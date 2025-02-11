@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">  
         <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://cdn.tailwindcss.com"></script>
         <title>DEEPSHARK</title>
         <link rel="stylesheet" href="../static/css/style.css">
     </head>
@@ -19,27 +20,24 @@
             <span class="logo">DEEPSHARK</span>
             <div class="auth-buttons">
                 <a class="contact" href="#">Contact us</a>
-                <a class="sign-in" href="#">Sign in</a>
-                <a class="sign-up" href="#">Sign up</a>
+                <a class="sign-in" href="/login">Sign in</a>
+                <a class="sign-up" href="/sign-up">Sign up</a>
             </div>
         </header>
         <main>
-            <section class="hero">
-                <div class="buttons">
-                    <a><i class='bx bx-question-mark'></i>Question</a>
-                    <a><i class='bx bx-book-open'></i>Tutorial</a>
-                    <a><i class='bx bxs-message-square-dots'></i>Chat with our Bot</a>
-                    <a><i class='bx bx-folder' ></i>LLMs Resources</a>
-                </div> 
-                <div class="content">
-                    <h1>Learn and become better at your school</h1>
-                    <p>Participate in a fully professional, social, engaging and interactive online school. Get the learning experience you deserve.</p>
-                    <div class="cta-buttons">
-                        <a href="#" class="btn-primary">Start now</a>
-                        <a href="#" class="btn-secondary">View course</a>
-                    </div>
-                </div>
-            </section>
+            {% include name %}
         </main>
+        <footer>
+            <div class="content">
+                <li class="col">Top Study Website for Computer Science Students University of Science</li>
+                <li class="col">
+                    <p>Feature Link</p>
+                </li>
+                <li class="col">
+                    Comtact with us
+                </li>
+            </div>
+        </footer>
+        <script src="../static/js/showmore.js"></script>
     </body>
     </html>
