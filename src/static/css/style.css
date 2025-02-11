@@ -77,7 +77,7 @@ main {
 
 .hero {
     text-align: center;
-    background: linear-gradient(to right, #2A3335, #5d6dea);
+    background: linear-gradient(to right, #2A3335, #194583);
     color: white;
     display: flex;
     flex-direction: row;
