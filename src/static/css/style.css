@@ -102,7 +102,8 @@ main {
 
 .hero .buttons a {
     background: #fff;
-    padding: 10px 5px;
+    width: 200px;
+    padding: 10px 25px;
     border-radius: 5px;
     color: #000;
     font-size: 20px;
@@ -118,7 +119,7 @@ main {
 }
 
 .hero .content {
-    padding: 70px 0;
+    padding: 50px 0;
     display: flex;
     flex-direction: column;
     margin-left: 10px;
