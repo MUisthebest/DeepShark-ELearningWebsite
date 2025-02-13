@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="title-course">Courses</h2>
+    <div class="search-bar">
+        <input type="text" placeholder="Search courses..." />
+        <i class='bx bx-search-alt'></i>
+    </div>
+    <section class="course-categories">
+        <div class="course-label">
+            <a href="#">All</a>
+            <a href="#">Newest</a>
+            <a href="#">Popular</a>
+            <a href="#">Free</a>
+        </div>
+        <div class="course-cards">
+            {% for course in courses %}
+                <a href="{{ course[1] }}" class="card">
+                    <img src="{{ course[2] }}" alt="{{ course[0] }}" />
+                    <div >{{ course[0] }} </div>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+</div>
