@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, Blueprint
+from flask import Flask, request, jsonify, Blueprint, make_response, redirect, url_for, session, render_template
 from api.models.user import User
 from api.settings import db, bcrypt, create_access_token
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
@@ -30,18 +30,9 @@ def signin():
 
     user = User.query.filter_by(email=data["email"]).first()
     if user and bcrypt.check_password_hash(user.password_hash, data["password"]):
-        access_token = create_access_token(identity=user.id)
-        return jsonify({"access_token": access_token}), 200
+        response = make_response(redirect(url_for("home"))) 
+        response.set_cookie("user_id", str(user.id), httponly=True, max_age=3600) 
+        return response
 
     return jsonify({"message": "Invalid credentials"}), 401
 
-
-@app.route("/profile", methods=["GET"])
-@jwt_required()
-def profile():
-    user_id = get_jwt_identity()
-    user = User.query.get(user_id)
-    if not user:
-        return jsonify({"message": "User not found"}), 404
-
-    return jsonify({"id": user.id, "username": user.username, "email": user.email, "image_face": user.image_face}), 200

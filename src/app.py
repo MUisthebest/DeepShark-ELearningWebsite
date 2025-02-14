@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from api.routes.routes import api_bp
 from api.settings import db, bcrypt, jwt
 from flask_migrate import Migrate
@@ -6,6 +6,7 @@ import os
 
 from api.routes.auth import app as auth_bp
 from flask import Flask
+from api.models.user import User
 
 
 from dotenv import load_dotenv
@@ -33,7 +34,12 @@ app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 
 @app.route("/")
 def home():
-    return render_template("index.html", name="home.html")
+    user_id = request.cookies.get("user_id")
+    if not user_id:
+        return redirect("/")
+
+    user = User.query.get(user_id) if user_id else None
+    return render_template("index.html", name="home.html", user=user)
 
 
 @app.route("/signin", methods=["GET"])
@@ -65,10 +71,24 @@ def tutorial():
     cur.close()
     return render_template("index.html", name="tutorial.html", courses=courses)
 
+@app.route("/profile", methods=["GET"])
+def profile():
+    user_id = request.cookies.get("user_id")
+    user = User.query.get(user_id)
+    if not user:
+        return redirect("/")
+
+    return render_template("index.html", name="profile.html", user=user)
+
 
 @app.route("/chat", methods=["GET"])
 def chat():
-    return render_template("index.html", name="chat.html")
+    user_id = request.cookies.get("user_id")
+    if not user_id:
+        return redirect("/")
+
+    user = User.query.get(user_id) if user_id else None
+    return render_template("index.html", name="chat.html", user=user)
 
 
 if __name__ == "__main__":

@@ -38,9 +38,17 @@
                 <a href="#">a</a>    
             </div>
             <div class="auth-buttons">
-                <a class="contact" href="#">Contact us</a>
-                <a class="sign-in" href="/signin">Sign in</a>
-                <a class="sign-up" href="/signup">Sign up</a>
+                {% if user %}
+                    <div class="profile">
+                        <a href="/profile">
+                            <img src="{{user.image_face}}" class="profile-icon">
+                        </a>
+                    </div>
+                {% else %}
+                    <a class="contact" href="#">Contact us</a>
+                    <a class="sign-in" href="/signin">Sign in</a>
+                    <a class="sign-up" href="/signup">Sign up</a>
+                {% endif %}
             </div>
         </header>
         <main>
