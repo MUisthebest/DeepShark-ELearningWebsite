@@ -36,7 +36,7 @@ app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 def home():
     user_id = request.cookies.get("user_id")
     if not user_id:
-        return redirect("/")
+        return render_template("index.html", name="home.html", user=None)
 
     user = User.query.get(user_id) if user_id else None
     return render_template("index.html", name="home.html", user=user)
@@ -85,7 +85,7 @@ def profile():
 def chat():
     user_id = request.cookies.get("user_id")
     if not user_id:
-        return redirect("/")
+        return render_template("index.html", name="chat.html", user=None)
 
     user = User.query.get(user_id) if user_id else None
     return render_template("index.html", name="chat.html", user=user)
