@@ -1,1 +1,1 @@
-from .routes import predict
+from .routes.routes import predict
