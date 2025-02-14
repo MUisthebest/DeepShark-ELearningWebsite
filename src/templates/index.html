@@ -17,7 +17,25 @@
     </head>
     <body>
         <header>
-            <a href="/" class="logo">DEEPSHARK</a>
+            <div class="header-logo">
+                <a href="/" class="logo">DEEPSHARK</a>
+                <div class="toggle"><i class='bx bx-chevron-left-square toggle-icon'></i></div>
+            </div>
+            <a href="#" class="new-chat">New Chat<i class='bx bx-message-add'></i></a>
+            <div class="for-chat">
+                <h4>History</h4>
+                <a href="#">1+1</a>
+                <a href="#">Bằng có đẹp trai không?</a>
+                <a href="#">Bằng và 4 cục tạ</a>
+                <a href="#">a</a>
+                <a href="#">a</a>
+                <a href="#">a</a>
+                <a href="#">a</a>
+                <a href="#">a</a>
+                <a href="#">a</a>
+                <a href="#">a</a>
+                <a href="#">a</a>    
+            </div>
             <div class="auth-buttons">
                 <a class="contact" href="#">Contact us</a>
                 <a class="sign-in" href="/login">Sign in</a>
@@ -39,5 +57,22 @@
             </div>
         </footer>
         <script src="../static/js/showmore.js"></script>
+        <script>
+            document.querySelector('.toggle').addEventListener('click', function() {
+                document.querySelector('.logo').classList.toggle('hidden');
+                document.querySelector('.new-chat').classList.toggle('hidden');
+                document.querySelector('.for-chat').classList.toggle('hidden');
+                document.querySelector('.auth-buttons').classList.toggle('hidden');
+
+                const icon = document.querySelector('.toggle-icon');
+                if (icon.classList.contains('bx-chevron-left-square')) {
+                    icon.classList.remove('bx-chevron-left-square');
+                    icon.classList.add('bx-chevron-right-square');
+                } else {
+                    icon.classList.remove('bx-chevron-right-square');
+                    icon.classList.add('bx-chevron-left-square');
+                }
+            });
+        </script>
     </body>
     </html>

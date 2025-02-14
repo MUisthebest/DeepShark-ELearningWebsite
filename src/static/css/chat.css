@@ -4,7 +4,55 @@ body {
 
 header {
     flex-direction: column;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 15px;
+    transition: 0.5s linear;
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.toggle {
+    display: flex;
+    justify-content: flex-end;}
+
+.toggle i {
+    display: flex;
+    font-size: calc(1vw + 16px);
+    cursor: pointer;
+    color: #000;
+}
+
+.for-chat {
+    justify-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.for-chat h4 {
+    color: #000;
+    align-self: flex-start;
+    padding: 5px;
+    font-size: calc(1vw + 5px);
+    border-bottom: 1px solid #ddd;
+}
+
+.contact {
+    display: none;
+}
+
+.for-chat a {
+    color: #2A3335;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 footer {
@@ -83,6 +131,7 @@ footer {
     padding: 10px;
     border-top: 1px solid #ddd;
     background-color: #f4f4f9;
+    margin-bottom: 0;
 }
 .chat-input input {
     flex: 1;
@@ -98,4 +147,37 @@ footer {
     background-color: #007bff;
     color: white;
     cursor: pointer;
+}
+
+.new-chat {
+    display: flex;
+    padding: 10px;
+    color: #000;
+    border: 1px solid #ddd;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    header {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #ffffffcd;
+    }
+
+    .chat-messages {
+        max-height: auto;
+    }
+
+    .toggle {
+        display: none;
+    }
 }
