@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../static/css/chat.css">
 <div class="chat-container">
-    <div class="chat-header"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="logo"><span class="name">Chatbot</span></div>
+    <div class="chat-header"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="logo"><span class="name">Chatbot</span><i class='bx bx-right-arrow-alt' ></i></div>
     <div class="chat-messages">
         <div class="chat-message bot-message">Hello! How can I assist you today?</div>
         <div class="chat-message user-message">I need help with my project.</div>
@@ -18,3 +18,8 @@
         <button>Send</button>
     </div>
 </div>
+<script>
+    document.querySelector('.chat-header i').addEventListener('click', function() {
+        document.querySelector('header').classList.toggle('hidden');
+    });
+</script>

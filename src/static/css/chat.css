@@ -90,6 +90,10 @@ footer {
     border-radius: 10px;
 }
 
+.chat-header i {
+    display: none;
+}
+
 .chat-header .name {
     display: flex;
     background: linear-gradient(45deg, #2A3335, #5d6dea);
@@ -173,6 +177,10 @@ footer {
         background-color: #ffffffcd;
     }
 
+    .chat-header {
+        justify-content: space-between;
+    }
+
     .chat-messages {
         max-height: auto;
     }
@@ -180,4 +188,27 @@ footer {
     .toggle {
         display: none;
     }
-}
+
+    .toggle-for-ip {
+        display: flex;
+        font-size: 30px;
+        color: #000;
+        border: 1px solid #ddd;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .toggle-for-ip:hover {
+        background-color: #ddd;
+    }
+
+    .chat-header i {
+        display: flex;
+        font-size: 30px;
+        color: #000;
+        border: 1px solid #ddd;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+}   

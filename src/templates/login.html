@@ -6,7 +6,7 @@
         </div>
         <p class="text-sm text-gray-500 text-center mb-6">Sign in to your account</p>
 
-        <form action="{{ url_for('login') }}" method="POST" class="space-y-4">
+        <form action="/api/auth/signin" method="POST" class="space-y-4">
             <div>
                 <label class="text-sm font-medium text-gray-600">Email</label>
                 <input type="email" name="email" required

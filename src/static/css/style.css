@@ -34,6 +34,10 @@ header {
     display: none;
 }
 
+.toggle-for-ip {
+    display: none;
+}
+
 main {
     display: block; 
     width: 100%;

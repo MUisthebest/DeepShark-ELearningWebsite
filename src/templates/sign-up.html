@@ -7,10 +7,10 @@
         </div>
         <p class="text-sm text-gray-500 text-center mb-6">Join us and start learning today</p>
 
-        <form action="{{ url_for('signUp') }}" method="POST" class="space-y-4">
+        <form action="api/auth/signup" method="POST" class="space-y-4">
             <div>
                 <label class="text-sm font-medium text-gray-600">Full Name</label>
-                <input type="text" name="fullname" required
+                <input type="text" name="username" required
                     class="w-full px-4 py-2 border focus:outline-none focus:ring-2 focus:ring-[#5d6dea]">
             </div>
 
@@ -34,7 +34,7 @@
 
         <div class="text-center mt-4">
             <p class="text-sm">Already have an account?
-                <a href="{{ url_for('login') }}" class="text-[#5d6dea] hover:underline">Sign In</a>
+                <a href="{{ url_for('signin') }}" class="text-[#5d6dea] hover:underline">Sign In</a>
             </p>
         </div>
     </div>
