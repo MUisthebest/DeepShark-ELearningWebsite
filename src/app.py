@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from api.routes.routes import api_bp
 from api.settings import db, bcrypt, jwt
+from flask_migrate import Migrate
 import os
 
 from api.routes.auth import app as auth_bp
@@ -21,6 +22,8 @@ app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 db.init_app(app)
 bcrypt.init_app(app)
 jwt.init_app(app)
+
+migrate = Migrate(app, db)
 
 app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
 app.register_blueprint(auth_bp, url_prefix="/api/auth/")
