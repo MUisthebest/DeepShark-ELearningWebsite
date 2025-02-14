@@ -20,6 +20,7 @@
             <div class="header-logo">
                 <a href="/" class="logo">DEEPSHARK</a>
                 <div class="toggle"><i class='bx bx-chevron-left-square toggle-icon'></i></div>
+                <div class="toggle-for-ip"><i class='bx bx-left-arrow-alt'></i></div>
             </div>
             <a href="#" class="new-chat">New Chat<i class='bx bx-message-add'></i></a>
             <div class="for-chat">
@@ -38,8 +39,8 @@
             </div>
             <div class="auth-buttons">
                 <a class="contact" href="#">Contact us</a>
-                <a class="sign-in" href="/login">Sign in</a>
-                <a class="sign-up" href="/sign-up">Sign up</a>
+                <a class="sign-in" href="/signin">Sign in</a>
+                <a class="sign-up" href="/signup">Sign up</a>
             </div>
         </header>
         <main>
@@ -56,14 +57,13 @@
                 </li>
             </div>
         </footer>
-        <script src="../static/js/showmore.js"></script>
         <script>
             document.querySelector('.toggle').addEventListener('click', function() {
                 document.querySelector('.logo').classList.toggle('hidden');
                 document.querySelector('.new-chat').classList.toggle('hidden');
                 document.querySelector('.for-chat').classList.toggle('hidden');
                 document.querySelector('.auth-buttons').classList.toggle('hidden');
-
+        
                 const icon = document.querySelector('.toggle-icon');
                 if (icon.classList.contains('bx-chevron-left-square')) {
                     icon.classList.remove('bx-chevron-left-square');
@@ -73,6 +73,23 @@
                     icon.classList.add('bx-chevron-left-square');
                 }
             });
+        
+            document.querySelector('.toggle-for-ip').addEventListener('click', function() {
+                document.querySelector('header').classList.toggle('hidden');
+            });
+        
+            window.addEventListener('resize', function() {
+                if (window.matchMedia("(min-width: 768px)").matches) {
+                    document.querySelector('header').classList.remove('hidden');
+                } else {
+                    if (document.querySelector('.logo').classList.contains('hidden')) {
+                        document.querySelector('.logo').classList.remove('hidden');
+                        document.querySelector('.new-chat').classList.remove('hidden');
+                        document.querySelector('.for-chat').classList.remove('hidden');
+                        document.querySelector('.auth-buttons').classList.remove('hidden');                    }
+                }
+            });
         </script>
+        
     </body>
     </html>

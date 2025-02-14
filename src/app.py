@@ -36,13 +36,13 @@ def home():
     return render_template("index.html", name="home.html")
 
 
-@app.route("/login", methods=["GET"])
-def login():
+@app.route("/signin", methods=["GET"])
+def signin():
     return render_template("index.html", name="login.html")
 
 
-@app.route("/sign-up", methods=["GET"])
-def signUp():
+@app.route("/signup", methods=["GET"])
+def signup():
     return render_template("index.html", name="sign-up.html")
 
 
