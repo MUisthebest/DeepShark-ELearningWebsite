@@ -2,12 +2,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     background-color: #f4f4f4;
     width: 100%;
     max-width: 100vw;
+    display: flex;
     overflow-x: hidden;
-    overflow-y: scroll;
-    height: 100vh;
+    height: auto;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -19,7 +22,15 @@ header {
     color: white;
 }
 
-header .logo {
+main {
+    display: block; 
+    width: 100%;
+    height: fit-content; 
+    flex: 1;
+    min-height: 100vh; 
+}
+
+.logo {
     background: linear-gradient(45deg, #2A3335, #5d6dea);
     -webkit-background-clip: text;
     font-family: "Jersey 15", serif;
@@ -102,10 +113,13 @@ main {
 
 .hero .buttons a {
     background: #fff;
-    padding: 10px 5px;
+    width: 40%;
+    padding: 10px 25px;
     border-radius: 5px;
     color: #000;
-    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: calc(1,2vw);
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.032);
 
@@ -118,7 +132,7 @@ main {
 }
 
 .hero .content {
-    padding: 70px 0;
+    padding: 50px 0;
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -128,7 +142,7 @@ main {
 
 
 .hero .content h1 {
-    font-size: 50px;
+    font-size: calc(2vw + 12px);
     text-align: justify;
     width: 65%;
     height: min-content;
@@ -140,7 +154,7 @@ main {
 }
 
 .hero .content p {
-    font-size: 18px;
+    font-size: calc(0.5vw + 10px);
     text-align: left;
     width: 55%;
     margin: 0;
@@ -178,4 +192,235 @@ main {
 
 .btn-primary:hover, .btn-secondary:hover {
     opacity: 0.9;
+}
+
+.achievement {
+    height: 300px;
+    background-color: gold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.achievement span {
+    text-align: center;
+    display: flex;
+    font-size: calc(1vw + 8px);
+    width: 30%;
+    margin: 1%;
+    flex-direction: column;
+}
+
+.tutorial {
+    width: 100%;
+    max-width: 100vw;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.tutorial .title {
+    width: fit-content;
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.tutorial .title h2 {
+    width: 100%;
+    font-weight: bold;
+    font-size: 34px;
+    text-align: center;
+    font-family: "Poppins", serif;
+}
+
+.tutorial .title i {
+    font-size: 30px;
+}
+
+.tutorial .list-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2%;
+    justify-content: flex-start;
+}
+
+
+.item {
+    width: 31%;
+    margin: 1%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; 
+    padding-bottom: 10px;
+}
+
+.item img {
+    width: 100%;
+    height: 60%;
+}
+
+.info {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.info h4 {
+    font-size: calc(1.5vw);
+}
+
+.info a {
+    text-decoration: none;
+    border: 1px solid #ccc;
+    color: #fff;
+    background: #194583;
+    height: auto;
+    width: 60%;
+    text-align: center;
+    align-self: center;
+    border-radius: 15px;
+    font-size: calc(1vw + 6px);
+}
+
+.item:nth-child(-n+3) {
+    display: block; 
+}
+
+.show-more {
+    display: block;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    width: 60%;
+    align-self: center;
+    background-color: #194583;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.tutorial-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #194583;
+    color: white;
+}
+
+.course-categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.search-bar {
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 60%;
+}
+.search-bar input {
+    width: 100%;
+    padding: 10px 40px 10px 20px; 
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+.search-bar i {
+    position: absolute;
+    right: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    cursor: pointer;
+}
+
+.container { 
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-image: url("../image/layout-background.svg");
+    background-size: cover;
+    overflow: hidden;
+    flex: 1;
+}
+
+
+.container h2 {
+    font-size: calc(3vw + 7px);
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    padding: 0;
+    font-family: "Poppins", serif;
+}
+
+.course-label {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-height: 600px;
+    padding: 10px;
+    gap: 10px;
+}
+
+.course-label a {
+    text-decoration: none;
+    color: #000;
+    font-size: calc(1vw + 4px);
+}
+
+.course-label a:hover {
+    background-color: #ccc;
+}
+
+.course-cards{ display: flex; flex-wrap: wrap; justify-content: flex-start; padding: 0 2%;
+    box-shadow: 0 4px 8px rgba(238, 234, 234, 0.2), 
+                0 6px 20px rgba(239, 235, 235, 0.19); width: 70%; border: 1px solid #ddd; border-radius: 10px;    overflow-y: auto; max-height: 600px; scrollbar-width: none;}
+.course-cards::-webkit-scrollbar {
+    display: none; 
+}
+.card { background: white; border: 1px solid #ccc; border-radius: 10px; margin: 1%; padding: 20px; width: calc(31%); }
+
+footer {
+    margin-bottom: 0;
+}
+
+footer .content {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to right, #2A3335, #194583);
+    padding: 0 80px;
+}
+
+footer .content li {
+    width: 30%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
 }
