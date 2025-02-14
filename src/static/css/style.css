@@ -22,6 +22,18 @@ header {
     color: white;
 }
 
+.for-chat {
+    display: none;
+}
+
+.toggle i{
+    display: none;
+}
+
+.new-chat {
+    display: none;
+}
+
 main {
     display: block; 
     width: 100%;
