@@ -2,11 +2,11 @@ from api.settings import db, bcrypt
 
 
 class ChatHistory(db.Model):
-    __tablename__ = 'public.history_chat' 
+    __tablename__ = 'history_chat' 
 
     id = db.Column(db.Integer, primary_key=True)
-    user_message = db.Column(db.String(500), nullable=False)  # Lưu câu hỏi của người dùng
-    bot_response = db.Column(db.String(500), nullable=False)  # Lưu câu trả lời của bot
+    user_message = db.Column(db.String(), nullable=False)  
+    bot_response = db.Column(db.String(), nullable=False)  
 
     def __init__(self, user_message, bot_response):
         self.user_message = user_message
