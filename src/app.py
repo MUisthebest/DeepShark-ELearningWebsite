@@ -6,8 +6,8 @@ import os
 
 from api.routes.auth import app as auth_bp
 from flask import Flask
-from api.models.user import User
-
+from api.models.user import User, ChatHistory
+from api.routes.auth import app as auth_bp 
 
 from dotenv import load_dotenv
 import psycopg2
@@ -36,10 +36,11 @@ app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 def home():
     user_id = request.cookies.get("user_id")
     if not user_id:
-        return render_template("index.html", name="home.html", user=None)
+        return render_template("index.html", name="home.html", user=None, chats=[])
 
     user = User.query.get(user_id) if user_id else None
-    return render_template("index.html", name="home.html", user=user)
+    chats = ChatHistory.query.all() 
+    return render_template("index.html", name="home.html", user=user, chats=chats)
 
 
 @app.route("/signin", methods=["GET"])

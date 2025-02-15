@@ -1,6 +1,19 @@
 from api.settings import db, bcrypt
 
 
+class ChatHistory(db.Model):
+    __tablename__ = 'public.history_chat' 
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_message = db.Column(db.String(500), nullable=False)  # Lưu câu hỏi của người dùng
+    bot_response = db.Column(db.String(500), nullable=False)  # Lưu câu trả lời của bot
+
+    def __init__(self, user_message, bot_response):
+        self.user_message = user_message
+        self.bot_response = bot_response
+
+
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
