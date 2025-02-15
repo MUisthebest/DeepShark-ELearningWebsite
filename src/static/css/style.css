@@ -64,6 +64,7 @@ main {
 .logo {
     background: linear-gradient(45deg, #2A3335, #5d6dea);
     -webkit-background-clip: text;
+    background-clip: text;
     font-family: "Jersey 15", serif;
     font-optical-sizing: auto;
     -webkit-text-fill-color: transparent;
