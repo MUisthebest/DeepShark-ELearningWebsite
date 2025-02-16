@@ -59,7 +59,7 @@ def question():
 
 
 def get_db_course():
-    conn = psycopg2.connect(host="ml-web.postgres.database.azure.com", database="courses", user="ml_admin", password="ml#web_db#2224")
+    conn = psycopg2.connect(host="ml-web.postgres.database.azure.com", database="main_db", user="ml_admin", password="ml#web_db#2224")
     return conn
 
 
