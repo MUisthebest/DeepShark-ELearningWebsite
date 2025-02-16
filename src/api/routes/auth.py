@@ -7,7 +7,7 @@ app = Blueprint("api_auth", __name__)
 
 @app.route("/signup", methods=["POST"])
 def signup():
-    data = request.get_json()  
+    data = request.form
     if not data or not all(k in data for k in ("username", "email", "password")):
         return jsonify({"message": "Missing fields"}), 400
 
@@ -24,7 +24,7 @@ def signup():
 
 @app.route("/signin", methods=["POST"])
 def signin():
-    data = request.get_json()
+    data = request.form
     if not data or not all(k in data for k in ("email", "password")):
         return jsonify({"message": "Missing fields"}), 400
 
