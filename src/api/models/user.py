@@ -44,3 +44,9 @@ class ChatMessage(db.Model):
         self.history_chat_id = history_chat_id
         self.user_message = user_message
         self.bot_response = bot_response
+
+    def to_dict(self):
+        return{
+            'user_message': self.user_message,
+            'bot_response': self.bot_response,
+        }

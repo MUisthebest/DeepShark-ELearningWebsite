@@ -93,10 +93,12 @@ def chat():
 
     # chat_messages = []
     # for chat in chats:
-    messages = ChatMessage.query.filter_by(history_chat_id=chats[0].id).all()  
+    messages = ChatMessage.query.filter_by(history_chat_id=chats[0].id).all()
+    chat_messages = [message.to_dict() for message in messages]  # Chuyển đổi thành dict
+
     # chat_messages.append(messages)
-    print(f"Chat messages: {messages}")
-    return render_template("index.html", name="chat.html", user=None, chats=chats, chat_messages=messages)
+    print(f"Chat messages: {chat_messages}")
+    return render_template("index.html", name="chat.html", user=None, chats=chats, chat_messages=chat_messages)
 
 
 

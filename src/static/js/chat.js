@@ -1,3 +1,5 @@
+
+
 document.querySelector('.chat-input button').addEventListener('click', async function() {
     const inputField = document.querySelector('.chat-input input');
     const userMessage = inputField.value;
