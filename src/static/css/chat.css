@@ -27,13 +27,24 @@ header {
     color: #000;
 }
 
+
+.history-item {
+    width: 270px;  
+    height: 60px;
+    white-space: nowrap;
+    display: block; 
+    text-overflow: ellipsis; 
+}
+
 .for-chat {
     justify-self: flex-start;
     display: flex;
     flex-direction: column;
+    width: 256px;  
     height: 60%;
     max-height: 400px;
-    overflow-y: auto;
+    overflow-y: scroll; 
+    overflow-x: hidden; 
 }
 
 .for-chat h4 {

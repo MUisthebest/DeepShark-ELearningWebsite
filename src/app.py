@@ -6,7 +6,7 @@ import os
 
 from api.routes.auth import app as auth_bp
 from flask import Flask
-from api.models.user import User, ChatHistory
+from api.models.user import User, ChatHistory, ChatMessage
 from api.routes.auth import app as auth_bp 
 
 from dotenv import load_dotenv
@@ -36,11 +36,10 @@ app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 def home():
     user_id = request.cookies.get("user_id")
     if not user_id:
-        return render_template("index.html", name="home.html", user=None, chats=[])
+        return render_template("index.html", name="home.html", user=None)
 
     user = User.query.get(user_id) if user_id else None
-    chats = ChatHistory.query.all() 
-    return render_template("index.html", name="home.html", user=user, chats=chats)
+    return render_template("index.html", name="home.html", user=user)
 
 
 @app.route("/signin", methods=["GET"])
@@ -85,11 +84,36 @@ def profile():
 @app.route("/chat", methods=["GET"])
 def chat():
     user_id = request.cookies.get("user_id")
-    if not user_id:
-        return render_template("index.html", name="chat.html", user=None)
 
-    user = User.query.get(user_id) if user_id else None
-    return render_template("index.html", name="chat.html", user=user)
+    print(user_id)
+
+    #TESTING
+    chats = ChatHistory.query.filter_by(user_id=user_id).all()
+    print(f"Chats: {chats}")
+
+    # chat_messages = []
+    # for chat in chats:
+    messages = ChatMessage.query.filter_by(history_chat_id=chats[0].id).all()  
+    # chat_messages.append(messages)
+    print(f"Chat messages: {messages}")
+    return render_template("index.html", name="chat.html", user=None, chats=chats, chat_messages=messages)
+
+
+
+    # return render_template("index.html", name="chat.html", user=None, chats=chats, chat_messages=chat_messages)
+
+
+    # # ACTUALLY, THE CODE MUST BE HERE!!!!!
+
+    # if not user_id:
+    #     return render_template("index.html", name="chat.html", user=None,chats=[])
+
+
+    # user = User.query.get(user_id) if user_id else None
+    # chats = ChatHistory.query.all()
+    # print(f"Chats: {chats}")
+
+    # return render_template("index.html", name="chat.html", user=user, chats=chats)
 
 
 if __name__ == "__main__":

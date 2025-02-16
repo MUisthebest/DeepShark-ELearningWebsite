@@ -27,7 +27,10 @@
             <div class="for-chat">
                 <h4>History</h4>
                 {% for chat in chats %}
-                    <a href="#">{{ chat.user_message }} <strong>-</strong> {{ chat.bot_response }}</a>
+                    <a href="https://www.coursera.org/" class="history-item">
+                        {{ chat.user_message }} <br>
+                    </a>
+                    <hr> 
                 {% endfor %}
             </div>
             <div class="auth-buttons">

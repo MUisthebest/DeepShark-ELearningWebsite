@@ -3,16 +3,11 @@ import textwrap
 import google.generativeai as genai
 from IPython.display import Markdown
 
+
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
-def to_markdown(text):
-    """
-    Hàm này sẽ chuyển đổi nội dung trả về thành định dạng Markdown.
-    """
-    text = text.replace('•', '  *')  
-    return text
-
+# 
 
 def predict(user_message):
     try:

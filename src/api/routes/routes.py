@@ -1,11 +1,15 @@
 from flask import Blueprint, request, jsonify, render_template
 from api.ai_models.ai_model import predict  # Đảm bảo import đúng
-from api.models.user import ChatHistory  # Import model ChatHistory
+from api.models.user import ChatHistory, ChatMessage  # Import model ChatHistory
 from api.settings import db
+import markdown
 
 
 
 api_bp = Blueprint("api_ai_models", __name__)  # Khởi tạo Blueprint
+
+def to_markdown(text):
+    return markdown.markdown(text)
 
 
 @api_bp.route("/predict", methods=["POST"])
@@ -15,8 +19,14 @@ def predict_web():
     print(f"Input data received: {input_data}")
     bot_response = predict(input_data) 
 
-    new_chat = ChatHistory(user_message=input_data, bot_response=bot_response)
-    db.session.add(new_chat)
+    # new_chat = ChatHistory(user_message=input_data, bot_response=bot_response)
+    # db.session.add(new_chat)
+    # db.session.commit()
+
+    new_message = ChatMessage(history_chat_id=1,user_message=input_data, bot_response=bot_response)
+    db.session.add(new_message)
     db.session.commit()
 
+    
+    bot_response = to_markdown(bot_response)
     return jsonify({"prediction": bot_response})
