@@ -16,9 +16,10 @@ def to_markdown(text):
 
 def predict(user_message):
     try:
-        model = genai.GenerativeModel('gemini-2.0-flash')  
-        response = model.generate_content(user_message)  
-        return to_markdown(response.text)  
+        # model = genai.GenerativeModel('gemini-2.0-flash')  
+        # response = model.generate_content(user_message)  
+        # return to_markdown(response.text)  
+        return user_message
     except Exception as e:
         print(f"Error calling Gemini API: {e}")
         return "Error processing your request."
