@@ -16,17 +16,19 @@
                 {% if message.bot_response %}
                     {{ message.bot_response }}
                 {% endif %}
-            </div>
+            </div>  
 
 
 
         {% endfor %}
     
     </div>
+
+    <input type="hidden" id="message_id" value="{{ message_id }}">
+
     <div class="chat-input">
         <input type="text" placeholder="Type a message..." />
         <button>Send</button>
     </div>
 </div>
 <script src="../static/js/chat.js"></script>  
-

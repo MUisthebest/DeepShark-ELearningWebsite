@@ -1,8 +1,7 @@
-
-
 document.querySelector('.chat-input button').addEventListener('click', async function() {
     const inputField = document.querySelector('.chat-input input');
     const userMessage = inputField.value;
+    const messageId = document.getElementById('message_id').value; 
 
     if (userMessage.trim() !== "") {
 
@@ -18,7 +17,10 @@ document.querySelector('.chat-input button').addEventListener('click', async fun
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ input_data: userMessage }) // Gửi tin nhắn người dùng dưới dạng JSON
+            body: JSON.stringify({ 
+                input_data: userMessage,
+                message_id: messageId
+                })
         });
 
         const data = await response.json();
