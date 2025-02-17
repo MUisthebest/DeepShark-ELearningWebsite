@@ -16,6 +16,8 @@
         <title>DEEPSHARK</title>
         <link rel="stylesheet" href="../static/css/style.css">
         <script src="{{ url_for('static', filename='/js/hiddenbutton.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='/js/update_chathistory.js') }}" defer></script>
+
     </head>
     <body>
         <header>
@@ -37,10 +39,10 @@
             <div class="for-chat">
                 <h4>History</h4>
                 {% for chat in chats %}
-                    <a href="{{ url_for('chat', chat_history_id=chat.id) }}" class="history-item">
+                    <a href="javascript:void(0)" class="history-item" data-chat-id="{{ chat.id }}">
                         {{ chat.name_conversation }} <br>
                     </a>
-                    <hr> 
+                    <hr>
                 {% endfor %}
             </div>
             <div class="auth-buttons">

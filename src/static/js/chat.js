@@ -39,3 +39,8 @@ document.querySelector('.chat-input button').addEventListener('click', async fun
         inputField.focus();
     }
 });
+
+
+
+
+

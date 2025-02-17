@@ -85,16 +85,18 @@ def profile():
 def chat():
     user_id = request.cookies.get("user_id")
     if not user_id:
-        return redirect("/signin") 
+        return redirect("/signin")  
     
-    all_chats = ChatHistory.query.filter_by(user_id=user_id).all()
-
-    chat_history_id = request.args.get('chat_history_id')
+    chat_history_id = request.cookies.get("history_chat_id")
+    if not chat_history_id:
+        chat_history_id = request.args.get('chat_history_id') 
 
     if not chat_history_id:
         last_chat = ChatHistory.query.filter_by(user_id=user_id).order_by(ChatHistory.id.desc()).first()
         if last_chat:
             chat_history_id = last_chat.id
+
+    all_chats = ChatHistory.query.filter_by(user_id=user_id).all()
 
     if chat_history_id:
         messages = ChatMessage.query.filter_by(history_chat_id=chat_history_id).all()

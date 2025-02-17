@@ -27,6 +27,7 @@ def predict_web():
     # db.session.add(new_chat)
     # db.session.commit()
 
+
     new_message = ChatMessage(history_chat_id=2,user_message=input_data, bot_response=bot_response)
     db.session.add(new_message)
     db.session.commit()
