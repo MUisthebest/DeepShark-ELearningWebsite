@@ -83,26 +83,27 @@ def profile():
 
 @app.route("/chat", methods=["GET"])
 def chat():
+
+
+
     user_id = request.cookies.get("user_id")
+    if not user_id:
+        return redirect("/signin")  
 
-    print(user_id)
+    last_chat = ChatHistory.query.filter_by(user_id=user_id).order_by(ChatHistory.id.desc()).first()
 
-    #TESTING
-    chats = ChatHistory.query.filter_by(user_id=user_id).all()
-    print(f"Chats: {chats}")
+    if last_chat:
+        chat_history_id = last_chat.id
+    else:
+        chat_history_id = None
 
-    # chat_messages = []
-    # for chat in chats:
-    message_id = chats[0].id
-    print(message_id)
-    messages = ChatMessage.query.filter_by(history_chat_id=message_id).all()
-    chat_messages = [message.to_dict() for message in messages]  
+    if chat_history_id:
+        messages = ChatMessage.query.filter_by(history_chat_id=chat_history_id).all()
+        chat_messages = [message.to_dict() for message in messages]
+    else:
+        chat_messages = []
 
-    # chat_messages.append(messages)
-    print(f"Chat messages: {chat_messages}")
-    return render_template("index.html", name="chat.html", user=None, chats=chats, chat_messages=chat_messages, message_id = message_id)
-
-
+    return render_template("index.html", name="chat.html", user=None, chat_messages=chat_messages, message_id=chat_history_id)
 
     # return render_template("index.html", name="chat.html", user=None, chats=chats, chat_messages=chat_messages)
 

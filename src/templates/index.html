@@ -15,6 +15,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <title>DEEPSHARK</title>
         <link rel="stylesheet" href="../static/css/style.css">
+        <script src="{{ url_for('static', filename='/js/hiddenbutton.js') }}" defer></script>
     </head>
     <body>
         <header>
@@ -23,11 +24,20 @@
                 <div class="toggle"><i class='bx bx-chevron-left-square toggle-icon'></i></div>
                 <div class="toggle-for-ip"><i class='bx bx-left-arrow-alt'></i></div>
             </div>
-            <a href="#" class="new-chat">New Chat<i class='bx bx-message-add'></i></a>
+
+
+            <!-- <a href="#" class="new-chat">New Chat<i class='bx bx-message-add'></i></a> -->
+
+            <form action="{{ url_for('api_ai_models.new_chat') }}" method="post">
+                <button type="submit" class="new-chat-btn">
+                    New Chat <i class='bx bx-message-add'></i>
+                </button>
+            </form>
+
             <div class="for-chat">
                 <h4>History</h4>
                 {% for chat in chats %}
-                    <a href="https://www.coursera.org/" class="history-item">
+                    <a href="{{ url_for('chat', chat_history_id=chat.id) }}" class="history-item">
                         {{ chat.name_conversation }} <br>
                     </a>
                     <hr> 

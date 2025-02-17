@@ -23,7 +23,7 @@ class ChatHistory(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    name_conversation = db.Column(db.String(), nullable=False)
+    name_conversation = db.Column(db.String(), nullable=False, default="Cuộc hội thoại mới")
     chat_messages = db.relationship('ChatMessage', backref='chat_history', lazy=True)
     
 
