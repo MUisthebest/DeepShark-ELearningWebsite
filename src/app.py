@@ -83,19 +83,18 @@ def profile():
 
 @app.route("/chat", methods=["GET"])
 def chat():
-
-
-
     user_id = request.cookies.get("user_id")
     if not user_id:
-        return redirect("/signin")  
+        return redirect("/signin") 
+    
+    all_chats = ChatHistory.query.filter_by(user_id=user_id).all()
 
-    last_chat = ChatHistory.query.filter_by(user_id=user_id).order_by(ChatHistory.id.desc()).first()
+    chat_history_id = request.args.get('chat_history_id')
 
-    if last_chat:
-        chat_history_id = last_chat.id
-    else:
-        chat_history_id = None
+    if not chat_history_id:
+        last_chat = ChatHistory.query.filter_by(user_id=user_id).order_by(ChatHistory.id.desc()).first()
+        if last_chat:
+            chat_history_id = last_chat.id
 
     if chat_history_id:
         messages = ChatMessage.query.filter_by(history_chat_id=chat_history_id).all()
@@ -103,7 +102,9 @@ def chat():
     else:
         chat_messages = []
 
-    return render_template("index.html", name="chat.html", user=None, chat_messages=chat_messages, message_id=chat_history_id)
+    return render_template("index.html", name="chat.html", user=None, chats=all_chats, chat_messages=chat_messages, message_id=chat_history_id)
+
+
 
     # return render_template("index.html", name="chat.html", user=None, chats=chats, chat_messages=chat_messages)
 
