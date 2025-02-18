@@ -6,8 +6,8 @@ import os
 
 from api.routes.auth import app as auth_bp
 from flask import Flask
-from api.models.user import User
-
+from api.models.user import User, ChatHistory, ChatMessage
+from api.routes.auth import app as auth_bp 
 
 from dotenv import load_dotenv
 import psycopg2
@@ -58,7 +58,7 @@ def question():
 
 
 def get_db_course():
-    conn = psycopg2.connect(host="ml-web.postgres.database.azure.com", database="courses", user="ml_admin", password="ml#web_db#2224")
+    conn = psycopg2.connect(host="ml-web.postgres.database.azure.com", database="main_db", user="ml_admin", password="ml#web_db#2224")
     return conn
 
 
@@ -81,14 +81,53 @@ def profile():
     return render_template("index.html", name="profile.html", user=user)
 
 
-@app.route("/chat", methods=["GET"])
+@app.route("/chat", methods=["GET"], endpoint="chat")
 def chat():
+
     user_id = request.cookies.get("user_id")
     if not user_id:
-        return render_template("index.html", name="chat.html", user=None)
+        return redirect("/signin")  
+    
+
 
     user = User.query.get(user_id) if user_id else None
-    return render_template("index.html", name="chat.html", user=user)
+
+
+    chat_history_id = request.cookies.get("history_chat_id")
+    if not chat_history_id:
+        chat_history_id = request.args.get('chat_history_id') 
+
+    if not chat_history_id:
+        last_chat = ChatHistory.query.filter_by(user_id=user_id).order_by(ChatHistory.id.desc()).first()
+        if last_chat:
+            chat_history_id = last_chat.id
+
+    all_chats = ChatHistory.query.filter_by(user_id=user_id).all()
+
+    if chat_history_id:
+        messages = ChatMessage.query.filter_by(history_chat_id=chat_history_id).all()
+        chat_messages = [message.to_dict() for message in messages]
+    else:
+        chat_messages = []
+
+    return render_template("index.html", name="chat.html", user=user, chats=all_chats, chat_messages=chat_messages, message_id=chat_history_id)
+
+
+
+    # return render_template("index.html", name="chat.html", user=None, chats=chats, chat_messages=chat_messages)
+
+
+    # # ACTUALLY, THE CODE MUST BE HERE!!!!!
+
+    # if not user_id:
+    #     return render_template("index.html", name="chat.html", user=None,chats=[])
+
+
+    # user = User.query.get(user_id) if user_id else None
+    # chats = ChatHistory.query.all()
+    # print(f"Chats: {chats}")
+
+    # return render_template("index.html", name="chat.html", user=user, chats=chats)
 
 
 if __name__ == "__main__":
