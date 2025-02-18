@@ -83,10 +83,16 @@ def profile():
 
 @app.route("/chat", methods=["GET"], endpoint="chat")
 def chat():
+
     user_id = request.cookies.get("user_id")
     if not user_id:
         return redirect("/signin")  
     
+
+
+    user = User.query.get(user_id) if user_id else None
+
+
     chat_history_id = request.cookies.get("history_chat_id")
     if not chat_history_id:
         chat_history_id = request.args.get('chat_history_id') 
@@ -104,7 +110,7 @@ def chat():
     else:
         chat_messages = []
 
-    return render_template("index.html", name="chat.html", user=None, chats=all_chats, chat_messages=chat_messages, message_id=chat_history_id)
+    return render_template("index.html", name="chat.html", user=user, chats=all_chats, chat_messages=chat_messages, message_id=chat_history_id)
 
 
 
