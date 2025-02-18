@@ -19,7 +19,6 @@ def predict_web():
     print(f"Input data received: {input_data}")
 
     message_id = data.get("message_id")  # Lấy message_id từ frontend
-    print(f"Message ID: {message_id}")
 
     bot_response = predict(input_data) 
 
@@ -28,7 +27,6 @@ def predict_web():
     # db.session.commit()
     history_chat_id = request.cookies.get("history_chat_id")
     
-    print(history_chat_id)
 
     new_message = ChatMessage(history_chat_id=history_chat_id,user_message=input_data, bot_response=bot_response)
     db.session.add(new_message)

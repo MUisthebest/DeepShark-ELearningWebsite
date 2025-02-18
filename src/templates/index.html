@@ -15,8 +15,6 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <title>DEEPSHARK</title>
         <link rel="stylesheet" href="../static/css/style.css">
-        <script src="{{ url_for('static', filename='/js/hiddenbutton.js') }}" defer></script>
-        <script src="{{ url_for('static', filename='/js/update_chathistory.js') }}" defer></script>
 
     </head>
     <body>
@@ -73,13 +71,27 @@
                 </li>
             </div>
         </footer>
+
+
+        <script src="{{ url_for('static', filename='/js/hiddenbutton.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='/js/update_chathistory.js') }}" defer></script>
+
         <script>
             document.querySelector('.toggle').addEventListener('click', function() {
                 document.querySelector('.logo').classList.toggle('hidden');
-                document.querySelector('.new-chat').classList.toggle('hidden');
+                document.querySelector('.new-chat-btn').classList.toggle('hidden');
                 document.querySelector('.for-chat').classList.toggle('hidden');
                 document.querySelector('.auth-buttons').classList.toggle('hidden');
-        
+
+                const header = document.querySelector('header');
+                header.classList.toggle('shrunk');
+
+                const newChatButton = document.querySelector('.new-chat-btn');
+                if (newChatButton) {
+                    newChatButton.classList.toggle('new-chat-btn-position-afterToggle');
+                }
+
+
                 const icon = document.querySelector('.toggle-icon');
                 if (icon.classList.contains('bx-chevron-left-square')) {
                     icon.classList.remove('bx-chevron-left-square');
@@ -106,6 +118,8 @@
                 }
             });
         </script>
+
+
         
     </body>
     </html>

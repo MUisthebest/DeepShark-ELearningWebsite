@@ -20,7 +20,16 @@ header {
     padding: 20px;
     background-color: #fff;
     color: white;
+    position: relative;
+
 }
+
+header.shrunk {
+    width: 10% ;
+    padding: 0;
+
+}
+
 
 .profile-icon {
     width: 60px;
@@ -212,13 +221,13 @@ main {
 .btn-primary {
     background-color: gold;
     color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adjust shadow as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .btn-secondary {
     background-color: #A1D6CB;
     color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adjust shadow as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .new-chat-btn {
@@ -232,6 +241,20 @@ main {
 
 .new-chat-btn:hover {
     background-color: #297cd4;
+}
+
+.new-chat-btn-position-afterToggle {
+    padding: 10px 20px;
+    background-color: #297cd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+
+
+    position: absolute;  /* Đặt vị trí tuyệt đối */
+    top: 15%;            /* Đặt nút cách 10% từ trên xuống */
+    left: 50%;           /* Đặt nút ở giữa theo chiều ngang */
+    transform: translateX(-50%);
 }
 
 

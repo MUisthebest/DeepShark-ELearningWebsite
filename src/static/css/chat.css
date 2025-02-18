@@ -4,9 +4,9 @@ body {
 
 header {
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 15px;
-    transition: 0.5s linear;
+    /* transition: 0.5s linear; */
 }
 
 .header-logo {
@@ -166,6 +166,8 @@ footer {
 }
 
 .new-chat {
+    position: absolute;  
+
     display: flex;
     padding: 10px;
     color: #000;
@@ -187,6 +189,8 @@ footer {
         height: 100%;
         width: 100%;
         background-color: #ffffffcd;
+        display: flex;
+
     }
 
     .chat-header {
