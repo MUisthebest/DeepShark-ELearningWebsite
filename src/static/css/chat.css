@@ -179,6 +179,19 @@ footer {
     display: none;
 }
 
+.new-chat-btn {
+    padding: 10px 20px;
+    background-color: #297cd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-chat-btn:hover {
+    background-color: #297cd4;
+}
+
 
 @media (max-width: 768px) {
 
