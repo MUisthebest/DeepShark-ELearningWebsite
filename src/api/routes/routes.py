@@ -44,17 +44,17 @@ def new_chat():
     user_id = request.cookies.get("user_id")
     if not user_id:
         return redirect("/signin")  
-    name_conversation = f"Cuộc hội thoại mới với ChatBOT trí tuệ nhân tạo"
 
-    new_chat_history = ChatHistory(user_id=user_id, name_conversation=name_conversation)
+    new_chat_history = ChatHistory(user_id=user_id)
+    
     db.session.add(new_chat_history)
     db.session.commit()
 
-    
-    # Lấy ID của cuộc hội thoại mới
     chat_history_id = new_chat_history.id
+    name_conversation = f"Cuộc hội thoại {chat_history_id} với ChatBOT"
 
-    return redirect(url_for('api_ai_models.chat', chat_history_id=chat_history_id))  # Điều hướng đến trang chat
+    new_chat_history.name_conversation = name_conversation
 
+    db.session.commit()
 
-
+    return redirect(url_for('chat', chat_history_id=chat_history_id))

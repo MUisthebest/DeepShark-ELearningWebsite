@@ -1,6 +1,7 @@
 window.onload = function() {
     var pageName = window.location.pathname;
-    if (pageName === "/chat.html") {
+
+    if (pageName === "/chat" || pageName === "/chat.html") {
         var newChatButton = document.querySelector('.new-chat-btn');
         if (newChatButton) {
             newChatButton.style.display = 'inline-block';  
@@ -8,7 +9,7 @@ window.onload = function() {
     } else {
         var newChatButton = document.querySelector('.new-chat-btn');
         if (newChatButton) {
-            newChatButton.style.display = 'none'; 
+            newChatButton.style.display = 'none';  
         }
     }
 };

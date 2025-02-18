@@ -81,7 +81,7 @@ def profile():
     return render_template("index.html", name="profile.html", user=user)
 
 
-@app.route("/chat", methods=["GET"])
+@app.route("/chat", methods=["GET"], endpoint="chat")
 def chat():
     user_id = request.cookies.get("user_id")
     if not user_id:
