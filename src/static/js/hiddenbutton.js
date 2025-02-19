@@ -1,15 +1,15 @@
 window.onload = function() {
-    var pageName = window.location.pathname; 
+    var pageName = window.location.pathname;
 
-    if (pageName === "/" || pageName === "/home") {
+    if (pageName === "/chat" || pageName === "/chat.html") {
         var newChatButton = document.querySelector('.new-chat-btn');
         if (newChatButton) {
-            newChatButton.style.display = 'none';
+            newChatButton.style.display = 'inline-block';  
         }
-    } else if (pageName === "/chat") {
+    } else {
         var newChatButton = document.querySelector('.new-chat-btn');
         if (newChatButton) {
-            newChatButton.style.display = 'inline-block';
+            newChatButton.style.display = 'none';  
         }
     }
 };

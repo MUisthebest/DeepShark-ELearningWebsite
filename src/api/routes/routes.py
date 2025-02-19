@@ -19,7 +19,6 @@ def predict_web():
     print(f"Input data received: {input_data}")
 
     message_id = data.get("message_id")  # Lấy message_id từ frontend
-    print(f"Message ID: {message_id}")
 
     bot_response = predict(input_data) 
 
@@ -28,7 +27,6 @@ def predict_web():
     # db.session.commit()
     history_chat_id = request.cookies.get("history_chat_id")
     
-    print(history_chat_id)
 
     new_message = ChatMessage(history_chat_id=history_chat_id,user_message=input_data, bot_response=bot_response)
     db.session.add(new_message)
@@ -44,17 +42,17 @@ def new_chat():
     user_id = request.cookies.get("user_id")
     if not user_id:
         return redirect("/signin")  
-    name_conversation = f"Cuộc hội thoại mới với ChatBOT trí tuệ nhân tạo"
 
-    new_chat_history = ChatHistory(user_id=user_id, name_conversation=name_conversation)
+    new_chat_history = ChatHistory(user_id=user_id)
+    
     db.session.add(new_chat_history)
     db.session.commit()
 
-    
-    # Lấy ID của cuộc hội thoại mới
     chat_history_id = new_chat_history.id
+    name_conversation = f"Cuộc hội thoại {chat_history_id} với ChatBOT"
 
-    return redirect(url_for('api_ai_models.chat', chat_history_id=chat_history_id))  # Điều hướng đến trang chat
+    new_chat_history.name_conversation = name_conversation
 
+    db.session.commit()
 
-
+    return redirect(url_for('chat', chat_history_id=chat_history_id))
