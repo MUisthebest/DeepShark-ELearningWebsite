@@ -8,6 +8,7 @@ from api.routes.auth import app as auth_bp
 from flask import Flask
 from api.models.user import User, ChatHistory, ChatMessage
 from api.routes.auth import app as auth_bp 
+from googletrans import Translator
 
 from dotenv import load_dotenv
 import psycopg2
@@ -16,6 +17,7 @@ load_dotenv()
 
 
 app = Flask(__name__)
+translator = Translator()
 
 # Config from .env
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
@@ -31,15 +33,41 @@ migrate = Migrate(app, db)
 app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
 app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 
+def get_translated_content():
+    try:
+        conn = psycopg2.connect(host="ml-web.postgres.database.azure.com", database="main_db", user="ml_admin", password="ml#web_db#2224")
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT answer_1 FROM question WHERE question_id = 50322054")
+        row = cursor.fetchone()
+        if row:
+            answer_1 = row[0]
+        else:
+            return "Không có dữ liệu cho question_id = 50374628"
+
+        
+        translated_content = translator.translate(answer_1, src='en', dest='vi').text
+        print("Dữ liệu dịch:", translated_content)
+
+        conn.close()
+        return translated_content
+
+    except Exception as e:
+        print("Lỗi kết nối DB:", e)
+        return "Không thể lấy dữ liệu"
 
 @app.route("/")
 def home():
     user_id = request.cookies.get("user_id")
     if not user_id:
-        return render_template("index.html", name="home.html", user=None)
+        translated_html = get_translated_content()
 
+        return render_template("index.html", name="home.html", user=None, content=translated_html)
+    
+    translated_html = get_translated_content()
     user = User.query.get(user_id) if user_id else None
-    return render_template("index.html", name="home.html", user=user)
+    print("Dữ liệu HTML đã dịch:", translated_html)
+    return render_template("index.html", name="home.html", user=user, content=translated_html)
 
 
 @app.route("/signin", methods=["GET"])
