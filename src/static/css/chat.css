@@ -178,6 +178,7 @@ footer {
 }
 
 .new-chat-btn {
+    display: inline-block;
     padding: 10px 20px;
     background-color: #297cd4;
     color: white;
