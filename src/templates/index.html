@@ -82,15 +82,14 @@
                 document.querySelector('.new-chat-btn').classList.toggle('hidden');
                 document.querySelector('.for-chat').classList.toggle('hidden');
                 document.querySelector('.auth-buttons').classList.toggle('hidden');
-
+                
                 const header = document.querySelector('header');
                 header.classList.toggle('shrunk');
 
-                const newChatButton = document.querySelector('.new-chat-btn');
+                const newChatButton = document.querySelector('.toggle');
                 if (newChatButton) {
-                    newChatButton.classList.toggle('new-chat-btn-position-afterToggle');
+                    newChatButton.classList.toggle('toggle-position-afterToggle');
                 }
-
 
                 const icon = document.querySelector('.toggle-icon');
                 if (icon.classList.contains('bx-chevron-left-square')) {
@@ -114,7 +113,9 @@
                         document.querySelector('.logo').classList.remove('hidden');
                         document.querySelector('.new-chat').classList.remove('hidden');
                         document.querySelector('.for-chat').classList.remove('hidden');
-                        document.querySelector('.auth-buttons').classList.remove('hidden');                    }
+                        document.querySelector('.auth-buttons').classList.remove('hidden'); 
+                        document.querySelector('.new-chat-btn').classList.remove('hidden');
+                        }
                 }
             });
         </script>
