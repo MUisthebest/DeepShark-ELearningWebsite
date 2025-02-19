@@ -177,10 +177,6 @@ footer {
     gap: 10px;
 }
 
-.hidden {
-    display: none;
-}
-
 .new-chat-btn {
     padding: 10px 20px;
     background-color: #297cd4;
@@ -188,6 +184,10 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }
 
 .new-chat-btn:hover {
