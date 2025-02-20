@@ -8,6 +8,15 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
 # 
+def summarize_text(user_message):
+    try:
+        return f"Summarize for {user_message}" if user_message else "No input data"
+    except Exception as e:
+        return "Error processing your request."
+
+
+
+
 
 def predict(user_message):
     try:

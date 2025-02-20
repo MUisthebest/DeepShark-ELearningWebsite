@@ -1,5 +1,5 @@
-from flask import Blueprint, request, jsonify, render_template, redirect, url_for
-from api.ai_models.ai_model import predict  
+from flask import Blueprint, request, jsonify, render_template, redirect, url_for, session
+from api.ai_models.ai_model import predict , summarize_text
 from api.models.user import ChatHistory, ChatMessage 
 from api.settings import db
 import markdown
@@ -16,25 +16,41 @@ def to_markdown(text):
 def predict_web():
     data = request.get_json()  
     input_data = data.get("input_data", "")  
-    print(f"Input data received: {input_data}")
-
     message_id = data.get("message_id")  # Lấy message_id từ frontend
+    chat_history_id = request.cookies.get("history_chat_id")
 
-    bot_response = predict(input_data) 
+    is_first_message = session.get('is_first_message', False)
 
-    # new_chat = ChatHistory(user_message=input_data, bot_response=bot_response)
-    # db.session.add(new_chat)
-    # db.session.commit()
-    history_chat_id = request.cookies.get("history_chat_id")
-    
+    if is_first_message: 
+        summary_text = summarize_text(input_data)  
 
-    new_message = ChatMessage(history_chat_id=history_chat_id,user_message=input_data, bot_response=bot_response)
-    db.session.add(new_message)
-    db.session.commit()
+        chat_history = ChatHistory.query.get(chat_history_id)
+        if chat_history:
+            chat_history.name_conversation = summary_text
+            chat_history.is_first_message = False  
+            db.session.commit()
 
-    
-    bot_response = to_markdown(bot_response)
-    return jsonify({"prediction": bot_response})
+        bot_response = predict(input_data)
+
+        new_message = ChatMessage(history_chat_id=chat_history_id, user_message=input_data, bot_response=bot_response)
+        db.session.add(new_message)
+        db.session.commit()
+
+        bot_response = to_markdown(bot_response)
+        return jsonify({"prediction": bot_response})
+
+    else:
+        bot_response = predict(input_data)
+
+        new_message = ChatMessage(history_chat_id=chat_history_id, user_message=input_data, bot_response=bot_response)
+        db.session.add(new_message)
+        db.session.commit()
+
+        bot_response = to_markdown(bot_response)
+        return jsonify({"prediction": bot_response})
+
+
+
 
 
 @api_bp.route("/new_chat", methods=["POST"])
