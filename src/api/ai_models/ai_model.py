@@ -10,6 +10,8 @@ genai.configure(api_key=GEMINI_API_KEY)
 # 
 def summarize_text(user_message):
     try:
+        model = genai.GenerativeModel('gemini-2.0-flash')  
+
         return f"Summarize for {user_message}" if user_message else "No input data"
     except Exception as e:
         return "Error processing your request."
@@ -18,10 +20,9 @@ def summarize_text(user_message):
 
 def predict(user_message):
     try:
-        # model = genai.GenerativeModel('gemini-2.0-flash')  
-        # response = model.generate_content(user_message)  
-        # return to_markdown(response.text)  
-        return user_message
+        model = genai.GenerativeModel('gemini-2.0-flash')  
+        response = model.generate_content(user_message)  
+        return response
     except Exception as e:
         print(f"Error calling Gemini API: {e}")
         return "Error processing your request."

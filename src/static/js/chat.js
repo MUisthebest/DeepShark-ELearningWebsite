@@ -44,6 +44,16 @@ document.querySelector('.chat-input button').addEventListener('click', async fun
     }
 });
 
+window.onload = function() {
+    const chatMessages = document.querySelector('.chat-messages');
+    const lastMessage = chatMessages.lastElementChild; 
+
+    if (lastMessage) {
+        lastMessage.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+};
+
+
 
 
 
