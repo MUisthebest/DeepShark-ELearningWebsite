@@ -16,38 +16,53 @@ def to_markdown(text):
 def predict_web():
     data = request.get_json()  
     input_data = data.get("input_data", "")  
+    print(f"Input data received: {input_data}")
+
     message_id = data.get("message_id")  # Lấy message_id từ frontend
-    chat_history_id = request.cookies.get("history_chat_id")
+    bot_response = predict(input_data) 
 
-    is_first_message = session.get('is_first_message', False)
+    # new_chat = ChatHistory(user_message=input_data, bot_response=bot_response)
+    # db.session.add(new_chat)
+    # db.session.commit()
+    history_chat_id = request.cookies.get("history_chat_id")
+    new_message = ChatMessage(history_chat_id=history_chat_id,user_message=input_data, bot_response=bot_response)
+    db.session.add(new_message)
+    db.session.commit()
 
-    if is_first_message: 
-        summary_text = summarize_text(input_data)  
+    bot_response = to_markdown(bot_response)
+    return jsonify({"prediction": bot_response})
 
-        chat_history = ChatHistory.query.get(chat_history_id)
-        if chat_history:
-            chat_history.name_conversation = summary_text
-            chat_history.is_first_message = False  
-            db.session.commit()
 
-        bot_response = predict(input_data)
 
-        new_message = ChatMessage(history_chat_id=chat_history_id, user_message=input_data, bot_response=bot_response)
-        db.session.add(new_message)
+
+
+@api_bp.route("/handle_message", methods=["POST"])
+def handle_message():
+    data = request.get_json()
+    input_data = data.get("input_data", "")
+    message_id = data.get("message_id")
+    
+    bot_response = predict(input_data)
+
+    chat_history = ChatHistory.query.get(message_id)
+    is_first_message = chat_history.is_first_message
+
+    if is_first_message:
+        # Nếu là tin nhắn đầu tiên, thực hiện tóm tắt
+        summary = summarize_text(message_id)
+
+        # Cập nhật name_conversation trong cơ sở dữ liệu với tóm tắt
+        chat_history.name_conversation = summary
+        chat_history.is_first_message = False  # Đánh dấu là không còn là tin nhắn đầu tiên
         db.session.commit()
 
-        bot_response = to_markdown(bot_response)
-        return jsonify({"prediction": bot_response})
+    new_message = ChatMessage(history_chat_id=message_id, user_message=input_data, bot_response=bot_response)
+    db.session.add(new_message)
+    db.session.commit()
 
-    else:
-        bot_response = predict(input_data)
-
-        new_message = ChatMessage(history_chat_id=chat_history_id, user_message=input_data, bot_response=bot_response)
-        db.session.add(new_message)
-        db.session.commit()
-
-        bot_response = to_markdown(bot_response)
-        return jsonify({"prediction": bot_response})
+    return jsonify({
+        "prediction": bot_response
+    })
 
 
 

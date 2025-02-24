@@ -16,8 +16,6 @@ def summarize_text(user_message):
 
 
 
-
-
 def predict(user_message):
     try:
         # model = genai.GenerativeModel('gemini-2.0-flash')  

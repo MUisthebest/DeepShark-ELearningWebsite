@@ -131,19 +131,11 @@ def chat():
 
     all_chats = ChatHistory.query.filter_by(user_id=user_id).order_by(ChatHistory.id.desc()).all()
 
-    # chat_history = ChatHistory.query.get(chat_history_id)
-    # if chat_history:
-    #     if chat_history.is_first_message:
-    #         session['is_first_message'] = True
-    #     else:
-    #         session['is_first_message'] = False
-
     if chat_history_id:
         messages = ChatMessage.query.filter_by(history_chat_id=chat_history_id).all()
         chat_messages = [message.to_dict() for message in messages]
     else:
         chat_messages = []
-    print(all_chats)
     return render_template("index.html", name="chat.html", user=user, chats=all_chats, chat_messages=chat_messages, message_id=chat_history_id)
 
 
