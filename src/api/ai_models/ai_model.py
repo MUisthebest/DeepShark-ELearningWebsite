@@ -12,14 +12,9 @@ genai.configure(api_key=GEMINI_API_KEY)
 
 def summarize_text(user_message):
     model = genai.GenerativeModel('gemini-2.0-flash')  
-    summarize_text = f"Summarize this text under 7 words: {user_message}"
-    print(summarize_text)
+    summarize_text = f"Tóm tắt văn bản sau dưới 7 từ:\n{user_message}"
     response = model.generate_content(summarize_text)  
-    return response.text if response else user_message
-
-
-# def to_markdown(text):
-#     return 
+    return response.text if response.text else user_message
 
 def to_markdown(text):
     html_output = markdown.markdown(text, extensions=['tables', 'fenced_code'])

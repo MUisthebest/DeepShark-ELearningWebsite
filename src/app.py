@@ -140,21 +140,5 @@ def chat():
 
 
 
-    # return render_template("index.html", name="chat.html", user=None, chats=chats, chat_messages=chat_messages)
-
-
-    # # ACTUALLY, THE CODE MUST BE HERE!!!!!
-
-    # if not user_id:
-    #     return render_template("index.html", name="chat.html", user=None,chats=[])
-
-
-    # user = User.query.get(user_id) if user_id else None
-    # chats = ChatHistory.query.all()
-    # print(f"Chats: {chats}")
-
-    # return render_template("index.html", name="chat.html", user=user, chats=chats)
-
-
 if __name__ == "__main__":
     app.run(debug=True)

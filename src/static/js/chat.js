@@ -33,6 +33,9 @@ document.querySelector('.chat-input button').addEventListener('click', async fun
         document.querySelector('.chat-messages').appendChild(botMessageDiv);
 
 
+        hljs.highlightAll();
+
+
         document.querySelector('.chat-messages').scrollTop = document.querySelector('.chat-messages').scrollHeight;
 
 

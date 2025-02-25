@@ -8,10 +8,6 @@ import markdown
 
 api_bp = Blueprint("api_ai_models", __name__)  # Khởi tạo Blueprint
 
-# def to_markdown(text):
-#     return markdown.markdown(text)
-
-
 
 @api_bp.route("/predict", methods=["POST"])
 def predict_web():
@@ -19,7 +15,7 @@ def predict_web():
     input_data = data.get("input_data", "")  
     print(f"Input data received: {input_data}")
 
-    message_id = data.get("message_id")  # Lấy message_id từ frontend
+    # message_id = data.get("message_id")  # Lấy message_id từ frontend
     bot_response = predict(input_data) 
 
     
@@ -47,12 +43,9 @@ def handle_message():
     is_first_message = chat_history.is_first_message
 
     if is_first_message:
-        # Nếu là tin nhắn đầu tiên, thực hiện tóm tắt
-        summary = summarize_text(message_id)
-
-        # Cập nhật name_conversation trong cơ sở dữ liệu với tóm tắt
+        summary = summarize_text(input_data)
         chat_history.name_conversation = summary
-        chat_history.is_first_message = False  # Đánh dấu là không còn là tin nhắn đầu tiên
+        chat_history.is_first_message = False 
         db.session.commit()
 
     new_message = ChatMessage(history_chat_id=message_id, user_message=input_data, bot_response=bot_response)

@@ -69,17 +69,24 @@ pre code.hljs {
     color: #8ab4f8
 }
 
+.hljs-type{
+    color: #c58af9;  
+
+}
+
+
 table {
     width: 100%;
     border-collapse: collapse;  /* Gộp viền */
     margin: 20px 0;
+    padding: 10px;
 
 }
 
 th, td {
     border: 2px solid #000000;  /* Đặt viền cho các ô */
     text-align: justify;
-
+    padding: 5px;
 }
 
 
@@ -232,7 +239,18 @@ footer {
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 10px;
-    max-width: 80%;
+    max-width: 50%;
+
+}
+
+.chat-message.bot-message {
+    background-color: #e2e2e2;
+    align-self: flex-start;
+    width: 66vw; /* Cố định chiều rộng */
+    max-width: 100%; /* Đảm bảo phần tử không vượt quá kích thước của container */
+    overflow-wrap: break-word; /* Ngắt từ khi gặp từ quá dài */
+    word-wrap: break-word; /* Ngắt từ dài và không vừa với chiều rộng */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
 }
 
 .chat-message.bot-message h1,
@@ -264,6 +282,8 @@ footer {
     background-color: #e2e2e2;
     align-self: flex-start;
     /* white-space: pre-line; */
+
+
 }
 .chat-input {
     display: flex;
