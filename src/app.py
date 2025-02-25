@@ -51,6 +51,10 @@ def signin():
 def signup():
     return render_template("index.html", name="sign-up.html")
 
+@app.route("/llms", methods=["GET"])
+def llms():
+    return render_template("index.html", name="llms.html")
+
 
 @app.route("/question", methods=["GET"])
 def question():
