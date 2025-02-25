@@ -32,8 +32,6 @@ document.querySelector('.chat-input button').addEventListener('click', async fun
         botMessageDiv.innerHTML = marked.parse(data.prediction || "Sorry, I didn't understand that.");
         document.querySelector('.chat-messages').appendChild(botMessageDiv);
 
-        window.location.reload(); 
-
 
         document.querySelector('.chat-messages').scrollTop = document.querySelector('.chat-messages').scrollHeight;
 
