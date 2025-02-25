@@ -28,10 +28,16 @@ pre code.hljs {
     font-family: "Courier New", monospace;  
     overflow: auto;                  
 }
-.hljs-title.function_ {
+.hljs-title {
     color: #fdd663; 
     
 }
+
+.hljs-title.function {
+    color: #e5e7eb; 
+    
+}
+
 
 .hljs-comment {
     color: #81c995;  
@@ -55,7 +61,13 @@ pre code.hljs {
     font-weight: 700; 
 }
 
+.hljs-string{
+    color: #81c995;  
+}
 
+.hljs-variable.language_{
+    color: #8ab4f8
+}
 
 table {
     width: 100%;
