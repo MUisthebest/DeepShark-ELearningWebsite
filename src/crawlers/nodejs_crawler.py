@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import urllib3
 
-HOST = 'https://nodejs.org/en/learn/'
+HOST = 'https://nodejs.org'
 url = 'https://nodejs.org/en/learn/getting-started/introduction-to-nodejs'
 
 response = requests.get(url)
@@ -15,25 +15,24 @@ for topic in topics:
     topic_text = topic.find(string=True, recursive=False).strip()
     titles = topic.find_all('a')
     
-    for title in titles[0:1]:
+    for title in titles:
         title_text = title.text.strip()
         link = title['href']
-        
-        subres = requests.get(HOST + link)
-        subres.encoding = 'utf-8'
+        suburl = HOST + link
+        print(suburl)
+        subres = requests.get(suburl)
         sub_soup = BeautifulSoup(subres.text, 'html.parser')
-
-        # Extract the <main> tag as raw HTML (not prettified)
-        main_tag = sub_soup.find('main')
-        raw_main_html = str(main_tag) if main_tag else ""
+        content = sub_soup.find('main')
+        if content:
+            for button in content.find_all('button'):
+                button.decompose()
+            content.find('div', class_='mt-4 grid w-full grid-cols-1 gap-4 md:grid-cols-2').decompose()
+        record = {
+            'topic': topic_text,
+            'title': title_text,
+            'content': sub_soup.find('main').prettify()
+        }
         
-        print(raw_main_html)
-        # record = {
-        #     'topic': topic_text,
-        #     'title': title_text,
-        #     'content': content
-        # }
-
-        # records.append(record)
-# df = pd.DataFrame(records)
-# df.to_csv('courses_data/nodejs_tutorial.csv', index=False)
+        records.append(record)
+df = pd.DataFrame(records)
+df.to_csv('courses_data/nodejs_tutorial.csv', index=False)
