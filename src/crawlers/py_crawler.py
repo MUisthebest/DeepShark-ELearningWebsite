@@ -26,4 +26,4 @@ for topic in topics:
         
         data.loc[len(data)] = [topic.text.strip(), content]
         
-data.to_csv("python_tutorial.csv", index=False)
+data.to_csv("courses_data/python_tutorial.csv", index=False)

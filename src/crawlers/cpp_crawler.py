@@ -34,4 +34,4 @@ for topic in topics:
         data.loc[len(data)] = [topic_text, title, content]
     
 # Print results
-data.to_csv("cplusplus_tutorial.csv", index=False)
+data.to_csv("courses_data/cplusplus_tutorial.csv", index=False)
