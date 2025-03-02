@@ -1,0 +1,40 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_spanbuf &lt;biểu đồ, đặc điểm&gt; :: Seekoff</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Pos_Type Seekoff (off_type TẮT, STD :: iOS_BASE :: SeekDir Dir,<code>off</code>                  STD :: iOS_Base :: OpenMode trong đó = </p>
+<p>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code><i>Trả về một kết quả, kết quả được bỏ qua. Nếu như</i></code>                      STD :: iOS_Base :: in | std :: ios_base :: out) ghi đè;<code>CharT</code>Định vị lại con trỏ tiếp theo để có được và/hoặc đặt khu vực, nếu có thể, đến vị trí tương ứng với<code>​0​</code>ký tự từ đầu, kết thúc hoặc vị trí hiện tại của khu vực GET và/hoặc đặt của bộ đệm.</p>
+<ul>
+<li>là số lượng<code><i>được tính toán như dưới đây:</i></code>Khi không có bộ đệm cơ bản, chức năng này không thành công nếu<code>*this</code>Con trỏ tiếp theo để nhận và/hoặc đặt khu vực để định vị lại là null và tính toán<code>which</code>, hoặc</li>
+<li> <code>dir</code>khoảng cách<code><a href="../ios_base/seekdir" title="cpp/io/ios base/seekdir">std::ios_base::cur</a></code>Newoff<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::in</a></code>Và<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::out</a></code>(xem bên dưới) không phải là không, có thể xảy ra nếu không có bộ đệm cơ bản hoặc<code>which</code>, hoặc</li>
+<li>không được mở trong chế độ yêu cầu bởi<code><i>được tính toán như dưới đây:</i></code>được đặt vào<code>off_type</code>các tính toán<code><i>Trả về một kết quả, kết quả được bỏ qua. Nếu như</i></code>.</li>
+</ul> <p><code><i>được tính toán như dưới đây:</i></code>không thể đại diện trong</p>
+<ul>
+<li>Nếu như<code>dir</code>khoảng cách<code><a href="../ios_base/seekdir" title="cpp/io/ios base/seekdir">std::ios_base::beg</a></code>Thì<code><i>được tính toán như dưới đây:</i></code>khoảng cách<code>off</code>.</li>
+<li>Nếu như<code>dir</code>khoảng cách<code><a href="../ios_base/seekdir" title="cpp/io/ios base/seekdir">std::ios_base::cur</a></code>Thì<code><i>được tính toán như dưới đây:</i></code>khoảng cách<ul>
+<li> <code>pptr() - pbase() + off</code>nếu như<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::out</a></code>có mặt trong<code>which</code>, hoặc</li>
+<li> <code>gptr() - eback() + off</code>nếu như<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::in</a></code>có mặt trong<code>which</code>.</li>
+</ul> </li>
+<li>Nếu như<code>dir</code>khoảng cách<code><a href="../ios_base/seekdir" title="cpp/io/ios base/seekdir">std::ios_base::end</a></code>Thì<code><i>được tính toán như dưới đây:</i></code>khoảng cách<ul>
+<li> <code>pptr() - pbase() + off</code>nếu như<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::out</a></code>Constexpr Iterator chèn (const_iterator pos,<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::in</a></code>Newoff<code>*this</code>Thì</li>
+<li>    toán tử &gt;&gt; (basic_istream &lt;char, đặc điểm&gt; &amp; st, không dấu char* s);<code>off + n</code>.</li>
+</ul> </li>
+</ul> <p>Newoff<code>pbuf + newoff</code>Newoff<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::in</a></code>và/hoặc<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::out</a></code>được đặt ở chế độ mở của<code>which</code>là<code><i>Hàm này định vị lại con trỏ tiếp theo để có được và/hoặc đặt khu vực</i></code>về thành công nếu</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Nếu không, di chuyển con trỏ tệp như thể bằng cách</td> <td>-</td> <td>được đặt tương ứng trong</td>
+</tr> <tr class="t-par"> <td>Chỉ duy trì một vị trí tệp.</td> <td>-</td> <td>tắt<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/seekdir" title="cpp/io/ios base/seekdir"><code>beg</code></a> </td> <td>tìm kiếm</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/seekdir" title="cpp/io/ios base/seekdir"><code>end</code></a> </td> <td>Tìm kiếm loại định hướng</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/seekdir" title="cpp/io/ios base/seekdir"><code>cur</code></a> </td> <td>Các hằng số sau cũng được xác định:</td>
+</tr> </table> </td>
+</tr> <tr class="t-par"> <td>              &lt;&lt; (Thành công? "Thành công \ n": "thất bại \ n");</td> <td>-</td> <td>PBUF<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>in</code></a> </td> <td>Dir</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>out</code></a> </td> <td>Xác định vị trí cơ sở để áp dụng bù tương đối. Nó có thể là một trong những hằng số sau:</td>
+</tr> </table> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>pos_type(newoff)</code>về thành công,<code>pos_type(off_type(-1))</code>, trong trường hợp đó</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_stringbuf/seekoff" title="cpp/io/basic stringbuf/seekoff"> <span class="t-lines"><span>Định vị</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Thay thế bộ đệm bằng mảng do người dùng xác định, nếu được phép<br/> <span class="t-mark">Putback<code>std::basic_stringbuf&lt;CharT,Traits,Allocator&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../strstreambuf/seekoff" title="cpp/io/strstreambuf/seekoff"> <span class="t-lines"><span>Định vị</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Thay thế bộ đệm bằng mảng do người dùng xác định, nếu được phép<br/> <span class="t-mark">Putback<code>std::strstreambuf</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_spanbuf/seekoff">https://en.cppreference.com/w/cpp/io/basic_spanbuf/seekoff</a>
+</p>
+</div>

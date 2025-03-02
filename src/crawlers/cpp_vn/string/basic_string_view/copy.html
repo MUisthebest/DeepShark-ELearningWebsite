@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_string_view &lt;biểu đồ, đặc điểm&gt; :: Sao chép</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td><pre data-language="cpp">SIZE_TYPE SAO CHÉP (Biểu đồ* Dest, Size_Type Count, size_type pos = 0) const;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Bản sao của constexpr size_type (Biểu đồ* Dest, Size_type Count,</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>                          size_type pos = 0) const;<code>[</code><code>pos</code><code>, </code><code>pos + rcount</code><code>)</code>Sao chép các chuỗi con<code>dest</code>là<code>rcount</code>ký tự của<code>count</code>Và<code>size() - pos</code>.</p>
+<p>Mẫu &lt;class inputit1, class inputit2,<code>Traits::copy(dest, data() + pos, rcount)</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>con trỏ đến chuỗi ký tự đích</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>đến mảng ký tự được trỏ đến bởi</td>
+</tr> <tr class="t-par"> <td>POS</td> <td>-</td> <td>Yêu cầu chiều dài chuỗi con</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Số lượng ký tự được sao chép.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../../error/out_of_range" title="cpp/error/out of range">std::out_of_range</a></code>nếu như<code>pos &gt; size()</code>.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>bool is_heap (execPolicy &amp;&amp; chính sách,<code>rcount</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">vị trí của nhân vật đầu tiên</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;mảng&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="substr" title="cpp/string/basic string view/substr"> <span class="t-lines"><span>rfind</span></span></a></div> </td> <td>Tìm sự xuất hiện cuối cùng của một chuỗi con<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_string/copy" title="cpp/string/basic string/copy"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>chèn ký tự<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_string&lt;CharT,Traits,Allocator&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../algorithm/copy" title="cpp/algorithm/copy"> <span class="t-lines"><span>Được xác định trong tiêu đề</span><span>sao chép</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../byte/memcpy" title="cpp/string/byte/memcpy"> <span class="t-lines"><span>Memcpy</span></span></a></div> </td> <td>sao chép một bộ đệm sang bộ đệm khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string_view/copy">https://en.cppreference.com/w/cpp/string/basic_string_view/copy</a>
+</p>
+</div>

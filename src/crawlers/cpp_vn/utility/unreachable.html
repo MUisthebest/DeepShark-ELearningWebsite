@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Không thể truy cập</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/utility" title="cpp/header/utility">&lt;utility&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">[[Noreturn]] void không thể truy cập ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Gọi<a href="../language/ub" title="cpp/language/ub">undefined behavior</a>. Việc triển khai có thể sử dụng điều này để tối ưu hóa các nhánh mã không thể (thông thường, trong các bản dựng được tối ưu hóa) hoặc để bẫy chúng để ngăn chặn thực hiện thêm (thông thường, trong các bản dựng gỡ lỗi).</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_unreachable" title="cpp/feature test"><code>__cpp_lib_unreachable</code></a></td> <td><span class="nu0">và không trả lại gì.</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<code>std::unreachable</code> </td>
+</tr>
+</table> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">[[Noreturn]] Inline void không thể truy cập ()</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">    // sử dụng các tiện ích mở rộng cụ thể của trình biên dịch nếu có thể.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <code>[[<a href="../language/attributes/assume" title="cpp/language/attributes/assume">assume</a>(<i>  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</i>)]]</code><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span> </td> <td>chỉ định rằng<i>  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</i>ngăn chặn cảnh báo trình biên dịch trên các thực thể không sử dụng, nếu có<span class="kw2">ĐÚNG VẬY</span>(Trình xác định thuộc tính)<br/><span class="t-mark">chỉ ra rằng một thành viên dữ liệu phi tĩnh không cần có một địa chỉ khác biệt với tất cả các thành viên dữ liệu phi tĩnh khác trong lớp của nó</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../memory/assume_aligned" title="cpp/memory/assume aligned"> <span class="t-lines"><span>Assume_aligned</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>thông báo cho trình biên dịch rằng một con trỏ được căn chỉnh<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/program/unreachable" title="c/program/unreachable">C documentation</a></span>vì<code>unreachable</code> </td>
+</tr> </table> <h3 id="External_Links">    // ngay cả khi không có phần mở rộng nào được sử dụng, hành vi không xác định vẫn được nâng lên bởi</h3> <table> <tr style="vertical-align:top;"> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính</td> <td>
+<a class="external text" href="https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html#index-_005f_005fbuiltin_005funreachable" rel="nofollow">GCC docs: <code>__builtin_unreachable</code></a> </td>
+</tr> <tr style="vertical-align:top;"> <td># Xác định mất giá (MSG) [[không dùng nữa (MSG)]]]]</td> <td>
+<a class="external text" href="https://clang.llvm.org/docs/LanguageExtensions.html#builtin-unreachable" rel="nofollow">Clang docs: <code>__builtin_unreachable</code></a> </td>
+</tr> <tr style="vertical-align:top;"> <td>đơn đặt hàng tổng số sửa đổi</td> <td>
+<a class="external text" href="https://docs.microsoft.com/en-us/cpp/intrinsics/assume" rel="nofollow">MSVC docs: <code>__assume</code></a> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/unreachable">https://en.cppreference.com/w/cpp/utility/unreachable</a>
+</p>
+</div>

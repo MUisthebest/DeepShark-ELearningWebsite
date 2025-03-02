@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Locale :: Facet</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Lớp địa phương :: khía cạnh;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p><code>std::locale::facet</code>là lớp cơ sở cho các khía cạnh. Nó cung cấp một lớp cơ sở chung để các địa phương có thể lưu trữ các con trỏ vào các khía cạnh mà họ thực hiện trong một thùng chứa được lập chỉ mục duy nhất và nó trừu tượng hóa hỗ trợ cho việc đếm tham chiếu khía cạnh.</p>
+<p>Bất cứ khi nào một khía cạnh được thêm vào một địa phương, ngôn ngữ sẽ tăng số lượng tham chiếu trong khía cạnh (thông qua một cơ chế cụ thể thực hiện). Bất cứ khi nào một địa điểm bị phá hủy hoặc sửa đổi, nó sẽ giảm số lượng tham chiếu trong mỗi khía cạnh, nó không còn thực hiện. Bất cứ khi nào số lượng tham chiếu của một khía cạnh trở thành 0, ngôn ngữ thực hiện<code>delete static_cast&lt;std::locale::facet*&gt;(f);</code>Ở đâu<code>f</code>là con trỏ tới khía cạnh.</p>
+<h3 id="Facet_class">Lớp học</h3> <p>Một lớp học là một<i>mặt</i>nếu như</p>
+<ul>
+<li>Một chức năng được sử dụng ODR trong các trường hợp sau:<a href="../../language/derived_class#Public_inheritance" title="cpp/language/derived class">publicly derived</a>từ một khía cạnh khác, hoặc</li>
+<li>nó là một lớp học xuất phát từ<code>std::locale::facet</code>và chứa a<a href="../../language/access#Public_member_access" title="cpp/language/access">publicly accessible</a>Tuyên bố như sau:</li>
+</ul> <p><span class="t-cc"><code><span class="kw4">năng động</span> <span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/locale/locale/id"><span class="kw1899">Điều đó cho tất cả<span class="me2">địa phương</span><span class="sy4">::</span><span class="me2">luôn luôn_noconv</span></span></a> id<span class="sy4">Số lượng các yếu tố để sao chép</span></code></span></p>
+<h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="facet/facet" title="cpp/locale/locale/facet/facet"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>xây dựng một khía cạnh mới với số lượng tham chiếu được chỉ định<br/> <span class="t-mark">(chức năng thành viên được bảo vệ)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>chuyên môn)</span></span></div> </td> <td>giao diện. Một số<br/> <span class="t-mark">(chức năng thành viên được bảo vệ)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>một đối tượng ngoại lệ khác để gán với</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>chất phá hủy được bảo vệ ảo<br/> <span class="t-mark">(Hàm thành viên được bảo vệ ảo)</span> </td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2694" rel="nofollow">LWG 2694</a> </td> <td>C ++ 98</td> <td>Định nghĩa về 'khía cạnh' đã bị xóa bởi độ phân giải của<a class="external text" href="https://cplusplus.github.io/LWG/issue436" rel="nofollow">LWG issue 436</a> </td> <td>Đã thêm định nghĩa trở lại</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="id" title="cpp/locale/locale/id"> <span class="t-lines"><span>luôn luôn_noconv</span></span></a></div> </td> <td>Loại chỉ mục FaceT: Mỗi lớp Facet phải khai báo hoặc kế thừa một thành viên tĩnh công khai thuộc loại này<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/locale/facet">https://en.cppreference.com/w/cpp/locale/locale/facet</a>
+</p>
+</div>

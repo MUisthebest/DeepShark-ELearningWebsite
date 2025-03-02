@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: strxfrm</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstring" title="cpp/header/cstring">&lt;cstring&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: size_t strxfrm (char* dest, const char* src, std :: size_t đếm);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Biến đổi chuỗi byte kết thúc null được trỏ đến bởi<code>src</code>thành hình thức được xác định theo thực hiện để so sánh hai chuỗi biến đổi với<code><a href="strcmp" title="cpp/string/byte/strcmp">std::strcmp</a></code>cho kết quả tương tự như so sánh các chuỗi ban đầu với<code><a href="strcoll" title="cpp/string/byte/strcoll">std::strcoll</a></code>, trong địa phương c hiện tại.</p>
+<p> <code>count</code>Các ký tự của chuỗi được chuyển đổi được ghi vào đích, bao gồm ký tự null chấm dứt và độ dài của chuỗi biến đổi đầy đủ được trả về, không bao gồm ký tự null chấm dứt.</p>
+<p>        {<code>dest</code>Mảng không đủ lớn. Hành vi không xác định nếu<code>dest</code>Và<code>src</code>chồng chéo.</p>
+<p>Nếu như<code>count</code>khoảng cách<code>​0​</code>, sau đó<code>dest</code>được phép là một con trỏ null.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Độ dài chính xác của bộ đệm có thể nhận toàn bộ chuỗi được chuyển đổi là<code>1 + std::strxfrm(nullptr, src, 0)</code>.</p>
+<p>Hàm này được sử dụng khi thực hiện nhiều so sánh phụ thuộc vào địa phương bằng cùng một chuỗi hoặc bộ chuỗi, bởi vì nó hiệu quả hơn để sử dụng<code>std::strxfrm</code>Để biến đổi tất cả các chuỗi chỉ một lần và sau đó so sánh các chuỗi đã biến đổi với<code><a href="strcmp" title="cpp/string/byte/strcmp">std::strcmp</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>con trỏ đến phần tử đầu tiên của mảng nơi chuỗi biến đổi sẽ được viết</td>
+</tr> <tr class="t-par"> <td>SRC</td> <td>-</td> <td>con trỏ đến ký tự đầu tiên của chuỗi byte kết thúc không</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng ký tự tối đa được viết</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Độ dài của chuỗi được biến đổi, không bao gồm cả ký tự null chấm dứt.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cassert&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;cstring&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../wide/wcsxfrm" title="cpp/string/wide/wcsxfrm"> <span class="t-lines"><span>wcsxfrm</span></span></a></div> </td> <td>biến đổi một chuỗi rộng để<code>wcscmp</code>sẽ tạo ra kết quả tương tự như<code>wcscoll</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../locale/collate/transform" title="cpp/locale/collate/transform"> <span class="t-lines"><span>so sánh hai chuỗi bằng cách sử dụng các quy tắc đối chiếu của khía cạnh này</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>do_transform<br/> <span class="t-mark">Putback<code>std::collate&lt;CharT&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strcoll" title="cpp/string/byte/strcoll"> <span class="t-lines"><span>Strcoll</span></span></a></div> </td> <td>so sánh hai chuỗi theo địa phương hiện tại<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/strxfrm" title="c/string/byte/strxfrm">C documentation</a></span>vì<code>strxfrm</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/strxfrm">https://en.cppreference.com/w/cpp/string/byte/strxfrm</a>
+</p>
+</div>

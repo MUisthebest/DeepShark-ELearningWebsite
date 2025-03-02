@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: DEFER_LOCK, STD :: Try_TO_LOCK, STD :: POCPT_LOCK</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/mutex" title="cpp/header/mutex">&lt;mutex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">constexpr std :: defer_lock_t defer_lock {};</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Inline Consexpr std :: Defer_lock_t Defer_lock {};</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">constexpr std :: try_to_lock_t try_to_lock {};</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Inline Consexpr std :: try_to_lock_t try_to_lock {};</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">constexpr std :: pesserpt_lock_t essopt_lock {};</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Inline Consexpr std :: APPEPT_LOCK_T AMPEPT_LOCK {};</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p><code>std::defer_lock</code>Thì<code>std::try_to_lock</code>Và<code>std::adopt_lock</code>là các phiên bản của các loại thẻ cấu trúc trống<code><a href="lock_tag_t" title="cpp/thread/lock tag t">std::defer_lock_t</a></code>Thì<code><a href="lock_tag_t" title="cpp/thread/lock tag t">std::try_to_lock_t</a></code>Và<code><a href="lock_tag_t" title="cpp/thread/lock tag t">std::adopt_lock_t</a></code>tương ứng.</p>
+<p>Chúng được sử dụng để chỉ định các chiến lược khóa cho<code><a href="lock_guard" title="cpp/thread/lock guard">std::lock_guard</a></code>Thì<code><a href="unique_lock" title="cpp/thread/unique lock">std::unique_lock</a></code>Và<code><a href="shared_lock" title="cpp/thread/shared lock">std::shared_lock</a></code>.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Địa phương</th>
+</tr> <tr class="t-dsc"> <td> <code>defer_lock_t</code> </td> <td>Không có được quyền sở hữu Mutex</td>
+</tr> <tr class="t-dsc"> <td> <code>try_to_lock_t</code> </td> <td>Cố gắng giành quyền sở hữu Mutex mà không cần chặn</td>
+</tr> <tr class="t-dsc"> <td> <code>adopt_lock_t</code> </td> <td>Giả sử chuỗi cuộc gọi đã có quyền sở hữu mutex</td>
+</tr> </table> <h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Prutex&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lock_tag_t" title="cpp/thread/lock tag t"> <span class="t-lines"><span>Defer_lock_t</span><span>TRY_TO_LOCK_T</span><span>POPPT_LOCK_T</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Loại thẻ được sử dụng để chỉ định chiến lược khóa<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="lock_guard/lock_guard" title="cpp/thread/lock guard/lock guard"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Nếu a<code>lock_guard</code>Loại mutex để khóa. Loại phải đáp ứng<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::lock_guard&lt;Mutex&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="unique_lock/unique_lock" title="cpp/thread/unique lock/unique lock"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Nếu a<code>unique_lock</code>#include &lt;Chủ đề&gt;<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::unique_lock&lt;Mutex&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/lock_tag">https://en.cppreference.com/w/cpp/thread/lock_tag</a>
+</p>
+</div>

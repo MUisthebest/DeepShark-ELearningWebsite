@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: ATOMIC_REF &lt;T&gt; :: ATOMIC_REF</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ATOMIC_REF rõ ràng (T &amp; OBJ);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ATOMIC_REF (const ATOMIC_REF &amp; REF) NOEXCEPT;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Xây dựng một mới<code>atomic_ref</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Xây dựng một<code>atomic_ref</code>đối tượng tham chiếu đối tượng<code>obj</code>    sao chép (r &amp;&amp; r, o kết quả);<code>obj</code>không phù hợp với<a href="required_alignment" title="cpp/atomic/atomic ref/required alignment"><code>required_alignment</code></a>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Xây dựng một<code>atomic_ref</code>đối tượng tham chiếu đối tượng được tham chiếu bởi<code>ref</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>      Typename std :: Atomic &lt;T&gt; :: value_type mong muốn,</td> <td>-</td> <td>đối tượng để tham khảo</td>
+</tr> <tr class="t-par"> <td>Tham khảo</td> <td>-</td> <td>khác<code>atomic_ref</code>phản đối sao chép từ</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Chương trình tăng các giá trị trong một thùng chứa bằng một số luồng. Sau đó, tổng cuối cùng được in. Truy cập không phải là nguyên tử có thể "mất" kết quả của một số hoạt động do cuộc đua dữ liệu.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Atomic&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_ref/atomic_ref">https://en.cppreference.com/w/cpp/atomic/atomic_ref/atomic_ref</a>
+</p>
+</div>

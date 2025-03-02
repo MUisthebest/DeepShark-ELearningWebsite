@@ -1,0 +1,125 @@
+ <h1 class="firstHeading" id="firstHeading">int main ()</h1> <p>Trả về kết quả của một hoạt động boolean.</p>
+<table class="wikitable"> <tr> <th rowspan="2">Tên nhà điều hành</th> <th rowspan="2">Cú pháp</th> <th rowspan="2">
+<a href="operators" title="cpp/language/operators">Over​load​able</a> </th> <th colspan="2">Ví dụ nguyên mẫu (cho<code>class T</code>)</th>
+</tr> <tr> <th>Định nghĩa lớp bên trong</th> <th>Định nghĩa lớp bên ngoài</th>
+</tr> <tr> <td>phủ định</td> <td>
+<code>not a</code> <p><code>!a</code></p>
+</td> <td class="table-yes">Đúng</td> <td>
+<code>bool T::operator!() const;</code> </td> <td>
+<code>bool operator!(const T &amp;a);</code> </td>
+</tr> <tr> <td>VÀ</td> <td>
+<code>a and b</code> <p><code>a &amp;&amp; b</code></p>
+</td> <td class="table-yes">Đúng</td> <td>
+<code>bool T::operator&amp;&amp;(const T2 &amp;b) const;</code> </td> <td>
+<code>bool operator&amp;&amp;(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td>Bao gồm hoặc</td> <td>
+<code>a or b</code> <p><code>a || b</code></p>
+</td> <td class="table-yes">Đúng</td> <td>
+<code>bool T::operator||(const T2 &amp;b) const;</code> </td> <td>
+<code>bool operator||(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td colspan="5"> <b>Ghi chú</b><br/> <ul>
+<li>Các biểu mẫu giống như từ khóa (<code>and</code>Thì<code>or</code>Thì<code>not</code>) và các hình thức giống như biểu tượng (<code>&amp;&amp;</code>Thì<code>||</code>Thì<code>!</code>) có thể được sử dụng thay thế cho nhau (xem<a href="operator_alternative" title="cpp/language/operator alternative">alternative representations</a>).</li>
+<li>Tất cả các nhà khai thác tích hợp trở lại<code>bool</code>, và hầu hết<a href="operators" title="cpp/language/operators">user-defined overloads</a>cũng trở lại<code>bool</code>để các toán tử do người dùng xác định có thể được sử dụng theo cách tương tự như các bản dựng. Tuy nhiên, trong quá tải toán tử do người dùng xác định<code>void</code>).</li>
+<li>Nhà khai thác xây dựng<code>&amp;&amp;</code>Và<code>||</code>Thực hiện đánh giá ngắn mạch (không đánh giá toán hạng thứ hai nếu kết quả được biết sau khi đánh giá đầu tiên), nhưng các toán tử bị quá tải hoạt động như các cuộc gọi chức năng thông thường và luôn đánh giá cả hai toán hạng.</li>
+</ul> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Các biểu thức toán tử logic có biểu mẫu</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>!</code> <span class="t-spar">RHS</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>&amp;&amp;</code> <span class="t-spar">RHS</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>||</code> <span class="t-spar">RHS</span> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Logic không</div> <div class="t-li1">
+<span class="t-li">2)</span>Hợp lý và</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Bao gồm hợp lý hoặc</div> <p>Nếu toán hạng không<code>bool</code>, nó được chuyển đổi thành<code>bool</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<a href="implicit_conversion" title="cpp/language/implicit conversion">contextual conversion to bool</a>: Nó chỉ được hình thành tốt nếu tuyên bố<code>bool t(arg)</code>được hình thành tốt, đối với một số tạm thời được phát minh<code>t</code>.</p>
+<p>Kết quả là một<code>bool</code>prvalue.</p>
+<p>Đối với toán tử không phải logic tích hợp, kết quả là<code>true</code>Nếu toán hạng là<code>false</code>. Nếu không, kết quả là<code>false</code>.</p>
+<p>Đối với logic và toán tử tích hợp, kết quả là<code>true</code>Nếu cả hai toán hạng là<code>true</code>. Nếu không, kết quả là<code>false</code>. Nhà điều hành này là<a class="extiw" href="https://en.wikipedia.org/wiki/Short-circuit_evaluation" title="enwiki:Short-circuit evaluation">short-circuiting</a>: Nếu toán hạng đầu tiên là<code>false</code>, toán hạng thứ hai không được đánh giá.</p>
+<p>Đối với logic hoặc toán tử tích hợp, kết quả là<code>true</code>Nếu bộ toán thứ nhất hoặc thứ hai (hoặc cả hai) là<code>true</code>. Toán tử này là ngắn mạch: Nếu toán hạng đầu tiên là<code>true</code>, toán hạng thứ hai không được đánh giá.</p>
+<p>Lưu ý rằng<a href="operator_arithmetic" title="cpp/language/operator arithmetic">bitwise logic operators</a>Không thực hiện ngắn mạch.</p>
+<h3 id="Results">Kết quả</h3> <table class="wikitable"> <tr> <th>
+<code>a</code> </th> <td>
+<code>true</code> </td> <td>
+<code>false</code> </td>
+</tr> <tr> <th>
+<code>!a</code> </th> <td>
+<code>false</code> </td> <td>
+<code>true</code> </td>
+</tr>
+</table> <table class="wikitable"> <tr> <th colspan="2" rowspan="2">
+<code>and</code> </th> <th colspan="2">
+<code>a</code> </th>
+</tr> <tr> <td>
+<code>true</code> </td> <td>
+<code>false</code> </td>
+</tr> <tr> <th rowspan="2">
+<code>b</code> </th> <td>
+<code>true</code> </td> <td>
+<code>true</code> </td> <td>
+<code>false</code> </td>
+</tr> <tr> <td>
+<code>false</code> </td> <td>
+<code>false</code> </td> <td>
+<code>false</code> </td>
+</tr>
+</table> <table class="wikitable"> <tr> <th colspan="2" rowspan="2">
+<code>or</code> </th> <th colspan="2">
+<code>a</code> </th>
+</tr> <tr> <td>
+<code>true</code> </td> <td>
+<code>false</code> </td>
+</tr> <tr> <th rowspan="2">
+<code>b</code> </th> <td>
+<code>true</code> </td> <td>
+<code>true</code> </td> <td>
+<code>true</code> </td>
+</tr> <tr> <td>
+<code>false</code> </td> <td>
+<code>true</code> </td> <td>
+<code>false</code> </td>
+</tr>
+</table> <p>TRONG<a href="overload_resolution#Call_to_an_overloaded_operator" title="cpp/language/overload resolution">overload resolution against user-defined operators</a>, Chữ ký chức năng tích hợp sau đây tham gia vào độ phân giải quá tải:</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Nhà điều hành Bool! (Bool)</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Toán tử bool &amp;&amp; (bool, bool)</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Toán tử bool || (Bool, Bool)</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Sstream&gt;</pre></div> </div> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>#include &lt;chuỗi&gt;<code>operator&amp;&amp;</code>Và<code>operator||</code> </p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../numeric/valarray/operator_arith" title="cpp/numeric/valarray/operator arith"> <span class="t-lines"><span>Kiểm tra xem có xảy ra lỗi không</span></span></a></div> </td> <td>Đưa ra toán hạng là<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::valarray&lt;T&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/valarray/operator_arith3" title="cpp/numeric/valarray/operator arith3"> <span class="t-lines"><span>Nhà điều hành &amp;&amp;</span><span>Nhà điều hành ||</span></span></a></div> </td> <td>Áp dụng toán tử nhị phân cho từng yếu tố của hai valarrays hoặc valarray và giá trị<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_ios/operator-" title="cpp/io/basic ios/operator!"> <span class="t-lines"><span>Kiểm tra xem có xảy ra lỗi không</span></span></a></div> </td> <td>xấu<code><a href="../io/basic_ios/fail" title="cpp/io/basic ios/fail">fail()</a></code>)<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_ios&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <h3 id="See_also">(chức năng)</h3> <p><a href="operator_precedence" title="cpp/language/operator precedence">Operator precedence</a></p>
+<p><a href="operators" title="cpp/language/operators">Operator overloading</a></p>
+<table class="wikitable"> <tr style="text-align:center"> <th colspan="7">Các nhà khai thác chung</th>
+</tr> <tr style="text-align:center"> <td>
+<a href="operator_assignment" title="cpp/language/operator assignment">assignment</a> </td> <td>
+<a href="operator_incdec" title="cpp/language/operator incdec">increment<br/>decrement</a> </td> <td>
+<a href="operator_arithmetic" title="cpp/language/operator arithmetic">arithmetic</a> </td> <td>
+<strong class="selflink">giá trị của các yếu tố để loại bỏ</strong> </td> <td>
+<a href="operator_comparison" title="cpp/language/operator comparison">comparison</a> </td> <td>
+<a href="operator_member_access" title="cpp/language/operator member access">member<br/>access</a> </td> <td>
+<a href="operator_other" title="cpp/language/operator other">other</a> </td>
+</tr> <tr style="text-align:center"> <td rowspan="6"> <p><code>a = b a += b a -= b a *= b a /= b a %= b a &amp;= b a |= b a ^= b a &lt;&lt;= b a &gt;&gt;= b</code></p>
+</td> <td rowspan="6"> <p><code>++a --a a++ a--</code></p>
+</td> <td rowspan="6"> <p><code>+a -a a + b a - b a * b a / b a % b ~a a &amp; b a | b a ^ b a &lt;&lt; b a &gt;&gt; b</code></p>
+</td> <td rowspan="6"> <p><code>!a a &amp;&amp; b a || b</code></p>
+</td> <td rowspan="6"> <p><code>a == b a != b a &lt; b a &gt; b a &lt;= b a &gt;= b a &lt;=&gt; b</code></p>
+</td> <td rowspan="6"> <p><code>a[...] *a &amp;a a-&gt;b a.b a-&gt;*b a.*b</code></p>
+</td> <td>Gọi chức năng</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a(...)</code> </td>
+</tr> <tr style="text-align:center"> <td>dấu phẩy</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a, b</code> </td>
+</tr> <tr style="text-align:center"> <td>có điều kiện</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a ? b : c</code> </td>
+</tr> <tr> <th colspan="7">Các nhà khai thác đặc biệt</th>
+</tr> <tr> <td colspan="7"> <p><a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Chuyển đổi một loại thành loại liên quan khác<br/> <a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>Chuyển đổi trong hệ thống phân cấp thừa kế<br/> <a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>thêm hoặc loại bỏ<a href="cv" title="cpp/language/cv">cv</a>-Qualifiers<br/> <a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>Chuyển đổi loại thành loại không liên quan<br/> <a href="explicit_cast" title="cpp/language/explicit cast">C-style cast</a>Chuyển đổi loại này sang loại khác bằng cách kết hợp<code>static_cast</code>Thì<code>const_cast</code>, Và<code>reinterpret_cast</code> <br/> <a href="new" title="cpp/language/new"><code>new</code></a>Tạo các đối tượng có thời lượng lưu trữ động<br/> <a href="delete" title="cpp/language/delete"><code>delete</code></a>Các đối tượng phá hủy được tạo trước đây bởi biểu thức và bản phát hành mới thu được vùng bộ nhớ<br/> <a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>truy vấn kích thước của một loại<br/> <a href="sizeof..." title="cpp/language/sizeof..."><code>sizeof...</code></a>truy vấn kích thước của một<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/> <a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>truy vấn thông tin loại của một loại<br/> <a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code></a>kiểm tra xem một biểu thức có thể ném một ngoại lệ<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/> <a href="alignof" title="cpp/language/alignof"><code>alignof</code></a>// (thường là 4):<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></p>
+</td>
+</tr>
+</table> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/operator_logical" title="c/language/operator logical">C documentation</a></span>vì<span class=""><span>int main ()</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/operator_logical">https://en.cppreference.com/w/cpp/language/operator_logical</a>
+</p>
+</div>

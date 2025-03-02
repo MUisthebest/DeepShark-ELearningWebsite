@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Danh sách &lt;T, Allecator&gt; :: trống</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">bool trống () const;</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">Giải quyết</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">bool trống () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Kiểm tra xem container có không có phần tử nào không, tức là liệu có<code>begin() == end()</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu thùng chứa trống,<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example">
+<p>Trong thực tế, việc triển khai<code>empty</code>để kiểm tra xem một<code><a href="http://en.cppreference.com/w/cpp/container/list"><span class="kw1278">Điều đó cho tất cả<span class="me2">danh sách</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">int</span><span class="sy1">&lt;</span></code>chứa bất kỳ yếu tố nào:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Danh sách&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="size" title="cpp/container/list/size"> <span class="t-lines"><span>kích cỡ</span></span></a></div> </td> <td>trả về một trình lặp đến cuối<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../iterator/empty" title="cpp/iterator/empty"> <span class="t-lines"><span>trống</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Kiểm tra xem container có trống không<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/list/empty">https://en.cppreference.com/w/cpp/container/list/empty</a>
+</p>
+</div>

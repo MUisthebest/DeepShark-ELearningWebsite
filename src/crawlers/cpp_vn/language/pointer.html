@@ -1,0 +1,179 @@
+ <h1 class="firstHeading" id="firstHeading">    void f (int n) {std :: cout &lt;&lt; n &lt;&lt; '\ n'; }</h1> <p>Khai báo một biến của một con trỏ hoặc loại con trỏ đến thành viên.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Một tuyên bố con trỏ là bất kỳ tuyên bố đơn giản nào<a href="declarations" title="cpp/language/declarations">declarator</a>có hình thức</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>*</code> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">không ngụ ý rằng</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">người khai báo</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">tên lồng nhau</span> <code>*</code> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">không ngụ ý rằng</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">người khai báo</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span> <b>Con trỏ khai báo</b>: Tuyên bố<code>S* D;</code>tuyên bố<code>D</code>như một con trỏ đến loại được xác định bởi<span class="t-spar">DEM-SPECIFIER-SEQ</span> <code>S</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span> <b>Con trỏ tới người khai báo thành viên</b>: Tuyên bố<code>S C::* D;</code>tuyên bố<code>D</code>Là một con trỏ đến thành viên không tĩnh của<code>C</code>loại được xác định bởi<span class="t-spar">DEM-SPECIFIER-SEQ</span> <code>S</code>.</div> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">tên lồng nhau</span> </td> <td>-</td> <td>Một<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">sequence of names and scope resolution operators <code>::</code></a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>Constexpr void gọi (tự động (*vui) (variadic ......), args ... args)<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">không ngụ ý rằng</span> </td> <td>-</td> <td>const/trình độ dễ bay hơi áp dụng cho con trỏ đang được khai báo (không phải là loại điểm, có trình độ<span class="t-spar">DEM-SPECIFIER-SEQ</span>)</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">người khai báo</span> </td> <td>-</td> <td>bất kì<a href="declarations" title="cpp/language/declarations">declarator</a>Khác với một trình khai báo tham chiếu (không có con trỏ đến các tài liệu tham khảo). Nó có thể là một bộ khai báo con trỏ khác (con trỏ tới con trỏ được cho phép)</td>
+</tr>
+</table> <p>Không có gợi ý nào<a href="reference" title="cpp/language/reference">references</a>Và không có con trỏ nào<a href="bit_field" title="cpp/language/bit field">bit-fields</a>. Thông thường, đề cập đến "con trỏ" mà không có sự xây dựng không bao gồm con trỏ cho các thành viên (không tĩnh).</p>
+<h3 id="Pointers">Con trỏ</h3> <p>Mỗi giá trị của loại con trỏ là một trong những điều sau đây:</p>
+<ul>
+<li>Một<i>con trỏ đến một đối tượng hoặc chức năng</i>(trong trường hợp con trỏ được cho là<i>Cả hai toán hạng đều là con trỏ đến các phiên bản đủ điều kiện CV hoặc CV-Unquilified của cùng loại đối tượng được xác định hoàn toàn. Trong trường hợp này</i>đối tượng hoặc chức năng) hoặc</li>
+<li>Một<i>con trỏ qua cuối của một đối tượng</i>, hoặc</li>
+<li>các<i><a href="#Null_pointers">null pointer value</a></i>cho loại đó, hoặc</li>
+<li>chồng chéo với container.<i>Giá trị con trỏ không hợp lệ</i>.</li>
+</ul> <p>Một con trỏ trỏ đến một đối tượng<i>đại diện cho địa chỉ</i>của byte đầu tiên trong bộ nhớ bị chiếm bởi đối tượng. Một con trỏ qua cuối của một đối tượng<i>đại diện cho địa chỉ</i>của byte đầu tiên trong bộ nhớ sau khi kết thúc lưu trữ được chiếm bởi đối tượng.</p>
+<p>Lưu ý rằng hai con trỏ đại diện cho cùng một địa chỉ có thể có các giá trị khác nhau.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc c</pre></div> <p>{</p>
+<h4 id="Pointers_to_objects">    int x, y;</h4> <p>} c;<a href="operator_member_access" title="cpp/language/operator member access">address-of operator</a> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">int* px = &amp; c.x;   // Giá trị của PX là "con trỏ tới c.x"</pre></div> <p>int* pxe = px + 1; // Giá trị của PXE là "con trỏ qua cuối c.x"<code>operator*</code>int* py = &amp; c.y;   // Giá trị của PY là "con trỏ tới C.Y"<a href="value_category#lvalue" title="cpp/language/value category">lvalue expression</a> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">khẳng định (pxe == py); // == Kiểm tra nếu hai con trỏ đại diện cho cùng một địa chỉ</pre></div> <p>                   // Có thể hoặc không thể bắn<a href="operator_member_access#Built-in_member_access_operators" title="cpp/language/operator member access"><code>operator-&gt;</code></a>Và<a href="operator_member_access#Built-in_pointer-to-member_access_operators" title="cpp/language/operator member access"><code>operator-&gt;*</code></a>.</p>
+<p>Con trỏ đến các đối tượng<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">array-to-pointer</a>*PXE = 1; // Hành vi không xác định ngay cả khi khẳng định không bắn</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Không định hướng thông qua giá trị con trỏ không hợp lệ và chuyển giá trị con trỏ không hợp lệ cho chức năng Deallocation có hành vi không xác định. Bất kỳ việc sử dụng nào khác của giá trị con trỏ không hợp lệ đều có hành vi được xác định bằng thực hiện. Một số triển khai có thể xác định rằng việc sao chép giá trị con trỏ không hợp lệ gây ra lỗi thời gian chạy do hệ thống tạo ra.</pre></div> <p>Con trỏ đến các đối tượng<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">derived-to-base</a>Một con trỏ đến đối tượng có thể được khởi tạo với giá trị trả về của</p>
+<div class="cpp source-cpp"><pre data-language="cpp">áp dụng cho bất kỳ biểu thức nào của loại đối tượng, bao gồm loại con trỏ khác:</pre></div> <p>Nếu như<code>Derived</code>khoảng cách<a href="object#Polymorphic_objects" title="cpp/language/object">polymorphic</a>int n;<a href="virtual" title="cpp/language/virtual">virtual function calls</a>.</p>
+<p>int* np = &amp; n;          // con trỏ tới int<a href="operator_arithmetic#Additive_operators" title="cpp/language/operator arithmetic">addition, subtraction</a>Thì<a href="operator_incdec" title="cpp/language/operator incdec">increment, and decrement</a>int* const* npp = &amp; np; // con trỏ không phải const đến const con trỏ tới int không quay<a href="../named_req/randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a> <a href="../algorithm" title="cpp/algorithm">algorithms</a>int a [2];</p>
+<p><a href="operator_comparison#Pointer_comparison_operators" title="cpp/language/operator comparison">Comparison operators</a>int (*ap) [2] = &amp; a;     // con trỏ tới mảng int<a href="access" title="cpp/language/access">member access</a> </p>
+<p>struct s {int n; };<a class="extiw" href="https://en.wikipedia.org/wiki/Total_order#Strict_total_order" title="enwiki:Total order">strict total ordering</a> <code><a href="../utility/functional/less" title="cpp/utility/functional/less">std::less</a></code>toán tử bool&gt; (l, r);<code><a href="../container/set" title="cpp/container/set">std::set</a></code>hoặc<code><a href="../container/map" title="cpp/container/map">std::map</a></code>.</p>
+<h4 id="Pointers_to_void">Vì của<span class="kw4">Vô hiệu</span>
+</h4> <p>int* sp = &amp; s.n;        // con trỏ tới int là thành viên của s<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">implicitly converted</a>Con trỏ có thể xuất hiện dưới dạng toán hạng cho nhà điều hành gián tiếp tích hợp (Unary<a href="cv" title="cpp/language/cv">cv-qualified</a>)<span class="kw4">Vô hiệu</span>), trả về<a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>hoặc<a href="explicit_cast" title="cpp/language/explicit cast">explicit cast</a>Xác định đối tượng Pointed-To:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int n;</pre></div> <p>int* p = &amp; n;     // con trỏ tới n<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>int &amp; r = *p;     // tham chiếu được liên kết với biểu thức lvalue xác định n<span class="kw4">Vô hiệu</span><span class="sy2">*</span>r = 7;           // lưu trữ int 7 trong n</p>
+<p>Vì của<span class="kw4">Vô hiệu</span>Con trỏ đến các đối tượng lớp cũng có thể xuất hiện dưới dạng các toán hạng bên trái của các toán tử truy cập thành viên<span class="kw4">char</span>.</p>
+<p>Vì của<span class="kw4">Vô hiệu</span>Chuyển đổi tiềm ẩn, con trỏ tới phần tử đầu tiên của một mảng có thể được khởi tạo bằng một biểu thức của loại mảng:<code><a href="../memory/c/malloc" title="cpp/memory/c/malloc">std::malloc</a></code>(C ++ 20)<span class="kw4">Vô hiệu</span><span class="sy2">*</span>Thì<code><a href="../algorithm/qsort" title="cpp/algorithm/qsort">std::qsort</a></code>int a [2];<span class="kw4">hằng số</span> <span class="kw4">Vô hiệu</span><span class="sy2">*</span>int* p1 = a; // con trỏ tới phần tử đầu tiên a [0] (a int) của mảng a<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/pthread_create.html" rel="nofollow"><code>pthread_create</code></a> <span class="kw4">Vô hiệu</span><span class="sy2">*</span>int b [6] [3] [8];</p>
+<h4 id="Pointers_to_functions">int (*p2) [3] [8] = b; // con trỏ tới phần tử đầu tiên b [0] của mảng b,</h4> <p>                     // là một mảng gồm 3 mảng 8 ints<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">function-to-pointer</a>Vì của</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Chuyển đổi ẩn cho con trỏ, con trỏ sang lớp cơ sở có thể được khởi tạo với địa chỉ của một lớp dẫn xuất:</pre></div> <p>cơ sở cấu trúc {};</p>
+<div class="cpp source-cpp"><pre data-language="cpp">cấu trúc có nguồn gốc: cơ sở {};</pre></div> <p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Có nguồn gốc d;</pre></div> <p>Cơ sở* p = &amp; d;<a href="operator_other" title="cpp/language/operator other">function call operator</a>, một con trỏ như vậy có thể được sử dụng để thực hiện</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Chắc chắn</pre></div> <p>các nhà khai thác được định nghĩa cho các con trỏ đến các yếu tố của mảng: những con trỏ như vậy thỏa mãn</p>
+<div class="cpp source-cpp"><pre data-language="cpp">yêu cầu và cho phép thư viện C ++</pre></div> <p>để làm việc với các mảng thô.<a href="overloaded_address" title="cpp/language/overloaded address">address of an overloaded function</a>được xác định cho các con trỏ đến các đối tượng trong một số tình huống: hai con trỏ đại diện cho cùng một địa chỉ so sánh bằng nhau, hai giá trị con trỏ null so sánh bằng nhau, con trỏ với các phần tử của cùng một mảng</p>
+<div class="cpp source-cpp"><pre data-language="cpp">So sánh theo thứ tự tuyên bố của những thành viên.</pre></div> <p><a href="operator_comparison#Pointer_comparison_operators" title="cpp/language/operator comparison">Equality comparison operators</a>Nhiều triển khai cũng cung cấp</p>
+<h3 id="Pointers_to_members">của con trỏ có nguồn gốc ngẫu nhiên, ví dụ: Nếu chúng được thực hiện làm địa chỉ trong không gian địa chỉ ảo liên tục. Những triển khai không (ví dụ: trong đó không phải tất cả các bit của con trỏ đều là một phần của địa chỉ bộ nhớ và phải bỏ qua để so sánh, hoặc một tính toán bổ sung là bắt buộc hoặc nếu không thì con trỏ và số nguyên không phải là mối quan hệ 1 đến 1), cung cấp chuyên môn hóa về</h3> <h4 id="Pointers_to_data_members">Con trỏ để</h4> <p>Con trỏ đến đối tượng thuộc bất kỳ loại nào cũng có thể<code>m</code>Mong đợi một cuộc gọi lại do người dùng cung cấp chấp nhận và trả về<code>C</code>. Trong mọi trường hợp, trách nhiệm của người gọi là chuyển con trỏ theo đúng loại trước khi sử dụng.<code>&amp;C::m</code>Con trỏ đến các chức năng<code>&amp;(C::m)</code>hoặc<code>&amp;m</code>Một chức năng con trỏ đến chức năng có thể được khởi tạo bằng một địa chỉ của hàm không thành viên hoặc hàm thành viên tĩnh. Vì của<code>C</code>int* p1 = &amp; n;</p>
+<p>void f (int);<a href="operator_member_access" title="cpp/language/operator member access">pointer-to-member access operators</a> <code>operator.*</code>Và<code>operator-&gt;*</code>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int* p2 = static_cast &lt;int*&gt; (pv);</pre></div> <p>std :: cout &lt;&lt; *p2 &lt;&lt; '\ n'; // In 1<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">implicitly converted</a>Nếu con trỏ ban đầu chỉ vào một tiểu mục lớp cơ sở trong một đối tượng thuộc loại đa hình,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">có thể được sử dụng để có được một</pre></div> <p>đó là chỉ vào đối tượng hoàn chỉnh của loại dẫn xuất nhất.<a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Và<a href="explicit_cast" title="cpp/language/explicit cast">explicit cast</a>Con trỏ để</p>
+<div class="cpp source-cpp"><pre data-language="cpp">có cùng kích thước, đại diện và căn chỉnh như con trỏ</pre></div> <p>Con trỏ để</p>
+<div class="cpp source-cpp"><pre data-language="cpp">được sử dụng để vượt qua các đối tượng thuộc loại không xác định, điều này là phổ biến trong các giao diện C:</pre></div> <h4 id="Pointers_to_member_functions">mong đợi một cuộc gọi lại do người dùng cung cấp chấp nhận hai</h4> <p>lập luận.<code>f</code>Mong đợi một cuộc gọi lại do người dùng cung cấp chấp nhận và trả về<code>C</code>. Trong mọi trường hợp, trách nhiệm của người gọi là chuyển con trỏ theo đúng loại trước khi sử dụng.<code>&amp;C::f</code>Con trỏ đến các chức năng<code>&amp;(C::f)</code>hoặc<code>&amp;f</code>Một chức năng con trỏ đến chức năng có thể được khởi tạo bằng một địa chỉ của hàm không thành viên hoặc hàm thành viên tĩnh. Vì của<code>C</code>Chuyển đổi ẩn, người vận hành địa chỉ là tùy chọn:</p>
+<p>void f (int);<a href="operator_member_access" title="cpp/language/operator member access">pointer-to-member access operators</a> <code>operator.*</code>Và<code>operator-&gt;*</code>. Các<a href="value_category#Pending_member_function_call" title="cpp/language/value category">resulting expression</a>void (*p1) (int) = &amp; f;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void (*p2) (int) = f; // Tương tự như &amp; f</pre></div> <p><br/>Không giống như các chức năng hoặc tham chiếu đến các chức năng, con trỏ đến các hàm là các đối tượng và do đó có thể được lưu trữ trong các mảng, sao chép, gán, v.v.<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">implicitly converted</a>void (A [10]) (int);  // Lỗi: mảng các chức năng</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void (&amp; a [10]) (int); // Lỗi: mảng tài liệu tham khảo</pre></div> <p>void (*a [10]) (int); // OK: Mảng con trỏ đến các chức năng<a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Và<a href="explicit_cast" title="cpp/language/explicit cast">explicit cast</a>Lưu ý: Các khai báo liên quan đến các con trỏ đến các chức năng thường có thể được đơn giản hóa với các bí danh loại:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">sử dụng f = void (int); // loại bí danh được đặt tên để đơn giản hóa các khai báo</pre></div> <p>F a [10];  // Lỗi: mảng các chức năng<code><a href="../utility/functional/mem_fn" title="cpp/utility/functional/mem fn">std::mem_fn</a></code>hoặc<code><a href="../utility/functional/bind" title="cpp/utility/functional/bind">std::bind</a></code>:</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">F &amp; A [10]; // Lỗi: mảng tài liệu tham khảo</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">F* a [10]; // OK: Mảng con trỏ đến các chức năng</pre></div> </div> <h3 id="Null_pointers">Một chức năng con trỏ tới</h3> <p>, Điều này gọi hàm nhọn-To:<i>int f (int n)</i>{<i>vô giá trị</i>.</p>
+<p>MỘT<i>    std :: cout &lt;&lt; n &lt;&lt; '\ n';</i>    trả lại n * n;</p>
+<ul><li>}</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>// u = u0 -&gt; phân tách với n = 0: u0<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code> <code>nullptr</code>).</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Vĩ mô<code><a href="../types/null" title="cpp/types/NULL">NULL</a></code>int main ()</p>
+<p><a href="zero_initialization" title="cpp/language/zero initialization">Zero-initialization</a>Và<a href="value_initialization" title="cpp/language/value initialization">value-initialization</a>{</p>
+<p>    int (*p) (int) = f;<a href="../utility/functional/function/target" title="cpp/utility/functional/function/target"><code>std::function::target()</code></a>    int x = p (7);<a href="dynamic_cast" title="cpp/language/dynamic cast">dynamic_cast</a>}<a href="delete" title="cpp/language/delete">delete expression</a>Dereferencing Một con trỏ hàm mang lại Lvalue Xác định chức năng nhọn:</p>
+<h3 id="Constness">int f ();</h3> <ul>
+<li>Nếu như<span class="t-spar">không ngụ ý rằng</span>int (*p) () = f;  // con trỏ p đang chỉ vào f<code>*</code>P();             // chức năng f được gọi trực tiếp qua con trỏ<span class="t-spar">DEM-SPECIFIER-SEQ</span>r ();             // chức năng f được gọi thông qua tham chiếu lvalue</li>
+<li>Nếu như<span class="t-spar">không ngụ ý rằng</span>(*P)();          // chức năng f được gọi qua chức năng lvalue<code>*</code>P();             // chức năng f được gọi trực tiếp qua con trỏ<span class="t-spar">người khai báo</span>Chức năng con trỏ đến chức năng có thể được khởi tạo từ một tập hợp quá tải có thể bao gồm các hàm, chuyên ngành mẫu chức năng và các mẫu chức năng, nếu chỉ một quá tải phù hợp với loại con trỏ (xem</li>
+</ul> <table class="wikitable"> <tr> <th>Cú pháp</th> <th>Để biết thêm chi tiết):</th>
+</tr> <tr> <td>
+<span class="kw4">hằng số</span>T<span class="sy2">*</span>
+</td> <td>T f (t n) {return n; }</td>
+</tr> <tr> <td>T<span class="kw4">hằng số</span><span class="sy2">*</span>
+</td> <td>T f (t n) {return n; }</td>
+</tr> <tr> <td>T<span class="sy2">*</span> <span class="kw4">hằng số</span>
+</td> <td> </td>
+</tr> <tr> <td>
+<span class="kw4">hằng số</span>T<span class="sy2">*</span> <span class="kw4">hằng số</span>
+</td> <td> </td>
+</tr> <tr> <td>T<span class="kw4">hằng số</span><span class="sy2">*</span> <span class="kw4">hằng số</span>
+</td> <td> </td>
+</tr> </table> <div class="cpp source-cpp"><pre data-language="cpp">int main ()</pre></div> <p>{<a class="mw-redirect" href="implicit_cast#Qualification_conversions" title="cpp/language/implicit cast">qualification conversions</a>.</p>
+<h3 id="Composite_pointer_type">    int (*p) (int) = f; // Instantiates và chọn F &lt;Int&gt;</h3> <p>}<a href="operator_comparison" title="cpp/language/operator comparison">comparison operator</a>được xác định cho các con trỏ đến các chức năng (chúng so sánh bằng nhau nếu chỉ vào cùng một chức năng).<a href="operator_other#Conditional_operator" title="cpp/language/operator other">conditional operator</a>Con trỏ cho các thành viên</p>
+<p>Con trỏ đến các thành viên dữ liệu<code>p1</code>Và<code>p2</code>Một con trỏ tới đối tượng thành viên không tĩnh<code>T1</code>Và<code>T2</code>là thành viên của lớp học<code>p1</code>Và<code>p2</code>có thể được khởi tạo với biểu thức</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx14">
+<td> <ul>
+<li> <code>p1</code>Và<code>p2</code>chính xác. Biểu thức như</li>
+<li>{<code>p1</code>Và<code>p2</code>Hàm thành viên không hình thành con trỏ cho các thành viên.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <code>p1</code>Và<code>p2</code>Một con trỏ như vậy có thể được sử dụng làm toán hạng bên phải của<code>T1</code>Và<code>T2</code>struct c {int m; };</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> </td> <td><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span></td>
+</tr> <tr class="t-rev t-since-cxx14">
+<td> <ul><li> <code>T1</code>Và<code>T2</code>int main ()<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <p>Các<i>{</i> <code>C</code>của<code>p1</code>Và<code>p2</code>(tức là, nó kết thúc ở cuối</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <ul>
+<li>Nếu như<code>p1</code>Điều đó như vậy<a href="#Null_pointers">null pointer constant</a>Thì<code>C</code>khoảng cách<code>T2</code>.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>p2</code>    std :: cout &lt;&lt; c.*p &lt;&lt; '\ n';   // In 7<code>C</code>khoảng cách<code>T1</code>.</li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>Nếu như<code>p1</code>Và<code>p2</code>, và sau đó thêm 1.<a href="#Null_pointers">null pointer constants</a>Thì<code>C</code>khoảng cách<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>p1</code>    std :: cout &lt;&lt; c.*p &lt;&lt; '\ n';   // In 7<code>C</code>khoảng cách<code>T2</code>.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>p2</code>    std :: cout &lt;&lt; c.*p &lt;&lt; '\ n';   // In 7<code>C</code>khoảng cách<code>T1</code>.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>    std :: cout &lt;&lt; d.*bp &lt;&lt; '\ n'; // Được rồi: in 7</li></ul> <dl>
+<dd>
+<ul>
+<li> <code>T1</code>hoặc<code>T2</code>    Có nguồn gốc d;<i>Khi khởi tạo một đối tượng thuộc loại CV1 không thuộc lớp</i> <span class="kw4">Vô hiệu</span>và người khai báo được kết hợp như trong bất kỳ</li>
+<li>    std :: cout &lt;&lt; cp-&gt;*p &lt;&lt; '\ n'; // In 10<i>Khởi tạo không thuộc lớp bằng cách chuyển đổi</i> <code>T</code>phần tử của một đối tượng mảng<code>T</code> <a href="type" title="cpp/language/type">object type</a>hoặc<span class="kw4">Vô hiệu</span>.</li>
+</ul> </dd>
+<dd> <code>C</code>    Có nguồn gốc d;<i>Để con trỏ đến cùng một thành viên dữ liệu của một lớp dẫn xuất:</i> <span class="kw4">Vô hiệu</span>phần tử của một đối tượng mảng<i>Để con trỏ đến cùng một thành viên dữ liệu của một lớp dẫn xuất:</i>// cv_2 là "const", u là "int"<i>Khi khởi tạo một đối tượng thuộc loại CV1 không thuộc lớp</i>Và<i>Khởi tạo không thuộc lớp bằng cách chuyển đổi</i>.</dd>
+</dl> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>    std :: cout &lt;&lt; d.*bp &lt;&lt; '\ n'; // Được rồi: in 7</li></ul> <dl>
+<dd>
+<ul>
+<li> <code>T1</code>hoặc<code>T2</code>cấu trúc có nguồn gốc: cơ sở {};<code>F1</code>và người khai báo được kết hợp như trong bất kỳ</li>
+<li> <code>F2</code>và người khai báo được kết hợp như trong bất kỳ</li>
+<li> <code>F1</code>Và<code>F2</code>    int có nguồn gốc ::* dp = &amp; xuất phát :: m;</li>
+</ul> </dd>
+<dd> <code>C</code>    Có nguồn gốc d;<code>F1</code>và người khai báo được kết hợp như trong bất kỳ</dd>
+</dl> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul><li>    std :: cout &lt;&lt; d.*bp &lt;&lt; '\ n'; // Được rồi: in 7</li></ul> <dl>
+<dd>
+<ul>
+<li> <code>T1</code>    Có nguồn gốc d;<code>C1</code>và người khai báo được kết hợp như trong bất kỳ</li>
+<li> <code>T2</code>    Có nguồn gốc d;<code>C2</code>và người khai báo được kết hợp như trong bất kỳ</li>
+<li>{<code>C1</code>Và<code>C2</code>khoảng cách<a href="reference_initialization#Definitions" title="cpp/language/reference initialization">reference-related</a>    std :: cout &lt;&lt; d.*dp &lt;&lt; '' &lt;&lt; d.*bp &lt;&lt; '\ n'; // in 1 1</li>
+</ul> </dd>
+<dd> <code>C</code>khoảng cách<ul>
+<li>các<a href="implicit_conversion#Combining_cv-qualifications" title="cpp/language/implicit conversion">qualification-combined type</a>của<code>T1</code>Và<code>T2</code>Sử dụng chức năng nhị phân đã cho<code>C1</code>hoặc có thể được chuyển đổi thành loại<code>C2</code>, hoặc</li>
+<li>    int a ::* const p;<code>T2</code>Và<code>T1</code>Sử dụng chức năng nhị phân đã cho<code>C2</code>hoặc có thể được chuyển đổi thành loại<code>C1</code>.</li>
+</ul> </dd>
+</dl> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>    std :: cout &lt;&lt; d.*bp &lt;&lt; '\ n'; // Được rồi: in 7</li></ul> <dl>
+<dd>
+<ul>
+<li> <code>T1</code>hoặc<code>T2</code>    std :: cout &lt;&lt; b.*bp &lt;&lt; '\ n'; // Hành vi không xác định<code>C1</code>cơ sở cấu trúc {};<code>F1</code>và người khai báo được kết hợp như trong bất kỳ</li>
+<li>cấu trúc có nguồn gốc: cơ sở {int m; };<code>C2</code> <code>F2</code>và người khai báo được kết hợp như trong bất kỳ</li>
+<li>{<code>C1</code>Và<code>C2</code>    int m;</li>
+<li> <code>F1</code>Và<code>F2</code>    int có nguồn gốc ::* dp = &amp; xuất phát :: m;</li>
+</ul> </dd>
+<dd> <code>C</code>khoảng cách<ul>
+<li>    Có nguồn gốc d;<code>C2</code>nó đến một đối tượng<code>F1</code>    D.M = 7;<code>C1</code>hoặc có thể được chuyển đổi thành loại<code>C2</code>, hoặc</li>
+<li>    Có nguồn gốc d;<code>C1</code>nó đến một đối tượng<code>F1</code>    D.M = 7;<code>C2</code>hoặc có thể được chuyển đổi thành loại<code>C1</code>.</li>
+</ul> </dd>
+</dl> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul><li>    std :: cout &lt;&lt; d.*bp &lt;&lt; '\ n'; // Được rồi: in 7</li></ul> <dl>
+<dd>
+<ul>
+<li> <code>T1</code>    std :: cout &lt;&lt; b.*bp &lt;&lt; '\ n'; // Hành vi không xác định<code>C1</code>}<code>M1</code>và người khai báo được kết hợp như trong bất kỳ</li>
+<li> <code>T2</code>    std :: cout &lt;&lt; b.*bp &lt;&lt; '\ n'; // Hành vi không xác định<code>C2</code>}<code>M2</code>Kiểu hướng đến của một con trỏ đến thành viên có thể là một con trỏ đến thành viên: Con trỏ cho các thành viên có thể là đa cấp và có thể được điều kiện bằng CV khác nhau ở mọi cấp độ. Các kết hợp đa cấp hỗn hợp của con trỏ và con trỏ cũng được cho phép:</li>
+<li> <code>M1</code>Và<code>M2</code>Cấu trúc a</li>
+<li>{<code>C1</code>Và<code>C2</code>    int m;</li>
+</ul> </dd>
+<dd> <code>C</code>khoảng cách<ul>
+<li>    int a ::* const p;<code>T2</code>Và<code>T1</code>Sử dụng chức năng nhị phân đã cho<code>C1</code>hoặc có thể được chuyển đổi thành loại<code>C2</code>, hoặc</li>
+<li>    int a ::* const p;<code>T1</code>Và<code>T2</code>Sử dụng chức năng nhị phân đã cho<code>C2</code>hoặc có thể được chuyển đổi thành loại<code>C1</code>.</li>
+</ul> </dd>
+</dl> <ul>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>T1</code>Và<code>T2</code>&gt;<a href="implicit_conversion#Similar_types" title="cpp/language/implicit conversion">similar types</a>Thì<code>C</code>};<code>T1</code>Và<code>T2</code>.</li>
+<li>Là xấu nếu<code>p1</code>Và<code>p2</code> <code>C</code>int main ()</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/73.html" rel="nofollow">CWG 73</a> </td> <td>C ++ 98</td> <td>    // Con trỏ không phải lúc tập trung đến thành viên dữ liệu là con trỏ const đến thành viên không phải là thành viên<br/>    int a ::* const a ::* p1 = &amp; a :: p;</td> <td> <br/>    const a a = {1, &amp; a :: m};</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/903.html" rel="nofollow">CWG 903</a> </td> <td>C ++ 98</td> <td>    std :: cout &lt;&lt; a.*(a.*p1) &lt;&lt; '\ n'; // In 1<br/> </td> <td>    // con trỏ không thường xuyên đến một con trỏ const-thành viên<br/>    int a ::* const* p2 = &amp; a.p;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1438.html" rel="nofollow">CWG 1438</a> </td> <td>C ++ 98</td> <td>    std :: cout &lt;&lt; a. ** p2 &lt;&lt; '\ n'; // In 1<br/>}</td> <td>Con trỏ đến các chức năng thành viên<br/>Một chức năng con trỏ tới thành viên không tĩnh<br/>là thành viên của lớp học</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1512.html" rel="nofollow">CWG 1512</a><br/>.<a class="external text" href="https://wg21.link/N3624" rel="nofollow">N3624</a>)</td> <td>C ++ 98</td> <td>có thể được khởi tạo với biểu thức<br/>chính xác. Biểu thức như<span class="kw4">int</span><span class="sy2">Chuyển đổi Boolean</span>Và<span class="kw4">hằng số</span> <span class="kw4">int</span><span class="sy2">Chuyển đổi Boolean</span> </td> <td>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2206.html" rel="nofollow">CWG 2206</a> </td> <td>C ++ 98</td> <td>bên trong<span class="kw4">Vô hiệu</span>Hàm thành viên không hình thành các con trỏ cho các chức năng thành viên.<br/>Một con trỏ như vậy có thể được sử dụng làm toán hạng bên phải của</td> <td>Chỉ có thể được sử dụng làm toán hạng bên trái của toán tử gọi chức năng:</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2381.html" rel="nofollow">CWG 2381</a> </td> <td>C ++ 17</td> <td>Cấu trúc c<br/>{</td> <td>cho phép</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/pointer" title="c/language/pointer">C documentation</a></span>vì<span class=""><span>    void f (int n) {std :: cout &lt;&lt; n &lt;&lt; '\ n'; }</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/pointer">https://en.cppreference.com/w/cpp/language/pointer</a>
+</p>
+</div>

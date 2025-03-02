@@ -1,0 +1,40 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: ATOMIC_THREAD_FENCE</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/atomic" title="cpp/header/atomic">&lt;atomic&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">extern "C" void Atomic_Thread_Fence (std :: memory_order thứ tự) NOExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Thiết lập<a href="memory_order" title="cpp/atomic/memory order">memory synchronization ordering</a>của các truy cập nguyên tử không phải là nguyên tử và thư giãn, theo hướng dẫn của<code>order</code>, không có hoạt động nguyên tử liên quan. Tuy nhiên, lưu ý rằng ít nhất một hoạt động nguyên tử được yêu cầu để thiết lập đồng bộ hóa, như được mô tả dưới đây.</p>
+<h4 id="Fence-atomic_synchronization">Đồng bộ hóa nguyên tử hàng rào</h4> <p>Một hàng rào giải phóng f trong chuỗi một đồng bộ hóa với nguyên tử<a href="memory_order" title="cpp/atomic/memory order">acquire operation</a>Y trong chủ đề b, nếu</p>
+<ul>
+<li>tồn tại một cửa hàng nguyên tử x (với bất kỳ thứ tự bộ nhớ nào),</li>
+<li>Y đọc giá trị được viết bởi x (hoặc giá trị sẽ được viết bởi<a href="memory_order" title="cpp/atomic/memory order">release sequence headed by X</a>Nếu X là một hoạt động phát hành),</li>
+<li>F được giải trình tự-trước X trong luồng A.</li>
+</ul> <p>Trong trường hợp này, tất cả các cửa hàng nguyên tử không phải là nguyên tử và thư giãn<a href="memory_order" title="cpp/atomic/memory order">sequenced-before</a>F trong chủ đề a di chúc<a href="memory_order" title="cpp/atomic/memory order">happen-before</a>Tất cả các tải nguyên tử không nguyên tử và thư giãn từ cùng một vị trí được thực hiện trong luồng B sau Y.</p>
+<h4 id="Atomic-fence_synchronization">Đồng bộ hóa hàng rào nguyên tử</h4> <p>Một nguyên tử<a href="memory_order" title="cpp/atomic/memory order">release operation</a>X trong luồng A đồng bộ hóa-với một hàng rào thu được trong luồng B, nếu</p>
+<ul>
+<li>tồn tại một nguyên tử đọc y (với bất kỳ thứ tự bộ nhớ nào),</li>
+<li>Y đọc giá trị được viết bởi x (hoặc bởi<a href="memory_order" title="cpp/atomic/memory order">release sequence headed by X</a>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.</li>
+<li>Y được giải trình tự-trước khi FREAD B.</li>
+</ul> <p>Trong trường hợp này, tất cả các cửa hàng nguyên tử không phải là nguyên tử và thư giãn<a href="memory_order" title="cpp/atomic/memory order">sequenced-before</a>X trong chủ đề a di chúc<a href="memory_order" title="cpp/atomic/memory order">happen-before</a>Tất cả các tải nguyên tử không nguyên tử và thư giãn từ cùng một vị trí được thực hiện trong luồng B sau F.</p>
+<h4 id="Fence-fence_synchronization">Đồng bộ hàng rào hàng rào</h4> <p>Một hàng rào phát hành FA trong chuỗi A đồng bộ hóa-với một hàng rào FB trong Thread B, nếu</p>
+<ul>
+<li>tồn tại một đối tượng nguyên tử m,</li>
+<li>tồn tại một nguyên tử ghi x (với bất kỳ thứ tự bộ nhớ nào) sửa đổi m trong luồng a,</li>
+<li>FA được giải trình tự-trước X trong Thread A,</li>
+<li>tồn tại một nguyên tử đọc y (với bất kỳ thứ tự bộ nhớ nào) trong luồng B,</li>
+<li>Y đọc giá trị được viết bởi x (hoặc giá trị sẽ được viết bởi<a href="memory_order" title="cpp/atomic/memory order">release sequence headed by X</a>Nếu X là một hoạt động phát hành),</li>
+<li>Y được giải trình tự-trước khi FB trong luồng B.</li>
+</ul> <p>Trong trường hợp này, tất cả các cửa hàng nguyên tử không phải là nguyên tử và thư giãn<a href="memory_order" title="cpp/atomic/memory order">sequenced-before</a>Fa trong chủ đề a di chúc<a href="memory_order" title="cpp/atomic/memory order">happen-before</a>Tất cả các tải nguyên tử không nguyên tử và thư giãn từ cùng một vị trí được thực hiện trong luồng B sau FB.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Thay thế nguyên tử giá trị được trỏ đến bởi</td> <td>-</td> <td>Bộ nhớ đặt hàng được thực hiện bởi hàng rào này</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>Trên x86 (bao gồm x86-64),<code>atomic_thread_fence</code>các chức năng phát hành không có hướng dẫn CPU và chỉ ảnh hưởng đến chuyển động mã thời gian biên dịch, ngoại trừ<code>std::atomic_thread_fence(std::memory_order::seq_cst)</code>.</p>
+<p><code>atomic_thread_fence</code>áp đặt các ràng buộc đồng bộ hóa mạnh hơn so với hoạt động của cửa hàng nguyên tử với cùng<code><a href="memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>. Trong khi một hoạt động giải phóng cửa hàng nguyên tử ngăn chặn tất cả các lần đọc trước và viết qua việc di chuyển qua cửa hàng, một<code>atomic_thread_fence</code>với<code>memory_order_release</code>Đặt hàng ngăn chặn tất cả các lần đọc trước đó và viết không di chuyển qua tất cả các cửa hàng tiếp theo.</p>
+<p>Đồng bộ hóa hàng rào có thể được sử dụng để thêm đồng bộ hóa vào một chuỗi các hoạt động nguyên tử thoải mái, ví dụ:: ví dụ:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// Toàn cầu</pre></div> <h3 id="Example">Ví dụ</h3> <p>STD :: Tính toán chuỗi (int);</p>
+<div class="cpp source-cpp"><pre data-language="cpp">in void in (std :: chuỗi);</pre></div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="memory_order" title="cpp/atomic/memory order"> <span class="t-lines"><span>memory_order</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xác định các ràng buộc thứ tự bộ nhớ cho hoạt động nguyên tử đã cho<br/> <span class="t-mark">(enum)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="atomic_signal_fence" title="cpp/atomic/atomic signal fence"> <span class="t-lines"><span>Atomic_Signal_Fence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>hàng rào giữa một luồng và trình xử lý tín hiệu được thực thi trong cùng một luồng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/atomic/atomic_thread_fence" title="c/atomic/atomic thread fence">C documentation</a></span>vì<code>atomic_thread_fence</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_thread_fence">https://en.cppreference.com/w/cpp/atomic/atomic_thread_fence</a>
+</p>
+</div>

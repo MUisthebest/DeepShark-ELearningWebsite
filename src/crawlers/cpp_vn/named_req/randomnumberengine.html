@@ -1,0 +1,75 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: RandomNumberEngine<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Một công cụ số ngẫu nhiên là một đối tượng hàm trả về các giá trị số nguyên không dấu sao cho mỗi giá trị trong phạm vi kết quả có thể có xác suất bằng nhau.</p>
+<p>Bất kỳ động cơ số ngẫu nhiên nào cũng là một<a href="uniformrandombitgenerator" title="cpp/named req/UniformRandomBitGenerator">UniformRandomBitGenerator</a>và do đó có thể được cắm vào bất kỳ<a href="../numeric/random" title="cpp/numeric/random">random number distribution</a>Để có được một số ngẫu nhiên (chính thức, một biến thể ngẫu nhiên).</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>(STD :: Chrono :: Thời lượng)<code>E</code>thỏa mãn<a href="uniformrandombitgenerator" title="cpp/named req/UniformRandomBitGenerator">UniformRandomBitGenerator</a>cũng sẽ thỏa mãn RandomNumberEngine nếu, được đưa ra</p>
+<ul>
+<li> <code>T</code>, loại được đặt tên bởi<code>E::result_type</code> </li>
+<li> <code>s</code>, một giá trị của loại<code>T</code> </li>
+<li> <code>e</code>, một giá trị không phải lúc của loại<code>E</code> </li>
+<li> <code>v</code>TRÊN<code>E</code> </li>
+<li> <code>x</code>Và<code>y</code>, có thể là các giá trị const của loại<code>E</code> </li>
+<li> <code>q</code>, một lvalue thuộc loại thỏa mãn<a href="seedsequence" title="cpp/named req/SeedSequence">SeedSequence</a> </li>
+<li> <code>z</code>, một giá trị của loại<code>unsigned long long</code> </li>
+<li> <code>os</code>, một luồng đầu ra</li>
+<li> <code>is</code>, một luồng đầu vào</li>
+</ul> <p>Các biểu thức sau là hợp lệ và có các hiệu ứng được chỉ định của chúng:</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>E()</code> </td> <td> </td> <td>Tạo một động cơ có cùng trạng thái với tất cả các động cơ được chế tạo mặc định khác<code>E</code>.</td>
+</tr> <tr> <td>
+<code>E(x)</code> </td> <td> </td> <td>Tạo ra một động cơ có cùng trạng thái như<code>x</code>.</td>
+</tr> <tr> <td>
+<code>E(s)</code> </td> <td> </td> <td>Tạo một động cơ có trạng thái ban đầu được xác định bởi số nguyên<code>s</code>.</td>
+</tr> <tr> <td>
+<code>E(q)</code> </td> <td> </td> <td>Tạo một động cơ có trạng thái ban đầu được xác định bằng một cuộc gọi đến<code>q.generate</code>.</td>
+</tr> <tr> <td>
+<code>e.seed()</code> </td> <td>
+<code>void</code> </td> <td>Bộ<code>e == E()</code>.</td>
+</tr> <tr> <td>
+<code>e.seed(s)</code> </td> <td>
+<code>void</code> </td> <td>Bộ<code>e == E(s)</code>.</td>
+</tr> <tr> <td>
+<code>e.seed(q)</code> </td> <td>
+<code>void</code> </td> <td>Bộ<code>e == E(q)</code>.</td>
+</tr> <tr> <td>
+<code>e()</code> </td> <td>
+<code>T</code> </td> <td>Trả về một giá trị trong khoảng thời gian đóng<code>[E::min(), E::max()]</code>. Đã khấu hao sự phức tạp liên tục.</td>
+</tr> <tr> <td>
+<code>e.discard(z)</code> </td> <td>
+<code>void</code> </td> <td>Tiến bộ<code>e</code>trạng thái của<code>z</code>Các cuộc gọi liên tiếp đến<code>e()</code>.</td>
+</tr> <tr> <td>
+<code>x == y</code> </td> <td>
+<code>bool</code> </td> <td>
+<code>true</code>nếu như<code>x</code>Và<code>y</code>ở cùng một trạng thái (sao cho các cuộc gọi trong tương lai lặp đi lặp lại<code>x()</code>Và<code>y()</code>sẽ tạo ra các chuỗi giống hệt nhau). Nếu không thì,<code>false</code>.</td>
+</tr> <tr> <td>
+<code>x != y</code> </td> <td>
+<code>bool</code> </td> <td>
+<code>!(x == y)</code> </td>
+</tr> <tr> <td>
+<code>os &lt;&lt; x</code> </td> <td>
+<code>decltype(os)&amp;</code> </td> <td>Viết để<code>os</code>biểu diễn văn bản của<code>x</code>Trạng thái hiện tại. Trong đầu ra, các số liền kề được phân tách bằng một hoặc nhiều ký tự không gian. Nếu như<code>os</code>fmtflags không được đặt thành<code>ios_base::dec|ios_base::left</code>, hành vi có thể không được xác định.</td>
+</tr> <tr> <td>
+<code>is &gt;&gt; v</code> </td> <td>
+<code>decltype(is)&amp;</code> </td> <td>Đọc từ<code>is</code>biểu diễn văn bản của<code>v</code>Trạng thái hiện tại của<code>os &lt;&lt; x</code>, sau đó<code>x == v</code>. Nếu như<code>is</code>fmtflags không được đặt thành<code>ios_base::dec</code>, hành vi có thể không được xác định.</td>
+</tr>
+</table> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>Các cơ sở thư viện tiêu chuẩn sau đây thỏa mãn RandomNumberEngine:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../numeric/random/linear_congruential_engine" title="cpp/numeric/random/linear congruential engine"> <span class="t-lines"><span>tuyến tính_congruanent_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>thực hiện<a class="extiw" href="https://en.wikipedia.org/wiki/Linear_congruential_generator" title="enwiki:Linear congruential generator">linear congruential</a>Thuật toán<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/mersenne_twister_engine" title="cpp/numeric/random/mersenne twister engine"> <span class="t-lines"><span>mersenne_twister_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>thực hiện<a class="extiw" href="https://en.wikipedia.org/wiki/Mersenne_twister" title="enwiki:Mersenne twister">Mersenne twister</a>Thuật toán<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/subtract_with_carry_engine" title="cpp/numeric/random/subtract with carry engine"> <span class="t-lines"><span>Subtract_With_Carry_Engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>thực hiện một sự trừ với-carry (<a class="extiw" href="https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator" title="enwiki:Lagged Fibonacci generator">lagged Fibonacci</a>) Thuật toán<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/discard_block_engine" title="cpp/numeric/random/discard block engine"> <span class="t-lines"><span>Discard_block_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>loại bỏ một số đầu ra của một động cơ số ngẫu nhiên<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/independent_bits_engine" title="cpp/numeric/random/independent bits engine"> <span class="t-lines"><span>Độc lập_bits_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>gói đầu ra của một động cơ số ngẫu nhiên thành các khối của một số bit được chỉ định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/shuffle_order_engine" title="cpp/numeric/random/shuffle order engine"> <span class="t-lines"><span>shuffle_order_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Cung cấp đầu ra của một công cụ số ngẫu nhiên theo một thứ tự khác<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <p>Các cơ sở thư viện tiêu chuẩn sau đây thỏa mãn<a href="uniformrandombitgenerator" title="cpp/named req/UniformRandomBitGenerator">UniformRandomBitGenerator</a>Nhưng không phải RandomNumberEngine:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../numeric/random/random_device" title="cpp/numeric/random/random device"> <span class="t-lines"><span>Random_device</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Trình tạo số ngẫu nhiên không xác định sử dụng nguồn entropy phần cứng<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/RandomNumberEngine">https://en.cppreference.com/w/cpp/named_req/RandomNumberEngine</a>
+</p>
+</div>

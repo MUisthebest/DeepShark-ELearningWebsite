@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FileSystem :: Path :: Tiện ích mở rộng</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">mở rộng đường dẫn () const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Trả về phần mở rộng của thành phần tên tệp của chế độ xem định dạng chung của<code>*this</code>.</p>
+<p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<a href="filename" title="cpp/filesystem/path/filename"><code>filename()</code></a>thành phần của đường dẫn định dạng chung chứa một khoảng thời gian (<code>.</code>) và không phải là một trong những yếu tố hệ thống tập tin đặc biệt<span class="t-spar">chấm</span>hoặc<span class="t-spar">chấm chấm</span>. Các yếu tố được so sánh bằng cách sử dụng vị từ nhị phân<i>sự mở rộng</i>là bộ nền bắt đầu vào khoảng thời gian ngoài cùng bên phải (bao gồm cả khoảng thời gian) và cho đến khi kết thúc tên đường dẫn.</p>
+<p>Nếu ký tự đầu tiên trong tên tệp là một khoảng thời gian, khoảng thời gian đó bị bỏ qua (tên tệp như ".profile" không được coi là một phần mở rộng).</p>
+<p>Nếu tên đường dẫn là<code>.</code>hoặc<code>..</code>Xây dựng một khoảng một khung nhìn trong phạm vi<a href="filename" title="cpp/filesystem/path/filename"><code>filename()</code></a>không chứa<code>'.'</code>Nhân vật, sau đó đường đi trống được trả về.</p>
+<p>Hành vi bổ sung có thể được xác định bởi các triển khai cho các hệ thống tệp để nối các yếu tố bổ sung (chẳng hạn như các luồng dữ liệu thay thế hoặc tên dữ liệu được phân vùng) vào các phần mở rộng.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Phần mở rộng của tên đường dẫn hiện tại hoặc đường dẫn trống nếu không có phần mở rộng.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Phần mở rộng được trả về bởi hàm này bao gồm một khoảng thời gian để có thể phân biệt tệp kết thúc bằng một khoảng thời gian (chức năng trả về<code>"."</code>) từ một tệp không có tiện ích mở rộng (chức năng trả về<code>""</code>).</p>
+<p>Trên một hệ thống không phải POSIX, có thể<code>p.stem() + p.extension() != p.filename()</code>Mặc dù các phiên bản định dạng chung là như nhau.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;FileSystem&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="filename" title="cpp/filesystem/path/filename"> <span class="t-lines"><span>Tên tệp</span></span></a></div> </td> <td>Trả về thành phần đường dẫn tên tệp<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stem" title="cpp/filesystem/path/stem"> <span class="t-lines"><span>thân cây</span></span></a></div> </td> <td>Trả về thành phần đường dẫn gốc (tên tệp không có phần mở rộng cuối cùng)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="replace_extension" title="cpp/filesystem/path/replace extension"> <span class="t-lines"><span>thay thế_extension</span></span></a></div> </td> <td>Thay thế phần mở rộng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="has_path" title="cpp/filesystem/path/has path"> <span class="t-lines"><span>has_extension</span></span></a></div> </td> <td>Kiểm tra xem phần tử đường dẫn tương ứng không trống<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/path/extension">https://en.cppreference.com/w/cpp/filesystem/path/extension</a>
+</p>
+</div>

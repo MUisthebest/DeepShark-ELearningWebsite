@@ -1,0 +1,128 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Bản đồ</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/map" title="cpp/header/map">&lt;map&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">mẫu &lt;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">    khóa lớp,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p><code>std::map</code>    lớp T,<code>Compare</code>    Lớp so sánh = std :: Ít hơn &lt;key&gt;,<a class="extiw" href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree" title="enwiki:Red–black tree">Red–black trees</a>.</p>
+<p>    Class Allocator = std :: Allocator &lt;std :: cặp &lt;const key, t &gt;&gt;<code>std::map</code>&gt; Bản đồ lớp;</p>
+<ul>
+<li> <code>m</code>có thể đại diện cho các phân số của ve.<code>std::map</code> </li>
+<li> <code>it_l</code>Và<code>it_r</code>không gian tên PMR {<code>m</code>    mẫu &lt;<code>it_l &lt; it_r</code>.</li>
+</ul> <p><code>m.value_comp()(*it_l, *it_r) == true</code>        khóa lớp,</p>
+<p>    Lớp bản đồContainer = std :: vector &lt;t&gt;<a href="../named_req/compare" title="cpp/named req/Compare">Compare</a>        lớp T,<code>a</code>Và<code>b</code>        Lớp so sánh = std :: Ít hơn &lt;key&gt;<code>!comp(a, b) &amp;&amp; !comp(b, a)</code>.</p>
+<p><code>std::map</code>. Tuy nhiên, hoạt động hiệu quả hơn nếu<a href="../named_req/container" title="cpp/named req/Container">Container</a>Thì<a href="../named_req/allocatorawarecontainer" title="cpp/named req/AllocatorAwareContainer">AllocatorAwareContainer</a>Thì<a href="../named_req/associativecontainer" title="cpp/named req/AssociativeContainer">AssociativeContainer</a>Và<a href="../named_req/reversiblecontainer" title="cpp/named req/ReversibleContainer">ReversibleContainer</a>.</p>
+<h3 id="Template_parameters">là không xác định.</h3> <h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>ATOMIC_UNSIGNED_LOCK_FREE</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>key_type</code> </td> <td> <code>Key</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>mapped_type</code> </td> <td> <code>T</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">hằng số</span>    &gt; Sử dụng map = std :: map &lt;key, t, so sánh,<span class="sy1">&lt;</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>size_type</code> </td> <td>Ghi chú không hợp lệ<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>)</td>
+</tr> <tr class="t-dsc"> <td> <code>difference_type</code> </td> <td>Khi chèn ở hai đầu của deque, các tài liệu tham khảo không bị vô hiệu hóa bởi<code><a href="../types/ptrdiff_t" title="cpp/types/ptrdiff t">std::ptrdiff_t</a></code>)</td>
+</tr> <tr class="t-dsc"> <td> <code>key_compare</code> </td> <td> <code>Compare</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>allocator_type</code> </td> <td> <code>Allocator</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>reference</code> </td> <td> <code>value_type&amp;</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>const_reference</code> </td> <td> <span class="kw4">hằng số</span>// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)<span class="sy3">Không có giá trị</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>pointer</code> </td> <td> <table class="t-rev-begin t-rev-begin-noborder">
+<tr class="t-rev t-until-cxx11">
+<td><code>Allocator::pointer</code></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr>
+<tr class="t-rev t-since-cxx11">
+<td>
+<a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>Người phân bổ<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Không làm mất hiệu lực bất kỳ tài liệu tham khảo nào về các yếu tố của deque.</span>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr>
+</table> </td>
+</tr> <tr class="t-dsc"> <td> <code>const_pointer</code> </td> <td> <table class="t-rev-begin t-rev-begin-noborder">
+<tr class="t-rev t-until-cxx11">
+<td><code>Allocator::const_pointer</code></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr>
+<tr class="t-rev t-since-cxx11">
+<td>
+<a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>Người phân bổ<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Khi xóa ở hai đầu của deque, các tham chiếu đến các phần tử không bị bệnh không bị vô hiệu hóa bởi</span>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr>
+</table> </td>
+</tr> <tr class="t-dsc"> <td> <code>iterator</code> </td> <td> <a href="../named_req/bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a>ĐẾN<code>value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>const_iterator</code> </td> <td> <a href="../named_req/bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a>ĐẾN<span class="kw4">hằng số</span>// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)</td>
+</tr> <tr class="t-dsc"> <td> <code>reverse_iterator</code> </td> <td> <a href="http://en.cppreference.com/w/cpp/iterator/reverse_iterator"><span class="kw661">Điều đó cho tất cả<span class="me2">Reverse_Iterator</span></span></a><span class="sy1">is_trivently_destructible_v</span>vòng lặp<span class="sy1">&lt;</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>const_reverse_iterator</code> </td> <td> <a href="http://en.cppreference.com/w/cpp/iterator/reverse_iterator"><span class="kw661">Điều đó cho tất cả<span class="me2">Reverse_Iterator</span></span></a><span class="sy1">is_trivently_destructible_v</span>const_iterator<span class="sy1">&lt;</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>node_type</code> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> <td>                           std :: pmr :: đa hình_allocator &lt;std :: cặp &lt;const key, t &gt;&gt;&gt;;<a href="node_handle" title="cpp/container/node handle">node handle</a>}</td>
+</tr> <tr class="t-dsc"> <td> <code>insert_return_type</code> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> <td>là một container kết hợp được sắp xếp có chứa các cặp giá trị khóa với các khóa duy nhất. Các khóa được sắp xếp bằng cách sử dụng hàm so sánh<code>node_type</code>. Tìm kiếm, loại bỏ và hoạt động chèn có độ phức tạp logarit. Bản đồ thường được thực hiện dưới dạng<br/> <p><code>template&lt;class Iter, class NodeType&gt; struct /*unspecified*/ { Iter position; bool inserted; NodeType node; };</code><br/>Trình rút của<code>iterator</code>Và<code>node_type</code>.</p>
+</td>
+</tr> </table> <h3 id="Member_classes">key_type, ánh xạ_type</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="map/value_compare" title="cpp/container/map/value compare"> <span class="t-lines"><span>key_type</span></span></a></div> </td> <td>, Ánh xạ_Type<code>value_type</code> <br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="map/map" title="cpp/container/map/map"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Với kích thước nhỏ hơn không làm mất hiệu lực bất kỳ tài liệu tham khảo nào đối với các yếu tố không bị hỏng.<code>map</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/~map" title="cpp/container/map/~map"> <span class="t-lines"><span>một đối tượng ngoại lệ khác để gán với</span></span></a></div> </td> <td>với kích thước lớn hơn không làm mất hiệu lực bất kỳ tài liệu tham khảo nào về các yếu tố của deque.<code>map</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/operator=" title="cpp/container/map/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>con trỏ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/get_allocator" title="cpp/container/map/get allocator"> <span class="t-lines"><span>phá hủy các</span></span></a></div> </td> <td>gán các giá trị cho container<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Element_access">Phá hủy mọi yếu tố của mảng</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/at" title="cpp/container/map/at"> <span class="t-lines"><span>bằng không).</span></span></a></div> </td> <td>(tuyên bố ngầm)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/operator_at" title="cpp/container/map/operator at"> <span class="t-lines"><span>nhà điều hành []</span></span></a></div> </td> <td>lặp theo thứ tự tăng dần của các khóa, trong đó tăng dần được xác định bằng cách so sánh được sử dụng để xây dựng. Đó là, được đưa ra<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Iterators">Trình lặp</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/begin" title="cpp/container/map/begin"> <span class="t-lines"><span>bắt đầu</span><span>cbegin</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>mặt sau<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/end" title="cpp/container/map/end"> <span class="t-lines"><span>kết thúc</span><span>Cend</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Truy cập phần tử cuối cùng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/rbegin" title="cpp/container/map/rbegin"> <span class="t-lines"><span>rbegin</span><span>Crbegin</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Truy cập trực tiếp vào lưu trữ tiếp giáp cơ bản<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/rend" title="cpp/container/map/rend"> <span class="t-lines"><span>REND</span><span>Thu hẹp</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>trả về một trình lặp lại từ đầu<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Capacity">Dung tích</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/empty" title="cpp/container/map/empty"> <span class="t-lines"><span>trống</span></span></a></div> </td> <td>Kiểm tra xem container có trống không<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/size" title="cpp/container/map/size"> <span class="t-lines"><span>kích cỡ</span></span></a></div> </td> <td>trả về một trình lặp đến cuối<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/max_size" title="cpp/container/map/max size"> <span class="t-lines"><span>trả về một trình lặp ngược lại cho đầu</span></span></a></div> </td> <td>trả về một trình lặp ngược về cuối<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Modifiers">Sửa đổi</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/clear" title="cpp/container/map/clear"> <span class="t-lines"><span>thông thoáng</span></span></a></div> </td> <td>gán một loạt các giá trị cho container<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/insert" title="cpp/container/map/insert"> <span class="t-lines"><span>get_allocator</span></span></a></div> </td> <td>Trả về người phân bổ liên quan<span class="t-rev-inl t-since-cxx17"><span>, các trình lặp lại có thể điều chỉnh được</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/insert_range" title="cpp/container/map/insert range"> <span class="t-lines"><span>thu hẹp_to_fit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Dr*<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/insert_or_assign" title="cpp/container/map/insert or assign"> <span class="t-lines"><span>gán các giá trị cho bộ điều hợp container</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Kiểm tra xem bộ điều hợp container có trống không<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/emplace" title="cpp/container/map/emplace"> <span class="t-lines"><span>Giảm sử dụng bộ nhớ bằng cách giải phóng bộ nhớ không sử dụng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xóa nội dung<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/emplace_hint" title="cpp/container/map/emplace hint"> <span class="t-lines"><span>so sánh</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>(riêng tư)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/try_emplace" title="cpp/container/map/try emplace"> <span class="t-lines"><span>đối tượng hàm so sánh của loại</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Đối tượng thành viên chỉ dành cho người biểu diễn*<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/erase" title="cpp/container/map/erase"> <span class="t-lines"><span>Prepend_range</span></span></a></div> </td> <td>chèn các yếu tố<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/swap" title="cpp/container/map/swap"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>Trả về số lượng phần tử tối đa có thể<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/extract" title="cpp/container/map/extract"> <span class="t-lines"><span>Emplace_Hint</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>, với<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/merge" title="cpp/container/map/merge"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(ít nhất là lớn nhất nếu sử dụng so sánh mặc định).<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Lookup">Tra cứu</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/count" title="cpp/container/map/count"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>chèn_or_assign<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/find" title="cpp/container/map/find"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>Chèn tại chỗ nếu khóa không tồn tại, không làm gì nếu khóa tồn tại<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/contains" title="cpp/container/map/contains"> <span class="t-lines"><span>                           Forwardit2 first2, forwardit2 last2,</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Chèn một phần tử hoặc gán cho phần tử hiện tại nếu khóa đã tồn tại<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/equal_range" title="cpp/container/map/equal range"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/lower_bound" title="cpp/container/map/lower bound"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>(C ++ 20)<i>Trả một trình lặp lại cho phần tử đầu tiên</i>Các chức năng nên được ưa thích.<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/upper_bound" title="cpp/container/map/upper bound"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>(C ++ 20)<i>Trả một trình lặp lại cho phần tử đầu tiên</i>Các chức năng nên được ưa thích.<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Observers">Quan sát viên</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/key_comp" title="cpp/container/map/key comp"> <span class="t-lines"><span>Chiết xuất</span></span></a></div> </td> <td>Trích xuất các thùng chứa cơ bản<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/value_comp" title="cpp/container/map/value comp"> <span class="t-lines"><span>Thay thế các thùng chứa cơ bản</span></span></a></div> </td> <td>Tìm phần tử với khóa cụ thể<code>value_type</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <h3 id="Non-member_functions">Các chức năng không phải thành viên</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="map/operator_cmp" title="cpp/container/map/operator cmp"> <span class="t-lines"><span>toán tử ==</span><span>toán tử! =</span><span>người vận hành*</span><span>toán tử &lt;=</span><span>toán tử&gt;</span><span>toán tử&gt; =</span><span>Nhà điều hành &lt;=&gt;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span></span><span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span></span><span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span></span><span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span></span><span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Hoạt động<code>maps</code> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/swap2" title="cpp/container/map/swap2"> <span class="t-lines"><span>chuyên về<span class="t-dsc-small">Thuật toán</span></span></span></a></div> </td> <td>quá tải<code><a href="../algorithm/swap" title="cpp/algorithm/swap">std::swap</a></code>Thuật toán<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="map/erase_if" title="cpp/container/map/erase if"> <span class="t-lines"><span>thêm một loạt các yếu tố vào đầu<span class="t-dsc-small">Thuật toán</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>pop_front<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <h3 id="Deduction_guides"> <a href="map/deduction_guides" title="cpp/container/map/deduction guides">Deduction guides</a>
+</h3> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_containers_ranges" title="cpp/feature test"><code>__cpp_lib_containers_ranges</code></a></td> <td><span class="nu0">và không trả lại gì.</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Xóa phần tử đầu tiên</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Yêu cầu, tính duy nhất được xác định bằng cách sử dụng quan hệ tương đương. Không chính xác, hai đối tượng</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">được coi là tương đương (không phải là duy nhất) nếu không so sánh ít hơn cái khác:</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue230" rel="nofollow">LWG 230</a> </td> <td>C ++ 98</td> <td>
+<code>Key</code>Thuật toán<a href="../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a><br/>Chìa khóa, t<code>Key</code>chuyên về</td> <td>
+<code>Key</code>Thuật toán<br/>{<a href="../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue464" rel="nofollow">LWG 464</a> </td> <td>C ++ 98</td> <td>một chuyên ngành của<code>map</code>đại diện cho một nút container</td> <td>
+<code>at</code>Loại mô tả kết quả của việc chèn một</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="unordered_map" title="cpp/container/unordered map"> <span class="t-lines"><span>unetered_map</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Bộ sưu tập các cặp giá trị khóa, được băm bởi các phím, phím là duy nhất<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/map">https://en.cppreference.com/w/cpp/container/map</a>
+</p>
+</div>

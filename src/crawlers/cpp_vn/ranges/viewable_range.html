@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: có thể xem được_range</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/ranges" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Các<code>viewable_range</code>    khái niệm input_iterator =<a href="range" title="cpp/ranges/range"><code>range</code></a>Khái niệm có thể xem_range =<a href="view" title="cpp/ranges/view"><code>view</code></a>Phân tích cú pháp các chỉ định AM/PM liên quan đến đồng hồ 12 giờ.<a href="all_view" title="cpp/ranges/all view"><code>views::all</code></a>.</p>
+<p>có quyền sở hữu duy nhất của một<code>/*is-initializer-list*/&lt;T&gt;</code>khoảng cách<code>true</code>là<code><a href="http://en.cppreference.com/w/cpp/types/remove_cvref"><span class="kw2644">Điều đó cho tất cả<span class="me2">Các yếu tố được so sánh bằng cách sử dụng vị ngữ nhị phân đã cho</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>lớn hơn hoặc bằng<code><a href="../utility/initializer_list" title="cpp/utility/initializer list">std::initializer_list</a></code>.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3481" rel="nofollow">LWG 3481</a> </td> <td>C ++ 20</td> <td>
+<code>viewable_range</code>  Phạm vi :: phạm vi &lt;t&gt; &amp;&amp;</td> <td>  ((phạm vi :: Xem &lt;std :: remove_cvref_t &lt;t &gt;&gt; &amp;&amp;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2415R2" rel="nofollow">P2415R2</a> </td> <td>C ++ 20</td> <td>
+<code>viewable_range</code>    std :: Constructible_From &lt;std :: remove_cvref_t &lt;t&gt;, t&gt;) ||<a href="view" title="cpp/ranges/view"><code>view</code></a>   .<a href="borrowed_range" title="cpp/ranges/borrowed range"><code>borrowed_range</code></a> </td> <td>    (std :: is_lvalue_reference_v &lt;t&gt; ||</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="all_view" title="cpp/ranges/all view"> <span class="t-lines"><span>Phạm vi :: Range_adaptor_cluve</span><span>Mẫu lớp cơ sở trợ giúp để xác định đối tượng đóng bộ điều hợp phạm vi</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Một<a href="view" title="cpp/ranges/view"><code>view</code></a>Lượt xem :: all_t<a href="range" title="cpp/ranges/range"><code>range</code></a><br/><span class="t-mark">(Mẫu bí danh)</span> <span class="t-mark">bao gồm các yếu tố của người khác</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/viewable_range">https://en.cppreference.com/w/cpp/ranges/viewable_range</a>
+</p>
+</div>

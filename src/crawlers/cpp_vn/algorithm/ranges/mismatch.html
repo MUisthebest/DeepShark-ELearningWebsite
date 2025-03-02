@@ -1,0 +1,42 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: không phù hợp, std :: phạm vi :: mismatch_result</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/algorithm" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-h"> <td>Chữ ký cuộc gọi</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;std :: input_iterator i1, std :: sentinel_for &lt;i1&gt; s1,</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">          std :: input_iterator i2, std :: sentinel_for &lt;i2&gt; s2,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-h"> <td>Mẫu &lt;phạm vi :: input_range r, std :: meally_incrementable o&gt;</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">          lớp pre = phạm vi :: carm_to,</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>[</code><code>first1</code><code>, </code><code>last1</code><code>)</code>hoặc<code>r1</code>std :: cặp &lt;inputit1, inputit2&gt;<code>[</code><code>first2</code><code>, </code><code>last2</code><code>)</code>hoặc<code>r2</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;class forwardit, lớp nhị phân&gt;<code>p</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>                                   Nhị phân p);<span class="t-v">(1)</span>Sử dụng<code>r</code>              std :: dự kiến ​​&lt;i, proj &gt;&gt; pre<code><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>r<span class="br0">)</span></code>(1,3)<code>first</code>Và<code><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/end"><span class="kw2884">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">kết thúc</span></span></a><span class="br0">.</span>r<span class="br0">)</span></code>(1,3)<code>last</code>.</div> <p>Mẫu &lt;phạm vi :: forward_range r, class proj = std :: nhận dạng,<i>          std :: Indirect_binary_predicate &lt;</i>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj&gt;,</p>
+<ul>
+<li>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; pre = ranges :: arem_to&gt;</li>
+<li>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>.</li>
+<li>    adjacent_find (r &amp;&amp; r, pre pre = {}, proj proj = {});<a href="../../language/unqualified_lookup" title="cpp/language/unqualified lookup">normal unqualified lookup</a>(Sau khi chiếu với phép chiếu<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>như phạm vi nguồn, như thể đang sử dụng</li>
+</ul> <p>Phạm vi ::</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Mẫu &lt;class execPolicy, class forwardit1, class forwardit2&gt;</td> <td>-</td> <td>Mẫu &lt;phạm vi :: input_range r1, phạm vi :: input_range r2,</td>
+</tr> <tr class="t-par"> <td>          lớp pre = phạm vi :: carm_to,</td> <td>-</td> <td>Bool Equal (Chính sách thực thi &amp;&amp; chính sách,</td>
+</tr> <tr class="t-par"> <td>            Forwardit1 first1, forwardit1 last1,</td> <td>-</td> <td>          lớp pre = phạm vi :: carm_to,</td>
+</tr> <tr class="t-par"> <td>Yêu cầu (phạm vi :: forward_range &lt;r1&gt; |</td> <td>-</td> <td>            Forwardit2 first2, forwardit2 last2);</td>
+</tr> <tr class="t-par"> <td>Sao chép các yếu tố, nhưng được thực thi theo</td> <td>-</td> <td>Các thực thể giống như chức năng được mô tả trên trang này là</td>
+</tr> <tr class="t-par"> <td>                                    Phạm vi :: iterator_t &lt;r2&gt;,</td> <td>-</td> <td>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;</td>
+</tr> <tr class="t-par"> <td>constexpr bool ends_with (r1 &amp;&amp; r1, r2 &amp;&amp; r2, pred = {},</td> <td>-</td> <td>Yêu cầu STD :: Inone</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>ranges::mismatch_result</code>                        Inputit2 first2,</p>
+<p>std :: cặp &lt;forwardIt1, forwardIt2&gt;<code>last1</code>hoặc<code>last2</code>Yêu cầu STD :: Inone</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Nếu phạm vi trống.<code><a href="http://en.cppreference.com/w/cpp/algorithm/min"><span class="kw1646">Điều đó cho tất cả<span class="me2">(Niebloid)</span></span></a><span class="br0">.</span>last1 <span class="sy2">-</span> first1, last2 <span class="sy2">-</span> first2<span class="br0">)</span></code>constexpr bool bằng (r1 &amp;&amp; r1, r2 &amp;&amp; r2, pred = {},</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Consexpr -Mismatch_Result &lt;i1, i2&gt;</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>    không phù hợp (I1 First1, S1 Last1, I2 First2, S2 Last2,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">              PROD PRED = {}, proj1 proj1 = {}, proj2 proj2 = {});</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Mẫu &lt;phạm vi :: input_range r1, phạm vi :: input_range r2,</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="equal" title="cpp/algorithm/ranges/equal"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="find" title="cpp/algorithm/ranges/find"> <span class="t-lines"><span>(Mẫu chức năng)</span><span>Phạm vi :: Tìm</span><span>Phạm vi :: find_if</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="lexicographical_compare" title="cpp/algorithm/ranges/lexicographical compare"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<code>true</code>trả lại<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="search" title="cpp/algorithm/ranges/search"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../mismatch" title="cpp/algorithm/mismatch"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/ranges/mismatch">https://en.cppreference.com/w/cpp/algorithm/ranges/mismatch</a>
+</p>
+</div>

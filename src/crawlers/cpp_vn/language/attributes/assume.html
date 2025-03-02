@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">Thuộc tính C ++: Giả sử<span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span>
+</h1> <p>Chỉ định rằng một biểu thức sẽ luôn luôn đánh giá<code>true</code>Tại một điểm nhất định.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>[[assume(</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> <code>)]]</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>-</td> <td>Biểu thức phải đánh giá để<code>true</code> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Chỉ có thể được áp dụng cho một<a href="../statements#Expression_statements" title="cpp/language/statements">null statement</a>, như trong<code>[[assume(x &gt; 0)]];</code>. Tuyên bố này được gọi là<i>giả định</i>. Nếu biểu thức (chuyển đổi theo ngữ cảnh thành<code>bool</code>) sẽ không đánh giá<code>true</code>Tại nơi giả định xảy ra, hành vi không được xác định. Nếu không, tuyên bố không làm gì cả. Cụ thể, biểu thức không được đánh giá (nhưng nó vẫn là<a href="../expressions#Potentially-evaluated_expressions" title="cpp/language/expressions">potentially evaluated</a>).</p>
+<p>Mục đích của một giả định là cho phép tối ưu hóa trình biên dịch dựa trên thông tin được đưa ra.</p>
+<p>Biểu thức có thể không phải là một<a href="../operator_other#Built-in_comma_operator" title="cpp/language/operator other">comma operator</a>Biểu thức, nhưng bao quanh biểu thức trong ngoặc đơn sẽ cho phép người vận hành dấu phẩy được sử dụng.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Nếu biểu thức sẽ có hành vi không xác định hoặc nếu nó sẽ gây ra một ngoại lệ bị ném, thì nó không đánh giá<code>true</code>.</p>
+<p>Vì các giả định gây ra hành vi không xác định nếu chúng không giữ, nên chúng nên được sử dụng một cách tiết kiệm. Chúng không được dự định là một cơ chế để ghi lại các điều kiện tiên quyết của một hàm hoặc để chẩn đoán vi phạm các điều kiện tiên quyết. Ngoài ra, nó không nên được cho là, mà không kiểm tra, rằng trình biên dịch thực sự sử dụng bất kỳ giả định cụ thể nào.</p>
+<h3 id="Example">Ví dụ</h3> <div class="cpp source-cpp"><pre data-language="cpp">void f (int &amp; x, int y)</pre></div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>{</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../utility/unreachable" title="cpp/utility/unreachable"> <span class="t-lines"><span>không thể truy cập</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Đánh dấu điểm thực thi không thể truy cập<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr style="vertical-align:top;"> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính</td> <td>    void g (int);<a class="external text" href="https://clang.llvm.org/docs/LanguageExtensions.html#langext-builtin-assume" rel="nofollow"><code>__builtin_assume</code></a>.</td>
+</tr> <tr style="vertical-align:top;"> <td># Xác định mất giá (MSG) [[không dùng nữa (MSG)]]]]</td> <td>    khoảng trống h ();<a class="external text" href="https://clang.llvm.org/docs/AttributeReference.html#assume" rel="nofollow"><code>assume</code></a>.</td>
+</tr> <tr style="vertical-align:top;"> <td>đơn đặt hàng tổng số sửa đổi</td> <td> <a class="external text" href="https://learn.microsoft.com/en-us/cpp/intrinsics/assume" rel="nofollow"><code>__assume</code></a>    [[Giả sử (x&gt; 0)]]; // trình biên dịch có thể giả sử x là dương</td>
+</tr> <tr style="vertical-align:top;"> <td>Chính thức,</td> <td> <a class="external text" href="https://gcc.gnu.org/onlinedocs/gcc/Statement-Attributes.html#index-assume-statement-attribute" rel="nofollow"><code>__attribute__((assume(...)))</code></a>.</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/attributes/assume">https://en.cppreference.com/w/cpp/language/attributes/assume</a>
+</p>
+</div>

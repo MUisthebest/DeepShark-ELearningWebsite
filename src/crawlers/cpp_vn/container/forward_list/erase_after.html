@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">std :: forward_list &lt;t, allocator&gt; :: erase_after</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iterator erase_After (const_iterator pos);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iterator erase_After (const_iterator đầu tiên, const_iterator cuối cùng);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Loại bỏ các phần tử được chỉ định khỏi container.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Loại bỏ phần tử sau<code>pos</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Loại bỏ các yếu tố sau<code>first</code>cho đến khi<code>last</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>Trình lặp vào phần tử trước phần tử để xóa</td>
+</tr> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>Phạm vi của các yếu tố để loại bỏ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Người lặp lại phần tử theo phần bị xóa, hoặc<code><a href="end" title="cpp/container/forward list/end">end()</a></code>Nếu không có yếu tố như vậy tồn tại.</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>last</code>
+</div> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <div class="t-li1">
+<span class="t-li">1)</span>trình rút vào các yếu tố để hoán đổi</div> <div class="t-li1">
+<span class="t-li">2)</span>Danh sách khởi tạo để sao chép các giá trị từ<code>first</code>Và<code>last</code>.</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Timoning_list&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="clear" title="cpp/container/forward list/clear"> <span class="t-lines"><span>thông thoáng</span></span></a></div> </td> <td>gán một loạt các giá trị cho container<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/forward_list/erase_after">https://en.cppreference.com/w/cpp/container/forward_list/erase_after</a>
+</p>
+</div>

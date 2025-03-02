@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: match_results &lt;bidirit, alloc&gt; :: toán tử []</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">toán tử const_reference [] (size_type n) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Nếu như<code>n &gt; 0</code>Và<code>n &lt; size()</code>, trả về một tham chiếu đến<code><a href="../sub_match" title="cpp/regex/sub match">std::sub_match</a></code>đại diện cho phần của chuỗi mục tiêu được khớp với<code>n</code><sup>phần tử đầu vào trong I</sup>bị bắt<a href="../ecmascript#Sub-expressions" title="cpp/regex/ecmascript">marked subexpression</a>).</p>
+<p>Nếu như<code>n == 0</code>, trả về một tham chiếu đến<code><a href="../sub_match" title="cpp/regex/sub match">std::sub_match</a></code>đại diện cho phần của chuỗi mục tiêu phù hợp với toàn bộ biểu thức chính quy phù hợp.</p>
+<p>nếu như<code>n &gt;= size()</code>, trả về một tham chiếu đến một<code><a href="../sub_match" title="cpp/regex/sub match">std::sub_match</a></code>đại diện cho một biểu thức phụ chưa từng có (một subrange trống của chuỗi mục tiêu).</p>
+<p>Hành vi của các chức năng này không được xác định trừ khi các diễn viên tương ứng từ<code>ready() == true</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>số tích phân chỉ định kết hợp để trả về</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Tham chiếu đến<code><a href="../sub_match" title="cpp/regex/sub match">std::sub_match</a></code>đại diện cho subrange phù hợp được chỉ định trong chuỗi mục tiêu.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;regex&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="str" title="cpp/regex/match results/str"> <span class="t-lines"><span>STR</span></span></a></div> </td> <td>Bidirit<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/match_results/operator_at">https://en.cppreference.com/w/cpp/regex/match_results/operator_at</a>
+</p>
+</div>

@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử &lt;&lt;, &gt;&gt;<small>(STD ::</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;biểu đồ lớp, đặc điểm lớp&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Friend std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>    toán tử &lt;&lt; (std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; OST, <code>d</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Ghi một biểu diễn văn bản của các tham số phân phối và trạng thái nội bộ để<code>ost</code>                const ermonential_distribution &amp; d);<code>ost</code>Mẫu &lt;biểu đồ lớp, đặc điểm lớp&gt;</div> <div class="t-li1">
+<span class="t-li">2)</span>Khôi phục các tham số phân phối và trạng thái nội bộ với dữ liệu được đọc từ<code>ist</code>. Các cờ định dạng của<code>ist</code>không thay đổi. Dữ liệu phải được viết bằng cách sử dụng một luồng có cùng một địa điểm,<code>CharT</code>Và<code>Traits</code>Friend std :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp;<code>ist.setstate(std::ios::failbit)</code>được gọi, có thể ném<code><a href="../../../io/ios_base/failure" title="cpp/io/ios base/failure">std::ios_base::failure</a></code>.<code>d</code>    Nhà điều hành &gt;&gt; (STD :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp; ist, </div> <p>(tức là cả hai<a href="../../../language/unqualified_lookup" title="cpp/language/unqualified lookup">unqualified</a>hoặc<a href="../../../language/qualified_lookup" title="cpp/language/qualified lookup">qualified lookup</a>Chức năng này không thể nhìn thấy thông thường<a href="../../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>Chuyển đổi danh tính:<code>std::exponential_distribution&lt;ResultType&gt;</code>Hương hiệu nút</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>                Cơ bản_distribution &amp; d);</td> <td>-</td> <td>Thực hiện các hoạt động đầu vào và đầu ra trên phân phối số giả ngẫu nhiên</td>
+</tr> <tr class="t-par"> <td>như đại diện văn bản. Các cờ định dạng và nhân vật điền vào</td> <td>-</td> <td>Thực hiện các hoạt động đầu vào ký tự.</td>
+</tr> <tr class="t-par"> <td>d</td> <td>-</td> <td>không thay đổi.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>ost</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>ist</code>
+</div> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1)</span>Có thể ném các trường hợp ngoại lệ do thực hiện.</div> <div class="t-li1">
+<span class="t-li">2)</span>Sao chép hàm tạo. Nếu như<code><a href="../../../io/ios_base/failure" title="cpp/io/ios base/failure">std::ios_base::failure</a></code>tham số mẫu, nếu không hành vi không được xác định. Nếu gặp phải đầu vào xấu,</div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3519" rel="nofollow">LWG 3519</a> </td> <td>C ++ 11</td> <td>không thay đổi trong trường hợp đó.<br/>OST</td> <td>Hình thức của các nhà khai thác bình đẳng đã không được xác định</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/random/exponential_distribution/operator_ltltgtgt">https://en.cppreference.com/w/cpp/numeric/random/exponential_distribution/operator_ltltgtgt</a>
+</p>
+</div>

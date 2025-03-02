@@ -1,0 +1,176 @@
+ <h1 class="firstHeading" id="firstHeading">Các triển khai tự do và lưu trữ</h1> <p>Có hai loại triển khai được xác định bởi tiêu chuẩn C ++:<i><b>đã lưu trữ</b></i>Và<i><b>tự do</b></i>thực hiện. Vì<i>đã lưu trữ</i>triển khai, tập hợp các tiêu đề thư viện tiêu chuẩn theo yêu cầu của tiêu chuẩn C ++ lớn hơn nhiều so với<i>tự do</i>những người. Trong a<i>tự do</i>Thực hiện, thực thi có thể xảy ra mà không có hệ điều hành.</p>
+<p>Các loại thực hiện được xác định bằng thực hiện.<span class="t-rev-inl t-since-cxx11"><span>Vĩ mô<code>__STDC_HOSTED__</code>được xác định trước<code>1</code>cho các triển khai được lưu trữ và<code>0</code>cho việc thực hiện độc lập.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span></p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <h3 id="Requirements_on_multi-threaded_executions_and_data_races">Yêu cầu trên<a href="language/memory_model" title="cpp/language/memory model">multi-threaded executions and data races</a>
+</h3> <table> <tr> <th> <i>tự do</i> </th> <th> <i>đã lưu trữ</i> </th>
+</tr> <tr> <td>Dưới a<i>tự do</i>thực hiện, nó được xác định là một chương trình có thể có nhiều hơn một<a href="thread" title="cpp/thread">thread of execution</a>.</td> <td>Dưới a<i>đã lưu trữ</i>triển khai, một chương trình C ++ có thể có nhiều hơn một<a href="thread" title="cpp/thread">thread</a>Chạy đồng thời.</td>
+</tr>
+</table> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Requirements_on_the_main_function">Yêu cầu về<a href="language/main_function" title="cpp/language/main function"><code>main</code></a>chức năng</h3> <table> <tr> <th> <i>tự do</i> </th> <th> <i>đã lưu trữ</i> </th>
+</tr> <tr> <td>Trong a<i>tự do</i>thực hiện, nó được xác định là do một chương trình được yêu cầu để xác định<a href="language/main_function" title="cpp/language/main function"><code>main</code></a>chức năng. Khởi nghiệp và chấm dứt được xác định thực hiện; Khởi nghiệp chứa việc thực hiện<a href="language/constructor" title="cpp/language/constructor">constructors</a>cho các đối tượng của<a href="language/scope#Namespace_scope" title="cpp/language/scope">namespace scope</a>với thời gian lưu trữ tĩnh; chấm dứt chứa việc thực hiện<a href="language/destructor" title="cpp/language/destructor">destructors</a>Đối với các đối tượng có tĩnh<a href="language/storage_duration" title="cpp/language/storage duration">storage duration</a>.</td> <td>Trong a<i>đã lưu trữ</i>thực hiện, một chương trình phải chứa một chức năng toàn cầu được gọi là<a href="language/main_function" title="cpp/language/main function"><code>main</code></a>. Thực hiện một chương trình bắt đầu một chính<a href="thread" title="cpp/thread">thread of execution</a>trong đó<code>main</code>chức năng được gọi và trong đó các biến tĩnh<a href="language/storage_duration" title="cpp/language/storage duration">storage duration</a>có thể được khởi tạo và phá hủy.</td>
+</tr>
+</table> <h3 id="Requirements_on_standard_library_headers">Yêu cầu trên<a href="index" title="cpp/header">standard library headers</a>
+</h3> <p>MỘT<i>tự do</i>Việc thực hiện có một bộ tiêu đề được xác định bằng triển khai. Bộ này bao gồm ít nhất các tiêu đề trong bảng sau.</p>
+<p>Đối với các tiêu đề tự do một phần, việc triển khai tự do chỉ cần cung cấp một phần của các thực thể trong bản tóm tắt tương ứng:</p>
+<ul><li>Nếu một thực thể được bình luận<span class="co1">// Tự do</span>, nó được đảm bảo được cung cấp.</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul><li>Nếu một thực thể (mẫu chức năng hoặc mẫu chức năng) được nhận xét<span class="co1">// Tự do-bị-Xuất bản</span>, nó được đảm bảo là được cung cấp hoặc xóa.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <table class="wikitable sortable"> <caption style="padding:6px;">Các tiêu đề cần thiết cho việc thực hiện độc lập</caption> <tr> <th>Thư viện</th> <th>Thành phần</th> <th>Tiêu đề</th> <th>Tự do</th>
+</tr> <tr> <td rowspan="13">
+<a href="utility#Language_support" title="cpp/utility">Language support</a> </td> <td>Định nghĩa chung</td> <td>
+<a href="header/cstddef" title="cpp/header/cstddef"><code>&lt;cstddef&gt;</code></a> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>C Thư viện tiêu chuẩn</td> <td>
+<a href="header/cstdlib" title="cpp/header/cstdlib"><code>&lt;cstdlib&gt;</code></a> </td> <td class="table-maybe">Một phần</td>
+</tr> <tr> <td>Thuộc tính thực hiện</td> <td>
+<a href="header/cfloat" title="cpp/header/cfloat"><code>&lt;cfloat&gt;</code></a><br/><a href="header/climits" title="cpp/header/climits"><code>&lt;climits&gt;</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><a href="header/limits" title="cpp/header/limits"><code>&lt;limits&gt;</code></a><br/><a href="header/version" title="cpp/header/version"><code>&lt;version&gt;</code></a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Các loại số nguyên</td> <td>
+<a href="header/cstdint" title="cpp/header/cstdint"><code>&lt;cstdint&gt;</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Quản lý bộ nhớ động</td> <td>
+<a href="header/new" title="cpp/header/new"><code>&lt;new&gt;</code></a> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Nhận dạng loại</td> <td>
+<a href="header/typeinfo" title="cpp/header/typeinfo"><code>&lt;typeinfo&gt;</code></a> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Vị trí nguồn</td> <td>
+<a href="header/source_location" title="cpp/header/source location"><code>&lt;source_location&gt;</code></a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Xử lý ngoại lệ</td> <td>
+<a href="header/exception" title="cpp/header/exception"><code>&lt;exception&gt;</code></a> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Danh sách khởi tạo</td> <td>
+<a href="header/initializer_list" title="cpp/header/initializer list"><code>&lt;initializer_list&gt;</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>So sánh</td> <td>
+<a href="header/compare" title="cpp/header/compare"><code>&lt;compare&gt;</code></a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Coroutines hỗ trợ</td> <td>
+<a href="header/coroutine" title="cpp/header/coroutine"><code>&lt;coroutine&gt;</code></a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Hỗ trợ thời gian chạy khác</td> <td>
+<a href="header/cstdarg" title="cpp/header/cstdarg"><code>&lt;cstdarg&gt;</code></a> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Hỗ trợ gỡ lỗi</td> <td>
+<a href="header/debugging" title="cpp/header/debugging"><code>&lt;debugging&gt;</code></a> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td colspan="2">
+<a href="concepts" title="cpp/concepts">Concepts</a> </td> <td>
+<a href="header/concepts" title="cpp/header/concepts"><code>&lt;concepts&gt;</code></a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td rowspan="2">
+<a href="error" title="cpp/error">Diagnostics</a> </td> <td>Số lỗi</td> <td>
+<a href="header/cerrno" title="cpp/header/cerrno"><code>&lt;cerrno&gt;</code></a> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> <td class="table-maybe">Một phần</td>
+</tr> <tr> <td>Hỗ trợ lỗi hệ thống</td> <td>
+<a href="header/system_error" title="cpp/header/system error"><code>&lt;system_error&gt;</code></a> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> <td class="table-maybe">Một phần</td>
+</tr> <tr> <td>
+<a href="memory" title="cpp/memory">Memory management</a> </td> <td>Ký ức</td> <td>
+<a href="header/memory" title="cpp/header/memory"><code>&lt;memory&gt;</code></a> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td class="table-maybe">Một phần</td>
+</tr> <tr> <td rowspan="2">
+<a href="meta" title="cpp/meta">Metaprogramming</a> </td> <td>Loại đặc điểm</td> <td>
+<a href="header/type_traits" title="cpp/header/type traits"><code>&lt;type_traits&gt;</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Biên dịch số học hợp lý thời gian</td> <td>
+<a href="header/ratio" title="cpp/header/ratio"><code>&lt;ratio&gt;</code></a> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td rowspan="5">
+<a href="utility#General-purpose_utilities" title="cpp/utility">General utilities</a> </td> <td>Các thành phần tiện ích</td> <td>
+<a href="header/utility" title="cpp/header/utility"><code>&lt;utility&gt;</code></a> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Tổng</td> <td>
+<a href="header/tuple" title="cpp/header/tuple"><code>&lt;tuple&gt;</code></a> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td>Các đối tượng chức năng</td> <td>
+<a href="header/functional" title="cpp/header/functional"><code>&lt;functional&gt;</code></a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td class="table-maybe">Một phần</td>
+</tr> <tr> <td>Chuyển đổi số nguyên thủy</td> <td>
+<a href="header/charconv" title="cpp/header/charconv"><code>&lt;charconv&gt;</code></a> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> <td class="table-maybe">Một phần</td>
+</tr> <tr> <td>Thao túng bit</td> <td>
+<a href="header/bit" title="cpp/header/bit"><code>&lt;bit&gt;</code></a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td class="table-yes">Tất cả</td>
+</tr> <tr> <td rowspan="2">
+<a href="string" title="cpp/string">Strings</a> </td> <td>Lớp chuỗi</td> <td>
+<a href="header/string" title="cpp/header/string"><code>&lt;string&gt;</code></a> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> <td class="table-maybe">Một phần</td>
+</tr> <tr> <td>Null-chấm dứt<br/>Tiện ích trình tự</td> <td>
+<a href="header/cstring" title="cpp/header/cstring"><code>&lt;cstring&gt;</code></a> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span><br/><a href="header/cwchar" title="cpp/header/cwchar"><code>&lt;cwchar&gt;</code></a> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> <td class="table-maybe">Một phần</td>
+</tr> <tr> <td colspan="2">
+<a href="iterator" title="cpp/iterator">Iterators</a> </td> <td>
+<a href="header/iterator" title="cpp/header/iterator"><code>&lt;iterator&gt;</code></a> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td class="table-maybe">Một phần</td>
+</tr> <tr> <td colspan="2">
+<a href="ranges" title="cpp/ranges">Ranges</a> </td> <td>
+<a href="header/ranges" title="cpp/header/ranges"><code>&lt;ranges&gt;</code></a> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td class="table-maybe">Một phần</td>
+</tr> <tr> <td>
+<a href="numeric" title="cpp/numeric">Numerics</a> </td> <td>Chức năng toán học<br/>Đối với các loại dấu phẩy động</td> <td>
+<a href="header/cmath" title="cpp/header/cmath"><code>&lt;cmath&gt;</code></a> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> <td class="table-maybe">Một phần</td>
+</tr> <tr> <td>
+<a href="thread" title="cpp/thread">Concurrency support</a> </td> <td>Nguyên tử</td> <td>
+<a href="header/atomic" title="cpp/header/atomic"><code>&lt;atomic&gt;</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td class="table-yes">Tất cả<sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> </td>
+</tr> <tr> <td colspan="2">
+<b>Phản đối</b>tiêu đề</td> <td>
+<a href="header/ciso646" title="cpp/header/ciso646"><code>&lt;ciso646&gt;</code></a> <span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span><br/><a href="header/cstdalign" title="cpp/header/cstdalign"><code>&lt;cstdalign&gt;</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> <br/><a href="header/cstdbool" title="cpp/header/cstdbool"><code>&lt;cstdbool&gt;</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> <td class="table-yes">Tất cả</td>
+</tr>
+</table> <ol class="references"> <li id="cite_note-1"> <span class="reference-text"><span class="t-rev-inl t-since-cxx20"><span>Hỗ trợ cho các loại nguyên tử tích phân luôn không khóa và sự hiện diện của các bí danh loại<code><a href="atomic/atomic" title="cpp/atomic/atomic">std::atomic_signed_lock_free</a></code>Và<code><a href="atomic/atomic" title="cpp/atomic/atomic">std::atomic_unsigned_lock_free</a></code>được thực hiện được xác định trong một triển khai tự do.</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span></span> </li> </ol> <h3 id="Notes">Ghi chú</h3> <p>Một số nhà cung cấp trình biên dịch có thể không hỗ trợ đầy đủ việc thực hiện tự do. Ví dụ, GCC Libstdc ++ đã có các vấn đề thực hiện và xây dựng trước phiên bản 13, trong khi LLVM LIBCXX và MSVC STL không hỗ trợ tự do.</p>
+<p>Trong C ++ 23, nhiều tính năng được thực hiện tự do với các tiêu đề một phần. Tuy nhiên, nó vẫn còn để thảo luận trong WG21 liệu một số tiêu đề sẽ được tự do trong các tiêu chuẩn trong tương lai. Bất kể, container thích<code><a href="container/vector" title="cpp/container/vector">vector</a></code>Thì<code><a href="container/list" title="cpp/container/list">list</a></code>Thì<code><a href="container/deque" title="cpp/container/deque">deque</a></code>, Và<code><a href="container/map" title="cpp/container/map">map</a></code>sẽ không bao giờ được tự do do sự phụ thuộc của họ vào các trường hợp ngoại lệ và đống.</p>
+<p>GCC 13 cung cấp nhiều tiêu đề hơn, chẳng hạn như<a href="header/optional" title="cpp/header/optional"><code>&lt;optional&gt;</code></a>Thì<a href="header/span" title="cpp/header/span"><code>&lt;span&gt;</code></a>Thì<a href="header/array" title="cpp/header/array"><code>&lt;array&gt;</code></a>, Và<a href="header/bitset" title="cpp/header/bitset"><code>&lt;bitset&gt;</code></a>, đối với tự do, mặc dù các tiêu đề này có thể không di động hoặc cung cấp các khả năng giống như một triển khai được lưu trữ. Tốt hơn là tránh sử dụng chúng trong môi trường tự do, ngay cả khi công cụ cung cấp cho họ.</p>
+<table class="wikitable sortable ftm-begin ftm-has-value"> <tr> <th>
+<a href="utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_feature_test_macros" title="cpp/feature test"><code>__cpp_lib_freestanding_feature_test_macros</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>Macro kiểm tra tính năng độc lập</td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_algorithm" title="cpp/feature test"><code>__cpp_lib_freestanding_algorithm</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/algorithm" title="cpp/header/algorithm"><code>&lt;algorithm&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_array" title="cpp/feature test"><code>__cpp_lib_freestanding_array</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/array" title="cpp/header/array"><code>&lt;array&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_char_traits" title="cpp/feature test"><code>__cpp_lib_freestanding_char_traits</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<code><a href="string/char_traits" title="cpp/string/char traits">std::char_traits</a></code> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_charconv" title="cpp/feature test"><code>__cpp_lib_freestanding_charconv</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/charconv" title="cpp/header/charconv"><code>&lt;charconv&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_cstdlib" title="cpp/feature test"><code>__cpp_lib_freestanding_cstdlib</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/cstdlib" title="cpp/header/cstdlib"><code>&lt;cstdlib&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_cstring" title="cpp/feature test"><code>__cpp_lib_freestanding_cstring</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/cstring" title="cpp/header/cstring"><code>&lt;cstring&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_cwchar" title="cpp/feature test"><code>__cpp_lib_freestanding_cwchar</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/cwchar" title="cpp/header/cwchar"><code>&lt;cwchar&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_errc" title="cpp/feature test"><code>__cpp_lib_freestanding_errc</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<code><a href="error/errc" title="cpp/error/errc">std::errc</a></code> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_expected" title="cpp/feature test"><code>__cpp_lib_freestanding_expected</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/expected" title="cpp/header/expected"><code>&lt;expected&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_functional" title="cpp/feature test"><code>__cpp_lib_freestanding_functional</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/functional" title="cpp/header/functional"><code>&lt;functional&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_iterator" title="cpp/feature test"><code>__cpp_lib_freestanding_iterator</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/iterator" title="cpp/header/iterator"><code>&lt;iterator&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_mdspan" title="cpp/feature test"><code>__cpp_lib_freestanding_mdspan</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/mdspan" title="cpp/header/mdspan"><code>&lt;mdspan&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_memory" title="cpp/feature test"><code>__cpp_lib_freestanding_memory</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/memory" title="cpp/header/memory"><code>&lt;memory&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_numeric" title="cpp/feature test"><code>__cpp_lib_freestanding_numeric</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/numeric" title="cpp/header/numeric"><code>&lt;numeric&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_optional" title="cpp/feature test"><code>__cpp_lib_freestanding_optional</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/optional" title="cpp/header/optional"><code>&lt;optional&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_ranges" title="cpp/feature test"><code>__cpp_lib_freestanding_ranges</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/ranges" title="cpp/header/ranges"><code>&lt;ranges&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_ratio" title="cpp/feature test"><code>__cpp_lib_freestanding_ratio</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/ratio" title="cpp/header/ratio"><code>&lt;ratio&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_string_view" title="cpp/feature test"><code>__cpp_lib_freestanding_string_view</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/string_view" title="cpp/header/string view"><code>&lt;string_view&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_tuple" title="cpp/feature test"><code>__cpp_lib_freestanding_tuple</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/tuple" title="cpp/header/tuple"><code>&lt;tuple&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_utility" title="cpp/feature test"><code>__cpp_lib_freestanding_utility</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/utility" title="cpp/header/utility"><code>&lt;utility&gt;</code></a> </td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_freestanding_variant" title="cpp/feature test"><code>__cpp_lib_freestanding_variant</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<a href="header/variant" title="cpp/header/variant"><code>&lt;variant&gt;</code></a> </td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul>
+<li>4.1 Tuân thủ thực hiện [Intro.compliance] (p: 10)</li>
+<li>6.9.2 Các thực thi và chủng tộc dữ liệu đa luồng [Intro.MultithRead] (p: 84)</li>
+<li>6.9.3.1 Chức năng chính [basic.start.main] (p: 89)</li>
+<li>16.4.2.5 Thực hiện tự do [Tuân thủ] (p: 483)</li>
+</ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul>
+<li>4.1 Tuân thủ thực hiện [Intro.compliance] (p: 7)</li>
+<li>6.9.2 Các thực thi và chủng tộc dữ liệu đa luồng [Intro.MultithRead] (p: 77)</li>
+<li>6.9.3.1 Hàm chính [basic.start.main] (p: 82)</li>
+<li>16.5.1.3 Thực hiện tự do [Tuân thủ] (p: 470)</li>
+</ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul>
+<li>4.1 Tuân thủ thực hiện [Intro.compliance] (p: 5)</li>
+<li>4.7 Các thực thi và chủng tộc dữ liệu đa luồng [intro.MultithRead] (p: 15)</li>
+<li>6.6.1 Chức năng chính [basic.start.main] (p: 66)</li>
+<li>20.5.1.3 Thực hiện tự do [Tuân thủ] (p: 458)</li>
+</ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul>
+<li>1.4 Tuân thủ thực hiện [intro.compliance] (p: 5)</li>
+<li>1.10 Các thực thi và chủng tộc dữ liệu đa luồng [Intro.MultithRead] (p: 11)</li>
+<li>3.6.1 Chức năng chính [basic.start.main] (p: 62)</li>
+<li>17.6.1.3 Thực hiện tự do [Tuân thủ] (p: 441)</li>
+</ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul>
+<li>1.4 Tuân thủ thực hiện [intro.compliance] (p: 5)</li>
+<li>1.10 Các thực thi và chủng tộc dữ liệu đa luồng [Intro.MultithRead] (p: 11)</li>
+<li>3.6.1 Hàm chính [basic.start.main] (p: 58)</li>
+<li>17.6.1.3 Thực hiện tự do [Tuân thủ] (p: 408)</li>
+</ul>
+<li>Tiêu chuẩn C ++ 03 (ISO/IEC 14882: 2003):</li>
+<ul>
+<li>1.4 Tuân thủ thực hiện [intro.compliance] (p: 3)</li>
+<li>3.6.1 Hàm chính [basic.start.main] (p: 43)</li>
+<li>17.4.1.3 Thực hiện tự do [LIB.compliance] (p: 326)</li>
+</ul>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1938.html" rel="nofollow">CWG 1938</a> </td> <td>C ++ 98</td> <td>một triển khai không cần<br/>để ghi lại xem nó có được lưu trữ không</td> <td>thực hiện loại thực hiện thực hiện-<br/>được xác định (do đó yêu cầu một tài liệu)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3653" rel="nofollow">LWG 3653</a><br/>.<a class="external text" href="https://wg21.link/P1642R11" rel="nofollow">P1642R11</a>)</td> <td>C ++ 20</td> <td>
+<a href="header/coroutine" title="cpp/header/coroutine"><code>&lt;coroutine&gt;</code></a>là tự do, nhưng<br/>Sử dụng<code><a href="utility/hash" title="cpp/utility/hash">std::hash</a></code>mà không</td> <td>làm ra<a href="header/functional" title="cpp/header/functional"><code>&lt;functional&gt;</code></a>hiện tại<br/>tự do một phần</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/conformance" title="c/language/conformance">C documentation</a></span>vì<span class=""><span>Sự phù hợp</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/freestanding">https://en.cppreference.com/w/cpp/freestanding</a>
+</p>
+</div>

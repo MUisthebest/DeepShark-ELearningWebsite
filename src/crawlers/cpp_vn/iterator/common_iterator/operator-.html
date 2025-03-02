@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">Nhà điều hành- (STD :: Common_Iterator)</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;std :: cỡ_sentinel_for &lt;i&gt; i2, std :: cỡ_sentinel_for &lt;i&gt; s2&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>    Yêu cầu std :: cỡ_sentinel_for &lt;s, i2&gt;</p>
+<p>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code><i>Trình tự giống như.</i></code>bạn bè constexpr std :: iter_difference_t &lt;i2&gt;<code><a href="../../utility/variant" title="cpp/utility/variant">std::variant</a></code>    toán tử- (const common_iterator &amp; x, const std :: common_iterator &lt;i2, s2&gt; &amp; y);<code><a href="../common_iterator" title="cpp/iterator/common iterator">std::common_iterator</a></code>Tính khoảng cách giữa hai bộ điều hợp vòng lặp. Hai sentinels được coi là bằng nhau.<code>x</code>hoặc<code>y</code>biểu thị cơ bản<code>x.var.valueless_by_exception() || y.var.valueless_by_exception()</code>khoảng cách<code>true</code>.</p>
+<p>    toán tử &lt;&lt; (std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; os, const thư mục_entry &amp; d);<a href="../../language/unqualified_lookup" title="cpp/language/unqualified lookup">unqualified</a>hoặc<a href="../../language/qualified_lookup" title="cpp/language/qualified lookup">qualified lookup</a>Chức năng này không thể nhìn thấy thông thường<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>Chuyển đổi danh tính:<code>std::common_iterator&lt;I&gt;</code>Hương hiệu nút</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>std :: hoán đổi (x.map_, y.map_);</td> <td>-</td> <td>đối tượng thành viên trong</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <ul>
+<li> <code>​0​</code>nếu như<code>x.var</code>giữ một<code>S</code>, hành vi không xác định nếu một trong hai<code>y.var</code>giữ một<code>S2</code>không hợp lệ, tức là</li>
+<li>Là xấu nếu<code>alt_x - alt_y</code>là<code>alt_x</code>Và<code>alt_y</code>bộ điều hợp vòng lặp để tính toán sự khác biệt của<code>x.var</code>Và<code>y.var</code>đối tượng và</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Đối tượng, tức là cả hai đều giữ một sentinel.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">là các lựa chọn thay thế được tổ chức bởi</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3574" rel="nofollow">LWG 3574</a> </td> <td>C ++ 20</td> <td>
+<code>variant</code>các phép lặp để hoán đổi các yếu tố<code>common_iterator</code>#include &lt;THERTHERM&gt;</td> <td>#include &lt;Istream&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_arith" title="cpp/iterator/common iterator/operator arith"> <span class="t-lines"><span>fetch_or</span><span>fetch_or<span class="t-dsc-small">toán tử ++</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>có thể được sử dụng như một "cây cầu" giữa các chuỗi được thể hiện bởi cặp iterator/sentinel và các chức năng di sản mong đợi<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/common_iterator/operator-">https://en.cppreference.com/w/cpp/iterator/common_iterator/operator-</a>
+</p>
+</div>

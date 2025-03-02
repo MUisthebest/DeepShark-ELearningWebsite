@@ -1,0 +1,109 @@
+ <h1 class="firstHeading" id="firstHeading">Chuyển đổi số học thông thường</h1> <p>Nhiều nhà khai thác nhị phân mong đợi các hoạt động của<a href="type" title="cpp/language/type">arithmetic</a>hoặc<a href="enum" title="cpp/language/enum">enumeration</a>Loại gây ra chuyển đổi và loại kết quả năng suất theo cách tương tự. Mục đích là để mang lại một loại chung, cũng là loại kết quả. Mô hình này được gọi là<i>(nhưng không phải cả hai) là một (có thể là dấu ngoặc đơn)</i>.</p>
+<h3 id="Definition">Sự định nghĩa</h3> <p>Chuyển đổi số học thông thường được định nghĩa như sau:</p>
+<h4 id="Stage_1">Giai đoạn 1</h4> <p>                    Giảm khóm,<a href="implicit_conversion#Lvalue-to-rvalue_conversion" title="cpp/language/implicit conversion">lvalue-to-rvalue conversion</a>Đối với cả hai toán hạng, các prvalues ​​kết quả được sử dụng thay cho các toán hạng ban đầu cho quá trình còn lại.</p>
+<h4 id="Stage_2">Giai đoạn 2</h4> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>Nếu một trong hai toán hạng là của<a href="enum#Scoped_enumerations" title="cpp/language/enum">scoped enumeration type</a>, không có chuyển đổi nào được thực hiện; Nếu toán hạng khác không có cùng loại, biểu thức không được hình thành.</li>
+<li>Nếu không, tiến tới giai đoạn tiếp theo.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Stage_3">Giai đoạn 3</h4> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul>
+<li>Nếu một trong hai toán hạng là của<a href="enum" title="cpp/language/enum">enumeration type</a>và toán hạng khác thuộc loại bảng liệt kê khác hoặc loại dấu phẩy động, biểu thức là không hình thành.</li>
+<li>Nếu không, tiến tới giai đoạn tiếp theo.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <h4 id="Stage_4">Giai đoạn 4</h4> <ul>
+<li>Nếu một trong hai toán hạng là của<a href="types#Floating-point_types" title="cpp/language/types">floating-point type</a>, các quy tắc sau được áp dụng:</li>
+<ul>
+<li>Nếu cả hai toán hạng có cùng loại, không cần chuyển đổi thêm.</li>
+<li>Mặt khác, nếu một trong các toán hạng thuộc loại điểm không nổi, thì toán hạng đó được chuyển đổi thành loại toán hạng khác.</li>
+<li>Nếu không, nếu<a href="#Floating-point_conversion_rank">floating-point conversion ranks</a>của các loại toán hạng là<span class="t-rev-inl t-since-cxx23"><span>đặt hàng nhưng</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>Không bằng nhau, sau đó toán hạng của loại có thứ hạng chuyển đổi điểm nổi ít hơn được chuyển đổi thành loại của toán hạng khác.</li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul>
+<li>Mặt khác, nếu thứ hạng chuyển đổi điểm nổi của các loại toán hạng là bằng nhau, thì toán hạng có ít hơn<a href="#Floating-point_conversion_subrank">floating-point conversion subrank</a>được chuyển đổi thành loại của toán hạng khác.</li>
+<li>Nếu không, biểu thức là không hình thành.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <ul><li>Mặt khác, cả hai toán hạng đều thuộc loại số nguyên, tiến hành giai đoạn tiếp theo.</li></ul> <h4 id="Stage_5">Giai đoạn 5</h4> <p>Cả hai toán hạng được chuyển đổi thành một loại chung<code>C</code>. Cho các loại<code>T1</code>Và<code>T2</code>là loại được quảng bá (<a href="implicit_conversion#Integral_promotion" title="cpp/language/implicit conversion">under the rules of integral promotions</a>) của các toán hạng, các quy tắc sau được áp dụng để xác định<code>C</code>:</p>
+<ul>
+<li>Nếu như<code>T1</code>Và<code>T2</code>là cùng loại,<code>C</code>là loại đó.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>T1</code>Và<code>T2</code>Cả hai đều có chữ ký các loại số nguyên hoặc cả hai loại số nguyên không dấu,<code>C</code>là loại lớn hơn<a href="#Integer_conversion_rank">integer conversion rank</a>.</li>
+<li>Nếu không, một loại giữa<code>T1</code>Và<code>T2</code>là một loại số nguyên đã ký<code>S</code>, loại khác là một loại số nguyên không dấu<code>U</code>. Áp dụng các quy tắc follwing:</li>
+<ul>
+<li>Nếu thứ hạng chuyển đổi số nguyên của<code>U</code>lớn hơn hoặc bằng với thứ hạng chuyển đổi số nguyên của<code>S</code>Thì<code>C</code>khoảng cách<code>U</code>.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>S</code>có thể đại diện cho tất cả các giá trị của<code>U</code>Thì<code>C</code>khoảng cách<code>S</code>.</li>
+<li>Là xấu nếu<code>C</code>loại số nguyên không dấu tương ứng với<code>S</code>.</li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20 t-until-cxx26">
+<td> <p>Nếu một toán hạng thuộc loại liệt kê và toán hạng còn lại thuộc loại liệt kê khác hoặc loại dấu phẩy động, thì hành vi này sẽ không được chấp nhận.</p>
+</td> <td>
+<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span><br/><span class="t-mark-rev t-until-cxx26">(Cho đến C ++ 26)</span>
+</td>
+</tr> </table> <h3 id="Integer_conversion_rank">Xếp hạng chuyển đổi số nguyên</h3> <p>Không có mẫu nào được xác định trong<a href="types#Integer_types" title="cpp/language/types">integer type</a>có một<i>Xếp hạng chuyển đổi số nguyên</i>được định nghĩa như sau:</p>
+<ul>
+<li>Không có hai loại số nguyên đã ký khác ngoài<span class="kw4">char</span>Và<span class="kw4">STD</span> <span class="kw4">char</span> <span class="kw4">char</span>được ký) có cùng thứ hạng, ngay cả khi chúng có cùng một đại diện.</li>
+<li>Xếp hạng của một loại số nguyên đã ký là lớn hơn thứ hạng của bất kỳ loại số nguyên nào có chiều rộng với chiều rộng nhỏ hơn.</li>
+<li>Các cấp bậc của các loại số nguyên sau giảm theo thứ tự:</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <span class="kw4">dài</span> <span class="kw4">dài</span> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li> <span class="kw4">dài</span> </li>
+<li> <span class="kw4">int</span> </li>
+<li> <span class="kw4">STD</span> </li>
+<li> <span class="kw4">STD</span> <span class="kw4">char</span> </li>
+<li>Xếp hạng của bất kỳ loại số nguyên không dấu bằng cấp bậc của loại số nguyên đã ký tương ứng.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Thứ hạng của bất kỳ loại số nguyên tiêu chuẩn nào lớn hơn thứ hạng của bất kỳ loại số nguyên mở rộng nào có cùng chiều rộng.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>Thứ hạng của<span class="kw4">bool</span>ít hơn thứ hạng của tất cả các loại số nguyên tiêu chuẩn.</li>
+<li>Hàng ngũ của các loại ký tự mã hóa (<span class="kw4">char</span> <span class="t-rev-inl t-since-cxx20"><span>Thì<code>char8_t</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span><span class="t-rev-inl t-since-cxx11"><span>Thì<code>char16_t</code>Thì<code>char32_t</code>Thì</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Và<span class="kw4">wchar_t</span>) bằng với hàng ngũ của họ<a href="types#Character_types" title="cpp/language/types">underlying types</a>, có nghĩa là:</li>
+<ul><li>Thứ hạng của<span class="kw4">char</span>bằng với thứ hạng của<span class="kw4">STD</span> <span class="kw4">char</span>Và<span class="kw4">STD</span> <span class="kw4">char</span>.</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Thứ hạng của char8_t bằng với thứ hạng của<span class="kw4">STD</span> <span class="kw4">char</span>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>Thứ hạng của<span class="kw4">char16_t</span>bằng với thứ hạng của<code><a href="../types/integer" title="cpp/types/integer">std::uint_least16_t</a></code>.</li>
+<li>Thứ hạng của<span class="kw4">char32_t</span>bằng với thứ hạng của<code><a href="../types/integer" title="cpp/types/integer">std::uint_least32_t</a></code>.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>Thứ hạng của<span class="kw4">wchar_t</span>bằng với thứ hạng của loại cơ bản được xác định thực hiện của nó.</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Xếp hạng của bất kỳ loại số nguyên được ký kết mở rộng nào so với loại số nguyên được ký kết khác có cùng chiều rộng được xác định là thực hiện, nhưng vẫn tuân theo các quy tắc khác để xác định thứ hạng chuyển đổi số nguyên.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>Đối với tất cả các loại số nguyên<code>T1</code>Thì<code>T2</code>, Và<code>T3</code>Sử dụng chức năng nhị phân đã cho<code>T1</code>có thứ hạng lớn hơn<code>T2</code>Và<code>T2</code>có thứ hạng lớn hơn<code>T3</code>, sau đó<code>T1</code>có thứ hạng lớn hơn<code>T3</code>.</li></ul> <p>Thứ hạng chuyển đổi số nguyên cũng được sử dụng trong định nghĩa của<a href="implicit_conversion#Integral_promotion" title="cpp/language/implicit conversion">integral promotion</a>.</p>
+<h3 id="Floating-point_conversion_rank_and_subrank">Xếp hạng chuyển đổi điểm nổi và Subrank</h3> <h4 id="Floating-point_conversion_rank">Xếp hạng chuyển đổi điểm nổi</h4> <p>Không có mẫu nào được xác định trong<a href="types#Floating-point_types" title="cpp/language/types">floating-point type</a>Toán tử gán bản sao được xác định ngầm cho một lớp<i>Xếp hạng chuyển đổi điểm nổi</i>được định nghĩa như sau:</p>
+<ul><li>Các cấp bậc của các loại điểm nổi tiêu chuẩn giảm theo thứ tự:<ul>
+<li> <span class="kw4">dài</span> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </li>
+<li> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </li>
+<li> <span class="kw4">trôi nổi</span> </li>
+</ul> </li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul>
+<li>Thứ hạng của một loại điểm nổi<code>T</code>lớn hơn thứ hạng của bất kỳ loại điểm nổi nào có tập hợp các giá trị là một tập hợp con thích hợp của tập hợp các giá trị của<code>T</code>.</li>
+<li>Hai loại dấu phẩy động mở rộng với cùng một bộ giá trị có thứ hạng bằng nhau.</li>
+<li>Một loại dấu phẩy động mở rộng với cùng một bộ giá trị với chính xác một loại điểm nổi tiêu chuẩn CV-UNQUITED có thứ hạng bằng với thứ hạng của loại dấu phẩy động tiêu chuẩn đó.</li>
+<li>Một loại điểm nổi mở rộng với cùng một tập hợp các giá trị với nhiều hơn một loại điểm nổi tiêu chuẩn CV không đủ điều kiện có thứ hạng bằng với thứ hạng<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <h4 id="Floating-point_conversion_subrank">Subrank chuyển đổi điểm nổi</h4> <p>Các loại điểm nổi có xếp hạng chuyển đổi điểm nổi bằng nhau được đặt hàng bởi<i>Subrank chuyển đổi điểm nổi</i>. Subrank tạo thành tổng số đơn đặt hàng giữa các loại có cấp bậc bằng nhau.</p>
+<p>Các loại<code>std::float16_t</code>Thì<code>std::float32_t</code>Thì<code>std::float64_t</code>, Và<code>std::float128_t</code>.<a href="../types/floating-point" title="cpp/types/floating-point">fixed width floating-point types</a>) có một subrank chuyển đổi lớn hơn bất kỳ loại điểm nổi tiêu chuẩn nào với thứ hạng chuyển đổi bằng nhau. Mặt khác, thứ tự subrank chuyển đổi được xác định bằng cách thực hiện.</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h4 id="Usage">Cách sử dụng</h4> <p>Xếp hạng chuyển đổi điểm nổi và Subrank cũng được sử dụng để</p>
+<ul>
+<li>Xác định xem việc chuyển đổi giữa các loại dấu nổi khác nhau<a href="implicit_conversion#Floating-point_conversions" title="cpp/language/implicit conversion">can be implicit</a>};<a href="list_initialization#Narrowing_conversions" title="cpp/language/list initialization">narrowing conversion</a>Thì</li>
+<li> <a href="overload_resolution#Ranking_of_implicit_conversion_sequences" title="cpp/language/overload resolution">distinguish the conversion sequences</a>trong quá tải độ phân giải,</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul>
+<li>xác định loại thực tế được trích xuất bởi<a href="../locale/num_get/get" title="cpp/locale/num get/get"><code>std::num_get::get()</code></a>để trích xuất một loại dấu phẩy dài mở rộng bằng cách sử dụng<a href="../io/basic_istream/operator_gtgt" title="cpp/io/basic istream/operator gtgt"><code>std::basic_istream::operator&gt;&gt;</code></a>Thì</li>
+<li>xác định loại thực tế được chèn bởi<a href="../locale/num_put/put" title="cpp/locale/num put/put"><code>std::num_put::put()</code></a>để chèn một loại dấu phẩy dài mở rộng bằng cách sử dụng<a href="../io/basic_ostream/operator_ltlt" title="cpp/io/basic ostream/operator ltlt"><code>std::basic_ostream::operator&lt;&lt;</code></a>Thì</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <ul>
+<li>xác định xem<code><a href="../numeric/complex" title="cpp/numeric/complex">std::complex</a></code>                                   OUTPUTITIT D_FIRST, PRECEPREDATICATE P);<a href="../numeric/complex/complex" title="cpp/numeric/complex/complex">converting constructor</a>là rõ ràng, hoặc</li>
+<li>Xác định loại điểm nổi phổ biến nếu các đối số của các loại dấu nổi khác nhau được truyền đến<a href="../numeric/math" title="cpp/numeric/math">common</a>hoặc<a href="../numeric/special_functions" title="cpp/numeric/special functions">special</a>chức năng toán học.</li>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1642.html" rel="nofollow">CWG 1642</a> </td> <td>C ++ 98</td> <td>Chuyển đổi số học thông thường có thể liên quan đến lvalues</td> <td>Áp dụng chuyển đổi lvalue-sang rvalue đầu tiên</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2528.html" rel="nofollow">CWG 2528</a> </td> <td>C ++ 20</td> <td>so sánh ba chiều giữa<span class="kw4">STD</span> <span class="kw4">char</span><br/>Và<span class="kw4">STD</span> <span class="kw4">int</span>là xấu vì<br/>của chương trình khuyến mãi tích phân trung gian<sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> </td> <td>xác định loại chung dựa trên<br/>về các loại được quảng bá, không có<br/>thực sự quảng bá các toán hạng<sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup> </td>
+</tr>
+</table> <ol class="references"> <li id="cite_note-1"> <span class="reference-text">Trước khi giải quyết,<code>unsigned char</code>được thăng chức lên<code>int</code>Ở đầu giai đoạn 5, sau đó nó được chuyển đổi thành<code>unsigned int</code>. Tuy nhiên, việc chuyển đổi sau này được thu hẹp, điều này làm cho so sánh ba chiều không được hình thành.</span> </li> <li id="cite_note-2"> <span class="reference-text">Sau khi giải quyết, loại chung vẫn là<code>unsigned int</code>. Sự khác biệt là<code>unsigned char</code>được chuyển đổi trực tiếp thành<code>unsigned int</code>mà không cần quảng bá tích phân trung gian. Việc chuyển đổi không thu hẹp và do đó so sánh ba chiều được hình thành tốt.</span> </li> </ol> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/usual_arithmetic_conversions">https://en.cppreference.com/w/cpp/language/usual_arithmetic_conversions</a>
+</p>
+</div>

@@ -1,0 +1,41 @@
+ <h1 class="firstHeading" id="firstHeading">std :: laguerre, std :: laguerref, std :: laguerrel</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx23"> <td><pre data-language="cpp">float laguerre (không dấu int n, float x);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">gấp đôi laguerre (unsign int n, double x);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Laguerre dài đôi (không dấu int n, dài đôi x);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">/ *-điểm nổi-loại */ laguerre (không dấu int n,</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl-h"> <td> <a href="#Notes">Additional overloads</a>
+</td> <td></td> <td></td> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">                                    / *-điểm nổi kiểu */ x);</pre>
+</td> <td>, kết quả là hữu hạn.</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>float laguerref (unsign int n, float x);<a class="extiw" href="https://en.wikipedia.org/wiki/Laguerre_polynomials" title="enwiki:Laguerre polynomials">Laguerre polynomials</a>float PGS_laguerref (unsign int n, unsign int m, float x);<code>n</code>Double Double Hermitel (không dấu int n, dài đôi x);<code>x</code>.<span class="t-rev-inl t-since-cxx23"><span>Double Double Acosl (Double Num dài);<code>std::laguerre</code>constexpr / *-point-point-type * / /<code>x</code>.</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;arithmetic1, orithmetic2, số học lớp3&gt; lớp</span>ACO kép (số nguyên);<code>double</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>Double PGSLAGUERRE (unsign int n, unsign int m, integer x);</td>
+</tr> <tr class="t-par"> <td>x</td> <td>-</td> <td>, đặt hàng</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3>Laguerrel dài đôi (không dấu int n, dài đôi x);<code>x</code>        : keep_ (std :: di chuyển (x)) {}<span><span>Mẫu &lt;Class Integer&gt;</span><span>/</span><span>gấp đôi laguerre (unsign int n, integer x);</span></span><span><span>mức độ của đa thức</span><span>/</span><span>Nếu không có lỗi xảy ra, giá trị của thứ tự-</span></span>(x<sup class="t-su">Trả về một kết quả, kết quả được bỏ qua. Nếu như</sup><i>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</i><sup>Đa thức Hermite của</sup>cbrt kép (số nguyên);<h3 id="Error_handling">Xử lý lỗi</h3> <p>n+m<code><a href="../math/math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code></p>
+<ul>
+<li>(x), được trả về (trong đó \ (\ mathsf {l} _ {n+m} (x) \) l</li>
+<li>Nếu như<code>x</code>n+m</li>
+<li>Nếu như<code>n</code>Nếu không có lỗi xảy ra, giá trị của đa thức Laguerre không liên kết của</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Lỗi có thể được báo cáo theo quy định trong<a class="mw-redirect" href="https://en.cppreference.com/w/cpp/experimental/special_math" title="cpp/experimental/special math">ISO 29124:2010</a>Nếu đối số là NAN, NAN được trả lại và không được báo cáo về tên miền<code>__STDCPP_MATH_SPEC_FUNCS__</code>là âm, có thể xảy ra lỗi miền miền<code>__STDCPP_WANT_MATH_SPEC_FUNCS__</code>lớn hơn hoặc bằng 128, hành vi được xác định là thực hiện</p>
+<p>Các triển khai không hỗ trợ C ++ 17, nhưng hỗ trợ<code>tr1/cmath</code>, cung cấp chức năng này nếu<code>std::tr1</code>.</p>
+<p>được xác định bởi việc triển khai thành một giá trị ít nhất là 201003L và nếu người dùng xác định<a class="external text" href="https://www.boost.org/doc/libs/release/libs/math/doc/html/math_toolkit/sf_poly/laguerre.html" rel="nofollow">available in boost.math</a>.</p>
+<p>bán tại</p>
+<p>Các đa thức Laguerre liên quan là các giải pháp đa thức của phương trình \ (x \ ddot {y} + (m + 1-x) \ dot {y} + ny = 0 \) XY</p>
+<table class="wikitable"> <tr> <th>,,</th> <th>+(m+1-x) y</th>
+</tr> <tr style="height:45px;"> <td>laguerre<span class="br0">.</span><span class="nu0">. Không làm gì khác.</span>- 1)<span class="br0">)</span> </td> <td>, nếu như</td>
+</tr> <tr style="height:45px;"> <td>laguerre<span class="br0">.</span><span class="nu0">, nếu như</span>- 1)<span class="br0">)</span> </td> <td>N!</td>
+</tr> <tr style="height:45px;"> <td>laguerre<span class="br0">.</span><span class="nu0">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</span>- 1)<span class="br0">)</span> </td> <td> <span><span>, nếu như</span><span>/</span><span>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</span></span>(x<sup class="t-su">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>lớn hơn hoặc bằng 128, hành vi được xác định là thực hiện</td>
+</tr> <tr style="height:45px;"> <td>laguerre<span class="br0">.</span><span class="nu0">Yêu cầu std :: Constructible_From &lt;std :: iter_value_t &lt;i&gt;, std :: iter_reference_t &lt;i &gt;&gt;</span>- 1)<span class="br0">)</span> </td> <td> <span><span>, nếu như</span><span>/</span><span>6</span></span>Các đa thức laguerre là các giải pháp đa thức của phương trình.<sup class="t-su">Yêu cầu std :: Constructible_From &lt;std :: iter_value_t &lt;i&gt;, std :: iter_reference_t &lt;i &gt;&gt;</sup>-x + 1<sup class="t-su">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>(x</td>
+</tr>
+</table> <p>, kết quả bằng<span class="t-v">, kết quả là hữu hạn.</span>trong khoảng [−π; π].<code>num</code>Nếu việc triển khai hỗ trợ số học dấu nổi của IEEE (IEC 60559),<code>std::laguerre(int_num, num)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::laguerre(int_num, static_cast&lt;double&gt;(num))</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">- 4x + 2)</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">(-x</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="assoc_laguerre" title="cpp/numeric/special functions/assoc laguerre"> <span class="t-lines"><span>PGS_LAGUERRE</span><span>PGS_LAGUERREF</span><span>Assoc_laguerrel</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>đa thức liên kết laguerre<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr> <td>
+<a class="external text" href="https://mathworld.wolfram.com/LaguerrePolynomial.html" rel="nofollow">Weisstein, Eric W. "Laguerre Polynomial."</a>Nếu đối số là +, +được trả về.</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/special_functions/laguerre">https://en.cppreference.com/w/cpp/numeric/special_functions/laguerre</a>
+</p>
+</div>

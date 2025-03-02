@@ -1,0 +1,164 @@
+ <h1 class="firstHeading" id="firstHeading">chỉ được đánh giá một lần và nó hoạt động như một hoạt động duy nhất liên quan đến các cuộc gọi chức năng theo trình tự không xác định (ví dụ: trong</h1> <p>Toán tử gán sửa đổi giá trị của đối tượng.</p>
+<table class="wikitable"> <tr> <th rowspan="2">Tên nhà điều hành</th> <th rowspan="2">Cú pháp</th> <th rowspan="2">
+<a href="operators" title="cpp/language/operators">Over​load​able</a> </th> <th colspan="2">Ví dụ nguyên mẫu (cho<code>class T</code>)</th>
+</tr> <tr> <th>Định nghĩa lớp bên trong</th> <th>Định nghĩa lớp bên ngoài</th>
+</tr> <tr> <td>Bài tập đơn giản</td> <td>
+<code>a = b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T&amp; T::operator =(const T2&amp; b);</code> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <td>Bổ sung nhiệm vụ</td> <td>
+<code>a += b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T&amp; T::operator +=(const T2&amp; b);</code> </td> <td>
+<code>T&amp; operator +=(T&amp; a, const T2&amp; b);</code> </td>
+</tr> <tr> <td>Phép trừ phân công</td> <td>
+<code>a -= b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T&amp; T::operator -=(const T2&amp; b);</code> </td> <td>
+<code>T&amp; operator -=(T&amp; a, const T2&amp; b);</code> </td>
+</tr> <tr> <td>Bài tập nhân</td> <td>
+<code>a *= b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T&amp; T::operator *=(const T2&amp; b);</code> </td> <td>
+<code>T&amp; operator *=(T&amp; a, const T2&amp; b);</code> </td>
+</tr> <tr> <td>Phân chia phân công</td> <td>
+<code>a /= b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T&amp; T::operator /=(const T2&amp; b);</code> </td> <td>
+<code>T&amp; operator /=(T&amp; a, const T2&amp; b);</code> </td>
+</tr> <tr> <td>phần còn lại</td> <td>
+<code>a %= b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T&amp; T::operator %=(const T2&amp; b);</code> </td> <td>
+<code>T&amp; operator %=(T&amp; a, const T2&amp; b);</code> </td>
+</tr> <tr> <td>BitWise và gán</td> <td>
+<code>a &amp;= b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T&amp; T::operator &amp;=(const T2&amp; b);</code> </td> <td>
+<code>T&amp; operator &amp;=(T&amp; a, const T2&amp; b);</code> </td>
+</tr> <tr> <td>BitWise hoặc nhiệm vụ</td> <td>
+<code>a |= b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T&amp; T::operator |=(const T2&amp; b);</code> </td> <td>
+<code>T&amp; operator |=(T&amp; a, const T2&amp; b);</code> </td>
+</tr> <tr> <td>BitWise XOR gán</td> <td>
+<code>a ^= b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T&amp; T::operator ^=(const T2&amp; b);</code> </td> <td>
+<code>T&amp; operator ^=(T&amp; a, const T2&amp; b);</code> </td>
+</tr> <tr> <td>BitWise trái chuyển đổi bên trái</td> <td>
+<code>a &lt;&lt;= b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T&amp; T::operator &lt;&lt;=(const T2&amp; b);</code> </td> <td>
+<code>T&amp; operator &lt;&lt;=(T&amp; a, const T2&amp; b);</code> </td>
+</tr> <tr> <td>BitWise Bight Shift Ghép phân công</td> <td>
+<code>a &gt;&gt;= b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T&amp; T::operator &gt;&gt;=(const T2&amp; b);</code> </td> <td>
+<code>T&amp; operator &gt;&gt;=(T&amp; a, const T2&amp; b);</code> </td>
+</tr> <tr> <td colspan="5"> <b>Ghi chú</b><br/> <ul>
+<li>Tất cả các nhà khai thác phân công tích hợp trở lại<code>*this</code>, và hầu hết<a href="operators" title="cpp/language/operators">user-defined overloads</a>cũng trở lại<code>*this</code>để các toán tử do người dùng xác định có thể được sử dụng theo cách tương tự như các bản dựng. Tuy nhiên, trong quá tải toán tử do người dùng xác định<code>void</code>).</li>
+<li> <code>T2</code>có thể là bất kỳ loại bao gồm<code>T</code>.</li>
+</ul> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p><i>int main ()</i>toán tử thay thế nội dung của đối tượng<code>a</code>với một bản sao nội dung của<code>b</code>.<code>b</code>không được sửa đổi). Đối với các loại lớp, đây là một hàm thành viên đặc biệt, được mô tả trong<a href="copy_assignment" title="cpp/language/copy assignment">copy assignment operator</a>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p><i>Di chuyển nhiệm vụ</i>toán tử thay thế nội dung của đối tượng<code>a</code>Mẫu &lt;Class Alloc&gt;<code>b</code>, tránh sao chép nếu có thể (<code>b</code>có thể được sửa đổi). Đối với các loại lớp, đây là một hàm thành viên đặc biệt, được mô tả trong<a href="move_assignment" title="cpp/language/move assignment">move assignment operator</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Đối với các loại không thuộc lớp, phân công sao chép và di chuyển không thể phân biệt được và được gọi là<i>Chuyển nhượng trực tiếp</i>.</p>
+<p><i>gán gộp</i>người vận hành thay thế nội dung của đối tượng<code>a</code>với kết quả hoạt động nhị phân giữa giá trị trước đó của<code>a</code>và giá trị của<code>b</code>.</p>
+<h4 id="Builtin_direct_assignment">Buildin chỉ định trực tiếp</h4> <p>Các biểu thức gán trực tiếp có biểu mẫu</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>=</code> <span class="t-spar">RHS</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>= {}</code> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>= {</code> <span class="t-spar">RHS</span> <code>}</code> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <p>Cho nhà điều hành tích hợp,<span class="t-spar">Số lượng bọ ve trừ đi từ</span>có thể có bất kỳ loại vô hướng không phải lúc nào và<span class="t-spar">RHS</span>phải được chuyển đổi hoàn toàn<span class="t-spar">Số lượng bọ ve trừ đi từ</span>.</p>
+<p>Toán tử gán trực tiếp mong đợi một lvalue có thể sửa đổi là toán hạng bên trái của nó và biểu thức rvalue<span class="t-rev-inl t-since-cxx11"><span>hoặc a<i>{</i></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Là toán hạng bên phải của nó và trả về một lvalue xác định toán hạng bên trái sau khi sửa đổi. Kết quả là một trường bit nếu toán hạng bên trái là một trường bit.</p>
+<p>Đối với các loại không thuộc lớp, toán hạng phù hợp là đầu tiên<a href="implicit_conversion" title="cpp/language/implicit conversion">implicitly converted</a>đến loại CV-UNTQUEDED của toán hạng bên trái, và sau đó giá trị của nó được sao chép vào đối tượng được xác định bởi toán hạng bên trái.</p>
+<p>Khi toán hạng bên trái có loại tham chiếu, toán tử gán sẽ sửa đổi đối tượng được giới thiệu thành.</p>
+<p>Nếu các toán hạng bên trái và bên phải xác định các đối tượng chồng chéo, hành vi không được xác định (trừ khi sự chồng chéo là chính xác và loại là như nhau).</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Nếu toán hạng phù hợp là một<i>{</i></p>
+<ul>
+<li>Nếu biểu thức<code>E1</code>có loại vô hướng,</li>
+<ul>
+<li>        {double {1}, double {2}, double {3}}; // mảng sao lưu<code>E1 = {}</code>Mẫu &lt;class T, class so sánh&gt;<code>E1 = T{}</code>là<code>T</code>Các biểu thức gán hợp chất có biểu mẫu<code>E1</code>.</li>
+<li>        {double {1}, double {2}, double {3}}; // mảng sao lưu<code>E1 = {E2}</code>Mẫu &lt;class T, class so sánh&gt;<code>E1 = T{E2}</code>là<code>T</code>Các biểu thức gán hợp chất có biểu mẫu<code>E1</code>.</li>
+</ul>
+<li>Nếu biểu thức<code>E1</code>có loại lớp, cú pháp<code>E1 = {args...}</code>tạo cuộc gọi đến toán tử gán với<i>{</i>như đối số, sau đó chọn toán tử phân công thích hợp theo các quy tắc của<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>. Lưu ý rằng, nếu có một toán tử gán không bảng từ một số loại không phải lớp, thì nó sẽ được ưu tiên hơn gán bản sao/di chuyển trong<code>E1 = {}</code>bởi vì<code>{}</code>không thuộc lớp là một<a href="overload_resolution#Implicit_conversion_sequence_in_list-initialization" title="cpp/language/overload resolution">identity conversion</a>, vượt quá sự chuyển đổi do người dùng xác định từ<code>{}</code>đến một loại lớp.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Sử dụng một loại loại không có đủ điều kiện dễ bay hơi như là toán tử bên trái của toán tử gán trực tiếp tích hợp được không dùng nữa, trừ khi biểu thức gán<a href="expressions#Unevaluated_expressions" title="cpp/language/expressions">unevaluated context</a>};<a href="expressions#Discarded-value_expressions" title="cpp/language/expressions">discarded-value expression</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>TRONG<a href="overload_resolution#Call_to_an_overloaded_operator" title="cpp/language/overload resolution">overload resolution against user-defined operators</a>, cho mọi loại<code>T</code>Tất cả các toán tử logic bitwise khác đều có thấp hơn</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">T*&amp; toán tử = (t*&amp;, t*);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">T*Disriles &amp; Toán tử = (t*Disriles &amp;, t*);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đối với mọi liệt kê hoặc con trỏ đến loại thành viên<code>T</code>, Tùy chọn có đủ điều kiện dễ bay hơi, Chữ ký chức năng sau tham gia vào độ phân giải quá tải:</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">T &amp; Toán tử = (T &amp;, T);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đối với mỗi cặp A1 và A2, trong đó A1 là loại số học (đủ điều kiện dễ bay hơi) và A2 là loại số học được thúc đẩy, chữ ký chức năng sau đây tham gia vào độ phân giải quá tải:</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">A1 &amp; Toán tử = (A1 &amp;, A2);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h4 id="Builtin_compound_assignment">int main ()</h4> <p>{</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <span class="t-spar">Không hợp lệ bất kỳ trình lặp nào (bao gồm cả bộ lặp cuối) hoặc sửa đổi bất kỳ yếu tố nào của phạm vi liên quan, hành vi không được xác định.</span> <span class="t-spar">RHS</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <span class="t-spar">Không hợp lệ bất kỳ trình lặp nào (bao gồm cả bộ lặp cuối) hoặc sửa đổi bất kỳ yếu tố nào của phạm vi liên quan, hành vi không được xác định.</span> <code>{}</code> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <span class="t-spar">Không hợp lệ bất kỳ trình lặp nào (bao gồm cả bộ lặp cuối) hoặc sửa đổi bất kỳ yếu tố nào của phạm vi liên quan, hành vi không được xác định.</span> <code>{</code> <span class="t-spar">RHS</span> <code>}</code> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">Không hợp lệ bất kỳ trình lặp nào (bao gồm cả bộ lặp cuối) hoặc sửa đổi bất kỳ yếu tố nào của phạm vi liên quan, hành vi không được xác định.</span> </td> <td>-</td> <td>Một trong số<code>*=</code>Thì<code>/=</code> <code>%=</code>Thì<code>+=</code> <code>-=</code>Thì<code>&lt;&lt;=</code>Thì<code>&gt;&gt;=</code>Thì<code>&amp;=</code>Thì<code>^=</code>Thì<code>|=</code> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> </td> <td>-</td> <td>    std :: cout &lt;&lt; n &lt;&lt; '';<span class="t-spar">Số lượng bọ ve trừ đi từ</span> <span class="t-spar">Không hợp lệ bất kỳ trình lặp nào (bao gồm cả bộ lặp cuối) hoặc sửa đổi bất kỳ yếu tố nào của phạm vi liên quan, hành vi không được xác định.</span>khoảng cách<code>+=</code>hoặc<code>-=</code>    n = 1;            // gán trực tiếp</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">RHS</span> </td> <td>-</td> <td>    std :: cout &lt;&lt; n &lt;&lt; '';<span class="t-spar">RHS</span> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> </td>
+</tr>
+</table> <p>    n = {};           // không bắt đầu, sau đó phân công<code>E1 op= E2</code>    std :: cout &lt;&lt; n &lt;&lt; '';<span class="t-rev-inl t-since-cxx11"><span>hoặc a<i>{</i></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> <code>E1 = E1 op E2</code>    n = 'a';          // Quảng cáo tích phân, sau đó chuyển nhượng<code>E1</code>    std :: cout &lt;&lt; n &lt;&lt; '';<code>f(a += b, g())</code> <code>g()</code>).</p>
+<p>TRONG<a href="overload_resolution#Call_to_an_overloaded_operator" title="cpp/language/overload resolution">overload resolution against user-defined operators</a>    n = {'B'};        // diễn viên rõ ràng, sau đó chuyển nhượng</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    std :: cout &lt;&lt; n &lt;&lt; '';</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp"> </pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    n = 1.0;          // Chuyển đổi điểm nổi, sau đó chuyển nhượng</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    std :: cout &lt;&lt; n &lt;&lt; '';</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p> </p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">// n = {1.0};        // lỗi trình biên dịch (chuyển đổi thu hẹp)</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp"> </pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    int &amp; r = n;       // không phải là một nhiệm vụ</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    r = 2;            // gán thông qua tham chiếu</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    std :: cout &lt;&lt; n &lt;&lt; '';</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp"> </pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>    int* p;<code>T</code>Tất cả các toán tử logic bitwise khác đều có thấp hơn</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    p = &amp; n;           // gán trực tiếp</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    p = nullptr;      // chuyển đổi null-trỏ, sau đó gán</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    std :: cout &lt;&lt; p &lt;&lt; '';</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp"> </pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <h3 id="Example_2">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1527.html" rel="nofollow">CWG 1527</a> </td> <td>C ++ 11</td> <td>    struct {int a; std :: chuỗi s; } obj;<br/>    obj = {1, "ABC"}; // gán từ một danh sách khởi động giằng<br/>    std :: cout &lt;&lt; obj.a &lt;&lt; ':' &lt;&lt; obj.s &lt;&lt; '\ n';</td> <td>}<br/>1 0 97 98 1 2 (nil) 1: ABC</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1538.html" rel="nofollow">CWG 1538</a> </td> <td>C ++ 11</td> <td>
+<code>E1 = {E2}</code>Phân công hợp chất xây dựng<code>E1 = T(E2)</code><br/>.<code>T</code>Các biểu thức gán hợp chất có biểu mẫu<code>E1</code>cho nhà điều hành tích hợp,</td> <td>có thể có bất kỳ loại số học nào, ngoại trừ khi<br/>ĐẾN<code>E1 = T{E2}</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2327R1" rel="nofollow">P2327R1</a> </td> <td>C ++ 20</td> <td>, cũng chấp nhận các loại con trỏ với các hạn chế tương tự như + và -<br/>cho nhà điều hành tích hợp,</td> <td>phải được chuyển đổi hoàn toàn</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2654.html" rel="nofollow">CWG 2654</a> </td> <td>C ++ 20</td> <td>Hành vi của mọi biểu thức phân bổ hợp chất tích hợp<br/>(Trong đó E1 là biểu thức Lvalue có thể sửa đổi và E2 là biểu thức rvalue</td> <td>) hoàn toàn giống như hành vi của biểu thức</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <p><a href="operator_precedence" title="cpp/language/operator precedence">Operator precedence</a></p>
+<p><a href="operators" title="cpp/language/operators">Operator overloading</a></p>
+<table class="wikitable"> <tr style="text-align:center"> <th colspan="7">Các nhà khai thác chung</th>
+</tr> <tr style="text-align:center"> <td>
+<strong class="selflink">, ngoại trừ việc biểu thức</strong> </td> <td>
+<a href="operator_incdec" title="cpp/language/operator incdec">increment<br/>decrement</a> </td> <td>
+<a href="operator_arithmetic" title="cpp/language/operator arithmetic">arithmetic</a> </td> <td>
+<a href="operator_logical" title="cpp/language/operator logical">logical</a> </td> <td>
+<a href="operator_comparison" title="cpp/language/operator comparison">comparison</a> </td> <td>
+<a href="operator_member_access" title="cpp/language/operator member access">member<br/>access</a> </td> <td>
+<a href="operator_other" title="cpp/language/operator other">other</a> </td>
+</tr> <tr style="text-align:center"> <td rowspan="6"> <p><code>a = b a += b a -= b a *= b a /= b a %= b a &amp;= b a |= b a ^= b a &lt;&lt;= b a &gt;&gt;= b</code></p>
+</td> <td rowspan="6"> <p><code>++a --a a++ a--</code></p>
+</td> <td rowspan="6"> <p><code>+a -a a + b a - b a * b a / b a % b ~a a &amp; b a | b a ^ b a &lt;&lt; b a &gt;&gt; b</code></p>
+</td> <td rowspan="6"> <p><code>!a a &amp;&amp; b a || b</code></p>
+</td> <td rowspan="6"> <p><code>a == b a != b a &lt; b a &gt; b a &lt;= b a &gt;= b a &lt;=&gt; b</code></p>
+</td> <td rowspan="6"> <p><code>a[...] *a &amp;a a-&gt;b a.b a-&gt;*b a.*b</code></p>
+</td> <td>Gọi chức năng</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a(...)</code> </td>
+</tr> <tr style="text-align:center"> <td>dấu phẩy</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a, b</code> </td>
+</tr> <tr style="text-align:center"> <td>có điều kiện</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a ? b : c</code> </td>
+</tr> <tr> <th colspan="7">Các nhà khai thác đặc biệt</th>
+</tr> <tr> <td colspan="7"> <p><a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Chuyển đổi một loại thành loại liên quan khác<br/> <a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>Chuyển đổi trong hệ thống phân cấp thừa kế<br/> <a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>thêm hoặc loại bỏ<a href="cv" title="cpp/language/cv">cv</a>-Qualifiers<br/> <a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>Chuyển đổi loại thành loại không liên quan<br/> <a href="explicit_cast" title="cpp/language/explicit cast">C-style cast</a>Chuyển đổi loại này sang loại khác bằng cách kết hợp<code>static_cast</code>Thì<code>const_cast</code>, Và<code>reinterpret_cast</code> <br/> <a href="new" title="cpp/language/new"><code>new</code></a>Tạo các đối tượng có thời lượng lưu trữ động<br/> <a href="delete" title="cpp/language/delete"><code>delete</code></a>Các đối tượng phá hủy được tạo trước đây bởi biểu thức và bản phát hành mới thu được vùng bộ nhớ<br/> <a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>truy vấn kích thước của một loại<br/> <a href="sizeof..." title="cpp/language/sizeof..."><code>sizeof...</code></a>truy vấn kích thước của một<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/> <a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>truy vấn thông tin loại của một loại<br/> <a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code></a>kiểm tra xem một biểu thức có thể ném một ngoại lệ<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/> <a href="alignof" title="cpp/language/alignof"><code>alignof</code></a>// (thường là 4):<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></p>
+</td>
+</tr>
+</table> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/operator_assignment" title="c/language/operator assignment">C documentation</a></span>vì<span class=""><span>chỉ được đánh giá một lần và nó hoạt động như một hoạt động duy nhất liên quan đến các cuộc gọi chức năng theo trình tự không xác định (ví dụ: trong</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/operator_assignment">https://en.cppreference.com/w/cpp/language/operator_assignment</a>
+</p>
+</div>

@@ -1,0 +1,91 @@
+ <h1 class="firstHeading" id="firstHeading">Tra cứu tên không đủ tiêu chuẩn</h1> <p>            // static const int i = 1; // Tìm thấy thứ nhất<i>    STD có thể thay đổi :: Mutex m; // "Quy tắc M &amp; M": Mutable và Mutex đi cùng nhau</i>Tên, đó là một cái tên không xuất hiện bên phải của toán tử phân giải phạm vi<code>::</code>, Tra cứu tên kiểm tra<a href="scope" title="cpp/language/scope">scopes</a>Như được mô tả dưới đây, cho đến khi nó tìm thấy ít nhất một tuyên bố dưới bất kỳ hình thức nào, tại thời điểm đó, việc tra cứu dừng lại và không có phạm vi nào được kiểm tra. (Lưu ý: Tra cứu từ một số bối cảnh bỏ qua một số khai báo, ví dụ, tra cứu tên được sử dụng ở bên trái của<code>::</code>Bỏ qua các khai báo chức năng, biến và liệt kê, tra cứu một tên được sử dụng như một trình xác định lớp cơ sở bỏ qua tất cả các khai báo không thuộc loại)</p>
+<p>Với mục đích tra cứu tên không đủ tiêu chuẩn, tất cả các tuyên bố từ một không gian tên được đề cử bởi một<a href="namespace" title="cpp/language/namespace">using directive</a>Xuất hiện như thể được khai báo trong không gian tên kèm theo gần nhất có chứa, trực tiếp hoặc gián tiếp, cả cách sử dụng phương pháp định hướng và không gian tên được chỉ định.</p>
+<p>Tra cứu tên không đủ tiêu chuẩn của tên được sử dụng bên trái của toán tử gọi chức năng (và, tương đương, toán tử trong một biểu thức) được mô tả trong<a href="adl" title="cpp/language/adl">argument-dependent lookup</a>.</p>
+<h3 id="File_scope">Phạm vi tập tin</h3> <p>Đối với một tên được sử dụng trong phạm vi tên toàn cầu (không gian tên cấp cao nhất), bên ngoài bất kỳ không gian tên, lớp hoặc không gian tên người dùng, phạm vi toàn cầu trước khi sử dụng tên được kiểm tra:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int n = 1;     // Tuyên bố N</pre></div> <h3 id="Namespace_scope">Điều đó bao gồm</h3> <p>int x = n + 1; // ok: tìm kiếm tìm kiếm :: n</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h3 id="Definition_outside_of_its_namespace">int z = y - 1; // Lỗi: Tra cứu thất bại</h3> <p>int y = 2;     // Tuyên bố Y</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Đối với một cái tên được sử dụng trong không gian tên người dùng được tuyên bố bên ngoài bất kỳ chức năng hoặc lớp nào, không gian tên này được tìm kiếm trước khi sử dụng tên, thì không gian tên bao quanh không gian tên này trước khi khai báo không gian tên này, v.v. cho đến khi đạt được không gian tên toàn cầu.</pre></div> <h3 id="Non-member_function_definition">int n = 1; // tuyên ngôn</h3> <p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">không gian tên n</pre></div> <h3 id="Class_definition">{</h3> <p>    int m = 2;<a href="class" title="cpp/language/class">class definition</a> </p>
+<div class="t-li1">
+<span class="t-li">}</span>    không gian tên y</div> <div class="t-li1">
+<span class="t-li">{</span>    {</div> <div class="t-li1">
+<span class="t-li">}</span>        int z = k; // Lỗi: Tra cứu thất bại<a href="nested_types" title="cpp/language/nested types">nested</a>        int y = m; // ok, tìm kiếm tìm thấy :: n :: m</div> <div class="t-li1">
+<span class="t-li">tải trong luồng B.</span>        int z = k; // Lỗi: Tra cứu thất bại<a href="class#Local_classes" title="cpp/language/class">local</a>    }</div> <div class="t-li1">
+<span class="t-li">Không tham gia vào độ phân giải quá tải nếu biểu thức đó không được hình thành tốt.</span> </div> <p>C &lt;tint&gt; C;  // ĐƯỢC RỒI; Instantiates Tuyên bố void C :: F (int n = 0, int)<a href="friend" title="cpp/language/friend">friend</a>    int k = 3;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <h3 id="Injected_class_name">Định nghĩa bên ngoài không gian tên của nó</h3> <p>Đối với một tên được sử dụng trong định nghĩa của biến thành viên không gian tên ngoài không gian tên, Tra cứu tiến hành giống như đối với một tên được sử dụng bên trong không gian tên:<a href="injected-class-name" title="cpp/language/injected-class-name">injected-class-name</a>.</p>
+<h3 id="Member_function_definition">không gian tên x</h3> <p>{<a href="#Class_definition">class definition</a>    extern int x; // Tuyên bố, không định nghĩa</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    int n = 1;    // Tìm thấy thứ nhất</pre></div>}<a class="extiw" href="https://en.wikipedia.org/wiki/Dominance_(C%2B%2B)" title="enwiki:Dominance (C++)">dominance in virtual inheritance</a> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td>int n = 2;        // Tìm thấy thứ 2<code>B</code>int x :: x = n;     // Tìm X :: N, Đặt X :: X thành 1<code>A</code>nếu như<code>A</code>Định nghĩa chức năng không thành viên<code>B</code>Đối với một tên được sử dụng trong định nghĩa của một hàm, trong cơ thể của nó hoặc là một phần của đối số mặc định, trong đó hàm là thành viên của không gian tên người dùng hoặc toàn cầu, khối mà tên được sử dụng được tìm kiếm trước khi sử dụng tên, thì khối bao quanh được tìm kiếm trước khi bắt đầu khối đó, v.v. Sau đó, không gian tên trong đó hàm được khai báo được tìm kiếm cho đến khi định nghĩa (không nhất thiết là khai báo) của hàm sử dụng tên, sau đó là các không gian tên kèm theo, v.v.<code>A</code>không gian tên a<code>B</code>{</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td>MỘT<i>    không gian tên n</i>    {<code>C</code>        void f ();<code>C</code>        int i = 3; // Tìm thấy thứ 3 (nếu không có mặt thứ 2)<code>C</code>    }<code>Bi</code> <code>Bi</code>    int i = 4;     // Tìm thấy thứ 4 (nếu không có thứ 3)<code>C</code>                  std :: error_code &amp; ec);<ul>
+<li>}<code>Bi</code> </li>
+<li>int i = 5;         // Tìm thấy thứ 5 (nếu không có thứ 4)<code>C</code> <code>Bi</code>Thì</li>
+<li>Vô hiệu A :: N :: f ()<code>Bi</code>{<code>C</code>    int i = 2;     // Tìm thấy thứ 2 (nếu không có lần đầu tiên)<code>Bi</code> </li>
+<li>    while (đúng)<code>C</code>    {<code>Bi</code>       int i = 1;  // Tìm thấy đầu tiên: Tra cứu đã hoàn thành<code>C</code>       std :: cout &lt;&lt; i;<code>Bi</code>Thì</li>
+<li>    }<code>Bi</code>}<code>C</code> <code>C</code>// int i;          // không tìm thấy<code>C</code>    {<code>Bi</code>không gian tên a</li>
+<li>{<code>C</code>    không gian tên n<code>C</code>    {<code>Bi</code>.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <div class="cpp source-cpp"><pre data-language="cpp">        // int i;  // không tìm thấy</pre></div>    }<code>B</code>}<code>B</code>Định nghĩa lớp<code>B</code>Cho một cái tên được sử dụng ở bất cứ đâu trong<code>B</code>.<div class="cpp source-cpp"><pre data-language="cpp">phần thân của lớp mà tên được sử dụng cho đến khi sử dụng,</pre></div> <h3 id="Friend_function_definition">Toàn bộ cơ thể của lớp cơ sở của nó, đệ quy vào căn cứ của họ khi không tìm thấy tuyên bố,</h3> <p>    lớp b<a href="friend" title="cpp/language/friend">friend</a>, cơ thể của lớp bao quanh cho đến khi định nghĩa của lớp này và toàn bộ cơ thể của lớp cơ sở của lớp bên trong,<a href="friend" title="cpp/language/friend">friend</a>Nếu lớp này là</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, hoặc được lồng trong một lớp địa phương, phạm vi khối trong đó lớp được xác định cho đến điểm định nghĩa,</pre></div> <h3 id="Friend_function_declaration">Nếu lớp này là thành viên của không gian tên hoặc được lồng trong một lớp là thành viên của không gian tên hoặc là một lớp địa phương trong một hàm là thành viên của không gian tên, phạm vi của không gian tên được tìm kiếm cho đến khi định nghĩa của lớp, bao quanh lớp hoặc chức năng; Tra cứu tiếp tục đến các không gian tên bao quanh cái đó cho đến khi phạm vi toàn cầu.</h3> <p>Tuyên bố, việc tra cứu để xác định xem nó có đề cập đến một thực thể được tuyên bố trước đó được tiến hành như trên ngoại trừ việc nó dừng lại sau khi không gian tên bên trong cùng.<a href="friend" title="cpp/language/friend">friend</a>không gian tên m<a href="declarations#Declarators" title="cpp/language/declarations">declarator</a>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    // const int i = 1; // Không bao giờ tìm thấy</pre></div> <h3 id="Default_argument"> </h3> <p>    lớp b<a href="default_arguments" title="cpp/language/default arguments">default argument</a>    {<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>        // static const int i = 3;     // Tìm thấy thứ 3 (nhưng sẽ không vượt qua kiểm tra truy cập)<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">member-initializer</a>    };</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <h3 id="Static_data_member_definition"> </h3> <p>// const int i = 5;                    // Tìm thấy thứ 5<a href="static" title="cpp/language/static">static data member</a> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">không gian tên n</pre></div> <h3 id="Enumerator_declaration">{</h3> <p>    // const int i = 4;                // Tìm thấy thứ 4<a href="enum" title="cpp/language/enum">enumerator declaration</a> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">    Lớp Y: Công khai M :: B</pre></div> <h3 id="Catch_clause_of_a_function-try_block">    {</h3> <p>        // static const int i = 2;     // Tìm thấy thứ 2<a href="function-try-block" title="cpp/language/function-try-block">function-try-block</a> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">        Lớp X.</pre></div> <h3 id="Overloaded_operator">        {</h3> <p>            // static const int i = 1; // Tìm thấy thứ nhất<a href="expressions#Operators" title="cpp/language/expressions">operator</a>            int a [i]; // sử dụng tôi<code>operator+</code> <code>a+b</code>            // static const int i = 1; // Không bao giờ tìm thấy<code>operator+(a,b)</code>        };<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">        // static const int i = 2;     // Không bao giờ tìm thấy</pre></div> <h3 id="Template_definition">    };</h3> <p>C &lt;tint&gt; C;  // ĐƯỢC RỒI; Instantiates Tuyên bố void C :: F (int n = 0, int)<a href="dependent_name" title="cpp/language/dependent name">non-dependent name</a> <a href="dependent_name" title="cpp/language/dependent name">dependent name</a>    // const int i = 4;                // Không bao giờ tìm thấy<a href="adl" title="cpp/language/adl">ADL</a>}<span class="t-rev-inl t-until-cxx11"><span>Tên lớp được tiêm</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span>// const int i = 5;                    // Không bao giờ tìm thấy<span class="t-rev-inl t-until-cxx11"><span>Tên lớp được tiêm</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span>Đối với tên của một mẫu hoặc mẫu lớp được sử dụng trong định nghĩa của lớp hoặc mẫu đó hoặc xuất phát từ một, tra cứu tên không đủ tiêu chuẩn, tìm thấy lớp được xác định như thể tên được giới thiệu bởi một tuyên bố thành viên (có quyền truy cập thành viên công cộng). Để biết thêm chi tiết, xem</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Định nghĩa chức năng thành viên</pre></div> <p>Đối với một tên được sử dụng bên trong thân chức năng thành viên, một đối số mặc định của hàm thành viên, đặc tả ngoại lệ của hàm thành viên hoặc trình khởi tạo thành viên mặc định, phạm vi được tìm kiếm giống như trong<a href="dependent_name#Lookup_rules" title="cpp/language/dependent name">dependent name lookup rules</a>, ngoại trừ toàn bộ phạm vi của lớp được xem xét, không chỉ là phần trước khi tuyên bố sử dụng tên. Đối với các lớp lồng nhau, toàn bộ cơ thể của lớp bao quanh được tìm kiếm.</p>
+<h3 id="Template_name">lớp b</h3> <h3 id="Member_of_a_class_template_outside_of_template">{</h3> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul>
+<li>    // int i;         // Tìm thấy thứ 3</li>
+<li>};</li>
+<li> </li>
+</ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul>
+<li>không gian tên m</li>
+<li>{</li>
+<li>    // int i;         // Tìm thấy thứ 5</li>
+</ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul>
+<li> </li>
+<li>    không gian tên n</li>
+<li>    {</li>
+</ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul>
+<li>        // int i;     // Tìm thấy thứ 4</li>
+<li> </li>
+<li>        Lớp X: Công khai B</li>
+</ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul>
+<li>            // int i; // Tìm thấy thứ 2 cũng vậy</li>
+<li>        };</li>
+<li> </li>
+</ul>
+<li>    S.B3 = 0B11;</li>
+<ul>
+<li>            // int i; // Tìm thấy thứ 2 cũng vậy</li>
+<li>        };</li>
+<li> </li>
+</ul>
+</ul> <h3 id="Defect_Reports">&gt; Multiset lớp;</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/490.html" rel="nofollow">CWG 490</a> </td> <td>C ++ 98</td> <td>        // int i;     // Tìm thấy thứ 4<br/>    }<br/>}</td> <td> <br/>// int i;             // Tìm thấy thứ 6<br/> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/514.html" rel="nofollow">CWG 514</a> </td> <td>C ++ 98</td> <td>Void M :: N :: x :: f ()<br/>{</td> <td>    // int i;         // Tìm thấy thứ nhất<br/>    i = 16;<br/>    // int i;         // Không bao giờ tìm thấy</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="qualified_lookup" title="cpp/language/qualified lookup">Qualified name lookup</a> </li>
+<li> <a href="scope" title="cpp/language/scope">Scope</a> </li>
+<li> <a href="adl" title="cpp/language/adl">Argument-dependent lookup</a> </li>
+<li> <a href="function_template" title="cpp/language/function template">Template argument deduction</a> </li>
+<li> <a href="overload_resolution" title="cpp/language/overload resolution">Overload resolution</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/unqualified_lookup">https://en.cppreference.com/w/cpp/language/unqualified_lookup</a>
+</p>
+</div>

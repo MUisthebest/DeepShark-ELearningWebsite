@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Generator &lt;Ref, V, Allocator&gt; :: Promise_type :: unpandled_exception</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">void chưa xử lý_exception ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>x</code>là một số<a href="../../generator" title="cpp/coroutine/generator">generator</a>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<p>Để kiểm soát cách giải quyết thời gian địa phương mơ hồ hoặc không tồn tại. Đi qua<a href="../../generator#Data_members" title="cpp/coroutine/generator">handle</a>đề cập đến coroutine mà<a href="../promise_type" title="cpp/coroutine/generator/promise type">promise object</a>khoảng cách<code>*this</code>đang ở trên đỉnh của<code>*<a href="../../generator#Data_members" title="cpp/coroutine/generator">active_</a></code>của<code>x</code>:</p>
+<ul>
+<li>Nếu tay cầm đề cập đến coroutine có đối tượng hứa hẹn<code>*this</code>là yếu tố duy nhất của<code>x.*active_</code>So sánh nội dung của<code>throw</code>.</li>
+<li>Nếu không, gán<code><a href="../../../error/current_exception" title="cpp/error/current exception">std::current_exception()</a></code>ĐẾN<a href="../../generator#Data_members" title="cpp/coroutine/generator"><code>except_</code></a>.</li>
+<li>Nếu không, hành vi là không xác định.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>với:</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/coroutine/generator/promise_type/unhandled_exception">https://en.cppreference.com/w/cpp/coroutine/generator/promise_type/unhandled_exception</a>
+</p>
+</div>

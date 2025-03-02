@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">std :: sig_atomic_t</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/csignal" title="cpp/header/csignal">&lt;csignal&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">typedef / * không xác định * / sig_atomic_t;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Một loại số nguyên có thể được truy cập như một thực thể nguyên tử ngay cả khi có sự ngắt không đồng bộ được thực hiện bởi các tín hiệu.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Cho đến khi C ++ 11, được giới thiệu<code><a href="../../atomic/atomic" title="cpp/atomic/atomic">std::atomic</a></code>Và<code><a href="../../atomic/atomic_signal_fence" title="cpp/atomic/atomic signal fence">std::atomic_signal_fence</a></code>, về điều duy nhất mà một chương trình phù hợp nghiêm ngặt có thể làm trong một trình xử lý tín hiệu là gán một giá trị cho một<code>volatile static std::sig_atomic_t</code>biến và nhanh chóng trở lại.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="signal" title="cpp/utility/program/signal"> <span class="t-lines"><span>tín hiệu</span></span></a></div> </td> <td>Đặt trình xử lý tín hiệu cho tín hiệu cụ thể<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../atomic/atomic_signal_fence" title="cpp/atomic/atomic signal fence"> <span class="t-lines"><span>Atomic_Signal_Fence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>hàng rào giữa một luồng và trình xử lý tín hiệu được thực thi trong cùng một luồng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/program/sig_atomic_t" title="c/program/sig atomic t">C documentation</a></span>vì<code>sig_atomic_t</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/program/sig_atomic_t">https://en.cppreference.com/w/cpp/utility/program/sig_atomic_t</a>
+</p>
+</div>

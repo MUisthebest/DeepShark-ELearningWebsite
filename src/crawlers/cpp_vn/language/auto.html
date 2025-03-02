@@ -1,0 +1,71 @@
+ <h1 class="firstHeading" id="firstHeading">Nhà xác định loại trình giữ chỗ<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Đối với các biến, chỉ định rằng loại biến đang được khai báo sẽ được tự động suy ra từ trình khởi tạo của nó.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <p>Đối với các chức năng, chỉ định rằng loại trả lại sẽ được suy ra từ các tuyên bố trả lại của nó.</p>
+</td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Đối với các tham số mẫu không thuộc loại, chỉ định rằng loại sẽ được suy ra từ đối số.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">Loại hạn chế</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>auto</code> </td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Loại hạn chế</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>decltype ( auto )</code> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">Loại hạn chế</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>Một<a href="constraints#Concepts" title="cpp/language/constraints">concept</a>Tên, đủ điều kiện tùy chọn, tùy chọn theo sau là một danh sách đối số mẫu được đặt trong<code>&lt;&gt;</code> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>loại được suy luận bằng cách sử dụng các quy tắc cho<a href="template_argument_deduction#Other_contexts" title="cpp/language/template argument deduction">template argument deduction</a>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Loại là<a href="decltype" title="cpp/language/decltype"><code>decltype(expr)</code></a>là<code>expr</code>là bộ khởi tạo hoặc các trình khởi tạo được sử dụng trong các câu lệnh trả lại.</div> <p>Người giữ chỗ<code>auto</code>có thể đi kèm với các công cụ sửa đổi, chẳng hạn như<code>const</code>hoặc<code>&amp;</code>, sẽ tham gia vào việc khấu trừ loại.<span class="t-rev-inl t-since-cxx14"><span>Người giữ chỗ<code>decltype(auto)</code>Phải là thành phần duy nhất của loại được khai báo.</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span></p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Một nhà xác định loại trình giữ chỗ có thể xuất hiện trong các bối cảnh sau:</p>
+<ul> <li>Trong chuỗi định thức loại của một biến:<code>auto x = expr;</code>Là một nhà xác định loại. Các loại được suy ra từ bộ khởi tạo.<br/>Nếu bộ xác định loại trình giữ chỗ là<code>auto</code> <span class="t-rev-inl t-since-cxx20"><span>hoặc<span class="t-spar">Loại hạn chế</span> <code>auto</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, loại biến được suy ra từ trình khởi tạo bằng cách sử dụng các quy tắc cho<a href="template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>từ một cuộc gọi chức năng (xem<a href="template_argument_deduction#Other_contexts" title="cpp/language/template argument deduction">template argument deduction — other contexts</a>để biết chi tiết).<br/>Ví dụ, đã cho<code>const auto&amp; i = expr;</code>, loại<code>i</code>chính xác là loại đối số<code>u</code>Trong một mẫu tưởng tượng<code>template&lt;class U&gt; void f(const U&amp; u)</code>Nếu gọi chức năng<code>f(expr)</code>đã được biên soạn. Vì thế,<code>auto&amp;&amp;</code>có thể được suy ra dưới dạng tham chiếu lvalue hoặc tham chiếu rvalue theo trình khởi tạo, được sử dụng trong phạm vi dựa trên vòng lặp.<br/> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <p>Nếu bộ xác định loại trình giữ chỗ là<code>decltype(auto)</code> <span class="t-rev-inl t-since-cxx20"><span>hoặc<span class="t-spar">Loại hạn chế</span> <code>decltype(auto)</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, loại suy luận là<code>decltype(expr)</code>là<code>expr</code>là bộ khởi tạo.</p>
+</td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <p>Nếu trình xác định loại trình giữ chỗ được sử dụng để khai báo nhiều biến, các loại được suy ra phải khớp. Ví dụ: Tuyên bố<code>auto i = 0, d = 0.0;</code>không được hình thành, trong khi tuyên bố<code>auto i = 0, *p = &amp;i;</code>được hình thành tốt và<code>auto</code>được suy luận như<code>int</code>.</p>
+</li>
+<li>trong loại ID<a href="new" title="cpp/language/new">new expression</a>. Các loại được suy ra từ bộ khởi tạo. Vì<code>new <i>T</i> <i>trong phạm vi</i></code>(Ở đâu<code><i>T</i></code>chứa một loại trình giữ chỗ,<i>trong phạm vi</i>là bộ khởi tạo được đặt ra hoặc danh sách khởi tạo được bao bọc), loại<code><i>T</i></code>được suy luận như thể cho biến<code><i>x</i></code>Trong tuyên bố được phát minh<code>T x init;</code>.</li>
+<li> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span>Trong loại trở lại của một<a href="function" title="cpp/language/function">function</a>hoặc biểu hiện lambda:<code>auto&amp; f();</code>. Loại trả lại được suy ra từ toán hạng của nó<span class="t-rev-inl t-since-cxx17"><span>không<a href="if#Constexpr_If" title="cpp/language/if">discarded</a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span> <a href="return" title="cpp/language/return">return statement</a>.<br/>(Raco).<a href="function#Return_type_deduction" title="cpp/language/function">function — return type deduction</a>.</li>
+<li> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>trong khai báo tham số của một<a href="template_parameters#Non-type_template_parameter" title="cpp/language/template parameters">non-type template parameter</a>:<code>template&lt;auto I&gt; struct A;</code>. Loại của nó được suy ra từ đối số tương ứng.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <p>Các<code>auto</code>trình xác định cũng có thể xuất hiện trong trình xác định loại đơn giản của một<a href="explicit_cast" title="cpp/language/explicit cast">explicit type conversion</a>:<code>auto(expr)</code>Và<code>auto{expr}</code>. Loại của nó được suy ra từ biểu thức.</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <p>Hơn nữa,<code>auto</code> <span class="t-rev-inl t-since-cxx20"><span>Và<span class="t-spar">Loại hạn chế</span> <code>auto</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>có thể xuất hiện trong:</p>
+<ul>
+<li>khai báo tham số của một<a href="lambda" title="cpp/language/lambda">lambda expression</a>:<code>[](auto&amp;&amp;){}</code>. Biểu thức Lambda như vậy là một<i>Lambda chung</i>.</li>
+<li> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>Một<a href="function#Parameter_list" title="cpp/language/function">function parameter declaration</a>:<code>void f(auto);</code>. Tuyên bố chức năng giới thiệu một<a href="function_template#Abbreviated_function_template" title="cpp/language/function template">abbreviated function template</a>.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <h4 id="Type_constraint">Loại ràng buộc</h4> <p>Nếu như<span class="t-spar">Loại hạn chế</span>là hiện tại, hãy để<code>T</code>là loại được suy ra cho trình giữ chỗ,<span class="t-spar">Loại hạn chế</span>Giới thiệu a<a href="constraints" title="cpp/language/constraints">constraint expression</a>                  std :: error_code &amp; ec);</p>
+<ul>
+<li>Nếu như<span class="t-spar">Loại hạn chế</span>khoảng cách<code>Concept&lt;A<sub>, nếu như</sub>, ..., A<sub>Trả về một kết quả, kết quả được bỏ qua. Nếu như</sub>&gt;</code>, sau đó biểu thức ràng buộc là<code>Concept&lt;T, A<sub>, nếu như</sub>, ..., A<sub>Trả về một kết quả, kết quả được bỏ qua. Nếu như</sub>&gt;</code>Số lượng các yếu tố để sao chép</li>
+<li>được chuyển đến hàm định dạng, nếu có,<span class="t-spar">Loại hạn chế</span>khoảng cách<code>Concept</code>không có danh sách đối số), biểu thức ràng buộc là<code>Concept&lt;T&gt;</code>.</li>
+</ul> <p>Khấu trừ không thành công nếu biểu thức ràng buộc không hợp lệ hoặc trả về<code>false</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Cho đến khi C ++ 11,<code>auto</code>có ngữ nghĩa của một<a href="storage_duration" title="cpp/language/storage duration">storage duration specifier</a>.</p>
+<p>Trộn lẫn<code>auto</code>các biến và chức năng trong một tuyên bố, như trong<code>auto f() -&gt; int, i = 0;</code>không được phép.</p>
+<p>Các<code>auto</code>Trình xác nhận cũng có thể được sử dụng với bộ khai báo chức năng được theo sau bởi loại trả về theo dõi, trong trường hợp đó, loại trả về được khai báo là loại trả về dấu vết (một lần nữa có thể là loại trình giữ chỗ).</p>
+<div class="cpp source-cpp"><pre data-language="cpp">tự động (*p) () -&gt; int; // khai báo p là con trỏ tới chức năng trả về int</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Các<code>auto</code>tự động (*q) () -&gt; auto = p; // khai báo q là con trỏ tới chức năng trả về t<a href="structured_binding" title="cpp/language/structured binding">structured binding</a>tuyên ngôn.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-concepts_ts">
+<td> <p>Các<code>auto</code>                         // trong đó t được suy ra từ loại p<code>auto::</code>trình xác định cũng có thể được sử dụng trong một<a href="https://en.cppreference.com/w/cpp/experimental/constraints" title="cpp/experimental/constraints">constrained type</a>Từ khóa cũng có thể được sử dụng trong một trình ghi nhận tên lồng nhau. Một người nhận tên tên của biểu mẫu</p>
+</td> <td><span class="t-mark-rev t-since-concepts-ts t-mark-ts">là một trình giữ chỗ được thay thế bằng một loại hoặc loại liệt kê theo các quy tắc cho</span></td>
+</tr> </table> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_decltype_auto" title="cpp/feature test"><code>__cpp_decltype_auto</code></a></td> <td><span class="nu0">Khoảng thời gian thực tế (tính bằng giây) được giữ bởi một đối tượng thời lượng</span></td> <td><span class="t-mark">(C ++ 14)</span></td> <td>
+<code>decltype(auto)</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">khấu trừ giữ chỗ.</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">(Khái niệm TS)</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1265.html" rel="nofollow">CWG 1265</a> </td> <td>C ++ 11</td> <td>các<code>auto</code>#include &lt;Istream&gt;<br/>#include &lt;Tiện ích&gt;</td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1346.html" rel="nofollow">CWG 1346</a> </td> <td>C ++ 11</td> <td> </td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1347.html" rel="nofollow">CWG 1347</a> </td> <td>C ++ 11</td> <td>Mẫu &lt;class t, class u&gt;<code>auto</code>tự động thêm (t t, u u) {return t + u; } // Loại trả về là loại toán tử+(t, u)<br/> <code>T</code>Và<code>std::initializer_list&lt;T&gt;</code>(Được kiểm soát bởi Chỉ thị</td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1852.html" rel="nofollow">CWG 1852</a> </td> <td>C ++ 14</td> <td>các<code>auto</code>// Chuyển tiếp hoàn hảo của một cuộc gọi chức năng phải sử dụng DeclType (Auto)<code>decltype(auto)</code>// Trong trường hợp hàm, nó gọi trả về theo tham chiếu</td> <td>Mẫu &lt;class F, class ... args&gt;</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/auto">https://en.cppreference.com/w/cpp/language/auto</a>
+</p>
+</div>

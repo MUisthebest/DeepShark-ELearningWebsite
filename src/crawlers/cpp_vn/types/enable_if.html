@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">std :: enable_if</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;bool b, class t = void&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Nếu như<code>B</code>khoảng cách<code>true</code>Thì<code>std::enable_if</code>struct enable_if;<code>type</code>có một thành viên công cộng đánh máy<code>T</code>, bằng</p>
+<p>; Nếu không, không có thành viên đánh máy.<a href="../language/sfinae" title="cpp/language/sfinae">SFINAE</a>Chức năng này là một cách thuận tiện để tận dụng<a href="../language/constraints" title="cpp/language/constraints">concepts</a>Trước C ++ 20<a href="../language/overload_resolution" title="cpp/language/overload resolution">candidate set</a>, đặc biệt để loại bỏ các chức năng có điều kiện khỏi</p>
+<p><code>std::enable_if</code>Dựa trên các đặc điểm loại, cho phép quá tải chức năng hoặc chuyên môn riêng biệt dựa trên các đặc điểm loại khác nhau đó.</p>
+<ul>
+<li>có thể được sử dụng dưới nhiều hình thức, bao gồm:</li>
+<li>như một đối số chức năng bổ sung (không áp dụng cho quá tải toán tử),</li>
+<li>Là loại trả lại (không áp dụng cho các hàm tạo và hàm hủy),</li>
+</ul> <p>bằng nhau<code>std::enable_if</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td>nhiều nhất là một chuyển đổi đủ điều kiện, và<code>T</code>Là một mẫu lớp hoặc tham số mẫu chức năng.<code>B</code> </td>
+</tr> </table> <h3 id="Helper_types">Mẫu &lt;phạm vi :: input_range r, std :: meally_incrementable o&gt;</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">hoặc không có thành viên như vậy, tùy thuộc vào giá trị của</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;bool b, class t = void&gt;</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>sử dụng enable_if_t = typename enable_if &lt;b, t&gt; :: type;<a href="../language/function_template#Function_template_overloading" title="cpp/language/function template">function template equivalence</a>).</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;bool b, class t = void&gt;</pre></div> <p>struct enable_if {};<code>enable_if</code> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> <p>struct enable_if &lt;true, t&gt; {typedef t type; };<a class="external text" href="https://github.com/itanium-cxx-abi/cxx-abi/issues/20" rel="nofollow">in the Itanium C++ ABI</a>.<code>_Z4funcI1XLi0EEvv</code>Một sai lầm phổ biến là khai báo hai mẫu chức năng chỉ khác nhau trong các đối số mẫu mặc định của chúng. Điều này không hoạt động vì các khai báo được coi là sự phân chia lại của cùng một mẫu chức năng (đối số mẫu mặc định không được tính vào</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">/* SAI */</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="void_t" title="cpp/types/void t"> <span class="t-lines"><span>void_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Void variadic Bí danh<br/><span class="t-mark">(Mẫu bí danh)</span> </td>
+</tr> </table> <ul>
+<li> <a href="../language/static_assert" title="cpp/language/static assert"><code>static_assert</code></a> </li>
+<li> <a href="../language/sfinae" title="cpp/language/sfinae">SFINAE</a> </li>
+<li> <a href="../language/constraints" title="cpp/language/constraints">Constraints and Concepts</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/enable_if">https://en.cppreference.com/w/cpp/types/enable_if</a>
+</p>
+</div>

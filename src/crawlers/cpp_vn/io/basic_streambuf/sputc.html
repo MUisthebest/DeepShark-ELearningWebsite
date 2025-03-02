@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: sputc</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int_type sputc (char_type ch);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Viết một ký tự vào chuỗi đầu ra.</p>
+<p>Nếu vị trí ghi chuỗi đầu ra không khả dụng (bộ đệm đã đầy), thì các cuộc gọi<code>overflow(ch)</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>ch</td> <td>-</td> <td>nhân vật để viết</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Nhân vật bằng văn bản, được chuyển đổi thành<code>int_type</code>với<code>Traits::to_int_type(ch)</code>về thành công.</p>
+<p><code>Traits::eof()</code>(Như được trả lại bởi<code><a href="overflow" title="cpp/io/basic streambuf/overflow">overflow()</a></code>) về thất bại.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Một</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="sputn" title="cpp/io/basic streambuf/sputn"> <span class="t-lines"><span>Đặt khu vực</span></span></a></div> </td> <td>Sputc<code>xsputn()</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_streambuf/sputc">https://en.cppreference.com/w/cpp/io/basic_streambuf/sputc</a>
+</p>
+</div>

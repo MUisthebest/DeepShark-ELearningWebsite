@@ -1,0 +1,37 @@
+ <h1 class="firstHeading" id="firstHeading">std :: unucted_exception, std :: unaught_exceptions</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/exception" title="cpp/header/exception">&lt;exception&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">bool unaught_exception () ném ();</pre>
+</td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">bool unaught_exception () noExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(không được dùng trong C ++ 17)</span> <br/><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">int unucted_exceptions () noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Phát hiện nếu luồng hiện tại có một đối tượng ngoại lệ trực tiếp, nghĩa là một ngoại lệ đã bị ném hoặc được tái<code><a href="terminate" title="cpp/error/terminate">std::terminate</a></code>hoặc<code><a href="unexpected" title="cpp/error/unexpected">std::unexpected</a></code>. Nói cách khác,<code>std::uncaught_exception</code>phát hiện nếu<a href="../language/throw#Stack_unwinding" title="cpp/language/throw">stack unwinding</a>hiện đang được tiến hành.</div> <div class="t-li1">
+<span class="t-li">2)</span>Phát hiện có bao nhiêu trường hợp ngoại lệ trong luồng hiện tại đã bị ném hoặc tái sinh và chưa nhập các điều khoản bắt phù hợp của họ.</div> <p>Đôi khi thật an toàn khi ném một ngoại lệ ngay cả khi<code>std::uncaught_exception() == true</code>. Ví dụ, nếu<a href="../language/throw#Stack_unwinding" title="cpp/language/throw">stack unwinding</a>khiến một đối tượng bị phá hủy, bộ hủy diệt cho đối tượng đó có thể chạy mã ném một ngoại lệ miễn là ngoại lệ bị bắt bởi một số khối bắt trước khi thoát khỏi kẻ phá hủy.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>Nếu ngăn xếp ngăn xếp hiện đang được tiến hành trong chủ đề này,<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">2)</span>Số lượng các đối tượng ngoại lệ chưa được thực hiện trong luồng hiện tại.</div> <h3 id="Notes">Ghi chú</h3> <p>Một ví dụ trong đó int returning<code>uncaught_exceptions</code>được sử dụng là<a class="external text" href="https://www.boost.org/doc/libs/release/libs/log/doc/html/index.html" rel="nofollow">boost.log</a>Thư viện: Biểu thức<code>BOOST_LOG(logger) &lt;&lt; foo();</code>Đầu tiên tạo ra một đối tượng bảo vệ và ghi lại số lượng ngoại lệ chưa được học trong hàm tạo của nó. Đầu ra được thực hiện bởi bộ hủy của đối tượng bảo vệ trừ khi<code>foo()</code>Ném (trong trường hợp đó, số lượng ngoại lệ chưa được thực hiện trong chất phá hủy lớn hơn những gì mà hàm tạo quan sát được).</p>
+<p><a href="https://en.cppreference.com/w/cpp/experimental/scope_fail" title="cpp/experimental/scope fail"><code>std::experimental::scope_fail</code></a>Và<a href="https://en.cppreference.com/w/cpp/experimental/scope_success" title="cpp/experimental/scope success"><code>std::experimental::scope_success</code></a>trong LFTS v3 dựa vào chức năng của<code>uncaught_exceptions</code>, bởi vì các chất phá hủy của chúng cần phải làm những việc khác nhau phụ thuộc vào việc được gọi trong quá trình tháo gỡ.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_uncaught_exceptions" title="cpp/feature test"><code>__cpp_lib_uncaught_exceptions</code></a></td> <td><span class="nu0">Tương tự như cho</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<a href="#Top"><code>std::uncaught_exceptions</code></a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Ngoại lệ&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue70" rel="nofollow">LWG 70</a> </td> <td>C ++ 98</td> <td>#include &lt;stdexcept&gt;<code>uncaught_exception()</code>bị mất tích</td> <td> <code>throw()</code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="terminate" title="cpp/error/terminate"> <span class="t-lines"><span>chấm dứt</span></span></a></div> </td> <td>chức năng được gọi khi xử lý ngoại lệ không thành công<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="exception_ptr" title="cpp/error/exception ptr"> <span class="t-lines"><span>Exception_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Loại con trỏ được chia sẻ để xử lý các đối tượng ngoại lệ<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="current_exception" title="cpp/error/current exception"> <span class="t-lines"><span>current_exception</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>nắm bắt được ngoại lệ hiện tại trong một<code><a href="exception_ptr" title="cpp/error/exception ptr">std::exception_ptr</a></code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr style="vertical-align:top;"> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính</td> <td>
+<a class="external text" href="http://www.gotw.ca/gotw/047.htm" rel="nofollow">GOTW issue 47: Uncaught Exceptions</a> </td>
+</tr> <tr style="vertical-align:top;"> <td># Xác định mất giá (MSG) [[không dùng nữa (MSG)]]]]</td> <td>
+<a class="external text" href="https://wg21.link/n4152" rel="nofollow">Rationale for <code>std::uncaught_exceptions</code></a>Cấu trúc foo</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/uncaught_exception">https://en.cppreference.com/w/cpp/error/uncaught_exception</a>
+</p>
+</div>

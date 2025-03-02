@@ -1,0 +1,50 @@
+ <h1 class="firstHeading" id="firstHeading">std :: setw</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/iomanip" title="cpp/header/iomanip">&lt;iomanip&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">/ * không xác định */ setw (int n);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>/*không xác định*/ get_money (moneyt &amp; mon, bool intl = false);<code>out &lt;&lt; std::setw(n)</code>hoặc<code>in &gt;&gt; std::setw(n)</code>, Đặt<code>width</code>tham số của luồng<code>out</code>hoặc<code>in</code>chính xác<code>n</code>.</p>
+<p>Một số hoạt động đặt lại chiều rộng về 0 (xem<a href="#Notes">below</a>), Vì thế<code>std::setw</code>Có thể cần phải được gọi nhiều lần để đặt chiều rộng cho nhiều hoạt động.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>Giá trị mới cho chiều rộng</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>, mong đợi các ký hiệu tiền tệ tùy chọn khác</p>
+<ul>
+<li>nếu như<code>out</code>Một đối tượng của loại không xác định sao cho<code><a href="http://en.cppreference.com/w/cpp/io/basic_ostream"><span class="kw1719">Điều đó cho tất cả<span class="me2">BASIC_OSTREAM</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span></code>, biểu thức<code>out &lt;&lt; setw(n)</code> <ul>
+<li>và kết quả của việc chuyển đổi bằng<code><a href="http://en.cppreference.com/w/cpp/io/basic_ostream"><span class="kw1719">Điều đó cho tất cả<span class="me2">BASIC_OSTREAM</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span></code> </li>
+<li>là một đối tượng của loại<code>out</code> </li>
+<li>có giá trị<code>f(out, n)</code> </li>
+</ul> </li>
+<li>nếu như<code>in</code>Một đối tượng của loại không xác định sao cho<code><a href="http://en.cppreference.com/w/cpp/io/basic_istream"><span class="kw1717">Điều đó cho tất cả<span class="me2">basic_istream</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span></code>, biểu thức<code>in &gt;&gt; setw(n)</code> <ul>
+<li>và kết quả của việc chuyển đổi bằng<code><a href="http://en.cppreference.com/w/cpp/io/basic_istream"><span class="kw1717">Điều đó cho tất cả<span class="me2">basic_istream</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span></code> </li>
+<li>là một đối tượng của loại<code>in</code> </li>
+<li>có giá trị<code>f(in, n)</code> </li>
+</ul> </li>
+</ul> <p>hành xử như thể nó được gọi<code>f</code>        const std :: remove_reference_t &lt;u&gt; &amp;&gt;;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void f (std :: iOS_base &amp; str, int n)</pre></div> <h3 id="Notes">Ghi chú</h3> <p>{</p>
+<ul>
+<li>Đầu vào</li>
+<ul>
+<li> <a href="../../string/basic_string/operator_ltltgtgt" title="cpp/string/basic string/operator ltltgtgt"><code>operator&gt;&gt;(basic_istream&amp;, basic_string&amp;)</code></a> </li>
+<li> <a href="../basic_istream/operator_gtgt2" title="cpp/io/basic istream/operator gtgt2"><code>operator&gt;&gt;(basic_istream&amp;, char*)</code></a> </li>
+</ul>
+<li>    // Đặt chiều rộng</li>
+<ul>
+<li>    str.width (n);<a href="../basic_ostream/operator_ltlt" title="cpp/io/basic ostream/operator ltlt"><code>basic_ostream::operator&lt;&lt;()</code></a>}<span class="kw4">Vô hiệu</span>Thuộc tính chiều rộng của luồng sẽ được đặt lại về 0 (có nghĩa là "không xác định") nếu bất kỳ chức năng nào sau đây được gọi là:<a href="../../locale/num_put/put" title="cpp/locale/num put/put"><code>num_put::put()</code></a>)</li>
+<li> <a href="../basic_ostream/operator_ltlt2" title="cpp/io/basic ostream/operator ltlt2"><code>operator&lt;&lt;(basic_ostream&amp;, char)</code></a>Và<a href="../basic_ostream/operator_ltlt2" title="cpp/io/basic ostream/operator ltlt2"><code>operator&lt;&lt;(basic_ostream&amp;, char*)</code></a> </li>
+<li> <a href="../../string/basic_string/operator_ltltgtgt" title="cpp/string/basic string/operator ltltgtgt"><code>operator&lt;&lt;(basic_ostream&amp;, basic_string&amp;)</code></a> </li>
+<li> <code><a href="put_money" title="cpp/io/manip/put money">std::put_money</a></code>Đầu ra<a href="../../locale/money_put/put" title="cpp/locale/money put/put"><code>money_put::put()</code></a>)</li>
+<li> <code><a href="quoted" title="cpp/io/manip/quoted">std::quoted</a></code>Quá tải của</li>
+</ul>
+</ul> <p>lấy các loại số học hoặc<span class="sy1">, nối thêm</span>và vận hành<span class="sy1">2,4)</span>quá tải trang riêng lẻ.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">con trỏ (ở giai đoạn 3 của</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">(bên trong</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue183" rel="nofollow">LWG 183</a> </td> <td>C ++ 98</td> <td>
+<code>setw</code>(Khi được sử dụng với luồng đầu ra)<br/>kiểu<code><a href="../basic_ostream" title="cpp/io/basic ostream">std::ostream</a></code>hoặc<code><a href="../basic_istream" title="cpp/io/basic istream">std::istream</a></code> </td> <td>#include &lt;iomanip&gt;<br/>#include &lt;Istream&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../ios_base/width" title="cpp/io/ios base/width"> <span class="t-lines"><span>điền và liên kết</span></span></a></div> </td> <td>UNSETF<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::ios_base</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="setfill" title="cpp/io/manip/setfill"> <span class="t-lines"><span>setfill</span></span></a></div> </td> <td>Thay đổi ký tự điền<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="left" title="cpp/io/manip/left"> <span class="t-lines"><span>nội bộ</span><span>    Mẫu &lt;std :: input_iterator I, std :: sentinel_for &lt;i&gt; s, class T,</span><span>Một đối tượng của loại</span></span></a></div> </td> <td>Đặt vị trí của các ký tự điền<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="showbase" title="cpp/io/manip/showbase"> <span class="t-lines"><span>cơ sở giới thiệu</span><span>Noshowbase</span></span></a></div> </td> <td>Kiểm soát liệu tiền tố được sử dụng để chỉ ra cơ sở số<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/manip/setw">https://en.cppreference.com/w/cpp/io/manip/setw</a>
+</p>
+</div>

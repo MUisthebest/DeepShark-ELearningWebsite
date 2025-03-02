@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tùy chọn &lt;t&gt; :: xuất hiện</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;class ... args&gt;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">T &amp; emplace (args &amp;&amp; ... args);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;class ... args&gt;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr t &amp; place (args &amp;&amp; ... args);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;class u, class ... args&gt;<code>*this</code>T &amp; emplace (std :: initizer_list &lt;u&gt; ilist, args &amp;&amp; ... args);</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;class u, class ... args&gt;<a href="../../language/direct_initialization" title="cpp/language/direct initialization">direct-initializing</a>Consexpr T &amp; Emplace (STD :: Khởi tạo_list &lt;u&gt; ilist, args &amp;&amp; ... args);<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...</code>Xây dựng giá trị chứa tại chỗ. Nếu như</div> <div class="t-li1">
+<span class="t-li">2)</span>Đã chứa một giá trị trước cuộc gọi, giá trị chứa bị phá hủy bằng cách gọi bộ hủy diệt của nó.<code>ilist, <a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...</code>Khởi tạo giá trị chứa bằng<code><a href="http://en.cppreference.com/w/cpp/types/is_constructible"><span class="kw527">Điều đó cho tất cả<span class="me2">is_constructable</span></span></a><span class="sy1">is_trivently_destructible_v</span>T, <a href="http://en.cppreference.com/w/cpp/utility/initializer_list"><span class="kw962">Điều đó cho tất cả<span class="me2">Khởi tạo_list</span></span></a><span class="sy1">is_trivently_destructible_v</span>U<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span>, Args<span class="sy3">. Trong các cuộc gọi có hiệu lực</span>...<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">được phân vùng liên quan đến</span></code>khoảng cách<code>true</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, không cho phép định dạng định dạng.</td> <td>-</td> <td>từ các lập luận</td>
+</tr> <tr class="t-par"> <td>Quá tải</td> <td>-</td> <td>Chứa một giá trị bất ngờ, phá hủy giá trị đó.</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T</code> <code>Args...</code>. Tiêu chuẩn hiện tại làm cho đảm bảo này thông qua câu lệnh chăn trong<span class="t-v">(1)</span> </td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T</code> <code><a href="../initializer_list" title="cpp/utility/initializer list">std::initializer_list</a></code>Và<code>Args...</code>. Tiêu chuẩn hiện tại làm cho đảm bảo này thông qua câu lệnh chăn trong<span class="t-v">(2)</span> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>các đối số để chuyển đến hàm tạo</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>(nhưng không khởi tạo danh sách trực tiếp) với<code>T</code>là một con trỏ đến đối tượng và<code>*this</code>như tham số.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Khởi tạo giá trị chứa bằng cách gọi hàm tạo của nó với</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">như tham số. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2231R1" rel="nofollow">P2231R1</a> </td> <td>C ++ 20</td> <td>
+<code>emplace</code>Bất kỳ ngoại lệ nào được ném bởi hàm tạo đã chọn của</td> <td>xây dựng giá trị chứa tại chỗ</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator=" title="cpp/utility/optional/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>gán nội dung<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/optional/emplace">https://en.cppreference.com/w/cpp/utility/optional/emplace</a>
+</p>
+</div>

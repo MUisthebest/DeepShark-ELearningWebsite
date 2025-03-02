@@ -1,0 +1,94 @@
+ <h1 class="firstHeading" id="firstHeading">, ngoại trừ</h1> <p>MỘT<i>định danh</i>là một chuỗi dài các chữ số, dấu gạch dưới, chữ thường và chữ in hoa và hầu hết các ký tự unicode.</p>
+<p>Nhân vật đầu tiên của một định danh hợp lệ phải là một trong những điều sau đây:</p>
+<ul>
+<li>chữ hoa chữ hoa a-z</li>
+<li>chữ thường Latin Chữ A-Z</li>
+<li>gạch dưới</li>
+<li>bất kỳ ký tự unicode nào với thuộc tính unicode<a class="external text" href="https://www.unicode.org/reports/tr31/#Table_Lexical_Classes_for_Identifiers" rel="nofollow">XID_Start</a> </li>
+</ul> <p>Bất kỳ ký tự nào khác của định danh hợp lệ phải là một trong những điều sau:</p>
+<ul>
+<li>Chữ số 0-9</li>
+<li>chữ hoa chữ hoa a-z</li>
+<li>chữ thường Latin Chữ A-Z</li>
+<li>gạch dưới</li>
+<li>bất kỳ ký tự unicode nào với thuộc tính unicode<a class="external text" href="https://www.unicode.org/reports/tr31/#Table_Lexical_Classes_for_Identifiers" rel="nofollow">XID_Continue</a> </li>
+</ul> <p>Danh sách các ký tự có thuộc tính xid_start và xid_continue có thể được tìm thấy trong<a class="external text" href="https://www.unicode.org/Public/UCD/latest/ucd/DerivedCoreProperties.txt" rel="nofollow">DerivedCoreProperties.txt</a>.</p>
+<p>Số nhận dạng là nhạy cảm trường hợp (chữ thường và chữ in hoa là khác biệt) và mọi ký tự đều có ý nghĩa. Mọi định danh phải phù hợp với<a class="external text" href="https://www.unicode.org/charts/normalization/" rel="nofollow">Normalization Form C</a>.</p>
+<p>Lưu ý: Hỗ trợ của các định danh Unicode bị giới hạn trong hầu hết các triển khai, ví dụ:<a class="external text" href="https://gcc.gnu.org/wiki/FAQ#What_is_the_status_of_adding_the_UTF-8_support_for_identifier_names_in_GCC.3F" rel="nofollow">gcc (until 10)</a>.</p>
+<h3 id="In_declarations">Trong các tuyên bố</h3> <p>Một định danh có thể được sử dụng<a href="declarations" title="cpp/language/declarations">to name</a>Đối tượng, tài liệu tham khảo, chức năng, người điều tra, loại, thành viên lớp, không gian tên, mẫu, chuyên ngành mẫu,<span class="t-rev-inl t-since-cxx11"><span>Gói tham số</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Nhãn Goto và các thực thể khác, với các ngoại lệ sau:</p>
+<ul><li>các định danh là<a href="../keyword" title="cpp/keyword">keywords</a>không thể được sử dụng cho các mục đích khác;</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Nơi duy nhất họ có thể được sử dụng làm từ không<span class="t-spar">thuộc tính-token</span>(ví dụ.<span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="kw1">iOS_Base (const ios_base &amp;) = xóa;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span>là một hợp lệ<a href="attributes" title="cpp/language/attributes">attribute</a>).</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>các định danh là<a href="operator_alternative" title="cpp/language/operator alternative">alternative representations</a>Đối với một số toán tử và dấu chấm câu nhất định không thể được sử dụng cho các mục đích khác;</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>các định danh có ý nghĩa đặc biệt (<code>final</code><span class="t-rev-inl t-since-cxx20"><span>Thì<code>import</code>Thì<code>module</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Và<code>override</code>) được sử dụng rõ ràng trong một bối cảnh nhất định thay vì là định danh thường xuyên;<ul><li>Trừ khi có quy định khác, bất kỳ sự mơ hồ nào về việc liệu một định danh nhất định có ý nghĩa đặc biệt được giải quyết để giải thích mã thông báo là một định danh thông thường hay không.</li></ul> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>, ngoại trừ<span class="t-rev-inl t-since-cxx11"><span>xuất hiện dưới dạng mã thông báo hoặc mã thông báo tiền xử lý (tức là không phải trong<span class="t-spar">Mỗi tên được đưa vào chương trình bởi một</span>giống<code>operator ""id</code>)</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>của một trong các hình thức sau được bảo lưu:<ul>
+<li>số nhận dạng với một dấu gạch dưới kép ở bất cứ đâu;</li>
+<li>định danh bắt đầu bằng một dấu gạch dưới, theo sau là một chữ cái viết hoa;</li>
+<li>Trong không gian tên toàn cầu, các định danh bắt đầu với một dấu gạch dưới.</li>
+</ul> </li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>TRONG<a href="user_literal#Literal_operators" title="cpp/language/user literal">literal operators</a>:<ul>
+<li>Số nhận dạng hậu tố theo nghĩa đen không bắt đầu với một dấu gạch dưới được dành riêng cho tiêu chuẩn hóa trong tương lai;</li>
+<li>Số nhận dạng hậu tố theo nghĩa đen có chứa dấu gạch dưới kép được dành riêng để sử dụng bằng cách triển khai.</li>
+</ul> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>"Bảo lưu" ở đây có nghĩa là các tiêu đề thư viện tiêu chuẩn<span class="co2">#định nghĩa</span>Hoặc khai báo các định danh như vậy cho nhu cầu nội bộ của họ, trình biên dịch có thể xác định trước các định danh không chuẩn của loại đó và thuật toán mang tên đó có thể cho rằng một số số nhận dạng này không được sử dụng. Nếu lập trình viên sử dụng các định danh như vậy, chương trình sẽ không được hình thành, không cần chẩn đoán.</p>
+<p>Ngoài ra, đó là hành vi không xác định đối với<span class="co2">#định nghĩa</span>hoặc<span class="co2">#undef</span>một số tên nhất định trong một đơn vị dịch, xem<a href="../preprocessor/replace" title="cpp/preprocessor/replace">reserved macro names</a>Để biết thêm chi tiết.</p>
+<h4 id="Zombie_identifiers">Định danh zombie</h4> <p>Kể từ C ++ 14, một số định danh được xóa khỏi thư viện tiêu chuẩn C ++. Chúng được liệt kê trong<a href="../symbol_index/zombie_names" title="cpp/symbol index/zombie names">list of zombie names</a>.</p>
+<p>Tuy nhiên, các định danh này vẫn được dành riêng cho tiêu chuẩn hóa trước đây trong một bối cảnh nhất định. Tên chức năng thành viên bị loại bỏ không được sử dụng làm tên cho các macro giống như hàm và các tên thành viên bị loại bỏ khác có thể không được sử dụng làm tên cho các macro giống như đối tượng trong mã di động.</p>
+<h3 id="In_expressions">Trong biểu thức</h3> <p>Một định danh đặt tên một biến, một hàm,<span class="t-rev-inl t-since-cxx20"><span>chuyên môn hóa a<a href="constraints" title="cpp/language/constraints">concept</a>Thì</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>hoặc một người liệt kê có thể được sử dụng như một<a href="expressions" title="cpp/language/expressions">expression</a>. Kết quả của một biểu thức bao gồm chỉ số nhận dạng là thực thể được đặt tên bởi định danh. Các<a href="value_category" title="cpp/language/value category">value category</a>của biểu thức là<i>lvalue</i>Nếu định danh đặt tên cho một hàm, một biến<span class="t-rev-inl t-since-cxx20"><span>có thể đại diện cho các phân số của ve.<a href="template_parameters#Non-type_template_parameter" title="cpp/language/template parameters">template parameter object</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, hoặc một thành viên dữ liệu, và<span class="t-rev-inl t-until-cxx11"><span><i>rvalue</i></span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span><i>prvalue</i></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>mặt khác (ví dụ: an<a href="enum" title="cpp/language/enum">enumerator</a>khoảng cách<span class="t-rev-inl t-until-cxx11"><span>một rvalue</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>một prvalue</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }<span class="t-rev-inl t-since-cxx20"><span>, một chuyên ngành của một khái niệm là một bool prvalue</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>). Loại biểu thức được xác định như sau:</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Nếu thực thể được đặt tên bởi số nhận dạng (không đủ tiêu chuẩn) là một thực thể cục bộ và sẽ dẫn đến việc can thiệp<a href="lambda" title="cpp/language/lambda">lambda expression</a>Nắm bắt nó bằng bản sao nếu nó được đặt tên bên ngoài một toán hạng không được đánh giá trong vùng khai báo trong đó định danh xuất hiện, thì loại biểu thức là loại<a href="operator_member_access" title="cpp/language/operator member access">class member access expression</a>Đặt tên cho thành viên dữ liệu không tĩnh sẽ được khai báo cho việc bắt giữ như vậy trong đối tượng đóng của biểu thức Lambda can thiệp như vậy.</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">void f ()</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>{<code>T</code>    Float x, &amp; r = x;<span class="kw4">hằng số</span> </li></ul>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul><li>    [=]</li></ul> <p>    {<a href="member_functions" title="cpp/language/member functions">member function</a>        DeclType (x) y1;        // y1 có loại float<code>this-&gt;member</code>.</p>
+<h4 id="Unqualified_identifiers">        DeclType ((x)) y2 = y1; // y2 có loại float const &amp; vì lambda này</h4> <p>                               // không thể thay đổi và x là một lvalue</p>
+<ul>
+<li>chồng chéo với container.<a href="operators" title="cpp/language/operators">overloaded operator</a>        DeclType (r) r1 = y1;   // r1 có loại float &amp;<code>operator+</code>hoặc<code><a href="http://en.cppreference.com/w/cpp/memory/new/operator_new"><span class="kw690">nhà điều hành mới</span></a></code>Số lượng các yếu tố để sao chép</li>
+<li>Một<a href="cast_operator" title="cpp/language/cast operator">user-defined conversion function</a>    };<code>operator bool</code>Số lượng các yếu tố để sao chép</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Một<a href="user_literal" title="cpp/language/user literal">user-defined literal operator</a>    };<code>operator "" _km</code>Số lượng các yếu tố để sao chép</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>Một<a href="templates" title="cpp/language/templates">template</a>}<code>MyTemplate&lt;int&gt;</code>Số lượng các yếu tố để sao chép</li>
+<li>Trong cơ thể của một người không tĩnh<code>~</code>, loại biểu thức là<code>~MyClass</code>Số lượng các yếu tố để sao chép</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Trong cơ thể của một người không tĩnh<code>~</code>theo sau là a<a href="decltype" title="cpp/language/decltype">decltype</a>Mặt khác, loại biểu thức giống như loại thực thể được đặt tên.<code>~decltype(str)</code>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul><li>Trong cơ thể của một người không tĩnh<code>~</code>theo sau là a<a href="pack_indexing#Pack_indexing_specifier" title="cpp/language/pack indexing">pack indexing specifier</a>, chẳng hạn như<code>~pack...[0]</code>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <p>, mỗi định danh tên một thành viên không tĩnh được chuyển đổi hoàn toàn thành biểu thức truy cập thành viên lớp<i>Định danh không đủ tiêu chuẩn</i>.</p>
+<h4 id="Qualified_identifiers">Bên cạnh các định danh được khai báo phù hợp, có thể được sử dụng trong các biểu thức trong cùng một vai trò:</h4> <p>MỘT<i>tên trong ký hiệu chức năng, chẳng hạn như</i>Tên, chẳng hạn như<code>::</code>Tên, chẳng hạn như</p>
+<ul>
+<li>tên theo sau là danh sách đối số của nó, chẳng hạn như</li>
+<li>nhân vật</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>theo sau là một tên lớp, chẳng hạn như</li>
+<li>Một<a href="decltype" title="cpp/language/decltype"><code>decltype</code> specifier</a>nhân vật</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul><li>Một<a href="pack_indexing#Pack_indexing_specifier" title="cpp/language/pack indexing">pack indexing specifier</a>chỉ định, chẳng hạn như</li></ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <p>nhân vật<code><a href="http://en.cppreference.com/w/cpp/string/basic_string/npos"><span class="kw1234">Điều đó cho tất cả<span class="me2">ngoại trừ việc phần tử được xây dựng là</span><span class="sy4">::</span><span class="me2">Cùng với các định danh, chúng được gọi là</span></span></a></code>biểu hiện ID không đủ tiêu chuẩn<code>npos</code>Định danh đủ điều kiện<code>string</code>một tên liệt kê;<code>std</code>là một biểu hiện ID không đủ tiêu chuẩn được chuẩn bị bởi một toán tử phân giải phạm vi<code>::tolower</code>và tùy chọn, một chuỗi của bất kỳ trong số các toán tử phân tích phạm vi sau đây:<code>tolower</code>một tên không gian tên;<code><span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/io/cout"><span class="kw1762">Điều đó cho tất cả<span class="me2">cout</span></span></a></code>một tên lớp;<code>cout</code>một tên liệt kê;<code>std</code>biểu thị một lớp hoặc loại liệt kê.<code>boost::signals2::connection</code>Trình xác định biểu thị một loại hoặc loại liệt kê.<code>connection</code>Ví dụ, biểu thức<code>signals2</code>NPO<code>boost</code>.</p>
+<p>Biểu thức ràng buộc được giới thiệu cho từng tham số với ràng buộc<a href="../keyword/template" title="cpp/keyword/template"><code>template</code></a>là một biểu thức đặt tên cho thành viên tĩnh<a href="dependent_name" title="cpp/language/dependent name">dependent template names</a>.</p>
+<p>(Raco).<a href="qualified_lookup" title="cpp/language/qualified lookup">qualified lookup</a>trong lớp</p>
+<h3 id="Names">trong không gian tên</h3> <p>MỘT<i>tên</i>. Biểu thức</p>
+<ul>
+<li>Đặt tên cho chức năng</li>
+<li>Trong không gian tên toàn cầu. Biểu thức<code>operator+</code>Thì<code><a href="http://en.cppreference.com/w/cpp/memory/new/operator_new"><span class="kw690">nhà điều hành mới</span></a></code>);</li>
+<li>Đặt tên cho biến toàn cầu<code>operator bool</code>);</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>trong không gian tên<code>operator ""_km</code>);</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>, đó là một không gian tên cấp cao nhất. Biểu thức<code>MyTemplate&lt;int&gt;</code>).</li></ul> <p>Tên loại<a href="declarations" title="cpp/language/declarations">declaration</a>tuyên bố trong không gian tên<a href="storage_duration#Linkage" title="cpp/language/storage duration">linkage</a>.</p>
+<p>, được tuyên bố trong không gian tên<a href="lookup" title="cpp/language/lookup">name lookup</a>có thể xuất hiện trong các định danh đủ điều kiện là cần thiết để định hướng<a href="dependent_name" title="cpp/language/dependent name">dependent names</a>Đối với các chi tiết của việc tra cứu tên cho các định danh đủ điều kiện.<a href="dependent_name" title="cpp/language/dependent name">explicit disambiguation</a>).</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1440.html" rel="nofollow">CWG 1440</a> </td> <td>C ++ 11</td> <td>Tên<code>::</code>là việc sử dụng một trong những điều sau đây để chỉ một thực thể:</td> <td>một định danh;<br/>Tên toán tử bị quá tải trong ký hiệu chức năng (</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1963.html" rel="nofollow">CWG 1963</a> </td> <td>C ++ 11</td> <td>Tên chức năng chuyển đổi do người dùng xác định (<br/>Tên toán tử theo nghĩa đen do người dùng định nghĩa (</td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2521.html" rel="nofollow">CWG 2521</a> </td> <td>C ++ 11</td> <td>một tên mẫu theo sau là danh sách đối số của nó (<span class="t-spar">Mỗi tên được đưa vào chương trình bởi một</span>của<br/>. Một cái tên được sử dụng trong nhiều hơn một đơn vị dịch có thể đề cập đến các thực thể giống nhau hoặc khác nhau, tùy thuộc vào</td> <td>Khi trình biên dịch gặp một tên không xác định trong một chương trình, nó liên kết nó với tuyên bố giới thiệu tên</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/identifier" title="c/language/identifier">C documentation</a></span>vì<span class=""><span>, ngoại trừ</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/identifiers">https://en.cppreference.com/w/cpp/language/identifiers</a>
+</p>
+</div>

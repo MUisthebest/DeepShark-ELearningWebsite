@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Bsearch</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/cstdlib" title="cpp/header/cstdlib">&lt;cstdlib&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">void* bsearch (const void* phím, const void* ptr, std :: size_t đếm,</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">               std :: size_t size, /* c-compare-pred* /* comp);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark t-mark-expos">.<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">    .</span>)</span> </td> </tr> </table> <p>void* bsearch (const void* phím, const void* ptr, std :: size_t đếm,<code>key</code>               std :: size_t size, /* so sánh-pred* /* comp);<code>ptr</code>bên ngoài "c" bằng cách sử dụng /*c-compare-pred* / = int (const void*, const void*);<code>count</code>bên ngoài "c ++" bằng cách sử dụng /*so sánh-pred* / = int (const void*, const void*);<code>size</code>Tìm một phần tử bằng phần tử được trỏ bởi<code>key</code>trong một mảng được chỉ ra bởi<code>comp</code>.</p>
+<p>. Các mảng chứa<code>comp</code>các yếu tố của</p>
+<p>từng byte mỗi và phải được phân vùng đối với đối tượng được chỉ ra bởi<code>comp</code>, nghĩa là, tất cả các yếu tố so sánh ít hơn phải xuất hiện trước tất cả các yếu tố so sánh bằng và các yếu tố phải xuất hiện trước tất cả các yếu tố so sánh lớn hơn đối tượng chính. Một mảng được sắp xếp đầy đủ đáp ứng các yêu cầu này. Các yếu tố được so sánh bằng cách sử dụng chức năng được trỏ đến bởi</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu mảng chưa được phân vùng theo thứ tự tăng dần đối với khóa, theo cùng một tiêu chí</td> <td>-</td> <td>Sử dụng.</td>
+</tr> <tr class="t-par"> <td>Nếu mảng chứa một số yếu tố</td> <td>-</td> <td>sẽ chỉ ra bằng với phần tử được tìm kiếm, thì nó không xác định phần tử nào chức năng sẽ trả về kết quả.</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>chìa khóa</td>
+</tr> <tr class="t-par"> <td>kích cỡ</td> <td>-</td> <td>con trỏ đến phần tử để tìm kiếm</td>
+</tr> <tr class="t-par"> <td>sau đó</td> <td>-</td> <td>PTR<i>Một phạm vi phân loại đầy đủ đáp ứng các tiêu chí này.</i>con trỏ đến mảng để kiểm tra<i>Trả một trình lặp lại cho phần tử đầu tiên</i>Số lượng phần tử trong mảng<code>key</code>Kích thước của mỗi phần tử trong mảng trong byte<br/> <p>Hàm so sánh trả về giá trị số nguyên âm nếu đối số đầu tiên là</p>
+<p><span class="t-cc"><code> int cmp(const void *a, const void *b);</code></span></p>
+<p>hơn thứ hai, giá trị số nguyên dương nếu đối số đầu tiên là</p>
+<p>hơn thứ hai và không nếu các đối số là tương đương.</p>
+</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>được thông qua như là đối số đầu tiên, một phần tử từ mảng là thứ hai.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Chữ ký của hàm so sánh phải tương đương với các điều sau:</p>
+<p>Hàm không được sửa đổi các đối tượng được truyền cho nó và phải trả về kết quả nhất quán khi được gọi cho cùng một đối tượng, bất kể vị trí của chúng trong mảng.<code>comp</code>​<a href="../language#language_linkage" title="cpp/language">language linkage</a>Con trỏ đến phần tử tìm thấy hoặc con trỏ null nếu phần tử chưa được tìm thấy.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Mặc dù có tên, cả các tiêu chuẩn C và POSIX đều không yêu cầu chức năng này được thực hiện bằng cách sử dụng tìm kiếm nhị phân hoặc thực hiện bất kỳ sự đảm bảo phức tạp nào.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Hai quá tải được cung cấp bởi thư viện tiêu chuẩn C ++ là khác biệt vì các loại tham số</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="qsort" title="cpp/algorithm/qsort"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>Qsort<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="equal_range" title="cpp/algorithm/equal range"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch">C documentation</a></span>vì<code>bsearch</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/bsearch">https://en.cppreference.com/w/cpp/algorithm/bsearch</a>
+</p>
+</div>

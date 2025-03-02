@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Assume_aligned</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;std :: size_t n, lớp T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>[[NODISCARD]] Consexpr t* Assume_aligned (t* ptr);<code>ptr</code>Thông báo cho việc thực hiện rằng đối tượng<code>N</code>các điểm được liên kết với ít nhất<code>assume_aligned</code>.</p>
+<p><code>N</code>. Việc triển khai có thể sử dụng thông tin này để tạo mã hiệu quả hơn, nhưng nó chỉ có thể đưa ra giả định này nếu đối tượng được truy cập thông qua giá trị trả về của<code>ptr</code>phải là sức mạnh của 2. Hành vi không được xác định nếu<code>T</code>không trỏ đến một đối tượng thuộc loại<code>N</code>.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>ptr</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="Notes">Ghi chú</h3> <p>(Bỏ qua trình độ hóa CV ở mọi cấp độ) hoặc nếu sự liên kết của đối tượng không ít nhất là<code>assume_aligned</code>Để đảm bảo rằng chương trình được hưởng lợi từ các tối ưu hóa được kích hoạt bởi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, Điều quan trọng là phải truy cập đối tượng thông qua giá trị trả về của nó:</pre></div> <p>void f (int* p)<code>assume_aligned</code>{</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_assume_aligned" title="cpp/feature test"><code>__cpp_lib_assume_aligned</code></a></td> <td><span class="nu0">201811l</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<code>std::assume_aligned</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="../language/alignof" title="cpp/language/alignof"> <code>alignof</code> operator</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>// (thường là 4):</td>
+</tr> <tr class="t-dsc"> <td> <a href="../language/alignas" title="cpp/language/alignas"> <code>alignas</code> specifier</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>// `alignas (gấp đôi dài)` Nếu muốn.</td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/aligned_storage" title="cpp/types/aligned storage"> <span class="t-lines"><span>căn chỉnh_storage</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span><span class="t-mark-rev t-deprecated-cxx23">(Không dùng nữa trong C ++ 23)</span></span></span></div> </td> <td>Xác định loại phù hợp để sử dụng là lưu trữ không chính thức cho các loại kích thước đã cho<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="align" title="cpp/memory/align"> <span class="t-lines"><span>căn chỉnh</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Sắp xếp một con trỏ trong bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>[[<a href="../language/attributes/assume" title="cpp/language/attributes/assume">assume</a>(<i>  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</i>)]]</code><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span> </td> <td>chỉ định rằng<i>  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</i>ngăn chặn cảnh báo trình biên dịch trên các thực thể không sử dụng, nếu có<span class="kw2">ĐÚNG VẬY</span>(Trình xác định thuộc tính)<br/><span class="t-mark">chỉ ra rằng một thành viên dữ liệu phi tĩnh không cần có một địa chỉ khác biệt với tất cả các thành viên dữ liệu phi tĩnh khác trong lớp của nó</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/assume_aligned">https://en.cppreference.com/w/cpp/memory/assume_aligned</a>
+</p>
+</div>

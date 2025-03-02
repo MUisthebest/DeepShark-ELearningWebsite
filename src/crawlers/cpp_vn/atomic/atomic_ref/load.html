@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: ATOMIC_REF &lt;T&gt; :: Tải</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Tải t (std :: memory_order order = std :: memory_order_seq_cst) const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Tải về mặt nguyên tử và trả về giá trị hiện tại của đối tượng được tham chiếu. Bộ nhớ bị ảnh hưởng theo giá trị của<code>order</code>.</p>
+<p><code>order</code>Phải là một trong những<code><a href="../memory_order" title="cpp/atomic/memory order">std::memory_order_relaxed</a></code>Thì<code><a href="../memory_order" title="cpp/atomic/memory order">std::memory_order_consume</a></code>Thì<code><a href="../memory_order" title="cpp/atomic/memory order">std::memory_order_acquire</a></code>hoặc<code><a href="../memory_order" title="cpp/atomic/memory order">std::memory_order_seq_cst</a></code>. Nếu không thì hành vi không xác định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Thay thế nguyên tử giá trị được trỏ đến bởi</td> <td>-</td> <td>Tham gia vào giải quyết quá tải.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Giá trị hiện tại của đối tượng được tham chiếu.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_t" title="cpp/atomic/atomic ref/operator T"> <span class="t-lines"><span>is_lock_free</span></span></a></div> </td> <td>kiểm tra xem<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_ref/load">https://en.cppreference.com/w/cpp/atomic/atomic_ref/load</a>
+</p>
+</div>

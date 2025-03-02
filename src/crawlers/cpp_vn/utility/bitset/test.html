@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Bitset &lt;n&gt; :: Kiểm tra</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Kiểm tra bool (std :: size_t pos) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <p>Trả về giá trị của bit tại vị trí<code>pos</code>(Đếm từ 0).</p>
+<p>Không gian tên std :: Phạm vi<code><a href="operator_at" title="cpp/utility/bitset/operator at">operator[]</a></code>, thực hiện kiểm tra giới hạn và ném<code><a href="../../error/out_of_range" title="cpp/error/out of range">std::out_of_range</a></code>nếu như<code>pos</code>không tương ứng với một vị trí hợp lệ trong bitset.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>Vị trí của bit để trả về (đếm từ 0)</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu bit được yêu cầu được đặt,<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../../error/out_of_range" title="cpp/error/out of range">std::out_of_range</a></code>nếu như<code>pos</code>không tương ứng với một vị trí hợp lệ trong bitset.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;tim&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;bitset&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_at" title="cpp/utility/bitset/operator at"> <span class="t-lines"><span>nhà điều hành []</span></span></a></div> </td> <td>#include &lt;Cassert&gt;<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../numeric/popcount" title="cpp/numeric/popcount"> <span class="t-lines"><span>PopCount</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>tính số lượng<code>1</code>bit trong một số nguyên không dấu<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../numeric/has_single_bit" title="cpp/numeric/has single bit"> <span class="t-lines"><span>has_single_bit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>kiểm tra xem một số có phải là một sức mạnh không thể thiếu của<code>2</code> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/bitset/test">https://en.cppreference.com/w/cpp/utility/bitset/test</a>
+</p>
+</div>

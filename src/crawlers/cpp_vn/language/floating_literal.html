@@ -1,0 +1,68 @@
+ <h1 class="firstHeading" id="firstHeading">Đo nổi theo nghĩa đen</h1> <p>Đạo luật nổi xác định một hằng số thời gian biên dịch có giá trị được chỉ định trong tệp nguồn.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">Chuỗi chữ số</span> <span class="t-spar">Decimal-exponent</span> <span class="t-spar">Hậu tố</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Chuỗi chữ số</span> <code>.</code> <span class="t-spar">Decimal-exponent</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Hậu tố</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Chuỗi chữ số</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>.</code> <span class="t-spar">Chuỗi chữ số</span> <span class="t-spar">Decimal-exponent</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Hậu tố</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>0x</code>|<code>0X</code> <span class="t-spar">HEX-DIGIT-DEQUENCE</span> <span class="t-spar">Hex-exponent</span> <span class="t-spar">Hậu tố</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>0x</code>|<code>0X</code> <span class="t-spar">HEX-DIGIT-DEQUENCE</span> <code>.</code> <span class="t-spar">Hex-exponent</span> <span class="t-spar">Hậu tố</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>0x</code>|<code>0X</code> <span class="t-spar">HEX-DIGIT-DEQUENCE</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>.</code> <span class="t-spar">HEX-DIGIT-DEQUENCE</span> <span class="t-spar">Hex-exponent</span> <span class="t-spar">Hậu tố</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span> <span class="t-spar">Chuỗi chữ số</span>Đại diện cho toàn bộ số không có dấu phân cách thập phân, trong trường hợp này, số mũ không phải là tùy chọn:<code>1e10</code>Thì<code>1e-5L</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span> <span class="t-spar">Chuỗi chữ số</span>Đại diện cho toàn bộ số với một dấu phân cách thập phân, trong trường hợp này là số mũ là tùy chọn:<code>1.</code>Thì<code>1.e-2</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <span class="t-spar">Chuỗi chữ số</span>đại diện cho một số phân số. Số mũ là tùy chọn:<code>3.14</code>Thì<code>.1f</code>Thì<code>0.1e-1L</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Thập lục phân<span class="t-spar">Chuỗi chữ số</span>đại diện cho toàn bộ số mà không có dấu phân cách radix. Số mũ không bao giờ là tùy chọn cho các chữ nổi của hình lục giác:<code>0x1ffp10</code>Thì<code>0X0p-1</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Thập lục phân<span class="t-spar">Chuỗi chữ số</span>đại diện cho toàn bộ số với một dấu phân cách radix. Số mũ không bao giờ là tùy chọn cho các chữ nổi của hình lục giác:<code>0x1.p0</code>Thì<code>0xf.p-1</code>.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>Thập lục phân<span class="t-spar">Chuỗi chữ số</span>đại diện cho một số phân số với một phân tách radix. Số mũ không bao giờ là tùy chọn cho các chữ nổi của hình lục giác:<code>0x0.123p-1</code>Thì<code>0xa.bp10l</code>.</div> <p><span class="t-spar">Decimal-exponent</span>có hình thức</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>e</code>|<code>E</code> <span class="t-spar">Dấu hiệu số mũ</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Chuỗi chữ số</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p><span class="t-spar">Hex-exponent</span>có hình thức</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>p</code>|<code>P</code> <span class="t-spar">Dấu hiệu số mũ</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Chuỗi chữ số</span> </td> <td class="t-sdsc-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr>
+</table> <p><span class="t-spar">Dấu hiệu số mũ</span>, nếu có mặt, là<code>+</code>hoặc<code>-</code></p>
+<p><span class="t-spar">Hậu tố</span>, nếu có, là một trong những<code>f</code>Thì<code>l</code>Thì<code>F</code>Thì<code>L</code><span class="t-rev-inl t-since-cxx23"><span>Thì<code>f16</code>Thì<code>f32</code>Thì<code>f64</code>Thì<code>f128</code>Thì<code>bf16</code>Thì<code>F16</code>Thì<code>F32</code>Thì<code>F64</code>Thì<code>F128</code>Thì<code>BF16</code></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>. Hậu tố xác định loại nghĩa đen dấu phẩy động:</p>
+<ul>
+<li>(không có hậu tố) định nghĩa<code>double</code> </li>
+<li> <code>f F</code>Xác định<code>float</code> </li>
+<li> <code>l L</code>Xác định<code>long double</code> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul>
+<li> <code>f16 F16</code>Xác định<code>std::float16_t</code> </li>
+<li> <code>f32 F32</code>Xác định<code>std::float32_t</code> </li>
+<li> <code>f64 F64</code>Xác định<code>std::float64_t</code> </li>
+<li> <code>f128 F128</code>Xác định<code>std::float128_t</code> </li>
+<li> <code>bf16 BF16</code>Xác định<code>std::bfloat16_t</code> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <p>Trích dẫn đơn tùy chọn (<span class="st0">void print_info (std :: string_view rem, const std :: map &lt;int, char&gt; &amp; v)</span>) có thể được chèn giữa các chữ số dưới dạng phân tách; Họ bị bỏ qua khi xác định giá trị của nghĩa đen.</p>
+</td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Ký hiệu khoa học thập phân được sử dụng, có nghĩa là giá trị của nghĩa đen dấu phẩy động có ý nghĩa nhân với số 10 được nâng lên<span class="t-spar">Decimal-exponent</span>. Ví dụ. ý nghĩa toán học của<code>123e4</code>khoảng cách<i>123 × 10<sup>4</sup></i>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Nếu nghĩa đen nổi bắt đầu với chuỗi nhân vật<code>0x</code>hoặc<code>0X</code>, nghĩa đen nổi là một<i>Pha nổi theo nghĩa đen</i>. Nếu không, nó là một<i>nghĩa đen dấu thập phân</i>.</p>
+<p>C &lt;tint&gt; C;  // ĐƯỢC RỒI; Instantiates Tuyên bố void C :: F (int n = 0, int)<i>Pha nổi theo nghĩa đen</i>, ý nghĩa được hiểu là một số hợp lý thập lục phân, và<span class="t-spar">Chuỗi chữ số</span>của số mũ được hiểu là công suất số nguyên (thập phân) của 2 mà theo đó ý nghĩa phải được chia tỷ lệ.</p>
+<p><span class="t-cc"><code>double d = 0x1.4p3;</code></span><code>// hex fraction 1.4 (decimal 1.25) scaled by 2<sup>Yêu cầu std :: Constructible_From &lt;std :: iter_value_t &lt;i&gt;, std :: iter_reference_t &lt;i &gt;&gt;</sup>, that is 10.0</code></p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Các chữ cái nổi của dấu hiệu âm lục không phải là một phần của C ++ cho đến C ++ 17, mặc dù chúng có thể được phân tích cú pháp và in bởi các hàm I/O vì C ++ 11: cả hai luồng I/O C ++ khi<code><a href="../io/manip/fixed" title="cpp/io/manip/fixed">std::hexfloat</a></code>được bật và các luồng I/O C:<code><a href="../io/c/fprintf" title="cpp/io/c/fprintf">std::printf</a></code>Thì<code><a href="../io/c/fscanf" title="cpp/io/c/fscanf">std::scanf</a></code>, vv xem<code><a href="../string/byte/strtof" title="cpp/string/byte/strtof">std::strtof</a></code>cho mô tả định dạng.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_hex_float" title="cpp/feature test"><code>__cpp_hex_float</code></a></td> <td><span class="nu0">Thuật toán song song</span></td> <td><span class="t-mark">Dest_at</span></td> <td>Hexadecimal nổi nghĩa chữ</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;iomanip&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>#include &lt;pyleninfo&gt;</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>#include &lt;pyleninfo&gt;</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li> </li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li> </li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li> </li></ul>
+<li>    S.B3 = 0B11;</li>
+<ul><li>int main ()</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="user_literal" title="cpp/language/user literal"> user-defined literals</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>    std :: cout &lt;&lt; '\ n';</td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/floating_constant" title="c/language/floating constant">C documentation</a></span>vì<span class=""><span>{</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/floating_literal">https://en.cppreference.com/w/cpp/language/floating_literal</a>
+</p>
+</div>

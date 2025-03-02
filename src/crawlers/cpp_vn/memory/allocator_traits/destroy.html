@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: allocator_traits &lt;alloc&gt; :: phá hủy</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Phá hủy khoảng trống tĩnh (ALLOC &amp; A, T* P);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>void phá hủy (u* p);<code>p</code>Mẫu &lt;Class T&gt;<code>a.destroy(p)</code>constic static void phá hủy (ALLOC &amp; A, T* P);<code>Alloc</code>Nếu có thể, hãy xây dựng một đối tượng thuộc loại<code>destroy()</code>ký tự.<span class="t-rev-inl t-until-cxx20"><span>. Nếu có thể, làm như vậy bằng cách gọi<code>*p</code>. Nếu không thể (ví dụ:<code>p-&gt;~T()</code></span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span><code><a href="http://en.cppreference.com/w/cpp/memory/destroy_at"><span class="kw730">Điều đó cho tất cả<span class="me2">(Niebloid)</span></span></a><span class="br0">.</span>p<span class="br0">)</span></code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Một</td> <td>-</td> <td>kẻ hủy diệt của</td>
+</tr> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>trực tiếp, như</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>người phân bổ sử dụng để phá hủy<code>destroy()</code>Hàm này được sử dụng bởi các thùng chứa thư viện tiêu chuẩn khi chèn, sao chép hoặc di chuyển các phần tử.<a href="../../named_req/allocator" title="cpp/named req/Allocator">Allocator</a>Vì chức năng này cung cấp tự động rơi trở lại vị trí mới, chức năng thành viên</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../allocator/destroy" title="cpp/memory/allocator/destroy"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span></div> </td> <td>xây dựng<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::allocator&lt;T&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/allocator_traits/destroy">https://en.cppreference.com/w/cpp/memory/allocator_traits/destroy</a>
+</p>
+</div>

@@ -1,0 +1,37 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Địa chỉ</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-since-cxx17">(Constexpr kể từ C ++ 17)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">T* địa chỉ (t &amp; arg) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class T&gt;<code>arg</code>const t* địa chỉ (const t &amp;&amp;) = xóa;<code>operator&amp;</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Có được địa chỉ thực tế của đối tượng hoặc chức năng<code>const</code>, ngay cả với sự hiện diện của quá tải</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>              Không có p);<code>std::addressof(e)</code>Điều đó như vậy<a href="../language/constant_expression" title="cpp/language/constant expression">constant subexpression</a>Sử dụng chức năng nhị phân đã cho<code>e</code>Quá tải rvalue bị xóa để ngăn chặn địa chỉ của</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</td> <td>-</td> <td>rvalues.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>là một biểu hiện phụ hằng số lvalue.<code>arg</code>.</p>
+<h3 id="Possible_implementation">. ​</h3> <p>đối tượng hoặc chức năng lvalue<code>constexpr</code>    iota (R &amp;&amp; r, t giá trị);<code>reinterpret_cast</code>Con trỏ đến</p>
+<table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Việc thực hiện dưới đây không</pre></div> </td>
+</tr>
+</table> <p>không thể sử dụng trong một biểu thức không đổi. Hỗ trợ trình biên dịch là cần thiết (xem bên dưới).<a class="external text" href="https://github.com/gcc-mirror/gcc/blob/b8806796ec64585de39ca6ee3b7b30cc08f27d62/libstdc++-v3/include/bits/move.h#L47-L50" rel="nofollow">GNU libstdc++</a>Thì<a class="external text" href="https://github.com/llvm/llvm-project/blob/5146b57b403b3a512dc64e766695b13803ef3b54/libcxx/include/__memory/addressof.h#L21-L28" rel="nofollow">LLVM libc++</a>Thì<a class="external text" href="https://github.com/microsoft/STL/blob/2f03bdf361f7f153b4216c60a0d9491c0be13a73/stl/inc/xstddef#L279-L282" rel="nofollow">Microsoft STL</a>.</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_addressof_constexpr" title="cpp/feature test"><code>__cpp_lib_addressof_constexpr</code></a></td> <td><span class="nu0">Thuật toán song song</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<code>constexpr</code> <code>std::addressof</code> </td>
+</tr>
+</table> <p><code>constexpr</code>vì<code>addressof</code>// STD :: Remove_Reference là cần thiết để chỉ định rõ ràng các đối số mẫu<a class="external text" href="https://cplusplus.github.io/LWG/issue2296" rel="nofollow">LWG2296</a>// ví dụ. Địa chỉ &lt;int &amp;&gt; và địa chỉ &lt;int &amp;&amp;&gt; sẽ hoạt động giống như địa chỉ</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p><code>operator&amp;</code> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">// Quá tải cho các loại đối tượng</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Mẫu &lt;Class T&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2598" rel="nofollow">LWG 2598</a> </td> <td>C ++ 11</td> <td>
+<code>std::addressof&lt;const T&gt;</code>Tên std :: enable_if &lt;std :: is_object &lt;</td> <td>    Typename std :: remove_reference &lt;t&gt; :: type&gt; :: value, t*&gt; :: gõ địa chỉ (t &amp; arg) noExcept</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="allocator" title="cpp/memory/allocator"> <span class="t-lines"><span>người phân bổ</span></span></a></div> </td> <td>Bộ phân bổ mặc định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="pointer_traits/pointer_to" title="cpp/memory/pointer traits/pointer to"> <span class="t-lines"><span>{</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>    trả về reinterpret_cast &lt;t*&gt; (<br/> <span class="t-mark">(Chức năng thành viên tĩnh công khai của<code>std::pointer_traits&lt;Ptr&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/addressof">https://en.cppreference.com/w/cpp/memory/addressof</a>
+</p>
+</div>

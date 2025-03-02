@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Variant &lt;type ...&gt; :: ~ biến thể</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td><pre data-language="cpp">~ biến thể ();</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Constexpr ~ biến thể ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Nếu như<a href="valueless_by_exception" title="cpp/utility/variant/valueless by exception"><code>valueless_by_exception()</code></a>khoảng cách<code>true</code>, không làm gì cả. Nếu không, phá hủy giá trị hiện có.</p>
+<p>Chất hủy diệt này là tầm thường nếu<code><a href="http://en.cppreference.com/w/cpp/types/is_destructible"><span class="kw572">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="sy1">is_trivently_destructible_v</span>T_i<span class="sy1">&lt;</span></code>khoảng cách<code>true</code>cho tất cả<code>T_i</code>TRONG<code>Types...</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Variant&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cstdio&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2231R1" rel="nofollow">P2231R1</a> </td> <td>C ++ 20</td> <td>Chất phá hủy không phải là Consexpr trong khi các chất phá hủy không tầm thường có thể là Consexpr trong C ++ 20</td> <td>xây dựng giá trị chứa tại chỗ</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/variant/%7Evariant">https://en.cppreference.com/w/cpp/utility/variant/%7Evariant</a>
+</p>
+</div>

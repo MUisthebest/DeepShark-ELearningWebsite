@@ -1,0 +1,79 @@
+ <h1 class="firstHeading" id="firstHeading">Khởi tạo mặc định</h1> <p>Đây là khởi tạo được thực hiện khi một đối tượng được xây dựng mà không có bộ khởi tạo.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">Đối tượng t</span>﻿<code>;</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>new</code> <span class="t-spar">T</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Khởi tạo mặc định được thực hiện trong ba tình huống:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Khi một biến có tự động, tĩnh hoặc địa lý<a href="storage_duration" title="cpp/language/storage duration">storage duration</a>được tuyên bố không có bộ khởi tạo;</div> <div class="t-li1">
+<span class="t-li">2)</span>Khi một đối tượng có thời lượng lưu trữ động được tạo bởi một<a href="new" title="cpp/language/new">new-expression</a>không có bộ khởi tạo;</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Khi một lớp cơ sở hoặc một thành viên dữ liệu không tĩnh không được đề cập trong một<a href="constructor" title="cpp/language/constructor">constructor initializer list</a>và hàm tạo đó được gọi.</div> <p>Các hiệu ứng của việc bắt đầu hóa mặc định là:</p>
+<ul>
+<li>nếu như<code>T</code>là một (có thể là đủ điều kiện CV)<span class="t-rev-inl t-until-cxx11"><span>Không Pod</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span>loại lớp, các hàm tạo được xem xét và tuân theo<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>chống lại danh sách lập luận trống. Hàm tạo được chọn (là một trong những<a href="default_constructor" title="cpp/language/default constructor">default constructors</a>) được gọi để cung cấp giá trị ban đầu cho đối tượng mới;</li>
+<li>nếu như<code>T</code>là một loại mảng, mọi yếu tố của mảng đều được khởi động mặc định;</li>
+<li>Nếu không, không có khởi tạo nào được thực hiện (xem<a href="#Notes">notes</a>).</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Chỉ có thể (có thể là các loại lớp không POD (hoặc mảng có đủ điều kiện CV) với thời gian lưu trữ tự động được coi là được khởi tạo mặc định khi không sử dụng trình khởi tạo. Các loại vô hướng và pod có thời lượng lưu trữ động được coi là không được khởi tạo (vì C ++ 11, tình huống này được phân loại lại thành một hình thức khởi tạo mặc định).</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <h4 id="Default-initialization_of_a_const_object">Mặc định-khởi tạo của một đối tượng const</h4> <p>Nếu một chương trình kêu gọi khởi tạo mặc định của một đối tượng của một<a href="cv" title="cpp/language/cv">const</a>-loại đủ điều kiện<code>T</code>, T sẽ là một<i>Const-Default có thể xây dựng</i>loại lớp hoặc mảng của chúng.</p>
+<p>Một loại lớp<code>T</code>const-default có thể xây dựng không nếu bắt buộc mặc định của<code>T</code>sẽ gọi một hàm tạo do người dùng cung cấp<code>T</code> <span class="t-rev-inl t-since-cxx11"><span>(không được kế thừa từ một lớp cơ sở)</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>(Cho đến C ++ 14)</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <ul>
+<li>từng thành viên dữ liệu phi tĩnh trực tiếp<code>M</code>của<code>T</code>thuộc loại lớp<code>X</code>(hoặc mảng của chúng),<code>X</code>là const-Default-được xây dựng, và</li>
+<li> <code>T</code>không có trực tiếp<a href="union#Union-like_classes" title="cpp/language/union">variant members</a>, Và</li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>từng thành viên dữ liệu phi tĩnh phi biến đổi trực tiếp<code>M</code>của<code>T</code>Toán tử gán bản sao được xác định ngầm cho một lớp<a href="data_members#Member_initialization" title="cpp/language/data members">default member initializer</a>Hoặc, nếu<code>M</code>thuộc loại lớp<code>X</code>(hoặc mảng của chúng),<code>X</code>có thể cấu trúc liên tục, có thể cấu trúc,</li>
+<li>nếu như<code>T</code>là một liên minh với ít nhất một thành viên dữ liệu không tĩnh, chính xác là một<a href="union#Union-like_classes" title="cpp/language/union">variant member</a>có trình khởi tạo thành viên mặc định,</li>
+<li>nếu như<code>T</code>không phải là một liên minh, đối với mỗi thành viên công đoàn ẩn danh có ít nhất một thành viên dữ liệu không tĩnh (nếu có), chính xác là một thành viên dữ liệu không tĩnh có trình khởi tạo thành viên mặc định và</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Trong luồng B. nghĩa là, một khi tải nguyên tử được hoàn thành, Thread B được đảm bảo sẽ thấy mọi thứ ARREAD A đã viết vào bộ nhớ. Lời hứa này chỉ giữ nếu B thực sự trả về giá trị được lưu trữ hoặc giá trị từ sau này trong chuỗi phát hành.<a href="object#Potentially_constructed_subobjects" title="cpp/language/object">potentially constructed</a>lớp cơ sở của<code>T</code>là const-Default-được xây dựng.</p>
+<h4 id="Read_from_an_indeterminate_byte">Đọc từ một byte không xác định</h4> <p>Sử dụng giá trị không xác định thu được bằng cách khởi hành mặc định, một biến không thuộc lớp thuộc bất kỳ loại nào<a href="ub" title="cpp/language/ub">undefined behavior</a>(đặc biệt, nó có thể là một<a href="object#Object_representation_and_value_representation" title="cpp/language/object">trap representation</a>), ngoại trừ trong các trường hợp sau:</p>
+<ul>
+<li>Nếu một giá trị không xác định của loại<span class="kw4">STD</span> <span class="kw4">char</span> <span class="t-rev-inl t-since-cxx17"><span>hoặc<a href="../types/byte" title="cpp/types/byte"><code>std::byte</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>được gán cho một biến khác của loại (có thể là đủ điều kiện CV)<span class="kw4">STD</span> <span class="kw4">char</span> <span class="t-rev-inl t-since-cxx17"><span>hoặc<a href="../types/byte" title="cpp/types/byte"><code>std::byte</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>(giá trị của biến trở nên không xác định, nhưng hành vi không được xác định);</li>
+<li>Nếu một giá trị không xác định của loại<span class="kw4">STD</span> <span class="kw4">char</span> <span class="t-rev-inl t-since-cxx17"><span>hoặc<a href="../types/byte" title="cpp/types/byte"><code>std::byte</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>được sử dụng để khởi tạo một biến khác của loại (có thể là đủ điều kiện CV)<span class="kw4">STD</span> <span class="kw4">char</span> <span class="t-rev-inl t-since-cxx17"><span>hoặc<a href="../types/byte" title="cpp/types/byte"><code>std::byte</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Số lượng các yếu tố để sao chép</li>
+<li>Nếu một giá trị không xác định của loại<span class="kw4">STD</span> <span class="kw4">char</span> <span class="t-rev-inl t-since-cxx17"><span>hoặc<a href="../types/byte" title="cpp/types/byte"><code>std::byte</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Kết quả từ</li>
+<ul>
+<li>Toán tử thứ hai hoặc thứ ba của một biểu thức có điều kiện,</li>
+<li>Quyền hoạt động bên phải của nhà điều hành dấu phẩy,</li>
+<li>Toán thể của một diễn viên hoặc chuyển đổi thành (có thể là đủ điều kiện CV)<span class="kw4">STD</span> <span class="kw4">char</span> <span class="t-rev-inl t-since-cxx17"><span>hoặc<a href="../types/byte" title="cpp/types/byte"><code>std::byte</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Thì</li>
+<li>một biểu thức giá trị bị loại bỏ.</li>
+</ul>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">int f (bool b)</pre></div> <h3 id="Notes">Ghi chú</h3> <p>{<a href="zero_initialization" title="cpp/language/zero initialization">zero initialized</a>).</p>
+<p>    int x;               // ok: giá trị của x không xác định</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_constexpr" title="cpp/feature test"><code>__cpp_constexpr</code></a></td> <td><span class="nu0">201907L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>    int y = x;           // Hành vi không xác định<a href="asm" title="cpp/language/asm">asm-declaration</a>TRONG<code>constexpr</code>chức năng</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    Char C không dấu;     // OK: Giá trị của C không xác định</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/178.html" rel="nofollow">CWG 178</a> </td> <td>C ++ 98</td> <td>    Char không dấu d = c; // ok: giá trị của d không xác định<br/>    int e = d;           // Hành vi không xác định<br/>    Trả lại B? D: 0;    // Hành vi không xác định nếu B là đúng<code>new T()</code>}</td> <td>Mặc định-khởi kiện hóa các biến không thuộc lớp với thời lượng lưu trữ tự động và động tạo ra các đối tượng với các giá trị không xác định (các đối tượng tĩnh và địa lý nhận được<br/>Tài liệu tham khảo và các đối tượng vô hướng Const không thể được xác định mặc định.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/253.html" rel="nofollow">CWG 253</a> </td> <td>C ++ 98</td> <td>Tầm thường-khởi tạo mặc định và<br/>#include &lt;chuỗi&gt;</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/616.html" rel="nofollow">CWG 616</a> </td> <td>C ++ 98</td> <td>struct t1 {int mem; };<br/> </td> <td>Cấu trúc T2<span class="kw4">STD</span> <span class="kw4">char</span>        hoán đổi (đầu tiên [i], đầu tiên [std :: rand () % (i + 1)]);</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1787.html" rel="nofollow">CWG 1787</a> </td> <td>C ++ 98</td> <td>{<span class="kw4">STD</span> <span class="kw4">char</span><br/>    int mem;</td> <td>    T2 () {} // "mem" không có trong danh sách khởi tạo</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="converting_constructor" title="cpp/language/converting constructor">converting constructor</a> </li>
+<li> <a href="default_constructor" title="cpp/language/default constructor">default constructor</a> </li>
+<li> <a href="explicit" title="cpp/language/explicit"><code>explicit</code></a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> <ul>
+<li> <a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a> </li>
+<li> <a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </li>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy-initialization</a> </li>
+<li> <a href="direct_initialization" title="cpp/language/direct initialization">direct-initialization</a> </li>
+<li> <a href="list_initialization" title="cpp/language/list initialization">list-initialization</a> </li>
+<li> <a href="reference_initialization" title="cpp/language/reference initialization">reference initialization</a> </li>
+<li> <a href="value_initialization" title="cpp/language/value initialization">value-initialization</a> </li>
+<li> <a href="zero_initialization" title="cpp/language/zero initialization">zero-initialization</a> </li>
+</ul> </li>
+<li> <a href="new" title="cpp/language/new"><code>new</code></a>
+</li>
+</ul>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/default_initialization">https://en.cppreference.com/w/cpp/language/default_initialization</a>
+</p>
+</div>

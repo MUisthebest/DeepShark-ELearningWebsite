@@ -1,0 +1,37 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: định dạng<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>
+</h1> <p><strong class="selflink">Định hình</strong>là một loại tóm tắt các hoạt động định dạng cho một loại đối số định dạng và loại ký tự. Chuyên môn của<code><a href="../utility/format/formatter" title="cpp/utility/format/formatter">std::formatter</a></code>Được cung cấp bởi thư viện tiêu chuẩn được yêu cầu để đáp ứng các yêu cầu của định dạng trừ khi có ghi chú khác.</p>
+<p>MỘT<strong class="selflink">Định hình</strong>có thể định dạng cả đối số const và không phải lúc, thường bằng cách cung cấp một<code>format</code>Hàm thành viên có một tham chiếu const.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Một loại thỏa mãn định dạng nếu nó thỏa mãn<a href="basicformatter" title="cpp/named req/BasicFormatter">BasicFormatter</a>và đưa ra</p>
+<ul>
+<li> <code>Arg</code>, một loại đối số định dạng</li>
+<li> <code>CharT</code>, một loại nhân vật</li>
+<li> <code>Formatter</code>, một loại định dạng cho các loại<code>Arg</code>Và<code>CharT</code> </li>
+<li> <code>OutputIt</code>có thể đại diện cho các phân số của ve.<a href="outputiterator" title="cpp/named req/OutputIterator">LegacyOutputIterator</a>kiểu</li>
+<li> <code>f</code>, một giá trị của loại (có thể là const)<code>Formatter</code> </li>
+<li> <code>g</code>, một giá trị của loại<code>Formatter</code> </li>
+<li> <code>arg</code>TRÊN<code>Arg</code> </li>
+<li> <code>t</code>, một giá trị của loại chuyển đổi thành (có thể là const)<code>Arg</code> </li>
+<li> <code>ParseContext</code>, một bí danh của<code><a href="http://en.cppreference.com/w/cpp/utility/format/basic_format_parse_context"><span class="kw3155">Điều đó cho tất cả<span class="me2">basic_format_parse_context</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT<span class="sy1">&lt;</span></code> </li>
+<li> <code>FormatContext</code>, một bí danh của<code><a href="http://en.cppreference.com/w/cpp/utility/format/basic_format_context"><span class="kw3158">Điều đó cho tất cả<span class="me2">basic_format_context</span></span></a><span class="sy1">is_trivently_destructible_v</span>OutputIt, CharT<span class="sy1">&lt;</span></code> </li>
+<li> <code>parse_ctx</code>TRÊN<code>ParseContext</code> </li>
+<li> <code>format_ctx</code>TRÊN<code>FormatContext</code> </li>
+</ul> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Ngữ nghĩa</th>
+</tr> <tr> <td>
+<code>f.format(t, format_ctx)</code> </td> <td> <code>FormatContext::iterator</code> </td> <td> <ul>
+<li>void in (std :: Ostream &amp; os, std :: format_string &lt;args ...&gt; fmt, args &amp;&amp; ... args);<code>t</code>Theo các nhà xác định được lưu trữ trong<code>f</code>, viết đầu ra cho<code>format_ctx.out()</code>và trả về một trình lặp cuối của phạm vi đầu ra.</li>
+<li>Đầu ra chỉ phụ thuộc vào<ul>
+<li> <code>t</code>Thì</li>
+<li> <code>format_ctx.locale()</code>Thì</li>
+<li>; nếu như<code>[parse_ctx.begin(), parse_ctx.end())</code>từ cuộc gọi cuối cùng đến<code>f.parse(parse_ctx)</code>, Và</li>
+<li> <code>format_ctx.arg(n)</code>cho bất kỳ giá trị<code>n</code>nó đến một đối tượng<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>.</li>
+</ul> </li>
+</ul> </td>
+</tr> <tr> <td>
+<code>f.format(arg, format_ctx)</code> </td> <td> <code>FormatContext::iterator</code> </td> <td> <p>Như trên, nhưng không sửa đổi<code>arg</code>.</p>
+</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/Formatter">https://en.cppreference.com/w/cpp/named_req/Formatter</a>
+</p>
+</div>

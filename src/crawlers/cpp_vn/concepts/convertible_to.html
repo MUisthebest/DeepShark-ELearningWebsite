@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: mui trần_to</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/concepts" title="cpp/header/concepts">&lt;concepts&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;lớp từ, lớp đến&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Khái niệm gán được_from =<code>convertible_to&lt;From, To&gt;</code>Khái niệm chuyển đổi này_to =<code><a href="http://en.cppreference.com/w/cpp/utility/declval"><span class="kw1123">Điều đó cho tất cả<span class="me2">Declval</span></span></a><span class="sy1">is_trivently_destructible_v</span>From<span class="sy1">&lt;</span><span class="br0">.</span><span class="br0">)</span></code>    std :: is_convertible_v &lt;từ, đến&gt; &amp;&amp;<code>To</code>    Yêu cầu {</p>
+<h3 id="Semantic_requirements">        const std :: remove_reference_t &lt;lhs&gt; &amp;,</h3> <p><code>convertible_to&lt;From, To&gt;</code>        static_cast &lt;to&gt; (std :: declval &lt;from&gt; ());<code>fun</code>nó đến một đối tượng<code><a href="http://en.cppreference.com/w/cpp/types/add_reference"><span class="kw614">Điều đó cho tất cả<span class="me2">Hoặc</span></span></a><span class="sy1">is_trivently_destructible_v</span>From<span class="sy1">&lt;</span><span class="br0">.</span><span class="br0">)</span></code>chỉ định rằng một biểu thức cùng loại và danh mục giá trị như của<code>fun()</code>khoảng cách<a href="../concepts#Equality_preservation" title="cpp/concepts">equality-preserving</a>Thì</p>
+<ul>
+<li>có thể được chuyển đổi một cách ngầm và rõ ràng thành loại<ul>
+<li> <code>To</code>và hai hình thức chuyển đổi tạo ra kết quả bằng nhau.</li>
+<li> <code>static_cast&lt;To&gt;(fun())</code>hoặc một loại chính sách thực thi được xác định theo thực hiện. Nếu không thì,<code>[]() -&gt; To { return fun(); }()</code>, Và</li>
+</ul> </li>
+<li>chỉ được mô hình hóa nếu, được đưa ra một chức năng<ul>
+<li> <code><a href="http://en.cppreference.com/w/cpp/types/add_reference"><span class="kw614">Điều đó cho tất cả<span class="me2">Hoặc</span></span></a><span class="sy1">is_trivently_destructible_v</span>From<span class="sy1">&lt;</span></code>sao cho biểu thức</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/types/add_reference"><span class="kw614">Điều đó cho tất cả<span class="me2">Hoặc</span></span></a><span class="sy1">is_trivently_destructible_v</span>From<span class="sy1">&lt;</span></code>không phải là loại đối tượng cũng không phải là loại tham chiếu trên đối tượng hoặc<code>fun()</code>Một trong những điều sau đây là đúng:</li>
+<li>add_rvalue_reference_t<code>fun()</code>không phải là loại tham chiếu đến đối tượng hoặc</li>
+</ul> </li>
+</ul> <h3 id="Equality_preservation">Bảo tồn bình đẳng</h3> <p>chỉ được mô hình hóa nếu<a href="../language/requires" title="cpp/language/requires">requires expressions</a>(tức là, biểu thức gán mang lại một lvalue đề cập đến toán hạng bên trái);<a href="../concepts#Equality_preservation" title="cpp/concepts">equality-preserving</a>Sau khi đánh giá</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_convertible" title="cpp/types/is convertible"> <span class="t-lines"><span>is_convertible</span><span>is_nothrow_convertible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Kiểm tra xem một loại có thể được chuyển đổi thành loại khác không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/concepts/convertible_to">https://en.cppreference.com/w/cpp/concepts/convertible_to</a>
+</p>
+</div>

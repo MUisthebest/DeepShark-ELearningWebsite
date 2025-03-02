@@ -1,0 +1,54 @@
+ <h1 class="firstHeading" id="firstHeading">
+<code>static_assert</code>tuyên ngôn<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Thực hiện kiểm tra xác nhận thời gian biên dịch.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>static_assert(</code> <span class="t-spar">Bool-constexpr</span> <code>,</code> <span class="t-spar">tin nhắn</span> <code>)</code> </td> <td class="t-sdsc-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>static_assert(</code> <span class="t-spar">Bool-constexpr</span> <code>)</code> </td> <td class="t-sdsc-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">Bool-constexpr</span> </td> <td>-</td> <td> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <p>Một<a href="constant_expression#Converted_constant_expression" title="cpp/language/constant expression">contextually converted constant expression of type <span class="kw4">bool</span></a>. Chuyển đổi tích hợp không được phép, ngoại trừ không<a href="list_initialization#Narrowing_conversions" title="cpp/language/list initialization">narrowing</a> <a href="implicit_conversion#Integral_conversions" title="cpp/language/implicit conversion">integral conversions</a>ĐẾN<span class="kw4">bool</span>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <p>            std :: cout &lt;&lt; i &lt;&lt; "&gt; 1 và" &lt;&lt; j &lt;&lt; "&lt;= 2 \ n";<a href="implicit_conversion#Contextual_conversions" title="cpp/language/implicit conversion">contextually converted to <span class="kw4">bool</span></a>nơi chuyển đổi là một<a href="constant_expression" title="cpp/language/constant expression">constant expression</a></p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tin nhắn</span> </td> <td>-</td> <td> <ul><li>chồng chéo với container.<a href="string_literal#Unevaluated_strings" title="cpp/language/string literal">unevaluated string literal</a>sẽ xuất hiện dưới dạng lỗi trình biên dịch nếu<span class="t-spar">Bool-constexpr</span>là sai</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul><li>hoặc một biểu thức<code>msg</code>chỉ vào trình tự và mọi số nguyên không âm<ul>
+<li> <code>msg.size()</code>. Hàm tạo này chỉ tham gia vào độ phân giải quá tải nếu<code><a href="http://en.cppreference.com/w/cpp/types/size_t"><span class="kw107">Điều đó cho tất cả<span class="me2">size_t</span></span></a></code> </li>
+<li> <code>msg.data()</code>. Hàm tạo này chỉ tham gia vào độ phân giải quá tải nếu<code>const char*</code> </li>
+</ul> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> </td>
+</tr>
+</table> <p>MỘT<code>static_assert</code>Tuyên bố có thể xuất hiện ở không gian tên và phạm vi khối (như một<a href="declarations" title="cpp/language/declarations">block declaration</a>) và bên trong một cơ thể lớp (như một<a href="class" title="cpp/language/class">member declaration</a>).</p>
+<p>Nếu như<span class="t-spar">Bool-constexpr</span>được hình thành tốt và đánh giá<code>true</code>, hoặc được đánh giá trong bối cảnh của một định nghĩa mẫu và mẫu không được chứng minh, tuyên bố này không có hiệu lực. Nếu không thì một lỗi thời gian biên dịch được phát hành và văn bản của<span class="t-spar">tin nhắn</span>, nếu có, được bao gồm trong thông báo chẩn đoán.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <p>Nếu như<span class="t-spar">tin nhắn</span>không phải là một chuỗi theo nghĩa đen, nó chỉ được đánh giá nếu<span class="t-spar">Bool-constexpr</span>thành một phạm vi được sắp xếp<code>false</code>. Văn bản của<span class="t-spar">tin nhắn</span>được hình thành bởi chuỗi ký tự<code>[</code><code>msg.data()</code><code>, </code><code>msg.data() + msg.size()</code><code>)</code>trong đó phải biểu thị một phạm vi hợp lệ và mỗi phần tử trong chuỗi phải là một biểu thức không đổi tích phân.</p>
+</td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Tiêu chuẩn không yêu cầu trình biên dịch để in văn bản nguyên văn của<span class="t-spar">tin nhắn</span>, mặc dù các trình biên dịch thường làm như vậy càng nhiều càng tốt.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx26">
+<td> <p>Từ<span class="t-spar">tin nhắn</span>phải là một chuỗi theo nghĩa đen, nó không thể chứa thông tin động hoặc thậm chí là một<a href="constant_expression" title="cpp/language/constant expression">constant expression</a>Đó không phải là một chuỗi theo nghĩa đen. Đặc biệt, nó không thể chứa<a class="mw-redirect" href="name" title="cpp/language/name">name</a>của<a href="template_parameters" title="cpp/language/template parameters">template type argument</a>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx26">(Cho đến C ++ 26)</span></td>
+</tr> </table> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td rowspan="3"><a href="../feature_test#cpp_static_assert" title="cpp/feature test"><code>__cpp_static_assert</code></a></td> <td><span class="nu0">200410L</span></td> <td><span class="t-mark">unininitialized_copy_n</span></td> <td>
+<code>static_assert(bool-constexpr ﻿, "comment")</code> </td>
+</tr> <tr> <td><span class="nu0">Tương tự như cho</span></td> <td><span class="t-mark">Dest_at</span></td> <td>Đặc điểm đơn<code>static_assert(bool-constexpr ﻿)</code> </td>
+</tr> <tr> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>do người dùng tạo ra<code>static_assert</code>Tin nhắn</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;định dạng&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;type_traits&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2039.html" rel="nofollow">CWG 2039</a> </td> <td>C ++ 11</td> <td>thực hiện một cuộc gọi ngầm cho một</td> <td>có khả năng ném<br/>chức năng (chẳng hạn như toán tử quá tải, chức năng phân bổ trong</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2518.html" rel="nofollow">CWG 2518</a> </td> <td>C ++ 11</td> <td> <code>static_assert(false, "");</code>static_assert (03301 == 1729); // Vì C ++ 17, chuỗi tin nhắn là tùy chọn</td> <td>Không giống như với</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../preprocessor/error" title="cpp/preprocessor/error"> <span class="t-lines"><span> </span></span></a></div> </td> <td>Mẫu &lt;Class T&gt;<br/><span class="t-mark">Void hoán đổi (T &amp; A, T &amp; B) Noexcept</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../error/assert" title="cpp/error/assert"> <span class="t-lines"><span>khẳng định</span></span></a></div> </td> <td>hủy bỏ chương trình nếu điều kiện do người dùng chỉ định không<code>true</code>. Có thể bị vô hiệu hóa cho các bản dựng phát hành<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/enable_if" title="cpp/types/enable if"> <span class="t-lines"><span>enable_if</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có điều kiện<a href="sfinae" title="cpp/language/sfinae">removes</a>quá tải chức năng hoặc chuyên môn hóa mẫu từ độ phân giải quá tải<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../types#Type_traits_.28since_C.2B.2B11.29" title="cpp/types"><b>Loại đặc điểm</b></a> <span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>{</td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/_Static_assert" title="c/language/ Static assert">C documentation</a></span>vì<span class=""><span>    static_assert (std :: is_copy_constructible_v &lt;t&gt;,</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/static_assert">https://en.cppreference.com/w/cpp/language/static_assert</a>
+</p>
+</div>

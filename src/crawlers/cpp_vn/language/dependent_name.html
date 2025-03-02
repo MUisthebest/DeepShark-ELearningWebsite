@@ -1,0 +1,207 @@
+ <h1 class="firstHeading" id="firstHeading"> </h1> <p>Bên trong định nghĩa của một<a href="templates" title="cpp/language/templates">template</a>(cả hai<a href="class_template" title="cpp/language/class template">class template</a>Và<a href="function_template" title="cpp/language/function template">function template</a>), ý nghĩa của một số cấu trúc có thể khác nhau từ việc khởi tạo này sang khởi tạo khác. Cụ thể, các loại và biểu thức có thể phụ thuộc vào loại tham số mẫu và giá trị của các tham số mẫu không thuộc loại.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Typename T&gt;</pre></div> <p>struct x: b &lt;t&gt; // "b &lt;t&gt;" phụ thuộc vào t<i>    void f () const</i>    Typename t :: a* pa; // "T :: A" phụ thuộc vào T<i>    void f () const</i>.</p>
+<h3 id="Binding_rules"> </h3> <p>    void f (b &lt;t&gt;* pb)</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    {</pre></div> </div> <p>        tĩnh int i = b &lt;t&gt; :: i; // "B &lt;t&gt; :: i" phụ thuộc vào T<i>        PB-&gt; J ++; // "pb-&gt; j" phụ thuộc vào t</i>    }</p>
+<ul><li>};<a class="mw-redirect" href="incomplete_type" title="cpp/language/incomplete type">incomplete</a>Tra cứu và ràng buộc tên là khác nhau cho</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>Tên phụ thuộc<a href="using_declaration" title="cpp/language/using declaration">using-declaration</a>và không</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul>
+<li>Tên phụ thuộc</li>
+<li>Một<a href="constant_expression" title="cpp/language/constant expression">constant expression</a>Quy tắc ràng buộc<span class="t-rev-inl t-since-cxx11"><span>Tên không phụ thuộc được tra cứu và ràng buộc tại điểm định nghĩa mẫu. Sự ràng buộc này giữ ngay cả khi tại điểm khởi tạo mẫu có sự phù hợp tốt hơn:</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>#include &lt;Istream&gt;<span class="t-rev-inl t-since-cxx11"><span> </span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>void g (double) {std :: cout &lt;&lt; "g (double) \ n"; }</li>
+<li> <span class="t-rev-inl t-since-cxx14"><span>Mẫu &lt;Class T&gt;</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>cấu trúc s</li>
+</ul> <p>{<i>    void f () const</i>    {</p>
+<h3 id="Lookup_rules">        g (1); // "G" là một tên không phụ thuộc, bị ràng buộc ngay bây giờ</h3> <p>    }<a href="lookup" title="cpp/language/lookup">lookup</a>};</p>
+<ul>
+<li> <i>{</i>    S &lt;tn&gt; s;</li>
+<li> <a href="adl" title="cpp/language/adl">ADL</a>int main ()<i>{</i>    g (1);  // gọi g (int)<i> </i>    S &lt;tn&gt; s;</li>
+</ul> <p>    s.f (); // Gọi G (Double)</p>
+<p>}<a href="definition#One_Definition_Rule" title="cpp/language/definition">ODR</a>Nếu ý nghĩa của một</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Tên không phụ thuộc</pre></div> <p>Thay đổi giữa bối cảnh định nghĩa và điểm khởi tạo của chuyên môn hóa mẫu, chương trình không được hình thành, không cần chẩn đoán. Điều này là có thể trong các tình huống sau:<code>operator&lt;&lt;</code>Một loại được sử dụng trong một tên không phụ thuộc là<code>E::writeObject&lt;vector&lt;int&gt;&gt;</code>Tại điểm định nghĩa nhưng hoàn thành tại điểm khởi tạo<code>P1::operator&lt;&lt;</code>tra cứu một tên trong định nghĩa mẫu được tìm thấy<code>P2::operator&lt;&lt;</code>, nhưng việc tra cứu trong phạm vi tương ứng trong khởi tạo không tìm thấy bất kỳ khai báo nào vì việc khai báo sử dụng là một bản mở rộng gói và gói tương ứng trống</p>
+<p>Một khởi tạo sử dụng đối số mặc định hoặc đối số mẫu mặc định chưa được xác định tại điểm định nghĩa<code>std::vector</code>Tại điểm khởi tạo, sử dụng giá trị của một đối tượng const của loại enum tích phân hoặc unscoped</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, giá trị của đối tượng Consexpr, giá trị của tham chiếu hoặc định nghĩa của hàm ConsexPR</pre></div> <p>và đối tượng đó</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">/tham chiếu/chức năng</pre></div> </div> <p>không được định nghĩa tại điểm định nghĩa</p>
+<h3 id="Dependent_types">Mẫu sử dụng chuyên môn mẫu không phụ thuộc</h3> <p>hoặc chuyên môn hóa mẫu biến</p>
+<ul>
+<li>Tại điểm khởi tạo và mẫu này, nó sử dụng được khởi tạo từ một chuyên môn một phần không được xác định tại điểm định nghĩa hoặc đặt tên cho một chuyên môn rõ ràng không được tuyên bố tại điểm định nghĩa</li>
+<li>Ràng buộc của<i>chứa một mã định danh mà tra cứu tên tìm thấy tham số mẫu không kiểu có loại chứa trình giữ chỗ</i>(Xem bên dưới)</li>
+<li>được hoãn lại cho đến khi tra cứu diễn ra.<i>chứa một mã định danh mà tra cứu tên tìm thấy tham số mẫu không kiểu có loại chứa trình giữ chỗ</i>(Xem bên dưới)</li>
+<li>Như đã thảo luận trong</li>
+<li>, Việc tra cứu một tên phụ thuộc được sử dụng trong một mẫu được hoãn lại cho đến khi biết các đối số mẫu, tại thời điểm đó</li>
+<li>Tra cứu không ADL kiểm tra các khai báo chức năng với liên kết bên ngoài có thể nhìn thấy từ</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Định nghĩa mẫu<a href="parameter_pack" title="cpp/language/parameter pack">parameter packs</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>bối cảnh</li>
+<li>Một<a href="templates#template-id" title="cpp/language/templates">template-id</a>kiểm tra các khai báo chức năng với liên kết bên ngoài có thể nhìn thấy từ</li>
+<ul>
+<li>Định nghĩa mẫu</li>
+<li>bối cảnh hoặc<span class="t-rev-inl t-since-cxx11"><span>mẫu khởi tạo</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>bối cảnh<a href="injected-class-name" title="cpp/language/injected-class-name">injected-class-name</a>)</li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>(Nói cách khác, việc thêm một khai báo chức năng mới sau khi định nghĩa mẫu không hiển thị nó, ngoại trừ thông qua ADL).<a href="decltype" title="cpp/language/decltype"><code>decltype</code></a>Mục đích của quy tắc này là giúp bảo vệ chống lại các vi phạm</li></ul> <p>Kết quả của<code>decltype</code>Đối với việc khởi tạo mẫu:<a href="function_template#Function_template_overloading" title="cpp/language/function template">equivalent</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul><li>các<a href="pack_indexing#Pack_indexing_specifier" title="cpp/language/pack indexing">pack indexing specifier</a>// một thư viện bên ngoài</li></ul> <p>không gian tên e</p>
+</td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <p>{</p>
+<h3 id="Type-dependent_expressions">    Mẫu &lt;Typename T&gt;</h3> <p>    void writeObject (const t &amp; t)</p>
+<ul>
+<li>    {</li>
+<li> <code>this</code>        std :: cout &lt;&lt; "value =" &lt;&lt; t &lt;&lt; '\ n';</li>
+<li>chồng chéo với container.<a href="identifiers" title="cpp/language/identifiers">id-expression</a>cái đó<span class="t-rev-inl t-since-cxx20"><span>Cụ thể,<a href="constraints" title="cpp/language/constraints">concept-id</a>Và</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span> </li>
+<ul>
+<li>    }</li>
+<li>}<a href="templates#template-id" title="cpp/language/templates">template-id</a> </li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <code>__func__</code>// Đơn vị dịch 1:<span class="t-rev-inl t-since-cxx14"><span>// Lập trình viên 1 muốn cho phép E :: WriteObject hoạt động với Vector &lt;Int&gt;</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>)</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>Không gian tên P1<a href="cast_operator" title="cpp/language/cast operator">conversion function</a>{</li>
+<li>    STD :: Ostream &amp; Toán tử &lt;&lt; (STD :: Ostream &amp; Os, Const Std :: Vector &lt;Int&gt; &amp; V)<a href="identifiers" title="cpp/language/identifiers">qualified-id</a>    {<i>chứa một mã định danh mà tra cứu tên tìm thấy tham số mẫu không kiểu có loại chứa trình giữ chỗ</i> </li>
+<li>            hệ điều hành &lt;&lt; n &lt;&lt; '';<i>, đề cập đến một</i>    }</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <ul><li> <a href="function#Return_type_deduction" title="cpp/language/function">return type deduction</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <ul>
+<li>    void dosome ()<a href="structured_binding" title="cpp/language/structured binding">structured binding declaration</a>    {</li>
+<li>        STD :: Vector &lt;Int&gt; V;<code>auto</code> </li>
+<li>        E :: writeObject (v); // Lỗi: sẽ không tìm thấy P1 :: Toán tử &lt;&lt;<code>auto</code>    }</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul>
+<li>}</li>
+<li> <a href="new" title="cpp/language/new">new-expression</a> </li>
+<li>// Đơn vị dịch 2:<i>, đề cập đến một</i>Không gian tên P2</li>
+<li>{<i>chứa một mã định danh mà tra cứu tên tìm thấy tham số mẫu không kiểu có loại chứa trình giữ chỗ</i> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li> <a href="fold" title="cpp/language/fold">fold-expression</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul><li> <a href="pack_indexing#Pack_indexing_expression" title="cpp/language/pack indexing">pack indexing expression</a>    {</li></ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <p>        for (int n: v)<span class="t-rev-inl t-since-cxx11"><span>Thì<a href="alignof" title="cpp/language/alignof"><code>alignof</code></a>Thì<a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code></a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Thì<a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>Thì<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>Thì<a href="delete" title="cpp/language/delete"><code>delete</code></a>, Và<a href="throw" title="cpp/language/throw"><code>throw</code></a>            hệ điều hành &lt;&lt; n &lt;&lt; ':';</p>
+<h3 id="Value-dependent_expressions">        trả về hệ điều hành &lt;&lt; "[]";</h3> <ul>
+<li>    }<a href="constant_expression" title="cpp/language/constant expression">constant expression</a> </li>
+<li>chồng chéo với container.<a href="identifiers" title="cpp/language/identifiers">id-expression</a>cái đó</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Điều đó như vậy<a href="constraints" title="cpp/language/constraints">concept-id</a>    void dosomothingelse ()</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>    {</li>
+<li>        STD :: Vector &lt;Int&gt; V;</li>
+<li>        E :: writeObject (v); // Lỗi: sẽ không tìm thấy P2 :: Toán tử &lt;&lt;<i>, đề cập đến một</i>}</li>
+<li>Trong ví dụ trên, nếu tìm kiếm không phải là ADL cho<i>, đề cập đến một</i> </li>
+<li>sẽ có hai định nghĩa khác nhau: một<span class="t-rev-inl t-until-cxx11"><span>và một cách sử dụng</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>. Vi phạm ODR như vậy có thể không được phát hiện bởi trình liên kết, dẫn đến một hoặc cái khác đang được sử dụng trong cả hai trường hợp.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Để làm cho ADL kiểm tra một không gian tên do người dùng xác định</li>
+<li> <span class="t-rev-inl t-since-cxx11"><span><a href="alignof" title="cpp/language/alignof"><code>alignof</code></a>Thì<a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code></a>Thì</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span><a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>Thì<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>Nên được thay thế bằng lớp do người dùng xác định hoặc loại phần tử của nó phải là lớp do người dùng xác định:</li>
+<li>Không gian tên P1</li>
+<li>{<a href="identifiers" title="cpp/language/identifiers">qualified-id</a>    // Nếu C là một lớp được xác định trong không gian tên P1<i>, đề cập đến một</i> </li>
+<li>    {<a href="constant_expression" title="cpp/language/constant expression">constant expression</a>        for (c n: v)<a href="templates#Templated_entity" title="cpp/language/templates">templated entity</a>            hệ điều hành &lt;&lt; n;<span class="t-rev-inl t-since-cxx11"><span>        trả lại hệ điều hành;</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>    }</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li> <a href="fold" title="cpp/language/fold">fold-expression</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Dependent_names"> </h3> <h3 id="Current_instantiation">    void dosome ()</h3> <p>    {<i>, đề cập đến một</i>        E :: writeObject (v); // OK: Instantiates writeObject (std :: vector &lt;p1 :: c&gt;)<code>typename</code>Và<code>template</code>                           // tìm thấy p1 :: toán tử &lt;&lt; thông qua ADL</p>
+<p>    }</p>
+<ul>
+<li>}</li>
+<ul><li>Lưu ý: Quy tắc này làm cho nó không thực tế đối với các toán tử quá tải cho các loại thư viện tiêu chuẩn:</li></ul>
+<li>#include &lt;Istream&gt;</li>
+<ul><li>#include &lt;iterator&gt;</li></ul>
+<li>#include &lt;Tiện ích&gt;</li>
+<ul><li>#include &lt;Vector&gt;</li></ul>
+<li> </li>
+<ul><li>// Ý tưởng xấu: Nhà điều hành trong không gian tên toàn cầu, nhưng các đối số của nó nằm trong STD ::</li></ul>
+</ul> <p>STD :: Ostream &amp; Toán tử &lt;&lt; (STD :: Ostream &amp; OS, std :: Pair &lt;int, double&gt; p)</p>
+<ul>
+<li>}<a href="template_parameters#Type_template_parameter" title="cpp/language/template parameters">type parameter</a>    trả về hệ điều hành &lt;&lt; p.first &lt;&lt; ',' &lt;&lt; p.second;</li>
+<li>}<a href="template_parameters#Non-type_template_parameter" title="cpp/language/template parameters">non-type parameter</a> <a href="identifiers" title="cpp/language/identifiers">identifier</a>int main ()</li>
+<ul>
+<li>{</li>
+<li>    typedef std :: cặp &lt;int, double&gt; elem_t;</li>
+</ul>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">    std :: vector &lt;Elem_t&gt; V (10);</pre></div> <p>    std :: cout &lt;&lt; v [0] &lt;&lt; '\ n'; // OK, tìm kiếm thông thường :: Nhà điều hành &lt;&lt;<i>    STD :: Sao chép (V.Begin (), V.End (),</i>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">              std :: Ostream_iterator &lt;elem_t&gt; (std :: cout, ""));</pre></div> <p>    // Lỗi: Cả hai Tra cứu thông thường từ điểm định nghĩa của</p>
+<ul>
+<li>    // std :: Ostream_iterator và ADL sẽ chỉ xem xét không gian tên STD,<a href="unqualified_lookup" title="cpp/language/unqualified lookup">unqualified lookup</a>    // và sẽ tìm thấy nhiều quá tải của std :: toán tử &lt;&lt;, vì vậy việc tra cứu sẽ được thực hiện.</li>
+<li> <a href="qualified_lookup" title="cpp/language/qualified lookup">qualified name</a>    // Độ phân giải quá tải sau đó sẽ không tìm được toán tử &lt;&lt; cho elem_t<code>::</code>    // trong bộ được tìm thấy bởi tra cứu.</li>
+<li>}<code>y</code>TRONG<code>x.y</code>hoặc<code>xp-&gt;y</code>Lưu ý: Tra cứu giới hạn (nhưng không ràng buộc) các tên phụ thuộc cũng diễn ra theo thời gian định nghĩa mẫu, vì cần thiết để phân biệt chúng với các tên không phụ thuộc và cũng để xác định xem chúng có phải là thành viên của việc khởi tạo hiện tại hay các thành viên chuyên môn không xác định hay không. Thông tin thu được từ tra cứu này có thể được sử dụng để phát hiện lỗi, xem bên dưới.<code>x</code>hoặc<code>*xp</code>Các loại phụ thuộc</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Các loại sau là các loại phụ thuộc:</pre></div> <p>tham số mẫu</p>
+<p>một thành viên của một</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Chuyên môn không xác định</pre></div> <h3 id="Unknown_specializations">một lớp/enum lồng nhau là một thành viên phụ thuộc của</h3> <p>Chuyên môn không xác định<i>chứa một mã định danh mà tra cứu tên tìm thấy tham số mẫu không kiểu có loại chứa trình giữ chỗ</i>một loại hợp chất được xây dựng từ một loại phụ thuộc</p>
+<ul>
+<li>Một<a href="qualified_lookup" title="cpp/language/qualified lookup">qualified name</a>Một loại mảng có loại phần tử phụ thuộc hoặc có ràng buộc (nếu có) phụ thuộc vào giá trị<code>::</code>Điều đó như vậy<i>Áp dụng cho một biểu thức phụ thuộc loại là một loại phụ thuộc duy nhất. Hai kết quả như vậy chỉ đề cập đến cùng một loại nếu biểu thức của chúng là</i>Một loại chức năng có đặc tả ngoại lệ phụ thuộc vào giá trị<i>, đề cập đến một</i> </li>
+<li>Một<a href="qualified_lookup" title="cpp/language/qualified lookup">qualified name</a>Tên mẫu là tham số mẫu hoặc<i>, đề cập đến một</i>, nếu lớp là một loại phụ thuộc.</li>
+<li>Lưu ý: Một thành viên typedef của một khởi tạo hiện tại chỉ phụ thuộc khi loại nó đề cập đến.<code>y</code>TRONG<code>x.y</code>hoặc<code>xp-&gt;y</code>Biểu thức phụ thuộc loại<code>x</code>hoặc<code>*xp</code>áp dụng cho biểu thức phụ thuộc loại<i>Áp dụng cho một biểu thức phụ thuộc loại là một loại phụ thuộc duy nhất. Hai kết quả như vậy chỉ đề cập đến cùng một loại nếu biểu thức của chúng là</i>áp dụng cho biểu thức hằng phụ thuộc loại<i>, đề cập đến một</i> </li>
+<li>Lưu ý: Một thành viên typedef của một khởi tạo hiện tại chỉ phụ thuộc khi loại nó đề cập đến.<code>y</code>TRONG<code>x.y</code>hoặc<code>xp-&gt;y</code>Biểu thức phụ thuộc loại<code>x</code>hoặc<code>*xp</code>Các biểu thức sau phụ thuộc loại:<i>, đề cập đến một</i>, nếu lớp là một loại phụ thuộc.</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Chứa một định danh mà tra cứu tên tìm thấy ít nhất một tuyên bố phụ thuộc</pre></div> <p><br/>chứa một người phụ thuộc</p>
+<ul><li>chứa định danh đặc biệt<a href="qualified_lookup" title="cpp/language/qualified lookup">qualified name</a>.<i>, đề cập đến một</i>chứa tên của<i>, đề cập đến một</i>có bộ khởi tạo phụ thuộc loại<i>chứa một mã định danh mà tra cứu tên tìm thấy tham số mẫu không kiểu có loại chứa trình giữ chỗ</i>Chuyên môn không xác định</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Đặt tên cho một thành viên phụ thuộc của</pre></div> <ul><li>khởi tạo hiện tại<i>, đề cập đến một</i>chứa một mã định danh mà tra cứu tên tìm thấy một hoặc nhiều khai báo của các chức năng thành viên của phần khởi động hiện tại<i>, đề cập đến một</i>có bộ khởi tạo phụ thuộc loại<i>chứa một mã định danh mà tra cứu tên tìm thấy tham số mẫu không kiểu có loại chứa trình giữ chỗ</i>Chứa một định danh mà theo đó tra cứu tên tìm thấy một biến được khai báo với một loại chứa loại trình giữ chỗ (ví dụ:,</li></ul> <p>Thành viên dữ liệu tĩnh), trong đó bộ khởi tạo phụ thuộc vào loại,</p>
+<h3 id="The_typename_disambiguator_for_dependent_names">Các<span class="kw1">            Chuyển tiếp đầu tiên, chuyển tiếp cuối cùng);</span>khởi tạo hiện tại</h3> <p>tạo ra một đối tượng thuộc loại phụ thuộc<i>, đề cập đến một</i>khởi tạo hiện tại<code>typename</code>Loại nào phụ thuộc</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Biểu thức truy cập thành viên đề cập đến một thành viên của</pre></div> </div> <p>Biểu thức ràng buộc được giới thiệu cho từng tham số với ràng buộc<code>typename</code>Chuyên môn không xác định<code>T::x</code>Nếu biểu hiện id của nó là biểu thức phụ thuộc loại</p>
+<p>Lưu ý: Biết chữ, cuộc gọi giả giả<a href="qualified_lookup" title="cpp/language/qualified lookup">qualified name lookup</a>-Các nhân không bao giờ phụ thuộc vào loại vì các loại của các biểu thức này không thể.<code>typename</code>Biểu thức phụ thuộc giá trị<a href="elaborated_type_specifier" title="cpp/language/elaborated type specifier">elaborated type specifier</a>một biểu thức được sử dụng trong bối cảnh nơi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">được yêu cầu và có bất kỳ biểu hiện phụ nào phụ thuộc vào giá trị</pre></div> <p>Biểu thức ràng buộc được giới thiệu cho từng tham số với ràng buộc<code>typename</code>và bất kỳ lập luận nào của nó phụ thuộc</p>
+<div class="cpp source-cpp"><pre data-language="cpp">là phụ thuộc vào loại</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>là tên của tham số mẫu không kiểu<code>typename</code>Đặt tên cho một thành viên dữ liệu tĩnh là thành viên phụ thuộc của</p>
+<ul>
+<li>khởi tạo hiện tại<a href="declarations#Specifiers" title="cpp/language/declarations">declaration specifier</a>và không được khởi tạo.<span class="t-spar">DEM-SPECIFIER-SEQ</span>Đặt tên cho một hàm thành viên tĩnh là thành viên phụ thuộc của</li>
+<ul>
+<li>Một<a href="declarations#Simple_declaration" title="cpp/language/declarations">simple declaration</a>hoặc<a href="function#Function_definition" title="cpp/language/function">function definition</a>khởi tạo hiện tại</li>
+<li>Một<a href="class#Member_specification" title="cpp/language/class">class member declaration</a>Số lượng các yếu tố để sao chép</li>
+<li>Một<a href="function#Parameter_list" title="cpp/language/function">parameter declaration</a>trong a<a href="class#Member_specification" title="cpp/language/class">class member declaration</a>là một hằng số với một</li>
+<li>Một<a href="function#Parameter_list" title="cpp/language/function">parameter declaration</a>xuất hiện trong bối cảnh ngay lập tức của một khởi tạo mẫu.<a href="function" title="cpp/language/function">declarator for a function or function template</a>số nguyên hoặc liệt kê</li>
+<li>Một<a href="function#Parameter_list" title="cpp/language/function">parameter declaration</a>xuất hiện trong bối cảnh ngay lập tức của một khởi tạo mẫu.<a href="lambda" title="cpp/language/lambda">lambda expression</a>nghĩa đen</li>
+<li>Loại, khởi tạo từ biểu thức phụ thuộc giá trị<a href="constraints#Requires_expressions" title="cpp/language/constraints">requires-expression</a>Số lượng các yếu tố để sao chép</li>
+<li>-expressions trong đó đối số là biểu thức phụ thuộc loại hoặc ID loại phụ thuộc<a href="template_parameters#Non-type_template_parameter" title="cpp/language/template parameters">non-type template parameter</a>Số lượng các yếu tố để sao chép</li>
+</ul>
+<li>bất kỳ biểu thức đúc nào đến một loại phụ thuộc hoặc từ biểu thức phụ thuộc giá trị<i><a href="type#Type_naming" title="cpp/language/type">type-id</a></i>địa chỉ của biểu thức trong đó đối số là<i>Loại ID</i>Nếu phạm vi trống.</li>
+<ul>
+<li>các<span class="t-spar">kiểu</span>trong a<a href="new" title="cpp/language/new">new expression</a>tên là một thành viên phụ thuộc của</li>
+<li>các<span class="t-spar">Loại ID</span>}<a href="type_alias" title="cpp/language/type alias">alias declaration</a>Số lượng các yếu tố để sao chép</li>
+<li>Một<a href="function" title="cpp/language/function">trailing return type</a>Thì</li>
+<li>Một<a href="template_parameters#Type_template_parameter" title="cpp/language/template parameters">default argument of a type template parameter</a>, hoặc</li>
+<li>các<span class="t-spar">Loại ID</span>xuất hiện trong bối cảnh ngay lập tức của một khởi tạo mẫu.<a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Thì<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>Thì<a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>, hoặc<a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>.</li>
+</ul>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="The_template_disambiguator_for_dependent_names">Các<span class="kw1">             STD :: mui trần_to &lt;const alloc &amp;, allocator&gt;</span>khởi tạo hiện tại</h3> <p>Địa chỉ của biểu thức trong đó đối số là bất kỳ biểu thức nào, được đánh giá là cốt lõi<i>, đề cập đến một</i>đó là một đối tượng có tĩnh<code>template</code>hoặc lưu trữ chủ đề</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">thời lượng hoặc một chức năng thành viên.</pre></div> </div> <p>Biểu thức ràng buộc được giới thiệu cho từng tham số với ràng buộc<code>template</code>Tên phụ thuộc<code>::</code>Khởi tạo hiện tại<code>-&gt;</code>Trong một định nghĩa mẫu lớp (bao gồm các chức năng thành viên và các lớp lồng nhau), một số tên có thể được suy luận để chỉ<code>.</code>khởi tạo hiện tại</p>
+<ul>
+<li> <code>T::template foo&lt;X&gt;();</code> </li>
+<li> <code>s.template foo&lt;X&gt;();</code> </li>
+<li> <code>this-&gt;template foo&lt;X&gt;();</code> </li>
+<li> <code>typename T::template iterator&lt;int&gt;::value_type v;</code> </li>
+</ul> <p>. Điều này cho phép phát hiện một số lỗi nhất định tại điểm định nghĩa, thay vì khởi tạo và loại bỏ yêu cầu về<code>typename</code>    toán tử-= (const std :: chrono :: tháng &amp; dm) const noexcept;<code>template</code>Disambigators cho các tên phụ thuộc, xem bên dưới.</p>
+<p>Chỉ các tên sau có thể đề cập đến khởi tạo hiện tại:<code>::</code>Trong một mẫu định nghĩa mẫu:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Một lớp lồng nhau, một thành viên của mẫu lớp, một thành viên của một lớp lồng nhau, tên lớp được tiêm của mẫu, tên lớp được tiêm của một lớp lồng nhau.</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <p>Trong định nghĩa mẫu lớp chính hoặc trong định nghĩa của thành viên của nó:<a href="unqualified_lookup" title="cpp/language/unqualified lookup">unqualified name lookup</a>Tên của mẫu lớp theo sau là danh sách đối số mẫu (hoặc chuyên môn mẫu bí danh tương đương) cho mẫu chính trong đó mỗi đối số tương đương (được xác định bên dưới) với tham số tương ứng của nó.<code>-&gt;</code>Trong định nghĩa của một lớp hoặc mẫu lớp lồng nhau:<code>.</code>Tên của lớp lồng nhau được sử dụng như một thành viên của khởi tạo hiện tại.<span class="t-rev-inl t-since-cxx11"><span>Trong định nghĩa về chuyên môn một phần hoặc của một thành viên của chuyên môn một phần:</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Tên của mẫu lớp theo sau là danh sách đối số mẫu cho chuyên môn một phần, trong đó mỗi đối số tương đương với tham số tương ứng của nó.<span class="t-rev-inl t-until-cxx11"><span>Đối số mẫu tương đương với tham số mẫu nếu</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span></p>
+<div class="cpp source-cpp"><pre data-language="cpp">cho a</pre></div> </td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/206.html" rel="nofollow">CWG 206</a> </td> <td>C ++ 98</td> <td>, đối số mẫu biểu thị cùng loại với tham số mẫu.<br/>cho a<br/>, đối số mẫu là một<br/>Tên đó là một biến tương đương với tham số mẫu. Một biến tương đương với tham số mẫu nếu</td> <td>    const uint8_t* data {reinterpret_cast &lt;const uint8_t*&gt; (&amp; c)};<br/>Nó có cùng loại với tham số mẫu (bỏ qua trình độ cv) và<br/>Trình khởi tạo của nó bao gồm một định danh duy nhất đặt tên cho tham số mẫu hoặc, đệ quy, một biến như vậy.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/224.html" rel="nofollow">CWG 224</a> </td> <td>C ++ 98</td> <td>Mẫu &lt;Class T&gt;<br/>Lớp A.</td> <td>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/382.html" rel="nofollow">CWG 382</a> </td> <td>C ++ 98</td> <td>các<code>typename</code>    A &lt;t*&gt; P3;   // A &lt;t*&gt; không phải là khởi tạo hiện tại</td> <td> <br/>    lớp b</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/468.html" rel="nofollow">CWG 468</a> </td> <td>C ++ 98</td> <td>các<code>template</code>    A &lt;t*&gt; P3;   // A &lt;t*&gt; không phải là khởi tạo hiện tại</td> <td> <br/>    lớp b</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/502.html" rel="nofollow">CWG 502</a> </td> <td>C ++ 98</td> <td>    {</td> <td>        B* P1;                 // B là hiện tại khởi tạo</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1047.html" rel="nofollow">CWG 1047</a> </td> <td>C ++ 98</td> <td>
+<code>typeid</code>        A &lt;t&gt; :: B* P2;           // A &lt;t&gt; :: B là khởi tạo hiện tại</td> <td>        Tên A &lt;T*&gt; :: B* P3; // A &lt;t*&gt; :: B không phải là khởi tạo hiện tại<br/>    };</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1160.html" rel="nofollow">CWG 1160</a> </td> <td>C ++ 98</td> <td>};<br/> <br/>Mẫu &lt;Class T&gt;</td> <td>Mẫu &lt;class inputit, class outputit&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1413.html" rel="nofollow">CWG 1413</a> </td> <td>C ++ 98</td> <td>Lớp A &lt;t*&gt;<br/>{</td> <td>    B &lt;mY_I&gt;* B1;  // b &lt;y_i&gt; là khởi tạo hiện tại:</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1471.html" rel="nofollow">CWG 1471</a> </td> <td>C ++ 98</td> <td>    A &lt;t&gt;* P2;  // A &lt;t&gt; không phải là khởi tạo hiện tại<br/>};</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1850.html" rel="nofollow">CWG 1850</a> </td> <td>C ++ 98</td> <td>Mẫu &lt;int i&gt;<br/>cấu trúc b</td> <td>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1929.html" rel="nofollow">CWG 1929</a> </td> <td>C ++ 98</td> <td>    static const int my_i = i;<code>template</code>    static const int my_i2 = i + 0;<br/>    static const int my_i3 = my_i;<code>::</code>    static const long my_i4 = i;</td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2100.html" rel="nofollow">CWG 2100</a> </td> <td>C ++ 98</td> <td>    static const int my_i5 = (i);<br/> </td> <td>    B &lt;mY_I&gt;* B1;  // b &lt;y_i&gt; là khởi tạo hiện tại:</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2276.html" rel="nofollow">CWG 2276</a> </td> <td>C ++ 98</td> <td>                  // my_i có cùng loại với tôi,<br/>                  // Và nó được khởi tạo chỉ với tôi</td> <td>Một chức năng được sử dụng ODR trong các trường hợp sau:</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2307.html" rel="nofollow">CWG 2307</a> </td> <td>C ++ 98</td> <td>    B &lt;mY_I2&gt;* B2; // B &lt;mY_I2&gt; không phải là khởi tạo hiện tại:<br/>                  // i + 0 không phải là một định danh duy nhất</td> <td>    B &lt;mY_I3&gt;* B3; // B &lt;MY_I3&gt; là khởi tạo hiện tại:</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2457.html" rel="nofollow">CWG 2457</a> </td> <td>C ++ 11</td> <td>                  // my_i3 có cùng loại với tôi,</td> <td>Một chức năng được sử dụng ODR trong các trường hợp sau:</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/dependent_name">https://en.cppreference.com/w/cpp/language/dependent_name</a>
+</p>
+</div>

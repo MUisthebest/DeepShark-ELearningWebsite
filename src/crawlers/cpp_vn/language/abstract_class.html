@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">Lớp học trừu tượng</h1> <p>Xác định một loại trừu tượng không thể được khởi tạo, nhưng có thể được sử dụng như một lớp cơ sở.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>MỘT<i>    ảo ~ base () {}</i>chức năng là a<a href="virtual" title="cpp/language/virtual">virtual function</a>    get_leap_second_info (const std :: Chrono :: UTC_TIME &lt;feluration&gt; &amp; ut);<a href="function" title="cpp/language/function">declarator</a>Có cú pháp sau:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">người khai báo</span> <span class="t-spar">người phụ nữ</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>=</code> <code>0</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Ở đây trình tự<code>= 0</code>được gọi là<span class="t-spar">};</span>, và xuất hiện ngay sau khi<span class="t-spar">người khai báo</span>hoặc sau khi tùy chọn<span class="t-spar">người phụ nữ</span>.<a href="override" title="cpp/language/override"><code>override</code></a>hoặc<a href="final" title="cpp/language/final"><code>final</code></a>).</p>
+<p><span class="t-spar">};</span>không thể xuất hiện trong định nghĩa hàm thành viên hoặc<a href="friend" title="cpp/language/friend">friend</a>tuyên ngôn.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">cơ sở cấu trúc</pre></div> <p>MỘT<i>{</i>    ảo int g ();<a href="virtual" title="cpp/language/virtual">the final overrider</a>khoảng cách<i>    ảo ~ base () {}</i>.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>};</p>
+<p> </p>
+<p>Cấu trúc A: Cơ sở</p>
+<p>{</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    // OK: Tuyên bố ba chức năng ảo thành viên, hai trong số chúng thuần túy</pre></div> </div> <p>    ảo int f () = 0, g () ghi đè = 0, h ();<a href="destructor" title="cpp/language/destructor">destructor</a> <code>= 0</code>    // OK: Destructor cũng có thể tinh khiết</p>
+<p>    ~ A () = 0;</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h3 id="Defect_Reports">&gt; Multiset lớp;</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/390.html" rel="nofollow">CWG 390</a> </td> <td>C ++ 98</td> <td>    // Lỗi: Trình định nghĩa thuần túy về định nghĩa chức năng</td> <td>    ảo int b () = 0 {}</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2153.html" rel="nofollow">CWG 2153</a> </td> <td>C ++ 98</td> <td>
+<span class="t-spar">};</span>Lớp học trừu tượng</td> <td>bị cấm</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul><li> <a href="virtual" title="cpp/language/virtual"><code>virtual</code></a> </li></ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/abstract_class">https://en.cppreference.com/w/cpp/language/abstract_class</a>
+</p>
+</div>

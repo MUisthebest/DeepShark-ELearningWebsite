@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: to_underlying</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/utility" title="cpp/header/utility">&lt;utility&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;class enum&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>constexpr std :: bên dưới_type_t &lt;enum&gt; to_underlying (enum e) noexcept;<code><span class="kw1">Không chính thức,</span> <span class="kw1">Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;</span><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/types/underlying_type"><span class="kw641">Điều đó cho tất cả<span class="me2">Chuyển đổi một bảng liệt kê thành loại cơ bản của nó. Tương đương với</span></span></a><span class="sy1">is_trivently_destructible_v</span>Enum<span class="sy1">2,4)</span><span class="br0">.</span>e<span class="br0">)</span><span class="sy4">Số lượng các yếu tố để sao chép</span></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</td> <td>-</td> <td>bên dưới_type_t</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Giá trị liệt kê để chuyển đổi<code>Enum</code>Giá trị số nguyên của loại<code>e</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>std::to_underlying</code>, chuyển đổi từ</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_to_underlying" title="cpp/feature test"><code>__cpp_lib_to_underlying</code></a></td> <td><span class="nu0">202102L</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<code>std::to_underlying</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">có thể được sử dụng để tránh chuyển đổi một bảng liệt kê thành một loại số nguyên khác với loại cơ bản của nó.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CstDint&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/underlying_type" title="cpp/types/underlying type"> <span class="t-lines"><span>bên dưới_type</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được loại số nguyên cơ bản cho một loại liệt kê nhất định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/is_enum" title="cpp/types/is enum"> <span class="t-lines"><span>is_enum</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có phải là loại bảng liệt kê không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/is_scoped_enum" title="cpp/types/is scoped enum"> <span class="t-lines"><span>is_scoped_enum</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Kiểm tra xem một loại có phải là loại bảng liệt kê phạm vi không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/to_underlying">https://en.cppreference.com/w/cpp/utility/to_underlying</a>
+</p>
+</div>

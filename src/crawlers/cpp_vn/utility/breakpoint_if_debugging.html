@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: breakpoint_if_debugging</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/debugging" title="cpp/header/debugging">&lt;debugging&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx26"> <td> <pre data-language="cpp">void breakpoint_if_debugging () noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> </tr> </table> <p>Điểm dừng có điều kiện: Các nỗ lực tạm thời tạm dừng việc thực thi chương trình và chuyển kiểm soát cho trình gỡ lỗi nếu có thể xác định rằng trình gỡ lỗi có mặt. Hoạt động như một không có op khác. Chính thức, hành vi của chức năng này được xác định hoàn toàn.</p>
+<p>Mẫu &lt;class inputit1, class inputit2,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">if (std :: is_debugger_present ())</pre></div> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_debugging" title="cpp/feature test"><code>__cpp_lib_debugging</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>Thư viện hỗ trợ gỡ lỗi</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_debugger_present" title="cpp/utility/is debugger present"> <span class="t-lines"><span>is_debugger_present</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C ++ 26)</span></span></span></div> </td> <td>Kiểm tra xem một chương trình có chạy dưới sự kiểm soát của trình gỡ lỗi không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="breakpoint" title="cpp/utility/breakpoint"> <span class="t-lines"><span>điểm dừng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C ++ 26)</span></span></span></div> </td> <td>tạm dừng chương trình đang chạy khi được gọi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/breakpoint_if_debugging">https://en.cppreference.com/w/cpp/utility/breakpoint_if_debugging</a>
+</p>
+</div>

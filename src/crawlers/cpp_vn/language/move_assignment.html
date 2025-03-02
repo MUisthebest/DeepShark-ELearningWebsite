@@ -1,0 +1,121 @@
+ <h1 class="firstHeading" id="firstHeading">Di chuyển toán tử chuyển nhượng</h1> <p>Toán tử chuyển nhượng di chuyển là một bảng không<a href="member_functions" title="cpp/language/member functions">non-static member function</a>với toán tử tên<span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span>có thể được gọi với một đối số của cùng loại lớp và sao chép nội dung của đối số, có thể biến đổi đối số.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Đối với cú pháp toán tử chuyển nhượng di chuyển chính thức, xem<a href="function" title="cpp/language/function">function declaration</a>. Danh sách cú pháp bên dưới chỉ thể hiện một tập hợp con của tất cả các cú pháp toán tử chuyển nhượng di chuyển hợp lệ.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <code>operator=(</code><span class="t-spar">danh sách tham số</span>﻿<code>);</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <code>operator=(</code><span class="t-spar">danh sách tham số</span>﻿<code>)</code> <span class="t-spar">cơ thể chức năng</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <code>operator=(</code><span class="t-spar">tham số-list-no-default</span>﻿<code>) = default;</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <code>operator=(</code><span class="t-spar">danh sách tham số</span>﻿<code>) = delete;</code> </td> <td>(4)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <span class="t-spar">tên lớp</span>﻿<code>::</code><code>operator=(</code><span class="t-spar">danh sách tham số</span>﻿<code>)</code> <span class="t-spar">cơ thể chức năng</span> </td> <td>             Không có p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <span class="t-spar">tên lớp</span>﻿<code>::</code><code>operator=(</code><span class="t-spar">tham số-list-no-default</span>﻿<code>) = default;</code> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">tên lớp</span> </td> <td>-</td> <td>lớp có toán tử chuyển nhượng di chuyển đang được khai báo, loại lớp được đưa ra là<code>T</code>Trong các mô tả dưới đây</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">danh sách tham số</span> </td> <td>-</td> <td>Một<a href="function#Parameter_list" title="cpp/language/function">parameter list</a>chỉ trong một tham số, thuộc loại<code>T&amp;&amp;</code>Thì<span class="kw4">hằng số</span>T<span class="sy3">. Trong các cuộc gọi có hiệu lực</span>Thì<span class="kw4">bay hơi</span>T<span class="sy3">. Trong các cuộc gọi có hiệu lực</span>hoặc<span class="kw4">hằng số</span> <span class="kw4">bay hơi</span>T<span class="sy3">. Trong các cuộc gọi có hiệu lực</span> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tham số-list-no-default</span> </td> <td>-</td> <td>Một<a href="function#Parameter_list" title="cpp/language/function">parameter list</a>chỉ trong một tham số, thuộc loại<code>T&amp;&amp;</code>Thì<span class="kw4">hằng số</span>T<span class="sy3">. Trong các cuộc gọi có hiệu lực</span>Thì<span class="kw4">bay hơi</span>T<span class="sy3">. Trong các cuộc gọi có hiệu lực</span>hoặc<span class="kw4">hằng số</span> <span class="kw4">bay hơi</span>T<span class="sy3">. Trong các cuộc gọi có hiệu lực</span>và không có đối số mặc định</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">cơ thể chức năng</span> </td> <td>-</td> <td>các<a href="constructor" title="cpp/language/constructor">function body</a>của toán tử chuyển nhượng di chuyển</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">kiểu trả lại</span> </td> <td>-</td> <td>Bất kỳ loại, nhưng<code>T&amp;</code>được ưa chuộng để cho phép xác nhận chuỗi</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <div class="t-li1">
+<span class="t-li">1)</span>Tuyên bố của một toán tử chuyển nhượng di chuyển bên trong định nghĩa lớp.</div> <div class="t-li1">
+<span class="t-li">    const std :: chrono :: giây* offset;     // Chỉ giải thích</span>Định nghĩa của một toán tử chuyển nhượng di chuyển bên trong định nghĩa lớp.</div> <div class="t-li2">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Toán tử chuyển nhượng di chuyển được mặc định rõ ràng.</div> <div class="t-li2">
+<span class="t-li">là trong</span>Toán tử chuyển nhượng di chuyển bị xóa.</div> <div class="t-li1">
+<span class="t-li">    trả về std :: find_if_not (đầu tiên, cuối cùng, p) == cuối cùng;</span>Định nghĩa của toán tử chuyển nhượng di chuyển bên ngoài định nghĩa lớp (lớp phải chứa một khai báo<span class="t-v">(1)</span>).</div> <div class="t-li2">
+<span class="t-li">từ_sys</span>Toán tử chuyển nhượng di chuyển được mặc định rõ ràng.</div> <div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc x</pre></div> <p>{<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>    X &amp; Toán tử = (X &amp;&amp; Khác);    // di chuyển toán tử chuyển nhượng</p>
+<p>// X toán tử = (const x khác); // Lỗi: Loại tham số không chính xác<code><a href="../string/basic_string" title="cpp/string/basic string">std::string</a></code>};<code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </p>
+<h3 id="Implicitly-declared_move_assignment_operator">Liên minh y</h3> <p>{</p>
+<ul>
+<li>    // và không viloate các hạn chế được liệt kê ở trên<a href="copy_constructor" title="cpp/language/copy constructor">copy constructors</a>Số lượng các yếu tố để sao chép</li>
+<li>    // và không viloate các hạn chế được liệt kê ở trên<a href="move_constructor" title="cpp/language/move constructor">move constructors</a>Số lượng các yếu tố để sao chép</li>
+<li>    // và không viloate các hạn chế được liệt kê ở trên<a href="copy_assignment" title="cpp/language/copy assignment">copy assignment operators</a>Số lượng các yếu tố để sao chép</li>
+<li>    Toán tử tự động = (y &amp;&amp; khác) -&gt; y &amp;;       // OK: Loại trả về theo dõi<a href="destructor" title="cpp/language/destructor">destructor</a>Thì</li>
+</ul> <p>    Y &amp; toán tử = (y &amp;&amp; self, y &amp; other); // OK: Tham số đối tượng rõ ràng<span class="kw1">};</span> <span class="kw1"> </span>// y &amp; toán tử = (y &amp;&amp;, int num = 1);        // Lỗi: có các tham số không đối tượng khác<code>T&amp; T::operator=(T&amp;&amp;)</code>.</p>
+<p>};<code>T&amp; T::operator=(const T&amp;&amp;)</code>Và<code>T&amp; T::operator=(T&amp;&amp;)</code>Toán tử chuyển nhượng di chuyển được gọi bất cứ khi nào nó được chọn bởi<code>default</code>.</p>
+<p>, ví dụ. Khi một đối tượng xuất hiện ở phía bên trái của biểu thức gán, trong đó phía bên phải là một rvalue có cùng loại chuyển đổi hoặc hoàn toàn.<span class="t-rev-inl t-until-cxx17"><span><a href="except_spec" title="cpp/language/except spec">dynamic exception specification</a></span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span><a href="noexcept_spec" title="cpp/language/noexcept spec">noexcept specification</a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>.</p>
+<p>Di chuyển các toán tử gán thường "đánh cắp" các tài nguyên do đối số nắm giữ (ví dụ: con trỏ đến các đối tượng được phân bổ động, mô tả tệp, ổ cắm TCP, luồng I/O, chạy luồng, v.v.), thay vì tạo bản sao của chúng và để lại đối số ở một trạng thái hợp lệ nhưng không xác định. Ví dụ, di chuyển chỉ định từ một</p>
+<h3 id="Implicitly-defined_move_assignment_operator">hoặc từ a</h3> <p>có thể dẫn đến cuộc tranh luận bị bỏ trống. Đây không phải là, tuy nhiên, một sự đảm bảo. Một phân công di chuyển là ít hơn, không được xác định hạn chế hơn so với phân công thông thường; Trong trường hợp gán thông thường phải để lại hai bản sao dữ liệu khi hoàn thành, việc chuyển nhượng di chuyển chỉ cần để lại một.<a href="definition#ODR-use" title="cpp/language/definition">odr-used</a><span class="t-rev-inl t-since-cxx14"><span>hoặc<a href="constant_expression#Functions_and_variables_needed_for_constant_evaluation" title="cpp/language/constant expression">needed for constant evaluation</a></span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>.</p>
+<p>Toán tử chuyển nhượng di chuyển được công bố ngầm<code><a href="../string/byte/memmove" title="cpp/string/byte/memmove">std::memmove</a></code>).</p>
+<p>Nếu không có toán tử gán di chuyển do người dùng xác định nào được cung cấp cho loại lớp và tất cả những điều sau đây là đúng:</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx14 t-until-cxx23">
+<td> <p>Không có người dùng được giải khai<code>T</code>khoảng cách<a href="constexpr" title="cpp/language/constexpr"><code>constexpr</code></a>nếu như</p>
+<ul>
+<li> <code>T</code>Điều đó như vậy<a href="../named_req/literaltype" title="cpp/named req/LiteralType">literal type</a>, Và</li>
+<li>Không có người dùng được giải khai</li>
+<li>thuộc loại lớp hoặc mảng loại lớp có toán tử gán bản sao có tham số<code>T</code>Không có người dùng được giải khai</li>
+</ul> </td> <td>
+<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span><br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <p>Không có người dùng được giải khai<code>T</code>khoảng cách<a href="constexpr" title="cpp/language/constexpr"><code>constexpr</code></a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>sau đó trình biên dịch sẽ khai báo toán tử chuyển nhượng di chuyển dưới dạng</p>
+<div class="cpp source-cpp"><pre data-language="cpp">thành viên của lớp với chữ ký</pre></div> <h3 id="Deleted_move_assignment_operator">Một lớp có thể có nhiều toán tử gán di chuyển, ví dụ: cả hai</h3> <p>. Nếu một số toán tử gán di chuyển do người dùng xác định có mặt, người dùng vẫn có thể buộc thế hệ của toán tử gán di chuyển được tuyên bố ngầm<code>T</code>Toán tử chuyển nhượng di chuyển được khai báo ngầm (hoặc mặc định trên Tuyên bố đầu tiên) có một đặc điểm kỹ thuật ngoại lệ như được mô tả trong</p>
+<ul>
+<li> <code>T</code>. Đối với các loại liên minh, bài tập bản sao được xác định ngầm sẽ sao chép biểu diễn đối tượng (như bởi</li>
+<li> <code>T</code>). Đối với các loại lớp không liên kết, toán tử thực hiện gán bản sao thành viên của các cơ sở của đối tượng và các thành viên không tĩnh, theo thứ tự khởi tạo của họ, sử dụng gán tích hợp cho người vận hành vô hướng và sao chép cho các loại lớp.</li>
+<li> <code>T</code>Toán tử gán bản sao được xác định ngầm cho một lớp<a href="object#Potentially_constructed_subobject" title="cpp/language/object">potentially constructed subobject</a>Toán tử gán được chọn để sao chép từng tiểu đơn lớp cơ sở trực tiếp là hàm constexpr và<code>M</code>cho mỗi thành viên dữ liệu không tĩnh của<code>M</code>Vì một số toán tử gán (di chuyển hoặc sao chép) luôn được khai báo cho bất kỳ lớp nào, toán tử gán lớp cơ sở luôn được ẩn. Nếu việc khai thác sử dụng được sử dụng để đưa toán tử gán từ lớp cơ sở và loại đối số của nó có thể giống như loại đối số của toán tử gán ngầm của lớp dẫn xuất, việc khai báo sử dụng cũng bị ẩn bởi tuyên bố ngầm.</li>
+<ul>
+<li>Toán tử gán bản sao được xác định ngầm cho một lớp</li>
+<li>Việc tạo ra toán tử gán bản sao được xác định ngầm được xác định<a href="union#Union-like_classes" title="cpp/language/union">variant member</a>có một hàm tạo phân hủy người dùng hoặc trình xây dựng bản sao phát hành của người dùng.</li>
+</ul>
+</ul> <p>Toán tử chuyển nhượng di chuyển được xác định ngầm<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>.</p>
+<h3 id="Trivial_move_assignment_operator">Nếu toán tử chuyển nhượng di chuyển được tuyên bố ngầm không bị xóa cũng không tầm thường, thì nó được xác định (nghĩa là cơ thể chức năng được tạo và biên dịch) bởi trình biên dịch nếu</h3> <p>Đối với các loại liên minh, toán tử chuyển nhượng di chuyển được xác định ngầm sẽ sao chép biểu diễn đối tượng (như bởi<code>T</code>Sao chép toán tử gán cho lớp</p>
+<ul>
+<li>Đối với các loại lớp không liên kết, toán tử chuyển nhượng di chuyển thực hiện gán di chuyển toàn bộ thành viên của các cơ sở trực tiếp của đối tượng và các thành viên không tĩnh ngay lập tức, theo thứ tự khai báo của họ, sử dụng gán tích hợp cho vô hướng, phân bổ di chuyển thành công cho mảng và di chuyển toán tử cho các loại lớp (được gọi là không phải là không có barn).</li>
+<li> <code>T</code>Nếu bất kỳ điều kiện nào sau đây được thỏa mãn:</li>
+<li> <code>T</code>có một thành viên dữ liệu không tĩnh thuộc loại không có đủ điều kiện const (hoặc có thể là mảng đa chiều của chúng).</li>
+<li>Toán tử chuyển nhượng di chuyển được xác định ngầm cho một lớp<code>T</code>có a</li>
+<li>Toán tử gán được chọn để di chuyển từng tiểu mục lớp cơ sở trực tiếp là hàm constexpr và<code>T</code>(hoặc có thể là mảng đa chiều của chúng) sao cho độ phân giải quá tải được áp dụng để tìm</li>
+</ul> <p>Đó là loại loại (hoặc mảng của chúng), toán tử gán được chọn để di chuyển thành viên đó là hàm Consexpr.<code><a href="../string/byte/memmove" title="cpp/string/byte/memmove">std::memmove</a></code>Toán tử chuyển nhượng di chuyển được xác định ngầm cho một lớp</p>
+<h3 id="Eligible_move_assignment_operator">Như với gán bản sao, không xác định liệu các tiểu mục lớp cơ sở ảo có thể truy cập được thông qua nhiều đường dẫn trong mạng di truyền hay không, được gán nhiều lần bởi toán tử gán di chuyển được xác định ngầm:</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Cấu trúc v</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>{</p>
+<ul>
+<li>Toán tử gán bản sao cho lớp</li>
+<li>Để cho một số đối tượng máy phát<a href="constraints" title="cpp/language/constraints">associated constraints</a>là tầm thường nếu tất cả những điều sau đây là đúng:</li>
+<li>    V &amp; Toán tử = (V &amp;&amp; Khác)<a href="constraints#Partial_ordering_of_constraints" title="cpp/language/constraints">more constrained</a>không có chức năng thành viên ảo;</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>    {<a href="../named_req/triviallycopyable" title="cpp/named req/TriviallyCopyable">trivially copyable type</a>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>toán tử gán bản sao được chọn cho mọi cơ sở trực tiếp của<a href="value_category" title="cpp/language/value category"><i>rvalue</i></a>là tầm thường;<a href="value_category" title="cpp/language/value category"><i>prvalue</i></a>Toán tử gán bản sao được chọn cho mọi thành viên loại (hoặc mảng thuộc loại lớp)<a href="value_category" title="cpp/language/value category"><i>XVALUE</i></a>là tầm thường.<code>std::move</code>Một toán tử gán bản sao tầm thường tạo một bản sao của biểu diễn đối tượng như thể bằng cách<a href="value_category" title="cpp/language/value category"><i>lvalue</i></a>. Tất cả các loại dữ liệu tương thích với ngôn ngữ C (loại POD) đều có thể sao chép một cách tầm thường.</p>
+<p>        // Điều này có thể được gọi một hoặc hai lần<a href="copy_assignment" title="cpp/language/copy assignment">copy assignment</a>).</p>
+<p>(Raco).<a href="operators#Assignment_operator" title="cpp/language/operators">assignment operator overloading</a>        // Nếu được gọi là hai lần, 'Khác' là phân nhóm chỉ được di chuyển từ V-từ V-</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">        trả lại *cái này;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    }</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1353.html" rel="nofollow">CWG 1353</a> </td> <td>C ++ 11</td> <td>};<br/> </td> <td>Không có toán tử gán bản sao với cùng loại tham số đầu tiên và cùng một cv/ref-aperifers (nếu có)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1402.html" rel="nofollow">CWG 1402</a> </td> <td>C ++ 11</td> <td>Cấu trúc A: ảo v {}; // toán tử = gọi V :: toán tử =<br/>Struct B: ảo v {}; // toán tử = gọi V :: toán tử =<br/>Cấu trúc C: B, A {};      // Toán tử = gọi B :: Toán tử =, sau đó A :: Toán tử =<br/>                         // Nhưng họ chỉ có thể gọi v :: toán tử = một lần</td> <td> <br/>int main ()<br/>{<br/>    C C1, C2;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1806.html" rel="nofollow">CWG 1806</a> </td> <td>C ++ 11</td> <td>    C2 = std :: di chuyển (C1);<br/>}</td> <td>Được cho</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2094.html" rel="nofollow">CWG 2094</a> </td> <td>C ++ 11</td> <td>Đã xóa toán tử chuyển nhượng di chuyển<br/>Toán tử gán di chuyển được tuyên bố ngầm hoặc mặc định cho lớp<a class="external text" href="https://cplusplus.github.io/CWG/issues/496.html" rel="nofollow">CWG issue 496</a>)</td> <td>Nếu cả hai toán tử gán bản sao và di chuyển được cung cấp, độ phân giải quá tải sẽ chọn gán di chuyển nếu đối số là một</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2180.html" rel="nofollow">CWG 2180</a> </td> <td>C ++ 11</td> <td>được định nghĩa là bị xóa nếu bất kỳ điều kiện nào sau đây được thỏa mãn:<code>T</code><br/>Nhà điều hành chuyển nhượng di chuyển<code>T</code>Một toán tử chuyển nhượng di chuyển được tuyên bố ngầm bị xóa bị bỏ qua bị bỏ qua bởi<br/>Toán tử chuyển nhượng di chuyển tầm thường</td> <td>Không xác định liệu các tiểu học lớp cơ sở ảo có thể truy cập được thông qua nhiều đường dẫn trong mạng di truyền hay không, được gán nhiều lần bởi toán tử gán bản sao được xác định ngầm (cùng áp dụng cho<br/>Để biết thêm chi tiết về hành vi dự kiến ​​của toán tử phân bổ bản sao do người dùng xác định.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2690.html" rel="nofollow">CWG 2690</a> </td> <td>C ++ 11</td> <td>Toán tử chuyển nhượng di chuyển cho lớp<br/>Nó không được cung cấp người dùng (có nghĩa là, nó được xác định ngầm hoặc mặc định);</td> <td>toán tử chuyển nhượng di chuyển được chọn cho mọi cơ sở trực tiếp của<br/>Toán tử gán di chuyển được chọn cho mọi thành viên loại (hoặc mảng thuộc loại lớp) của lớp không tĩnh</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="constructor" title="cpp/language/constructor">constructor</a> </li>
+<li> <a href="converting_constructor" title="cpp/language/converting constructor">converting constructor</a> </li>
+<li> <a href="copy_assignment" title="cpp/language/copy assignment">copy assignment</a> </li>
+<li> <a href="copy_constructor" title="cpp/language/copy constructor">copy constructor</a> </li>
+<li> <a href="default_constructor" title="cpp/language/default constructor">default constructor</a> </li>
+<li> <a href="destructor" title="cpp/language/destructor">destructor</a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> <ul>
+<li> <a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a> </li>
+<li> <a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </li>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a> </li>
+<li> <a href="default_initialization" title="cpp/language/default initialization">default initialization</a> </li>
+<li> <a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a> </li>
+<li> <a href="list_initialization" title="cpp/language/list initialization">list initialization</a> </li>
+<li> <a href="reference_initialization" title="cpp/language/reference initialization">reference initialization</a> </li>
+<li> <a href="value_initialization" title="cpp/language/value initialization">value initialization</a> </li>
+<li> <a href="zero_initialization" title="cpp/language/zero initialization">zero initialization</a> </li>
+</ul> </li>
+<li> <a href="move_constructor" title="cpp/language/move constructor">move constructor</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/move_assignment">https://en.cppreference.com/w/cpp/language/move_assignment</a>
+</p>
+</div>

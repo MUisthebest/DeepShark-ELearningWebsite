@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: inout_ptr_t &lt;smart, con trỏ, args ...&gt; :: inout_ptr_t</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">rõ ràng inout_ptr_t (Smart &amp; sp, args ... args);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">inout_ptr_t (const inout_ptr_t &amp;) = xóa;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>STD :: Exception_ptr make_exception_ptr (e e) noExcept;<code>inout_ptr_t</code>. Thích nghi<code>sp</code>như thể ràng buộc nó với<code>Smart&amp;</code>thành viên, nắm bắt mọi lập luận<code>t</code>TRONG<code>args...</code>như thể khởi tạo thành viên tương ứng của loại<code>T</code>TRONG<code>Args...</code>với<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="br0">.</span>t<span class="br0">)</span></code>, sau đó khởi tạo được lưu trữ<code>Pointer</code>với<code>sp</code>nếu như<code>Smart</code>là một loại con trỏ, nếu không, sẽ khởi tạo nó với<code>sp.get()</code>.<code>sp.release()</code>có thể được gọi nếu<code>Smart</code>không phải là một loại con trỏ, trong trường hợp nó sẽ không được gọi lại trong bộ hủy diệt.</div> <div class="t-li1">
+<span class="t-li">2)</span>Sao chép Constructor bị xóa rõ ràng.<code>inout_ptr_t</code>Mỗi lần khởi tạo và chuyên môn đầy đủ của</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không có được bằng cách gọi</td> <td>-</td> <td>Chương trình không được hình thành nếu việc xây dựng giá trị trả lại (xem bên dưới) không được hình thành.</td>
+</tr> <tr class="t-par"> <td>, không cho phép định dạng định dạng.</td> <td>-</td> <td>Các đối số được sử dụng để đặt lại để bắt giữ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Nếu như<code>Smart</code>không phải là loại con trỏ và<code>sp.release()</code>không được gọi bởi hàm tạo, nó có thể được gọi bởi bộ hủy diệt trước khi đặt lại<code>sp</code>.</p>
+<p>Mỗi cuộc tranh luận trong<code>args...</code>được chuyển vào được tạo ra<code>inout_ptr_t</code>Nếu nó thuộc loại đối tượng hoặc được chuyển vào<code>inout_ptr_t</code>AS-IS nếu nó thuộc loại tham chiếu.</p>
+<p>Các hàm tạo của<code>inout_ptr_t</code>được phép ném ngoại lệ. Ví dụ, khi nào<code>sp</code>là một con trỏ xâm nhập với một khối điều khiển, phân bổ cho khối điều khiển mới có thể được thực hiện trong hàm tạo chứ không phải là chất phá hủy.</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/inout_ptr_t/inout_ptr_t">https://en.cppreference.com/w/cpp/memory/inout_ptr_t/inout_ptr_t</a>
+</p>
+</div>

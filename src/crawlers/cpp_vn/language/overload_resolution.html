@@ -1,0 +1,305 @@
+ <h1 class="firstHeading" id="firstHeading">Độ phân giải quá tải</h1> <p>Để biên dịch một cuộc gọi chức năng, trước tiên trình biên dịch phải thực hiện<a href="lookup" title="cpp/language/lookup">name lookup</a>, trong đó, đối với các chức năng, có thể liên quan đến<a href="adl" title="cpp/language/adl">argument-dependent lookup</a>và cho các mẫu chức năng có thể được theo sau bởi<a href="template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>.</p>
+<p>Nếu tên đề cập đến nhiều hơn một thực thể, thì nó được cho là<i>quá tải</i>và trình biên dịch phải xác định quá tải để gọi. Nói một cách đơn giản, quá tải có các tham số khớp với các đối số chặt chẽ nhất là cái được gọi là.</p>
+<p>Về chi tiết, độ phân giải quá tải tiến hành thông qua các bước sau:</p>
+<ol>
+<li>Xây dựng bộ<a href="#Candidate_functions">candidate functions</a>.</li>
+<li>Trim chỉ tập hợp thành<a href="#Viable_functions">viable functions</a>.</li>
+<li>Phân tích tập hợp để xác định đơn<a href="#Best_viable_function">best viable function</a>(Điều này có thể liên quan<a href="#Ranking_of_implicit_conversion_sequences">ranking of implicit conversion sequences</a>).</li>
+</ol> <div class="cpp source-cpp"><pre data-language="cpp">void f (dài);</pre></div> <p>void f (float);<a href="overloaded_address" title="cpp/language/overloaded address">Address of an overloaded function</a>.</p>
+<p> <a href="templates#Templated_entity" title="cpp/language/templates">templated entity</a>f (0l); // gọi f (dài)<a href="constraints" title="cpp/language/constraints">constraint</a>).</p>
+<h3 id="Candidate_functions">f (0);  // Lỗi: quá tải mơ hồ</h3> <p>Bên cạnh các cuộc gọi chức năng, tên chức năng quá tải có thể xuất hiện trong một số bối cảnh bổ sung, trong đó áp dụng các quy tắc khác nhau: xem<i>Nếu một hàm không thể được chọn bởi độ phân giải quá tải, nó không thể được sử dụng (ví dụ: đó là một</i>với một thất bại</p>
+<h4 id="Call_to_a_named_function">Chức năng ứng cử viên</h4> <p>Nếu như<code>E</code>trong a<a href="operator_other#Built-in_function_call_operator" title="cpp/language/operator other">function call expression</a> <code>E(args)</code>Trước khi độ phân giải quá tải bắt đầu, các chức năng được chọn bằng cách tra cứu tên và suy luận đối số mẫu được kết hợp để tạo thành tập hợp của</p>
+<ul>
+<li>là trung gian nếu cần thiết.<code>E</code>có hình thức<code>PA-&gt;B</code>hoặc<code>A.B</code>chức năng ứng cử viên<code>B</code>khoảng cách<a href="lookup" title="cpp/language/lookup">looked up</a>. Các chi tiết chính xác phụ thuộc vào bối cảnh diễn ra độ phân giải quá tải.<code>T</code>Gọi đến một hàm được đặt tên</li>
+<li>là trung gian nếu cần thiết.<code>E</code>Điều đó như vậy<a href="expressions#Primary_expressions" title="cpp/language/expressions">primary expression</a>Đặt tên cho một tập hợp các chức năng quá tải và/hoặc các mẫu chức năng (nhưng không phải là đối tượng có thể gọi được), các quy tắc sau được tuân theo:<a href="lookup" title="cpp/language/lookup">looked up</a>(trong đó một loại có loại cv t), sau đó<a href="adl" title="cpp/language/adl">ADL</a>Là một chức năng thành viên của</li>
+</ul> <dl>
+<dd>. Các tuyên bố chức năng được tìm thấy bởi tra cứu là các chức năng ứng cử viên. Danh sách đối số cho mục đích phân giải quá tải có đối số đối tượng ngụ ý của loại CV T.</dd>
+<dd>, tên là<code>T</code>tuân theo các quy tắc bình thường cho các cuộc gọi chức năng (có thể liên quan đến<a href="this" title="cpp/language/this">this</a>). Các khai báo chức năng được tìm thấy bởi tra cứu này là (do cách tìm kiếm hoạt động):<code>T</code>a) Tất cả các chức năng không phải thành viên (trong trường hợp đó, danh sách đối số cho mục đích phân giải quá tải chính xác là danh sách đối số được sử dụng trong biểu thức cuộc gọi chức năng)<code>T</code>Thì<code>*this</code>b) Tất cả các chức năng thành viên của một số lớp<code>this</code>, trong trường hợp đó, nếu<code>T</code>có phạm vi và là một con trỏ để<code>T</code>hoặc đến một lớp có nguồn gốc của</dd>
+</dl> <h4 id="Call_to_a_class_object">được sử dụng như đối số đối tượng ngụ ý. Nếu không (nếu</h4> <p>Nếu như<code>E</code>trong a<a href="operator_other#Built-in_function_call_operator" title="cpp/language/operator other">function call expression</a> <code>E(args)</code>không ở trong phạm vi hoặc không chỉ ra<code>T</code>, sau đó</p>
+<ul>
+<li>), một đối tượng giả của loại<a href="lookup" title="cpp/language/lookup">lookup</a>được sử dụng làm đối số đối tượng ngụ ý và nếu quá tải độ phân giải sau đó chọn hàm thành viên không tĩnh, chương trình sẽ không được hình thành.<span class="br0">.</span><span class="br0">)</span>Gọi đến một đối tượng lớp<code>(E).operator()</code>có loại cv</li>
+<li>Các toán tử gọi chức năng của T có được bằng cách thông thường<a href="cast_operator" title="cpp/language/cast operator">user-defined conversion function</a>TRONG<code>T</code>của toán tử tên<code>T</code>Trong bối cảnh của biểu thức<code>T</code>và mọi tuyên bố được tìm thấy được thêm vào tập hợp các chức năng ứng cử viên.</li>
+</ul> <dl>
+<dd>
+<ul>
+<li>Cho mỗi không tiết lộ</li>
+<li>hoặc trong một cơ sở của</li>
+<li>(Trừ khi được ẩn), người có trình điều chỉnh CV giống nhau hoặc lớn hơn</li>
+</ul> </dd>
+<dd>Các trình điều chỉnh CV và trong đó chức năng chuyển đổi chuyển đổi thành:<i>con trỏ đến chức năng</i>Tham chiếu-tới-trỏ đến chức năng</dd>
+</dl> <p>tham chiếu đến chức năng<code>E</code>Sau đó a</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Chức năng cuộc gọi thay thế</pre></div> <h4 id="Call_to_an_overloaded_operator">Với một tên duy nhất có tham số đầu tiên là kết quả của việc chuyển đổi, các tham số còn lại là danh sách tham số được chấp nhận bởi kết quả của chuyển đổi và loại trả về là loại trả về kết quả của chuyển đổi, được thêm vào tập hợp các hàm ứng cử viên. Nếu chức năng thay thế này được chọn bởi độ phân giải quá tải tiếp theo, thì chức năng chuyển đổi do người dùng xác định sẽ được gọi và sau đó kết quả của việc chuyển đổi sẽ được gọi.</h4> <p>Trong mọi trường hợp, danh sách đối số cho mục đích của độ phân giải quá tải là danh sách đối số của biểu thức cuộc gọi chức năng trước đối số đối tượng ngụ ý<a href="expressions#Operators" title="cpp/language/expressions">builtin operators</a>Và<a href="operators" title="cpp/language/operators">user-defined operator overloads</a>(Khi khớp với hàm thay thế, chuyển đổi do người dùng xác định sẽ tự động chuyển đổi đối số đối tượng ngụ ý thành đối số đầu tiên của hàm thay thế).</p>
+<p>int f1 (int);<code>@</code>int j = f (&amp; i); // &amp; i -&gt; int*tốt hơn &amp; i -&gt; const int*, gọi f (int*)<code>T1</code> <code>@</code>Cấu trúc a<code>T1</code>{<code>T2</code>    sử dụng fp1 = int (*) (int);</p>
+<div class="t-li1">
+<span class="t-li">1)</span> <i>    toán tử fp1 () {return f1; } // chức năng chuyển đổi thành con trỏ sang chức năng</i>    sử dụng fp2 = int (*) (float);<code>T1</code>    toán tử fp2 () {return f2; } // chức năng chuyển đổi thành con trỏ sang chức năng<a href="lookup" title="cpp/language/lookup">qualified name lookup</a>của<code>T1::operator@</code>} Một;</div> <div class="t-li1">
+<span class="t-li">2)</span> <i> </i>int i = a (1); // gọi F1 qua con trỏ được trả về từ chức năng chuyển đổi<a href="operators" title="cpp/language/operators">operator overloading</a>Gọi cho một toán tử quá tải<a href="lookup" title="cpp/language/lookup">unqualified name lookup</a>của<code>operator@</code>Nếu ít nhất một trong các đối số cho toán tử trong biểu thức có loại lớp hoặc loại bảng liệt kê, thì cả hai đều<a href="adl" title="cpp/language/adl">ADL</a>Tham gia vào độ phân giải quá tải, với tập hợp các chức năng ứng cử viên được chọn như sau:</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <i>Đối với một nhà điều hành chưa</i>đối số của ai có loại<code>operator,</code>(sau khi loại bỏ các cấp độ CV) hoặc toán tử nhị phân<code>operator&amp;</code>, Và<code>operator-&gt;</code>của người hạng phụ có loại<a href="expressions#Operators" title="cpp/language/expressions">built-in operator pages</a>và toán hạng bên phải<span class="t-rev-inl t-since-cxx20"><span>(Sau khi loại bỏ các cấp độ CV), các bộ chức năng ứng cử viên sau đây đã được chuẩn bị:</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>ứng cử viên thành viên<a href="implicit_conversion" title="cpp/language/implicit conversion">standard conversion sequences</a>Và sự sụp đổ của</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <span class="t-li">là trong</span> <i>Viết lại các ứng cử viên</i>:<ul>
+<li>ứng cử viên không phải là thành viên<code>x &lt; y</code>Thì<code>x &lt;= y</code>Thì<code>x &gt; y</code>, Và<code>x &gt;= y</code>là một lớp hoàn chỉnh hoặc một lớp hiện đang được xác định, tập hợp các ứng cử viên thành viên là kết quả của<code>operator&lt;=&gt;</code>. Trong tất cả các trường hợp khác, tập hợp các ứng cử viên thành viên trống rỗng.</li>
+<li>ứng cử viên không phải là thành viên<code>x &lt; y</code>Thì<code>x &lt;= y</code>Thì<code>x &gt; y</code>, Và<code>x &gt;= y</code>: Cho các nhà khai thác ở đâu<code>x &lt;=&gt; y</code>, Unary<span class="sy1">&lt;=&gt;</span>trong bối cảnh của biểu thức (có thể liên quan đến</li>
+<li>Bool Binary_Search (Forwardit First, Forwardit Last,<code>x != y</code>), ngoại trừ việc khai báo chức năng thành viên bị bỏ qua và không ngăn chặn việc tra cứu tiếp tục vào phạm vi kèm theo tiếp theo. Nếu cả hai toán tử của toán tử nhị phân hoặc toán hạng duy nhất của toán tử Unary có loại bảng liệt kê, thì các chức năng duy nhất từ ​​bộ tra cứu trở thành ứng cử viên không phải là thành viên là những người có tham số có loại liệt kê đó (hoặc tham chiếu đến loại liệt kê đó)<span class="sy1">==</span>Ứng viên tích hợp<span class="sy3">Nếu tồn tại một</span><span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span>.</li>
+<li>: Vì<code>x == y</code>Và<code>x != y</code>, Unary<span class="sy1">==</span>, tập hợp các ứng cử viên tích hợp trống rỗng. Đối với các nhà khai thác khác, các ứng viên tích hợp là những người được liệt kê trong<span class="sy3">Nếu tồn tại một</span><span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span>.</li>
+</ul>Miễn là tất cả các toán hạng có thể được chuyển đổi hoàn toàn thành các tham số của chúng. Nếu bất kỳ ứng cử viên tích hợp nào có cùng danh sách tham số với tư cách là ứng cử viên không thành viên</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>hoặc viết lại ứng cử viên không phải thành viên<code>operator-&gt;</code>Đó không phải là một chuyên môn về mẫu chức năng, nó không được thêm vào danh sách các ứng cử viên tích hợp. Khi các toán tử gán tích hợp được xem xét, các chuyển đổi từ các tham số đầu tiên của họ bị hạn chế: chỉ<a href="operator_member_access#Built-in_member_access_operators" title="cpp/language/operator member access">member access operator</a>).</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Đối với bốn biểu thức vận hành quan hệ</pre></div> <p>, tất cả các thành viên, không phải thành viên và tích hợp<a href="implicit_conversion" title="cpp/language/implicit conversion">user-defined conversion sequence</a>S tìm thấy được thêm vào tập hợp.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Đối với bốn biểu thức vận hành quan hệ</pre></div> <p>cũng như biểu thức so sánh ba chiều<span class="sy3">Không có giá trị</span>, một ứng cử viên tổng hợp với thứ tự của hai tham số được đảo ngược được thêm vào cho mỗi thành viên, không thành viên và toán tử tích hợp<span class="sy2">-</span><span class="sy1">&lt;</span>s tìm thấy.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Tập hợp các chức năng ứng cử viên sẽ được gửi cho độ phân giải quá tải là một liên kết của các bộ ở trên. Danh sách đối số cho mục đích phân giải quá tải bao gồm các toán hạng của toán tử ngoại trừ<span class="sy1">&lt;=&gt;</span>, trong đó toán hạng thứ hai không phải là đối số cho cuộc gọi chức năng (xem<code>@</code>Thì<code>x @ y</code>    toán tử int ();              // Chuyển đổi do người dùng xác định<code>0 @ (y &lt;=&gt; x)</code>};<code>(x &lt;=&gt; y) @ 0</code>Một toán tử+(const a &amp;, const a &amp;); // Nhà điều hành không có thành viên do người dùng xác định<span class="sy1">&lt;=&gt;</span> </p>
+<p>Tập hợp các chức năng ứng cử viên sẽ được gửi cho độ phân giải quá tải là một liên kết của các bộ ở trên. Danh sách đối số cho mục đích phân giải quá tải bao gồm các toán hạng của toán tử ngoại trừ<span class="sy1">==</span>, trong đó toán hạng thứ hai không phải là đối số cho cuộc gọi chức năng (xem<code>@</code>Cấu trúc a<code>==</code>hoặc<code>!=</code>{<span class="kw4">bool</span>, Và<code>x @ y</code>    toán tử int ();              // Chuyển đổi do người dùng xác định<code>y == x</code>hoặc<code>!(y == x)</code>};<code>!(x == y)</code>Một toán tử+(const a &amp;, const a &amp;); // Nhà điều hành không có thành viên do người dùng xác định<span class="sy1">==</span> </p>
+<p>void m ()</p>
+<p>{<span class="sy1">&lt;=&gt;</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1233">Điều đó cho tất cả<span class="me2">ngoại trừ việc phần tử được xây dựng là</span></span></a>Thì<span class="kw4">hằng số</span> <span class="kw4">char</span><span class="sy2">*</span><span class="br0">)</span>và vận hành<span class="sy1">==</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1233">Điều đó cho tất cả<span class="me2">ngoại trừ việc phần tử được xây dựng là</span></span></a>Thì<span class="kw4">hằng số</span> <span class="kw4">char</span><span class="sy2">*</span><span class="br0">)</span>    A a, b;<code><a href="../string/basic_string" title="cpp/string/basic string">std::string</a></code>Và<span class="kw4">hằng số</span> <span class="kw4">char</span><span class="sy2">*</span>    a + b; // Thành viên-ứng cử viên: Không có<a href="default_comparisons" title="cpp/language/default comparisons">default comparisons</a>           // Ứng viên không phải thành viên: Nhà điều hành+(A, B)</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h4 id="Initialization_by_constructor">           // Ứng viên tích hợp: int (a) + int (b)</h4> <p>           // Độ phân giải quá tải chọn toán tử+(a, b)<a href="direct_initialization" title="cpp/language/direct initialization">direct-initialized</a>hoặc<a href="default_initialization" title="cpp/language/default initialization">default-initialized</a>}<a href="copy_initialization" title="cpp/language/copy initialization">copy-initialization</a>Nếu độ phân giải quá tải chọn một ứng cử viên tích hợp,</p>
+<p>Từ một toán hạng thuộc loại không được phép có trình tự chuyển đổi tiêu chuẩn thứ hai: chức năng chuyển đổi do người dùng xác định phải cung cấp trực tiếp cho loại toán hạng dự kiến:<a href="converting_constructor" title="cpp/language/converting constructor">converting constructors</a>struct y {toán tử int*(); }; // y có thể chuyển đổi thành int*</p>
+<h4 id="Copy-initialization_by_conversion">int *a = y () + 100.0;          // Lỗi: Không có toán tử+ giữa con trỏ và gấp đôi</h4> <p>Nếu như<a href="copy_initialization" title="cpp/language/copy initialization">copy-initialization</a>Cho toán tử ,, người vận hành unary<code>S</code>, và nhà điều hành<code>T</code>, nếu không có chức năng khả thi (xem bên dưới) trong tập hợp các chức năng ứng cử viên, thì toán tử được giải thích lại dưới dạng tích hợp.</p>
+<ul>
+<li>Xem thêm việc triển khai<a href="converting_constructor" title="cpp/language/converting constructor">converting constructors</a>của<code>T</code> </li>
+<li>Nếu một toán tử viết lại<code>S</code>Ứng viên được chọn bởi độ phân giải quá tải cho người vận hành<code>T</code>được hiểu là biểu thức viết lại:<code>T</code>Nếu ứng cử viên được chọn là ứng cử viên tổng hợp với thứ tự đảo ngược của các tham số hoặc<i>không ngụ ý rằng</i> <code>T</code>Nếu không, bằng cách sử dụng toán tử viết lại đã chọn<code>T</code>ứng viên.</li>
+</ul> <p>Nếu một toán tử viết lại</p>
+<h4 id="Non-class_initialization_by_conversion">Ứng viên được chọn bởi độ phân giải quá tải cho người vận hành</h4> <p>(đó là một trong hai<code>T</code>), loại trả lại của nó phải (có thể là CV đủ điều kiện)<a href="cast_operator" title="cpp/language/cast operator">user-defined conversion function</a>được hiểu là biểu thức viết lại:<code>S</code>Nếu ứng cử viên được chọn là ứng cử viên tổng hợp với thứ tự đảo ngược của các tham số hoặc</p>
+<ul>
+<li>Nếu không, bằng cách sử dụng toán tử viết lại đã chọn<code>S</code>Để biết thêm chi tiết.<code>T</code>Khởi tạo bởi hàm tạo<code>T</code>bởi a<a href="implicit_conversion" title="cpp/language/implicit conversion">standard conversion sequence</a>Tra cứu này với thứ tự đối số đảo ngược giúp bạn chỉ có thể viết nhà điều hành</li>
+<li>để tạo tất cả các so sánh giữa<a href="direct_initialization" title="cpp/language/direct initialization">direct-initialization</a>, cả hai cách. Nhìn thấy<code>S</code>Để biết thêm chi tiết.<code>T</code>Khởi tạo bởi hàm tạo<code>T</code>bởi a<a href="implicit_conversion#Qualification_conversion" title="cpp/language/implicit conversion">qualification conversion</a>Khi một đối tượng thuộc loại lớp là</li>
+</ul> <p>các chức năng chuyển đổi do người dùng không xác định</p>
+<h4 id="Reference_initialization_by_conversion">Bối cảnh, các chức năng ứng cử viên là tất cả các hàm tạo của lớp được khởi tạo. Danh sách đối số là danh sách biểu thức của trình khởi tạo.</h4> <p>Là người phân bổ.<a href="reference_initialization" title="cpp/language/reference initialization">reference initialization</a>Khi một đối tượng thuộc loại lớp được sao chép sao chép từ một đối tượng thuộc cùng loại hoặc có nguồn gốc hoặc được khởi tạo mặc định trong bối cảnh khởi tạo sao chép, các chức năng ứng cử viên là tất cả<i>Khi khởi tạo một đối tượng thuộc loại CV1 không thuộc lớp</i> <code>T</code>Sao chép sáng tác bằng cách chuyển đổi<i>Khởi tạo không thuộc lớp bằng cách chuyển đổi</i> <code>S</code>đến loại CV</p>
+<ul><li>Trong số các đối tượng được khởi tạo, các chức năng sau là các chức năng ứng cử viên:<code>S</code>các chức năng chuyển đổi không tiết lộ từ</li></ul> <dl>
+<dd>
+<ul>
+<li>và các lớp cơ sở của nó (trừ khi ẩn)<i>Khởi tạo không thuộc lớp bằng cách chuyển đổi</i> <code>T2</code> </li>
+<li>hoặc một tham chiếu đến như vậy. Nếu việc bắt đầu bản sao này là một phần của chuỗi khởi tạo trực tiếp của<i>Khởi tạo không thuộc lớp bằng cách chuyển đổi</i> <code>T2</code>), sau đó các chức năng chuyển đổi rõ ràng cũng được xem xét.<i>Khởi tạo không thuộc lớp bằng cách chuyển đổi</i> <code>T2</code> </li>
+</ul> </dd>
+<dd>Ở đâu<i>Khởi tạo không thuộc lớp bằng cách chuyển đổi</i> <code>T2</code>khoảng cách<a href="reference_initialization#Definitions" title="cpp/language/reference initialization">reference-compatible</a>với<i>Khi khởi tạo một đối tượng thuộc loại CV1 không thuộc lớp</i> <code>T</code>.</dd>
+</dl> <ul><li>yêu cầu a<code>T2</code>thành viên<code>T</code>Để chuyển đổi từ biểu thức khởi tạo của loại CV loại<code>T</code>, các chức năng sau đây là ứng cử viên:</li></ul> <p>các chức năng chuyển đổi do người dùng không xác định</p>
+<h4 id="List-initialization">Danh sách khởi tạo</h4> <p>và các lớp cơ sở của nó (trừ khi ẩn) sản xuất loại<code>T</code>khoảng cách<a href="list_initialization" title="cpp/language/list initialization">list-initialized</a>hoặc một loại có thể chuyển đổi thành</p>
+<ul>
+<li>hoặc một tham chiếu đến loại đó. Vòng loại CV trên loại trả về bị bỏ qua với mục đích chọn các chức năng ứng cử viên.<code>T</code>Nếu đây là</li>
+<li>, các chức năng chuyển đổi do người dùng xác định rõ ràng của<code>T</code>và các lớp cơ sở của nó (trừ khi ẩn) sản xuất loại</li>
+</ul> <p>hoặc một loại có thể chuyển đổi thành<code>T</code>, hoặc một tham chiếu đến loại đó, cũng được xem xét.</p>
+<p>Dù bằng cách nào, danh sách đối số cho mục đích phân giải quá tải bao gồm một đối số duy nhất là biểu thức khởi tạo, sẽ được so sánh với đối số đối tượng ngầm của hàm chuyển đổi.</p>
+<h4 id="Additional_rules_for_function_template_candidates">Khởi tạo tham chiếu bằng cách chuyển đổi</h4> <p>, trong đó tham chiếu đến<a href="template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>CV1</p>
+<ul>
+<li>bị ràng buộc với kết quả lvalue hoặc rvalue của một chuyển đổi từ biểu thức khởi tạo từ loại lớp</li>
+<li>CV2<a href="sfinae" title="cpp/language/sfinae">SFINAE</a>).</li>
+</ul> <p>, các chức năng sau được chọn cho bộ ứng cử viên:</p>
+<p>(Raco).<a href="function_template#Function_template_overloading" title="cpp/language/function template">function template overloading</a>Các chức năng chuyển đổi do người dùng không xác định</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>và các lớp cơ sở của nó (trừ khi ẩn) với loại<a href="explicit" title="cpp/language/explicit">conditional explicit specifier</a>(Khi khởi tạo tham chiếu Lvalue hoặc tham chiếu rvalue vào hàm<a href="dependent_name#Value-dependent_expressions" title="cpp/language/dependent name">value-dependent</a>CV2</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h4 id="Additional_rules_for_constructor_candidates">(Khi khởi tạo tham chiếu rvalue hoặc tham chiếu lvalue cho chức năng)</h4> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>CV2<a href="move_constructor" title="cpp/language/move constructor">move constructors</a>Và<a href="move_assignment" title="cpp/language/move assignment">move assignment operators</a>hoặc tham chiếu rvalue về</p>
+<p>Một nhà xây dựng<a href="using_declaration#Inheriting_constructors" title="cpp/language/using declaration">inherited</a>CV2<code>C</code>CV2<code>P</code>CV1<code>D</code>"Đối với không âm</p>
+<ul>
+<li>Để khởi tạo trực tiếp, các chức năng chuyển đổi do người dùng xác định rõ ràng cũng được xem xét nếu</li>
+<li> <code>C</code>khoảng cách<a href="reference_initialization#Definitions" title="cpp/language/reference initialization">reference-related</a>ĐẾN<code>P</code>.</li>
+<li> <code>P</code>hoặc có thể được chuyển đổi thành loại<code>D</code>.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Additional_rules_for_member_function_candidates">với chuyển đổi trình độ.</h4> <p>Dù bằng cách nào, danh sách đối số cho mục đích phân giải quá tải bao gồm một đối số duy nhất là biểu thức khởi tạo, sẽ được so sánh với đối số đối tượng ngầm của hàm chuyển đổi.<a href="member_functions" title="cpp/language/member functions">member function</a>Khi một đối tượng thuộc loại lớp không tổng hợp<span class="t-rev-inl t-since-cxx23"><span>, độ phân giải quá tải hai pha diễn ra.<a href="member_functions#Explicit_object_parameter" title="cpp/language/member functions">explicit object parameter</a></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>Ở giai đoạn 1, các chức năng ứng cử viên đều là các hàm tạo danh sách khởi tạo của<i>từ loại lớp</i>Nếu độ phân giải quá tải không thành công ở giai đoạn 1, giai đoạn 2 được nhập, trong đó các chức năng ứng cử viên đều là các hàm tạo của</p>
+<p>và danh sách đối số cho mục đích phân giải quá tải bao gồm các yếu tố riêng lẻ của danh sách khởi tạo.<i>Mặc định</i>.</p>
+<p>Có hàm tạo mặc định, Giai đoạn 1 bị bỏ qua.<code>X</code>Trong việc bắt đầu trong danh sách sao chép, nếu Giai đoạn 2 chọn một hàm tạo rõ ràng, việc khởi tạo là không được hình thành (trái ngược với tất cả các lần khởi tạo sao chép trong đó các hàm tạo rõ ràng thậm chí không được xem xét).<a href="member_functions" title="cpp/language/member functions">member functions</a>.</p>
+<p>Các quy tắc bổ sung cho các ứng cử viên mẫu chức năng<i>Mặc định</i>và kiểm tra bất kỳ đối số mẫu rõ ràng nào được thực hiện để tìm các giá trị đối số mẫu (nếu có) có thể được sử dụng trong trường hợp này:<i>từ loại lớp</i>.</p>
+<p>Nếu suy luận đối số không thành công hoặc chuyên môn mẫu chức năng tổng hợp sẽ không được hình thành, không có chức năng nào như vậy được thêm vào bộ ứng cử viên (xem<i>Nếu một tên đề cập đến một hoặc nhiều mẫu chức năng và cả một tập hợp các hàm không có mẫu quá tải, các chức năng đó và các chuyên ngành được tạo từ các mẫu đều là tất cả các ứng cử viên.</i>Để biết thêm chi tiết.<i>.</i></p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <p>Nếu mẫu hàm xây dựng hoặc mẫu chức năng chuyển đổi có<i>từ loại lớp</i>, sau khi khấu trừ, nếu bối cảnh yêu cầu một ứng cử viên không rõ ràng và chuyên môn hóa được tạo là rõ ràng, nó sẽ bị xóa khỏi bộ ứng cử viên.</p>
+</td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> </table> <p>Các quy tắc bổ sung cho các ứng cử viên xây dựng<i>Mặc định</i>được định nghĩa là xóa được loại trừ trong tập hợp các chức năng ứng cử viên.<i>từ loại lớp</i>:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>có tham số đầu tiên của tham chiếu loại</div> <div class="t-li1">
+<span class="t-li">2)</span>(Bao gồm cả một hàm tạo như vậy được khởi tạo từ một mẫu) được loại trừ khỏi tập hợp các hàm ứng cử viên khi xây dựng một đối tượng thuộc loại<span class="t-rev-inl t-since-cxx11"><span>Danh sách đối số có chính xác một đối số.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>là liên quan đến tham chiếu<div class="cpp source-cpp"><pre data-language="cpp">Các quy tắc bổ sung cho các ứng cử viên chức năng thành viên</pre></div>
+</div> <h3 id="Viable_functions">Nếu bất kỳ chức năng ứng cử viên nào là</h3> <p>(tĩnh hoặc không tĩnh)<i>không có</i></p>
+<p>, nhưng không phải là một hàm tạo, nó được đối xử như thể nó có một tham số bổ sung (</p>
+<div class="t-li1">
+<span class="t-li">1)</span>tham số đối tượng ẩn<code>M</code>) đại diện cho đối tượng mà chúng được gọi và xuất hiện trước các tham số đầu tiên của các tham số thực tế.<code>M</code>Tương tự, đối tượng mà hàm thành viên đang được gọi được chuẩn bị vào danh sách đối số là</div> <div class="t-li1">
+<span class="t-li">2)</span>ngụ ý đối tượng đối tượng<code>M</code>Cho các chức năng thành viên của lớp học<a href="variadic_arguments" title="cpp/language/variadic arguments">ellipsis parameter</a>, loại tham số đối tượng ngầm bị ảnh hưởng bởi các trình độ cv và trình độ tinh chỉnh của chức năng thành viên như được mô tả trong</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Các chức năng chuyển đổi do người dùng xác định được coi là thành viên của<code>M</code>ngụ ý đối tượng đối tượng<code>M+1</code>cho mục đích xác định loại<code>M</code>.</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <span class="t-li">là trong</span>tham số đối tượng ẩn<a href="constraints" title="cpp/language/constraints">constraint</a>Các chức năng thành viên được giới thiệu bởi việc sử dụng khai báo vào một lớp dẫn xuất được coi là thành viên của lớp dẫn xuất cho mục đích xác định loại của</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>ngầm</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>tham số đối tượng</div> <p>Đối với các hàm thành viên tĩnh,</p>
+<ul>
+<li> <a href="#Copy-initialization_by_conversion">copy-initialization of a class by user-defined conversion</a>Thì</li>
+<li> <a href="#Non-class_initialization_by_conversion">initialization of a non-class type by a conversion function</a>Thì</li>
+<li> <a href="#Reference_initialization_by_conversion">initialization by conversion function for direct reference binding</a>Thì</li>
+<li> <a href="#Initialization_by_constructor">initialization by constructor</a>tham số đối tượng ẩn<a href="copy_initialization" title="cpp/language/copy initialization">copy-initialization</a>Thì</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>được coi là phù hợp với bất kỳ đối tượng nào: loại của nó không được kiểm tra và không có trình tự chuyển đổi nào được thử cho nó.<code>X</code>Đối với phần còn lại của độ phân giải quá tải,<code>X</code>hoặc tham chiếu đến (có thể là CV đủ điều kiện)<code>X</code>:</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">ngụ ý đối tượng đối tượng</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Best_viable_function">không thể phân biệt được với các đối số khác, nhưng các quy tắc đặc biệt sau đây áp dụng cho</h3> <p>tham số đối tượng ẩn<code>F1</code>Và<code>F2</code>Các chuyển đổi do người dùng xác định không thể được áp dụng cho tham số đối tượng ngầm<code>i</code>Rvalues ​​có thể được liên kết với tham số đối tượng ngầm không xảy ra<code>i</code>(Trừ khi đây là cho chức năng thành viên có trình độ Ref<i>và không ảnh hưởng đến xếp hạng của các chuyển đổi ngầm.</i>struct b {void f (int); };</p>
+<p><code>F1</code>struct a {toán tử b &amp; (); };<code>F2</code> <i>A a;</i>A.B :: F (1); // Lỗi: Không thể áp dụng các chuyển đổi do người dùng xác định</p>
+<div class="t-li1">
+<span class="t-li">1)</span>           // tham số đối tượng ngầm<i>A (a &lt;t&gt;) -&gt; a &lt;a &lt;t &gt;&gt;; // #7, chuyên môn như #5</i>Chức năng khả thi</div> <div class="t-li1">
+<span class="t-li">2)</span>Đưa ra tập hợp các hàm ứng cử viên, được xây dựng như mô tả ở trên, bước tiếp theo của độ phân giải quá tải là kiểm tra các đối số và tham số để giảm tập hợp thành tập hợp<i>A (a &lt;t&gt;) -&gt; a &lt;a &lt;t &gt;&gt;; // #7, chuyên môn như #5</i>Để được bao gồm trong tập hợp các chức năng khả thi, chức năng ứng cử viên phải đáp ứng những điều sau đây:</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Nếu có</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <div class="t-li1">
+<span class="t-li">là trong</span>đối số, chức năng ứng cử viên có chính xác</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>tham số là khả thi<i>Nếu chức năng ứng cử viên có ít hơn</i>, phân tích cú pháp đầu vào ký tự là giá trị ngày/thời gian theo chuỗi định dạng<a href="function_template#Function_template_overloading" title="cpp/language/function template">partial ordering rules for template specializations</a>
+</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <span class="t-li">từ_sys</span>tham số, nhưng có một<a href="constraints" title="cpp/language/constraints">partial ordering of constraints</a> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <span class="t-li">6)</span>, nó là khả thi.<div class="cpp source-cpp"><pre data-language="cpp">Nếu chức năng ứng cử viên có nhiều hơn</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <span class="t-li">. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu biểu thức</span>tham số và<span class="t-li">được hình thành tốt. Chương trình không được hình thành nếu</span>'ST tham số và tất cả các tham số theo sau có các đối số mặc định, nó là khả thi. Đối với phần còn lại của độ phân giải quá tải, danh sách tham số bị cắt tại</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <span class="t-li">Toán tử bool constexpr&gt; (const std :: Chrono :: sys_time &lt;fending&gt; &amp; x,</span>Nếu chức năng có liên quan<a class="mw-redirect" href="deduction_guide" title="cpp/language/deduction guide">user-defined deduction-guide</a>Nếu bất kỳ tham số nào có loại tham chiếu, ràng buộc tham chiếu được tính ở bước này: Nếu một đối số rvalue tương ứng với tham số tham chiếu Lvalue không xảy ra hoặc đối số lvalue tương ứng với tham số tham chiếu rvalue, hàm không khả thi.<span class="t-li">                           const std :: Chrono :: Leap_Second &amp; y) noExcept;</span>Đối với mỗi đối số phải có ít nhất một chuỗi chuyển đổi ngầm chuyển đổi nó thành tham số tương ứng.<a class="mw-redirect" href="deduction_guide" title="cpp/language/deduction guide">copy deduction candidate</a>Nếu bất kỳ tham số nào có loại tham chiếu, ràng buộc tham chiếu được tính ở bước này: Nếu một đối số rvalue tương ứng với tham số tham chiếu Lvalue không xảy ra hoặc đối số lvalue tương ứng với tham số tham chiếu rvalue, hàm không khả thi.<span class="t-li">Mẫu &lt;Lớp thời lượng&gt;</span>Chuyển đổi do người dùng xác định (cả hai hàm tạo chuyển đổi và chức năng chuyển đổi do người dùng xác định) đều bị cấm tham gia trình tự chuyển đổi ngầm, trong đó có thể áp dụng nhiều hơn một chuyển đổi do người dùng xác định. Cụ thể, chúng không được xem xét nếu mục tiêu của chuyển đổi là tham số đầu tiên của hàm tạo hoặc tham số đối tượng ẩn của chức năng chuyển đổi do người dùng xác định<div class="cpp source-cpp"><pre data-language="cpp">Trong bước thứ hai (khởi tạo trực tiếp) của lớp học</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>Khởi tạo bằng cách xác định danh sách trong đó danh sách khởi tạo có chính xác một phần tử là danh sách khởi tạo và mục tiêu là tham số đầu tiên của hàm tạo của lớp</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, và việc chuyển đổi là</pre></div> <p>struct a {a (int); };</p>
+<div class="cpp source-cpp"><pre data-language="cpp">struct b {b (a); };</pre></div> <h3 id="Ranking_of_implicit_conversion_sequences"> </h3> <p>B B {{0}}; // Danh sách-khởi tạo của B<a href="implicit_conversion" title="cpp/language/implicit conversion">implicit conversions</a> <a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a>// Ứng viên: B (Const B &amp;), B (B &amp;&amp;), B (A)<span class="t-rev-inl t-since-cxx23"><span>// {0} -&gt; b &amp;&amp; không khả thi: sẽ phải gọi b (a)</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span></p>
+<p>Mỗi<a href="implicit_conversion" title="cpp/language/implicit conversion">type of standard conversion sequence</a>// {0} -&gt; const b &amp;: không khả thi: sẽ phải liên kết với rvalue, sẽ phải gọi B (a)</p>
+<div class="t-li1">
+<span class="t-li">1)</span> <b>// {0} -&gt; khả thi. Gọi A (int): Chuyển đổi do người dùng xác định thành A không bị cấm</b>Chức năng khả thi tốt nhất<span class="t-rev-inl t-since-cxx17"><span>Đối với mỗi cặp chức năng khả thi</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>, Trình tự chuyển đổi ngầm từ</div> <div class="t-li1">
+<span class="t-li">2)</span> <b>-THER Đối số với</b>-th tham số được xếp hạng để xác định cái nào tốt hơn (ngoại trừ đối số đầu tiên,</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <b>bù lại</b>Đối số đối tượng ngầm</div> <p>Đối với các chức năng thành viên tĩnh không ảnh hưởng đến xếp hạng)<a href="implicit_conversion" title="cpp/language/implicit conversion">three conversions</a>)</p>
+<p>được xác định là một chức năng tốt hơn</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Nếu chuyển đổi ngầm cho tất cả các đối số của F1 là</pre></div> <p>Không tệ hơn<a href="bit_field" title="cpp/language/bit field">bit field</a>hơn các chuyển đổi ngầm cho tất cả các đối số của F2 và</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Có ít nhất một đối số của F1 có chuyển đổi ngầm là<i>A (a &lt;t&gt;) -&gt; a &lt;a &lt;t &gt;&gt;; // #7, chuyên môn như #5</i>hơn sự chuyển đổi ngầm tương ứng cho đối số đó của F2</div> <div class="t-li1">
+<span class="t-li">2)</span>hoặc, nếu không, (chỉ trong bối cảnh khởi tạo không thuộc lớp bằng cách chuyển đổi), chuỗi chuyển đổi tiêu chuẩn từ loại trả về của F1 sang loại được khởi tạo là<i>A (a &lt;t&gt;) -&gt; a &lt;a &lt;t &gt;&gt;; // #7, chuyên môn như #5</i>hơn chuỗi chuyển đổi tiêu chuẩn từ loại trả về của F2<a href="variadic_arguments" title="cpp/language/variadic arguments">ellipsis conversion</a>hàm thành viên, xóa các giá trị không xác định và giảm</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>hoặc, nếu không, (chỉ trong bối cảnh khởi tạo bằng hàm chuyển đổi để liên kết tham chiếu trực tiếp của tham chiếu đến loại chức năng), loại trả về của F1 là cùng loại tham chiếu (lvalue hoặc rvalue) khi tham chiếu được khởi tạo và loại trả về của F2 không<code>S1</code>khoảng cách<i>A (a &lt;t&gt;) -&gt; a &lt;a &lt;t &gt;&gt;; // #7, chuyên môn như #5</i>Hoặc, nếu không, F1 và F2 đều là những chuyên môn về mẫu và F1 là<code>S2</code>nếu như</div> <div class="t-li2">
+<span class="t-li">}</span> <code>S1</code>chuyên môn hơn<code>S2</code>Hoặc, nếu không, F1 và F2 là các hàm không phải bảng chữ cái có cùng danh sách loại tham số và F1 bị hạn chế hơn F2 theo</div> <div class="t-li2">
+<span class="t-li">{</span>Hoặc, nếu không, F1 là một hàm tạo cho lớp D, F2 là một hàm tạo cho lớp B cơ sở của D và đối với tất cả các đối số, các tham số tương ứng của F1 và F2 có cùng loại:<code>S1</code>Cấu trúc a<code>S2</code>
+</div> <div class="t-li2">
+<span class="t-li">}</span> <code>S1</code>Và<code>S2</code>    A (int = 0);<code>S1</code>};<code>S2</code> <div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc B: a</pre></div>
+</div> <div class="t-li2">
+<span class="t-li">tải trong luồng B.</span> <code>S1</code>Và<code>S2</code>    Sử dụng A :: a;<code>S1</code> <code>S2</code>    B ();<div class="cpp source-cpp"><pre data-language="cpp">};</pre></div>
+</div> <div class="t-li2">
+<span class="t-li">Không tham gia vào độ phân giải quá tải nếu biểu thức đó không được hình thành tốt.</span> <code>S1</code>Và<code>S2</code>B B; // ok, b :: b ()<code>S1</code>Hoặc, nếu không, F2 là một ứng cử viên viết lại và F1 thì không,<i>Một phạm vi phân loại đầy đủ đáp ứng các tiêu chí này.</i>Hoặc, nếu không, F1 và F2 đều là ứng cử viên viết lại và F2 là một ứng cử viên viết lại được tổng hợp với thứ tự đảo ngược của các tham số và F1 thì không,<code>S2</code>Hoặc, nếu không, F1 được tạo ra từ một<div class="cpp source-cpp"><pre data-language="cpp">và F2 không</pre></div>
+</div> <div class="t-li2">
+<span class="t-li">}</span>và F2 không<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Hoặc, nếu không, F1 được tạo từ hàm tạo không bảng và F2 được tạo từ mẫu cấu trúc:<code>S1</code>Mẫu &lt;Class T&gt;<code>S2</code><span class="t-rev-inl t-until-cxx11"><span>Cấu trúc a<a href="string_literal#Notes" title="cpp/language/string literal">deprecated string literal array-to-pointer conversion</a></span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>(Nói cách khác, việc thêm một khai báo chức năng mới sau khi định nghĩa mẫu không hiển thị nó, ngoại trừ thông qua ADL).<code>S1</code>{<code>S2</code>    sử dụng value_type = t;</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <div class="cpp source-cpp"><pre data-language="cpp">    A (value_type);  // #1</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span>    A (const a &amp;);    // #2<code>U1</code>khoảng cách<i>A (a &lt;t&gt;) -&gt; a &lt;a &lt;t &gt;&gt;; // #7, chuyên môn như #5</i> <code>U2</code>    Mẫu &lt;class u&gt;<code>U1</code>    A (int, t, u);   // #4<code>U2</code> <div class="cpp source-cpp"><pre data-language="cpp">};                  // #5 là một (a), ứng cử viên khấu trừ bản sao</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Mẫu &lt;Class T&gt;<code>L1</code>khoảng cách<i>A (a &lt;t&gt;) -&gt; a &lt;a &lt;t &gt;&gt;; // #7, chuyên môn như #5</i>A b2 = a; // sử dụng #7 để suy luận A &lt;a &lt;int &gt;&gt; và #1 để khởi tạo<code>L2</code>nếu như<code>L1</code>khởi tạo một<code><a href="../utility/initializer_list" title="cpp/utility/initializer list">std::initializer_list</a></code>Mẫu &lt;Class T&gt;<code>L2</code>Không.<div class="cpp source-cpp"><pre data-language="cpp">A (t) -&gt; a &lt;t&gt;;       // #6, ít chuyên môn hơn #5</pre></div>
+</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11 t-until-cxx20">
+<td> <span class="t-li">từ_sys</span>Mẫu &lt;Class T&gt;<code>L1</code>khoảng cách<i>A (a &lt;t&gt;) -&gt; a &lt;a &lt;t &gt;&gt;; // #7, chuyên môn như #5</i>A b2 = a; // sử dụng #7 để suy luận A &lt;a &lt;int &gt;&gt; và #1 để khởi tạo<code>L2</code> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <span class="t-li">từ_sys</span>Mẫu &lt;Class T&gt;<code>L1</code>khoảng cách<i>A (a &lt;t&gt;) -&gt; a &lt;a &lt;t &gt;&gt;; // #7, chuyên môn như #5</i>A b2 = a; // sử dụng #7 để suy luận A &lt;a &lt;int &gt;&gt; và #1 để khởi tạo<code>L2</code>Những so sánh theo cặp này được áp dụng cho tất cả các chức năng khả thi. Nếu chính xác một hàm khả thi tốt hơn tất cả các chức năng khác, độ phân giải quá tải thành công và chức năng này được gọi. Nếu không, tổng hợp thất bại.<ul>
+<li>void fcn (const int*, short); // Quá tải #1</li>
+<li>void fcn (int*, int);         // Quá tải #2</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>int i;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>ngắn s = 0;<code>bool</code> <code>bool</code>void f () </div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <span class="t-li">2)</span>{<a href="enum" title="cpp/language/enum">enumeration</a>    Fcn (&amp; i, 1l);  // Đối số đầu tiên: &amp; i -&gt; int* tốt hơn &amp; i -&gt; const int*<div class="cpp source-cpp"><pre data-language="cpp">                  // Đối số thứ 2: 1L -&gt; ngắn và 1L -&gt; int tương đương</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>                  // gọi fcn (int*, int)<code>FP1</code> <code>FP2</code>    Fcn (&amp; i, 'c'); // Đối số đầu tiên: &amp; i -&gt; int* tốt hơn &amp; i -&gt; const int*<code>FP1</code>                  // Đối số thứ 2: 'c' -&gt; int tốt hơn 'c' -&gt; ngắn<code>T3</code>nếu như<ul><li>các<a href="usual_arithmetic_conversions#Floating-point_conversion_rank" title="cpp/language/usual arithmetic conversions">floating-point conversion rank</a>của<code>FP1</code>                  // gọi fcn (int*, int)<code>FP2</code>, Và<ul>
+<li> <code>T3</code> </li>
+<li> <code>T3</code>    Fcn (&amp; i, s);   // Đối số đầu tiên: &amp; i -&gt; int* tốt hơn &amp; i -&gt; const int*<code>FP1</code>, hoặc</li>
+<li>các<a href="usual_arithmetic_conversions#Floating-point_conversion_subrank" title="cpp/language/usual arithmetic conversions">floating-point conversion subrank</a>của<code>FP2</code>                  // Đối số thứ 2: s -&gt; ngắn hơn so với s -&gt; int<code>T3</code>.</li>
+</ul> </li></ul> <div class="cpp source-cpp"><pre data-language="cpp">                  // không có người chiến thắng, lỗi biên dịch</pre></div> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <div class="t-li1">
+<span class="t-li">là trong</span>}<code>void</code>Nếu chức năng khả thi tốt nhất giải quyết được một hàm mà nhiều khai báo được tìm thấy và nếu bất kỳ hai trong số các khai báo này tồn tại các phạm vi khác nhau và chỉ định một đối số mặc định làm cho chức năng khả thi, chương trình sẽ được hình thành.<code>void</code>không gian tên a<code>void</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Nếu như<code>Mid</code>    extern "c" void f (int = 5);<code>Base</code>, Và<code>Derived</code>    extern "c" void f (int = 5);<code>Mid</code>
+</div> <div class="t-li2">
+<span class="t-li">}</span> <code>Derived*</code>ĐẾN<code>Mid*</code>sử dụng khoảng trống ()<code>Derived*</code>ĐẾN<code>Base*</code>
+</div> <div class="t-li2">
+<span class="t-li">{</span> <code>Derived</code>ĐẾN<code>Mid&amp;</code>hoặc<code>Mid&amp;&amp;</code>sử dụng khoảng trống ()<code>Derived</code>ĐẾN<code>Base&amp;</code>hoặc<code>Base&amp;&amp;</code>
+</div> <div class="t-li2">
+<span class="t-li">}</span> <code>Base::*</code>ĐẾN<code>Mid::*</code>sử dụng khoảng trống ()<code>Base::*</code>ĐẾN<code>Derived::*</code>
+</div> <div class="t-li2">
+<span class="t-li">tải trong luồng B.</span> <code>Derived</code>ĐẾN<code>Mid</code>sử dụng khoảng trống ()<code>Derived</code>ĐẾN<code>Base</code>
+</div> <div class="t-li2">
+<span class="t-li">Không tham gia vào độ phân giải quá tải nếu biểu thức đó không được hình thành tốt.</span> <code>Mid*</code>ĐẾN<code>Base*</code>sử dụng khoảng trống ()<code>Derived*</code>ĐẾN<code>Base*</code>
+</div> <div class="t-li2">
+<span class="t-li">}</span> <code>Mid</code>ĐẾN<code>Base&amp;</code>hoặc<code>Base&amp;&amp;</code>sử dụng khoảng trống ()<code>Derived</code>ĐẾN<code>Base&amp;</code>hoặc<code>Base&amp;&amp;</code>
+</div> <div class="t-li2">
+<span class="t-li">Sử dụng A :: F;</span> <code>Mid::*</code>ĐẾN<code>Derived::*</code>sử dụng khoảng trống ()<code>Base::*</code>ĐẾN<code>Derived::*</code>
+</div> <div class="t-li2">
+<span class="t-li"> </span> <code>Mid</code>ĐẾN<code>Base</code>sử dụng khoảng trống ()<code>Derived</code>ĐẾN<code>Base</code>
+</div> <p>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    f (3); // Ok, đối số mặc định không được sử dụng cho khả năng tồn tại</pre></div> <h3 id="Implicit_conversion_sequence_in_list-initialization">    f ();  // Lỗi: tìm thấy đối số mặc định hai lần</h3> <p>TRONG<a href="list_initialization" title="cpp/language/list initialization">list initialization</a>}<span class="t-spar">{</span>Xếp hạng các chuỗi chuyển đổi ngầm</p>
+<ul>
+<li>Trình tự chuyển đổi tiềm ẩn đối số được xem xét bởi độ phân giải quá tải tương ứng với<code>X</code>được sử dụng trong</li>
+<li>.</li>
+<li>Khi tham số là tham số đối tượng ngầm của hàm thành viên tĩnh, chuỗi chuyển đổi ngầm là một chuỗi chuyển đổi tiêu chuẩn không tốt hơn cũng không tệ hơn bất kỳ chuỗi chuyển đổi tiêu chuẩn nào khác.<a href="http://en.cppreference.com/w/cpp/utility/initializer_list"><span class="kw962">Điều đó cho tất cả<span class="me2">Khởi tạo_list</span></span></a><span class="sy1">is_trivently_destructible_v</span>X<span class="sy1">&lt;</span>được gán một trong ba cấp bậc:<code>X</code>Trận đấu chính xác</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">: Không cần chuyển đổi, chuyển đổi lvalue sang rvalue, chuyển đổi trình độ,</pre></div> <ul><li>chuyển đổi con trỏ chức năng,<code>{}</code>Chuyển đổi loại lớp do người dùng định nghĩa thành cùng một lớp<code>T</code>: chuyển đổi tích phân, chuyển đổi điểm nổi, chuyển đổi tích phân nổi, chuyển đổi con trỏ, chuyển đổi con trỏ sang thành viên, chuyển đổi Boolean, chuyển đổi do người dùng xác định</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>: Khuyến tả ​​tích hợp, Khuyến mãi điểm nổi<code>T</code>: chuyển đổi tích phân, chuyển đổi điểm nổi, chuyển đổi tích phân nổi, chuyển đổi con trỏ, chuyển đổi con trỏ sang thành viên, chuyển đổi Boolean, chuyển đổi do người dùng xác định</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <div class="cpp source-cpp"><pre data-language="cpp">Thứ hạng của chuỗi chuyển đổi tiêu chuẩn là mức tồi tệ nhất trong các cấp bậc của các chuyển đổi tiêu chuẩn mà nó nắm giữ (có thể có</pre></div> <ul>
+<li>Liên kết của tham số tham chiếu trực tiếp với biểu thức đối số là danh tính hoặc chuyển đổi từ gốc từ cơ sở:<code>X</code>cơ sở cấu trúc {};</li>
+<ul>
+<li>cấu trúc có nguồn gốc: cơ sở {} d;<a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a> </li>
+<li>int f (cơ sở &amp;);    // Quá tải #1</li>
+</ul>
+</ul> <p>int f (dẫn xuất &amp;); // Quá tải #2</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <ul><li>int i = f (d); // d -&gt; Derive &amp; có trận đấu chính xác cấp bậc<a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a>              // d -&gt; cơ sở &amp; có chuyển đổi xếp hạng</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">              // gọi f (dẫn xuất &amp;)</pre></div> <ul><li>Vì xếp hạng các chuỗi chuyển đổi chỉ hoạt động với các loại và danh mục giá trị, một</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Có thể liên kết với một đối số tham chiếu cho mục đích xếp hạng, nhưng nếu chức năng đó được chọn, nó sẽ bị hình thành.</pre></div> <ul>
+<li>Một chuỗi chuyển đổi tiêu chuẩn luôn luôn là</li>
+<li>tốt hơn</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>hơn một chuỗi chuyển đổi do người dùng xác định hoặc trình tự chuyển đổi Ellipsis.<a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a>Một chuỗi chuyển đổi do người dùng xác định luôn luôn</p>
+<p>tốt hơn</p>
+<div class="cpp source-cpp"><pre data-language="cpp">hơn một</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1.html" rel="nofollow">CWG 1</a> </td> <td>C ++ 98</td> <td>Một chuỗi chuyển đổi tiêu chuẩn<br/>tốt hơn<br/>hơn một chuỗi chuyển đổi tiêu chuẩn</td> <td>Niềng răng xung quanh danh sách khởi tạo lồng nhau có thể được giải quyết (bỏ qua), trong trường hợp đó, nhiều điều khoản khởi tạo cần thiết được sử dụng để khởi tạo mọi thành viên hoặc phần tử của tập hợp con tương ứng và các điều khoản khởi tạo tiếp theo được sử dụng để khởi tạo các thành viên sau của đối tượng. Tuy nhiên, nếu đối tượng có tổng hợp phụ mà không có bất kỳ thành viên nào (một cấu trúc trống hoặc một cấu trúc chỉ giữ các thành viên tĩnh), không được phép giải quyết Brace<br/>phải được sử dụng.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/83.html" rel="nofollow">CWG 83</a> </td> <td>C ++ 98</td> <td>là một phần sau thích hợp của<br/>ĐẾN<span class="kw4">char</span><span class="sy2">*</span>, không bao gồm các phép biến đổi Lvalue. Trình tự chuyển đổi danh tính được coi là một phần sau của bất kỳ chuyển đổi không nhận dạng nào<span class="kw4">hằng số</span> <span class="kw4">char</span><span class="sy2">*</span><br/>Hoặc, nếu không, cấp bậc của</td> <td>tốt hơn cấp bậc của<br/>Hoặc, nếu không, cả hai<br/>đang liên kết với tham số tham chiếu với một cái gì đó khác ngoài tham số đối tượng ngầm của hàm thành viên đủ điều kiện</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/162.html" rel="nofollow">CWG 162</a> </td> <td>C ++ 98</td> <td>liên kết một tham chiếu rvalue với một rvalue trong khi<code>F</code>                           Forwardit2 first2, forwardit2 last2,<br/>liên kết một tham chiếu lvalue với rvalue<code>&amp;F(args)</code> </td> <td>int i;<br/>int f1 ();<br/> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/280.html" rel="nofollow">CWG 280</a> </td> <td>C ++ 98</td> <td>int g (const int &amp;);  // Quá tải #1<br/>int g (const int &amp;&amp;); // Quá tải #2<br/> </td> <td>int j = g (i);    // lvalue int -&gt; const int &amp; là chuyển đổi hợp lệ duy nhất<br/>int k = g (f1 ()); // rvalue int -&gt; const int &amp;&amp; tốt hơn rvalue int -&gt; const int &amp;<br/>Hoặc, nếu không, cả hai<br/>đang liên kết với một tham số tham chiếu và<br/>liên kết một tham chiếu lvalue với chức năng trong khi<br/>liên kết một tham chiếu rvalue với chức năng.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/415.html" rel="nofollow">CWG 415</a> </td> <td>C ++ 98</td> <td>int f (void (&amp;) ());  // Quá tải #1<br/>int f (void (&amp;&amp;) ()); // Quá tải #2<br/> </td> <td>void g ();<br/>int i1 = f (g); // gọi số 1<br/>Hoặc, nếu không, cả hai</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/495.html" rel="nofollow">CWG 495</a> </td> <td>C ++ 98</td> <td>đang liên kết với các tham số tham chiếu chỉ khác nhau trong trình độ CV cấp cao nhất và<br/>Loại s là<br/>CV đủ điều kiện hơn<br/>'S.</td> <td>int f (const int &amp;); // Quá tải #1<br/>int f (int &amp;);       // Quá tải #2 (cả hai tài liệu tham khảo)<br/> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1307.html" rel="nofollow">CWG 1307</a> </td> <td>C ++ 11</td> <td>int g (const int &amp;); // Quá tải #1</td> <td>int g (int);         // Quá tải #2<br/> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1328.html" rel="nofollow">CWG 1328</a> </td> <td>C ++ 11</td> <td>int i;<br/>int j = f (i); // lvalue i -&gt; int &amp; tốt hơn lvalue int -&gt; const int &amp;</td> <td>hơn thứ hai, nếu không</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1374.html" rel="nofollow">CWG 1374</a> </td> <td>C ++ 98</td> <td>              // gọi f (int &amp;)<br/>int k = g (i); // lvalue i -&gt; const int &amp; xếp hạng khớp chính xác</td> <td>              // lvalue i -&gt; rvalue int xếp hạng khớp chính xác</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1385.html" rel="nofollow">CWG 1385</a> </td> <td>C ++ 11</td> <td>              // Quá tải mơ hồ: Lỗi biên dịch<br/>f)</td> <td>Hoặc, nếu không, S1 và S2 chỉ khác nhau về chuyển đổi trình độ và<br/>sự điều kiện CV của kết quả của</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1467.html" rel="nofollow">CWG 1467</a> </td> <td>C ++ 11</td> <td>là một tập hợp con thích hợp của trình độ CV về kết quả của<br/>, và S1 không phải là</td> <td>có thể được chuyển đổi thành kết quả của</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1601.html" rel="nofollow">CWG 1601</a> </td> <td>C ++ 11</td> <td>bằng cách chuyển đổi trình độ.<br/>int f (const int*);</td> <td>int f (int*);<br/> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1608.html" rel="nofollow">CWG 1608</a> </td> <td>C ++ 98</td> <td>int i;<code>@</code><br/>int j = f (&amp; i); // &amp; i -&gt; int*tốt hơn &amp; i -&gt; const int*, gọi f (int*)<code>T1</code>Trình tự chuyển đổi do người dùng xác định<br/><code>T1</code>tốt hơn</td> <td>hơn một chuỗi chuyển đổi do người dùng xác định<br/>Nếu họ gọi cùng một hàm chuyển đổi trình xây dựng/người dùng do người dùng xác định hoặc khởi tạo cùng một lớp với tổng hợp khởi tạo và trong cả hai trường hợp trình tự chuyển đổi tiêu chuẩn thứ hai trong<br/><code>T1::operator@</code>                     Forwardit2 s_first, forwardit2 s_last,</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1687.html" rel="nofollow">CWG 1687</a> </td> <td>C ++ 98</td> <td>tốt hơn chuỗi chuyển đổi tiêu chuẩn thứ hai trong<br/>Cấu trúc a</td> <td>{<br/>    toán tử ngắn (); // chức năng chuyển đổi do người dùng xác định<br/>Trình tự chuyển đổi tiêu chuẩn</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2052.html" rel="nofollow">CWG 2052</a> </td> <td>C ++ 98</td> <td>} Một;<br/> </td> <td>int f (int);   // Quá tải #1<br/>int f (float); // Quá tải #2</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2076.html" rel="nofollow">CWG 2076</a> </td> <td>C ++ 11</td> <td> <br/>int i = f (a); // a -&gt; ngắn, tiếp theo là ngắn -&gt; int (khuyến mãi xếp hạng)<br/>    // Trích xuất phần còn lại bằng cách sử dụng quá tải Streambuf<a class="external text" href="https://cplusplus.github.io/CWG/issues/1467.html" rel="nofollow">CWG issue 1467</a> </td> <td>Void đảo ngược (Bidirit đầu tiên, Bidirit cuối cùng)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2137.html" rel="nofollow">CWG 2137</a> </td> <td>C ++ 11</td> <td>              // a -&gt; ngắn, tiếp theo là ngắn -&gt; float (chuyển đổi xếp hạng)<br/>              // gọi f (int)</td> <td>bất kỳ mệnh đề khởi tạo nào theo nó trong<br/>Một chuỗi sáng tác danh sách</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2273.html" rel="nofollow">CWG 2273</a> </td> <td>C ++ 11</td> <td>tốt hơn<br/>hơn trình tự khởi tạo danh sách</td> <td>tham số, while</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2673.html" rel="nofollow">CWG 2673</a> </td> <td>C ++ 20</td> <td>void f1 (int);                                 // #1<br/>void f1 (std :: initizer_list &lt;nong&gt;);         // #2<br/>void g1 () {f1 ({42}); } // chọn #2</td> <td>void f (x a);  // Mẫu đầu tiên f</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2712.html" rel="nofollow">CWG 2712</a> </td> <td>C ++ 98</td> <td> <br/>void f2 (std :: cặp &lt;const char*, const char*&gt;); // #3<br/>void f2 (std :: initizer_list &lt;std :: String&gt;);  // #4<sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> </td> <td>void g2 () {f2 ({"foo", "thanh"}); } // chọn #4<br/>Một chuỗi sáng tác danh sách</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2713.html" rel="nofollow">CWG 2713</a> </td> <td>C ++ 20</td> <td>tốt hơn<br/>hơn trình tự khởi tạo danh sách</td> <td>Nếu các tham số tương ứng là các tham chiếu đến các mảng và L1 chuyển đổi thành loại "mảng N1 T", L2 chuyển đổi thành loại "mảng N2 T" và N1 nhỏ hơn N2.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2468R2" rel="nofollow">P2468R2</a> </td> <td>C ++ 20</td> <td>Một chuỗi sáng tác danh sách<span class="sy1">==</span> <br/>vì<code>a != b</code>tốt hơn<span class="sy3">Nếu tồn tại một</span><span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span>tồn tại</td> <td>void f (x a);  // Mẫu đầu tiên f</td>
+</tr>
+</table> <ol class="references"> <li id="cite_note-1"> <span class="reference-text">hơn trình tự khởi tạo danh sách<code>T</code>Nếu các tham số tương ứng là các tham chiếu đến các mảng và L1 và L2 chuyển đổi thành các mảng cùng loại phần tử và một trong hai</span> </li> </ol> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>Số lượng phần tử N1 được khởi tạo bởi L1 nhỏ hơn số lượng phần tử N2 được khởi tạo bởi L2 hoặc</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>N1 bằng với N2 và L2 chuyển đổi thành một mảng ràng buộc không xác định và L1 thì không.</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>void f (int (&amp;&amp;) []); // Quá tải #1</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li> </li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li> </li></ul>
+<li>Tiêu chuẩn C ++ 03 (ISO/IEC 14882: 2003):</li>
+<ul><li> </li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="lookup" title="cpp/language/lookup">Name lookup</a> </li>
+<li> <a href="adl" title="cpp/language/adl">Argument-dependent lookup</a> </li>
+<li> <a href="template_argument_deduction" title="cpp/language/template argument deduction">Template argument deduction</a> </li>
+<li> <a href="sfinae" title="cpp/language/sfinae">SFINAE</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/overload_resolution">https://en.cppreference.com/w/cpp/language/overload_resolution</a>
+</p>
+</div>

@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: erase_if (std :: map)</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/map" title="cpp/header/map">&lt;map&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;khóa lớp, lớp T, so sánh lớp, phân bổ lớp, pred class&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Typename std :: map &lt;key, t, so sánh, alloc&gt; :: size_type<code>pred</code>    erase_if (std :: map &lt;key, t, so sánh, alloc&gt; &amp; c, pre pre);</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Xóa tất cả các yếu tố thỏa mãn vị ngữ</pre></div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ánh xạ_Type</td> <td>-</td> <td>từ container. Tương đương với</td>
+</tr> <tr class="t-par"> <td>Sao chép các yếu tố, nhưng được thực thi theo</td> <td>-</td> <td>auto old_size = c.size ();<code>true</code>for (tự động đầu tiên = c.begin (), last = c.end (); đầu tiên! = last;)</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>{</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>    if (pre (*đầu tiên))</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">        đầu tiên = c.erase (đầu tiên);</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    khác</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../algorithm/remove" title="cpp/algorithm/remove"> <span class="t-lines"><span>Được xác định trong tiêu đề</span><span>di dời</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/map/erase_if">https://en.cppreference.com/w/cpp/container/map/erase_if</a>
+</p>
+</div>

@@ -1,0 +1,274 @@
+ <h1 class="firstHeading" id="firstHeading">Chấm câu</h1> <p>Đây là các biểu tượng dấu câu trong C ++. Ý nghĩa của mỗi biểu tượng được chi tiết trong các trang được liên kết.</p>
+<h3 id=".7B_.7D"> <code>{</code> <code>}</code>
+</h3> <ul>
+<li>Trong a<a href="class" title="cpp/language/class">class/struct</a>hoặc<a href="union" title="cpp/language/union">union</a>Định nghĩa, phân định<a href="class#Member_specification" title="cpp/language/class">member specification</a>.</li>
+<li>Trong một<a href="enum" title="cpp/language/enum">enum</a>Định nghĩa, phân định danh sách liệt kê.</li>
+<li>Phân định a<a href="statements#Compound_statements" title="cpp/language/statements">compound statement</a>. Tuyên bố ghép có thể là một phần của</li>
+<ul>
+<li>Một<a href="function#Function_definition" title="cpp/language/function">function definition</a> </li>
+<li>Một<a href="try_catch" title="cpp/language/try catch">try block or catch clause</a> </li>
+<li>Một<a href="function-try-block" title="cpp/language/function-try-block">function-try-block</a> </li>
+<li>Một<a href="lambda" title="cpp/language/lambda">lambda expression</a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul>
+<li>TRONG<a href="initialization" title="cpp/language/initialization">initialization</a>, phân định các bộ khởi tạo.<span class="t-rev-inl t-since-cxx11"><span>Loại khởi tạo này được gọi là<a href="list_initialization" title="cpp/language/list initialization">list-initialization</a>.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> </li>
+<li>Trong a<a href="namespace" title="cpp/language/namespace">namespace definition</a>, phân định cơ thể không gian tên.</li>
+<li>Trong a<a href="language_linkage" title="cpp/language/language linkage">language linkage specification</a>, phân định các tuyên bố.</li>
+<li>Trong a<a href="constraints#Requires_expressions" title="cpp/language/constraints">requires-expression</a>, phân định các yêu cầu.<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+<li>Trong a<a href="constraints#Compound_Requirements" title="cpp/language/constraints">compound requirement</a>, phân định biểu thức.<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+<li>Trong một<a href="modules" title="cpp/language/modules">export declaration</a>, phân định các tuyên bố.<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul> <h3 id=".5B_.5D"> <code>[</code> <code>]</code>
+</h3> <ul>
+<li> <a href="operator_member_access#Built-in_subscript_operator" title="cpp/language/operator member access">Subscript operator</a>; một phần của<code>operator[]</code>TRONG<a href="operators#Array_subscript_operator" title="cpp/language/operators">operator overloading</a>.</li>
+<li>Một phần của<a href="declarations#Declarators" title="cpp/language/declarations">array declarator</a>trong a<a href="declarations" title="cpp/language/declarations">declaration</a>hoặc a<a href="type#Type_naming" title="cpp/language/type">type-id</a>(ví dụ: trong a<a href="new" title="cpp/language/new">new expression</a>).</li>
+<li>Một phần của<code>new[]</code>nhà điều hành trong<a href="../memory/new/operator_new" title="cpp/memory/new/operator new">operator overloading (allocation function)</a>.</li>
+<li>Một phần của<code>delete[]</code>nhà điều hành trong<a href="delete" title="cpp/language/delete">delete expression</a>Và<a href="../memory/new/operator_delete" title="cpp/memory/new/operator delete">operator overloading (deallocation function)</a>.</li>
+<li>Trong a<a href="lambda" title="cpp/language/lambda">lambda expression</a>, phân định<a href="lambda#Lambda_capture" title="cpp/language/lambda">captures</a>.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Trong một<a href="attributes" title="cpp/language/attributes">attribute specifier</a>, phân định các thuộc tính.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Trong a<a href="structured_binding" title="cpp/language/structured binding">structured binding declaration</a>, DELIMIT Danh sách định danh.<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+</ul> <h3 id=".23"> <code>#</code>
+</h3> <ul>
+<li>Giới thiệu a<a href="../preprocessor" title="cpp/preprocessor">preprocessing directive</a>.</li>
+<li>Các<a href="../preprocessor/replace#.23_and_.23.23_operators" title="cpp/preprocessor/replace">preprocessing operator for stringification</a>.</li>
+</ul> <h3 id=".23.23"> <code>##</code>
+</h3> <ul><li>Các<a href="../preprocessor/replace#.23_and_.23.23_operators" title="cpp/preprocessor/replace">preprocessing operator for token pasting</a>.</li></ul> <h3 id=".28_.29"> <code>(</code> <code>)</code>
+</h3> <ul>
+<li>Trong một biểu hiện,<a href="expressions#Primary_expressions" title="cpp/language/expressions">indicate grouping</a>.</li>
+<li> <a href="operator_other#Built-in_function_call_operator" title="cpp/language/operator other">Function call operator</a>; một phần của<code>operator()</code>TRONG<a href="operators#Function_call_operator" title="cpp/language/operators">operator overloading</a>.</li>
+<li>Trong a<a href="explicit_cast" title="cpp/language/explicit cast">function-style type cast</a>, phân định biểu thức/khởi tạo.</li>
+<li>Trong a<a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Thì<a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>Thì<a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>, hoặc<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>, phân định biểu thức.</li>
+<li>Trong a<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>Thì<a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a><span class="t-rev-inl t-since-cxx11"><span>Thì<a href="sizeof..." title="cpp/language/sizeof..."><code>sizeof...</code></a>Thì<a href="alignof" title="cpp/language/alignof"><code>alignof</code></a>, hoặc<a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code></a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Biểu thức, phân định toán hạng.</li>
+<li>Trong a<a href="new" title="cpp/language/new">placement new expression</a>, phân định các đối số vị trí.</li>
+<li>Trong a<a href="new" title="cpp/language/new">new expression</a>, Tùy chọn phân định loại ID.</li>
+<li>Trong a<a href="new" title="cpp/language/new">new expression</a>, phân định các bộ khởi tạo.</li>
+<li>Trong a<a href="explicit_cast" title="cpp/language/explicit cast">C-style cast</a>, phân định loại ID.</li>
+<li>Trong a<a href="declarations" title="cpp/language/declarations">declaration</a>hoặc a<a href="type#Type_naming" title="cpp/language/type">type-id</a>, chỉ ra nhóm.</li>
+<li>Phân định danh sách tham số trong</li>
+<ul>
+<li>Một<a href="function" title="cpp/language/function">function declarator</a>(trong a<a href="declarations" title="cpp/language/declarations">declaration</a>hoặc a<a href="type#Type_naming" title="cpp/language/type">type-id</a>)</li>
+<li>Một<a href="lambda" title="cpp/language/lambda">lambda expression</a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Một<a href="class_template_argument_deduction" title="cpp/language/class template argument deduction">user-defined deduction guide</a> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+<li>Một<a href="constraints#Requires_expressions" title="cpp/language/constraints">requires-expression</a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul>
+<li>TRONG<a href="direct_initialization" title="cpp/language/direct initialization">direct-initialization</a>, phân định các bộ khởi tạo.</li>
+<li>Trong một<a href="asm" title="cpp/language/asm">asm declaration</a>, phân định chuỗi theo nghĩa đen.</li>
+<li>Trong a<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">member initializer list</a>, phân định các bộ khởi tạo cho một cơ sở hoặc thành viên.</li>
+<li>Trong một<a href="if" title="cpp/language/if"><code>if</code></a> <span class="t-rev-inl t-since-cxx17"><span>- có thể sửa đổi giá trị được tham chiếu thông qua<code>constexpr</code> <code>if</code>)</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Thì<a href="switch" title="cpp/language/switch"><code>switch</code></a>Thì<a href="while" title="cpp/language/while"><code>while</code></a>Thì<a href="do" title="cpp/language/do"><code>do-while</code></a>, hoặc<a href="for" title="cpp/language/for"><code>for</code></a><span class="t-rev-inl t-since-cxx11"><span>- có thể sửa đổi giá trị được tham chiếu thông qua<a href="range-for" title="cpp/language/range-for">range-based <code>for</code></a>)</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>tuyên bố, phân định mệnh đề kiểm soát.</li>
+<li>Trong a<a href="try_catch" title="cpp/language/try catch">catch clause</a>, phân định khai báo tham số.</li>
+<li>Trong a<a href="../preprocessor/replace#Function-like_macros" title="cpp/preprocessor/replace">function-like macro definition</a>, phân định các tham số macro.</li>
+<li>Trong a<a href="../preprocessor/replace#Function-like_macros" title="cpp/preprocessor/replace">function-like macro invocation</a>, phân định các đối số vĩ mô hoặc ngăn dấu phẩy được hiểu là phân tách đối số.</li>
+<li>Một phần của a<code>defined</code><span class="t-rev-inl t-since-cxx17"><span>Thì<code>__has_include</code></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span><span class="t-rev-inl t-since-cxx20"><span>Thì<code>__has_cpp_attribute</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Toán tử tiền xử lý.</li>
+<li>Trong a<a href="static_assert" title="cpp/language/static assert"><code>static_assert</code></a>Tuyên bố, phân định các toán hạng.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Trong a<a href="decltype" title="cpp/language/decltype"><code>decltype</code></a>người xác định<a href="noexcept_spec" title="cpp/language/noexcept spec"><code>noexcept</code></a>người xác định<a href="alignas" title="cpp/language/alignas"><code>alignas</code></a>thời lượng để biểu diễn phần bù từ UTC tương ứng với<span class="t-rev-inl t-since-cxx20"><span>Thì<a href="explicit" title="cpp/language/explicit">conditional <code>explicit</code> specifier</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, phân định toán hạng.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Trong một<a href="attributes" title="cpp/language/attributes">attribute</a>, phân định các đối số thuộc tính.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Một phần của<a href="decltype" title="cpp/language/decltype"><code>decltype(auto)</code></a>người xác định.<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </li>
+<li>Phân định a<a href="fold" title="cpp/language/fold">fold expression</a>.<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+<li>Một phần của<a href="../preprocessor/replace" title="cpp/preprocessor/replace"><code>__VA_OPT__</code></a>Thay thế trong một định nghĩa vĩ mô variadic.<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul> <h3 id=".3B"> <code>;</code>
+</h3> <ul>
+<li>Chỉ ra kết thúc của</li>
+<ul>
+<li>Một<a href="statements" title="cpp/language/statements">statement</a>(bao gồm cả việc bắt đầu một câu lệnh)</li>
+<li>Một<a href="declarations" title="cpp/language/declarations">declaration</a>hoặc<a href="class#Member_specification" title="cpp/language/class">member declaration</a> </li>
+<li>Một<a href="modules" title="cpp/language/modules">module declaration</a>, Nhập Khai báo, Trình giới thiệu phân đoạn mô -đun toàn cầu hoặc Trình giới thiệu đoạn mô -đun riêng<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+<li>Một<a href="constraints#Requires_expressions" title="cpp/language/constraints">requirement</a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul>
+<li>Tách các mệnh đề thứ hai và thứ ba của một<a href="for" title="cpp/language/for">for statement</a>.</li>
+</ul> <h3 id=":"> <code>:</code>
+</h3> <ul>
+<li>Một phần của<a href="operator_other#Conditional_operator" title="cpp/language/operator other">conditional operator</a>.</li>
+<li>Một phần của<a href="statements#Labels" title="cpp/language/statements">label declaration</a>.</li>
+<li>Trong đầu lớp của một<a href="class" title="cpp/language/class">class definition</a>, giới thiệu<a href="derived_class" title="cpp/language/derived class">base-clause</a>.</li>
+<li>Một phần của<a href="access" title="cpp/language/access">access specifier</a>trong đặc điểm kỹ thuật của thành viên.</li>
+<li>Trong a<a class="mw-redirect" href="bitfield" title="cpp/language/bitfield">bit-field member declaration</a>, giới thiệu chiều rộng.</li>
+<li>Trong a<a href="constructor" title="cpp/language/constructor">constructor</a>Định nghĩa, giới thiệu danh sách khởi tạo thành viên.</li>
+<li>Trong a<a href="range-for" title="cpp/language/range-for">range-based for</a>tuyên bố, tách biệt phạm vi khai báo và trình khởi tạo phạm vi.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Giới thiệu một<a href="enum" title="cpp/language/enum">enum base</a>, trong đó chỉ định loại cơ bản của enum.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Trong một<a href="attributes" title="cpp/language/attributes">attribute specifier</a>, Tách biệt thuộc tính-sử dụng-Prefix và danh sách thuộc tính.<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+<li>Trong a<a href="modules" title="cpp/language/modules">module declaration</a>hoặc nhập khai báo phân vùng mô -đun, giới thiệu tên phân vùng mô -đun.<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+<li>Một phần của a<a href="modules#Private_module_fragment" title="cpp/language/modules">private module fragment</a>người giới thiệu (<code>module :private;</code>).<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul> <h3 id="..."> <code>...</code>
+</h3> <ul>
+<li>// a và d chuỗi ban đầu chung là A.A và D.D<a href="function#Parameter_list" title="cpp/language/function">parameter list</a>của một bộ khai báo chức năng<span class="t-rev-inl t-since-cxx11"><span>hoặc biểu hiện lambda</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx17"><span>hoặc hướng dẫn khấu trừ do người dùng xác định</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>, biểu thị a<a href="variadic_arguments" title="cpp/language/variadic arguments">variadic function</a>.</li>
+<li>Trong a<a href="try_catch" title="cpp/language/try catch">catch-clause</a>, Biểu thị Catch-All Handler.</li>
+<li>Trong a<a href="../preprocessor/replace" title="cpp/preprocessor/replace">macro definition</a>, biểu thị một macro variadic.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Biểu thị<a href="parameter_pack" title="cpp/language/parameter pack">pack</a>Tuyên bố và mở rộng.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> <h3 id=".3F"> <code>?</code>
+</h3> <ul><li>Một phần của<a href="operator_other#Conditional_operator" title="cpp/language/operator other">conditional operator</a>.</li></ul> <h3 id="::"> <code>::</code>
+</h3> <ul>
+<li>Toán tử phân giải phạm vi trong</li>
+<ul>
+<li>Một<a href="qualified_lookup" title="cpp/language/qualified lookup">qualified name</a> </li>
+<li>Một<a href="pointer#Pointers_to_members" title="cpp/language/pointer">pointer-to-member declaration</a> </li>
+<li>Một<a href="new" title="cpp/language/new">new</a>hoặc<a href="delete" title="cpp/language/delete">delete</a>Biểu thức, để chỉ ra rằng chỉ có các chức năng phân bổ hoặc giao dịch toàn cầu mới được tra cứu</li>
+</ul>
+<li>Trong một<a href="attributes" title="cpp/language/attributes">attribute</a>, chỉ ra phạm vi thuộc tính.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Một phần của<a href="namespace" title="cpp/language/namespace">nested namespace definition</a>.<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+</ul> <h3 id="."> <code>.</code>
+</h3> <ul>
+<li> <a href="operator_member_access#Built-in_member_access_operators" title="cpp/language/operator member access">Member access operator</a>.</li>
+<li>TRONG<a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a>, giới thiệu một nhà thiết kế.<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+<li>Một phần của<a href="modules" title="cpp/language/modules">module name or module partition name</a>.<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul> <h3 id="..2A"> <code>.*</code>
+</h3> <ul><li> <a href="operator_member_access#Built-in_pointer-to-member_access_operators" title="cpp/language/operator member access">Pointer-to-member access operator</a>.</li></ul> <h3 id="-.3E"> <code>-&gt;</code>
+</h3> <ul>
+<li> <a href="operator_member_access#Built-in_member_access_operators" title="cpp/language/operator member access">Member access operator</a>; một phần của<code>operator-&gt;</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li>Trong a<a href="function" title="cpp/language/function">function declarator</a>hoặc<a href="lambda" title="cpp/language/lambda">lambda expression</a>, Giới thiệu loại trả về dấu vết.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Trong a<a href="class_template_argument_deduction" title="cpp/language/class template argument deduction">user-defined deduction guide</a>, giới thiệu loại kết quả.<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+<li>Trong a<a href="constraints#Compound_Requirements" title="cpp/language/constraints">compound requirement</a>, giới thiệu yêu cầu loại trả lại.<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul> <h3 id="-.3E.2A"> <code>-&gt;*</code>
+</h3> <ul><li> <a href="operator_member_access#Built-in_pointer-to-member_access_operators" title="cpp/language/operator member access">Pointer-to-member access operator</a>; một phần của<code>operator-&gt;*</code>TRONG<a href="operators#Rarely_overloaded_operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".7E"> <code>~</code>
+</h3> <ul>
+<li> <a href="operator_arithmetic#Bitwise_logic_operators" title="cpp/language/operator arithmetic">Unary complement operator (a.k.a. bitwise not operator)</a>; một phần của<code>operator~</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li>Một phần của biểu hiện id để đặt tên<a href="destructor" title="cpp/language/destructor">destructor</a>hoặc pseudo-phá hủy.</li>
+</ul> <h3 id=".21"> <code>!</code>
+</h3> <ul>
+<li> <a href="operator_logical" title="cpp/language/operator logical">Logical not operator</a>; một phần của<code>operator!</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li>Một phần của<a href="if#Consteval_if" title="cpp/language/if">reversed variant of a consteval <code>if</code> statement</a>.<span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </li>
+</ul> <h3 id=".2B"> <code>+</code>
+</h3> <ul>
+<li> <a href="operator_arithmetic#Unary_arithmetic_operators" title="cpp/language/operator arithmetic">Unary plus operator</a>; một phần của<code>operator+</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li> <a href="operator_arithmetic#Additive_operators" title="cpp/language/operator arithmetic">Binary plus operator</a>; một phần của<code>operator+</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li>
+</ul> <h3 id="-"> <code>-</code>
+</h3> <ul>
+<li> <a href="operator_arithmetic#Unary_arithmetic_operators" title="cpp/language/operator arithmetic">Unary minus operator</a>; một phần của<code>operator-</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li> <a href="operator_arithmetic#Additive_operators" title="cpp/language/operator arithmetic">Binary minus operator</a>; một phần của<code>operator-</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li>
+</ul> <h3 id=".2A"> <code>*</code>
+</h3> <ul>
+<li> <a href="operator_member_access#Built-in_indirection_operator" title="cpp/language/operator member access">Indirection operator</a>; một phần của<code>operator*</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li> <a href="operator_arithmetic#Multiplicative_operators" title="cpp/language/operator arithmetic">Multiplication operator</a>; một phần của<code>operator*</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li>Toán tử con trỏ hoặc một phần của toán tử con trỏ đến thành viên trong một<a href="declarations#Declarators" title="cpp/language/declarations">declarator</a>hoặc trong a<a href="type#Type_naming" title="cpp/language/type">type-id</a>.</li>
+<li>Một phần của<code>*this</code>trong a<a href="lambda#Lambda_capture" title="cpp/language/lambda">lambda capture</a>Danh sách, để chụp đối tượng hiện tại bằng cách sao chép.<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+</ul> <h3 id=".2F"> <code>/</code>
+</h3> <ul><li> <a href="operator_arithmetic#Multiplicative_operators" title="cpp/language/operator arithmetic">Division operator</a>; một phần của<code>operator/</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".25"> <code>%</code>
+</h3> <ul><li> <a href="operator_arithmetic#Multiplicative_operators" title="cpp/language/operator arithmetic">Modulo operator</a>; một phần của<code>operator%</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".5E"> <code>^</code>
+</h3> <ul><li> <a href="operator_arithmetic#Bitwise_logic_operators" title="cpp/language/operator arithmetic">Bitwise xor operator</a>; một phần của<code>operator^</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".26"> <code>&amp;</code>
+</h3> <ul>
+<li> <a href="operator_member_access#Built-in_address-of_operator" title="cpp/language/operator member access">Address-of operator</a>; một phần của<code>operator&amp;</code>TRONG<a href="operators#Rarely_overloaded_operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li> <a href="operator_arithmetic#Bitwise_logic_operators" title="cpp/language/operator arithmetic">Bitwise and operator</a>; một phần của<code>operator&amp;</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li>Toán tử tham chiếu lvalue trong một<a href="declarations#Declarators" title="cpp/language/declarations">declarator</a>hoặc trong a<a href="type#Type_naming" title="cpp/language/type">type-id</a>.</li>
+<li>Trong a<a href="lambda#Lambda_capture" title="cpp/language/lambda">lambda capture</a>, chỉ ra việc bắt giữ tham chiếu phụ.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li> <a href="member_functions#ref-qualified_member_functions" title="cpp/language/member functions">Ref-qualifier</a>TRONG<a href="member_functions" title="cpp/language/member functions">member function declaration</a>.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> <h3 id=".7C"> <code>|</code>
+</h3> <ul><li> <a href="operator_arithmetic#Bitwise_logic_operators" title="cpp/language/operator arithmetic">Bitwise or operator</a>; một phần của<code>operator|</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".3D"> <code>=</code>
+</h3> <ul>
+<li> <a href="operator_assignment" title="cpp/language/operator assignment">Simple assignment operator</a>; một phần của<code>operator=</code>TRONG<a href="operators#Assignment_operator" title="cpp/language/operators">operator overloading</a>, có thể là một chức năng thành viên đặc biệt (<a href="copy_assignment" title="cpp/language/copy assignment">copy assignment operator</a><span class="t-rev-inl t-since-cxx11"><span>hoặc<a href="move_assignment" title="cpp/language/move assignment">move assignment operator</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>).</li>
+<li>TRONG<a href="initialization" title="cpp/language/initialization">initialization</a>, biểu thị<a href="copy_initialization" title="cpp/language/copy initialization">copy-initialization</a><span class="t-rev-inl t-since-cxx11"><span>hoặc<a href="list_initialization" title="cpp/language/list initialization">copy-list-initialization</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</li>
+<li>Trong a<a href="function" title="cpp/language/function">function declaration</a>, giới thiệu a<a href="default_arguments" title="cpp/language/default arguments">default argument</a>.</li>
+<li>Trong a<a href="template_parameters" title="cpp/language/template parameters">template parameter list</a>, giới thiệu a<a href="template_parameters#Default_template_arguments" title="cpp/language/template parameters">default template argument</a>.</li>
+<li>Trong a<a href="namespace_alias" title="cpp/language/namespace alias">namespace alias definition</a>, tách biệt bí danh và không gian tên bí danh.</li>
+<li>Trong một<a href="enum" title="cpp/language/enum">enum definition</a>, Giới thiệu giá trị của liệt kê.</li>
+<li>Một phần của bộ chỉ định thuần túy trong một<a href="abstract_class" title="cpp/language/abstract class">pure virtual function declaration</a>.</li>
+<li>Nắm bắt mặc định trong<a href="lambda#Lambda_capture" title="cpp/language/lambda">lambda capture</a>, để chỉ ra bằng cách bắt giữ bằng cách sử dụng.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Một phần của định nghĩa mặc định (<code>=default;</code>) hoặc định nghĩa đã xóa (<code>=delete;</code>) TRONG<a href="function#Function_definition" title="cpp/language/function">function definition</a>.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Trong a<a href="type_alias" title="cpp/language/type alias">type alias declaration</a>, tách biệt bí danh và loại bí danh.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>Trong a<a href="constraints" title="cpp/language/constraints">concept definition</a>, tách tên khái niệm và biểu thức ràng buộc.<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul> <h3 id=".2B.3D"> <code>+=</code>
+</h3> <ul><li> <a href="operator_assignment" title="cpp/language/operator assignment">Compound assignment operator</a>; một phần của<code>operator+=</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id="-.3D"> <code>-=</code>
+</h3> <ul><li> <a href="operator_assignment" title="cpp/language/operator assignment">Compound assignment operator</a>; một phần của<code>operator-=</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".2A.3D"> <code>*=</code>
+</h3> <ul><li> <a href="operator_assignment" title="cpp/language/operator assignment">Compound assignment operator</a>; một phần của<code>operator*=</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".2F.3D"> <code>/=</code>
+</h3> <ul><li> <a href="operator_assignment" title="cpp/language/operator assignment">Compound assignment operator</a>; một phần của<code>operator/=</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".25.3D"> <code>%=</code>
+</h3> <ul><li> <a href="operator_assignment" title="cpp/language/operator assignment">Compound assignment operator</a>; một phần của<code>operator%=</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".5E.3D"> <code>^=</code>
+</h3> <ul><li> <a href="operator_assignment" title="cpp/language/operator assignment">Compound assignment operator</a>; một phần của<code>operator^=</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".26.3D"> <code>&amp;=</code>
+</h3> <ul><li> <a href="operator_assignment" title="cpp/language/operator assignment">Compound assignment operator</a>; một phần của<code>operator&amp;=</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".7C.3D"> <code>|=</code>
+</h3> <ul><li> <a href="operator_assignment" title="cpp/language/operator assignment">Compound assignment operator</a>; một phần của<code>operator|=</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".3D.3D"> <code>==</code>
+</h3> <ul><li> <a href="operator_comparison" title="cpp/language/operator comparison">Equality operator</a>; một phần của<code>operator==</code>TRONG<a href="operators#Comparison_operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".21.3D"> <code>!=</code>
+</h3> <ul><li> <a href="operator_comparison" title="cpp/language/operator comparison">Inequality operator</a>; một phần của<code>operator!=</code>TRONG<a href="operators#Comparison_operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".3C"> <code>&lt;</code>
+</h3> <ul>
+<li> <a href="operator_comparison" title="cpp/language/operator comparison">Less-than operator</a>; một phần của<code>operator&lt;</code>TRONG<a href="operators#Comparison_operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li>Trong a<a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Thì<a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>Thì<a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>, hoặc<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>, giới thiệu loại ID.</li>
+<li>Giới thiệu a<a href="template_parameters#Template_arguments" title="cpp/language/template parameters">template argument list</a>.</li>
+<li>Giới thiệu a<a href="template_parameters" title="cpp/language/template parameters">template parameter list</a>TRONG</li>
+<ul>
+<li>Một<a href="templates" title="cpp/language/templates">template declaration</a> </li>
+<li>Một<a href="partial_specialization" title="cpp/language/partial specialization">partial specialization</a> </li>
+<li>Một<a href="lambda" title="cpp/language/lambda">lambda expression</a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul>
+<li>Một phần của<code>template&lt;&gt;</code>TRONG<a href="template_specialization" title="cpp/language/template specialization">template specialization declaration</a>.</li>
+<li>Giới thiệu tên tiêu đề trong</li>
+<ul>
+<li>Một<a href="../preprocessor/include" title="cpp/preprocessor/include"><code>#include</code> directive</a> </li>
+<li>Một<a href="../preprocessor/include" title="cpp/preprocessor/include"><code>__has_include</code> preprocessing expression</a> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+<li>chồng chéo với container.<a href="modules" title="cpp/language/modules"><code>import</code> declaration</a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul>
+</ul> <h3 id=".3E"> <code>&gt;</code>
+</h3> <ul>
+<li> <a href="operator_comparison" title="cpp/language/operator comparison">Greater-than operator</a>; một phần của<code>operator&gt;</code>TRONG<a href="operators#Comparison_operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li> <a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Thì<a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>Thì<a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>, hoặc<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>, chỉ ra sự kết thúc của loại ID.</li>
+<li>Chỉ ra sự kết thúc của một<a href="template_parameters#Template_arguments" title="cpp/language/template parameters">template argument list</a>.</li>
+<li>Chỉ ra sự kết thúc của một<a href="template_parameters" title="cpp/language/template parameters">template parameter list</a>TRONG</li>
+<ul>
+<li>Một<a href="templates" title="cpp/language/templates">template declaration</a> </li>
+<li>Một<a href="partial_specialization" title="cpp/language/partial specialization">partial specialization</a> </li>
+<li>Một<a href="lambda" title="cpp/language/lambda">lambda expression</a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul>
+<li>Một phần của<code>template&lt;&gt;</code>TRONG<a href="template_specialization" title="cpp/language/template specialization">template specialization declaration</a>.</li>
+<li>Chỉ ra kết thúc của một tên tiêu đề trong</li>
+<ul>
+<li>Một<a href="../preprocessor/include" title="cpp/preprocessor/include"><code>#include</code> directive</a> </li>
+<li>Một<a href="../preprocessor/include" title="cpp/preprocessor/include"><code>__has_include</code> preprocessing expression</a> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+<li>chồng chéo với container.<a href="modules" title="cpp/language/modules"><code>import</code> declaration</a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+</ul>
+</ul> <h3 id=".3C.3D"> <code>&lt;=</code>
+</h3> <ul><li> <a href="operator_comparison" title="cpp/language/operator comparison">Less-than-or-equal-to operator</a>; một phần của<code>operator&lt;=</code>TRONG<a href="operators#Comparison_operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".3E.3D"> <code>&gt;=</code>
+</h3> <ul><li> <a href="operator_comparison" title="cpp/language/operator comparison">Greater-than-or-equal-to operator</a>; một phần của<code>operator&gt;=</code>TRONG<a href="operators#Comparison_operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".3C.3D.3E_.28since_C.2B.2B20.29"> <code>&lt;=&gt;</code> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>
+</h3> <ul><li> <a href="operator_comparison#Three-way_comparison" title="cpp/language/operator comparison">Three-way comparison (spaceship) operator</a>; một phần của<code>operator&lt;=&gt;</code>TRONG<a href="operators#Comparison_operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".26.26"> <code>&amp;&amp;</code>
+</h3> <ul>
+<li> <a href="operator_logical" title="cpp/language/operator logical">Logical and operator</a>; một phần của<code>operator&amp;&amp;</code>TRONG<a href="operators#Rarely_overloaded_operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li>Toán tử tham chiếu rvalue trong một<a href="declarations#Declarators" title="cpp/language/declarations">declarator</a>hoặc trong a<a href="type#Type_naming" title="cpp/language/type">type-id</a>.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li> <a href="member_functions#ref-qualified_member_functions" title="cpp/language/member functions">Ref-qualifier</a>TRONG<a href="member_functions" title="cpp/language/member functions">member function declaration</a>.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> <h3 id=".7C.7C"> <code>||</code>
+</h3> <ul><li> <a href="operator_logical" title="cpp/language/operator logical">Logical or operator</a>; một phần của<code>operator||</code>TRONG<a href="operators#Rarely_overloaded_operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".3C.3C"> <code>&lt;&lt;</code>
+</h3> <ul><li> <a href="operator_arithmetic#Bitwise_shift_operators" title="cpp/language/operator arithmetic">Bitwise shift operator</a>; một phần của<code>operator&lt;&lt;</code>trong quá tải người vận hành (<a href="operators#Bitwise_arithmetic_operators" title="cpp/language/operators">bitwise operator</a>hoặc<a href="operators#Stream_extraction_and_insertion" title="cpp/language/operators">stream insertion operator</a>).</li></ul> <h3 id=".3E.3E"> <code>&gt;&gt;</code>
+</h3> <ul>
+<li> <a href="operator_arithmetic#Bitwise_shift_operators" title="cpp/language/operator arithmetic">Bitwise shift operator</a>; một phần của<code>operator&gt;&gt;</code>trong quá tải người vận hành (<a href="operators#Bitwise_arithmetic_operators" title="cpp/language/operators">bitwise operator</a>hoặc<a href="operators#Stream_extraction_and_insertion" title="cpp/language/operators">stream extraction operator</a>).</li>
+<li>Có thể được sửa lại là hai<code>&gt;</code>trong a<a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Thì<a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>Thì<a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>, hoặc<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>có thể đại diện cho các phân số của ve.<a href="template_parameters#Template_arguments" title="cpp/language/template parameters">template argument list</a>được đặt ở chế độ mở của gói<a href="template_parameters" title="cpp/language/template parameters">template parameter list</a>.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> <h3 id=".3C.3C.3D"> <code>&lt;&lt;=</code>
+</h3> <ul><li> <a href="operator_assignment" title="cpp/language/operator assignment">Compound assignment operator</a>; một phần của<code>operator&lt;&lt;=</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".3E.3E.3D"> <code>&gt;&gt;=</code>
+</h3> <ul><li> <a href="operator_assignment" title="cpp/language/operator assignment">Compound assignment operator</a>; một phần của<code>operator&gt;&gt;=</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".2B.2B"> <code>++</code>
+</h3> <ul><li> <a href="operator_incdec" title="cpp/language/operator incdec">Increment operator</a>; một phần của<code>operator++</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id="--"> <code>--</code>
+</h3> <ul><li> <a href="operator_incdec" title="cpp/language/operator incdec">Decrement operator</a>; một phần của<code>operator--</code>TRONG<a href="operators" title="cpp/language/operators">operator overloading</a>.</li></ul> <h3 id=".2C"> <code>,</code>
+</h3> <ul>
+<li> <a href="operator_other#Built-in_comma_operator" title="cpp/language/operator other">Comma operator</a>; một phần của<code>operator,</code>TRONG<a href="operators#Rarely_overloaded_operators" title="cpp/language/operators">operator overloading</a>.</li>
+<li>Danh sách phân tách trong</li>
+<ul>
+<li>danh sách tuyên bố trong một<a href="declarations" title="cpp/language/declarations">declaration</a> </li>
+<li>Danh sách khởi tạo trong<a href="initialization" title="cpp/language/initialization">initialization</a> </li>
+<li>danh sách đối số vị trí trong một<a href="new" title="cpp/language/new">placement new</a> </li>
+<li>danh sách đối số trong một<a href="operator_other#Function_call_operator" title="cpp/language/operator other">function call expression</a> </li>
+<li>danh sách đối số trong một<a href="operator_member_access#Built-in_subscript_operator" title="cpp/language/operator member access">multi-argument subscript expression</a> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </li>
+<li>Danh sách liệt kê trong một<a href="enum" title="cpp/language/enum">enum</a>tuyên ngôn</li>
+<li>các<a href="derived_class" title="cpp/language/derived class">base class</a>Liệt kê trong a<a href="class" title="cpp/language/class">class</a>tuyên ngôn</li>
+<li>danh sách khởi tạo thành viên trong một<a href="constructor" title="cpp/language/constructor">constructor</a>sự định nghĩa</li>
+<li>Một<a href="function#Parameter_list" title="cpp/language/function">function parameter list</a> </li>
+<li>Một<a href="template_parameters" title="cpp/language/template parameters">template parameter list</a> </li>
+<li>Một<a href="template_parameters#Template_arguments" title="cpp/language/template parameters">template argument list</a> </li>
+<li>danh sách tham số macro trong một<a href="../preprocessor/replace" title="cpp/preprocessor/replace">function-like macro definition</a> </li>
+<li>danh sách đối số macro trong một<a href="../preprocessor/replace#Function-like_macros" title="cpp/preprocessor/replace">function-like macro invocation</a>, trừ khi được tìm thấy giữa một tập hợp dấu ngoặc đơn bên trong</li>
+<li>Một<a href="lambda#Lambda_capture" title="cpp/language/lambda">lambda capture</a>danh sách<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>chồng chéo với container.<a href="attributes" title="cpp/language/attributes">attribute</a>danh sách<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>danh sách tuyên bố trong một<a href="namespace#Using-declarations" title="cpp/language/namespace">using-declaration</a> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+<li>danh sách định danh trong một<a href="structured_binding" title="cpp/language/structured binding">structured binding</a>tuyên ngôn<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+</ul>
+<li>Trong a<a href="static_assert" title="cpp/language/static assert"><code>static_assert</code></a>Tuyên bố, tách các đối số.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>5.12 Các toán tử và dấu chấm câu [lex.operators]</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>5.12 Các toán tử và dấu chấm câu [lex.operators]</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>5.12 Các toán tử và dấu chấm câu [lex.operators]</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>2.13 Các toán tử và dấu chấm câu [lex.operators]</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>2.13 Các toán tử và dấu chấm câu [lex.operators]</li></ul>
+<li>Tiêu chuẩn C ++ 03 (ISO/IEC 14882: 2003):</li>
+<ul><li>2.12 Các toán tử và Trình định câu [lex.operators]</li></ul>
+<li>    S.B3 = 0B11;</li>
+<ul><li>2.12 Các toán tử và Trình định câu [lex.operators]</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="operator_alternative" title="cpp/language/operator alternative"> Alternative representations </a> </td> <td>cách viết thay thế cho một số nhà khai thác nhất định</td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/punctuators" title="c/language/punctuators">C documentation</a></span>vì<span class=""><span>Chấm câu</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/punctuators">https://en.cppreference.com/w/cpp/language/punctuators</a>
+</p>
+</div>

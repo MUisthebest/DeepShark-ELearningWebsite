@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">std :: wcstoul, std :: wcstoul</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Wcstoul dài không dấu (const wchar_t* str, wchar_t ** str_end, int base);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">không dấu dài wcstoull (const wchar_t* str, wchar_t ** str_end, int base);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Diễn giải một giá trị số nguyên không dấu trong một chuỗi rộng được trỏ bởi<code>str</code>.</p>
+<p>                 std :: size_t* pos = nullptr, int base = 10);<a href="iswspace" title="cpp/string/wide/iswspace"><code>std::iswspace</code></a>Stoll dài (const std :: String &amp; str,<i>                 std :: size_t* pos = nullptr, int base = 10);</i>Stoll dài (const std :: wstring &amp; str,<code>base</code>                           std :: size_t* pos = nullptr, int base = 10);</p>
+<ul>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>cộng với dấu hiệu hoặc trừ</li>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>) cho đến khi tìm thấy ký tự không phải màu trắng đầu tiên, sau đó lấy càng nhiều ký tự càng tốt để tạo thành một<code>0</code>Loại bỏ bất kỳ ký tự khoảng trắng nào (như được xác định bằng cách gọi<code>8</code>hoặc<code>​0​</code>)</li>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>) cho đến khi tìm thấy ký tự không phải màu trắng đầu tiên, sau đó lấy càng nhiều ký tự càng tốt để tạo thành một<code>0x</code>hoặc<code>0X</code>cơ sở-n<code>16</code>hoặc<code>​0​</code>)</li>
+<li>(trong đó n =</li>
+</ul> <p>) Biểu diễn số nguyên và chuyển đổi chúng thành giá trị số nguyên. Giá trị số nguyên hợp lệ bao gồm các phần sau:<code>{0,2,3,...,36}.</code>tiền tố (<code>2</code>) chỉ ra cơ sở thập lục phân (chỉ áp dụng khi cơ sở là<code>{0,1},</code>cho căn cứ-<code>3</code>) chỉ ra cơ sở thập lục phân (chỉ áp dụng khi cơ sở là<code>{0,1,2},</code>một chuỗi các chữ số<code>10</code>Tập hợp các giá trị hợp lệ cho cơ sở là<code>Aa</code>cho căn cứ-<code>11</code>Số nguyên là<code>Zz</code>cho căn cứ-<code>36</code>Số nguyên là</p>
+<p>Và như vậy. Đối với các căn cứ lớn hơn<a href="../../locale/setlocale" title="cpp/locale/setlocale">locale</a>.</p>
+<p>Nếu giá trị của<code>base</code>khoảng cách<code>​0​</code>, các chữ số hợp lệ bao gồm các ký tự chữ cái, bắt đầu từ<code>0</code>cho căn cứ-<code>0x</code>hoặc<code>0X</code>Số nguyên, đến</p>
+<p>cho căn cứ-<a href="../../language/operator_arithmetic#Unary_arithmetic_operators" title="cpp/language/operator arithmetic">unary minus</a>Stoull dài không dấu (const std :: wstring &amp; str,</p>
+<p>Các chức năng đặt con trỏ được trỏ bởi<code>str_end</code>để chỉ vào nhân vật rộng qua nhân vật cuối cùng được giải thích. Nếu như<code>str_end</code>là một con trỏ null, nó bị bỏ qua.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>Con trỏ đến chuỗi rộng được chấm dứt null để được giải thích</td>
+</tr> <tr class="t-par"> <td>str_end</td> <td>-</td> <td>con trỏ tới con trỏ tới một ký tự rộng</td>
+</tr> <tr class="t-par"> <td>căn cứ</td> <td>-</td> <td> <i>căn cứ</i>của giá trị số nguyên được giải thích</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Giá trị số nguyên tương ứng với nội dung của<code>str</code>về thành công. Nếu giá trị được chuyển đổi rơi ra khỏi phạm vi của loại trả về tương ứng, lỗi phạm vi xảy ra và<code><a href="../../types/climits" title="cpp/types/climits">ULONG_MAX</a></code>hoặc<code><a href="../../types/climits" title="cpp/types/climits">ULLONG_MAX</a></code>được trả lại. Nếu không có chuyển đổi nào có thể được thực hiện,<code>​0​</code>bất kể</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CWchar&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;errno.h&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../byte/strtoul" title="cpp/string/byte/strtoul"> <span class="t-lines"><span>Strtoul</span><span>strtoull</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi chuỗi byte thành giá trị số nguyên không dấu<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="wcstol" title="cpp/string/wide/wcstol"> <span class="t-lines"><span>WCSTOL</span><span>wcstoll</span></span></a></div> </td> <td>Chuyển đổi một chuỗi rộng thành giá trị số nguyên<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/wcstoul" title="c/string/wide/wcstoul">C documentation</a></span>vì<code>wcstoul, wcstoull</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/wcstoul">https://en.cppreference.com/w/cpp/string/wide/wcstoul</a>
+</p>
+</div>

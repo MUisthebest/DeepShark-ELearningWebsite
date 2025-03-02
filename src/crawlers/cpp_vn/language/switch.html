@@ -1,0 +1,66 @@
+ <h1 class="firstHeading" id="firstHeading">Tuyên bố chuyển đổi</h1> <p>Chuyển kiểm soát sang một trong một số tuyên bố, tùy thuộc vào giá trị của một điều kiện.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>switch</code> <code>(</code> <span class="t-spar"> </span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tình trạng</span> <code>)</code> <span class="t-spar">tuyên bố</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>bất kỳ số lượng của<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar"> </span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>Bất kỳ điều nào sau đây:<ul>
+<li>chồng chéo với container.<a href="statements#Expression_statements" title="cpp/language/statements">expression statement</a>(có thể là một<i>Tuyên bố NULL</i>(có nghĩa là mỗi đầu ra kết thúc bằng một dòng mới) và in kết quả vào một luồng.<code>;</code>")</li>
+<li>Một<a href="declarations#Simple_declaration" title="cpp/language/declarations">simple declaration</a>, thường là một tuyên bố của một biến có trình khởi tạo, nhưng nó có thể khai báo một cách tùy ý nhiều biến hoặc<a href="structured_binding" title="cpp/language/structured binding">structured bindings</a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul><li>chồng chéo với container.<a href="type_alias" title="cpp/language/type alias">alias declaration</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table>Lưu ý rằng bất kỳ<span class="t-spar"> </span>Phải kết thúc bằng một dấu chấm phẩy<code>;</code>, đó là lý do tại sao nó thường được mô tả một cách không chính thức như một biểu thức hoặc một tuyên bố theo sau là một dấu chấm phẩy.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tình trạng</span> </td> <td>-</td> <td>Bất kỳ điều nào sau đây:<ul>
+<li>chồng chéo với container.<a href="expressions" title="cpp/language/expressions">expression</a>, trong trường hợp này, giá trị của<span class="t-spar">tình trạng</span>là giá trị của biểu thức</li>
+<li>Một<a href="declarations" title="cpp/language/declarations">declaration</a>của một biến không phải là một biến của loại đó với bình đẳng nẹp hoặc bình đẳng<a href="initialization" title="cpp/language/initialization">initializer</a>, trong trường hợp này, giá trị của<span class="t-spar">tình trạng</span>là giá trị của biến được khai báo</li>
+</ul> <p>Giá trị của<span class="t-spar">tình trạng</span>Phải thuộc loại tích phân hoặc liệt kê hoặc thuộc loại lớp<a href="implicit_conversion#Contextual_conversions" title="cpp/language/implicit conversion">contextually implicitly convertible</a>đến một loại tích phân hoặc liệt kê. Nếu loại (có thể được chuyển đổi) là tùy thuộc vào<a href="implicit_conversion#Integral_promotion" title="cpp/language/implicit conversion">integral promotions</a>Thì<span class="t-spar">tình trạng</span>được chuyển đổi thành loại được quảng bá.</p>
+</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tuyên bố</span> </td> <td>-</td> <td>bất kì<a href="statements" title="cpp/language/statements">statement</a>(thường là một tuyên bố ghép).<code>case:</code>Và<code>default:</code>Nhãn được cho phép trong<span class="t-spar">tuyên bố</span>Và<code>break;</code>Tuyên bố có ý nghĩa đặc biệt.</td>
+</tr>
+</table> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>case</code> <span class="t-spar">biểu hiện liên tục</span> <code>:</code> <span class="t-spar">tuyên bố</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>default</code> <code>:</code> <span class="t-spar">tuyên bố</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">biểu hiện liên tục</span> </td> <td>-</td> <td>một biểu thức không đổi cùng loại với loại<span class="t-spar">tình trạng</span>Sau khi chuyển đổi và<a href="implicit_conversion#Integral_promotion" title="cpp/language/implicit conversion">integral promotions</a> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Phần thân của câu lệnh chuyển đổi có thể có số lượng tùy ý của<code>case:</code>nhãn, miễn là các giá trị của tất cả<span class="t-spar">biểu hiện liên tục</span>là duy nhất (sau khi chuyển đổi/khuyến mãi). Nhiều nhất là một<code>default:</code>Nhãn có thể có mặt (mặc dù các câu lệnh chuyển đổi lồng nhau có thể sử dụng của riêng họ<code>default:</code>nhãn hoặc có<code>case:</code>Các nhãn có hằng số giống hệt với các nhãn được sử dụng trong công tắc kèm theo).</p>
+<p>Nếu như<span class="t-spar">tình trạng</span>đánh giá với một giá trị bằng giá trị của một trong những<span class="t-spar">biểu hiện liên tục</span>s, sau đó kiểm soát được chuyển sang câu lệnh được dán nhãn<span class="t-spar">biểu hiện liên tục</span>.</p>
+<p>Nếu như<span class="t-spar">tình trạng</span>đánh giá một giá trị không phù hợp với bất kỳ<code>case:</code>Nhãn, và<code>default:</code>nhãn có mặt, kiểm soát được chuyển sang câu lệnh được dán nhãn<code>default:</code>nhãn.</p>
+<p>Nếu như<span class="t-spar">tình trạng</span>đánh giá một giá trị không phù hợp với bất kỳ<code>case:</code>Nhãn, và<code>default:</code>Nhãn không có mặt, sau đó không có câu lệnh nào trong thân chuyển đổi được thực thi.</p>
+<p>Các<a href="break" title="cpp/language/break">break</a>tuyên bố, khi gặp phải trong<span class="t-spar">tuyên bố</span>thoát khỏi câu lệnh chuyển đổi:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">chuyển đổi (1)</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>    Trường hợp 1:<a href="attributes" title="cpp/language/attributes">attribute</a> <code>[[<a href="attributes/fallthrough" title="cpp/language/attributes/fallthrough">fallthrough</a>]]</code>        std :: cout &lt;&lt; '1'; // in "1",</p>
+<p>Nếu như<span class="t-spar"> </span>    Trường hợp 2:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>{</code><br/> <dl>
+<dd>
+<span class="t-spar"> </span><br/> </dd>
+<dd>
+<code>switch</code> <code>(</code> <span class="t-spar">tình trạng</span> <code>)</code> <span class="t-spar">tuyên bố</span><br/> </dd>
+</dl> <p>{</p>
+</td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>        std :: cout &lt;&lt; '2'; // Sau đó in "2"<span class="t-spar"> </span> <span class="t-spar"> </span> <span class="t-spar">tình trạng</span>}<span class="t-spar">tuyên bố</span>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr>
+</table> <p>chuyển đổi (1)<a href="goto" title="cpp/language/goto">not permitted to enter the scope</a>{<span class="t-spar">tuyên bố</span>    Trường hợp 1:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">        std :: cout &lt;&lt; '1'; // In "1"</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">        phá vỡ;            // và thoát khỏi công tắc</pre></div> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/switch" title="cpp/keyword/switch"><code>switch</code></a>Thì<a href="../keyword/case" title="cpp/keyword/case"><code>case</code></a>Thì<a href="../keyword/default" title="cpp/keyword/default"><code>default</code></a></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>    Trường hợp 2:<i>công tắc</i>tuyên bố</p>
+<div class="cpp source-cpp"><pre data-language="cpp">        std :: cout &lt;&lt; '2';</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">        phá vỡ;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1767.html" rel="nofollow">CWG 1767</a> </td> <td>C ++ 98</td> <td>
+<span class="t-spar">tình trạng</span>}<br/>Trình biên dịch có thể đưa ra các cảnh báo về Fallentroug</td> <td>xuất hiện ngay trước nhãn trường hợp để chỉ ra rằng Fall trong đó là cố ý.<br/><span class="t-spar">tình trạng</span>được sử dụng, câu lệnh chuyển đổi tương đương với</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2629.html" rel="nofollow">CWG 2629</a> </td> <td>C ++ 98</td> <td>
+<span class="t-spar">tình trạng</span>Ngoại trừ những cái tên được tuyên bố bởi</td> <td>bị cấm</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/switch" title="c/language/switch">C documentation</a></span>vì<code>switch</code> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr style="vertical-align:top;"> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính</td> <td>
+<a class="extiw" href="https://en.wikipedia.org/wiki/Duff%27s_device" title="enwiki:Duff's device">Loop unrolling using Duff's Device</a> </td>
+</tr> <tr style="vertical-align:top;"> <td># Xác định mất giá (MSG) [[không dùng nữa (MSG)]]]]</td> <td>
+<a class="extiw" href="https://en.wikipedia.org/wiki/Coroutine#C" title="enwiki:Coroutine">Duff's device can be used to implement coroutines in C/C++</a> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/switch">https://en.cppreference.com/w/cpp/language/switch</a>
+</p>
+</div>

@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Calloc</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdlib" title="cpp/header/cstdlib">&lt;cstdlib&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void* calloc (std :: size_t num, std :: size_t size);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Phân bổ bộ nhớ cho một mảng<code>num</code>Đối tượng có kích thước<code>size</code>, khởi tạo nó thành tất cả các bit bằng không (<a href="../../language/object#Object_creation" title="cpp/language/object">implicitly creating</a>các đối tượng trong khu vực đích).</p>
+<p>Nếu phân bổ thành công, hãy trả một con trỏ xuống byte thấp nhất (đầu tiên) trong khối bộ nhớ được phân bổ được căn chỉnh phù hợp cho bất kỳ loại đối tượng nào.</p>
+<p>Nếu như<code>size</code>bằng không, hành vi được thực hiện được xác định (con trỏ null có thể được trả về hoặc một số con trỏ không null có thể được trả về có thể không được sử dụng để truy cập lưu trữ).</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Các chức năng sau được yêu cầu là an toàn cho luồng:</p>
+<ul>
+<li>Các phiên bản thư viện của<a href="../new/operator_new" title="cpp/memory/new/operator new"><code>operator new</code></a>Và<a href="../new/operator_delete" title="cpp/memory/new/operator delete"><code>operator delete</code></a> </li>
+<li>Phiên bản thay thế người dùng của toàn cầu<a href="../new/operator_new" title="cpp/memory/new/operator new"><code>operator new</code></a>Và<a href="../new/operator_delete" title="cpp/memory/new/operator delete"><code>operator delete</code></a> </li>
+<li> <code>std::calloc</code>Thì<code><a href="malloc" title="cpp/memory/c/malloc">std::malloc</a></code>Thì<code><a href="realloc" title="cpp/memory/c/realloc">std::realloc</a></code><span class="t-rev-inl t-since-cxx17"><span>Thì<code><a href="aligned_alloc" title="cpp/memory/c/aligned alloc">std::aligned_alloc</a></code></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Thì<code><a href="free" title="cpp/memory/c/free">std::free</a></code> </li>
+</ul> <p>Các cuộc gọi đến các chức năng này phân bổ hoặc xử lý một đơn vị lưu trữ cụ thể xảy ra trong một đơn đặt hàng duy nhất và mỗi cuộc gọi giải quyết như vậy<a href="../../atomic/memory_order" title="cpp/atomic/memory order">happens-before</a>Phân bổ tiếp theo (nếu có) theo thứ tự này.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>trả lại hệ điều hành &lt;&lt; s.str ();</td> <td>-</td> <td>số lượng đối tượng</td>
+</tr> <tr class="t-par"> <td>kích cỡ</td> <td>-</td> <td>Kích thước của mỗi đối tượng</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Khi thành công, trả lại con trỏ về đầu bộ nhớ mới được phân bổ. Để tránh rò rỉ bộ nhớ, con trỏ được trả lại phải được giải quyết với<code><a href="free" title="cpp/memory/c/free">std::free()</a></code>hoặc<code><a href="realloc" title="cpp/memory/c/realloc">std::realloc()</a></code>.</p>
+<p>Khi thất bại, trả về một con trỏ null.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Do các yêu cầu liên kết, số lượng byte được phân bổ không nhất thiết phải bằng<code>num * size</code>.</p>
+<p>Khởi tạo cho tất cả các bit bằng 0 không đảm bảo rằng điểm nổi hoặc con trỏ sẽ được khởi tạo thành 0,0 và giá trị con trỏ null, tương ứng (mặc dù điều đó đúng trên tất cả các nền tảng phổ biến).</p>
+<p>Ban đầu (tính bằng C89), hỗ trợ cho kích thước bằng không đã được thêm vào để phù hợp với mã như</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Obj *p = calloc (0, sizeof (obj)); // "Không có chiều dài"</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">...</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">while (1)</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/memory/calloc" title="c/memory/calloc">C documentation</a></span>vì<code>calloc</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/c/calloc">https://en.cppreference.com/w/cpp/memory/c/calloc</a>
+</p>
+</div>

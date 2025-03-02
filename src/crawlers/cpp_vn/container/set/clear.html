@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: set &lt;key, so sánh, phân bổ&gt; :: rõ ràng</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">khoảng trống rõ ràng ();</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void rõ ràng () NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xóa tất cả các yếu tố từ container. Sau cuộc gọi này,<code><a href="size" title="cpp/container/set/size">size()</a></code>trả về 0.</p>
+<p>Không hợp lệ bất kỳ tài liệu tham khảo, con trỏ hoặc trình lặp lại đề cập đến các yếu tố chứa. Bất kỳ trình lặp trong quá khứ vẫn còn hợp lệ.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Tuyến tính trong kích thước của container, tức là số lượng các phần tử.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;String_view&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue224" rel="nofollow">LWG 224</a> </td> <td>C ++ 98</td> <td>#include &lt;Map&gt;<code>log(size()) + N</code>Đếm các yếu tố mà vị ngữ<code>N</code>              Outputit D_First)</td> <td> <code>size()</code>void print_info (std :: string_view rem, const std :: map &lt;int, char&gt; &amp; v)</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="erase" title="cpp/container/set/erase"> <span class="t-lines"><span>Prepend_range</span></span></a></div> </td> <td>chèn các yếu tố<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/set/clear">https://en.cppreference.com/w/cpp/container/set/clear</a>
+</p>
+</div>

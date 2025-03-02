@@ -1,0 +1,48 @@
+ <h1 class="firstHeading" id="firstHeading">std :: strtof, std :: strtod, std :: strtold</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdlib" title="cpp/header/cstdlib">&lt;cstdlib&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">float strtof (const char* str, char ** str_end);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Double strtod (const char* str, char ** str_end);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Long Double Strtold (const char* str, char ** str_end);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Diễn giải giá trị điểm nổi trong chuỗi byte được trỏ bởi<code>str</code>.</p>
+<p>Chức năng loại bỏ bất kỳ ký tự khoảng trắng nào (như được xác định bởi<code>std::isspace</code>) cho đến khi nhân vật không phải là màu trắng được tìm thấy. Sau đó, phải mất càng nhiều ký tự càng tốt để hình thành biểu diễn điểm nổi hợp lệ và chuyển đổi chúng thành giá trị dấu phẩy động. Giá trị điểm nổi hợp lệ có thể là một trong những điều sau đây:</p>
+<ul>
+<li>biểu hiện dấu phẩy động thập phân. Nó bao gồm các phần sau:</li>
+<ul>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>cộng với dấu hiệu hoặc trừ</li>
+<li>Trình tự không trống của các chữ số thập phân tùy chọn chứa ký tự điểm thập phân (như được xác định bởi c hiện tại<a href="../../locale/setlocale" title="cpp/locale/setlocale">locale</a>) (xác định ý nghĩa)</li>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span> <code>e</code>hoặc<code>E</code>theo sau với điểm trừ tùy chọn hoặc dấu cộng và chuỗi không trống của các chữ số thập phân (xác định số mũ cho cơ sở 10)</li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>Biểu hiện dấu phẩy hơi thập lục phân. Nó bao gồm các phần sau:</li>
+<ul>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>cộng với dấu hiệu hoặc trừ</li>
+<li> <code>0x</code>hoặc<code>0X</code> </li>
+<li>Trình tự không trống của các chữ số thập lục phân tùy ý chứa một ký tự điểm thập phân (như được xác định bởi c hiện tại<a href="../../locale/setlocale" title="cpp/locale/setlocale">locale</a>) (xác định ý nghĩa)</li>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span> <code>p</code>hoặc<code>P</code>theo sau với điểm trừ tùy chọn hoặc dấu cộng và trình tự không trống của các chữ số thập phân (xác định số mũ cho cơ sở 2)</li>
+</ul>
+<li>Biểu hiện vô cực. Nó bao gồm các phần sau:</li>
+<ul>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>cộng với dấu hiệu hoặc trừ</li>
+<li> <code>INF</code>hoặc<code>INFINITY</code>Bỏ qua trường hợp</li>
+</ul>
+<li>biểu thức không phải là một số. Nó bao gồm các phần sau:</li>
+<ul>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>cộng với dấu hiệu hoặc trừ</li>
+<li> <code>NAN</code>hoặc<code>NAN(</code><i>char_singe</i><code>)</code>bỏ qua trường hợp của<code>NAN</code>phần.<i>char_singe</i>Chỉ có thể chứa các chữ số, chữ cái Latin và nhấn mạnh. Kết quả là một giá trị dấu nổi Nan yên tĩnh.</li>
+</ul>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>bất kỳ biểu thức nào khác có thể được chấp nhận bởi c hiện đã được cài đặt<a href="../../locale/setlocale" title="cpp/locale/setlocale">locale</a> </li></ul> <p>Các chức năng đặt con trỏ được trỏ bởi<code>str_end</code>để chỉ vào nhân vật qua nhân vật cuối cùng được giải thích. Nếu như<code>str_end</code>là một con trỏ null, nó bị bỏ qua.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc null để được giải thích</td>
+</tr> <tr class="t-par"> <td>str_end</td> <td>-</td> <td>Con trỏ đến một con trỏ đến nhân vật.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Giá trị điểm nổi tương ứng với nội dung của<code>str</code>về thành công. Nếu giá trị được chuyển đổi rơi ra khỏi phạm vi của loại trả về tương ứng, lỗi phạm vi xảy ra và<code><a href="../../numeric/math/huge_val" title="cpp/numeric/math/HUGE VAL">HUGE_VAL</a></code>Thì<code><a href="../../numeric/math/huge_val" title="cpp/numeric/math/HUGE VAL">HUGE_VALF</a></code>hoặc<code><a href="../../numeric/math/huge_val" title="cpp/numeric/math/HUGE VAL">HUGE_VALL</a></code>được trả lại. Nếu không có chuyển đổi nào có thể được thực hiện,<code>​0​</code>được trả lại và<code>*str_end</code>được đặt thành<code>str</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cerrno&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;clocale&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="atof" title="cpp/string/byte/atof"> <span class="t-lines"><span>atof</span></span></a></div> </td> <td>Chuyển đổi chuỗi byte thành giá trị điểm nổi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../wide/wcstof" title="cpp/string/wide/wcstof"> <span class="t-lines"><span>WCSTOF</span><span>WCSTOD</span><span>wcstold</span></span></a></div> </td> <td>Chuyển đổi một chuỗi rộng thành giá trị điểm nổi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../utility/from_chars" title="cpp/utility/from chars"> <span class="t-lines"><span>From_chars</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Chuyển đổi một chuỗi ký tự thành giá trị số nguyên hoặc dấu phẩy động<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/strtof" title="c/string/byte/strtof">C documentation</a></span>vì<code>strtof, strtod, strtold</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/strtof">https://en.cppreference.com/w/cpp/string/byte/strtof</a>
+</p>
+</div>

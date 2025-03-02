@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: try_lock</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/mutex" title="cpp/header/mutex">&lt;mutex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class Lockable1, Class Lockable2, Class ... Lockablen&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>int try_lock (Lockable1 &amp; Lock1, Lockable2 &amp; Lock2, Lockablen &amp; ... Lockn);<a href="../named_req/lockable" title="cpp/named req/Lockable">Lockable</a>Đối tượng<code>lock1</code>Thì<code>lock2</code>Thì<code>...</code>Thì<code>lockn</code>. Sau khi xây dựng và kiểm tra đối tượng Sentry, có thể bỏ qua khoảng trắng hàng đầu, trích xuất một<code>try_lock</code>Cố gắng khóa từng</p>
+<p>Nếu một cuộc gọi đến<code>try_lock</code>Để bắt đầu với lần đầu tiên.<code>try_lock</code>thất bại, không còn gọi thêm<code>unlock</code>được thực hiện,<code>​0​</code>được gọi cho bất kỳ đối tượng bị khóa và</p>
+<p>Nếu một cuộc gọi đến<code>try_lock</code>. Nếu một cuộc gọi đến<code>unlock</code>dẫn đến một ngoại lệ,</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Chỉ số dựa trên của đối tượng không bị khóa được trả về.</td> <td>-</td> <td>các<a href="../named_req/lockable" title="cpp/named req/Lockable">Lockable</a>Lock1, Lock2, ..., Lockn</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>-1</code>Lock1, Lock2, ..., Lockn<code>​0​</code>về thành công, hoặc</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Ví dụ sau sử dụng<code>std::try_lock</code>-Giá trị chỉ mục dựa trên của đối tượng không khóa.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Để định kỳ kiểm đếm và đặt lại các bộ đếm chạy trong các chủ đề riêng biệt.</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Brono&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lock" title="cpp/thread/lock"> <span class="t-lines"><span>khóa</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>khóa được chỉ định, các khối nếu không có sẵn<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/try_lock">https://en.cppreference.com/w/cpp/thread/try_lock</a>
+</p>
+</div>

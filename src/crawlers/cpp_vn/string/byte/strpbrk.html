@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: strpbrk</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstring" title="cpp/header/cstring">&lt;cstring&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">const char* strpbrk (const char* dest, const char* breakset);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">char* strpbrk (char* dest, const char* breakset);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Quét chuỗi byte kết thúc null được trỏ bởi<code>dest</code>Đối với bất kỳ ký tự nào từ chuỗi byte kết thúc không<code>breakset</code>và trả về một con trỏ cho nhân vật đó.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc không</td>
+</tr> <tr class="t-par"> <td>Phá vỡ</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc null có chứa các ký tự để tìm kiếm</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ đến nhân vật đầu tiên trong<code>dest</code>, đó cũng là trong<code>breakset</code>, hoặc con trỏ null nếu không có nhân vật như vậy tồn tại.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Tên là viết tắt của "Chuỗi con trỏ phá vỡ", bởi vì nó trả lại một con trỏ cho các ký tự đầu tiên của dấu phân cách ("break").</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;cstring&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;iomanip&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="strcspn" title="cpp/string/byte/strcspn"> <span class="t-lines"><span>STRCSPN</span></span></a></div> </td> <td>Trả về độ dài của phân đoạn ban đầu tối đa bao gồm<br/>chỉ các ký tự không được tìm thấy trong chuỗi byte khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strtok" title="cpp/string/byte/strtok"> <span class="t-lines"><span>Strtok</span></span></a></div> </td> <td>Tìm mã thông báo tiếp theo trong chuỗi byte<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strchr" title="cpp/string/byte/strchr"> <span class="t-lines"><span>Strchr</span></span></a></div> </td> <td>tìm thấy sự xuất hiện đầu tiên của một nhân vật<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../wide/wcspbrk" title="cpp/string/wide/wcspbrk"> <span class="t-lines"><span>WCSPBRK</span></span></a></div> </td> <td>Tìm vị trí đầu tiên của bất kỳ ký tự rộng nào trong một chuỗi rộng, trong một chuỗi rộng khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/strpbrk" title="c/string/byte/strpbrk">C documentation</a></span>vì<code>strpbrk</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/strpbrk">https://en.cppreference.com/w/cpp/string/byte/strpbrk</a>
+</p>
+</div>

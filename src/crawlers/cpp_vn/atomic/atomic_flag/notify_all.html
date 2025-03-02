@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Atomic_flag :: notify_all</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void notify_all () noExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void notify_all () NoExcept dễ bay hơi;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Thực hiện các hoạt động thông báo nguyên tử.</p>
+<p>Hút tất cả các luồng bị chặn trong các hoạt động chờ nguyên tử (tức là.<code>wait()</code>) TRÊN<code>*this</code>, nếu có bất kỳ; nếu không thì không có gì.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>Hình thức phát hiện thay đổi này thường hiệu quả hơn so với bỏ phiếu đơn giản hoặc spinlocks tinh khiết.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="wait" title="cpp/atomic/atomic flag/wait"> <span class="t-lines"><span>toán tử t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>chặn luồng cho đến khi thông báo và giá trị nguyên tử thay đổi<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../atomic_flag_wait" title="cpp/atomic/atomic flag wait"> <span class="t-lines"><span>ATOMIC_FLAG_WAIT</span><span>Atomic_flag_wait_explict</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>chặn luồng cho đến khi thông báo và cờ thay đổi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../atomic_flag_notify_one" title="cpp/atomic/atomic flag notify one"> <span class="t-lines"><span>Atomic_flag_notify_one</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Thông báo một luồng bị chặn trong Atomic_flag_wait<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_flag/notify_all">https://en.cppreference.com/w/cpp/atomic/atomic_flag/notify_all</a>
+</p>
+</div>

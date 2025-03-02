@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Mutex :: Khóa</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Khóa khoảng trống ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Khóa mutex. Nếu một chủ đề khác đã khóa mutex, một cuộc gọi đến<code>lock</code>Sẽ chặn thực thi cho đến khi khóa được thu thập.</p>
+<p>Nếu như<code>lock</code>được gọi bởi một chủ đề đã sở hữu<code>mutex</code>, hành vi không được xác định: ví dụ, chương trình<i>có thể</i>bế tắc. Việc thực hiện có thể phát hiện việc sử dụng không hợp lệ được khuyến khích ném<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>trả lại cho người gọi sẽ đánh giá<code>resource_deadlock_would_occur</code>Thay vì bộ chết.</p>
+<p>Trước<code><a href="unlock" title="cpp/thread/mutex/unlock">unlock()</a></code>hoạt động trên cùng một mutex<i>Phát hành hoạt động</i>    async (std :: chính sách khởi chạy, chức năng &amp;&amp; f, args &amp;&amp; ... args);<code><a href="../../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>) Hoạt động này.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Ném<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>Khi xảy ra lỗi, bao gồm các lỗi từ hệ điều hành cơ bản sẽ ngăn chặn<code>lock</code>từ đáp ứng các thông số kỹ thuật của nó. Mutex không bị khóa trong trường hợp bất kỳ ngoại lệ nào bị ném.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>lock()</code>thường không được gọi là trực tiếp:<code><a href="../unique_lock" title="cpp/thread/unique lock">std::unique_lock</a></code>Thì<a href="../scoped_lock" title="cpp/thread/scoped lock"><code>std::scoped_lock</code></a>, Và<code><a href="../lock_guard" title="cpp/thread/lock guard">std::lock_guard</a></code>được sử dụng để quản lý khóa độc quyền.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Ví dụ này cho thấy cách<code>lock</code>Và<code>unlock</code>có thể được sử dụng để bảo vệ dữ liệu chia sẻ.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="try_lock" title="cpp/thread/mutex/try lock"> <span class="t-lines"><span>Try_lock</span></span></a></div> </td> <td>cố gắng khóa mutex, trả về nếu không có sẵn mutex<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="unlock" title="cpp/thread/mutex/unlock"> <span class="t-lines"><span>Mở khóa</span></span></a></div> </td> <td>Mở khóa mutex<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/thread/mtx_lock" title="c/thread/mtx lock">C documentation</a></span>vì<code>mtx_lock</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/mutex/lock">https://en.cppreference.com/w/cpp/thread/mutex/lock</a>
+</p>
+</div>

@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: wcsncpy</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">wchar_t* wcsncpy (wchar_t* dest, const wchar_t* src, std :: size_t đếm);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Bản sao nhiều nhất<code>count</code>ký tự của chuỗi rộng được trỏ bởi<code>src</code>(bao gồm cả ký tự rộng null chấm dứt) đến mảng ký tự rộng được chỉ ra bởi<code>dest</code>.</p>
+<p>Nếu như<code>count</code>đạt được trước toàn bộ chuỗi<code>src</code>đã được sao chép, mảng ký tự rộng kết quả không được chấm dứt.</p>
+<p>Nếu, sau khi sao chép ký tự rộng NULL kết thúc từ<code>src</code>Thì<code>count</code>không đạt được, các ký tự rộng null bổ sung được viết thành<code>dest</code>cho đến khi tổng số<code>count</code>Nhân vật đã được viết.</p>
+<p>Nếu các chuỗi trùng nhau, hành vi không được xác định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>con trỏ đến mảng ký tự rộng để sao chép vào</td>
+</tr> <tr class="t-par"> <td>SRC</td> <td>-</td> <td>con trỏ tới chuỗi rộng để sao chép từ</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng ký tự rộng tối đa để sao chép</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>dest</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>Trong cách sử dụng điển hình,<code>count</code>là kích thước của mảng đích.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CWchar&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="wcscpy" title="cpp/string/wide/wcscpy"> <span class="t-lines"><span>WCSCPY</span></span></a></div> </td> <td>sao chép một chuỗi rộng sang một chuỗi rộng khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="wmemcpy" title="cpp/string/wide/wmemcpy"> <span class="t-lines"><span>WMEMCPY</span></span></a></div> </td> <td>sao chép một số lượng một số ký tự rộng nhất định giữa hai mảng không chồng chéo<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../byte/strncpy" title="cpp/string/byte/strncpy"> <span class="t-lines"><span>Strncpy</span></span></a></div> </td> <td>sao chép một lượng ký tự nhất định từ chuỗi này sang chuỗi khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/wcsncpy" title="c/string/wide/wcsncpy">C documentation</a></span>vì<code>wcsncpy</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/wcsncpy">https://en.cppreference.com/w/cpp/string/wide/wcsncpy</a>
+</p>
+</div>

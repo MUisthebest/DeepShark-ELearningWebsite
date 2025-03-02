@@ -1,0 +1,38 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: UnaryTyPetrait<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>MỘT<strong class="selflink">Unarytypetrait</strong>là một mẫu lớp mô tả một thuộc tính của tham số loại mẫu của nó với một<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::integral_constant</a></code>(tiêu biểu<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::bool_constant</a></code>) chuyên môn hóa.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <ul>
+<li> <a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>Và<a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>.</li>
+<li>Lấy một tham số loại mẫu (tham số mẫu bổ sung là tùy chọn và cho phép).</li>
+<li>Công khai và rõ ràng bắt nguồn từ một chuyên ngành<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::integral_constant</a></code>, được gọi là nó<i>Đặc tính cơ bản</i>.</li>
+<li>Tên thành viên của<i>Đặc tính cơ bản</i>không được ẩn giấu và có sẵn một cách rõ ràng.</li>
+</ul> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>ưu tiên_queue (comp, container, alloc)<a href="../meta" title="cpp/meta">type traits</a>Tất cả đều thỏa mãn unarytypetrait:</p>
+<ul>
+<li> <a href="../meta#Primary_type_categories" title="cpp/meta">Primary type categories</a> </li>
+<li> <a href="../meta#Composite_type_categories" title="cpp/meta">Composite type categories</a> </li>
+<li> <a href="../meta#Type_properties" title="cpp/meta">Type properties</a> </li>
+<li> <a href="../meta#Supported_operations" title="cpp/meta">Supported operations</a> </li>
+<li> <a href="../meta#Property_queries" title="cpp/meta">Property queries</a> </li>
+</ul> <p>Các mẫu lớp thư viện tiêu chuẩn sau đây cũng thỏa mãn unarytypetrait.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/integral_constant" title="cpp/types/integral constant"> <span class="t-lines"><span>Integral_constant</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Hằng số thời gian biên dịch của loại được chỉ định với giá trị được chỉ định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/negation" title="cpp/types/negation"> <span class="t-lines"><span>phủ định</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>logic không phải là meta<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/tuple/tuple_size" title="cpp/utility/tuple/tuple size"> <span class="t-lines"><span>truy cập một yếu tố của một<span class="t-dsc-small">struct tuple_element;</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Constexpr std :: size_t tuple_size_v = tuple_size &lt;t&gt; :: value;<code>tuple</code>, số lượng các phần tử trong mảng<br/> <span class="t-mark">(Chuyên ngành mẫu lớp)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/array/tuple_size" title="cpp/container/array/tuple size"> <span class="t-lines"><span>truy cập một yếu tố của một<span class="t-dsc-small">&lt;std :: mảng&gt;</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đối tượng từ một mảng tích hợp<code>array</code> <br/> <span class="t-mark">(Chuyên ngành mẫu lớp)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/pair/tuple_size" title="cpp/utility/pair/tuple size"> <span class="t-lines"><span>truy cập một yếu tố của một<span class="t-dsc-small">Mẫu &lt;std :: size_t i, class t, std :: size_t n&gt;</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Nhà điều hành Std :: size_t<code>pair</code> <br/> <span class="t-mark">(Chuyên ngành mẫu lớp)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/variant/variant_size" title="cpp/utility/variant/variant size"> <span class="t-lines"><span>biến thể_size</span><span>Biến thể_size_v</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>có được kích thước của danh sách các lựa chọn thay thế của biến thể tại thời điểm biên dịch<br/><span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> <span class="t-mark">(Mẫu biến)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/functional/is_bind_expression" title="cpp/utility/functional/is bind expression"> <span class="t-lines"><span>is_bind_expression</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>chỉ ra rằng một đối tượng là<code>std::bind</code>biểu thức hoặc có thể được sử dụng như một<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/functional/is_placeholder" title="cpp/utility/functional/is placeholder"> <span class="t-lines"><span>is_placeholder</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>chỉ ra rằng một đối tượng là một trình giữ chỗ tiêu chuẩn hoặc có thể được sử dụng như một<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../algorithm/is_execution_policy" title="cpp/algorithm/is execution policy"> <span class="t-lines"><span>Được xác định trong không gian tên</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(C ++ 17)<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/UnaryTypeTrait">https://en.cppreference.com/w/cpp/named_req/UnaryTypeTrait</a>
+</p>
+</div>

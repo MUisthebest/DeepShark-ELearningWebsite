@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">Thuộc tính C ++: Có thể_unused<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>
+</h1> <p>Ngăn chặn cảnh báo về các thực thể không sử dụng.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span>maybe_unused<span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span></code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Thuộc tính này có thể xuất hiện trong Tuyên bố của các thực thể sau:</p>
+<ul>
+<li> <a href="../classes" title="cpp/language/classes">class/struct/union</a>:<code>struct [[maybe_unused]] S;</code>Thì</li>
+<li> <a href="../typedef" title="cpp/language/typedef">typedef</a>, bao gồm cả những người được tuyên bố bởi<a href="../type_alias" title="cpp/language/type alias">alias declaration</a>:<code>[[maybe_unused]] typedef S* PS;</code>Thì<code>using PS [[maybe_unused]] = S*;</code>Thì</li>
+<li>biến, bao gồm<a href="../static" title="cpp/language/static">static data member</a>:<code>[[maybe_unused]] int x;</code>Thì</li>
+<li> <a href="../data_members" title="cpp/language/data members">non-static data member</a>:<code>union U { [[maybe_unused]] int n; };</code>Thì</li>
+<li> <a href="../function" title="cpp/language/function">function</a>:<code>[[maybe_unused]] void f();</code>Thì</li>
+<li> <a href="../enum" title="cpp/language/enum">enumeration</a>:<code>enum [[maybe_unused]] E {};</code>Thì</li>
+<li>Tái lập điều khiển:<code>enum { A [[maybe_unused]], B [[maybe_unused]] = 42 };</code>Thì</li>
+<li> <a href="../structured_binding" title="cpp/language/structured binding">structured binding</a>:<code><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span>maybe_unused<span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span> <span class="kw4">    phân vùng_point (r &amp;&amp; r, pred, proj proj = {});</span> <span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span>a, b<span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span> <span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span> <a href="http://en.cppreference.com/w/cpp/utility/pair/make_pair"><span class="kw1100">Điều đó cho tất cả<span class="me2">Mẫu &lt;class forwardit, class so sánh&gt;</span></span></a><span class="br0">.</span><span class="nu0">đối tượng mà từ đó gán cho</span>, <span class="nu16">0,23</span><span class="br0">)</span><span class="sy4">Số lượng các yếu tố để sao chép</span></code>.</li>
+</ul> <p>Cho các thực thể được tuyên bố<code>[[maybe_unused]]</code>, nếu các thực thể hoặc các ràng buộc có cấu trúc của chúng không được sử dụng, cảnh báo về các thực thể không sử dụng do trình biên dịch đưa ra bị triệt tiêu.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cassert&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2360.html" rel="nofollow">CWG 2360</a> </td> <td>C ++ 17</td> <td> <code>[[maybe_unused]]</code>[[có thể_unused]] void f ([[có thể_unuss]] bool điều1,</td> <td>cho phép</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/attributes/maybe_unused" title="c/language/attributes/maybe unused">C documentation</a></span>vì<code>maybe_unused</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/attributes/maybe_unused">https://en.cppreference.com/w/cpp/language/attributes/maybe_unused</a>
+</p>
+</div>

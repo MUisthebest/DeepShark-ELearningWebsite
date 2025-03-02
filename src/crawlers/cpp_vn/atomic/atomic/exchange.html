@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: ATOMIC &lt;T&gt; :: Trao đổi</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">T Exchange (T mong muốn, STD :: Memory_order Order =</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                           std :: memory_order_seq_cst) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>T Exchange (T mong muốn, STD :: Memory_order Order =<code>desired</code>                           std :: memory_order_seq_cst) NoExcept biến động;<code>order</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>bool compare_exchange_strong (T &amp; mong đợi, T mong muốn,<code><a href="http://en.cppreference.com/w/cpp/atomic/atomic"><span class="kw2070">Điều đó cho tất cả<span class="me2">nguyên tử</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Chờ đợi</span></code>khoảng cách<code>false</code>Thay thế nguyên tử giá trị cơ bản với<span class="t-v">(2)</span>(Một hoạt động đọc sửa đổi-viết). Bộ nhớ bị ảnh hưởng theo giá trị của</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>bool Atomic_compare_exchange_strong_explict</td> <td>-</td> <td>và quá tải</td>
+</tr> <tr class="t-par"> <td>Thay thế nguyên tử giá trị được trỏ đến bởi</td> <td>-</td> <td>Tham gia vào giải quyết quá tải.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>giá trị để gán</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Các ràng buộc về thứ tự bộ nhớ để thực thi</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Giá trị của biến nguyên tử trước cuộc gọi.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../atomic_exchange" title="cpp/atomic/atomic exchange"> <span class="t-lines"><span>Atomic_exchange</span><span>ATOMIC_EXCHANGE_EXPLICIT</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>thay thế nguyên tử giá trị của đối tượng nguyên tử bằng đối số không nguyên tử và trả về giá trị cũ của nguyên tử<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../utility/exchange" title="cpp/utility/exchange"> <span class="t-lines"><span>trao đổi</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C ++ 14)</span></span></span></div> </td> <td>Thay thế đối số bằng một giá trị mới và trả về giá trị trước đó của nó<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic/exchange">https://en.cppreference.com/w/cpp/atomic/atomic/exchange</a>
+</p>
+</div>

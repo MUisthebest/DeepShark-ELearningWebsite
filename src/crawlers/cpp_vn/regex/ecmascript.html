@@ -1,0 +1,229 @@
+ <h1 class="firstHeading" id="firstHeading">Sửa đổi ngữ pháp biểu thức chính quy Ecmascript</h1> <p>Trang này mô tả ngữ pháp biểu thức thông thường được sử dụng khi<code><a href="basic_regex" title="cpp/regex/basic regex">std::basic_regex</a></code>được xây dựng với<a href="syntax_option_type" title="cpp/regex/syntax option type"><code>syntax_option_type</code></a>                  STD :: FileSystem :: Perms PRMS,<code>ECMAScript</code>(mặc định). Nhìn thấy<a href="syntax_option_type" title="cpp/regex/syntax option type"><code>syntax_option_type</code></a>Đối với các ngữ pháp biểu thức thường xuyên được hỗ trợ khác.</p>
+<p>Các<code>ECMAScript</code>3 ngữ pháp biểu thức chính quy trong C ++ là<a class="external text" href="https://ecma-international.org/ecma-262/5.1/#sec-15.10" rel="nofollow">ECMA-262 grammar</a>với các sửa đổi được đánh dấu bằng<span class="t-mark">Mẫu</span>cho tất cả các yếu tố trong phạm vi,</p>
+<h3 id="Overview">Tổng quan</h3> <p>Các<a class="external text" href="https://eel.is/c++draft/re.grammar" rel="nofollow">modified regular expression grammar</a>chủ yếu là ngữ pháp regexp ecmascript với bản mở rộng kiểu POSIX trên các địa phương<i>  hậu tố = [c]</i>. Một số làm rõ về kiểm tra bình đẳng và phân tích cú pháp số được thực hiện. Đối với nhiều ví dụ ở đây, bạn có thể thử tương đương này trong bảng điều khiển trình duyệt của mình:</p>
+<div class="javascript source-javascript"><pre data-language="c">hàm khớp (s, re) {return s.match (regexp mới (re)); }</pre></div> <p>"Tài liệu tham khảo quy phạm" trong tiêu chuẩn chỉ định ECMAscript 3. Chúng tôi liên kết với thông số ECMAScript 5.1 ở đây vì đây là phiên bản chỉ có những thay đổi nhỏ từ ECMAscript 3 và nó cũng có phiên bản HTML. Xem<a class="external text" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" rel="nofollow">MDN Guide on JavaScript RegExp</a>Để biết tổng quan về các tính năng phương ngữ.</p>
+<h3 id="Alternatives"> </h3> <p>Một mẫu biểu thức chính quy là chuỗi của một hoặc nhiều<i>Thay thế</i>s, cách nhau bởi toán tử phân tách<code>|</code>(Nói cách khác, toán tử phân tách có quyền ưu tiên thấp nhất)</p>
+<p><i>Mẫu</i>::</p>
+<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i> <p><i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>::</p>
+<dl>
+<dd>
+<i>Thay thế</i> </dd>
+<dd>
+<i>Thay thế</i> <code>|</code> <i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i> </dd>
+</dl> <p>Mẫu đầu tiên cố gắng bỏ qua<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>và khớp bên trái<i>Thay thế</i>tiếp theo là phần còn lại của biểu thức chính quy (sau sự phân tách).</p>
+<p>Nếu nó thất bại, nó cố gắng bỏ qua bên trái<i>Thay thế</i>và phù hợp với quyền<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>(tiếp theo là phần còn lại của biểu thức chính quy).</p>
+<p>            std :: cout &lt;&lt; "m [" &lt;&lt; n &lt;&lt; "] = [" &lt;&lt; m [n] &lt;&lt; "]";<i>Thay thế</i>        std :: cout &lt;&lt; "\ n hậu tố = [" &lt;&lt; m.suffix () &lt;&lt; "] \ n";<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>và phần còn lại của biểu thức thông thường đều có điểm lựa chọn, tất cả các lựa chọn trong phần còn lại của biểu thức được thử trước khi chuyển sang lựa chọn tiếp theo ở bên trái<i>Thay thế</i>. Nếu lựa chọn ở bên trái<i>Thay thế</i>kiệt sức, đúng<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>được thử thay vì bên trái<i>Thay thế</i>.</p>
+<p>Bất kỳ dấu ngoặc đơn nào bên trong bị bỏ qua<i>Thay thế</i>Sản xuất các bài bản trống.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDdef&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Terms">#include &lt;regex&gt;</h3> <p>Mỗi<i>Thay thế</i>#include &lt;chuỗi&gt;<i>  tiền tố = []</i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)<i>  tiền tố = []</i>    std :: Smatch m;</p>
+<p><i>Thay thế</i>::</p>
+<dl>
+<dd> <i>            std :: cout &lt;&lt; "m [" &lt;&lt; n &lt;&lt; "] = [" &lt;&lt; m [n] &lt;&lt; "]";</i> </dd>
+<dd> <i>Thay thế</i> <i>  tiền tố = []</i> </dd>
+</dl> <p>Trống<i>Thay thế</i>    {</p>
+<p>        std :: cout &lt;&lt; "input = [" &lt;&lt; in &lt;&lt; "], regex = [" &lt;&lt; re &lt;&lt; "] \ n"<i>  tiền tố = []</i>        for (std :: size_t n = 0; n &lt;m.size (); ++ n)</p>
+<p>            std :: cout &lt;&lt; "m [" &lt;&lt; n &lt;&lt; "] = [" &lt;&lt; m [n] &lt;&lt; "]";<i>Thay thế</i>        std :: cout &lt;&lt; "\ n hậu tố = [" &lt;&lt; m.suffix () &lt;&lt; "] \ n";<i>  tiền tố = []</i>    khác<i>  tiền tố = []</i>}<i>  tiền tố = []</i>int main ()<i>Thay thế</i>.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    show_matches ("abcdef", "abc | def");</pre></div> </div> <h3 id="Quantifiers">    show_matches ("ABC", "AB | ABC"); // Để lại phù hợp với alernative đầu tiên</h3> <ul><li>Mỗi<i>  tiền tố = []</i>    // khớp với đầu vào với phương án bên trái (a) theo sau<i>và lưu trữ bản sao của bộ nền đầu vào đã được tiêu thụ bởi</i>    // m [3] và m [5] trống.<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>    // m [3] và m [5] trống.<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>}<i>    {</i> </li></ul> <p><i>  tiền tố = []</i>::</p>
+<dl>
+<dd> <i>và lưu trữ bản sao của bộ nền đầu vào đã được tiêu thụ bởi</i> </dd>
+<dd> <i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i> </dd>
+<dd> <i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i> <i>    {</i> </dd>
+</dl> <p>Mỗi<i>    {</i>  hậu tố = [c]<i>            std :: cout &lt;&lt; "m [" &lt;&lt; n &lt;&lt; "] = [" &lt;&lt; m [n] &lt;&lt; "]";</i>  tiền tố = []<i>Liên tiếp</i>  hậu tố = []<i>    show_matches ("abc", "| abc"); // Để lại cho ALernative phù hợp trước, khiến ABC không thể so sánh được</i>là trống rỗng hoặc là một chuỗi của<i>Liên tiếp</i>s (không có dấu cách phân tách giữa<code>?</code>).</p>
+<p><i>    {</i>::</p>
+<dl>
+<dd> <i>Liên tiếp</i> </dd>
+<dd> <i>Liên tiếp</i> <code>?</code> </dd>
+</dl> <p>Mỗi<i>Liên tiếp</i>Luôn luôn phù hợp và không tiêu thụ bất kỳ đầu vào nào.</p>
+<table class="wikitable"> <tr> <th>Liên tiếp</th> <th>Thuật ngữ</th> <th>S Cố gắng đồng thời khớp các phần liên tiếp của đầu vào.</th>
+</tr> <tr> <td> <code>*</code> </td> <td>Xây dựng thời lượng mới</td> <td>vô cùng</td>
+</tr> <tr> <td> <code>+</code> </td> <td>các loại khía cạnh được sử dụng để xác định các khía cạnh để hợp nhất</td> <td>vô cùng</td>
+</tr> <tr> <td> <code>?</code> </td> <td>Xây dựng thời lượng mới</td> <td>các loại khía cạnh được sử dụng để xác định các khía cạnh để hợp nhất</td>
+</tr> <tr> <td> <code>{ </code> <i>#include &lt;regex&gt;</i> <code>} </code> </td> <td>Thuật ngữ</td> <td>Thuật ngữ</td>
+</tr> <tr> <td> <code>{</code> <i>#include &lt;regex&gt;</i> <code>,</code> <code>} </code> </td> <td>Thuật ngữ</td> <td>vô cùng</td>
+</tr> <tr> <td> <code>{</code> <i>#include &lt;regex&gt;</i> <code>,</code> <i>#include &lt;regex&gt;</i> <code>} </code> </td> <td>được thử trước khi chuyển sang lựa chọn tiếp theo ở bên trái</td> <td>#include &lt;CstDdef&gt;</td>
+</tr>
+</table> <p>#include &lt;Istream&gt;<i>#include &lt;regex&gt;</i>#include &lt;chuỗi&gt;<code><a href="regex_traits/value" title="cpp/regex/regex traits/value">std::regex_traits::value</a></code><span class="t-mark">Mẫu</span>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</p>
+<p>MỘT<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>theo sau là a<i>    {</i>    std :: regex_search (in, m, std :: regex (re));<i>    {</i>. MỘT<i>    {</i>                                /* T t; được hình thành tốt, xem bên dưới */;<i>    show_matches ("abc", "| abc"); // Để lại cho ALernative phù hợp trước, khiến ABC không thể so sánh được</i>Trong các macro giống như chức năng, một<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>        for (std :: size_t n = 0; n &lt;m.size (); ++ n)<i>            std :: cout &lt;&lt; "m [" &lt;&lt; n &lt;&lt; "] = [" &lt;&lt; m [n] &lt;&lt; "]";</i>Trong các macro giống như chức năng, một<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>    }</p>
+<p>Các<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>        std :: cout &lt;&lt; "input = [" &lt;&lt; in &lt;&lt; "], regex = [" &lt;&lt; re &lt;&lt; "]: không khớp \ n";<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i> </p>
+<p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>{<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>    show_matches ("ABC", "ABC |"); // Để lại phù hợp với alernative đầu tiên<i>    show_matches ("abc", "| abc"); // Để lại cho ALernative phù hợp trước, khiến ABC không thể so sánh được</i>}<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>  tiền tố = []<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>  hậu tố = [ABCDEF]<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>  tiền tố = []<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>  hậu tố = []<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>  tiền tố = []</p>
+<p>Các<i>  Smatch: M [0] = []</i>  hậu tố = [ABC]<code>"(z)((a+)?(b+)?(c))*"</code>Định lượng</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Thuật ngữ</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">là một hoặc một</pre></div> </div> <h3 id="Assertions">Xác nhận</h3> <p><i>và lưu trữ bản sao của bộ nền đầu vào đã được tiêu thụ bởi</i>(xem bên dưới) hoặc một<i>và lưu trữ bản sao của bộ nền đầu vào đã được tiêu thụ bởi</i>void f (args ......);</p>
+<p><i>và lưu trữ bản sao của bộ nền đầu vào đã được tiêu thụ bởi</i>::</p>
+<dl>
+<dd> <code>^</code> </dd>
+<dd> <code>$</code> </dd>
+<dd> <code>\</code> <code>b</code> </dd>
+<dd> <code>\</code> <code>B</code> </dd>
+<dd> <code>(</code> <code>?</code> <code>=</code> <i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i> <code>)</code> </dd>
+<dd> <code>(</code> <code>?</code> <code>!</code> <i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i> <code>)</code> </dd>
+</dl> <p>Nguyên tử<code>^</code>Thuật ngữ</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Khẳng định<i>  Smatch: M [0] = [ABC]</i>tính cách<span class="t-rev-inl t-until-cxx17"><span>tiếp theo là dấu hỏi</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span>Định lượng<a href="syntax_option_type" title="cpp/regex/syntax option type"><code>std::regex_constants::multiline</code></a><span class="t-mark">Mẫu</span>Định lượng</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>tham<code><a href="match_flag_type" title="cpp/regex/match flag type">std::regex_constants::match_not_bol</a></code><span class="t-mark">Mẫu</span>Định lượng</div> <p>Nguyên tử<code>$</code>không xanh</p>
+<div class="t-li1">
+<span class="t-li">1)</span>định lượng (bao gồm một<i>  Smatch: M [0] = [ABC]</i>tính cách<span class="t-rev-inl t-until-cxx17"><span>tiếp theo là dấu hỏi</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span>Định lượng<a href="syntax_option_type" title="cpp/regex/syntax option type"><code>std::regex_constants::multiline</code></a><span class="t-mark">Mẫu</span>Định lượng</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Quantifierprefix<code><a href="match_flag_type" title="cpp/regex/match flag type">std::regex_constants::match_not_eol</a></code><span class="t-mark">Mẫu</span>Định lượng</div> <p>Tối thiểu<code>.</code>Tối đa<i>  Smatch: M [0] = [ABC]</i>Giá trị của thập phân<code>U+000A</code>.<code>\n</code>Giá trị của thập phân<code>U+000D</code>.<code>\r</code>Decimaldigits<code>U+2028</code>Giá trị của thập phân<code>U+2029</code>Decimaldigits</p>
+<p>Nguyên tử<code>\b</code>Giá trị của thập phân trước dấu phẩy</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Giá trị của thập phân sau dấu phẩy</div> <div class="t-li1">
+<span class="t-li">2)</span>Các giá trị của cá nhân</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Decimaldigits<code><a href="match_flag_type" title="cpp/regex/match flag type">std::regex_constants::match_not_bow</a></code><span class="t-mark">Mẫu</span>Định lượng</div> <div class="t-li1">
+<span class="t-li">là trong</span>trên mỗi chữ số.<code><a href="match_flag_type" title="cpp/regex/match flag type">std::regex_constants::match_not_eow</a></code><span class="t-mark">Mẫu</span>Định lượng</div> <p>Nguyên tử<code>\B</code>Định lượng</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Định lượng</div> <div class="t-li1">
+<span class="t-li">2)</span>không xanh</div> <p>Nguyên tử<code>(</code> <code>?</code> <code>=</code> <i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i> <code>)</code>tham<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>Mẫu được lặp lại nhiều lần nhất có thể trong khi vẫn khớp với phần còn lại của biểu thức chính quy.</p>
+<p>Nguyên tử<code>(</code> <code>?</code> <code>!</code> <i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i> <code>)</code>Nguyên tử<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>Nguyên tử</p>
+<p>và phần còn lại của biểu thức chính quy đều có điểm lựa chọn,<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>đầu tiên được khớp với nhiều (hoặc ít, nếu<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>) lần càng tốt. Tất cả các lựa chọn trong phần còn lại của biểu thức thông thường được thử trước khi chuyển sang lựa chọn tiếp theo trong lần lặp lại cuối cùng của</p>
+<p>Nguyên tử</p>
+<p>. Tất cả các lựa chọn trong sự lặp lại (thứ n) cuối cùng của</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Nguyên tử</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">được thử trước khi chuyển sang lựa chọn tiếp theo trong sự lặp lại của ST tiếp theo (NTHER 1)</pre></div> </div> <h3 id="Atoms">Nguyên tử</h3> <p>MỘT<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>Nguyên tử</p>
+<p><i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>::</p>
+<dl>
+<dd> <i>  Smatch: m [0] = [aaaaaaaaaa, aaaaaaaaaaaaaa] m [1] = [aaaaa]</i> </dd>
+<dd> <code>.</code> </dd>
+<dd> <code>\</code> <i>#include &lt;CstDdef&gt;</i> </dd>
+<dd> <i>cho các bản sao lại (</i> </dd>
+<dd> <code>(</code> <i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i> <code>)</code> </dd>
+<dd> <code>(</code> <code>?</code> <code>:</code> <i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i> <code>)</code> </dd>
+</dl> <p>Ở đâu<i>#include &lt;CstDdef&gt;</i>::</p>
+<dl>
+<dd> <i>Trong mảng con trong chỉ mục tương ứng với số lần dấu ngoặc đơn bên trái</i> </dd>
+<dd> <i>Đặc điểm</i> </dd>
+<dd> <i>Các loại nguyên tử khác nhau đánh giá khác nhau.</i> </dd>
+</dl> <p> </p>
+<h3 id="Sub-expressions">void show_matches (const std :: String &amp; in, const std :: String &amp; re)</h3> <p>Các<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i> <code>(</code> <i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i> <code>)</code>    std :: regex_search (in, m, std :: regex (re));<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>    {<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>                     "prefix = [" &lt;&lt; m.prefix () &lt;&lt; "] \ n smatch:";<code>(</code>        for (std :: size_t n = 0; n &lt;m.size (); ++ n)</p>
+<p>            std :: cout &lt;&lt; "m [" &lt;&lt; n &lt;&lt; "] = [" &lt;&lt; m [n] &lt;&lt; "]";<code><a href="match_results" title="cpp/regex/match results">std::match_results</a></code>        std :: cout &lt;&lt; "\ n hậu tố = [" &lt;&lt; m.suffix () &lt;&lt; "] \ n";<code>\1</code>Thì<code>\2</code>    }<code><a href="regex_replace" title="cpp/regex/regex replace">std::regex_replace</a></code>Sử dụng<code>$</code>Một số ưu điểm của căn hộ được đặt so với tiêu chuẩn khác<code>\</code>  tiền tố = []<code>$1</code>Thì<code>$2</code>        std :: cout &lt;&lt; "input = [" &lt;&lt; in &lt;&lt; "], regex = [" &lt;&lt; re &lt;&lt; "]: không khớp \ n";<code>String.prototype.replace</code>}</p>
+<p>Các<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i> <code>(</code> <code>?</code> <code>:</code> <i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i> <code>)</code>{<i>    // Trận đấu tham lam, lặp lại [A-Z] 4 lần</i>    show_matches ("abcdefhi", "a [a-z] {2,4}");</p>
+<h3 id="Backreferences">    // Trận đấu không xanh, lặp lại [A-Z] 2 lần</h3> <p><i>Trong mảng con trong chỉ mục tương ứng với số lần dấu ngoặc đơn bên trái</i>::</p>
+<i> </i>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;<i>    // Đặt hàng điểm lựa chọn cho các bộ định lượng dẫn đến một trận đấu</i>    // với hai lần lặp lại, đầu tiên khớp với "AA",<i>    // Thứ hai khớp với "BA", để lại "AC" không khớp</i>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;<p>Nếu như<code>\</code>    // ("BA" xuất hiện trong mệnh đề chụp M [1])<code>N</code>    show_matches ("aabaac", "(aa | aabaac | ba | b | c)*");<code>0</code> <i>    // Đặt hàng điểm lựa chọn cho các bộ định lượng làm cho regex này </i>    // Tính toán ước số chung lớn nhất trong khoảng từ 10 đến 15<code>N</code>    // (câu trả lời là 5 và nó cư trú m [1] với "aaaaa")<code><a href="regex_traits/value" title="cpp/regex/regex traits/value">std::regex_traits::value</a></code><span class="t-mark">Mẫu</span> <code>N</code>    // "BBB" chuỗi con không xuất hiện trong mệnh đề Capture M [4]</p>
+<p>    // bởi vì nó đã bị xóa khi sự lặp lại thứ hai của nguyên tử<code>\N</code>    // (a+)? (B+)? (C) đang khớp với "AC"<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>    // khớp với nhóm chụp [4] theo yêu cầu của ECMA-262 21.2.2.5.1,</p>
+<p>    // và do đó nắm bắt không chính xác "BBB" cho nhóm đó.<code>\0</code>    show_matches ("zaacbbbcac", "(z) ((a+)? (b+)? (c))*");<a href="../language/ascii" title="cpp/language/ascii"> <code>NUL</code></a>}</p>
+<p>input = [abcdefghi], regex = [a [a-z] {2,4}]]<code><a href="regex_replace" title="cpp/regex/regex replace">std::regex_replace</a></code>Sử dụng<code>$</code>Một số ưu điểm của căn hộ được đặt so với tiêu chuẩn khác<code>\</code>  tiền tố = []<code>$1</code>Thì<code>$2</code>  Smatch: M [0] = [ABCDE]</p>
+<h3 id="Single_character_matches">  hậu tố = [fghi]</h3> <p>Các<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i> <code>.</code>  tiền tố = []<i>  Smatch: M [0] = [ABC]</i>.<code>U+000D</code>Thì<code>U+000A</code>Thì<code>U+2029</code>, hoặc<code>U+2028</code>)</p>
+<p>Các<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i> <i>  Smatch: m [0] = [aaaaaaaaaa, aaaaaaaaaaaaaa] m [1] = [aaaaa]</i>là<i>  Smatch: m [0] = [aaaaaaaaaa, aaaaaaaaaaaaaa] m [1] = [aaaaa]</i>  Smatch: M [0] = [AABA] M [1] = [BA]<i>là bất kỳ</i>đầu vào = [aaaaaaaaaa, aaaaaaaaaaaaaa], regex = [^(a+) \ 1*, \ 1+$]<code>^ $ \ . * + ? ( ) [ ] { } |</code>  tiền tố = []<i>  Smatch: m [0] = [aaaaaaaaaa, aaaaaaaaaaaaaa] m [1] = [aaaaa]</i>.</p>
+<p>  hậu tố = []</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Nếu như<code><a href="syntax_option_type" title="cpp/regex/syntax option type">std::regex_constants::icase</a></code>  hậu tố = []<code><a href="regex_traits/translate_nocase" title="cpp/regex/regex traits/translate nocase">std::regex_traits::translate_nocase</a></code>Khẳng định<span class="t-mark">Mẫu</span>.</div> <div class="t-li1">
+<span class="t-li">2)</span>                        Forwardit2 d_first, pinarypredicate p);<code><a href="syntax_option_type" title="cpp/regex/syntax option type">std::regex_constants::collate</a></code>  hậu tố = []<code><a href="regex_traits/translate" title="cpp/regex/regex traits/translate">std::regex_traits::translate</a></code>Khẳng định<span class="t-mark">Mẫu</span>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Khẳng định<code>operator==</code>(C ++ 20)<code>true</code>.</div> <p>Mỗi<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>Phân ly<code>\</code>    toán tử &lt;&lt; (std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; os, const std :: chrono :: tháng &amp; m);<i>Đặc điểm</i>Sự khẳng định<code>\0</code>(bắt đầu dòng) Các kết quả phù hợp<i>Đặc điểm</i>Lineterminator</p>
+<p><i>Đặc điểm</i>::</p>
+<dl>
+<dd> <i>(Kết thúc dòng) Các trận đấu</i> </dd>
+<dd> <code>c</code> <i>được bật)</i> </dd>
+<dd> <i>Trong hai khẳng định ở trên và trong nguyên tử</i> </dd>
+<dd> <i>(phân tách đoạn văn)</i> </dd>
+<dd> <i>(Chỉ C ++)</i> </dd>
+</dl> <p>Đây,<i>(Kết thúc dòng) Các trận đấu</i>Sự khẳng định<code>f n r t v</code></p>
+<table class="wikitable"> <tr> <th>(Kết thúc dòng) Các trận đấu</th> <th>Vị trí của một</th> <th>Tên</th>
+</tr> <tr> <td>
+<code>f</code> </td> <td>U+000C</td> <td>Lineterminator</td>
+</tr> <tr> <td>
+<code>n</code> </td> <td>U+000a</td> <td>(Điều này có thể không được hỗ trợ)</td>
+</tr> <tr> <td>
+<code>r</code> </td> <td>U+000d</td> <td>vận chuyển trở lại</td>
+</tr> <tr> <td>
+<code>t</code> </td> <td>U+0009</td> <td>Tab ngang</td>
+</tr> <tr> <td>
+<code>v</code> </td> <td>U+000b</td> <td>Tab dọc</td>
+</tr>
+</table> <p><i>được bật)</i>(Chỉ C ++)<i>được bật)</i>Chuyển tiếp<code>32</code>. Ví dụ,<code>\cD</code>Và<code>\cd</code>Phần cuối của đầu vào (trừ khi<code>U+0004</code>(Chỉ C ++)<code>U+0044</code>Và<code>0x44 % 32 == 4</code>được bật)<code>U+0064</code>Và<code>0x64 % 32 == 4</code>.</p>
+<p><i>Trong hai khẳng định ở trên và trong nguyên tử</i>Sự khẳng định<code>x</code>Lineterminator<i>Sự khởi đầu của một từ (ký tự hiện tại là chữ cái, chữ số hoặc dấu gạch dưới và ký tự trước đó là không)</i>hoặc nguồn cấp dữ liệu),<i>Sự khởi đầu của một từ (ký tự hiện tại là chữ cái, chữ số hoặc dấu gạch dưới và ký tự trước đó là không)</i>bool Atomic_compare_exchange_weak_explict<code>0 1 2 3 4 5 6 7 8 9 a b c d e f A B C D E F</code>(phân tách dòng), hoặc</p>
+<p><i>(phân tách đoạn văn)</i>Sự khẳng định<code>u</code>(Boundary Word) khớp<i>Sự khởi đầu của một từ (ký tự hiện tại là chữ cái, chữ số hoặc dấu gạch dưới và ký tự trước đó là không)</i>Phần cuối của một từ (ký tự hiện tại không phải là chữ cái, chữ số hoặc dấu gạch dưới, và ký tự trước đó là một trong số đó)<code><a href="basic_regex" title="cpp/regex/basic regex">std::basic_regex</a></code>                                   OUTPUTITIT D_FIRST, PRECEPREDATICATE P);<code>CharT</code>Thì<code><a href="regex_error" title="cpp/regex/regex error">std::regex_error</a></code>Struct foo: std công khai :: enable_shared_from_this &lt;foo&gt;<span class="t-mark">Mẫu</span>.</p>
+<p><i>(Chỉ C ++)</i>được bật)</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Phần cuối của đầu vào nếu ký tự cuối cùng là chữ cái, chữ số hoặc dấu gạch dưới (trừ khi</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">(Chỉ C ++)</pre></div> </div> <h3 id="Character_classes">được bật)</h3> <p>Sự khẳng định</p>
+<p>(ranh giới từ âm) khớp với mọi thứ ngoại trừ những điều sau</p>
+<p><i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>::<code>\</code></p>
+<i>Các loại nguyên tử khác nhau đánh giá khác nhau.</i> <p>Sự khẳng định</p>
+<p><i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>::</p>
+<i>cho các bản sao lại (</i> <p>Phân ly</p>
+<table class="wikitable"> <tr> <th>Các loại nguyên tử khác nhau đánh giá khác nhau.</th> <th>Sự khẳng định<span class="t-mark">Mẫu</span>
+</th> <th>    skip_symlinks = / * không xác định * /,</th>
+</tr> <tr> <td> <code>d</code> </td> <td> <code>[[:digit:]]</code> </td> <td>chữ số</td>
+</tr> <tr> <td> <code>D</code> </td> <td> <code>[^[:digit:]]</code> </td> <td>(lookahead âm tính không có chiều rộng) phù hợp nếu</td>
+</tr> <tr> <td> <code>s</code> </td> <td> <code>[[:space:]]</code> </td> <td>Phân ly</td>
+</tr> <tr> <td> <code>S</code> </td> <td> <code>[^[:space:]]</code> </td> <td>sẽ không khớp với đầu vào tại vị trí hiện tại.</td>
+</tr> <tr> <td> <code>w</code> </td> <td> <code>[_[:alnum:]]</code> </td> <td>Cho cả hai khẳng định xem xét, khi khớp với<code>_</code> </td>
+</tr> <tr> <td> <code>W</code> </td> <td> <code>[^_[:alnum:]]</code> </td> <td>Phân ly<code>_</code> </td>
+</tr>
+</table>, vị trí không được nâng cao trước khi khớp với phần còn lại của biểu thức chính quy. Ngoài ra, nếu<p>MỘT<i>cho các bản sao lại (</i>Có thể khớp tại vị trí hiện tại theo nhiều cách, chỉ có vị trí đầu tiên được thử.<i>  Smatch: M [0] = [ABA] M [1] = [A] </i>LƯU Ý: Các xác nhận LOOKAHEAD có thể được sử dụng để tạo logic và giữa nhiều biểu thức chính quy (xem ví dụ bên dưới).<code>^</code>#include &lt;CstDdef&gt;<code>^</code>, cái này<i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>#include &lt;regex&gt;<i>  Smatch: M [0] = [ABA] M [1] = [A] </i> <i>void show_matches (const std :: String &amp; in, const std :: String &amp; re)</i>{<i>  Smatch: M [0] = [ABA] M [1] = [A] </i>.</p>
+<p><i>cho các bản sao lại (</i>::</p>
+<dl>
+<dd> <code>[</code> <code>[</code> <i>    if (! m.empty ())</i><code>^</code><i>    {</i> <i>  Smatch: M [0] = [ABA] M [1] = [A] </i> <code>]</code> </dd>
+<dd> <code>[</code> <code>^</code> <i>  Smatch: M [0] = [ABA] M [1] = [A] </i> <code>]</code> </dd>
+</dl> <p>        for (std :: size_t n = 0; n &lt;m.size (); ++ n)</p>
+<dl>
+<dd>            std :: cout &lt;&lt; "m [" &lt;&lt; n &lt;&lt; "] = [" &lt;&lt; m [n] &lt;&lt; "]";</dd>
+<dd> <i>    }</i> </dd>
+</dl> <p><i>    }</i>::</p>
+<dl>
+<dd> <i>  hậu tố = [c]</i> </dd>
+<dd> <i>  hậu tố = [c]</i> <i>  hậu tố = [aaabac]</i> </dd>
+<dd> <i>  hậu tố = [c]</i>-<i>  hậu tố = [c]</i> <i>  Smatch: M [0] = [ABA] M [1] = [A] </i> </dd>
+</dl> <p>    // khớp với A ở cuối đầu vào<code><i>  hậu tố = [c]</i> - <i>  hậu tố = [c]</i></code>    // khớp với O ở cuối từ đầu tiên<span class="t-mark">Mẫu</span></p>
+<p> <i>  hậu tố = [c]</i> <code>c1</code>Điều đó được gọi bởi tiếp theo<i>  hậu tố = [c]</i> <code>c2</code>    // Vì việc quay lại vào LookAhead bị cấm, <code>c</code>    // Điều này phù hợp với ABA chứ không phải aaaba</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Nếu như<code><a href="syntax_option_type" title="cpp/regex/syntax option type">std::regex_constants::collate</a></code>    show_matches ("baaabac", "(? = (a+)) a*b \\ 1");<code>c</code>}<code>c1 &lt;= c &amp;&amp; c &lt;= c2</code>
+</div> <div class="t-li1">
+<span class="t-li">1)</span>Nếu không (nếu<code><a href="syntax_option_type" title="cpp/regex/syntax option type">std::regex_constants::collate</a></code>    // logic và thông qua lookahead: mật khẩu này phù hợp nếu nó chứa</div> <div class="t-li2">
+<span class="t-li">1)</span>Nếu như<code><a href="syntax_option_type" title="cpp/regex/syntax option type">std::regex_constants::icase</a></code>    // Ít nhất một chữ cái viết thường<code>c</code>Thì<code>c1</code>, Và<code>c2</code>    // và dài ít nhất 6 ký tự<code><a href="regex_traits/translate_nocase" title="cpp/regex/regex traits/translate nocase">std::regex_traits::translate_nocase</a></code>
+</div> <div class="t-li2">
+<span class="t-li">2)</span>Nếu không (nếu<code><a href="syntax_option_type" title="cpp/regex/syntax option type">std::regex_constants::icase</a></code>    // và ít nhất một ký tự dấu câu<code>c</code>Thì<code>c1</code>, Và<code>c2</code>    // và dài ít nhất 6 ký tự<code><a href="regex_traits/translate" title="cpp/regex/regex traits/translate">std::regex_traits::translate</a></code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>    show_matches ("abcdef", "(? =.*[[: thấp hơn:]]) (? =.*[<code><a href="regex_traits/transform" title="cpp/regex/regex traits/transform">std::regex_traits::transform</a></code>    show_matches ("ab, def", "(? =.*[[: thấp hơn:]]) (? =.*[<code>c</code>}<code>transformed c1 &lt;= transformed c &amp;&amp; transformed c &lt;= transformed c2</code>
+</div> <p>input = [aaa], regex = [a $]<code>-</code>  tiền tố = [aa]</p>
+<ul>
+<li>  Smatch: M [0] = [A] <i>  Smatch: M [0] = [ABA] M [1] = [A] </i> </li>
+<li>Input = [Moo Goo Gai Pan], Regex = [O \ B]</li>
+<li>  tiền tố = [mo]</li>
+<li>  Smatch: M [0] = [O] <i>Đặc điểm</i> </li>
+</ul> <p>input = [baaabac], regex = [(? = (a+))]]</p>
+<dl>
+<dd> <i>  hậu tố = [c]</i> </dd>
+<dd> <i>Lớp học</i> <i>  hậu tố = [aaabac]</i> </dd>
+<dd> <i>Lớp học</i>-<i>  hậu tố = [c]</i> <i>  Smatch: M [0] = [ABA] M [1] = [A] </i> </dd>
+</dl> <p><i>  hậu tố = [c]</i>::</p>
+<dl>
+<dd> <code>-</code> </dd>
+<dd> <i>Lớp học</i> </dd>
+<dd> <i>Phân ly</i><span class="t-mark">Mẫu</span> </dd>
+<dd> <i>được theo sau bởi một số thập phân</i><span class="t-mark">Mẫu</span> </dd>
+<dd> <i>Khi một bản sao lại</i><span class="t-mark">Mẫu</span> </dd>
+</dl> <p>có thể là một trong những điều sau đây:</p>
+<dl>
+<dd> <i>là bất kỳ</i>Sourcecharacter<code>\ or ] or -</code> </dd>
+<dd> <code>\</code> <i>Nguyên tử</i> </dd>
+</dl> <p>Mỗi<i>Lớp học</i>Phân ly<i>là bất kỳ</i>Nguyên tử</p>
+<p>Decimalescape</p>
+<dl>
+<dd> <i>Trong mảng con trong chỉ mục tương ứng với số lần dấu ngoặc đơn bên trái</i> </dd>
+<dd> <code>b</code> </dd>
+<dd> <i>Đặc điểm</i> </dd>
+<dd> <i>Các loại nguyên tử khác nhau đánh giá khác nhau.</i> </dd>
+</dl> <p>Biểu hiện phụ<i>Nguyên tử</i> <code>\b</code>Phân ly<i>cho các bản sao lại (</i>Phân ly<i>và lưu trữ bản sao của bộ nền đầu vào đã được tiêu thụ bởi</i>.</p>
+<p>có một cú ném<code>\B</code>Phân ly<i>Trong mảng con trong chỉ mục tương ứng với số lần dấu ngoặc đơn bên trái</i>của các biểu hiện phụ được đánh dấu đã gặp phải trong toàn bộ biểu thức chính quy tại thời điểm này.<i>cho các bản sao lại (</i>, các tiểu trình đã bị bắt có thể truy cập được dưới dạng backreferences (</p>
+<p>Các ký tự<code>-</code>Và<code>]</code>, ...) và có thể được tham chiếu trong các biểu thức thông thường. Lưu ý rằng<i>cho các bản sao lại (</i>, chẳng hạn như<code>*</code>hoặc<code>?</code>, ...) theo cách tương tự như</p>
+<h3 id="POSIX-based_character_classes">(ECMA-262, Phần 15.5.4.11).</h3> <p>Nguyên tử</p>
+<p>Phân ly<span class="t-mark">Mẫu</span>::<code>[:</code></p>
+<i>Nguyên tử</i> <code>:]</code> <p>và không lưu trữ kết quả của nó trong bài con. Đây là một nhóm từ vựng thuần túy.<i>Nguyên tử</i>không phải là một bản sao lại: đó là một lối thoát nhân vật đại diện cho<code><a href="regex_traits/lookup_classname" title="cpp/regex/regex traits/lookup classname">std::regex_traits::lookup_classname</a></code>Decimalintegerliteral<code><a href="regex_traits/lookup_classname" title="cpp/regex/regex traits/lookup classname">std::regex_traits::lookup_classname</a></code>lookaHead<code>alnum, alpha, blank, cntrl, digit, graph, lower, print, punct, space, upper, xdigit, d, s, w</code>∉<code>jdigit</code>hoặc<code>jkanji</code>Decimaldigit</p>
+<p>được theo sau bởi một số thập phân<span class="t-mark">Mẫu</span>::<code>[.</code></p>
+<i>Nguyên tử</i> <code>.]</code> <p>Hậu thế<code>[.tilde.]</code>hoặc<code>[.ch.]</code>. Giá trị<code><a href="regex_traits/lookup_collatename" title="cpp/regex/regex traits/lookup collatename">std::regex_traits::lookup_collatename</a></code>cho các bản sao lại (</p>
+<p>(Chỉ C ++)<code><a href="syntax_option_type" title="cpp/regex/syntax option type">std::regex_constants::collate</a></code>Trên mỗi chữ số và kết hợp kết quả của chúng bằng số học cơ sở-10. Đó là một lỗi nếu<code>[[.dz.]-g]</code>lớn hơn tổng số lượng dấu ngoặc đơn còn lại trong toàn bộ biểu thức chính quy.</p>
+<p>Khi một bản sao lại<span class="t-mark">Mẫu</span>::<code>[=</code></p>
+<i>Nguyên tử</i> <code>=]</code> <p>, nó phù hợp với cùng một chuỗi con với những gì hiện đang được lưu trữ trong phần tử n'th của mảng con.<i>Nguyên tử</i>không phải là một bản sao lại: đó là một lối thoát nhân vật đại diện cho<code><a href="regex_traits/lookup_collatename" title="cpp/regex/regex traits/lookup collatename">std::regex_traits::lookup_collatename</a></code>tính cách. Nó không thể được theo sau bởi một chữ số thập phân.<code><a href="regex_traits/transform_primary" title="cpp/regex/regex traits/transform primary">std::regex_traits::transform_primary</a></code>Như trên, lưu ý rằng<code><a href="regex_traits/lookup_collatename" title="cpp/regex/regex traits/lookup collatename">std::regex_traits::lookup_collatename</a></code>cho các bản sao lại (</p>
+<p>, ...).<code>[[=a=]]</code>Phù hợp với ký tự<code>a, À, Á, Â, Ã, Ä, Å, A, à, á, â, ã, ä and å. </code></p>
+<p>Nguyên tử<span class="t-mark">Mẫu</span>::</p>
+<dl>
+<dd>Mẫu</dd>
+<dd>Nguyên tử</dd>
+</dl> <p>Mẫu<span class="t-mark">Mẫu</span>::</p>
+<i>là bất kỳ</i>Sourcecharacter<code>. = :</code> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/ecmascript">https://en.cppreference.com/w/cpp/regex/ecmascript</a>
+</p>
+</div>

@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ios &lt;biểu đồ, đặc điểm&gt; :: set_rdbuf</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>void init (std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* sb);<code>sb</code>void set_rdbuf (std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* sb);</p>
+<p>mà không xóa trạng thái lỗi.<code><a href="../basic_ofstream" title="cpp/io/basic ofstream">std::basic_ofstream</a></code>hoặc<code><a href="../basic_istringstream" title="cpp/io/basic istringstream">std::basic_istringstream</a></code>Hàm thành viên này được bảo vệ: nó được gọi bởi các hàm tạo di chuyển của các luồng dẫn xuất như<code><a href="../basic_ios" title="cpp/io/basic ios">std::basic_ios</a></code>, là bước cuối cùng sau khi xây dựng lớp cơ sở và sau khi di chuyển bộ đệm luồng: chỉ lớp luồng dẫn xuất nhất mới biết cách di chuyển chính xác bộ đệm luồng, nhưng</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ở cấp độ thấp, lớp học về cơ bản kết thúc việc triển khai thiết bị thô của</td> <td>-</td> <td>Chất xây dựng bản sao là</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="rdbuf" title="cpp/io/basic ios/rdbuf"> <span class="t-lines"><span>ngoại lệ</span></span></a></div> </td> <td>quản lý mặt nạ ngoại lệ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ios/set_rdbuf">https://en.cppreference.com/w/cpp/io/basic_ios/set_rdbuf</a>
+</p>
+</div>

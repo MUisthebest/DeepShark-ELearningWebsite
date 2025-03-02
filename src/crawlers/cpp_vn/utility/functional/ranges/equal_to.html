@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Phạm vi :: Equal_to</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../../header/functional" title="cpp/header/functional">&lt;functional&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">struct Equal_to;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Đối tượng chức năng để thực hiện so sánh. Các loại tham số của toán tử gọi hàm (nhưng không phải là loại trả về) được suy ra từ các đối số.</p>
+<h3 id="Nested_types">Các loại lồng nhau</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Loại lồng nhau</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>is_transparent</code> </td> <td> <a href="../../functional#Transparent_function_objects" title="cpp/utility/functional">unspecified</a> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>chuyển đổi đối tượng thành</span></span></div> </td> <td>Đối tượng chức năng để thực hiện so sánh. Trừ khi chuyên ngành, gọi<i>(Niebloid)</i> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <h2 id="std::ranges::equal_to::operator.28.29">STD :: phạm vi :: Equ_to :: Toán tử ()</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Mẫu &lt;class t, class u&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Toán tử tự động constexpr () (t &amp;&amp; t, u &amp;&amp; u) const;<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="br0">.</span>t<span class="br0">)</span> <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>U<span class="sy1">&lt;</span><span class="br0">.</span>u<span class="br0">)</span></code>(1,3)<code>expr</code>:</p>
+<ul>
+<li>Nếu như<code>expr</code>Cho biểu thức<a href="../../../language/operator_comparison#Built-in_pointer_equality_comparison" title="cpp/language/operator comparison">built-in</a>nhà điều hành<span class="sy1">==</span>kết quả trong một cuộc gọi đến<a href="../../../language/pointer#Composite_pointer_type" title="cpp/language/pointer">composite pointer type</a>của<code>t</code>Và<code>u</code>(1,3)<code>P</code>:</li>
+<ul>
+<li>Toán tử bool constexpr () (t &amp;&amp; t, u &amp;&amp; u) const;<code>P</code>Cho hai con trỏ được chuyển đổi (loại<a href="../../../language/operator_comparison#Pointer_total_order" title="cpp/language/operator comparison">implementation-defined strict total order over pointers</a>; Nếu không nếu<code>false</code>ở trong trạng thái không hợp lệ, tức là<code>true</code>.</li>
+<li>) trong<code>T</code>ĐẾN<code>P</code>Nếu chuỗi chuyển đổi từ<code>U</code>ĐẾN<code>P</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="../../../concepts#Equality_preservation" title="cpp/concepts">equality-preserving</a>Hoạt động tương đương cho quá tải</li>
+</ul>
+<li>hoặc trình tự chuyển đổi từ</li>
+<ul>
+<li>std :: cặp &lt;t, t&gt; minmax (std :: initizer_list &lt;t&gt; ilist, so sánh comp);<code>expr</code>.</li>
+<li>Nếu như<code><a href="http://en.cppreference.com/w/cpp/concepts/equality_comparable"><span class="kw2951">Điều đó cho tất cả<span class="me2">Chỉ định rằng hai loại chia sẻ một loại chung</span></span></a><span class="sy1">is_trivently_destructible_v</span>T, U<span class="sy1">&lt;</span></code>Nếu không thì:</li>
+</ul>
+</ul> <p>                const std :: chrono :: sys_time &lt;thời gian&gt; &amp; tp);<code><a href="http://en.cppreference.com/w/cpp/concepts/equality_comparable"><span class="kw2951">Điều đó cho tất cả<span class="me2">Chỉ định rằng hai loại chia sẻ một loại chung</span></span></a><span class="sy1">is_trivently_destructible_v</span>T, U<span class="sy1">&lt;</span></code>    Tên T :: Nội; // Tên thành viên được yêu cầu</p>
+<h3 id="Notes">Ghi chú</h3> <p>), nếu một con trỏ đi trước người kia trong<code><a href="../equal_to" title="cpp/utility/functional/equal to">std::equal_to</a></code>Thì<code>std::ranges::equal_to</code>So với<code>!=</code>Ngoài ra yêu cầu<a href="../../../concepts/equality_comparable" title="cpp/concepts/equality comparable"><code>equality_comparable_with</code></a>có hiệu lực và cả hai loại đối số được yêu cầu (đồng nhất) có thể so sánh với chính họ (thông qua</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3530" rel="nofollow">LWG 3530</a> </td> <td>C ++ 20</td> <td>#include &lt;Istream&gt;</td> <td> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../equal_to" title="cpp/utility/functional/equal to"> <span class="t-lines"><span>2,4,6,8)</span></span></a></div> </td> <td>thực hiện đối tượng chức năng<code>x == y</code> <br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/functional/ranges/equal_to">https://en.cppreference.com/w/cpp/utility/functional/ranges/equal_to</a>
+</p>
+</div>

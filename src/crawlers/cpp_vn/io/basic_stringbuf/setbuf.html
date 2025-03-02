@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_stringbuf &lt;biểu đồ, đặc điểm, phân bổ&gt; :: setbuf</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nếu như<code>s</code>STD ảo :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* setbuf (char_type* s, std :: streamsize n)<code>n</code>là 0, chức năng này không có tác dụng.</p>
+<p>Mặt khác, hiệu ứng được xác định theo triển khai: một số triển khai không làm gì cả, trong khi một số triển khai xóa<code><a href="../../string/basic_string" title="cpp/string/basic string">std::string</a></code>Thành viên hiện đang được sử dụng làm bộ đệm và bắt đầu sử dụng mảng ký tự do người dùng cung cấp có kích thước<code>n</code>, yếu tố đầu tiên được chỉ ra bởi<code>s</code>, dưới dạng bộ đệm và trình tự ký tự đầu vào/đầu ra.</p>
+<p>Byte trong mảng đó để đệm.<code>pubsetbuf()</code>Hàm này được bảo vệ ảo, nó chỉ có thể được gọi qua<code>std::basic_stringbuf</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>Con trỏ đến biểu đồ đầu tiên trong bộ đệm do người dùng cung cấp hoặc NULL</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>Số lượng các thành phần biểu đồ trong bộ đệm do người dùng cung cấp hoặc không</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>this</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>các yếu tố trong bộ đệm do người dùng cung cấp<code><a href="http://en.cppreference.com/w/cpp/io/strstreambuf"><span class="kw1756">Điều đó cho tất cả<span class="me2">Strstreambuf</span></span></a></code>Bộ đệm luồng không dùng<a class="external text" href="https://www.boost.org/doc/libs/release/libs/iostreams/doc/classes/array.html#array" rel="nofollow"><code>boost::basic_array</code></a>Có thể được sử dụng để thực hiện bộ đệm I/O trên mảng Char do người dùng cung cấp theo cách di động.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Kiểm tra chức năng SetBuf của StringStream.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Sstream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_streambuf/pubsetbuf" title="cpp/io/basic streambuf/pubsetbuf"> <span class="t-lines"><span>Gọi</span></span></a></div> </td> <td>Sputc<code>setbuf()</code> <br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_streambuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_stringbuf/setbuf">https://en.cppreference.com/w/cpp/io/basic_stringbuf/setbuf</a>
+</p>
+</div>

@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">Hướng dẫn khấu trừ cho<code>std::ranges::subrange</code>
+</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/ranges" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;std :: input_or_output_iterator I, std :: sentinel_for &lt;i&gt; s&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">subrange (i, s) -&gt; subrange &lt;i, s&gt;;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;std :: input_or_output_iterator I, std :: sentinel_for &lt;i&gt; s&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Subrange (i, s, /*Make-unsited-like-t* /&lt;std :: iter_difference_t &lt;i &gt;&gt;)-&gt;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Những cái này<a href="../../language/class_template_argument_deduction" title="cpp/language/class template argument deduction">deduction guides</a>Đối với tất cả các loại con trỏ. Những chuyên môn này có bố cục tiêu chuẩn<code><a href="../subrange" title="cpp/ranges/subrange">std::ranges::subrange</a></code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>    Subrange &lt;i, s, phạm vi :: subrange_kind :: có kích thước&gt;;<code>subrange</code>Mẫu &lt;phạm vi :: mượn_range &lt;r&gt;&gt;<code><a href="http://en.cppreference.com/w/cpp/iterator/sized_sentinel_for"><span class="kw2863">Điều đó cho tất cả<span class="me2">Kích thước_sentinel_for</span></span></a><span class="sy1">is_trivently_destructible_v</span>S, I<span class="sy1">&lt;</span></code>Subrange (R &amp;&amp;) -&gt;</div> <div class="t-li1">
+<span class="t-li">2)</span>    Subrange &lt;Ranges :: iterator_t &lt;r&gt;, phạm vi :: sentinel_t &lt;r&gt;,<code>subrange</code>Mẫu &lt;phạm vi :: mượn_range &lt;r&gt;&gt;</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>              std :: cỡ_sentinel_for &lt;ranges :: sentinel_t &lt;r&gt;,<code>subrange</code>              Phạm vi :: iterator_t &lt;r &gt;&gt;)?</div> <div class="t-li1">
+<span class="t-li">là trong</span>             Phạm vi :: subrange_kind :: có kích thước: phạm vi :: subrange_kind :: unsized&gt;;<code>subrange</code>Mẫu &lt;phạm vi :: mượn_range &lt;r&gt;&gt;</div> <p>Subrange (R &amp;&amp;, /*Make-Unsited-Like-T* /&lt;Ranges :: Range_Difference_T &lt;R &gt;&gt;)-&gt;<code><i>    Subrange &lt;Ranges :: iterator_t &lt;r&gt;, phạm vi :: sentinel_t &lt;r&gt;,</i></code>             Phạm vi :: subrange_kind :: có kích thước&gt;;<a href="../../iterator/weakly_incrementable#Integer-like_types" title="cpp/iterator/weakly incrementable">integer-like type</a>Suy ra các đối số mẫu từ loại Iterator và Sentinel. Các</p>
+<h3 id="Notes">Ghi chú</h3> <p>có kích thước nếu<code>subrange</code>sự vật,</p>
+<ul>
+<li>vì<span class="t-v">Outputit adjacent_difference (đầu vào đầu tiên, đầu vào cuối cùng, </span>được thỏa mãn, như được xác định bởi đối số mẫu mặc định.</li>
+<li>vì<span class="t-v">1</span>Suy ra các đối số mẫu từ loại Iterator và Sentinel, trong khi kích thước của phạm vi được chỉ định. Các</li>
+</ul> <h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3404" rel="nofollow">LWG 3404</a> </td> <td>C ++ 20</td> <td>luôn luôn có kích thước.</td> <td>#include &lt;Istream&gt;</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/subrange/deduction_guides">https://en.cppreference.com/w/cpp/ranges/subrange/deduction_guides</a>
+</p>
+</div>

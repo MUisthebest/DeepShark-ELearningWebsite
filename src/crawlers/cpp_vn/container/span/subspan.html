@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">std :: span &lt;t, cden&gt; :: subpan</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;std :: size_t offset,</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">          STD :: size_t Count = std :: Dynamic_extent&gt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Constexpr std :: span &lt;Element_type, E / * Xem bên dưới * /&gt;<code>Count</code>    subpan () const;<code>Offset</code>. Nếu như<code>Count</code>khoảng cách<code>std::dynamic_extent</code>Consexpr std :: span &lt;ement_type, std :: Dynamic_extent&gt;<code>size() - offset</code>    Subpan (Size_Type Offset,<code>*this</code>).</p>
+<span class="t-li">1)</span>             size_type Count = std :: Dynamic_extent) const;<ul>
+<li> <code>Offset</code>Để so sánh các giá trị.<code>Extent</code>, hoặc</li>
+<li> <code>Count</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<code>std::dynamic_extent</code>Và<code>Count</code>Để so sánh các giá trị.<code>Extent - Offset</code>.</li>
+</ul> <p>Mẫu &lt;class execPolicy, class forwardit1, class forwardit2&gt;<code>Offset</code>hoặc<code>Count</code>Có được một khoảng thời gian là một cái nhìn trên</p>
+<ul>
+<li> <code>Offset</code>Để so sánh các giá trị.<code>size()</code>, hoặc</li>
+<li> <code>Count</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<code>std::dynamic_extent</code>Và<code>Count</code>Để so sánh các giá trị.<code>size() - Offset</code>.</li>
+</ul> <p>Các yếu tố của khoảng thời gian này bắt đầu từ phần bù<code>E</code>, số lượng các phần tử trong subpan là<span class="t-v">(1)</span>(tức là, nó kết thúc ở cuối</p>
+<ul>
+<li>Nếu như<code>Count</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<code>std::dynamic_extent</code>Thì<code>Count</code>Số lượng các yếu tố để sao chép</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>Extent</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<code>std::dynamic_extent</code>Thì<code>Extent - Offset</code>Số lượng các yếu tố để sao chép</li>
+<li>Là xấu nếu<code>std::dynamic_extent</code>.</li>
+</ul> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>nằm ngoài phạm vi. Điều này xảy ra nếu<code>r</code>Đó là một quan điểm so với đầu tiên<code>r.data() == this-&gt;data() + Offset</code>. Nếu như<code>Count</code>khoảng cách<code>std::dynamic_extent</code>Thì<code>r.size() == this-&gt;size() - Offset</code>Nếu phạm vi được sắp xếp<code>r.size() == Count</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Mức độ</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">của khoảng thời gian được trả lại bởi</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="first" title="cpp/container/span/first"> <span class="t-lines"><span>đến phạm vi bắt đầu tại</span></span></a></div> </td> <td>size_bytes<code>N</code>có được một subpan bao gồm cái đầu tiên<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="last" title="cpp/container/span/last"> <span class="t-lines"><span>cuối cùng</span></span></a></div> </td> <td>Kiểm tra xem chuỗi có trống không<code>N</code>có được một subpan bao gồm cái đầu tiên<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/span/subspan">https://en.cppreference.com/w/cpp/container/span/subspan</a>
+</p>
+</div>

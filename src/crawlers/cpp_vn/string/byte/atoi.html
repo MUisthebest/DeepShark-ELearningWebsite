@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">std :: atoi, std :: atol, std :: san hô</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdlib" title="cpp/header/cstdlib">&lt;cstdlib&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">int atoi (const char* str);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Atol dài (const char* str);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">đảo san hô dài (const char* str);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Diễn giải một giá trị số nguyên trong chuỗi byte được trỏ bởi<code>str</code>. Radix ngụ ý luôn luôn là 10.</p>
+<p>Loại bỏ bất kỳ ký tự khoảng trắng nào cho đến khi tìm thấy ký tự không phải màu đầu tiên được tìm thấy, sau đó lấy càng nhiều ký tự càng tốt để tạo thành biểu diễn số nguyên hợp lệ và chuyển đổi chúng thành giá trị số nguyên. Giá trị số nguyên hợp lệ bao gồm các phần sau:</p>
+<ul>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>cộng với dấu hiệu hoặc trừ</li>
+<li>số số</li>
+</ul> <p>Nếu giá trị của kết quả không thể được biểu diễn, tức là giá trị được chuyển đổi rơi ra khỏi phạm vi của loại trả về tương ứng, hành vi không được xác định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc null để được giải thích</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Giá trị số nguyên tương ứng với nội dung của<code>str</code>về thành công.</p>
+<p>Nếu không có chuyển đổi nào có thể được thực hiện,<code>​0​</code>bất kể</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Typename T&gt;</pre></div> </td>
+</tr>
+</table> <p>T atoi_impl (const char* str)<code>atoi</code>Thì<code>atoil</code>, Và<code>atoll</code>{<a class="external text" href="https://github.com/bminor/musl/blob/master/src/stdlib/atoi.c" rel="nofollow">MUSL libc</a>    while (std :: isspace (static_cast &lt;unsign char&gt; (*str))))<code><a href="strtol" title="cpp/string/byte/strtol">strtol</a></code>/<code><a href="strtol" title="cpp/string/byte/strtol">strtoll</a></code>        ++ str;<a class="external text" href="https://github.com/bminor/glibc/blob/master/stdlib/atoi.c" rel="nofollow">GNU libc</a>).</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">    bool âm = sai;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_string/stol" title="cpp/string/basic string/stol"> <span class="t-lines"><span>Stoi</span><span>đánh cắp</span><span>Stoll</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi một chuỗi thành một số nguyên đã ký<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_string/stoul" title="cpp/string/basic string/stoul"> <span class="t-lines"><span>Stoul</span><span>stoull</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi một chuỗi thành một số nguyên không dấu<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strtol" title="cpp/string/byte/strtol"> <span class="t-lines"><span>strtol</span><span>Strtoll</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi chuỗi byte thành giá trị số nguyên<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strtoul" title="cpp/string/byte/strtoul"> <span class="t-lines"><span>Strtoul</span><span>strtoull</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi chuỗi byte thành giá trị số nguyên không dấu<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strtoimax" title="cpp/string/byte/strtoimax"> <span class="t-lines"><span>stroimax</span><span>Strtoumax</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi chuỗi byte thành<code><a href="../../types/integer" title="cpp/types/integer">std::intmax_t</a></code>hoặc<code><a href="../../types/integer" title="cpp/types/integer">std::uintmax_t</a></code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../utility/from_chars" title="cpp/utility/from chars"> <span class="t-lines"><span>From_chars</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Chuyển đổi một chuỗi ký tự thành giá trị số nguyên hoặc dấu phẩy động<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/atoi" title="c/string/byte/atoi">C documentation</a></span>vì<code>atoi, atol, atoll</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/atoi">https://en.cppreference.com/w/cpp/string/byte/atoi</a>
+</p>
+</div>

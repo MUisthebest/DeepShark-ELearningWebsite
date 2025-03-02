@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: nothrow</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/new" title="cpp/header/new">&lt;new&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">struct nothrow_t {};</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">struct nothrow_t {rõ ràng nothrow_t () = mặc định; };</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">extern const std :: nothrow_t nothrow;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p><code>std::nothrow_t</code>là một loại lớp trống được sử dụng để phân loại quá tải của việc ném và không ném<a href="operator_new" title="cpp/memory/new/operator new">allocation functions</a>.<code>std::nothrow</code>là một hằng số của nó.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;New&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2510" rel="nofollow">LWG 2510</a> </td> <td>C ++ 11</td> <td>hàm tạo mặc định không tiết lộ, có thể dẫn đến sự mơ hồ</td> <td>đã làm rõ</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_new" title="cpp/memory/new/operator new"> <span class="t-lines"><span>nhà điều hành mới</span><span>nhà điều hành mới []</span></span></a></div> </td> <td>chức năng phân bổ<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/new/nothrow_t">https://en.cppreference.com/w/cpp/memory/new/nothrow_t</a>
+</p>
+</div>

@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Ostream_iterator &lt;T, Biểu đồ, Đặc điểm&gt; :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Ostream_Iterator &amp; Toán tử = (const T &amp; value);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Chèn<code>value</code>Vào luồng liên kết, sau đó chèn dấu phân cách, nếu một người được chỉ định tại thời điểm xây dựng.</p>
+<p>Nếu như<code>out_stream</code>là một con trỏ tới các liên kết<code><a href="../../io/basic_ostream" title="cpp/io/basic ostream">std::basic_ostream</a></code>Và<code>delim</code>là dấu phân cách được chỉ định khi xây dựng đối tượng này, thì hiệu ứng này tương đương với</p>
+<p><code>*out_stream &lt;&lt; value; if (delim != 0) *out_stream &lt;&lt; delim; return *this;</code></p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>được phân vùng liên quan đến</td> <td>-</td> <td>đối tượng để chèn</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Notes">Ghi chú</h3> <p><code>T</code>có thể là bất kỳ lớp nào có người dùng do người dùng xác định<code>operator&lt;&lt;</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;iterator&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/ostream_iterator/operator%3D">https://en.cppreference.com/w/cpp/iterator/ostream_iterator/operator%3D</a>
+</p>
+</div>

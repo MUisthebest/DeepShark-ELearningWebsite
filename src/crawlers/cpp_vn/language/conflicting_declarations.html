@@ -1,0 +1,49 @@
+ <h1 class="firstHeading" id="firstHeading">Tuyên bố mâu thuẫn</h1> <p>Trừ khi có quy định khác, hai khai báo không thể (Re) giới thiệu cùng một thực thể. Chương trình sẽ không được hình thành nếu các tuyên bố như vậy tồn tại.</p>
+<h3 id="Corresponding_declarations">Tuyên bố tương ứng</h3> <p>    void g () const;   // ĐƯỢC RỒI<i>tương ứng</i>Nếu họ (Re) giới thiệu cùng một tên, cả hai đều khai báo các hàm tạo hoặc cả hai tuyên bố phá hủy, trừ khi</p>
+<ul>
+<li>Hoặc là a<a href="using_declaration" title="cpp/language/using declaration"><span class="kw1">    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</span> declaration</a>Thì</li>
+<li>một người tuyên bố một loại (không phải<a href="typedef" title="cpp/language/typedef">typedef name</a>) và cái khác tuyên bố một thành viên dữ liệu không tĩnh, không<a href="union#Anonymous_unions" title="cpp/language/union">anonymous union</a>, Tái thiết, chức năng hoặc mẫu chức năng hoặc</li>
+<li>Mỗi tuyên bố một mẫu chức năng hoặc hàm và chúng không khai báo quá tải tương ứng (xem bên dưới).</li>
+</ul> <p><br/>Hai<a href="function" title="cpp/language/function">function declarations</a>tuyên bố<i>quá tải tương ứng</i>Nếu cả hai tuyên bố chức năng thỏa mãn tất cả các điều kiện sau:</p>
+<ul><li>void f (e) {} // ok, một quá tải khác<a href="function#Parameter-type-list" title="cpp/language/function">parameter-type-list</a><span class="t-rev-inl t-since-cxx23"><span>, bỏ qua các loại<a href="member_functions#Explicit_object_parameter" title="cpp/language/member functions">explicit object parameters</a></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>.</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Họ có<a href="function_template#Function_template_overloading" title="cpp/language/function template">equivalent</a>Trailing<a href="constraints#Requires_clauses" title="cpp/language/constraints">requires clauses</a>(Nếu có, ngoại trừ<a href="friend" title="cpp/language/friend">friend declarations</a>).</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul><li>Nếu cả hai đều là chức năng thành viên không tĩnh, họ cần đáp ứng thêm một trong các yêu cầu sau:</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul><li>Chính xác một trong số họ là một<a href="member_functions" title="cpp/language/member functions">implicit object member function</a>Nếu không có trình điều chỉnh ref và các loại tham số đối tượng của chúng, sau khi xóa các tham chiếu cấp cao nhất, là như nhau.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <ul><li>Các tham số đối tượng của họ có cùng loại.</li></ul> <p><br/>Hai<a href="function_template" title="cpp/language/function template">function template declarations</a>tuyên bố<i>quá tải tương ứng</i>Nếu cả hai mẫu khai báo mẫu đáp ứng tất cả các điều kiện sau:</p>
+<ul>
+<li>Danh sách tham số mẫu của họ có cùng độ dài.</li>
+<li>Các tham số mẫu tương ứng của họ là<a href="function_template#Function_template_overloading" title="cpp/language/function template">equivalent</a>.</li>
+<li>Họ có tương đương<a href="function#Parameter-type-list" title="cpp/language/function">parameter-type-lists</a><span class="t-rev-inl t-since-cxx23"><span>, bỏ qua các loại<a href="member_functions#Explicit_object_parameter" title="cpp/language/member functions">explicit object parameters</a></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>.</li>
+<li>Họ có các loại lợi nhuận tương đương.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul>
+<li>Các tham số mẫu tương ứng của họ đều được khai báo mà không có<a href="constraints#Constraints" title="cpp/language/constraints">constraint</a>hoặc cả hai được tuyên bố với các ràng buộc tương đương.</li>
+<li>Họ có dấu vết tương đương<a href="constraints#Requires_clauses" title="cpp/language/constraints">requires clauses</a>(nếu có).</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul><li>Nếu cả hai đều là các mẫu chức năng thành viên không tĩnh, họ cần đáp ứng thêm một trong các yêu cầu sau:</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul><li>Chính xác một trong số họ là một<a href="member_functions" title="cpp/language/member functions">implicit object member function</a>Mẫu không có trình điều chỉnh ref và các loại tham số đối tượng của chúng, sau khi xóa tất cả các tài liệu tham khảo, là tương đương.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <ul><li>Các tham số đối tượng của họ có các loại tương đương.</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc a</pre></div> <h3 id="Potentially-conflict_declarations">{</h3> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <p>    bạn bè void c ();   // #1<i>};</i> <code>_</code>cấu trúc b</p>
+<ul>
+<li>{<a href="storage_duration" title="cpp/language/storage duration">storage duration</a>Thì</li>
+<li>Một<a href="structured_binding" title="cpp/language/structured binding">structured binding</a>không<a href="scope" title="cpp/language/scope">inhabiting</a>    Friend void c () {} // tương ứng với và xác định, #1</li>
+<li>};<a href="lambda#Lambda_capture" title="cpp/language/lambda">lambda capture</a> </li>
+<li>typedef int int;<a href="data_members" title="cpp/language/data members">data member</a>.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <p> <i>enum e: int {a};</i> <a href="typedef#typedef_name_for_linkage_purposes" title="cpp/language/typedef">typedef names</a>Và<a href="enum#Enumeration_name_for_linkage_purposes" title="cpp/language/enum">enumeration names</a>void f (int);   // #2</p>
+<ul>
+<li>void f (int) {} // Xác định #2</li>
+<li>void f (e) {} // ok, một quá tải khác<a href="scope" title="cpp/language/scope">target scope</a> <a href="scope#Function_parameter_scope" title="cpp/language/scope">function parameter scope</a>hoặc a<a href="scope#Template_parameter_scope" title="cpp/language/scope">template parameter scope</a>.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul><li>Cấu trúc x</li></ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <ul>
+<li>{</li>
+<ul><li>    static void f ();</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>    void g ();<a href="storage_duration#Module_linkage" title="cpp/language/storage duration">module linkage</a> <a href="modules#Module_ownership" title="cpp/language/modules">attached to the same module</a>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul><li>    void g ();<a href="storage_duration#External_linkage" title="cpp/language/storage duration">external linkage</a>.</li></ul> <p><br/>    void g () const;   // ĐƯỢC RỒI<i>    void g () &amp;;       // Lỗi: Tái giải quyết</i> <code>A</code>Và<code>B</code>    void H (x &amp;, int);<code>A</code>    void H (int) &amp;&amp;;   // OK, một quá tải khác<code>B</code><span class="t-rev-inl t-since-cxx26"><span>, Trừ khi<code>B</code> </span><span><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></span></span></p>
+<div class="cpp source-cpp"><pre data-language="cpp">    void j (const này x &amp;);</pre></div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/conflicting_declarations">https://en.cppreference.com/w/cpp/language/conflicting_declarations</a>
+</p>
+</div>

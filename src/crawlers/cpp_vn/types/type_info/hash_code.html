@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: type_info :: Hash_code</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">std :: size_t hash_code () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Trả về một giá trị không xác định (ở đây được biểu thị bằng<i>Mã băm</i>) như vậy cho tất cả<code><a href="../type_info" title="cpp/types/type info">std::type_info</a></code>các đối tượng đề cập đến cùng một loại,<i>Mã băm</i>là như nhau.</p>
+<p>Không có đảm bảo nào khác được đưa ra:<code><a href="../type_info" title="cpp/types/type info">std::type_info</a></code>Các đối tượng đề cập đến các loại khác nhau có thể có cùng<i>Mã băm</i>(mặc dù tiêu chuẩn khuyến nghị rằng việc triển khai tránh điều này càng nhiều càng tốt) và<i>Mã băm</i>Đối với cùng một loại có thể thay đổi giữa các lời mời của cùng một chương trình.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một giá trị giống hệt nhau cho tất cả<code><a href="../type_info" title="cpp/types/type info">std::type_info</a></code>Các đối tượng đề cập đến cùng loại.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Chương trình sau đây là một ví dụ về ánh xạ loại giá trị hiệu quả mà không cần sử dụng<code><a href="../type_index" title="cpp/types/type index">std::type_index</a></code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;nhớ&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_cmp" title="cpp/types/type info/operator cmp"> <span class="t-lines"><span>toán tử ==</span><span>toán tử! =</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span></span></span></div> </td> <td>toán tử bool! = (MP, MP);<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="name" title="cpp/types/type info/name"> <span class="t-lines"><span>tên</span></span></a></div> </td> <td>Tên được xác định tên của loại<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/type_info/hash_code">https://en.cppreference.com/w/cpp/types/type_info/hash_code</a>
+</p>
+</div>

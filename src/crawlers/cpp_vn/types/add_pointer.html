@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">std :: add_pulum</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Nếu như<code>T</code>struct add_pulum;<code>type</code>là loại tham chiếu, sau đó cung cấp cho thành viên typedef</p>
+<p>đó là một con trỏ đến loại được giới thiệu.<code>type</code>Mặt khác (nếu t là loại chức năng CV- hoặc Ref-Spralified), cung cấp cho thành viên typedef<code>T*</code>.</p>
+<p>loại nào<code>type</code>Mặt khác (nếu t là loại chức năng CV- hoặc Ref-Spralified), cung cấp cho thành viên typedef<code>T</code>.</p>
+<p>bằng nhau<code>std::add_pointer</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Tên</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td>bộ nhớ_order_consume<code>T</code>loại nào<code>T</code> </td>
+</tr> </table> <h3 id="Helper_types">Mẫu &lt;phạm vi :: input_range r, std :: meally_incrementable o&gt;</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">hoặc loại được tham chiếu bởi</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">sử dụng add_pulum_t = typename add_pulum &lt;t&gt; :: type;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Chi tiết không gian tên</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2101" rel="nofollow">LWG 2101</a> </td> <td>C ++ 11</td> <td>
+<code>std::add_pointer</code>{<br/>    Mẫu &lt;Class T&gt;</td> <td>    struct type_identity {sử dụng type = t; }; // hoặc sử dụng std :: type_identity (kể từ C ++ 20)</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_pointer" title="cpp/types/is pointer"> <span class="t-lines"><span>is_pulum</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem một loại có phải là loại con trỏ không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="remove_pointer" title="cpp/types/remove pointer"> <span class="t-lines"><span>remove_pulum</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xóa một con trỏ khỏi loại đã cho<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/add_pointer">https://en.cppreference.com/w/cpp/types/add_pointer</a>
+</p>
+</div>

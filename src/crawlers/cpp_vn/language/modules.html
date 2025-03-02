@@ -1,0 +1,88 @@
+ <h1 class="firstHeading" id="firstHeading">Mô -đun<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>
+</h1> <p>Hầu hết các dự án C ++ đều sử dụng nhiều đơn vị dịch và vì vậy họ cần chia sẻ<a href="declarations" title="cpp/language/declarations">declarations</a>Và<a href="definition" title="cpp/language/definition">definitions</a>trên những đơn vị đó. Việc sử dụng<a href="../standard_library#Headers" title="cpp/standard library">headers</a>nổi bật cho mục đích này, một ví dụ là<a href="../standard_library" title="cpp/standard library">standard library</a>những tuyên bố có thể được cung cấp bởi<a href="../standard_library#Including_headers" title="cpp/standard library">including the corresponding header</a>.</p>
+<p>Các mô -đun là một tính năng ngôn ngữ để chia sẻ các tuyên bố và định nghĩa trên các đơn vị dịch thuật. Chúng là một thay thế cho một số trường hợp sử dụng của tiêu đề.</p>
+<p>Các mô -đun là trực giao<a href="namespace" title="cpp/language/namespace">namespaces</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// Helloworld.cpp</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">Mô -đun xuất Helloworld; // Tuyên bố mô -đun</pre></div> <h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>export</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>module</code> <span class="t-spar">Mô-đun tên attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>export</code> <span class="t-spar">tuyên ngôn</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>export {</code> <span class="t-spar">Tuyên bố-seq</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>}</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>export</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>import</code> <span class="t-spar">Đơn vị giao diện mô -đun</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td>(4)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>export</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>import</code> <span class="t-spar">Nhập thông báo nhập có thể được xuất trong một đơn vị giao diện mô -đun. Đó là, nếu mô-đun B xuất-nhập A, thì nhập b cũng sẽ hiển thị tất cả các lần xuất từ ​​A.</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td>             Không có p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>export</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>import</code> <span class="t-spar">Mô -đun xuất A;   // Khai báo đơn vị giao diện mô -đun chính cho mô -đun được đặt tên 'A'</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>module;</code> </td> <td>            Chuyển tiếp 2 First2);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>module : private;</code> </td> <td>            Nhị phân p);</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>{<i>Đơn vị mô -đun</i>.</div> <div class="t-li1">
+<span class="t-li">          std :: Indirect_strict_weak_order &lt;</span>    std :: cout &lt;&lt; "Xin chào thế giới! \ n";<span class="t-spar">tuyên ngôn</span>hoặc<span class="t-spar">Tuyên bố-seq</span>.</div> <div class="t-li1">
+<span class="t-li">}</span>// main.cpp</div> <div class="t-li1">
+<span class="t-li">6)</span>Bắt đầu a<a href="#Global_module_fragment">global module fragment</a>.</div> <div class="t-li1">
+<span class="t-li">. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu biểu thức</span>Bắt đầu a<a href="#Private_module_fragment">private module fragment</a>.</div> <h3 id="Module_declarations">nhập khẩu Helloworld; // Nhập cảnh báo</h3> <p> <i>Đơn vị mô -đun</i>. Các<i>int main ()</i>{<i>Đoạn mô -đun toàn cầu</i>    Xin chào();<i>}</i>Mô-đun tên mô-đun-phần</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>export</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>module</code> <span class="t-spar">Mô-đun tên attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Mô-đun phân vùng attr<code>mymodule</code>Thì<code>mymodule.mysubmodule</code>Thì<code>mymodule2</code>Tiêu đề tên attr</p>
+<p>MỘT<i>Tuyên bố mô -đun. Tuyên bố rằng đơn vị dịch hiện tại là một</i>Tuyên bố xuất khẩu. Xuất khẩu tất cả các tuyên bố phạm vi không gian tên trong</p>
+<p>4,5,6)<code>export</code>Nhập cảnh khai. Nhập một đơn vị mô -đun/phân vùng mô -đun/đơn vị tiêu đề.<i>Tuyên bố mô -đun</i>Một đơn vị dịch có thể có một tuyên bố mô -đun, trong trường hợp đó nó được coi là một<i>Tuyên bố mô -đun</i>.</p>
+<p>, nếu được cung cấp, phải là tuyên bố đầu tiên của đơn vị dịch (ngoại trừ<i>, được bảo hiểm sau này). Mỗi đơn vị mô -đun được liên kết với một</i>Tên mô -đun</p>
+<div class="cpp source-cpp"><pre data-language="cpp">(và tùy chọn là một phân vùng), được cung cấp trong khai báo mô -đun.</pre></div> <h3 id="Exporting_declarations_and_definitions">Mô-đun tên mô-đun-phần</h3> <p>Tên mô -đun bao gồm một hoặc nhiều định danh được phân tách bằng các dấu chấm (ví dụ::<code>export</code>...). Các dấu chấm không có ý nghĩa nội tại, tuy nhiên chúng được sử dụng một cách không chính thức để đại diện cho thứ bậc.<code>export</code>Mô -đun được đặt tên</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>export</code> <span class="t-spar">tuyên ngôn</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>export {</code> <span class="t-spar">Tuyên bố-seq</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>}</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="cpp source-cpp"><pre data-language="cpp">là bộ sưu tập các đơn vị mô -đun có cùng tên mô -đun.</pre></div> <h3 id="Importing_modules_and_header_units">Các đơn vị mô -đun có khai báo có từ khóa</h3> <p>được gọi là<i>Nhập cảnh khai</i>:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>export</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>import</code> <span class="t-spar">Đơn vị giao diện mô -đun</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>; Tất cả các đơn vị mô -đun khác được gọi là</p>
+<p>Đơn vị thực hiện mô -đun</p>
+<p>Đối với mỗi mô -đun được đặt tên, phải có chính xác một đơn vị giao diện mô -đun chỉ định không có phân vùng mô -đun; Đơn vị mô -đun này được gọi là</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Đơn vị giao diện mô -đun chính</pre></div> <p><a href="../preprocessor/include" title="cpp/preprocessor/include"><code> #include</code></a>. Nội dung được xuất của nó sẽ có sẵn khi nhập mô -đun có tên tương ứng.<i>Đoạn mô -đun toàn cầu</i>// (mỗi dòng đại diện cho một đơn vị dịch riêng)<i> </i>với một<i>Nhập cảnh khai</i>:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>export</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>import</code> <span class="t-spar">Mô -đun xuất A;   // Khai báo đơn vị giao diện mô -đun chính cho mô -đun được đặt tên 'A'</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>mô -đun a;          // Khai báo đơn vị triển khai mô -đun cho mô -đun có tên 'A'</p>
+<p>mô -đun a;          // Khai báo một đơn vị triển khai mô -đun khác cho mô -đun có tên 'A'<span class="co2">Ma trận lớp</span>Mô -đun xuất A.B; // Khai báo đơn vị giao diện mô -đun chính cho mô -đun được đặt tên 'A.B'<i>Đoạn mô -đun toàn cầu</i>, KHÔNG</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mô -đun A.B;        // Khai báo đơn vị triển khai mô -đun cho mô -đun có tên 'A.B'</pre></div> <h3 id="Global_module_fragment">Xuất khẩu khai báo và định nghĩa</h3> <p>Các đơn vị giao diện mô -đun có thể xuất các khai báo (bao gồm cả định nghĩa), có thể được nhập bởi các đơn vị dịch khác. Để xuất một tuyên bố, hoặc tiền tố nó với<i>Đoạn mô -đun toàn cầu</i>Từ khóa, hoặc khác đặt nó bên trong một</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>module;</code> <p><span class="t-spar">khối.</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span></p>
+<p><span class="t-spar">Mô -đun xuất A; // Khai báo đơn vị giao diện mô -đun chính cho mô -đun được đặt tên 'A'</span></p>
+</td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p> <code>module;</code>// Xin chào () sẽ được hiển thị bằng các đơn vị dịch thuật nhập 'A'<a href="../preprocessor#Directives" title="cpp/preprocessor">preprocessing directives</a>Xuất char const* xin chào () {return "xin chào"; } </p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h3 id="Private_module_fragment">// Cả một () và không () sẽ được hiển thị.</h3> <p>char const* world () {return "thế giới"; }<i>Đoạn mô -đun riêng</i> </p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>module : private;</code> <p><span class="t-spar">Tuyên bố-seq</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span></p>
+</td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p><i>// Cả một () và không () sẽ được hiển thị.</i>xuất khẩu<i>Đoạn mô -đun riêng</i>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    int một () {return 1; }</pre></div> <h3 id="Module_partitions">    int zero () {return 0; }</h3> <p>}<i> </i>.<code>:</code>Không gian tên xuất khẩu Hi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    char const* English () {return "hi!"; }</p>
+<p>    char const* french () {return "salut!"; }</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>export</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>import</code> <span class="t-spar">Nhập thông báo nhập có thể được xuất trong một đơn vị giao diện mô -đun. Đó là, nếu mô-đun B xuất-nhập A, thì nhập b cũng sẽ hiển thị tất cả các lần xuất từ ​​A.</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="cpp source-cpp"><pre data-language="cpp">Nhập các mô -đun và đơn vị tiêu đề</pre></div> <p>Các mô -đun được nhập thông qua một</p>
+<p>Mô-đun tên attr<code>export</code>Tất cả các khai báo và định nghĩa được xuất trong các đơn vị giao diện mô -đun của mô -đun có tên đã cho sẽ có sẵn trong đơn vị dịch bằng cách sử dụng khai báo nhập.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>export</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>import</code> <span class="t-spar">Nhập thông báo nhập có thể được xuất trong một đơn vị giao diện mô -đun. Đó là, nếu mô-đun B xuất-nhập A, thì nhập b cũng sẽ hiển thị tất cả các lần xuất từ ​​A.</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="cpp source-cpp"><pre data-language="cpp">Trong các đơn vị mô-đun, tất cả các khai báo nhập khẩu (bao gồm cả nhập khẩu xuất khẩu) phải được nhóm lại sau khi khai báo mô-đun và trước tất cả các khai báo khác.</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">////////a.cpp (đơn vị giao diện mô -đun chính của 'A')</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">Mô -đun xuất A;</pre></div> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h3 id="Module_ownership">Xuất char const* xin chào () {return "xin chào"; }</h3> <p> <i>//////// B.CPP (Đơn vị giao diện mô -đun chính của 'B')</i>Mô -đun xuất B;</p>
+<p> </p>
+<p>xuất nhập khẩu a;<a href="storage_duration#module_linkage" title="cpp/language/storage duration">module linkage</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <div class="cpp source-cpp"><pre data-language="cpp">Xuất char const* world () {return "thế giới"; }</pre></div> <p> </p>
+<ul>
+<li>// a và d chuỗi ban đầu chung là A.A và D.D<i>/////// Main.cpp (không phải là đơn vị mô -đun)</i>#include &lt;Istream&gt;</li>
+<li>// a và d chuỗi ban đầu chung là A.A và D.D<i>nhập khẩu b;</i> </li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">int main ()</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    std :: cout &lt;&lt; hello () &lt;&lt; '' &lt;&lt; world () &lt;&lt; '\ n';</p>
+<ul>
+<li> <a href="namespace" title="cpp/language/namespace">namespace</a>}</li>
+<li>không nên được sử dụng trong một đơn vị mô -đun (bên ngoài<a href="language_linkage" title="cpp/language/language linkage">language linkage</a>), bởi vì tất cả các tuyên bố và định nghĩa bao gồm sẽ được coi là một phần của mô -đun. Thay vào đó, các tiêu đề cũng có thể được nhập khẩu là</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Đơn vị tiêu đề</pre></div> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_modules" title="cpp/feature test"><code>__cpp_modules</code></a></td> <td><span class="nu0">201907L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>Tiêu đề tên attr</td>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_modules" title="cpp/feature test"><code>__cpp_lib_modules</code></a></td> <td><span class="nu0">202207L</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<a href="../standard_library#Importing_modules" title="cpp/standard library">Standard library modules</a> <code>std</code>Và<code>std.compat</code> </td>
+</tr>
+</table> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/export" title="cpp/keyword/export"><code>export</code></a>Thì<a href="../keyword/import" title="cpp/keyword/import"><code>import</code></a>Thì<a href="../keyword/module" title="cpp/keyword/module"><code>module</code></a>Thì<a href="../keyword/private" title="cpp/keyword/private"><code>private</code></a></p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2732.html" rel="nofollow">CWG 2732</a> </td> <td>C ++ 20</td> <td>Một đơn vị tiêu đề là một đơn vị dịch riêng biệt được tổng hợp từ tiêu đề. Nhập một đơn vị tiêu đề sẽ có thể truy cập tất cả các định nghĩa và khai báo của nó. Macro tiền xử lý cũng có thể truy cập được (vì khai báo nhập được công nhận bởi bộ tiền xử lý).<br/>Tuy nhiên, trái với</td> <td>, các macro tiền xử lý đã được xác định tại điểm khai báo nhập sẽ không ảnh hưởng đến việc xử lý tiêu đề. Điều này có thể bất tiện trong một số trường hợp (một số tiêu đề sử dụng các macro tiền xử lý như một dạng cấu hình), trong trường hợp đó việc sử dụng</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/modules">https://en.cppreference.com/w/cpp/language/modules</a>
+</p>
+</div>

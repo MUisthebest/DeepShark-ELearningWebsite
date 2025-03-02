@@ -1,0 +1,253 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: SequenceContainer</h1> <p>MỘT<strong class="selflink">SequenceContainer</strong>Điều đó như vậy<a href="container" title="cpp/named req/Container">Container</a>lưu trữ các đối tượng cùng loại trong một sắp xếp tuyến tính.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <table class="t-dsc-begin"> <tr> <td colspan="2"> <h5 id="Legend">Huyền thoại</h5> </td>
+</tr> <tr class="t-dsc"> <td> <code>X</code> </td> <td>Một lớp container trình tự</td>
+</tr> <tr class="t-dsc"> <td> <code>T</code> </td> <td>Loại phần tử của<code>X</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>a</code> </td> <td>Một giá trị của loại<code>X</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>u</code> </td> <td>Tên của một biến được khai báo</td>
+</tr> <tr class="t-dsc"> <td> <code>A</code> </td> <td>Loại phân bổ của<code>X</code>:<ul>
+<li> <code>X::allocator_type</code>Nếu nó tồn tại,</li>
+<li>[tĩnh]<a href="http://en.cppreference.com/w/cpp/memory/allocator"><span class="kw702">Điều đó cho tất cả<span class="me2">người phân bổ</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span> </li>
+</ul> </td>
+</tr> <tr class="t-dsc"> <td> <code>i</code>Thì<code>j</code> </td> <td> <a href="inputiterator" title="cpp/named req/InputIterator">LegacyInputIterators</a>chỉ vào trình tự và mọi số nguyên không âm<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>Điều đó như vậy<a href="../iterator#Ranges" title="cpp/iterator">valid range</a>và các trình lặp lại đề cập đến các yếu tố hoàn toàn có thể chuyển đổi thành<code>value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>rg</code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>Giá trị của một loại<code>R</code>mô hình đó<a href="../ranges/to#container_compatible_range" title="cpp/ranges/to"><code>container-compatible-range</code></a><code>&lt;T&gt;</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>il</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td>  std :: di chuyển &lt;u&gt; &amp;&amp;<a href="http://en.cppreference.com/w/cpp/utility/initializer_list"><span class="kw962">Điều đó cho tất cả<span class="me2">Khởi tạo_list</span></span></a><span class="sy1">is_trivently_destructible_v</span>// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)<span class="sy1">&lt;</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>n</code> </td> <td>Một giá trị của loại<code>X::size_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>p</code> </td> <td>Một hợp lệ<a href="../iterator" title="cpp/iterator">const iterator</a>Mẫu &lt;Class T&gt;<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>q</code> </td> <td>MỘT<a href="../iterator#Dereferenceability_and_validity" title="cpp/iterator">valid dereferenceable</a>const iterator vào<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>q1</code>Thì<code>q2</code> </td> <td>Hai iterators vào<code>a</code>chỉ vào trình tự và mọi số nguyên không âm<code>[</code><code>q1</code><code>, </code><code>q2</code><code>)</code>là một phạm vi hợp lệ</td>
+</tr> <tr class="t-dsc"> <td> <code>t</code> </td> <td>MỘT<a href="../language/value_category" title="cpp/language/value category">lvalue</a><span class="t-rev-inl t-since-cxx11"><span>hoặc const rvalue</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>nó đến một đối tượng<code>X::value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>rv</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td>Một loại không phải là tập đoàn<code>X::value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>Args</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td>Gói tham số mẫu</td>
+</tr> <tr class="t-dsc"> <td> <code>args</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td>Một gói tham số chức năng với mẫu<code>Arg&amp;&amp;</code> </td>
+</tr> </table> <p>phạm vi của các yếu tố để tạo<code>X</code>thỏa mãn SequenceContainer nếu</p>
+<ul>
+<li>phạm vi của các yếu tố để tạo<code>X</code>Phần cuối của phạm vi ban đầu<a href="container" title="cpp/named req/Container">Container</a>, Và</li>
+<li>Các câu lệnh và biểu thức sau đây phải hợp lệ và có các hiệu ứng được chỉ định của chúng cho tất cả các thùng chứa trình tự<span class="t-rev-inl t-since-cxx11"><span>                             STD :: Memory_order Order) NoExcept;<code><a href="../container/array" title="cpp/container/array">std::array</a></code>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<a href="#NotesT1">notes</a>)</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>:</li>
+</ul> <table class="wikitable"> <tr> <th colspan="2">Tuyên bố</th> <th>Các hiệu ứng</th> <th colspan="2">Điều kiện<sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> </th>
+</tr> <tr> <td colspan="2" rowspan="2">
+<code>X u(n, t)</code> </td> <td rowspan="2">Cấu trúc các bộ chứa chuỗi container<code>n</code>Đã xóa quá tải cho nhân vật/mảng/mảng UTF BASIC_OSTREAM và UTF<code>t</code>.</td> <td>Trước</td> <td>
+<code>T</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>.</td>
+</tr> <tr> <td>Bưu kiện</td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>u.<span class="me1">bắt đầu</span><span class="br0">.</span><span class="br0">)</span>, u.<span class="me1">kết thúc</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span><br/>    == n</code>khoảng cách<code>true</code>.</td>
+</tr> <tr> <td colspan="2" rowspan="2">
+<code>X u(i, j)</code> </td> <td rowspan="2">Xây dựng container trình tự bằng nhau, phần tử khôn ngoan, theo phạm vi<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>.</td> <td>Trước</td> <td>
+<code>T</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>từ<code>*i</code>Mẫu &lt;Class T&gt;<code>X</code>.</td>
+</tr> <tr> <td>Bưu kiện</td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>u.<span class="me1">bắt đầu</span><span class="br0">.</span><span class="br0">)</span>, u.<span class="me1">kết thúc</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span><br/>    <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>i, j<span class="br0">)</span></code>khoảng cách<code>true</code>.</td>
+</tr> <tr> <th>Sự biểu lộ</th> <th>Kiểu</th> <th>Các hiệu ứng</th> <th colspan="2">Điều kiện</th>
+</tr> <tr> <td rowspan="2">
+<code>X<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/ranges/from_range"><span class="kw3504">Điều đó cho tất cả<span class="me2">từ_range</span></span></a>, rg<span class="br0">)</span></code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td rowspan="2">
+<code>X</code> </td> <td rowspan="2">Xây dựng container trình tự bằng nhau, phần tử khôn ngoan, theo phạm vi<code>rg</code>.</td> <td>Trước</td> <td>
+<code>T</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>.</td>
+</tr> <tr> <td>Bưu kiện</td> <td> <ul>
+<li>iterator) và tất cả các tham chiếu đến các yếu tố bị vô hiệu.<code>rg</code>được hủy bỏ một lần.</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>begin<span class="br0">.</span><span class="br0">)</span>, end<span class="br0">.</span><span class="br0">)</span><span class="br0">)</span><br/>    <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3142">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>khoảng cách<code>true</code>.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>X(il)</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td>
+<code>X</code> </td> <td>Mẫu &lt;class inputit1, class inputit2,<code>X(il.begin(),  il.end())</code>.</td> <td class="table-na" colspan="2"> <small>Không có yêu cầu rõ ràng</small> </td>
+</tr> <tr> <td rowspan="2">
+<code>a = il</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td rowspan="2">
+<code>X&amp;</code> </td> <td rowspan="2">Gán phạm vi được biểu thị bằng<code>il</code>Mẫu &lt;Class T&gt;<code>a</code>.<sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup> </td> <td>Trước</td> <td>
+<code>T</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Và<a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>.</td>
+</tr> <tr> <td>Bưu kiện</td> <td>Các yếu tố hiện có của<code>a</code>bị phá hủy hoặc được gán cho.</td>
+</tr> <tr> <td rowspan="2">
+<code>a.emplace(p, args)</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td rowspan="2">
+<code>iterator</code> </td> <td rowspan="2">Chèn một đối tượng thuộc loại<code>T</code>, được xây dựng với<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span></code>Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,<code>p</code>.</td> <td>Trước</td> <td>
+<code>T</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>.</td>
+</tr> <tr> <td>Bưu kiện</td> <td>Các điểm lặp được trả về tại phần tử được xây dựng từ<code>args</code>Mẫu &lt;Class T&gt;<code>a</code>.</td>
+</tr> <tr> <td rowspan="2">
+<code>a.insert(p, t)</code> </td> <td rowspan="2">
+<code>iterator</code> </td> <td rowspan="2">Chèn một bản sao của<code>t</code>Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,<code>p</code>.</td> <td>Trước</td> <td>
+<code>T</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>.</td>
+</tr> <tr> <td>Bưu kiện</td> <td>Các điểm lặp được trả về tại bản sao của<code>t</code>chèn vào<code>a</code>.</td>
+</tr> <tr> <td rowspan="2">
+<code>a.insert(p, rv)</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td rowspan="2">
+<code>iterator</code> </td> <td rowspan="2">Chèn một bản sao của<code>rv</code>Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,<code>p</code>, có thể sử dụng ngữ nghĩa di chuyển.</td> <td>Trước</td> <td>
+<code>T</code>khoảng cách<a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>.</td>
+</tr> <tr> <td>Bưu kiện</td> <td>Các điểm lặp được trả về tại bản sao của<code>rv</code>chèn vào<code>a</code>.</td>
+</tr> <tr> <td rowspan="2">
+<code>a.insert(p, n, t)</code> </td> <td rowspan="2">
+<code>iterator</code> </td> <td rowspan="2">Chèn<code>n</code>Đã xóa quá tải cho nhân vật/mảng/mảng UTF BASIC_OSTREAM và UTF<code>t</code>Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,<code>p</code>.</td> <td>Trước</td> <td>
+<code>T</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Và<a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>.</td>
+</tr> <tr> <td>Bưu kiện</td> <td>Các điểm lặp được trả về tại bản sao của phần tử đầu tiên được chèn vào<code>a</code>Là một tập tin trong thư mục<code>p</code>vì<code>n == 0</code>.</td>
+</tr> <tr> <td rowspan="2">
+<code>a.insert(p, i, j)</code> </td> <td rowspan="2">
+<code>iterator</code> </td> <td rowspan="2">Chèn bản sao của các yếu tố trong<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,<code>p</code>.</td> <td>Trước</td> <td>
+<code>T</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Và<code>i</code>Và<code>j</code>không ở trong<code>a</code>.</td>
+</tr> <tr> <td>Bưu kiện</td> <td> <ul>
+<li>Iterator) bị vô hiệu. Không có tài liệu tham khảo được vô hiệu.<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>được hủy bỏ một lần.</li>
+<li>Các điểm lặp được trả về tại bản sao của phần tử đầu tiên được chèn vào<code>a</code>Là một tập tin trong thư mục<code>p</code>vì<code>i == j</code>.</li>
+</ul> </td>
+</tr> <tr> <td rowspan="2">
+<code>a.insert_range(p, rg)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td rowspan="2">
+<code>iterator</code> </td> <td rowspan="2">Chèn bản sao của các yếu tố trong<code>rg</code>Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,<code>p</code>.</td> <td>Trước</td> <td> <ul>
+<li> <code>T</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>.</li>
+<li> <code>rg</code>Và<code>a</code>Không chồng chéo.</li>
+</ul> </td>
+</tr> <tr> <td>Bưu kiện</td> <td> <ul>
+<li>iterator) và tất cả các tham chiếu đến các yếu tố bị vô hiệu.<code>rg</code>được hủy bỏ một lần.</li>
+<li>Các điểm lặp được trả về tại bản sao của phần tử đầu tiên được chèn vào<code>a</code>điểm đó vào bản sao của phần tử đầu tiên được chèn vào<code>p</code>nếu như<code>rg</code>...</li>
+</ul> </td>
+</tr> <tr> <td rowspan="2">
+<code>a.insert(p, il)</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td rowspan="2">
+<code>iterator</code> </td> <td rowspan="2">Mẫu &lt;class inputit1, class inputit2,<code>a.insert(p,         il.begin(),         il.end())</code>.</td> <td>Trước</td> <td class="table-na"> <small>Không có yêu cầu rõ ràng</small> </td>
+</tr> <tr> <td>Bưu kiện</td> <td>Các điểm lặp được trả về tại bản sao của phần tử đầu tiên được chèn vào<code>a</code>Là một tập tin trong thư mục<code>p</code>nếu như<code>il</code>...</td>
+</tr> <tr> <td rowspan="2">
+<code>a.erase(q)</code> </td> <td rowspan="2">
+<code>iterator</code> </td> <td rowspan="2">Xóa bỏ yếu tố được chỉ ra bởi<code>q</code>.</td> <td>Trước</td> <td class="table-na"> <small>Không có yêu cầu rõ ràng</small> </td>
+</tr> <tr> <td>Bưu kiện</td> <td>Các điểm lặp được trả về tại phần tử ngay lập tức<code>q</code>trước khi xóa, hoặc<code>a.end()</code>Nếu không có yếu tố như vậy tồn tại.</td>
+</tr> <tr> <td rowspan="2">
+<code>a.erase(q1, q2)</code> </td> <td rowspan="2">
+<code>iterator</code> </td> <td rowspan="2">Xóa các yếu tố trong<code>[</code><code>q1</code><code>, </code><code>q2</code><code>)</code>.</td> <td>Trước</td> <td class="table-na"> <small>Không có yêu cầu rõ ràng</small> </td>
+</tr> <tr> <td>Bưu kiện</td> <td>Các điểm lặp được trả về tại phần tử được chỉ ra bởi<code>q2</code>trước khi xóa, hoặc<code>a.end()</code>Nếu không có yếu tố như vậy tồn tại.</td>
+</tr> <tr> <td rowspan="2">
+<code>a.clear()</code> </td> <td rowspan="2">
+<span class="kw4">Vô hiệu</span> </td> <td rowspan="2">Phá hủy tất cả các yếu tố trong<code>a</code>.</td> <td>Trước</td> <td class="table-na"> <small>Không có yêu cầu rõ ràng</small> </td>
+</tr> <tr> <td>Bưu kiện</td> <td> <ul>
+<li>Tất cả các tài liệu tham khảo, con trỏ và trình lặp đều bị vô hiệu, bao gồm cả trình lặp cuối.</li>
+<li> <code>a.empty()</code>khoảng cách<code>true</code>.</li>
+</ul> </td>
+</tr> <tr> <td rowspan="2">
+<code>a.assign(i, j)</code> </td> <td rowspan="2">
+<span class="kw4">Vô hiệu</span> </td> <td rowspan="2">Thay thế các yếu tố trong<code>a</code>với một bản sao của<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>.</td> <td>Trước</td> <td> <ul>
+<li> <code>T</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>.</li>
+<li> <code>i</code>Và<code>j</code>không ở trong<code>a</code>.</li>
+</ul> </td>
+</tr> <tr> <td>Bưu kiện</td> <td>Iterator) bị vô hiệu. Không có tài liệu tham khảo được vô hiệu.<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>được hủy bỏ một lần.</td>
+</tr> <tr> <td rowspan="2">
+<code>a.assign_range(rg)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td rowspan="2">
+<span class="kw4">Vô hiệu</span> </td> <td rowspan="2">Thay thế các yếu tố trong<code>a</code>với một bản sao của mỗi yếu tố trong<code>rg</code>.</td> <td>Trước</td> <td> <ul>
+<li> <code>T</code><sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>.</li>
+<li> <code>rg</code>Và<code>a</code>Không chồng chéo.</li>
+</ul> </td>
+</tr> <tr> <td>Bưu kiện</td> <td> <ul>
+<li>iterator) và tất cả các tham chiếu đến các yếu tố bị vô hiệu.<code>rg</code>được hủy bỏ một lần.</li>
+<li>Tất cả các tài liệu tham khảo, con trỏ và trình lặp đều bị vô hiệu.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>a.assign(il)</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td>
+<span class="kw4">Vô hiệu</span> </td> <td>Mẫu &lt;class inputit1, class inputit2,<code>a.assign(il.begin(),         il.end())</code>.</td> <td class="table-na" colspan="2"> <small>Không có yêu cầu rõ ràng</small> </td>
+</tr> <tr> <td rowspan="2">
+<code>a.assign(n, t)</code> </td> <td rowspan="2">
+<span class="kw4">Vô hiệu</span> </td> <td rowspan="2">Thay thế các yếu tố trong<code>a</code>với<code>n</code>Đã xóa quá tải cho nhân vật/mảng/mảng UTF BASIC_OSTREAM và UTF<code>t</code>.</td> <td>Trước</td> <td>
+<code>T</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Và<a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>.</td>
+</tr> <tr> <td>Bưu kiện</td> <td class="table-na"> <small>Không có yêu cầu rõ ràng</small> </td>
+</tr> <tr> <th colspan="5">Ghi chú</th>
+</tr> <tr> <td colspan="5">
+<ol class="references"> <li id="cite_note-1"> <span class="reference-text">Đối với một biểu thức có hiệu ứng tương đương với một số hoạt động khác, các điều kiện của các biểu thức bên trong các hoạt động đó được kế thừa trên đầu các điều kiện được liệt kê trong bảng.</span> </li> <li id="cite_note-2"> <span class="reference-text"><code><a href="../container/array" title="cpp/container/array">std::array</a></code>Hỗ trợ chuyển nhượng từ danh sách có giằng, nhưng không phải từ<code><a href="../utility/initializer_list" title="cpp/utility/initializer list">std::initializer_list</a></code>.</span> </li> <li id="cite_note-3"> <span class="reference-text"><code>T</code>Và<code>R</code>là các loại sao cho<code>ranges<span class="sy4">::</span><span class="me2">// Lưu ý: Vì biểu thức #2 đã yêu cầu biến thể rvalue không liên tục</span><span class="sy1">is_trivently_destructible_v</span>T<span class="sy3">Không có giá trị</span>, <a href="http://en.cppreference.com/w/cpp/ranges/iterator_t"><span class="kw2895">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">với loại tham chiếu chuyển đổi sang loại phần tử của container</span></span></a><span class="sy1">is_trivently_destructible_v</span>R<span class="sy1">2,4)</span></code>được mô hình hóa.</span> </li> </ol> </td>
+</tr>
+</table> <h4 id="Optional_operations">Hoạt động tùy chọn</h4> <p>Các biểu thức sau phải hợp lệ và có các hiệu ứng được chỉ định của chúng cho các thùng chứa trình tự được đặt tên, tất cả các hoạt động<span class="t-rev-inl t-since-cxx23"><span>                             STD :: Memory_order Order) NoExcept;<code>prepend_range</code>Và<code>append_range</code></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>mất thời gian khấu hao liên tục:</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Kiểu</th> <th>Các hiệu ứng</th> <th>Điều kiện tiên quyết<sup class="reference" id="cite_ref-4"><a href="#cite_note-4">[1]</a></sup>
+</th> <th>Container</th>
+</tr> <tr> <td>
+<code>a.front()</code> </td> <td>
+<code>reference</code>, hoặc<p><code>const_reference</code>vì<span class="kw4">hằng số</span> <code>a</code></p>
+</td> <td>Mẫu &lt;Class execPolicy,<code>*a.begin()</code>.</td> <td class="table-na"> <small>Không có yêu cầu rõ ràng</small> </td> <td>
+<code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code> <code><a href="../container/array" title="cpp/container/array">std::array</a></code> <code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/forward_list" title="cpp/container/forward list">std::forward_list</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </td>
+</tr> <tr> <td>
+<code>a.back()</code> </td> <td>
+<code>reference</code>, hoặc<p><code>const_reference</code>vì<span class="kw4">hằng số</span> <code>a</code></p>
+</td> <td>Mẫu &lt;class inputit1, class inputit2,<code>auto tmp = a.end();--tmp;return *tmp;</code>.</td> <td class="table-na"> <small>Không có yêu cầu rõ ràng</small> </td> <td>
+<code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code> <code><a href="../container/array" title="cpp/container/array">std::array</a></code> <code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </td>
+</tr> <tr> <td>
+<code>a.emplace_front(args)</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td>
+<span class="kw4">Vô hiệu</span> </td> <td>Chuẩn bị a<code>T</code>xây dựng với<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><br/>    (args)...</code>.</td> <td>
+<code>T</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>args</code>.</td> <td>
+<code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/forward_list" title="cpp/container/forward list">std::forward_list</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> </td>
+</tr> <tr> <td>
+<code>a.emplace_back(args)</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td>
+<span class="kw4">Vô hiệu</span> </td> <td>Cộng đồng a<code>T</code>xây dựng với<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><br/>    (args)...</code>.</td> <td>
+<code>T</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>args</code>.</td> <td>
+<code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </td>
+</tr> <tr> <td>
+<code>a.push_front(t)</code> </td> <td>
+<span class="kw4">Vô hiệu</span> </td> <td>Chuẩn bị một bản sao của<code>t</code>.</td> <td>
+<code>T</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>.</td> <td>
+<code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/forward_list" title="cpp/container/forward list">std::forward_list</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> </td>
+</tr> <tr> <td>
+<code>a.push_front(rv)</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td>
+<span class="kw4">Vô hiệu</span> </td> <td>Chuẩn bị một bản sao của<code>rv</code>, có thể sử dụng ngữ nghĩa di chuyển.</td> <td>
+<code>T</code>khoảng cách<a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>.</td> <td>
+<code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/forward_list" title="cpp/container/forward list">std::forward_list</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> </td>
+</tr> <tr> <td>
+<code>a.prepend_range(rg)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>
+<span class="kw4">Vô hiệu</span> </td> <td>Chèn<sup class="reference" id="cite_ref-range_5-0"><a href="#cite_note-range-5">[2]</a></sup>bản sao của các yếu tố trong<code>rg</code>Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,<code>begin()</code>, mỗi người lặp trong<code>rg</code>được hủy bỏ một lần.</td> <td>
+<code>T</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>.</td> <td>
+<code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/forward_list" title="cpp/container/forward list">std::forward_list</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> </td>
+</tr> <tr> <td>
+<code>a.push_back(t)</code> </td> <td>
+<span class="kw4">Vô hiệu</span> </td> <td>Cộng lại một bản sao của<code>t</code>.</td> <td>
+<code>T</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>.</td> <td>
+<code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code> <code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </td>
+</tr> <tr> <td>
+<code>a.push_back(rv)</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td>
+<span class="kw4">Vô hiệu</span> </td> <td>Cộng lại một bản sao của<code>rv</code>, có thể sử dụng ngữ nghĩa di chuyển.</td> <td>
+<code>T</code>khoảng cách<a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>.</td> <td>
+<code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code> <code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </td>
+</tr> <tr> <td>
+<code>a.append_range(rg)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>
+<span class="kw4">Vô hiệu</span> </td> <td>Chèn<sup class="reference" id="cite_ref-range_5-1"><a href="#cite_note-range-5">[2]</a></sup>bản sao của các yếu tố trong<code>rg</code>Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,<code>end()</code>dereferencator mỗi lần lặp trong<code>rg</code>một lần.</td> <td>
+<code>T</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>.</td> <td>
+<code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </td>
+</tr> <tr> <td>
+<code>a.pop_front()</code> </td> <td>
+<span class="kw4">Vô hiệu</span> </td> <td>Phá hủy yếu tố đầu tiên.</td> <td>
+<code>a.empty()</code>khoảng cách<code>false</code>.</td> <td>
+<code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/forward_list" title="cpp/container/forward list">std::forward_list</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> </td>
+</tr> <tr> <td>
+<code>a.pop_back()</code> </td> <td>
+<span class="kw4">Vô hiệu</span> </td> <td>Phá hủy yếu tố cuối cùng.</td> <td>
+<code>a.empty()</code>khoảng cách<code>false</code>.</td> <td>
+<code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code> <code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </td>
+</tr> <tr> <td>
+<code>a[n]</code> </td> <td>
+<code>reference</code>, hoặc<p><code>const_reference</code>vì<span class="kw4">hằng số</span> <code>a</code></p>
+</td> <td>Mẫu &lt;class inputit1, class inputit2,<code>return    *(a.begin() + n);</code>.</td> <td class="table-na"> <small>Không có yêu cầu rõ ràng</small> </td> <td>
+<code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code> <code><a href="../container/array" title="cpp/container/array">std::array</a></code> <code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </td>
+</tr> <tr> <td>
+<code>a.at(n)</code> </td> <td>
+<code>reference</code>, hoặc<p><code>const_reference</code>vì<span class="kw4">hằng số</span> <code>a</code></p>
+</td> <td>Mẫu &lt;Class execPolicy,<code>*(a.begin() + n)</code>sử dụng tài nguyên bộ nhớ cơ bản.<code><a href="../error/out_of_range" title="cpp/error/out of range">std::out_of_range</a></code>nếu như<code>n &gt;= size()</code>.</td> <td class="table-na"> <small>Không có yêu cầu rõ ràng</small> </td> <td>
+<code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code> <code><a href="../container/array" title="cpp/container/array">std::array</a></code> <code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </td>
+</tr> <tr> <th colspan="5">Ghi chú</th>
+</tr> <tr> <td colspan="5">
+<ol class="references"> <li id="cite_note-4"> <span class="reference-text">Đối với một biểu thức có hiệu ứng tương đương với một số hoạt động khác, các điều kiện tiên quyết của các biểu thức bên trong các hoạt động đó được kế thừa trên đầu các điều kiện tiên quyết được liệt kê trong bảng.</span> </li> <li id="cite_note-range-5"> <span class="reference-text">Thứ tự chèn, liên quan đến thứ tự của các yếu tố trong<code>rg</code>, là không đảo ngược.</span> </li> </ol> </td>
+</tr>
+</table> <p>Ngoài ra, cho mọi bộ chứa chuỗi:</p>
+<ul><li>Một mẫu trình xây dựng lấy hai trình lặp đầu vào và quá tải mẫu chức năng thành viên của<code>insert</code>Thì<code>append</code>Thì<code>assign</code>Thì<code>replace</code>đó lấy hai trình lặp đầu vào không tham gia vào độ phân giải quá tải nếu đối số mẫu tương ứng không thỏa mãn<a href="inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>Hướng dẫn khấu trừ có<a href="inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>được để lại ở trạng thái hợp lệ nhưng không xác định.<code>Allocator</code>Tham số mẫu không tham gia vào độ phân giải quá tải nếu loại không đủ điều kiện làm trình lặp đầu vào hoặc bộ phân bổ tương ứng được suy ra cho tham số đó.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Sequence_containers_in_the_standard_library">Trình tự container trong thư viện tiêu chuẩn</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../string/basic_string" title="cpp/string/basic string"> <span class="t-lines"><span>BASIC_STRING</span></span></a></div> </td> <td>Lưu trữ và thao túng chuỗi các ký tự<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/array" title="cpp/container/array"> <span class="t-lines"><span>Mảng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Mảng tiếp giáp tĩnh<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/vector" title="cpp/container/vector"> <span class="t-lines"><span>Vector</span></span></a></div> </td> <td>Mảng tiếp giáp động<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/deque" title="cpp/container/deque"> <span class="t-lines"><span>Deque</span></span></a></div> </td> <td>Hàng đợi hai lần<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/forward_list" title="cpp/container/forward list"> <span class="t-lines"><span>forward_list</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Danh sách liên kết đơn<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/list" title="cpp/container/list"> <span class="t-lines"><span>danh sách</span></span></a></div> </td> <td>Danh sách liên kết gấp đôi<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <h4 id="Trade-offs_.2F_usage_notes">Ghi chú đánh đổi / sử dụng</h4> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </td> <td>Truy cập nhanh nhưng hầu như không hiệu quả chèn/xóa</td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../container/array" title="cpp/container/array">std::array</a></code> </td> <td>Truy cập nhanh nhưng số lượng phần tử cố định</td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../container/list" title="cpp/container/list">std::list</a></code><br/><code><a href="../container/forward_list" title="cpp/container/forward list">std::forward_list</a></code> </td> <td>Chèn/xóa hiệu quả ở giữa chuỗi</td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> </td> <td>Chèn/xóa hiệu quả ở đầu và ở cuối chuỗi</td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue139" rel="nofollow">LWG 139</a> </td> <td>C ++ 98</td> <td>các hoạt động tùy chọn không bắt buộc phải<br/>được thực hiện cho các container được chỉ định</td> <td>cần thiết với<br/>Thời gian khấu hao</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue149" rel="nofollow">LWG 149</a> </td> <td>C ++ 98</td> <td>
+<code>a.insert(p, t)</code>đến nửa đầu của một vectơ số nguyên:<code>iterator</code>, hoặc nếu<br/><code>a.insert(p, n, t)</code>Và<code>a.insert(p, n, t)</code>đến nửa đầu của một vectơ số nguyên:<span class="kw4">Vô hiệu</span> </td> <td>Tất cả họ trở về<br/><code>iterator</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue151" rel="nofollow">LWG 151</a> </td> <td>C ++ 98</td> <td>
+<code>q1</code>được yêu cầu phải có thể phân tách được<sup class="reference" id="cite_ref-6"><a href="#cite_note-6">[1]</a></sup> </td> <td>nó có thể không thể biến đổi</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue355" rel="nofollow">LWG 355</a> </td> <td>C ++ 98</td> <td>nhân vật (<code>a.back()</code>hoặc<code>a.pop_back()</code>sẽ<br/>thực thi<code>--a.end()</code>, đó là nguy hiểm<sup class="reference" id="cite_ref-7"><a href="#cite_note-7">[2]</a></sup> </td> <td>Giảm một bản sao<br/>của<code>a.end()</code>Bởi vì</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue589" rel="nofollow">LWG 589</a> </td> <td>C ++ 98</td> <td>các yếu tố mà<code>i</code>Và<code>j</code>Tham khảo<br/>có thể không thể chuyển đổi thành<code>value_type</code> </td> <td>Họ là ngầm<br/>chuyển đổi thành<code>value_type</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3927" rel="nofollow">LWG 3927</a> </td> <td>C ++ 98</td> <td>nhà điều hành<span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span>không có yêu cầu ngầm</td> <td>đã thêm yêu cầu ngầm</td>
+</tr>
+</table> <ol class="references"> <li id="cite_note-6"> <span class="reference-text">Nó là một khiếm khuyết bởi vì nó làm cho hành vi của<code>a.erase(a.begin(), a.end())</code>không xác định là<code>a</code>là một thùng chứa trống.</span> </li> <li id="cite_note-7"> <span class="reference-text">                               Không có p);<code>a.end()</code>là một loại cơ bản,<code>--a.end()</code>là xấu. Nó nguy hiểm khi loại<code>a</code>được đặt ra, trong trường hợp này, lỗi này có thể khó tìm thấy.</span> </li> </ol> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/SequenceContainer">https://en.cppreference.com/w/cpp/named_req/SequenceContainer</a>
+</p>
+</div>

@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Deque &lt;t, Allocator&gt; :: Push_back</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx98"> <td> <pre data-language="cpp">void push_back (const t &amp; value);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void push_back (t &amp;&amp; value);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Cộng sự phần tử đã cho<code>value</code>đến cuối container.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Phần tử mới được khởi tạo dưới dạng bản sao của<code>value</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>value</code>được chuyển vào yếu tố mới.</div> <p>, theo thứ tự không đảo ngược.<a href="end" title="cpp/container/deque/end"><code>end()</code></a>Tất cả các trình rút (bao gồm cả</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>được phân vùng liên quan đến</td> <td>-</td> <td>giá trị của phần tử để nối</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>is_array_v</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mảng tích hợp để được chuyển đổi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Nếu một ngoại lệ được ném (có thể là do<code>Allocator::allocate()</code>hoặc phần tử sao chép/di chuyển hàm tạo/gán), chức năng này không có hiệu lực (<a href="../../language/exceptions#Exception_safety" title="cpp/language/exceptions">strong exception guarantee</a>).</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;iomanip&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="emplace_back" title="cpp/container/deque/emplace back"> <span class="t-lines"><span>Vị trí</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>xây dựng phần tử tại chỗ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="push_front" title="cpp/container/deque/push front"> <span class="t-lines"><span>xuất hiện_back</span></span></a></div> </td> <td>kết thúc một yếu tố tại chỗ ở cuối<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="pop_back" title="cpp/container/deque/pop back"> <span class="t-lines"><span>đẩy_back</span></span></a></div> </td> <td>thêm một phần tử vào cuối<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../iterator/back_inserter" title="cpp/iterator/back inserter"> <span class="t-lines"><span>Back_Inserter</span></span></a></div> </td> <td>tạo ra a<code><a href="../../iterator/back_insert_iterator" title="cpp/iterator/back insert iterator">std::back_insert_iterator</a></code>loại được suy ra từ đối số<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/deque/push_back">https://en.cppreference.com/w/cpp/container/deque/push_back</a>
+</p>
+</div>

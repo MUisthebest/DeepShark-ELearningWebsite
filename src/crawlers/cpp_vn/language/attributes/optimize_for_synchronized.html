@@ -1,0 +1,11 @@
+ <h1 class="firstHeading" id="firstHeading">Thuộc tính C ++: Tối ưu hóa_for_synchronized<span class="t-mark-rev t-since-tm-ts t-mark-ts">(TM TS)</span>
+</h1> <p>Chỉ ra rằng định nghĩa hàm phải được tối ưu hóa để gọi từ một<a href="../transactional_memory" title="cpp/language/transactional memory">synchronized statement</a>.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span>optimize_for_synchronized<span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span></code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Áp dụng cho tên được khai báo trong khai báo chức năng, đó phải là khai báo đầu tiên của hàm.</p>
+<p>Chỉ ra rằng định nghĩa hàm phải được tối ưu hóa để gọi từ một<a href="../transactional_memory" title="cpp/language/transactional memory">synchronized statement</a>. Cụ thể, nó tránh các khối đồng bộ tuần tự hóa thực hiện cuộc gọi đến một chức năng an toàn giao dịch cho phần lớn các cuộc gọi, nhưng không phải cho tất cả các cuộc gọi.</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/attributes/optimize_for_synchronized">https://en.cppreference.com/w/cpp/language/attributes/optimize_for_synchronized</a>
+</p>
+</div>

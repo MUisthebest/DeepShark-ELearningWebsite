@@ -1,0 +1,67 @@
+ <h1 class="firstHeading" id="firstHeading">Không bắt đầu</h1> <p>Đặt giá trị ban đầu của một đối tượng thành 0.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Lưu ý rằng đây không phải là cú pháp để khởi tạo bằng không, không có cú pháp chuyên dụng trong ngôn ngữ. Đây là những ví dụ về các loại khởi tạo khác, có thể thực hiện không bắt đầu.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>static</code> <span class="t-spar">T</span> <span class="t-spar">sự vật</span> <code>;</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">T</span> <code>()</code> <code>;</code> <p><span class="t-spar">T</span> <span class="t-spar">Chuyển đổi đối số</span> <code>=</code> <code>{}</code> <code>;</code></p>
+<p><span class="t-spar">T</span> <code>{}</code> <code>;</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></p>
+</td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar"> </span> <span class="t-spar">Mảng</span> <code>[</code> <span class="t-spar">Trả về một kết quả, kết quả được bỏ qua. Nếu như</span> <code>]</code> <code>=</code> <code>"</code> <span class="t-spar">Trình tự ngắn</span> <code>";</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Không bắt đầu hóa được thực hiện trong các tình huống sau:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Đối với mọi biến được đặt tên với tĩnh<span class="t-rev-inl t-since-cxx11"><span>hoặc chủ đề địa phương</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> <a href="storage_duration" title="cpp/language/storage duration">storage duration</a>không phải là chủ thể của<a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a>, trước khi bất kỳ khởi tạo khác.</div> <div class="t-li1">
+<span class="t-li">2)</span>Như một phần của<a href="value_initialization" title="cpp/language/value initialization">value-initialization</a>trình tự cho các loại không lớp và cho các thành viên của các loại lớp có giá trị không có hàm tạo, bao gồm cả khởi tạo giá trị của các phần tử của<a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregates</a>trong đó không có bộ khởi tạo được cung cấp.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Khi một mảng của bất kỳ<a href="types#Character_types" title="cpp/language/types">character type</a>khoảng cách<a href="aggregate_initialization#Character_arrays" title="cpp/language/aggregate initialization">initialized with a string literal</a>Điều đó quá ngắn, phần còn lại của mảng được khởi tạo bằng không.</div> <p>Những ảnh hưởng của không bắt đầu là:</p>
+<ul>
+<li>Nếu như<code>T</code>Điều đó như vậy<a href="../named_req/scalartype" title="cpp/named req/ScalarType">scalar type</a>, đối tượng được khởi tạo thành giá trị thu được bởi<a href="explicit_cast" title="cpp/language/explicit cast">explicitly converting</a>số nguyên theo nghĩa đen<code>​0​</code>(không) đến<code>T</code>.</li>
+<li>Nếu như<code>T</code>là loại lớp không liên minh:</li>
+<ul>
+<li>Xem thêm việc triển khai<a href="object#Object_representation_and_value_representation" title="cpp/language/object">padding bits</a>được khởi tạo thành các bit bằng không,</li>
+<li>mỗi người không tĩnh<a href="data_members" title="cpp/language/data members">data member</a>không bắt đầu,</li>
+<li>Mỗi lớp cơ sở không phải là người Virtual<a href="object#Subobjects" title="cpp/language/object">subobject</a>là không khởi xướng, và</li>
+<li>Nếu đối tượng không phải là tiểu phân lớp cơ sở, mỗi mục tiêu<a href="derived_class#Virtual_base_classes" title="cpp/language/derived class">virtual base class</a>SubObject được khởi tạo bằng không.</li>
+</ul>
+<li>Nếu như<code>T</code>là một loại công đoàn:</li>
+<ul>
+<li>Tất cả các bit đệm được khởi tạo thành các bit bằng không, và</li>
+<li>Thành viên dữ liệu có tên không tĩnh đầu tiên của đối tượng là không khởi xướng.</li>
+</ul>
+<li>Nếu như<code>T</code>là loại mảng, mỗi phần tử được khởi tạo bằng không.</li>
+<li>Nếu như<code>T</code>là loại tham chiếu, không có gì được thực hiện.</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Quá tải không được khai báo<a href="initialization#Non-local_variables" title="cpp/language/initialization">non-local initialization</a>, tĩnh<span class="t-rev-inl t-since-cxx11"><span>và chủ đề địa phương</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Các biến không khởi xướng không đổi được khởi tạo bằng 0 trước khi bất kỳ khởi tạo nào khác. Nếu định nghĩa của một biến phi cục bộ không thuộc lớp không có trình khởi tạo, thì việc khởi tạo mặc định không làm gì cả, không để lại kết quả của việc không bắt đầu không được sửa đổi trước đó.</p>
+<p>Một con trỏ không khởi đầu là giá trị con trỏ null thuộc loại của nó, ngay cả khi giá trị của con trỏ null không phải là không thể thiếu.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;chuỗi&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/277.html" rel="nofollow">CWG 277</a> </td> <td>C ++ 98</td> <td> <br/>Cấu trúc a</td> <td>{<br/>    int a, b, c;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/694.html" rel="nofollow">CWG 694</a> </td> <td>C ++ 98</td> <td>};</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/903.html" rel="nofollow">CWG 903</a> </td> <td>C ++ 98</td> <td>gấp đôi f [3];   // không khởi xướng thành ba 0,0<br/> </td> <td>int* p;        // không khởi xướng đến giá trị con trỏ null<br/>               // (ngay cả khi giá trị không phải là tích hợp 0)<code>​0​</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2026.html" rel="nofollow">CWG 2026</a> </td> <td>C ++ 98</td> <td> <br/>int main ()</td> <td>{<br/>    std :: cout &lt;&lt; "d =" &lt;&lt; d &lt;&lt; '\ n';</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2196.html" rel="nofollow">CWG 2196</a> </td> <td>C ++ 98</td> <td> </td> <td>std :: chuỗi s; // không khởi đầu cho giá trị không xác định, sau đó</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2253.html" rel="nofollow">CWG 2253</a> </td> <td>C ++ 98</td> <td>               // mặc định-khởi kiện được "" bởi STD :: Chuỗi trình xây dựng mặc định<br/> </td> <td>int main (int argc, char*[])<br/>{</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="constructor" title="cpp/language/constructor">constructor</a> </li>
+<li> <a href="copy_assignment" title="cpp/language/copy assignment">copy assignment</a> </li>
+<li> <a href="default_constructor" title="cpp/language/default constructor">default constructor</a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> <ul>
+<li> <a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a> </li>
+<li> <a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </li>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a> </li>
+<li> <a href="default_initialization" title="cpp/language/default initialization">default initialization</a> </li>
+<li> <a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a> </li>
+<li> <a href="list_initialization" title="cpp/language/list initialization">list initialization</a> </li>
+<li> <a href="value_initialization" title="cpp/language/value initialization">value initialization</a> </li>
+</ul> </li>
+<li> <a href="move_assignment" title="cpp/language/move assignment">move assignment</a> </li>
+<li> <a href="new" title="cpp/language/new"><code>new</code></a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/zero_initialization">https://en.cppreference.com/w/cpp/language/zero_initialization</a>
+</p>
+</div>

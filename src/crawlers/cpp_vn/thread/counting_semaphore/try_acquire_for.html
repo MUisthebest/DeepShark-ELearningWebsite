@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Counting_Semaphore &lt;ItherMaxValue&gt; :: try_acquire_for</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class rep, giai đoạn lớp&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Cố gắng làm giảm nguyên tử quầy trong<code>1</code>Nếu nó lớn hơn<code>​0​</code>; nếu không thì các khối cho đến khi nó lớn hơn<code>​0​</code>bool try_acquire_for (const std :: Chrono :: Thời lượng &lt;rep, period&gt; &amp; rel_time);<code>rel_time</code>và có thể làm giảm thành công bộ đếm nội bộ, hoặc</p>
+<h3 id="Preconditions">Điều kiện tiên quyết</h3> <p>Gán cho đã cho</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>được thực hiện hoặc khi thời gian chờ tương đối</td> <td>-</td> <td>các<i>Như tên của nó chỉ ra,</i>Thời lượng đã bị vượt quá.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu nó làm giảm bộ đếm nội bộ, nếu không<code>false</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Sao chép hàm tạo. Nếu như<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>thời lượng chức năng phải đợi nó không thành công</p>
+<h3 id="Notes">Ghi chú</h3> <p>hoặc một ngoại lệ liên quan đến thời gian chờ.<code>rel_time</code>Trong thực tế, chức năng có thể mất nhiều thời gian hơn</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="release" title="cpp/thread/counting semaphore/release"> <span class="t-lines"><span>giải phóng</span></span></a></div> </td> <td>có thể thất bại một cách mạnh mẽ.<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="acquire" title="cpp/thread/counting semaphore/acquire"> <span class="t-lines"><span>gia tăng bộ đếm nội bộ và người mua lại</span></span></a></div> </td> <td>giành được<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_acquire" title="cpp/thread/counting semaphore/try acquire"> <span class="t-lines"><span>làm giảm bộ đếm hoặc khối bên trong cho đến khi nó có thể</span></span></a></div> </td> <td>Try_acquire<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_acquire_until" title="cpp/thread/counting semaphore/try acquire until"> <span class="t-lines"><span>cố gắng làm giảm bộ đếm nội bộ, chặn đến một thời gian</span></span></a></div> </td> <td>Try_acquire_until<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/counting_semaphore/try_acquire_for">https://en.cppreference.com/w/cpp/thread/counting_semaphore/try_acquire_for</a>
+</p>
+</div>

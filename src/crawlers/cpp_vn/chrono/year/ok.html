@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Chrono :: năm :: ok</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr bool ok () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Kiểm tra xem giá trị năm được lưu trữ trong<code>*this</code>nằm trong phạm vi hợp lệ, tức là,<code>[</code><code>-32767</code><code>, </code><code>32767</code><code>]</code>.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu giá trị năm được lưu trữ trong<code>*this</code>nằm trong phạm vi<code>[</code><code>-32767</code><code>, </code><code>32767</code><code>]</code>. Nếu không thì<code>false</code>.</p>
+<h3 id="Possible_implementation">. ​</h3> <p>-Loại bị thu hút<a class="external text" href="https://github.com/gcc-mirror/gcc/blob/919858077f4b768c8472f29b977edf0aa6e0f1e5/libstdc%2B%2B-v3/include/std/chrono#L1606" rel="nofollow">libstdc++</a>Thì<a class="external text" href="https://github.com/llvm-mirror/libcxx/blob/78d6a7767ed57b50122a161b91f59f19c9bd0d19/include/chrono#L1832" rel="nofollow">libc++</a>và Howard Hinnant's<a class="external text" href="https://github.com/HowardHinnant/date/blob/0b72599bd43f72d8935e507e25e4f0063f9bb34e/include/date/date.h#L1630" rel="nofollow">date.h</a>.</p>
+<table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">lớp học</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">    một năm ngắn_;   // chỉ dành cho giải trình</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/year/ok">https://en.cppreference.com/w/cpp/chrono/year/ok</a>
+</p>
+</div>

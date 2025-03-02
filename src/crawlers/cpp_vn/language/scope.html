@@ -1,0 +1,123 @@
+ <h1 class="firstHeading" id="firstHeading">// Tuyên bố mẫu lớp của X X.</h1> <p>Mỗi<a href="declarations" title="cpp/language/declarations">declaration</a>xuất hiện trong chương trình C ++ chỉ có thể nhìn thấy trong một số có thể không liên tục<i>phạm vi</i>.</p>
+<p>Trong một phạm vi,<a href="lookup" title="cpp/language/lookup">unqualified name lookup</a>có thể được sử dụng để liên kết một tên với tuyên bố của nó.</p>
+<h3 id="General">Tổng quan</h3> <p>Mỗi chương trình có một<i>Phạm vi toàn cầu</i>};<i>                           Forwardit2 first2, forwardit2 last2,</i>toàn bộ chương trình.</p>
+<p>Mọi phạm vi khác<code>S</code>được giới thiệu bởi</p>
+<ul>
+<li>Một<a href="declarations" title="cpp/language/declarations">declaration</a>Thì</li>
+<li>một tham số trong<a href="function#Parameter_list" title="cpp/language/function">parameter list</a>Thì</li>
+<li>Một<a href="statements" title="cpp/language/statements">statement</a>, hoặc</li>
+<li>chồng chéo với container.<a href="try_catch" title="cpp/language/try catch">exception handler</a>.</li>
+</ul> <p><code>S</code>luôn xuất hiện trong một phạm vi khác, do đó<i>                           Forwardit2 first2, forwardit2 last2,</i> <code>S</code>.</p>
+<p>MỘT<i>Phạm vi bao quanh</i>Tại một điểm chương trình là bất kỳ phạm vi nào chứa nó; phạm vi nhỏ nhất như vậy được cho là<i>phạm vi ngay lập tức</i>Tại thời điểm đó.</p>
+<p>Một phạm vi<i>can thiệp</i>giữa một điểm chương trình<code>P</code>và một phạm vi<code>S</code>(không chứa<code>P</code>) nếu nó là hoặc chứa<code>S</code>nhưng không chứa<code>P</code>.</p>
+<p>Các<i>Phạm vi cha mẹ</i>của bất kỳ phạm vi<code>S</code>đó không phải là<a href="#Template_parameter_scope">template parameter scope</a>là phạm vi nhỏ nhất có chứa<code>S</code>và không phải là một phạm vi tham số mẫu.</p>
+<p>Trừ khi có quy định khác:</p>
+<ul>
+<li>Một tuyên bố<i>cư trú</i>phạm vi ngay lập tức tại nó<a href="#Point_of_declaration">locus</a>.</li>
+<li>Một tuyên bố<i>phạm vi mục tiêu</i>là phạm vi mà nó sinh sống.</li>
+<li>Bất kỳ tên (Re) nào được giới thiệu bởi một tuyên bố là<i>Phải mô hình</i>với nó trong phạm vi mục tiêu của nó.</li>
+</ul> <p>Một thực thể<i>thuộc về</i>đến một phạm vi<code>S</code>nếu như<code>S</code>là phạm vi mục tiêu của một tuyên bố của thực thể.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// phạm vi phạm vi toàn cầu</pre></div> <p>// Phạm vi S T</p>
+<ul>
+<li>int x;         // ─┐ // Điểm chương trình x<code>S</code>là phạm vi mục tiêu của Tuyên bố<code>T</code>{// │ ┐ ─┐<code>Y</code>.</li>
+<ul><li>    {// │ │ ─┐<code>Y</code>.</li></ul>
+<li>        int y; // │ │ │ // điểm chương trình y<code>S</code>Và<code>T</code>    } // │ │ ─┘<code>S</code>} // ─┘ ─┘<code>T</code>.</li>
+<li>Trong chương trình trên:<code>T</code>Phạm vi toàn cầu, phạm vi</li>
+<ul>
+<li>// Tuyên bố mẫu lớp của X X.<code>T</code>Chứa điểm chương trình<code>Y</code>.</li>
+<li>Nói cách khác, ba phạm vi này đều là phạm vi bao quanh tại điểm chương trình<code>y</code>Phạm vi toàn cầu chứa phạm vi<code>T</code>, và phạm vi</li>
+<li>// Tuyên bố mẫu lớp của X X.<code>T</code>Do đó, phạm vi<code>y</code>.</li>
+<li>là phạm vi nhỏ nhất trong số ba, có nghĩa là:<code>y</code>Phạm vi<code>T</code>.</li>
+</ul>
+<li>// Tuyên bố mẫu lớp của X X.<code>S</code>Tuyên bố của biến<code>T</code>sống trong phạm vi<code>S</code>.</li>
+<li>// Tuyên bố mẫu lớp của X X.<code>S</code>Phạm vi<code>X</code>là phạm vi mục tiêu của Tuyên bố<code>T</code>.</li>
+</ul> <h3 id="Block_scope">Biến</h3> <p>Mỗi</p>
+<ul>
+<li> <a href="statements#Selection_statements" title="cpp/language/statements">selection statement</a>.<a href="if" title="cpp/language/if"><span class="kw1">nếu như</span></a>Thì<a href="switch" title="cpp/language/switch"><span class="kw1">công tắc</span></a>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.</li>
+<li> <a href="statements#Iteration_statements" title="cpp/language/statements">iteration statement</a>.<a href="for" title="cpp/language/for"><span class="kw1">vì</span></a><span class="t-rev-inl t-since-cxx11"><span>Thì<a href="range-for" title="cpp/language/range-for">range-<span class="kw1">vì</span></a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Thì<a href="while" title="cpp/language/while"><span class="kw1">, hoặc nếu</span></a>Thì<a href="do" title="cpp/language/do"><span class="kw1">thu được từ</span>-<span class="kw1">, hoặc nếu</span></a>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.</li>
+<li> <a href="try_catch" title="cpp/language/try catch">exception handler</a>, hoặc</li>
+<li> <a href="statements#Compound_statements" title="cpp/language/statements">compound statement</a>thuộc về phạm vi<span class="t-spar">Tệp hỗn hợp</span>Phạm vi</li>
+</ul> <p>Giới thiệu a<i>là phạm vi cha mẹ của phạm vi</i>và phạm vi toàn cầu là phạm vi cha mẹ của phạm vi</p>
+<p>Phạm vi<i>can thiệp giữa điểm chương trình</i>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">và phạm vi</pre></div> <p>Phạm vi khối<span class="t-rev-inl t-since-cxx26"><span>đó không phải là<a href="conflicting_declarations#Potentially-conflict_declarations" title="cpp/language/conflicting declarations">name-independent declaration</a>Và</span><span><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></span></span>của một người dùng ngoại lệ<code>S</code>của</p>
+<ul><li>Phạm vi khối<span class="sy2">-</span>Điều đó bao gồm tuyên bố hoặc người xử lý.<a href="function#Function_definition" title="cpp/language/function">function body</a>hoặc<a href="function-try-block" title="cpp/language/function-try-block">function <span class="kw1">    i = 0;</span> block</a>Thì</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Một biến thuộc phạm vi khối là một<code>{</code> <span class="t-spar">Sự phụ thuộc:</span> <code>}</code>xuất hiện trong bối cảnh ngay lập tức của một khởi tạo mẫu.<a href="lambda" title="cpp/language/lambda">lambda expression</a>Thì</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>Biến khối</li>
+<li>int i = 42;<span class="kw1">    i = 0;</span>khối</li>
+</ul> <p><a href="conflicting_declarations#Potentially-conflict_declarations" title="cpp/language/conflicting declarations">potentially conflicts</a>int a [10];<code>S</code>, chương trình là xấu.</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h3 id="Function_parameter_scope">for (int i = 0; i &lt;10; i ++) // bên trong i i i</h3> <p>Mỗi<a href="function#Parameter_list" title="cpp/language/function">parameter declaration</a> <code>P</code>Giới thiệu a<i>    a [i] = i;                // Được giới thiệu bởi sự kể chuyện</i> <code>P</code>.</p>
+<ul>
+<li>if (int x = f ()) // khai báo tính<a href="function" title="cpp/language/function">function declaration</a>:</li>
+<ul>
+<li>Nếu một tuyên bố<a href="function#Function_definition" title="cpp/language/function">function definition</a>đó không phải là một</li>
+<li>phạm vi mục tiêu của ai là phạm vi khối</li>
+<li>các hợp chất<a href="#Point_of_declaration">locus</a>Tuyên bố của a</li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>if (int x = f ()) // khai báo tính<a href="lambda" title="cpp/language/lambda">lambda expression</a>{// IF khối là sự thay thế của if-statement<code>{</code> <span class="t-spar">Sự phụ thuộc:</span> <code>}</code>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>if (int x = f ()) // khai báo tính<a class="mw-redirect" href="deduction_guide" title="cpp/language/deduction guide">deduction guide</a>với một tuyên bố có phạm vi mục tiêu là phạm vi cha mẹ của</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>if (int x = f ()) // khai báo tính<a href="requires" title="cpp/language/requires">requires expression</a>{// IF khối là sự thay thế của if-statement<code>{</code> <span class="t-spar">biểu thức mà</span> <code>}</code>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <div class="cpp source-cpp"><pre data-language="cpp">    int x;       // lỗi</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <h3 id="Lambda_scope">}</h3> <p>Mỗi<a href="lambda" title="cpp/language/lambda">lambda expression</a>Giới thiệu a<i>khác</i>{// Khối khác cũng là một thay thế của if-statement<code>[</code><span class="t-spar"> </span>﻿<code>]</code>    int x;       // lỗi<code>{</code> <span class="t-spar">Sự phụ thuộc:</span> <code>}</code>.</p>
+<p>Các<a href="lambda#Lambda_captures" title="cpp/language/lambda">captures</a>}<code>E</code>Phạm vi tham số chức năng<code>E</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Phạm vi tham số chức năng</pre></div> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <h3 id="Namespace_scope">Điều đó bao gồm</h3> <p>Không có mẫu nào được xác định trong<a href="namespace" title="cpp/language/namespace">namespace definition</a>Nếu tham số được khai báo là danh sách tham số của một<code>N</code>Giới thiệu a<i>Nếu khai báo chức năng là một</i> <code>S</code>Phạm vi không gian tên<span class="t-spar">Tuyên bố</span>Mặt khác (khai báo hàm là nguyên mẫu hàm), phạm vi được giới thiệu được mở rộng đến cuối bộ khai báo hàm.<code>N</code>.</p>
+<p>} // Phạm vi tham số chức năng kết thúc ở đây<code>S</code>Phạm vi Lambda<code>S</code>Phạm vi Lambda<code>S</code>:</p>
+<ul>
+<li>C &lt;tint&gt; C;  // ĐƯỢC RỒI; Instantiates Tuyên bố void C :: F (int n = 0, int)<a href="class" title="cpp/language/class">class</a>Điều đó bắt đầu ngay sau đó<span class="t-spar">tên lớp học</span>.</li>
+<li>C &lt;tint&gt; C;  // ĐƯỢC RỒI; Instantiates Tuyên bố void C :: F (int n = 0, int)<a href="enum" title="cpp/language/enum">enumeration</a>và kéo dài đến cuối<span class="t-spar">Mỗi bảng điều khiển được liên kết với giá trị của loại cơ bản. Khi khởi tạo được cung cấp trong</span>.</li>
+<li>với các bộ khởi tạo biểu thức Lambda<span class="t-spar">không đủ tiêu chuẩn-id</span>hoặc<span class="t-spar">Trừ khi nó đáp ứng tất cả các điều kiện sau:</span>của<a href="declarations#Declarators" title="cpp/language/declarations">declarator</a>.</li>
+</ul> <p>Các<a href="#General">global scope</a>Nếu tham số được khai báo là danh sách tham số của một<a href="namespace" title="cpp/language/namespace">global namespace</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, phạm vi được giới thiệu được mở rộng đến cuối</pre></div> <h3 id="Class_scope">int f (int n) // khai báo tham số</h3> <p>{// Giới thiệu phạm vi tham số chức năng<code>C</code>Giới thiệu a<i>mẫu &lt;int x&gt; class B &lt;x, &amp; mảng&gt; {}; // Lỗi: loại đối số &amp; mảng là</i> <code>S</code>Phạm vi không gian tên<span class="t-spar">Đặc điểm cụ thể thành viên</span>của<a href="class" title="cpp/language/class">class definition</a>của<code>C</code>.</p>
+<p>} // Phạm vi tham số chức năng kết thúc ở đây<code>S</code>Phạm vi Lambda<code>S</code>Phạm vi Lambda<code>S</code>:</p>
+<ul>
+<li>C &lt;tint&gt; C;  // ĐƯỢC RỒI; Instantiates Tuyên bố void C :: F (int n = 0, int)<a href="class" title="cpp/language/class">class</a>Điều đó bắt đầu ngay sau đó<span class="t-spar">tên lớp học</span>.</li>
+<li>C &lt;tint&gt; C;  // ĐƯỢC RỒI; Instantiates Tuyên bố void C :: F (int n = 0, int)<a href="enum" title="cpp/language/enum">enumeration</a>và kéo dài đến cuối<span class="t-spar">Mỗi bảng điều khiển được liên kết với giá trị của loại cơ bản. Khi khởi tạo được cung cấp trong</span>.</li>
+<li>với các bộ khởi tạo biểu thức Lambda<span class="t-spar">không đủ tiêu chuẩn-id</span>hoặc<span class="t-spar">Trừ khi nó đáp ứng tất cả các điều kiện sau:</span>của<a href="declarations#Declarators" title="cpp/language/declarations">declarator</a>.</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">sống trong phạm vi Lambda được giới thiệu bởi</pre></div> <h3 id="Enumeration_scope">auto lambda = [x = 1, y] () // Biểu thức lambda này giới thiệu phạm vi Lambda,</h3> <p>{// Đó là phạm vi đích của việc bắt giữ<code>E</code>    / * ... */<i>};                         // Phạm vi Lambda kết thúc trước khi dấu chấm phẩy</i>Phạm vi không gian tên<span class="t-spar"> </span>của<span class="t-rev-inl t-since-cxx11"><span>cho một không gian tên</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> <a href="enum" title="cpp/language/enum">enumeration declaration</a>của<code>E</code>Phạm vi không gian tên</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Điều đó bao gồm cả</pre></div> <h3 id="Template_parameter_scope">cho mọi định nghĩa không gian tên cho</h3> <p>Mỗi<a href="template_parameters#Template_template_parameter" title="cpp/language/template parameters">template template parameter</a>Giới thiệu a<i>tái cấu trúc, phần sau</i>hoặc được chứa bởi<span class="t-rev-inl t-since-cxx20"><span>Đối tượng lưu trữ<a href="constraints#Requires_clauses" title="cpp/language/constraints">require clauses</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, các phần sau cũng được bao gồm trong phạm vi</p>
+<p>(Mẫu) Tái giải quyết hoặc chuyên môn mẫu lớp, phần sau<code>D</code>Giới thiệu a<i>tái cấu trúc, phần sau</i> <code>S</code>Đối với bất kỳ điều chỉnh lại hoặc chuyên môn nào khác, phần sau<code>D</code>là phạm vi không gian tên của<code>D</code>Không gian tên V // Định nghĩa không gian tên của V V V<code>S</code>{// giới thiệu phạm vi không gian tên<code>D</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    // Phần đầu tiên của phạm vi S S S S S S S S S S S S S S S S S S S S S S S S S S L</pre></div> <h3 id="Point_of_declaration">    void f ();</h3> <p>    // Phần đầu tiên của phạm vi S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S<i>}</i> </p>
+<p>Void V :: f () // Phần sau khi F F F<a href="declarations#Declarators" title="cpp/language/declarations">declarator</a>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    khoảng trống h (); // tuyên bố v :: h</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">} // Phần thứ hai của phạm vi S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S</pre></div> <p>Phạm vi lớp học<a href="templates#template-id" title="cpp/language/templates">template-id</a>Mỗi khai báo của một lớp hoặc mẫu lớp<a href="class" title="cpp/language/class">class-head</a>Điều đó bao gồm cả</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Đối với mỗi người không phải là người không phải là bạn bè hoặc chuyên môn hóa có phạm vi mục tiêu là</pre></div> <p>hoặc được chứa bởi<a href="enum" title="cpp/language/enum">enum specifier</a><span class="t-rev-inl t-since-cxx11"><span>, các phần sau cũng được bao gồm trong phạm vi</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>(Mẫu) Tái giải quyết hoặc chuyên môn mẫu lớp, phần sau</p>
+<div class="cpp source-cpp"><pre data-language="cpp">tái cấu trúc, phần sau</pre></div> <p>Phạm vi tham số mẫu<a href="type_alias" title="cpp/language/type alias">type alias or alias template</a>Lớp C // Định nghĩa lớp của C C ”</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{// giới thiệu một phạm vi lớp học</pre></div> <p>    // Phần đầu tiên của phạm vi S S S S S S S S S S S S S S S S S S S S S S S S S S L<a href="using_declaration" title="cpp/language/using declaration">using declaration</a>    void f ();</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    // Phần đầu tiên của phạm vi S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S</pre></div> <p>}</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Void C :: f () // Phần sau khi F F F<a href="injected-class-name" title="cpp/language/injected-class-name">injected-class-name</a>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    / * ... */</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>} // Phần thứ hai của phạm vi S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S<code>__func__</code>Phạm vi liệt kê</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Phạm vi tham số mẫu<a href="structured_binding" title="cpp/language/structured binding">structured binding declaration</a>{// giới thiệu một phạm vi liệt kê<span class="t-spar">Phạm vi liệt kê</span>Điều đó bao gồm cả</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Không opaque<span class="t-rev-inl t-since-cxx17"><span>(nếu có mặt).</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Enum Class E // Tuyên bố liệt kê của E E<span class="t-spar">{</span>xuất hiện trong bối cảnh ngay lập tức của một khởi tạo mẫu.<a href="range-for" title="cpp/language/range-for">range-<span class="kw1">vì</span> loop</a>{// giới thiệu một phạm vi liệt kê<span class="t-spar">Giải khai phạm vi</span>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    // Phạm vi “S” bắt đầu từ đây</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Phạm vi tham số mẫu<a href="template_parameters" title="cpp/language/template parameters">template parameter</a>    // Phạm vi “S” kết thúc ở đây</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Phạm vi tham số mẫu<a href="constraints" title="cpp/language/constraints">concept definition</a>Phạm vi tham số mẫu</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>bao gồm toàn bộ danh sách tham số mẫu<a href="namespace" title="cpp/language/namespace">namespace definition</a>của tham số mẫu mẫu đó.</p>
+<h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>Phạm vi tham số mẫu</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>Phạm vi tham số mẫu</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>mà mở rộng từ đầu danh sách tham số mẫu của</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>. Bất kỳ tuyên bố nào bên ngoài danh sách tham số mẫu sẽ sống</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>. Bất kỳ tuyên bố nào bên ngoài danh sách tham số mẫu sẽ sống</li></ul>
+<li>    S.B3 = 0B11;</li>
+<ul><li>thay vào đó sống cùng một phạm vi như</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/scope" title="c/language/scope">C documentation</a></span>vì<span class=""><span>// Tuyên bố mẫu lớp của X X.</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/scope">https://en.cppreference.com/w/cpp/language/scope</a>
+</p>
+</div>

@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: strcspn</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstring" title="cpp/header/cstring">&lt;cstring&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: size_t strcspn (const char *dest, const char *src);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả về độ dài của phân đoạn ban đầu tối đa của chuỗi byte được trỏ bởi<code>dest</code>, chỉ bao gồm các ký tự<i>không</i>tìm thấy trong chuỗi byte được trỏ bởi<code>src</code>.</p>
+<p>Tên chức năng là viết tắt của "nhịp bổ sung".</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc không</td>
+</tr> <tr class="t-par"> <td>SRC</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc null có chứa các ký tự để tìm kiếm</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Độ dài của phân đoạn ban đầu tối đa chỉ chứa các ký tự không được tìm thấy trong chuỗi byte được trỏ bởi<code>src</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDdef&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;cstring&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="strspn" title="cpp/string/byte/strspn"> <span class="t-lines"><span>STRSPN</span></span></a></div> </td> <td>Trả về độ dài của phân đoạn ban đầu tối đa bao gồm<br/>chỉ các ký tự được tìm thấy trong chuỗi byte khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../wide/wcscspn" title="cpp/string/wide/wcscspn"> <span class="t-lines"><span>WCSCSPN</span></span></a></div> </td> <td>Trả về độ dài của phân đoạn ban đầu tối đa bao gồm<br/>chỉ rộng<i>không</i>Tìm thấy trong một chuỗi rộng khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strpbrk" title="cpp/string/byte/strpbrk"> <span class="t-lines"><span>strpbrk</span></span></a></div> </td> <td>Tìm vị trí đầu tiên của bất kỳ ký tự nào từ một bộ phân cách<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_string/find_first_of" title="cpp/string/basic string/find first of"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>nối các ký tự đến cuối<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_string&lt;CharT,Traits,Allocator&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/strcspn" title="c/string/byte/strcspn">C documentation</a></span>vì<code>strcspn</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/strcspn">https://en.cppreference.com/w/cpp/string/byte/strcspn</a>
+</p>
+</div>

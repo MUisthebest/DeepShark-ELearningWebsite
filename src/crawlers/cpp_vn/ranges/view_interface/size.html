@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: View_interface &lt;D&gt; :: size</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ConstExpr Auto Size () yêu cầu phạm vi :: forward_range &lt;d&gt; &amp;&amp;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">    std :: cỡ_sentinel_for &lt;ranges :: sentinel_t &lt;d&gt;, </pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>constexpr dectype (auto) back () const<code>size()</code>                            Phạm vi :: iterator_t &lt;D &gt;&gt;;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>derived</code>{<code>static_cast&lt;D&amp;&gt;(*this)</code>là các yếu tố của phạm vi.<code><span class="kw1">Không chính thức,</span> <span class="coMULTI">ConstExpr Auto Size () const</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/end"><span class="kw2884">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">kết thúc</span></span></a><span class="br0">.</span>derived<span class="br0">)</span> <span class="sy2">-</span> <a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>derived<span class="br0">)</span><span class="br0">)</span><span class="sy4">Số lượng các yếu tố để sao chép</span></code>ConstExpr Auto Size () Const yêu cầu phạm vi :: forward_range &lt;const d&gt; &amp;&amp;<code><i>constexpr / * iterator * / end () const yêu cầu std :: more_as &lt;w, giới hạn&gt;;</i></code>    std :: cỡ_sentinel_for &lt;ranges :: sentinel_t &lt;const d&gt;,</div> <div class="t-li1">
+<span class="t-li">2)</span>                                   Nhị phân p);<span class="t-v">(1)</span>, và sau đó gọi<code>derived</code>khoảng cách<code>static_cast&lt;const D&amp;&gt;(*this)</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>                            Phạm vi :: iterator_t &lt;const d &gt;&gt;;</p>
+<h3 id="Notes">Ghi chú</h3> <p>, cũng là địa chỉ thấp nhất của lưu trữ tiếp giáp (ngụ ý bởi<code>size()</code>:</p>
+<ul><li> <code><a href="../drop_while_view" title="cpp/ranges/drop while view">std::ranges::drop_while_view</a></code> </li></ul> <p>) được tham chiếu bởi quan điểm của loại dẫn xuất khi chế độ xem không trống.<code><a href="../view_interface" title="cpp/ranges/view interface">std::ranges::view_interface</a></code>Địa chỉ được biểu thị bằng trình lặp bắt đầu.<code>size()</code>Hàm thành viên có được kích thước của phạm vi bằng cách tính chênh lệch giữa sentinel và trình lặp bắt đầu.<a href="../../iterator/sized_sentinel_for" title="cpp/iterator/sized sentinel for"><code>sized_sentinel_for</code></a>:</p>
+<ul>
+<li> <code><a href="../basic_istream_view" title="cpp/ranges/basic istream view">std::ranges::basic_istream_view</a></code> </li>
+<li> <code><a href="../filter_view" title="cpp/ranges/filter view">std::ranges::filter_view</a></code> </li>
+<li> <code><a href="../join_view" title="cpp/ranges/join view">std::ranges::join_view</a></code> </li>
+<li> <code>std::ranges::lazy_split_view</code> </li>
+<li> <code><a href="../split_view" title="cpp/ranges/split view">std::ranges::split_view</a></code> </li>
+<li> <code><a href="../take_while_view" title="cpp/ranges/take while view">std::ranges::take_while_view</a></code> </li>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3646" rel="nofollow">LWG 3646</a> </td> <td>C ++ 20</td> <td>, trong đó mẫu chức năng chỉ dành cho giải trình<code>size</code>Thực hiện các diễn viên rõ ràng từ loại đối số đến loại không dấu tương ứng của nó.</td> <td>Sự khác biệt giữa sentinel và trình lặp bắt đầu của giá trị của loại dẫn xuất, được chuyển đổi thành loại không dấu tương ứng của nó.</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../iterator/size" title="cpp/iterator/size"> <span class="t-lines"><span>kích cỡ</span><span>ssize</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Trả về kích thước của một container hoặc mảng<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../size" title="cpp/ranges/size"> <span class="t-lines"><span>Phạm vi :: CREND</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Trả về một trình lặp ngược lại vào một phạm vi chỉ đọc<br/><span class="t-mark">(Đối tượng điểm tùy chỉnh)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../ssize" title="cpp/ranges/ssize"> <span class="t-lines"><span>Phạm vi :: Kích thước</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Trả về một số nguyên bằng kích thước của một phạm vi<br/><span class="t-mark">(Đối tượng điểm tùy chỉnh)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/view_interface/size">https://en.cppreference.com/w/cpp/ranges/view_interface/size</a>
+</p>
+</div>

@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">Tiêu đề tiêu chuẩn tiêu đề &lt;Cuchar&gt;<span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span>
+</h1> <p>Tiêu đề này ban đầu là trong thư viện tiêu chuẩn C<a href="https://en.cppreference.com/w/c/string/multibyte" title="c/string/multibyte"><code>&lt;uchar.h&gt;</code></a>.</p>
+<p>Tiêu đề này là một phần của<a href="../string/multibyte" title="cpp/string/multibyte">null-terminated multibyte strings</a>thư viện.</p>
+<table class="t-dsc-begin"> <tr> <td colspan="2"> <h3 id="Macros">Macro</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>__Stdc_utf_16__</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>chỉ ra rằng mã hóa UTF-16 được sử dụng bởi MBRTOC16 và C16RTomb<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>__Stdc_utf_32__</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>chỉ ra rằng mã hóa UTF-32 được sử dụng bởi MBRTOC32 và C32RTomb<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr> <td colspan="2"> <h3 id="Types">Loại</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/multibyte/mbstate_t" title="cpp/string/multibyte/mbstate t"> <span class="t-lines"><span>mbstate_t</span></span></a></div> </td> <td>Thông tin trạng thái chuyển đổi cần thiết để lặp lại chuỗi ký tự multibyte<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/size_t" title="cpp/types/size t"> <span class="t-lines"><span>size_t</span></span></a></div> </td> <td>loại số nguyên không dấu được trả về bởi<a href="../language/sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>nhà điều hành<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr> <td colspan="2"> <h3 id="Functions">Chức năng</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/multibyte/mbrtoc16" title="cpp/string/multibyte/mbrtoc16"> <span class="t-lines"><span>MBRTOC16</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi một ký tự multibyte hẹp thành mã hóa UTF-16<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/multibyte/c16rtomb" title="cpp/string/multibyte/c16rtomb"> <span class="t-lines"><span>C16rtomb</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi một ký tự rộng 16 bit thành chuỗi multibyte hẹp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/multibyte/mbrtoc32" title="cpp/string/multibyte/mbrtoc32"> <span class="t-lines"><span>MBRTOC32</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi một ký tự multibyte hẹp thành mã hóa UTF-32<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/multibyte/c32rtomb" title="cpp/string/multibyte/c32rtomb"> <span class="t-lines"><span>C32rtomb</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi một ký tự rộng 32 bit thành chuỗi multibyte hẹp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/multibyte/mbrtoc8" title="cpp/string/multibyte/mbrtoc8"> <span class="t-lines"><span>MBRTOC8</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Chuyển đổi một ký tự multibyte hẹp thành mã hóa UTF-8<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/multibyte/c8rtomb" title="cpp/string/multibyte/c8rtomb"> <span class="t-lines"><span>C8rtomb</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Chuyển đổi chuỗi UTF-8 thành mã hóa multibyte hẹp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <h3 id="Synopsis">kết quả bằng cách xây dựng mọi thành viên dữ liệu của kết quả từ thành viên tương ứng của</h3> <div class="cpp source-cpp"><pre data-language="cpp">không gian tên std {</pre></div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/header/cuchar">https://en.cppreference.com/w/cpp/header/cuchar</a>
+</p>
+</div>

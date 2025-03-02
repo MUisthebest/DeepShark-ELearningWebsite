@@ -1,0 +1,10 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; :: hoán đổi</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Cuộc gọi<code>basic_ios::swap(rhs)</code>hoán đổi void (basic_ostream &amp; rhs);<code>rdbuf()</code>để trao đổi tất cả các thành viên dữ liệu của lớp cơ sở, ngoại trừ<code>*this</code>Và<code>rhs</code>, giữa<code><a href="../basic_ofstream" title="cpp/io/basic ofstream">std::basic_ofstream</a></code>Và<code><a href="../basic_ostringstream" title="cpp/io/basic ostringstream">std::basic_ostringstream</a></code>Hàm hoán đổi này được bảo vệ: nó được gọi bởi các hàm thành viên hoán đổi của các lớp luồng dẫn xuất như</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>. Hàm hoán đổi này được bảo vệ: nó được gọi bởi các hàm hoán đổi của các lớp luồng đầu ra có thể trao đổi</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">một cơ bản của cùng một loại để hoán đổi với</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ostream/swap">https://en.cppreference.com/w/cpp/io/basic_ostream/swap</a>
+</p>
+</div>

@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: ptrdiff_t</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/cstddef" title="cpp/header/cstddef">&lt;cstddef&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">typedef /*thực hiện xác định* / ptrdiff_t;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p><code>std::ptrdiff_t</code>là loại số nguyên đã ký kết quả của việc trừ hai con trỏ.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Chiều rộng bit của<code>std::ptrdiff_t</code>không nhỏ hơn 17.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p><code>std::ptrdiff_t</code>được sử dụng cho<a href="../language/operator_arithmetic#Additive_operators" title="cpp/language/operator arithmetic">pointer arithmetic</a>và lập chỉ mục mảng, nếu các giá trị âm là có thể. Các chương trình sử dụng các loại khác, chẳng hạn như<code>int</code>, có thể thất bại, ví dụ: Hệ thống 64 bit khi chỉ số vượt quá<code><a href="climits" title="cpp/types/climits">INT_MAX</a></code>hoặc nếu nó dựa vào số học mô-đun 32 bit.</p>
+<p>Khi làm việc với thư viện container C ++, loại thích hợp cho sự khác biệt giữa các trình lặp là thành viên typedef<code>difference_type</code>, thường đồng nghĩa với<code>std::ptrdiff_t</code>.</p>
+<p>Chỉ các con trỏ đến các phần tử của cùng một mảng (bao gồm cả con trỏ một qua phần cuối của mảng) có thể được trừ đi với nhau.</p>
+<p>Nếu một mảng quá lớn (lớn hơn<code><a href="climits" title="cpp/types/climits">PTRDIFF_MAX</a></code>các yếu tố, nhưng ít hơn<code><a href="climits" title="cpp/types/climits">SIZE_MAX</a></code>byte), rằng sự khác biệt giữa hai con trỏ có thể không thể đại diện cho<code>std::ptrdiff_t</code>, kết quả của việc trừ hai con trỏ như vậy là không xác định.</p>
+<p>Đối với các mảng char ngắn hơn<code><a href="climits" title="cpp/types/climits">PTRDIFF_MAX</a></code>Thì<code>std::ptrdiff_t</code>hoạt động như đối tác đã ký của<code><a href="size_t" title="cpp/types/size t">std::size_t</a></code>: Nó có thể lưu trữ kích thước của mảng bất kỳ loại nào và trên hầu hết các nền tảng, đồng nghĩa với<code><a href="integer" title="cpp/types/integer">std::intptr_t</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDdef&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="size_t" title="cpp/types/size t"> <span class="t-lines"><span>size_t</span></span></a></div> </td> <td>loại số nguyên không dấu được trả về bởi<a href="../language/sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>nhà điều hành<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="offsetof" title="cpp/types/offsetof"> <span class="t-lines"><span>offsetof</span></span></a></div> </td> <td>Byte bù từ đầu của một<a href="../named_req/standardlayouttype" title="cpp/named req/StandardLayoutType">standard-layout</a>Nhập thành viên được chỉ định<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/types/ptrdiff_t" title="c/types/ptrdiff t">C documentation</a></span>vì<code>ptrdiff_t</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/ptrdiff_t">https://en.cppreference.com/w/cpp/types/ptrdiff_t</a>
+</p>
+</div>

@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Quick_exit</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdlib" title="cpp/header/cstdlib">&lt;cstdlib&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">[[Noreturn]] void Quick_exit (int exit_code) NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Nguyên nhân chấm dứt chương trình bình thường xảy ra mà không làm sạch hoàn toàn các tài nguyên.</p>
+<p>Chức năng được thông qua<code><a href="at_quick_exit" title="cpp/utility/program/at quick exit">std::at_quick_exit</a></code>được gọi theo thứ tự ngược lại đăng ký của họ. Nếu một ngoại lệ cố gắng truyền bá bất kỳ chức năng nào,<code><a href="../../error/terminate" title="cpp/error/terminate">std::terminate</a></code>được gọi. Sau khi gọi các chức năng đã đăng ký, các cuộc gọi<code><a href="http://en.cppreference.com/w/cpp/utility/program/_Exit"><span class="kw970">STD :: _ Thoát</span></a><span class="br0">.</span>exit_code<span class="br0">)</span></code>.</p>
+<p>Chức năng được thông qua<code><a href="atexit" title="cpp/utility/program/atexit">std::atexit</a></code>không được gọi.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>EXIT_CODE</td> <td>-</td> <td>Trạng thái thoát của chương trình</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDlib&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="abort" title="cpp/utility/program/abort"> <span class="t-lines"><span>khẳng định ((2 + 2 == 5) &amp;&amp; "Có năm đèn");</span></span></a></div> </td> <td>Việc thực hiện<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="exit" title="cpp/utility/program/exit"> <span class="t-lines"><span>ra</span></span></a></div> </td> <td>gây ra sự chấm dứt chương trình bình thường với việc dọn dẹp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="atexit" title="cpp/utility/program/atexit"> <span class="t-lines"><span>atexit</span></span></a></div> </td> <td>đăng ký một chức năng được gọi<code><a href="exit" title="cpp/utility/program/exit">std::exit()</a></code>Mệnh viện<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="at_quick_exit" title="cpp/utility/program/at quick exit"> <span class="t-lines"><span>at_quick_exit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đăng ký một chức năng được gọi<code>std::quick_exit</code>Mệnh viện<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/program/quick_exit" title="c/program/quick exit">C documentation</a></span>vì<code>quick_exit</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/program/quick_exit">https://en.cppreference.com/w/cpp/utility/program/quick_exit</a>
+</p>
+</div>

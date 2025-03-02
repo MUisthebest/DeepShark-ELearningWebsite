@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: rethrow_if_nested</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/exception" title="cpp/header/exception">&lt;exception&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class E&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Nếu như<code>E</code>void rethrow_if_nested (const e &amp; e);<code><a href="nested_exception" title="cpp/error/nested exception">std::nested_exception</a></code>không phải là loại lớp đa hình, hoặc nếu<code>E</code>là một lớp cơ sở không thể truy cập hoặc mơ hồ của</p>
+<p>, không có hiệu lực.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Nếu không, thực hiện</pre></div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</td> <td>-</td> <td>    p-&gt; rethrow_nested ();</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>e<i>không</i>đối tượng ngoại lệ để tái hiện<code><a href="http://en.cppreference.com/w/cpp/error/exception_ptr"><span class="kw778">Điều đó cho tất cả<span class="me2">Exception_ptr</span></span></a></code>Không giống như nhiều chức năng liên quan, chức năng này là</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">dự định được gọi với một</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3>
+<div class="t-example">
+<p>Thể hiện việc xây dựng và đệ quy thông qua một đối tượng ngoại lệ lồng nhau.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Ngoại lệ&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Fstream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="nested_exception" title="cpp/error/nested exception"> <span class="t-lines"><span>Nested_Exception</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>một loại mixin để nắm bắt và lưu trữ các ngoại lệ hiện tại<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="throw_with_nested" title="cpp/error/throw with nested"> <span class="t-lines"><span>Ném_with_nested</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>ném lập luận của nó với<code><a href="nested_exception" title="cpp/error/nested exception">std::nested_exception</a></code>trộn lẫn vào<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/rethrow_if_nested">https://en.cppreference.com/w/cpp/error/rethrow_if_nested</a>
+</p>
+</div>

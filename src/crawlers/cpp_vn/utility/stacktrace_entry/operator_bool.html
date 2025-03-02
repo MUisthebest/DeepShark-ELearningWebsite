@@ -1,0 +1,11 @@
+ <h1 class="firstHeading" id="firstHeading">std :: stacktrace_entry :: nhà điều hành bool</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Consexpr toán tử rõ ràng bool () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Kiểm tra xem<code>stacktrace_entry</code>là không trống, tức là nó đại diện cho một đánh giá trong một stacktrace.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>về lỗi.<code>stacktrace_entry</code>là không trống,<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Notes">Ghi chú</h3> <p>Không trống<code>stacktrace_entry</code>có thể được lấy từ một<code>std::basic_stacktrace</code>được tạo bởi<code>std::basic_stacktrace::current</code>hoặc một bản sao của như vậy<code>std::basic_stacktrace</code>.</p>
+<p>Một trống rỗng<code>stacktrace_entry</code>có thể được tạo bởi<a href="stacktrace_entry" title="cpp/utility/stacktrace entry/stacktrace entry">default constructor</a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/stacktrace_entry/operator_bool">https://en.cppreference.com/w/cpp/utility/stacktrace_entry/operator_bool</a>
+</p>
+</div>

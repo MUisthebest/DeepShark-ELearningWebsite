@@ -1,0 +1,43 @@
+ <h1 class="firstHeading" id="firstHeading">Pimpl</h1> <p>"Con trỏ để triển khai" hoặc "pimpl" là C ++<a href="#External_links">programming technique</a>loại bỏ các chi tiết triển khai của một lớp khỏi biểu diễn đối tượng của nó bằng cách đặt chúng trong một lớp riêng biệt, được truy cập thông qua một con trỏ mờ đục:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// --------------------</pre></div> <p>// Giao diện (Widget.h)</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Tiện ích cấu trúc<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>{</p>
+<p>    // thành viên công cộng</p>
+<h3 id="Trade-offs">riêng tư:</h3> <p>    Cấu trúc im lặng; // Tuyên bố chuyển tiếp của lớp thực hiện</p>
+<ul>
+<li>    // Một ví dụ thực hiện: Xem bên dưới để biết các tùy chọn thiết kế khác và sự đánh đổi</li>
+<li>    STD :: ASTERMETY :: Propagate_const &lt;// trình bao bọc con trỏ Const-chuyển đổi</li>
+</ul> <h4 id="Compilation_firewall">        STD :: độc đáo_ptr &lt;// con trỏ mờ độc đáo</h4> <p>            Impl &gt;&gt; pimpl;               // đến lớp thực hiện được tuyên bố tiến bộ</p>
+<ul>
+<li> <a class="external text" href="https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Rt-scary" rel="nofollow">T.61 Do not over-parametrize members</a>Và</li>
+<li> <a class="external text" href="https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#t84-use-a-non-template-core-implementation-to-provide-an-abi-stable-interface" rel="nofollow">T.84 Use a non-template core implementation to provide an ABI-stable interface</a>.</li>
+</ul> <p>};<code>T</code> <code>push_back</code>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// ---------------------------</pre></div> <p>// triển khai (widget.cpp)<code>push_back</code>Tiện ích cấu trúc :: Impl<code>T</code>{</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    // Chi tiết thực hiện</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">};</pre></div> </div> <h4 id="Runtime_overhead">Kỹ thuật này được sử dụng để xây dựng các giao diện thư viện C ++ với ABI ổn định và để giảm các phụ thuộc thời gian biên dịch.</h4> <ul>
+<li>Bởi vì các thành viên dữ liệu riêng tư của một lớp tham gia vào biểu diễn đối tượng của nó, ảnh hưởng đến kích thước và bố cục và bởi vì các chức năng thành viên riêng của một lớp tham gia</li>
+<li>.</li>
+<li>PIMPL loại bỏ sự phụ thuộc biên dịch này; Những thay đổi đối với việc thực hiện không gây ra sự tái hợp. Do đó, nếu một thư viện sử dụng pimpl trong ABI của mình, các phiên bản mới hơn của thư viện có thể thay đổi việc triển khai trong khi vẫn tương thích với ABI với các phiên bản cũ hơn.</li>
+</ul> <p>Sự đánh đổi</p>
+<h4 id="Maintenance_overhead">Các lựa chọn thay thế cho thành ngữ pimpl là</h4> <p>Thực hiện nội tuyến: Thành viên tư nhân và thành viên công cộng là thành viên của cùng một lớp.</p>
+<p>Lớp trừu tượng thuần túy (OOP Factory): Người dùng có được một con trỏ duy nhất đến lớp cơ sở nhẹ hoặc trừu tượng, các chi tiết triển khai nằm trong lớp dẫn xuất ghi đè các chức năng thành viên ảo của nó.</p>
+<h3 id="Implementation">Tường lửa tổng hợp</h3> <p>Trong các trường hợp đơn giản, cả phương pháp PIMPL và nhà máy sẽ loại bỏ sự phụ thuộc thời gian biên dịch giữa việc triển khai và người dùng giao diện lớp. Phương pháp nhà máy tạo ra một sự phụ thuộc ẩn vào VTable, và do đó sắp xếp lại, thêm hoặc loại bỏ các chức năng thành viên ảo phá vỡ ABI. Cách tiếp cận PIMPL không có sự phụ thuộc ẩn, tuy nhiên nếu lớp triển khai là chuyên môn hóa mẫu, thì lợi ích tường lửa biên dịch bị mất: người dùng của giao diện phải quan sát toàn bộ định nghĩa mẫu để khởi tạo chuyên môn chính xác. Một cách tiếp cận thiết kế phổ biến trong trường hợp này là tái cấu trúc việc triển khai theo cách tránh tham số hóa, đây là một trường hợp sử dụng khác cho các hướng dẫn cốt lõi C ++:<code><a href="../memory/unique_ptr" title="cpp/memory/unique ptr">std::unique_ptr</a></code>.</p>
+<p>container tiêu chuẩn<code><a href="../memory/unique_ptr" title="cpp/memory/unique ptr">std::unique_ptr</a></code>Ví dụ: mẫu lớp sau không sử dụng loại</p>
+<p>trong thành viên tư nhân của nó hoặc trong cơ thể của<code><a href="https://en.cppreference.com/w/cpp/experimental/propagate_const" title="cpp/experimental/propagate const">std::experimental::propagate_const</a></code>Mẫu &lt;Class T&gt;</p>
+<p>Lớp PTR_Vector<a class="external text" href="https://herbsutter.com/gotw/_100/" rel="nofollow">GOTW #100</a>{</p>
+<p>    std :: vector &lt;void*&gt; vp;</p>
+<p>công cộng:<code><a href="../memory/allocator" title="cpp/memory/allocator">std::allocator</a></code>    void push_back (t* p)<a href="../memory/memory_resource" title="cpp/memory/memory resource"><code>std::pmr::memory_resource*</code></a>.</p>
+<h3 id="Notes">Ghi chú</h3> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>    {</p>
+<div class="cpp source-cpp"><pre data-language="cpp">        vp.push_back (p);</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    }</pre></div> </div> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr style="vertical-align:top;"> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính</td> <td>
+<a class="external text" href="http://www.gotw.ca/gotw/028.htm" rel="nofollow">GotW #28</a>};</td>
+</tr> <tr style="vertical-align:top;"> <td># Xác định mất giá (MSG) [[không dùng nữa (MSG)]]]]</td> <td>
+<a class="external text" href="https://herbsutter.com/gotw/_100/" rel="nofollow">GotW #100</a>Do đó, các thành viên tư nhân có thể được chuyển sang thực hiện AS-IS và</td>
+</tr> <tr style="vertical-align:top;"> <td>đơn đặt hàng tổng số sửa đổi</td> <td>
+<a class="external text" href="https://www.cppstories.com/2018/01/pimpl/" rel="nofollow">The Pimpl Pattern - what you should know.</a> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/pimpl">https://en.cppreference.com/w/cpp/language/pimpl</a>
+</p>
+</div>

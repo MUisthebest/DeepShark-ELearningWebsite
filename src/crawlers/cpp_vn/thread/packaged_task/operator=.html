@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Packaged_task &lt;r (args ...)&gt; :: toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">gackaged_task &amp; toán tử = (const packaged_task &amp;) = xóa;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Gói_Task &amp; Toán tử = (PackAged_Task &amp;&amp; rhs) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Trình điều khiển gán bản sao bị xóa,<code>std::packaged_task</code>Sở hữu_view &amp; Toán tử = (Sở hữu_view &amp;&amp; Khác) = Mặc định;</div> <div class="t-li1">
+<span class="t-li">2)</span>Phát hành trạng thái được chia sẻ, nếu có, phá hủy nhiệm vụ được tổ chức trước đó và di chuyển trạng thái chia sẻ và nhiệm vụ thuộc sở hữu của<code>rhs</code>Mẫu &lt;Class T&gt;<code>*this</code>.<code>rhs</code>bị bỏ lại mà không có trạng thái chung và với một nhiệm vụ cảm động từ.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>các<code>std::packaged_task</code>để bọc</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2067" rel="nofollow">LWG 2067</a> </td> <td>C ++ 11</td> <td>loại tham số của toán tử gán bản sao là<code>packaged_task&amp;</code> </td> <td>Được cho<span class="kw4">hằng số</span> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/packaged_task/operator%3D">https://en.cppreference.com/w/cpp/thread/packaged_task/operator%3D</a>
+</p>
+</div>

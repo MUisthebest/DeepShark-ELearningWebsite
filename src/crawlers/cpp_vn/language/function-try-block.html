@@ -1,0 +1,34 @@
+ <h1 class="firstHeading" id="firstHeading">Chức năng-thử khối</h1> <p>Thiết lập một người xử lý ngoại lệ xung quanh cơ thể của một chức năng.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Chức năng-Thy-Block là một trong những dạng cú pháp thay thế cho<span class="t-spar">cơ thể chức năng</span>, đó là một phần của<a href="function" title="cpp/language/function">function definition</a>.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>try</code> <span class="t-spar">CTOR-initializer</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Tệp hỗn hợp</span> <span class="t-spar">{</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">CTOR-initializer</span> </td> <td>-</td> <td>là bộ lặp không đổi, nghĩa là, trình lặp không bao giờ có thể được sử dụng làm trình lặp đầu ra vì các phần tử sửa đổi không được phép.<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">initializer list</a>, chỉ được phép trong các nhà xây dựng</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Tệp hỗn hợp</span> </td> <td>-</td> <td>các nẹp bao bọc<a href="statements#Compound_statements" title="cpp/language/statements">sequence of statements</a>cấu thành cơ thể của một chức năng</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">{</span> </td> <td>-</td> <td>trình tự của một hoặc nhiều<a href="try_catch" title="cpp/language/try catch">catch-clauses</a> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>MỘT<i>Chức năng-thử khối</i>liên kết một chuỗi các điều khoản bắt với toàn bộ cơ thể chức năng và với<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">member initializer list</a>(nếu được sử dụng trong một hàm tạo) là tốt. Mỗi ngoại lệ được ném từ bất kỳ câu lệnh nào trong cơ thể chức năng hoặc (đối với các hàm tạo) từ bất kỳ hàm tạo cơ sở hoặc thành viên nào<span class="t-spar">{</span>giống như cách một ngoại lệ ném một cách thường xuyên<a href="try_catch" title="cpp/language/try catch">try block</a>sẽ.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> </div> <p>#include &lt;chuỗi&gt;</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p> </p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>cấu trúc s</p>
+<p>{</p>
+<p>    std :: chuỗi m;<code>throw;</code> </p>
+<p>    S (const std :: String &amp; str, int idx)<code>throw;</code>    thử: m (str, idx)</p>
+<p>    {<code>return;</code>        std :: cout &lt;&lt; "s (" &lt;&lt; str &lt;&lt; "," &lt;&lt; idx &lt;&lt; ") được xây dựng, m =" &lt;&lt; m &lt;&lt; '\ n';<code>void</code>Gia số được lặp lại</p>
+<h3 id="Notes">Ghi chú</h3> <p>    }</p>
+<p>    Catch (const std :: Exception &amp; E)</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td>    {<a href="storage_duration" title="cpp/language/storage duration">thread-local</a>        std :: cout &lt;&lt; "s (" &lt;&lt; str &lt;&lt; "," &lt;&lt; idx &lt;&lt; ") không thành công:" &lt;&lt; e.what () &lt;&lt; '\ n';</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>    } // Tin tiềm năng "Ném;" Ở đây cho nhà xây dựng<a href="main_function" title="cpp/language/main function">main() function</a>};<a href="storage_duration" title="cpp/language/storage duration">static</a> </p>
+<p><a href="scope#Block_scope" title="cpp/language/scope">The scope</a>int main ()<span class="t-spar">{</span>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    S S1 {"ABC", 1}; // không ném (chỉ mục ở giới hạn)</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1167.html" rel="nofollow">CWG 1167</a> </td> <td>C ++ 98</td> <td> <br/>    thử</td> <td>    {</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/function-try-block">https://en.cppreference.com/w/cpp/language/function-try-block</a>
+</p>
+</div>

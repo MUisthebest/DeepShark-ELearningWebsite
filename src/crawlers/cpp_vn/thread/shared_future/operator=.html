@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_Future &lt;T&gt; :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">Shared_Future &amp; Toán tử = (const shared_future &amp; other);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Shared_Future &amp; Toán tử = (const shared_future &amp; other) noExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Shared_Future &amp; Toán tử = (Shared_Future &amp;&amp; Khác) NoExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Gán nội dung của một nội dung khác<code>shared_future</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Phát hành bất kỳ trạng thái chia sẻ nào và gán nội dung của<code>other</code>ĐẾN<code>*this</code>Chia sẻ quyền sở hữu đối tượng được quản lý bởi<code>this-&gt;valid() == other.valid()</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Phát hành bất kỳ trạng thái chia sẻ nào và di chuyển-chỉ định nội dung của<code>other</code>ĐẾN<code>*this</code>Chia sẻ quyền sở hữu đối tượng được quản lý bởi<code>other.valid() == false</code>Và<code><a href="valid" title="cpp/thread/shared future/valid">this-&gt;valid()</a></code>sẽ mang lại giá trị giống như<code>other.valid()</code>        };</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>Một<code>std::shared_future</code>sẽ chuyển trạng thái sang<code>*this</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/shared_future/operator%3D">https://en.cppreference.com/w/cpp/thread/shared_future/operator%3D</a>
+</p>
+</div>

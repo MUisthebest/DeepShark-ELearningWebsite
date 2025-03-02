@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: cartesian_product_view &lt;đầu tiên, vs ...&gt; :: cartesian_product_view</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Constexpr Cartesian_Product_View () = Mặc định;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Consexpr rõ ràng cartesian_product_view (đầu tiên_base, vs ... cơ sở);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Xây dựng một<a href="../cartesian_product_view" title="cpp/ranges/cartesian product view"><code>cartesian_product_view</code></a>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định.<a href="../../language/default_initialization" title="cpp/language/default initialization">Default-initializes</a>Thành viên dữ liệu cơ bản<a href="../cartesian_product_view#Data_members" title="cpp/ranges/cartesian product view"><code><i>Range constexpr :: Xem tự động liền kề &lt;n&gt; (r &amp;&amp; r);</i></code></a>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Di chuyển các cấu trúc cơ bản<a href="../cartesian_product_view#Data_members" title="cpp/ranges/cartesian product view"><code><i>Range constexpr :: Xem tự động liền kề &lt;n&gt; (r &amp;&amp; r);</i></code></a>bằng cách khởi tạo nó với<code>std::move(first_base), std::move(bases)...</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>First_base</td> <td>-</td> <td>đối tượng xem đầu tiên để thích nghi</td>
+</tr> <tr class="t-par"> <td>cơ sở</td> <td>-</td> <td>gói các đối tượng xem để thích nghi</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;mảng&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;định dạng&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/cartesian_product_view/cartesian_product_view">https://en.cppreference.com/w/cpp/ranges/cartesian_product_view/cartesian_product_view</a>
+</p>
+</div>

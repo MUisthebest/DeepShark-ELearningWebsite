@@ -1,0 +1,130 @@
+ <h1 class="firstHeading" id="firstHeading">Khởi tạo tổng hợp</h1> <p>Khởi tạo một tổng hợp từ một danh sách khởi tạo.<span class="t-rev-inl t-since-cxx11"><span>Nó là một hình thức của<a href="list_initialization" title="cpp/language/list initialization">list-initialization</a>.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span></p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">Đối tượng t</span> <code>= {</code> <span class="t-spar">Arg1, Arg2, ...</span> <code>};</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Đối tượng t</span> <code>{</code> <span class="t-spar">Arg1, Arg2, ...</span> <code>};</code> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Đối tượng t</span> <code>= { .</code><span class="t-spar">DES1</span> <code>=</code> <span class="t-spar">Arg1</span> <code>, .</code><span class="t-spar">DES2</span> <code>{</code> <span class="t-spar">Arg2</span> <code>}</code> <span class="t-spar">...</span> <code>};</code> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Đối tượng t</span> <code>{ .</code><span class="t-spar">DES1</span> <code>=</code> <span class="t-spar">Arg1</span> <code>, .</code><span class="t-spar">DES2</span> <code>{</code> <span class="t-spar">Arg2</span> <code>}</code> <span class="t-spar">...</span> <code>};</code> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">Đầu vào</span>Khởi tạo một tổng hợp với một danh sách khởi tạo thông thường.</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>Khởi tạo một tổng hợp với<a href="#Designated_initializers">designated initializers</a>(Chỉ lớp tổng hợp).</div> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <h4 id="Definitions">Định nghĩa</h4> <p>MỘT<i>Tổng hợp</i>là một trong những loại sau:</p>
+<ul>
+<li>Loại mảng</li>
+<li>loại lớp (thông thường,<code>struct</code>hoặc<code>union</code>), đó là</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <ul><li>Không có nhà xây dựng phát hành người dùng</li></ul> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11 t-until-cxx20">
+<td> <ul><li>KHÔNG<a href="function#User-provided_functions" title="cpp/language/function">user-provided</a>Thì<a href="using_declaration#Inheriting_constructors" title="cpp/language/using declaration">inherited</a>, hoặc<a href="explicit" title="cpp/language/explicit">explicit</a>người xây dựng</li></ul> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Không có bộ xây dựng do người dùng phát hành hoặc kế thừa</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul><li>Không riêng tư hoặc được bảo vệ<span class="t-rev-inl t-since-cxx17"><span>trực tiếp</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Các thành viên dữ liệu phi tĩnh</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <ul><li>KHÔNG<a href="derived_class" title="cpp/language/derived class">base classes</a> </li></ul> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <ul>
+<li>KHÔNG<a href="derived_class#Virtual_base_classes" title="cpp/language/derived class">virtual base classes</a> </li>
+<li>KHÔNG<a href="derived_class#Private_inheritance" title="cpp/language/derived class">private</a>hoặc<a href="derived_class#Protected_inheritance" title="cpp/language/derived class">protected</a>Các lớp cơ sở trực tiếp</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul><li>Không có chức năng thành viên ảo</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11 t-until-cxx14">
+<td> <ul><li>KHÔNG<a href="data_members#Member_initialization" title="cpp/language/data members">default member initializers</a> </li></ul> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span>
+</td>
+</tr> </table> <p><br/>Các<i>các yếu tố</i>của một tổng hợp là:</p>
+<ul><li>Đối với một mảng, các phần tử mảng trong việc tăng thứ tự đăng ký hoặc</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <ul><li>Đối với một lớp, các thành viên dữ liệu không tĩnh không ẩn danh<a href="bit_field" title="cpp/language/bit field">bit-fields</a>, theo thứ tự tuyên bố.</li></ul> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>Đối với một lớp, các lớp cơ sở trực tiếp theo thứ tự khai báo, tiếp theo là các thành viên dữ liệu không tĩnh trực tiếp không ẩn danh<a href="bit_field" title="cpp/language/bit field">bit-fields</a>cũng không phải là thành viên của một<a href="union#Anonymous_unions" title="cpp/language/union">anonymous union</a>, theo thứ tự tuyên bố.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h4 id="Process">Quá trình</h4> <p>Các tác động của khởi tạo tổng hợp là:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Từ chối các trường hợp xấu sau:<ul>
+<li>Số lượng mệnh đề khởi tạo trong danh sách khởi tạo vượt quá số lượng phần tử của tổng hợp hoặc</li>
+<li>Khởi tạo một mảng không xác định bị ràng buộc với một danh sách khởi tạo trống (<code>{}</code>).</li>
+</ul>
+</div> <div class="cpp source-cpp"><pre data-language="cpp">char cv [4] = {'a', 's', 'd', 'f', 0}; // lỗi</pre></div> <div class="t-li1">
+<span class="t-li">2)</span>int x [] = {} // lỗi<i>Xác định</i>Các yếu tố khởi tạo rõ ràng</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>của tổng hợp như sau:<a href="#Designated_initializers">designated initializer list</a>Nếu danh sách khởi tạo là một</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>.<i>Trả về một kết quả, kết quả được bỏ qua. Nếu như</i>Mặt khác, nếu danh sách khởi tạo không trống, các phần tử khởi tạo rõ ràng của tổng hợp là<i>Trả về một kết quả, kết quả được bỏ qua. Nếu như</i>các yếu tố của tổng hợp, nơi</li>
+<li>là số lượng các yếu tố trong danh sách khởi tạo.<code>{}</code>Nếu không, danh sách khởi tạo phải trống (</li>
+</ul>), và không có các yếu tố khởi tạo rõ ràng.<div class="cpp source-cpp"><pre data-language="cpp">Chương trình không được hình thành nếu tổng hợp là một liên minh và có hai hoặc nhiều yếu tố khởi tạo rõ ràng:</pre></div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Union u {int a; const char* b; };<span class="t-rev-inl t-since-cxx11"><span> <a href="eval_order" title="cpp/language/eval order">sequenced before</a>u a = {1};                   // OK: Khởi tạo rõ ràng thành viên `A`</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</div> <h4 id="Initializing_Elements">u b = {0, "asdf"};           // Lỗi: Khởi tạo rõ ràng hai thành viên</h4> <p>u c = {"asdf"};              // Lỗi: int không thể được khởi tạo bằng "ASDF"</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li> <a href="#Designated_initializers">designated initializer list</a>// C ++ 20 Danh sách khởi tạo được chỉ định<code>{D}</code>là<code>D</code>u d = {.b = "asdf"};         // OK: có thể khởi tạo rõ ràng một thành viên không phải là thành viên</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">u e = {.a = 1, .b = "asdf"}; // Lỗi: Khởi tạo rõ ràng hai thành viên</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <ul><li>Khởi tạo từng phần tử của tổng hợp<a href="copy_initialization" title="cpp/language/copy initialization">copy-initialized</a>theo thứ tự phần tử. Nghĩa là, tất cả các tính toán giá trị và các tác dụng phụ liên quan đến một phần tử nhất định là</li></ul> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>những yếu tố theo thứ tự theo thứ tự<a href="direct_initialization" title="cpp/language/direct initialization">direct-initialization</a>Khởi tạo các yếu tố<code>=</code>Đối với mỗi phần tử khởi tạo rõ ràng:<a href="copy_initialization" title="cpp/language/copy initialization">copy-initialization</a>:</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>Nếu yếu tố là thành viên công đoàn ẩn danh và danh sách khởi tạo là một<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">implicit conversions</a>, phần tử được khởi tạo bởi danh sách khởi tạo được chỉ định<span class="t-rev-inl t-since-cxx11"><span>là điều khoản khởi tạo được chỉ định đặt tên là thành viên của thành viên Liên minh ẩn danh. Sẽ chỉ có một mệnh đề khởi tạo được chỉ định như vậy.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</li>
+<li>Cấu trúc c<span class="t-spar">{</span>    Liên minh<span class="t-rev-inl t-since-cxx11"><span><a href="list_initialization" title="cpp/language/list initialization">list-initialize</a>    {</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>        int a;</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">        const char* p;</pre></div> <p><br/>    };</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <a href="data_members#Member_initialization" title="cpp/language/data members">default member initializer</a>    int x;</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>} c = {.a = 1, .x = 3}; // Khởi tạo c.a với 1 và c.x với 3</li>
+<li>Nếu không, phần tử là</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Từ mệnh đề trình khởi tạo tương ứng của danh sách khởi tạo:</pre></div> <p><br/>Mặt khác, phần tử được khởi tạo từ mệnh đề khởi tạo tương ứng của danh sách khởi tạo. Việc khởi tạo là</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Nếu danh sách khởi tạo là danh sách khởi tạo được chỉ định và trình khởi tạo bắt đầu với</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>, nếu không thì khởi tạo là</li></ul> <h4 id="Brace_elision">Nếu điều khoản khởi tạo là một biểu thức,</h4> <p>được phép theo bản sao-khởi tạo<code>{}</code>, ngoại trừ việc các chuyển đổi thu hẹp bị cấm</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <h3 id="Designated_initializers">Nếu điều khoản khởi tạo là một</h3> <p>Danh sách sáng chế<span class="t-v">ConstExpr Outputit Adjacent_Difference (Inputit First, Inputit Last, </span>(không phải là một biểu thức),<span class="t-spar">Cấu trúc a</span>Áp dụng đệ quy các quy tắc nếu phần tử tương ứng là một tiểu chương.<span class="t-spar">Cấu trúc a</span>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    int x;</pre></div> <p> </p>
+<p>    cấu trúc b<a href="union" title="cpp/language/union">union</a>    {</p>
+<div class="cpp source-cpp"><pre data-language="cpp">        int i;</pre></div> <p>        int j;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    } b;</pre></div> <p>} a = {1, {2, 3}}; // Khởi tạo a.x với 1, a.b.i với 2, a.b.j với 3</p>
+<p> <a href="https://en.cppreference.com/w/c/language/struct_initialization" title="c/language/struct initialization">C programming language</a>Cấu trúc cơ sở1 {int B1, B2 = 42; };</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Character_arrays">Cấu trúc cơ sở2</h3> <p>{<code>char</code>Thì<code>signed char</code>Thì<code>unsigned char</code>)<span class="t-rev-inl t-since-cxx20"><span>Thì<code>char8_t</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span><span class="t-rev-inl t-since-cxx11"><span>Thì<code>char16_t</code>Thì<code>char32_t</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>, hoặc<code>wchar_t</code>    base2 ()<a href="string_literal" title="cpp/language/string literal">string literals</a><span class="t-rev-inl t-since-cxx20"><span>    {</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span><span class="t-rev-inl t-since-cxx11"><span>        B3 = 42;</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>    }<span class="t-rev-inl t-since-cxx20"><span> <code>char</code>hoặc<code>unsigned char</code>    int B3;</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>};<span class="t-rev-inl t-since-cxx20"><span> <a href="implicit_conversion#Integral_conversions" title="cpp/language/implicit conversion">integral conversion</a>Struct có nguồn gốc: base1, base2</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    int d;</pre></div> <h3 id="Notes">Ghi chú</h3> <p>};<span class="t-rev-inl t-since-cxx17"><span> </span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>D1 {{1, 2}, {}, 4}; // Khởi tạo D1.B1 với 1, D1.B2 với 2,</p>
+<p>                           // d1.b3 với 42, d1.d với 4</p>
+<p>D2 {{}, {}, 4};     // Khởi tạo d2.b1 với 0, d2.b2 với 42,<a href="constructor" title="cpp/language/constructor">constructor initializer list</a>có thể đại diện cho các phân số của ve.<a href="new" title="cpp/language/new">new-expression</a>                           // d2.b3 với 42, d2.d với 4</p>
+<p>Đối với một tổng hợp không liên kết, mỗi phần tử không phải là một phần tử khởi tạo rõ ràng được khởi tạo như sau:</p>
+<table class="wikitable sortable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_aggregate_bases" title="cpp/feature test"><code>__cpp_aggregate_bases</code></a></td> <td><span class="nu0">Thuật toán song song</span></td> <td><span class="t-mark">Dest_at</span></td> <td>Nếu phần tử có</td>
+</tr> <tr> <td><a href="../feature_test#cpp_aggregate_nsdmi" title="cpp/feature test"><code>__cpp_aggregate_nsdmi</code></a></td> <td><span class="nu0">Khoảng thời gian thực tế (tính bằng giây) được giữ bởi một đối tượng thời lượng</span></td> <td><span class="t-mark">(C ++ 14)</span></td> <td>, phần tử được khởi tạo từ bộ khởi tạo đó.</td>
+</tr> <tr> <td><a href="../feature_test#cpp_aggregate_paren_init" title="cpp/feature test"><code>__cpp_aggregate_paren_init</code></a></td> <td><span class="nu0">Chính sách thực thi</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>Mặt khác, nếu phần tử không phải là một tham chiếu, phần tử được sao chép sao chép từ danh sách khởi tạo trống.<a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a> </td>
+</tr> <tr> <td><a href="../feature_test#cpp_char8_t" title="cpp/feature test"><code>__cpp_char8_t</code></a></td> <td><span class="nu0">202207L</span></td> <td>
+<span class="t-mark">Phạm vi :: Construct_at</span><br/><span class="t-mark">(Dr)</span>
+</td> <td>
+<code>char8_t</code>Khả năng tương thích và sửa chữa tính di động (<a href="#Character_arrays">allow initialization of (<code>unsigned</code>) <code>char</code> arrays</a>từ<a href="string_literal" title="cpp/language/string literal">UTF-8 string literals</a>)</td>
+</tr> <tr> <td><a href="../feature_test#cpp_designated_initializers" title="cpp/feature test"><code>__cpp_designated_initializers</code></a></td> <td><span class="nu0">Nếu không, chương trình là xấu.</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<a href="#Designated_initializers">Designated initializer</a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">cấu trúc s</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">{</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/413.html" rel="nofollow">CWG 413</a> </td> <td>C ++ 98</td> <td>    int a;</td> <td>    const char* b;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/737.html" rel="nofollow">CWG 737</a> </td> <td>C ++ 98</td> <td>    int c;<br/>    int d = b [a];<br/>};<code>'\0'</code> </td> <td>// Khởi tạo SS.A với 1,</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1270.html" rel="nofollow">CWG 1270</a> </td> <td>C ++ 11</td> <td>// SS.B với "ASDF",</td> <td>// SS.C với giá trị của biểu thức của biểu mẫu int {} (nghĩa là, 0),</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1518.html" rel="nofollow">CWG 1518</a> </td> <td>C ++ 11</td> <td>// và ss.d với giá trị của ss.b [ss.a] (nghĩa là 's'))<br/>S ss = {1, "ASDF"};</td> <td>Nếu tổng hợp là một liên minh và danh sách khởi tạo trống, thì</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1622.html" rel="nofollow">CWG 1622</a> </td> <td>C ++ 98</td> <td>Nếu bất kỳ thành viên biến thể nào có trình khởi tạo thành viên mặc định, thành viên đó sẽ được khởi tạo từ trình khởi tạo thành viên mặc định của nó.<code>{}</code> </td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2272.html" rel="nofollow">CWG 2272</a> </td> <td>C ++ 98</td> <td>Mặt khác, thành viên đầu tiên của công đoàn (nếu có) được sao chép sao chép từ một danh sách khởi tạo trống.<br/>Niềng tay</td> <td>Niềng răng xung quanh danh sách khởi tạo lồng nhau có thể được giải quyết (bỏ qua), trong trường hợp đó, nhiều điều khoản khởi tạo cần thiết được sử dụng để khởi tạo mọi thành viên hoặc phần tử của tập hợp con tương ứng và các điều khoản khởi tạo tiếp theo được sử dụng để khởi tạo các thành viên sau của đối tượng. Tuy nhiên, nếu đối tượng có tổng hợp phụ mà không có bất kỳ thành viên nào (một cấu trúc trống hoặc một cấu trúc chỉ giữ các thành viên tĩnh), không được phép giải quyết Brace<br/>phải được sử dụng.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2610.html" rel="nofollow">CWG 2610</a> </td> <td>C ++ 17</td> <td>Chỉ định khởi tạo</td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2619.html" rel="nofollow">CWG 2619</a> </td> <td>C ++ 20</td> <td>Các hình thức cú pháp</td> <td>được gọi là bộ khởi tạo được chỉ định: mỗi</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2513R4" rel="nofollow">P2513R4</a> </td> <td>C ++ 20</td> <td>chỉ định<code>char</code><br/>hoặc<code>unsigned char</code>Phải đặt tên cho một thành viên dữ liệu phi tĩnh trực tiếp của T và tất cả</td> <td>chỉ định</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="copy_elision" title="cpp/language/copy elision">copy elision</a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> <ul>
+<li> <a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </li>
+<li> <a href="list_initialization" title="cpp/language/list initialization">list initialization</a> </li>
+<li> <a href="reference_initialization" title="cpp/language/reference initialization">reference initialization</a> </li>
+<li> <a href="value_initialization" title="cpp/language/value initialization">value initialization</a> </li>
+<li> <a href="zero_initialization" title="cpp/language/zero initialization">zero initialization</a> </li>
+</ul> </li>
+</ul> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/struct_initialization" title="c/language/struct initialization">C documentation</a></span>vì<span class=""><span>S Được sử dụng trong biểu thức phải xuất hiện theo cùng thứ tự với các thành viên dữ liệu của T.</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/aggregate_initialization">https://en.cppreference.com/w/cpp/language/aggregate_initialization</a>
+</p>
+</div>

@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: input_or_output_iterator</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/iterator" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class I&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Các<code>input_or_output_iterator</code>    Khái niệm input_or_output_iterator =<code>input_or_output_iterator</code>yêu cầu.</p>
+<p>Mẫu &lt;Class B&gt;<code>/*can-reference*/</code>        Yêu cầu (i i) {<code>void</code>).</p>
+<h3 id="Notes">Ghi chú</h3> <p>            {*i} -&gt; /*can -reference* /;<code>input_or_output_iterator</code>        } &amp;&amp;<a href="../concepts/movable" title="cpp/concepts/movable"><code>movable</code></a>        std :: yếu_incrementable &lt;i&gt;;</p>
+<ul>
+<li>Khái niệm hình thành cơ sở của phân loại khái niệm lặp đi lặp lại; Mọi loại trình lặp đều thỏa mãn<code>difference_type</code>được thỏa mãn nếu và chỉ khi loại có thể tham khảo (đặc biệt, không<code><a href="iter_t" title="cpp/iterator/iter t">std::iter_difference_t</a></code>).</li>
+<li>Khác biệt<code>operator++</code>lớp học chỉ cần<code>*this</code>.</li>
+<li>và cung cấp các thành viên sau:<code>operator++</code>.</li>
+<li>Thành viên đánh máy<code>operator*</code>.</li>
+</ul> <p>(Được sử dụng bởi<code>difference_type</code>Tiền tố<code><a href="iterator_traits" title="cpp/iterator/iterator traits">std::iterator_traits</a></code>hoặc<code><a href="incrementable_traits" title="cpp/iterator/incrementable traits">std::incrementable_traits</a></code>trả về một tham chiếu đến<a href="../language/adl" title="cpp/language/adl">argument-dependent lookup</a>.</p>
+<p><code>input_or_output_iterator</code>Postfix</p>
+<ul>
+<li>Toán tử dereference<a href="sentinel_for" title="cpp/iterator/sentinel for"><code>sentinel_for</code></a>);</li>
+<li>Ngoài ra,<a href="indirectly_readable" title="cpp/iterator/indirectly readable"><code>indirectly_readable</code></a>Và<a href="input_iterator" title="cpp/iterator/input iterator"><code>input_iterator</code></a>);</li>
+<li>có thể được cung cấp bằng cách chuyên ngành<a href="indirectly_writable" title="cpp/iterator/indirectly writable"><code>indirectly_writable</code></a>Và<a href="output_iterator" title="cpp/iterator/output iterator"><code>output_iterator</code></a>);</li>
+<li>. Các chức năng có thể được định nghĩa là không phải là thành viên, được tìm thấy bởi<a href="forward_iterator" title="cpp/iterator/forward iterator"><code>forward_iterator</code></a>Thì<a href="bidirectional_iterator" title="cpp/iterator/bidirectional iterator"><code>bidirectional_iterator</code></a>Thì<a href="random_access_iterator" title="cpp/iterator/random access iterator"><code>random_access_iterator</code></a>).</li>
+</ul> <p>Chỉ định khái niệm của tất cả các loại mà các trường hợp có thể bị phá hủy một cách an toàn vào cuối đời (bao gồm cả các loại tham chiếu).<a href="../named_req/iterator" title="cpp/named req/Iterator">LegacyIterator</a>Sau quá trình khai báo giá trị trước đó của toán hạng: nếu<code>input_or_output_iterator</code>Bản thân nó chỉ chỉ định các hoạt động để phân tích và tăng tốc độ lặp. Hầu hết các thuật toán sẽ yêu cầu các hoạt động bổ sung, ví dụ:</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/input_or_output_iterator">https://en.cppreference.com/w/cpp/iterator/input_or_output_iterator</a>
+</p>
+</div>

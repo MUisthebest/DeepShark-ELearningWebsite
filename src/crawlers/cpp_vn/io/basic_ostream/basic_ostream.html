@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; :: basic_ostream</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">rõ ràng cơ bản_ostream (std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* sb);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">basic_ostream (const basic_ostream &amp; rhs) = xóa;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>được bảo vệ:<code>basic_ostream</code>basic_istream (basic_istream &amp;&amp; rhs);<code><a href="../basic_ios/init" title="cpp/io/basic ios/init">basic_ios::init(sb)</a></code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>basic_ostream (basic_ostream &amp;&amp; rhs);</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Xây dựng<code>basic_ios&lt;CharT, Traits&gt;::move(rhs)</code>Trình xây dựng bản sao được bảo vệ và bị xóa. Các luồng đầu ra không thể sao chép.<code>basic_ios</code>Trình xây dựng di chuyển sử dụng<code>rdbuf()</code>đến 0 và sử dụng<code>rhs</code>Mẫu &lt;Class T&gt;<code>*this</code>để di chuyển tất cả<code><a href="../basic_ofstream" title="cpp/io/basic ofstream">std::basic_ofstream</a></code>Và<code><a href="../basic_ostringstream" title="cpp/io/basic ostringstream">std::basic_ostringstream</a></code>Hàm thành viên này được bảo vệ: Nó được gọi bởi các hàm tạo di chuyển được bảo vệ của các lớp luồng dẫn xuất</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ở cấp độ thấp, lớp học về cơ bản kết thúc việc triển khai thiết bị thô của</td> <td>-</td> <td>các thành viên, ngoại trừ</td>
+</tr> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>. Trình xây dựng di chuyển này được bảo vệ: nó được gọi bởi các hàm tạo di chuyển của các lớp luồng đầu ra di động</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>container tiêu chuẩn<code><a href="../basic_ios/init" title="cpp/io/basic ios/init">basic_ios::init(sb)</a></code>, di chuyển-thiết kế bộ phân bổ từ<code>badbit</code>Chuyển đổi danh tính:<code>sb</code>Streambuffer để sử dụng làm trình tự đầu ra<a href="sentry" title="cpp/io/basic ostream/sentry"><code>basic_ostream::sentry</code></a>basic_ostream để khởi tạo từ<code>sb</code>là một con trỏ null, và bởi vì</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Không có gì nếu luồng đã ở trạng thái thất bại, ghi vào một luồng được xây dựng từ một con trỏ null</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">7.1</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ostream/basic_ostream">https://en.cppreference.com/w/cpp/io/basic_ostream/basic_ostream</a>
+</p>
+</div>

@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">
+<code>override</code>thời lượng để biểu diễn phần bù từ UTC tương ứng với<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Chỉ định rằng a<a href="virtual" title="cpp/language/virtual">virtual function</a>ghi đè một chức năng ảo khác.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Định danh<code>override</code>, nếu được sử dụng, xuất hiện ngay sau khi<a href="function" title="cpp/language/function">declarator</a>Trong cú pháp của khai báo hàm thành viên hoặc định nghĩa hàm thành viên bên trong định nghĩa lớp.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">người khai báo</span> <span class="t-spar">Virt-Specifier-seq</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">};</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">người khai báo</span> <span class="t-spar">Virt-Specifier-seq</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">cơ thể chức năng</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Trong một tuyên bố chức năng thành viên,<code>override</code>có thể xuất hiện trong<span class="t-spar">Virt-Specifier-seq</span>ngay sau khi tuyên bố, và trước<a href="abstract_class" title="cpp/language/abstract class"><span class="t-spar">};</span></a>, nếu được sử dụng.</div> <div class="t-li1">
+<span class="t-li">2)</span>Trong định nghĩa hàm thành viên bên trong định nghĩa lớp,<code>override</code>có thể xuất hiện trong<span class="t-spar">Virt-Specifier-seq</span>ngay sau khi tuyên bố và ngay trước<span class="t-spar">cơ thể chức năng</span>.</div> <p>Trong cả hai trường hợp,<span class="t-spar">Virt-Specifier-seq</span>, nếu được sử dụng, là<code>override</code>hoặc<a href="final" title="cpp/language/final"><code>final</code></a>, hoặc<code>final override</code>hoặc<code>override final</code>.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Trong một tuyên bố hoặc định nghĩa chức năng thành viên,<code>override</code>Công cụ xác định đảm bảo rằng hàm là ảo và đang ghi đè một hàm ảo từ một lớp cơ sở. Chương trình không được hình thành (một lỗi thời gian biên dịch được tạo ra) nếu điều này không đúng.</p>
+<p><code>override</code>là một định danh có ý nghĩa đặc biệt khi được sử dụng sau khi khai báo chức năng thành viên: đó không phải là từ khóa dành riêng.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="final" title="cpp/language/final"> <code>final</code> specifier</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>Cấu trúc a</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/override">https://en.cppreference.com/w/cpp/language/override</a>
+</p>
+</div>

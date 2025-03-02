@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Thông báo_all_at_thread_exit</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/condition_variable" title="cpp/header/condition variable">&lt;condition_variable&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void notify_all_at_thread_exit (std :: điều kiện_varable &amp; cond,</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p><code>notify_all_at_thread_exit</code>                                std :: độc đáo_lock &lt;std :: mutex&gt; lk);<a href="../keyword/thread_local" title="cpp/keyword/thread local">thread_local</a>cung cấp một cơ chế để thông báo cho các chủ đề khác rằng một chủ đề nhất định đã hoàn thành hoàn toàn, bao gồm phá hủy tất cả</p>
+<ul>
+<li>Đối tượng. Nó hoạt động như sau:<code>lk</code>Quyền sở hữu khóa đã mua trước đó</li>
+<li>được chuyển sang lưu trữ nội bộ.<code>cond</code>Môi trường thực thi được sửa đổi sao cho khi luồng hiện tại thoát ra, biến điều kiện</li>
+</ul> <p><code>lk.unlock();cond.notify_all();</code></p>
+<p>được thông báo như thể bởi:<code>lk.unlock()</code>khoảng cách<i>b</i>    async (std :: chính sách khởi chạy, chức năng &amp;&amp; f, args &amp;&amp; ... args);<code><a href="../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>Ngụ ý<a href="../keyword/thread_local" title="cpp/keyword/thread local">thread local storage duration</a>) sự phá hủy của tất cả các đối tượng với</p>
+<p>liên kết với chủ đề hiện tại.<code><a href="promise" title="cpp/thread/promise">std::promise</a></code>hoặc<code><a href="packaged_task" title="cpp/thread/packaged task">std::packaged_task</a></code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>không bị khóa bởi chủ đề hiện tại là hành vi không xác định.<code>lock.mutex()</code>Gọi chức năng này nếu</p>
+<p>không bị khóa bởi chủ đề hiện tại là hành vi không xác định.<code>lock.mutex()</code>Gọi chức năng này nếu</p>
+<p>không giống nhau như một loại được sử dụng bởi tất cả các luồng khác hiện đang chờ đợi trên cùng một biến điều kiện là hành vi không xác định.<code>lk</code>Khóa được cung cấp<code>cond</code>được tổ chức cho đến khi chủ đề thoát ra. Khi chức năng này được gọi, không có thêm luồng nào có thể có được cùng một khóa để chờ<code>lk</code>. Nếu một số chủ đề đang chờ đợi biến điều kiện này, hãy đảm bảo rằng điều kiện đang chờ được thỏa mãn trong khi giữ khóa trên<code>notify_all_at_thread_exit</code>, và khóa này không được phát hành và được phản ứng lại trước khi gọi</p>
+<p>Để tránh sự nhầm lẫn từ các đánh thức giả trong các chủ đề khác.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trong các trường hợp sử dụng điển hình, chức năng này là thứ cuối cùng được gọi bởi một luồng tách ra.</td> <td>-</td> <td>cond</td>
+</tr> <tr class="t-par"> <td>biến điều kiện để thông báo tại thoát luồng</td> <td>-</td> <td>LK<code>cond</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Khóa liên quan đến biến điều kiện<code>notify_all_at_thread_exit</code>Đoạn mã một phần này minh họa cách</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Có thể được sử dụng để tránh truy cập dữ liệu phụ thuộc vào người dân địa phương trong khi các địa phương chủ đề đó đang trong quá trình bị phá hủy:</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="promise/set_value_at_thread_exit" title="cpp/thread/promise/set value at thread exit"> <span class="t-lines"><span>#include &lt;Cassert&gt;</span></span></a></div> </td> <td>#include &lt;điều kiện_varable&gt;<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::promise&lt;R&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="packaged_task/make_ready_at_thread_exit" title="cpp/thread/packaged task/make ready at thread exit"> <span class="t-lines"><span>#include &lt;Prutex&gt;</span></span></a></div> </td> <td>#include &lt;chuỗi&gt;<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::packaged_task&lt;R(Args...)&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/notify_all_at_thread_exit">https://en.cppreference.com/w/cpp/thread/notify_all_at_thread_exit</a>
+</p>
+</div>

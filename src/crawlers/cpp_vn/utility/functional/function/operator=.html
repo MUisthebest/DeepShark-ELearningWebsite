@@ -1,0 +1,36 @@
+ <h1 class="firstHeading" id="firstHeading">std :: function &lt;r (args ...)&gt; :: toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">hàm &amp; toán tử = (hàm const &amp; other);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">hàm &amp; toán tử = (hàm &amp;&amp; khác);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">hàm &amp; toán tử = (std :: nullptr_t) noExcept;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class F&gt; </pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">hàm &amp; toán tử = (f &amp;&amp; f);</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Mẫu &lt;Class F&gt; <i>mục tiêu</i>ĐẾN<code>std::function</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm &amp; Toán tử = (STD :: Tham chiếu_Wrapper &lt;f&gt; F) NoExcept;<i>mục tiêu</i>của<code>other</code>, như thể bằng cách thực hiện<code>function(other).swap(*this);</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Gán một mới<i>mục tiêu</i>của<code>other</code>ĐẾN<code>*this</code>.<code>other</code>Gán một bản sao của</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Di chuyển các<i>mục tiêu</i>.<code>*this</code>khoảng cách<i>trống</i>sau cuộc gọi.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Đặt<i>mục tiêu</i>của<code>*this</code>ở trong trạng thái hợp lệ với một giá trị không xác định.<code>f</code>, như thể bằng cách thực hiện<code>function<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>F<span class="sy1">&lt;</span><span class="br0">.</span>f<span class="br0">)</span><span class="br0">)</span>.<span class="me1">Được xác định trong tiêu đề</span><span class="br0">.</span><span class="sy2">*</span>this<span class="br0">)</span><span class="sy4">Số lượng các yếu tố để sao chép</span></code>Giảm dòng điện<code>f</code>khoảng cách<a href="../../../named_req/callable" title="cpp/named req/Callable">Callable</a>Sẽ được<code>Args...</code>Sau cuộc gọi cũng vậy. Vì<code>R</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Đặt<i>mục tiêu</i>của<code>*this</code>Khởi tạo cơ bản<code>f</code>, như thể bằng cách thực hiện<code>function(f).swap(*this);</code>
+</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>khác<code>std::function</code>đến người được gọi</td>
+</tr> <tr class="t-par"> <td>có thể sửa đổi các phần tử của phạm vi thông qua trình lặp được thu hút. Nếu như</td> <td>-</td> <td>. Toán tử này không tham gia vào độ phân giải quá tải trừ khi<i>mục tiêu</i>với</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>F</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../../named_req/callable" title="cpp/named req/Callable">Callable</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>đối tượng để sao chép mục tiêu của<code>std::function</code>một cuộc gọi để khởi tạo<code>*this</code>Ngay cả trước khi hỗ trợ phân bổ đã được xóa khỏi<code>other</code>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<a class="external text" href="https://cplusplus.github.io/LWG/issue2386" rel="nofollow">LWG issue 2386</a>).</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2132" rel="nofollow">LWG 2132</a> </td> <td>C ++ 11</td> <td>Trong C ++ 17, các toán tử gán này sử dụng trình phân bổ mặc định thay vì phân bổ của</td> <td>được định nghĩa như sau:</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2401" rel="nofollow">LWG 2401</a> </td> <td>C ++ 11</td> <td>hoặc người phân bổ của<code>std::nullptr_t</code>Quá tải lấy một đối tượng có thể gọi có thể mơ hồ</td> <td>Thực hiện quá tải</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../move_only_function/operator=" title="cpp/utility/functional/move only function/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>lớp Copyable_function &lt;r (args ...) &amp;&amp; noExcept&gt;;<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::move_only_function</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="assign" title="cpp/utility/functional/function/assign"> <span class="t-lines"><span>Loại số nguyên đã ký (thường là</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span></span></span></div> </td> <td>là loại thứ hai trong hai loại trong<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <table class="t-dsc-begin"> <tr><td></td></tr> </table> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/functional/function/operator%3D">https://en.cppreference.com/w/cpp/utility/functional/function/operator%3D</a>
+</p>
+</div>

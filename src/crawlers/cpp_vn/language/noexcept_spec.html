@@ -1,0 +1,89 @@
+ <h1 class="firstHeading" id="firstHeading">Động cơ tiêu xác NoExcept<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Chỉ định xem một chức năng có thể ném ngoại lệ hay không.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>noexcept</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>noexcept(</code><span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span><code>)</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>throw()</code> </td> <td>(3)</td> <td> <span class="t-mark-rev t-deprecated-cxx17">(không được dùng trong C ++ 17)</span><br/><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>                                   Nhị phân p);<code>noexcept(true)</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Nếu như<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>thành một phạm vi được sắp xếp<code>true</code>, chức năng được tuyên bố không ném bất kỳ ngoại lệ nào. MỘT<code>(</code>(Được sử dụng để xác định đặc tả ngoại lệ mặc định của các trình điều khiển phá hủy, bộ xây dựng và toán tử chuyển nhượng như mô tả ở trên):<code>noexcept</code>luôn luôn là một phần của hình thức này (nó không bao giờ có thể bắt đầu một bộ khởi tạo).</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>                                   Nhị phân p);<code>noexcept(true)</code>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<a href="except_spec" title="cpp/language/except spec">dynamic exception specification</a>cho ngữ nghĩa của nó trước C ++ 17)</div> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>-</td> <td> <a href="constant_expression#Converted_constant_expression" title="cpp/language/constant expression">contextually converted constant expression of type <code>bool</code></a> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <p>Đặc điểm cụ thể của NoExcept không phải là một phần của loại chức năng (giống như<a href="except_spec" title="cpp/language/except spec">dynamic exception specification</a>) và chỉ có thể xuất hiện như một phần của<a href="lambda" title="cpp/language/lambda">lambda declarator</a>hoặc cấp cao nhất<a href="function" title="cpp/language/function">function declarator</a>Khi khai báo các chức năng, các biến, các thành viên dữ liệu không tĩnh của chức năng, con trỏ tới chức năng, tham chiếu đến chức năng hoặc con trỏ đến hàm thành viên và cả khi khai báo tham số hoặc loại trả về trong một trong các khai báo đó lần lượt là một con trỏ hoặc tham chiếu đến chức năng. Nó không thể xuất hiện trong một<a href="typedef" title="cpp/language/typedef">typedef</a>hoặc<a href="type_alias" title="cpp/language/type alias">type alias</a>tuyên ngôn.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void f () noexcept; // Hàm f () không ném</pre></div> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <p>void (*fp) () noExcept (false); // fp trỏ đến một chức năng có thể ném<a href="function" title="cpp/language/function">function declarator</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>void g (void pfa () noexcept);  // g mất một con trỏ để chức năng không ném<i>// typedef int (*pf) () noExcept; // lỗi</i>hoặc<i>Đặc điểm cụ thể của NoExcept là một phần của loại chức năng và có thể xuất hiện như một phần của bất kỳ</i>:</p>
+<ul><li> <i>    void g () noexcept; // ĐƯỢC RỒI</i>không ném</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <ul><li>có khả năng ném<a href="except_spec" title="cpp/language/except spec">dynamic exception specification</a> </li></ul> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> </table> <ul>
+<li>có khả năng ném<code>noexcept</code>Chức năng là:<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>thành một phạm vi được sắp xếp<code>false</code> </li>
+<li>các chức năng được khai báo với một<code>noexcept</code>Chức năng được tuyên bố với</li>
+<li> <a href="destructor" title="cpp/language/destructor">destructors</a>người xác định của ai<i>    void g () noexcept; // ĐƯỢC RỒI</i>(Xem bên dưới)</li>
+<li> <a href="default_constructor" title="cpp/language/default constructor">default constructors</a>Thì<a href="copy_constructor" title="cpp/language/copy constructor">copy constructors</a>Thì<a href="move_constructor" title="cpp/language/move constructor">move constructors</a>chỉ định ngoại trừ</li>
+<ul>
+<li>trừ khi sự phá hủy của bất kỳ cơ sở hoặc thành viên có khả năng được xây dựng nào<i>    void g () noexcept; // ĐƯỢC RỒI</i>(Xem bên dưới)</li>
+<li>được tuyên bố ngầm hoặc được tuyên bố ngầm hoặc mặc định trong tuyên bố đầu tiên của họ trừ khi<i>    void g () noexcept; // ĐƯỢC RỒI</i>(Xem bên dưới)</li>
+<li>có khả năng ném<i>    void g () noexcept; // ĐƯỢC RỒI</i>(Xem bên dưới)</li>
+</ul>
+<li> <a href="copy_assignment" title="cpp/language/copy assignment">copy assignment</a>người vận hành,<a href="move_assignment" title="cpp/language/move assignment">move assignment</a>có khả năng ném<i>    void g () noexcept; // ĐƯỢC RỒI</i>(Xem bên dưới)</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li> <a href="default_comparisons" title="cpp/language/default comparisons">comparison operators</a>có khả năng ném<i>    void g () noexcept; // ĐƯỢC RỒI</i>(Xem bên dưới)</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li> <a href="../memory/new/operator_delete" title="cpp/memory/new/operator delete">deallocation functions</a> </li>
+<li>có khả năng ném<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>thành một phạm vi được sắp xếp<code>true</code>được mặc định trong khai báo đầu tiên của họ trừ khi gọi bất kỳ toán tử so sánh nào trong định nghĩa ngầm là</li>
+</ul> <p><a href="function_template#Explicit_instantiation" title="cpp/language/function template">Explicit instantiations</a>có khả năng ném</p>
+<p>Các chức năng không ném là tất cả các chức năng khác (những người có trình xác định của NoExcept có<span class="t-rev-inl t-since-cxx17"><span>cũng như các bộ hủy diệt, các chức năng thành viên đặc biệt mặc định và các chức năng phân giải)</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Có thể sử dụng Trình phát động NoExcept, nhưng nó không bắt buộc. Nếu được sử dụng, đặc điểm kỹ thuật ngoại lệ phải giống như đối với tất cả các khai báo khác. Một chẩn đoán chỉ được yêu cầu nếu các thông số kỹ thuật ngoại lệ không giống nhau trong một đơn vị dịch duy nhất.</pre></div> <p>Các chức năng chỉ khác nhau trong đặc tả ngoại lệ của chúng không thể bị quá tải<span class="t-rev-inl t-until-cxx17"><span>(Giống như loại trả về, đặc tả ngoại lệ là một phần của loại chức năng, nhưng không phải là một phần của chữ ký chức năng)</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span>&gt;<a href="implicit_conversion#Function_pointer_conversions" title="cpp/language/implicit conversion">implicitly convertible</a>ĐẾN</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>void f () noexcept;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void f (); // Lỗi: Thông số kỹ thuật ngoại lệ khác nhau</pre></div> <p>void g () noexcept (false);</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void g (); // ok, cả hai tuyên bố cho g đều có khả năng ném</pre></div> <p>Con trỏ (bao gồm cả con trỏ đến chức năng thành viên) để các chức năng không ném<code><a href="../error/terminate" title="cpp/error/terminate">std::terminate</a></code>có thể được gán hoặc sử dụng để khởi tạo</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Con trỏ đến các chức năng có khả năng ném, nhưng không phải là cách khác.</pre></div> <p>void ft (); // có khả năng ném<i>, nhưng chưa được khởi tạo, các tên phụ thuộc được tra cứu và bất kỳ mẫu nào được sử dụng trong</i>Khởi tạo</p>
+<p>void (*fn) () NoExcept = ft; // lỗi</p>
+<p>Nếu một chức năng ảo không phải là không ném, tất cả các khai báo, bao gồm cả định nghĩa, của mọi trình ghi đè cũng không phải là không cảm ứng, trừ khi trình ghi đè được xác định là đã xóa:<i>, nhưng chưa được khởi tạo, các tên phụ thuộc được tra cứu và bất kỳ mẫu nào được sử dụng trong</i>cấu trúc b<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>Khi đặc tả ngoại lệ động của chuyên môn mẫu chức năng là</p>
+<p>{<i>, nhưng chưa được khởi tạo, các tên phụ thuộc được tra cứu và bất kỳ mẫu nào được sử dụng trong</i>được khởi tạo như thể để tuyên bố chuyên môn hóa.</p>
+<ul>
+<li>Một đặc điểm ngoại lệ động của một hàm được coi là</li>
+<li>cần thiết<a href="definition#ODR-use" title="cpp/language/definition">odr-used</a> </li>
+<li>Trong các bối cảnh sau:</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">    khoảng trống ảo f () noexcept;</pre></div> <ul>
+<li>Hàm là</li>
+<li>chức năng sẽ được sử dụng ODR nhưng xuất hiện trong một toán hạng không được đánh giá</li>
+<li>Mẫu &lt;Class T&gt;</li>
+</ul> <p>    khoảng trống ảo g ();<i>    void ảo H () NoExcept = Xóa;</i>};</p>
+<p>Một biểu thức<code>e</code>khoảng cách<i>    void g () noexcept; // ĐƯỢC RỒI</i>{</p>
+<ul>
+<li> <code>e</code>Cấu trúc D: b<i>    void g () noexcept; // ĐƯỢC RỒI</i><span class="t-rev-inl t-until-cxx17"><span>, Trừ khi<code>e</code>Điều đó như vậy<a href="constant_expression" title="cpp/language/constant expression">core constant expression</a></span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span> </li>
+<li> <code>e</code>    void f ();          // Ill-formed: d :: f có khả năng ném, b :: f không ném<i>    void g () noexcept; // ĐƯỢC RỒI</i>    void H () = Xóa; // ĐƯỢC RỒI<code>new</code>};<code>e</code>Các chức năng không ném được phép gọi các chức năng có khả năng ném. Bất cứ khi nào một ngoại lệ được ném và tìm kiếm một người xử lý gặp phải khối ngoài cùng của chức năng không ném, chức năng</li>
+<li> <code>e</code>Điều đó như vậy<a href="throw" title="cpp/language/throw"><code>throw</code>-expression</a> </li>
+<li> <code>e</code>Điều đó như vậy<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>được gọi là:</li>
+<li> <code>e</code>Điều đó như vậy<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>extern void f (); // có khả năng ném</li>
+<li> <code>e</code> </li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">void g () Noexcept</pre></div> <h3 id="Notes">Ghi chú</h3> <p>{<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>    f ();      // hợp lệ, ngay cả khi f ném<a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code> operator</a>    ném 42; // hợp lệ, hiệu quả một cuộc gọi đến STD :: chấm dứt<code>noexcept</code>}</p>
+<p>Đặc điểm kỹ thuật ngoại lệ của một chuyên môn mẫu chức năng không được khởi tạo cùng với khai báo chức năng; nó chỉ được khởi tạo khi<code>noexcept</code>Việc xác định đặc điểm ngoại lệ của một chức năng thành viên đặc biệt được tuyên bố ngầm cũng chỉ được đánh giá khi cần thiết (đặc biệt, việc khai báo tiềm ẩn chức năng thành viên của một lớp dẫn xuất không yêu cầu xác định đặc tính ngoại lệ của chức năng thành viên cơ sở phải được khởi tạo).<a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code> operator</a>Khi việc xác định kỹ thuật của một mẫu chức năng của một mẫu chức năng là<code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code>, nhưng chưa được ngay lập tức, các tên phụ thuộc được tra cứu và bất kỳ mẫu nào được sử dụng trong<code>noexcept</code>Một mô tả của một hàm được coi là</p>
+<h4 id="Deprecates">Mẫu &lt;Class T&gt;</h4> <p><code>noexcept</code>T f () noExcept (sizeof (t) &lt;4);<a href="except_spec" title="cpp/language/except spec"><code>throw()</code></a> <a href="except_spec" title="cpp/language/except spec"><code>throw()</code></a>Thì<code>noexcept</code>int main ()<code><a href="../error/unexpected" title="cpp/error/unexpected">std::unexpected</a></code>{<code><a href="../error/terminate" title="cpp/error/terminate">std::terminate</a></code>    DeclType (f &lt;oid&gt; ()) *p; // f không được đánh giá, nhưng cần thiết<code>noexcept</code>                            // Lỗi vì khởi tạo đặc tả NoExcept <a href="except_spec" title="cpp/language/except spec"><code>throw()</code></a>                            // Tính toán sizeof (void)<code>throw()</code>}<code>noexcept(true)</code>.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_noexcept_function_type" title="cpp/feature test"><code>__cpp_noexcept_function_type</code></a></td> <td><span class="nu0">201510L</span></td> <td><span class="t-mark">Dest_at</span></td> <td>Định nghĩa chính thức của</td>
+</tr>
+</table> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/noexcept" title="cpp/keyword/noexcept"><code>noexcept</code></a></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Biểu thức ném có khả năng</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1330.html" rel="nofollow">CWG 1330</a> </td> <td>C ++ 11</td> <td>Cho phép tất cả các ngoại lệ (đặc điểm kỹ thuật ngoại lệ được coi là hiện tại, mặc dù nó không thể diễn tả được trong mã và hoạt động như thể không có thông số kỹ thuật ngoại lệ)</td> <td>Mặt khác, nếu tập hợp các ngoại lệ tiềm năng không trống, đặc điểm kỹ thuật ngoại lệ ngầm liệt kê mọi loại từ tập hợp.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1740.html" rel="nofollow">CWG 1740</a> </td> <td>C ++ 11</td> <td>Một<code>(</code>(Được sử dụng để xác định đặc tả ngoại lệ mặc định của các trình điều khiển phá hủy, bộ xây dựng và toán tử chuyển nhượng như mô tả ở trên):<code>noexcept</code>có khả năng ném</td> <td>là một chức năng gọi đến một hàm, con trỏ tới chức năng hoặc chức năng con trỏ đến thành viên<br/>có khả năng ném</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2039.html" rel="nofollow">CWG 2039</a> </td> <td>C ++ 11</td> <td>thực hiện một cuộc gọi ngầm cho một</td> <td>có khả năng ném<br/>chức năng (chẳng hạn như toán tử quá tải, chức năng phân bổ trong</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="noexcept" title="cpp/language/noexcept"> <code>noexcept</code> operator</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>-Expression, một hàm tạo cho một đối số chức năng hoặc một kẻ phá hủy nếu</td>
+</tr> <tr class="t-dsc"> <td> <a href="except_spec" title="cpp/language/except spec"> Dynamic exception specification</a><span class="t-mark-rev t-until-cxx17">xáo trộn</span> </td> <td>void no_throw () noExcept;<span class="t-mark-rev t-deprecated-cxx11">(không dùng nữa trong C ++ 11)</span> </td>
+</tr> <tr class="t-dsc"> <td> <a href="throw" title="cpp/language/throw"> <code>throw</code> expression </a> </td> <td>là một biểu hiện đầy đủ)</td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/move_if_noexcept" title="cpp/utility/move if noexcept"> <span class="t-lines"><span>Move_if_NoExcept</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được một tham chiếu rvalue nếu hàm tạo di chuyển không ném<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/noexcept_spec">https://en.cppreference.com/w/cpp/language/noexcept_spec</a>
+</p>
+</div>

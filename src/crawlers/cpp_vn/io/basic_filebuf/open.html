@@ -1,0 +1,80 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_filebuf &lt;biểu đồ, đặc điểm&gt; :: Mở</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">BASIC_FILEBUF* MỞ (const char* s, std :: ios_base :: OpenMode Mode);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">BASIC_FILEBUF* MỞ (const std :: String &amp; str, std :: ios_base :: OpenMode Mode);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">BASIC_FILEBUF* MỞ (const std :: fileSystem :: path &amp; p,</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">                     STD :: iOS_Base :: Mode OpenMode);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>BASIC_FILEBUF* MỞ (const std :: fileSystem :: path :: value_type* s,<code>is_open() != false</code>                     STD :: iOS_Base :: Mode OpenMode);</p>
+<p>Nếu tệp được liên kết đã mở (<code>s</code><span class="t-rev-inl t-since-cxx17"><span>Thì<code>p.c_str()</code></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>hoặc<code>str.c_str()</code>), trả lại một con trỏ null ngay lập tức.<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::openmode</a></code>Mặt khác, mở tệp với tên đã cho (<code><a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1679">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">. Các số ngẫu nhiên được tạo bằng trình tạo số ngẫu nhiên</span></span></a> <span class="sy3">|</span> <a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1676">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">, tùy thuộc vào quá tải).</span></span></a></code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>        // Một biến thể của C ++ 11 std :: Uniform_int_distribution thực hiện.<span class="t-v">(4)</span>Các giá trị có thể được viết là, ví dụ:<code>std::filesystem::path::value_type</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<span class="kw4">char</span>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>ứng dụng<code><a href="../c/fopen" title="cpp/io/c/fopen">std::fopen</a></code>chỉ được cung cấp nếu<code>mode <span class="sy3">Không có giá trị</span> ~<a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1681">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">Tạo mới</span></span></a></code>với đối số thứ hai (chế độ truy cập tệp) được xác định bởi kết quả của<code>open()</code>ăn</p>
+<table class="wikitable"> <tr> <th colspan="6">
+<code>mode <span class="sy3">Không có giá trị</span> ~<a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1681">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">Tạo mới</span></span></a></code> </th> <th rowspan="2">﻿<code><a href="../c/fopen" title="cpp/io/c/fopen">std::fopen</a></code>﻿<br/>truy cập<br/>đang chỉ ra) và là chuỗi ký tự liên quan (nguồn ký tự cho tất cả các hoạt động đầu vào và mục tiêu cho đầu ra).</th> <th rowspan="2">Thất bại nếu kết quả không phải là một số kết hợp các cờ được hiển thị trong bảng:</th> <th rowspan="2">ăn</th>
+</tr> <tr style="text-align:center"> <td>
+<a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>binary</code></a> </td> <td>
+<a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>in</code></a> </td> <td>
+<a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>out</code></a> </td> <td>
+<a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>trunc</code></a> </td> <td>
+<a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>app</code></a> </td> <td>
+<a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>noreplace</code></a><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-no">-</td> <td>
+<code>"r"</code> </td> <td rowspan="4">Hành động nếu tệp đã tồn tại</td> <td rowspan="2">Phá hủy nội dung</td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-no">-</td> <td>
+<code>"rb"</code> </td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-no">-</td> <td>
+<code>"r+"</code> </td> <td rowspan="2">Đọc từ bắt đầu</td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-no">-</td> <td>
+<code>"r+b"</code> </td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-no">-</td> <td rowspan="2">
+<code>"w"</code> </td> <td rowspan="6">Không mở</td> <td rowspan="6">Tạo mới</td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-no">-</td> <td rowspan="2">
+<code>"wb"</code> </td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td>
+<code>"w+"</code> </td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td>
+<code>"w+b"</code> </td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td rowspan="2">
+<code>"wx"</code> </td> <td rowspan="6">Phá hủy nội dung</td> <td rowspan="6">Tạo mới</td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td rowspan="2">
+<code>"wbx"</code> </td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td>
+<code>"w+x"</code> </td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td>
+<code>"w+bx"</code> </td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td rowspan="2">
+<code>"a"</code> </td> <td rowspan="8">Không mở</td> <td rowspan="8">Tạo mới</td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td rowspan="2">
+<code>"ab"</code> </td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td rowspan="2">
+<code>"a+"</code> </td>
+</tr> <tr> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td rowspan="2">
+<code>"a+b"</code> </td>
+</tr> <tr> <td class="table-yes">gọi</td> <td class="table-yes">gọi</td> <td class="table-no">-</td> <td class="table-no">-</td> <td class="table-yes">gọi</td> <td class="table-no">-</td>
+</tr>
+</table> <p>Viết để kết thúc<code><span class="br0">.</span>openmode <span class="sy3">Không có giá trị</span> <a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1681">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">Tạo mới</span></span></a><span class="br0">)</span> <span class="sy3">Nếu tồn tại một</span><span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span> <span class="nu0">. Không làm gì khác.</span></code>Nếu hoạt động mở thành công và<code>ate</code>ăn<code><a href="http://en.cppreference.com/w/cpp/io/c/fseek"><span class="kw1871">Điều đó cho tất cả<span class="me2">FSEEK</span></span></a><span class="br0">.</span>file, <span class="nu0">. Không làm gì khác.</span>, <a href="http://en.cppreference.com/w/cpp/io/c"><span class="kw1895">Seek_end</span></a><span class="br0">)</span></code>là<code>file</code>(The<code><a href="../c/fopen" title="cpp/io/c/fopen">std::fopen</a></code>bit được đặt), định vị lại vị trí tệp vào cuối tệp, như thể bằng cách gọi<code><a href="close" title="cpp/io/basic filebuf/close">close()</a></code>con trỏ có được trả lại bằng cách gọi không</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>. Nếu định vị lại thất bại, các cuộc gọi</td> <td>-</td> <td>và trả về một con trỏ null để chỉ ra thất bại.<code>s</code>s, str, p</td>
+</tr> <tr class="t-par"> <td>Init</td> <td>-</td> <td>Tên tệp để mở;<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::openmode</a></code>Phải trỏ đến chuỗi kết thúc null</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>this</code>Về thành công, một con trỏ null về thất bại.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>open()</code>chế độ mở tệp, nhị phân hoặc của<code>open()</code>chế độ<code><a href="../basic_fstream" title="cpp/io/basic fstream">std::basic_fstream</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">thường được gọi thông qua hàm tạo hoặc</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">chức năng thành viên của</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue596" rel="nofollow">LWG 596</a> </td> <td>C ++ 98</td> <td>
+<code>open()</code>#include &lt;Fstream&gt;</td> <td>#include &lt;Istream&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_open" title="cpp/io/basic filebuf/is open"> <span class="t-lines"><span>Bản gốc_Handle</span></span></a></div> </td> <td>Trả về tay cầm được xác định thực hiện cơ bản<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="close" title="cpp/io/basic filebuf/close"> <span class="t-lines"><span>Kiểm tra xem tệp được liên kết có mở không</span></span></a></div> </td> <td>mở<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_filebuf/open">https://en.cppreference.com/w/cpp/io/basic_filebuf/open</a>
+</p>
+</div>

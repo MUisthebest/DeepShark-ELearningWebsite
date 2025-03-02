@@ -1,0 +1,50 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_istream &lt;biểu đồ, đặc điểm&gt; :: Nhận</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">int_type get ();</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_istream &amp; get (char_type &amp; ch);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_istream &amp; get (char_type* s, std :: streamsize Count);</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_istream &amp; get (char_type* s, std :: streamsize Count, char_type delim);</pre>
+</td> <td>(4)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_istream &amp; get (basic_streambuf &amp; strbuf);</pre>
+</td> <td>             Không có p);</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_istream &amp; get (basic_streambuf &amp; strbuf, char_type delim);</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trích xuất ký tự hoặc ký tự từ luồng.</p>
+<p>Tất cả các phiên bản cư xử như<a href="../../named_req/unformattedinputfunction" title="cpp/named req/UnformattedInputFunction">UnformattedInputFunctions</a>. Sau khi xây dựng và kiểm tra đối tượng Sentry, các chức năng này thực hiện như sau:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Đọc một ký tự và trả về nó nếu có. Nếu không, trả lại<code>Traits::eof()</code>và bộ<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">failbit</a></code>Và<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">eofbit</a></code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Đọc một nhân vật và lưu trữ nó cho<code>ch</code>Nếu có sẵn. Nếu không, lá<code>ch</code>Không sửa đổi và bộ<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">failbit</a></code>Và<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">eofbit</a></code>. Lưu ý rằng chức năng này không bị quá tải trên các loại<code>signed char</code>Và<code>unsigned char</code>, Không giống như toán tử đầu vào ký tự được định dạng &gt;&gt;.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>                                   Nhị phân p);<code>get(s, count, widen('\n'))</code>, đó là, đọc nhiều nhất<code><a href="http://en.cppreference.com/w/cpp/algorithm/max"><span class="kw1644">Điều đó cho tất cả<span class="me2">Được xác định trong tiêu đề</span></span></a><span class="br0">.</span><span class="nu0">. Không làm gì khác.</span>, count <span class="sy2">-</span> <span class="nu0">, nếu như</span><span class="br0">)</span></code>ký tự và lưu trữ chúng vào chuỗi ký tự được trỏ bởi<code>s</code>cho đến khi<code>'\n'</code>được tìm thấy.</div> <span class="t-li">là trong</span>Đọc các ký tự và lưu trữ chúng vào các vị trí liên tiếp của mảng ký tự có phần tử đầu tiên được chỉ ra bởi<code>s</code>. Các ký tự được trích xuất và lưu trữ cho đến khi bất kỳ điều nào sau đây xảy ra:<ul>
+<li> <code>count</code>là ít hơn<code>1</code>hoặc<code>count - 1</code>Nhân vật đã được lưu trữ.</li>
+<li>Kết thúc điều kiện tệp xảy ra trong chuỗi đầu vào (<code>setstate(eofbit)</code>được gọi là).</li>
+<li>ký tự đầu vào có sẵn tiếp theo<code>c</code>Mẫu &lt;class inputit1, class inputit2&gt;<code>delim</code>Sau đó kiểm tra tính cách nào ở vị trí putback. Nếu nhân vật được giữ thì đã có<code>Traits::eq(c, delim)</code>. Nhân vật này không được trích xuất (không giống như<a href="getline" title="cpp/io/basic istream/getline"><code>getline()</code></a>).</li>
+</ul> <div class="t-li1">Trong mọi trường hợp, nếu<code>count &gt; 0</code>, một nhân vật null (<code>CharT()</code>được lưu trữ ở vị trí tiếp theo của mảng.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>                                   Nhị phân p);<code>get(strbuf, widen('\n'))</code>, nghĩa là đọc các ký tự có sẵn và chèn chúng vào<a href="../basic_streambuf" title="cpp/io/basic streambuf"><code>basic_streambuf</code></a>đối tượng cho đến khi<code>'\n'</code>được tìm thấy.</div> <span class="t-li">từ_sys</span>Đọc các ký tự và chèn chúng vào trình tự đầu ra được điều khiển bởi<a href="../basic_streambuf" title="cpp/io/basic streambuf"><code>basic_streambuf</code></a>sự vật. Ký tự được trích xuất và chèn vào<code>strbuf</code>Cho đến khi bất kỳ điều nào sau đây xảy ra:<ul>
+<li>Kết thúc điều kiện tệp xảy ra trong chuỗi đầu vào.</li>
+<li>Chèn vào chuỗi đầu ra bị lỗi (trong trường hợp đó, ký tự không thể chèn, không được trích xuất).</li>
+<li>ký tự đầu vào có sẵn tiếp theo<code>c</code>Mẫu &lt;class inputit1, class inputit2&gt;<code>delim</code>Sau đó kiểm tra tính cách nào ở vị trí putback. Nếu nhân vật được giữ thì đã có<code>Traits::eq(c, delim)</code>. Nhân vật này không được trích xuất.</li>
+<li>Một ngoại lệ xảy ra (trong trường hợp đó, ngoại lệ bị bắt và không được tái sinh).</li>
+</ul> <p>Nếu không có ký tự nào được trích xuất, cuộc gọi<code>setstate(failbit)</code>.</p>
+<p>Tất cả các phiên bản đặt giá trị của<code><a href="gcount" title="cpp/io/basic istream/gcount">gcount()</a></code>đến số lượng ký tự được trích xuất.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>ch</td> <td>-</td> <td>tham chiếu đến nhân vật để viết kết quả cho</td>
+</tr> <tr class="t-par"> <td>S</td> <td>-</td> <td>con trỏ đến chuỗi ký tự để lưu trữ các ký tự</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Kích thước của chuỗi ký tự được trỏ bởi<code>s</code> </td>
+</tr> <tr class="t-par"> <td>DELIM</td> <td>-</td> <td>phân định ký tự để dừng trích xuất tại. Nó không được trích xuất và không được lưu trữ</td>
+</tr> <tr class="t-par"> <td>STRBUF</td> <td>-</td> <td>bộ đệm phát trực tuyến để đọc nội dung để</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Ký tự được trích xuất hoặc<code>Traits::eof()</code>.</div> <div class="t-li1">
+<span class="t-li">2-6)</span> <code>*this</code>
+</div> <h3 id="Exceptions">Ngoại lệ</h3>
+<code><a href="../ios_base/failure" title="cpp/io/ios base/failure">failure</a></code>Nếu xảy ra lỗi (cờ trạng thái lỗi không<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">goodbit</a></code>) Và<code><a href="../basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>được thiết lập để ném cho trạng thái đó.<p>Nếu một hoạt động nội bộ ném một ngoại lệ, nó sẽ bị bắt và<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">badbit</a></code>được đặt. Nếu như<code><a href="../basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>được đặt cho<code>badbit</code>, ngoại lệ là được tái sinh.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Sstream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue370" rel="nofollow">LWG 370</a> </td> <td>C ++ 98</td> <td>#include &lt;Map&gt;<span class="t-v">             Không có p);</span> <code>get(s, count, widen('\n'))</code>Thì<br/> <span class="t-v">(3)</span> </td> <td>, số lượng tăng số lặp là tuyến tính. Đáng chú ý,<br/><code>get(strbuf, widen('\n'))</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue531" rel="nofollow">LWG 531</a> </td> <td>C ++ 98</td> <td>Sửa đổi điểm thời gian<span class="t-v">ConstExpr Outputit Adjacent_Difference (Inputit First, Inputit Last, </span>int main ()<br/>{<code>count</code>    trả lại trước;</td> <td>    std :: istringsTream s1 ("Xin chào, thế giới.");<br/>    char c1 = s1.get (); // đọc 'H'</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="read" title="cpp/io/basic istream/read"> <span class="t-lines"><span>đọc</span></span></a></div> </td> <td>Đặt một ký tự vào luồng đầu vào<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="operator_gtgt" title="cpp/io/basic istream/operator gtgt"> <span class="t-lines"><span>Num</span></span></a></div> </td> <td>Mở một tệp và liên kết nó với luồng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="operator_gtgt2" title="cpp/io/basic istream/operator gtgt2"> <span class="t-lines"><span>Num<span class="t-dsc-small">(STD :: basic_istream)</span></span></span></a></div> </td> <td>Trích xuất ký tự và mảng ký tự<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_istream/get">https://en.cppreference.com/w/cpp/io/basic_istream/get</a>
+</p>
+</div>

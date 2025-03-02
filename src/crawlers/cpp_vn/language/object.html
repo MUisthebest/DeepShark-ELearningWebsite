@@ -1,0 +1,123 @@
+ <h1 class="firstHeading" id="firstHeading">} // được rồi</h1> <p>Các chương trình C ++ tạo, phá hủy, tham khảo, truy cập và thao túng<i>Đối tượng</i>.</p>
+<p>Một đối tượng, trong C ++, có</p>
+<ul>
+<li>Kích thước (có thể được xác định với<a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>);</li>
+<li>yêu cầu căn chỉnh (có thể được xác định với<a href="alignof" title="cpp/language/alignof"><code>alignof</code></a>);</li>
+<li> <a href="storage_duration" title="cpp/language/storage duration">storage duration</a>(tự động, tĩnh, động, địa lý chủ đề);</li>
+<li> <a href="lifetime" title="cpp/language/lifetime">lifetime</a>(giới hạn theo thời lượng lưu trữ hoặc tạm thời);</li>
+<li> <a href="type" title="cpp/language/type">type</a>Số lượng các yếu tố để sao chép</li>
+<li>giá trị (có thể không xác định được, ví dụ: đối với<a href="default_initialization" title="cpp/language/default initialization">default-initialized</a>Các loại không thuộc lớp);</li>
+<li>Tùy chọn, a<a class="mw-redirect" href="name" title="cpp/language/name">name</a>.</li>
+</ul> <p>Các thực thể sau đây không phải là đối tượng: giá trị, tham chiếu, chức năng, điều tra, loại, thành viên lớp không tĩnh, mẫu, chuyên ngành mẫu hoặc chức năng, không gian tên, gói tham số và gói tham số và<code>this</code>.</p>
+<p>MỘT<i>địa chỉ qua cuối một đối tượng có thời lượng lưu trữ tĩnh</i>là một đối tượng hoặc một tham chiếu không phải là thành viên dữ liệu không tĩnh, được giới thiệu bởi một<a href="declarations" title="cpp/language/declarations">declaration</a>.</p>
+<h3 id="Object_creation">Tạo đối tượng</h3> <p>Các đối tượng có thể được tạo rõ ràng bởi<a href="definition" title="cpp/language/definition">definitions</a>Thì<a href="new" title="cpp/language/new">new-expressions</a>Thì<a href="throw" title="cpp/language/throw">throw-expressions</a>, thay đổi thành viên tích cực của một<a href="union" title="cpp/language/union">union</a>và đánh giá các biểu thức yêu cầu<a href="lifetime#Temporary_object_lifetime" title="cpp/language/lifetime">temporary objects</a>. Đối tượng được tạo được xác định duy nhất trong tạo đối tượng rõ ràng.</p>
+<p>Đối tượng của<a href="../named_req/implicitlifetimetype" title="cpp/named req/ImplicitLifetimeType">implicit-lifetime types</a>cũng có thể được tạo ra một cách ngầm</p>
+<ul>
+<li>Các hoạt động bắt đầu trọn đời của một loại<span class="kw4">STD</span> <span class="kw4">char</span><span class="t-rev-inl t-since-cxx17"><span>hoặc<a href="../types/byte" title="cpp/types/byte"><code>std::byte</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>, trong trường hợp đó, các đối tượng như vậy được tạo trong mảng,</li>
+<li>Gọi để theo dõi các chức năng phân bổ, trong trường hợp đó các đối tượng đó được tạo trong bộ lưu trữ được phân bổ:</li>
+<ul>
+<li> <code><a href="../memory/new/operator_new" title="cpp/memory/new/operator new">operator new</a></code>(bao gồm cả vị trí mới)</li>
+<li> <code><a href="../memory/new/operator_new" title="cpp/memory/new/operator new">operator new[]</a></code>(bao gồm cả vị trí mới)</li>
+<li> <code><a href="../memory/c/malloc" title="cpp/memory/c/malloc">std::malloc</a></code> </li>
+<li> <code><a href="../memory/c/calloc" title="cpp/memory/c/calloc">std::calloc</a></code> </li>
+<li> <code><a href="../memory/c/realloc" title="cpp/memory/c/realloc">std::realloc</a></code> </li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li> <code><a href="../memory/c/aligned_alloc" title="cpp/memory/c/aligned alloc">std::aligned_alloc</a></code> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul>
+<li>Gọi để theo dõi<a href="#Object_representation_and_value_representation">object representation</a>Sao chép các chức năng, trong trường hợp đó, các đối tượng đó được tạo trong vùng đích lưu trữ hoặc kết quả:</li>
+<ul>
+<li> <code><a href="../string/byte/memcpy" title="cpp/string/byte/memcpy">std::memcpy</a></code> </li>
+<li> <code><a href="../string/byte/memmove" title="cpp/string/byte/memmove">std::memmove</a></code> </li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li> <a href="../numeric/bit_cast" title="cpp/numeric/bit cast"><code>std::bit_cast</code></a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Không hoặc nhiều đối tượng có thể được tạo trong cùng một khu vực lưu trữ, miễn là làm như vậy sẽ đưa ra hành vi được xác định của chương trình. Nếu sự sáng tạo như vậy là không thể, ví dụ: Do hoạt động mâu thuẫn, hành vi của chương trình không được xác định. Nếu nhiều tập hợp các đối tượng được tạo ngầm như vậy sẽ cung cấp cho hành vi được xác định của chương trình, thì nó không được xác định là tập hợp các đối tượng như vậy được tạo. Nói cách khác, các đối tượng được tạo ngầm không bắt buộc phải được xác định duy nhất.</p>
+<p>Sau khi hoàn toàn tạo các đối tượng trong một vùng lưu trữ được chỉ định, một số hoạt động tạo ra một con trỏ tới<i>Đối tượng được tạo phù hợp</i>. Đối tượng được tạo phù hợp có cùng địa chỉ với vùng lưu trữ. Tương tự như vậy, hành vi không được xác định nếu chỉ nếu không có giá trị con trỏ như vậy có thể cung cấp cho hành vi được xác định của chương trình và nó không xác định giá trị con trỏ nào được tạo ra nếu có nhiều giá trị đưa ra hành vi được xác định của chương trình.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDlib&gt;</pre></div> <p> <code><a href="../memory/allocator/allocate" title="cpp/memory/allocator/allocate">std::allocator::allocate</a></code>struct x {int a, b; };<a href="union" title="cpp/language/union">union</a> <span class="t-rev-inl t-since-cxx23"><span>&gt; class basic_filebuf: std công khai :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;<code>std::start_lifetime_as</code>Và<code>std::start_lifetime_as_array</code>X* makex ()</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span></p>
+<h3 id="Object_representation_and_value_representation">{</h3> <p>    // Một trong những hành vi được xác định có thể có:<i>    // Cuộc gọi đến STD :: malloc hoàn toàn tạo ra một đối tượng loại X</i>Và<i>    // và các tiểu mục của nó A và B, và trả về một con trỏ cho đối tượng X đó</i>    X* p = static_cast &lt;x*&gt; (std :: malloc (sizeof (x)));</p>
+<table class="wikitable"> <tr> <th>    p-&gt; a = 1;</th> <th>    p-&gt; b = 2;</th> <th>    trả lại p;</th>
+</tr> <tr> <td>}<code>T</code> </td> <td>Đại diện giá trị<code>N</code> <span class="kw4">STD</span> <span class="kw4">char</span>hoặc bản sao được xác định ngầm/di chuyển các chức năng thành viên đặc biệt của<a href="bit_field" title="cpp/language/bit field">bit-field</a>Các loại cũng có thể tạo các đối tượng.<code>T</code>là<code>N</code>khoảng cách<code>sizeof(T)</code> </td> <td>các đối tượng được đưa lên bởi một<code>T</code>Biểu diễn đối tượng và biểu diễn giá trị<code>T</code> </td>
+</tr> <tr> <td>Một số loại và đối tượng có<code>obj</code>nó đến một đối tượng<code>T</code> </td> <td>biểu diễn đối tượng<code>obj</code>biểu diễn giá trị<code>T</code> </td> <td>, chúng được xác định trong bảng dưới đây:<code>obj</code>Thực thể<code>T</code> </td>
+</tr> <tr> <td>Biểu diễn đối tượng<code>bf</code> </td> <td>Đại diện giá trị<code>N</code>Một loại đối tượng hoàn chỉnh<code>bf</code>là<code>N</code>Trình tự của</td> <td>các đối tượng được đưa lên bởi một<code>bf</code>Toàn bộ đối tượng của loại<code>bf</code> </td>
+</tr>
+</table> <p>tập hợp các bit trong biểu diễn đối tượng của<i>tham gia vào việc thể hiện một giá trị của loại</i>.</p>
+<p>Bool Binary_Search (Forwardit First, Forwardit Last,<a href="../named_req/triviallycopyable" title="cpp/named req/TriviallyCopyable">TriviallyCopyable</a>một đối tượng hoàn chỉnh không bit<i>các byte của</i>tương ứng với biểu diễn đối tượng của</p>
+<p>Các bit của<a class="external text" href="https://web.archive.org/web/20170830125905/https://blogs.msdn.microsoft.com/oldnewthing/20040119-00/?p=41003" rel="nofollow">may be a trap representation</a>.</p>
+<p>tương ứng với biểu diễn giá trị của<a href="../named_req/triviallycopyable" title="cpp/named req/TriviallyCopyable">TriviallyCopyable</a>một đối tượng trường bit<a href="../numeric/math/nan" title="cpp/numeric/math/NAN">NaN</a>Trình tự của<a href="object#Alignment" title="cpp/language/object">alignment requirements</a>Thì<a href="bit_field" title="cpp/language/bit field">bit-field</a>bit được đưa lên bởi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">là chiều rộng của trường bit</pre></div> <p>tập hợp các bit trong biểu diễn đối tượng của<span class="kw4">char</span>Thì<span class="kw4">STD</span> <span class="kw4">char</span>, Và<span class="kw4">STD</span> <span class="kw4">char</span>tham gia vào việc đại diện cho giá trị của<a href="bit_field" title="cpp/language/bit field">bit-fields</a>Bit trong biểu diễn đối tượng của một loại hoặc đối tượng không phải là một phần của biểu diễn giá trị là</p>
+<h3 id="Subobjects">BIT đệm</h3> <p>Các loại, biểu diễn giá trị là một phần của biểu diễn đối tượng, điều đó có nghĩa là việc sao chép các byte bị chiếm bởi đối tượng trong lưu trữ là đủ để tạo ra một đối tượng khác có cùng giá trị (ngoại trừ nếu đối tượng là một tiểu mục có khả năng lặp lại hoặc giá trị là<i>Bẫy đại diện</i>thuộc loại của nó và tải nó vào CPU làm tăng một ngoại lệ phần cứng, chẳng hạn như Snan ("Tín hiệu không phải là một số")) các giá trị dấu phẩy động hoặc số nguyên NAT ("không phải là một thứ")).</p>
+<ul>
+<li>                                  const std :: Common_Iterator &lt;i2, s2&gt; &amp; y);</li>
+<li>Mặc dù hầu hết các triển khai không cho phép các biểu diễn bẫy, các bit đệm hoặc nhiều biểu diễn cho các loại số nguyên, nhưng có những ngoại lệ; Ví dụ, giá trị của loại số nguyên trên itanium</li>
+<li>Điều ngược lại không nhất thiết là đúng: hai đối tượng của</li>
+</ul> <p>Loại với các biểu diễn đối tượng khác nhau có thể đại diện cho cùng một giá trị. Ví dụ: nhiều mẫu bit dấu phẩy động đại diện cho cùng một giá trị đặc biệt<i>. Thông thường hơn, các bit đệm có thể được giới thiệu để thỏa mãn</i>.</p>
+<p>Kích thước, v.v.<i>#include &lt;Cassert&gt;</i> <span class="t-rev-inl t-since-cxx20"><span>cấu trúc s<code>[[<a href="attributes/no_unique_address" title="cpp/language/attributes/no unique address">no_unique_address</a>]]</code>thuộc tính</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>.</p>
+<p>{<i>    char c;  // 1 giá trị byte</i>             // 3 byte của bit đệm (giả sử alignof (float) == 4)<a href="bit_field" title="cpp/language/bit field">bit-field</a>    Float f; // 4 giá trị byte (giả sử sizeof (float) == 4)<span class="t-rev-inl t-since-cxx20"><span> <code>[[no_unique_address]]</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Tạo các loại điểm nổi bằng cách sử dụng ký hiệu khoa học hoặc ký hiệu hex nếu kết hợp với<a href="ebo" title="cpp/language/ebo">empty base optimization</a>).</p>
+<p>    Toán tử bool == (const s &amp; arg) const // bình đẳng dựa trên giá trị<i>    {</i>        trả về c == arg.c &amp;&amp; f == arg.f;<code>a</code>    }<code>b</code>nếu như</p>
+<ul>
+<li> <code>a</code>};<code>b</code>, hoặc</li>
+<li> <code>b</code> <a href="lifetime#Providing_storage" title="cpp/language/lifetime">provides storage</a>vì<code>a</code>, hoặc</li>
+<li> <code>c</code>Ở đâu<code>a</code>{<code>c</code>, Và<code>c</code>{<code>b</code>.</li>
+</ul> <p>    khẳng định (sizeof (s) == 8);<a href="lifetime" title="cpp/language/lifetime">lifetimes</a>    S S1 = {'A', 3.14};<a href="bit_field" title="cpp/language/bit field">bit-fields</a>    S S2 = S1;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    reinterpret_cast &lt;unsign char*&gt; (&amp; s1) [2] = 'b'; // Sửa đổi một số bit đệm</pre></div> <p>    khẳng định (S1 == S2); // Giá trị không thay đổi</p>
+<ul>
+<li>}<a href="data_members" title="cpp/language/data members">data members</a>Thì</li>
+<li>Đối với các đối tượng của loại<a href="derived_class" title="cpp/language/derived class">base classes</a>(Trừ khi chúng quá khổ</li>
+<li>), mỗi bit của biểu diễn đối tượng được yêu cầu tham gia vào biểu diễn giá trị và mỗi mẫu bit có thể đại diện cho một giá trị riêng biệt (không có bit đệm, bit bẫy hoặc nhiều biểu diễn được phép).<a href="abstract_class" title="cpp/language/abstract class">abstract</a>acc = std :: di chuyển (val2);<a href="derived_class#Virtual_base_classes" title="cpp/language/derived class">virtual base classes</a> </li>
+</ul> <p>Các tiểu mục<i>Một đối tượng có thể có</i>.</p>
+<h3 id="Polymorphic_objects">Các tiểu mục</h3> <p>. Chúng bao gồm<a href="virtual" title="cpp/language/virtual">virtual function</a>Các tiểu mục cơ sở<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>Và<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>các yếu tố mảng</p>
+<p>Một đối tượng không phải là một tiểu thư của một đối tượng khác được gọi là</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">hoàn chỉnh đối tượng</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Một tiểu mục là</pre></div> </div> <h3 id="Strict_aliasing">có khả năng chồng chéo</h3> <p>Nếu nó là một tiểu mục lớp cơ sở<a href="reinterpret_cast#Type_aliasing" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>hoặc một thành viên dữ liệu không tĩnh được khai báo với</p>
+<h3 id="Alignment">Các đối tượng hoàn chỉnh, đối tượng thành viên và các phần tử mảng còn được gọi là</h3> <p>Không có mẫu nào được xác định trong<a href="type" title="cpp/language/type">object type</a>Hầu hết các đối tượng có nguồn gốc<i>, để phân biệt chúng với các tiểu mục lớp cơ sở. Kích thước của một đối tượng không có khả năng chồng chéo cũng như</i>được yêu cầu là không khác (kích thước của tiểu mục lớp cơ sở có thể bằng không<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>Ngay cả khi không có</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Một đối tượng có thể chứa các đối tượng khác, trong trường hợp đó các đối tượng chứa<a href="alignof" title="cpp/language/alignof"><code>alignof</code></a>hoặc<code><a href="../types/alignment_of" title="cpp/types/alignment of">std::alignment_of</a></code>lồng nhau trong<code><a href="../memory/align" title="cpp/memory/align">std::align</a></code>đối tượng cũ. Một đối tượng<code><a href="../types/aligned_storage" title="cpp/types/aligned storage">std::aligned_storage</a></code>được lồng trong một đối tượng khác</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>là một tiểu mục của<span class="t-rev-inl t-since-cxx11"><span>tồn tại một đối tượng<a href="alignas" title="cpp/language/alignas"><code>alignas</code></a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>được lồng bên trong</p>
+<p>được lồng bên trong<a href="class" title="cpp/language/class">class</a>Thì<a href="#Object_representation_and_value_representation">padding bits</a>Bất kỳ hai đối tượng nào có sự chồng chéo</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">(Đó là không</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">) được đảm bảo có các địa chỉ khác nhau trừ khi một trong số chúng được lồng trong một địa chỉ khác, hoặc nếu chúng là các tiểu mục thuộc loại khác nhau trong cùng một đối tượng hoàn chỉnh và một trong số chúng là một tiểu mục có kích thước bằng không.</pre></div> </div> <p>static const char c1 = 'x';<span class="kw4">char</span>Thì<span class="kw4">STD</span> <span class="kw4">char</span>, Và<span class="kw4">STD</span> <span class="kw4">char</span>static const char c2 = 'x';<code>1</code>khẳng định (&amp; C1! = &amp; C2); // cùng các giá trị, các địa chỉ khác nhau<i>Cho một lớp học,</i>nó không tĩnh<span class="t-rev-inl t-since-cxx11"><span>Trực tiếp không phải là Virtual của nó<code><a href="../types/max_align_t" title="cpp/types/max align t">std::max_align_t</a></code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<p>, Và,</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Nếu lớp không<code><a href="../types/max_align_t" title="cpp/types/max align t">std::max_align_t</a></code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<a href="alignas" title="cpp/language/alignas"><code>alignas</code></a>được gọi là nó<i>Các tiểu mục có khả năng xây dựng</i>Các đối tượng đa hình<i>Các đối tượng thuộc loại lớp khai báo hoặc kế thừa ít nhất một hàm ảo là các đối tượng đa hình. Trong mỗi đối tượng đa hình, việc triển khai lưu trữ thông tin bổ sung (trong mỗi lần thực hiện hiện có, nó là một con trỏ trừ khi được tối ưu hóa), được sử dụng bởi</i>.</p>
+<p><a href="../named_req/allocator" title="cpp/named req/Allocator">Allocator</a>cuộc gọi và theo các tính năng RTTI (</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11 t-until-cxx20">
+<td> <p>) để xác định, tại thời gian chạy, loại mà đối tượng được tạo, bất kể biểu thức được sử dụng trong.<span class="t-rev-inl t-until-cxx17"><span><a href="new" title="cpp/language/new">new-expressions</a>Và</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span> <code><a href="../memory/get_temporary_buffer" title="cpp/memory/get temporary buffer">std::get_temporary_buffer</a></code>Đối với các đối tượng không polymor, việc giải thích giá trị được xác định từ biểu thức trong đó đối tượng được sử dụng và được quyết định tại thời điểm biên dịch.</p>
+</td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>#include &lt;Istream&gt;<a class="extiw" href="https://en.wikipedia.org/wiki/Object-oriented_programming" title="enwiki:Object-oriented programming">object-oriented programming (OOP)</a>:</p>
+<table class="wikitable"> <tr> <th>#include &lt;pyleninfo&gt;</th> <th> </th>
+</tr> <tr> <td>Cấu trúc cơ sở1<br/>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<code><a href="../types/is_object" title="cpp/types/is object">std::is_object</a></code>)</td> <td>{</td>
+</tr> <tr> <td>    // Loại đa hình: Tuyên bố một thành viên ảo</td> <td>    ảo ~ base1 () {}<code>instanceof</code>};</td>
+</tr> <tr> <td> </td> <td>Struct Desured1: Base1<code>instanceof</code>{</td>
+</tr> <tr> <td>     // Loại đa hình: kế thừa một thành viên ảo</td> <td>};</td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/633.html" rel="nofollow">CWG 633</a> </td> <td>C ++ 98</td> <td> </td> <td>Cấu trúc cơ sở2</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/734.html" rel="nofollow">CWG 734</a> </td> <td>C ++ 98</td> <td>{<br/>     // loại không polymor<br/>};</td> <td> <br/>struct có nguồn gốc2: base2<br/>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1189.html" rel="nofollow">CWG 1189</a> </td> <td>C ++ 98</td> <td>     // loại không polymor<br/>};</td> <td> <br/>int main ()</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1861.html" rel="nofollow">CWG 1861</a> </td> <td>C ++ 98</td> <td>{<br/>    Xuất phát1 obj1; // Object1 được tạo bằng loại dẫn xuất1<br/>    Dẫn xuất2 obj2; // Object2 được tạo bằng loại dẫn xuất2</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2489.html" rel="nofollow">CWG 2489</a> </td> <td>C ++ 98</td> <td>
+<span class="kw4">char</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span> <br/>Kiểm tra khoảng trống ()</td> <td>    Cơ sở1 &amp; b1 = obj1; // B1 đề cập đến đối tượng obj1<br/>    Cơ sở2 &amp; b2 = obj2; // B2 đề cập đến đối tượng obj2<span class="kw4">char</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2519.html" rel="nofollow">CWG 2519</a> </td> <td>C ++ 98</td> <td> </td> <td>    std :: cout &lt;&lt; "Loại biểu thức của B1:" &lt;&lt; typeid (declType (b1)). name () &lt;&lt; '\ n'</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2719.html" rel="nofollow">CWG 2719</a> </td> <td>C ++ 98</td> <td>              &lt;&lt; "Loại biểu thức của B2:" &lt;&lt; typeid (declType (b2)). Name () &lt;&lt; '\ n'<br/>              &lt;&lt; "Loại đối tượng của B1:" &lt;&lt; typeid (b1) .name () &lt;&lt; '\ n'</td> <td>là giá trị trả về, vẫn có thể giảm được, nhưng bản thân các yếu tố có giá trị không xác định. Một cuộc gọi đến<br/>kích cỡ.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0593R6" rel="nofollow">P0593R6</a> </td> <td>C ++ 98</td> <td>              &lt;&lt; "Loại đối tượng của B2:" &lt;&lt; typeid (b2) .name () &lt;&lt; '\ n'<br/>              &lt;&lt; "Kích thước của B1:" &lt;&lt; sizeof b1 &lt;&lt; '\ n'<br/>              &lt;&lt; "Kích thước của B2:" &lt;&lt; sizeof b2 &lt;&lt; '\ n';</td> <td>}</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/object" title="c/language/object">C documentation</a></span>vì<span class=""><span>} // được rồi</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/object">https://en.cppreference.com/w/cpp/language/object</a>
+</p>
+</div>

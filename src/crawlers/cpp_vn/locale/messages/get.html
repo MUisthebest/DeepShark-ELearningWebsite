@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tin nhắn &lt;Phange&gt; :: Get, std :: message &lt;Phange&gt; :: DO_GET</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">String_Type get (Catalog Cat, Int Set, Int Msgid, Const String_Type &amp; Dfault) Const;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>             Biểu đồ const* Low2, Biểu đồ const* High2) const;<code>do_get</code>Virtual POS_Type Seekoff (Off_Type TẮT, STD :: IOS_BASE :: SeekDir Dir,</div> <div class="t-li1">
+<span class="t-li">2)</span>được bảo vệ:<code>cat</code>chuỗi ảo_type do_get (catalog cat, int set, int msgid, const string_type &amp; dfault) const;<code>set</code>Thì<code>msgid</code>Và<code>dfault</code>Có được một tin nhắn từ danh mục tin nhắn mở<code>dfault</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>con mèo</td> <td>-</td> <td>sử dụng các giá trị<code><a href="open" title="cpp/locale/messages/open">open()</a></code>theo cách thực hiện theo định nghĩa. Nếu không tìm thấy tin nhắn dự kiến ​​trong danh mục, hãy trả về một bản sao của<code><a href="close" title="cpp/locale/messages/close">close()</a></code> </td>
+</tr> <tr class="t-par"> <td>bộ</td> <td>-</td> <td>Định danh danh mục tin nhắn thu được từ</td>
+</tr> <tr class="t-par"> <td>và chưa được chuyển cho</td> <td>-</td> <td>Đối số được xác định thực hiện, thông báo được đặt trong POSIX</td>
+</tr> <tr class="t-par"> <td>Dfault</td> <td>-</td> <td>MSGID</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Đối số được xác định thực hiện, ID tin nhắn trong POSIX<code>dfault</code>Chuỗi để tra cứu trong danh mục (nếu danh mục sử dụng Tra cứu chuỗi) và cũng là chuỗi để trả về trong trường hợp lỗi</p>
+<h3 id="Notes">Ghi chú</h3> <p>một mã định danh danh mục mở hợp lệ, trên đó<code><a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/catgets.html" rel="nofollow">catgets()</a></code>Thông điệp từ danh mục hoặc một bản sao của<code>set</code>Thì<code>msgid</code>, Và<code>dfault</code>Nếu không tìm thấy.<code>catgets()</code>và các tham số<code>set</code>Và<code>msgid</code>được thông qua<code>gettext(dfault)</code>as-is. Trong gnu libstdc ++, chức năng này bỏ qua</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>. Trong GNU libstdc ++, được thực hiện theo GNU<code>/usr/share/locale/de/LC_MESSAGES/sed.mo</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, nó không làm gì cả.</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Ví dụ sau đây đã chứng minh truy xuất các tin nhắn: trên một hệ thống GNU/Linux điển hình mà nó đọc từ</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr><td></td></tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/messages/get">https://en.cppreference.com/w/cpp/locale/messages/get</a>
+</p>
+</div>

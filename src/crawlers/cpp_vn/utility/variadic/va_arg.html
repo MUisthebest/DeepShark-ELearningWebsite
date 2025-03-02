@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">Va_arg</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdarg" title="cpp/header/cstdarg">&lt;cstdarg&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">T va_arg (std :: va_list ap, t);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Các<code>va_arg</code>Macro mở rộng sang một biểu thức của loại<code>T</code>tương ứng với tham số tiếp theo từ<code><a href="va_list" title="cpp/utility/variadic/va list">va_list</a></code> <code>ap</code>.</p>
+<p>Trước khi gọi<code>va_arg</code>Thì<code>ap</code>phải được khởi tạo bằng một cuộc gọi đến<code><a href="va_start" title="cpp/utility/variadic/va start">va_start</a></code>hoặc<code><a href="va_copy" title="cpp/utility/variadic/va copy">va_copy</a></code>, không có cuộc gọi can thiệp đến<code><a href="va_end" title="cpp/utility/variadic/va end">va_end</a></code>. Mỗi lời cầu khẩn của<code>va_arg</code>Macro sửa đổi<code>ap</code>Để chỉ vào đối số biến tiếp theo.</p>
+<p>Nếu loại đối số tiếp theo trong<code>ap</code>(sau các chương trình khuyến mãi) không tương thích với<code>T</code>, hành vi không xác định, trừ khi:</p>
+<ul>
+<li>Một loại là loại số nguyên có chữ ký, loại khác là loại số nguyên không dấu tương ứng và giá trị có thể thể hiện ở cả hai loại; hoặc</li>
+<li>Một loại là con trỏ tới<code>void</code>và cái khác là một con trỏ đến loại ký tự (<code>char</code>Thì<code>signed char</code>, hoặc<code>unsigned char</code>).</li>
+</ul> <p>Nếu như<code>va_arg</code>được gọi khi không còn tranh luận nữa<code>ap</code>Hoạt động tương đương cho quá tải</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>AP</td> <td>-</td> <td>một ví dụ của<code><a href="va_list" title="cpp/utility/variadic/va list">va_list</a></code>kiểu</td>
+</tr> <tr class="t-par"> <td>T</td> <td>-</td> <td>loại tham số tiếp theo trong<code>ap</code> </td>
+</tr>
+</table> <h3 id="Expanded_value">Giá trị mở rộng</h3> <p>Tham số biến tiếp theo trong<code>ap</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDarg&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cstdio&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="va_start" title="cpp/utility/variadic/va start"> <span class="t-lines"><span>Va_Start</span></span></a></div> </td> <td>Cho phép truy cập vào các đối số chức năng Variadic<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="va_copy" title="cpp/utility/variadic/va copy"> <span class="t-lines"><span>Va_Copy</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tạo một bản sao của các đối số chức năng Variadic<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="va_end" title="cpp/utility/variadic/va end"> <span class="t-lines"><span>Va_end</span></span></a></div> </td> <td>kết thúc việc chuyển giao của các đối số chức năng variadic<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/variadic/va_arg" title="c/variadic/va arg">C documentation</a></span>vì<code>va_arg</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/variadic/va_arg">https://en.cppreference.com/w/cpp/utility/variadic/va_arg</a>
+</p>
+</div>

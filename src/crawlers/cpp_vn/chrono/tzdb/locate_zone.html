@@ -1,0 +1,9 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Chrono :: TZDB :: locate_zone</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">const std :: Chrono :: time_zone* locate_zone (std :: string_view tz_name) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Có được một con trỏ tới một<code>std::chrono::time_zone</code>trong cơ sở dữ liệu này đại diện cho múi giờ được chỉ định bởi<code>tz_name</code>. Nếu như<code>p</code>là con trỏ được trả lại, sau đó cũng<code>p-&gt;name() == tz_name</code>hoặc có một<code><a href="../time_zone_link" title="cpp/chrono/time zone link">std::chrono::time_zone_link</a></code> <code>l</code>trong cơ sở dữ liệu này sao cho<code>p-&gt;name() == l.target() &amp;&amp; l.name() == tz_name</code>.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một con trỏ tới<code>std::chrono::time_zone</code>trong cơ sở dữ liệu này đại diện cho múi giờ được chỉ định bởi<code>tz_name</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Ném<code><a href="../../error/runtime_error" title="cpp/error/runtime error">std::runtime_error</a></code>Nếu không có như vậy<code>time_zone</code>có thể được tìm thấy.</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/tzdb/locate_zone">https://en.cppreference.com/w/cpp/chrono/tzdb/locate_zone</a>
+</p>
+</div>

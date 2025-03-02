@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: NOOP_COROUTINE</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/coroutine" title="cpp/header/coroutine">&lt;coroutine&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">STD :: NOOP_COROUTINE_HANDLE NOOP_COROUTINE () NOEXCEPT;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Trả về một tay cầm coroutine đề cập đến một coroutine no-op.</p>
+<p>Nếu đã có một trạng thái coroutine của coroutine, thì không xác định liệu một cuộc gọi tiếp theo đến<code>noop_coroutine</code>Trả về một tay cầm coroutine thu được trước đó, hoặc một tay cầm coroutine đề cập đến trạng thái coroutine mới của coroutine.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>MỘT<code><a href="coroutine_handle" title="cpp/coroutine/coroutine handle">std::noop_coroutine_handle</a></code>Đề cập đến một coroutine không có op.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Trả lại các giá trị từ các cuộc gọi khác nhau cho<code>noop_coroutine</code>có thể và có thể không so sánh bằng nhau.</p>
+<p><code>noop_coroutine</code>chỉ có thể trả lại một<code>noop_coroutine_handle</code>Đề cập đến một đối tượng trạng thái Coroutine mà không bắt đầu một coroutine.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Coroutine&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="noop_coroutine_promise" title="cpp/coroutine/noop coroutine promise"> <span class="t-lines"><span>Noop_coroutine_promise</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>được sử dụng cho các coroutines không có hiệu ứng quan sát được<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="coroutine_handle" title="cpp/coroutine/coroutine handle"> <span class="t-lines"><span>NOOP_COROUTINE_HANDLE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td> <code><a href="http://en.cppreference.com/w/cpp/coroutine/coroutine_handle"><span class="kw3206">Điều đó cho tất cả<span class="me2">Coroutine_Handle</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/coroutine/noop_coroutine_promise"><span class="kw3247">Điều đó cho tất cả<span class="me2">Noop_coroutine_promise</span></span></a><span class="sy1">&lt;</span></code>, dự định tham khảo một coroutine no-op<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/coroutine/noop_coroutine">https://en.cppreference.com/w/cpp/coroutine/noop_coroutine</a>
+</p>
+</div>

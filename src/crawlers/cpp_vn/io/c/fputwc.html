@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FPUTWC</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">std :: wint_t fputwc (wchar_t ch, std :: file* stream);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">std :: wint_t putwc (wchar_t ch, std :: file* stream);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Viết một nhân vật rộng<code>ch</code>Viết một nhân vật<code>stream</code>.</p>
+<div class="t-li1">
+<span class="t-li">2)</span>Có thể được thực hiện như một macro và có thể đánh giá<code>stream</code>nhiều hơn một lần.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>ch</td> <td>-</td> <td>nhân vật rộng được viết</td>
+</tr> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>                const std :: chrono :: hh_mm_ss &lt;fulent&gt; &amp; t);</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>ch</code>về thành công,<code>WEOF</code>về thất bại. Nếu xảy ra lỗi mã hóa,<code><a href="../../error/errno" title="cpp/error/errno">errno</a></code>được đặt thành<code><a href="../../error/errno_macros" title="cpp/error/errno macros">EILSEQ</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cerrno&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;clocale&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fputc" title="cpp/io/c/fputc"> <span class="t-lines"><span>fputc</span><span>putc</span></span></a></div> </td> <td>ghi một ký tự vào luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fputws" title="cpp/io/c/fputws"> <span class="t-lines"><span>fputws</span></span></a></div> </td> <td>ghi một chuỗi rộng vào luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fgetwc" title="cpp/io/c/fgetwc"> <span class="t-lines"><span>FGETWC</span><span>getwc</span></span></a></div> </td> <td>Nhận một ký tự rộng từ luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/fputwc" title="c/io/fputwc">C documentation</a></span>vì<code>fputwc</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/fputwc">https://en.cppreference.com/w/cpp/io/c/fputwc</a>
+</p>
+</div>

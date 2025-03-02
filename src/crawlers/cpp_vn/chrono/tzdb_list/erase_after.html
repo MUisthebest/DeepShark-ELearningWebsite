@@ -1,0 +1,9 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Chrono :: TZDB_List :: Erase_After</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">const_iterator erase_after (const_iterator p);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Xóa<code>std::chrono::tzdb</code>Được giới thiệu bởi người lặp sau<code>p</code>. Hành vi không được xác định nếu Iterator không thể điều chỉnh được. Không có con trỏ, tài liệu tham khảo hoặc trình lặp được vô hiệu hóa ngoại trừ những người đề cập đến phần tử bị xóa.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một trình lặp chỉ vào phần tử theo phần tử bị xóa hoặc<code>end()</code>Nếu không có yếu tố như vậy tồn tại.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>tzdb_list</code>được dự định là có thể triển khai như một danh sách được liên kết đơn lẻ và giao diện của nó giống với<code><a href="../../container/forward_list" title="cpp/container/forward list">std::forward_list</a></code>. Nó có không<code>before_begin()</code>, tuy nhiên, và do đó không thể xóa yếu tố đầu tiên.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/tzdb_list/erase_after">https://en.cppreference.com/w/cpp/chrono/tzdb_list/erase_after</a>
+</p>
+</div>

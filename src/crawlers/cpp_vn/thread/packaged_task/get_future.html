@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Packaged_task &lt;r (args ...)&gt; :: get_future</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">std :: Tương lai &lt;r&gt; get_future ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>    Tìm kiếm (I1 First1, S1 Last1, I2 First2, S2 Last2, Pred = {},<code>future</code>trong đó chia sẻ trạng thái chia sẻ giống như<code>*this</code>.</p>
+<p><code>get_future</code>chỉ có thể được gọi một lần cho mỗi<code>packaged_task</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một tương lai có chung trạng thái chia sẻ như<code>*this</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../future_error" title="cpp/thread/future error">std::future_error</a></code>về các điều kiện lỗi sau:</p>
+<ul>
+<li>Trạng thái chia sẻ đã được truy xuất thông qua cuộc gọi đến<code>get_future</code>. Danh mục lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>future_already_retrieved</code></a>.</li>
+<li> <code>*this</code>không có trạng thái chung. Danh mục lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>no_state</code></a>.</li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/packaged_task/get_future">https://en.cppreference.com/w/cpp/thread/packaged_task/get_future</a>
+</p>
+</div>

@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Shared_lock &lt;splex&gt; :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">Shared_Lock &amp; Toán tử = (Shared_Lock &amp;&amp; Khác) NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>Di chuyển toán tử chuyển nhượng. Thay thế nội dung bằng các nội dung của<code>other</code>Sử dụng ngữ nghĩa di chuyển.</p>
+<p>Nếu, trước cuộc gọi này,<code>*this</code>có một mutex liên quan ((<code><a href="mutex" title="cpp/thread/shared lock/mutex">mutex()</a></code>trả lại một con trỏ không null) và đã có được quyền sở hữu nó (<code>owns()</code>(C ++ 20)<code>true</code>), mutex được mở khóa bằng cách gọi<code><a href="../shared_mutex/unlock_shared" title="cpp/thread/shared mutex/unlock shared">unlock_shared()</a></code>.</p>
+<p>Sau cuộc gọi này,<code>other</code>không có mutex liên quan.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>khác<code>shared_lock</code>Để thay thế trạng thái bằng</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/shared_lock/operator%3D">https://en.cppreference.com/w/cpp/thread/shared_lock/operator%3D</a>
+</p>
+</div>

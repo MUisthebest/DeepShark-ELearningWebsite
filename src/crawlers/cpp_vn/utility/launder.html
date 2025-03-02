@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: rửa</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/new" title="cpp/header/new">&lt;new&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr t* giặt (t* p) noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Class T&gt;<code>p</code>[[NODISCARD]] Consexpr t* giặt (t* p) noexcept;<code>p</code>Hàng rào nguồn gốc liên quan đến</p>
+<p>. Trả một con trỏ cho cùng một bộ nhớ</p>
+<ul>
+<li>chỉ ra, nhưng trong đó đối tượng giới thiệu được giả định là có một loại thời gian và động khác biệt.<code>p</code>đại diện cho địa chỉ<code>A</code>Chính thức, được đưa ra</li>
+<li>con trỏ<code>x</code>của một byte trong bộ nhớ<code>A</code> </li>
+<li> <code>x</code>một đối tượng<a href="../language/lifetime" title="cpp/language/lifetime">lifetime</a> </li>
+<li>#include &lt;Istream&gt;<code>x</code>giống như<code>T</code>được đặt tại địa chỉ</li>
+<li>là trong nó<code>y</code>, bỏ qua các trình điều chỉnh CV ở mọi cấp độ<code>z</code>          std :: Indirect_strict_weak_order &lt;<a href="../language/static_cast#pointer-interconvertible" title="cpp/language/static cast">pointer-interconvertible</a>với<code>y</code>Mỗi byte có thể truy cập được thông qua kết quả đều có thể truy cập được thông qua P (byte có thể truy cập được thông qua một con trỏ trỏ đến một đối tượng<code>z</code>Nếu những byte đó nằm trong bộ lưu trữ của một đối tượng</li>
+</ul> <p>Sau đó<code>std::launder(p)</code>Trả về một giá trị của loại<code>T*</code>, hoặc trong mảng ngay lập tức trong đó<code>x</code>. "Độc quyền" có nghĩa là tôi</p>
+<p>là nó luôn luôn đề cập đến một múi giờ hợp lệ và đại diện cho một điểm thời gian hiện có và rõ ràng trong múi giờ đó. Phù hợp với bất biến này,<code>T</code>là một yếu tố).<span class="kw4">Vô hiệu</span>.</p>
+<p><code>std::launder</code>Điều đó chỉ vào đối tượng<a href="../language/constant_expression" title="cpp/language/constant expression">core constant expression</a>là loại chức năng hoặc (có thể là CV đủ điều kiện)<code>std::launder</code>có thể được sử dụng trong một</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>std::launder</code>Nếu và chỉ khi giá trị (chuyển đổi) của đối số của nó có thể được sử dụng thay cho gọi chức năng. Nói cách khác,</p>
+<p>không thư giãn các hạn chế trong đánh giá liên tục.<code>std::launder</code>không có tác dụng đối với lập luận của nó. Giá trị trả về của nó phải được sử dụng để truy cập đối tượng. Do đó, luôn luôn là một lỗi để loại bỏ giá trị trả về.</p>
+<ul>
+<li>Cách sử dụng điển hình của<a href="../language/lifetime#Storage_reuse" title="cpp/language/lifetime">reused</a>bao gồm:</li>
+<li>Có được một con trỏ tới một đối tượng được tạo trong việc lưu trữ một đối tượng hiện có cùng loại, trong đó con trỏ đến đối tượng cũ không thể<code>new</code>(ví dụ, vì một trong hai đối tượng là một tiểu mục cơ sở);</li>
+</ul> <p>Các<i>Có được một con trỏ tới một đối tượng được tạo bởi vị trí</i>Từ một con trỏ đến một đối tượng cung cấp lưu trữ cho đối tượng đó.<code>std::launder</code>khả năng tiếp cận</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Hạn chế đảm bảo điều đó</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Không thể được sử dụng để truy cập các byte không thể truy cập được thông qua con trỏ ban đầu, do đó can thiệp vào phân tích thoát của trình biên dịch.</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2859" rel="nofollow">LWG 2859</a> </td> <td>C ++ 17</td> <td>Một yếu tố mới có thể được thêm vào bằng cách sử dụng<i>có thể tiếp cận</i>int x [10];<br/>Auto p = std :: giặt (reinterpret_cast &lt;int (*) [10]&gt; (&amp; x [0])); // ĐƯỢC RỒI</td> <td>};</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3495" rel="nofollow">LWG 3495</a> </td> <td>C ++ 17</td> <td>
+<code>std::launder</code> <br/>int x2 [2] [10];</td> <td>thứ tự một phần của các mẫu chức năng quá tải</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/launder">https://en.cppreference.com/w/cpp/utility/launder</a>
+</p>
+</div>

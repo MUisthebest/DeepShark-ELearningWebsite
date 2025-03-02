@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: multiset &lt;key, so sánh, phân bổ&gt; :: đếm</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx98"> <td> <pre data-language="cpp">size_type số lượng (khóa const &amp; key) const;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">Mẫu &lt;Class K&gt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>size_type số lượng (const k &amp; x) const;<i>tương đương</i>Trả về số lượng các phần tử với khóa so sánh</p>
+<div class="t-li1">
+<span class="t-li">1)</span>cho đối số được chỉ định.<code>key</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>. Đây là 1 hoặc 0 vì container này không cho phép trùng lặp.<code>x</code>. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu ID đủ điều kiện<code>Compare::is_transparent</code>là hợp lệ và biểu thị một loại. Nó cho phép gọi chức năng này mà không cần xây dựng một thể hiện<code>Key</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu mảng chưa được phân vùng theo thứ tự tăng dần đối với khóa, theo cùng một tiêu chí</td> <td>-</td> <td>Trả về số lượng các phần tử với khóa so sánh tương đương với giá trị</td>
+</tr> <tr class="t-par"> <td>x</td> <td>-</td> <td>Giá trị chính của các yếu tố để đếm</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>giá trị thay thế để so sánh với các phím<i>tương đương</i>ĐẾN<code>key</code>hoặc<code>x</code>.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>, là 1 hoặc 0.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="find" title="cpp/container/multiset/find"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>Chèn tại chỗ nếu khóa không tồn tại, không làm gì nếu khóa tồn tại<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="equal_range" title="cpp/container/multiset/equal range"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/multiset/count">https://en.cppreference.com/w/cpp/container/multiset/count</a>
+</p>
+</div>

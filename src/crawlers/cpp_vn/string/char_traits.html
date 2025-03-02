@@ -1,0 +1,83 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: char_traits</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/string" title="cpp/header/string">&lt;string&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">mẫu &lt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Các<code>char_traits</code>    Biểu đồ lớp <code>char_traits</code>&gt; Class basic_iostream: </p>
+<p>Các<code>char_traits</code>&gt; lớp char_traits;<a href="../language/extending_std" title="cpp/language/extending std">provide a specialization</a>Lớp là một mẫu lớp đặc điểm tóm tắt các hoạt động ký tự và chuỗi cơ bản cho một loại ký tự nhất định. Bộ hoạt động được xác định là các thuật toán chung hầu như luôn có thể được thực hiện theo nó. Do đó, có thể sử dụng các thuật toán như vậy với hầu hết mọi ký tự hoặc loại chuỗi có thể, chỉ bằng cách cung cấp một tùy chỉnh<a href="../named_req/chartraits" title="cpp/named req/CharTraits">CharTraits</a>.</p>
+<h3 id="Specializations">Tra cứu cho định danh</h3> <p>Mẫu lớp phục vụ làm cơ sở cho các khởi tạo rõ ràng. Người dùng có thể</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-header"> <th colspan="2">C Thư viện<code><a href="../header/string" title="cpp/header/string">&lt;string&gt;</a></code> </th>
+</tr> <tr class="t-dsc"> <td>STD<span class="sy4">::</span><span class="me2">char_traits</span><span class="sy1">is_trivently_destructible_v</span><span class="kw4">char</span><span class="sy1">&lt;</span> </td> <td>Các đặc điểm ký tự tiêu chuẩn của char8_t<span class="kw4">char</span> </td>
+</tr> <tr class="t-dsc"> <td>STD<span class="sy4">::</span><span class="me2">char_traits</span><span class="sy1">is_trivently_destructible_v</span><span class="kw4">wchar_t</span><span class="sy1">&lt;</span> </td> <td>Các đặc điểm ký tự tiêu chuẩn của char8_t<span class="kw4">wchar_t</span> </td>
+</tr> <tr class="t-dsc"> <td>STD<span class="sy4">::</span><span class="me2">char_traits</span><span class="sy1">is_trivently_destructible_v</span>char8_t<span class="sy1">&lt;</span> <span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span> </td> <td>các đặc điểm ký tự tiêu chuẩn của</td>
+</tr> <tr class="t-dsc"> <td>STD<span class="sy4">::</span><span class="me2">char_traits</span><span class="sy1">is_trivently_destructible_v</span><span class="kw4">char16_t</span><span class="sy1">&lt;</span> <span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>Các đặc điểm ký tự tiêu chuẩn của char8_t<span class="kw4">char16_t</span> </td>
+</tr> <tr class="t-dsc"> <td>STD<span class="sy4">::</span><span class="me2">char_traits</span><span class="sy1">is_trivently_destructible_v</span><span class="kw4">char32_t</span><span class="sy1">&lt;</span> <span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>Các đặc điểm ký tự tiêu chuẩn của char8_t<span class="kw4">char32_t</span> </td>
+</tr> </table> <p>các đặc điểm ký tự tiêu chuẩn của<a href="../named_req/chartraits" title="cpp/named req/CharTraits">CharTraits</a>.</p>
+<h4 id="Member_types">nhà điều hành ()</h4> <p>các đặc điểm ký tự tiêu chuẩn của<a href="../named_req/chartraits" title="cpp/named req/CharTraits">CharTraits</a>:</p>
+<table class="wikitable"> <tr> <th rowspan="2">
+<code>CharT</code> </th> <th colspan="5">ATOMIC_UNSIGNED_LOCK_FREE</th>
+</tr> <tr> <th> <code>char_type</code> </th> <th>
+<code>int_type</code> </th> <th>
+<code>off_type</code> </th> <th>
+<code>pos_type</code> </th> <th>
+<code>state_type</code> </th>
+</tr> <tr> <td>
+<span class="kw4">char</span> </td> <td>
+<span class="kw4">char</span> </td> <td>
+<span class="kw4">int</span> </td> <td rowspan="5"> <code><a href="../io/streamoff" title="cpp/io/streamoff">std::streamoff</a></code> </td> <td>
+<code><a href="../io/fpos" title="cpp/io/fpos">std::streampos</a></code> </td> <td rowspan="5"> <code><a href="multibyte/mbstate_t" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></code> </td>
+</tr> <tr> <td>
+<span class="kw4">wchar_t</span> </td> <td>
+<span class="kw4">wchar_t</span> </td> <td>
+<a href="wide#Types" title="cpp/string/wide"><code>std::wint_t</code></a> </td> <td>
+<code><a href="../io/fpos" title="cpp/io/fpos">std::wstreampos</a></code> </td>
+</tr> <tr> <td>char8_t</td> <td>char8_t</td> <td>
+<span class="kw4">STD</span> <span class="kw4">int</span> </td> <td>
+<code><a href="../io/fpos" title="cpp/io/fpos">std::u8streampos</a></code> </td>
+</tr> <tr> <td> <span class="kw4">char16_t</span> </td> <td>
+<span class="kw4">char16_t</span> </td> <td> <code><a href="../types/integer" title="cpp/types/integer">std::uint_least16_t</a></code> </td> <td> <code><a href="../io/fpos" title="cpp/io/fpos">std::u16streampos</a></code> </td>
+</tr> <tr> <td>
+<span class="kw4">char32_t</span> </td> <td>
+<span class="kw4">char32_t</span> </td> <td>
+<code><a href="../types/integer" title="cpp/types/integer">std::uint_least32_t</a></code> </td> <td>
+<code><a href="../io/fpos" title="cpp/io/fpos">std::u32streampos</a></code> </td>
+</tr>
+</table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Tất cả những chuyên môn này đều đáp ứng các yêu cầu của<code>comparison_category</code>(1,3)<a href="../utility/compare/strong_ordering" title="cpp/utility/compare/strong ordering"><code>std::strong_ordering</code></a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h4 id="Member_functions">nếu không thì</h4> <p>Các chuyên ngành tiêu chuẩn xác định các loại thành viên sau<a href="../named_req/chartraits" title="cpp/named req/CharTraits">CharTraits</a>:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="char_traits/assign" title="cpp/string/char traits/assign"> <span class="t-lines"><span>Loại số nguyên đã ký (thường là</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>Trên hết, các chuyên ngành tiêu chuẩn cũng xác định loại thành viên<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="char_traits/cmp" title="cpp/string/char traits/cmp"> <span class="t-lines"><span>Các chuyên ngành tiêu chuẩn xác định các chức năng thành viên tĩnh theo yêu cầu của</span><span>gán một ký tự</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>phương trình<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="char_traits/move" title="cpp/string/char traits/move"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>LT<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="char_traits/copy" title="cpp/string/char traits/copy"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>so sánh hai ký tự<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="char_traits/compare" title="cpp/string/char traits/compare"> <span class="t-lines"><span>so sánh các đối tượng thuộc loại</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>chuyển một chuỗi ký tự sang một chuỗi khác<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="char_traits/length" title="cpp/string/char traits/length"> <span class="t-lines"><span>    toán tử &lt;&lt; (basic_ostream &lt;char, đặc điểm&gt; &amp; os, char32_t ch) = xóa;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>sao chép một chuỗi ký tự<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="char_traits/find" title="cpp/string/char traits/find"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>so sánh về mặt từ vựng hai chuỗi ký tự<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="char_traits/to_char_type" title="cpp/string/char traits/to char type"> <span class="t-lines"><span>Trả về độ dài của một chuỗi ký tự</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>từ_time_t<code>int_type</code>tương đương<code>char_type</code> <br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="char_traits/to_int_type" title="cpp/string/char traits/to int type"> <span class="t-lines"><span>to_char_type</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>từ_time_t<code>char_type</code>tương đương<code>int_type</code> <br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="char_traits/eq_int_type" title="cpp/string/char traits/eq int type"> <span class="t-lines"><span>to_int_type</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>so sánh hai<code>int_type</code>giá trị<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="char_traits/eof" title="cpp/string/char traits/eof"> <span class="t-lines"><span>Chức năng nhà nước</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>int main ()<i>Chức năng nhà nước</i>được phân vùng liên quan đến<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="char_traits/not_eof" title="cpp/string/char traits/not eof"> <span class="t-lines"><span>tương đương</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>EQ_INT_TYPE<i>Chức năng nhà nước</i>được phân vùng liên quan đến<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p><a href="../named_req/chartraits" title="cpp/named req/CharTraits">CharTraits</a>Not_eof<code>X::type</code>kiểm tra xem một nhân vật có phải không<code>X::func(args)</code>Không yêu cầu xác định các loại và chức năng được liệt kê ở trên là thành viên trực tiếp, nó chỉ yêu cầu các loại như</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>và biểu cảm như<a class="external text" href="http://www.gotw.ca/gotw/029.htm" rel="nofollow">case-insensitive comparison</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">là hợp lệ và có ngữ nghĩa cần thiết. Các đặc điểm nhân vật do người dùng xác định có thể được lấy từ các lớp đặc điểm ký tự khác và chỉ ghi đè một số thành viên của họ, xem ví dụ dưới đây.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Đặc điểm ký tự do người dùng xác định có thể được sử dụng để cung cấp</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="basic_string" title="cpp/string/basic string"> <span class="t-lines"><span>BASIC_STRING</span></span></a></div> </td> <td>Lưu trữ và thao túng chuỗi các ký tự<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="basic_string_view" title="cpp/string/basic string view"> <span class="t-lines"><span>BASIC_STRING_VIEW</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Chế độ xem chuỗi chỉ đọc<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_istream" title="cpp/io/basic istream"> <span class="t-lines"><span>basic_istream</span></span></a></div> </td> <td>Kết thúc một thiết bị trừu tượng nhất định (<code><a href="../io/basic_streambuf" title="cpp/io/basic streambuf">std::basic_streambuf</a></code>)<br/>và cung cấp giao diện đầu vào cấp cao<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_ostream" title="cpp/io/basic ostream"> <span class="t-lines"><span>BASIC_OSTREAM</span></span></a></div> </td> <td>Kết thúc một thiết bị trừu tượng nhất định (<code><a href="../io/basic_streambuf" title="cpp/io/basic streambuf">std::basic_streambuf</a></code>)<br/>và cung cấp giao diện đầu ra cấp cao<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_streambuf" title="cpp/io/basic streambuf"> <span class="t-lines"><span>basic_streambuf</span></span></a></div> </td> <td>Tóm tắt một thiết bị thô<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/char_traits">https://en.cppreference.com/w/cpp/string/char_traits</a>
+</p>
+</div>

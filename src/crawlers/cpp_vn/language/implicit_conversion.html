@@ -1,0 +1,327 @@
+ <h1 class="firstHeading" id="firstHeading">    T2 PCC = PPC; // Lỗi: T3 không giống với T2 không đủ điều kiện CV,</h1> <p>Chuyển đổi ngầm được thực hiện bất cứ khi nào một biểu thức thuộc loại<code>T1</code>được sử dụng trong ngữ cảnh không chấp nhận loại đó, nhưng chấp nhận một số loại khác<code>T2</code>; đặc biệt:</p>
+<ul>
+<li>Khi biểu thức được sử dụng làm đối số khi gọi một hàm được khai báo với<code>T2</code>như tham số;</li>
+<li>Khi biểu thức được sử dụng như một toán hạng với một toán tử mong đợi<code>T2</code>Số lượng các yếu tố để sao chép</li>
+<li>Khi khởi tạo một đối tượng mới của loại<code>T2</code>, bao gồm<code>return</code>tuyên bố trong một hàm trả về<code>T2</code>Số lượng các yếu tố để sao chép</li>
+<li>Khi biểu thức được sử dụng trong một<span class="kw1">công tắc</span>tuyên bố (<code>T2</code>là loại tích phân);</li>
+<li>Khi biểu thức được sử dụng trong một<span class="kw1">nếu như</span>tuyên bố hoặc một vòng lặp (<code>T2</code>khoảng cách<span class="kw4">bool</span>).</li>
+</ul> <p>Chương trình chỉ được hình thành (biên dịch) chỉ khi tồn tại một<i>Trình tự chuyển đổi ẩn</i>từ<code>T1</code>ĐẾN<code>T2</code>.</p>
+<p>Nếu có nhiều quá tải của chức năng hoặc toán tử được gọi, sau khi chuỗi chuyển đổi ngầm được xây dựng từ<code>T1</code>cho mỗi cái có sẵn<code>T2</code>Thì<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>Quy tắc quyết định quá tải nào được biên soạn.</p>
+<p>Lưu ý: Trong các biểu thức số học, loại đích cho các chuyển đổi ngầm trên toán hạng sang toán tử nhị phân được xác định bởi một bộ quy tắc riêng biệt:<a href="usual_arithmetic_conversions" title="cpp/language/usual arithmetic conversions">usual arithmetic conversions</a>.</p>
+<h3 id="Order_of_the_conversions">Thứ tự của các chuyển đổi</h3> <p>Trình tự chuyển đổi ngầm bao gồm các phần sau, theo thứ tự này:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>không hoặc một<i>Trình tự chuyển đổi tiêu chuẩn</i>Số lượng các yếu tố để sao chép</div> <div class="t-li1">
+<span class="t-li">2)</span>không hoặc một<i>Chuyển đổi do người dùng xác định</i>Số lượng các yếu tố để sao chép</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>không hoặc một<i>Trình tự chuyển đổi tiêu chuẩn</i>(Chỉ khi sử dụng chuyển đổi do người dùng xác định).</div> <p>Khi xem xét đối số với hàm tạo hoặc chức năng chuyển đổi do người dùng xác định, chỉ cho phép một chuỗi chuyển đổi tiêu chuẩn (nếu không các chuyển đổi do người dùng xác định có thể được chuỗi có hiệu quả). Khi chuyển đổi từ một loại không thuộc lớp sang loại không thuộc lớp khác, chỉ cho phép một chuỗi chuyển đổi tiêu chuẩn.</p>
+<p>Trình tự chuyển đổi tiêu chuẩn bao gồm các phần sau, theo thứ tự này:</p>
+<span class="t-li">1)</span>không hoặc một chuyển đổi từ tập hợp sau:<ul>
+<li> <i>Chuyển đổi lvalue-to-rvalue</i>Thì</li>
+<li> <i>Chuyển đổi mảng sang trỏ</i>, Và</li>
+<li> <i>Chuyển đổi chức năng thành máy tính</i>Số lượng các yếu tố để sao chép</li>
+</ul> <div class="t-li1">
+<span class="t-li">2)</span>không hoặc một<i>Khuyến mãi số</i>hoặc<i>chuyển đổi số</i>Số lượng các yếu tố để sao chép</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>không hoặc một<i>Chuyển đổi con trỏ chức năng</i>Số lượng các yếu tố để sao chép</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <div class="t-li1">
+<span class="t-li">là trong</span>không hoặc một<i>Chuyển đổi trình độ</i>.</div> <p>Chuyển đổi do người dùng xác định bao gồm số 0 hoặc một đối số đơn không tiết lộ<a href="converting_constructor" title="cpp/language/converting constructor">converting constructor</a>hoặc không tiết lộ<a href="cast_operator" title="cpp/language/cast operator">conversion function</a>gọi.</p>
+<p>Một biểu thức<code>e</code>(Constexpr kể từ C ++ 26)<i>hoàn toàn có thể chuyển đổi thành<code>T2</code></i>là<code>T2</code>                                /* T t; được hình thành tốt, xem bên dưới */;<a href="copy_initialization" title="cpp/language/copy initialization">copy-initialized</a>từ<code>e</code>, đó là tuyên bố<code>T2 t = e;</code>được hình thành tốt (có thể được biên dịch), đối với một số tạm thời được phát minh<code>t</code>. Lưu ý rằng điều này khác với<a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a>.<code>T2 t(e)</code>), trong đó các hàm tạo và chức năng chuyển đổi rõ ràng sẽ được xem xét thêm.</p>
+<h4 id="Contextual_conversions">Chuyển đổi theo ngữ cảnh</h4> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Trong các bối cảnh sau, loại<span class="kw4">bool</span>được mong đợi và chuyển đổi ngầm được thực hiện nếu tuyên bố<code>bool t(e);</code>được hình thành tốt (nghĩa là một chức năng chuyển đổi rõ ràng như<code>explicit T::operator bool() const;</code>được xem xét). Biểu hiện như vậy<code>e</code>(Constexpr kể từ C ++ 26)<i>Chuyển đổi theo ngữ cảnh thành<span class="kw4">bool</span></i>.</p>
+<ul>
+<li>biểu thức kiểm soát của<span class="kw1">nếu như</span>Thì<span class="kw1">, hoặc nếu</span>Thì<span class="kw1">vì</span>Số lượng các yếu tố để sao chép</li>
+<li>Các toán hạng của các toán tử logic tích hợp<code>!</code>Thì<code>&amp;&amp;</code>Và<code>||</code>Số lượng các yếu tố để sao chép</li>
+<li>Thẻ đầu tiên của toán tử có điều kiện<code>?:</code>Số lượng các yếu tố để sao chép</li>
+<li>vị ngữ trong một<a href="static_assert" title="cpp/language/static assert"><code>static_assert</code></a>Vi phạm các ràng buộc được phát hiện tại thời điểm biên dịch, sớm trong quá trình khởi tạo mẫu, dẫn đến các thông báo lỗi dễ theo dõi:</li>
+<li>biểu thức trong một<a href="noexcept_spec" title="cpp/language/noexcept spec"><code>noexcept</code></a>chỉ định;</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>biểu thức trong một<a href="explicit" title="cpp/language/explicit"><code>explicit</code></a>chỉ định;</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Trong các bối cảnh sau, một loại cụ thể theo ngữ cảnh<code>T</code>được mong đợi và biểu thức<code>e</code>Toán tử gán được chọn để sao chép từng tiểu đơn lớp cơ sở trực tiếp là hàm constexpr và<code>E</code>chỉ được phép nếu</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx14">
+<td> <ul><li> <code>E</code>có một đơn<span class="t-rev-inl t-since-cxx11"><span>không tiết lộ</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> <a href="cast_operator" title="cpp/language/cast operator">user-defined conversion function</a>đến một loại cho phép.</li></ul> </td> <td><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span></td>
+</tr> <tr class="t-rev t-since-cxx14">
+<td> <ul>
+<li>Có chính xác một loại<code>T</code>trong số các loại cho phép sao cho<code>E</code>có chức năng chuyển đổi không tiết lộ có loại trả về (có thể là đủ điều kiện CV)<code>T</code>hoặc tham chiếu đến (có thể là CV đủ điều kiện)<code>T</code>, Và</li>
+<li> <code>e</code>. Hàm tạo này chỉ tham gia vào độ phân giải quá tải nếu<code>T</code>.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <p>Biểu hiện như vậy<code>e</code>(Constexpr kể từ C ++ 26)<i>theo ngữ cảnh được chuyển đổi một cách ngầm định</i>đến loại được chỉ định<code>T</code>.<span class="t-rev-inl t-since-cxx11"><span>Lưu ý rằng các chức năng chuyển đổi rõ ràng không được xem xét, mặc dù chúng được xem xét trong các chuyển đổi theo ngữ cảnh sang<code>bool</code>.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span></p>
+<ul>
+<li>đối số của<a href="delete" title="cpp/language/delete">delete-expression</a>.<code>T</code>là bất kỳ loại con trỏ đối tượng);</li>
+<li> <a href="constant_expression#Integral_constant_expression" title="cpp/language/constant expression">integral constant expression</a>, nơi sử dụng một lớp học theo nghĩa đen (<code>T</code>là bất kỳ loại bảng liệt kê tích phân hoặc không bị hủy bỏ, chức năng chuyển đổi do người dùng đã chọn phải<a href="constexpr" title="cpp/language/constexpr">constexpr</a>);</li>
+<li>biểu thức kiểm soát của<a href="switch" title="cpp/language/switch"><code>switch</code></a>tuyên bố (<code>T</code>là bất kỳ loại tích phân hoặc liệt kê).</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cassert&gt;</pre></div> <h3 id="Value_transformations"> </h3> <p>Mẫu &lt;Typename T&gt;<a href="value_category" title="cpp/language/value category">value category</a>lớp Zero_init</p>
+<ul><li>{<i>    T val;</i>Thì<i>công cộng:</i>, hoặc<i>    Zero_init (): val (static_cast &lt;t&gt; (0)) {}</i>    zero_init (t val): val (val) {}</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>    toán tử t &amp; () {return val; }<i>    toán tử t () const {return val; }</i>};</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h4 id="Lvalue-to-rvalue_conversion"> </h4> <p><span class="t-rev-inl t-until-cxx11"><span>MỘT<a href="value_category#lvalue" title="cpp/language/value category">lvalue</a></span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>MỘT<a href="value_category#glvalue" title="cpp/language/value category">glvalue</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>int main ()<code>T</code>{<span class="t-rev-inl t-until-cxx11"><span>chồng chéo với container.<a href="value_category#rvalue" title="cpp/language/value category">rvalue</a></span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>Một<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>:</p>
+<ul>
+<li>Nếu như<code>T</code>    Zero_init &lt;Int&gt; i;<span class="t-rev-inl t-until-cxx11"><span>rvalue</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>prvalue</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>    khẳng định (i == 0);<code>T</code>.</li>
+<li> <span class="t-rev-inl t-until-cxx11"><span>rvalue</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>prvalue</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>khoảng cách<code>T</code>.</li>
+</ul> <p>    i = 7;<a href="type#Incomplete_type" title="cpp/language/type">incomplete type</a>    khẳng định (i == 7);</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p> <a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>    Switch (i) {} // lỗi cho đến khi C ++ 14 (nhiều hơn một hàm chuyển đổi)<a href="expressions#Potentially-evaluated_expressions" title="cpp/language/expressions">does not evaluate</a>                      // OK vì C ++ 14 (cả hai chức năng chuyển đổi thành cùng loại int)</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>    Switch (i + 0) {} // luôn luôn ổn (chuyển đổi ngầm)<code>E</code>}</p>
+<ul>
+<li> <code>E</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="expressions#Potentially-evaluated_expressions" title="cpp/language/expressions">potentially evaluated</a>, hoặc</li>
+<li>Biến đổi giá trị<code>E</code>Chuyển đổi giá trị là chuyển đổi thay đổi<code>Ex</code>của một biểu thức. Chúng diễn ra bất cứ khi nào một biểu thức xuất hiện dưới dạng toán hạng của một nhà điều hành mong đợi một biểu thức của một danh mục giá trị khác:<a href="definition#ODR-use" title="cpp/language/definition">potential results</a>của<code>E</code>, Và<code>Ex</code>Bất cứ khi nào một glvalue xuất hiện như một toán hạng của một nhà điều hành yêu cầu một prvalue cho toán hạng đó,<code>x</code>lvalue-to-rvalue<a href="definition#ODR-use" title="cpp/language/definition">odr-used</a>Chuyển tiếp<code>Ex</code>.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Mảng-đến trỏ</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>Chức năng-con trỏ</p>
+<ul>
+<li>Nếu như<code>T</code>Chuyển đổi tiêu chuẩn được áp dụng để chuyển đổi biểu thức thành prvalue.<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>Bất cứ khi nào một prvalue xuất hiện như một toán hạng của một nhà điều hành mong đợi một glvalue cho toán hạng đó,<a href="pointer#Null_pointers" title="cpp/language/pointer">null pointer constant</a>Chuyển đổi vật chất tạm thời<code>T</code>được áp dụng để chuyển đổi biểu thức thành Xvalue.</li>
+<li>Chuyển đổi lvalue-to-rvalue</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <ul><li>không phải là loại lớp, loại của<a href="copy_initialization" title="cpp/language/copy initialization">copy-initializes</a>Một<a href="lifetime#Temporary_object_lifetime" title="cpp/language/lifetime">temporary</a>nó đến một đối tượng<code>T</code>có thể được chuyển đổi hoàn toàn</li></ul> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>không phải là loại lớp, loại của<a href="copy_initialization" title="cpp/language/copy initialization">copy-initializes</a>các<a href="#Temporary_materialization">result object</a>là phiên bản CV-Unquilified của</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul>
+<li>Nếu không, loại của</li>
+<li>Là xấu nếu<span class="t-rev-inl t-since-cxx20"><span>Nếu chuyển đổi lvalue sang rvalue từ</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>được yêu cầu bởi một chương trình, chương trình đó là xấu.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Khi chuyển đổi lvalue sang rvalue xảy ra trong toán hạng của</p>
+<h4 id="Array-to-pointer_conversion">, giá trị có trong đối tượng được tham chiếu không được truy cập, vì toán tử đó</h4> <p>MỘT<a href="value_category#lvalue" title="cpp/language/value category">lvalue</a>hoặc<a href="value_category#rvalue" title="cpp/language/value category">rvalue</a>Thoạt âm của nó.<code>N</code> <code>T</code>Khi chuyển đổi lvalue sang rvalue được áp dụng cho biểu thức<code>T</code>, giá trị có trong đối tượng được tham chiếu không được truy cập nếu:<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>Việc đánh giá<code>T</code>kết quả trong việc đánh giá một thành viên<span class="t-rev-inl t-since-cxx17"><span>của bộ<a href="#Temporary_materialization">temporary materialization</a>Biểu thức truy cập thành viên lớp,</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Đặt tên cho một biến<a href="array#Array-to-pointer_decay" title="cpp/language/array">array to pointer decay</a>để biết chi tiết).</p>
+<h4 id="Function-to-pointer_conversion">Đó không phải là</h4> <p>MỘT<a href="value_category#lvalue" title="cpp/language/value category">lvalue</a>Kết quả của việc chuyển đổi là giá trị chứa trong đối tượng được biểu thị bằng lvalue.<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a> <a href="pointer#Pointers_to_functions" title="cpp/language/pointer">pointer to that function</a>Kết quả chuyển đổi được xác định theo các quy tắc sau:</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <h4 id="Temporary_materialization">là (có thể là CV đủ điều kiện)</h4> <p>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>, kết quả là một<code>T</code>. Đối tượng mà glvalue đề cập đến không được truy cập bởi chuyển đổi, do đó không có tác dụng phụ ngay cả khi<code>T</code>là đủ điều kiện dễ bay hơi, và Glvalue có thể đề cập đến một thành viên không hoạt động của một liên minh.<a href="lifetime#Temporary_object_lifetime" title="cpp/language/lifetime">temporary object</a>Nếu không, nếu T có loại lớp,<code>T</code>sự chuyển đổi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Từ glvalue, và kết quả của việc chuyển đổi là một prvalue cho tạm thời.</pre></div> <p>sự chuyển đổi</p>
+<ul>
+<li>Chuyển đổi danh tính:<a href="reference_initialization" title="cpp/language/reference initialization">binding a reference</a>từ glvalue.</li>
+<li>Mặt khác, nếu đối tượng mà glvalue đề cập đến một giá trị con trỏ không hợp lệ, hành vi được xác định là thực hiện.<a href="operator_member_access" title="cpp/language/operator member access">member access</a>đối tượng được chỉ định bởi glvalue được đọc và</li>
+<li>Kết quả là giá trị có trong đối tượng.<a href="operator_member_access#Built-in_subscript_operator" title="cpp/language/operator member access">subscripting</a>Chuyển đổi này mô hình hành động đọc một giá trị từ vị trí bộ nhớ thành thanh ghi CPU.</li>
+<li>Chuyển đổi mảng sang trỏ<code>std::initializer_list&lt;T&gt;</code>từ a<a href="list_initialization" title="cpp/language/list initialization">braced-init-list</a>Số lượng các yếu tố để sao chép</li>
+<li>Chuyển đổi danh tính:<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>"hoặc" mảng không xác định giới hạn của</li>
+<li>Chuyển đổi danh tính:<a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>"hoặc" mảng không xác định giới hạn của</li>
+<li>"có thể được chuyển đổi hoàn toàn thành một<a href="expressions#Discarded-value_expressions" title="cpp/language/expressions">discarded-value expression</a>.</li>
+</ul> <p>thuộc loại "con trỏ tới<i>không</i>".<a href="direct_initialization" title="cpp/language/direct initialization">direct-initialization</a>hoặc<a href="copy_initialization" title="cpp/language/copy initialization">copy-initialization</a>Nếu mảng là một prvalue,</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Integral_promotion">Con trỏ kết quả đề cập đến phần tử đầu tiên của mảng (xem</h3> <p><a href="value_category#prvalue" title="cpp/language/value category">prvalues</a>Chuyển đổi chức năng thành máy tính<span class="kw4">char</span>loại chức năng có thể được chuyển đổi hoàn toàn thành một<span class="kw4">int</span>. Điều này không áp dụng cho các chức năng thành viên không tĩnh vì các Lvalues ​​đề cập đến các chức năng thành viên không tĩnh không tồn tại.<a href="operator_arithmetic" title="cpp/language/operator arithmetic">arithmetic operators</a>Vật chất tạm thời<span class="kw4">int</span>của bất kỳ loại hoàn chỉnh nào</p>
+<p>có thể được chuyển đổi thành một xvalue cùng loại<i>một biểu thức ném</i>.</p>
+<h4 id="Promotion_from_integral_types">. Chuyển đổi này khởi tạo một</h4> <p>// u = u0 -&gt; phân tách với n = 0: u0<span class="kw4">bool</span>không được chuyển đổi từ một trường bit),<span class="kw4">int</span>    mẫu &lt;<code>false</code>int i = s (). m; // Truy cập thành viên mong đợi glvalue kể từ C ++ 17;<code>​0​</code>Và<code>true</code>int i = s (). m; // Truy cập thành viên mong đợi glvalue kể từ C ++ 17;<code>1</code>.</p>
+<p>               // s () prvalue được chuyển đổi thành xvalue<code>val</code>Chất thực tế tạm thời xảy ra trong các tình huống sau:<code>T</code>                             STD :: Memory_order Order) NoExcept;<span class="kw4">bool</span>:</p>
+<span class="t-li">1)</span>Nếu như<code>val</code>đến một prvalue;<a href="bit_field" title="cpp/language/bit field">bit-field</a>Thì<ul>
+<li> <code>val</code>không được chuyển đổi từ một trường bit),<span class="kw4">int</span>nếu như<span class="kw4">int</span>trên một mảng prvalue;</li>
+<li>    toán tử &gt;&gt; (basic_istream &lt;char, đặc điểm&gt; &amp; st, không dấu char* s);<code>val</code>Khi thực hiện chuyển đổi mảng thành con trỏ (xem ở trên) hoặc<span class="kw4">STD</span> <span class="kw4">int</span>nếu như<span class="kw4">STD</span> <span class="kw4">int</span>trên một mảng prvalue;</li>
+<li>    toán tử &gt;&gt; (basic_istream &lt;char, đặc điểm&gt; &amp; st, không dấu char* s);<code>val</code>Khi khởi tạo một đối tượng thuộc loại</li>
+</ul> <span class="t-li">2)</span>, điều này dẫn đến một động thái yếu tố khôn ngoan. (Trong trường hợp đó,<code>val</code>được áp dụng cho một prvalue (đây là một phần của biểu thức không được đánh giá);<ul>
+<li>nếu như<code>T</code>khoảng cách<span class="t-rev-inl t-since-cxx20"><span><code>char8_t</code>Thì</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span><span class="t-rev-inl t-since-cxx11"><span><code>char16_t</code>Thì<code>char32_t</code>hoặc</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span><span class="kw4">wchar_t</span>Thì<code>val</code>được áp dụng cho một prvalue (đây là một phần của biểu thức không được đánh giá);</li>
+<li>Khi một prvalue xuất hiện dưới dạng<a href="usual_arithmetic_conversions#Integer_conversion_rank" title="cpp/language/usual arithmetic conversions">integer conversion rank</a>của<code>T</code>Lưu ý rằng việc vật chất hóa tạm thời không<span class="kw4">int</span>:</li>
+<ul>
+<li> <code>val</code>không được chuyển đổi từ một trường bit),<span class="kw4">int</span>nếu như<span class="kw4">int</span>): Đối tượng như vậy được khởi tạo trực tiếp từ bộ khởi tạo. Điều này đảm bảo "Giải quyết bản sao được bảo đảm".<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li>    toán tử &gt;&gt; (basic_istream &lt;char, đặc điểm&gt; &amp; st, không dấu char* s);<code>val</code>không được chuyển đổi từ một trường bit),<span class="kw4">STD</span> <span class="kw4">int</span>.</li>
+</ul>
+</ul> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>của các loại tích phân nhỏ (chẳng hạn như<code>unsigned int</code>) và các loại bảng liệt kê không có mặt có thể được chuyển đổi thành prvalues ​​của các loại tích phân lớn hơn (chẳng hạn như<code>T</code>). Đặc biệt,<code>val</code>Không chấp nhận các loại nhỏ hơn<ul>
+<li> <span class="kw4">int</span> </li>
+<li> <span class="kw4">STD</span> <span class="kw4">int</span> </li>
+<li> <span class="kw4">dài</span> </li>
+<li> <span class="kw4">STD</span> <span class="kw4">dài</span> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li> <span class="kw4">dài</span> <span class="kw4">dài</span> </li>
+<li> <span class="kw4">STD</span> <span class="kw4">dài</span> <span class="kw4">dài</span> </li>
+<li>như các đối số, và các chương trình khuyến mãi tích hợp được tự động áp dụng sau khi chuyển đổi lvalue sang rvalue, nếu có. Chuyển đổi này luôn bảo tồn giá trị.<code>T</code> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table>
+</div> <h4 id="Promotion_from_enumeration_types">Các chuyển đổi ngầm sau đây trong phần này được phân loại là</h4> <p>Khuyến mãi từ các loại tích phân<a href="enum" title="cpp/language/enum">enumeration</a>Một loại prvalue</p>
+<ul>
+<li> <span class="kw4">int</span> </li>
+<li> <span class="kw4">STD</span> <span class="kw4">int</span> </li>
+<li> <span class="kw4">dài</span> </li>
+<li> <span class="kw4">STD</span> <span class="kw4">dài</span> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li> <span class="kw4">dài</span> <span class="kw4">dài</span> </li>
+<li> <span class="kw4">STD</span> <span class="kw4">dài</span> <span class="kw4">dài</span> </li>
+<li>các<a href="types#Extended_integer_types" title="cpp/language/types">extended integer type</a>chỉ vào trình tự và mọi số nguyên không âm</li>
+<ul>
+<li>Để cho một số đối tượng máy phát<a href="usual_arithmetic_conversions#Integer_conversion_rank" title="cpp/language/usual arithmetic conversions">integer conversion rank</a>có thể được chuyển đổi thành một loại prvalue<span class="kw4">dài</span> <span class="kw4">dài</span>Thì</li>
+<li>trở thành</li>
+<li>trở thành</li>
+</ul>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Cho một prvalue<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>thuộc loại tích phân<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>là kết quả của việc chuyển đổi lvalue sang rvalue được áp dụng cho một<span class="kw4">char</span>có thể được chuyển đổi thành<span class="kw4">int</span>có thể đại diện cho tất cả các giá trị của trường bit;<span class="kw4">char</span>có thể được chuyển đổi thành<span class="kw4">STD</span>có thể đại diện cho tất cả các giá trị của trường bit;</p>
+<h3 id="Floating-point_promotion">có thể được chuyển đổi theo các quy tắc được chỉ định trong mục (3).</h3> <p>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>nó đến một đối tượng<span class="kw4">trôi nổi</span>không được chuyển đổi từ một trường bit),<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>có thể được chuyển đổi theo các quy tắc được chỉ định trong mục (3);</p>
+<p>Nếu không, nếu<i>thấp hơn cấp bậc của</i>.</p>
+<h3 id="Numeric_conversions">Chuyển đổi số</h3> <p>có thể được chuyển đổi thành một loại prvalue</p>
+<h4 id="Integral_conversions">có thể đại diện cho tất cả các giá trị của</h4> <p>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>có thể được chuyển đổi thành một loại prvalue</p>
+<ul>
+<li>Trong các trường hợp được chỉ định bởi mục (1) (trường bit được chuyển đổi không phù hợp<a class="extiw" href="https://en.wikipedia.org/wiki/Modular_arithmetic" title="enwiki:Modular arithmetic">modulo</a>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));<sup class="t-su">Trả về một kết quả, kết quả được bỏ qua. Nếu như</sup>) hoặc mục (2) (</li>
+<ul><li>là một trong những loại ký tự đã cho),<sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>có thể được chuyển đổi thành prvalue của loại đầu tiên sau đây có thể biểu thị tất cả các giá trị của loại cơ bản của nó:</li></ul>
+<li>loại cơ bản của<span class="t-rev-inl t-until-cxx20"><span>thực hiện xác định</span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span>Quảng cáo từ các loại liệt kê<sup class="t-su">Trả về một kết quả, kết quả được bỏ qua. Nếu như</sup>Một prvalue của một người chưa được mở</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Loại có loại cơ bản không được sửa chữa có thể được chuyển đổi thành prvalue của loại đầu tiên từ danh sách sau có thể giữ toàn bộ phạm vi giá trị của họ:<a href="operator_arithmetic#Overflows" title="cpp/language/operator arithmetic">signed integer arithmetic overflow</a>lớn hơn cấp bậc của</li>
+<li>, mà không xác định).<span class="kw4">bool</span>Nếu loại nguồn là<code>false</code>Một prvalue của một loại bảng liệt kê không bịa đặt có loại cơ bản được cố định có thể được chuyển đổi thành loại cơ bản của nó. Hơn nữa, nếu loại cơ bản cũng phải chịu sự quảng bá tích hợp, theo loại được quảng bá cơ bản. Chuyển đổi sang loại cơ bản không được coi là tốt hơn cho mục đích của<code>true</code>Lưu ý rằng tất cả các chuyển đổi khác không phải là chương trình khuyến mãi; Ví dụ,<span class="kw4">int</span>chọn</li>
+<li>hoặc các số nguyên bị cắt cụt và không dấu là không mở rộng hoặc cắt ngắn tương ứng.<span class="kw4">bool</span>(Khuyến mãi) Over<a href="#Boolean_conversions">boolean conversion</a>Đó là hành vi không xác định để khai báo chuyên môn đầy đủ hoặc một phần của bất kỳ mẫu biến thư viện tiêu chuẩn nào, ngoại trừ khi được phép rõ ràng.</li>
+</ul> <ol class="references"> <li id="cite_note-1"> <span class="reference-text">-&gt;<a href="../types/integer" title="cpp/types/integer">exact-width integer types</a>(chuyển đổi).</span> </li> </ol> <h4 id="Floating-point_conversions">Khuyến mãi điểm nổi</h4> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <p>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>có thể được chuyển đổi thành một loại prvalue</p>
+</td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <p>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>. Giá trị không thay đổi.<a href="usual_arithmetic_conversions#Floating-point_conversion_rank" title="cpp/language/usual arithmetic conversions">floating-point conversion rank</a>.</p>
+<p>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>Chuyển đổi này được gọi là</p>
+<p><a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Khuyến mãi điểm nổi</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>Không giống như các chương trình khuyến mãi, chuyển đổi số có thể thay đổi các giá trị, với sự mất độ chính xác tiềm năng.</p>
+<ul>
+<li>Chuyển đổi tích phân</li>
+<li>của một loại số nguyên hoặc thuộc loại bảng liệt kê chưa được chuyển đổi có thể được chuyển đổi thành bất kỳ loại số nguyên nào khác. Nếu chuyển đổi được liệt kê trong các chương trình khuyến mãi tích hợp, thì đó là một chương trình khuyến mãi và không phải là một chuyển đổi.<a href="../numeric/fenv/fe_round" title="cpp/numeric/fenv/FE round">to nearest</a>).</li>
+<li>Nếu không, hành vi là không xác định.</li>
+</ul> <h4 id="Floating.E2.80.93integral_conversions">Nếu loại đích không được ký, giá trị kết quả là giá trị không dấu nhỏ nhất bằng với giá trị nguồn</h4> <ul>
+<li>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>trong đó n là số lượng bit được sử dụng để thể hiện loại đích.</li>
+<ul>
+<li>Nghĩa là, tùy thuộc vào loại đích rộng hơn hay hẹp hơn, số nguyên có ký được mở rộng dấu hiệu</li>
+<li>hoặc các số nguyên bị cắt cụt và không dấu là không mở rộng hoặc cắt ngắn tương ứng.<span class="kw4">bool</span>Nếu loại đích được ký, giá trị không thay đổi nếu số nguyên nguồn có thể được biểu diễn trong loại đích. Nếu không thì kết quả là<a href="#Boolean_conversions">below</a>).</li>
+</ul>
+<li>Giá trị duy nhất của loại đích bằng với giá trị nguồn modulo 2</li>
+<ul>
+<li>trong đó n là số lượng bit được sử dụng để thể hiện loại đích<a href="../numeric/fenv/fe_round" title="cpp/numeric/fenv/FE round">to nearest</a>.</li>
+<li>(Lưu ý rằng điều này khác với</li>
+<li>, mà không xác định).<span class="kw4">bool</span>Nếu loại nguồn là<code>false</code>, giá trị<code>true</code>được chuyển đổi thành 0 và giá trị</li>
+</ul>
+</ul> <h4 id="Pointer_conversions">được chuyển đổi thành giá trị một trong loại đích (lưu ý rằng nếu loại đích là</h4> <ul>
+<li>MỘT<a href="pointer#Null_pointers" title="cpp/language/pointer">null pointer constant</a>, Đây là một chương trình khuyến mãi số nguyên, không phải là một chuyển đổi số nguyên).<i>Nếu loại đích là</i>Chuyển đổi tích phân nổi</li>
+<li>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>Điều này chỉ áp dụng nếu số học là bổ sung của hai<code>T</code>. Tuy nhiên, lưu ý rằng tại thời điểm này, tất cả các nền tảng có trình biên dịch C ++ đều sử dụng số học bổ sung của Two.<span class="kw4">Vô hiệu</span>Chuyển đổi điểm nổi</li>
+<ul><li>thuộc loại dấu phẩy động có thể được chuyển đổi thành prvalue thuộc bất kỳ loại dấu phẩy động nào khác.</li></ul>
+<li>thuộc loại điểm nổi có thể được chuyển đổi thành prvalue của bất kỳ loại điểm nổi nào khác với</li>
+<ul>
+<li>thuộc loại dấu phẩy nổi tiêu chuẩn có thể được chuyển đổi thành prvalue thuộc bất kỳ loại dấu phẩy nổi tiêu chuẩn nào khác.</li>
+<li>Chuyển đổi con trỏ</li>
+</ul>
+</ul> <h4 id="Pointer-to-member_conversions">Nếu việc chuyển đổi được liệt kê trong các chương trình khuyến mãi nổi, đó là một chương trình khuyến mãi và không phải là một chuyển đổi.</h4> <ul>
+<li>MỘT<a href="pointer#Null_pointers" title="cpp/language/pointer">null pointer constant</a>Nếu giá trị nguồn có thể được biểu diễn chính xác trong loại đích, nó sẽ không thay đổi.<i>Nếu giá trị nguồn nằm giữa hai giá trị có thể đại diện của loại đích, kết quả là một trong hai giá trị đó (nó được xác định là được xác định là nào, mặc dù nếu số học của IEEE được hỗ trợ, hãy làm tròn mặc định</i>Chuyển đổi tích phân nổi</li>
+<li>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>thuộc loại điểm nổi có thể được chuyển đổi thành prvalue thuộc bất kỳ loại số nguyên nào. Phần phân số bị cắt, nghĩa là phần phân số bị loại bỏ.<code>T</code>Nếu giá trị bị cắt không thể phù hợp với loại đích, hành vi không được xác định (ngay cả khi loại đích không được ký, số học modulo không áp dụng).<code>B</code>Nếu loại đích là<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>, đây là một chuyển đổi boolean (xem<code>T</code>Một loại prvalue của loại liệt kê số nguyên hoặc không bị nhiễm trùng có thể được chuyển đổi thành prvalue thuộc bất kỳ loại dấu phẩy động nào. Kết quả là chính xác nếu có thể.<code>D</code>Nếu giá trị có thể phù hợp với loại đích nhưng không thể được biểu diễn chính xác, thì việc triển khai được xác định là giá trị đại diện thấp nhất hay gần nhất sẽ được chọn, mặc dù nếu số học của IEEE được hỗ trợ<code>D</code>Nếu giá trị không thể phù hợp với loại đích, hành vi không được xác định.<code>B</code>Nếu loại nguồn là<code>D</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</li>
+<ul>
+<li>Nếu như<code>B</code>, giá trị<code>D</code>được chuyển đổi thành 0 và giá trị<code>D</code>, chương trình là xấu.</li>
+<li>Nếu như<code>D</code>được chuyển đổi thành một.</li>
+<li>Chuyển đổi con trỏ</li>
+</ul>
+</ul> <h4 id="Boolean_conversions">có thể được chuyển đổi thành bất kỳ loại con trỏ nào và kết quả là giá trị con trỏ null của loại đó. Chuyển đổi như vậy (được gọi là</h4> <p>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>Chuyển đổi con trỏ null<span class="kw4">bool</span>.</p>
+<p>) được phép chuyển đổi thành loại đủ điều kiện CV như một chuyển đổi duy nhất, nghĩa là nó không được coi là sự kết hợp của các chuyển đổi số và đủ điều kiện.<code>false</code>Con trỏ đến bất kỳ loại đối tượng (tùy chọn nào có trình độ CV)<code>true</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>có thể được chuyển đổi thành một con trỏ prvalue thành (bình định CV đủ điều kiện)<a href="direct_initialization" title="cpp/language/direct initialization">direct-initialization</a>có thể đại diện cho các phân số của ve.<span class="kw4">bool</span>. Con trỏ kết quả đại diện cho cùng một vị trí trong bộ nhớ với giá trị con trỏ gốc.<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>, bao gồm<code>nullptr</code>Nếu con trỏ gốc là giá trị con trỏ null, kết quả là giá trị con trỏ null của loại đích.<code>false</code>Một con trỏ prvalue đến một loại lớp hoàn chỉnh có nguồn gốc từ CV) có thể được chuyển đổi thành một con trỏ prvalue sang lớp cơ sở (giống hệt CV) của nó. Kết quả của việc chuyển đổi là một con trỏ tới tiểu mục lớp cơ sở trong đối tượng nhọn-pointed.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Qualification_conversions">Nếu lớp cơ sở không thể truy cập hoặc mơ hồ, chương trình sẽ không được hình thành.</h3> <p>Giá trị con trỏ null được chuyển đổi thành giá trị con trỏ null của loại đích.</p>
+<ul>
+<li>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>Chuyển đổi con trỏ sang thành viên<a href="cv" title="cpp/language/cv">cv-qualified</a>kiểu<code>T</code>có thể được chuyển đổi thành bất kỳ loại con trỏ đến thành viên nào và kết quả là giá trị con trỏ thành viên NULL của loại đó. Chuyển đổi như vậy (được gọi là<code>T</code>Chuyển đổi con trỏ thành viên Null</li>
+<li>) được phép chuyển đổi thành loại đủ điều kiện CV như một chuyển đổi duy nhất, nghĩa là nó không được coi là sự kết hợp của các chuyển đổi số và đủ điều kiện.<code>T</code>có thể được chuyển đổi thành một<code>X</code>trong một lớp cơ sở<a href="cv#Conversions" title="cpp/language/cv">more cv-qualified</a>kiểu<code>T</code>có thể được chuyển đổi thành một<code>X</code>.</li>
+</ul> <p>Con trỏ tới thành viên cùng loại<a href="#Combining_cv-qualifications">below</a>.</p>
+<h4 id="Similar_types">trong lớp hoàn chỉnh có nguồn gốc của nó</h4> <p>. Con trỏ kết quả có thể được hủy bỏ bằng cách<i>Cả hai đều là những gợi ý cho thành viên của cùng một lớp, và các loại thành viên chỉ tương tự nhau; hoặc</i>các tiểu mục cơ sở của điều đó</p>
+<ul>
+<li>không thể truy cập, mơ hồ hoặc cơ sở ảo của</li>
+<li>hoặc là cơ sở của một số cơ sở ảo trung gian của</li>
+<li>Không chứa thành viên ban đầu và không phải là một lớp cơ sở của lớp chứa thành viên ban đầu, hành vi không được xác định.</li>
+<li>Giá trị con trỏ null được chuyển đổi thành giá trị con trỏ null của loại đích.</li>
+</ul> <p>}</p>
+<ul>
+<li>
+<span class="kw4">hằng số</span> <span class="kw4">int</span><span class="sy2">*</span> <span class="kw4">hằng số</span> <span class="sy2">*</span>Và<span class="kw4">int</span><span class="sy2">Chuyển đổi Boolean</span>của tích phân, điểm nổi, liệt kê không có đường, con trỏ và các loại con trỏ đến thành viên có thể được chuyển đổi thành một loại prvalue thuộc loại</li>
+<li>
+<span class="kw4">int</span> <span class="br0">.</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">.</span><span class="kw4">int</span><span class="sy2">*</span><span class="br0">)</span>Và<span class="kw4">int</span> <span class="br0">.</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">.</span><span class="kw4">hằng số</span> <span class="kw4">int</span><span class="sy2">*</span><span class="br0">)</span>. Tất cả các giá trị khác trở thành</li>
+<li>
+<span class="kw4">hằng số</span> <span class="kw4">int</span> <span class="br0">.</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">.</span><span class="kw4">int</span><span class="sy2">*</span><span class="br0">)</span>Và<span class="kw4">int</span> <span class="br0">.</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">.</span><span class="kw4">int</span><span class="sy2">*</span><span class="br0">)</span>. Tất cả các giá trị khác trở thành</li>
+<li>
+<span class="kw4">int</span> <span class="br0">.</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">.</span><span class="kw4">int</span><span class="sy2">*</span> <span class="kw4">hằng số</span><span class="br0">)</span>Và<span class="kw4">int</span> <span class="br0">.</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">.</span><span class="kw4">int</span><span class="sy2">*</span><span class="br0">)</span>Trong bối cảnh của một</li>
+<li>
+<a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">int</span>Thì<span class="kw4">int</span><span class="sy1">&lt;</span>Và<a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">hằng số</span> <span class="kw4">int</span>Thì<span class="kw4">int</span><span class="sy1">&lt;</span>Đối tượng có thể được khởi tạo từ một loại prvalue của</li>
+</ul> <p>. Giá trị kết quả là</p>
+<p>MỘT<i>. Tuy nhiên, đây không được coi là một chuyển đổi ngầm.</i>Chuyển đổi trình độ<code>T</code>Nói chung:<code>cv_i</code>Và<code>P_i</code>chỉ vào trình tự và mọi số nguyên không âm<code>T</code>loại con trỏ tới<code>cv_0 P_0 cv_1 P_1 ... cv_n−1 P_n−1 cv_n U</code>có thể được chuyển đổi thành một con trỏ prvalue thành một loại có trình độ CV hơn<code>n</code>là</p>
+<ul>
+<li>Trong luồng B. nghĩa là, một khi tải nguyên tử được hoàn thành, Thread B được đảm bảo sẽ thấy mọi thứ ARREAD A đã viết vào bộ nhớ. Lời hứa này chỉ giữ nếu B thực sự trả về giá trị được lưu trữ hoặc giá trị từ sau này trong chuỗi phát hành.<code>cv_i</code>(Nói cách khác, độ phân giải và biến động có thể được thêm vào).<span class="kw4">hằng số</span>Và<span class="kw4">bay hơi</span>, Và</li>
+<li>Trong luồng B. nghĩa là, một khi tải nguyên tử được hoàn thành, Thread B được đảm bảo sẽ thấy mọi thứ ARREAD A đã viết vào bộ nhớ. Lời hứa này chỉ giữ nếu B thực sự trả về giá trị được lưu trữ hoặc giá trị từ sau này trong chuỗi phát hành.<code>P_i</code>khoảng cách</li>
+<ul>
+<li>Một prvalue của loại con trỏ đến thành viên của loại đủ điều kiện CV</li>
+<li>trong lớp<code>C_i</code>có thể được chuyển đổi thành một con trỏ prvalue thành thành viên của</li>
+<li>trong lớp<code>N_i</code>Định nghĩa chính thức về chuyển đổi trình độ chuyên môn của ”được đưa ra</li>
+<li>Các loại tương tự</li>
+</ul>
+</ul> <p>Nếu như<code>P_i</code>Không chính thức, hai loại là<code>cv_i+1</code>tương tự<code>cv_i</code>Nếu, bỏ qua trình độ CV cấp cao nhất:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Họ là cùng một loại; hoặc</pre></div> <p>Cả hai đều là những con trỏ, và các loại nhọn là tương tự nhau; hoặc<code>T1</code>Và<code>T2</code>&gt;<i>Cả hai đều là những gợi ý cho thành viên của cùng một lớp, và các loại thành viên chỉ tương tự nhau; hoặc</i>Cả hai đều là mảng và các loại phần tử mảng tương tự nhau.</p>
+<ul>
+<li>void f (e) {} // ok, một quá tải khác<code>n</code>.</li>
+<li>**<code>U</code>là như nhau.</li>
+<li>Nếu và chỉ khi các toán hạng bằng nhau.<code>P_i</code>là tương tự;<span class="t-rev-inl t-since-cxx20"><span>không giống nhau;<code>N_i</code>không giống nhau;</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>cho tất cả<code>i</code>.</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">tương tự (chúng là cùng loại);</pre></div> <h4 id="Combining_cv-qualifications">không giống nhau.</h4> <p>Chính thức, sự tương đồng loại được định nghĩa theo phân tích trình độ chuyên môn.<code>Tn</code>phân tích trình độ<code>Dn</code>của một loại<code>cvn_i</code>Và<code>Pn_i</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>là một chuỗi các thành phần<code>T1</code>// u = u1 -&gt; phân tách với n = 1: con trỏ tới [u1]<code>T2</code>"Đối với không âm</p>
+<ul>
+<li> <code>T1</code>Và<code>T2</code>là một tập hợp</li>
+<li>// cv_1 trống, p_1 là con trỏ đến,<code>i</code>Sử dụng chức năng nhị phân đã cho<span class="kw4">hằng số</span>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>cv1_i</code>, sau đó<span class="kw4">hằng số</span>“Con trỏ đến thành viên của lớp<code>cv2_i</code>consexpr unary_transform_result &lt;phạm vi :: rayed_iterator_t &lt;r&gt;, o&gt;<span class="kw4">bay hơi</span>.</li>
+<li>// cv_1 trống, p_1 là con trỏ đến,<code>i</code>Sử dụng chức năng nhị phân đã cho<code>cv1_i</code>Và<code>cv2_i</code>Mảng của<span class="kw4">hằng số</span>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>cv2_k</code>constexpr outputit exclusive_scan (đầu vào đầu tiên, đầu vào cuối cùng,<code>k</code>TRONG<code>[</code><code>1</code><code>, </code><code>i</code><code>)</code>.</li>
+</ul> <p>Các<i>// n = 0 -&gt; cv_0 trống, u là con trỏ đến con trỏ tới const int ”</i>// n = 1 -&gt; cv_0 trống, p_0 là con trỏ tới<code>T1</code>Và<code>T2</code>// cv_1 trống, u là con trỏ đến const int ”<code>T3</code>(C ++ 17)<code>T1</code>chỉ vào trình tự và mọi số nguyên không âm</p>
+<ul>
+<li> <code>cv3_0</code>                   Forwardit2 s_first, forwardit2 s_last,</li>
+<li>Trên loại phần tử cũng được lấy làm trình điều trị CV<code>i</code>Thì<code>cv3_i</code>// cv_2 là "const", u là "int"<code>cv1_i</code>Và<code>cv2_i</code>, Và</li>
+<li>nếu như<code>cv3_i</code>khác với<code>cv1_i</code>hoặc<code>c2_i</code>, sau đó<span class="kw4">hằng số</span>// Thay thế bất kỳ loại nào sau đây cho U đưa ra một trong các phân tách:<code>cv3_k</code>constexpr outputit exclusive_scan (đầu vào đầu tiên, đầu vào cuối cùng,<code>k</code>TRONG<code>[</code><code>1</code><code>, </code><code>i</code><code>)</code>.</li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<i>// n = 0 -&gt; cv_0 trống, u là con trỏ đến con trỏ tới const int ”</i>// n = 1 -&gt; cv_0 trống, p_0 là con trỏ tới<code>T1</code>Và<code>T2</code>// cv_1 trống, u là con trỏ đến const int ”<code>T3</code>(C ++ 17)<code>T1</code>là<code>D3</code>// n = 2 -&gt; cv_0 trống, p_0 là con trỏ tới</p>
+<ul>
+<li> <code>cv3_0</code>...</li>
+<li>// cv_1 trống, p_1 là con trỏ đến,<code>i</code>Thì<code>cv3_i</code>// cv_2 là "const", u là "int"<code>cv1_i</code>Và<code>cv2_i</code>.</li>
+<li>Nếu như<code>P1_i</code>hoặc<code>P2_i</code>sử dụng t = const int **;<code>P3_i</code> <code>P1_i</code>.</li>
+<li>Nếu như<code>cv3_i</code>khác với<code>cv1_i</code>hoặc<code>cv2_i</code>, hoặc<code>P3_i</code>khác với<code>P1_i</code>hoặc<code>P2_i</code>, sau đó<span class="kw4">hằng số</span>// Thay thế bất kỳ loại nào sau đây cho U đưa ra một trong các phân tách:<code>cv3_k</code>constexpr outputit exclusive_scan (đầu vào đầu tiên, đầu vào cuối cùng,<code>k</code>TRONG<code>[</code><code>1</code><code>, </code><code>i</code><code>)</code>.</li>
+</ul> <p>// u = u0 -&gt; phân tách với n = 0: u0<code>T1</code>// u = u1 -&gt; phân tách với n = 1: con trỏ tới [u1]<code>T2</code>// u = u2 -&gt; phân tách với n = 2: con trỏ tới [con trỏ tới [const u2]]]<code>T1</code>Và<code>T2</code>sử dụng u2 = int;<code>T2</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <div class="cpp source-cpp"><pre data-language="cpp">sử dụng u1 = const u2*;</pre></div> <p>sử dụng u0 = u1*;<span class="kw4">hằng số</span>/<span class="kw4">bay hơi</span>Hai loại</p>
+<div class="cpp source-cpp"><pre data-language="cpp">tương tự</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <h3 id="Function_pointer_conversions">Nếu có tồn tại một giải pháp trình độ chuyên môn cho mỗi người trong số họ, trong đó tất cả các điều kiện sau đây được thỏa mãn cho hai giải quyết trình độ chuyên môn:</h3> <ul>
+<li>MỘT<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>Các loại được biểu thị bằng</li>
+<li>Các thành phần giống nhau</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">hoặc một là "mảng của</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="The_safe_bool_problem">"Và cái khác là mảng của giới hạn không rõ ràng của"</h3> <p>// phân hủy trình độ với n = 2:<code>if (obj) { ... }</code>// con trỏ tới [con trỏ dễ bay hơi tới [const int]]<code>T::operator bool() const;</code>sử dụng t1 = const int * dễ bay hơi *;<span class="kw4">bool</span> <span class="kw4">int</span>// phân hủy trình độ với n = 2:<code>obj &lt;&lt; 1;</code>hoặc<code>int i = obj;</code>.</p>
+<p>// const con trỏ tới [con trỏ tới [int]]<code><a href="../io/basic_ios" title="cpp/io/basic ios">std::basic_ios</a></code>sử dụng t2 = int ** const;<code>operator void*</code> <code><span class="kw1">nếu như</span> <span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/io/cin"><span class="kw1760">Điều đó cho tất cả<span class="me2">cin</span></span></a><span class="br0">)</span> <span class="br0">danh tính</span>...<span class="br0">{</span></code>Sự so sánh giữa<span class="kw4">Vô hiệu</span><span class="sy2">*</span>Chuyển đổi hai thời lượng thành loại chung của chúng và tạo ra một thời lượng mà số lượng đánh dấu là tổng số lượng đánh dấu sau khi chuyển đổi.<span class="kw4">bool</span>Đếm các yếu tố mà vị ngữ<code><span class="kw4">int</span> n <span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span> <a href="http://en.cppreference.com/w/cpp/io/cout"><span class="kw1762">Điều đó cho tất cả<span class="me2">cout</span></span></a><span class="sy4">Số lượng các yếu tố để sao chép</span></code>// Đối với hai phân loại trình độ ở trên<span class="kw4">Vô hiệu</span><span class="sy2">*</span>là sai.<span class="kw4">int</span>// mặc dù CV_0, CV_1 và CV_2 đều khác nhau,<code>delete <a href="http://en.cppreference.com/w/cpp/io/cout"><span class="kw1762">Điều đó cho tất cả<span class="me2">cout</span></span></a><span class="sy4">Số lượng các yếu tố để sao chép</span></code>// Họ có cùng n, u, p_0 và p_1,</p>
+<p>// Do đó, các loại T1 và T2 là tương tự nhau.<a class="external text" href="https://en.wikibooks.org/wiki/More_C++_Idioms/Safe_bool" rel="nofollow">Safe Bool idiom</a>.<code><a href="../io/basic_ios" title="cpp/io/basic ios">std::basic_ios</a></code>Kết hợp các cấp độ CV<a class="external text" href="https://cplusplus.github.io/LWG/issue468" rel="nofollow">LWG issue 468</a>, Và<code>operator void*</code>Trong mô tả dưới đây, phân loại trình độ dài nhất của loại<a href="../io/basic_ios/operator_bool#Notes" title="cpp/io/basic ios/operator bool">notes</a>).</p>
+<p>được ký hiệu là<a href="explicit" title="cpp/language/explicit">explicit bool conversion</a>, và các thành phần của nó được ký hiệu là</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/170.html" rel="nofollow">CWG 170</a> </td> <td>C ++ 98</td> <td>Một biểu thức prvalue của loại<br/>có thể được chuyển đổi thành loại</td> <td>hơn thứ hai, nếu không</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/172.html" rel="nofollow">CWG 172</a> </td> <td>C ++ 98</td> <td>Nếu tất cả các điều kiện sau đây được thỏa mãn:</td> <td>là tương tự.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/330.html" rel="nofollow">CWG 330</a><br/>.<a class="external text" href="https://wg21.link/N4261" rel="nofollow">N4261</a>)</td> <td>C ++ 98</td> <td>; khoảng thời gian kết quả có<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span><span class="sy2">*</span> <span class="kw4">hằng số</span> <span class="br0">.</span><span class="sy2">*</span>, nhưng được thực hiện theo<span class="br0">)</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="nu0">Yêu cầu std :: Constructible_From &lt;std :: iter_value_t &lt;i&gt;, std :: iter_reference_t &lt;i &gt;&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><br/>ĐẾN<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> <span class="kw4">hằng số</span> <span class="sy2">*</span> <span class="kw4">hằng số</span> <span class="br0">.</span><span class="sy2">*</span>, nhưng được thực hiện theo<span class="br0">)</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="nu0">Yêu cầu std :: Constructible_From &lt;std :: iter_value_t &lt;i&gt;, std :: iter_reference_t &lt;i &gt;&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span>Đối với mỗi người khác không</td> <td>cũng là trong</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/519.html" rel="nofollow">CWG 519</a> </td> <td>C ++ 98</td> <td>Đối với mỗi người khác không<br/>là khác nhau, sau đó</td> <td>Loại kết hợp đủ điều kiện</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/616.html" rel="nofollow">CWG 616</a> </td> <td>C ++ 98</td> <td>của hai loại<br/>là một loại<br/>Đối với mỗi người khác không</td> <td>Cấu trúc T2<span class="kw4">STD</span> <span class="kw4">char</span><br/>là sự kết hợp của<br/>được thêm vào</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/685.html" rel="nofollow">CWG 685</a> </td> <td>C ++ 98</td> <td>Loại kết hợp đủ điều kiện<br/>của hai loại</td> <td>là một loại</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/707.html" rel="nofollow">CWG 707</a> </td> <td>C ++ 98</td> <td>thỏa mãn tất cả các điều kiện sau:<br/>Đối với mỗi người khác không</td> <td>là sự kết hợp của<br/>là mảng của những người không biết ràng buộc của ”,<br/>là "mảng không xác định giới hạn", nếu không thì đó là</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1423.html" rel="nofollow">CWG 1423</a> </td> <td>C ++ 11</td> <td>
+<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>được thêm vào<span class="kw4">bool</span><br/>Một loại prvalue</td> <td>có thể được chuyển đổi thành loại</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1773.html" rel="nofollow">CWG 1773</a> </td> <td>C ++ 11</td> <td>Nếu loại kết hợp đủ điều kiện của<br/>là CV-Unquilified<br/>// phân phối trình độ dài nhất của T1 (n = 2):</td> <td>// con trỏ tới [con trỏ tới [char]]</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1781.html" rel="nofollow">CWG 1781</a> </td> <td>C ++ 11</td> <td>
+<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>ĐẾN<span class="kw4">bool</span>sử dụng t1 = char **;<br/> </td> <td>// phân phối trình độ dài nhất của T2 (n = 2):<br/>// con trỏ tới [con trỏ tới [const char]]</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1787.html" rel="nofollow">CWG 1787</a> </td> <td>C ++ 98</td> <td>sử dụng t2 = const char **;<br/><span class="kw4">STD</span> <span class="kw4">char</span> </td> <td>    T2 () {} // "mem" không có trong danh sách khởi tạo</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1981.html" rel="nofollow">CWG 1981</a> </td> <td>C ++ 11</td> <td>// Xác định các thành phần CV3_I và T_I của D3 (n = 2):</td> <td>/di chuyển</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2140.html" rel="nofollow">CWG 2140</a> </td> <td>C ++ 11</td> <td>// cv3_1 = trống (liên kết của cv1_1 và cv2_1 trống rỗng)<br/><code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>// cv3_2 = Hồi const (liên kết của cv1_2 và const const cv2_2)</td> <td>// p3_0 = con trỏ tới (không có mảng nào bị ràng buộc, sử dụng p1_0)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2310.html" rel="nofollow">CWG 2310</a> </td> <td>C ++ 98</td> <td>// p3_1 = con trỏ tới (không có mảng nào bị ràng buộc, sử dụng p1_1)<br/>// Tất cả các thành phần ngoại trừ CV_2 đều giống nhau, CV3_2 khác với CV1_2,<br/>// Do đó, thêm vào const const vào CV3_K cho mỗi k trong [1, 2): CV3_1 trở thành const const.</td> <td>// t3 là con trỏ của người Viking tới con trỏ đến const char, tức là, const char * const *.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2484.html" rel="nofollow">CWG 2484</a> </td> <td>C ++ 20</td> <td>Sử dụng T3 = / * Loại kết hợp đủ điều kiện của T1 và T2 * /;<span class="kw4">char16_t</span> <br/>int main ()</td> <td>{<br/>    const char c = 'c';<span class="kw4">char16_t</span> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2485.html" rel="nofollow">CWG 2485</a> </td> <td>C ++ 98</td> <td>    char* pc;</td> <td>    T1 ppc = &amp; pc;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a> </li>
+<li> <a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a> </li>
+<li> <a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a> </li>
+<li> <a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a> </li>
+<li> <a href="explicit_cast" title="cpp/language/explicit cast">explicit cast</a> </li>
+<li> <a href="cast_operator" title="cpp/language/cast operator">user-defined conversion</a> </li>
+</ul> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/conversion" title="c/language/conversion">C documentation</a></span>vì<span class=""><span>    T2 PCC = PPC; // Lỗi: T3 không giống với T2 không đủ điều kiện CV,</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/implicit_conversion">https://en.cppreference.com/w/cpp/language/implicit_conversion</a>
+</p>
+</div>

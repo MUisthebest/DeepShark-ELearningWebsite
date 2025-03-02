@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_stringbuf &lt;biểu đồ, đặc điểm, phân bổ&gt; :: tràn</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Virtual int_type Overflow (int_type c = đặc điểm :: eof ());<code>c</code>Cộng sự nhân vật</p>
+<p>Nếu như<code>c</code>đến trình tự ký tự đầu ra.<code>traits::eq_int_type(c, traits::eof()) == true</code>là chỉ báo cuối tệp (<code>traits::eof()</code>.</p>
+<p>), sau đó không có nhân vật để nối thêm. Hàm không làm gì và trả về một giá trị không xác định khác ngoài<code>sputc(c)</code>Nếu lỗi ngăn chặn ngay cả khi biết liệu<code>c</code>.</p>
+<p>Mặt khác, nếu chuỗi đầu ra có sẵn một vị trí ghi hoặc chức năng này có thể cung cấp thành công vị trí ghi, thì các cuộc gọi<code><a href="../basic_stringbuf" title="cpp/io/basic stringbuf">std::stringbuf</a></code>Chức năng này có thể cung cấp một vị trí ghi có sẵn nếu<code>(mode &amp; ios_base::out) != 0</code>được mở cho đầu ra (<code><a href="../basic_stringbuf" title="cpp/io/basic stringbuf">std::stringbuf</a></code>): Trong trường hợp này, nó phân bổ lại (hoặc ban đầu phân bổ) bộ đệm đủ lớn để giữ toàn bộ bộ đệm hiện tại cộng với ít nhất một ký tự nữa. Nếu<code>(mode &amp; ios_base::in) != 0</code>cũng mở cho đầu vào (<code>overflow</code>), sau đó<code><a href="../basic_streambuf/gptr" title="cpp/io/basic streambuf/gptr">egptr()</a></code>cũng tăng kích thước của khu vực GET bằng cách di chuyển</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ánh xạ_Type</td> <td>-</td> <td>Phiên bản lớp cơ sở của chức năng không làm gì cả. Các lớp dẫn xuất có thể ghi đè chức năng này để cho phép cập nhật khu vực đặt trong trường hợp kiệt sức.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>Traits::eof()</code>Để chỉ qua vị trí viết mới.<code>c</code>để chỉ ra thất bại,<code>c</code>Nếu nhân vật<code>Traits::eof()</code>được thêm thành công, hoặc một số giá trị khác ngoài<code>Traits::eof()</code>Nếu được gọi với</p>
+<h3 id="Notes">Ghi chú</h3> <p>như đối số.<code>overflow()</code>Chức năng này khác với một tiêu biểu<code><a href="../basic_stringbuf" title="cpp/io/basic stringbuf">std::basic_stringbuf</a></code>di chuyển nội dung của bộ đệm đến trình tự ký tự liên quan vì đối với một</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>, bộ đệm và trình tự liên quan là một và giống nhau.<code>overflow()</code>Trong quá trình thực hiện được sử dụng để thực hiện ví dụ này (ví dụ: GCC-4.9),<code><a href="str" title="cpp/io/basic stringbuf/str">str()</a></code>phân bổ quá mức khu vực đặt đến 512 byte: một cuộc gọi đến<code><a href="../basic_streambuf/sputc" title="cpp/io/basic streambuf/sputc">sputc()</a></code>sẽ chỉ trả lại bốn byte khởi tạo, nhưng 508 cuộc gọi tiếp theo<code>overflow()</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">sẽ không yêu cầu các cuộc gọi mới đến</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Sstream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue169" rel="nofollow">LWG 169</a> </td> <td>C ++ 98</td> <td>#include &lt;Istream&gt;</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue432" rel="nofollow">LWG 432</a> </td> <td>C ++ 98</td> <td>
+<code>overflow</code>struct mybuf: std :: stringbuf<code><a href="../basic_streambuf/pptr" title="cpp/io/basic streambuf/pptr">epptr()</a></code>{<br/>    mybuf (const std :: String &amp; new_str,<code>std::stringbuf</code>          std :: iOS_Base :: OpenMode trong đó = std :: ios_base :: in | STD :: iOS_Base :: out)</td> <td>        : std :: StringBuf (new_str, what) {}</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_streambuf/overflow" title="cpp/io/basic streambuf/overflow"> <span class="t-lines"><span>Xsputn</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>ghi nhiều ký tự vào chuỗi đầu ra<br/> <span class="t-mark">Putback<code>std::basic_streambuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="underflow" title="cpp/io/basic stringbuf/underflow"> <span class="t-lines"><span>showmanyc</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Khởi tạo các chuỗi đầu vào và đầu ra<br/> <span class="t-mark">(Hàm thành viên được bảo vệ ảo)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_stringbuf/overflow">https://en.cppreference.com/w/cpp/io/basic_stringbuf/overflow</a>
+</p>
+</div>

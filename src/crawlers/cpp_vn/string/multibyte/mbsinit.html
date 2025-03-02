@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: mbsinit</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int mbsinit (const std :: mbstate_t* ps);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nếu như<code>ps</code>không phải là một con trỏ null,<code>mbsinit</code>chức năng xác định xem các điểm đến<code><a href="mbstate_t" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></code>Đối tượng mô tả trạng thái chuyển đổi ban đầu.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Mặc dù không khởi đầu<code><a href="mbstate_t" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></code>luôn đại diện cho trạng thái chuyển đổi ban đầu, có thể có các giá trị khác của<code><a href="mbstate_t" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></code>cũng đại diện cho trạng thái chuyển đổi ban đầu.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>PS</td> <td>-</td> <td>Con trỏ tới<code><a href="mbstate_t" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></code>phản đối kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>​0​</code>nếu như<code>ps</code>không phải là một con trỏ null và không đại diện cho trạng thái chuyển đổi ban đầu, giá trị khác không.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;clocale&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CWchar&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="mbstate_t" title="cpp/string/multibyte/mbstate t"> <span class="t-lines"><span>mbstate_t</span></span></a></div> </td> <td>Thông tin trạng thái chuyển đổi cần thiết để lặp lại chuỗi ký tự multibyte<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/multibyte/mbsinit" title="c/string/multibyte/mbsinit">C documentation</a></span>vì<code>mbsinit</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/multibyte/mbsinit">https://en.cppreference.com/w/cpp/string/multibyte/mbsinit</a>
+</p>
+</div>

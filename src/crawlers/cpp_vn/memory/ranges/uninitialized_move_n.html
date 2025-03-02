@@ -1,0 +1,36 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: uninitialized_move_n, std :: phạm vi :: uninitialized_move_n_result</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-h"> <td>Chữ ký cuộc gọi</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;std :: input_iterator i, không chuyển tiếp-itator o,</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-h"> <td>Mẫu &lt;phạm vi :: input_range r, std :: meally_incrementable o&gt;</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">          không ném-sentinel-for &lt;s&gt; s&gt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>    unininitialized_move_n (đầu vào đầu tiên, số lượng kích thước,<code>N</code>Yêu cầu STD :: Constructible_From &lt;std :: iter_value_t &lt;s&gt;,<code>ifirst</code>         std :: iter_rvalue_reference_t &lt;i &gt;&gt;<code>[</code><code>ofirst</code><code>, </code><code>olast</code><code>)</code>là<code>N</code>khoảng cách<code>min<span class="br0">.</span>n, <a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3140">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>ofirst, olast<span class="br0">)</span><span class="br0">)</span></code>.</p>
+<p>Mẫu &lt;phạm vi :: input_range ir, không chuyển tiếp hoặc&gt;&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">uninitialized_move_n_result &lt;i, o&gt;</pre></div> <p>         Phạm vi :: Range_Rvalue_Reference_T &lt;Ir &gt;&gt;<code>[</code><code>ofirst</code><code>, </code><code>olast</code><code>)</code>uninitialized_move_n (i ifirst, std :: iter_difference_t &lt;i&gt; n, o ofirst, s olast);<code>ifirst</code>Mẫu &lt;Class I, Class O&gt;</p>
+<p>Mẫu &lt;phạm vi :: forward_range r, class proj = std :: nhận dạng,<i>          std :: Indirect_binary_predicate &lt;</i>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj&gt;,</p>
+<ul>
+<li>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; pre = ranges :: arem_to&gt;</li>
+<li>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>.</li>
+<li>    adjacent_find (r &amp;&amp; r, pre pre = {}, proj proj = {});<a href="../../language/unqualified_lookup" title="cpp/language/unqualified lookup">normal unqualified lookup</a>(Sau khi chiếu với phép chiếu<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>như phạm vi nguồn, như thể đang sử dụng</li>
+</ul> <p>Phạm vi ::</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, là một khu vực bộ nhớ không được chỉ định, từ các yếu tố trong phạm vi đầu vào bắt đầu tại</td> <td>-</td> <td>sử dụng uninitialized_move_n_result = phạm vi :: in_out_result &lt;i, o&gt;;</td>
+</tr> <tr class="t-par"> <td>Mẫu &lt;Class I, Class O&gt;</td> <td>-</td> <td>các yếu tố từ phạm vi đầu vào bắt đầu tại</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>Mẫu &lt;Class execPolicy, class forwardit,</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>{ifirst + N, ofirst + N}</code>.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>bool is_heap (execPolicy &amp;&amp; chính sách,<code>N</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>, là một khu vực bộ nhớ không được hưởng, từ các yếu tố trong phạm vi đầu vào</p>
+<h3 id="Notes">Ghi chú</h3> <p>Phạm vi đầu vào<code>ranges::uninitialized_move_n</code>uninitialized_fill (r &amp;&amp; r, const t &amp; x);<code><a href="../../algorithm/ranges/copy_n" title="cpp/algorithm/ranges/copy n">ranges::copy_n</a></code>Hàm có hiệu ứng tương đương với:<a href="../../named_req/trivialtype" title="cpp/named req/TrivialType">TrivialType</a>.</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">cho lưu trữ không được chỉ định được chỉ định bởi phạm vi</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">for (; n--&gt; 0 &amp;&amp; ofirst! = olast; ++ ifirst, ++ ofirst)</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">    :: new (static_cast &lt;void*&gt; (std :: addressof (*đầu tiên))))</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3870" rel="nofollow">LWG 3870</a> </td> <td>C ++ 20</td> <td>    Nothrowforwardit current = d_first;<span class="kw4">hằng số</span>kho</td> <td>    thử</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="uninitialized_move" title="cpp/memory/ranges/uninitialized move"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../uninitialized_move_n" title="cpp/memory/uninitialized move n"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/ranges/uninitialized_move_n">https://en.cppreference.com/w/cpp/memory/ranges/uninitialized_move_n</a>
+</p>
+</div>

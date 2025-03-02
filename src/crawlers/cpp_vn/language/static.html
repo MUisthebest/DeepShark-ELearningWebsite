@@ -1,0 +1,53 @@
+ <h1 class="firstHeading" id="firstHeading">
+<code>static</code>(con trỏ tới C);</h1> <p>Bên trong định nghĩa lớp, từ khóa<a class="mw-redirect" href="../keywords/static" title="cpp/keywords/static"><code>static</code></a>tuyên bố các thành viên không bị ràng buộc với các trường hợp lớp.</p>
+<p>Bên ngoài một định nghĩa lớp, nó có một ý nghĩa khác: Xem<a href="storage_duration" title="cpp/language/storage duration">storage duration</a>.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Tuyên bố cho một thành viên tĩnh là một<a href="class#Member_specification" title="cpp/language/class">member declaration</a>có các chỉ số khai báo có chứa từ khóa<code>static</code>. Từ khóa<code>static</code>thường xuất hiện trước các nhà xác định khác (đó là lý do tại sao cú pháp thường được mô tả không chính thức là<code>static</code> <span class="t-spar">thành viên dữ liệu</span>hoặc<code>static</code> <span class="t-spar">chức năng thành viên</span>), nhưng có thể xuất hiện ở bất cứ đâu trong chuỗi xác định.</p>
+<p>Tên của bất kỳ thành viên dữ liệu tĩnh và hàm thành viên tĩnh phải khác với tên của lớp chứa.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Các thành viên tĩnh của một lớp không được liên kết với các đối tượng của lớp: chúng là các biến độc lập với<a href="storage_duration" title="cpp/language/storage duration">static<span class="t-rev-inl t-since-cxx11"><span>hoặc chủ đề</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> storage duration</a>hoặc các chức năng thường xuyên.</p>
+<p>Các<code>static</code>Từ khóa chỉ được sử dụng với khai báo của một thành viên tĩnh, bên trong định nghĩa lớp, nhưng không phải với định nghĩa của thành viên tĩnh đó:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">lớp x {static int n; }; // khai báo (sử dụng 'tĩnh'))</pre></div> <p>int x :: n = 1;              // Định nghĩa (không sử dụng 'tĩnh')<a class="mw-redirect" href="incomplete_type" title="cpp/language/incomplete type">incomplete type</a>Tuyên bố bên trong cơ thể lớp không phải là một định nghĩa và có thể tuyên bố thành viên là<code>void</code>(Khác với</p>
+<div class="cpp source-cpp"><pre data-language="cpp">), bao gồm loại mà thành viên được khai báo:</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>cấu trúc foo;<a href="constexpr" title="cpp/language/constexpr"><code>constexpr</code></a><span class="t-rev-inl t-since-cxx17"><span>hoặc<a href="inline" title="cpp/language/inline"><code>inline</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span> </p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>cấu trúc s<code>m</code>{<code>T</code>    tĩnh in a []; // khai báo, loại không đầy đủ<code>T::m</code>    foo tĩnh x;   // khai báo, loại không đầy đủ<code>E.m</code>hoặc<code>E-&gt;m</code>là<code>E</code>    tĩnh s s;     // khai báo, loại không đầy đủ (bên trong định nghĩa của riêng nó)<code>T</code>hoặc<code>T*</code>};</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>int s :: a [10]; // Định nghĩa, loại hoàn chỉnh<a href="access" title="cpp/language/access">class member access rules (private, protected, public)</a>.</p>
+<h4 id="Static_member_functions">Chức năng thành viên tĩnh</h4> <p>struct foo {};<code>this</code>proxy</p>
+<p>Foo s :: x;     // Định nghĩa, loại hoàn chỉnh<code>virtual</code>Thì<code>const</code>Thì<code>volatile</code>, hoặc<a href="member_functions#ref-qualified_member_functions" title="cpp/language/member functions">ref-qualified</a>.</p>
+<p>S S :: S;       // Định nghĩa, loại hoàn chỉnh<a href="pointer#Pointers_to_functions" title="cpp/language/pointer">pointer to function</a>Tuy nhiên, nếu tuyên bố sử dụng<a href="pointer#Pointers_to_member_functions" title="cpp/language/pointer">pointer to member function</a>.</p>
+<h4 id="Static_data_members">Công cụ xác định, thành viên phải được tuyên bố là có loại hoàn chỉnh.</h4> <p>Để chỉ một thành viên tĩnh<a href="storage_duration" title="cpp/language/storage duration">storage duration</a><span class="t-rev-inl t-since-cxx11"><span>của lớp học<a href="../keyword/thread_local" title="cpp/keyword/thread local"><code>thread_local</code></a>, hai biểu mẫu có thể được sử dụng: Tên đủ điều kiện</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<p>hoặc biểu thức truy cập thành viên<code>mutable</code>.</p>
+<p>là một biểu thức đánh giá<a href="storage_duration" title="cpp/language/storage duration">external linkage</a>tương ứng. Khi trong cùng một phạm vi lớp, trình độ không cần thiết:<a href="namespace#Unnamed_namespaces" title="cpp/language/namespace">unnamed namespace</a>Cấu trúc x</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>{<a href="inline" title="cpp/language/inline"><code>inline</code></a>    static void f (); // tuyên ngôn</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    tĩnh in n;    // tuyên ngôn</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h4 id="Constant_static_members">};</h4> <p> <code>const</code>X g () {return x (); } // một số chức năng trả về x<code>volatile</code> <a href="initialization" title="cpp/language/initialization">initializer</a>void f ()<a href="constexpr" title="cpp/language/constexpr">constant expression</a>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    X :: f ();  // x :: f là tên đủ điều kiện của chức năng thành viên tĩnh</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>    g (). f (); // g (). f là biểu thức truy cập thành viên đề cập đến hàm thành viên tĩnh<a href="../named_req/literaltype" title="cpp/named req/LiteralType">LiteralType</a>}<code>constexpr</code> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">int x :: n = 7; // sự định nghĩa</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p> <span class="t-rev-inl t-since-cxx17"><span>Tuyên bố của a</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>void x :: f () // Định nghĩa <span class="t-rev-inl t-since-cxx11 t-until-cxx17"><span>{ </span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span>khoảng cách<a href="definition#ODR-use" title="cpp/language/definition">odr-used</a>    n = 1; // x :: n có thể truy cập được chỉ là n trong phạm vi này</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>MỘT<code>constexpr</code>}<code>inline</code>Các thành viên tĩnh tuân theo</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <div class="cpp source-cpp"><pre data-language="cpp">Các hàm thành viên tĩnh không được liên kết với bất kỳ đối tượng. Khi được gọi, họ không có</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/194.html" rel="nofollow">CWG 194</a> </td> <td>C ++ 98</td> <td>Chức năng thành viên tĩnh không thể</td> <td>Địa chỉ của chức năng thành viên tĩnh có thể được lưu trữ một cách thông thường<br/><a href="member_functions#Defect_report" title="cpp/language/member functions">non-static member functions</a>)</td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>, nhưng không phải trong một</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>Thành viên dữ liệu tĩnh</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>Các thành viên dữ liệu tĩnh không được liên kết với bất kỳ đối tượng. Chúng tồn tại ngay cả khi không có đối tượng nào của lớp đã được xác định. Chỉ có một trường hợp của thành viên dữ liệu tĩnh trong toàn bộ chương trình có tĩnh</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>Các thành viên dữ liệu tĩnh không thể</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>Các thành viên dữ liệu tĩnh không thể</li></ul>
+<li>    S.B3 = 0B11;</li>
+<ul><li>Các thành viên dữ liệu tĩnh không thể</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <ul><li> <a href="storage_duration" title="cpp/language/storage duration"><code>static</code> storage specifier</a> </li></ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/static">https://en.cppreference.com/w/cpp/language/static</a>
+</p>
+</div>

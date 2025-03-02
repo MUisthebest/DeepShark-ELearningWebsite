@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: rethrow_exception</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/exception" title="cpp/header/exception">&lt;exception&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">[[noreturn]] void rethrow_exception (std :: exican_ptr p);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Ném đối tượng ngoại lệ đã bị bắt trước đó được giới thiệu bởi con trỏ ngoại lệ<code>p</code>hoặc một bản sao của đối tượng đó.</p>
+<p>Nó không được xác định liệu một bản sao được thực hiện. Nếu một bản sao được thực hiện, lưu trữ cho nó được phân bổ theo cách không xác định.</p>
+<p>đến một phạm vi khác kết thúc tại<code>p</code>là null.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>không null<code><a href="exception_ptr" title="cpp/error/exception ptr">std::exception_ptr</a></code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Đối tượng ngoại lệ được giới thiệu bởi<code>p</code>Nếu không có bản sao được thực hiện.</p>
+<p>Mặt khác, một bản sao của đối tượng ngoại lệ như vậy nếu việc triển khai sao chép thành công đối tượng ngoại lệ.</p>
+<p>Là xấu nếu<code><a href="../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>hoặc ngoại lệ được ném khi sao chép đối tượng ngoại lệ, nếu phân bổ hoặc sao chép không thành công, tương ứng.</p>
+<h3 id="Notes">Ghi chú</h3> <p>constexpr void sort (ngẫu nhiên đầu tiên, ngẫu nhiên cuối cùng, so sánh comp);<a class="external text" href="https://wg21.link/P1675R2" rel="nofollow">P1675R2</a>Thì<code>rethrow_exception</code>không được phép sao chép đối tượng ngoại lệ, không thể thực hiện được trên một số nền tảng nơi các đối tượng ngoại lệ được phân bổ trên ngăn xếp.</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">int main ()</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="exception_ptr" title="cpp/error/exception ptr"> <span class="t-lines"><span>Exception_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Loại con trỏ được chia sẻ để xử lý các đối tượng ngoại lệ<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="current_exception" title="cpp/error/current exception"> <span class="t-lines"><span>current_exception</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>nắm bắt được ngoại lệ hiện tại trong một<code><a href="exception_ptr" title="cpp/error/exception ptr">std::exception_ptr</a></code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/rethrow_exception">https://en.cppreference.com/w/cpp/error/rethrow_exception</a>
+</p>
+</div>

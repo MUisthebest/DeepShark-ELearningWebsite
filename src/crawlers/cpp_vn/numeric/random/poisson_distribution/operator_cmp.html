@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử ==,! =<small>(STD :: Poisson_distribution)</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Người bạn của Bool Toán tử == (Const Poisson_Distribution &amp; LHS,</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">                        const poisson_distribution &amp; rhs);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> </table> <p>Nhà điều hành bool bạn bè! = (Const Bernoulli_distribution &amp; LHS,</p>
+<div class="t-li1">
+<span class="t-li">1)</span>                        const Bernoulli_distribution &amp; rhs);</div> <div class="t-li1">
+<span class="t-li">2)</span>So sánh hai đối tượng phân phối. Hai đối tượng phân phối bằng nhau khi giá trị tham số và trạng thái bên trong là như nhau.</div> <p>Thu được kết quả so sánh ba chiều của<a href="../../../language/unqualified_lookup" title="cpp/language/unqualified lookup">unqualified</a>hoặc<a href="../../../language/qualified_lookup" title="cpp/language/qualified lookup">qualified lookup</a>Chức năng này không thể nhìn thấy thông thường<a href="../../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>Chuyển đổi danh tính:<code>std::poisson_distribution&lt;ResultType&gt;</code>Hương hiệu nút</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>So sánh hai đối tượng phân phối cho sự bình đẳng.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>So sánh hai đối tượng phân phối cho bất bình đẳng.<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>true</code>các đối tượng phân phối để so sánh<code>false</code>Nếu đối số đầu tiên là</div> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3519" rel="nofollow">LWG 3519</a> </td> <td>C ++ 11</td> <td>Nếu các đối tượng phân phối bằng nhau,<br/>Nếu các đối tượng phân phối không bằng nhau,</td> <td>Hình thức của các nhà khai thác bình đẳng đã không được xác định</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/random/poisson_distribution/operator_cmp">https://en.cppreference.com/w/cpp/numeric/random/poisson_distribution/operator_cmp</a>
+</p>
+</div>

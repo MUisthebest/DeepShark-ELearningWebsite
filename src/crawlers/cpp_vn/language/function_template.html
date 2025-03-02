@@ -1,0 +1,202 @@
+ <h1 class="firstHeading" id="firstHeading">Mẫu chức năng</h1> <p>Một mẫu chức năng xác định một gia đình của các chức năng.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <span class="t-spar">Giải khai chức năng</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <code>requires</code> <span class="t-spar">// Hai tuyên bố sau đây có các ràng buộc khác nhau:</span> <span class="t-spar">Giải khai chức năng</span> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Chức năng khai báo với các chủ sở hữu</span> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>export</code> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <span class="t-spar">Giải khai chức năng</span> </td> <td>(4)</td> <td> <span class="t-mark-rev t-until-cxx11">(Đã xóa trong C ++ 11)</span> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">danh sách tham số</span> </td> <td>-</td> <td>một danh sách không phân tách dấu phẩy không có trống của<a href="template_parameters" title="cpp/language/template parameters">template parameters</a>, mỗi trong số đó là<a href="template_parameters#Non-type_template_parameter" title="cpp/language/template parameters">non-type parameter</a>có thể đại diện cho các phân số của ve.<a href="template_parameters#Type_template_parameter" title="cpp/language/template parameters">type parameter</a>có thể đại diện cho các phân số của ve.<a href="template_parameters#Template_template_parameter" title="cpp/language/template parameters">template parameter</a><span class="t-rev-inl t-since-cxx11"><span>được đặt ở chế độ mở của gói<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>của bất kỳ ai trong số đó</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.<span class="t-rev-inl t-since-cxx20"><span>Như với bất kỳ mẫu nào, các tham số có thể<a href="template_parameters#Constrained_template_parameter" title="cpp/language/template parameters">constrained</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Giải khai chức năng</span> </td> <td>-</td> <td>Một<a href="function" title="cpp/language/function">function declaration</a>. Tên chức năng được khai báo trở thành một tên mẫu.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">// Hai tuyên bố sau đây có các ràng buộc khác nhau:</span> </td> <td>-</td> <td>Một<a href="constraints" title="cpp/language/constraints">constraint expression</a>trong đó hạn chế các tham số mẫu được chấp nhận bởi mẫu chức năng này</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Giải khai về chức năng-<br/>với các chủ sở hữu</span> </td> <td>-</td> <td>Một<a href="function" title="cpp/language/function">function declaration</a>trong đó loại ít nhất một tham số sử dụng trình giữ chỗ<a href="auto" title="cpp/language/auto">auto</a>hoặc<a href="../concepts" title="cpp/concepts">Concept auto</a>: Danh sách tham số mẫu sẽ có một tham số được phát minh cho từng trình giữ chỗ (xem các mẫu chức năng viết tắt bên dưới)</td>
+</tr>
+</table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p><code>export</code>là một công cụ sửa đổi tùy chọn đã khai báo mẫu là<i>xuất khẩu</i>(Khi được sử dụng với một mẫu lớp, nó cũng đã khai báo tất cả các thành viên của mình). Các tệp mà các mẫu xuất khởi tạo không cần phải bao gồm các định nghĩa của chúng: Tuyên bố là đủ. Triển khai của<code>export</code>rất hiếm và không đồng ý với nhau về chi tiết.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <h3 id="Abbreviated_function_template">Mẫu chức năng viết tắt</h3> <p>Khi các loại trình giữ chỗ (một trong hai<a href="auto" title="cpp/language/auto">auto</a>hoặc<a href="../concepts" title="cpp/concepts">Concept auto</a>) Xuất hiện trong danh sách tham số của khai báo chức năng hoặc của khai báo mẫu chức năng, khai báo khai báo một mẫu chức năng và một tham số mẫu được phát minh cho mỗi trình giữ chỗ được thêm vào danh sách tham số mẫu:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void f1 (tự động); // Tương tự như mẫu &lt;class T&gt; void f1 (t)</pre></div> <p>void F2 (tự động C1); // Tương tự như mẫu &lt;c1 t&gt; void f2 (t), nếu c1 là một khái niệm</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void F3 (C2 Auto ...); // Tương tự như mẫu &lt;c2 ... ts&gt; void f3 (ts ...), nếu c2 là một khái niệm</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Function_template_instantiation">void F4 (const C3 Auto*, C4 Auto &amp;); // Tương tự như mẫu &lt;c3 t, c4 u&gt; void f4 (const t*, u &amp;);</h3> <p> </p>
+<h4 id="Explicit_instantiation">Khởi tạo rõ ràng</h4> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>template</code> <span class="t-spar">kiểu trả lại</span> <span class="t-spar">tên</span> <code>&lt;</code> <span class="t-spar">Danh sách lập luận</span> <code>&gt;</code> <code>(</code> <span class="t-spar">danh sách tham số</span> <code>)</code> <code>;</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>template</code> <span class="t-spar">kiểu trả lại</span> <span class="t-spar">tên</span> <code>(</code> <span class="t-spar">danh sách tham số</span> <code>)</code> <code>;</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>extern</code> <code>template</code> <span class="t-spar">kiểu trả lại</span> <span class="t-spar">tên</span> <code>&lt;</code> <span class="t-spar">Danh sách lập luận</span> <code>&gt;</code> <code>(</code> <span class="t-spar">danh sách tham số</span> <code>)</code> <code>;</code> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>extern</code> <code>template</code> <span class="t-spar">kiểu trả lại</span> <span class="t-spar">tên</span> <code>(</code> <span class="t-spar">danh sách tham số</span> <code>)</code> <code>;</code> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;class t, c u&gt;<a href="template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>void g (t x, u y, c tự động z); // Tương tự như mẫu &lt;Lớp T, C U, C W&gt; void G (T x, U Y, W Z);</div> <div class="t-li1">
+<span class="t-li">2)</span>Các mẫu chức năng viết tắt có thể được chuyên dụng như tất cả các mẫu chức năng.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;&gt;</div> <div class="t-li1">
+<span class="t-li">là trong</span>void f4 &lt;Int&gt; (const int*, const double &amp;); // Chuyên môn hóa F4 &lt;int, const Double&gt;</div> <p>Chức năng Mẫu khởi tạo</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Bản thân một mẫu chức năng không phải là một loại, hoặc một hàm, hoặc bất kỳ thực thể nào khác. Không có mã nào được tạo từ một tệp nguồn chỉ chứa các định nghĩa mẫu. Để bất kỳ mã nào xuất hiện, một mẫu phải được khởi tạo: các đối số mẫu phải được xác định để trình biên dịch có thể tạo chức năng thực tế (hoặc lớp, từ một mẫu lớp).</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Định nghĩa khởi tạo rõ ràng (không có<a href="template_argument_deduction" title="cpp/language/template argument deduction">deduced</a>Nếu mọi tham số mẫu không mặc định được chỉ định rõ ràng)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Định nghĩa khởi tạo rõ ràng với suy luận đối số mẫu cho tất cả các tham số</pre></div> <p>Tuyên bố khởi tạo rõ ràng (không có suy luận đối số mẫu nếu mọi tham số mẫu không mặc định được chỉ định rõ ràng)<code>inline</code>hoặc<code>constexpr</code>Tuyên bố khởi tạo rõ ràng với suy luận đối số mẫu cho tất cả các tham số</p>
+<p>Từ tham số chức năng:<a href="constructor" title="cpp/language/constructor">constructor</a>Một tuyên bố khởi tạo rõ ràng (một mẫu bên ngoài) ngăn chặn các khởi tạo ngầm: mã sẽ gây ra một khởi tạo ngầm phải sử dụng định nghĩa khởi tạo rõ ràng được cung cấp ở một nơi khác trong chương trình.<span class="t-v">(1)</span>Một đối số mẫu có thể được xác định không xác định rõ ràng về chuyên môn hóa mẫu chức năng hoặc của một mẫu chức năng thành viên chuyên môn hóa nếu nó có thể là<span class="t-v">(2)</span>).</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Từ tham số chức năng:<a href="destructor#Prospective_destructor" title="cpp/language/destructor">prospective destructor</a>Mẫu &lt;Typename T&gt;</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>khoảng trống f (t s)<a href="inline" title="cpp/language/inline">inline</a>{<a href="auto" title="cpp/language/auto">auto</a>    std :: cout &lt;&lt; s &lt;&lt; '\ n';</p>
+<p>}<a href="default_arguments" title="cpp/language/default arguments">default arguments</a> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">mẫu void f &lt;double&gt; (double); // Instantiates f &lt;double&gt; (Double)</pre></div> <h4 id="Implicit_instantiation">// lớp mẫu y &lt;int&gt;; // Lỗi: khởi tạo rõ ràng bên ngoài</h4> <p>mẫu void f &lt;&gt; (char);         // Instantiates f &lt;par&gt; (char), đối số mẫu được suy luận<a href="definition#ODR-use" title="cpp/language/definition">the function definition to exist</a><span class="t-rev-inl t-since-cxx11"><span>mẫu void f (int);            // Instantiates f &lt;int&gt; (int), đối số mẫu được suy luận</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Khởi tạo rõ ràng của một mẫu chức năng hoặc của hàm thành viên của mẫu lớp không thể sử dụng<a href="template_argument_deduction" title="cpp/language/template argument deduction">deduced</a>. Nếu tuyên bố của việc khởi tạo rõ ràng sẽ đặt tên cho một chức năng thành viên đặc biệt được tuyên bố ngầm, chương trình sẽ không được hình thành.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Khởi tạo rõ ràng của một</pre></div> </div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Không thể sử dụng danh sách tham số mẫu (cú pháp<a href="constant_expression#Functions_and_variables_needed_for_constant_evaluation" title="cpp/language/constant expression">needed for constant evaluation</a>), điều này cũng không bao giờ cần thiết vì chúng có thể được suy luận (cú pháp</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Khởi tạo rõ ràng của một</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Phải đặt tên cho bộ hủy đã chọn của lớp.<code>&lt;&gt;</code>Các tuyên bố khởi tạo rõ ràng không ngăn chặn sự khởi tạo ngầm của<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>chức năng,</p>
+<h3 id="Template_argument_deduction">Khấu trừ tranh luận mẫu</h3> <p>-Declarations, tài liệu tham khảo và chuyên ngành mẫu lớp. .</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Định nghĩa khởi tạo rõ ràng của một mẫu chức năng với</pre></div> <p>không phải là việc sử dụng các đối số và không cố gắng khởi tạo chúng:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">char* p = 0;</pre></div> <p> <a href="lookup" title="cpp/language/lookup">name lookup</a>Mẫu &lt;Class T&gt;<a href="adl" title="cpp/language/adl">argument-dependent lookup</a>T g (t x = &amp; p) {return x; }<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>.</p>
+<p>(Raco).<a href="template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a> </p>
+<h3 id="Explicit_template_arguments"> </h3> <p>mẫu int g &lt;int&gt; (int); // OK mặc dù &amp; P không phải là một int.</p>
+<ul>
+<li>Khi mã đề cập đến một hàm trong ngữ cảnh yêu cầu</li>
+<li>, hoặc nếu sự tồn tại của định nghĩa ảnh hưởng đến ngữ nghĩa của chương trình</li>
+<li>và chức năng đặc biệt này đã không được khởi tạo rõ ràng, việc khởi tạo ngầm xảy ra. Danh sách các đối số mẫu không phải được cung cấp nếu nó có thể</li>
+<ul>
+<li>từ bối cảnh.</li>
+<li>#include &lt;Istream&gt;</li>
+<li> </li>
+<li>Mẫu &lt;Typename T&gt;</li>
+<li>khoảng trống f (t s)</li>
+<li>{</li>
+<li>    std :: cout &lt;&lt; s &lt;&lt; '\ n';</li>
+</ul>
+</ul> <p>}<a href="operators" title="cpp/language/operators">overloaded operators</a>Thì<a href="cast_operator" title="cpp/language/cast operator">conversion functions</a> </p>
+<p>int main ()<span class="t-rev-inl t-since-cxx11"><span>{</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<p>    f &lt;double&gt; (1); // Instantiates và gọi f &lt;double&gt; (double)<a href="template_parameters#Template_non-type_arguments" title="cpp/language/template parameters">convertible to them</a>.</p>
+<p>    f &lt;&gt; ('a');     // Instantiates và gọi f &lt;par&gt; (char)<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>).</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>    f (7);         // Instantiates và gọi F &lt;Int&gt; (int)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    void (*pf) (std :: chuỗi) = f; // instantiates f &lt;chuỗi&gt; (chuỗi)</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Template_argument_substitution">    pf ("");                     // gọi f &lt;chuỗi&gt; (chuỗi)</h3> <p>}</p>
+<p>Sự tồn tại của một định nghĩa về hàm được coi là ảnh hưởng đến ngữ nghĩa của chương trình nếu hàm là<a href="overload_resolution" title="cpp/language/overload resolution">overload set</a>Bằng một biểu thức, ngay cả khi đánh giá không đổi của biểu thức là không bắt buộc hoặc nếu đánh giá biểu thức không đổi không sử dụng định nghĩa.<a href="sfinae" title="cpp/language/sfinae">SFINAE</a> </p>
+<p>Mẫu &lt;Typename T&gt;<a href="function#Function_declaration" title="cpp/language/function">function declaration</a>).</p>
+<p>ConstExpr int f () {return t :: value; }</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h3 id="Function_template_overloading">Mẫu &lt;bool b, typename t&gt;</h3> <p>void g (declType (b? f &lt;t&gt; (): 0));</p>
+<p>Mẫu &lt;bool b, typename t&gt;</p>
+<p>void g (...);</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Mẫu &lt;bool b, typename t&gt;<i>tương đương</i>void H (declType (int {b? f &lt;t&gt; (): 0}));<a href="definition#One_Definition_Rule" title="cpp/language/definition">ODR</a>Mẫu &lt;bool b, typename t&gt;<span class="t-rev-inl t-since-cxx20"><span>Hai<a href="lambda" title="cpp/language/lambda">lambda expressions</a>void H (...);</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span></p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>void x ()<a href="dependent_name" title="cpp/language/dependent name">dependent expressions</a>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    g &lt;false, int&gt; (0); // OK: B? f &lt;t&gt; (): 0 không có khả năng được đánh giá không đổi</pre></div> <p>#include &lt;Istream&gt;<i>tương đương</i>nếu như</p>
+<ul>
+<li>                      // và danh sách bắt đầu của int từ int không thể thu hẹp</li>
+<li>}</li>
+<li>Lưu ý: Bỏ qua<i>tương đương</i>hoàn toàn cho phép</li>
+<ul><li>Để kiểm tra cả quá tải mẫu và không theo mẫu.</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Để khởi tạo một mẫu chức năng, mọi đối số mẫu phải được biết, nhưng không phải mọi đối số mẫu phải được chỉ định. Khi có thể, trình biên dịch sẽ suy ra các đối số mẫu bị thiếu từ các đối số chức năng. Điều này xảy ra khi một cuộc gọi chức năng được thử và khi một địa chỉ của một mẫu chức năng được lấy.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>Mẫu &lt;typename to, typename từ&gt;</li>
+<li>Để chuyển đổi (từ f);</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul><li>void G (Double D) <i>tương đương</i> </li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul>
+<li>{</li>
+<li>    int i = Chuyển đổi &lt;Int&gt; (d);    // Gọi chuyển đổi &lt;int, double&gt; (double)</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Hai<span class="t-rev-inl t-since-cxx20"><span><a href="expressions#Potentially-evaluated_expressions" title="cpp/language/expressions">potentially-evaluated</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>    char c = chuyển đổi &lt;par&gt; (d);  // Gọi chuyển đổi &lt;char, double&gt; (double)<i>Khấu trừ đối số mẫu diễn ra sau mẫu chức năng</i>}<i>tương đương</i>Cơ chế này cho phép sử dụng các toán tử mẫu, vì không có cú pháp để chỉ định các đối số mẫu cho toán tử khác ngoài việc viết lại nó như một biểu thức cuộc gọi chức năng.</p>
+<p>#include &lt;Istream&gt;<i>Khấu trừ đối số mẫu diễn ra sau mẫu chức năng</i>int main () <i>tương đương</i>{<i>Khấu trừ đối số mẫu diễn ra sau mẫu chức năng</i>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>    // toán tử &lt;&lt; được tra cứu qua ADL dưới dạng std :: toán tử &lt;&lt;,<i>Khấu trừ đối số mẫu diễn ra sau mẫu chức năng</i>Constexpr Iterator chèn (const_iterator pos,<i>tương đương</i>    // std :: endl được suy luận cho &amp; std :: endl &lt;char, std :: char_traits &lt;char &gt;&gt;</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>}<i>Khấu trừ đối số mẫu diễn ra sau mẫu chức năng</i>Constexpr Iterator chèn (const_iterator pos,<i>tương đương</i>(có thể liên quan</p>
+<div class="cpp source-cpp"><pre data-language="cpp">) và trước</pre></div> <p>Đối số mẫu rõ ràng<a href="template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.<i>Đối số mẫu của mẫu chức năng có thể được lấy từ</i>Khấu trừ tranh luận mẫu</p>
+<p>Đối số mẫu mặc định</p>
+<div class="t-li1">
+<span class="t-li">1)</span> <a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>được chỉ định rõ ràng, có thể được thực hiện trong các bối cảnh sau:<div class="cpp source-cpp"><pre data-language="cpp">Trong một biểu thức cuộc gọi chức năng</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Khi một địa chỉ của một hàm được thực hiện<a href="overloaded_address" title="cpp/language/overloaded address">address of a function template specialization</a>Khi một tham chiếu đến chức năng được khởi tạo<div class="cpp source-cpp"><pre data-language="cpp">Khi hàm con trỏ tới thành viên được hình thành</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Trong một tuyên bố của một người bạn<a href="../memory/new/operator_delete" title="cpp/memory/new/operator delete">placement operator delete</a>Trong một khởi tạo rõ ràng</div> <div class="t-li1">
+<span class="t-li">là trong</span>Trong một tuyên bố của một người bạn<a href="friend#Template_friends" title="cpp/language/friend">friend function declaration</a>, đầu vào được coi là mã hóa rộng bản địa (do đó không có sự chuyển đổi nào diễn ra trên Windows).<a href="function_template#Explicit_instantiation" title="cpp/language/function template">explicit instantiation</a>};<a href="template_specialization" title="cpp/language/template specialization">explicit specialization</a>Không có cách nào để chỉ định rõ ràng các đối số mẫu cho<div class="cpp source-cpp"><pre data-language="cpp">và các hàm tạo, bởi vì chúng được gọi mà không sử dụng tên hàm.</pre></div>
+</div> <p>Các đối số mẫu được chỉ định phải khớp với các tham số mẫu bằng loại (nghĩa là, loại cho loại, không loại cho không kiểu và mẫu cho mẫu). Không thể có nhiều đối số hơn các tham số</p>
+<p>(Trừ khi một tham số là gói tham số, trong trường hợp đó phải có một đối số cho mỗi tham số không gói)</p>
+<ul>
+<li>Các đối số không thuộc loại được chỉ định phải khớp với các loại của các tham số mẫu không kiểu tương ứng hoặc BE hoặc BE<span class="t-rev-inl t-since-cxx11"><span>Các tham số chức năng không tham gia vào suy luận đối số mẫu (ví dụ: nếu các đối số mẫu tương ứng được chỉ định rõ ràng) có thể được chuyển đổi ẩn sang loại tham số hàm tương ứng (như trong thông thường</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Một gói tham số mẫu được chỉ định rõ ràng có thể được mở rộng bằng cách khấu trừ đối số mẫu nếu có các đối số bổ sung:</li>
+<li>Mẫu &lt;class ... loại&gt;<code>A</code>void f (loại ... giá trị);<i>không ngụ ý rằng</i> <span class="t-rev-inl t-since-cxx11"><span>Và<i>Tham khảo</i>void g ()</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>{<i>không ngụ ý rằng</i> <code>A&amp;</code><span class="t-rev-inl t-since-cxx11"><span>các biểu thức là các hoạt động của<i>Tham khảo</i>khoảng cách<code>&amp;&amp;</code>, hoặc<i>Tham khảo</i>    f &lt;int*, float*&gt; (0, 0, 0); // loại = {int*, float*, int}<i>không ngụ ý rằng</i> <code>A&amp;&amp;</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>}</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Thay thế đối số mẫu</pre></div> <p>Khi tất cả các đối số mẫu đã được chỉ định, suy ra hoặc thu được từ các đối số mẫu mặc định, mọi việc sử dụng tham số mẫu trong danh sách tham số chức năng được thay thế bằng các đối số mẫu tương ứng.<a href="template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>Thất bại thay thế (nghĩa là không thay thế các tham số mẫu bằng các đối số mẫu được suy ra hoặc được cung cấp) của một mẫu chức năng sẽ loại bỏ mẫu chức năng khỏi</p>
+<p>. Điều này cho phép một số cách để thao tác các bộ quá tải bằng cách sử dụng metaproming mẫu: xem</p>
+<ul>
+<li>Sau khi thay thế, tất cả các tham số hàm của mảng và loại chức năng được điều chỉnh theo con trỏ và tất cả các trình điều chỉnh CV cấp cao nhất được loại bỏ khỏi các tham số chức năng (như trong một thông thường<span class="t-rev-inl t-since-cxx11"><span>Việc loại bỏ các trình điều chỉnh CV cấp cao nhất không ảnh hưởng đến loại tham số khi nó xuất hiện trong hàm:</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Mẫu &lt;Class T&gt;</li>
+<li>void f (t t);</li>
+<li> </li>
+</ul> <p>Mẫu &lt;Lớp X&gt;<code>P</code>void g (const x x);<code>A</code> </p>
+<ul>
+<li>Nếu chỉ khi mọi yếu tố trong phạm vi<code>P</code>Và<code>A</code>Mẫu &lt;Class Z&gt;</li>
+<li>Nếu như<code>P</code> </li>
+<li>Nếu như<code>A</code> </li>
+<li>Nếu như<code>P</code>f &lt;Int&gt; (1);       // loại chức năng là void (int), t là int<code>P</code>f &lt;const int&gt; (1); // loại chức năng là void (int), t là const int</li>
+<li>Nếu như<code>A</code>f &lt;Int&gt; (1);       // loại chức năng là void (int), t là int<code>A</code>f &lt;const int&gt; (1); // loại chức năng là void (int), t là const int</li>
+</ul> <p> <code>P</code>từ<code>A</code>// Hai chức năng khác nhau có cùng loại và cùng một x<a href="template_argument_deduction#Deduction_from_a_type" title="cpp/language/template argument deduction">template argument deduction from a type</a>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Nếu như<code>P</code>// (Con trỏ hai chức năng này không bằng nhau,<code>A</code>// và thống kê chức năng địa phương sẽ có các địa chỉ khác nhau)<code>P</code>G &lt;Int&gt; (1);       // loại chức năng là void (int), x là const int</p>
+<p>Nếu như<code>A</code>g &lt;const int&gt; (1); // loại chức năng là void (int), x là const int</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p> <code>A</code>// Chỉ các bộ chế độ CV cấp cao nhất mới bị loại bỏ:<code>P</code>H &lt;const int&gt; (1, null); // Loại chức năng là void (int, const int*) <code>A</code>                       // z là const int, zp là const int*<code>P</code>Quá tải mẫu chức năng<code>P/A</code>Mẫu &lt;int i, int j&gt;</p>
+<p>Một hàm không phải bảng chữ cái luôn khác biệt với một chuyên môn mẫu với cùng loại. Các chuyên ngành của các mẫu chức năng khác nhau luôn khác biệt với nhau ngay cả khi chúng có cùng loại. Hai mẫu chức năng có cùng loại trả về và cùng một danh sách tham số là khác biệt và có thể được phân biệt với danh sách đối số mẫu rõ ràng.<code>P</code>Và<code>A</code>Khi một biểu thức sử dụng các tham số mẫu loại hoặc không kiểu xuất hiện trong danh sách tham số chức năng hoặc trong loại trả về, biểu thức đó vẫn là một phần của chữ ký mẫu chức năng cho mục đích quá tải:</p>
+<ul>
+<li>Nếu như<code>A</code>Mẫu &lt;int i, int j&gt;<code>P</code>A &lt;i+j&gt; f (a &lt;i&gt;, a &lt;j&gt;); // Quá tải #1<code>A</code>A &lt;k+l&gt; f (a &lt;h&gt;, a &lt;c&gt;); // Tương tự như #1<code>P</code> </li>
+<li>Nếu như<code>A</code>Mẫu &lt;int k, int l&gt;<code>P</code>Thì<code>A</code>A &lt;k+l&gt; f (a &lt;h&gt;, a &lt;c&gt;); // Tương tự như #1<code>P</code> </li>
+</ul> <p> <code>P/A</code>Mẫu &lt;int i, int j&gt;</p>
+<p>A &lt;i-j&gt; f (a &lt;i&gt;, a &lt;j&gt;); // Quá tải #2<code>P</code>Và<code>A</code>Hai biểu thức liên quan đến các tham số mẫu được gọi</p>
+<ul>
+<li>Nếu hai định nghĩa hàm chứa các biểu thức này sẽ giống nhau</li>
+<li>, nghĩa là, hai biểu thức chứa cùng một chuỗi mã thông báo có tên được giải quyết thành cùng một thực thể thông qua Tra cứu tên, ngoại trừ các tham số mẫu có thể được đặt tên khác nhau.</li>
+<li>không bao giờ tương đương.</li>
+</ul> <p>Mẫu &lt;int i, int j&gt;</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>void f (a &lt;i+j&gt;); // Mẫu quá tải #1</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p> </p>
+<p>Mẫu &lt;int k, int l&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void f (a &lt;k+l&gt;); // tương đương với #1</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">Khi xác định xem hai</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">là tương đương, chỉ có các tên phụ thuộc liên quan được xem xét, không phải là kết quả của việc tra cứu tên. Nếu nhiều khai báo của cùng một mẫu khác nhau về kết quả tra cứu tên, thì tuyên bố đầu tiên như vậy được sử dụng:</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> <p>DeclType (g (t ())) h (); // DeclType (g (t ())) là loại phụ thuộc<span class="t-rev-inl t-since-cxx11"><span> </span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>int g (int);</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">DeclType (g (t ())) h ()</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">{// Redeclaration of H () sử dụng tra cứu trước đó</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">    trả lại g (t ()); // mặc dù việc tra cứu ở đây không tìm thấy g (int)</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <div class="cpp source-cpp"><pre data-language="cpp">int i = h &lt;int&gt; (); // Thay thế đối số mẫu thất bại; g (int)</pre></div> <p>                  // không ở trong phạm vi tại Tuyên bố đầu tiên của H ()</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Hai mẫu chức năng được xem xét</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Chúng được tuyên bố trong cùng một phạm vi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Họ có cùng tên</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Họ có</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Danh sách tham số mẫu, có nghĩa là các danh sách có cùng độ dài và đối với mỗi cặp tham số tương ứng, tất cả những điều sau đây đều đúng:</pre></div> <h3 id="Function_overloads_vs_function_specializations">Hai tham số có cùng loại (cả hai loại, cả hai loại hoặc cả hai mẫu)</h3> <p>Chúng là cả hai gói tham số hoặc không</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Nếu không thuộc loại, các loại của chúng tương đương,</pre></div> <p>Nếu mẫu, các tham số mẫu của chúng tương đương,</p>
+<div style="margin-left:0px"> <table class="mw-collapsible mw-collapsed"> <tr> <th>, không còn là một phần của cây phụ thuộc.</th>
+</tr> <tr> <td> <p>Nếu một người được tuyên bố với tên khái niệm, cả hai đều là, và tên khái niệm tương đương.<code>(f)(t)</code>Các biểu thức liên quan đến các tham số mẫu trong các loại trả về và danh sách tham số của chúng là<a href="adl" title="cpp/language/adl">ADL</a>Các biểu thức trong các yêu cầu của chúng theo các danh sách tham số mẫu, nếu có, là tương đương</p>
+<ul><li>Các biểu thức trong các yêu cầu của chúng theo các trình khai chức hàm, nếu có, là tương đương<code>f()</code>Biểu thức liên quan đến các tham số mẫu được gọi<i>về mặt chức năng tương đương</i>Nếu họ không<code>g()</code>.</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">, nhưng đối với bất kỳ tập hợp các đối số mẫu nhất định, việc đánh giá hai biểu thức dẫn đến cùng một giá trị.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> <ul><li>// tương đương</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Nếu họ là</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">về mặt chức năng tương đương</pre></div> <ul><li>về mặt chức năng tương đương</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Ngoài ra, hai mẫu chức năng là</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">void f (a &lt;i&gt;, a &lt;i+10&gt;); // Quá tải #1</pre></div> <ul><li>Nếu các ràng buộc của chúng được chỉ định khác nhau, nhưng họ chấp nhận và được thỏa mãn bởi cùng một tập hợp các danh sách đối số mẫu.</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Nếu một chương trình chứa các khai báo của các mẫu chức năng</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">về mặt chức năng tương đương</pre></div> <p><br/>, chương trình là xấu; Không cần chẩn đoán.<code>f(t)</code>).</p>
+<ul><li>// tương đương</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;int i&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> <ul><li>Mẫu &lt;int i&gt;</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">void f (a &lt;i&gt;, a &lt;i+10&gt;); // REDECLISION OF OVLOAD #1</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> <ul><li>// không tương đương</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;int i&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">void f (a &lt;i&gt;, a &lt;i+10&gt;); // Quá tải #1</pre></div> <p><br/>Mẫu &lt;int i&gt;</p>
+</td>
+</tr>
+</table>
+</div> <p>void f (A &lt;i&gt;, A &lt;i+11&gt;); // Quá tải #2<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>.</p>
+<h3 id="Function_template_specialization"> </h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/214.html" rel="nofollow">CWG 214</a> </td> <td>C ++ 98</td> <td>// tương đương về chức năng nhưng không tương đương</td> <td>Mẫu &lt;int i&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/532.html" rel="nofollow">CWG 532</a> </td> <td>C ++ 98</td> <td>Mẫu &lt;int i&gt;<br/>void f (a &lt;i&gt;, a &lt;i+10&gt;);      // Quá tải #1</td> <td>Mẫu &lt;int i&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/581.html" rel="nofollow">CWG 581</a> </td> <td>C ++ 98</td> <td>void f (a &lt;i&gt;, a &lt;i+1+2+3+4&gt;); // tương đương về mặt chức năng<br/>Khi cùng một mẫu chức năng chức năng phù hợp với nhiều hơn một mẫu chức năng quá tải (điều này thường là kết quả của</td> <td>thứ tự một phần của các mẫu chức năng quá tải</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1321.html" rel="nofollow">CWG 1321</a> </td> <td>C ++ 98</td> <td>được thực hiện để chọn phù hợp nhất.<br/>Cụ thể, đặt hàng một phần diễn ra trong các tình huống sau:</td> <td>Đối với một cuộc gọi đến một chuyên môn về mẫu chức năng:<br/>Mẫu &lt;Lớp X&gt;<br/>void f (x a);</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1395.html" rel="nofollow">CWG 1395</a> </td> <td>C ++ 11</td> <td>Mẫu &lt;Lớp X&gt;<br/>void f (x* a);</td> <td> <br/>int* p;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1406.html" rel="nofollow">CWG 1406</a> </td> <td>C ++ 11</td> <td>f (p);<br/>Khi<br/>được thực hiện:</td> <td>Mẫu &lt;Lớp X&gt;<br/>void f (x a);<br/>Mẫu &lt;Lớp X&gt;<code>&amp;&amp;</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1446.html" rel="nofollow">CWG 1446</a> </td> <td>C ++ 11</td> <td>void f (x* a);<br/> <br/>void (*p) (int*) = &amp; f;<br/>Khi a</td> <td>Đó là một chuyên môn về mẫu chức năng được chọn để phù hợp với toán tử vị trí Mới:<br/>Tài liệu tham khảo rvalue<br/>Khi a</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2373.html" rel="nofollow">CWG 2373</a> </td> <td>C ++ 98</td> <td>Đề cập đến một chuyên môn mẫu chức năng:<br/>Mẫu &lt;Lớp X&gt;</td> <td>void f (x a);  // Mẫu đầu tiên f</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="class_template" title="cpp/language/class template">class template</a> </li>
+<li> <a href="function" title="cpp/language/function">function declaration</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/function_template">https://en.cppreference.com/w/cpp/language/function_template</a>
+</p>
+</div>

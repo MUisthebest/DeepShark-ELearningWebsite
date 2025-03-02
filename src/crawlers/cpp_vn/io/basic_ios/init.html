@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ios &lt;biểu đồ, đặc điểm&gt; :: init</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>void init (std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* sb);<code>sb</code>Đặt bộ đệm luồng liên kết thành</p>
+<p>và khởi tạo trạng thái nội bộ.</p>
+<table class="wikitable"> <tr> <th>Yếu tố</th> <th>vĩ mô</th>
+</tr> <tr> <td> <code><a href="rdbuf" title="cpp/io/basic ios/rdbuf">rdbuf()</a></code> </td> <td> <code>sb</code> </td>
+</tr> <tr> <td> <code><a href="tie" title="cpp/io/basic ios/tie">tie()</a></code> </td> <td>Các điều kiện hậu như sau:</td>
+</tr> <tr> <td> <code><a href="rdstate" title="cpp/io/basic ios/rdstate">rdstate()</a></code> </td> <td> <code>goodbit</code>nếu như<code>sb</code>con trỏ null<code>badbit</code> </td>
+</tr> <tr> <td> <code><a href="exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code> </td> <td> <code>goodbit</code> </td>
+</tr> <tr> <td> <a href="../ios_base/flags" title="cpp/io/ios base/flags"><code>flags()</code></a> </td> <td> <code>skipws | dec</code> </td>
+</tr> <tr> <td> <a href="../ios_base/width" title="cpp/io/ios base/width"><code>width()</code></a> </td> <td> <code>​0​</code> </td>
+</tr> <tr> <td> <a href="../ios_base/precision" title="cpp/io/ios base/precision"><code>precision()</code></a> </td> <td> <code>6</code> </td>
+</tr> <tr> <td> <code><a href="fill" title="cpp/io/basic ios/fill">fill()</a></code> </td> <td> <code>widen(' ')</code> </td>
+</tr> <tr> <td> <a href="../ios_base/getloc" title="cpp/io/ios base/getloc"><code>getloc()</code></a> </td> <td>không phải là một con trỏ null, nếu không<code><a href="http://en.cppreference.com/w/cpp/locale/locale"><span class="kw1898">Điều đó cho tất cả<span class="me2">địa phương</span></span></a><span class="br0">.</span><span class="br0">)</span></code> </td>
+</tr>
+</table> <p>một bản sao của giá trị được trả về bởi<code><a href="../basic_istream" title="cpp/io/basic istream">std::basic_istream</a></code>Và<code><a href="../basic_ostream" title="cpp/io/basic ostream">std::basic_ostream</a></code>Hàm thành viên này được bảo vệ: nó được gọi bởi các hàm tạo của các lớp luồng dẫn xuất<code><a href="../basic_ios" title="cpp/io/basic ios">std::basic_ios</a></code>Khi bộ đệm luồng liên quan được biết đến. Cho đến khi chức năng này được gọi, mọi hàm thành viên (bao gồm cả bộ hủy)<code>basic_ios</code>gọi hành vi không xác định. Lưu ý rằng</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ở cấp độ thấp, lớp học về cơ bản kết thúc việc triển khai thiết bị thô của</td> <td>-</td> <td>Chất xây dựng bản sao là</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="basic_ios" title="cpp/io/basic ios/basic ios"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>    : STD công khai :: iOS_Base<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ios/init">https://en.cppreference.com/w/cpp/io/basic_ios/init</a>
+</p>
+</div>

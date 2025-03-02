@@ -1,0 +1,34 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: in_out_out_result</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../../header/algorithm" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Lớp I, Lớp O1, Lớp O2&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p><code>ranges::in_out_out_result</code>Cấu trúc in_in_out_result;</p>
+<p>là một mẫu lớp cung cấp một cách để lưu trữ một trình lặp và cờ boolean như một đơn vị.<a href="../../../language/structured_binding" title="cpp/language/structured binding">structured bindings</a>.</p>
+<p>Mẫu lớp này không có lớp cơ sở hoặc thành viên được khai báo ngoài các lớp được hiển thị bên dưới. Do đó, nó phù hợp để sử dụng với<a href="../../../language/aggregate_initialization" title="cpp/language/aggregate initialization">aggregate classes</a>Tất cả các chức năng thành viên đặc biệt của mẫu lớp này được khai báo ngầm, điều này làm cho các chuyên ngành</p>
+<h3 id="Template_parameters">là không xác định.</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Cấu trúc in_out_out_result;</td> <td>-</td> <td>I, O1, O2<code>ranges::in_out_out_result</code>loại vòng lặp mà</td>
+</tr>
+</table> <h3 id="Data_members">cửa hàng.</h3> <div class="t-member"> <h2 id="std::ranges::in_out_out_result::in">các loại đối tượng mà</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: phạm vi :: in_found_result :: in</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>[[no_unique_address]] tôi trong;</p>
+</div> <div class="t-member"> <h2 id="std::ranges::in_out_out_result::out1">std :: phạm vi :: in_out_out_result :: in</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: phạm vi :: in_out_out_result :: out1</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>[[no_unique_address]] tôi trong;</p>
+</div> <div class="t-member"> <h2 id="std::ranges::in_out_out_result::out2">[[no_unique_address]] o1 out1;</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: phạm vi :: in_out_out_result :: out2</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>[[no_unique_address]] tôi trong;</p>
+</div> <h3 id="Member_functions">nếu không thì</h3> <div class="t-member"> <h2 id="std::ranges::in_out_out_result::operator_in_out_out_result.3CII.2C_OO1.2C_OO2.3E">[[no_unique_address]] o2 out2;</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">std :: phạm vi :: in_out_out_result :: toán tử in_out_out_result &lt;ii, OO1, OO2&gt;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;Lớp II, Lớp OO1, Lớp OO2&gt;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Yêu cầu STD :: Convertible_to &lt;Const I &amp;, I2&gt;<code>*this</code>Toán tử constexpr in_found_result &lt;i2&gt; () const &amp;;<code>*this</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;class inputit1, class inputit2,<code>return {in, out1, out2};</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;class inputit1, class inputit2,<code>return {std::move(in), std::move(out1), std::move(out2)};</code>.</div>
+</div> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>Yêu cầu std :: mui trần_to &lt;i, i2&gt;<code>ranges::in_out_out_result</code>Toán tử constexpr in_found_result &lt;I2&gt; () &amp;&amp;;</p>
+<table class="t-dsc-begin"> <tr> <td colspan="2"> <h5 id="Algorithm_functions">Chuyển đổi</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../partition_copy" title="cpp/algorithm/ranges/partition copy"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <h3 id="Synopsis">kết quả bằng cách xây dựng mọi thành viên dữ liệu của kết quả từ thành viên tương ứng của</h3> <div class="cpp source-cpp"><pre data-language="cpp">Yêu cầu STD :: Convertible_to &lt;Const I &amp;, ii&gt; &amp;&amp;</pre></div> <h3 id="Notes">Ghi chú</h3> <p>Các chức năng thư viện tiêu chuẩn sau đây sử dụng<a href="../../../language/type_alias" title="cpp/language/type alias">alias type</a>, ví dụ.<code>using merge_result = in_in_out_result&lt;I1, I2, O&gt;;</code>.</p>
+<p>như loại trả lại:<i><code>_result</code></i>Hàm thuật toán<code>std::ranges::merge</code>Tóm tắt<code>std::ranges::merge_result</code>.</p>
+<p>Không gian tên std :: Phạm vi<code><a href="../../../utility/pair" title="cpp/utility/pair">std::pair</a></code>Và<code><a href="../../../utility/tuple" title="cpp/utility/tuple">std::tuple</a></code>{</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">         STD :: Convertible_to &lt;Const O1 &amp;, OO1&gt; &amp;&amp;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">         std :: mui trần_to &lt;const o2 &amp;, oo2&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../../utility/pair" title="cpp/utility/pair"> <span class="t-lines"><span>đôi</span></span></a></div> </td> <td>thực hiện tuple nhị phân, tức là một cặp giá trị<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../../utility/tuple" title="cpp/utility/tuple"> <span class="t-lines"><span>Tuple</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>thực hiện thùng chứa kích thước cố định, chứa các yếu tố có thể khác nhau<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/ranges/return_types/in_out_out_result">https://en.cppreference.com/w/cpp/algorithm/ranges/return_types/in_out_out_result</a>
+</p>
+</div>

@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: zip_transform_view &lt;f, chế độ xem ...&gt; :: zip_transform_view</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">zip_transform_view () = mặc định;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">constexpr zip_transform_view (f fun, chế độ xem ... chế độ xem);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <span class="t-li">1)</span>Hàm tạo mặc định.<a href="../../language/value_initialization" title="cpp/language/value initialization">Value-initializes</a>đối tượng được lưu trữ có thể được lưu trữ và tất cả đều được điều chỉnh<a href="../view" title="cpp/ranges/view"><code>view</code></a>Đối tượng.<br/> <p>Hàm tạo mặc định bị xóa nếu</p>
+<ul>
+<li> <code>F</code>                                OUTPUTITIT D_FIRST, Binarypredicate P);<a href="../../concepts/default_initializable" title="cpp/concepts/default initializable"><code>default_initializable</code></a>, hoặc</li>
+<li> <code><a href="../../types/is_default_constructible" title="cpp/types/is default constructible">std::is_default_constructible_v</a></code>khoảng cách<code>false</code>Đối với ít nhất một loại trong<code>Views...</code>.</li>
+</ul> <div class="t-li1">
+<span class="t-li">2)</span>Di chuyển xây dựng đối tượng được lưu trữ được lưu trữ từ<code>fun</code>Và mọi điều chỉnh<a href="../view" title="cpp/ranges/view"><code>view</code></a>đối tượng từ chế độ xem tương ứng trong<code>views...</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>có thể sửa đổi các phần tử của phạm vi thông qua trình lặp được thu hút. Nếu như</td> <td>-</td> <td>đối tượng có thể gọi được sử dụng để tạo ra các yếu tố của<code>zip_transform_view</code> </td>
+</tr> <tr class="t-par"> <td>quan điểm</td> <td>-</td> <td>Xem các đối tượng để thích nghi</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/zip_transform_view/zip_transform_view">https://en.cppreference.com/w/cpp/ranges/zip_transform_view/zip_transform_view</a>
+</p>
+</div>

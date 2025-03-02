@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_lock &lt;mutex&gt; :: try_lock_for</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">Mẫu &lt;class rep, giai đoạn lớp&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>bool try_lock_for (const std :: Chrono :: Thời lượng &lt;rep, intion&gt; &amp; timeout_duration);<code>timeout_duration</code>Cố gắng khóa mutex liên quan trong chế độ chia sẻ. Khối cho đến khi được chỉ định<code>true</code>ở trong trạng thái không hợp lệ, tức là<code>false</code>. Gọi một cách hiệu quả<code>mutex()-&gt;try_lock_shared_for(timeout_duration)</code>.</p>
+<p>quy định<code>timeout_duration</code>Chức năng này có thể chặn lâu hơn</p>
+<p>do lập lịch hoặc sự chậm trễ tranh chấp tài nguyên.</p>
+<p><code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>được ném nếu không có mutex liên quan hoặc nếu mutex đã bị khóa.</p>
+<p>đến một phạm vi khác kết thúc tại<code>Mutex</code>với luồng đầu ra C tiêu chuẩn<a href="../../named_req/sharedtimedlockable" title="cpp/named req/SharedTimedLockable">SharedTimedLockable</a>yêu cầu.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Điều đó đã sử dụng đánh giá lười biếng, chức năng này trở lại ngay lập tức mà không phải chờ đợi.</td> <td>-</td> <td>Thời gian chờ_Duration</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu quyền sở hữu của Mutex đã được mua lại thành công,<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <ul>
+<li>Bất kỳ trường hợp ngoại lệ nào được ném bởi<code>mutex()-&gt;try_lock_shared_for(timeout_duration)</code>.</li>
+<li>Nếu không có mutex liên quan,<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>với mã lỗi của<code><a href="../../error/errc" title="cpp/error/errc">std::errc::operation_not_permitted</a></code>.</li>
+<li>Nếu mutex đã bị khóa,<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>với mã lỗi của<code><a href="../../error/errc" title="cpp/error/errc">std::errc::resource_deadlock_would_occur</a></code>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../unique_lock/try_lock_for" title="cpp/thread/unique lock/try lock for"> <span class="t-lines"><span>Try_lock_for</span></span></a></div> </td> <td>cố gắng khóa (tức là, quyền sở hữu) Mutex liên quan mà không chặn<a href="../../named_req/timedlockable" title="cpp/named req/TimedLockable">TimedLockable</a>Nỗ lực khóa (tức là, quyền sở hữu)<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::unique_lock&lt;Mutex&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="lock" title="cpp/thread/shared lock/lock"> <span class="t-lines"><span>khóa</span></span></a></div> </td> <td>Khóa chia sẻ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_lock" title="cpp/thread/shared lock/try lock"> <span class="t-lines"><span>Try_lock</span></span></a></div> </td> <td>Khóa Mutex liên quan<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_lock_until" title="cpp/thread/shared lock/try lock until"> <span class="t-lines"><span>Try_lock_until</span></span></a></div> </td> <td>cố gắng khóa mutex liên quan, trong thời lượng được chỉ định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="unlock" title="cpp/thread/shared lock/unlock"> <span class="t-lines"><span>Mở khóa</span></span></a></div> </td> <td>cố gắng khóa mutex liên quan, cho đến khi một thời điểm xác định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/shared_lock/try_lock_for">https://en.cppreference.com/w/cpp/thread/shared_lock/try_lock_for</a>
+</p>
+</div>

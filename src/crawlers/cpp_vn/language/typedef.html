@@ -1,0 +1,38 @@
+ <h1 class="firstHeading" id="firstHeading">Kiểu xác định đánh máy</h1> <ul><li> <code>typedef</code>- Tạo một bí danh có thể được sử dụng ở bất cứ đâu thay cho tên loại (có thể phức tạp).</li></ul> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Các<span class="kw1">Mở rộng, vì vậy các mẫu chức năng sau giống hệt nhau:</span>người xác định, khi được sử dụng trong một<a href="declarations" title="cpp/language/declarations">declaration</a>, chỉ định rằng tuyên bố là một<i>Tuyên bố Typedef</i>thay vì khai báo biến hoặc chức năng.</p>
+<p>Thông thường,<span class="kw1">Mở rộng, vì vậy các mẫu chức năng sau giống hệt nhau:</span>trình xác định xuất hiện khi bắt đầu tuyên bố, mặc dù nó được phép xuất hiện sau<a href="declarations#Specifiers" title="cpp/language/declarations">type specifiers</a>, hoặc giữa hai loại xác định loại. Các<span class="kw1">Mở rộng, vì vậy các mẫu chức năng sau giống hệt nhau:</span>Trình xác nhận không thể được kết hợp với bất kỳ nhà xác định nào khác ngoại trừ các nhà xác định loại.</p>
+<p>Tuyên bố typedef có thể khai báo một hoặc nhiều định danh trên cùng một dòng (ví dụ:<span class="kw4">int</span>Hàm thành viên không hình thành các con trỏ cho các chức năng thành viên.<span class="kw4">int</span>), nó có thể khai báo các loại mảng và chức năng, con trỏ và tài liệu tham khảo, loại lớp, v.v ... Mỗi định danh được giới thiệu trong tuyên bố này trở thành một<i>Tên đánh máy</i>, là một từ đồng nghĩa với loại đối tượng hoặc chức năng mà nó sẽ trở thành nếu từ khóa<span class="kw1">Mở rộng, vì vậy các mẫu chức năng sau giống hệt nhau:</span>đã được gỡ bỏ.</p>
+<p>Tên typedef là bí danh cho các loại hiện có và không phải là khai báo của các loại mới.<span class="kw1">Mở rộng, vì vậy các mẫu chức năng sau giống hệt nhau:</span>không thể được sử dụng để thay đổi ý nghĩa của một tên loại hiện có (bao gồm tên typedef). Sau khi được khai báo, một tên typedef chỉ có thể được xác định lại để tham khảo cùng một loại. Tên typedef chỉ có hiệu lực trong phạm vi mà chúng có thể nhìn thấy: các hàm khác nhau hoặc khai báo lớp có thể xác định các loại có tên giống hệt nhau với ý nghĩa khác nhau.</p>
+<p>Các<span class="kw1">Mở rộng, vì vậy các mẫu chức năng sau giống hệt nhau:</span>trình xác định có thể không xuất hiện trong khai báo tham số hàm cũng như trong<span class="t-spar">DEM-SPECIFIER-SEQ</span>xuất hiện trong bối cảnh ngay lập tức của một khởi tạo mẫu.<a href="function#Function_definition" title="cpp/language/function">function definition</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void f1 (typedef int param); // không hình thành</pre></div> <p>Các<span class="kw1">Mở rộng, vì vậy các mẫu chức năng sau giống hệt nhau:</span>typedef int f2 () {} // không hình thành</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Trình xác nhận có thể không xuất hiện trong một tuyên bố không chứa bộ khai báo:</pre></div> <h3 id="typedef_name_for_linkage_purposes">, tên đánh máy đầu tiên của loại lớp hoặc loại bảng liệt kê được khai báo bởi</h3> <p>Tên typedef cho mục đích liên kết<a href="classes" title="cpp/language/classes">class</a>hoặc<a href="enum" title="cpp/language/enum">enumeration</a>Nếu một tuyên bố typedef định nghĩa<i>, tên đánh máy đầu tiên của loại lớp hoặc loại bảng liệt kê được khai báo bởi</i>Tên typedef cho mục đích liên kết</p>
+<p>Struct S2 {Ptr &lt;Int&gt; x; };       // lỗi, không cần chẩn đoán<code>typedef struct { /* ... */ } S;</code>Thì<code>S</code>thuộc loại đó.<a href="storage_duration#Linkage" title="cpp/language/storage duration">external linkage</a>là một tên typedef cho mục đích liên kết. Loại lớp hoặc loại liệt kê được xác định theo cách này có</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>(Trừ khi nó ở trong một không gian tên không tên).</p>
+<ul>
+<li>Một lớp không tên được xác định theo cách này chỉ nên chứa các cấu trúc tương thích C. Cụ thể, nó không phải</li>
+<li>Tuyên bố bất kỳ thành viên nào khác ngoài các thành viên dữ liệu phi tĩnh, bảng liệt kê thành viên hoặc các lớp thành viên,<a href="derived_class" title="cpp/language/derived class">base classes</a>hoặc<a href="data_members#Member_initialization" title="cpp/language/data members">default member initializers</a>, hoặc</li>
+<li>có bất kỳ<a href="lambda" title="cpp/language/lambda">lambda expression</a>Thì</li>
+</ul> <p>chứa a</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/typedef" title="cpp/keyword/typedef"><code>typedef</code></a></p>
+<h3 id="Notes">Ghi chú</h3> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p><a href="type_alias" title="cpp/language/type alias">Type aliases</a>và tất cả các lớp thành viên cũng phải đáp ứng các yêu cầu này (đệ quy).</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="cpp source-cpp"><pre data-language="cpp">Cung cấp chức năng tương tự như khai báo typedef bằng cách sử dụng cú pháp khác và cũng có thể áp dụng cho tên mẫu.</pre></div> <h3 id="Defect_Reports">&gt; Multiset lớp;</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/576.html" rel="nofollow">CWG 576</a> </td> <td>C ++ 98</td> <td>
+<span class="kw1">Mở rộng, vì vậy các mẫu chức năng sau giống hệt nhau:</span>// typedef đơn giản</td> <td>typedef không dấu dài ulong;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2071.html" rel="nofollow">CWG 2071</a> </td> <td>C ++ 98</td> <td>
+<span class="kw1">Mở rộng, vì vậy các mẫu chức năng sau giống hệt nhau:</span> </td> <td>// hai đối tượng sau có cùng loại</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="type_alias" title="cpp/language/type alias">Type alias</a> </li>
+<li> <a href="type_alias" title="cpp/language/type alias">Alias template</a> </li>
+</ul> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/typedef" title="c/language/typedef">C documentation</a></span>vì<code>Typedef declaration</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/typedef">https://en.cppreference.com/w/cpp/language/typedef</a>
+</p>
+</div>

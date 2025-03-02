@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: char_traits &lt;par&gt; :: eof, std :: char_traits &lt;wchar_t&gt; :: eof, std :: char_traits &lt;char8_t&gt; :: eof, std :: char_traitt</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">int_type eof ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">ConstExpr int_type eof () NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Trả về một giá trị không tương đương với bất kỳ giá trị hợp lệ nào của loại<code>char_type</code>.</p>
+<p>(Raco).<a href="../../named_req/chartraits" title="cpp/named req/CharTraits">CharTraits</a>các ký tự trong chuỗi ký tự được trỏ bởi<code>X::eof</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="wikitable"> <tr> <th> <code>char_type</code> </th> <th>
+<code>eof()</code> </th>
+</tr> <tr> <td>
+<span class="kw4">char</span> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/io/c"><span class="kw1886">EOF</span></a></code> </td>
+</tr> <tr> <td>
+<span class="kw4">wchar_t</span> </td> <td>
+<code>WEOF</code> </td>
+</tr> <tr> <td>char8_t</td> <td>một hằng số được xác định thực hiện<br/>không thể xuất hiện dưới dạng đơn vị mã UTF-8 hợp lệ</td>
+</tr> <tr> <td>
+<span class="kw4">char16_t</span> </td> <td>một hằng số được xác định thực hiện<br/>không thể xuất hiện dưới dạng đơn vị mã UTF-16 hợp lệ</td>
+</tr> <tr> <td>
+<span class="kw4">char32_t</span> </td> <td>một hằng số được xác định thực hiện<br/>không thể xuất hiện dưới dạng điểm mã Unicode</td>
+</tr>
+</table> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="not_eof" title="cpp/string/char traits/not eof"> <span class="t-lines"><span>tương đương</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>EQ_INT_TYPE<i>Chức năng nhà nước</i>được phân vùng liên quan đến<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/char_traits/eof">https://en.cppreference.com/w/cpp/string/char_traits/eof</a>
+</p>
+</div>

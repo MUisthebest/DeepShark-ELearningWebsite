@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_stringbuf &lt;biểu đồ, đặc điểm, phân bổ&gt; ::<i>Để chỉ ra chế độ I/O của luồng liên quan (chỉ đầu vào, chỉ đầu ra, đầu vào/đầu ra, at-end, v.v.).</i>
+</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">void init_buf_ptrs ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark t-mark-expos">.<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">    .</span>)</span> </td> </tr> </table> <p>Khởi tạo các chuỗi đầu vào và đầu ra từ<code>buf</code>Theo<code>mode</code>.<code>buf</code>Và<code>mode</code>&gt;<a href="../basic_stringbuf#Exposition-only_members" title="cpp/io/basic stringbuf">exposition-only data members</a>của<code>*this</code>.</p>
+<p>Ngay sau khi chức năng này trả về:</p>
+<ul>
+<li>Nếu như<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::out</a></code>có mặt trong<code>mode</code>Thì<a href="../basic_streambuf/pptr" title="cpp/io/basic streambuf/pptr"><code>pbase()</code></a>chỉ đến<code>buf.front()</code>Và<code>epptr() &gt;= pbase() + buf.size()</code>khoảng cách<code>true</code>Số lượng các yếu tố để sao chép<ul>
+<li>Ngoài ra, nếu<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::ate</a></code>có mặt trong<code>mode</code>Thì<code>pptr() == pbase() + buf.size()</code>khoảng cách<code>true</code>Thì</li>
+<li>[tĩnh]<code>pptr() == pbase()</code>khoảng cách<code>true</code>.</li>
+</ul> </li>
+<li>Nếu như<code><a href="../ios_base/openmode" title="cpp/io/ios base/openmode">std::ios_base::in</a></code>có mặt trong<code>mode</code>Thì<a href="../basic_streambuf/gptr" title="cpp/io/basic streambuf/gptr"><code>eback()</code></a>chỉ đến<code>buf.front()</code>, Và<code>gptr() == eback() &amp;&amp; egptr() == eback() + buf.size()</code>khoảng cách<code>true</code>.</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Vì lý do hiệu quả, các hoạt động của bộ đệm luồng có thể vi phạm các bất biến của<code>buf</code>trong khi nó được tổ chức đóng gói trong<code>std::basic_stringbuf</code>, ví dụ: bằng cách viết cho các ký tự trong phạm vi<code>[</code><code>buf.data() + buf.size()</code><code>, </code><code>buf.data() + buf.capacity()</code><code>)</code>.</p>
+<p>Tất cả các hoạt động truy xuất một<code><a href="../../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code>từ<code>buf</code>đảm bảo rằng<code><a href="../../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code>Các bất biến giữ giá trị trả lại.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1448" rel="nofollow">LWG 1448</a> </td> <td>C ++ 98</td> <td>nhân vật (<code><i>Để chỉ ra chế độ I/O của luồng liên quan (chỉ đầu vào, chỉ đầu ra, đầu vào/đầu ra, at-end, v.v.).</i>()</code>làm ra<br/><code>pptr() == pbase() + buf.data()</code><br/>Đối với các luồng là cả luồng đầu vào và đầu ra</td> <td>làm cho<br/><code>pptr() == pbase() + buf.size()</code><br/>cho các luồng nối</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_stringbuf/init_buf_ptrs">https://en.cppreference.com/w/cpp/io/basic_stringbuf/init_buf_ptrs</a>
+</p>
+</div>

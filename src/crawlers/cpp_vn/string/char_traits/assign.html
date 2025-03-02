@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: char_traits &lt;par&gt; :: gán, std :: char_traits &lt;wchar_t&gt; :: gán, std :: char_traits &lt;char8_t&gt; :: gán, std :: char_traits</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">gán khoảng trống tĩnh (char_type &amp; c1, const char_type &amp; c2);</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Chỉ định void tĩnh (char_type &amp; c1, const char_type &amp; c2) noexcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-since-cxx17">(Constexpr kể từ C ++ 17)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">static char_type* gán (char_type* ptr,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">ForwardItIT2 Sao chép (Chính sách thực thi &amp;&amp; chính sách,</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Chỉ định<code>c2</code>ĐẾN<code>c1</code>                          std :: size_t đếm, char_type c2);<code>c1 = c2</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Chỉ định<code>c2</code>, hành xử giống hệt<code>count</code>cho mỗi nhân vật trong<code>ptr</code>.</div> <p>(Raco).<a href="../../named_req/chartraits" title="cpp/named req/CharTraits">CharTraits</a>các ký tự trong chuỗi ký tự được trỏ bởi<code>X::assign</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>C1</td> <td>-</td> <td>Đối với các yêu cầu chung về các đặc điểm tính cách cho</td>
+</tr> <tr class="t-par"> <td>ký tự để gán cho</td> <td>-</td> <td>C2</td>
+</tr> <tr class="t-par"> <td>Nếu mảng chứa một số yếu tố</td> <td>-</td> <td>giá trị ký tự để gán</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>con trỏ đến một chuỗi ký tự để gán cho</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Gán cho đã cho</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>ptr</code>
+</div> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <div class="t-li1">
+<span class="t-li">1)</span>trình rút vào các yếu tố để hoán đổi</div> <div class="t-li1">
+<span class="t-li">2)</span>bool is_heap (execPolicy &amp;&amp; chính sách,<code>count</code>.</div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/char_traits/assign">https://en.cppreference.com/w/cpp/string/char_traits/assign</a>
+</p>
+</div>

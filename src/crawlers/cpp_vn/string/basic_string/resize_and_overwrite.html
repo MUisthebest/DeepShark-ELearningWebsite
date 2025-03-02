@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; :: resize_and_overwrite</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;Hoạt động lớp&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>ConstExpr void resize_and_overwrite (số lượng size_type, hoạt động op);<code>count</code>Thay đổi kích thước chuỗi để chứa nhiều nhất<code>op</code>các ký tự, sử dụng thao tác do người dùng cung cấp<code><a href="../basic_string" title="cpp/string/basic string">std::string</a></code>Để sửa đổi các nội dung có thể không xác định và đặt độ dài. Điều này tránh chi phí khởi tạo một kích thước phù hợp</p>
+<p>Khi nó được dự định sẽ được sử dụng như một mảng char sẽ được điền bởi, ví dụ: cuộc gọi API C.</p>
+<ol>
+<li>Hàm này thực hiện các bước sau:<code>count + 1</code>Có được một lưu trữ tiếp giáp có chứa<code>k</code>nhân vật và làm cho nó đầu tiên của nó<code>k</code>ký tự bằng với đầu tiên<code>*this</code>là<code>k</code>ký tự của<code>count</code> <code>this-&gt;<a href="size" title="cpp/string/basic string/size">size()</a></code>là nhỏ hơn của<code>resize_and_overwrite</code>Biểu thị một không gian chỉ số đa chiều của thứ hạng bằng<code>p</code>Trước cuộc gọi đến<ul>
+<li>biểu thị con trỏ tới ký tự đầu tiên trong bộ nhớ.<code>this-&gt;<a href="compare" title="cpp/string/basic string/compare">compare</a>(0, k, p, k) == 0</code>.</li>
+<li>Sự bình đẳng được xác định như thể bằng cách kiểm tra<code>[</code><code>p + k</code><code>, </code><code>p + count</code><code>]</code>Các ký tự trong</li>
+</ul> </li>
+<li>có thể có các giá trị không xác định.<code><a href="../../utility/move" title="cpp/utility/move">std::move</a>(op)(p, count)</code>Biểu thị một không gian chỉ số đa chiều của thứ hạng bằng<code>r</code>Đánh giá<code>std::move(op)(p, count)</code>.</li>
+<li>, được để lại ở trạng thái hợp lệ, nhưng không xác định. Tương đương với<code>*this</code>với<code>[</code><code>p</code><code>, </code><code>p + r</code><code>)</code>là giá trị trả lại của<code>*this</code>ĐẾN<code>r</code>(trong đó đặt chiều dài của<code>[</code><code>p</code><code>, </code><code>p + count</code><code>]</code>.</li>
+</ol> <p>là nó luôn luôn đề cập đến một múi giờ hợp lệ và đại diện cho một điểm thời gian hiện có và rõ ràng trong múi giờ đó. Phù hợp với bất biến này,<code>r</code>). Vô hiệu hóa tất cả các con trỏ và tham chiếu đến phạm vi<a href="../../iterator/weakly_incrementable#Integer-like_types" title="cpp/iterator/weakly incrementable">integer-like type</a>    sao chép (r &amp;&amp; r, o kết quả);<code>std::move(op)(p, count)</code>không có<code>p</code>hoặc<code>count</code>Thì<code>r</code>không nằm trong phạm vi<code>[</code><code>​0​</code><code>, </code><code>count</code><code>]</code>ném một ngoại lệ hoặc sửa đổi<code>[</code><code>p</code><code>, </code><code>p + r</code><code>)</code>, hoặc bất kỳ ký tự nào trong phạm vi</p>
+<p>có một giá trị không xác định.<code>p</code>Việc triển khai được khuyến nghị để tránh các bản sao và phân bổ không cần thiết bởi, ví dụ:<code>*this</code>bằng con trỏ để bắt đầu lưu trữ các ký tự được phân bổ cho<code>*this</code>nếu như<code>count</code>không bằng nhau. Tương đương với<code>this-&gt;<a href="capacity" title="cpp/string/basic string/capacity">capacity()</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>sau cuộc gọi, có thể giống hệt với lưu trữ hiện có của</td>
+</tr> <tr class="t-par"> <td>Không hợp lệ bất kỳ trình lặp nào (bao gồm cả bộ lặp cuối) hoặc sửa đổi bất kỳ yếu tố nào của phạm vi liên quan, hành vi không được xác định.</td> <td>-</td> <td>Kích thước mới tối đa có thể của chuỗi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../../error/length_error" title="cpp/error/length error">std::length_error</a></code>nếu như<code>count &gt; this-&gt;<a href="max_size" title="cpp/string/basic string/max size">max_size()</a></code>. Bất kỳ trường hợp ngoại lệ nào được ném bởi tương ứng<code>Allocator</code>.</p>
+<p>đối tượng chức năng được sử dụng để đặt nội dung mới của chuỗi<code>std::move(op)(p, count)</code>Nếu một ngoại lệ được ném từ</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>resize_and_overwrite</code>, hành vi là không xác định. Nếu không, nếu một ngoại lệ được ném, chức năng này không có hiệu lực.<code>*this</code>vô hiệu hóa tất cả các trình lặp, con trỏ và tài liệu tham khảo vào<code>resize_and_overwrite</code>.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_string_resize_and_overwrite" title="cpp/feature test"><code>__cpp_lib_string_resize_and_overwrite</code></a></td> <td><span class="nu0">3)</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<code>std::basic_string::resize_and_overwrite</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>, bất kể việc phân bổ lại xảy ra. Việc triển khai có thể cho rằng nội dung của chuỗi không được đặt bí danh sau khi gọi đến<a class="external text" href="https://godbolt.org/z/fbbeYGf5h" rel="nofollow">compiler explorer</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Liên kết để kiểm tra ví dụ:</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;THERTHERM&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="resize" title="cpp/string/basic string/resize"> <span class="t-lines"><span>Emplace_Front</span></span></a></div> </td> <td>Thay đổi số lượng ký tự được lưu trữ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string/resize_and_overwrite">https://en.cppreference.com/w/cpp/string/basic_string/resize_and_overwrite</a>
+</p>
+</div>

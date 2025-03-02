@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Chrono :: wanted_time &lt;Thời lượng, TimeZonePtr&gt; :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">wanted_time &amp; Toán tử = (const wasced_time &amp; other) = mặc định;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">wasced_time &amp; toán tử = (const std :: Chrono :: sys_time &lt;fulent&gt; &amp; other);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">wanted_time &amp; toán tử = (const std :: Chrono :: local_time &lt;fulent&gt; &amp; other);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Gán giá trị của<code>other</code>ĐẾN<code>*this</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Toán tử gán bản sao mặc định. Copy-actigns cả điểm thời gian được lưu trữ và con trỏ múi giờ được lưu trữ.<code>zoned_time</code>không có toán tử chuyển nhượng di chuyển; Một động thái là một bản sao.</div> <div class="t-li1">
+<span class="t-li">2)</span>Chỉ định<code>other</code>đến điểm thời gian lưu trữ. Con trỏ múi giờ không thay đổi. Sau cuộc gọi này,<code>get_sys_time() == other</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Yêu cầu STD :: Convertible_to &lt;Const I &amp;, I2&gt;<code>other</code>Mẫu &lt;class forwardit, class t&gt;<code>std::chrono::sys_time</code>Mẫu &lt;Class T&gt;<code>zone-&gt;to_sys(other)</code>(Ở đâu<code>zone</code>là thành viên dữ liệu không tĩnh giữ con trỏ múi giờ được lưu trữ) và gán kết quả cho điểm thời gian được lưu trữ. Con trỏ múi giờ không thay đổi. Sau cuộc gọi này,<code>get_local_time() == other</code>.</div> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/zoned_time/operator%3D">https://en.cppreference.com/w/cpp/chrono/zoned_time/operator%3D</a>
+</p>
+</div>

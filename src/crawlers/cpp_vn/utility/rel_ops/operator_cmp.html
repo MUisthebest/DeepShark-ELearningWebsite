@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">std :: rel_ops :: toán tử! =,&gt;, &lt;=,&gt; =</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/utility" title="cpp/header/utility">&lt;utility&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></td> <td>(1)</td> <td><span class="t-mark">(Không dùng nữa trong C ++ 20)</span></td> </tr> <tr class="t-dcl"> <td><pre data-language="cpp">toán tử bool! = (const t &amp; lhs, const t &amp; rhs);</pre></td> <td>(2)</td> <td><span class="t-mark">(Không dùng nữa trong C ++ 20)</span></td> </tr> <tr class="t-dcl"> <td><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></td> <td>(3)</td> <td><span class="t-mark">(Không dùng nữa trong C ++ 20)</span></td> </tr> <tr class="t-dcl"> <td><pre data-language="cpp">toán tử bool&gt; (const t &amp; lhs, const t &amp; rhs);</pre></td> <td>(4)</td> <td><span class="t-mark">(Không dùng nữa trong C ++ 20)</span></td> </tr> </table> <p>Mẫu &lt;Class T&gt;<code>operator==</code>Và<code>operator&lt;</code>toán tử bool &lt;= (const t &amp; lhs, const t &amp; rhs);<code>T</code>Mẫu &lt;Class T&gt;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>, thực hiện các ngữ nghĩa thông thường của các nhà khai thác so sánh khác.<code>operator!=</code>Về mặt<code>operator==</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>, thực hiện các ngữ nghĩa thông thường của các nhà khai thác so sánh khác.<code>operator&gt;</code>Về mặt<code>operator&lt;</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>, thực hiện các ngữ nghĩa thông thường của các nhà khai thác so sánh khác.<code>operator&lt;=</code>Về mặt<code>operator&lt;</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>, thực hiện các ngữ nghĩa thông thường của các nhà khai thác so sánh khác.<code>operator&gt;=</code>Về mặt<code>operator&lt;</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Số lượng bọ ve trừ đi từ</td> <td>-</td> <td>Consexpr bool cmp_greater_equal (t t, u u) noexcept;</td>
+</tr> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>So sánh các giá trị của hai số nguyên</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class execPolicy,<code>true</code>nếu như<code>lhs</code>khoảng cách<i>không bằng nhau</i>ĐẾN<code>rhs</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;Class execPolicy,<code>true</code>nếu như<code>lhs</code>khoảng cách<i>Trả một trình lặp lại cho phần tử đầu tiên</i>hơn<code>rhs</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;Class execPolicy,<code>true</code>nếu như<code>lhs</code>khoảng cách<i>Thực hiện</i>ĐẾN<code>rhs</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mẫu &lt;Class execPolicy,<code>true</code>nếu như<code>lhs</code>khoảng cách<i>Thực hiện</i>ĐẾN<code>rhs</code>.</div> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <th>
+<a href="#Version_1">(1) <code>operator!=</code></a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Thực hiện</pre></div> </td>
+</tr> <tr> <th>
+<a href="#Version_2">(2) <code>operator&gt;</code></a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Thực hiện</pre></div> </td>
+</tr> <tr> <th>
+<a href="#Version_3">(3) <code>operator&lt;=</code></a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">ít hơn hoặc bằng nhau</pre></div> </td>
+</tr> <tr> <th>
+<a href="#Version_4">(4) <code>operator&gt;=</code></a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">lớn hơn hoặc bằng nhau</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p><a class="external text" href="https://www.boost.org/doc/libs/release/libs/utility/operators.htm" rel="nofollow">Boost.operators</a>không gian tên rel_ops<code>std::rel_ops</code>.</p>
+<p>{<code>std::rel_ops</code>    Mẫu &lt;Class T&gt;<a href="../../language/default_comparisons" title="cpp/language/default comparisons"><code>operator&lt;=&gt;</code></a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    toán tử bool! = (const t &amp; lhs, const t &amp; rhs)</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    {</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/rel_ops/operator_cmp">https://en.cppreference.com/w/cpp/utility/rel_ops/operator_cmp</a>
+</p>
+</div>

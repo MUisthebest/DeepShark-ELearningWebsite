@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: WMEMCMP</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int wmemcmp (const wchar_t* lhs, const wchar_t* rhs, std :: size_t đếm);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>                    std :: size_t đếm);<code>count</code>các ký tự rộng của các mảng ký tự rộng được chỉ bằng<code>lhs</code>Và<code>rhs</code>ký tự của chuỗi nhân vật</p>
+<p>Dấu hiệu của kết quả là dấu hiệu của sự khác biệt giữa các giá trị của cặp ký tự rộng đầu tiên khác nhau trong các mảng được so sánh.</p>
+<p>Nếu như<code>count</code>bằng không, chức năng không làm gì cả.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>con trỏ đến các mảng ký tự rộng để so sánh</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng ký tự rộng để kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Giá trị âm nếu giá trị của ký tự rộng khác nhau đầu tiên trong<code>lhs</code>nhỏ hơn giá trị của ký tự rộng tương ứng trong<code>rhs</code>:<code>lhs</code>    void H (int) &amp;&amp;;   // OK, một quá tải khác<code>rhs</code>theo thứ tự từ vựng.</p>
+<p><code>​0​</code>Nếu tất cả<code>count</code>ký tự rộng của<code>lhs</code>Và<code>rhs</code>                 const std :: error_condition &amp; cond) noExcept;</p>
+<p>Giá trị dương nếu giá trị của ký tự rộng khác nhau đầu tiên trong<code>lhs</code>lớn hơn giá trị của ký tự rộng tương ứng trong<code>rhs</code>:<code>rhs</code>    void H (int) &amp;&amp;;   // OK, một quá tải khác<code>lhs</code>theo thứ tự từ vựng.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Hàm này không nhạy cảm với địa phương và không chú ý đến các giá trị của<code>wchar_t</code>Đối tượng Nó kiểm tra: NULLS cũng như các ký tự rộng không hợp lệ cũng được so sánh.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;clocale&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CWchar&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="wcscmp" title="cpp/string/wide/wcscmp"> <span class="t-lines"><span>WCSCMP</span></span></a></div> </td> <td>so sánh hai chuỗi rộng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../byte/memcmp" title="cpp/string/byte/memcmp"> <span class="t-lines"><span>MEMCMP</span></span></a></div> </td> <td>So sánh hai bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="wcsncmp" title="cpp/string/wide/wcsncmp"> <span class="t-lines"><span>WCSNCMP</span></span></a></div> </td> <td>so sánh một lượng ký tự nhất định từ hai chuỗi rộng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/wmemcmp" title="c/string/wide/wmemcmp">C documentation</a></span>vì<code>wmemcmp</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/wmemcmp">https://en.cppreference.com/w/cpp/string/wide/wmemcmp</a>
+</p>
+</div>

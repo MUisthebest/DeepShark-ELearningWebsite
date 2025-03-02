@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: sputn, std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: xsputn</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">std :: Streamsize Sputn (const char_type* s, std :: streamsize Count);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Cuộc gọi<code>xsputn(s, count)</code>Virtual POS_Type Seekoff (Off_Type TẮT, STD :: IOS_BASE :: SeekDir Dir,</div> <div class="t-li1">
+<span class="t-li">2)</span>Virtual std :: Streamsize Xsputn (const char_type* s, std :: streamsize Count);<code>count</code>Viết<code>s</code>ký tự cho chuỗi đầu ra từ mảng ký tự có phần tử đầu tiên được chỉ ra bởi<code><a href="sputc" title="cpp/io/basic streambuf/sputc">sputc()</a></code>. Các ký tự được viết như thể bằng cách gọi nhiều lần<code>count</code>. Viết dừng khi một trong hai<code><a href="sputc" title="cpp/io/basic streambuf/sputc">sputc()</a></code>các ký tự được viết hoặc một cuộc gọi đến<code>Traits::eof()</code>.</div> <p>sẽ trở lại<code>pptr() == epptr()</code>Nếu khu vực đặt trở nên đầy đủ (<code><a href="overflow" title="cpp/io/basic streambuf/overflow">overflow()</a></code>), nó không được xác định cho dù</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>thực sự được gọi hoặc hiệu ứng của nó đạt được bằng các phương tiện khác.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Số lượng ký tự được viết thành công.<code><a href="../basic_ostream/write" title="cpp/io/basic ostream/write">std::ofstream::write()</a></code>"đạt được bằng các phương tiện khác" cho phép I/O số lượng lớn mà không cần bộ đệm trung gian: đó là cách</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Đơn giản chỉ cần chuyển con trỏ đến cuộc gọi hệ thống phù hợp trong một số triển khai.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue565" rel="nofollow">LWG 565</a> </td> <td>C ++ 98</td> <td>
+<code>xsputn()</code>#include &lt;Sstream&gt;<code><a href="overflow" title="cpp/io/basic streambuf/overflow">overflow()</a></code>nếu như<code>pptr() == epptr()</code> </td> <td> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="sgetn" title="cpp/io/basic streambuf/sgetn"> <span class="t-lines"><span>Đọc một ký tự từ trình tự đầu vào và tiến lên trình tự</span></span></a></div> </td> <td>Sputc<code>xsgetn()</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_streambuf/sputn">https://en.cppreference.com/w/cpp/io/basic_streambuf/sputn</a>
+</p>
+</div>

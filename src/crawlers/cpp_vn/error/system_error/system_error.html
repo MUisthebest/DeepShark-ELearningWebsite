@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">std :: System_error :: System_error</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">System_error (STD :: ERROR_CODE EC);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">System_error (std :: error_code EC, const std :: chuỗi &amp; what_arg);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">System_error (std :: error_code EC, const char* what_arg);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">System_error (int ev, const std :: error_c Category &amp; ecat);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">System_error (int ev, const std :: error_c Category &amp; ecat,</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">              const std :: chuỗi &amp; what_arg);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">System_error (int ev, const std :: error_c Category &amp; ecat,</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>              const char* what_arg);</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Xây dựng đối tượng lỗi hệ thống mới.<code>ec</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Xây dựng đối tượng lỗi hệ thống mới.<code>ec</code>Cấu trúc với mã lỗi<code>what_arg</code>, Danh mục lỗi liên quan<code><a href="what" title="cpp/error/system error/what">what()</a></code>và chuỗi giải thích<code>what_arg</code>. Chuỗi được trả về bởi</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Các cấu trúc với mã lỗi cơ bản<code>ev</code>như một nền tảng.<code>ecat</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Các cấu trúc với mã lỗi cơ bản<code>ev</code>và danh mục lỗi liên quan<code>ecat</code>Các cấu trúc với mã lỗi cơ bản<code>what_arg</code>, Danh mục lỗi liên quan<code><a href="what" title="cpp/error/system error/what">what()</a></code>và chuỗi giải thích<code>what_arg</code>. Chuỗi được trả về bởi</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Sao chép hàm tạo. Khởi tạo nội dung với các nội dung của<code>other</code>. Nếu như<code>*this</code>Và<code>other</code>mô tả kết quả của nỗ lực chuyển đổi<code>std::system_error</code>phải ít nhất được đặt hàng một phần đối với<code><a href="http://en.cppreference.com/w/cpp/string/byte/strcmp"><span class="kw1149">Điều đó cho tất cả<span class="me2">Có thể ném</span></span></a><span class="br0">.</span>what<span class="br0">.</span><span class="br0">)</span>, other.<span class="me1">Con trỏ đến một chuỗi kết thúc null với thông tin giải thích. Chuỗi phù hợp để chuyển đổi và hiển thị dưới dạng</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">. Không làm gì khác.</span></code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Mã lỗi khác để khởi tạo với</td> <td>-</td> <td>Thực hiện hoạt động đầu ra luồng trên mã lỗi</td>
+</tr> <tr class="t-par"> <td>được đảm bảo để chứa</td> <td>-</td> <td>Là một chuỗi con (giả sử rằng nó không chứa một ký tự null nhúng).<code>ecat</code> </td>
+</tr> <tr class="t-par"> <td>Mã lỗi phụ thuộc nền tảng để xây dựng với</td> <td>-</td> <td>ev</td>
+</tr> <tr class="t-par"> <td>What_arg</td> <td>-</td> <td>Chuỗi giải thích</td>
+</tr> <tr class="t-par"> <td>khác</td> <td>-</td> <td>khác<code>system_error</code>    remove_copy (r &amp;&amp; r, o kết quả, const t &amp; value, proj proj = {});</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Mã lỗi cơ bản trong bảng liệt kê được liên kết với<code>system_error</code>danh mục lỗi<code><a href="../errno" title="cpp/error/errno">errno</a></code>giá trị.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Trình diễn cách tạo một</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Ngoại lệ từ một</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/system_error/system_error">https://en.cppreference.com/w/cpp/error/system_error/system_error</a>
+</p>
+</div>

@@ -1,0 +1,61 @@
+ <h1 class="firstHeading" id="firstHeading">Liên kết ngôn ngữ</h1> <p>Cung cấp liên kết giữa các đơn vị chương trình được viết bằng các ngôn ngữ lập trình khác nhau.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>extern</code> <span class="t-spar">chuỗi chữ</span> <code>{</code> <span class="t-spar">Tuyên bố-seq</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>}</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>extern</code> <span class="t-spar">chuỗi chữ</span> <span class="t-spar">tuyên ngôn</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Áp dụng đặc tả ngôn ngữ<span class="t-spar">chuỗi chữ</span>Đối với tất cả các loại chức năng, tên chức năng có liên kết bên ngoài và các biến có liên kết bên ngoài được khai báo trong<span class="t-spar">Tuyên bố-seq</span>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Áp dụng đặc tả ngôn ngữ<span class="t-spar">chuỗi chữ</span>đến một tuyên bố hoặc định nghĩa duy nhất.</div> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">chuỗi chữ</span> </td> <td>-</td> <td>chồng chéo với container.<a href="string_literal#Unevaluated_strings" title="cpp/language/string literal">unevaluated string literal</a>tên là liên kết ngôn ngữ cần thiết</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Tuyên bố-seq</span> </td> <td>-</td> <td>Một chuỗi các tuyên bố, có thể bao gồm các thông số kỹ thuật liên kết lồng nhau</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tuyên ngôn</span> </td> <td>-</td> <td>một tuyên bố</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Mọi loại chức năng, mọi tên hàm với<a href="storage_duration" title="cpp/language/storage duration">external linkage</a>và mọi tên biến với<a href="storage_duration" title="cpp/language/storage duration">external linkage</a>, có một tài sản được gọi là<i>{</i>. Liên kết ngôn ngữ gói gọn tập hợp các yêu cầu cần thiết để liên kết với một đơn vị chương trình được viết bằng ngôn ngữ lập trình khác:<a class="extiw" href="https://en.wikipedia.org/wiki/calling_convention" title="enwiki:calling convention">calling convention</a>Thì<a class="extiw" href="https://en.wikipedia.org/wiki/name_mangling" title="enwiki:name mangling">name mangling</a>(Trang trí tên) Thuật toán, v.v.</p>
+<p>Chỉ có hai liên kết ngôn ngữ được đảm bảo được hỗ trợ:</p>
+<ol>
+<li> <span class="st0">"C ++"</span>, liên kết ngôn ngữ mặc định.</li>
+<li> <span class="st0">"C"</span>, cho phép liên kết với các chức năng được viết bằng ngôn ngữ lập trình C và xác định, trong chương trình C ++, các chức năng có thể được gọi từ các đơn vị được viết trong C.</li>
+</ol> <div class="cpp source-cpp"><pre data-language="cpp">bên ngoài "C"</pre></div> <p>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    int open (const char *path_name, int flags); // khai báo chức năng C</pre></div> <p>}<code><a href="../algorithm/qsort" title="cpp/algorithm/qsort">std::qsort</a></code>Và<code><a href="../algorithm/bsearch" title="cpp/algorithm/bsearch">std::bsearch</a></code> </p>
+<h4 id="Special_rules_for_.22C.22_linkage">int main ()<span class="st0">"C"</span>{</h4> <p>    int fd = open ("test.txt", 0); // gọi chức năng C từ chương trình C ++<span class="t-rev-inl t-since-cxx20"><span>}<a href="constraints#Requires_clauses" title="cpp/language/constraints">requires-clause</a>Thì</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span> <span class="st0">"C"</span>// chức năng C ++ này có thể được gọi từ mã C<span class="st0">"C ++"</span>Bên ngoài "C" Void Handler (int)<span class="st0">"C"</span>):</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    std :: cout &lt;&lt; "gọi lại được gọi \ n"; // nó có thể sử dụng C ++<span class="st0">"C"</span>}</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Vì liên kết ngôn ngữ là một phần của mọi loại chức năng, nên các chức năng cũng duy trì liên kết ngôn ngữ. Liên kết ngôn ngữ của các loại chức năng (đại diện cho quy ước gọi) và liên kết ngôn ngữ của các tên chức năng (đại diện cho tên xáo trộn) độc lập với nhau:</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">extern "c" void f1 (void (*pf) ()); // khai báo một hàm f1 với liên kết C,</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">                             // trả về khoảng trống và đưa một con trỏ đến hàm c</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">                             // mà trả về khoảng trống và không có tham số</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <p> <span class="st0">"C"</span>bên ngoài "C" typedef void func (); // khai báo func dưới dạng loại hàm c trả về khoảng trống</p>
+<div class="cpp source-cpp"><pre data-language="cpp">                                // và không lấy tham số</pre></div> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p> <a href="scope#Namespace_scope" title="cpp/language/scope">namespace scope</a>.</p>
+<p>Func f2;            // Tên F2 có liên kết C ++, nhưng loại của nó là hàm C</p>
+<p>Func "C" bên ngoài F3; // Tên f3 có liên kết C và loại của nó là c function void ()</p>
+<p>void (*pf2) (func*); // Tên PF2 có liên kết C ++ và loại của nó là<span class="st0">"C ++"</span>                    // "Con trỏ tới chức năng C ++ trả về khoảng trống và lấy một</p>
+<p>                    // đối số của loại 'con trỏ tới hàm c trả về khoảng trống<a href="storage_duration" title="cpp/language/storage duration"><code>extern</code> specifier</a>                    // và không lấy tham số '"<a href="storage_duration#Linkage" title="cpp/language/storage duration">linkage</a> <a href="definition" title="cpp/language/definition">definition</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">bên ngoài "C"</pre></div> <p><span class="kw4">Extern</span> <span class="st0">"C"</span>{<span class="kw4">Extern</span> <span class="st0">"C"</span>    tĩnh khoảng trống f4 (); // Tên của hàm F4 có liên kết nội bộ (không có ngôn ngữ)<a href="../preprocessor/conditional" title="cpp/preprocessor/conditional"><code> #ifdef</code></a>                      // Nhưng loại chức năng có liên kết ngôn ngữ C<a href="../preprocessor/replace#Predefined_macros" title="cpp/preprocessor/replace"><code>__cplusplus</code></a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <p>Hai hàm có cùng tên và cùng một danh sách tham số trong cùng một không gian tên không thể có hai liên kết ngôn ngữ khác nhau (tuy nhiên, lưu ý rằng liên kết của một tham số có thể cho phép quá tải đó, như trong trường hợp của<span class="st0">"C"</span>Và<span class="st0">"C ++"</span>). Tương tự như vậy, hai biến trong cùng một không gian tên không thể có hai liên kết ngôn ngữ khác nhau.<code><a href="../algorithm/qsort" title="cpp/algorithm/qsort">std::qsort</a></code>Thì<code><a href="../algorithm/bsearch" title="cpp/algorithm/bsearch">std::bsearch</a></code>Thì<code><a href="../utility/program/signal" title="cpp/utility/program/signal">std::signal</a></code>Thì<code><a href="../utility/program/atexit" title="cpp/utility/program/atexit">std::atexit</a></code>, Và<code><a href="../utility/program/at_quick_exit" title="cpp/utility/program/at quick exit">std::at_quick_exit</a></code>):<a class="external text" href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=2316" rel="nofollow">GCC bug 2316</a>Thì<a class="external text" href="https://bugs.llvm.org/show_bug.cgi?id=6277" rel="nofollow">Clang bug 6277</a>Thì<a class="external text" href="https://cplusplus.github.io/CWG/issues/1555.html" rel="nofollow">CWG issue 1555</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Quy tắc đặc biệt cho</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/4.html" rel="nofollow">CWG 4</a> </td> <td>C ++ 98</td> <td>liên kết</td> <td>Khi các thành viên lớp học</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/341.html" rel="nofollow">CWG 341</a> </td> <td>C ++ 98</td> <td>, bạn bè có chức năng với một dấu vết<span class="st0">"C"</span>hoặc các hàm thành viên không tĩnh xuất hiện trong một<br/>khối ngôn ngữ, liên kết của các loại của chúng vẫn còn</td> <td>(Nhưng các loại tham số, nếu có, vẫn còn<br/>bên ngoài "C"<br/>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/564.html" rel="nofollow">CWG 564</a> </td> <td>C ++ 98</td> <td>    Lớp X.<br/>    {<br/>        void mf ();           // Hàm MF và loại của nó có liên kết ngôn ngữ C ++</td> <td>        void mf2 (void (*) ()); // Hàm MF2 có liên kết ngôn ngữ C ++;<br/>                             // tham số có loại con trỏ vào chức năng C</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2460.html" rel="nofollow">CWG 2460</a> </td> <td>C ++ 20</td> <td>    };<br/>Và<span class="st0">"C"</span>}</td> <td>
+<span class="st0">"C"</span>{<br/>Khi một hàm hoặc một biến được khai báo (trong bất kỳ không gian tên nào) với</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2483.html" rel="nofollow">CWG 2483</a> </td> <td>C ++ 98</td> <td>Liên kết ngôn ngữ, tất cả các khai báo của các hàm (trong bất kỳ không gian tên nào) và tất cả các khai báo của các biến trong phạm vi toàn cầu với cùng một tên không đủ tiêu chuẩn phải đề cập đến cùng một hàm hoặc biến.<br/>int x;<span class="st0">"C"</span> <span class="st0">"C ++"</span> </td> <td>không gian tên a<span class="st0">"C"</span> </td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>    bên ngoài "c" int x (); // Lỗi: cùng tên với biến tên toàn cầu x</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>    bên ngoài "c" int x (); // Lỗi: cùng tên với biến tên toàn cầu x</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>}</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>    bên ngoài "c" int f ();</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>    bên ngoài "c" int f ();</li></ul>
+<li>Tiêu chuẩn C ++ 03 (ISO/IEC 14882: 2003):</li>
+<ul><li>    bên ngoài "c" int f ();</li></ul>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/language_linkage">https://en.cppreference.com/w/cpp/language/language_linkage</a>
+</p>
+</div>

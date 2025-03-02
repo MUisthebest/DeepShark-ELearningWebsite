@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: showmanyc</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>STD ảo :: Streamsize showmanyc ();<code><a href="underflow" title="cpp/io/basic streambuf/underflow">underflow()</a></code>Ước tính số lượng ký tự có sẵn cho đầu vào trong chuỗi ký tự liên quan.<code>Traits::eof()</code>được đảm bảo không trở lại</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Hoặc ném một ngoại lệ cho đến khi ít nhất nhiều nhân vật được trích xuất.<code>-1</code>nếu như<code>showmanyc</code>Số lượng ký tự chắc chắn có sẵn trong chuỗi ký tự liên quan hoặc<code>showmanyc</code>(C ++ 20)<code>-1</code>Thì<code><a href="underflow" title="cpp/io/basic streambuf/underflow">underflow()</a></code>Và<code><a href="uflow" title="cpp/io/basic streambuf/uflow">uflow()</a></code>Có thể xác định, mà không chặn, không có ký tự nào có sẵn. Nếu như<code>Traits::eof</code>Chắc chắn sẽ trở lại</p>
+<p>hoặc ném.<code>​0​</code>Phiên bản lớp cơ sở trả về</p>
+<h3 id="Notes">Ghi chú</h3> <p>, có ý nghĩa của "không chắc chắn nếu có các ký tự có sẵn trong chuỗi liên quan".</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue159" rel="nofollow">LWG 159</a> </td> <td>C ++ 98</td> <td>
+<code><a href="underflow" title="cpp/io/basic streambuf/underflow">underflow()</a></code>Tên của hàm này là viết tắt của "Stream: có bao nhiêu ký tự?", Vì vậy, nó được phát âm là "có bao nhiêu c", thay vì "hiển thị nhiều c".<br/>ít nhất<code>showmanyc()</code>được đảm bảo không thất bại cho đến khi</td> <td>ký tự được cung cấp<br/><code>showmanyc()</code>đã mở rộng bảo lãnh cho phép ít nhất</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="in_avail" title="cpp/io/basic streambuf/in avail"> <span class="t-lines"><span>PUBSYNC</span></span></a></div> </td> <td>Gọi<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_filebuf/showmanyc" title="cpp/io/basic filebuf/showmanyc"> <span class="t-lines"><span>đồng bộ hóa các bộ đệm với chuỗi ký tự liên quan</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Xóa bộ đệm khu vực đặt và đóng tệp được liên kết<br/> <span class="t-mark">Putback<code>std::basic_filebuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_streambuf/showmanyc">https://en.cppreference.com/w/cpp/io/basic_streambuf/showmanyc</a>
+</p>
+</div>

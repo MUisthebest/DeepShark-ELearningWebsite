@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Phần cứng_Destuction_Interference_Size, std :: phần cứng_construction_interference_size</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/new" title="cpp/header/new">&lt;new&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Constexpr std :: size_t</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">    phần cứng_destruction_interference_size = /*thực hiện xác định* /;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Constexpr std :: size_t<code>alignof<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/types/max_align_t"><span class="kw111">Điều đó cho tất cả<span class="me2">MAX_ALIGN_T</span></span></a><span class="br0">)</span></code> <div class="cpp source-cpp"><pre data-language="cpp">    phần cứng_construction_interference_size = /*thực hiện xác định* /;</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Bù tối thiểu giữa hai đối tượng để tránh chia sẻ sai. Đảm bảo ít nhất là<code>alignof<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/types/max_align_t"><span class="kw111">Điều đó cho tất cả<span class="me2">MAX_ALIGN_T</span></span></a><span class="br0">)</span></code> <div class="cpp source-cpp"><pre data-language="cpp">struct keep_apart</pre></div>
+</div> <h3 id="Notes">Ghi chú</h3> <p>{</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_hardware_interference_size" title="cpp/feature test"><code>__cpp_lib_hardware_interference_size</code></a></td> <td><span class="nu0">201703L</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<code>constexpr std::hardware_constructive_interference_size</code>Và<br/> <p><code>constexpr std::hardware_destructive_interference_size</code></p>
+</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>    alignas (std :: phần cứng_destruction_interference_size) std :: Atomic &lt;int&gt; cat;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    alignas (std :: phần cứng_destruction_interference_size) std :: Atomic &lt;int&gt; Dog;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">};</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="thread/hardware_concurrency" title="cpp/thread/thread/hardware concurrency"> <span class="t-lines"><span>{</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>    STD :: Atomic &lt;Int&gt; Dog;<br/> <span class="t-mark">(Chức năng thành viên tĩnh công khai của<code>std::thread</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="jthread/hardware_concurrency" title="cpp/thread/jthread/hardware concurrency"> <span class="t-lines"><span>{</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>    STD :: Atomic &lt;Int&gt; Dog;<br/> <span class="t-mark">(Chức năng thành viên tĩnh công khai của<code>std::jthread</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/hardware_destructive_interference_size">https://en.cppreference.com/w/cpp/thread/hardware_destructive_interference_size</a>
+</p>
+</div>

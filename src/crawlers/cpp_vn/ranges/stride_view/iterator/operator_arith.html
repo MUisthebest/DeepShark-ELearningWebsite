@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: stride_view &lt;v&gt; ::<i>vòng lặp</i>&lt;Const&gt; :: Toán tử ++,-,+=,-=</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">:: Nhà điều hành ++</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">constexpr /*iterator* /&amp; toán tử ++ ();</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Consexpr /*iterator* / toán tử ++ (int)</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Consexpr /*iterator* /&amp; Toán tử-()</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">  yêu cầu phạm vi :: bidItional_range &lt;base&gt;;</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Consexpr /*iterator* / toán tử-(int)</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">  yêu cầu phạm vi :: bidItional_range &lt;base&gt;;</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Consexpr /*iterator* /&amp; Toán tử+= (argen_type n)<a href="iterator" title="cpp/ranges/stride view/iterator/iterator">iterator</a>.</p>
+<p>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>, và một trong hai</i></code></a>Thì<a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>kết thúc_</i></code></a>Thì<a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>(n * i)</i></code></a>, Và<a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>mất tích_</i></code></a>là thành viên dữ liệu của<a href="iterator" title="cpp/ranges/stride view/iterator/iterator">iterator</a>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;class inputit1, class inputit2,<div class="cpp source-cpp"><pre data-language="cpp">thiếu_ = phạm vi :: advance (current_, stride_, end_);</pre></div>trả lại *cái này<a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>, và một trong hai</i></code></a>Trước cuộc gọi<a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>kết thúc_</i></code></a>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;class inputit1, class inputit2,<code>++*this;</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;class inputit1, class inputit2,<code>auto tmp = *this; ++*this; return tmp;</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mẫu &lt;class inputit1, class inputit2,<div class="cpp source-cpp"><pre data-language="cpp">không nên bằng</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Mẫu &lt;class inputit1, class inputit2,<code>auto tmp = *this; --*this; return tmp;</code>.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>Mẫu &lt;class inputit1, class inputit2,<div class="cpp source-cpp"><pre data-language="cpp">Phạm vi :: Advance (current_, thiếu_ - stride_);</pre></div> <p>Nếu như<code>n &gt; 0</code>mất tích_ = 0;<code><a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3142">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>current_, end_<span class="br0">)</span></code>và giá trị được trả về khi kết quả chính xác nhỏ hơn<code>stride_ * (n - 1)</code>trả lại *cái này;<code>n &lt; 0</code>    toán tử-= (const std :: chrono :: tháng &amp; dm) const noexcept;<code><a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3142">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>current_, end_<span class="br0">)</span></code>if (n&gt; 0)<code>stride_ * (n - 1)</code>.</p>
+</div> <div class="t-li1">
+<span class="t-li">6)</span>Mẫu &lt;class inputit1, class inputit2,<code>return *this += -n;</code>
+</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>Trả về một tham chiếu đến phần tử tại vị trí tương đối được chỉ định.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">Tăng hoặc giảm trình lặp, bằng cách áp dụng hoạt động tương ứng trên trình lặp bên dưới.</span> <code>*this</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Gán cho đã cho</div> <div class="t-li1">
+<span class="t-li">Gia tăng theo một.</span>Sự gia tăng hoặc giảm<code>*this</code>Giảm một.</div> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_arith2" title="cpp/ranges/stride view/iterator/operator arith2"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>tiến bộ hoặc giảm các trình lặp cơ bản<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/stride_view/iterator/operator_arith">https://en.cppreference.com/w/cpp/ranges/stride_view/iterator/operator_arith</a>
+</p>
+</div>

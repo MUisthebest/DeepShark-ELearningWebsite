@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">Chuyển đổi hàm tạo</h1> <p>Một hàm tạo không được khai báo với trình xác định<a href="explicit" title="cpp/language/explicit">explicit</a> <span class="t-rev-inl t-until-cxx11"><span>và có thể được gọi với một tham số duy nhất</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span>được gọi là a<i>Chuyển đổi hàm tạo</i>.</p>
+<p>Không giống như các nhà xây dựng rõ ràng, chỉ được xem xét trong<a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a>(trong đó bao gồm<a href="explicit_cast" title="cpp/language/explicit cast">explicit conversions</a>chẳng hạn như<a href="static_cast" title="cpp/language/static cast">static_cast</a>), các hàm tạo chuyển đổi cũng được xem xét trong<a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a>, như một phần của<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">user-defined conversion sequence</a>.</p>
+<p>Người ta nói rằng một hàm tạo chuyển đổi chỉ định chuyển đổi ngầm từ các loại đối số của nó (nếu có) sang loại lớp của nó. Lưu ý rằng không tiết lộ<a href="cast_operator" title="cpp/language/cast operator">user-defined conversion function</a>cũng chỉ định một chuyển đổi ngầm.</p>
+<p>Không được công bố ngầm và không được xác định bởi người dùng<a href="copy_constructor" title="cpp/language/copy constructor">copy constructors</a>Và<a href="move_constructor" title="cpp/language/move constructor">move constructors</a>đang chuyển đổi các hàm tạo.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc a</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="copy_assignment" title="cpp/language/copy assignment">copy assignment</a> </li>
+<li> <a href="copy_constructor" title="cpp/language/copy constructor">copy constructor</a> </li>
+<li> <a href="copy_elision" title="cpp/language/copy elision">copy elision</a> </li>
+<li> <a href="default_constructor" title="cpp/language/default constructor">default constructor</a> </li>
+<li> <a href="destructor" title="cpp/language/destructor">destructor</a> </li>
+<li> <a href="explicit" title="cpp/language/explicit"><code>explicit</code></a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> <ul>
+<li> <a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a> </li>
+<li> <a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </li>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a> </li>
+<li> <a href="default_initialization" title="cpp/language/default initialization">default initialization</a> </li>
+<li> <a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a> </li>
+<li> <a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">initializer list</a> </li>
+<li> <a href="list_initialization" title="cpp/language/list initialization">list initialization</a> </li>
+<li> <a href="reference_initialization" title="cpp/language/reference initialization">reference initialization</a> </li>
+<li> <a href="value_initialization" title="cpp/language/value initialization">value initialization</a> </li>
+<li> <a href="zero_initialization" title="cpp/language/zero initialization">zero initialization</a> </li>
+</ul> </li>
+<li> <a href="move_assignment" title="cpp/language/move assignment">move assignment</a> </li>
+<li> <a href="move_constructor" title="cpp/language/move constructor">move constructor</a> </li>
+<li> <a href="new" title="cpp/language/new">new</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/converting_constructor">https://en.cppreference.com/w/cpp/language/converting_constructor</a>
+</p>
+</div>

@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: remove_extent</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Nếu như<code>T</code>struct remove_extent;<code>X</code>là một mảng đa chiều của một số loại<code>type</code>, một đối tượng riêng biệt của loại<code>X</code>, nếu không thì<code>type</code>khoảng cách<code>T</code>là một mảng một số loại</p>
+<p>bằng nhau<code>std::remove_extent</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Tên</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td>, cung cấp cho thành viên đánh máy<code>T</code> </td>
+</tr> </table> <h3 id="Helper_types">Mẫu &lt;phạm vi :: input_range r, std :: meally_incrementable o&gt;</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">. Lưu ý rằng nếu T là một mảng đa chiều, chỉ có kích thước đầu tiên được loại bỏ.</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">sử dụng remove_extent_t = typename remove_extent &lt;t&gt; :: type;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Mẫu &lt;Class T&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_array" title="cpp/types/is array"> <span class="t-lines"><span>is_array</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem một loại là loại mảng<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="rank" title="cpp/types/rank"> <span class="t-lines"><span>thứ hạng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được số lượng kích thước của một loại mảng<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="extent" title="cpp/types/extent"> <span class="t-lines"><span>phạm vi</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được kích thước của một loại mảng dọc theo một kích thước được chỉ định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="remove_all_extents" title="cpp/types/remove all extents"> <span class="t-lines"><span>remove_all_extents</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>loại bỏ tất cả các phạm vi khỏi loại mảng đã cho<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/remove_extent">https://en.cppreference.com/w/cpp/types/remove_extent</a>
+</p>
+</div>

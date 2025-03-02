@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Nâng cao</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/iterator" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx17"> <td><pre data-language="cpp">Mẫu &lt;class inputit, khoảng cách lớp&gt;</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td> </tr> <tr class="t-dcl t-since-cxx17"> <td><pre data-language="cpp">void Advance (đầu vào &amp; nó, khoảng cách n);</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td> </tr> </table> <p>Mẫu &lt;class inputit, khoảng cách lớp&gt;<code>it</code>Chuyển tiếp<code>n</code>các yếu tố.</p>
+<p>Nếu như<code>n</code>Constexpr void Advance (Inputit &amp; It, khoảng cách n);<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a>Gia số được lặp lại</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Một số vòng lặp trong</td> <td>-</td> <td>là âm, trình lặp bị giảm. Trong trường hợp này,</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>, nếu không thì hành vi là không xác định.<code>it</code>Người lặp lại được nâng cao</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>    if (pre (*đầu tiên))</p>
+<p>            Forwardit2 first2, forwardit2 last2,<code>InputIt</code>Số lượng các yếu tố<a href="../named_req/randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>nên được nâng cao</p>
+<h3 id="Notes">Ghi chú</h3> <p>Ngoài ra đáp ứng các yêu cầu của<a href="../iterator#Dereferenceability_and_validity" title="cpp/iterator">singular</a>, sự phức tạp là không đổi.</p>
+<h3 id="Possible_implementation">. ​</h3> <p>được tìm thấy,<a class="external text" href="https://github.com/gcc-mirror/gcc/blob/d9375e490072d1aae73a93949aa158fcd2a27018/libstdc%2B%2B-v3/include/bits/stl_iterator_base_funcs.h#L200" rel="nofollow">libstdc++</a>Và<a class="external text" href="https://github.com/llvm-mirror/libcxx/blob/a12cb9d211019d99b5875b6d8034617cbc24c2cc/include/iterator#L582" rel="nofollow">libc++</a>.</p>
+<table class="eq-fun-cpp-table"> <tr> <th>
+<a href="#Version_1">Non-constexpr version</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Hành vi không được xác định nếu chuỗi tăng hoặc giảm được chỉ định sẽ yêu cầu một trình lặp không thể nâng (chẳng hạn như trình lặp lại trong quá khứ)</pre></div> </td>
+</tr> <tr> <th>
+<a href="#Version_2">constexpr version</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">iterator) bị giảm.</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Chi tiết không gian tên</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">{</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="next" title="cpp/iterator/next"> <span class="t-lines"><span>Kế tiếp</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tăng một lần lặp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="prev" title="cpp/iterator/prev"> <span class="t-lines"><span>trước</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Giảm một vòng lặp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="distance" title="cpp/iterator/distance"> <span class="t-lines"><span>STD ::</span></span></a></div> </td> <td>Trả về khoảng cách giữa hai trình lặp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ranges/advance" title="cpp/iterator/ranges/advance"> <span class="t-lines"><span>Phạm vi :: Nâng cao</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>tiến lên một trình lặp bằng khoảng cách đã cho hoặc đến một ràng buộc nhất định<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/advance">https://en.cppreference.com/w/cpp/iterator/advance</a>
+</p>
+</div>

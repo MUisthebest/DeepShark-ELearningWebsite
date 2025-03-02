@@ -1,0 +1,10 @@
+ <h1 class="firstHeading" id="firstHeading">std :: pmr :: memory_resource :: do_deallocate</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">void ảo DO_Deallocate (void* p, std :: size_t byte, std :: size_t căn chỉnh) = 0;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Xử lý lưu trữ được chỉ ra bởi<code>p</code>.</p>
+<p><code>p</code>phải được trả lại bằng một cuộc gọi trước<code>allocate(bytes, alignment)</code>trên a<code>memory_resource</code>                 std :: size_t căn chỉnh = alignof (std :: max_align_t));<code>*this</code>và bộ lưu trữ mà nó chỉ ra chưa được giải quyết, nếu không hành vi không được xác định.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="deallocate" title="cpp/memory/memory resource/deallocate"> <span class="t-lines"><span>/ * container-node-type */</span></span></a></div> </td> <td>Xử lý bộ nhớ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/memory_resource/do_deallocate">https://en.cppreference.com/w/cpp/memory/memory_resource/do_deallocate</a>
+</p>
+</div>

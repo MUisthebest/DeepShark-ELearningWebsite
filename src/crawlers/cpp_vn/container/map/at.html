@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">std :: map &lt;key, t, so sánh, phân bổ&gt; :: at</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">T &amp; at (khóa const &amp; key);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">const t &amp; at (const key &amp; key) const;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả về một tham chiếu đến giá trị được ánh xạ của phần tử với khóa tương đương với<code>key</code>. Nếu không có yếu tố như vậy tồn tại, một ngoại lệ của loại<code><a href="../../error/out_of_range" title="cpp/error/out of range">std::out_of_range</a></code>có thể được chuyển đổi hoàn toàn thành cả hai. Loại</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu mảng chưa được phân vùng theo thứ tự tăng dần đối với khóa, theo cùng một tiêu chí</td> <td>-</td> <td>chìa khóa của yếu tố cần tìm</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Tham chiếu đến giá trị được ánh xạ của phần tử được yêu cầu.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../../error/out_of_range" title="cpp/error/out of range">std::out_of_range</a></code>Nếu container không có phần tử với được chỉ định<code>key</code>.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Logarit trong kích thước của container.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue464" rel="nofollow">LWG 464</a> </td> <td>C ++ 98</td> <td>
+<code>map</code>không có chức năng thành viên này</td> <td>Được cho</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue703" rel="nofollow">LWG 703</a> </td> <td>C ++ 98</td> <td>Yêu cầu phức tạp bị thiếu</td> <td>Được cho</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2007" rel="nofollow">LWG 2007</a> </td> <td>C ++ 98</td> <td>giá trị trả về được đề cập đến phần tử được yêu cầu</td> <td>đề cập đến giá trị được ánh xạ của nó</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_at" title="cpp/container/map/operator at"> <span class="t-lines"><span>nhà điều hành []</span></span></a></div> </td> <td>lặp theo thứ tự tăng dần của các khóa, trong đó tăng dần được xác định bằng cách so sánh được sử dụng để xây dựng. Đó là, được đưa ra<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/map/at">https://en.cppreference.com/w/cpp/container/map/at</a>
+</p>
+</div>

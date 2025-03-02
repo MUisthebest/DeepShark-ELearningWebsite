@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iostream_c Categortory</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/ios" title="cpp/header/ios">&lt;ios&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">const std :: error_c Category &amp; iostream_c Category () noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Có được một tham chiếu đến đối tượng danh mục lỗi tĩnh cho các lỗi iOStream. Đối tượng được yêu cầu ghi đè chức năng ảo<code>error_category::name()</code>Để trả lại một con trỏ về chuỗi<code>"iostream"</code>. Nó được sử dụng để xác định mã lỗi được cung cấp trong các ngoại lệ của loại<code><a href="ios_base/failure" title="cpp/io/ios base/failure">std::ios_base::failure</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Tham chiếu đến đối tượng tĩnh của loại thời gian chạy không xác định, có nguồn gốc từ<code><a href="../error/error_category" title="cpp/error/error category">std::error_category</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Fstream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2087" rel="nofollow">LWG 2087</a> </td> <td>C ++ 11</td> <td>
+<code>iostream_category</code> <span class="kw1">Noexcept</span> </td> <td>int main ()<span class="kw1">Noexcept</span> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="ios_base/failure" title="cpp/io/ios base/failure"> <span class="t-lines"><span>Mẫu &lt;Class T&gt;</span></span></a></div> </td> <td>Đăng ký chức năng gọi lại sự kiện<br/> <span class="t-mark">(Lớp thành viên công cộng của<code>std::ios_base</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="io_errc" title="cpp/io/io errc"> <span class="t-lines"><span>io_errc</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Mã lỗi luồng IO<br/> <span class="t-mark">(enum)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/iostream_category">https://en.cppreference.com/w/cpp/io/iostream_category</a>
+</p>
+</div>

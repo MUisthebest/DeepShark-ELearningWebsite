@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Ostream_iterator &lt;T, Biểu đồ, Đặc điểm&gt; :: Ostream_Iterator</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Ostream_Iterator (Ostream_type &amp; Stream, Biểu đồ const* Delim);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Ostream_Iterator (Ostream_type &amp; Stream);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Xây dựng trình lặp với<code>stream</code>là luồng liên kết, bằng cách lưu trữ địa chỉ của<code>stream</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>, trả lại<code>delim</code>như dấu phân cách.</div> <div class="t-li1">
+<span class="t-li">2)</span>Sử dụng một con trỏ null làm dấu phân cách.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>luồng đầu ra được truy cập bởi trình lặp lại này</td>
+</tr> <tr class="t-par"> <td>DELIM</td> <td>-</td> <td>Chuỗi ký tự kết thúc không được chèn vào luồng sau mỗi đầu ra</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;THERTHERM&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1280" rel="nofollow">LWG 1280</a> </td> <td>C ++ 98</td> <td>
+<code>stream</code>#include &lt;iterator&gt;</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2325R3" rel="nofollow">P2325R3</a> </td> <td>C ++ 20</td> <td>hàm tạo mặc định được cung cấp dưới dạng C ++ 20<br/>Trình lặp phải được<a href="../../concepts/default_initializable" title="cpp/concepts/default initializable"><code>default_initializable</code></a> </td> <td>    const char* file = "test.txt";<br/>    {</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/ostream_iterator/ostream_iterator">https://en.cppreference.com/w/cpp/iterator/ostream_iterator/ostream_iterator</a>
+</p>
+</div>

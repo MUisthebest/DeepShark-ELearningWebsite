@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_spanstream &lt;biểu đồ, đặc điểm&gt; :: hoán đổi</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">hoán đổi void (basic_spanstream &amp; other);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Trao đổi trạng thái của luồng với các<code>other</code>.</p>
+<p>Điều này được thực hiện bằng cách gọi<code><a href="http://en.cppreference.com/w/cpp/io/basic_iostream"><span class="kw1721">Điều đó cho tất cả<span class="me2">basic_iostream</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Được xác định trong tiêu đề</span><span class="br0">.</span>other<span class="br0">)</span></code>và hoán đổi phần bọc<code>std::basic_spanbuf</code>Đối tượng (có thể truy cập thông qua<code>*rdbuf()</code>).</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>phát trực tuyến để trao đổi trạng thái với</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_spanbuf/swap" title="cpp/io/basic spanbuf/swap"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Lật<code>basic_spanbuf</code>Đối tượng<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_spanbuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_spanstream/swap">https://en.cppreference.com/w/cpp/io/basic_spanstream/swap</a>
+</p>
+</div>

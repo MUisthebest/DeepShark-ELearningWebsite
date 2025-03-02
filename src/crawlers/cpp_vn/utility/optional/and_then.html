@@ -1,0 +1,34 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Tùy chọn &lt;t&gt; :: và_then</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;Class F&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">ConstExpr Auto and_then (f &amp;&amp; f) &amp;;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;Class F&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">ConstExpr Auto và_Then (F &amp;&amp; F) Const &amp;;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Nếu như<code>*this</code>chứa một giá trị, gọi<code>f</code>với giá trị chứa như một đối số, và trả về kết quả của việc gọi đó; Nếu không, trả về một trống<code>std::optional</code>.</p>
+<p>Loại trả lại (xem bên dưới) phải là một chuyên gia của<code><a href="../optional" title="cpp/utility/optional">std::optional</a></code>(Không giống như<a href="transform" title="cpp/utility/optional/transform"><code>transform()</code></a>). Nếu không, chương trình là xấu.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;class inputit1, class inputit2,<br/><div class="cpp source-cpp"><pre data-language="cpp">Nếu (*cái này)</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;class inputit1, class inputit2,<br/><div class="cpp source-cpp"><pre data-language="cpp">    trả lại std :: gọi (std :: forward &lt;f&gt; (f), ** this);</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;class inputit1, class inputit2,<br/><div class="cpp source-cpp"><pre data-language="cpp">khác</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mẫu &lt;class inputit1, class inputit2,<br/><div class="cpp source-cpp"><pre data-language="cpp">    trả về std :: remove_cvref_t &lt;std :: indoke_result_t &lt;f, t &amp; &gt;&gt; {};</pre></div>
+</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>có thể sửa đổi các phần tử của phạm vi thông qua trình lặp được thu hút. Nếu như</td> <td>-</td> <td>if (has_value ())<a href="../../named_req/callable" title="cpp/named req/Callable">Callable</a>Nếu (*cái này)<code><a href="../optional" title="cpp/utility/optional">std::optional</a></code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Kết quả của<code>f</code>    trả lại std :: gọi (std :: forward &lt;f&gt; (f), ** this);<code><a href="../optional" title="cpp/utility/optional">std::optional</a></code>là giải thích chỉ lớp lồng nhau.</p>
+<h3 id="Notes">Ghi chú</h3> <p>khác<i>    trả về std :: remove_cvref_t &lt;std :: indoke_result_t &lt;f, const t &amp; &gt;&gt; {};</i>.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_optional" title="cpp/feature test"><code>__cpp_lib_optional</code></a></td> <td><span class="nu0">3)</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<a href="../optional#Monadic_operations" title="cpp/utility/optional">Monadic operations</a>TRONG<code><a href="../optional" title="cpp/utility/optional">std::optional</a></code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Nếu (*cái này)</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    trả lại std :: gọi (std :: forward &lt;f&gt; (f), std :: di chuyển (** this));</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="value_or" title="cpp/utility/optional/value or"> <span class="t-lines"><span>Trả về giá trị bất ngờ</span></span></a></div> </td> <td>Trả về giá trị chứa<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="transform" title="cpp/utility/optional/transform"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>int main ()<code>optional</code>Trả về kết quả của hàm đã cho trên giá trị chứa nếu nó tồn tại hoặc trống<code>optional</code>[tĩnh]<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="or_else" title="cpp/utility/optional/or else"> <span class="t-lines"><span>chứa giá trị dự kiến ​​biến đổi nếu nó tồn tại; Nếu không, trả lại</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>trả lại<code>optional</code>chứa giá trị chứa được biến đổi nếu nó tồn tại hoặc trống<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/optional/and_then">https://en.cppreference.com/w/cpp/utility/optional/and_then</a>
+</p>
+</div>

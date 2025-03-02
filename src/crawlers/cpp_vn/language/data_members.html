@@ -1,0 +1,100 @@
+ <h1 class="firstHeading" id="firstHeading">Các thành viên dữ liệu phi tĩnh</h1> <p>Các thành viên dữ liệu không tĩnh được khai báo trong một<a href="class" title="cpp/language/class">member specification</a>của một lớp học.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">lớp s</pre></div> <p>{<a href="declarations" title="cpp/language/declarations">simple declarations</a>    int n;              // Thành viên dữ liệu phi tĩnh</p>
+<ul><li> <a href="../keyword/extern" title="cpp/keyword/extern"><code>extern</code></a>Và<a href="../keyword/register" title="cpp/keyword/register"><code>register</code></a>    int &amp; r;             // Thành viên dữ liệu không tĩnh thuộc loại tham chiếu</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <a href="../keyword/thread_local" title="cpp/keyword/thread local"><code>thread_local</code></a>    int a [2] = {1, 2};  // Thành viên dữ liệu phi tĩnh với Bộ khởi tạo thành viên mặc định (C ++ 11)<a href="static" title="cpp/language/static">static</a>    std :: chuỗi s, *ps; // Hai thành viên dữ liệu không tĩnh</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li> <a class="mw-redirect" href="incomplete_type" title="cpp/language/incomplete type">incomplete types</a>Thì<a href="abstract_class" title="cpp/language/abstract class">abstract class types</a> <code>C</code>    cấu trúc lồng nhau<code>C</code>    {<code>C&amp;</code>        std :: chuỗi s;<code>C*</code>    } D5;               // Thành viên dữ liệu không tĩnh thuộc loại lồng nhau</li>
+<li> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Một<a href="auto" title="cpp/language/auto">placeholder type specifier</a>biểu thị<code>auto</code><span class="t-rev-inl t-since-cxx14"><span>Thì<code>decltype(auto)</code></span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span><span class="t-rev-inl t-since-cxx17"><span>    Bit char: 2;       // Bitfield hai bit<a href="class_template_argument_deduction" title="cpp/language/class template argument deduction">deduction</a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span><span class="t-rev-inl t-since-cxx20"><span>có thể đại diện cho các phân số của ve.<a href="constraints" title="cpp/language/constraints">constrained</a>};</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Bất kì<a href="static#Constant_static_members" title="cpp/language/static">initialized in the class definition</a>).</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Ngoài ra,<a href="bit_field" title="cpp/language/bit field">bit-field</a>được phép, ngoại trừ</p>
+<h3 id="Layout">Các nhà xác định lớp lưu trữ không được phép;</h3> <p>Bộ xác định lớp lưu trữ không được phép (nhưng nó được phép<code>C</code>thành viên dữ liệu);<code>C</code>và các mảng không được phép: đặc biệt là một lớp<a href="storage_duration" title="cpp/language/storage duration">storage duration</a>không thể có thành viên dữ liệu không tĩnh của loại</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <p>Khi một đối tượng của một số lớp<a href="union" title="cpp/language/union">union</a>được tạo ra, mỗi thành viên dữ liệu không tĩnh thuộc loại không tham chiếu được phân bổ trong một phần của biểu diễn đối tượng của<span class="t-rev-inl t-since-cxx20"><span><a href="object#Subobjects" title="cpp/language/object">non-zero-sized</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>(con trỏ tới C);<span class="t-rev-inl t-until-cxx11"><span>Một thành viên dữ liệu không tĩnh không thể có cùng tên với tên của lớp nếu có ít nhất một hàm tạo do người dùng phát hành có mặt;<a href="access" title="cpp/language/access">access specifier</a></span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>, một tên mẫu lớp có chủ đề<a href="access" title="cpp/language/access">member access</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>người giữ chỗ<span class="t-rev-inl t-until-cxx11"><span>) không thể được sử dụng trong khai báo thành viên dữ liệu không tĩnh (mặc dù nó được phép cho các thành viên dữ liệu tĩnh</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>Tuyên bố được cho phép.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Cách trình bày</p>
+</td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <p>Khi một đối tượng của một số lớp<a href="union" title="cpp/language/union">union</a>được tạo ra, mỗi thành viên dữ liệu không tĩnh thuộc loại không tham chiếu được phân bổ trong một phần của biểu diễn đối tượng của<a href="object#Subobjects" title="cpp/language/object">non-zero-sized</a>. Liệu các thành viên tham khảo có chiếm bất kỳ lưu trữ nào được xác định không, nhưng</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>giống như đối tượng mà chúng là thành viên.</p>
+<h3 id="Standard-layout">Cho không</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Các loại lớp,<a href="classes#POD_class" title="cpp/language/classes">POD class</a>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>thành viên<i>Lớp tiêu chuẩn</i>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<a href="classes#Standard-layout_class" title="cpp/language/classes">standard-layout class</a>không bị tách biệt bởi một</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Các<i>Một lớp trong đó tất cả các thành viên dữ liệu phi tĩnh đều có cùng một điều khiển truy cập và một số điều kiện khác được thỏa mãn được gọi là</i>luôn luôn được phân bổ để các thành viên được tuyên bố sau này có địa chỉ cao hơn trong một đối tượng lớp. Thành viên</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>phân tách bởi một trình xác định truy cập<code>[[<a href="attributes/no_unique_address" title="cpp/language/attributes/no unique address">no_unique_address</a>]]</code>với kiểm soát truy cập khác nhau</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>được phân bổ theo thứ tự không xác định (trình biên dịch có thể nhóm chúng lại với nhau).</li>
+<li>Cho không<a href="object#Alignment" title="cpp/language/object">alignment requirements</a>, Và</li>
+<li>Các loại lớp,</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Các thành viên luôn được phân bổ để các thành viên được tuyên bố sau này có địa chỉ cao hơn trong một đối tượng lớp. Lưu ý rằng kiểm soát truy cập của thành viên vẫn ảnh hưởng đến thuộc tính Layout tiêu chuẩn (xem bên dưới).</pre></div> <p>Các yêu cầu căn chỉnh có thể cần phải đệm giữa các thành viên hoặc sau thành viên cuối cùng của một lớp.<i>tương thích bố cục</i>Tiêu chuẩn-Layout<a href="enum" title="cpp/language/enum">enumerations</a>Một lớp được coi là có tiêu chuẩn và có các thuộc tính được mô tả dưới đây khi và chỉ khi đó là<i>Một lớp trong đó tất cả các thành viên dữ liệu phi tĩnh đều có cùng một điều khiển truy cập và một số điều kiện khác được thỏa mãn được gọi là</i>Đối với danh sách các yêu cầu).<code>A</code>Và<code>B</code>Trình tự ban đầu chung</p>
+<p>của hai loại lớp không liên kết tiêu chuẩn là chuỗi dài nhất của các thành viên dữ liệu không tĩnh và trường bit theo thứ tự khai báo, bắt đầu với thực thể đầu tiên như vậy trong mỗi lớp, do đó<i>tương thích bố cục</i>Cả hai thực thể đều được khai báo với</p>
+<p>thuộc tính hoặc không phải là,</p>
+<ul>
+<li>Các thực thể tương ứng có các loại tương thích bố cục,<code>T1</code>Các thực thể tương ứng có cùng<code>m</code>Cả hai thực thể đều là trường bit có cùng chiều rộng hoặc không phải là trường bit.<code>T2</code>#include &lt;New&gt;<code>m</code>Cấu trúc a {int a; char b; };<code>T1</code>Và<code>T2</code>struct b {const int b1; Char dễ bay hơi B2; }; </li>
+<li>// Trình tự ban đầu chung của A và B là A.A, A.B và B.B1, B.B2<a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a> <a href="reinterpret_cast#Type_aliasing" title="cpp/language/reinterpret cast">strict aliasing</a>struct c {int c; Không dấu: 0; char b; };</li>
+<li>Vĩ mô<code><a href="../types/offsetof" title="cpp/types/offsetof">offsetof</a></code>// Trình tự ban đầu chung của A và C là A.A và C.C</li>
+</ul> <h3 id="Member_initialization"> </h3> <p>struct d {int d; Char B: 4; };</p>
+<div class="t-li1">
+<span class="t-li">1)</span>// a và d chuỗi ban đầu chung là A.A và D.D<a href="constructor" title="cpp/language/constructor">member initializer list</a> <div class="cpp source-cpp"><pre data-language="cpp">struct e {unsign int e; char b; };</pre></div>
+</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <span class="t-li">2)</span>// Trình tự ban đầu chung của A và E trống<i>Hai loại lớp không liên kết tiêu chuẩn được gọi là</i>Nếu chúng giống nhau bỏ qua các trình điều chỉnh CV, nếu có, tương thích bố cục<a href="initialization" title="cpp/language/initialization">initializer</a>(tức là các bảng liệt kê với cùng một loại cơ bản) hoặc nếu<div class="cpp source-cpp"><pre data-language="cpp">Trình tự ban đầu chung</pre></div> <p>bao gồm mọi thành viên dữ liệu không tĩnh và trường bit (trong ví dụ trên,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">là tương thích bố cục).</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Hai công đoàn tiêu chuẩn được gọi là<a href="bit_field" title="cpp/language/bit field">bit-field</a>Nếu họ có cùng số lượng thành viên dữ liệu không tĩnh và các thành viên dữ liệu phi tĩnh tương ứng (theo bất kỳ thứ tự nào) có các loại tương thích bố cục.</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> </table> <p>Các loại tiêu chuẩn có các thuộc tính đặc biệt sau:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Trong một liên minh tiêu chuẩn với một thành viên tích cực thuộc loại không liên minh</pre></div> <p>, nó được phép đọc một thành viên dữ liệu không tĩnh<a href="default_constructor" title="cpp/language/default constructor">default constructor</a>của một thành viên liên minh khác thuộc loại lớp không liên minh</p>
+<div class="cpp source-cpp"><pre data-language="cpp">là một phần của chuỗi ban đầu chung của</pre></div> <p>(Ngoại trừ việc đọc một thành viên dễ bay hơi thông qua Glvalue không bay hơi là không xác định).<a href="constructor#Explanation" title="cpp/language/constructor">member initializer lists</a>):</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Một con trỏ đến một đối tượng thuộc loại lớp tiêu chuẩn có thể là</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Nếu như<span class="t-rev-inl t-until-cxx20"><span>Để con trỏ đến thành viên dữ liệu phi bit không tĩnh đầu tiên của nó (nếu nó có các thành viên dữ liệu không tĩnh) hoặc nếu không thì bất kỳ tiểu nhóm nào của lớp cơ sở của nó (nếu có bất kỳ) và ngược lại. Nói cách khác, không được phép đệm trước khi thành viên dữ liệu đầu tiên thuộc loại tiêu chuẩn. Lưu ý rằng</span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span>Các quy tắc vẫn áp dụng cho kết quả của dàn diễn viên như vậy.</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>và a<a href="expressions#Potentially-evaluated_expressions" title="cpp/language/expressions">potentially-evaluated</a>có thể được sử dụng để xác định độ lệch của bất kỳ thành viên nào từ đầu của lớp tiêu chuẩn.<a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a>Khởi tạo thành viên</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Các thành viên dữ liệu phi tĩnh có thể được khởi tạo theo một trong hai cách:</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Usage">Cách sử dụng</h3> <p>Trong</p>
+<div class="t-li1">
+<span class="t-li">1)</span>của hàm tạo.<code>this-&gt;</code>cấu trúc s<a href="this" title="cpp/language/this"><code>this</code></a>{<div class="cpp source-cpp"><pre data-language="cpp">    int n;</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>    std :: chuỗi s;<a href="pointer" title="cpp/language/pointer">pointer to non-static member</a>.<div class="cpp source-cpp"><pre data-language="cpp">    S (): n (7) {} // trực tiếp-khởi hành n, mặc định-khởi hành s</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>};<a href="expressions#Unevaluated_expressions" title="cpp/language/expressions">unevaluated operands</a>.<div class="cpp source-cpp"><pre data-language="cpp">Thông qua a</pre></div>
+</div> <div class="t-li1">Bộ khởi tạo thành viên mặc định<a class="external text" href="https://cplusplus.github.io/CWG/issues/613.html" rel="nofollow">CWG issue 613</a>TRONG<a class="external text" href="https://wg21.link/N2253" rel="nofollow">N2253</a>, đó là một nẹp hoặc bằng</div> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_nsdmi" title="cpp/feature test"><code>__cpp_nsdmi</code></a></td> <td><span class="nu0">Tại một điểm nhất định</span></td> <td><span class="t-mark">unininitialized_copy_n</span></td> <td>
+<a href="#Member_initialization">Non-static data member initializers</a> </td>
+</tr> <tr> <td><a href="../feature_test#cpp_aggregate_nsdmi" title="cpp/feature test"><code>__cpp_aggregate_nsdmi</code></a></td> <td><span class="nu0">Khoảng thời gian thực tế (tính bằng giây) được giữ bởi một đối tượng thời lượng</span></td> <td><span class="t-mark">(C ++ 14)</span></td> <td>
+<a href="aggregate_initialization" title="cpp/language/aggregate initialization">Aggregate classes</a>với<a href="#Member_initialization">default member initializers</a> </td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/80.html" rel="nofollow">CWG 80</a> </td> <td>C ++ 98</td> <td>Bao gồm trong khai báo thành viên và được sử dụng nếu thành viên bị bỏ qua khỏi danh sách khởi tạo thành viên của một hàm tạo.<br/>cấu trúc s</td> <td>{<br/>    int n = 7;<br/>    std :: chuỗi s {'a', 'b', 'c'};</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/190.html" rel="nofollow">CWG 190</a> </td> <td>C ++ 98</td> <td>    S () {} // Trình khởi tạo thành viên mặc định sẽ sao chép-khởi tạo n, list-initialize s<br/>};</td> <td>Nếu một thành viên có trình khởi tạo thành viên mặc định và cũng xuất hiện trong danh sách khởi tạo thành viên trong một hàm tạo, trình khởi tạo thành viên mặc định sẽ bị bỏ qua cho hàm tạo đó.<br/>#include &lt;Istream&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/613.html" rel="nofollow">CWG 613</a> </td> <td>C ++ 98</td> <td> </td> <td>int x = 0;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/645.html" rel="nofollow">CWG 645</a> </td> <td>C ++ 98</td> <td>cấu trúc s<br/>{</td> <td>    int n = ++ x;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1397.html" rel="nofollow">CWG 1397</a> </td> <td>C ++ 11</td> <td>    S () {} // sử dụng trình khởi tạo thành viên mặc định<br/>    S (int arg): n (arg) {} // sử dụng trình khởi tạo thành viên </td> <td>};<br/> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1425.html" rel="nofollow">CWG 1425</a> </td> <td>C ++ 98</td> <td>int main ()<br/>{<br/>    std :: cout &lt;&lt; x &lt;&lt; '\ n'; // In 0</td> <td>    S S1;                   // Bộ khởi tạo mặc định đã chạy<br/>    std :: cout &lt;&lt; x &lt;&lt; '\ n'; // In 1<br/>    S S2 (7);                // Bộ khởi tạo mặc định đã không chạy</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1696.html" rel="nofollow">CWG 1696</a> </td> <td>C ++ 98</td> <td>hàm tạo mục tiêu<br/>Trong trường hợp này, hàm tạo mục tiêu được chọn bằng độ phân giải quá tải và được thực thi trước, sau đó điều khiển trả về Trình xây dựng ủy thác và cơ thể của nó được thực thi.</td> <td>    std :: cout &lt;&lt; x &lt;&lt; '\ n'; // In 1</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1719.html" rel="nofollow">CWG 1719</a> </td> <td>C ++ 98</td> <td>}</td> <td>Bộ khởi tạo thành viên mặc định không được phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2254.html" rel="nofollow">CWG 2254</a> </td> <td>C ++ 11</td> <td>thành viên.<br/>Các thành viên của loại mảng không thể suy ra kích thước của họ từ các bộ khởi tạo thành viên:</td> <td>Cấu trúc x<br/>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2583.html" rel="nofollow">CWG 2583</a> </td> <td>C ++ 11</td> <td>    int a [] = {1, 2, 3};  // lỗi</td> <td>    int b [3] = {1, 2, 3}; // ĐƯỢC RỒI</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <a href="classes" title="cpp/language/classes">classes</a> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <a href="static" title="cpp/language/static">static members</a> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <a href="member_functions" title="cpp/language/member functions">non-static member functions</a> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/is_standard_layout" title="cpp/types/is standard layout"> <span class="t-lines"><span>is_standard_layout</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại là<a href="data_members#Standard-layout" title="cpp/language/data members">standard-layout</a>kiểu<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/offsetof" title="cpp/types/offsetof"> <span class="t-lines"><span>offsetof</span></span></a></div> </td> <td>Byte bù từ đầu của một<a href="../named_req/standardlayouttype" title="cpp/named req/StandardLayoutType">standard-layout</a>Nhập thành viên được chỉ định<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/data_members">https://en.cppreference.com/w/cpp/language/data_members</a>
+</p>
+</div>

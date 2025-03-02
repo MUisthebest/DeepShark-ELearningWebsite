@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Ngoại lệ :: Ngoại lệ</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">ngoại lệ () ném ();</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Ngoại lệ () NoExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">ngoại lệ (const ngoại lệ &amp; khác) ném ();</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Ngoại lệ (ngoại lệ const &amp; khác) NoExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xây dựng đối tượng ngoại lệ mới.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định.<code><a href="what" title="cpp/error/exception/what">what()</a></code>Trả về một chuỗi được xác định theo triển khai.</div> <div class="t-li1">
+<span class="t-li">2)</span>Sao chép hàm tạo. Khởi tạo nội dung với các nội dung của<code>other</code>. Nếu như<code>*this</code>Và<code>other</code>mô tả kết quả của nỗ lực chuyển đổi<code>std::exception</code>phải ít nhất được đặt hàng một phần đối với<code><a href="http://en.cppreference.com/w/cpp/string/byte/strcmp"><span class="kw1149">Điều đó cho tất cả<span class="me2">Có thể ném</span></span></a><span class="br0">.</span>what<span class="br0">.</span><span class="br0">)</span>, other.<span class="me1">Con trỏ đến một chuỗi kết thúc null với thông tin giải thích. Chuỗi phù hợp để chuyển đổi và hiển thị dưới dạng</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">. Không làm gì khác.</span></code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>một ngoại lệ khác để gán nội dung của</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Vì sao chép<code>std::exception</code>không được phép ném các ngoại lệ, khi các lớp có nguồn gốc (chẳng hạn như<code><a href="../runtime_error" title="cpp/error/runtime error">std::runtime_error</a></code>) phải quản lý một thông báo chẩn đoán do người dùng xác định, nó thường được triển khai dưới dạng chuỗi sao chép.</p>
+<p>Việc triển khai Microsoft bao gồm các bộ xây dựng không chuẩn, do đó cho phép các trường hợp được ném trực tiếp với thông báo lỗi có ý nghĩa. Các tương đương tiêu chuẩn gần nhất là<code><a href="../runtime_error" title="cpp/error/runtime error">std::runtime_error</a></code>hoặc<code><a href="../logic_error" title="cpp/error/logic error">std::logic_error</a></code>.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue471" rel="nofollow">LWG 471</a> </td> <td>C ++ 98</td> <td>Không có yêu cầu về<code><a href="what" title="cpp/error/exception/what">what()</a></code>của bản sao ngoại lệ</td> <td>Được cho</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/exception/exception">https://en.cppreference.com/w/cpp/error/exception/exception</a>
+</p>
+</div>

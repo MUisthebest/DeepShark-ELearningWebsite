@@ -1,0 +1,58 @@
+ <h1 class="firstHeading" id="firstHeading">Các lớp học có nguồn gốc</h1> <p>Bất kỳ loại lớp nào (cho dù được khai báo với<span class="t-spar">Lớp học</span> <code>class</code>hoặc<code>struct</code>) có thể được tuyên bố là<i>bắt nguồn</i>từ một hoặc nhiều<i>lớp cơ sở</i>trong đó, đến lượt nó, có thể được bắt nguồn từ các lớp cơ sở của riêng họ, tạo thành một hệ thống phân cấp kế thừa.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Danh sách các lớp cơ sở được cung cấp trong<span class="t-spar">Điều khoản cơ sở</span>của<a href="class" title="cpp/language/class">class declaration syntax</a>. Các<span class="t-spar">Điều khoản cơ sở</span>bao gồm nhân vật<code>:</code>tiếp theo là một danh sách được phân tách bằng dấu phẩy của một hoặc nhiều<span class="t-spar">người nhận cơ sở</span>struct common_type &lt;std :: Chrono :: Time_Point &lt;Đồng hồ, Thời lượng1&gt;, </p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">    int a, b, c;</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>virtual</code> <span class="t-spar">    int a, b, c;</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Truy cập-specifier</span> <span class="t-spar">    int a, b, c;</span> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>virtual</code> <span class="t-spar">Truy cập-specifier</span> <span class="t-spar">    int a, b, c;</span> </td> <td>(4)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Truy cập-specifier</span> <code>virtual</code> <span class="t-spar">    int a, b, c;</span> </td> <td>             Không có p);</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Chỉ định một kế thừa phi Virtual với khả năng truy cập thành viên mặc định.</div> <div class="t-li1">
+<span class="t-li">2)</span>Chỉ định một kế thừa ảo với khả năng truy cập thành viên mặc định.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Chỉ định một kế thừa phi Virtual với khả năng tiếp cận thành viên nhất định.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Chỉ định một kế thừa ảo với khả năng truy cập thành viên nhất định.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Giống như 4),<code>virtual</code>Và<span class="t-spar">Truy cập-specifier</span>có thể xuất hiện theo bất kỳ thứ tự nào.</div> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>trình tự của bất kỳ số lượng nào<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Truy cập-specifier</span> </td> <td>-</td> <td>Một trong số<code>private</code>Thì<code>public</code>, hoặc<code>protected</code> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">    int a, b, c;</span> </td> <td>-</td> <td>Một trong số<ul>
+<li> <span class="t-spar">tên lồng nhau</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tên tên</span> </li>
+<li> <span class="t-spar">tên lồng nhau</span> <code>template</code> <span class="t-spar">là một tham chiếu rvalue cho loại được khai báo</span> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <a href="decltype" title="cpp/language/decltype"><span class="t-spar">DeclType-Specifier</span></a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul><li> <a href="pack_indexing#Pack_indexing_specifier" title="cpp/language/pack indexing"><span class="t-spar">Pack-Index-Specifier</span> </a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> </td>
+</tr>
+</table> <p>MỘT<a href="elaborated_type_specifier" title="cpp/language/elaborated type specifier">elaborated type specifier</a>không thể trực tiếp xuất hiện dưới dạng<span class="t-spar">    int a, b, c;</span>Do giới hạn cú pháp.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p><span class="t-spar">người nhận cơ sở</span>s trong a<span class="t-spar">Điều khoản cơ sở</span>Trong đặc điểm kỹ thuật ngoại lệ, tìm thấy mẫu chức năng này ngoài bất cứ thứ gì được tìm thấy bởi các quy tắc tra cứu thông thường, làm cho đặc điểm kỹ thuật ngoại lệ tương đương với C ++ 17<a href="parameter_pack" title="cpp/language/parameter pack">pack expansions</a>.</p>
+<p>Một lớp hoặc cấu trúc được tuyên bố<a href="final" title="cpp/language/final"><code>final</code></a>không thể được biểu thị bằng<span class="t-spar">    int a, b, c;</span>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Nếu như<span class="t-spar">Truy cập-specifier</span>bị bỏ qua, nó mặc định là<code>public</code>cho các lớp học được khai báo với<span class="t-spar">Lớp học</span> <code>struct</code>và để<code>private</code>cho các lớp học được khai báo với<span class="t-spar">Lớp học</span> <code>class</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">cơ sở cấu trúc</pre></div> <p>{<span class="t-spar">    int a, b, c;</span>};<span class="t-spar">Điều khoản cơ sở</span> </p>
+<p>// Mỗi đối tượng thuộc loại có nguồn gốc bao gồm cơ sở dưới dạng tiểu mục<i>cấu trúc có nguồn gốc: cơ sở</i>{<a href="ebo" title="cpp/language/ebo">empty base optimization</a>    int b;<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">member initializer list</a>.</p>
+<h3 id="Virtual_base_classes">};</h3> <p> <code>virtual</code>// Mỗi đối tượng thuộc loại Derive2 bao gồm có nguồn gốc và cơ sở dưới dạng các tiểu mục<code>virtual</code>struct dẫn xuất2: xuất phát</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    int c;<code><a href="../io/basic_istream" title="cpp/io/basic istream">std::istream</a></code>Và<code><a href="../io/basic_ostream" title="cpp/io/basic ostream">std::ostream</a></code>có nguồn gốc từ<code><a href="../io/basic_ios" title="cpp/io/basic ios">std::ios</a></code>};<code><a href="../io/basic_iostream" title="cpp/io/basic iostream">std::iostream</a></code>Các lớp học được ký hiệu bằng<code><a href="../io/basic_istream" title="cpp/io/basic istream">std::istream</a></code>Và<code><a href="../io/basic_ostream" title="cpp/io/basic ostream">std::ostream</a></code>lớp học hoặc tổng hợp<code><a href="../io/basic_iostream" title="cpp/io/basic iostream">std::iostream</a></code>được liệt kê trong<code><a href="../io/basic_ostream" title="cpp/io/basic ostream">std::ostream</a></code>là các lớp cơ sở trực tiếp. Căn cứ của họ là các lớp cơ sở gián tiếp. Cùng một lớp không thể được chỉ định là lớp cơ sở trực tiếp nhiều lần, nhưng cùng một lớp có thể là lớp cơ sở trực tiếp và gián tiếp.<code><a href="../io/basic_istream" title="cpp/io/basic istream">std::istream</a></code>Mỗi lớp cơ sở trực tiếp và gián tiếp có mặt, vì<code><a href="../io/basic_ios" title="cpp/io/basic ios">std::ios</a></code>Lớp cơ sở tiểu mục<code><a href="../io/ios_base" title="cpp/io/ios base">std::ios_base</a></code>).</p>
+<p>, trong phần biểu diễn đối tượng của lớp dẫn xuất ở độ lệch phụ thuộc ABI. Các lớp cơ sở trống thường không tăng kích thước của đối tượng dẫn xuất do<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">member initializer list</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">. Các hàm tạo của các tiểu mục lớp cơ sở được gọi bởi hàm tạo của lớp dẫn xuất: đối số có thể được cung cấp cho các hàm tạo trong</pre></div> <p>Có<a href="unqualified_lookup#Member_function_definition" title="cpp/language/unqualified lookup">special rules</a>Các lớp cơ sở ảo</p>
+<h3 id="Public_inheritance">Đối với mỗi lớp cơ sở riêng biệt được chỉ định</h3> <p>    Aa ()<code>public</code> <a href="access" title="cpp/language/access">member access specifier</a>mỗi lần).</p>
+<p>struct b {int n; };<a class="extiw" href="https://en.wikipedia.org/wiki/Liskov_substitution_principle" title="enwiki:Liskov substitution principle">LSP</a>Lớp X: ảo công khai b {};<a class="extiw" href="https://en.wikipedia.org/wiki/Design_by_contract" title="enwiki:Design by contract">DbC</a>Lớp Y: công khai ảo B {};<a href="virtual" title="cpp/language/virtual">overrides</a>.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Lớp Z: công khai b {};</pre></div> </div> <h3 id="Protected_inheritance"> </h3> <p>    Aa ()<code>protected</code> <a href="access" title="cpp/language/access">member access specifier</a>// một trong đó là cơ sở của z và một cái được chia sẻ bởi x và y</p>
+<p>Struct AA: X, Y, Z</p>
+<h3 id="Private_inheritance">{</h3> <p>    Aa ()<code>private</code> <a href="access" title="cpp/language/access">member access specifier</a>    {</p>
+<p>        X :: n = 1; // Sửa đổi thành viên của SuboBject ảo B<a href="ebo" title="cpp/language/ebo">empty-base optimization</a>.</p>
+<p>        Y :: n = 2; // Sửa đổi cùng một thành viên của SuboBject ảo B<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>        Z :: n = 3; // Sửa đổi thành viên của Subobject B không phải là Virtual</p>
+<p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">        std :: cout &lt;&lt; x :: n &lt;&lt; y :: n &lt;&lt; z :: n &lt;&lt; '\ n'; // In 223</pre></div> <h3 id="Member_name_lookup">    }</h3> <p>};<a href="lookup" title="cpp/language/lookup">name lookup</a>.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1710.html" rel="nofollow">CWG 1710</a> </td> <td>C ++ 98</td> <td>Một ví dụ về hệ thống phân cấp kế thừa với các lớp cơ sở ảo là hệ thống phân cấp iostreams của thư viện tiêu chuẩn:<span class="t-spar">Sử dụng kế thừa ảo.</span>có nguồn gốc từ cả hai<br/>, vì vậy mọi trường hợp của<code>template</code>chứa a</td> <td>cho phép<code>template</code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="virtual" title="cpp/language/virtual">virtual functions</a> </li>
+<li> <a href="abstract_class" title="cpp/language/abstract class">abstract classes</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/derived_class">https://en.cppreference.com/w/cpp/language/derived_class</a>
+</p>
+</div>

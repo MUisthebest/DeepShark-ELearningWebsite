@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: make_pair</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/utility" title="cpp/header/utility">&lt;utility&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T1, Class T2&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx14"> <td> <pre data-language="cpp">std :: cặp &lt;t1, t2&gt; make_pair (t1 t, t2 u);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span> </td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">Mẫu &lt;Class T1, Class T2&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>Mẫu &lt;class T, std :: size_t n&gt;<code><a href="../pair" title="cpp/utility/pair">std::pair</a></code>std :: cặp &lt;v1, v2&gt; make_pair (t1 &amp;&amp; t, t2 &amp;&amp; u);</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Mẫu &lt;Class T1, Class T2&gt;<code>V1</code>Và<code>V2</code>&gt;<code><a href="http://en.cppreference.com/w/cpp/types/decay"><span class="kw631">Điều đó cho tất cả<span class="me2">mục nát</span></span></a><span class="sy1">is_trivently_destructible_v</span>T1<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">kiểu</span></code>Và<code><a href="http://en.cppreference.com/w/cpp/types/decay"><span class="kw631">Điều đó cho tất cả<span class="me2">mục nát</span></span></a><span class="sy1">is_trivently_destructible_v</span>T2<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">kiểu</span></code>constexpr std :: cặp &lt;v1, v2&gt; make_pair (t1 &amp;&amp; t, t2 &amp;&amp; u);<code><a href="../../types/decay" title="cpp/types/decay">std::decay</a></code>kết quả trong<code><a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper"><span class="kw1070">Điều đó cho tất cả<span class="me2">Tham chiếu_Wrapper</span></span></a><span class="sy1">is_trivently_destructible_v</span>X<span class="sy1">&lt;</span></code>Hằng số chỉ giải thích<code>X</code>đối tượng, suy ra loại mục tiêu từ các loại đối số.<code>X&amp;</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>t, u</td> <td>-</td> <td>Các loại suy luận</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>MỘT<code><a href="../pair" title="cpp/utility/pair">std::pair</a></code>(các biến đổi loại thông thường được áp dụng cho các đối số của các hàm được truyền theo giá trị) trừ khi áp dụng</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">, trong trường hợp đó, loại suy luận là</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">các giá trị để xây dựng cặp từ</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue181" rel="nofollow">LWG 181</a> </td> <td>C ++ 98</td> <td>Đối tượng chứa các giá trị đã cho.<br/>#include &lt;Istream&gt;</td> <td>#include &lt;Tiện ích&gt;<br/>#include &lt;chức năng&gt;</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/pair/make_pair">https://en.cppreference.com/w/cpp/utility/pair/make_pair</a>
+</p>
+</div>

@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Phạm vi :: Prev</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/iterator" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-h"> <td>Chữ ký cuộc gọi</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;std :: bidIrectional_iterator i&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Constexpr I Prev (I I);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;std :: bidIrectional_iterator i&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Class Inputit&gt;<code>n</code><sup>phần tử đầu vào trong I</sup>Trình lặp biểu thị sự khởi đầu của phạm vi<code>i</code>.</p>
+<p>Mẫu &lt;phạm vi :: forward_range r, class proj = std :: nhận dạng,<i>          std :: Indirect_binary_predicate &lt;</i>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj&gt;,</p>
+<ul>
+<li>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; pre = ranges :: arem_to&gt;</li>
+<li>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>.</li>
+<li>    adjacent_find (r &amp;&amp; r, pre pre = {}, proj proj = {});<a href="../../language/unqualified_lookup" title="cpp/language/unqualified lookup">normal unqualified lookup</a>(Sau khi chiếu với phép chiếu<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>như phạm vi nguồn, như thể đang sử dụng</li>
+</ul> <p>Phạm vi ::</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</td> <td>-</td> <td>người kế thừa (hoặc</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>, nếu không thì hành vi là không xác định.<code>i</code>Bidirit prev (bidirit it, typename std :: iterator_traits &lt;Bidirit&gt; :: argen_type n = 1);</td>
+</tr> <tr class="t-par"> <td>Phải mô hình</td> <td>-</td> <td>Mẫu &lt;std :: bidIrectional_iterator i&gt;<code>i</code>chỉ đến</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Consexpr I Prev (I I, STD :: ITER_DIFFERTY_T &lt;i&gt; N, I B có ràng buộc);<code>i</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Các<code>n</code><sup>phần tử đầu vào trong I</sup>Trình lặp biểu thị sự khởi đầu của phạm vi<code>i</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Các<code>n</code><sup>phần tử đầu vào trong I</sup>Trình lặp biểu thị sự khởi đầu của phạm vi<code>i</code>Người tiền nhiệm của<code>bound</code>kế thừa của người lặp</div> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <div class="t-li1">
+<span class="t-li">1)</span>trình rút vào các yếu tố để hoán đổi</div> <div class="t-li1">
+<span class="t-li">          std :: Indirect_strict_weak_order &lt;</span>Toán tử bool &lt;(const std :: deque &lt;t, alloc&gt; &amp; lhs,<code>I</code>Range constexpr :: mượn_subrange_t &lt;r&gt;<code><a href="http://en.cppreference.com/w/cpp/iterator/random_access_iterator"><span class="kw2868">Điều đó cho tất cả<span class="me2">Random_Access_Iterator</span></span></a><span class="sy1">is_trivently_destructible_v</span>I<span class="sy1">&lt;</span></code>; nếu không tuyến tính.</div> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">tiền thân của tererator</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>người tiền nhiệm nếu<code>--r.end()</code>tiền thân của tererator<code>r.end()</code>tiền thân (hoặc<code>operator--</code>Đầu vào tiếp theo (inputit it, typename std :: iterator_traits &lt;buputit&gt; :: argen_type n = 1)<code>--r.end()</code>{<code>ranges::prev(r.end())</code>làm.</p>
+<p>hoặc trình lặp đầu tiên so sánh với<code><a href="http://en.cppreference.com/w/cpp/ranges/common_range"><span class="kw2908">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">struct prev_fn</span></span></a></code>{<code>ranges::transform_view::end</code>    Mẫu &lt;std :: bidIrectional_iterator i&gt;<code>ranges::transform_view::begin</code>    Constexpr i toán tử () (i i) const<code>--r.end()</code>    {<code>ranges::prev</code>        --Tôi;</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">        trả lại tôi;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    }</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="next" title="cpp/iterator/ranges/next"> <span class="t-lines"><span>Phạm vi :: Tiếp theo</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>tăng một trình lặp bằng một khoảng cách nhất định hoặc đến một ràng buộc<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="advance" title="cpp/iterator/ranges/advance"> <span class="t-lines"><span>Phạm vi :: Nâng cao</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>tiến lên một trình lặp bằng khoảng cách đã cho hoặc đến một ràng buộc nhất định<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../prev" title="cpp/iterator/prev"> <span class="t-lines"><span>trước</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Giảm một vòng lặp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/ranges/prev">https://en.cppreference.com/w/cpp/iterator/ranges/prev</a>
+</p>
+</div>

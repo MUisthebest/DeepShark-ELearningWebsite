@@ -1,0 +1,126 @@
+ <h1 class="firstHeading" id="firstHeading">Bộ ký tự và mã hóa</h1> <p>Trang này mô tả một số bộ ký tự được chỉ định bởi tiêu chuẩn C ++.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <h3 id="Translation_character_set">Bộ ký tự dịch</h3> <p>Các<i>Bộ ký tự dịch</i>bao gồm các yếu tố sau:</p>
+<ul>
+<li>mỗi ký tự trừu tượng được gán một điểm mã trong<a class="external text" href="https://www.unicode.org/versions/latest/" rel="nofollow">Unicode</a>không gian mã hóa, và</li>
+<li>Một ký tự riêng biệt cho mỗi giá trị vô hướng Unicode không được gán cho một ký tự trừu tượng.</li>
+</ul> <p>Bộ ký tự dịch là một siêu của bộ ký tự cơ bản và bộ ký tự theo nghĩa đen cơ bản (xem bên dưới).</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h3 id="Basic_character_set">Bộ ký tự cơ bản</h3> <p>Các<i>Bộ ký tự cơ bản</i>bao gồm những điều sau<span class="t-rev-inl t-until-cxx26"><span>96</span><span><span class="t-mark-rev t-until-cxx26">(Cho đến C ++ 26)</span></span></span><span class="t-rev-inl t-since-cxx26"><span>99</span><span><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></span></span>ký tự:</p>
+<table class="wikitable"> <tr> <th>Đơn vị mã</th> <th>Tính cách</th> <th>Glyph</th>
+</tr> <tr> <td>U+0009</td> <td>Bảng nhân vật</td> <td> </td>
+</tr> <tr> <td>U+000b</td> <td>Tabline</td> <td> </td>
+</tr> <tr> <td>U+000C</td> <td>Form Feed (FF)</td> <td> </td>
+</tr> <tr> <td>U+0020</td> <td>Không gian</td> <td> </td>
+</tr> <tr> <td>U+000a</td> <td>Line Feed (LF)</td> <td>dòng mới</td>
+</tr> <tr> <td>U+0021</td> <td>Dấu chấm than</td> <td>
+<code>!</code> </td>
+</tr> <tr> <td>U+0022</td> <td>Dấu ngoặc kép</td> <td>
+<code>"</code> </td>
+</tr> <tr> <td>U+0023</td> <td>Dấu hiệu số</td> <td>
+<code>#</code> </td>
+</tr> <tr> <td>U+0025</td> <td>Phần trăm dấu hiệu</td> <td>
+<code>%</code> </td>
+</tr> <tr> <td>U+0026</td> <td>Ampersand</td> <td>
+<code>&amp;</code> </td>
+</tr> <tr> <td>U+0027</td> <td>Apostrophe</td> <td>
+<code>'</code> </td>
+</tr> <tr> <td>U+0028</td> <td>Dấu ngoặc đơn trái</td> <td>
+<code>(</code> </td>
+</tr> <tr> <td>U+0029</td> <td>Dấu ngoặc đơn phải</td> <td>
+<code>)</code> </td>
+</tr> <tr> <td>U+002A</td> <td>Dấu hoa thị</td> <td>
+<code>*</code> </td>
+</tr> <tr> <td>U+002b</td> <td>Cộng với dấu hiệu</td> <td>
+<code>+</code> </td>
+</tr> <tr> <td>U+002C</td> <td>Dấu phẩy</td> <td>
+<code>,</code> </td>
+</tr> <tr> <td>U+002D</td> <td>Dấu gạch nối</td> <td>
+<code>-</code> </td>
+</tr> <tr> <td>U+002E</td> <td>Dừng hoàn toàn</td> <td>
+<code>.</code> </td>
+</tr> <tr> <td>U+002f</td> <td>Solidus</td> <td>
+<code>/</code> </td>
+</tr> <tr> <td>U+0030 .. U+0039</td> <td>Digit Zero .. Nine</td> <td>
+<code>0 1 2 3 4 5 6 7 8 9</code> </td>
+</tr> <tr> <td>U+003a</td> <td>Đại tá</td> <td>
+<code>:</code> </td>
+</tr> <tr> <td>U+003b</td> <td>Bán kết</td> <td>
+<code>;</code> </td>
+</tr> <tr> <td>U+003C</td> <td>Dấu hiệu ít hơn</td> <td>
+<code>&lt;</code> </td>
+</tr> <tr> <td>U+003D</td> <td>Bằng dấu hiệu</td> <td>
+<code>=</code> </td>
+</tr> <tr> <td>U+003E</td> <td>Dấu hiệu lớn hơn</td> <td>
+<code>&gt;</code> </td>
+</tr> <tr> <td>U+003F</td> <td>Dấu hỏi</td> <td>
+<code>?</code> </td>
+</tr> <tr> <td>U+0041 .. u+005a</td> <td>Thư vốn Latin A .. Z</td> <td>
+<code>A B C D E F G H I J K L M</code> <p><code>N O P Q R S T U V W X Y Z</code></p>
+</td>
+</tr> <tr> <td>U+005b</td> <td>Khung vuông bên trái</td> <td>
+<code>[</code> </td>
+</tr> <tr> <td>U+005C</td> <td>Đảo ngược Solidus</td> <td>
+<code>\</code> </td>
+</tr> <tr> <td>U+005D</td> <td>Khung vuông phải</td> <td>
+<code>]</code> </td>
+</tr> <tr> <td>U+005E</td> <td>Giọng giới thiệu</td> <td>
+<code>^</code> </td>
+</tr> <tr> <td>U+005F</td> <td>Đường thấp</td> <td>
+<code>_</code> </td>
+</tr> <tr> <td>U+0061 .. U+007A</td> <td>Chữ nhỏ Latin a .. z</td> <td>
+<code>a b c d e f g h i j k l m</code> <p><code>n o p q r s t u v w x y z</code></p>
+</td>
+</tr> <tr> <td>U+007b</td> <td>Khung xoăn trái</td> <td>
+<code>{</code> </td>
+</tr> <tr> <td>U+007C</td> <td>Đường thẳng đứng</td> <td>
+<code>|</code> </td>
+</tr> <tr> <td>U+007D</td> <td>Khung xoăn phải</td> <td>
+<code>}</code> </td>
+</tr> <tr> <td>U+007E</td> <td>Tilde</td> <td>
+<code>~</code> </td>
+</tr>
+</table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <p>Các ký tự sau được thêm vào bộ ký tự cơ bản kể từ C ++ 26:</p>
+<table class="wikitable"> <tr> <th>Đơn vị mã</th> <th>Tính cách</th> <th>Glyph</th>
+</tr> <tr> <td>U+0024</td> <td>Dấu hiệu đô la</td> <td>
+<code>$</code> </td>
+</tr> <tr> <td>U+0040</td> <td>Thương mại tại</td> <td>
+<code>@</code> </td>
+</tr> <tr> <td>U+0060</td> <td>Giọng mộ</td> <td>
+<code>`</code> </td>
+</tr>
+</table> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <h3 id="Basic_literal_character_set">Bộ ký tự theo nghĩa đen cơ bản</h3> <p>Các<i>Bộ ký tự theo nghĩa đen cơ bản</i>Bao gồm tất cả các ký tự của bộ ký tự cơ bản, cộng với các ký tự điều khiển sau:</p>
+<table class="wikitable"> <tr> <th>Đơn vị mã</th> <th>Tính cách</th>
+</tr> <tr> <td>U+0000</td> <td>Vô giá trị</td>
+</tr> <tr> <td>U+0007</td> <td>Chuông</td>
+</tr> <tr> <td>U+0008</td> <td>Backspace</td>
+</tr> <tr> <td>U+000d</td> <td>Trở về vận chuyển (CR)</td>
+</tr>
+</table> <h3 id="Execution_character_set">Bộ ký tự thực thi</h3> <p>Bộ ký tự thực thi và bộ ký tự rộng thực thi là các siêu của bộ ký tự theo nghĩa đen cơ bản. Các mã hóa của các bộ ký tự thực thi và các tập hợp các phần tử bổ sung (nếu có) là cụ thể của ngôn ngữ. Mỗi yếu tố thực thi tập thể tích rộng phải được thể hiện như một<code>wchar_t</code>Đơn vị mã.</p>
+<h3 id="Code_unit_and_literal_encoding">Đơn vị mã và mã hóa theo nghĩa đen</h3> <p>MỘT<i>Đơn vị mã</i>là một giá trị số nguyên của loại ký tự. Ký tự trong a<a href="character_literal" title="cpp/language/character literal">character literal</a>khác với một nhân vật đa năng hoặc không thể kiểm soát được theo nghĩa đen hoặc trong một<a href="string_literal" title="cpp/language/string literal">string literal</a>được mã hóa dưới dạng chuỗi của một hoặc nhiều đơn vị mã, như được xác định bởi tiền tố mã hóa; Điều này được gọi là tương ứng<i>Mã hóa theo nghĩa đen</i>.</p>
+<p>Một mã hóa theo nghĩa đen hoặc mã hóa cụ thể địa phương của một trong các bộ ký tự thực thi mã hóa từng phần tử của ký tự theo nghĩa đen cơ bản được đặt thành một đơn vị mã duy nhất có giá trị không âm, khác biệt với đơn vị mã cho bất kỳ phần tử nào khác. Một ký tự không có trong bộ ký tự theo nghĩa đen cơ bản có thể được mã hóa với nhiều hơn một đơn vị mã; Giá trị của một đơn vị mã như vậy có thể giống như của một đơn vị mã cho một phần tử của bộ ký tự theo nghĩa đen cơ bản. Mã hóa của các bộ ký tự thực thi có thể không liên quan đến bất kỳ mã hóa theo nghĩa đen nào.</p>
+<p>Mã hóa theo nghĩa đen thông thường là mã hóa được áp dụng cho một ký tự thông thường hoặc chuỗi theo nghĩa đen. Mã hóa theo nghĩa đen rộng là mã hóa được áp dụng cho một ký tự rộng hoặc chuỗi chữ.</p>
+<p>Ký tự NULL U+0000 được mã hóa dưới dạng giá trị 0. Không có phần tử nào khác của tập ký tự được mã hóa với một đơn vị mã có giá trị 0. Giá trị đơn vị mã của mỗi ký tự chữ số thập phân sau chữ số 0 (U+0030) sẽ lớn hơn giá trị của trước. Các mã hóa theo nghĩa đen thông thường và rộng được xác định bằng cách thực hiện.</p>
+<p>Đối với nghĩa đen UTF-8, UTF-16 hoặc UTF-32, giá trị vô hướng UCS tương ứng với từng ký tự của bộ ký tự dịch được mã hóa theo quy định trong ISO/IEC 10646 cho dạng mã hóa UCS tương ứng.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Tên tiêu chuẩn của một số bộ ký tự được thay đổi trong C ++ 23 thông qua<a class="external text" href="https://wg21.link/P2314R4" rel="nofollow">P2314R4</a>.</p>
+<table class="wikitable"> <tr> <th>Tên mới</th> <th>Tên cũ</th>
+</tr> <tr> <td>Bộ ký tự cơ bản</td> <td>Bộ ký tự nguồn cơ bản</td>
+</tr> <tr> <td>Bộ ký tự theo nghĩa đen cơ bản</td> <td>Bộ ký tự thực thi cơ bản<br/>tập hợp thực hành cơ bản tập hợp vật nhân</td>
+</tr>
+</table> <p>Ánh xạ từ tệp nguồn<span class="t-rev-inl t-since-cxx23"><span>(khác với tệp nguồn UTF-8)</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>ký tự cho<span class="t-rev-inl t-until-cxx23"><span>Bộ ký tự cơ bản</span><span><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></span></span><span class="t-rev-inl t-since-cxx23"><span>Bộ ký tự dịch</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>trong lúc<a href="translation_phases#Phase1" title="cpp/language/translation phases">translation phase 1</a>được xác định theo triển khai, do đó, việc triển khai được yêu cầu ghi lại cách các ký tự nguồn cơ bản được biểu diễn trong các tệp nguồn.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/788.html" rel="nofollow">CWG 788</a> </td> <td>C ++ 98</td> <td>các giá trị của các thành viên của bộ ký tự thực thi<br/>được xác định thực hiện, nhưng không phải là địa phương cụ thể</td> <td>Họ là địa phương cụ thể</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1796.html" rel="nofollow">CWG 1796</a> </td> <td>C ++ 98</td> <td>biểu diễn của ký tự null (rộng) trong<br/>Bộ ký tự thực thi cơ bản (rộng-) có tất cả các bit không</td> <td>Chỉ có giá trị yêu cầu bằng không</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <a href="ascii" title="cpp/language/ascii">ASCII chart</a> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/charset" title="c/language/charset">C documentation</a></span>vì<span class=""><span>Bộ ký tự và mã hóa</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/charset">https://en.cppreference.com/w/cpp/language/charset</a>
+</p>
+</div>

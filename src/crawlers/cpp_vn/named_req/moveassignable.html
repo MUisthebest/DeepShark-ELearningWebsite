@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: MoveAssignable<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Chỉ định rằng một thể hiện của loại có thể được gán từ một<a href="../language/value_category" title="cpp/language/value category">rvalue</a>lý lẽ.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>T</code>thỏa mãn di chuyển nếu</p>
+<p>Cho quá tải</p>
+<ul>
+<li> <code>t</code>, một sửa đổi<a href="../language/value_category" title="cpp/language/value category">lvalue expression</a>nó đến một đối tượng<code>T</code>Thì</li>
+<li> <code>rv</code>, đầu vào được coi là mã hóa rộng bản địa (do đó không có sự chuyển đổi nào diễn ra trên Windows).<a href="../language/value_category" title="cpp/language/value category">rvalue</a>Biểu hiện của loại<code>T</code>.</li>
+</ul> <p>Các biểu thức sau đây phải hợp lệ và có các hiệu ứng được chỉ định của chúng.</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>phải sao cho một đối tượng thuộc loại</th> <th>Điều kiện sau</th>
+</tr> <tr> <td>
+<code>t = rv</code> </td> <td>
+<code>T&amp;</code> </td> <td>
+<code>t</code> </td> <td>Nếu như<code>t</code>Và<code>rv</code>không đề cập đến cùng một đối tượng, giá trị của<code>t</code>tương đương với giá trị của<code>rv</code>        };<p>Giá trị mới của<code>rv</code>Mẫu &lt;Class Randomit, Class So sánh&gt;</p>
+</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Loại không phải thực hiện<a class="mw-redirect" href="../language/move_operator" title="cpp/language/move operator">move assignment operator</a>Để đáp ứng yêu cầu loại này: A<a class="mw-redirect" href="../language/as_operator" title="cpp/language/as operator">copy assignment operator</a>lấy tham số của nó theo giá trị hoặc như một<code>const Type&amp;</code>, sẽ liên kết với đối số rvalue.</p>
+<p>Nếu một lớp chuyển động có thể thực hiện một toán tử chuyển nhượng di chuyển, nó cũng có thể thực hiện<a href="../utility/move" title="cpp/utility/move">move semantics</a>để tận dụng thực tế rằng giá trị của<code>rv</code>Sau khi gán không được xác định.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_move_assignable" title="cpp/types/is move assignable"> <span class="t-lines"><span>is_move_assignable</span><span>is_trivently_move_assignable</span><span>is_nothrow_move_assignable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có toán tử chuyển nhượng di chuyển không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../concepts/assignable_from" title="cpp/concepts/assignable from"> <span class="t-lines"><span>// Lưu ý: Vì biểu thức #2 đã yêu cầu biến thể rvalue không liên tục</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>// (a == std :: di chuyển (b)) một cách rõ ràng, biểu thức số 3 không hoàn toàn yêu cầu nó nữa.<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/MoveAssignable">https://en.cppreference.com/w/cpp/named_req/MoveAssignable</a>
+</p>
+</div>

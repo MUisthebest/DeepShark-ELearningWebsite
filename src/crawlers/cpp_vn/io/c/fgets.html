@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Fgets</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">char* fgets (char* str, int Count, std :: file* stream);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đọc nhiều nhất<code>count - 1</code>các ký tự từ luồng tệp đã cho và lưu trữ chúng trong mảng ký tự được trỏ đến bởi<code>str</code>. Phân tích cú pháp dừng nếu tìm thấy một ký tự dòng mới, trong trường hợp đó<code>str</code>sẽ chứa ký tự Newline đó hoặc nếu cuối tệp xảy ra. Nếu byte được đọc và không có lỗi xảy ra, hãy viết một ký tự null ở vị trí ngay sau khi ký tự cuối cùng được viết thành<code>str</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>con trỏ đến một phần tử của mảng char</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng ký tự tối đa để viết (thường là độ dài của<code>str</code>)</td>
+</tr> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>luồng tệp để đọc dữ liệu từ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>str</code>Về thành công, con trỏ null về thất bại.</p>
+<p>Nếu điều kiện cuối tập tin gặp phải, hãy đặt<i>Chức năng nhà nước</i>chỉ báo trên<code>stream</code>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<code><a href="feof" title="cpp/io/c/feof">std::feof()</a></code>). Đây chỉ là một thất bại nếu nó khiến không có byte nào được đọc, trong trường hợp đó, một con trỏ null được trả về và nội dung của mảng được chỉ ra bởi<code>str</code>không bị thay đổi (nghĩa là byte đầu tiên không được ghi đè bằng một ký tự null).</p>
+<p>Nếu thất bại đã được gây ra bởi một số lỗi khác, hãy đặt<i>. Nếu thất bại đã được gây ra bởi một số lỗi khác, hãy đặt</i>lỗi<code><a href="ferror" title="cpp/io/c/ferror">std::ferror()</a></code>) TRÊN<code>stream</code>. Nội dung của mảng được trỏ đến bởi<code>str</code>là không xác định (nó thậm chí có thể không được chấm dứt).</p>
+<h3 id="Notes">Ghi chú</h3> <p><a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/fgets.html" rel="nofollow">POSIX additionally requires</a>cái đó<code>fgets</code>, di chuyển-thiết kế bộ phân bổ từ<code><a href="../../error/errno" title="cpp/error/errno">errno</a></code>Nếu nó gặp phải một thất bại khác với điều kiện cuối tập tin.</p>
+<p>Mặc dù đặc tả tiêu chuẩn là<a class="external text" href="https://stackoverflow.com/questions/23388620" rel="nofollow">unclear</a>trong trường hợp<code>count &lt;= 1</code>, các triển khai phổ biến làm</p>
+<ul>
+<li>nếu như<code>count &lt; 1</code>, không làm gì, báo cáo lỗi,</li>
+<li>nếu như<code>count == 1</code>Thì</li>
+<ul>
+<li>Một số triển khai không làm gì, báo cáo lỗi,</li>
+<li>Những người khác không đọc gì, lưu trữ số 0 trong<code>str[0]</code>, Báo cáo thành công.</li>
+</ul>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cstdio&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CstDlib&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fscanf" title="cpp/io/c/fscanf"> <span class="t-lines"><span>quét</span><span>fscanf</span><span>sscanf</span></span></a></div> </td> <td>đọc đầu vào được định dạng từ<code><a href="std_streams" title="cpp/io/c/std streams">stdin</a></code>, một luồng tệp hoặc bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="gets" title="cpp/io/c/gets"> <span class="t-lines"><span>Nhận</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-deprecated-cxx11">(không dùng nữa trong C ++ 11)</span></span><span><span class="t-mark-rev t-until-cxx14">(Đã xóa trong C ++ 14)</span></span></span></div> </td> <td>đọc một chuỗi ký tự từ<code><a href="std_streams" title="cpp/io/c/std streams">stdin</a></code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fputs" title="cpp/io/c/fputs"> <span class="t-lines"><span>FPUTS</span></span></a></div> </td> <td>ghi một chuỗi ký tự vào luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/fgets" title="c/io/fgets">C documentation</a></span>vì<code>fgets</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/fgets">https://en.cppreference.com/w/cpp/io/c/fgets</a>
+</p>
+</div>

@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: MBRTOC16</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cuchar" title="cpp/header/cuchar">&lt;cuchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">std :: size_t mbrtoc16 (char16_t* pc16,</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>                      const char* s,</p>
+<p>Nếu như<code>s</code>                      std :: size_t n,<code>n</code>                      std :: mbstate_t* ps);<code>s</code>Chuyển đổi một ký tự multibyte hẹp thành biểu diễn ký tự UTF-16.<code>s</code>không phải là một con trỏ null, kiểm tra nhiều nhất<code>*pc16</code> <code>pc16</code>byte của chuỗi ký tự đa</p>
+<p>Để xác định số lượng byte cần thiết để hoàn thành ký tự multibyte tiếp theo (bao gồm bất kỳ chuỗi dịch chuyển nào). Nếu chức năng xác định rằng ký tự multibyte tiếp theo trong<code>*s</code>hoàn thành và hợp lệ, chuyển đổi nó thành ký tự 16 bit tương ứng và lưu trữ nó trong<code>*ps</code>không phải là null).<code>mbrtoc16</code>Nếu ký tự đa hóa trong<code>*s</code>.</p>
+<p>Nếu như<code>s</code>tương ứng với chuỗi đa Char16_t (ví dụ: một cặp thay thế trong UTF-16), sau đó sau cuộc gọi đầu tiên đến chức năng này,<code>n</code>Và<code>pc16</code>được cập nhật theo cách mà cuộc gọi tiếp theo đến<code>std::mbrtoc16(nullptr, "", 1, ps)</code>.</p>
+<p>sẽ viết thêm char16_t, mà không cần xem xét<code>*ps</code>là một con trỏ null, các giá trị của</p>
+<p>Mã hóa đa dạng được sử dụng bởi chức năng này được chỉ định bởi locle C hiện đang hoạt động.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>bị bỏ qua và cuộc gọi tương đương với</td> <td>-</td> <td>Nếu ký tự rộng được tạo ra là ký tự null, trạng thái chuyển đổi</td>
+</tr> <tr class="t-par"> <td>S</td> <td>-</td> <td>đại diện cho trạng thái thay đổi ban đầu.</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>giới hạn số lượng byte trong s có thể được kiểm tra</td>
+</tr> <tr class="t-par"> <td>PS</td> <td>-</td> <td>con trỏ đến đối tượng trạng thái chuyển đổi được sử dụng khi diễn giải chuỗi đa</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>PC16</p>
+<ul>
+<li> <code>​0​</code>Con trỏ đến vị trí mà ký tự 16 bit kết quả sẽ được viết<code>s</code>con trỏ đến chuỗi ký tự đa dạng được sử dụng làm đầu vào<code>*pc16</code>Điều đầu tiên sau đây áp dụng:</li>
+<li>Nếu nhân vật được chuyển đổi từ<code>[1...n]</code>(và được lưu trữ trong<code>s</code>.</li>
+<li> <code>-3</code>Nếu tiếp theo<code>char16_t</code>Nếu không null) là nhân vật null.<code>char16_t</code>số byte<code>*pc16</code>của nhân vật đa nhân được chuyển đổi thành công từ</li>
+<li> <code>-2</code>Nếu tiếp theo<code>n</code>từ một đa<code>*pc16</code>.</li>
+<li> <code>-1</code>ký tự (ví dụ: một cặp thay thế) hiện đã được viết cho<code>*pc16</code>Nếu loại nguồn là<code><a href="../../error/errno_macros" title="cpp/error/errno macros">EILSEQ</a></code>được lưu trữ trong<code><a href="../../error/errno" title="cpp/error/errno">errno</a></code>và giá trị của<code>*ps</code>Mẫu &lt;Class Randomit, Class So sánh&gt;</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">. Không có byte được xử lý từ đầu vào trong trường hợp này.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Byte tạo thành một ký tự không đầy đủ, nhưng cho đến nay có giá trị, hợp lệ. Không có gì được viết cho</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="c16rtomb" title="cpp/string/multibyte/c16rtomb"> <span class="t-lines"><span>C16rtomb</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi một ký tự rộng 16 bit thành chuỗi multibyte hẹp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../locale/codecvt/in" title="cpp/locale/codecvt/in"> <span class="t-lines"><span>phá hủy một khía cạnh codecvt</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>DO_OUT<code>ExternT</code>ĐẾN<code>InternT</code>Chuyển đổi một chuỗi từ<br/> <span class="t-mark">Putback<code>std::codecvt&lt;InternT,ExternT,StateT&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16">C documentation</a></span>vì<code>mbrtoc16</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/multibyte/mbrtoc16">https://en.cppreference.com/w/cpp/string/multibyte/mbrtoc16</a>
+</p>
+</div>

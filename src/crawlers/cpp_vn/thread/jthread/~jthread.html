@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: jthread :: ~ jthread</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">~ jthread ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Phá hủy<code>jthread</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<p>Nếu như<code>*this</code>có một chủ đề liên quan (<code>joinable() == true</code>Nếu có thể. Nếu không thể (ví dụ:<code>request_stop()</code>Và sau đó<code>join()</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Các<code>request_stop()</code>không có tác dụng nếu<code>jthread</code>trước đây đã được yêu cầu dừng lại.</p>
+<p>MỘT<code>jthread</code>đối tượng không có một luồng liên kết sau</p>
+<ul>
+<li>Nó được xây dựng mặc định.</li>
+<li>nó đã được chuyển từ.</li>
+<li> <code>join()</code>đã được gọi.</li>
+<li> <code>detach()</code>đã được gọi.</li>
+</ul> <p>Nếu như<code>join()</code>ném một ngoại lệ (ví dụ: vì bế tắc được phát hiện),<code><a href="../../error/terminate" title="cpp/error/terminate">std::terminate()</a></code>có thể được gọi.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../thread/~thread" title="cpp/thread/thread/~thread"> <span class="t-lines"><span>một đối tượng ngoại lệ khác để gán với</span></span></a></div> </td> <td>phá hủy đối tượng luồng, chủ đề bên dưới phải được nối hoặc tách ra<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::thread</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/jthread/%7Ejthread">https://en.cppreference.com/w/cpp/thread/jthread/%7Ejthread</a>
+</p>
+</div>

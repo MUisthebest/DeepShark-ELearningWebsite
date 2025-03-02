@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iOS_Base :: Độ chính xác</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">luồng chính xác () const;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Độ chính xác của StreamSize (StreamSize new_Precision);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Quản lý độ chính xác (nghĩa là có bao nhiêu chữ số được tạo) của đầu ra điểm nổi được thực hiện bởi<code><a href="../../locale/num_put/put" title="cpp/locale/num put/put">std::num_put::do_put</a></code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Trả về độ chính xác hiện tại.</div> <div class="t-li1">
+<span class="t-li">2)</span>Đặt độ chính xác cho một. Trả về độ chính xác trước đó.</div> <p>Độ chính xác mặc định, như được thiết lập bởi<code><a href="../basic_ios/init" title="cpp/io/basic ios/init">std::basic_ios::init</a></code>, là 6.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>New_Precision</td> <td>-</td> <td>Cài đặt độ chính xác mới</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Độ chính xác trước khi gọi đến chức năng</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue189" rel="nofollow">LWG 189</a> </td> <td>C ++ 98</td> <td>int main ()<br/>{</td> <td>#include &lt;CstDint&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="width" title="cpp/io/ios base/width"> <span class="t-lines"><span>điền và liên kết</span></span></a></div> </td> <td>UNSETF<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../manip/setprecision" title="cpp/io/manip/setprecision"> <span class="t-lines"><span>SetPrecision</span></span></a></div> </td> <td>Thay đổi độ chính xác điểm nổi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ios_base/precision">https://en.cppreference.com/w/cpp/io/ios_base/precision</a>
+</p>
+</div>

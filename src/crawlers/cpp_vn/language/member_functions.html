@@ -1,0 +1,71 @@
+ <h1 class="firstHeading" id="firstHeading">Chức năng thành viên không tĩnh</h1> <p>Hàm thành viên không tĩnh là một hàm được khai báo trong<a href="class" title="cpp/language/class">member specification</a>của một lớp không có<a href="static" title="cpp/language/static"><code>static</code></a>hoặc<a href="friend" title="cpp/language/friend"><code>friend</code></a>người xác định (xem<a href="static#Static_member_functions" title="cpp/language/static">static member functions</a>Và<a href="friend" title="cpp/language/friend">friend declaration</a>cho hiệu ứng của các từ khóa đó).</p>
+<div class="cpp source-cpp"><pre data-language="cpp">lớp s</pre></div> <p><a href="constructor" title="cpp/language/constructor">Constructors</a>Thì<a href="destructor" title="cpp/language/destructor">destructors</a>, Và<a href="cast_operator" title="cpp/language/cast operator">conversion functions</a>{</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <p>MỘT<i>    int mf1 (); // Tuyên bố chức năng thành viên không tĩnh</i>    void mf2 () dễ bay hơi, mf3 () &amp;&amp;; // có thể có trình điều chỉnh CV và/hoặc trình đánh giá tham chiếu<a href="#Explicit_object_parameter">explicit object parameter</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>MỘT<i>        // Tuyên bố trên tương đương với hai khai báo riêng biệt:</i>        // void mf2 () dễ bay hơi;</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>{<a href="function" title="cpp/language/function">function declarations</a>        // void mf3 () &amp;&amp;;<a href="abstract_class" title="cpp/language/abstract class">pure-specifiers</a> <span class="t-rev-inl t-since-cxx11"><span>    int mf4 () const {return dữ liệu; } // có thể được xác định nội tuyến<a href="final" title="cpp/language/final"><code>final</code></a>Và<a href="override" title="cpp/language/override"><code>override</code></a>người xác định</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>, Và<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">member initialization lists</a>.</p>
+<p>    Vốc ảo MF5 () cuối cùng; // có thể là ảo, có thể sử dụng cuối cùng/ghi đè<code>X</code>    S (): Dữ liệu (12) {} // Trình xây dựng cũng là các hàm thành viên</p>
+<div class="t-li1">
+<span class="t-li">1)</span>    dữ liệu int;<code>X</code>};</div> <div class="t-li1">
+<span class="t-li">2)</span> <a href="derived_class" title="cpp/language/derived class">derived</a>từ<code>X</code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>int s :: mf1 () {return 7; } // Nếu không được định nghĩa nội tuyến, phải được xác định tại không gian tên<code>X</code>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span>Sử dụng cú pháp đặc biệt cho các khai báo của họ. Các quy tắc được mô tả trong trang này có thể không áp dụng cho các chức năng này. Xem các trang tương ứng của họ để biết chi tiết.<code>X</code>
+</div> <p>chức năng thành viên đối tượng rõ ràng<code>X</code>là chức năng thành viên không tĩnh với<code>X</code>Hàm thành viên đối tượng ngầm<code>X</code>là hàm thành viên không tĩnh mà không có tham số đối tượng rõ ràng (trước C ++ 23, đây là loại chức năng thành viên không tĩnh duy nhất và do đó được gọi là "hàm thành viên không tĩnh" trong tài liệu).</p>
+<p>Trực tiếp từ bên trong cơ thể của một chức năng thành viên của<code>X</code>, CV-Qualifers<a href="expressions" title="cpp/language/expressions">id-expression</a> <code>e</code>, máy đánh giá,<code>X</code>Gọi chức năng thành viên không tĩnh của lớp<code>X</code>có thể được gọi<code>(*this).e</code>Đối với một đối tượng của loại<code>this-&gt;</code>Sử dụng toán tử truy cập thành viên lớp<a href="dependent_name" title="cpp/language/dependent name">dependent</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Đối với một đối tượng của một lớp</pre></div> <p>Trực tiếp từ bên trong cơ thể của một chức năng thành viên của<code>X</code>Trực tiếp từ bên trong cơ thể của một chức năng thành viên của một lớp có nguồn gốc từ<code>X</code>Gọi chức năng thành viên không tĩnh của lớp<code>X</code>trên một đối tượng không thuộc loại</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, hoặc thuộc loại có nguồn gốc từ</pre></div> <h4 id="Member_functions_with_cv-qualifiers">gọi hành vi không xác định.</h4> <p>Trong cơ thể của một chức năng thành viên không tĩnh của<a href="cv" title="cpp/language/cv">cv-qualifier</a>, bất kì<span class="kw4">hằng số</span>Thì<span class="kw4">bay hơi</span>(ví dụ: một định danh) giải quyết cho một thành viên không tĩnh<span class="kw4">hằng số</span>Và<span class="kw4">bay hơi</span>hoặc của một lớp cơ sở của<a href="function" title="cpp/language/function">function declaration</a>, được chuyển đổi thành biểu thức truy cập thành viên</p>
+<p>(Trừ khi nó đã là một phần của biểu thức truy cập thành viên). Điều này không xảy ra trong bối cảnh định nghĩa mẫu, vì vậy một tên có thể phải được đặt trước với<code>*this</code>rõ ràng để trở thành<span class="kw4">hằng số</span>cấu trúc s<span class="kw4">hằng số</span>{<span class="kw4">hằng số</span>    int n;<a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>    void f ();<a href="this" title="cpp/language/this"><code>this</code></a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">};</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <h4 id="Member_functions_with_ref-qualifier"> </h4> <p>Void s :: f ()<code>&amp;</code>{<code>&amp;&amp;</code>    n = 1; // biến thành (*this) .n = 1;<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>}</p>
+<ul>
+<li> </li>
+<li>int main ()</li>
+<li>{</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">    S S1, S2;</pre></div> <p>    s1.f (); // thay đổi s1.n<a href="this" title="cpp/language/this"><code>this</code></a>}<code>*this</code>Trong cơ thể của một chức năng thành viên không tĩnh của</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Virtual_and_pure_virtual_functions">, bất kỳ ID không đủ tiêu chuẩn nào giải quyết được cho một thành viên tĩnh, một bảng điều khiển hoặc một loại</h4> <p>hoặc của một lớp cơ sở của<i>ảo</i>hoặc<i>    ảo ~ base () {}</i>, bao gồm 0 hoặc một<a href="virtual" title="cpp/language/virtual">virtual functions</a>Và<a href="abstract_class" title="cpp/language/abstract class">abstract classes</a> </p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <h4 id="Explicit_object_parameter">, được chuyển đổi thành ID đủ điều kiện tương ứng:</h4> <p>cấu trúc s<code>this</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    tĩnh in n;<code>this</code>kết quả trong việc đánh giá một thành viên</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    void f ();</pre></div> <p>};<a href="operators#Array_subscript_operator" title="cpp/language/operators">array subscript operator</a> </p>
+<p>Void s :: f ()<a href="crtp" title="cpp/language/crtp">CRTP</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    n = 1; // biến thành s :: n = 1;<code>this</code>}</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>int main ()</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p><br/>    S S1, S2;</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h4 id="Special_member_functions">sự liên tiếp (</h4> <p>}<i>Chức năng thành viên với trình điều chỉnh CV</i>Một hàm thành viên đối tượng ngầm có thể được khai báo với một</p>
+<ul>
+<li> <a href="default_constructor" title="cpp/language/default constructor">Default constructor</a> </li>
+<li> <a href="copy_constructor" title="cpp/language/copy constructor">Copy constructor</a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <a href="move_constructor" title="cpp/language/move constructor">Move constructor</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li> <a class="mw-redirect" href="as_operator" title="cpp/language/as operator">Copy assignment operator</a> </li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <a class="mw-redirect" href="move_operator" title="cpp/language/move operator">Move assignment operator</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li> <span class="t-rev-inl t-until-cxx20"><span><a href="destructor" title="cpp/language/destructor">Destructor</a></span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span><a href="destructor#Prospective_destructor" title="cpp/language/destructor">Prospective destructor</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span> </li></ul> <p>sự liên tiếp (<span class="t-rev-inl t-since-cxx20"><span>, hoặc một sự kết hợp của<a href="default_comparisons" title="cpp/language/default comparisons">comparison operators</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>), chuỗi này xuất hiện sau danh sách tham số trong<i>. Các chức năng với các chuỗi trình độ cv-califer khác nhau (hoặc không có chuỗi) có các loại khác nhau và do đó có thể quá tải lẫn nhau.</i>Trong phần thân của một hàm với trình tự cv-trình độ cv,<span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span> <span class="kw1">#include &lt;Istream&gt;</span>là CV đủ điều kiện, ví dụ: trong một chức năng thành viên với</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_ref_qualifiers" title="cpp/feature test"><code>__cpp_ref_qualifiers</code></a></td> <td><span class="nu0">vòng loại, chỉ có các chức năng thành viên khác với</span></td> <td><span class="t-mark">unininitialized_copy_n</span></td> <td>
+<a href="function#Function_declaration" title="cpp/language/function">ref-qualifiers</a> </td>
+</tr> <tr> <td><a href="../feature_test#cpp_explicit_this_parameter" title="cpp/feature test"><code>__cpp_explicit_this_parameter</code></a></td> <td><span class="nu0">3)</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<a href="#Explicit_object_parameter">Explicit object parameter</a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Vòng loại có thể được gọi là bình thường. Một chức năng thành viên không có</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">vòng loại vẫn có thể được gọi nếu</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/194.html" rel="nofollow">CWG 194</a> </td> <td>C ++ 98</td> <td>được áp dụng hoặc thông qua đường dẫn truy cập không liên quan<br/>#include &lt;Vector&gt;</td> <td> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li>
+<a href="classes" title="cpp/language/classes">classes</a> </li>
+<li>
+<a href="data_members" title="cpp/language/data members">non-static data members</a> </li>
+<li>
+<a href="static" title="cpp/language/static">static data members</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/member_functions">https://en.cppreference.com/w/cpp/language/member_functions</a>
+</p>
+</div>

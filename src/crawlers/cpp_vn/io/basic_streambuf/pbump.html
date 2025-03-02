@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: pbump</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>void pbump (số lượng);<i>Tái định vị</i>.<code><a href="pptr" title="cpp/io/basic streambuf/pptr">pptr()</a></code>Đặt con trỏ<code>count</code>) qua<code>count</code>ký tự, ở đâu<code>[</code><code>pbase()</code><code>, </code><code>epptr()</code><code>)</code>.</p>
+<p>có thể là tích cực hoặc tiêu cực. Không có séc được thực hiện để di chuyển con trỏ bên ngoài khu vực đặt<code><a href="overflow" title="cpp/io/basic streambuf/overflow">overflow()</a></code>Nếu con trỏ được nâng cao và sau đó<code>count</code>được gọi để xả khu vực đặt vào chuỗi ký tự liên quan, hiệu ứng là thêm</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Các ký tự có giá trị không xác định là đầu ra.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>Số lượng ký tự để bỏ qua<code>int</code>Bởi vì chức năng này có một<code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">int</span><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Được xác định trong tiêu đề</span><span class="br0">.</span><span class="br0">)</span></code>, nó không thể điều khiển bộ đệm lớn hơn<a class="external text" href="https://cplusplus.github.io/LWG/issue255" rel="nofollow">LWG issue 255</a>).</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">số để thêm vào con trỏ đặt</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Fstream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="gbump" title="cpp/io/basic streambuf/gbump"> <span class="t-lines"><span>GPTR</span></span></a></div> </td> <td>egptr<br/> <span class="t-mark">(chức năng thành viên được bảo vệ)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_streambuf/pbump">https://en.cppreference.com/w/cpp/io/basic_streambuf/pbump</a>
+</p>
+</div>

@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Endian</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/bit" title="cpp/header/bit">&lt;bit&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">enum lớp endian</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>{<a class="extiw" href="https://en.wikipedia.org/wiki/Endianness#Overview" title="enwiki:Endianness">endianness</a>của tất cả<a href="../language/type" title="cpp/language/type">scalar types</a>:</p>
+<ul>
+<li>    Little = /*thực hiện được xác định* /,<code>std::endian::native</code>Mẫu &lt;class inputit1, class inputit2&gt;<code>std::endian::little</code>.</li>
+<li>    lớn = /*thực hiện được xác định* /,<code>std::endian::native</code>Mẫu &lt;class inputit1, class inputit2&gt;<code>std::endian::big</code>.</li>
+</ul> <p>    gốc = /*thực hiện được xác định* /,</p>
+<ul>
+<li>};<code>sizeof</code>, một đối tượng riêng biệt của loại<code>1</code>Chỉ ra<code>std::endian::little</code>Thì<code>std::endian::big</code>, Và<code>std::endian::native</code>là như nhau.</li>
+<li>Nếu tất cả các loại vô hướng là ít endian,<code>std::endian::native</code>Nếu tất cả các loại vô hướng là lớn,<code>std::endian::big</code>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<code>std::endian::little</code>.</li>
+</ul> <h3 id="Possible_implementation">. ​</h3> <div class="cpp source-cpp"><pre data-language="cpp">Nền tảng trường hợp góc cũng được hỗ trợ:</pre></div> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_endian" title="cpp/feature test"><code>__cpp_lib_endian</code></a></td> <td><span class="nu0">201907L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<code>std::endian</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Nếu tất cả các loại vô hướng có</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">, endianness không quan trọng và cả ba giá trị,</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../numeric/byteswap" title="cpp/numeric/byteswap"> <span class="t-lines"><span>ByteWap</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>đảo ngược các byte trong giá trị số nguyên đã cho<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/endian">https://en.cppreference.com/w/cpp/types/endian</a>
+</p>
+</div>

@@ -1,0 +1,36 @@
+ <h1 class="firstHeading" id="firstHeading">std :: forward_list &lt;t, allocator&gt; :: chèn_after</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iterator insert_After (const_iterator pos, const t &amp; value);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iterator chèn_after (const_iterator pos, t &amp;&amp; value);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iterator insert_After (const_iterator pos, size_type Count, const t &amp; value);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class Inputit&gt;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iterator insert_After (const_iterator pos, đầu vào đầu tiên, inputit cuối cùng);</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>iterator insert_After (const</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Chèn<code>value</code>Sau khi phần tử được chỉ ra bởi<code>pos</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Chèn<code>count</code>Chèn<code>value</code>Sau khi phần tử được chỉ ra bởi<code>pos</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>bản sao của<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>Sau khi phần tử được chỉ ra bởi<code>pos</code>    sao chép (r &amp;&amp; r, o kết quả);<code>first</code>Và<code>last</code>đủ điều kiện là<code>*this</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>là người lặp vào<code>ilist</code>.</div> <p>Chèn một phần tử mới vào một vị trí sau vị trí được chỉ định trong container. Phần tử được xây dựng tại chỗ, tức là không có hoạt động sao chép hoặc di chuyển được thực hiện. Chất xây dựng của phần tử được gọi với các đối số chính xác, như được cung cấp cho hàm.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>Sau khi phần tử được chỉ ra bởi</td>
+</tr> <tr class="t-par"> <td>được phân vùng liên quan đến</td> <td>-</td> <td>người lặp lại)</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Iterator sau đó nội dung sẽ được chèn</td>
+</tr> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>Số lượng bản sao để chèn</td>
+</tr> <tr class="t-par"> <td>Quá tải</td> <td>-</td> <td>Phạm vi của các phần tử cần chèn, không thể là người rút vào thùng chứa mà chèn được gọi</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">Đầu vào</span>phạm vi của các yếu tố cần chèn</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Trình rút vào phần tử cuối cùng được chèn hoặc<code>pos</code>nếu như<code>count == 0</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Trình rút vào phần tử cuối cùng được chèn hoặc<code>pos</code>nếu như<code>first == last</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Trình rút vào phần tử cuối cùng được chèn hoặc<code>pos</code>nếu như<code>ilist</code>...</div> <h3 id="Exceptions">Ngoại lệ</h3> <p>Nếu một ngoại lệ được ném vì bất kỳ lý do gì, các chức năng này không có hiệu lực (<a href="../../language/exceptions#Exception_safety" title="cpp/language/exceptions">strong exception safety guarantee</a>).</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <div class="t-li1">
+<span class="t-li">Đầu vào</span>trình rút vào các yếu tố để hoán đổi</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>bool is_heap (execPolicy &amp;&amp; chính sách,<code>count</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>bool is_heap (execPolicy &amp;&amp; chính sách,<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>first, last<span class="br0">)</span></code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>bool is_heap (execPolicy &amp;&amp; chính sách,<code>ilist.size()</code>.</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Trình rút vào phần tử cuối cùng được chèn hoặc</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Timoning_list&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="emplace_after" title="cpp/container/forward list/emplace after"> <span class="t-lines"><span>Hỗ trợ loại không hoàn chỉnh tối thiểu</span></span></a></div> </td> <td>Trước_begin<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="push_front" title="cpp/container/forward list/push front"> <span class="t-lines"><span>xuất hiện_back</span></span></a></div> </td> <td>kết thúc một yếu tố tại chỗ ở cuối<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/forward_list/insert_after">https://en.cppreference.com/w/cpp/container/forward_list/insert_after</a>
+</p>
+</div>

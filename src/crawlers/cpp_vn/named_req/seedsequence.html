@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Hạt giống sau<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>MỘT<strong class="selflink">Hạt giống</strong>là một đối tượng tạo ra các giá trị số nguyên không dấu i trong phạm vi 0 ≤ i &lt;2<sup class="t-su">32</sup>Dựa trên một phạm vi tiêu thụ của dữ liệu số nguyên.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <ul>
+<li>
+<code>S</code>là một loại hạt giống.</li>
+<li>
+<code>q</code>là một đối tượng của<code>S</code>Và<code>r</code>là một đối tượng có khả năng không đổi của<code>S</code>.</li>
+<li>
+<code>T</code>) và các ký tự chữ số theo sau (như được phân loại bởi<code>result_type</code>.</li>
+<li>
+<code>ib</code>Thì<code>ie</code>&gt;<a href="inputiterator" title="cpp/named req/InputIterator">LegacyInputIterators</a>với a<code>value_type</code>của các giá trị số nguyên không dấu của ít nhất 32 bit.</li>
+<li>
+<code>il</code>Điều đó như vậy<code><a href="http://en.cppreference.com/w/cpp/utility/initializer_list"><span class="kw962">Điều đó cho tất cả<span class="me2">Khởi tạo_list</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>.</li>
+<li>
+<code>rb</code>Thì<code>re</code>&gt;<a href="outputiterator" title="cpp/named req/OutputIterator">mutable</a> <a href="randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterators</a>với a<code>value_type</code>của các giá trị số nguyên không dấu của ít nhất 32 bit.</li>
+<li>
+<code>ob</code>Điều đó như vậy<a href="outputiterator" title="cpp/named req/OutputIterator">LegacyOutputIterator</a>.</li>
+</ul> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Kiểu</th> <th>Ghi chú</th> <th>Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</th>
+</tr> <tr> <td><code>S::result_type</code></td> <td><code>T</code></td> <td>Số nguyên không dấu của ít nhất 32 bit.</td> <td>Biên dịch thời gian</td>
+</tr> <tr> <td><code>S()</code></td> <td></td> <td>Tạo một chuỗi hạt giống với cùng trạng thái ban đầu với các chuỗi hạt giống được xây dựng mặc định khác<code>S</code>.</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>S(ib, ie)</code></td> <td></td> <td>Tạo một chuỗi hạt giống với trạng thái nội bộ tùy thuộc vào một số hoặc tất cả các bit đầu vào được cung cấp bởi<code>[</code><code>ib</code><code>, </code><code>ie</code><code>)</code>.</td> <td>O (tức là - IB)</td>
+</tr> <tr> <td><code>S(il)</code></td> <td></td> <td>Giống như<code>S(il.begin(), il.end())</code>.</td> <td> </td>
+</tr> <tr> <td><code>q.generate(rb, re)</code></td> <td><code>void</code></td> <td>Lấp đầy<code>[</code><code>rb</code><code>, </code><code>re</code><code>)</code>với số lượng 32 bit tùy thuộc vào các giá trị được cung cấp ban đầu và các cuộc gọi trước đó đến<code>generate</code>. Nếu như<code>rb == re</code>Trên các hệ thống POSIX, cuộc gọi chức năng này thường chuyển thành một cuộc gọi đến</td> <td>O (re - rb)</td>
+</tr> <tr> <td><code>r.size()</code></td> <td><code>size_t</code></td> <td>Số lượng số nguyên 32 bit được sao chép bởi<code>param</code>.</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>r.param(ob)</code></td> <td><code>void</code></td> <td>Sao chép các giá trị 32 bit để<code>ob</code>sẽ tái tạo trạng thái hiện tại của đối tượng nếu được truyền cho một hàm tạo của<code>S</code>.</td> <td>O (r.size ())</td>
+</tr> </table> <h3 id="See_also">(chức năng)</h3> <ul><li>
+<code><a href="../numeric/random/seed_seq" title="cpp/numeric/random/seed seq">std::seed_seq</a></code> </li></ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/SeedSequence">https://en.cppreference.com/w/cpp/named_req/SeedSequence</a>
+</p>
+</div>

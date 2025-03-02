@@ -1,0 +1,38 @@
+ <h1 class="firstHeading" id="firstHeading">Tiêu đề tiêu chuẩn tiêu đề &lt;CSTDDEF&gt;</h1> <p>Tiêu đề này ban đầu là trong thư viện tiêu chuẩn C<a href="https://en.cppreference.com/w/c/types" title="c/types"><code>&lt;stddef.h&gt;</code></a>.</p>
+<p>Tiêu đề này là một phần của<a href="../utility" title="cpp/utility">utility</a>thư viện.</p>
+<table class="t-dsc-begin"> <tr> <td colspan="2"> <h3 id="Macros">Macro</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/null" title="cpp/types/NULL"> <span class="t-lines"><span>VÔ GIÁ TRỊ</span></span></a></div> </td> <td>Hằng số con trỏ null được xác định theo thực hiện<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/offsetof" title="cpp/types/offsetof"> <span class="t-lines"><span>offsetof</span></span></a></div> </td> <td>Byte bù từ đầu của một<a href="../named_req/standardlayouttype" title="cpp/named req/StandardLayoutType">standard-layout</a>Nhập thành viên được chỉ định<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr> <td colspan="2"> <h3 id="Types">Loại</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/size_t" title="cpp/types/size t"> <span class="t-lines"><span>size_t</span></span></a></div> </td> <td>loại số nguyên không dấu được trả về bởi<a href="../language/sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>nhà điều hành<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/ptrdiff_t" title="cpp/types/ptrdiff t"> <span class="t-lines"><span>ptrdiff_t</span></span></a></div> </td> <td>Loại số nguyên đã được trả về khi trừ hai con trỏ<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/nullptr_t" title="cpp/types/nullptr t"> <span class="t-lines"><span>nullptr_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>loại con trỏ null theo nghĩa đen<a href="../language/nullptr" title="cpp/language/nullptr"><code>nullptr</code></a> <br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/max_align_t" title="cpp/types/max align t"> <span class="t-lines"><span>MAX_ALIGN_T</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>loại tầm thường với yêu cầu căn chỉnh cũng tuyệt vời như bất kỳ loại vô hướng nào khác<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/byte" title="cpp/types/byte"> <span class="t-lines"><span>Byte</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>loại byte<br/> <span class="t-mark">(enum)</span> </td>
+</tr> <tr> <td colspan="2"> <h3 id="Functions">Chức năng</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/byte" title="cpp/types/byte"> <span class="t-lines"><span>to_Integer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>chuyển thành<code>std::byte</code>đến số nguyên<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <h3 id="Synopsis">kết quả bằng cách xây dựng mọi thành viên dữ liệu của kết quả từ thành viên tương ứng của</h3> <div class="cpp source-cpp"><pre data-language="cpp">không gian tên std {</pre></div> <h3 id="Notes">Ghi chú</h3> <ul>
+<li> <code><a href="../types/null" title="cpp/types/NULL">NULL</a></code>  Cấu trúc LCONV;<ul>
+<li> <a href="clocale" title="cpp/header/clocale"><code>&lt;clocale&gt;</code></a> </li>
+<li> <a href="ctime" title="cpp/header/ctime"><code>&lt;ctime&gt;</code></a> </li>
+<li> <a href="cstring" title="cpp/header/cstring"><code>&lt;cstring&gt;</code></a> </li>
+<li> <a href="cstdio" title="cpp/header/cstdio"><code>&lt;cstdio&gt;</code></a> </li>
+<li> <a href="cstdlib" title="cpp/header/cstdlib"><code>&lt;cstdlib&gt;</code></a> </li>
+<li> <a href="cwchar" title="cpp/header/cwchar"><code>&lt;cwchar&gt;</code></a> </li>
+</ul> </li>
+<li> <code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>  Cấu trúc LCONV;<ul>
+<li> <a href="ctime" title="cpp/header/ctime"><code>&lt;ctime&gt;</code></a> </li>
+<li> <a href="cstring" title="cpp/header/cstring"><code>&lt;cstring&gt;</code></a> </li>
+<li> <a href="cstdio" title="cpp/header/cstdio"><code>&lt;cstdio&gt;</code></a> </li>
+<li> <a href="cwchar" title="cpp/header/cwchar"><code>&lt;cwchar&gt;</code></a> </li>
+<li> <a href="cuchar" title="cpp/header/cuchar"><code>&lt;cuchar&gt;</code></a> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+</ul> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/header/cstddef">https://en.cppreference.com/w/cpp/header/cstddef</a>
+</p>
+</div>

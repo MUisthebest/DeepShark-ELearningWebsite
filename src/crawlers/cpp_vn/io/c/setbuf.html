@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: setbuf</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void setBuf (std :: file* stream, char* bộ đệm);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đặt bộ đệm bên trong để sử dụng cho các hoạt động I/O được thực hiện trên luồng C<code>stream</code>.</p>
+<p>Nếu như<code>buffer</code>không phải là null, tương đương với<code><a href="http://en.cppreference.com/w/cpp/io/c/setvbuf"><span class="kw1821">Điều đó cho tất cả<span class="me2">setvbuf</span></span></a><span class="br0">.</span>stream, buffer, <a href="http://en.cppreference.com/w/cpp/io/c"><span class="kw1889">_Iofbf</span></a>, <a href="http://en.cppreference.com/w/cpp/io/c"><span class="kw1888">Bufsiz</span></a><span class="br0">)</span></code>.</p>
+<p>Nếu như<code>buffer</code>là null, tương đương với<code><a href="http://en.cppreference.com/w/cpp/io/c/setvbuf"><span class="kw1821">Điều đó cho tất cả<span class="me2">setvbuf</span></span></a><span class="br0">.</span>stream, nullptr, <a href="http://en.cppreference.com/w/cpp/io/c"><span class="kw1891">_IONBF</span></a>, <span class="nu0">. Không làm gì khác.</span><span class="br0">)</span></code>, mà tắt bộ đệm.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>luồng tệp để đặt bộ đệm thành</td>
+</tr> <tr class="t-par"> <td>Điều khiển đầu vào và đầu ra thành một chuỗi ký tự. Nó bao gồm và cung cấp quyền truy cập vào</td> <td>-</td> <td>Con trỏ tới một bộ đệm cho luồng sử dụng. Nếu một con trỏ null được cung cấp, bộ đệm bị tắt. Nếu không phải là NULL, phải có khả năng giữ ít nhất<code>BUFSIZ</code>ký tự</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>Nếu như<code><a href="../c" title="cpp/io/c">BUFSIZ</a></code>không phải là kích thước bộ đệm thích hợp,<code><a href="setvbuf" title="cpp/io/c/setvbuf">std::setvbuf</a></code>có thể được sử dụng để thay đổi nó.</p>
+<p><code><a href="setvbuf" title="cpp/io/c/setvbuf">std::setvbuf</a></code>cũng nên được sử dụng để phát hiện lỗi, vì<code>std::setbuf</code>không chỉ ra thành công hay thất bại.</p>
+<p>Chức năng này chỉ có thể được sử dụng sau<code>stream</code>đã được liên kết với một tệp mở, nhưng trước bất kỳ hoạt động nào khác (trừ một cuộc gọi không thành công<code>std::setbuf</code>/<code><a href="setvbuf" title="cpp/io/c/setvbuf">std::setvbuf</a></code>).</p>
+<p>Một lỗi phổ biến là đặt bộ đệm của<code><a href="std_streams" title="cpp/io/c/std streams">stdin</a></code>hoặc<code><a href="std_streams" title="cpp/io/c/std streams">stdout</a></code>đến một mảng có trọn đời kết thúc trước khi chương trình chấm dứt:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int main ()</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p><code>std::setbuf</code>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    char buf [bufsiz];</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    std :: setbuf (stdin, buf);</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="setvbuf" title="cpp/io/c/setvbuf"> <span class="t-lines"><span>setvbuf</span></span></a></div> </td> <td>Đặt bộ đệm và kích thước của nó cho một luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/setbuf" title="c/io/setbuf">C documentation</a></span>vì<code>setbuf</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/setbuf">https://en.cppreference.com/w/cpp/io/c/setbuf</a>
+</p>
+</div>

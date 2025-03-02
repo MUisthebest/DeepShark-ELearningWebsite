@@ -1,0 +1,38 @@
+ <h1 class="firstHeading" id="firstHeading">Tiền xử lý</h1> <p>Bộ tiền xử lý được thực thi tại<a href="language/translation_phases#Phase_4" title="cpp/language/translation phases">translation phase 4</a>, trước khi tổng hợp. Kết quả của tiền xử lý là một tệp duy nhất được chuyển cho trình biên dịch thực tế.</p>
+<h3 id="Directives">Chỉ thị</h3> <p>Các chỉ thị tiền xử lý kiểm soát hành vi của bộ tiền xử lý. Mỗi chỉ thị chiếm một dòng và có định dạng sau:</p>
+<ul>
+<li>các<code>#</code>tính cách.</li>
+<li>một chuỗi của:</li>
+<ul>
+<li>Tên chỉ thị được xác định tiêu chuẩn (được liệt kê<a href="#Capabilities">below</a>) theo sau là các đối số tương ứng, hoặc</li>
+<li>một hoặc nhiều<a href="language/translation_phases#Phase_3" title="cpp/language/translation phases">preprocessing tokens</a>trong đó mã thông báo bắt đầu không phải là tên chỉ thị được xác định theo tiêu chuẩn, trong trường hợp này, chỉ thị được hỗ trợ theo điều kiện với ngữ nghĩa do thực hiện<span class="t-rev-inl t-until-cxx23"><span>(ví dụ: một phần mở rộng không chuẩn thông thường là Chỉ thị<code>#warning</code>phát ra một thông báo do người dùng xác định trong quá trình biên dịch)</span><span><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></span></span>, hoặc</li>
+<li>Không có gì, trong trường hợp này chỉ thị không có hiệu lực.</li>
+</ul>
+<li>một dòng phá vỡ.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<a href="language/modules" title="cpp/language/modules">module and import directives</a>cũng là chỉ thị tiền xử lý.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Các chỉ thị tiền xử lý không được đến từ việc mở rộng vĩ mô.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#define trống</pre></div> <h3 id="Capabilities">Trống # bao gồm &lt;file.h&gt; // không phải là một chỉ thị tiền xử lý</h3> <p>Khả năng</p>
+<ul>
+<li> <b><a href="preprocessor/conditional" title="cpp/preprocessor/conditional">conditionally</a></b>Bộ tiền xử lý có khả năng dịch tệp nguồn:<code>#if</code>Thì<code>#ifdef</code>Thì<code>#ifndef</code>Thì<code>#else</code>Thì<code>#elif</code><span class="t-rev-inl t-since-cxx23"><span>Thì<code>#elifdef</code>Thì<code>#elifndef</code></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>, Và<code>#endif</code>).</li>
+<li> <b><a href="preprocessor/replace" title="cpp/preprocessor/replace">replace</a></b>biên dịch các phần của tệp nguồn (được kiểm soát bởi Chỉ thị<code>#define</code>Và<code>#undef</code>Nhắn tin macro trong khi có thể kết hợp hoặc trích dẫn số nhận dạng (được kiểm soát bởi các chỉ thị<code>#</code>Và<code>##</code>).</li>
+<li> <b><a href="preprocessor/include" title="cpp/preprocessor/include">include</a></b>và các nhà khai thác<code>#include</code> <span class="t-rev-inl t-since-cxx17"><span>Các tệp khác (được kiểm soát bởi Chỉ thị<code>__has_include</code></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>).</li>
+<li>và kiểm tra với<b><a href="preprocessor/error" title="cpp/preprocessor/error">error</a></b> <span class="t-rev-inl t-since-cxx23"><span>hoặc<b><a href="preprocessor/error" title="cpp/preprocessor/error">warning</a></b></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>gây ra một<code>#error</code><span class="t-rev-inl t-since-cxx23"><span>hoặc<code>#warning</code>(Được kiểm soát bởi Chỉ thị</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>).</li>
+</ul> <p>tương ứng</p>
+<ul>
+<li> <b><a href="preprocessor/impl" title="cpp/preprocessor/impl">implementation-defined</a></b>Các khía cạnh sau đây của bộ tiền xử lý có thể được kiểm soát:<code>#pragma</code> <span class="t-rev-inl t-since-cxx11"><span>và vận hành<code>_Pragma</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>hành vi (được kiểm soát bởi Chỉ thị<code>__pragma</code>). Ngoài ra, một số trình biên dịch hỗ trợ (ở mức độ khác nhau), nhà điều hành<i>như một</i>không chuẩn</li>
+<li> <b><a href="preprocessor/line" title="cpp/preprocessor/line">file name and line information</a></b>sự mở rộng.<code>#line</code>).</li>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2001.html" rel="nofollow">CWG 2001</a> </td> <td>C ++ 98</td> <td>Có sẵn cho bộ xử lý tiền xử lý (được kiểm soát bởi Chỉ thị</td> <td>Hành vi sử dụng các chỉ thị không được xác định không theo tiêu chuẩn không rõ ràng</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="preprocessor/replace#Predefined_macros" title="cpp/preprocessor/replace">C++ documentation</a></span>vì<span class=""><span> </span></span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="symbol_index/macro" title="cpp/symbol index/macro">C++ documentation</a></span>vì<span class=""><span>#IFDEF __HAS_CPP_ATTRIBUTE // Kiểm tra xem __HAS_CPP_ATTRIBUTE có mặt có mặt</span></span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/preprocessor" title="c/preprocessor">C documentation</a></span>vì<span class=""><span>làm cho điều kiện hỗ trợ</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/preprocessor">https://en.cppreference.com/w/cpp/preprocessor</a>
+</p>
+</div>

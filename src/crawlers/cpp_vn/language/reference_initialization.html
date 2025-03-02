@@ -1,0 +1,187 @@
+ <h1 class="firstHeading" id="firstHeading">Khởi tạo tham chiếu</h1> <p>Liên kết một tham chiếu đến một đối tượng.</p>
+<h3 id="Syntax">Cú pháp</h3> <h5 id="Non-list-initialization">Không khởi đầu danh sách</h5> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">T</span>﻿<code>&amp;</code> <span class="t-spar">Tham khảo</span> <code>=</code> <span class="t-spar">mục tiêu</span> <code>;</code><br/> <p><span class="t-spar">T</span>﻿<code>&amp;</code> <span class="t-spar">Tham khảo</span> <code>(</code> <span class="t-spar">mục tiêu</span> <code>);</code></p>
+</td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">T</span>﻿<code>&amp;&amp;</code> <span class="t-spar">Tham khảo</span> <code>=</code> <span class="t-spar">mục tiêu</span> <code>;</code><br/> <p><span class="t-spar">T</span>﻿<code>&amp;&amp;</code> <span class="t-spar">Tham khảo</span> <code>(</code> <span class="t-spar">mục tiêu</span> <code>);</code></p>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">func-refpar</span> <code>(</code> <span class="t-spar">mục tiêu</span> <code>)</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>return</code> <span class="t-spar">mục tiêu</span> <code>;</code> </td> <td>(4)</td> <td> <span class="t-mark">(Bên trong định nghĩa của<span class="t-spar">func-refret</span>)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Lớp học</span><code>::</code><span class="t-spar">Lớp học</span><code>(</code>...<code>) :</code> <span class="t-spar">thành viên ref</span> <code>(</code> <span class="t-spar">mục tiêu</span> <code>) {</code>...<code>}</code> </td> <td>             Không có p);</td> <td> <span class="t-mark">(Bên trong định nghĩa của<span class="t-spar">Lớp học</span>)</span> </td>
+</tr>
+</table> <h5 id="Ordinary_list-initialization_.28since_C.2B.2B11.29">Danh sách thông thường-khởi tạo<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h5> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">T</span>﻿<code>&amp;</code> <span class="t-spar">Tham khảo</span> <code>= {</code> <span class="t-spar">Arg1</span><code>,</code> <span class="t-spar">Arg2</span><code>,</code>...<code>};</code><br/> <p><span class="t-spar">T</span>﻿<code>&amp;</code> <span class="t-spar">Tham khảo</span> <code>{</code> <span class="t-spar">Arg1</span><code>,</code> <span class="t-spar">Arg2</span><code>,</code>...<code>};</code></p>
+</td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">T</span>﻿<code>&amp;&amp;</code> <span class="t-spar">Tham khảo</span> <code>= {</code> <span class="t-spar">Arg1</span><code>,</code> <span class="t-spar">Arg2</span><code>,</code>...<code>};</code><br/> <p><span class="t-spar">T</span>﻿<code>&amp;&amp;</code> <span class="t-spar">Tham khảo</span> <code>{</code> <span class="t-spar">Arg1</span><code>,</code> <span class="t-spar">Arg2</span><code>,</code>...<code>};</code></p>
+</td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">func-refpar</span> <code>({</code> <span class="t-spar">Arg1</span><code>,</code> <span class="t-spar">Arg2</span><code>,</code>...<code>});</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <h5 id="Designated_list-initialization_.28since_C.2B.2B20.29">Danh sách được chỉ định-khởi tạo<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>
+</h5> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">T</span>﻿<code>&amp;</code> <span class="t-spar">Tham khảo</span> <code>= {.</code><span class="t-spar">DES1</span> <code>=</code> <span class="t-spar">Arg1</span> <code>, .</code><span class="t-spar">DES2</span> <code>{</code> <span class="t-spar">Arg2</span> <code>}</code>...<code>};</code><br/> <p><span class="t-spar">T</span>﻿<code>&amp;</code> <span class="t-spar">Tham khảo</span> <code>{.</code><span class="t-spar">DES1</span> <code>=</code> <span class="t-spar">Arg1</span> <code>, .</code><span class="t-spar">DES2</span> <code>{</code> <span class="t-spar">Arg2</span> <code>}</code>...<code>};</code></p>
+</td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">T</span>﻿<code>&amp;&amp;</code> <span class="t-spar">Tham khảo</span> <code>= {.</code><span class="t-spar">DES1</span> <code>=</code> <span class="t-spar">Arg1</span> <code>, .</code><span class="t-spar">DES2</span> <code>{</code> <span class="t-spar">Arg2</span> <code>}</code>...<code>};</code><br/> <p><span class="t-spar">T</span>﻿<code>&amp;&amp;</code> <span class="t-spar">Tham khảo</span> <code>{.</code><span class="t-spar">DES1</span> <code>=</code> <span class="t-spar">Arg1</span> <code>, .</code><span class="t-spar">DES2</span> <code>{</code> <span class="t-spar">Arg2</span> <code>}</code>...<code>};</code></p>
+</td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">func-refpar</span> <code>({.</code><span class="t-spar">DES1</span> <code>=</code> <span class="t-spar">Arg1</span> <code>, .</code><span class="t-spar">DES2</span> <code>{</code> <span class="t-spar">Arg2</span> <code>}</code>...<code>});</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Một tham chiếu đến<code>T</code>có thể được khởi tạo với một đối tượng thuộc loại<code>T</code>, một chức năng của loại<code>T</code>, hoặc một đối tượng hoàn toàn có thể chuyển đổi thành<code>T</code>. Sau khi khởi tạo, một tham chiếu không thể được nối lại (thay đổi) để tham khảo một đối tượng khác.</p>
+<p>Tài liệu tham khảo được khởi tạo trong các tình huống sau:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Khi một cái tên<a href="reference#Lvalue_references" title="cpp/language/reference">lvalue reference</a>Biến được khai báo với một bộ khởi tạo.</div> <div class="t-li1">
+<span class="t-li">2)</span>Khi một cái tên<a href="reference#Rvalue_references" title="cpp/language/reference">rvalue reference</a>Biến được khai báo với một bộ khởi tạo.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Trong một biểu thức cuộc gọi chức năng, khi tham số chức năng có loại tham chiếu.</div> <div class="t-li1">
+<span class="t-li">là trong</span>// a và d chuỗi ban đầu chung là A.A và D.D<code>return</code>tuyên bố, khi hàm trả về một loại tham chiếu.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Khi a<a href="data_members" title="cpp/language/data members">non-static data member</a>loại tham chiếu được khởi tạo bằng cách sử dụng<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">member initializer</a>.</div> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">T</span> </td> <td>-</td> <td>loại được tham chiếu</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Tham khảo</span> </td> <td>-</td> <td>Biến tham chiếu sẽ được khởi tạo</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">mục tiêu</span> </td> <td>-</td> <td>Biểu thức khởi tạo đang được sử dụng</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">func-refpar</span> </td> <td>-</td> <td>một chức năng có tham số của loại tham chiếu (<span class="t-spar">T</span>﻿<code>&amp;</code><span class="t-rev-inl t-since-cxx11"><span>hoặc<span class="t-spar">T</span>﻿<code>&amp;&amp;</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>)</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">func-refret</span> </td> <td>-</td> <td>một hàm có loại trả về là loại tham chiếu (<span class="t-spar">T</span>﻿<code>&amp;</code><span class="t-rev-inl t-since-cxx11"><span>hoặc<span class="t-spar">T</span>﻿<code>&amp;&amp;</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>)</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Lớp học</span> </td> <td>-</td> <td>một tên lớp</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">thành viên ref</span> </td> <td>-</td> <td>một thành viên dữ liệu không tĩnh thuộc loại tham chiếu (<span class="t-spar">T</span>﻿<code>&amp;</code><span class="t-rev-inl t-since-cxx11"><span>hoặc<span class="t-spar">T</span>﻿<code>&amp;&amp;</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> <span class="t-spar">Lớp học</span> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">DES1</span>Thì<span class="t-spar">DES2</span>consexpr t giảm (đầu vào đầu tiên, đầu vào cuối cùng, t init, binaryop binary_op);</td> <td>-</td> <td>người thiết kế</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Arg1</span>Thì<span class="t-spar">Arg2</span>consexpr t giảm (đầu vào đầu tiên, đầu vào cuối cùng, t init, binaryop binary_op);</td> <td>-</td> <td>Các bộ khởi tạo trong danh sách khởi tạo</td>
+</tr>
+</table> <h3 id="Definitions">Định nghĩa</h3> <p>Cho hai loại<code>T1</code>Và<code>T2</code>:</p>
+<ul>
+<li>Đưa ra các phiên bản<code>T1</code>Và<code>T2</code>(1,3)<code>U1</code>Và<code>U2</code>tương ứng, nếu<code>U1</code>khoảng cách<a href="implicit_conversion#Similar_types" title="cpp/language/implicit conversion">similar</a>ĐẾN<code>U2</code>, hoặc<code>U1</code>Điều đó như vậy<a href="derived_class" title="cpp/language/derived class">base class</a>của<code>U2</code>Thì<code>T1</code>khoảng cách<i>liên quan đến tham chiếu</i>ĐẾN<code>T2</code>.</li>
+<li>Nếu một prvalue của loại hình con trỏ<code>T2</code>"Có thể được chuyển đổi thành loại con trỏ" thành<code>T1</code>Thông qua một chuỗi chuyển đổi tiêu chuẩn,<code>T1</code>khoảng cách<i>Tương thích tham chiếu</i>với<code>T2</code>.</li>
+</ul> <h3 id="Initialization_rules">Quy tắc khởi tạo</h3> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Nếu khởi tạo tham chiếu sử dụng bình thường<span class="t-rev-inl t-since-cxx20"><span>hoặc được chỉ định</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Danh sách khởi tạo, các quy tắc của<a href="list_initialization" title="cpp/language/list initialization">list-initialization</a>được theo dõi.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Để khởi tạo tham chiếu không danh sách, được đưa ra<span class="t-spar">mục tiêu</span>(1,3)<code>U</code>, tài liệu tham khảo cũng<i>liên kết trực tiếp</i>ĐẾN<span class="t-spar">mục tiêu</span>hoặc liên kết với một giá trị của loại<code>T</code>chuyển đổi từ<span class="t-spar">mục tiêu</span>. Liên kết trực tiếp được coi là đầu tiên, tiếp theo là ràng buộc gián tiếp, nếu không có ràng buộc nào có sẵn, chương trình không được hình thành.</p>
+<p>Trong tất cả các trường hợp mối quan hệ tương thích tham chiếu của hai loại được sử dụng để thiết lập tính hợp lệ của liên kết tham chiếu và trình tự chuyển đổi tiêu chuẩn sẽ không được hình thành, một chương trình đòi hỏi phải có một liên kết như vậy là không rõ ràng.</p>
+<h4 id="Direct_binding">Ràng buộc trực tiếp</h4> <p>Nếu tất cả các điều kiện sau đây được thỏa mãn:</p>
+<ul>
+<li>Double &amp; Rd = D;        // RD đề cập đến D</li>
+<li> <span class="t-spar">mục tiêu</span>không phải là<a href="bit_field" title="cpp/language/bit field">bit-field</a>lvalue.</li>
+<li> <code>T</code>lớp prvalue<code>U</code>.</li>
+</ul> <p>Nếu không, nếu tham chiếu để được khởi tạo là một tham chiếu lvalue và<span class="t-spar">mục tiêu</span>không phải là đủ điều kiện hoặc có trình độ dễ bay hơi, prorgram không được hình thành:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">gấp đôi d = 2.0;</pre></div> <p>    std :: cout &lt;&lt; d.*bp &lt;&lt; '\ n'; // Được rồi: in 7</p>
+<ul>
+<li>Double &amp; Rd = D;        // RD đề cập đến D</li>
+<li> <code>U</code>Double &amp; Rd3 = I;   // Lỗi: Loại không khớp và tham chiếu không phải là const</li>
+<li> <code>T</code>là giá trị của bất kỳ danh mục sau:<code>U</code>.</li>
+<li> <span class="t-spar">mục tiêu</span>Cấu trúc A {};<code>V</code>chỉ vào trình tự và mọi số nguyên không âm<code>T</code>lớp prvalue<code>V</code>.</li>
+</ul> <p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">A &amp; RA = B;             // RA đề cập đến một tiểu mục trong B</pre></div> <p>const a &amp; rca = b;      // RCA đề cập đến một tiểu mục trong B<code>T</code>Tham chiếu để được khởi tạo là một tham chiếu lvalue.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">là một loại lớp.</pre></div> <p>    std :: cout &lt;&lt; d.*bp &lt;&lt; '\ n'; // Được rồi: in 7</p>
+<ul><li> <span class="t-spar">mục tiêu</span>không liên quan đến tham chiếu đến</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <ul><li>rvalue</li></ul> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11 t-until-cxx17">
+<td> <ul>
+<li>có thể được chuyển đổi thành một loại loại</li>
+<li>chức năng lvalue</li>
+<li>Sau đó, tham chiếu liên kết với kết quả lvalue của chuyển đổi hoặc với tiểu mục lớp cơ sở thích hợp của nó:</li>
+<li>chức năng lvalue</li>
+</ul> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <ul>
+<li>Struct B: A {toán tử int &amp; (); };</li>
+<li>chức năng lvalue</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul><li> <code>T</code>lớp prvalue<code>U</code>.</li></ul> <p>Nếu không, nếu tham chiếu để được khởi tạo là một tham chiếu lvalue và<span class="t-spar">mục tiêu</span>không phải là đủ điều kiện hoặc có trình độ dễ bay hơi, prorgram không được hình thành:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Double &amp; Rd2 = 2.0; // Lỗi: không phải là một lvalue và tham chiếu không phải là const</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Nếu như<span class="t-spar">mục tiêu</span>là một prvalue,<a href="implicit_conversion#Temporary_materialization" title="cpp/language/implicit conversion">temporary materialization</a>bên ngoài b f ();</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>    std :: cout &lt;&lt; d.*bp &lt;&lt; '\ n'; // Được rồi: in 7</p>
+<ul>
+<li> <code>U</code>Double &amp; Rd3 = I;   // Lỗi: Loại không khớp và tham chiếu không phải là const</li>
+<li> <code>T</code>là giá trị của bất kỳ danh mục sau:<code>U</code>.</li>
+<li> <span class="t-spar">mục tiêu</span>XValue không bit<code>v</code>nó đến một đối tượng<code>V</code>chỉ vào trình tự và mọi số nguyên không âm<code>T</code>lớp prvalue<code>V</code>là<code>v</code>mảng prvalue</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <ul><li>rvalue</li></ul> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11 t-until-cxx17">
+<td> <ul>
+<li>XVALUE</li>
+<li>chức năng lvalue</li>
+<li>chức năng lvalue</li>
+</ul> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <ul>
+<li>rvalue</li>
+<li>chức năng lvalue</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>là tương thích tham chiếu với</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Sau đó tham chiếu liên kết với</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>, hoặc theo tiểu mục lớp cơ sở thích hợp của nó:<code>C</code>khoảng cách<a href="implicit_conversion#Qualification_conversions" title="cpp/language/implicit conversion">adjusted</a>Cấu trúc A {};<code>T</code>Cấu trúc B: A {};<a href="implicit_conversion#Temporary_materialization" title="cpp/language/implicit conversion">temporary materialization</a>bên ngoài b f ();</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h4 id="Indirect_binding"> </h4> <p>const a &amp; rca2 = f (); // Liên kết với các tiểu mục của b rvalue.<code>T</code>A &amp;&amp; rra = f ();       // Tương tự như trên<code>U</code>.</p>
+<p>Nếu như<code>T</code>hoặc<code>U</code> <a href="copy_initialization" title="cpp/language/copy initialization">copy-initialization</a>int i2 = 42;<code>T</code>int &amp;&amp; rri = static_cast &lt;int &amp;&amp;&gt; (i2); // ràng buộc trực tiếp với i2<a href="copy_initialization" title="cpp/language/copy initialization">copy-initialization</a>được áp dụng cho nó. Tham chiếu liên kết với đối tượng kết quả hoặc với tiểu mục lớp cơ sở thích hợp của nó.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <p>là một loại lớp.<code>T</code>không liên quan đến tham chiếu đến<span class="t-spar">mục tiêu</span>có thể được chuyển đổi thành một giá trị</p>
+</td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <p>Là xấu nếu<span class="t-spar">mục tiêu</span>là tương thích tham chiếu với<code>T</code>là của bất kỳ loại sau:<code>T</code>lớp prvalue</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <div class="cpp source-cpp"><pre data-language="cpp">chức năng lvalue</pre></div> <h3 id="Lifetime_of_a_temporary">chức năng lvalue</h3> <p>Sau đó, tham chiếu liên kết với kết quả của việc chuyển đổi hoặc theo tiểu mục lớp cơ sở thích hợp của nó:<a href="lifetime#Temporary_object_lifetime" title="cpp/language/lifetime">temporary object lifetime exceptions</a>Cấu trúc A {};</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <ul><li>Một<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>Cấu trúc B: A {};</li></ul> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>Một<a href="implicit_conversion#Temporary_materialization" title="cpp/language/implicit conversion">temporary materialization conversion</a>Thì</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul>
+<li>struct x {toán tử b (); } x;<code>(e)</code>là<code>e</code> </li>
+<li>Một<a href="operator_member_access#Built-in_subscript_operator" title="cpp/language/operator member access">built-in subscript expression</a>, sau đó được sử dụng để cung cấp trực tiếp tham chiếu. Đối với việc khởi tạo trực tiếp này, các chuyển đổi do người dùng xác định không được xem xét.<code>a[n]</code>hoặc<code>n[a]</code>là<code>a</code>B &amp;&amp; rrb = x;    // Liên kết trực tiếp với kết quả của việc chuyển đổi</li>
+<li>Một<a href="operator_member_access#Built-in_member_access_operators" title="cpp/language/operator member access">class member access expression</a>, sau đó được sử dụng để cung cấp trực tiếp tham chiếu. Đối với việc khởi tạo trực tiếp này, các chuyển đổi do người dùng xác định không được xem xét.<code>e.m</code>là<code>e</code>Ràng buộc gián tiếp<code>m</code>với nó, và</li>
+<li>Một<a href="operator_member_access#Built-in_pointer-to-member_access_operators" title="cpp/language/operator member access">pointer-to-member operation</a>, sau đó được sử dụng để cung cấp trực tiếp tham chiếu. Đối với việc khởi tạo trực tiếp này, các chuyển đổi do người dùng xác định không được xem xét.<code>e.*mp</code>là<code>e</code>Ràng buộc gián tiếp<code>mp</code>, kết quả là một loại loại</li>
+<li>Một<a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>Thì<a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Thì<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>, hoặc<a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>Nếu ràng buộc trực tiếp không có sẵn, ràng buộc gián tiếp được xem xét. Trong trường hợp này,<a href="explicit_cast" title="cpp/language/explicit cast">explicit cast</a>không thể liên quan đến tham chiếu đến</li>
+<li>Một<a href="operator_other#Conditional_operator" title="cpp/language/operator other">conditional expression</a>, sau đó được sử dụng để cung cấp trực tiếp tham chiếu. Đối với việc khởi tạo trực tiếp này, các chuyển đổi do người dùng xác định không được xem xét.<code>cond ? e1 : e2</code>Nếu không, một loại tạm thời<code>e1</code>hoặc<code>e2</code>bằng cách chuyển đổi do người dùng xác định. Chương trình sẽ không được hình thành nếu sự khởi tạo sao chép không tham chiếu tương ứng sẽ không được hình thành. Kết quả của cuộc gọi đến chức năng chuyển đổi, như được mô tả cho không tham chiếu</li>
+<li>Một<a href="operator_other#Built-in_comma_operator" title="cpp/language/operator other">built-in comma expression</a>, sau đó được sử dụng để cung cấp trực tiếp tham chiếu. Đối với việc khởi tạo trực tiếp này, các chuyển đổi do người dùng xác định không được xem xét.<code>x, e</code>Nếu không, một loại tạm thời<code>e</code>được tạo và sao chép khởi tạo từ</li>
+</ul> <p>. Các tài liệu tham khảo sau đó bị ràng buộc với tạm thời.</p>
+<ul>
+<li>được chuyển đổi hoàn toàn thành một prvalue của loại cv cv-unqualify<span class="kw1">Không chính thức,</span>”. Chuyển đổi vật chất tạm thời được áp dụng, xem xét loại prvalue là<span class="kw1">Không chính thức,</span>và tham chiếu được ràng buộc với đối tượng kết quả.</li>
+<li>const std :: chuỗi &amp; rs = "abc"; // RS đề cập đến bản sao tạm thời được khởi tạo từ mảng char</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>const Double &amp; RCD2 = 2;        // RCD2 đề cập đến tạm thời với giá trị 2.0</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>int i3 = 2;<a href="direct_initialization" title="cpp/language/direct initialization">direct-initialization</a>), trong đó đối tượng tạm thời hoặc tiểu mục của nó được biểu thị bằng một trong các biểu thức sau:<b>.</b>Trọn đời của một tạm thời<b>)</b>Bất cứ khi nào một tham chiếu bị ràng buộc với một đối tượng tạm thời hoặc với một tiểu mục của chúng, thời gian tồn tại của đối tượng tạm thời được mở rộng để phù hợp với tuổi thọ của tham chiếu (kiểm tra<a href="list_initialization" title="cpp/language/list initialization">list-initialization</a>), trong đó đối tượng tạm thời hoặc tiểu mục của nó được biểu thị bằng một trong các biểu thức sau:<b>danh tính</b>Biểu thức của một loại đối tượng,<b>{</b>.</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">một biểu hiện dấu ngoặc đơn</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>là một trong những biểu thức này,</p>
+<h3 id="Notes">Ghi chú</h3> <p>hình thức<a href="storage_duration" title="cpp/language/storage duration"><code>extern</code></a>người xác định.</p>
+<p>là các mục tiêu trực tiếp của các đối tượng<a class="external text" href="https://cplusplus.github.io/CWG/issues/1696.html" rel="nofollow">CWG issue 1696</a>là một mảng và là một trong những biểu thức này,<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">initializer list</a>hình thức<a class="external text" href="https://cplusplus.github.io/CWG/issues/1696.html" rel="nofollow">CWG 1696</a>là một trong những biểu hiện này và</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">chỉ định một thành viên dữ liệu không tĩnh thuộc loại đối tượng,</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/391.html" rel="nofollow">CWG 391</a> </td> <td>C ++ 98</td> <td>hình thức<br/>là một trong những biểu hiện này và<br/>Chuyển đổi mà không có chuyển đổi do người dùng xác định, chuyển đổi một trong các biểu thức này thành glvalue đề cập đến đối tượng được chỉ định bởi toán hạng hoặc đối tượng hoàn chỉnh của nó hoặc một tiểu thư của nó (một</td> <td>Biểu thức được hiểu là một chuỗi của các diễn viên này),<br/>hình thức<br/>đó là một glvalue, nơi</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/450.html" rel="nofollow">CWG 450</a> </td> <td>C ++ 98</td> <td>là một trong những biểu thức này, hoặc<br/>hình thức</td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/589.html" rel="nofollow">CWG 589</a> </td> <td>C ++ 98</td> <td>đó là một glvalue, nơi</td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/656.html" rel="nofollow">CWG 656</a> </td> <td>C ++ 98</td> <td>là một trong những biểu hiện này.<br/>Có những ngoại lệ sau đây cho quy tắc trọn đời này:<br/>tạm thời bị ràng buộc với giá trị trả về của một hàm trong một<br/>Tuyên bố không được mở rộng: Nó bị phá hủy ngay lập tức ở cuối biểu thức trả lại. Như là</td> <td>Tuyên bố luôn trả về một tài liệu tham khảo lơ lửng.<br/>Một liên kết tạm thời với một tham số tham chiếu trong một cuộc gọi hàm tồn tại cho đến khi kết thúc biểu thức đầy đủ chứa lệnh gọi hàm đó: Nếu hàm trả về một tham chiếu, vượt qua biểu thức đầy đủ, nó trở thành một tham chiếu lủng lẳng.<br/>Một liên kết tạm thời với một tham chiếu trong trình khởi tạo được sử dụng trong biểu thức mới tồn tại cho đến khi kết thúc biểu thức đầy đủ chứa biểu hiện mới đó, không dài như đối tượng được khởi tạo. Nếu đối tượng khởi tạo tồn tại toàn bộ biểu thức, thành viên tham chiếu của nó trở thành một tài liệu tham khảo lủng lẳng.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1287.html" rel="nofollow">CWG 1287</a> </td> <td>C ++ 11</td> <td>; khoảng thời gian kết quả có<span class="t-spar">mục tiêu</span>một liên kết tạm thời với một tham chiếu trong một phần tử tham chiếu của một tổng hợp được khởi tạo bằng cách sử dụng<br/>Cú pháp</td> <td>dấu ngoặc đơn<br/>tồn tại cho đến khi kết thúc biểu thức đầy đủ chứa bộ khởi tạo, trái ngược với</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1295.html" rel="nofollow">CWG 1295</a> </td> <td>C ++ 11</td> <td>Cú pháp</td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1299.html" rel="nofollow">CWG 1299</a> </td> <td>C ++ 98</td> <td>niềng răng</td> <td>hơn thứ hai, nếu không</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1571.html" rel="nofollow">CWG 1571</a> </td> <td>C ++ 98</td> <td>Cấu trúc a<br/>{<span class="t-spar">mục tiêu</span> </td> <td>    int b [3] = {1, 2, 3}; // ĐƯỢC RỒI</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1604.html" rel="nofollow">CWG 1604</a> </td> <td>C ++ 98</td> <td>    int &amp;&amp; r;</td> <td>    int b [3] = {1, 2, 3}; // ĐƯỢC RỒI</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2352.html" rel="nofollow">CWG 2352</a> </td> <td>C ++ 98</td> <td>};</td> <td>    int b [3] = {1, 2, 3}; // ĐƯỢC RỒI</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2481.html" rel="nofollow">CWG 2481</a> </td> <td>C ++ 17</td> <td> <br/>A A1 {7}; // ok, tuổi thọ được mở rộng</td> <td>Được cho</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2801.html" rel="nofollow">CWG 2801</a> </td> <td>C ++ 98</td> <td>A A2 (7); // TÀI LIỆU THAM KHẢO</td> <td>bị cấm</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="constructor" title="cpp/language/constructor">constructor</a> </li>
+<li> <a href="converting_constructor" title="cpp/language/converting constructor">converting constructor</a> </li>
+<li> <a href="copy_assignment" title="cpp/language/copy assignment">copy assignment</a> </li>
+<li> <a href="copy_constructor" title="cpp/language/copy constructor">copy constructor</a> </li>
+<li> <a href="explicit" title="cpp/language/explicit"><code>explicit</code></a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> <ul>
+<li> <a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </li>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a> </li>
+<li> <a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a> </li>
+<li> <a href="list_initialization" title="cpp/language/list initialization">list initialization</a> </li>
+</ul> </li>
+<li> <a href="move_assignment" title="cpp/language/move assignment">move assignment</a> </li>
+<li> <a href="move_constructor" title="cpp/language/move constructor">move constructor</a> </li>
+<li> <a href="new" title="cpp/language/new"><code>new</code></a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/reference_initialization">https://en.cppreference.com/w/cpp/language/reference_initialization</a>
+</p>
+</div>

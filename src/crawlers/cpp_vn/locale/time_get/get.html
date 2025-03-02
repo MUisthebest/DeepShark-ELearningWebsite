@@ -1,0 +1,175 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Time_get &lt;biểu đồ, đầu vào&gt; :: get, std :: time_get &lt;biểu đồ, inputit&gt; :: do_get</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">ITER_TYPE GET (ITER_TYPE BEG, ITER_TYPE END, STD :: IOS_BASE &amp; STR,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>               std :: ios_base :: iostate &amp; err, std :: tm* t,<code>[beg, end)</code>               const char_type* fmtbeg, const char_type* fmtend) const;<code>[fmtbeg, fmtend)</code>được bảo vệ:<code>do_get</code>. Các<code>get</code>Virtual ITER_TYPE DO_GET (ITER_TYPE BEG, ITER_TYPE END, STD :: iOS_BASE &amp; STR,<code>err</code>và tiếp tục vòng lặp, nếu không, nó đặt<code>err <span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span> <a href="http://en.cppreference.com/w/cpp/io/ios_base/iostate"><span class="kw1702">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">Phân tích cú pháp chỉ định chuyển đổi từ trình tự đầu vào</span></span></a></code>Phân tích ngày và thời gian từ chuỗi ký tự đầu vào</div> <div class="t-li2">
+<span class="t-li">}</span>Theo định dạng được cung cấp trong chuỗi ký tự<code>fmtbeg == fmtend</code>).</div> <div class="t-li2">
+<span class="t-li">{</span>. Định dạng dự kiến ​​sẽ tuân theo định dạng được mô tả dưới đây, mặc dù việc xử lý thực tế của từng định dạng định dạng có thể được tùy chỉnh bằng cách ghi đè<code>err <span class="sy3">Nếu tồn tại một</span><span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span> <a href="http://en.cppreference.com/w/cpp/io/ios_base/iostate"><span class="kw1702">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">Phân tích cú pháp chỉ định chuyển đổi từ trình tự đầu vào</span></span></a></code>).</div> <div class="t-li2">
+<span class="t-li">}</span>bằng cách thực thi<code>beg == end</code>Goodbit<code>eofbit</code>Và<code>failbit</code>TRONG<code>err</code>.</div>. Sau đó nhập một vòng lặp, kết thúc bất cứ khi nào bất kỳ điều kiện nào sau đây trở thành đúng (được kiểm tra theo thứ tự này):<div class="t-li2">
+<span class="t-li">}</span>Tất cả các ký tự đã được đọc từ chuỗi định dạng (<code>'%'</code>Có một lỗi phân tích cú pháp (<code><a href="../../io/manip/get_time" title="cpp/io/manip/get time">std::get_time</a></code>Goodbit<code>do_get(beg, end, str, err, t, format, modifier)</code>là<code>format</code>Tất cả các ký tự đã được đọc từ chuỗi đầu vào (<code>modifier</code>. Nếu điều kiện này chấm dứt vòng lặp, hàm sẽ đặt cả hai<code>%</code>Trong phần thân của vòng lặp, các bước sau đây diễn ra:<code>'\0'</code>Nếu ký tự tiếp theo trong chuỗi định dạng là<code>'%'</code>Thì<code>eofbit</code>có mặt trong<code>err</code>, theo sau là một hoặc hai ký tự tạo thành một<code>do_get</code>Trình xác định chuyển đổi (xem bên dưới), các ký tự này được sử dụng trong cuộc gọi<code>err</code>là nhân vật xác định chuyển đổi chính và<code>fmtbeg</code>là công cụ sửa đổi tùy chọn (xuất hiện giữa</div> <div class="t-li2">
+<span class="t-li">{</span>và ký tự định dạng, nếu có). Nếu không có công cụ sửa đổi, giá trị<code>str</code>biểu thị<code><a href="http://en.cppreference.com/w/cpp/string/byte/isspace"><span class="kw3515">Điều đó cho tất cả<span class="me2">không gian ISSP</span></span></a><span class="br0">.</span><span class="sy2">*</span>fmtbeg, str.<span class="me1">Đầu ra</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span> <span class="sy1">==</span> <span class="kw2">ĐÚNG VẬY</span></code>được sử dụng. Nếu chuỗi định dạng không rõ ràng hoặc kết thúc quá sớm để xác định trình xác định chuyển đổi sau<code>fmtbeg</code>và vòng lặp bị chấm dứt. Nếu, sau cuộc gọi đến<code>fmtend</code>, không có bit lỗi nào được đặt trong</div> <div class="t-li2">
+<span class="t-li">}</span>, Chức năng tăng lên<code>++fmtbeg, ++beg;</code>Để chỉ ra ngay sau khi định vị chuyển đổi và tiếp tục vòng lặp.<code>failbit</code>TRONG<code>err</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Nếu ký tự tiếp theo là khoảng trắng, như được chỉ ra bởi địa phương được cung cấp trong luồng<code>[beg, end)</code>, chức năng tiếp tục tăng<code><a href="../../chrono/c/tm" title="cpp/chrono/c/tm">std::tm</a></code>cho đến khi nó trở nên bằng<code>t</code>hoặc chỉ vào một nhân vật không phải là màu sắc.</div>Nếu ký tự tiếp theo trong chuỗi định dạng tương đương với ký tự tiếp theo trong luồng đầu vào theo so sánh không phân biệt chữ hoa chữ thường, hàm sẽ tiến lên cả hai chuỗi bởi một ký tự<code>err</code>và tiếp tục vòng lặp, nếu không, nó đặt<code>err <span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span> <a href="http://en.cppreference.com/w/cpp/io/ios_base/iostate"><span class="kw1702">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">Phân tích cú pháp chỉ định chuyển đổi từ trình tự đầu vào</span></span></a></code>và cập nhật<code>[beg, end)</code>cấu trúc được chỉ ra bởi<code><a href="../time_get" title="cpp/locale/time get">std::time_get</a></code>theo đó.<code>'%'</code>Thì<code>modifier</code>Đầu tiên, xóa các bit lỗi trong<code>'\0'</code>), Và<code>format</code>bằng cách thực thi<code>failbit</code>TRONG<code>err</code>Goodbit<code>eofbit</code>TRONG<code>err</code>. Sau đó đọc các ký tự từ chuỗi đầu vào<code>*t</code>được mong đợi bởi<code>'%x'</code>hoặc<code>'%c'</code>Bộ xác định định dạng được hình thành bằng cách kết hợp<code>'E'</code>Và<code>'O'</code>(Nếu không<code>*t</code>. Nếu các ký tự không kết hợp để tạo thành trình xác định chuyển đổi hợp lệ, hãy đặt<code>eofbit</code>TRONG<code>err</code>. Nếu kết thúc của luồng đầu vào đạt được sau khi đọc một ký tự, hãy đặt<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>                      STD :: iOS_Base :: in | std :: ios_base :: out) ghi đè;</td> <td>-</td> <td>. Nếu chuỗi đầu vào được phân tích cú pháp thành công, hãy cập nhật các trường tương ứng của</td>
+</tr> <tr class="t-par"> <td>kết thúc</td> <td>-</td> <td>.   Cho các nhà xác định chuyển đổi phức tạp, chẳng hạn như</td>
+</tr> <tr class="t-par"> <td>STR</td> <td>-</td> <td>, hoặc các chỉ thị sử dụng các công cụ sửa đổi<code><a href="../ctype" title="cpp/locale/ctype">std::ctype</a></code>, hàm có thể không xác định được một số giá trị để lưu trữ<code><a href="../collate" title="cpp/locale/collate">std::collate</a></code>. Trong trường hợp như vậy, nó đặt</td>
+</tr> <tr class="t-par"> <td>và để lại các lĩnh vực này ở trạng thái không xác định.</td> <td>-</td> <td>iterator chỉ định sự khởi đầu của chuỗi để phân tích cú pháp</td>
+</tr> <tr class="t-par"> <td>Chuyển đổi đối số</td> <td>-</td> <td>Con trỏ tới<code><a href="../../chrono/c/tm" title="cpp/chrono/c/tm">std::tm</a></code>Một quá khứ lặp đi lặp lại cho chuỗi để phân tích cú pháp</td>
+</tr> <tr class="t-par"> <td>Một đối tượng luồng mà hàm này sử dụng để có được các khía cạnh địa phương khi cần, ví dụ:</td> <td>-</td> <td>Bỏ qua khoảng trắng hoặc<p>Chuỗi chỉ định định dạng chuyển đổi<code>%</code>Chuỗi định dạng bao gồm các nhà xác định chuyển đổi bằng 0 hoặc nhiều hơn, ký tự khoảng trắng và các ký tự thông thường (ngoại trừ<code>%</code>nhân vật, tùy chọn theo sau là<code>E</code>hoặc<code>O</code>). Mỗi ký tự thông thường dự kiến ​​sẽ khớp với một ký tự trong luồng đầu vào trong so sánh không nhạy cảm trường hợp. Mỗi ký tự khoảng trắng phù hợp với khoảng trắng tùy ý trong chuỗi đầu vào. Mỗi đặc tả chuyển đổi bắt đầu với<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/strptime.html" rel="nofollow"><code>strptime()</code></a>:</p>
+<table class="wikitable"> <tr> <th>bù lại<br/>thời lượng để biểu diễn phần bù từ UTC tương ứng với</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th> <th>công cụ sửa đổi (bị bỏ qua nếu không được hỗ trợ bởi ngôn ngữ), theo sau là ký tự xác định hành vi của trình xác định. Các định dạng xác định định dạng phù hợp với chức năng POSIX</th>
+</tr> <tr> <th>
+<code>%</code> </th> <td>Viết cho các lĩnh vực<code>%</code>. Thông số kỹ thuật chuyển đổi đầy đủ phải là<code>%%</code> </td> <td>Gán cho đã cho</td>
+</tr> <tr> <th>
+<code>t</code> </th> <td>Phù hợp với bất kỳ khoảng trắng nào</td> <td>Gán cho đã cho</td>
+</tr> <tr> <th>
+<code>n</code> </th> <td>Phù hợp với bất kỳ khoảng trắng nào</td> <td>Gán cho đã cho</td>
+</tr> <tr> <th colspan="3">Mỗi ký tự khoảng trắng phù hợp với các ký tự khoảng trắng hoặc nhiều hơn trong luồng đầu vào.</th>
+</tr> <tr> <th>
+<code>Y</code> </th> <td>Phù hợp với bất kỳ khoảng trắng nào<b>năm</b>phân tích cú pháp đầy đủ</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>EY</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>năm</b>phân tích cú pháp</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>y</code> </th> <td>Kết quả trong 2000-2068<b>năm</b>phân tích 2 chữ số cuối cùng của<code>[69,99]</code>như một số thập phân. Phạm vi<code>[00,68]</code>Kết quả trong các giá trị 1969 đến 1999, phạm vi</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>Oy</code> </th> <td>Kết quả trong 2000-2068<b>năm</b>phân tích 2 chữ số cuối cùng của</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>Ey</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>năm</b>Khi được bù từ thời kỳ Lịch thay thế của Locale<code>%EC</code> </td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>C</code> </th> <td>phân tích cú pháp<b>năm</b>như một số thập phân (phạm vi<code>[00,99]</code>)</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>EC</code> </th> <td>phân tích 2 chữ số đầu tiên của</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th colspan="3">Các nhà xác định chuyển đổi sau đây có sẵn:</th>
+</tr> <tr> <th>
+<code>b</code> </th> <td>Phân tích tên của năm cơ sở (giai đoạn) trong đại diện thay thế của địa phương, ví dụ: 平成 (thời đại Heisei) trong ja_jp<code>Oct</code> </td> <td>
+<code>tm_mon</code> </td>
+</tr> <tr> <th>
+<code>h</code> </th> <td>Từ đồng nghĩa của<code>b</code> </td> <td>
+<code>tm_mon</code> </td>
+</tr> <tr> <th>
+<code>B</code> </th> <td>Từ đồng nghĩa của<code>b</code> </td> <td>
+<code>tm_mon</code> </td>
+</tr> <tr> <th>
+<code>m</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tháng</b>như một số thập phân (phạm vi<code>[01,12]</code>phân tích cú pháp</td> <td>
+<code>tm_mon</code> </td>
+</tr> <tr> <th>
+<code>Om</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tháng</b>phân tích cú pháp</td> <td>
+<code>tm_mon</code> </td>
+</tr> <tr> <th colspan="3">Tuần</th>
+</tr> <tr> <th>
+<code>U</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tuần trong năm</b>Như một số thập phân (Chủ nhật là ngày đầu tiên trong tuần) (phạm vi<code>[00,53]</code>phân tích cú pháp</td> <td>
+<code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th>
+<code>OU</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tuần trong năm</b>, như bằng<code>%U</code>phân tích cú pháp</td> <td>
+<code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th>
+<code>W</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tuần trong năm</b>Như một số thập phân (Thứ Hai là ngày đầu tiên trong tuần) (phạm vi<code>[00,53]</code>phân tích cú pháp</td> <td>
+<code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th>
+<code>OW</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tuần trong năm</b>, như bằng<code>%W</code>phân tích cú pháp</td> <td>
+<code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th colspan="3">Ngày trong năm/tháng</th>
+</tr> <tr> <th>
+<code>j</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>ngày trong năm</b>như một số thập phân (phạm vi<code>[001,366]</code>phân tích cú pháp</td> <td>
+<code>tm_yday</code> </td>
+</tr> <tr> <th>
+<code>d</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>ngày trong tháng</b>như một số thập phân (phạm vi<code>[01,31]</code>phân tích cú pháp</td> <td>
+<code>tm_mday</code> </td>
+</tr> <tr> <th>
+<code>Od</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>ngày trong tháng</b>phân tích cú pháp</td> <td>
+<code>tm_mday</code> </td>
+</tr> <tr> <th>
+<code>e</code> </th> <td>Từ đồng nghĩa của<code>d</code> </td> <td>
+<code>tm_mday</code> </td>
+</tr> <tr> <th>
+<code>Oe</code> </th> <td>Từ đồng nghĩa của<code>Od</code> </td> <td>
+<code>tm_mday</code> </td>
+</tr> <tr> <th colspan="3">Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.</th>
+</tr> <tr> <th>
+<code>a</code> </th> <td>Sử dụng hệ thống số thay thế, ví dụ: Parses là 27 ở địa phương JA_JP, các số 0 hàng đầu được phép nhưng không bắt buộc<code>Fri</code> </td> <td>
+<code>tm_wday</code> </td>
+</tr> <tr> <th>
+<code>A</code> </th> <td>Từ đồng nghĩa của<code>a</code> </td> <td>
+<code>tm_wday</code> </td>
+</tr> <tr> <th>
+<code>w</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>Ngày trong tuần</b>như một số thập phân, nơi Chủ nhật là<code>0</code>(phạm vi<code>[0-6]</code>)</td> <td>
+<code>tm_wday</code> </td>
+</tr> <tr> <th>
+<code>Ow</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>Ngày trong tuần</b>như một số thập phân, nơi Chủ nhật là<code>0</code>phân tích cú pháp</td> <td>
+<code>tm_wday</code> </td>
+</tr> <tr> <th colspan="3">Giờ, phút, thứ hai</th>
+</tr> <tr> <th>
+<code>H</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>giờ</b>Là một số thập phân, đồng hồ 24 giờ (phạm vi<code>[00-23]</code>phân tích cú pháp</td> <td>
+<code>tm_hour</code> </td>
+</tr> <tr> <th>
+<code>OH</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>giờ</b>phân tích cú pháp</td> <td>
+<code>tm_hour</code> </td>
+</tr> <tr> <th>
+<code>I</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>giờ</b>Là một số thập phân, đồng hồ 12 giờ (phạm vi<code>[01,12]</code>phân tích cú pháp</td> <td>
+<code>tm_hour</code> </td>
+</tr> <tr> <th>
+<code>OI</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>giờ</b>phân tích cú pháp</td> <td>
+<code>tm_hour</code> </td>
+</tr> <tr> <th>
+<code>M</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>phút</b>như một số thập phân (phạm vi<code>[00,59]</code>phân tích cú pháp</td> <td>
+<code>tm_min</code> </td>
+</tr> <tr> <th>
+<code>OM</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>phút</b>phân tích cú pháp</td> <td>
+<code>tm_min</code> </td>
+</tr> <tr> <th>
+<code>S</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>thứ hai</b>như một số thập phân (phạm vi<code>[00,60]</code>phân tích cú pháp</td> <td>
+<code>tm_sec</code> </td>
+</tr> <tr> <th>
+<code>OS</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>thứ hai</b>phân tích cú pháp</td> <td>
+<code>tm_sec</code> </td>
+</tr> <tr> <th colspan="3">Khác</th>
+</tr> <tr> <th>
+<code>c</code> </th> <td>Sử dụng hệ thống số thay thế, ví dụ: Parses là 24 trong địa phương JA_JP<code>Sun Oct 17 04:41:13 2010</code>(phụ thuộc vào địa phương)</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>Ec</code> </th> <td>Phân tích định dạng chuỗi thời gian và tiêu chuẩn của địa phương, ví dụ:</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>x</code> </th> <td>Phân tích định dạng chuỗi thời gian và ngày thay thế của địa phương, ví dụ: mong đợi 平成 23 (năm Heisei 23) thay vì 2011 (năm 2011) tại địa phương JA_JP</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>Ex</code> </th> <td>Phân tích đại diện ngày tiêu chuẩn của địa phương</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>X</code> </th> <td>phân tích các đại diện ngày thay thế của địa phương, ví dụ: mong đợi 平成 23 (năm Heisei 23) thay vì 2011 (năm 2011) tại địa phương JA_JP</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>EX</code> </th> <td>Phân tích đại diện thời gian tiêu chuẩn của địa phương</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>D</code> </th> <td>tương đương với<b>Phân tích đại diện thời gian thay thế của địa phương</b> </td> <td>
+<code>tm_mon</code>Thì<code>tm_mday</code>Thì<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>r</code> </th> <td>" %m / %d / %y"<b>phân tích thời gian đồng hồ 12 giờ tiêu chuẩn của địa phương (trong POSIX,</b>)</td> <td>
+<code>tm_hour</code>Thì<code>tm_min</code>Thì<code>tm_sec</code> </td>
+</tr> <tr> <th>
+<code>R</code> </th> <td>tương đương với<b>" %I: %m: %s %p"</b> </td> <td>
+<code>tm_hour</code>Thì<code>tm_min</code> </td>
+</tr> <tr> <th>
+<code>T</code> </th> <td>tương đương với<b>" %H: %m"</b> </td> <td>
+<code>tm_hour</code>Thì<code>tm_min</code>Thì<code>tm_sec</code> </td>
+</tr> <tr> <th>
+<code>p</code> </th> <td>" %H: %M: %S"<b>sáng hoặc p.m.</b> </td> <td>
+<code>tm_hour</code> </td>
+</tr>
+</table> <p>Ghi chú:<code>tm_isdst</code>phân tích cú pháp của địa điểm tương đương với<code>mktime</code></p>
+</td>
+</tr> <tr class="t-par"> <td>Để so sánh chuỗi</td> <td>-</td> <td>err</td>
+</tr> <tr class="t-par"> <td>định dạng</td> <td>-</td> <td>Đối tượng cờ lỗi phát trực tuyến được sửa đổi bởi hàm này để chỉ ra lỗi</td>
+</tr> <tr class="t-par"> <td>đối tượng sẽ giữ kết quả của cuộc gọi chức năng này</td> <td>-</td> <td>fmtbeg<code>%</code>Con trỏ tới ký tự đầu tiên của chuỗi các ký tự char_type chỉ định định dạng chuyển đổi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>fmtend<code>[beg, end)</code>Con trỏ qua ký tự cuối cùng của chuỗi các ký tự char_type chỉ định định dạng chuyển đổi</p>
+<h3 id="Notes">Ghi chú</h3> <p>nhân vật đặt tên cho một trình chi tiết chuyển đổi<code>'%'</code>công cụ sửa đổi<code><a href="../collate" title="cpp/locale/collate">std::collate</a></code>công cụ sửa đổi tùy chọn có thể xuất hiện giữa<code>str</code>và bộ xác định chuyển đổi</p>
+<p>Tererator chỉ một trong quá khứ nhân vật cuối cùng trong<code>*t</code>Điều đó đã được phân tích thành công.</p>
+<p>So sánh không phân biệt trường hợp cho không gian không phải<code>*t</code>ký tự trong chuỗi định dạng,<code>get()</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">khía cạnh của địa điểm được cung cấp bởi</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">thường là, nhưng không nhất thiết, được sử dụng.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../io/manip/get_time" title="cpp/io/manip/get time"> <span class="t-lines"><span>Phân tích các đại diện ngày và giờ của địa phương.</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Lệnh sửa đổi<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/time_get/get">https://en.cppreference.com/w/cpp/locale/time_get/get</a>
+</p>
+</div>

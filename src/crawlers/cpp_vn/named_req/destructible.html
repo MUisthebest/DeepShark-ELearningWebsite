@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Phá hủy</h1> <p>Chỉ định rằng một thể hiện của loại có thể bị phá hủy.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>T</code>thỏa mãn phá hủy nếu</p>
+<p>Cho quá tải</p>
+<ul><li> <code>u</code>, một biểu thức của loại<code>T</code>.</li></ul> <p>Các biểu thức sau đây phải hợp lệ và có các hiệu ứng được chỉ định của chúng.</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Điều kiện sau</th>
+</tr> <tr> <td>
+<code>u.~T()</code> </td> <td>Tất cả các tài nguyên thuộc sở hữu của<code>u</code>được khai hoang, không có ngoại lệ nào được ném.</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Những kẻ phá hủy được gọi là ngầm ở cuối<a href="../language/lifetime" title="cpp/language/lifetime">object lifetime</a>chẳng hạn như khi rời đi<a href="../language/scope" title="cpp/language/scope">scope</a>hoặc bởi<a href="../language/delete" title="cpp/language/delete">delete-expression</a>. Cuộc gọi phá hủy rõ ràng như trong bảng yêu cầu loại là rất hiếm.</p>
+<p>Cảm ơn<a href="../language/operator_member_access#Built-in_member_access_operators" title="cpp/language/operator member access">pseudo destructor call</a>, tất cả các loại vô hướng đáp ứng yêu cầu của phá hủy, trong khi các loại mảng và loại tham chiếu thì không. Lưu ý rằng<code><a href="../types/is_destructible" title="cpp/types/is destructible">std::is_destructible</a></code>Cho phép các mảng và loại tham chiếu.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_destructible" title="cpp/types/is destructible"> <span class="t-lines"><span>is_destructable</span><span>is_trivently_destructable</span><span>is_nothrow_destructable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem một loại có hàm không bị phá hủy không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../concepts/destructible" title="cpp/concepts/destructible"> <span class="t-lines"><span>Cấu trúc t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>{<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/Destructible">https://en.cppreference.com/w/cpp/named_req/Destructible</a>
+</p>
+</div>

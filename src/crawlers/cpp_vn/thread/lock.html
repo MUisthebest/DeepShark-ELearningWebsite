@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Khóa</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/mutex" title="cpp/header/mutex">&lt;mutex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class Lockable1, Class Lockable2, Class ... Lockablen&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>void Lock (Lockable1 &amp; Lock1, Lockable2 &amp; Lock2, Lockablen &amp; ... Lockn);<a href="../named_req/lockable" title="cpp/named req/Lockable">Lockable</a>Đối tượng<code>lock1</code>Thì<code>lock2</code>Thì<code>...</code>Thì<code>lockn</code>Khóa đã cho</p>
+<p>Sử dụng thuật toán tránh bế tắc để tránh bế tắc.<code>lock</code>Thì<code>try_lock</code>, Và<code>unlock</code>Các đối tượng bị khóa bởi một loạt các cuộc gọi không xác định<code>lock</code>hoặc<code>unlock</code>. Nếu một cuộc gọi đến<code>unlock</code>dẫn đến một ngoại lệ,</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>được gọi cho bất kỳ đối tượng bị khóa trước khi phát triển lại.</td> <td>-</td> <td>các<a href="../named_req/lockable" title="cpp/named req/Lockable">Lockable</a>Lock1, Lock2, ..., Lockn</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p><a class="external text" href="https://www.boost.org/doc/libs/release/doc/html/thread/synchronization.html#thread.synchronization.lock_functions.lock_range" rel="nofollow">Boost provides a version of this function</a>Đối tượng để khóa<a href="../named_req/lockable" title="cpp/named req/Lockable">Lockable</a>có một chuỗi</p>
+<p><a href="scoped_lock" title="cpp/thread/scoped lock"><code>std::scoped_lock</code></a>các đối tượng được xác định bởi một cặp lặp.<a href="../language/raii" title="cpp/language/raii">RAII</a>Cung cấp a<code>std::lock</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Ví dụ sau sử dụng<code>std::lock</code>bao bọc cho chức năng này và thường được ưu tiên hơn một cuộc gọi trần trụi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Để khóa các cặp mutexes mà không bị bế tắc.</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Brono&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="unique_lock" title="cpp/thread/unique lock"> <span class="t-lines"><span>độc đáo_lock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Thực hiện trình bao bọc quyền sở hữu Mutex có thể di chuyển<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_lock" title="cpp/thread/try lock"> <span class="t-lines"><span>Try_lock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Nỗ lực để có được quyền sở hữu các clexes thông qua các cuộc gọi lặp đi lặp lại<code>try_lock</code> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="scoped_lock" title="cpp/thread/scoped lock"> <span class="t-lines"><span>scoped_lock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Trình bao bọc Raii không tránh bế tắc cho nhiều mutexes<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/lock">https://en.cppreference.com/w/cpp/thread/lock</a>
+</p>
+</div>

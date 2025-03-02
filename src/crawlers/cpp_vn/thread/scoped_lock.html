@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">std :: scoped_lock</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/mutex" title="cpp/header/mutex">&lt;mutex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;class ... mutextypes&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Lớp học<code>scoped_lock</code>lớp lock_guard;<a class="extiw" href="https://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization" title="enwiki:Resource Acquisition Is Initialization">RAII-style</a>lớp scoped_lock;</p>
+<p>Khi a<code>scoped_lock</code>Cơ chế sở hữu số 0 hoặc nhiều mutexes trong suốt thời gian của một khối phạm vi.<code>scoped_lock</code>Đối tượng được tạo ra, nó cố gắng sở hữu mutex mà nó được đưa ra. Khi điều khiển rời khỏi phạm vi mà<code>scoped_lock</code>Đối tượng được tạo ra, nó cố gắng sở hữu các mutexes mà nó được đưa ra. Khi điều khiển rời khỏi phạm vi mà<code><a href="lock" title="cpp/thread/lock">std::lock</a></code>.</p>
+<p>Các<code>scoped_lock</code>được phá hủy và Mutex được phát hành.</p>
+<h3 id="Template_parameters">là không xác định.</h3> <table class="t-par-begin"> <tr class="t-par"> <td>được phá hủy và các mutexes được phát hành. Nếu một số milexes được đưa ra, thuật toán tránh bế tắc được sử dụng như thể bằng cách</td> <td>-</td> <td>MUTEXTYPES<a href="../named_req/lockable" title="cpp/named req/Lockable">Lockable</a>Các loại của mutexes để khóa. Các loại phải đáp ứng<code>sizeof...(MutexTypes)==1</code>yêu cầu trừ khi<a href="../named_req/basiclockable" title="cpp/named req/BasicLockable">BasicLockable</a> </td>
+</tr>
+</table> <h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>ATOMIC_UNSIGNED_LOCK_FREE</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>mutex_type</code> <span class="t-mark"> <code>sizeof...(MutexTypes)==1</code>)</span> </td> <td>, trong trường hợp đó, loại duy nhất phải đáp ứng<code>MutexTypes...</code> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="scoped_lock/scoped_lock" title="cpp/thread/scoped lock/scoped lock"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Nếu a<code>scoped_lock</code>Mutex, loại duy nhất trong<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="scoped_lock/~scoped_lock" title="cpp/thread/scoped lock/~scoped lock"> <span class="t-lines"><span>một đối tượng ngoại lệ khác để gán với</span></span></a></div> </td> <td>với kích thước lớn hơn không làm mất hiệu lực bất kỳ tài liệu tham khảo nào về các yếu tố của deque.<code>scoped_lock</code>, tùy chọn khóa các mutexes đã cho<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>chuyên môn)</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">[Đã xóa]</span></span></span></div> </td> <td>Không được xác nhận sao chép<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>đối tượng, mở khóa Mutex cơ bản<code>scoped_lock</code>Lỗi bắt đầu phổ biến là "quên" để đưa ra một<code>std::scoped_lock(mtx);</code>Biến một tên, ví dụ:<code>scoped_lock</code>(mặc định nào xây dựng một<code>mtx</code>*(d_first + 1) = *(đầu tiên + 1) - *(đầu tiên);<code>std::scoped_lock{mtx};</code>biến tên</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_scoped_lock" title="cpp/feature test"><code>__cpp_lib_scoped_lock</code></a></td> <td><span class="nu0">201703L</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<a href="#Top"><code>std::scoped_lock</code></a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Ví dụ sau sử dụng<code>std::scoped_lock</code>đối tượng, mở khóa các mutexes cơ bản</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Để khóa các cặp mutexes mà không có bế tắc và theo phong cách raii.</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Brono&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2981" rel="nofollow">LWG 2981</a> </td> <td>C ++ 17</td> <td>#include &lt;Prutex&gt;<code>scoped_lock&lt;MutexTypes...&gt;</code> </td> <td>#include &lt;Istream&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="unique_lock" title="cpp/thread/unique lock"> <span class="t-lines"><span>độc đáo_lock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Thực hiện trình bao bọc quyền sở hữu Mutex có thể di chuyển<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="lock_guard" title="cpp/thread/lock guard"> <span class="t-lines"><span>lock_guard</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>thực hiện một trình bao bọc quyền sở hữu mutex dựa trên phạm vi nghiêm ngặt<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/scoped_lock">https://en.cppreference.com/w/cpp/thread/scoped_lock</a>
+</p>
+</div>

@@ -1,0 +1,55 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: View_interface &lt;D&gt; :: trống</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">consexpr bool trống ()</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">    Yêu cầu phạm vi :: cỡ_range &lt;d&gt; || Phạm vi :: forward_range &lt;d&gt;;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>constexpr dectype (auto) back () const<code>empty()</code>constexpr bool trống () const<code>​0​</code>    Yêu cầu phạm vi :: cỡ_range &lt;const d&gt; || Phạm vi :: forward_range &lt;const d&gt;;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>derived</code>là một tham chiếu bị ràng buộc<code>static_cast&lt;D&amp;&gt;(*this)</code>là các yếu tố của phạm vi.<code><span class="kw1">Không chính thức,</span> <a href="http://en.cppreference.com/w/cpp/ranges/size"><span class="kw3100">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">kích cỡ</span></span></a><span class="br0">.</span>derived<span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">. Không làm gì khác.</span><span class="sy4">Số lượng các yếu tố để sao chép</span></code>nếu như<code>D</code>Phần cuối của phạm vi ban đầu<a href="../sized_range" title="cpp/ranges/sized range"><code>sized_range</code></a>chức năng thành viên kiểm tra xem đối tượng của kích thước loại dẫn xuất có hay không<code><span class="kw1">Không chính thức,</span> <a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>derived<span class="br0">)</span> <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/end"><span class="kw2884">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">kết thúc</span></span></a><span class="br0">.</span>derived<span class="br0">)</span><span class="sy4">Số lượng các yếu tố để sao chép</span></code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>                                   Nhị phân p);<span class="t-v">(1)</span>, và sau đó gọi<code>derived</code>khoảng cách<code>static_cast&lt;const D&amp;&gt;(*this)</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>(nếu hợp lệ) hoặc liệu trình lặp bắt đầu và Sentinel so sánh bằng nhau.<code>​0​</code> <code>D</code>Phần cuối của phạm vi ban đầu<code><a href="../sized_range" title="cpp/ranges/sized range">std::ranges::sized_range</a></code>. Nếu không, tương đương với<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Notes">Ghi chú</h3> <p>, cũng là địa chỉ thấp nhất của lưu trữ tiếp giáp (ngụ ý bởi<code>empty</code>:</p>
+<ul>
+<li> <a href="../common_view" title="cpp/ranges/common view"><code>std::ranges::common_view</code></a> </li>
+<li> <a href="../drop_view" title="cpp/ranges/drop view"><code>std::ranges::drop_view</code></a> </li>
+<li> <a href="../drop_while_view" title="cpp/ranges/drop while view"><code>std::ranges::drop_while_view</code></a> </li>
+<li> <a href="../elements_view" title="cpp/ranges/elements view"><code>std::ranges::elements_view</code></a> </li>
+<li> <a href="../filter_view" title="cpp/ranges/filter view"><code>std::ranges::filter_view</code></a> </li>
+<li> <a href="../join_view" title="cpp/ranges/join view"><code>std::ranges::join_view</code></a> </li>
+<li> <a href="../lazy_split_view" title="cpp/ranges/lazy split view"><code>std::ranges::lazy_split_view</code></a> </li>
+<li> <a href="../reverse_view" title="cpp/ranges/reverse view"><code>std::ranges::reverse_view</code></a> </li>
+<li> <a href="../single_view" title="cpp/ranges/single view"><code>std::ranges::single_view</code></a> </li>
+<li> <a href="../split_view" title="cpp/ranges/split view"><code>std::ranges::split_view</code></a> </li>
+<li> <a href="../take_view" title="cpp/ranges/take view"><code>std::ranges::take_view</code></a> </li>
+<li> <a href="../take_while_view" title="cpp/ranges/take while view"><code>std::ranges::take_while_view</code></a> </li>
+<li> <a href="../transform_view" title="cpp/ranges/transform view"><code>std::ranges::transform_view</code></a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul>
+<li> <a href="../adjacent_transform_view" title="cpp/ranges/adjacent transform view"><code>std::ranges::adjacent_transform_view</code></a> </li>
+<li> <a href="../adjacent_view" title="cpp/ranges/adjacent view"><code>std::ranges::adjacent_view</code></a> </li>
+<li> <a href="../as_const_view" title="cpp/ranges/as const view"><code>std::ranges::as_const_view</code></a> </li>
+<li> <a href="../as_rvalue_view" title="cpp/ranges/as rvalue view"><code>std::ranges::as_rvalue_view</code></a> </li>
+<li> <a href="../cartesian_product_view" title="cpp/ranges/cartesian product view"><code>std::ranges::cartesian_product_view</code></a> </li>
+<li> <a href="../chunk_view" title="cpp/ranges/chunk view"><code>std::ranges::chunk_view</code></a> </li>
+<li> <a href="../chunk_by_view" title="cpp/ranges/chunk by view"><code>std::ranges::chunk_by_view</code></a> </li>
+<li> <a href="../join_with_view" title="cpp/ranges/join with view"><code>std::ranges::join_with_view</code></a> </li>
+<li> <a href="../repeat_view" title="cpp/ranges/repeat view"><code>std::ranges::repeat_view</code></a> </li>
+<li> <a href="../slide_view" title="cpp/ranges/slide view"><code>std::ranges::slide_view</code></a> </li>
+<li> <a href="../stride_view" title="cpp/ranges/stride view"><code>std::ranges::stride_view</code></a> </li>
+<li> <a href="../zip_view" title="cpp/ranges/zip view"><code>std::ranges::zip_view</code></a> </li>
+<li> <a href="../zip_transform_view" title="cpp/ranges/zip transform view"><code>std::ranges::zip_transform_view</code></a> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>Các chất hủy diệt ảo thuần túy<code><a href="../basic_istream_view" title="cpp/ranges/basic istream view">std::ranges::basic_istream_view</a></code>Nếu kích thước của đối tượng của loại dẫn xuất là<code><a href="../view_interface" title="cpp/ranges/view interface">std::ranges::view_interface</a></code>) hoặc trình lặp bắt đầu của nó và Sentinel so sánh bằng nhau,<code>empty()</code>kế thừa từ<code><a href="../sized_range" title="cpp/ranges/sized range">std::ranges::sized_range</a></code>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<code><a href="../forward_range" title="cpp/ranges/forward range">std::ranges::forward_range</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">và không tuyên bố</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3715" rel="nofollow">LWG 3715</a> </td> <td>C ++ 20</td> <td>
+<code>empty()</code>chức năng thành viên, nó không thể sử dụng việc thực hiện mặc định, bởi vì nó không bao giờ thỏa mãn<a href="../forward_range" title="cpp/ranges/forward range"><code>forward_range</code></a>loại</td> <td>
+<a href="../sized_range" title="cpp/ranges/sized range"><code>sized_range</code></a>#include &lt;mảng&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../iterator/empty" title="cpp/iterator/empty"> <span class="t-lines"><span>trống</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Kiểm tra xem container có trống không<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../empty" title="cpp/ranges/empty"> <span class="t-lines"><span>Phạm vi :: Ssize</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Trả về một số nguyên đã ký bằng với kích thước của một phạm vi<br/><span class="t-mark">(Đối tượng điểm tùy chỉnh)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/view_interface/empty">https://en.cppreference.com/w/cpp/ranges/view_interface/empty</a>
+</p>
+</div>

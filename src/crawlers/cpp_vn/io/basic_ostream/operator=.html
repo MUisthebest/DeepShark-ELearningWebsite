@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; :: toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">basic_ostream &amp; toán tử = (const basic_ostream &amp; rhs) = xóa;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>được bảo vệ:<a href="../../named_req/copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>.</div> <div class="t-li1">
+<span class="t-li">2)</span>basic_ostream &amp; toán tử = (basic_ostream &amp;&amp; rhs);<a href="../basic_ios/rdbuf" title="cpp/io/basic ios/rdbuf"><code>rdbuf()</code></a>    mẫu &lt;<code>rhs</code>Toán tử chuyển nhượng di chuyển trao đổi<code>swap(*rhs)</code>Toán tử gán bản sao được bảo vệ và bị xóa. Luồng đầu ra không<code><a href="../basic_ofstream" title="cpp/io/basic ofstream">std::basic_ofstream</a></code>Và<code><a href="../basic_ostringstream" title="cpp/io/basic ostringstream">std::basic_ostringstream</a></code>, như thể bằng cách gọi</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>các<code>basic_ostream</code>Toán tử chuyển nhượng di chuyển trao đổi tất cả các thành viên dữ liệu của lớp cơ sở, ngoại trừ<code>*this</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">. Toán tử gán di chuyển này được bảo vệ: Nó chỉ được gọi bởi các toán tử gán di chuyển của các lớp luồng đầu ra di động dẫn xuất</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">đối tượng mà từ đó gán cho</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2067" rel="nofollow">LWG 2067</a> </td> <td>C ++ 11</td> <td>#include &lt;Istream&gt;<span class="t-v">(1)</span> <code>basic_ostream&amp;</code><br/>#include &lt;Sstream&gt;<span class="t-v">(2)</span> <span class="kw4">hằng số</span>BASIC_OSTREAM<span class="sy3">. Trong các cuộc gọi có hiệu lực</span> </td> <td>#include &lt;Tiện ích&gt;<span class="kw4">hằng số</span><br/> <span class="kw4">hằng số</span> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ostream/operator%3D">https://en.cppreference.com/w/cpp/io/basic_ostream/operator%3D</a>
+</p>
+</div>

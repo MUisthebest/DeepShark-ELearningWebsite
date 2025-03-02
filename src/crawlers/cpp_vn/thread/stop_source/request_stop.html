@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: stop_source :: request_stop</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">bool request_stop () noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Đưa ra yêu cầu dừng cho trạng thái dừng, nếu<code>stop_source</code>Đối tượng có trạng thái dừng và nó vẫn chưa được yêu cầu.</p>
+<p>Xác định được đưa ra về mặt nguyên tử và nếu dừng lại, trạng thái dừng được cập nhật nguyên tử để tránh các điều kiện chủng tộc, như vậy: đó là:</p>
+<ul>
+<li> <code>stop_requested()</code>Và<code>stop_possible()</code>có thể được gọi đồng thời<code>stop_token</code>cát<code>stop_source</code>s của cùng một trạng thái dừng;</li>
+<li> <code>request_stop()</code>có thể được gọi đồng thời<code>stop_source</code>các đối tượng, và chỉ một thực sự sẽ thực sự thực hiện yêu cầu dừng.</li>
+</ul> <p>Tuy nhiên, xem phần Ghi chú.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>về lỗi.<code>stop_source</code>đối tượng có trạng thái dừng và yêu cầu dừng lại, nếu không<code>false</code>.</p>
+<h3 id="Postconditions">Postconditions</h3> <p><code>stop_possible()</code>khoảng cách<code>false</code>hoặc<code>stop_requested()</code>khoảng cách<code>true</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<code>request_stop()</code>Vấn đề có yêu cầu dừng không (tức là, trả về<code>true</code>), sau đó bất kỳ<code>stop_callback</code>S đã đăng ký cho cùng một trạng thái dừng liên kết sẽ được gọi đồng bộ, trên cùng một luồng<code>request_stop()</code>được ban hành trên. Nếu một lời cầu khẩn của một cuộc gọi lại thoát ra khỏi một ngoại lệ,<code><a href="../../error/terminate" title="cpp/error/terminate">std::terminate</a></code>Chuỗi để giữ tên viết tắt múi giờ hoặc tên tương ứng với</p>
+<p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<code>stop_source</code>Đối tượng có trạng thái dừng nhưng yêu cầu dừng đã được thực hiện, chức năng này trả về<code>false</code>. Tuy nhiên không có gì đảm bảo rằng một<code>stop_source</code>đối tượng chỉ cần dừng lại (thành công) không phải ở giữa việc gọi một<code>stop_callback</code>    skip_existing = / * không xác định * /,</p>
+<p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<code>request_stop()</code>Vấn đề có yêu cầu dừng không (tức là, trả về<code>true</code>), sau đó tất cả các biến điều kiện của loại cơ sở<code><a href="../condition_variable_any" title="cpp/thread/condition variable any">std::condition_variable_any</a></code>đã đăng ký với một sự chờ đợi bị gián đoạn<code>stop_token</code>s liên kết với<code>stop_source</code>trạng thái dừng sẽ được thông báo.</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/stop_source/request_stop">https://en.cppreference.com/w/cpp/thread/stop_source/request_stop</a>
+</p>
+</div>

@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">Atomic_flag_init</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/atomic" title="cpp/header/atomic">&lt;atomic&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define Atomic_flag_init / * Xác định triển khai * /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xác định trình khởi tạo có thể được sử dụng để khởi tạo<code><a href="atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>Để xóa (sai) trạng thái với tuyên bố<code><a href="http://en.cppreference.com/w/cpp/atomic/atomic_flag"><span class="kw2092">Điều đó cho tất cả<span class="me2">Atomic_flag</span></span></a> v <span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span> ATOMIC_FLAG_INIT<span class="sy4">Số lượng các yếu tố để sao chép</span></code>. Nó không được xác định nếu nó có thể được sử dụng với các bối cảnh khởi tạo khác.</p>
+<p>Nếu cờ có tĩnh<a href="../language/storage_duration#Storage_duration" title="cpp/language/storage duration">storage duration</a>, cái này<a href="../language/initialization#Static_initialization" title="cpp/language/initialization">initialization is static</a>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Đây là cách duy nhất để khởi tạo<code><a href="atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>Đối với một giá trị xác định: giá trị được giữ sau khi bất kỳ khởi tạo nào khác là không xác định.</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>Macro này không còn cần thiết vì hàm tạo mặc định của<code><a href="atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>Khởi tạo nó để xóa trạng thái. Nó được giữ cho khả năng tương thích với C.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Atomic&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3659" rel="nofollow">LWG 3659</a> </td> <td>C ++ 20</td> <td>
+<code>ATOMIC_FLAG_INIT</code> </td> <td>STD :: ATOMIC_FLAG STATIC_FLAG = ATOMIC_FLAG_INIT; // khởi tạo tĩnh,</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="atomic_flag" title="cpp/atomic/atomic flag"> <span class="t-lines"><span>Atomic_flag</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>loại nguyên tử boolean không khóa<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/atomic/ATOMIC_FLAG_INIT" title="c/atomic/ATOMIC FLAG INIT">C documentation</a></span>vì<code>ATOMIC_FLAG_INIT</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/ATOMIC_FLAG_INIT">https://en.cppreference.com/w/cpp/atomic/ATOMIC_FLAG_INIT</a>
+</p>
+</div>

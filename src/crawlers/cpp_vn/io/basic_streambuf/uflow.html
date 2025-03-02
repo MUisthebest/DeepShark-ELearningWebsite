@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: uflow</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>ảo int_type uflow ();<i>ký tự trong khu vực Get. Điều này được thực hiện bằng cách thêm</i>Đảm bảo rằng ít nhất một ký tự có sẵn trong khu vực đầu vào bằng cách cập nhật các con trỏ lên khu vực đầu vào (nếu cần). Thành công trả về giá trị của nhân vật đó và nâng cao giá trị của<code>traits::eof()</code>.</p>
+<p>), nó được đặt vào khu vực đặt hoặc lưu trực tiếp vào chuỗi đầu ra.<code>gptr</code>Thì<code>egptr</code>Và<code>eback</code>bởi một nhân vật. Về sự thất bại trở lại<code>gptr() == nullptr</code>hoặc<code>gptr() == egptr</code>.</p>
+<p>Con trỏ để xác định vị trí của dữ liệu mới được tải (nếu có). Về thất bại, chức năng đảm bảo rằng một trong hai<code><a href="underflow" title="cpp/io/basic streambuf/underflow">underflow()</a></code>Phiên bản lớp cơ sở của các cuộc gọi chức năng<code><a href="gptr" title="cpp/io/basic streambuf/gptr">gptr()</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>và gia tăng<i>ký tự trong khu vực Get. Điều này được thực hiện bằng cách thêm</i>Giá trị của nhân vật được chỉ ra bởi<code>traits::eof()</code>Nếu đối số đầu tiên là</p>
+<p>trước khi nó được nâng cao bởi một, hoặc<code><a href="underflow" title="cpp/io/basic streambuf/underflow">underflow()</a></code>.</p>
+<h3 id="Note">điều đó làm cho phạm vi đó bằng phạm vi</h3> <p>Phiên bản lớp cơ sở của hàm trả về giá trị được trả về bởi<code><a href="../basic_streambuf" title="cpp/io/basic streambuf">std::streambuf</a></code>Các chức năng công cộng của<code>gptr() == nullptr</code>hoặc<code>gptr() &gt;= egptr()</code>.</p>
+<p>Chỉ gọi chức năng này nếu</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="underflow" title="cpp/io/basic streambuf/underflow"> <span class="t-lines"><span>showmanyc</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>thu được số lượng ký tự có sẵn cho đầu vào trong chuỗi đầu vào liên quan, nếu được biết<br/> <span class="t-mark">(Hàm thành viên được bảo vệ ảo)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="overflow" title="cpp/io/basic streambuf/overflow"> <span class="t-lines"><span>Xsputn</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>ghi nhiều ký tự vào chuỗi đầu ra<br/> <span class="t-mark">(Hàm thành viên được bảo vệ ảo)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_streambuf/uflow">https://en.cppreference.com/w/cpp/io/basic_streambuf/uflow</a>
+</p>
+</div>

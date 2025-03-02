@@ -1,0 +1,39 @@
+ <h1 class="firstHeading" id="firstHeading">Đã sửa lỗi các loại điểm nổi chiều rộng<span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span>
+</h1> <p>Nếu việc triển khai hỗ trợ bất kỳ loại ISO 60559 nào sau đây dưới dạng loại dấu phẩy động mở rộng, thì:</p>
+<ul>
+<li>Macro tương ứng được định nghĩa là 1 để chỉ ra hỗ trợ,</li>
+<li>tương ứng<a href="../language/floating_literal" title="cpp/language/floating literal">floating-point literal</a>Hậu tố có sẵn và</li>
+<li>Tên bí danh loại tương ứng được cung cấp:</li>
+</ul> <table class="wikitable"> <tr> <td rowspan="2">
+<b>Loại tên</b><br/>C Thư viện<br/><a href="../header/stdfloat" title="cpp/header/stdfloat"><code>&lt;stdfloat&gt;</code></a> </td> <th rowspan="2">Hậu tố theo nghĩa đen</th> <th rowspan="2">Macro được xác định trước</th> <th rowspan="2">C loại ngôn ngữ</th> <th colspan="4">Loại thuộc tính</th>
+</tr> <tr> <td>bit của lưu trữ</td> <td>bit của độ chính xác</td> <td>bit của số mũ</td> <td>số mũ tối đa</td>
+</tr> <tr> <th> <code>std::float16_t</code> </th> <td>
+<code>f16</code>hoặc<code>F16</code> </td> <td>
+<code>__STDCPP_FLOAT16_T__</code> </td> <td>
+<code>_Float16</code> </td> <td>16</td> <td>11</td> <td>5</td> <td>15</td>
+</tr> <tr> <th> <code>std::float32_t</code> </th> <td>
+<code>f32</code>hoặc<code>F32</code> </td> <td>
+<code>__STDCPP_FLOAT32_T__</code> </td> <td>
+<code>_Float32</code> </td> <td>32</td> <td>24</td> <td>8</td> <td>127</td>
+</tr> <tr> <th> <code>std::float64_t</code> </th> <td>
+<code>f64</code>hoặc<code>F64</code> </td> <td>
+<code>__STDCPP_FLOAT64_T__</code> </td> <td>
+<code>_Float64</code> </td> <td>64</td> <td>53</td> <td>11</td> <td>1023</td>
+</tr> <tr> <th> <code>std::float128_t</code> </th> <td>
+<code>f128</code>hoặc<code>F128</code> </td> <td>
+<code>__STDCPP_FLOAT128_T__</code> </td> <td>
+<code>_Float128</code> </td> <td>128</td> <td>113</td> <td>15</td> <td>16383</td>
+</tr> <tr> <th> <code>std::bfloat16_t</code> </th> <td>
+<code>bf16</code>hoặc<code>BF16</code> </td> <td>
+<code>__STDCPP_BFLOAT16_T__</code> </td> <td>(N/a)</td> <td>16</td> <td>8</td> <td>8</td> <td>127</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>phạm vi của các yếu tố để tạo<code>std::bfloat16_t</code>được gọi là<a class="extiw" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format" title="enwiki:Bfloat16 floating-point format">Brain Floating Point</a>.</p>
+<p>Chỉ định khái niệm của tất cả các loại mà các trường hợp có thể bị phá hủy một cách an toàn vào cuối đời (bao gồm cả các loại tham chiếu).<a href="integer" title="cpp/types/integer">fixed width integer types</a>, có thể là bí danh để<a href="../language/types#Standard_integer_types" title="cpp/language/types">standard integer types</a>, Các loại điểm nổi có chiều rộng cố định phải là bí danh cho các loại điểm nổi mở rộng (không phải<span class="kw4">trôi nổi</span>/<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>/<span class="kw4">dài</span> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>).</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;StdFloat&gt;</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li> </li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <ul><li> <a href="../language/types" title="cpp/language/types">Fundamental types</a> </li></ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/floating-point">https://en.cppreference.com/w/cpp/types/floating-point</a>
+</p>
+</div>

@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: pubsync, std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: đồng bộ hóa</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">int pubsync ();</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Virtual int sync ();</p>
+<p>Đồng bộ hóa chuỗi ký tự được kiểm soát (bộ đệm) với chuỗi ký tự liên quan.<code>sync()</code>là địa phương liên quan. Cuộc gọi</p>
+<p>1) cuộc gọi</p>
+<p>2) Phiên bản lớp cơ sở của chức năng này không có hiệu lực. Các lớp dẫn xuất có thể ghi đè chức năng này để cho phép đồng bộ hóa thiết bị cơ bản với các bộ đệm.<code><a href="../basic_stringbuf" title="cpp/io/basic stringbuf">std::basic_stringbuf</a></code>Đối với các luồng đầu ra, điều này thường dẫn đến việc viết nội dung của khu vực đặt vào chuỗi liên quan, tức là xả bộ đệm đầu ra. Đối với các luồng đầu vào, điều này thường làm trống khu vực GET và buộc đọc lại từ chuỗi liên quan để chọn những thay đổi gần đây. Hành vi mặc định (được tìm thấy, ví dụ, trong</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>), là không làm gì cả.<code>sync()</code>.</p>
+<p>1) Giá trị trả lại của<code>​0​</code>về thành công,<code>-1</code>2) Trả lại<code>​0​</code>.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_istream/sync" title="cpp/io/basic istream/sync"> <span class="t-lines"><span>tìm kiếm</span></span></a></div> </td> <td>Trả về chỉ báo vị trí đầu ra<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_istream&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_filebuf/sync" title="cpp/io/basic filebuf/sync"> <span class="t-lines"><span>tìm kiếm</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Tái định vị vị trí tệp, sử dụng địa chỉ tuyệt đối<br/> <span class="t-mark">Putback<code>std::basic_filebuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_streambuf/pubsync">https://en.cppreference.com/w/cpp/io/basic_streambuf/pubsync</a>
+</p>
+</div>

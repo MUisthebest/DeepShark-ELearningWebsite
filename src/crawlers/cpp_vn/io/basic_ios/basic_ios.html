@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ios &lt;biểu đồ, đặc điểm&gt; :: basic_ios</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_ios ();</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(3)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">rõ ràng cơ bản_ios (std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* sb);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xây dựng một mới<code>std::basic_ios</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<div class="t-li1">
+<span class="t-li">1)</span>riêng tư:<code><a href="init" title="cpp/io/basic ios/init">init()</a></code>basic_ios (const basic_ios &amp;);</div> <div class="t-li1">
+<span class="t-li">2)</span>công cộng:<code>init(sb)</code>basic_ios (const basic_ios &amp;) = xóa;<code>sb</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Hàm tạo mặc định. Trạng thái nội bộ không được khởi tạo.<span class="t-rev-inl t-until-cxx11"><span>Phải được gọi trước khi sử dụng đầu tiên của đối tượng hoặc trước khi phá hủy, nếu không hành vi không được xác định.</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>Khởi tạo trạng thái bên trong bằng cách gọi</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>. Bộ đệm luồng liên kết được đặt thành<a href="../../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ở cấp độ thấp, lớp học về cơ bản kết thúc việc triển khai thiết bị thô của</td> <td>-</td> <td>Chất xây dựng bản sao là</td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1249" rel="nofollow">LWG 1249</a> </td> <td>C ++ 98</td> <td>tuyên bố riêng tư và không được xác định</td> <td>được định nghĩa rõ ràng là bị xóa</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ios/basic_ios">https://en.cppreference.com/w/cpp/io/basic_ios/basic_ios</a>
+</p>
+</div>

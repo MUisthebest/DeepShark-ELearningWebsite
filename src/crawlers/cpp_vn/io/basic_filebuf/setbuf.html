@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_filebuf &lt;biểu đồ, đặc điểm&gt; :: setbuf</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nếu như<code>s</code>STD ảo :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* setbuf (char_type* s, std :: streamsize n)<code>n</code>là một con trỏ null và<i>bằng không, FileBuf trở thành</i>không bị ảnh hưởng<code>pbase()</code>Và<code>pptr()</code>Đối với đầu ra, có nghĩa là</p>
+<p>là null và bất kỳ đầu ra nào được gửi ngay lập tức đến tệp.<code>setbuf()</code>Nếu không, một cuộc gọi đến<code>s</code>Thay thế bộ đệm bên trong (chuỗi ký tự được điều khiển) bằng mảng ký tự do người dùng cung cấp có phần tử đầu tiên được chỉ ra bởi<code><a href="../basic_filebuf" title="cpp/io/basic filebuf">std::basic_filebuf</a></code>và cho phép điều này<code>n</code>phản đối việc sử dụng tối đa</p>
+<p>Byte trong mảng đó để đệm.<code>pubsetbuf()</code>Hàm này được bảo vệ ảo, nó chỉ có thể được gọi qua<code>std::basic_filebuf</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>hoặc từ các chức năng thành viên của một lớp do người dùng định nghĩa<code>CharT</code>con trỏ đến đầu tiên</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>trong bộ đệm do người dùng cung cấp hoặc null<code>CharT</code>số lượng của</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>this</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>các phần tử trong bộ đệm do người dùng cung cấp hoặc không</p>
+<ul><li>Các điều kiện khi chức năng này có thể được sử dụng và cách sử dụng bộ đệm được cung cấp được xác định.</li></ul> <code>setbuf()</code>GCC 4.6 libstdc ++<code><a href="../basic_filebuf" title="cpp/io/basic filebuf">std::basic_filebuf</a></code>chỉ có thể được gọi khi<code>n-1</code>không được liên kết với một tệp (không có hiệu lực khác). Với bộ đệm do người dùng cung cấp, đọc từ tệp đọc<ul><li>Byte tại một thời điểm.</li></ul> <code>setbuf()</code>Clang ++ 3.0 libc ++<ul><li>Có thể được gọi sau khi mở tệp, nhưng trước bất kỳ I/O nào (có thể gặp sự cố). Với bộ đệm do người dùng cung cấp, đọc từ tệp đọc bội số lớn nhất của 4096 phù hợp với bộ đệm.</li></ul> <code>setbuf()</code>Visual Studio 2010<p>Có thể được gọi bất cứ lúc nào, ngay cả sau khi một số I/O đã diễn ra. Nội dung hiện tại của bộ đệm, nếu có, bị mất.<code>setbuf(0, 0)</code>Tiêu chuẩn không xác định bất kỳ hành vi nào cho chức năng này ngoại trừ</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Được gọi trước khi bất kỳ I/O nào diễn ra được yêu cầu để đặt đầu ra không bị truy cập.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Cung cấp bộ đệm 10K để đọc. Trên Linux, tiện ích chuỗi có thể được sử dụng để quan sát số lượng byte thực tế đọc.</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Fstream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue173" rel="nofollow">LWG 173</a> </td> <td>C ++ 98</td> <td>#include &lt;Istream&gt;<code>n</code>Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,<code>int</code> </td> <td>, số lượng tăng số lặp là tuyến tính. Đáng chú ý,<code><a href="../streamsize" title="cpp/io/streamsize">std::streamsize</a></code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_streambuf/pubsetbuf" title="cpp/io/basic streambuf/pubsetbuf"> <span class="t-lines"><span>Gọi</span></span></a></div> </td> <td>Sputc<code>setbuf()</code> <br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_streambuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../c/setvbuf" title="cpp/io/c/setvbuf"> <span class="t-lines"><span>setvbuf</span></span></a></div> </td> <td>Đặt bộ đệm và kích thước của nó cho một luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_filebuf/setbuf">https://en.cppreference.com/w/cpp/io/basic_filebuf/setbuf</a>
+</p>
+</div>

@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">Hướng dẫn khấu trừ cho<code>std::tuple</code>
+</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/tuple" title="cpp/header/tuple">&lt;tuple&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;class ... uTypes&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Tuple (utypes ...) -&gt; tuple &lt;utypes ...&gt;;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;Class T1, Class T2&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Tuple (std :: cặp &lt;t1, t2&gt;) -&gt; tuple &lt;t1, t2&gt;;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;class alloc, class ... uTypes&gt;</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Những cái này<a href="../../language/class_template_argument_deduction" title="cpp/language/class template argument deduction">deduction guides</a>Đối với tất cả các loại con trỏ. Những chuyên môn này có bố cục tiêu chuẩn<code><a href="../tuple" title="cpp/utility/tuple">std::tuple</a></code>Tùy chọn (t) -&gt; Tùy chọn &lt;t&gt;;</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">tuple (std :: allocator_arg_t, alloc, utypes ...) -&gt; tuple &lt;utypes ...&gt;;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/tuple/deduction_guides">https://en.cppreference.com/w/cpp/utility/tuple/deduction_guides</a>
+</p>
+</div>

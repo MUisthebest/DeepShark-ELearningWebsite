@@ -1,0 +1,81 @@
+ <h1 class="firstHeading" id="firstHeading">Mẫu</h1> <p>Một mẫu là một thực thể C ++ xác định một trong những điều sau đây:</p>
+<ul>
+<li>một gia đình của các lớp học (<a href="class_template" title="cpp/language/class template">class template</a>), có thể là<a href="member_template" title="cpp/language/member template">nested classes</a> </li>
+<li>một gia đình chức năng (<a href="function_template" title="cpp/language/function template">function template</a>), có thể là<a href="member_template" title="cpp/language/member template">member functions</a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>một bí danh cho một gia đình loại (<a href="type_alias" title="cpp/language/type alias">alias template</a>)</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <ul><li>một gia đình các biến (<a href="variable_template" title="cpp/language/variable template">variable template</a>)</li></ul> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>một khái niệm (<a href="constraints" title="cpp/language/constraints">constraints and concepts</a>)</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Các mẫu được tham số hóa bởi một hoặc nhiều<a href="template_parameters" title="cpp/language/template parameters">template parameters</a>, thuộc ba loại: tham số mẫu loại, tham số mẫu không kiểu và tham số mẫu mẫu.</p>
+<p>Khi các đối số mẫu được cung cấp, hoặc, cho<a href="function_template#Template_argument_deduction" title="cpp/language/function template">function</a> <span class="t-rev-inl t-since-cxx17"><span>Và<a href="class_template_argument_deduction" title="cpp/language/class template argument deduction">class</a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Chỉ các mẫu, được suy luận, chúng được thay thế cho các tham số mẫu để có được<i>#include &lt;Istream&gt;</i>của mẫu, nghĩa là một loại cụ thể hoặc một hàm cụ thể lvalue. Chuyên môn cũng có thể được cung cấp rõ ràng:<a href="template_specialization" title="cpp/language/template specialization">full specializations</a>được phép lớp học<span class="t-rev-inl t-since-cxx14"><span>, biến</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>và các mẫu chức năng,<a href="partial_specialization" title="cpp/language/partial specialization">partial specializations</a>chỉ được phép cho các mẫu lớp<span class="t-rev-inl t-since-cxx14"><span>và các mẫu biến</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>.</p>
+<p>Khi một chuyên ngành mẫu lớp được tham chiếu trong ngữ cảnh yêu cầu một loại đối tượng hoàn chỉnh hoặc khi một chuyên môn mẫu chức năng được tham chiếu trong ngữ cảnh yêu cầu một định nghĩa chức năng để tồn tại, mẫu là<i>khởi tạo</i>(Mã cho nó thực sự được biên dịch), trừ khi mẫu đã được xác định rõ ràng hoặc được khởi tạo rõ ràng. Việc khởi tạo một mẫu lớp không khởi tạo bất kỳ chức năng thành viên nào của nó trừ khi chúng cũng được sử dụng. Tại thời điểm liên kết, các khởi tạo giống hệt nhau được tạo bởi các đơn vị dịch khác nhau được hợp nhất.</p>
+<p>Định nghĩa của một mẫu lớp phải được hiển thị tại điểm khởi tạo ngầm, đó là lý do tại sao các thư viện mẫu thường cung cấp tất cả các định nghĩa mẫu trong các tiêu đề (ví dụ:<a class="external text" href="https://www.boost.org/doc/libs/release/more/getting_started/unix-variants.html#header-only-libraries" rel="nofollow">most boost libraries are header-only</a>).</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>template &lt;</code><span class="t-spar">danh sách tham số</span>﻿<code>&gt;</code> <span class="t-spar">tuyên ngôn;</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tuyên ngôn</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>export template &lt;</code><span class="t-spar">danh sách tham số</span>﻿<code>&gt;</code> <span class="t-spar">tuyên ngôn</span> </td> <td>(2)</td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>template &lt;</code><span class="t-spar">danh sách tham số</span>﻿<code>&gt; concept</code> <span class="t-spar">Tên khái niệm</span> <code>=</code> <span class="t-spar">    {std :: Hash &lt;t&gt; {} (a)} -&gt; std :: mctionble_to &lt;std :: size_t&gt;;</span>﻿<code>;</code> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">danh sách tham số</span> </td> <td>-</td> <td>một danh sách không phân tách dấu phẩy không có trống của<a href="template_parameters" title="cpp/language/template parameters">template parameters</a>, mỗi trong số đó là<a href="template_parameters#Non-type_template_parameter" title="cpp/language/template parameters">non-type parameter</a>có thể đại diện cho các phân số của ve.<a href="template_parameters#Type_template_parameter" title="cpp/language/template parameters">type parameter</a>có thể đại diện cho các phân số của ve.<a href="template_parameters#Template_template_parameter" title="cpp/language/template parameters">template parameter</a><span class="t-rev-inl t-since-cxx11"><span>được đặt ở chế độ mở của gói<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>của bất kỳ ai trong số đó</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tuyên ngôn;</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>Một<a href="constraints#requires_clauses" title="cpp/language/constraints">requires-clause</a>Điều đó chỉ định<a href="constraints" title="cpp/language/constraints">constraints</a>Trên các đối số mẫu.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tuyên ngôn</span> </td> <td>-</td> <td>Tuyên bố của a<a href="class_template" title="cpp/language/class template">class (including struct and union)</a>có thể đại diện cho các phân số của ve.<a href="member_template" title="cpp/language/member template">member class or member enumeration type</a>có thể đại diện cho các phân số của ve.<a href="function_template" title="cpp/language/function template">function</a>hoặc<a href="member_template" title="cpp/language/member template">member function</a>, một thành viên dữ liệu tĩnh ở phạm vi không gian tên<span class="t-rev-inl t-since-cxx14"><span><a href="variable_template" title="cpp/language/variable template">, a variable or static data member at class scope</a></span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>};<a href="type_alias" title="cpp/language/type alias">alias template</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>. Nó cũng có thể định nghĩa một<a href="template_specialization" title="cpp/language/template specialization">template specialization</a>.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Tên khái niệm</span><br/><span class="t-spar">    {std :: Hash &lt;t&gt; {} (a)} -&gt; std :: mctionble_to &lt;std :: size_t&gt;;</span> </td> <td>-</td> <td>nhìn thấy<a href="constraints" title="cpp/language/constraints">constraints and concepts</a> </td>
+</tr>
+</table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p><code>export</code>là một công cụ sửa đổi tùy chọn đã khai báo mẫu là<i>xuất khẩu</i>(Khi được sử dụng với một mẫu lớp, nó cũng đã khai báo tất cả các thành viên của mình). Các tệp mà các mẫu xuất khởi tạo không cần phải bao gồm các định nghĩa của chúng: Tuyên bố là đủ. Triển khai của<code>export</code>rất hiếm và không đồng ý với nhau về chi tiết.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> </table> <h3 id="template-id">};</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">tên mẫu</span>﻿<code>&lt;</code><span class="t-spar">danh sách tham số</span>﻿<code>&gt;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">tên mẫu</span> </td> <td>-</td> <td>Hoặc là một<a href="identifiers" title="cpp/language/identifiers">identifier</a>tên đó là một mẫu (trong trường hợp đó được gọi là "<span class="t-spar">là một tham chiếu rvalue cho loại được khai báo</span>") Hoặc tên của một mẫu toán tử quá tải hoặc mẫu theo nghĩa đen do người dùng định nghĩa.</td>
+</tr>
+</table> <p>MỘT<span class="t-spar">là một tham chiếu rvalue cho loại được khai báo</span>Tên đó là một chuyên ngành mẫu lớp đặt tên cho một lớp.</p>
+<p>MỘT<span class="t-spar">};</span>Tên đó là một mẫu chuyên môn mẫu bí danh đặt tên một loại.</p>
+<p>MỘT<span class="t-spar">};</span>Tên đó là một mẫu chuyên môn hóa chức năng đặt tên cho một chức năng.</p>
+<p>MỘT<span class="t-spar">};</span>chỉ hợp lệ nếu</p>
+<ul>
+<li>nhiều nhất có nhiều đối số như có tham số hoặc tham số là gói tham số mẫu,</li>
+<li>Có một đối số cho mỗi tham số không có gói không cần thiết không có một đối số mẫu mặc định,</li>
+<li>Mỗi đối số mẫu phù hợp với tham số mẫu tương ứng,</li>
+<li>Thay thế từng đối số mẫu vào các tham số mẫu sau (nếu có) thành công và</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>về lỗi.<span class="t-spar">};</span>là không phụ thuộc, các ràng buộc liên quan được thỏa mãn như được chỉ định dưới đây.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Không hợp lệ<span class="t-spar">là một tham chiếu rvalue cho loại được khai báo</span>là một lỗi thời gian biên dịch, trừ khi nó đặt tên cho một chuyên môn về mẫu chức năng (trong trường hợp đó<a href="sfinae" title="cpp/language/sfinae">SFINAE</a>có thể áp dụng).</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T, T :: Type N = 0&gt;</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Lớp X;<span class="t-spar">là một tham chiếu rvalue cho loại được khai báo</span> <span class="t-spar">là một tham chiếu rvalue cho loại được khai báo</span>cấu trúc s</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Hai<span class="t-spar">};</span>};</p>
+<ul>
+<li> <span class="t-spar">tên mẫu</span>sử dụng t1 = x &lt;s, int, int&gt;; // Lỗi: Quá nhiều đối số</li>
+<li>sử dụng t2 = x &lt;&gt;;            // Lỗi: Không có đối số mặc định cho tham số mẫu đầu tiên</li>
+<li>sử dụng t3 = x &lt;1&gt;;           // Lỗi: Giá trị 1 không khớp với tham số loại<a href="template_parameters#Template_argument_equivalence" title="cpp/language/template parameters">template-argument-equivalent</a>sử dụng t4 = x &lt;int&gt;;         // Lỗi: thất bại thay thế cho tham số mẫu thứ hai</li>
+<li>sử dụng t5 = x &lt;s&gt;;           // ĐƯỢC RỒI</li>
+</ul> <p>Hai<span class="t-spar">};</span>Tên một mẫu không chức năng bị ràng buộc hoặc tham số mẫu mẫu bị ràng buộc, nhưng không phải là một mẫu thành viên là thành viên của một chuyên gia không xác định và tất cả<span class="t-rev-inl t-since-cxx14"><span>không phụ thuộc, các ràng buộc liên quan của mẫu bị ràng buộc phải được thỏa mãn:</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>Mẫu &lt;Typename T&gt;</p>
+<h3 id="Templated_entity">Khái niệm C1 = sizeof (t)! = sizeof (int);</h3> <p>MỘT<i> </i>Mẫu &lt;C1 T&gt;<span class="t-rev-inl t-since-cxx11"><span>Cấu trúc S1 {};<a href="lambda" title="cpp/language/lambda">lambda expression</a> </span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Mẫu &lt;C1 T&gt;</p>
+<ul><li>sử dụng ptr = t*;<span class="t-rev-inl t-since-cxx14"><span> </span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>             STD :: mui trần_to &lt;const alloc &amp;, allocator&gt;</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Một<a href="constraints" title="cpp/language/constraints">concept</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>S1 &lt;Int&gt;* P;                      // Lỗi: các ràng buộc không được thỏa mãn</li>
+<li>Ptr &lt;Int&gt; P;                      // Lỗi: các ràng buộc không được thỏa mãn</li>
+<li> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Mẫu &lt;Typename T&gt;</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Struct S2 {Ptr &lt;Int&gt; x; };       // lỗi, không cần chẩn đoán</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Mẫu &lt;Typename T&gt;<code>A::f</code>Struct S3 {ptr &lt;t&gt; x; };         // OK, sự hài lòng là không cần thiết</p>
+<p><br/>MỘT<i> </i>S3 &lt;Int&gt; x;                       // Lỗi: các ràng buộc không được thỏa mãn</p>
+<p>MỘT<i> </i>Mẫu &lt;Template &lt;C1 T&gt; Class X&gt;</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <p>MỘT<i>Cấu trúc S4</i>{</p>
+</td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2293.html" rel="nofollow">CWG 2293</a> </td> <td>C ++ 98</td> <td>    X &lt;tn&gt; x;                    // lỗi, không cần chẩn đoán<span class="t-spar">};</span> </td> <td>#include &lt;New&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2682.html" rel="nofollow">CWG 2682</a> </td> <td>C ++ 98<br/>C ++ 14</td> <td>Mẫu &lt;Typename T&gt;<br/>Khái niệm C2 = sizeof (t) == 1;</td> <td>Được cho</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/generic" title="c/language/generic">C documentation</a></span>vì<span class=""><span> </span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/templates">https://en.cppreference.com/w/cpp/language/templates</a>
+</p>
+</div>

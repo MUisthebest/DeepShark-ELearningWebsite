@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: độc đáo_ptr &lt;t, deleter&gt; :: toán tử*, std :: icom_ptr &lt;t, deleter&gt; :: toán tử-&gt;</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Typename std :: add_lvalue_reference &lt;t&gt; :: Loại toán tử*() const</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">    NOExcept (noExcept (*std :: DeclVal &lt;con trỏ&gt; ()));</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <p><code>operator*</code>Và<code>operator-&gt;</code>toán tử con trỏ-&gt; () const noexcept;<code>*this</code>.</p>
+<p>đến một phạm vi khác kết thúc tại<code>get() == nullptr</code>.</p>
+<p>cung cấp quyền truy cập vào đối tượng thuộc sở hữu của<code>unique_ptr</code>Các chức năng thành viên này chỉ được cung cấp cho</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Đối với các đối tượng đơn, tức là mẫu chính.<code>*this</code>So sánh nội dung của<code>*get()</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Trả về đối tượng thuộc sở hữu của<code>*this</code>là UTF-8, tương đương với:<code>get()</code>.</div> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1)</span>Trả về một con trỏ cho đối tượng thuộc sở hữu của<code>pointer</code>Có thể ném nếu<code>operator*</code>.</div> <h3 id="Notes">Ghi chú</h3> <p>có một cú ném<code><a href="../../types/add_reference" title="cpp/types/add reference">std::add_lvalue_reference</a></code>Việc sử dụng<code><a href="http://en.cppreference.com/w/cpp/memory/unique_ptr"><span class="kw735">Điều đó cho tất cả<span class="me2">độc đáo_ptr</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">Vô hiệu</span><span class="sy1">&lt;</span></code>là làm cho nó có thể khởi tạo<code>void&amp;</code>từ<code><a href="http://en.cppreference.com/w/cpp/types/add_reference"><span class="kw611">Điều đó cho tất cả<span class="me2">add_lvalue_reference</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">Vô hiệu</span><span class="sy1">&lt;</span></code>sản xuất<code>void</code>, bao gồm 0 hoặc một<a class="external text" href="https://cplusplus.github.io/LWG/issue673" rel="nofollow">LWG673</a> </p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">không được phép trong C ++ trong khi</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2762" rel="nofollow">LWG 2762</a> </td> <td>C ++ 11</td> <td>
+<code>operator*</code>#include &lt;nhớ&gt;<br/><code>*get()</code> </td> <td>Cấu trúc foo</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="get" title="cpp/memory/unique ptr/get"> <span class="t-lines"><span>Điền vào thùng chứa với giá trị được chỉ định</span></span></a></div> </td> <td>Trả về một con trỏ cho đối tượng được quản lý<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/unique_ptr/operator*">https://en.cppreference.com/w/cpp/memory/unique_ptr/operator*</a>
+</p>
+</div>

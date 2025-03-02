@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: shared_ptr &lt;t&gt; :: toán tử*, std :: shared_ptr &lt;t&gt; :: toán tử-&gt;</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">T &amp; Toán tử*() const NoExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Toán tử t*-&gt; () const noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Dereferences con trỏ được lưu trữ. Hành vi không được xác định nếu con trỏ được lưu trữ là null.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Kết quả của việc phá hủy con trỏ được lưu trữ, tức là,<code>*get()</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Con trỏ được lưu trữ, tức là,<code>get()</code>.</div> <h3 id="Remarks">Nhận xét</h3> <p>      std :: memory_order order = std :: memory_order_seq_cst) noexcept dễ bay hơi;<code>T</code>khoảng cách<span class="t-rev-inl t-since-cxx17"><span>một loại mảng hoặc (có thể là CV đủ điều kiện)</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span> <code>void</code>, nó không được xác định cho dù chức năng<span class="t-v">(1)</span>được tuyên bố. Nếu nó được khai báo, nó không xác định loại trả về của nó là gì, ngoại trừ việc khai báo (mặc dù không nhất thiết là định nghĩa) của hàm sẽ được hình thành tốt. Điều này làm cho nó có thể khởi tạo<code><a href="http://en.cppreference.com/w/cpp/memory/shared_ptr"><span class="kw736">Điều đó cho tất cả<span class="me2">Shared_ptr</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">Vô hiệu</span><span class="sy1">&lt;</span></code></p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>      std :: memory_order order = std :: memory_order_seq_cst) noexcept dễ bay hơi;<code>T</code>là một loại mảng, nó không xác định cho dù chức năng<span class="t-v">(2)</span>được tuyên bố. Nếu nó được khai báo, nó không xác định loại trả về của nó là gì, ngoại trừ việc khai báo hàm sẽ được hình thành tốt.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;nhớ&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="get" title="cpp/memory/shared ptr/get"> <span class="t-lines"><span>Điền vào thùng chứa với giá trị được chỉ định</span></span></a></div> </td> <td>Trả về con trỏ được lưu trữ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/shared_ptr/operator*">https://en.cppreference.com/w/cpp/memory/shared_ptr/operator*</a>
+</p>
+</div>

@@ -1,0 +1,40 @@
+ <h1 class="firstHeading" id="firstHeading">
+<code>const_cast</code>chuyển đổi</h1> <p>Chuyển đổi giữa các loại có trình độ CV khác nhau.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>const_cast&lt;</code> <span class="t-spar">Loại mục tiêu</span> <code>&gt;(</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> <code>)</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Trả về một giá trị của loại<span class="t-spar">Loại mục tiêu</span>.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Chỉ có thể thực hiện các chuyển đổi sau đây với<span class="kw1">thu được như thể bằng cách</span>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Cho hai<a href="implicit_conversion#Similar_types" title="cpp/language/implicit conversion">similar types</a> <code>T1</code>Và<code>T2</code>, một loại prvalue của<code>T1</code>có thể được chuyển đổi thành<code>T2</code>Nếu, xem xét<a href="implicit_conversion#Similar_types" title="cpp/language/implicit conversion">qualification-decompositions</a>của cả hai loại, mỗi loại<code>P1_i</code>giống như<code>P2_i</code>cho tất cả<code>i</code>. Kết quả đề cập đến thực thể ban đầu.</div> <div class="cpp source-cpp"><pre data-language="cpp">typedef int *a [3];              // mảng 3 con trỏ tới int</pre></div> <span class="t-li">2)</span>typedef const int *const ca [3]; // mảng 3 con trỏ const đến const int<code>T1</code>Và<code>T2</code> <code>T1</code>Ca &amp;&amp; r = a {}; // OK, tham chiếu liên kết với đối tượng mảng tạm thời<span class="kw4">hằng số</span> <span class="sy1">is_trivently_destructible_v</span>có thể được chuyển đổi rõ ràng thành một loại loại<span class="sy2">*</span><span class="sy1">&lt;</span>A &amp;&amp; r1 = const_cast &lt;a&gt; (ca {});   // Lỗi: mảng tạm thời bị phân rã thành con trỏ<ul>
+<li>A &amp;&amp; r2 = const_cast &lt;a &amp;&amp;&gt; (ca {}); // ĐƯỢC RỒI<code>T1</code>Đối với hai loại đối tượng<code>T2</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<span class="kw1">thu được như thể bằng cách</span><span class="sy1">is_trivently_destructible_v</span>có thể được chuyển đổi rõ ràng thành một loại loại<span class="sy3">Không có giá trị</span><span class="sy1">&lt;</span>.</li>
+<li>có thể được chuyển đổi một cách rõ ràng thành loại con trỏ của T2 sang T2, bằng cách sử dụng<code>T1</code>Một loại loại<code>T2</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<span class="kw1">thu được như thể bằng cách</span><span class="sy1">is_trivently_destructible_v</span>có thể được chuyển đổi rõ ràng thành một loại loại<span class="sy3">. Trong các cuộc gọi có hiệu lực</span><span class="sy1">&lt;</span>.</li>
+<li>Nếu như<code>T1</code>, sau đó các chuyển đổi sau cũng có thể được thực hiện:<code>T1</code>Một loại loại<code>T2</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<span class="kw1">thu được như thể bằng cách</span><span class="sy1">is_trivently_destructible_v</span>có thể được chuyển đổi rõ ràng thành một loại loại<span class="sy3">. Trong các cuộc gọi có hiệu lực</span><span class="sy1">&lt;</span>.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <p>T2</p>
+</td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <p>Nếu như<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>Một glvalue loại<a href="implicit_conversion#Temporary_materialization" title="cpp/language/implicit conversion">materialized temporary</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>có thể được chuyển đổi rõ ràng thành một loại xvalue<span class="t-spar">Loại mục tiêu</span>là loại lớp, một loại prvalue<span class="t-spar">Loại mục tiêu</span>.</div> <p>T2</p>
+<ul><li>Tham chiếu kết quả đề cập đến đối tượng ban đầu.<span class="t-spar">Loại mục tiêu</span>Giá trị con trỏ null có thể được chuyển đổi thành giá trị con trỏ null của<span class="t-rev-inl t-since-cxx11"><span>Loại mục tiêu</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Số lượng các yếu tố để sao chép</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>. Giá trị con trỏ thành viên null có thể được chuyển đổi thành giá trị con trỏ thành viên null của<span class="t-spar">Loại mục tiêu</span>Như với tất cả các biểu thức diễn viên, kết quả là:</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>một lvalue nếu</li></ul> <h3 id="Casting_away_constness">Loại mục tiêu</h3> <p>là một loại tham chiếu lvalue<code>T1</code>Và<code>T2</code>hoặc tham chiếu rvalue cho loại chức năng<code>T1</code>ĐẾN<code>T2</code> <i>một xValue nếu</i>                     Forwardit2 First2, nhị phân p);<a href="implicit_conversion#Similar_types" title="cpp/language/implicit conversion">qualification-decomposition</a>của<code>T2</code>Loại mục tiêu<a href="implicit_conversion#Qualification_conversions" title="cpp/language/implicit conversion">qualification conversions</a>là một tham chiếu rvalue cho loại đối tượng;<code>T1</code>một prvalue khác.</p>
+<p>Đúc ra sự ổn định<code>T1*</code>Đối với hai loại khác nhau<code>T2*</code>, một chuyển đổi từ<span class="kw1">thu được như thể bằng cách</span>bỏ đi sự ổn định<span class="t-v">.<a href="#Version_2">2</a>)</span>của mẫu CV2_0 P2_0 CV2_1 P2_1 ... CV2_N 1 P2_N 1 CV2_N U2, và không có</p>
+<p>Điều đó chuyển đổi<span class="kw1">thu được như thể bằng cách</span>đến CV2_0 P1_0 CV2_1 P1_1 ... CV2_N 1 P1_N 1 CV2_N U1 ((cùng các thành phần CV, các thành phần P và thành phần U khác nhau).</p>
+<p>Nếu một diễn viên từ một loại prvalue</p>
+<h3 id="Notes">Ghi chú</h3> <p>đến loại<span class="kw1">thu được như thể bằng cách</span>.</p>
+<p><span class="kw1">thu được như thể bằng cách</span>bỏ đi sự ổn định,<a href="cv" title="cpp/language/cv">const object</a>s cho tài liệu tham khảo (mục<a href="cv" title="cpp/language/cv">volatile object</a>) cũng sẽ bỏ đi sự ổn định.<a href="value_category#glvalue" title="cpp/language/value category">glvalue</a>Chỉ một</p>
+<h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/const_cast" title="cpp/keyword/const cast"><code>const_cast</code></a></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">có thể được sử dụng để bỏ đi sự ổn định.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Casting Casting Away Constness, ngụ ý về sự biến động của người Viking, vì các chuyển đổi trình độ cũng không thể loại bỏ sự biến động.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a> </li>
+<li> <a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a> </li>
+<li> <a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a> </li>
+<li> <a href="explicit_cast" title="cpp/language/explicit cast">explicit cast</a> </li>
+<li> <a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">implicit conversions</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/const_cast">https://en.cppreference.com/w/cpp/language/const_cast</a>
+</p>
+</div>

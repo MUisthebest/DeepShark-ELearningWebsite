@@ -1,0 +1,42 @@
+ <h1 class="firstHeading" id="firstHeading">std :: log<small>(STD :: phức tạp)</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/complex" title="cpp/header/complex">&lt;complex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>std :: Complex &lt;T&gt; log (const std :: phức tạp &lt;t&gt; &amp; z);<a class="extiw" href="https://en.wikipedia.org/wiki/Natural_logarithm" title="enwiki:Natural logarithm">natural (base <i>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</i>) logarithm</a>Tính toán phức tạp<code>z</code>có giá trị phức tạp</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trả về độ lớn của số phức</td> <td>-</td> <td>z</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>với một nhánh cắt dọc theo trục thực âm.<code>z</code>Nếu không có lỗi xảy ra, logarit tự nhiên phức tạp của</p>
+<h3 id="Error_handling_and_special_values">được trả về, trong phạm vi của một dải không bị ràng buộc dọc theo trục tưởng tượng và trong khoảng [0, +π] dọc theo trục thực.</h3> <p>Xử lý lỗi và giá trị đặc biệt<code><a href="../math/math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code>.</p>
+<p>Lỗi được báo cáo phù hợp với</p>
+<ul>
+<li>được trả về, trong phạm vi của một dải trong khoảng [−iπ, +iπ] dọc theo trục tưởng tượng và không ràng buộc về mặt toán học dọc theo trục thực.</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/numeric/math/log"><span class="kw1327">Điều đó cho tất cả<span class="me2">đăng nhập</span></span></a><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/numeric/complex/conj"><span class="kw2690">Điều đó cho tất cả<span class="me2">liên kết</span></span></a><span class="br0">.</span>z<span class="br0">)</span><span class="br0">)</span> <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/numeric/complex/conj"><span class="kw2690">Điều đó cho tất cả<span class="me2">liên kết</span></span></a><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/numeric/math/log"><span class="kw1327">Điều đó cho tất cả<span class="me2">đăng nhập</span></span></a><span class="br0">.</span>z<span class="br0">)</span><span class="br0">)</span></code> </li>
+<li>Nếu như<code>z</code>khoảng cách<code>(-0,+0)</code>, kết quả của sự so sánh là<code>(-∞,π)</code>Và<code><a href="../fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_DIVBYZERO</a></code>được trả về, trong phạm vi của một nửa chuỗi không giới hạn dọc theo trục thực và trong khoảng [−iπ/2; +iπ/2] dọc theo trục tưởng tượng.</li>
+<li>Nếu như<code>z</code>khoảng cách<code>(+0,+0)</code>, kết quả của sự so sánh là<code>(-∞,+0)</code>Và<code><a href="../fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_DIVBYZERO</a></code>được trả về, trong phạm vi của một nửa chuỗi không giới hạn dọc theo trục thực và trong khoảng [−iπ/2; +iπ/2] dọc theo trục tưởng tượng.</li>
+<li>Nếu như<code>z</code>khoảng cách<code>(x,+∞)</code>Nếu việc triển khai hỗ trợ số học dấu nổi của IEEE,<code>(+∞,π/2)</code> </li>
+<li>Nếu như<code>z</code>khoảng cách<code>(x,NaN)</code>Nếu việc triển khai hỗ trợ số học dấu nổi của IEEE,<code>(NaN,NaN)</code>Và<code><a href="../fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></code>(đối với bất kỳ y hữu hạn), kết quả là</li>
+<li>Nếu như<code>z</code>khoảng cách<code>(-∞,y)</code>(đối với bất kỳ không hữu hạn<code>(+∞,π)</code> </li>
+<li>Nếu như<code>z</code>khoảng cách<code>(+∞,y)</code>(đối với bất kỳ không hữu hạn<code>(+∞,+0)</code> </li>
+<li>Nếu như<code>z</code>khoảng cách<code>(-∞,+∞)</code>, kết quả của sự so sánh là<code>(+∞,3π/4)</code> </li>
+<li>Nếu như<code>z</code>khoảng cách<code>(+∞,+∞)</code>, kết quả của sự so sánh là<code>(+∞,π/4)</code> </li>
+<li>Nếu như<code>z</code>khoảng cách<code>(±∞,NaN)</code>, kết quả của sự so sánh là<code>(+∞,NaN)</code> </li>
+<li>Nếu như<code>z</code>khoảng cách<code>(NaN,y)</code>(Dấu hiệu của phần tưởng tượng là không xác định)<code>(NaN,NaN)</code>Và<code><a href="../fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></code>(đối với bất kỳ y hữu hạn), kết quả là</li>
+<li>Nếu như<code>z</code>khoảng cách<code>(NaN,+∞)</code>, kết quả của sự so sánh là<code>(+∞,NaN)</code> </li>
+<li>Nếu như<code>z</code>khoảng cách<code>(NaN,NaN)</code>, kết quả của sự so sánh là<code>(NaN,NaN)</code> </li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Chức năng liên tục trên nhánh cắt có tính đến dấu hiệu của phần tưởng tượng<code>z</code>Logarit tự nhiên của một số phức</p>
+<p>với các thành phần tọa độ cực (r,) bằng Ln R + I (θ + 2nπ), với giá trị chính ln r + iθ.<a href="https://en.cppreference.com/w/c/numeric/complex/clog" title="c/numeric/complex/clog"><code>clog</code></a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Các ngữ nghĩa của hàm này được dự định là phù hợp với hàm c</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cmath&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2597" rel="nofollow">LWG 2597</a> </td> <td>C ++ 98</td> <td>#include &lt;Complex&gt;</td> <td>#include &lt;Istream&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="log10" title="cpp/numeric/complex/log10"> <span class="t-lines"><span>log10<span class="t-dsc-small">(STD :: phức tạp)</span></span></span></a></div> </td> <td>Logarit phổ biến phức tạp với nhánh cắt dọc theo trục thực âm<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="exp" title="cpp/numeric/complex/exp"> <span class="t-lines"><span>Exp<span class="t-dsc-small">(STD :: phức tạp)</span></span></span></a></div> </td> <td>cơ sở phức tạp<i>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</i>theo cấp số nhân<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../math/log" title="cpp/numeric/math/log"> <span class="t-lines"><span>đăng nhập</span><span>Đăng nhập</span><span>logl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tính toán tự nhiên (cơ sở<i>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</i>) logarit (\ ({\ small \ ln {x}} \) ln (x)))<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../valarray/log" title="cpp/numeric/valarray/log"> <span class="t-lines"><span>đăng nhập<span class="t-dsc-small">Thuật toán</span></span></span></a></div> </td> <td>áp dụng chức năng<code><a href="../math/log" title="cpp/numeric/math/log">std::log</a></code>cho từng yếu tố của Valarray<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/complex/clog" title="c/numeric/complex/clog">C documentation</a></span>vì<code>clog</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/complex/log">https://en.cppreference.com/w/cpp/numeric/complex/log</a>
+</p>
+</div>

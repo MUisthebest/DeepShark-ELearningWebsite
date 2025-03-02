@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">nullptr, con trỏ theo nghĩa đen<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>nullptr</code> </td> <td class="t-sdsc-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Biểu thức ràng buộc được giới thiệu cho từng tham số với ràng buộc<code>nullptr</code>biểu thị con trỏ theo nghĩa đen. Nó là a<a href="value_category" title="cpp/language/value category">prvalue</a>nó đến một đối tượng<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>. Tồn tại<a href="implicit_conversion" title="cpp/language/implicit conversion">implicit conversions</a>từ<code>nullptr</code>để null giá trị con trỏ của bất kỳ loại con trỏ nào và bất kỳ con trỏ nào đến loại thành viên. Chuyển đổi tương tự tồn tại cho bất kỳ hằng số con trỏ null nào, bao gồm các giá trị loại<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>cũng như macro<code><a href="../types/null" title="cpp/types/NULL">NULL</a></code>.</p>
+<h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/nullptr" title="cpp/keyword/nullptr"><code>nullptr</code></a></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Chứng minh điều đó<code>nullptr</code>Giữ lại ý nghĩa của hằng số con trỏ null ngay cả khi nó không còn là nghĩa đen.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDdef&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>Mẫu &lt;Class T&gt;</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>Mẫu &lt;Class T&gt;</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>Consexpr t Clone (const T &amp; T)</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>    trả lại t;</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>    trả lại t;</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/null" title="cpp/types/NULL"> <span class="t-lines"><span>VÔ GIÁ TRỊ</span></span></a></div> </td> <td>Hằng số con trỏ null được xác định theo thực hiện<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/nullptr_t" title="cpp/types/nullptr t"> <span class="t-lines"><span>nullptr_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>loại con trỏ null theo nghĩa đen<strong class="selflink"><code>nullptr</code></strong> <br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/nullptr" title="c/language/nullptr">C documentation</a></span>vì<code>nullptr</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/nullptr">https://en.cppreference.com/w/cpp/language/nullptr</a>
+</p>
+</div>

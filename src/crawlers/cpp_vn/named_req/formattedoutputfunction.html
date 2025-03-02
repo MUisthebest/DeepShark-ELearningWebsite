@@ -1,0 +1,56 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: FormattedOtputFunction</h1> <h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Một chức năng đầu ra được định dạng là một chức năng đầu ra luồng thực hiện như sau:</p>
+<ul>
+<li>void cấu trúc (u* p, args &amp;&amp; ... args);<a href="../io/basic_ostream/sentry" title="cpp/io/basic ostream/sentry"><code>basic_ostream::sentry</code></a>với thời lượng lưu trữ tự động, thực hiện như sau:</li>
+<ul>
+<li>nếu như<a href="../io/ios_base/iostate" title="cpp/io/ios base/iostate"><code>eofbit</code></a>hoặc<a href="../io/ios_base/iostate" title="cpp/io/ios base/iostate"><code>badbit</code></a>được đặt trên luồng đầu ra, đặt<code>failbit</code>cũng như vậy, và nếu các ngoại lệ trên<code>failbit</code>được bật trong luồng đầu ra này<a href="../io/basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exception mask</a>.<code>(exceptions() &amp; failbit) != 0</code>), ném<a href="../io/ios_base/failure" title="cpp/io/ios base/failure"><code>ios_base::failure</code></a>.</li>
+<li>Flushes tie () 'd dòng đầu ra, nếu có.</li>
+</ul>
+<li>Kiểm tra trạng thái của Sentry bằng cách gọi<code>sentry::operator bool()</code>, tương đương với<a href="../io/basic_ios/good" title="cpp/io/basic ios/good"><code>basic_ios::good</code></a>.</li>
+<li>Nếu lính gác trở về<code>false</code>hoặc nhà xây dựng của Sentry đã ném một ngoại lệ, không có đầu ra nào diễn ra.</li>
+<li>Nếu lính gác trở về<code>true</code>, cố gắng thực hiện đầu ra mong muốn bằng cách chèn các ký tự vào luồng đầu ra như thể bằng cách gọi<code>rdbuf()-&gt;sputc()</code>. Các thành viên công cộng khác của<code><a href="../io/basic_ostream" title="cpp/io/basic ostream">std::basic_ostream</a></code>cũng có thể được sử dụng, nhưng các thành viên ảo của<code>rdbuf()</code>                             STD :: Memory_order Order) NoExcept;<a href="../io/basic_streambuf/overflow" title="cpp/io/basic streambuf/overflow"><code>overflow()</code></a>Thì<a href="../io/basic_streambuf/sputn" title="cpp/io/basic streambuf/sputn"><code>xsputn()</code></a>Và<a href="../io/basic_streambuf/pubsync" title="cpp/io/basic streambuf/pubsync"><code>sync()</code></a>sẽ không bao giờ được gọi.</li>
+<ul>
+<li>Nếu đầu ra không thể tạo ra, các bộ<code>failbit</code>. Nếu ngoại lệ trên<code>failbit</code>được bật trong luồng này<a href="../io/basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exception mask</a>.<code>(exceptions() &amp; failbit) != 0</code>), ném<a href="../io/ios_base/failure" title="cpp/io/ios base/failure"><code>ios_base::failure</code></a>.</li>
+<li>Nếu một ngoại lệ được ném trong quá trình đầu ra, các bộ<code>badbit</code>trong luồng đầu ra. Nếu ngoại lệ trên<code>badbit</code>được bật trong luồng này<a href="../io/basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exception mask</a>.<code>(exceptions() &amp; badbit) != 0</code>), ngoại lệ cũng được tái sinh.</li>
+<li>Nếu không có ngoại lệ nào bị ném, trở lại<code>*this</code>.</li>
+</ul>
+<li>Trong mọi trường hợp, cho dù kết thúc bằng ngoại lệ hay quay trở lại, bộ hủy của Sentry được gọi trước khi rời khỏi chức năng này.</li>
+</ul> <h3 id="Padding">Đệm</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx14">
+<td> <p>Các chức năng đầu ra được định dạng xác định đệm theo<a href="../locale/num_put/put" title="cpp/locale/num put/put"><code>std::num_put::do_put()</code></a>Giai đoạn 3.</p>
+</td> <td><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span></td>
+</tr> <tr class="t-rev t-since-cxx14">
+<td> <p>Nếu chức năng đầu ra được định dạng của luồng<code>os</code>Xác định phần đệm, nó làm như vậy như sau.</p>
+<p>Cho a<code>CharT</code>Trình tự ký tự<code>seq</code>Ở đâu<code>CharT</code>là loại nhân vật của<code>os</code>, nếu độ dài của<code>seq</code>là ít hơn<code>os.width()</code>Mẫu &lt;Đặc điểm lớp&gt;<code>os.fill()</code>được thêm vào chuỗi này khi cần thiết để pad đến một chiều rộng của<code>os.width()</code>) hoặc độ dài biến (</p>
+<p>Nếu như<code><span class="br0">.</span>os.<span class="me1">cờ</span><span class="br0">.</span><span class="br0">)</span> <span class="sy3">Không có giá trị</span> <a href="http://en.cppreference.com/w/cpp/io/ios_base/fmtflags"><span class="kw1690">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">    toán tử &lt;&lt; (basic_ostream &lt;wchar_t, đặc điểm&gt; &amp; os, char32_t ch) = xóa;</span></span></a><span class="br0">)</span> <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/io/ios_base/fmtflags"><span class="kw1687">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">    Mẫu &lt;std :: input_iterator I, std :: sentinel_for &lt;i&gt; s, class T,</span></span></a></code>khoảng cách<code>true</code>, các ký tự điền được đặt sau chuỗi ký tự; Mặt khác, chúng được đặt trước chuỗi ký tự.</p>
+</td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>Các chức năng thư viện tiêu chuẩn sau đây là<strong class="selflink">FormatedOutputFifts</strong>.</p>
+<ul>
+<li> <a href="../io/basic_ostream/operator_ltlt" title="cpp/io/basic ostream/operator ltlt"><code>basic_ostream::operator&lt;&lt;(std::basic_ostream&amp;, int / long / double / void* / bool)</code></a> </li>
+<li> <a href="../io/basic_ostream/operator_ltlt2" title="cpp/io/basic ostream/operator ltlt2"><code>operator&lt;&lt;(std::basic_ostream&amp;, char)</code></a> </li>
+<li> <a href="../io/basic_ostream/operator_ltlt2" title="cpp/io/basic ostream/operator ltlt2"><code>operator&lt;&lt;(std::basic_ostream&amp;, char*)</code></a> </li>
+<li> <a href="../utility/bitset/operator_ltltgtgt2" title="cpp/utility/bitset/operator ltltgtgt2"><code>operator&lt;&lt;(std::basic_ostream&amp;, const std::bitset&amp;)</code></a> </li>
+<li> <a href="../string/basic_string/operator_ltltgtgt" title="cpp/string/basic string/operator ltltgtgt"><code>operator&lt;&lt;(std::basic_ostream&amp;, const std::basic_string&amp;)</code></a> </li>
+<li> <code>operator&lt;&lt; </code>, khi được gọi trên giá trị trả lại của<code><a href="../io/manip/put_money" title="cpp/io/manip/put money">std::put_money</a></code> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li> <a href="../string/basic_string_view/operator_ltlt" title="cpp/string/basic string view/operator ltlt"><code>operator&lt;&lt;(std::basic_ostream&amp;, std::basic_string_view)</code></a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul>
+<li> <a href="../io/basic_ostream/print" title="cpp/io/basic ostream/print"><code>print(std::ostream&amp;, std::format_string&lt;Args...&gt;, Args&amp;&amp;...)</code></a>Thì</li>
+<li> <a href="../io/basic_ostream/println" title="cpp/io/basic ostream/println"><code>println(std::ostream&amp;, std::format_string&lt;Args...&gt;, Args&amp;&amp;...)</code></a>Thì</li>
+<li> <a href="../io/basic_ostream/vprint_unicode" title="cpp/io/basic ostream/vprint unicode"><code>vprint_unicode(std::ostream&amp;, std::string_view, std::format_args)</code></a>Thì</li>
+<li> <a href="../io/basic_ostream/vprint_nonunicode" title="cpp/io/basic ostream/vprint nonunicode"><code>vprint_nonunicode(std::ostream&amp;, std::string_view, std::format_args)</code></a>Thì</li>
+</ul>Ngoại trừ điều đó (được đưa ra<code>os</code>là một đối tượng luồng đầu ra):<ul>
+<li>bất kỳ ngoại lệ nào được ném bởi cuộc gọi đến<code><a href="../utility/format/vformat" title="cpp/utility/format/vformat">std::vformat</a></code>được truyền bá mà không liên quan đến giá trị của<code>os.exceptions()</code>, mà không liên quan đến giá trị của<code><a href="../io/ios_base/iostate" title="cpp/io/ios base/iostate">ios_base::badbit</a></code>Và không bật<code>os</code>Số lượng các yếu tố để sao chép</li>
+<li>Nếu chèn vào<code>os</code>Thất bại, cuộc gọi<code>os.setstate(ios_base::badbit)</code>, cuộc gọi<code><a href="../io/ios_base/failure" title="cpp/io/ios base/failure">ios_base::failure</a></code>).</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue160" rel="nofollow">LWG 160</a> </td> <td>C ++ 98</td> <td>quá trình xác định xem ngoại lệ có bị bắt không<br/>Rethrown có đề cập đến một chức năng không tồn tại không<code>exception()</code> </td> <td>, số lượng tăng số lặp là tuyến tính. Đáng chú ý,<a href="../io/basic_ios/exceptions" title="cpp/io/basic ios/exceptions"><code>exceptions()</code></a> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue165" rel="nofollow">LWG 165</a> </td> <td>C ++ 98</td> <td>Thành viên ảo duy nhất được phép<br/>gọi<code>rdbuf()</code> <code>overflow()</code> </td> <td>}<br/><code>xsputn()</code>Và<code>sync()</code> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction">https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction</a>
+</p>
+</div>

@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FileSystem :: Path :: STEM</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">đường dẫn thân () const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Trả về tên tệp được xác định bởi đường dẫn định dạng chung bị tước bỏ phần mở rộng của nó.</p>
+<p>Trả về chuỗi con từ đầu của<a href="filename" title="cpp/filesystem/path/filename"><code>filename()</code></a>lên đến và không bao gồm giai đoạn cuối (<code>.</code>) nhân vật, với các ngoại lệ sau:</p>
+<ul>
+<li>Nếu ký tự đầu tiên trong tên tệp là một khoảng thời gian, khoảng thời gian đó bị bỏ qua (tên tệp như ".profile" không được coi là một phần mở rộng).</li>
+<li>Nếu tên tệp là một trong những thành phần hệ thống tập tin đặc biệt<span class="t-spar">chấm</span>hoặc<span class="t-spar">chấm chấm</span>, hoặc nếu nó không có thời gian, chức năng trả về toàn bộ<a href="filename" title="cpp/filesystem/path/filename"><code>filename()</code></a>.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Thân của tên tệp được xác định bởi đường dẫn (nghĩa là tên tệp không có phần mở rộng cuối cùng).</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;FileSystem&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="filename" title="cpp/filesystem/path/filename"> <span class="t-lines"><span>Tên tệp</span></span></a></div> </td> <td>Trả về thành phần đường dẫn tên tệp<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="extension" title="cpp/filesystem/path/extension"> <span class="t-lines"><span>sự mở rộng</span></span></a></div> </td> <td>Trả về thành phần đường dẫn mở rộng tệp<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/path/stem">https://en.cppreference.com/w/cpp/filesystem/path/stem</a>
+</p>
+</div>

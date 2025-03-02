@@ -1,0 +1,38 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Asctime</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/ctime" title="cpp/header/ctime">&lt;ctime&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">char* asctime (const std :: tm* time_ptr);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Chuyển đổi thời gian theo lịch<code><a href="tm" title="cpp/chrono/c/tm">std::tm</a></code>Để biểu diễn văn bản của mẫu 25 ký tự cố định sau:<code>Www Mmm dd hh:mm:ss yyyy\n</code>.</p>
+<ul>
+<li>
+<code>Www</code>- Ngày viết tắt tiếng Anh ba chữ cái trong tuần từ<code>time_ptr-&gt;tm_wday</code>, một trong số<code>Mon</code>Thì<code>Tue</code>Thì<code>Wed</code>Thì<code>Thu</code>Thì<code>Fri</code>Thì<code>Sat</code>Thì<code>Sun</code>.</li>
+<li>
+<code>Mmm</code>- Tên tháng viết tắt tiếng Anh ba chữ cái từ<code>time_ptr-&gt;tm_mon</code>, một trong số<code>Jan</code>Thì<code>Feb</code>Thì<code>Mar</code>Thì<code>Apr</code>Thì<code>May</code>Thì<code>Jun</code>Thì<code>Jul</code>Thì<code>Aug</code>Thì<code>Sep</code>Thì<code>Oct</code>Thì<code>Nov</code>Thì<code>Dec</code>.</li>
+<li>
+<code>dd</code>- Ngày 2 chữ số của tháng từ<code>timeptr-&gt;tm_mday</code>như thể được in bởi<code>sprintf</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<code>%2d</code>.</li>
+<li>
+<code>hh</code>- Giờ 2 chữ số từ<code>timeptr-&gt;tm_hour</code>như thể được in bởi<code>sprintf</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<code>%.2d</code>.</li>
+<li>
+<code>mm</code>- phút 2 chữ số từ<code>timeptr-&gt;tm_min</code>như thể được in bởi<code>sprintf</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<code>%.2d</code>.</li>
+<li>
+<code>ss</code>- 2 chữ số thứ hai từ<code>timeptr-&gt;tm_sec</code>như thể được in bởi<code>sprintf</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<code>%.2d</code>.</li>
+<li>
+<code>yyyy</code>- Năm chữ số từ<code>timeptr-&gt;tm_year + 1900</code>như thể được in bởi<code>sprintf</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<code>%4d</code>.</li>
+</ul> <p>Hành vi không được xác định nếu có bất kỳ thành viên nào của<code>*time_ptr</code>nằm ngoài phạm vi bình thường của nó.</p>
+<p>Hành vi không được xác định nếu năm dương lịch được chỉ định bởi<code>time_ptr-&gt;tm_year</code>có hơn 4 chữ số hoặc nhỏ hơn năm 1000.</p>
+<p>Chức năng không hỗ trợ bản địa hóa và ký tự mới không thể bị xóa.</p>
+<p>Hàm sửa đổi lưu trữ tĩnh và không an toàn cho luồng.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Time_ptr</td> <td>-</td> <td>con trỏ đến a<code><a href="tm" title="cpp/chrono/c/tm">std::tm</a></code>đối tượng chỉ định thời gian để in</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ tới chuỗi ký tự kết thúc không có NULL giữ biểu diễn văn bản của ngày và giờ. Chuỗi có thể được chia sẻ giữa<code>std::asctime</code>Và<code><a href="ctime" title="cpp/chrono/c/ctime">std::ctime</a></code>và có thể được ghi đè trên mỗi lần gọi bất kỳ chức năng nào trong số đó.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Hàm này trả về một con trỏ cho dữ liệu tĩnh và không an toàn cho luồng. POSIX đánh dấu chức năng này lỗi thời và đề nghị phụ thuộc vào địa phương<code><a href="strftime" title="cpp/chrono/c/strftime">std::strftime</a></code>thay vì. TRONG<code><a href="../../locale/locale" title="cpp/locale/locale">std::locale</a></code><code>("C")</code>các<code><a href="strftime" title="cpp/chrono/c/strftime">std::strftime</a></code>Chuỗi định dạng<code>"%c\n"</code>sẽ là một trận đấu chính xác với<code>std::asctime</code>đầu ra, trong khi ở các địa phương khác, chuỗi định dạng<code>"%a %b %e %H:%M:%S %Y\n"</code>sẽ là một khả năng gần hơn nhưng không phải lúc nào cũng phù hợp chính xác.</p>
+<p>POSIX giới hạn các hành vi không xác định chỉ đối với các trường hợp khi chuỗi đầu ra sẽ dài hơn 25 ký tự, khi<code>timeptr-&gt;tm_wday</code>hoặc<code>timeptr-&gt;tm_mon</code>không nằm trong phạm vi dự kiến, hoặc khi<code>timeptr-&gt;tm_year</code>vượt quá<code>INT_MAX-1990</code>.</p>
+<p>Một số triển khai xử lý<code>timeptr-&gt;tm_mday == 0</code>có nghĩa là ngày cuối cùng của tháng trước.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;ctime&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;iomanip&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="ctime" title="cpp/chrono/c/ctime"> <span class="t-lines"><span>CTIME</span></span></a></div> </td> <td>Phạm vi :: AS_CONST_VIEW<code><a href="time_t" title="cpp/chrono/c/time t">std::time_t</a></code>phản đối biểu diễn văn bản<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strftime" title="cpp/chrono/c/strftime"> <span class="t-lines"><span>thời gian</span></span></a></div> </td> <td>Phạm vi :: AS_CONST_VIEW<code><a href="tm" title="cpp/chrono/c/tm">std::tm</a></code>phản đối biểu diễn văn bản tùy chỉnh<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../io/manip/put_time" title="cpp/io/manip/put time"> <span class="t-lines"><span>#include &lt;Istream&gt;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/chrono/asctime" title="c/chrono/asctime">C documentation</a></span>vì<code>asctime</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/c/asctime">https://en.cppreference.com/w/cpp/chrono/c/asctime</a>
+</p>
+</div>

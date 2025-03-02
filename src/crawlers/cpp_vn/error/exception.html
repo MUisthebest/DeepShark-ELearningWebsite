@@ -1,0 +1,94 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Ngoại lệ</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/exception" title="cpp/header/exception">&lt;exception&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Ngoại lệ lớp học;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Cung cấp giao diện nhất quán để xử lý các lỗi thông qua<a href="../language/throw" title="cpp/language/throw">throw expression</a>.</p>
+<p>Tất cả các ngoại lệ được tạo bởi thư viện tiêu chuẩn kế thừa từ<code>std::exception</code>.</p>
+<h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="exception/exception" title="cpp/error/exception/exception"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>xây dựng đối tượng ngoại lệ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="exception/~exception" title="cpp/error/exception/~exception"> <span class="t-lines"><span>một đối tượng ngoại lệ khác để gán với</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>ảo const char* what () const noexcept;<br/> <span class="t-mark">(chức năng thành viên công cộng ảo)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="exception/operator=" title="cpp/error/exception/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Bản sao đối tượng ngoại lệ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="exception/what" title="cpp/error/exception/what"> <span class="t-lines"><span>Con trỏ đến một chuỗi kết thúc null với thông tin giải thích. Chuỗi phù hợp để chuyển đổi và hiển thị dưới dạng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Việc triển khai được cho phép nhưng không bắt buộc phải ghi đè<br/> <span class="t-mark">(chức năng thành viên công cộng ảo)</span> </td>
+</tr> </table> <h3 id="Standard_exception_requirements">Yêu cầu ngoại lệ tiêu chuẩn</h3> <p>Mỗi lớp thư viện tiêu chuẩn<code>T</code>mà bắt nguồn từ<code>std::exception</code>có các chức năng thành viên có thể truy cập công khai sau đây, mỗi trong số chúng<span class="t-rev-inl t-until-cxx20"><span>Không thoát với một ngoại lệ</span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span>có a<a href="../language/noexcept_spec" title="cpp/language/noexcept spec">non-throwing exception specification</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>:</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li> <a href="../language/default_constructor" title="cpp/language/default constructor">default constructor</a>(Trừ khi các hàm tạo khác được cung cấp)</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li> <a href="../language/copy_constructor" title="cpp/language/copy constructor">copy constructor</a> </li>
+<li> <a href="../language/copy_assignment" title="cpp/language/copy assignment">copy assignment operator</a> </li>
+</ul> <p>Trình xây dựng bản sao và toán tử gán bản sao đáp ứng điều kiện hậu kỳ sau:</p>
+<ul><li>Nếu hai đối tượng<code>lhs</code>Và<code>rhs</code>mô tả kết quả của nỗ lực chuyển đổi<code>T</code>Và<code>lhs</code>là một bản sao của<code>rhs</code>, sau đó<code><a href="http://en.cppreference.com/w/cpp/string/byte/strcmp"><span class="kw1148">Điều đó cho tất cả<span class="me2">Có thể ném</span></span></a><span class="br0">.</span>lhs.<span class="me1">Con trỏ đến một chuỗi kết thúc null với thông tin giải thích. Chuỗi phù hợp để chuyển đổi và hiển thị dưới dạng</span><span class="br0">.</span><span class="br0">)</span>, rhs.<span class="me1">Con trỏ đến một chuỗi kết thúc null với thông tin giải thích. Chuỗi phù hợp để chuyển đổi và hiển thị dưới dạng</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span></code>hoặc một loại chính sách thực thi được xác định theo thực hiện. Nếu không thì,<code>​0​</code>.</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<code>what()</code>Chức năng thành viên của từng người như vậy<code>T</code>thỏa mãn các ràng buộc được chỉ định cho<code><a href="exception/what" title="cpp/error/exception/what">std::exception::what()</a></code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Standard_exceptions">Ngoại lệ tiêu chuẩn</h3> <ul>
+<li>
+<a href="logic_error" title="cpp/error/logic error"><code>logic_error</code></a> </li>
+<ul>
+<li>
+<a href="invalid_argument" title="cpp/error/invalid argument"><code>invalid_argument</code></a> </li>
+<li>
+<a href="domain_error" title="cpp/error/domain error"><code>domain_error</code></a> </li>
+<li>
+<a href="length_error" title="cpp/error/length error"><code>length_error</code></a> </li>
+<li>
+<a href="out_of_range" title="cpp/error/out of range"><code>out_of_range</code></a> </li>
+<li>
+<a href="../thread/future_error" title="cpp/thread/future error"><code>future_error</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul>
+<li>
+<a href="runtime_error" title="cpp/error/runtime error"><code>runtime_error</code></a> </li>
+<li>
+<a href="range_error" title="cpp/error/range error"><code>range_error</code></a> </li>
+<li>
+<a href="overflow_error" title="cpp/error/overflow error"><code>overflow_error</code></a> </li>
+<li>
+<a href="underflow_error" title="cpp/error/underflow error"><code>underflow_error</code></a> </li>
+<li>
+<a href="../regex/regex_error" title="cpp/regex/regex error"><code>regex_error</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>
+<a href="system_error" title="cpp/error/system error"><code>system_error</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<ul>
+<li>
+<a href="../io/ios_base/failure" title="cpp/io/ios base/failure"><code>ios_base::failure</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>
+<a href="../filesystem/filesystem_error" title="cpp/filesystem/filesystem error"><code>filesystem::filesystem_error</code></a> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+</ul>
+<li>
+<a href="tx_exception" title="cpp/error/tx exception"><code>tx_exception</code></a> <span class="t-mark-rev t-since-tm-ts t-mark-ts">(TM TS)</span> </li>
+<li>
+<a href="../chrono/nonexistent_local_time" title="cpp/chrono/nonexistent local time"><code>nonexistent_local_time</code></a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+<li>
+<a href="../chrono/ambiguous_local_time" title="cpp/chrono/ambiguous local time"><code>ambiguous_local_time</code></a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+<li>
+<a href="../utility/format/format_error" title="cpp/utility/format/format error"><code>format_error</code></a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+<li>
+<a href="../types/bad_typeid" title="cpp/types/bad typeid"><code>bad_typeid</code></a> </li>
+<li>
+<a href="../types/bad_cast" title="cpp/types/bad cast"><code>bad_cast</code></a> </li>
+<ul><li>
+<a href="../utility/any/bad_any_cast" title="cpp/utility/any/bad any cast"><code>bad_any_cast</code></a> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li></ul>
+<li>
+<a href="../utility/optional/bad_optional_access" title="cpp/utility/optional/bad optional access"><code>bad_optional_access</code></a> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+<li>
+<a href="../utility/expected/bad_expected_access" title="cpp/utility/expected/bad expected access"><code>bad_expected_access</code></a> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </li>
+<li>
+<a href="../memory/bad_weak_ptr" title="cpp/memory/bad weak ptr"><code>bad_weak_ptr</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>
+<a href="../utility/functional/bad_function_call" title="cpp/utility/functional/bad function call"><code>bad_function_call</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li>
+<a href="../memory/new/bad_alloc" title="cpp/memory/new/bad alloc"><code>bad_alloc</code></a> </li>
+<ul><li>
+<a href="../memory/new/bad_array_new_length" title="cpp/memory/new/bad array new length"><code>bad_array_new_length</code></a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li></ul>
+<li>
+<a href="bad_exception" title="cpp/error/bad exception"><code>bad_exception</code></a> </li>
+<li>
+<a href="../io/ios_base/failure" title="cpp/io/ios base/failure"><code>ios_base::failure</code></a> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </li>
+<li>
+<a href="../utility/variant/bad_variant_access" title="cpp/utility/variant/bad variant access"><code>bad_variant_access</code></a> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue471" rel="nofollow">LWG 471</a> </td> <td>C ++ 98</td> <td>Không có yêu cầu về các lớp thư viện tiêu chuẩn có nguồn gốc từ<code>std::exception</code> </td> <td>Được cho</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/exception">https://en.cppreference.com/w/cpp/error/exception</a>
+</p>
+</div>

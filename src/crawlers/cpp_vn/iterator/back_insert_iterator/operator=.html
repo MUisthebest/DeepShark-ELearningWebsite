@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Back_insert_iterator &lt;container&gt; :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="4">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">back_insert_iterator &lt;tavyer&gt; &amp;</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">    Toán tử = (Typename Container :: Const_Reference Value);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">back_insert_iterator &lt;tavyer&gt; &amp;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">    toán tử = (const containtame container :: value_type &amp; value);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">consexpr back_insert_iterator &lt;tavyer&gt; &amp; &amp;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>    toán tử = (const containtame container :: value_type &amp; value);<code>value</code>back_insert_iterator &lt;tavyer&gt; &amp;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>consexpr back_insert_iterator &lt;tavyer&gt; &amp; &amp;<code>container-&gt;push_back(value)</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>consexpr back_insert_iterator &lt;tavyer&gt; &amp; &amp;<code>container-&gt;push_back(std::move(value))</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>được phân vùng liên quan đến</td> <td>-</td> <td>    Toán tử = (Typename Container :: value_type &amp;&amp; value);</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Chèn giá trị đã cho</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">đến container.</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/back_insert_iterator/operator%3D">https://en.cppreference.com/w/cpp/iterator/back_insert_iterator/operator%3D</a>
+</p>
+</div>

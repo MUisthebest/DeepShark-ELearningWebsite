@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">std :: map &lt;key, t, so sánh, phân bổ&gt; :: hợp nhất</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;Class C2&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">void Merge (STD :: MAP &lt;KEY, T, C2, ALLOCATOR&gt; &amp; SOURCE);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;Class C2&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">void hợp nhất (std :: map &lt;key, t, c2, allocator&gt; &amp;&amp; nguồn);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Mẫu &lt;Class C2&gt;<code>source</code>void Merge (std :: multimap &lt;key, t, c2, allocator&gt; &amp; source);<code>*this</code>Mẫu &lt;Class C2&gt;<code>*this</code>void Merge (std :: multimap &lt;key, t, c2, allocator&gt; &amp;&amp; nguồn);<code>*this</code>Cố gắng trích xuất ("splice") mỗi phần tử trong<code>source</code>và chèn nó vào<code>source</code>sử dụng đối tượng so sánh của<code>*this</code>                   const_iterator đầu tiên, const_iterator cuối cùng);<code>source</code>.</p>
+<p>đến một phạm vi khác kết thúc tại<code>get_allocator() != source.get_allocator()</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>. Nếu có một yếu tố trong</td> <td>-</td> <td>với khóa tương đương với khóa của một phần tử từ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>, sau đó phần tử đó không được trích xuất từ</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>. Không có yếu tố nào được sao chép hoặc di chuyển, chỉ có các con trỏ bên trong của các nút container được sửa lại. Tất cả các con trỏ và tài liệu tham khảo về các yếu tố được chuyển tiếp vẫn hợp lệ, nhưng bây giờ hãy tham khảo<code>source.size()</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">nguồn</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">thùng chứa tương thích để chuyển các nút từ</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="extract" title="cpp/container/map/extract"> <span class="t-lines"><span>Emplace_Hint</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>, với<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="insert" title="cpp/container/map/insert"> <span class="t-lines"><span>get_allocator</span></span></a></div> </td> <td>Trả về người phân bổ liên quan<span class="t-rev-inl t-since-cxx17"><span>, các trình lặp lại có thể điều chỉnh được</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/map/merge">https://en.cppreference.com/w/cpp/container/map/merge</a>
+</p>
+</div>

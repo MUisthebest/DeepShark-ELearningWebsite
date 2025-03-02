@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: tầm thường<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Các<strong class="selflink">Tầm thường</strong>các yêu cầu mô tả các yêu cầu được thỏa mãn bởi một số đồng hồ trong<a href="../chrono" title="cpp/chrono">chrono library</a>.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Cho một loại<code>TC</code>:</p>
+<ul>
+<li>Loại phải đáp ứng<a href="clock" title="cpp/named req/Clock">Clock</a>yêu cầu.</li>
+<li>Các loại<code>TC::rep</code>Thì<code>TC::duration</code>, Và<code>TC::time_point</code>đáp ứng các yêu cầu của<a href="equalitycomparable" title="cpp/named req/EqualityComparable">EqualityComparable</a>Thì<a href="lessthancomparable" title="cpp/named req/LessThanComparable">LessThanComparable</a>Thì<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>Thì<a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>Thì<a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>Thì<a href="destructible" title="cpp/named req/Destructible">Destructible</a>, Và<a href="numerictype" title="cpp/named req/NumericType">NumericType</a>.</li>
+<li> <a href="../language/value_category" title="cpp/language/value category">lvalues</a>của các loại<code>TC::rep</code>Thì<code>TC::duration</code>, Và<code>TC::time_point</code>&gt;<a href="swappable" title="cpp/named req/Swappable">Swappable</a>.</li>
+<li>Chức năng<code>TC::now()</code>không ném ngoại lệ.</li>
+<li>phạm vi của các yếu tố để tạo<code>TC::time_point::clock</code>Đáp ứng các yêu cầu tầm thường, đệ quy.</li>
+</ul> <h3 id="Usage">Cách sử dụng</h3> <p>Các loại sau trong thư viện tiêu chuẩn đáp ứng các yêu cầu này:</p>
+<ul>
+<li>
+<code><a href="../chrono/system_clock" title="cpp/chrono/system clock">std::chrono::system_clock</a></code> </li>
+<li>
+<code><a href="../chrono/steady_clock" title="cpp/chrono/steady clock">std::chrono::steady_clock</a></code> </li>
+<li>
+<code><a href="../chrono/high_resolution_clock" title="cpp/chrono/high resolution clock">std::chrono::high_resolution_clock</a></code> </li>
+<li>
+<a href="../filesystem/file_time_type" title="cpp/filesystem/file time type"><code>std::filesystem::file_time_type::clock</code></a> </li>
+<li>
+<a href="../chrono/file_clock" title="cpp/chrono/file clock"><code>std::chrono::file_clock</code></a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/TrivialClock">https://en.cppreference.com/w/cpp/named_req/TrivialClock</a>
+</p>
+</div>

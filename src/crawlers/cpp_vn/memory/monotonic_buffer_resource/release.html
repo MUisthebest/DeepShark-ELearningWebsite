@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: pmr :: monotonic_buffer_resource :: phát hành</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">phát hành void ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Phát hành tất cả bộ nhớ được phân bổ bằng cách gọi<code>deallocate</code>chức năng trên tài nguyên bộ nhớ ngược dòng khi cần thiết. Đặt lại<i>Bộ đệm hiện tại</i>Và<i>Kích thước bộ đệm tiếp theo</i>đến giá trị ban đầu của họ khi xây dựng.</p>
+<p>Bộ nhớ được phát hành trở lại tài nguyên ngược dòng ngay cả khi<code>deallocate</code>chưa được gọi cho một số khối được phân bổ.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3120" rel="nofollow">LWG 3120</a> </td> <td>C ++ 17</td> <td>
+<code>release</code>có thể không làm cho bộ đệm ban đầu có thể tái sử dụng nếu được cung cấp</td> <td>bắt buộc phải làm như vậy</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../memory_resource/deallocate" title="cpp/memory/memory resource/deallocate"> <span class="t-lines"><span>/ * container-node-type */</span></span></a></div> </td> <td>Xử lý bộ nhớ<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::pmr::memory_resource</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/monotonic_buffer_resource/release">https://en.cppreference.com/w/cpp/memory/monotonic_buffer_resource/release</a>
+</p>
+</div>

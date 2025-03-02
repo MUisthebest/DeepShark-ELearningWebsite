@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; :: thay đổi kích thước</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">void thay đổi kích thước (số lượng size_type);</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Constexpr void thay đổi kích thước (số lượng size_type);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">void thay đổi kích thước (số lượng size_type, biểu đồ ch);</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ConstExpr void thay đổi kích thước (số lượng size_type, biểu đồ ch);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Thay đổi kích thước chuỗi để chứa<code>count</code>) hoặc độ dài biến (</p>
+<p>Nếu kích thước hiện tại nhỏ hơn<code>count</code>, các ký tự bổ sung được thêm vào:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Khởi tạo các ký tự được thêm vào<code>CharT()</code>.<code>'\0'</code>nếu như<code>CharT</code>khoảng cách<code>char</code>).</div> <div class="t-li1">
+<span class="t-li">2)</span>Khởi tạo các ký tự được thêm vào<code>ch</code>.</div> <p>Nếu kích thước hiện tại lớn hơn<code>count</code>, chuỗi được giảm xuống đầu tiên<code>count</code>các yếu tố.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Kích thước mới của chuỗi</td>
+</tr> <tr class="t-par"> <td>ch</td> <td>-</td> <td>ký tự để khởi tạo các ký tự mới với</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../../error/length_error" title="cpp/error/length error">std::length_error</a></code>nếu như<code>count &gt; max_size()</code>. Bất kỳ trường hợp ngoại lệ nào được ném bởi tương ứng<code>Allocator</code>.</p>
+<p>tham chiếu emplace_front (args &amp;&amp; ... args);<a href="../../language/exceptions#Exception_safety" title="cpp/language/exceptions">strong exception safety guarantee</a>).</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;iomanip&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue847" rel="nofollow">LWG 847</a> </td> <td>C ++ 98</td> <td>giá trị ký tự để nối thêm</td> <td>Phạm vi các ký tự để nối</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="size" title="cpp/string/basic string/size"> <span class="t-lines"><span>kích cỡ</span><span>    toán tử &lt;&lt; (basic_ostream &lt;char, đặc điểm&gt; &amp; os, char32_t ch) = xóa;</span></span></a></div> </td> <td>lớp đặc điểm chỉ định các hoạt động trên loại ký tự<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="reserve" title="cpp/string/basic string/reserve"> <span class="t-lines"><span>xô_Count</span></span></a></div> </td> <td>Nếu vector thay đổi năng lực, tất cả chúng. Nếu không, chỉ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="shrink_to_fit" title="cpp/string/basic string/shrink to fit"> <span class="t-lines"><span>giao phó</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark">.<span title="not available in libstdc++ C++98 mode">gán các giá trị cho container</span>)</span></span></span></div> </td> <td>gán_range<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string/resize">https://en.cppreference.com/w/cpp/string/basic_string/resize</a>
+</p>
+</div>

@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: get_deleter</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;class deleter, class t&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Deleter* get_deleter (const std :: shared_ptr &lt;t&gt; &amp; p) noExcept;<code>p</code>Truy cập vào<code>p</code>'s Deleter. Nếu con trỏ được chia sẻ<code>Deleter</code>sở hữu một bản phân phối loại CV-UNTQUED</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>(ví dụ: nếu nó được tạo bằng một trong các hàm tạo lấy một tham số Deleter làm tham số), thì hãy trả về một con trỏ cho Deleter. Nếu không, trả về một con trỏ null.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>một con trỏ được chia sẻ mà Deleter cần được truy cập<a href="../../language/nullptr" title="cpp/language/nullptr"><code>nullptr</code></a>Một con trỏ đến Deleter thuộc sở hữu hoặc<code><a href="../shared_ptr" title="cpp/memory/shared ptr">shared_ptr</a></code>. Con trỏ trả về có giá trị ít nhất miễn là vẫn còn ít nhất một</p>
+<h3 id="Notes">Ghi chú</h3> <p>ví dụ mà sở hữu nó.<code><a href="../shared_ptr" title="cpp/memory/shared ptr">shared_ptr</a></code>Con trỏ trả về có thể tồn tại lâu hơn<code><a href="../weak_ptr" title="cpp/memory/weak ptr">std::weak_ptr</a></code>Nếu, ví dụ, ví dụ</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Chứng minh điều đó<code><a href="../shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>S vẫn còn và việc triển khai không phá hủy Deleter cho đến khi toàn bộ khối điều khiển bị phá hủy.<code><a href="../shared_ptr" title="cpp/memory/shared ptr">shared_ptr</a></code>Deleter độc lập với</p>
+<div class="cpp source-cpp"><pre data-language="cpp">loại s.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="shared_ptr" title="cpp/memory/shared ptr/shared ptr"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td> <code><a href="../shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>người xây dựng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../unique_ptr/get_deleter" title="cpp/memory/unique ptr/get deleter"> <span class="t-lines"><span>get_deleter</span></span></a></div> </td> <td>. Phải thỏa mãn<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::unique_ptr&lt;T,Deleter&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/shared_ptr/get_deleter">https://en.cppreference.com/w/cpp/memory/shared_ptr/get_deleter</a>
+</p>
+</div>

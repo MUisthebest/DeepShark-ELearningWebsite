@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">
+<code>explicit</code>thời lượng để biểu diễn phần bù từ UTC tương ứng với</h1> <h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>explicit</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>explicit (</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> <code>) </code> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>-</td> <td> <a href="constant_expression#Converted_constant_expression" title="cpp/language/constant expression">contextually converted constant expression of type <code>bool</code></a> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Chỉ định rằng một hàm tạo<span class="t-rev-inl t-since-cxx11"><span>hoặc chức năng chuyển đổi</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx17"><span>hoặc<a class="mw-redirect" href="ctad" title="cpp/language/ctad">deduction guide</a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>rõ ràng, đó là, nó không thể được sử dụng cho<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">implicit conversions</a>Và<a href="copy_initialization" title="cpp/language/copy initialization">copy-initialization</a>.</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <span class="t-li">2)</span>Các<code>explicit</code>trình xác định có thể được sử dụng với một biểu thức không đổi. Hàm là rõ ràng khi và chỉ khi biểu thức không đổi đó đánh giá<code>true</code>.</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Trình xác định rõ ràng chỉ có thể xuất hiện trong<span class="t-spar">DEM-SPECIFIER-SEQ</span>của tuyên bố của một nhà xây dựng<span class="t-rev-inl t-since-cxx11"><span>hoặc chức năng chuyển đổi</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Trong định nghĩa lớp của nó.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Một nhà xây dựng<span class="t-rev-inl t-until-cxx11"><span>với một tham số không mặc định duy nhất</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span>được khai báo mà không có trình xác định chức năng<code>explicit</code>được gọi là a<a href="converting_constructor" title="cpp/language/converting constructor">converting constructor</a>.</p>
+<p>Cả hai hàm tạo (trừ<a href="copy_constructor" title="cpp/language/copy constructor">copy</a>/<a href="move_constructor" title="cpp/language/move constructor">move</a>) và các chức năng chuyển đổi do người dùng xác định có thể là các mẫu chức năng; ý nghĩa của<code>explicit</code>luôn luôn đi trước các yếu tố từ</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>MỘT<code>(</code>mã thông báo theo sau<code>explicit</code>được phân tích cú pháp như một phần của trình xác định rõ ràng:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">cấu trúc s</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_conditional_explicit" title="cpp/feature test"><code>__cpp_conditional_explicit</code></a></td> <td><span class="nu0">201806L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<code>explicit(bool)</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="converting_constructor" title="cpp/language/converting constructor">converting constructor</a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> </li>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a> </li>
+<li> <a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/explicit">https://en.cppreference.com/w/cpp/language/explicit</a>
+</p>
+</div>

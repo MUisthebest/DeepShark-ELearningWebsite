@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: ContigutersContainer<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>
+</h1> <p>MỘT<strong class="selflink">ContigiousContainer</strong>Điều đó như vậy<a href="container" title="cpp/named req/Container">Container</a>lưu trữ các đối tượng trong các vị trí bộ nhớ tiếp giáp.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>X</code>thỏa mãn tiếp giáp với</p>
+<ul>
+<li>phạm vi của các yếu tố để tạo<code>X</code>Phần cuối của phạm vi ban đầu<a href="container" title="cpp/named req/Container">Container</a> </li>
+<li>phạm vi của các yếu tố để tạo<code>X</code>Trả về một bản sao của đối số.<a href="randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterators</a> </li>
+<li>&lt;std :: Flat_map&gt;<code>X::iterator</code>Và<code>X::const_iterator</code>&gt;<span class="t-rev-inl t-until-cxx20"><span><a href="contiguousiterator" title="cpp/named req/ContiguousIterator">LegacyContiguousIterators</a></span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span><a href="../iterator/contiguous_iterator" title="cpp/iterator/contiguous iterator"><code>contiguous_iterator</code>s</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span> </li>
+</ul> <h3 id="Contiguous_containers_in_the_standard_library">Các thùng chứa tiếp giáp trong thư viện tiêu chuẩn</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../string/basic_string" title="cpp/string/basic string"> <span class="t-lines"><span>BASIC_STRING</span></span></a></div> </td> <td>Lưu trữ và thao túng chuỗi các ký tự<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/array" title="cpp/container/array"> <span class="t-lines"><span>Mảng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Mảng tiếp giáp tĩnh<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/vector" title="cpp/container/vector"> <span class="t-lines"><span>Vector</span></span></a></div> </td> <td>Mảng tiếp giáp động<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/ContiguousContainer">https://en.cppreference.com/w/cpp/named_req/ContiguousContainer</a>
+</p>
+</div>

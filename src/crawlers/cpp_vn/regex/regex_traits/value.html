@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: regex_traits &lt;Prible&gt; :: value</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">giá trị int (biểu đồ CH, int radix) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xác định giá trị được biểu thị bằng chữ số<code>ch</code>trong cơ sở số<code>radix</code>, với địa phương hiện đang thấm nhuần. Hàm này được gọi bởi<code><a href="../basic_regex" title="cpp/regex/basic regex">std::regex</a></code>Khi xử lý<a href="../ecmascript#Quantifiers" title="cpp/regex/ecmascript">Quantifiers</a>chẳng hạn như<code>{1</code>} hoặc<code>{2,5</code>},<a href="../ecmascript#Backreferences" title="cpp/regex/ecmascript">Backreferences</a>chẳng hạn như<code>\1</code>, và nhân vật thập lục phân và unicode trốn thoát.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>ch</td> <td>-</td> <td>nhân vật có thể đại diện cho một chữ số</td>
+</tr> <tr class="t-par"> <td>Mở rộng sang biểu thức không đổi số nguyên có giá trị</td> <td>-</td> <td>8, 10 hoặc 16</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Giá trị số nếu<code>ch</code>thực sự đại diện cho một chữ số trong ngôn ngữ hiện đang thấm nhuần có giá trị cho cơ sở số<code>radix</code>, hoặc<code>-1</code>về lỗi.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Locale&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/regex_traits/value">https://en.cppreference.com/w/cpp/regex/regex_traits/value</a>
+</p>
+</div>

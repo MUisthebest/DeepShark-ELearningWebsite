@@ -1,0 +1,11 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: zip_view &lt;views ...&gt; :: zip_view</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">zip_view () = mặc định;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">constexpr zip_view (chế độ xem ... chế độ xem);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định.<a href="../../language/value_initialization" title="cpp/language/value initialization">Value-initializes</a>Tất cả đều thích nghi<a href="../view" title="cpp/ranges/view"><code>view</code></a>Đối tượng.</div> <div class="t-li1">Hàm tạo mặc định bị xóa nếu<code><a href="../../types/is_default_constructible" title="cpp/types/is default constructible">std::is_default_constructible_v</a></code>khoảng cách<code>false</code>Đối với ít nhất một loại trong<code>Views...</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Di chuyển các cấu trúc mọi điều chỉnh<a href="../view" title="cpp/ranges/view"><code>view</code></a>đối tượng từ chế độ xem tương ứng trong<code>views...</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>quan điểm</td> <td>-</td> <td>Xem các đối tượng để thích nghi</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/zip_view/zip_view">https://en.cppreference.com/w/cpp/ranges/zip_view/zip_view</a>
+</p>
+</div>

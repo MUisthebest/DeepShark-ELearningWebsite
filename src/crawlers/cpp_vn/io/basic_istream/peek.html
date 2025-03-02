@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_istream &lt;biểu đồ, đặc điểm&gt; :: peek</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int_type peek ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Hành xử như<a href="../../named_req/unformattedinputfunction" title="cpp/named req/UnformattedInputFunction">UnformattedInputFunction</a>. Sau khi xây dựng và kiểm tra đối tượng Sentry, đọc ký tự tiếp theo từ luồng đầu vào mà không trích xuất nó.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Nếu như<code>good() == true</code>, trả về nhân vật tiếp theo có được bởi<code>rdbuf()-&gt;sgetc()</code>.</p>
+<p>và trả lại<code>Traits::eof()</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3>
+<code><a href="../ios_base/failure" title="cpp/io/ios base/failure">failure</a></code>Nếu xảy ra lỗi (cờ trạng thái lỗi không<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">goodbit</a></code>) Và<code><a href="../basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>được thiết lập để ném cho trạng thái đó.<p>Nếu một hoạt động nội bộ ném một ngoại lệ, nó sẽ bị bắt và<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">badbit</a></code>được đặt. Nếu như<code><a href="../basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>được đặt cho<code>badbit</code>, ngoại lệ là được tái sinh.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Sstream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_streambuf/sgetc" title="cpp/io/basic streambuf/sgetc"> <span class="t-lines"><span>SBUMPC</span></span></a></div> </td> <td>Stossc<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_streambuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="get" title="cpp/io/basic istream/get"> <span class="t-lines"><span>Điền vào thùng chứa với giá trị được chỉ định</span></span></a></div> </td> <td>Đầu vào định dạng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="unget" title="cpp/io/basic istream/unget"> <span class="t-lines"><span>Trích xuất ký tự</span></span></a></div> </td> <td>nhìn trộm<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_istream/peek">https://en.cppreference.com/w/cpp/io/basic_istream/peek</a>
+</p>
+</div>

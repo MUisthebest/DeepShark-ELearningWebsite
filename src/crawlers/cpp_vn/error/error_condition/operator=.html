@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">std :: error_condition :: toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Lass ErrorConditionEnum&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">ERROR_Condition &amp; Toán tử = (ErrorConditionEnum e) NoExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Lưu ý rằng khởi tạo mặc định có thể dẫn đến các giá trị không xác định cho lớp không</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">ERROR_Condition &amp; Toán tử = (Const Error_Condition &amp; other) = Mặc định;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Lưu ý rằng khởi tạo mặc định có thể dẫn đến các giá trị không xác định cho lớp không</span> </td> </tr> </table> <p>ERROR_Condition &amp; Toán tử = (Error_Condition &amp;&amp; Khác) = Mặc định;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Gán nội dung cho một điều kiện lỗi.<code>e</code>. Gọi một cách hiệu quả<code>make_error_condition</code>Khởi tạo điều kiện lỗi với enum<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>vì<code>e</code>Gán tình trạng lỗi cho enum<code>*this</code>và sau đó thay thế<code><a href="http://en.cppreference.com/w/cpp/error/error_condition/is_error_condition_enum"><span class="kw877">Điều đó cho tất cả<span class="me2">is_error_condition_enum</span></span></a><span class="sy1">is_trivently_destructible_v</span>ErrorConditionEnum<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">được phân vùng liên quan đến</span></code>khoảng cách<code>true</code>.</div> <div class="t-li1">
+<span class="t-li">          std :: Indirect_strict_weak_order &lt;</span>Thay thế mã lỗi và danh mục tương ứng với các loại biểu thị mã lỗi enum<code>other</code>ĐẾN<code>*this</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</td> <td>-</td> <td>Một điều kiện lỗi khác để khởi tạo với</td>
+</tr> <tr class="t-par"> <td>khác</td> <td>-</td> <td>với kết quả. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code>.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3629" rel="nofollow">LWG 3629</a> </td> <td>C ++ 11</td> <td>Mã lỗi enum để xây dựng với<code>std::make_error_condition</code>chỉ một</td> <td>Quá tải đã được sử dụng</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/error_condition/operator%3D">https://en.cppreference.com/w/cpp/error/error_condition/operator%3D</a>
+</p>
+</div>

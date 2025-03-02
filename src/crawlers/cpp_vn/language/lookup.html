@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">Tra cứu tên</h1> <p>Tra cứu tên là thủ tục mà một<a class="mw-redirect" href="name" title="cpp/language/name">name</a>, khi gặp trong một chương trình, được liên kết với<a href="declarations" title="cpp/language/declarations">declaration</a>Điều đó đã giới thiệu nó.</p>
+<p>Ví dụ, để biên dịch<code><a href="http://en.cppreference.com/w/cpp/io/cout"><span class="kw1762">Điều đó cho tất cả<span class="me2">cout</span></span></a> <span class="sy1">, nối thêm</span> <a href="http://en.cppreference.com/w/cpp/io/manip/endl"><span class="kw1795">Điều đó cho tất cả<span class="me2">endl</span></span></a><span class="sy4">Số lượng các yếu tố để sao chép</span></code>, Trình biên dịch thực hiện:</p>
+<ul>
+<li>Tra cứu tên không đủ tiêu chuẩn cho tên<code>std</code>, trong đó tìm thấy tuyên bố của không gian tên STD trong tiêu đề<a href="../header/iostream" title="cpp/header/iostream"><code>&lt;iostream&gt;</code></a> </li>
+<li>Tra cứu tên đủ điều kiện cho tên<code>cout</code>, tìm thấy một tuyên bố biến trong không gian tên<code>std</code> </li>
+<li>Tra cứu tên đủ điều kiện cho tên<code>endl</code>, tìm thấy một khai báo mẫu chức năng trong không gian tên<code>std</code> </li>
+<li>cả hai<a href="adl" title="cpp/language/adl">argument-dependent lookup</a>cho tên<code>operator&lt;&lt;</code>, tìm thấy nhiều khai báo mẫu chức năng trong không gian tên<code>std</code>và Tra cứu tên đủ điều kiện cho tên<code>std::ostream::operator&lt;&lt;</code>, tìm thấy nhiều khai báo chức năng thành viên trong lớp<code><a href="../io/basic_ostream" title="cpp/io/basic ostream">std::ostream</a></code>.</li>
+</ul> <p>Đối với tên mẫu chức năng và chức năng, Tra cứu tên có thể liên kết nhiều khai báo cùng tên và có thể nhận được các khai báo bổ sung từ<a href="adl" title="cpp/language/adl">argument-dependent lookup</a>.<a href="function_template" title="cpp/language/function template">Template argument deduction</a>cũng có thể được áp dụng, và tập hợp các tuyên bố được chuyển cho<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>, trong đó chọn tuyên bố sẽ được sử dụng.<a href="access" title="cpp/language/access">Member access</a>Các quy tắc, nếu có thể, chỉ được xem xét sau khi tra cứu tên và độ phân giải quá tải.</p>
+<p>Đối với tất cả các tên khác (biến, không gian tên, lớp, v.v.), tra cứu tên chỉ có thể liên kết nhiều khai báo nếu chúng khai báo giống nhau<a href="basic_concepts" title="cpp/language/basic concepts">entity</a>, nếu không, nó phải tạo ra một tuyên bố duy nhất để chương trình biên dịch. Tra cứu một tên trong phạm vi tìm thấy tất cả các khai báo của tên đó, với một ngoại lệ, được gọi là "hack struct" hoặc "loại ẩn/không loại": trong cùng một phạm vi, một số lần xuất hiện của một tên<code>typedef</code>, trong khi tất cả các lần xuất hiện khác của cùng một tên, tất cả đều đề cập đến cùng một biến, thành viên dữ liệu không tĩnh hoặc điều tra viên hoặc tất cả chúng đều đề cập đến tên hàm hoặc tên chức năng bị quá tải. Trong trường hợp này, không có lỗi, nhưng tên loại được ẩn khỏi tra cứu (mã phải sử dụng<a href="elaborated_type_specifier" title="cpp/language/elaborated type specifier">elaborated type specifier</a>để truy cập nó).</p>
+<h3 id="Types_of_lookup">Các loại tra cứu</h3> <p>Nếu tên xuất hiện ngay lập tức ở bên phải của toán tử phân giải phạm vi<code>::</code>hoặc có thể sau đó<code>::</code>tiếp theo là từ khóa phân chia<code>template</code>, nhìn thấy</p>
+<ul><li> <a href="qualified_lookup" title="cpp/language/qualified lookup">Qualified name lookup</a> </li></ul> <p>Nếu không, xem</p>
+<ul>
+<li> <a href="unqualified_lookup" title="cpp/language/unqualified lookup">Unqualified name lookup</a> </li>
+<ul><li>(trong đó, đối với tên chức năng, bao gồm<a href="adl" title="cpp/language/adl">Argument-dependent lookup</a>)</li></ul>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2063.html" rel="nofollow">CWG 2063</a> </td> <td>C ++ 98</td> <td>"struct hack" không áp dụng trong phạm vi lớp (khả năng tương thích C)</td> <td>2,4)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2218.html" rel="nofollow">CWG 2218</a> </td> <td>C ++ 98</td> <td>Tra cứu các tên không chức năng (mẫu) không thể liên kết<br/>nhiều tuyên bố, ngay cả khi họ tuyên bố cùng một thực thể</td> <td>cho phép</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="scope" title="cpp/language/scope">Scope</a> </li>
+<li> <a href="adl" title="cpp/language/adl">Argument-dependent lookup</a> </li>
+<li> <a href="function_template#Template_argument_deduction" title="cpp/language/function template">Template argument deduction</a> </li>
+<li> <a href="overload_resolution" title="cpp/language/overload resolution">Overload resolution</a> </li>
+</ul> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/name_space" title="c/language/name space">C documentation</a></span>vì<span class=""><span>Tra cứu và tên không gian</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/lookup">https://en.cppreference.com/w/cpp/language/lookup</a>
+</p>
+</div>

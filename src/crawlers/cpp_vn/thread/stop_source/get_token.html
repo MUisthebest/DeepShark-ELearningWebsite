@@ -1,0 +1,9 @@
+ <h1 class="firstHeading" id="firstHeading">std :: stop_source :: get_token</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">[[Nodiscard]] std :: stop_token get_token () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>    Tìm kiếm (I1 First1, S1 Last1, I2 First2, S2 Last2, Pred = {},<code>stop_token</code>đối tượng liên kết với<code>stop_source</code>trạng thái dừng, nếu<code>stop_source</code>có trạng thái dừng; Nếu không, hãy trả về một mặc định được xây dựng (trống)<code>stop_token</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>MỘT<code>stop_token</code>đối tượng, sẽ trống nếu<code>this-&gt;stop_possible() == false</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/stop_source/get_token">https://en.cppreference.com/w/cpp/thread/stop_source/get_token</a>
+</p>
+</div>

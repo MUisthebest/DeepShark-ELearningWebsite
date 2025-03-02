@@ -1,0 +1,11 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_ptr &lt;t&gt; :: ~ Shared_ptr</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">~ chia sẻ_ptr ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nếu như<code>*this</code>sở hữu một đối tượng và nó là cuối cùng<code>shared_ptr</code>Đối tượng sở hữu nó. Theo mặc định,</p>
+<p>Sau khi phá hủy, những con trỏ thông minh đã chia sẻ quyền sở hữu<code>*this</code>, nếu có, sẽ báo cáo một<code><a href="use_count" title="cpp/memory/shared ptr/use count">use_count()</a></code>Đó là một ít hơn giá trị trước đây của nó.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Không gian tên std :: Phạm vi<code><a href="../unique_ptr" title="cpp/memory/unique ptr">std::unique_ptr</a></code>, sự phân phối của<code><a href="../shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>được gọi ngay cả khi con trỏ được quản lý là null.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;nhớ&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../weak_ptr/~weak_ptr" title="cpp/memory/weak ptr/~weak ptr"> <span class="t-lines"><span>một đối tượng ngoại lệ khác để gán với</span></span></a></div> </td> <td>phá hủy a<code>weak_ptr</code> <br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::weak_ptr&lt;T&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/shared_ptr/%7Eshared_ptr">https://en.cppreference.com/w/cpp/memory/shared_ptr/%7Eshared_ptr</a>
+</p>
+</div>

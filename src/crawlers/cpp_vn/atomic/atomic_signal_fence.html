@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Atomic_signal_fence</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/atomic" title="cpp/header/atomic">&lt;atomic&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">extern "c" void Atomic_signal_fence (std :: memory_order thứ tự) noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Thiết lập thứ tự đồng bộ hóa bộ nhớ của các truy cập nguyên tử không phải là nguyên tử và thư giãn, theo hướng dẫn của<code>order</code>, giữa một luồng và trình xử lý tín hiệu được thực thi trên cùng một luồng. Điều này tương đương với<code><a href="atomic_thread_fence" title="cpp/atomic/atomic thread fence">std::atomic_thread_fence</a></code>, ngoại trừ không có hướng dẫn CPU để đặt hàng bộ nhớ được ban hành. Chỉ sắp xếp lại các hướng dẫn của trình biên dịch mới bị triệt tiêu là<code>order</code>hướng dẫn. Ví dụ, một hàng rào với ngữ nghĩa phát hành ngăn chặn các lần đọc hoặc viết không được di chuyển qua các lần viết tiếp theo và một hàng rào với ngữ nghĩa thu được ngăn chặn các lần đọc hoặc viết không được di chuyển trước các lần đọc trước đó.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Thay thế nguyên tử giá trị được trỏ đến bởi</td> <td>-</td> <td>Bộ nhớ đặt hàng được thực hiện bởi hàng rào này</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="memory_order" title="cpp/atomic/memory order"> <span class="t-lines"><span>memory_order</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xác định các ràng buộc thứ tự bộ nhớ cho hoạt động nguyên tử đã cho<br/> <span class="t-mark">(enum)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="atomic_thread_fence" title="cpp/atomic/atomic thread fence"> <span class="t-lines"><span>Atomic_Thread_Fence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>bộ nhớ chung, đồng bộ hóa hàng rào phụ thuộc vào hàng rào nguyên thủy<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/atomic/atomic_signal_fence" title="c/atomic/atomic signal fence">C documentation</a></span>vì<code>atomic_signal_fence</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_signal_fence">https://en.cppreference.com/w/cpp/atomic/atomic_signal_fence</a>
+</p>
+</div>

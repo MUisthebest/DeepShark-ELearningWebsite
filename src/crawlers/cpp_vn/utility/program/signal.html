@@ -1,0 +1,101 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tín hiệu</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/csignal" title="cpp/header/csignal">&lt;csignal&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">/*Tín hiệu-Handler*/*Tín hiệu (int sig,/*tay cầm tín hiệu*/*trình xử lý);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">bên ngoài "C" bằng cách sử dụng /*-Handler* / = void (int);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark t-mark-expos">.<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">    .</span>)</span> </td> </tr> </table> <p>Thay đổi xử lý tín hiệu<code>sig</code>. Tùy thuộc vào<code>handler</code>, tín hiệu có thể bị bỏ qua, đặt thành mặc định hoặc được xử lý bởi chức năng do người dùng xác định.</p>
+<p>Khi trình xử lý tín hiệu được đặt thành một hàm và tín hiệu xảy ra, nó được xác định cho dù<code>std<span class="sy4">::</span><span class="me2">tín hiệu</span><span class="br0">.</span>sig, <a href="http://en.cppreference.com/w/cpp/utility/program/SIG_strategies"><span class="kw980">Sig_dfl</span></a><span class="br0">)</span></code>sẽ được thực hiện ngay trước khi bắt đầu xử lý tín hiệu. Ngoài ra, việc triển khai có thể ngăn chặn một số bộ tín hiệu được xác định theo triển khai xảy ra trong khi trình xử lý tín hiệu chạy.</p>
+<p>Đối với một số tín hiệu, việc triển khai có thể gọi<code>std<span class="sy4">::</span><span class="me2">tín hiệu</span><span class="br0">.</span>sig, <a href="http://en.cppreference.com/w/cpp/utility/program/SIG_strategies"><span class="kw981">Sig_ign</span></a><span class="br0">)</span></code>khi khởi động chương trình. Đối với phần còn lại, việc thực hiện phải gọi<code>std<span class="sy4">::</span><span class="me2">tín hiệu</span><span class="br0">.</span>sig, <a href="http://en.cppreference.com/w/cpp/utility/program/SIG_strategies"><span class="kw980">Sig_dfl</span></a><span class="br0">)</span></code>.</p>
+<p>(Lưu ý: Posix giới thiệu<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/sigaction.html" rel="nofollow"><code>sigaction</code></a>để chuẩn hóa các hành vi được xác định theo thực hiện này)</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>sig</td> <td>-</td> <td>tín hiệu để đặt trình xử lý tín hiệu thành. Nó có thể là một giá trị được xác định bằng triển khai hoặc một trong các giá trị sau:<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="sig_types" title="cpp/utility/program/SIG types"> <span class="t-lines"><span>Sigabrt</span><span>Sigfpe</span><span>Sigill</span><span>Sigint</span><span>Sigsegv</span><span>Sigterm</span></span></a></div> </td> <td>Xác định các loại tín hiệu<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> </table> </td>
+</tr> <tr class="t-par"> <td>người xử lý</td> <td>-</td> <td>người xử lý tín hiệu. Đây phải là một trong những điều sau đây:<ul>
+<li>
+<code><a href="sig_strategies" title="cpp/utility/program/SIG strategies">SIG_DFL</a></code>vĩ mô. Trình xử lý tín hiệu được đặt thành trình xử lý tín hiệu mặc định.</li>
+<li>
+<code><a href="sig_strategies" title="cpp/utility/program/SIG strategies">SIG_IGN</a></code>vĩ mô. Tín hiệu bị bỏ qua.</li>
+<li>Con trỏ đến một hàm. Chữ ký của hàm phải tương đương với các điều sau:</li>
+</ul> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">extern "c" void fun (int sig);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Trình xử lý tín hiệu trước đó về thành công hoặc<code><a href="sig_err" title="cpp/utility/program/SIG ERR">SIG_ERR</a></code>Khi thất bại (đặt một trình xử lý tín hiệu có thể bị vô hiệu hóa trên một số triển khai).</p>
+<h3 id="Signal_handler">Trình xử lý tín hiệu</h3> <p>Các giới hạn sau đây được áp dụng cho chức năng do người dùng xác định được cài đặt dưới dạng trình xử lý tín hiệu.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <p>Nếu trình xử lý tín hiệu được gọi không phải là kết quả của<code><a href="abort" title="cpp/utility/program/abort">std::abort</a></code>hoặc<code><a href="raise" title="cpp/utility/program/raise">std::raise</a></code>(tín hiệu không đồng bộ), hành vi không được xác định nếu</p>
+<ul>
+<li>Trình xử lý tín hiệu gọi bất kỳ chức năng nào trong thư viện tiêu chuẩn, ngoại trừ</li>
+<ul>
+<li> <code><a href="abort" title="cpp/utility/program/abort">std::abort</a></code> </li>
+<li> <code><a href="_exit" title="cpp/utility/program/ Exit">std::_Exit</a></code> </li>
+<li> <code><a href="quick_exit" title="cpp/utility/program/quick exit">std::quick_exit</a></code> </li>
+<li> <code>std::signal</code>Với đối số đầu tiên là số lượng tín hiệu hiện đang được xử lý (trình xử lý Async có thể tự đăng ký lại, nhưng không phải là các tín hiệu khác).</li>
+</ul>
+<li>Trình xử lý tín hiệu đề cập đến bất kỳ đối tượng nào có thời lượng lưu trữ tĩnh không<span class="t-rev-inl t-since-cxx11"><span><code><a href="../../atomic/atomic" title="cpp/atomic/atomic">std::atomic</a></code>hoặc</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span><span class="kw4">bay hơi</span> <a href="http://en.cppreference.com/w/cpp/utility/program/sig_atomic_t"><span class="kw979">Điều đó cho tất cả<span class="me2">sig_atomic_t</span></span></a>.</li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <p>MỘT<i>Hoạt động nguyên tử không khóa đơn giản</i>là một lời cầu khẩn của một chức năng<code>f</code>từ<a href="../../header/atomic" title="cpp/header/atomic"><code>&lt;atomic&gt;</code></a><span class="t-rev-inl t-since-cxx23"><span>hoặc<a href="../../header/stdatomic.h" title="cpp/header/stdatomic.h"><code>&lt;stdatomic.h&gt;</code></a></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>, như vậy:</p>
+<ul>
+<li> <code>f</code>là chức năng<code><a href="../../atomic/atomic_is_lock_free" title="cpp/atomic/atomic is lock free">std::atomic_is_lock_free</a></code>Thì</li>
+<li> <code>f</code>là chức năng thành viên<code>is_lock_free</code>(ví dụ.<a href="../../atomic/atomic/is_lock_free" title="cpp/atomic/atomic/is lock free"><code>std::atomic::is_lock_free()</code></a>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.</li>
+<li> <code>f</code>là một chức năng thành viên không tĩnh của<code><a href="../../atomic/atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>Thì</li>
+<li> <code>f</code>là một hàm không thành viên và tham số đầu tiên của<code>f</code>và kết quả của việc chuyển đổi bằng<i>không ngụ ý rằng</i> <a href="http://en.cppreference.com/w/cpp/atomic/atomic_flag"><span class="kw2091">Điều đó cho tất cả<span class="me2">Atomic_flag</span></span></a><span class="sy2">*</span>Thì</li>
+<li> <code>f</code>là chức năng thành viên không tĩnh được gọi trên một đối tượng<code>obj</code>Đó là một quan điểm so với đầu tiên<code>obj.is_lock_free()</code>        std :: Common_Reference_T &lt;<code>true</code>, hoặc</li>
+<li> <code>f</code>là một hàm không phải thành viên và đối với mọi đối số con trỏ đến nguyên tử<code>arg</code>Mẫu &lt;class ... vs&gt;<code>f</code>Thì<code><a href="http://en.cppreference.com/w/cpp/atomic/atomic_is_lock_free"><span class="kw2070">Điều đó cho tất cả<span class="me2">ATOMIC_IS_LOCK_FREE</span></span></a><span class="br0">.</span>arg<span class="br0">)</span></code>        std :: Common_Reference_T &lt;<code>true</code>.</li>
+</ul> <p>Hành vi không được xác định nếu bất kỳ trình xử lý tín hiệu nào thực hiện bất kỳ điều nào sau đây:</p>
+<ul>
+<li>gọi đến bất kỳ chức năng thư viện nào, ngoại trừ các hoạt động nguyên tử không khóa đơn giản và<i>an toàn tín hiệu</i>các chức năng (lưu ý, đặc biệt, phân bổ động không an toàn tín hiệu):</li>
+<ul>
+<li> <code>std::signal</code>Với đối số đầu tiên là số lượng tín hiệu hiện được xử lý (Trình xử lý tín hiệu có thể tự đăng ký lại, nhưng không phải là các tín hiệu khác).</li>
+<li>Tại điểm trong mã<code><a href="../../types/numeric_limits" title="cpp/types/numeric limits">std::numeric_limits</a></code> </li>
+<li> <code><a href="_exit" title="cpp/utility/program/ Exit">std::_Exit</a></code> </li>
+<li> <code><a href="abort" title="cpp/utility/program/abort">std::abort</a></code> </li>
+<li> <code><a href="quick_exit" title="cpp/utility/program/quick exit">std::quick_exit</a></code> </li>
+<li>Các chức năng thành viên của<code><a href="../initializer_list" title="cpp/utility/initializer list">std::initializer_list</a></code>Đối tượng lưu trữ<code>std::initializer_list</code>#include &lt;Istream&gt;<code><a href="../../iterator/begin" title="cpp/iterator/begin">std::begin</a></code>Và<code><a href="../../iterator/end" title="cpp/iterator/end">std::end</a></code> </li>
+<li> <code><a href="../forward" title="cpp/utility/forward">std::forward</a></code>Thì<code>std::move</code>Thì<code><a href="../move_if_noexcept" title="cpp/utility/move if noexcept">std::move_if_noexcept</a></code> </li>
+<li>Tất cả các chức năng từ<a href="../../header/type_traits" title="cpp/header/type traits"><code>&lt;type_traits&gt;</code></a> </li>
+<li> <code><a href="../../string/byte/memcpy" title="cpp/string/byte/memcpy">std::memcpy</a></code>Và<code><a href="../../string/byte/memmove" title="cpp/string/byte/memmove">std::memmove</a></code> </li>
+</ul>
+<li>Truy cập vào một đối tượng có thời lượng lưu trữ luồng</li>
+<li>Một<a href="../../language/dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</li>
+<li>Một<a href="../../language/throw" title="cpp/language/throw"><code>throw</code></a>  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</li>
+<li>Nhập vào a<a href="../../language/try_catch" title="cpp/language/try catch"><code>try</code></a>Khối, bao gồm<a href="../../language/function-try-block" title="cpp/language/function-try-block">function-<code>try</code>-block</a> </li>
+<li>khởi tạo một biến tĩnh thực hiện<a href="../../language/initialization#Non-local_variables" title="cpp/language/initialization">dynamic non-local initialization</a>(bao gồm cả sự chậm trễ cho đến khi sử dụng ODR đầu tiên)</li>
+<li>Chờ hoàn thành việc khởi tạo bất kỳ biến nào với thời lượng lưu trữ tĩnh do một luồng khác đồng thời khởi tạo nó</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>Nếu chức năng xác định người dùng trả về khi xử lý<code><a href="sig_types" title="cpp/utility/program/SIG types">SIGFPE</a></code>Thì<code><a href="sig_types" title="cpp/utility/program/SIG types">SIGILL</a></code>Thì<code><a href="sig_types" title="cpp/utility/program/SIG types">SIGSEGV</a></code>hoặc bất kỳ tín hiệu xác định thực hiện nào khác chỉ định một ngoại lệ tính toán, hành vi không được xác định.</p>
+<p>Nếu trình xử lý tín hiệu được gọi là kết quả của<code><a href="abort" title="cpp/utility/program/abort">std::abort</a></code>hoặc<code><a href="raise" title="cpp/utility/program/raise">std::raise</a></code>(Tín hiệu đồng bộ), hành vi không được xác định nếu trình xử lý tín hiệu gọi<code><a href="raise" title="cpp/utility/program/raise">std::raise</a></code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx14">
+<td> <p>Khi vào trình xử lý tín hiệu, trạng thái của<a href="../../numeric/fenv" title="cpp/numeric/fenv">floating-point environment</a>và các giá trị của tất cả các đối tượng không được xác định, ngoại trừ</p>
+<ul><li>Mẫu &lt;class execPolicy, class forwardIt, kích thước lớp&gt;<span class="kw4">bay hơi</span> <a href="http://en.cppreference.com/w/cpp/utility/program/sig_atomic_t"><span class="kw979">Điều đó cho tất cả<span class="me2">sig_atomic_t</span></span></a> </li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>Đối tượng của không khóa<code><a href="../../atomic/atomic" title="cpp/atomic/atomic">std::atomic</a></code>loại</li>
+<li>tác dụng phụ được hiển thị thông qua<code><a href="../../atomic/atomic_signal_fence" title="cpp/atomic/atomic signal fence">std::atomic_signal_fence</a></code> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Khi trả về từ trình xử lý tín hiệu, giá trị của bất kỳ đối tượng nào được sửa đổi bởi trình xử lý tín hiệu không<span class="kw4">bay hơi</span> <a href="http://en.cppreference.com/w/cpp/utility/program/sig_atomic_t"><span class="kw979">Điều đó cho tất cả<span class="me2">sig_atomic_t</span></span></a>hoặc không khóa<code><a href="../../atomic/atomic" title="cpp/atomic/atomic">std::atomic</a></code>là không xác định.</p>
+</td> <td><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span></td>
+</tr> <tr class="t-rev t-since-cxx14">
+<td> <p>Một cuộc gọi đến chức năng<code>signal()</code> <a href="../../atomic/memory_order" title="cpp/atomic/memory order">synchronizes-with</a>Bất kỳ kết quả gọi của người xử lý tín hiệu.</p>
+<p>Nếu một trình xử lý tín hiệu được thực thi là kết quả của cuộc gọi đến<code><a href="raise" title="cpp/utility/program/raise">std::raise</a></code>(đồng bộ), sau đó việc thực hiện người xử lý là<i>    std :: Thread t1 (nhà sản xuất);</i>sự cầu khẩn của<code>std::raise</code>Và<i>{</i>sự trở lại từ nó và chạy trên cùng một luồng với<code>std::raise</code>. Thực hiện trình xử lý cho các tín hiệu khác là<i>    v.push_back (i * 2 + 1); // Lỗi: Cuộc đua dữ liệu</i>Đối với phần còn lại của chương trình và chạy trên một chủ đề không xác định.</p>
+<p>Hai quyền truy cập vào cùng một đối tượng của loại<span class="kw4">bay hơi</span> <a href="http://en.cppreference.com/w/cpp/utility/program/sig_atomic_t"><span class="kw979">Điều đó cho tất cả<span class="me2">sig_atomic_t</span></span></a>Không dẫn đến một cuộc đua dữ liệu nếu cả hai xảy ra trong cùng một luồng, ngay cả khi một hoặc nhiều xảy ra trong trình xử lý tín hiệu. Đối với mỗi lần gọi trình xử lý tín hiệu, các đánh giá được thực hiện bởi luồng gọi một bộ xử lý tín hiệu có thể được chia thành hai nhóm A và B, sao cho không có đánh giá nào trong B<i>cho kiểm soát chuỗi phụ thuộc hạt mịn.</i>đánh giá trong A và các đánh giá của<span class="kw4">bay hơi</span> <a href="http://en.cppreference.com/w/cpp/utility/program/sig_atomic_t"><span class="kw979">Điều đó cho tất cả<span class="me2">sig_atomic_t</span></span></a>các đối tượng lấy các giá trị như thể tất cả các đánh giá trong một<a href="../../atomic/memory_order" title="cpp/atomic/memory order">happened-before</a>Việc thực hiện trình xử lý tín hiệu và thực hiện trình xử lý tín hiệu<i>và tải trọng trong luồng B đọc một giá trị được viết bởi cửa hàng trong luồng A, sau đó là cửa hàng trong luồng a</i>Tất cả các đánh giá trong B.</p>
+</td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Posix yêu cầu điều đó<code>signal</code>là an toàn chủ đề, và<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/V2_chap02.html#tag_15_04" rel="nofollow">specifies a list of async-signal-safe library functions</a>có thể được gọi từ bất kỳ trình xử lý tín hiệu.</p>
+<p>Trình xử lý tín hiệu dự kiến ​​sẽ có<a href="../../language/language_linkage" title="cpp/language/language linkage">C linkage</a>và, nói chung, chỉ sử dụng các tính năng từ tập hợp con chung của C và C ++. Tuy nhiên, các triển khai phổ biến cho phép một hàm có liên kết C ++ được sử dụng như một trình xử lý tín hiệu.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Csignal&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>không gian tên</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>không gian tên</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>{</li></ul>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3756" rel="nofollow">LWG 3756</a> </td> <td>C ++ 17</td> <td>Constexpr unanyfunction for_each (đầu vào đầu tiên, đầu vào cuối cùng, không có chức năng f)<code><a href="../../atomic/atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>    STD dễ bay hơi :: sig_atomic_t gsignalstatus;</td> <td>Một chức năng được sử dụng ODR trong các trường hợp sau:</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="raise" title="cpp/utility/program/raise"> <span class="t-lines"><span>nâng lên</span></span></a></div> </td> <td>Chạy bộ xử lý tín hiệu cho tín hiệu cụ thể<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../atomic/atomic_signal_fence" title="cpp/atomic/atomic signal fence"> <span class="t-lines"><span>Atomic_Signal_Fence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>hàng rào giữa một luồng và trình xử lý tín hiệu được thực thi trong cùng một luồng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/program/signal" title="c/program/signal">C documentation</a></span>vì<code>signal</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/program/signal">https://en.cppreference.com/w/cpp/utility/program/signal</a>
+</p>
+</div>

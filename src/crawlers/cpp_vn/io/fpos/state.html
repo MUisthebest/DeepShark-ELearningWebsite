@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FPOS &lt;tate&gt; :: State</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Nhà nước () const;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">trạng thái void (State St);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Quản lý trạng thái vị trí tập tin.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Trả về giá trị của trạng thái vị trí tệp.</div> <div class="t-li1">
+<span class="t-li">2)</span>Thay thế trạng thái vị trí tệp bằng giá trị của<code>st</code>.</div> <p>Cho các chuyên ngành của<code><a href="../fpos" title="cpp/io/fpos">std::fpos</a></code>được sử dụng trong thư viện tiêu chuẩn,<code>State</code>luôn luôn<code><a href="../../string/multibyte/mbstate_t" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>    toán tử &gt;&gt; (istream &amp;&amp; st, t &amp;&amp; value);</td> <td>-</td> <td>Giá trị mới cho nhà nước</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Giá trị hiện tại của<code>fpos</code>tình trạng.</div> <div class="t-li1">
+<span class="t-li">2)</span>Gán cho đã cho</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CWchar&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue441" rel="nofollow">LWG 441</a> </td> <td>C ++ 98</td> <td>đã được sắp xếp bởi<span class="t-v">(1)</span> <span class="kw4">hằng số</span>{<span class="kw4">hằng số</span>trong<a href="../../header/ios" title="cpp/header/ios">synopsis</a>)</td> <td>Được cho<span class="kw4">hằng số</span> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../string/multibyte/mbstate_t" title="cpp/string/multibyte/mbstate t"> <span class="t-lines"><span>mbstate_t</span></span></a></div> </td> <td>Thông tin trạng thái chuyển đổi cần thiết để lặp lại chuỗi ký tự multibyte<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/fpos/state">https://en.cppreference.com/w/cpp/io/fpos/state</a>
+</p>
+</div>

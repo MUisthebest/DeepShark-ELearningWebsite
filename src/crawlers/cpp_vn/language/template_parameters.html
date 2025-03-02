@@ -1,0 +1,200 @@
+ <h1 class="firstHeading" id="firstHeading">Tham số mẫu và đối số mẫu</h1> <h3 id="Template_parameters">là không xác định.</h3> <p>Không có mẫu nào được xác định trong<a href="templates" title="cpp/language/templates">template</a>được tham số hóa bởi một hoặc nhiều tham số mẫu, được biểu thị trong<span class="t-spar">danh sách tham số</span>của cú pháp khai báo mẫu:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <span class="t-spar">tuyên ngôn</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Mỗi tham số trong<span class="t-spar">danh sách tham số</span>Có lẽ:</p>
+<ul>
+<li>một tham số mẫu không kiểu;</li>
+<li>một tham số mẫu loại;</li>
+<li>Một tham số mẫu mẫu.</li>
+</ul> <h4 id="Non-type_template_parameter">Tham số mẫu không thuộc loại</h4> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu</span> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu</span> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>=</code> <span class="t-spar">#include &lt;Istream&gt;</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu</span> <code>...</code> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">};</span> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">};</span> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>=</code> <span class="t-spar">#include &lt;Istream&gt;</span> </td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">};</span> <code>...</code> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1-2)</span>Một tham số mẫu không thuộc loại có tên tùy chọn và giá trị mặc định tùy chọn.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Một mẫu không thuộc loại<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>Một mẫu loại</div> <div class="t-li1">
+<span class="t-li">          lớp T,</span>Một tham số mẫu không thuộc loại với loại trình giữ chỗ.<span class="t-spar">};</span>có thể là bất kỳ loại nào bao gồm cả trình giữ chỗ<a href="auto" title="cpp/language/auto"><code>auto</code></a>(chẳng hạn như đơn giản<code>auto</code>Thì<code>auto *</code>hoặc<code>auto &amp;</code>)<span class="t-rev-inl t-since-cxx20"><span>có thể đại diện cho các phân số của ve.<a href="class_template_argument_deduction" title="cpp/language/class template argument deduction">placeholder for a deduced class type</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, hoặc<code>decltype(auto)</code>.</div> <p>Tham số mẫu không phải là<i>loại cấu trúc</i>, là một trong những loại sau (tùy chọn đủ điều kiện CV, vòng loại bị bỏ qua):</p>
+<ul>
+<li> <a href="reference#lvalue_references" title="cpp/language/reference">lvalue reference type</a>(đối tượng hoặc chức năng);</li>
+<li>chồng chéo với container.<a href="type" title="cpp/language/type">integral type</a>Số lượng các yếu tố để sao chép</li>
+<li>Một<a href="pointer" title="cpp/language/pointer">pointer type</a>(đối tượng hoặc chức năng);</li>
+<li>Một<a href="pointer#Pointers_to_members" title="cpp/language/pointer">pointer to member type</a>(đối tượng thành viên hoặc chức năng thành viên);</li>
+<li>chồng chéo với container.<a href="enum" title="cpp/language/enum">enumeration type</a>Số lượng các yếu tố để sao chép</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>Số lượng các yếu tố để sao chép</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul>
+<li>Một<a href="type" title="cpp/language/type">floating-point type</a>Số lượng các yếu tố để sao chép</li>
+<li>Một<a href="../named_req/literaltype" title="cpp/named req/LiteralType">literal class type</a>với các thuộc tính sau:</li>
+<ul>
+<li>Tất cả các lớp cơ sở và các thành viên dữ liệu phi tĩnh là công khai và không thể sửa chữa và</li>
+<li>Các loại của tất cả các lớp cơ sở và các thành viên dữ liệu phi tĩnh là các loại cấu trúc hoặc (có thể là đa chiều) của chúng.</li>
+</ul>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Các loại mảng và chức năng có thể được viết trong khai báo mẫu, nhưng chúng được tự động thay thế bằng con trỏ sang đối tượng và con trỏ để hoạt động khi thích hợp.</p>
+<p>Khi tên của tham số mẫu không kiểu được sử dụng trong một biểu thức trong phần thân của mẫu lớp, nó là một<a href="value_category" title="cpp/language/value category">prvalue</a>Trừ khi loại của nó là loại tham chiếu lvalue<span class="t-rev-inl t-since-cxx20"><span>, hoặc trừ khi loại của nó là loại lớp</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>.</p>
+<p>Tham số mẫu của biểu mẫu<code>class Foo</code>không phải là một tham số mẫu không tên không tên của loại<code>Foo</code>, ngay cả khi khác<code>class Foo</code> <a href="elaborated_type_specifier" title="cpp/language/elaborated type specifier">elaborated type specifier</a>Và<code>class Foo x;</code>tuyên bố<code>x</code>thuộc loại<code>Foo</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Loại tham số mẫu không phải kiểu<code>auto</code><span class="t-rev-inl t-since-cxx20"><span>, một người giữ chỗ cho một loại lớp được suy luận</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, hoặc<code>decltype(auto)</code>). Khấu trừ được thực hiện như thể bằng cách suy ra loại biến<code>x</code>Trong tuyên bố được phát minh<code>T x = template-argument;</code>là<code>T</code>là loại được khai báo của tham số mẫu. Nếu loại suy luận không được phép cho tham số mẫu không thuộc loại, chương trình sẽ không được hình thành.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;tự động n&gt;</pre></div> <p>struct b { / * ... * /};</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>MỘT<a href="identifiers" title="cpp/language/identifiers">identifier</a>B &lt;5&gt; B1;   // OK: Loại tham số mẫu không thuộc loại là int<code>T</code>B &lt;'a'&gt; b2; // OK: Loại tham số mẫu không thuộc loại là char<code>const T</code>B &lt;2.5&gt; B3; // Lỗi (cho đến khi C ++ 20): Loại tham số mẫu không phải là gấp đôi<i> </i>// c ++ 20 suy luận loại trình giữ chỗ, đối số mẫu lớp được suy ra tại<a href="constexpr#Constant_destruction" title="cpp/language/constexpr">constant destruction</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// Trang web gọi</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h4 id="Type_template_parameter">Mẫu &lt;std :: mảng mảng&gt;</h4> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">lớp My_Vector { / * ... * /};</span> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">lớp My_Vector { / * ... * /};</span> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>=</code> <span class="t-spar">#include &lt;Istream&gt;</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">lớp My_Vector { / * ... * /};</span> <code>...</code> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Loại hạn chế</span> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Loại hạn chế</span> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>=</code> <span class="t-spar">#include &lt;Istream&gt;</span> </td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Loại hạn chế</span> <code>...</code> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">lớp My_Vector { / * ... * /};</span> </td> <td>-</td> <td>nhiều nhất là một chuyển đổi đủ điều kiện, và<code>typename</code>hoặc<code>class</code>Mẫu &lt;Auto ...&gt;</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Loại hạn chế</span> </td> <td>-</td> <td>Cấu trúc C {};<a href="constraints" title="cpp/language/constraints">concept</a> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>C &lt;'c', 0, 2l, nullptr&gt; x; // ĐƯỢC RỒI<div class="cpp source-cpp"><pre data-language="cpp">tên là một tham số mẫu không thuộc loại loại</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>biểu thị một đối tượng thời lượng lưu trữ tĩnh của loại<div class="cpp source-cpp"><pre data-language="cpp">, được gọi là a</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Đối tượng tham số mẫu<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>.<div class="cpp source-cpp"><pre data-language="cpp">, có giá trị của đối số mẫu tương ứng sau khi nó được chuyển đổi thành loại tham số mẫu. Tất cả các tham số mẫu như vậy trong chương trình cùng loại với cùng một giá trị biểu thị cùng một đối tượng tham số mẫu. Một đối tượng tham số mẫu sẽ có</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span>Cấu trúc a<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>    Toán tử bool bạn bè == (const A &amp;, const a &amp;) = mặc định;<div class="cpp source-cpp"><pre data-language="cpp">};</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">từ_sys</span> <a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>.<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;a a&gt;</pre></div>
+</div> <p>void f ()</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    &amp;Một;                       // ĐƯỢC RỒI</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>    const a &amp; ra = a, &amp; rb = a; // cả hai bị ràng buộc với cùng một đối tượng tham số mẫu<code>P</code>    get_leap_second_info (const std :: Chrono :: UTC_TIME &lt;feluration&gt; &amp; ut);<span class="t-spar">Loại hạn chế</span>    khẳng định (&amp; ra == &amp; rb);       // vượt qua<code>C</code>Giới thiệu a<a href="constraints" title="cpp/language/constraints">constraint-expression</a> <code>E</code>}</p>
+<ul>
+<li>nếu như<code>Q</code>khoảng cách<code>C</code>Loại tham số mẫu</li>
+<ul>
+<li>nếu như<code>P</code>Kẻ tham số loại<code>E</code>Kẻ tham số loại<code>C&lt;P&gt;</code> </li>
+<li>    toán tử &gt;&gt; (basic_istream &lt;char, đặc điểm&gt; &amp; st, không dấu char* s);<code>P</code>Kẻ tham số loại<code>E</code>Kẻ tham số loại<code>(C&lt;P&gt; &amp;&amp; ...)</code> </li>
+</ul>
+<li>nếu như<code>Q</code>khoảng cách<code>C&lt;A1,A2...,AN&gt;</code>, sau đó<code>E</code>khoảng cách<code>C&lt;P,A1,A2,...AN&gt;</code>hoặc<code>(C&lt;P,A1,A2,...AN&gt; &amp;&amp; ...)</code>Yêu cầu STD :: Inone</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">. Không có sự khác biệt giữa các từ khóa này trong khai báo tham số mẫu loại</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h4 id="Template_template_parameter">tên của một</h4> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <span class="t-spar">lớp My_Vector { / * ... * /};</span> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <span class="t-spar">lớp My_Vector { / * ... * /};</span> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>=</code> <span class="t-spar">#include &lt;Istream&gt;</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <span class="t-spar">lớp My_Vector { / * ... * /};</span> <code>...</code> <span class="t-spar">tên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">lớp My_Vector { / * ... * /};</span> </td> <td>-</td> <td> <code>class</code> <span class="t-rev-inl t-since-cxx17"><span>hoặc<code>typename</code></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Một tham số mẫu loại với mặc định.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;class t = void&gt;</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>struct my_op_functor { / * ... * /};<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>Một mẫu loại</div> <p>Mẫu &lt;typename ... ts&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">lớp my_tuple { / * ... * /};</pre></div> <h4 id="Name_resolution_for_template_parameters">Một tham số mẫu loại bị ràng buộc mà không có mặc định.</h4> <p>Mẫu &lt;my_concept t&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">lớp my_constrained_vector { / * ... * /};</pre></div> <p>Một tham số mẫu loại bị ràng buộc với mặc định.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;my_concept t = void&gt;</pre></div> <p>lớp my_constrained_op_functor { / * ... * /};</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Một mẫu loại bị ràng buộc</pre></div> <p>Mẫu &lt;my_concept ... ts&gt;<a href="dependent_name#Dependent_types" title="cpp/language/dependent name">dependent</a>lớp my_constrained_tuple { / * ... * /};</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Tên của tham số là tùy chọn:</pre></div> <h3 id="Template_arguments">// khai báo của các mẫu được hiển thị ở trên:</h3> <p>Mẫu &lt;Slass&gt;<a href="class_template" title="cpp/language/class template">class templates</a>lớp My_Vector;<span class="t-rev-inl t-since-cxx17"><span>Thì<a href="class_template_argument_deduction" title="cpp/language/class template argument deduction">deduced from the initializer</a>Thì</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Mẫu &lt;class = void&gt;<a href="function_template" title="cpp/language/function template">function templates</a>cấu trúc my_op_functor;<a href="template_argument_deduction" title="cpp/language/template argument deduction">deduced from the context</a>Mẫu &lt;Typename ...&gt;</p>
+<p>lớp my_tuple;<a class="mw-redirect" href="type-id" title="cpp/language/type-id">type-id</a>Trong phần thân của khai báo mẫu, tên của một tham số loại là một tên typedef có bí danh loại được cung cấp khi mẫu được khởi tạo.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mỗi tham số bị ràng buộc</pre></div> <h4 id="Template_non-type_arguments">Q đang chỉ định khái niệm</h4> <p>Theo các quy tắc sau:</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <ul>
+<li>(không có danh sách đối số),<a href="constant_expression" title="cpp/language/constant expression">converted constant expression</a>không phải là gói tham số,</li>
+<li>đơn giản là<a href="storage_duration" title="cpp/language/storage duration">storage duration</a>và a<a href="storage_duration#Linkage" title="cpp/language/storage duration">linkage</a>là một gói tham số,<span class="t-rev-inl t-since-cxx11"><span>hoặc<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>giá trị.</li>
+<li>là một biểu hiện gấp</li>
+<li>Mẫu &lt;Typename T&gt;</li>
+<li>Khái niệm C1 = Đúng;<code>&amp;Class::Member</code>Mẫu &lt;Typename ... TS&gt; // Khái niệm Variadic<span class="t-rev-inl t-since-cxx11"><span>hoặc<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>giá trị.</li>
+</ul> <p>Khái niệm C2 = Đúng;</p>
+</td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <p>Mẫu &lt;typename t, typename u&gt;<a href="constant_expression" title="cpp/language/constant expression">converted constant expression</a>Khái niệm C3 = Đúng;</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>mẫu &lt;c1 t&gt; struct s1; // ràng buộc-biểu hiện là C1 &lt;t&gt;<i>và không có thành viên khả thi</i>hoặc<i>Không làm mất hiệu lực bất kỳ tài liệu tham khảo nào về các yếu tố của deque.</i>kiểu<span class="t-rev-inl t-since-cxx20"><span>mẫu &lt;c1 ... t&gt; struct s2; // ràng buộc-biểu hiện là (C1 &lt;t&gt; &amp;&amp; ...)</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>mẫu &lt;c2 ... t&gt; struct s3; // ràng buộc-biểu hiện là (c2 &lt;t&gt; &amp;&amp; ...)</p>
+<ul>
+<li>Mẫu &lt;C3 &lt;Int&gt; T&gt; Struct S4; // Biểu hiện ràng buộc là C3 &lt;T, Int&gt;<a href="reference_initialization" title="cpp/language/reference initialization">reference initialization</a>);</li>
+<li>Một<a href="string_literal" title="cpp/language/string literal">string literal</a>Số lượng các yếu tố để sao chép</li>
+<li>(Nói cách khác, việc thêm một khai báo chức năng mới sau khi định nghĩa mẫu không hiển thị nó, ngoại trừ thông qua ADL).<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>Số lượng các yếu tố để sao chép</li>
+<li>Mẫu &lt;C3 &lt;Int&gt; ... T&gt; Struct S5; // ràng buộc-biểu hiện là (C3 &lt;t, int&gt; &amp;&amp; ...)<code>__func__</code>Số lượng các yếu tố để sao chép</li>
+<li>Tham số mẫu mẫu<span class="t-rev-inl t-since-cxx20"><span>Kẻ tham số loại</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>.</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Kẻ tham số loại</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h4 id="Template_type_arguments">Kẻ tham số loại</h4> <p>Kẻ tham số loại<a href="type#Type_naming" title="cpp/language/type">type-id</a>Một tham số mẫu mẫu với một tên tùy chọn.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Một tham số mẫu mẫu có tên tùy chọn và mặc định.</pre></div> <h4 id="Template_template_arguments">Một mẫu mẫu</h4> <p>với một tên tùy chọn.<a href="identifiers#In_expressions" title="cpp/language/identifiers">id-expression</a>Trong phần thân của khai báo mẫu, tên của tham số này là một tên mẫu (và các đối số cần được khởi tạo).</p>
+<p>Mẫu &lt;Typename T&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">lớp my_array {};</pre></div> <p> <code>A</code>// hai tham số mẫu và một tham số mẫu mẫu:<code>P</code>Thì<code>P</code>// thực hiện đầu tiên<i>};</i>(1,3)<code>A</code>Đó là hành vi không xác định để khai báo chuyên môn đầy đủ hoặc một phần của bất kỳ mẫu biến thư viện tiêu chuẩn nào, ngoại trừ khi được phép rõ ràng.<span class="t-rev-inl t-since-cxx11"><span>Nếu như<code>P</code>Bản đồ lớp<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>{<code>A</code>    C &lt;h&gt; khóa;</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span></p>
+<p>    Giá trị C &lt;v&gt;;<code>P</code>khoảng cách<i>};</i>Độ phân giải tên cho các tham số mẫu<code>A</code>Tên của một tham số mẫu không được phép được xác định lại trong phạm vi của nó (bao gồm cả phạm vi lồng nhau). Một tham số mẫu không được phép có cùng tên với tên mẫu.<code>P</code>Mẫu &lt;class T, int n&gt;<code>A</code>lớp y<a href="function_template" title="cpp/language/function template">function templates</a>{<code>X</code>    int t;      // Lỗi: Tham số mẫu được xác định lại<code>A</code>    void f ()</p>
+<ul>
+<li>    {<code>P</code>hoặc<code>A</code>.</li>
+<li>        char t; // Lỗi: Tham số mẫu được xác định lại<code>X</code>    }<code>PP</code>};<code>AA</code> <span class="t-rev-inl t-since-cxx11"><span>Nếu như<code>PP</code>Mẫu &lt;Lớp X&gt;<code>AA</code>Lớp X; // Lỗi: Tham số mẫu được xác định lại<code>PP...</code>; nếu không thì,</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> <code>AA</code>Trong định nghĩa của một thành viên của một mẫu lớp xuất hiện bên ngoài định nghĩa mẫu lớp, tên của một thành viên của mẫu lớp ẩn tên của tham số mẫu của bất kỳ mẫu lớp nào kèm theo, nhưng không phải là tham số mẫu của thành viên nếu thành viên là mẫu hoặc mẫu chức năng.<code>PP</code>.</li>
+</ul> <p>Mẫu &lt;Class T&gt;<code>P</code>Cấu trúc a<code>A</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    struct b {};<a class="external text" href="https://wg21.link/p0522r0" rel="nofollow">P0522R0</a>    typedef void c;<code>A</code>    void f ();<code>P</code> </p>
+<p>    Mẫu &lt;class u&gt;<a class="external text" href="https://wg21.cmeerw.net/cwg/issue150" rel="nofollow">CWG#150</a>    void g (u);</p>
+<ul>
+<li> <a class="external text" href="https://gcc.gnu.org/gcc-7/changes.html#cxx" rel="nofollow">GCC</a>};</li>
+<li> <a class="external text" href="https://clang.llvm.org/cxx_status.html#p0522" rel="nofollow">Clang</a> </li>
+<li> <a class="external text" href="https://docs.microsoft.com/en-us/cpp/overview/visual-cpp-language-conformance" rel="nofollow">Microsoft Visual Studio</a>Mẫu &lt;Class B&gt;</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Vô hiệu A &lt;b&gt; :: f ()</pre></div> <h4 id="Default_template_arguments">{</h4> <p>    B B; // a của B, không phải tham số mẫu<code>=</code>}<span class="t-rev-inl t-since-cxx11"><span> </span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<p>Mẫu &lt;Class B&gt;<span class="t-rev-inl t-since-cxx14"><span>Mẫu &lt;lớp C&gt;</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>Vô hiệu A &lt;b&gt; :: G (C)<span class="t-rev-inl t-since-cxx11"><span>{</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>    B B; // a của B, không phải tham số mẫu<span class="t-rev-inl t-since-cxx11"><span>    C C; // tham số mẫu c, không phải A C của</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<p>}</p>
+<ul>
+<li>Trong định nghĩa của một thành viên của một mẫu lớp xuất hiện bên ngoài không gian tên chứa định nghĩa mẫu lớp, tên của một tham số mẫu ẩn tên của một thành viên của không gian tên này.<a href="class_template" title="cpp/language/class template">class template</a>không gian tên n<a href="member_template" title="cpp/language/member template">member templates</a>{<a class="external text" href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=53856" rel="nofollow">GCC bug 53856</a>)</li>
+<li>TRONG<a href="friend#Template_friends" title="cpp/language/friend">friend class template</a>Tuyên bố</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <ul><li>    lớp C {};<a href="function_template" title="cpp/language/function template">function template</a> </li></ul> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>    Mẫu &lt;Class T&gt;</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>    lớp b</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    {</pre></div> <p>        void f (t);</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    };</pre></div> <p>}<code>&gt;</code> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;lớp C&gt;</pre></div> <p>Void N :: B &lt;c&gt; :: F (c)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p><a href="access" title="cpp/language/access">Member access</a>    C b; // C là tham số mẫu, không phải n :: c</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <p>Trong định nghĩa của một mẫu lớp hoặc trong định nghĩa của một thành viên của một mẫu như vậy xuất hiện bên ngoài định nghĩa mẫu, cho mỗi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Lớp cơ sở, nếu tên của lớp cơ sở hoặc tên của một thành viên của lớp cơ sở giống như tên của tham số mẫu, tên lớp cơ sở hoặc tên thành viên ẩn tên tham số mẫu.</pre></div> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <h4 id="Template_argument_equivalence">Cấu trúc a</h4> <p>{<a href="templates#template-id" title="cpp/language/templates">template-ids</a>    struct b {};</p>
+<p>    int c;<i>    int y;</i>};</p>
+<ul>
+<li> </li>
+<li>Mẫu &lt;Lớp B, Lớp C&gt;</li>
+<li>Struct X: A</li>
+<li>{</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>    B B; // a's b<code>std::nullptr_t</code> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul>
+<li>    C b; // Lỗi: A C's C không phải là tên loại</li>
+<li>};</li>
+<li>Đối số mẫu</li>
+<li>Để một mẫu được khởi tạo, mọi tham số mẫu (loại, không kiểu hoặc mẫu) phải được thay thế bằng một đối số mẫu tương ứng. Vì</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>, các đối số được cung cấp rõ ràng<code>auto</code>Tên cho mục đích liên kết</p>
+<div class="cpp source-cpp"><pre data-language="cpp">hoặc mặc định. Vì</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="wikitable sortable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_nontype_template_parameter_auto" title="cpp/feature test"><code>__cpp_nontype_template_parameter_auto</code></a></td> <td><span class="nu0">, khi toán hạng là tên của một đối tượng không bay hơi có thời lượng lưu trữ tự động, đây không phải là tham số hàm hoặc tham số mệnh đề bắt và phạm vi của họ không mở rộng qua khối thử trong cùng (nếu có khối thử).</span></td> <td><span class="t-mark">Dest_at</span></td> <td>Tuyên bố<a href="#Non-type_template_parameter">non-type template parameters</a>với<code>auto</code> </td>
+</tr> <tr> <td><a href="../feature_test#cpp_template_template_args" title="cpp/feature test"><code>__cpp_template_template_args</code></a></td> <td><span class="nu0">201611l</span></td> <td>
+<span class="t-mark">, các đối số được cung cấp rõ ràng,</span><br/><span class="t-mark">(Dr)</span>
+</td> <td>Kết hợp của<a href="#Template_template_arguments">template template-arguments</a> </td>
+</tr> <tr> <td rowspan="2"><a href="../feature_test#cpp_nontype_template_args" title="cpp/feature test"><code>__cpp_nontype_template_args</code></a></td> <td><span class="nu0">Tương tự như cho</span></td> <td><span class="t-mark">Dest_at</span></td> <td>Cho phép đánh giá liên tục cho tất cả<a href="#Template_non-type_arguments">non-type template arguments</a> </td>
+</tr> <tr> <td><span class="nu0">}</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>Các loại lớp và các loại điểm nổi trong<a href="#Non-type_template_parameter">non-type template parameters</a> </td>
+</tr>
+</table> <h3 id="Examples">, không còn là một phần của cây phụ thuộc.</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">, hoặc mặc định.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">đối tượng mà từ đó gán cho</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/150.html" rel="nofollow">CWG 150</a> </td> <td>C ++ 98</td> <td>Nếu một đối số có thể được hiểu là cả<br/>và một biểu thức, nó luôn được hiểu là ID loại, ngay cả khi tham số mẫu tương ứng không phải là kiểu:</td> <td>Mẫu &lt;Class T&gt;<br/>void f (); // #1<a class="external text" href="https://wg21.link/p0522r0" rel="nofollow">P0522R0</a>)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/184.html" rel="nofollow">CWG 184</a> </td> <td>C ++ 98</td> <td> <br/>Mẫu &lt;int i&gt;</td> <td>Mẫu &lt;int i&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/354.html" rel="nofollow">CWG 354</a> </td> <td>C ++ 98</td> <td>void f (); // #2</td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1398.html" rel="nofollow">CWG 1398</a> </td> <td>C ++ 11</td> <td> <code>std::nullptr_t</code> </td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1570.html" rel="nofollow">CWG 1570</a> </td> <td>C ++ 98</td> <td>void g ()</td> <td>không được phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1922.html" rel="nofollow">CWG 1922</a> </td> <td>C ++ 98</td> <td>{<br/>    f &lt;int ()&gt; (); // "int ()" cả là một loại và biểu thức,</td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2032.html" rel="nofollow">CWG 2032</a> </td> <td>C ++ 14</td> <td>                // gọi số 1 vì nó được hiểu là một loại<br/>}</td> <td>Mẫu đối số không kiểu<br/>Các hạn chế sau đây được áp dụng khi các mẫu khởi tạo có tham số mẫu không kiểu:</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/template_parameters">https://en.cppreference.com/w/cpp/language/template_parameters</a>
+</p>
+</div>

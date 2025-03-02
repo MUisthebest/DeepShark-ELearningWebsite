@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">std :: istrstream :: istrstream</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Iststream rõ ràng (const char* s);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Iststream rõ ràng (char* s);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">istrstream (const char* s, std :: streamsize n);</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">istrstream (char* s, std :: streamsize n);</pre>
+</td> <td>(4)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Xây dựng mới<code><a href="../istrstream" title="cpp/io/istrstream">std::istrstream</a></code>và nó cơ bản<code><a href="../strstreambuf" title="cpp/io/strstreambuf">std::strstreambuf</a></code>.</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Xây dựng cơ bản<code><a href="../strstreambuf" title="cpp/io/strstreambuf">std::strstreambuf</a></code>. Sau khi xây dựng và kiểm tra đối tượng Sentry, có thể bỏ qua khoảng trắng hàng đầu, trích xuất một<code>strstreambuf(s,0)</code>và khởi tạo lớp cơ sở với địa chỉ của strstreambuf. Hành vi không xác định nếu<code>s</code>không chỉ vào một yếu tố của một mảng kết thúc null.</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>Xây dựng cơ bản<code><a href="../strstreambuf" title="cpp/io/strstreambuf">std::strstreambuf</a></code>. Sau khi xây dựng và kiểm tra đối tượng Sentry, có thể bỏ qua khoảng trắng hàng đầu, trích xuất một<code>strstreambuf(s,n)</code>và khởi tạo lớp cơ sở với địa chỉ của strstreambuf. Hành vi không xác định nếu<code>s</code>không chỉ vào một yếu tố của một mảng có chiều dài ít nhất là<code>n</code>các yếu tố.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>Mảng C-String hoặc Char để sử dụng làm nội dung của luồng</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>Kích thước của mảng</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Trstream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../strstreambuf/strstreambuf" title="cpp/io/strstreambuf/strstreambuf"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Nếu a<code>strstreambuf</code>sự vật<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::strstreambuf</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../ostrstream/ostrstream" title="cpp/io/ostrstream/ostrstream"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Xem bên dưới<code>ostrstream</code>đối tượng, tùy chọn phân bổ bộ đệm<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::ostrstream</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../strstream/strstream" title="cpp/io/strstream/strstream"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Nếu a<code>strstream</code>đối tượng, tùy chọn phân bổ bộ đệm<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::strstream</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/istrstream/istrstream">https://en.cppreference.com/w/cpp/io/istrstream/istrstream</a>
+</p>
+</div>

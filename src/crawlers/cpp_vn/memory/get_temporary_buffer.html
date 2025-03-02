@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: get_temden_buffer</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">std :: cặp &lt;t*, std :: ptrdiff_t&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(không được dùng trong C ++ 17)</span> <br/><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td> </tr> </table> <p>Nếu như<code>count</code>    get_temden_buffer (std :: ptrdiff_t đếm);</p>
+<p>Mẫu &lt;Class T&gt;<code>count</code>std :: cặp &lt;t*, std :: ptrdiff_t&gt;<code>T</code>    get_temden_buffer (std :: ptrdiff_t đếm) noExcept;<code>T</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>. Các gợi ý để có được và đặt khu vực, chế độ mở và bộ đệm cơ bản (nếu có) giống hệt với các bộ phận trong<a href="../language#object.23Alignment" title="cpp/language">over-aligned</a>là tiêu cực hoặc không, không làm gì cả.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Nếu không, các yêu cầu phân bổ lưu trữ tiếp giáp không chính xác cho</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>MỘT<code><a href="../utility/pair" title="cpp/utility/pair">std::pair</a></code>, thành viên<code>first</code>. Yêu cầu không ràng buộc và thay vào đó việc triển khai có thể phân bổ lưu trữ cho bất kỳ số lượng đối tượng liền kề nào khác (bao gồm cả không)<code>second</code>Các loại được hỗ trợ.</p>
+<p>Nếu như<code>count &lt;= 0</code>Số lượng đối tượng mong muốn<code>T</code>, thành viên<code>first</code>là một con trỏ đến đầu lưu trữ được phân bổ và thành viên<code>second</code>không đúng. Lưu ý rằng</p>
+<h3 id="Notes">Ghi chú</h3> <p>là số lượng đối tượng phù hợp với bộ lưu trữ thực sự được phân bổ.<a href="http://en.cppreference.com/w/cpp/memory/new/operator_new"><span class="kw690">nhà điều hành mới</span></a>hoặc lưu trữ được phân bổ là không đủ để lưu trữ một yếu tố duy nhất</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">, thành viên</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">kết quả là một con trỏ null và thành viên</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue425" rel="nofollow">LWG 425</a> </td> <td>C ++ 98</td> <td>API này ban đầu được thiết kế với mục đích cung cấp một triển khai hiệu quả hơn so với mục đích chung<code>count &lt;= 0</code>, nhưng không có việc thực hiện như vậy được tạo ra và API đã bị phản đối và loại bỏ.</td> <td>hơn thứ hai, nếu không</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2072" rel="nofollow">LWG 2072</a> </td> <td>C ++ 98</td> <td>#include &lt;THERTHERM&gt;</td> <td>cho phép</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="return_temporary_buffer" title="cpp/memory/return temporary buffer"> <span class="t-lines"><span>return_temden_buffer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark">(không được dùng trong C ++ 17)</span></span><span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span></span></span></div> </td> <td>Giải phóng lưu trữ không chính thức<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="allocator_traits/allocate_at_least" title="cpp/memory/allocator traits/allocate at least"> <span class="t-lines"><span>) theo mặc định.</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span> <span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Kích thước-Feed phản hồi trong giao diện phân bổ<br/> <span class="t-mark">(Chức năng thành viên tĩnh công khai của<code>std::allocator_traits&lt;Alloc&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/get_temporary_buffer">https://en.cppreference.com/w/cpp/memory/get_temporary_buffer</a>
+</p>
+</div>

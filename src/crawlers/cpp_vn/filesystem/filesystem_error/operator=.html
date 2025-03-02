@@ -1,0 +1,11 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FileSystem :: FileSystem_error :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">FileSystem_error &amp; Toán tử = (const fileSystem_error &amp; other) noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>thời điểm mà chuyển đổi đã được thử<code>other</code>. Nếu như<code>*this</code>Và<code>other</code>mô tả kết quả của nỗ lực chuyển đổi<code>std::filesystem::filesystem_error</code>phải ít nhất được đặt hàng một phần đối với<code><a href="http://en.cppreference.com/w/cpp/string/byte/strcmp"><span class="kw1149">Điều đó cho tất cả<span class="me2">Có thể ném</span></span></a><span class="br0">.</span>what<span class="br0">.</span><span class="br0">)</span>, other.<span class="me1">Con trỏ đến một chuỗi kết thúc null với thông tin giải thích. Chuỗi phù hợp để chuyển đổi và hiển thị dưới dạng</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">. Không làm gì khác.</span></code>Không được phép ném các ngoại lệ, thông báo này thường được lưu trữ bên trong dưới dạng chuỗi liên kết tham chiếu được phân bổ riêng.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>khác<code>filesystem_error</code>đối tượng gán với</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>Cửa hàng triển khai điển hình<code>path</code>các đối tượng được tham chiếu bởi<code>path1()</code>Và<code>path2()</code>Trong một lưu trữ tham chiếu. Kết quả là<code>*this</code>Và<code>other</code>thường chia sẻ của họ<code>path</code>Đối tượng sau khi gán.</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/filesystem_error/operator%3D">https://en.cppreference.com/w/cpp/filesystem/filesystem_error/operator%3D</a>
+</p>
+</div>

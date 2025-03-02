@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: longjmp</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/csetjmp" title="cpp/header/csetjmp">&lt;csetjmp&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx17"> <td> <pre data-language="cpp">void longjmp (std :: jmp_buf env, int status);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx17">xáo trộn</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">[[Noreturn]] void longjmp (std :: jmp_buf env, int status);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Tải bối cảnh thực thi<code>env</code>được lưu bởi một cuộc gọi trước đó cho<code><a href="setjmp" title="cpp/utility/program/setjmp">setjmp</a></code>. Hàm này không trả lại. Kiểm soát được chuyển đến vị trí cuộc gọi của macro<code><a href="setjmp" title="cpp/utility/program/setjmp">setjmp</a></code>mà thiết lập<code>env</code>. Cái đó<code><a href="setjmp" title="cpp/utility/program/setjmp">setjmp</a></code>sau đó trả về giá trị, được thông qua dưới dạng<code>status</code>.</p>
+<p>Nếu chức năng được gọi<code><a href="setjmp" title="cpp/utility/program/setjmp">setjmp</a></code>đã thoát ra, hành vi không được xác định (nói cách khác, chỉ cho phép nhảy lên đường dài được cho phép).</p>
+<h3 id="Extra_restrictions_in_C.2B.2B">Hạn chế thêm trong C ++</h3> <p>Trên đầu c<a href="https://en.cppreference.com/w/c/program/longjmp" title="c/program/longjmp"><code>longjmp</code></a>, C ++<code>std::longjmp</code>có hành vi hạn chế hơn.</p>
+<p>Nếu thay thế<code>std::longjmp</code>với<span class="kw1">    std :: ifstream f ("không tồn tại");</span>Và<code><a href="setjmp" title="cpp/utility/program/setjmp">setjmp</a></code>với<span class="kw1">#include &lt;Istream&gt;</span>sẽ gọi a<a href="../../language/destructor#Trivial_destructor" title="cpp/language/destructor">non-trivial destructor</a>Đối với bất kỳ đối tượng tự động nào, hành vi của như vậy<code>std::longjmp</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>đến một phạm vi khác kết thúc tại<code>std::longjmp</code>được gọi trong một<a href="../../language/coroutines" title="cpp/language/coroutines">coroutine</a>Ở một nơi có thể sử dụng toán tử Co_Await.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Env</td> <td>-</td> <td>Biến đề cập đến trạng thái thực thi của chương trình được lưu bởi<code><a href="setjmp" title="cpp/utility/program/setjmp">setjmp</a></code> </td>
+</tr> <tr class="t-par"> <td>trạng thái</td> <td>-</td> <td>giá trị để trở về từ<code><a href="setjmp" title="cpp/utility/program/setjmp">setjmp</a></code>. Nếu nó bằng<code>​0​</code>Thì<code>1</code>được sử dụng thay thế</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>std::longjmp</code>là cơ chế được sử dụng trong C để xử lý các điều kiện lỗi không mong muốn trong đó hàm không thể trả về một cách có ý nghĩa. C ++ thường sử dụng<a href="../../language/exceptions" title="cpp/language/exceptions">exception handling</a>cho mục đích này.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;mảng&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cmath&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue619" rel="nofollow">LWG 619</a> </td> <td>C ++ 98</td> <td>Từ ngữ của các hạn chế thêm trong C ++ là mơ hồ</td> <td>    }</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue894" rel="nofollow">LWG 894</a> </td> <td>C ++ 98</td> <td>hành vi không được xác định nếu thay thế<br/><code>std::longjmp</code>với<span class="kw1">    std :: ifstream f ("không tồn tại");</span>Và<code><a href="setjmp" title="cpp/utility/program/setjmp">setjmp</a></code>với<br/><span class="kw1">#include &lt;Istream&gt;</span>sẽ phá hủy bất kỳ vật thể tự động nào</td> <td>Hành vi chỉ không xác định<br/>Nếu một kẻ hủy diệt không tầm thường cho<br/>Bất kỳ đối tượng tự động nào cũng được gọi</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="setjmp" title="cpp/utility/program/setjmp"> <span class="t-lines"><span>setJmp</span></span></a></div> </td> <td>Lưu bối cảnh<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/program/longjmp" title="c/program/longjmp">C documentation</a></span>vì<code>longjmp</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/program/longjmp">https://en.cppreference.com/w/cpp/utility/program/longjmp</a>
+</p>
+</div>

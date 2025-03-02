@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Chrono :: Local_info</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/chrono" title="cpp/header/chrono">&lt;chrono&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">struct local_info;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Lớp học<code>local_info</code>mô tả kết quả của việc chuyển đổi một<code>std::chrono::local_time</code>Mẫu &lt;class forwardit, class t&gt;<code>std::chrono::sys_time</code>.</p>
+<ul>
+<li>Nếu kết quả của việc chuyển đổi là duy nhất, thì<code>result == local_info::unique</code>Thì<code>first</code>được lấp đầy với đúng<code>std::chrono::sys_info</code>, Và<code>second</code>là không khởi xướng.</li>
+<li>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<code>local_time</code>là không tồn tại, sau đó<code>result == local_info::nonexistent</code>Thì<code>first</code>được điền vào với<code>std::chrono::sys_info</code>kết thúc ngay trước khi<code>local_time</code>, Và<code>second</code>được điền vào với<code>std::chrono::sys_info</code>Điều đó bắt đầu ngay sau khi<code>local_time</code>.</li>
+<li>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<code>local_time</code>là mơ hồ, sau đó<code>result == local_info::ambiguous</code>Thì<code>first</code>được điền vào với<code>std::chrono::sys_info</code>kết thúc ngay sau khi<code>local_time</code>, Và<code>second</code>chứa đầy<code>std::chrono::sys_info</code>bắt đầu ngay trước<code>local_time</code>.</li>
+</ul> <p>Đây là một cấu trúc dữ liệu cấp thấp; Chuyển đổi điển hình từ<code>local_time</code>ĐẾN<code>sys_time</code>sẽ sử dụng nó ngầm hơn là rõ ràng.</p>
+<h3 id="Member_constants">Inline Consexpr bool is_execut_policy_v = std :: is_execut_policy &lt;t&gt; :: value;</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Tên</th> <th>vĩ mô</th>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span><span class="t-dsc-small">Constexpr int</span>(Niebloid)</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td> <code>​0​</code> <br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span><span class="t-dsc-small">Constexpr int</span>không tồn tại</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td> <code>1</code> <br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span><span class="t-dsc-small">Constexpr int</span>mơ hồ</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td> <code>2</code> <br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <h3 id="Member_objects">Đối tượng thành viên</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đối tượng thành viên</th> <th>Kiểu</th>
+</tr> <tr class="t-dsc"> <td> <code>result</code> </td> <td> <span class="kw4">int</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>first</code>Thì<code>second</code> </td> <td> <code>std::chrono::sys_info</code> </td>
+</tr> </table> <h3 id="Nonmember_functions">Chức năng không phải là tháng</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="local_info/operator_ltlt" title="cpp/chrono/local info/operator ltlt"> <span class="t-lines"><span>toán tử &lt;&lt;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>đầu ra a<code>local_info</code>vào một luồng<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <h3 id="Helper_classes">Lớp học trợ giúp</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="local_info/formatter" title="cpp/chrono/local info/formatter"> <span class="t-lines"><span>std :: định dạng<span class="t-dsc-small">&lt;std :: Chrono :: Local_info&gt;</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Định dạng hỗ trợ cho<code>local_info</code> <br/> <span class="t-mark">(Chuyên ngành mẫu lớp)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/local_info">https://en.cppreference.com/w/cpp/chrono/local_info</a>
+</p>
+</div>

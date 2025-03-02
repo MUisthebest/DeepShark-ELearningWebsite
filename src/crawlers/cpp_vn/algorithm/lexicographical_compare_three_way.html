@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">std :: từ vựng_compare_three_way</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/algorithm" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class inputit1, class inputit2, cmp cmp&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Constexpr Auto Lexicographical_compare_three_way (đầu vào đầu tiên1, đầu vào1, last1, last1,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>                                                  Đầu vào đầu tiên2 đầu tiên, inputit2 last2,<code>[</code><code>first1</code><code>, </code><code>last1</code><code>)</code>Và<code>[</code><code>first2</code><code>, </code><code>last2</code><code>)</code>                                                  Cmp comp)</p>
+<div class="t-li1">
+<span class="t-li">1)</span>    -&gt; DeclType (comp ( *First1, *First2));<code>comp</code>Mẫu &lt;class inputit1, class inputit2&gt;<code>comp</code>Constexpr Auto Lexicographical_compare_three_way (đầu vào đầu tiên1, đầu vào1, last1, last1,</div> <div class="t-li1">
+<span class="t-li">2)</span>                                                  Inputit2 First2, Inputit2 Last2);<div class="cpp source-cpp"><pre data-language="cpp">Về mặt từ vựng so sánh hai phạm vi</pre></div>
+</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Mẫu &lt;class execPolicy, class forwardit1, class forwardit2&gt;</td> <td>-</td> <td>Bool từ vựng_compare (execPolicy &amp;&amp; chính sách,</td>
+</tr> <tr class="t-par"> <td>            Forwardit1 first1, forwardit1 last1,</td> <td>-</td> <td>                              Forwardit1 first1, forwardit1 last1,</td>
+</tr> <tr class="t-par"> <td>sau đó</td> <td>-</td> <td>Sử dụng so sánh ba chiều và tạo ra kết quả của loại so sánh áp dụng mạnh nhất.<a href="../utility/compare/strong_ordering" title="cpp/utility/compare/strong ordering"><code>std::strong_ordering</code></a>Thì<a href="../utility/compare/weak_ordering" title="cpp/utility/compare/weak ordering"><code>std::weak_ordering</code></a>, hoặc<a href="../utility/compare/partial_ordering" title="cpp/utility/compare/partial ordering"><code>std::partial_ordering</code></a>).</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt1, InputIt2</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Trả về thứ tự giữa các cặp phần tử không tương đương đầu tiên theo</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Nếu phạm vi trống.<i>N</i>Ứng dụng của<code>comp</code>là<i>N</i>trong cả hai phạm vi nếu có, nếu không (nếu một phạm vi tương đương với tiền tố của một phạm vi khác theo</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">), trả về thứ tự giữa chiều dài của cả hai phạm vi.</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Tương đương với:</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Trả lại std :: từ vựng_compare_three_way (</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3410" rel="nofollow">LWG 3410</a> </td> <td>C ++ 20</td> <td>    First1, Last1, First2, Last2, std :: compare_three_way ());</td> <td>một loại đối tượng chức năng. Chương trình không được hình thành nếu loại trả lại của nó không phải là một trong ba loại loại so sánh (</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lexicographical_compare" title="cpp/algorithm/lexicographical compare"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>(C ++ 20)<code>true</code>trả lại<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/compare/compare_three_way" title="cpp/utility/compare/compare three way"> <span class="t-lines"><span>compare_three_way</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>thực hiện đối tượng chức năng<code>x &lt;=&gt; y</code> <br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ranges/lexicographical_compare" title="cpp/algorithm/ranges/lexicographical compare"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<code>true</code>trả lại<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/lexicographical_compare_three_way">https://en.cppreference.com/w/cpp/algorithm/lexicographical_compare_three_way</a>
+</p>
+</div>

@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tùy chọn &lt;t&gt; :: Value</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">ConstExpr t &amp; value () &amp;;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">constexpr const t &amp; value () const &amp;;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Nếu như<code>*this</code>constexpr t &amp;&amp; value () &amp;&amp;;</p>
+<p>constexpr const t &amp;&amp; value () const &amp;&amp;;<code><a href="bad_optional_access" title="cpp/utility/optional/bad optional access">std::bad_optional_access</a></code>chứa một giá trị, trả về một tham chiếu đến giá trị chứa.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Nếu không, ném a</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="bad_optional_access" title="cpp/utility/optional/bad optional access">std::bad_optional_access</a></code>nếu như<code>*this</code>std :: phạm vi :: filter_view :: pre</p>
+<h3 id="Notes">Ghi chú</h3> <p>Thành viên đánh máy<code><a href="operator*" title="cpp/utility/optional/operator*">operator*()</a></code>ngoại lệ.<code>value()</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Một tham chiếu đến giá trị chứa.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">không kiểm tra xem tùy chọn này có chứa giá trị không, có thể hiệu quả hơn</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="value_or" title="cpp/utility/optional/value or"> <span class="t-lines"><span>Trả về giá trị bất ngờ</span></span></a></div> </td> <td>Trả về giá trị chứa<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="operator*" title="cpp/utility/optional/operator*"> <span class="t-lines"><span>toán tử-&gt;</span><span>toán tử/=</span></span></a></div> </td> <td>/*di chuyển-box*/<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="bad_optional_access" title="cpp/utility/optional/bad optional access"> <span class="t-lines"><span>bad_optional_access</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Ngoại lệ cho biết đã kiểm tra quyền truy cập vào tùy chọn không chứa giá trị<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/optional/value">https://en.cppreference.com/w/cpp/utility/optional/value</a>
+</p>
+</div>

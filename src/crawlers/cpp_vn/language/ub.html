@@ -1,0 +1,47 @@
+ <h1 class="firstHeading" id="firstHeading">được giải trình tự không rõ ràng đối với</h1> <p>Kết xuất toàn bộ chương trình vô nghĩa nếu một số quy tắc của ngôn ngữ bị vi phạm.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Tiêu chuẩn C ++ xác định chính xác<a href="as_if" title="cpp/language/as if">observable behavior</a>của mọi chương trình C ++ không rơi vào một trong các lớp sau:</p>
+<ul>
+<li> <i>không được hình thành</i>- Chương trình có lỗi cú pháp hoặc lỗi ngữ nghĩa có thể chẩn đoán. Một trình biên dịch C ++ phù hợp là bắt buộc phải đưa ra chẩn đoán, ngay cả khi nó xác định một phần mở rộng ngôn ngữ gán ý nghĩa cho mã đó (chẳng hạn như với các mảng có độ dài thay đổi). Văn bản của tiêu chuẩn sử dụng<i>nên</i>Thì<i>sẽ không</i>, Và<i>không được hình thành</i>để chỉ ra những yêu cầu này.</li>
+<li> <i>xấu xa,<a href="ndr" title="cpp/language/ndr">no diagnostic required</a></i>- Chương trình có các lỗi ngữ nghĩa có thể không được chẩn đoán trong trường hợp chung (ví dụ: vi phạm<a href="definition" title="cpp/language/definition">ODR</a>hoặc các lỗi khác chỉ có thể phát hiện được tại thời điểm liên kết). Hành vi không được xác định nếu chương trình đó được thực thi.</li>
+<li> <i>Hành vi xác định thực hiện</i>- Hành vi của chương trình khác nhau giữa các triển khai và việc thực hiện phù hợp phải ghi lại các tác động của từng hành vi. Ví dụ: loại<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>hoặc số lượng bit trong một byte hoặc văn bản của<code><a href="../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc::what</a></code>. Một tập hợp con của hành vi được xác định là<i>Hành vi cụ thể địa phương</i>, phụ thuộc vào việc thực hiện được cung cấp<a href="../locale" title="cpp/locale">locale</a>.</li>
+<li> <i>hành vi không xác định</i>- Hành vi của chương trình khác nhau giữa các triển khai và việc thực hiện tuân thủ là không bắt buộc phải ghi lại các tác động của từng hành vi. Ví dụ,<a href="eval_order" title="cpp/language/eval order">order of evaluation</a>, cho dù giống hệt nhau<a href="string_literal" title="cpp/language/string literal">string literals</a>là khác biệt, số lượng chi phí phân bổ mảng, v.v ... Mỗi hành vi không xác định dẫn đến một trong một tập hợp các kết quả hợp lệ.</li>
+<li> <i>hành vi không xác định</i>- Không có hạn chế về hành vi của chương trình. Ví dụ về hành vi không xác định là các cuộc đua dữ liệu, truy cập bộ nhớ bên ngoài giới hạn mảng, tràn số nguyên, độ lệch con trỏ null,<a href="eval_order" title="cpp/language/eval order">more than one</a>sửa đổi cùng một vô hướng trong một biểu thức<span class="t-rev-inl t-until-cxx11"><span>không có bất kỳ điểm trình tự trung gian nào</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>đó là chưa từng có</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>, truy cập vào một đối tượng thông qua<a href="reinterpret_cast#Type_aliasing" title="cpp/language/reinterpret cast">a pointer of a different type</a>, v.v. Trình biên dịch không bắt buộc phải chẩn đoán hành vi không xác định (mặc dù nhiều tình huống đơn giản được chẩn đoán) và chương trình biên dịch không bắt buộc phải làm bất cứ điều gì có ý nghĩa.</li>
+</ul> <h3 id="UB_and_optimization">UB và tối ưu hóa</h3> <p>Vì các chương trình C ++ chính xác không có hành vi không xác định, các trình biên dịch có thể tạo ra kết quả không mong muốn khi một chương trình thực sự có UB được biên dịch với bật tối ưu hóa:</p>
+<p>Ví dụ,</p>
+<h4 id="Signed_overflow">Đã ký tràn</h4> <div class="cpp source-cpp"><pre data-language="cpp">int foo (int x)</pre></div> <p>Vô hướng vô hướng<a class="external text" href="https://godbolt.org/z/re39h7P1K" rel="nofollow">demo</a>)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    trả về x + 1&gt; x; // Đúng hoặc UB do tràn đã ký</pre></div> <h4 id="Access_out_of_bounds">}</h4> <div class="cpp source-cpp"><pre data-language="cpp">có thể được biên soạn là (</pre></div> <p>    trả lại sai;<a class="external text" href="https://godbolt.org/z/vMbsdo5az" rel="nofollow">demo</a>)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">        MOV EAX, 1</pre></div> <h4 id="Uninitialized_scalar">        ret</h4> <div class="cpp source-cpp"><pre data-language="cpp">Truy cập ra khỏi giới hạn</pre></div> <p>    trả lại sai;<a class="external text" href="https://godbolt.org/z/1sraffdM8" rel="nofollow">demo</a>)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">bool exists_in_table (int v)</pre></div> <div class="t-example">
+<p>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    // Trả về đúng trong một trong 4 lần lặp đầu tiên hoặc UB do truy cập ngoài giới hạn</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">    for (int i = 0; i &lt;= 4; i ++)</pre></div> </div> <h4 id="Invalid_scalar">        if (Bảng [i] == V)</h4> <div class="cpp source-cpp"><pre data-language="cpp">            trả lại đúng;</pre></div> <p>    trả lại sai;<a class="external text" href="https://godbolt.org/z/4vKxhcea4" rel="nofollow">demo</a>)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <h4 id="Null_pointer_dereference">Có thể được biên soạn là (</h4> <p>exist_in_table (int):<a class="external text" href="https://cplusplus.github.io/CWG/issues/2823.html" rel="nofollow">CWG issue 2823</a>        MOV EAX, 1</p>
+<div class="cpp source-cpp"><pre data-language="cpp">        ret</pre></div> <p>Vô hướng vô hướng<a class="external text" href="https://godbolt.org/z/edxr5W5T7" rel="nofollow">demo</a>)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">std :: size_t f (int x)</pre></div> <h4 id="Access_to_pointer_passed_to_std::realloc">{<code><a href="../memory/c/realloc" title="cpp/memory/c/realloc">std::realloc</a></code>
+</h4> <div class="t-example">
+<p>    std :: size_t a;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    if (x) // hoặc x khác hoặc ub</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">12</pre></div> </div> <h4 id="Infinite_loop_without_side-effects">        a = 42;</h4> <div class="t-example">
+<p>    trả lại a;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Có thể được biên soạn là (</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/behavior" title="c/language/behavior">C documentation</a></span>vì<span class=""><span>được giải trình tự không rõ ràng đối với</span></span> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr style="vertical-align:top;"> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính</td> <td>
+<a class="external text" href="https://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html" rel="nofollow">The LLVM Project Blog: What Every C Programmer Should Know About Undefined Behavior #1/3</a> </td>
+</tr> <tr style="vertical-align:top;"> <td># Xác định mất giá (MSG) [[không dùng nữa (MSG)]]]]</td> <td>
+<a class="external text" href="https://blog.llvm.org/2011/05/what-every-c-programmer-should-know_14.html" rel="nofollow">The LLVM Project Blog: What Every C Programmer Should Know About Undefined Behavior #2/3</a> </td>
+</tr> <tr style="vertical-align:top;"> <td>đơn đặt hàng tổng số sửa đổi</td> <td>
+<a class="external text" href="https://blog.llvm.org/2011/05/what-every-c-programmer-should-know_21.html" rel="nofollow">The LLVM Project Blog: What Every C Programmer Should Know About Undefined Behavior #3/3</a> </td>
+</tr> <tr style="vertical-align:top;"> <td>Chính thức,</td> <td>
+<a class="external text" href="https://devblogs.microsoft.com/oldnewthing/20140627-00/?p=633" rel="nofollow">Undefined behavior can result in time travel (among other things, but time travel is the funkiest)</a> </td>
+</tr> <tr style="vertical-align:top;"> <td>Hoạt động B tải từ biến nguyên tử M, quan sát một trong những điều sau đây:</td> <td>
+<a class="external text" href="https://www.cs.utah.edu/~regehr/papers/overflow12.pdf" rel="nofollow">Understanding Integer Overflow in C/C++</a> </td>
+</tr> <tr style="vertical-align:top;"> <td>.globl func</td> <td>
+<a class="external text" href="https://lwn.net/Articles/342330/" rel="nofollow">Fun with NULL pointers, part 1</a>f (int):</td>
+</tr> <tr style="vertical-align:top;"> <td>    .Type func, @Function</td> <td>
+<a class="external text" href="https://web.archive.org/web/20201108094235/https://kukuruku.co/post/undefined-behavior-and-fermats-last-theorem/" rel="nofollow">Undefined Behavior and Fermat’s Last Theorem.</a> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/ub">https://en.cppreference.com/w/cpp/language/ub</a>
+</p>
+</div>

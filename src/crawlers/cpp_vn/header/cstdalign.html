@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">Tiêu đề tiêu chuẩn tiêu đề &lt;CstDalign&gt;<span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>, &lt;stdalign.h&gt;<span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span>
+</h1> <p>Tiêu đề này ban đầu là trong thư viện tiêu chuẩn C<a href="https://en.cppreference.com/w/c/types" title="c/types"><code>&lt;stdalign.h&gt;</code></a>.</p>
+<p>C tiêu đề tương thích. Alignas và Alignof là<a href="../keyword" title="cpp/keyword">keywords</a>Trong C ++, nhưng chúng không phải là từ khóa trong C cho đến C23.</p>
+<table class="t-dsc-begin"> <tr> <td colspan="2"> <h3 id="Macros">Macro</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>__alignas_is_defined</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark">(không dùng nữa)</span></span></span></div> </td> <td>C hằng số macro tương thích, mở rộng sang số nguyên theo nghĩa đen<code>1</code> <br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p><code>&lt;cstdalign&gt;</code>được không dùng trong C ++ 17 và bị loại bỏ trong C ++ 20. Tương ứng<a href="https://en.cppreference.com/w/c/types" title="c/types"><code>&lt;stdalign.h&gt;</code></a>vẫn có sẵn trong C ++ 20.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3827" rel="nofollow">LWG 3827</a> </td> <td>C ++ 11</td> <td>C Các chương trình không còn cần sự tương thích<br/>(Mẫu lớp)<code>__alignas_is_defined</code>Kể từ C23</td> <td>phản đối điều này<br/>Macro trong C ++</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/header/cstdalign">https://en.cppreference.com/w/cpp/header/cstdalign</a>
+</p>
+</div>

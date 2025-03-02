@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử ==,! = (std :: scoped_allocator_adaptor)</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/scoped_allocator" title="cpp/header/scoped allocator">&lt;scoped_allocator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class Outeralloc1, Class OuterAlLOC2, Lớp ... InteralLocs&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">toán tử bool == (const scoped_allocator_adaptor &lt;outeralloc1, innerallocs ...&gt; &amp; lhs, </pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> </table> <p>                 const scoped_allocator_adaptor &lt;outeralloc2, innerallocs ...&gt; &amp; rhs) noExcept;</p>
+<ul>
+<li> <code>lhs.outer_allocator() == rhs.outer_allocator()</code>, Và</li>
+<li>nếu như<code>sizeof...(InnerAllocs) &gt; 0</code>Thì<code>lhs.inner_allocator() == rhs.inner_allocator()</code>.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>Mẫu &lt;Class Outeralloc1, Class OuterAlLOC2, Lớp ... InteralLocs&gt;</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class execPolicy,<code>true</code>nếu như<code>lhs</code>Và<code>rhs</code>phạm vi có giá trị để so sánh<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;Class execPolicy,<code>true</code>nếu như<code>lhs</code>Và<code>rhs</code>toán tử bool! = (const scoped_allocator_adaptor &lt;outeralloc1, innerallocs ...&gt; &amp; lhs, <code>false</code>Nếu đối số đầu tiên là</div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/scoped_allocator_adaptor/operator_cmp">https://en.cppreference.com/w/cpp/memory/scoped_allocator_adaptor/operator_cmp</a>
+</p>
+</div>

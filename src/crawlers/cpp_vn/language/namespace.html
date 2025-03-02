@@ -1,0 +1,138 @@
+ <h1 class="firstHeading" id="firstHeading">Không gian tên</h1> <p>Không gian tên cung cấp một phương pháp để ngăn chặn xung đột tên trong các dự án lớn.</p>
+<p>Các thực thể được tuyên bố bên trong một khối không gian tên được đặt trong phạm vi không gian tên, điều này ngăn chúng khỏi bị nhầm lẫn với các thực thể có tên giống hệt nhau trong các phạm vi khác.</p>
+<p>Các thực thể được tuyên bố bên ngoài tất cả các khối không gian tên thuộc về<i>Không gian tên toàn cầu</i>. Không gian tên toàn cầu thuộc về<a href="scope" title="cpp/language/scope">global scope</a>và có thể được đề cập rõ ràng với một<code>::</code>. Mặc dù nó không có tuyên bố, nhưng không gian tên toàn cầu không phải là<a href="#Unnamed_namespaces">unnamed namespace</a>.</p>
+<p>Nhiều khối không gian tên có cùng tên được cho phép. Tất cả các khai báo trong các khối này được khai báo trong cùng một phạm vi không gian tên.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>namespace</code> <span class="t-spar">ns-name</span> <code>{</code> <span class="t-spar">Tuyên bố</span> <code>}</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>inline</code> <code>namespace</code> <span class="t-spar">ns-name</span> <code>{</code> <span class="t-spar">Tuyên bố</span> <code>}</code> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>namespace</code> <code>{</code> <span class="t-spar">Tuyên bố</span> <code>}</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">ns-name</span> <code>::</code> <span class="t-spar">tên thành viên</span> </td> <td>(4)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>using</code> <code>namespace</code> <span class="t-spar">ns-name</span> <code>;</code> </td> <td>             Không có p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>using</code> <span class="t-spar">ns-name</span> <code>::</code> <span class="t-spar">tên thành viên</span> <code>;</code> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>namespace</code> <span class="t-spar">tên</span> <code>=</code> <span class="t-spar">không gian tên đủ điều kiện</span> <code>;</code> </td> <td>            Chuyển tiếp 2 First2);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>namespace</code> <span class="t-spar">ns-name</span> <code>::</code> <span class="t-spar">tên thành viên</span> <code>{</code> <span class="t-spar">Tuyên bố</span> <code>}</code> </td> <td>            Nhị phân p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>namespace</code> <span class="t-spar">ns-name</span> <code>::</code> <code>inline</code> <span class="t-spar">tên thành viên</span> <code>{</code> <span class="t-spar">Tuyên bố</span> <code>}</code> </td> <td>(9)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span> <a href="#Namespaces">Named namespace definition</a>cho không gian tên<span class="t-spar">ns-name</span>.</div> <div class="t-li1">
+<span class="t-li">2)</span> <a href="#Inline_namespaces">Inline namespace definition</a>cho không gian tên<span class="t-spar">ns-name</span>. Tuyên bố bên trong<span class="t-spar">ns-name</span>sẽ được nhìn thấy trong không gian tên kèm theo của nó.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <a href="#Unnamed_namespaces">Unnamed namespace definition</a>. Các thành viên của nó có phạm vi tiềm năng từ điểm tuyên bố của họ đến cuối đơn vị dịch, và có<a href="storage_duration" title="cpp/language/storage duration">internal linkage</a>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Tên không gian tên (cùng với tên lớp) có thể xuất hiện ở phía bên trái của toán tử phân giải phạm vi, như một phần của<a href="lookup" title="cpp/language/lookup">qualified name lookup</a>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <a href="#Using-directives">using-directive</a>: Từ quan điểm của không đủ tiêu chuẩn<a href="lookup" title="cpp/language/lookup">name lookup</a>Đạt tiêu chuẩn<span class="t-spar">ns-name</span>// trong C ++ 14, std :: Lít và không gian tên thành viên của nó là nội tuyến<span class="t-spar">ns-name</span>.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span> <a href="#Using-declarations">using-declaration</a>: làm cho biểu tượng<span class="t-spar">tên thành viên</span>từ không gian tên<span class="t-spar">ns-name</span>có thể truy cập cho<a href="lookup" title="cpp/language/lookup">unqualified lookup</a>Như thể được khai báo trong cùng một phạm vi lớp, phạm vi khối hoặc không gian tên như nơi sử dụng việc khai báo này xuất hiện.</div> <div class="t-li1">
+<span class="t-li">6)</span> <span class="t-spar">Không gian tên-Alias-Definition</span>: làm cho<span class="t-spar">tên</span>Một từ đồng nghĩa với một không gian tên khác: Xem<a href="namespace_alias" title="cpp/language/namespace alias">namespace alias</a>
+</div> <div class="t-li1">
+<span class="t-li">. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu biểu thức</span>Định nghĩa không gian tên lồng nhau:<code>namespace A::B::C { ... }</code>Mẫu &lt;class T, class so sánh&gt;<code>namespace A { namespace B { namespace C { ... } } }</code>.</div> <div class="t-li1">
+<span class="t-li">được hình thành tốt. Chương trình không được hình thành nếu</span>Phân tích không gian tên nội tuyến lồng nhau:<code>namespace A::B::inline C { ... }</code>Mẫu &lt;class T, class so sánh&gt;<code>namespace A::B { inline namespace C { ... } }</code>.<code>inline</code>Có thể xuất hiện trước mọi tên không gian tên ngoại trừ tên đầu tiên:<code>namespace A::inline B::C {}</code>Mẫu &lt;class T, class so sánh&gt;<code>namespace A { inline namespace B { namespace C {} } }</code>.</div> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <h4 id="Namespaces">Không gian tên</h4> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>inline</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>namespace</code> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">định danh</span> <code>{ </code> <span class="t-spar"> </span> <code>} </code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <code>inline</code> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>Nếu có mặt, làm cho điều này trở thành một không gian tên nội tuyến (xem bên dưới). Không thể xuất hiện trên<i>phần mở rộng không gian-định nghĩa</i>về lỗi.<i>    {}</i>không sử dụng<code>inline</code> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>Trình tự tùy chọn của bất kỳ số lượng nào<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">định danh</span> </td> <td>-</td> <td>nhiều nhất là một chuyển đổi đủ điều kiện, và<ul>
+<li>một định danh không được sử dụng trước đây, trong trường hợp đó là<i>    {}</i>Số lượng các yếu tố để sao chép</li>
+<li>tên của một không gian tên, trong trường hợp đó là<i>phần mở rộng không gian-định nghĩa</i>Số lượng các yếu tố để sao chép</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>một chuỗi các nhà xác định không gian tên bao quanh được phân tách bằng<code>::</code>, kết thúc với<span class="t-spar">định danh</span>, trong trường hợp đó là một<i>Phân tích không gian tên lồng nhau</i> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar"> </span> </td> <td>-</td> <td>có thể là chuỗi trống của<a href="declarations" title="cpp/language/declarations">declarations</a>thuộc bất kỳ loại nào (bao gồm các định nghĩa lớp và chức năng cũng như không gian tên lồng nhau)</td>
+</tr>
+</table> <p>Các định nghĩa không gian tên chỉ được phép ở phạm vi không gian tên, bao gồm cả phạm vi toàn cầu.</p>
+<p>Để mở lại một không gian tên hiện có (chính thức, là một<i>phần mở rộng không gian-định nghĩa</i>), việc tìm kiếm<span class="t-spar">định danh</span>Được sử dụng trong định nghĩa không gian tên phải quyết tâm với tên không gian tên (không phải bí danh không gian tên), được tuyên bố là thành viên của không gian tên kèm theo hoặc của không gian tên nội tuyến trong không gian tên kín.</p>
+<p>Các<span class="t-spar"> </span>Xác định a<a href="scope" title="cpp/language/scope">namespace scope</a>, ảnh hưởng đến<a href="lookup" title="cpp/language/lookup">name lookup</a>.</p>
+<p>Tất cả các tên được giới thiệu bởi các tuyên bố xuất hiện trong<span class="t-spar"> </span>(bao gồm các định nghĩa không gian tên lồng) trở thành thành viên của không gian tên<span class="t-spar">định danh</span>, liệu định nghĩa không gian tên này có phải là định nghĩa không gian tên ban đầu hay không (được giới thiệu<span class="t-spar">định danh</span>) hoặc một định nghĩa không gian tên mở rộng ("mở lại" không gian tên đã được xác định)</p>
+<p>Một thành viên không gian tên được tuyên bố trong thân không gian tên có thể được xác định hoặc được xác định lại bên ngoài nó bằng cách sử dụng trình độ chuyên môn rõ ràng</p>
+<div class="cpp source-cpp"><pre data-language="cpp">không gian tên q</pre></div> <p>{</p>
+<ul>
+<li>    không gian tên v // v là thành viên của Q và được xác định đầy đủ trong Q</li>
+<li>    {// Không gian tên Q :: V {// C ++ 17 Thay thế cho các dòng trên</li>
+<li>        lớp c {void m (); }; // C là thành viên của V và được xác định đầy đủ trong V</li>
+</ul> <p>                               // c :: m chỉ được tuyên bố</p>
+<div class="cpp source-cpp"><pre data-language="cpp">        void f (); // F là thành viên của V, nhưng chỉ được tuyên bố ở đây</pre></div> <p>    }<a href="friend" title="cpp/language/friend">friend</a> <a href="lookup" title="cpp/language/lookup">name lookup</a>    void V :: f () // Định nghĩa thành viên của V bên ngoài V của V<a href="unqualified_lookup" title="cpp/language/unqualified lookup">unqualified</a>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<a href="qualified_lookup" title="cpp/language/qualified lookup">qualified</a>                // F không gian tên kèm theo của F vẫn là không gian tên toàn cầu, Q và Q :: V<a href="adl" title="cpp/language/adl">ADL</a>    {</p>
+<p>        extern void h (); // Điều này tuyên bố :: Q :: V :: H</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    }</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <h4 id="Inline_namespaces"> </h4> <p>    Void V :: C :: M () // Định nghĩa V :: C :: M bên ngoài không gian tên (và cơ thể lớp)<code>inline</code>                   // Các không gian tên kèm theo là không gian tên toàn cầu, Q và Q :: V<i>    {}</i>.</p>
+<p>}</p>
+<ul>
+<li>MỘT<i>với sự hiện diện của một</i>Định nghĩa ngoài tên và các định nghĩa lại chỉ được phép</li>
+<li>TRONG<a href="adl" title="cpp/language/adl">argument-dependent lookup</a>sau thời điểm tuyên bố,</li>
+<li>tại phạm vi không gian tên, và</li>
+<li>trong các không gian tên bao quanh không gian tên ban đầu (bao gồm cả không gian tên toàn cầu).<a href="lookup" title="cpp/language/lookup">name lookup</a>Ngoài ra, họ phải sử dụng cú pháp ID đủ điều kiện.</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">không gian tên q</pre></div> <p>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    không gian tên v //-định nghĩa không gian nguyên bản cho V</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Unnamed_namespaces">    {</h4> <p>Các<i>        void f ();  // Tuyên bố Q :: V :: F</i>    }</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>inline</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>namespace</code> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>{ </code> <span class="t-spar"> </span> <code>} </code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <code>inline</code> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>    void v :: f () {} // ok</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>Trình tự tùy chọn của bất kỳ số lượng nào<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr>
+</table> <p>    void v :: g () {} // error: g () chưa phải là thành viên của V<i>với sự hiện diện của một</i> <a href="qualified_lookup" title="cpp/language/qualified lookup">qualified name lookup</a>Và<a href="unqualified_lookup" title="cpp/language/unqualified lookup">unqualified name lookup</a>    không gian tên v // phần mở rộng-tên-definition cho V<a href="adl" title="cpp/language/adl">argument-dependent lookup</a>    {</p>
+<div class="cpp source-cpp"><pre data-language="cpp">        void g ();  // Tuyên bố Q :: V :: G</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>    }</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>}<a href="storage_duration#Linkage" title="cpp/language/storage duration">internal linkage</a> </p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Using-declarations">không gian tên R // không phải là không gian tên kèm theo cho Q</h4> <p>{</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>using</code> <code>typename</code><span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tên lồng nhau</span> <span class="t-spar">không đủ tiêu chuẩn-id</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx17">xáo trộn</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>using</code> <span class="t-spar">(không</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <code>typename</code> </td> <td>-</td> <td>Từ khóa<code>typename</code>}<a href="dependent_name" title="cpp/language/dependent name">dependent names</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tên lồng nhau</span> </td> <td>-</td> <td>}<code>::</code>Không gian tên nội tuyến<code>::</code>Tuyên bố trong một lớp X không địa phương trở thành thành viên của không gian tên bên trong cùng của X, nhưng chúng không được nhìn thấy thông thường</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">không đủ tiêu chuẩn-id</span> </td> <td>-</td> <td>chồng chéo với container.<a href="identifiers" title="cpp/language/identifiers">id-expression</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">(không</span> </td> <td>-</td> <td>) trừ khi một tuyên bố phù hợp được cung cấp tại phạm vi không gian tên, trước hoặc sau định nghĩa lớp. Tên như vậy có thể được tìm thấy thông qua<code>typename</code><span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tên lồng nhau</span> <span class="t-spar">không đủ tiêu chuẩn-id</span>trong đó xem xét cả hai không gian tên và các lớp.<a href="parameter_pack" title="cpp/language/parameter pack">pack expansion</a>Chỉ có không gian tên kèm theo trong cùng được xem xét bởi tuyên bố của người bạn như vậy khi quyết định liệu cái tên này có xung đột với một tên được tuyên bố trước đó hay không.<a href="using_declaration" title="cpp/language/using declaration">derived class definitions</a> </td>
+</tr>
+</table> <p>void H (int);<span class="t-rev-inl t-since-cxx20"><span>không gian tên a<a href="enum" title="cpp/language/enum">enumerators</a>{</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>    Lớp X.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>    {<a href="using_declaration" title="cpp/language/using declaration">using declaration</a>.</p>
+<p>        bạn bè void f (x);       // a :: f là một người bạn</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>        lớp y<a href="lookup" title="cpp/language/lookup">lookup</a>        {</p>
+<div class="cpp source-cpp"><pre data-language="cpp">            bạn bè void g ();    // a :: g là một người bạn</pre></div> <p>            bạn bè void h (int); // A :: H là một người bạn, không có xung đột với :: H<a href="templates#template-id" title="cpp/language/templates">template-id</a>        };<span class="t-rev-inl t-until-cxx20"><span>    };</span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span>    // A :: F, A :: G và A :: H không hiển thị ở phạm vi không gian tên<a href="enum" title="cpp/language/enum">enumeration</a>    // mặc dù họ là thành viên của không gian tên a</p>
+<p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">    X x;</pre></div> <p>    void g () // Định nghĩa của A :: G</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    {</pre></div> <p>        f (x); // A :: x :: f được tìm thấy thông qua ADL</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    }</pre></div> <p> </p>
+<h4 id="Using-directives">    void f (x) {} // Định nghĩa của A :: F</h4> <p>MỘT<i>với sự hiện diện của một</i>Điều đó như vậy<a href="declarations" title="cpp/language/declarations">block-declaration</a>    void H (int) {} // Định nghĩa của A :: H</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>using</code> <code>namespace</code> <span class="t-spar">tên lồng nhau</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">}</span> <code>;</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>bất kỳ số lượng của<a href="attributes" title="cpp/language/attributes">attributes</a>    // Và họ cũng là bạn của A :: X và A :: X :: Y</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tên lồng nhau</span> </td> <td>-</td> <td>}<code>::</code>Không gian tên nội tuyến<code>::</code>Không gian tên nội tuyến là không gian tên sử dụng từ khóa tùy chọn<a href="lookup" title="cpp/language/lookup">lookup</a>Tên đó là không gian tên nội tuyến được chèn ngầm vào không gian tên kèm theo (tương tự như ẩn số sử dụng cho không gian tên không tên)</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">}</span> </td> <td>-</td> <td>Các thành viên của một không gian tên nội tuyến được đối xử như thể họ là thành viên của không gian tên kèm theo trong nhiều tình huống (được liệt kê dưới đây). Thuộc tính này là chuyển tiếp: Nếu một không gian tên N chứa một không gian tên nội tuyến M, từ đó chứa một không gian tên nội tuyến O, thì các thành viên của O có thể được sử dụng như thể chúng là thành viên của M hoặc N.<a href="lookup" title="cpp/language/lookup">lookup</a>Tên đó là không gian tên nội tuyến được chèn ngầm vào không gian tên kèm theo (tương tự như ẩn số sử dụng cho không gian tên không tên)</td>
+</tr>
+</table> <p>, khi một không gian tên được thêm vào tập hợp các không gian tên liên quan, các không gian tên nội tuyến của nó cũng được thêm vào và nếu một không gian tên nội tuyến được thêm vào danh sách các không gian tên liên quan, thì không gian tên bao quanh của nó cũng được thêm vào.<a href="scope" title="cpp/language/scope">scope</a>Mỗi thành viên của một không gian tên nội tuyến có thể được chuyên dụng một phần, được khởi tạo rõ ràng hoặc chuyên biệt rõ ràng như thể đó là thành viên của không gian tên kèm theo.<a href="unqualified_lookup" title="cpp/language/unqualified lookup">unqualified name lookup</a>Đạt tiêu chuẩn<span class="t-spar">}</span>// trong C ++ 14, std :: Lít và không gian tên thành viên của nó là nội tuyến<span class="t-spar">}</span>.</p>
+<p>    sử dụng không gian tên std :: String_literals; // làm cho toán tử có thể nhìn thấy "" s </p>
+<p>                                          // Từ std :: Lít :: String_literals<a href="unqualified_lookup" title="cpp/language/unqualified lookup">unqualified lookup</a>    tự động str = "abc" s;<span class="t-spar">}</span> <span class="t-spar">{</span>    sử dụng không gian tên std :: nghĩa đen; // làm cho nhìn thấy cả hai</p>
+<div class="cpp source-cpp"><pre data-language="cpp">                                   // std :: Litleals :: String_literals :: Toán tử "" s</pre></div> <p>                                   // và std :: Biết chữ :: Chrono_literals :: Nhà điều hành "" s</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    tự động str = "abc" s;</pre></div> <h3 id="Notes">Ghi chú</h3> <p>    Tự động tối thiểu = 60s;<code>using namespace std;</code>}<code>std</code> <code>std</code>{<a class="external text" href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rs-using-directive" rel="nofollow">SF.7: Don’t write <code>using namespace</code> at global scope in a header file</a>).</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_namespace_attributes" title="cpp/feature test"><code>__cpp_namespace_attributes</code></a></td> <td><span class="nu0">Tương tự như cho</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<a href="attributes" title="cpp/language/attributes">Attributes</a>    sử dụng std :: toán tử "" s; // Làm cho cả STD :: LIÊN QUAN :: String_literals :: Toán tử "" S</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>                            // và std :: Biết chữ :: Chrono_Literals :: Nhà điều hành "" S có thể nhìn thấy<code>std</code>không gian tên.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    tự động str = "abc" s;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/101.html" rel="nofollow">CWG 101</a> </td> <td>C ++ 98</td> <td>    Tự động tối thiểu = 60s;<br/>}<br/>Lưu ý: Quy tắc về các chuyên ngành cho phép phiên bản thư viện: Các triển khai khác nhau của mẫu thư viện có thể được xác định trong các không gian tên nội tuyến khác nhau, trong khi vẫn cho phép người dùng mở rộng không gian tên cha với một chuyên môn rõ ràng của mẫu chính:</td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/373.html" rel="nofollow">CWG 373</a> </td> <td>C ++ 98</td> <td>không gian tên lib<br/>{<br/>    không gian tên nội tuyến lib_1</td> <td>    {<br/>        Mẫu &lt;typename t&gt; Lớp A; <br/>    }</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/460.html" rel="nofollow">CWG 460</a> </td> <td>C ++ 98</td> <td> </td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/565.html" rel="nofollow">CWG 565</a> </td> <td>C ++ 98</td> <td>    Mẫu &lt;typename t&gt; void g (t) { / * ... * /}<br/>}<br/>/ * ... */</td> <td>Cấu trúc myClass { / * ... * /};<br/>không gian tên lib</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/986.html" rel="nofollow">CWG 986</a> </td> <td>C ++ 98</td> <td>{</td> <td>    Mẫu &lt;&gt; lớp A &lt;MyClass&gt; { / * ... * /};</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/987.html" rel="nofollow">CWG 987</a> </td> <td>C ++ 98</td> <td>}<br/> </td> <td>int main ()</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1021.html" rel="nofollow">CWG 1021</a> </td> <td>C ++ 98</td> <td>{<br/>    Lib :: a &lt;mylass&gt; a;<br/>    g (a);  // ok, lib là một không gian tên liên quan của một</td> <td>}</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1838.html" rel="nofollow">CWG 1838</a> </td> <td>C ++ 98</td> <td>Không gian tên không tên<br/>Không thể định nghĩa tên<br/>là một định nghĩa không gian tên của biểu mẫu</td> <td>Không gian tên-Body<br/>Nếu có mặt, hãy biến điều này thành một không gian tên nội tuyến<br/>Định nghĩa này được coi là một định nghĩa của một không gian tên với tên duy nhất và một</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2155.html" rel="nofollow">CWG 2155</a> </td> <td>C ++ 98</td> <td>Tìm kiếm chuyển tiếp của Const<a class="external text" href="https://cplusplus.github.io/CWG/issues/1838.html" rel="nofollow">CWG issue 1838</a>#include &lt;THERTHERM&gt;<br/>Trong phạm vi hiện tại đề cử không gian tên không tên này (lưu ý: được thêm vào hoàn toàn bằng cách sử dụng chỉ thị làm cho không gian tên có sẵn cho</td> <td>2,4)</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="namespace_alias" title="cpp/language/namespace alias"> namespace alias </a> </td> <td>, nhưng không phải cho</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/namespace">https://en.cppreference.com/w/cpp/language/namespace</a>
+</p>
+</div>

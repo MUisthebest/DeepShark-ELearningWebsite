@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">Thuộc tính C ++: no_unique_address<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>
+</h1> <p>Cho phép thành viên dữ liệu này chồng chéo với các thành viên dữ liệu không tĩnh khác hoặc các tiểu mục lớp cơ sở của lớp.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span>no_unique_address<span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span></code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Áp dụng cho tên được khai báo trong Tuyên bố của một thành viên dữ liệu không tĩnh không phải là một trường bit.</p>
+<p>Làm cho thành viên này Tiểu mục<a href="../object#Subobjects" title="cpp/language/object">potentially-overlapping</a>, tức là, cho phép thành viên này bị chồng chéo với các thành viên dữ liệu không tĩnh khác hoặc các tiểu mục lớp cơ sở của lớp. Điều này có nghĩa là nếu thành viên có một loại loại trống (ví dụ: bộ phân bổ không có trạng thái), trình biên dịch có thể tối ưu hóa nó để chiếm không có khoảng trống, giống như nếu đó là<a href="../ebo" title="cpp/language/ebo">empty base</a>. Nếu thành viên không trống, bất kỳ phần đệm đuôi nào cũng có thể được sử dụng lại để lưu trữ các thành viên dữ liệu khác.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>[[no_unique_address]]</code>bị MSVC bỏ qua ngay cả trong chế độ C ++ 20; thay vì,<code>[[msvc::no_unique_address]]</code>được cung cấp.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/attributes/no_unique_address">https://en.cppreference.com/w/cpp/language/attributes/no_unique_address</a>
+</p>
+</div>

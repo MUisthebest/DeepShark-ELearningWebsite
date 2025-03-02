@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">std :: error_c Category :: default_error_condition</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">STD ảo :: Error_Condition Default_error_condition (int val) const NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Trả về điều kiện lỗi cho giá trị lỗi đã cho.</p>
+<p>Mẫu &lt;class inputit1, class inputit2,<code><a href="http://en.cppreference.com/w/cpp/error/error_condition"><span class="kw876">Điều đó cho tất cả<span class="me2">Error_Condition</span></span></a><span class="br0">.</span>val, <span class="sy2">*</span>this<span class="br0">)</span></code>.</p>
+<p>Các lớp học bắt nguồn từ<code>error_category</code>Có thể ghi đè chức năng này để ánh xạ các giá trị lỗi nhất định đến một danh mục chung. Ví dụ,<code><a href="../system_category" title="cpp/error/system category">std::system_category</a></code>ghi đè chức năng này để ánh xạ các giá trị lỗi khớp với POSIX<code><a href="../errno" title="cpp/error/errno">errno</a></code>giá trị<code><a href="../generic_category" title="cpp/error/generic category">std::generic_category</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>đánh giá</td> <td>-</td> <td>Giá trị lỗi mà trả về điều kiện lỗi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Điều kiện lỗi cho mã lỗi đã cho.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/error_category/default_error_condition">https://en.cppreference.com/w/cpp/error/error_category/default_error_condition</a>
+</p>
+</div>

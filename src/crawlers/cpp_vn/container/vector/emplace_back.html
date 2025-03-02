@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Vector &lt;T, Allocator&gt; :: Emplace_Back</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">Mẫu &lt;class ... args&gt;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td> <pre data-language="cpp">void emplace_back (args &amp;&amp; ... args);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class ... args&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;class ... args&gt;<code><a href="../../memory/allocator_traits/construct" title="cpp/memory/allocator traits/construct">std::allocator_traits::construct</a></code>tham chiếu emplace_back (args &amp;&amp; ... args);<code>args...</code>Các lập luận<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...</code>.</p>
+<p>constexpr void append_range (R &amp;&amp; rg);<a href="size" title="cpp/container/vector/size"><code>size()</code></a>Nếu sau khi hoạt động mới<a href="capacity" title="cpp/container/vector/capacity"><code>capacity()</code></a>lớn hơn cũ<a href="end" title="cpp/container/vector/end"><code>end()</code></a>một sự phân bổ lại diễn ra, trong trường hợp đó tất cả các trình rút âm (bao gồm cả<a href="end" title="cpp/container/vector/end"><code>end()</code></a>Iterator bị vô hiệu.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>iterator trước đó phần tử mới sẽ được xây dựng</td> <td>-</td> <td>Args</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T (the container's element type)</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Và<a href="../../named_req/emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <p>Gán cho đã cho</p>
+</td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <p>Cộng sự một yếu tố mới đến cuối container. Phần tử được xây dựng thông qua</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>(2,3)</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>TÀI LIỆU THAM KHẢO<code>T</code>Nếu một ngoại lệ được ném, chức năng này không có hiệu lực (đảm bảo ngoại lệ mạnh). Nếu như<code>noexcept</code>Chất xây dựng di chuyển không<a href="../../named_req/copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>*this</code>và không</p>
+<h3 id="Notes">Ghi chú</h3> <p>, Vector sẽ sử dụng hàm tạo di chuyển ném. Nếu nó ném, bảo đảm được miễn và các hiệu ứng không được xác định.<code>emplace_back</code>Vì việc phân bổ lại có thể diễn ra,<a href="../../named_req/moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>yêu cầu loại phần tử là</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Trong thực tế, việc triển khai<code>emplace_back</code>Một tham chiếu đến phần tử được chèn.<code>President</code>Mẫu &lt;class forwardit, class t&gt;<code><a href="http://en.cppreference.com/w/cpp/container/vector"><span class="kw1272">Điều đó cho tất cả<span class="me2">Vector</span></span></a></code>Nếu một ngoại lệ được ném, chức năng này không có hiệu lực (đảm bảo ngoại lệ mạnh).<code>emplace_back</code>Để nối một đối tượng của loại<code>President</code>. Nó thể hiện làm thế nào<code>emplace_back</code>chuyển tiếp tham số đến<code>push_back</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">cho các vectơ.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">tránh các bản sao thêm hoặc hoạt động di chuyển cần thiết khi sử dụng</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="push_back" title="cpp/container/vector/push back"> <span class="t-lines"><span>Chèn_range</span></span></a></div> </td> <td>chèn một loạt các yếu tố<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="emplace" title="cpp/container/vector/emplace"> <span class="t-lines"><span>Giảm sử dụng bộ nhớ bằng cách giải phóng bộ nhớ không sử dụng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xóa nội dung<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/vector/emplace_back">https://en.cppreference.com/w/cpp/container/vector/emplace_back</a>
+</p>
+</div>

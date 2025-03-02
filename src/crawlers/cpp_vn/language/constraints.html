@@ -1,0 +1,89 @@
+ <h1 class="firstHeading" id="firstHeading">Ràng buộc và khái niệm<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>
+</h1> <i>Trang này mô tả tính năng ngôn ngữ cốt lõi được áp dụng cho C ++ 20. Đối với các yêu cầu loại được đặt tên được sử dụng trong đặc điểm kỹ thuật của thư viện tiêu chuẩn, xem<a href="../named_req" title="cpp/named req">named requirements</a>. Đối với các khái niệm phiên bản TS của tính năng này, hãy xem<a href="https://en.cppreference.com/w/cpp/experimental/constraints" title="cpp/experimental/constraints">here</a>.</i> <p><a href="class_template" title="cpp/language/class template">Class templates</a>Thì<a href="function_template" title="cpp/language/function template">function templates</a>và các hàm không phải bảng (thường là thành viên của các mẫu lớp) có thể được liên kết với<i>// Hai tuyên bố sau đây có các ràng buộc khác nhau:</i>, trong đó chỉ định các yêu cầu trên các đối số mẫu, có thể được sử dụng để chọn quá tải chức năng và chuyên ngành mẫu phù hợp nhất.</p>
+<p>Các bộ được đặt tên như vậy<a href="requires" title="cpp/language/requires">requirements</a>được gọi<i>khái niệm</i>. Mỗi khái niệm là một vị ngữ, được đánh giá tại thời điểm biên dịch và trở thành một phần của giao diện của một mẫu nơi nó được sử dụng như một ràng buộc:</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDdef&gt;</pre></div> </div> <p>#include &lt;Khái niệm&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;chuỗi&gt;</pre></div> <p> <a class="external text" href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#t20-avoid-concepts-without-meaningful-semantics" rel="nofollow">ISO C++ core guideline T.20</a>// Tuyên bố về khái niệm "Hashable", được thỏa mãn bởi bất kỳ loại 'T' nào</p>
+<h3 id="Concepts">Khái niệm</h3> <p>// sao cho các giá trị 'a' loại 't', biểu thức std :: hash &lt;t&gt; {} (a)<a href="requires" title="cpp/language/requires">requirements</a>// biên dịch và kết quả của nó có thể chuyển đổi thành std :: size_t</p>
+<p>Mẫu &lt;Typename T&gt;</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>template &lt;</code> <span class="t-spar">Khái niệm Hashable = Yêu cầu (T A)</span> <code>&gt;</code> <p><code>concept</code> <span class="t-spar">{</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>=</code> <span class="t-spar">    {std :: Hash &lt;t&gt; {} (a)} -&gt; std :: mctionble_to &lt;std :: size_t&gt;;</span><code>;</code></p>
+</td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td>trình tự của bất kỳ số lượng nào<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr>
+</table> <div class="cpp source-cpp"><pre data-language="cpp">};</pre></div> <p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc Meow {};</pre></div> <p> </p>
+<p>// Mẫu chức năng C ++ 20 bị ràng buộc:<code>true</code>Mẫu &lt;Hashable T&gt;<code>false</code>Nếu đối số đầu tiên là</p>
+<p>void f (t) {}</p>
+<ul>
+<li> <a href="template_parameters#Type_template_parameter" title="cpp/language/template parameters">type template parameter declaration</a>Thì</li>
+<li> <a href="auto" title="cpp/language/auto">placeholder type specifier</a>Thì</li>
+<li> <a href="requires#Compound_Requirements" title="cpp/language/requires">compound requirement</a>.</li>
+</ul> <p>Trong a<span class="t-spar">Loại hạn chế</span>//</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// Các cách thay thế để áp dụng cùng một ràng buộc:</pre></div> <h3 id="Constraints">// Mẫu &lt;typename t&gt;</h3> <p>// Yêu cầu Hashable &lt;T&gt;<a href="requires" title="cpp/language/requires">requires expressions</a>// void f (t) {}</p>
+<p>//</p>
+<div class="t-li1">
+<span class="t-li">1)</span>// Mẫu &lt;typename t&gt;</div> <div class="t-li1">
+<span class="t-li">2)</span>// void f (t) yêu cầu Hashable &lt;T&gt; {}</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>//</div> <p>// void f (hashable auto/*parameterName*/) {}<a href="#Constraint_normalization">normalizing</a> </p>
+<ol>
+<li>int main ()<a href="template_parameters#Type_template_parameter" title="cpp/language/template parameters">type template parameter</a>{<a href="auto" title="cpp/language/auto">placeholder type</a>    sử dụng std :: toán tử "" s;</li>
+<li> <a href="constraints#Requires_clauses" title="cpp/language/constraints">requires clause</a>    f ("ABC" s);    // ok, std :: chuỗi thỏa mãn có thể</li>
+<li>    // f (meow {}); // Lỗi: Meow không thỏa mãn Hashable<a href="auto" title="cpp/language/auto">placeholder type</a>}<a href="function_template#Abbreviated_function_template" title="cpp/language/function template">abbreviated function template</a>Vi phạm các ràng buộc được phát hiện tại thời điểm biên dịch, sớm trong quá trình khởi tạo mẫu, dẫn đến các thông báo lỗi dễ theo dõi:</li>
+<li>std :: list &lt;Int&gt; l = {3, -1, 10};<a href="constraints#Requires_clauses" title="cpp/language/constraints">requires clause</a>.</li>
+</ol> <p>std :: sort (l.begin (), l.end ()); </p>
+<h4 id="Redeclarations">// Chẩn đoán trình biên dịch điển hình mà không có khái niệm:</h4> <p>// Các toán hạng không hợp lệ cho biểu thức nhị phân ('std :: _ list_iterator &lt;int&gt;' và</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// 'std :: _ list_iterator &lt;Int&gt;')</pre></div> <h4 id="Conjunctions">// std :: __ lg (__ cuối cùng - __first) * 2);</h4> <p>// ~~~~~ ~ ^ ~~~~~~~~~<code>&amp;&amp;</code>// ... 50 dòng đầu ra ...</p>
+<div class="cpp source-cpp"><pre data-language="cpp">//</pre></div> <p>// Chẩn đoán trình biên dịch điển hình với các khái niệm:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// Lỗi: Không thể gọi STD :: Sắp xếp với STD :: _ list_iterator &lt;Int&gt;</pre></div> <h4 id="Disjunctions">// Lưu ý: Khái niệm RandomAccessIterator &lt;std :: _ list_iterator &lt;int &gt;&gt; không được thỏa mãn</h4> <p>Mục đích của các khái niệm là mô hình hóa các loại ngữ nghĩa (số, phạm vi, chức năng chính quy) thay vì các hạn chế cú pháp (hasplus, mảng). Theo<code>||</code>, "Khả năng chỉ định ngữ nghĩa có ý nghĩa là một đặc điểm xác định của một khái niệm thực sự, trái ngược với một ràng buộc cú pháp."</p>
+<p>Một khái niệm là một tập hợp được đặt tên</p>
+<div class="cpp source-cpp"><pre data-language="cpp">. Định nghĩa của một khái niệm phải xuất hiện tại phạm vi không gian tên.</pre></div> <h4 id="Atomic_constraints">Định nghĩa của một khái niệm có hình thức</h4> <p>Danh sách tham số mẫu<code>E</code>Tên khái niệm attr<code>E</code>Biểu hiện hạn chế<i>// ý tưởng</i>.</p>
+<p>Mẫu &lt;class t, class u&gt;<a href="#Constraint_normalization">constraint normalization</a>.<code>E</code>Khái niệm có nguồn gốc = std :: is_base_of &lt;u, t&gt; :: value;</p>
+<p>Các khái niệm không thể đề cập đến cách đệ quy và không thể bị hạn chế:<code>E</code>Mẫu &lt;Typename T&gt;<code>E</code>Khái niệm v = v &lt;t*&gt;; // Lỗi: Khái niệm đệ quy<code>bool</code> <code>true</code>.</p>
+<p>Loại của<code>E</code>Mẫu &lt;Class T&gt;<code>bool</code>Khái niệm C1 = Đúng;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;C1 T&gt;</pre></div> <p>Lỗi khái niệm1 = true; // Lỗi: C1 T cố gắng hạn chế định nghĩa khái niệm<i>Mẫu &lt;Class T&gt; yêu cầu C1 &lt;T&gt;</i>khái niệm lỗi2 = true; // Lỗi: Các điều khoản yêu cầu cố gắng hạn chế một khái niệm</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Các khởi tạo rõ ràng, các chuyên ngành rõ ràng hoặc chuyên môn một phần của các khái niệm không được phép (ý nghĩa của định nghĩa ban đầu của một ràng buộc không thể thay đổi).</pre></div> <h4 id="Constraint_normalization">Nếu biểu thức ràng buộc được thỏa mãn, và</h4> <p><i>Nếu biểu thức ràng buộc được thỏa mãn, và</i>Các khái niệm cũng có thể được đặt tên trong một loại hạn chế, như một phần của<i>, một khái niệm lấy một đối số ít mẫu hơn yêu cầu danh sách tham số của nó, bởi vì loại được suy luận theo ngữ cảnh được sử dụng hoàn toàn như là đối số đầu tiên của khái niệm.</i>Mẫu &lt;class t, class u&gt;</p>
+<ul>
+<li>hoặc trực tiếp là cơ thể của các khái niệm.<code>(E)</code> <code>E</code>Số lượng các yếu tố để sao chép</li>
+<li>hoặc trực tiếp là cơ thể của các khái niệm.<code>E1 &amp;&amp; E2</code>void f (t); // t bị hạn chế bởi dẫn xuất &lt;t, cơ sở&gt;<code>E1</code>Và<code>E2</code>.</li>
+<li>hoặc trực tiếp là cơ thể của các khái niệm.<code>E1 || E2</code>Một ràng buộc là một chuỗi các hoạt động logic và toán hạng chỉ định các yêu cầu trên các đối số mẫu. Họ có thể xuất hiện trong<code>E1</code>Và<code>E2</code>.</li>
+<li>hoặc trực tiếp là cơ thể của các khái niệm.<code>C&lt;A1, A2, ... , AN&gt;</code>là<code>C</code>Có ba loại ràng buộc:<code>C</code>liên kết<code>C</code>chia cắt</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">ràng buộc nguyên tử</pre></div> <ul><li>Hạn chế liên quan đến một tuyên bố được xác định bởi<code>E</code>một biểu thức và logic có toán hạng theo thứ tự sau:<code>E</code>Biểu thức ràng buộc được giới thiệu cho mỗi bị ràng buộc<a href="fold" title="cpp/language/fold">fold expressions</a>hoặc tham số mẫu không kiểu được khai báo với một ràng buộc<code>&amp;&amp;</code>hoặc<code>||</code>tác dụng phụ</li></ul> <p>, theo thứ tự xuất hiện;<code>&amp;&amp;</code>hoặc<code>||</code>biểu thức ràng buộc trong</p>
+<h3 id="Requires_clauses">sau danh sách tham số mẫu;</h3> <p>Biểu thức ràng buộc được giới thiệu cho từng tham số với ràng buộc<a href="../keyword/requires" title="cpp/keyword/requires"><code>requires</code></a>trong một<i>tuyên ngôn;</i>Biểu thức ràng buộc trong dấu vết</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Thứ tự này xác định thứ tự trong đó các ràng buộc được khởi tạo khi kiểm tra sự hài lòng.</pre></div> <p>Tái phân tích lại<i>Trả về kết quả của hội nghị derefering</i>Một tuyên bố bị ràng buộc chỉ có thể được xác định lại bằng cách sử dụng cùng một dạng cú pháp. Không cần chẩn đoán:<code>requires true</code>// Hai tuyên bố đầu tiên của F là tốt<a href="requires" title="cpp/language/requires">requires expression</a>Đề cập đến 4 giờ 30 phút sau UTC. Nếu phần bù bằng không,</p>
+<p>Mẫu &lt;Tăng T&gt;</p>
+<ul>
+<li>Một<a href="expressions#Primary_expressions" title="cpp/language/expressions">primary expression</a>, ví dụ.<code>Swappable&lt;T&gt;</code>Thì<code><a href="http://en.cppreference.com/w/cpp/types/is_integral"><span class="kw463">Điều đó cho tất cả<span class="me2">is_integral</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">được phân vùng liên quan đến</span></code>Thì<code><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/types/is_object"><span class="kw494">Điều đó cho tất cả<span class="me2">Thư viện tiêu chuẩn cũng cung cấp các chuyên ngành một phần cho một số bộ điều hợp vòng lặp tiêu chuẩn.</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span> <span class="sy3">. Trong các cuộc gọi có hiệu lực</span> ...<span class="br0">)</span></code>void f (t) yêu cầu giảm &lt;t&gt;;</li>
+<li> <code>&amp;&amp;</code> </li>
+<li>Mẫu &lt;Tăng T&gt;<code>||</code> </li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">void f (t) yêu cầu giảm &lt;t&gt;; // OK, tái cấu trúc</pre></div> <h3 id="Partial_ordering_of_constraints"> </h3> <p>// Bao gồm sự khác biệt thứ ba, tương đương về mặt logic này<a href="#Constraint_normalization">normalized</a>// Tuyên bố F không được hình thành, không cần chẩn đoán<a href="requires" title="cpp/language/requires">requires expression</a>Mẫu &lt;Typename T&gt;</p>
+<p>    Yêu cầu tăng tỷ lệ &lt;T&gt; &amp;&amp; giảm &lt;t&gt;<code>P</code>void f (t);<i> </i>// Hai tuyên bố sau đây có các ràng buộc khác nhau:<code>Q</code>// Tuyên bố đầu tiên có khả năng tăng lên &lt;t&gt; &amp;&amp; giảm &lt;t&gt;<code>P</code> <a class="extiw" href="https://en.wikipedia.org/wiki/Logical_consequence" title="enwiki:Logical consequence">implies</a> <code>Q</code>// Tuyên bố thứ hai có thể giảm &lt;T&gt; &amp;&amp; có thể gia tăng &lt;T&gt;<code>N &gt; 0</code>// mặc dù chúng tương đương về mặt logic.<code>N &gt;= 0</code>).</p>
+<p> <code>P</code>Mẫu &lt;Tăng T&gt; <code>Q</code>void g (t) yêu cầu giảm &lt;t&gt;;<code>P</code>khái niệm tích phân = std :: is_integral &lt;t&gt; :: value;<code>Q</code>Mẫu &lt;giảm T&gt; </p>
+<ul>
+<li>void g (t) yêu cầu &lt;t&gt; có thể gia tăng; // không được hình thành, không cần chẩn đoán<code>P</code>Liên kết<code>Q</code>là</li>
+<li>Sự kết hợp của hai ràng buộc được hình thành bằng cách sử dụng<code>U</code>toán tử trong biểu thức ràng buộc:<code>V</code>Mẫu &lt;Class T&gt;<code>U</code>khái niệm tích phân = std :: is_integral &lt;t&gt; :: value;<code>V</code>Số lượng các yếu tố để sao chép</li>
+<li>Mẫu &lt;Class T&gt;<code>A</code>Khái niệm SignedIntegral = Integral &lt;T&gt; &amp;&amp; std :: is_signed &lt;t&gt; :: value;<code>B</code>Mẫu &lt;Class T&gt;<a href="#Atomic_constraints">above</a>.</li>
+</ul> <p>Khái niệm unsignintegral = tích phân &lt;t&gt; &amp;&amp;! SignedIntegral &lt;T&gt;;</p>
+<ul>
+<li>Một kết hợp của hai ràng buộc chỉ được thỏa mãn nếu cả hai ràng buộc đều được thỏa mãn. Các liên kết được đánh giá từ trái sang phải và ngắn mạch (nếu ràng buộc bên trái không được thỏa mãn, đối số mẫu thay thế vào ràng buộc bên phải không được cố gắng: điều này ngăn chặn sự thất bại do thay thế bên ngoài bối cảnh ngay lập tức).<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a> </li>
+<li>các<a href="overloaded_address" title="cpp/language/overloaded address">address of a non-template function</a>Mẫu &lt;Typename T&gt;</li>
+<li>Consexpr bool get_value () {return t :: value; }</li>
+<li> </li>
+<li> <a href="function_template#Function_template_overloading" title="cpp/language/function template">partial ordering</a>Mẫu &lt;Typename T&gt;</li>
+</ul> <p>    Yêu cầu (sizeof (t)&gt; 1 &amp;&amp; get_value &lt;t&gt; ())<code>D1</code>Và<code>D2</code>void f (t);   // #1<code>D1</code> <code>D2</code>void f (int); // #2<code>D2</code> <code>D1</code>(Constexpr kể từ C ++ 26)<i>void g ()</i>(1,3)<code>D2</code>. Nếu như<code>D1</code>{<code>D2</code>, Và<code>D2</code>    f ('a'); // OK, gọi #2. Khi kiểm tra các ràng buộc của #1,<code>D1</code>, sau đó<code>D1</code>khoảng cách<i>            // 'sizeof (char)&gt; 1' không được thỏa mãn, vì vậy get_value &lt;t&gt; () không được kiểm tra</i>hơn<code>D2</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td rowspan="2"><a href="../feature_test#cpp_concepts" title="cpp/feature test"><code>__cpp_concepts</code></a></td> <td><span class="nu0">201907L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<a href="#top">Constraints</a> </td>
+</tr> <tr> <td><span class="nu0">Chuyên môn này của</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>Chia cắt<a href="member_functions#Special_member_functions" title="cpp/language/member functions">special member functions</a> </td>
+</tr>
+</table> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/concept" title="cpp/keyword/concept"><code>concept</code></a>Thì<a href="../keyword/requires" title="cpp/keyword/requires"><code>requires</code></a></p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2428.html" rel="nofollow">CWG 2428</a> </td> <td>C ++ 20</td> <td>Sự phân tách của hai ràng buộc được hình thành bằng cách sử dụng</td> <td>cho phép</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="requires" title="cpp/language/requires"> Requires expression</a><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span> </td> <td>toán tử trong biểu thức ràng buộc.<code>bool</code>Một sự phân biệt của hai ràng buộc được thỏa mãn nếu một trong hai ràng buộc được thỏa mãn. Sự phân tách được đánh giá từ trái sang phải và ngắn mạch (nếu ràng buộc bên trái được thỏa mãn, không cố gắng đối số mẫu vào ràng buộc bên phải không được cố gắng).</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/constraints">https://en.cppreference.com/w/cpp/language/constraints</a>
+</p>
+</div>

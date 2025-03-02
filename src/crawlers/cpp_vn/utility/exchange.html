@@ -1,0 +1,34 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Trao đổi</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/utility" title="cpp/header/utility">&lt;utility&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx14 t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;class t, class u = t&gt;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20 t-until-cxx23"> <td> <pre data-language="cpp">T trao đổi (t &amp; obj, u &amp;&amp; new_value);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> <br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;class t, class u = t&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Trao đổi Constexpr t (T &amp; OBJ, U &amp;&amp; New_Value);<code>obj</code>với<code>new_value</code>Mẫu &lt;class t, class u = t&gt;<code>obj</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>      Typename std :: Atomic &lt;T&gt; :: value_type mong muốn,</td> <td>-</td> <td>ConstExpr t Exchange (T &amp; OBJ, U &amp;&amp; new_value) noexcept (/ * Xem bên dưới */);</td>
+</tr> <tr class="t-par"> <td>Mẫu &lt;class forwardIt, lớp unypredicate, class t&gt;</td> <td>-</td> <td>Thay thế giá trị của<code>obj</code> </td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/moveconstructible" title="cpp/named req/MoveConstructible">MoveConstructible</a>và trả về giá trị cũ của<code>U</code>đối tượng có giá trị thay thế<code>T</code>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>giá trị để gán cho<code>obj</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <p>Gán cho đã cho</p>
+</td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <a href="../language/noexcept_spec" title="cpp/language/noexcept spec"><code>noexcept</code></a>Đặc điểm kỹ thuật:<div class="t-noexcept-box"><span class="t-cc"><code><span class="kw1">Noexcept</span><span class="br0">.</span><br/> <p><a href="http://en.cppreference.com/w/cpp/types/is_move_constructible"><span class="kw550">Điều đó cho tất cả<span class="me2">    lớp accessorpolicy = std :: default_accessor &lt;t&gt;</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span> <span class="sy3">. Trong các cuộc gọi có hiệu lực</span><br/> <a href="http://en.cppreference.com/w/cpp/types/is_assignable"><span class="kw556">Điều đó cho tất cả<span class="me2">. Ngoài ra, phải có thể chuyển các đối tượng thuộc loại</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy3">Không có giá trị</span>cho các đối tượng thuộc loại<span class="sy1">&lt;</span><br/></p>
+<span class="br0">)</span></code></span></div> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Giá trị cũ của</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Các<code>std::exchange</code>is_nothrow_assignable_v<a href="../language/move_assignment" title="cpp/language/move assignment">move assignment operators</a>Và<a href="../language/move_constructor" title="cpp/language/move constructor">move constructors</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, U</pre></div> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_exchange_function" title="cpp/feature test"><code>__cpp_lib_exchange_function</code></a></td> <td><span class="nu0">Khoảng thời gian thực tế (tính bằng giây) được giữ bởi một đối tượng thời lượng</span></td> <td><span class="t-mark">(C ++ 14)</span></td> <td>
+<a href="#Top"><code>std::exchange</code></a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;class t, class u = t&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">constexpr // kể từ C ++ 20</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../algorithm/swap" title="cpp/algorithm/swap"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>tráo đổi<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../atomic/atomic_exchange" title="cpp/atomic/atomic exchange"> <span class="t-lines"><span>Atomic_exchange</span><span>ATOMIC_EXCHANGE_EXPLICIT</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>thay thế nguyên tử giá trị của đối tượng nguyên tử bằng đối số không nguyên tử và trả về giá trị cũ của nguyên tử<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/exchange">https://en.cppreference.com/w/cpp/utility/exchange</a>
+</p>
+</div>

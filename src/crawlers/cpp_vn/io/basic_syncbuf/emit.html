@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_syncbuf &lt;biểu đồ, đặc điểm, phân bổ&gt; :: phát ra</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">bool phát ra ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Truyền nguyên tử tất cả đầu ra đang chờ xử lý vào luồng được bọc.</p>
+<p>Tất cả<code>emit()</code>Các cuộc gọi chuyển các ký tự sang cùng một đối tượng bộ đệm luồng được gói xuất hiện để thực thi theo một thứ tự tổng số<code>emit()</code>gọi <a href="../../atomic/memory_order" title="cpp/atomic/memory order">synchronizes-with</a>tiếp theo<code>emit()</code>các cuộc gọi trong tổng số đơn đặt hàng đó, ngay cả khi các cuộc gọi này được thực hiện thông qua các trường hợp khác biệt của<code>std::basic_syncbuf</code>/<code>std::basic_osyncstream</code>. Trong thực tế, điều này có nghĩa là phát ra () có khóa được liên kết duy nhất với đối tượng luồng được bọc: ví dụ, nó có thể được giữ trong bản đồ băm tĩnh nơi địa chỉ của luồng được bọc được sử dụng làm khóa.</p>
+<p>Nếu một cuộc gọi đã được thực hiện cho<a href="sync" title="cpp/io/basic syncbuf/sync"><code>sync</code></a>Kể từ cuộc gọi cuối cùng đến<code>emit()</code>, sau đó cũng xả luồng được bọc bằng cách gọi<a href="../basic_streambuf/pubsync" title="cpp/io/basic streambuf/pubsync"><code>pubsync()</code></a>trên đó.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu tất cả những điều sau đây là đúng:</p>
+<ul>
+<li>Có một luồng được bọc (con trỏ Streambuf được bọc không phải là NULL)</li>
+<li>Tất cả các ký tự từ bộ nhớ tạm thời đã được gửi thành công vào luồng được bọc</li>
+<li>cuộc gọi đến<a href="../basic_streambuf/pubsync" title="cpp/io/basic streambuf/pubsync"><code>pubsync()</code></a>, nếu được yêu cầu, cũng hoàn thành thành công.</li>
+</ul> <p>Mẫu &lt;Class execPolicy,<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Notes">Ghi chú</h3> <p>Thường được gọi bởi người phá hủy hoặc chuyển nhượng việc sở hữu<code>std::basic_osyncstream</code>, hoặc bởi<a href="../basic_osyncstream/emit" title="cpp/io/basic osyncstream/emit"><code>std::basic_osyncstream::emit</code></a>.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_osyncstream/~basic_osyncstream" title="cpp/io/basic osyncstream/~basic osyncstream"> <span class="t-lines"><span>một đối tượng ngoại lệ khác để gán với</span></span></a></div> </td> <td>Nếu tay cầm nút không trống,<code>basic_osyncstream</code>    Synced_out &lt;&lt; "Thế giới!";<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_osyncstream&lt;CharT,Traits,Allocator&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_osyncstream/emit" title="cpp/io/basic osyncstream/emit"> <span class="t-lines"><span>cũng như với một tạm thời:</span></span></a></div> </td> <td>cuộc gọi<strong class="selflink"><code>emit()</code></strong>std :: osyncstream (std :: cout) &lt;&lt; "Xin chào," &lt;&lt; "Thế giới!" &lt;&lt; '\ n';<code>basic_syncbuf</code>Nó cung cấp đảm bảo rằng tất cả các đầu ra được thực hiện cho cùng một bộ đệm đích cuối cùng (<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_osyncstream&lt;CharT,Traits,Allocator&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="basic_syncbuf" title="cpp/io/basic syncbuf/basic syncbuf"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Nếu a<code>basic_syncbuf</code>sự vật<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_syncbuf/emit">https://en.cppreference.com/w/cpp/io/basic_syncbuf/emit</a>
+</p>
+</div>

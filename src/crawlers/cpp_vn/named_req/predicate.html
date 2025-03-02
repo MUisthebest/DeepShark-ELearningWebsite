@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Vị ngữ</h1> <p>Các<strong class="selflink">Định vị</strong>các yêu cầu mô tả một cuộc gọi có thể gọi trả về một giá trị có thể kiểm tra như một<code>bool</code>.</p>
+<p>Vị ngữ thường được sử dụng với các thuật toán lấy dữ liệu đầu vào (các đối tượng/container riêng lẻ) và một vị ngữ, sau đó được gọi là dữ liệu đầu vào để quyết định tiến hành hành động hơn nữa. Một số ví dụ về việc sử dụng vị ngữ trong thư viện tiêu chuẩn C ++ là:</p>
+<ul>
+<li>
+<code><a href="http://en.cppreference.com/w/cpp/algorithm/all_any_none_of"><span class="kw1569">Điều đó cho tất cả<span class="me2">Được xác định trong tiêu đề</span></span></a></code>Thì<code><a href="http://en.cppreference.com/w/cpp/algorithm/all_any_none_of"><span class="kw1570">Điều đó cho tất cả<span class="me2">all_of</span></span></a></code>Thì<code><a href="http://en.cppreference.com/w/cpp/algorithm/all_any_none_of"><span class="kw1571">Điều đó cho tất cả<span class="me2">Any_of</span></span></a></code>Lấy một mảng các phần tử và một vị ngữ làm đầu vào. Gọi vị từ trên các yếu tố đầu vào riêng lẻ và trả về true nếu với tất cả/bất kỳ/không có phần tử, vị ngữ trả về đúng.</li>
+<li>
+<code><a href="http://en.cppreference.com/w/cpp/algorithm/find"><span class="kw1579">Điều đó cho tất cả<span class="me2">tìm thấy</span></span></a></code>Lấy chuỗi các yếu tố, và một vị ngữ. Trả về phần tử đầu tiên trong chuỗi, trong đó vị từ trả về giá trị<code>true</code>.</li>
+</ul> <p>Mô tả về các cơ sở thuật toán, được đưa ra ở trên, là thô và dự định giải thích vị ngữ theo thuật ngữ đơn giản. Để biết thông tin chi tiết, tham khảo các trang riêng lẻ.</p>
+<p>Nói cách khác, nếu một thuật toán có một vị ngữ<code>pred</code>và một người lặp<code>first</code>, nó sẽ có thể kiểm tra đối tượng của loại được chỉ bởi người lặp<code>first</code>sử dụng vị ngữ đã cho thông qua một cấu trúc như<code>if(pred(*first)) {...}</code>.</p>
+<p>Đối tượng chức năng<code>pred</code>sẽ không áp dụng bất kỳ chức năng không liên tục nào thông qua trình lặp bị bỏ rơi<span class="t-rev-inl t-since-cxx20"><span>và phải chấp nhận một<code>const</code>Đối số đối tượng, với cùng một hành vi bất kể đối số của nó có phải là<code>const</code>hoặc không<code>const</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>. Đối tượng chức năng này có thể là một con trỏ đến chức năng hoặc một đối tượng của một loại có toán tử cuộc gọi chức năng thích hợp.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <ul><li> <a href="functionobject" title="cpp/named req/FunctionObject">FunctionObject</a> </li></ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../concepts/predicate" title="cpp/concepts/predicate"> <span class="t-lines"><span>Chỉ định rằng một đối tượng thuộc loại có thể được xây dựng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(ý tưởng)<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/Predicate">https://en.cppreference.com/w/cpp/named_req/Predicate</a>
+</p>
+</div>

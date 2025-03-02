@@ -1,0 +1,174 @@
+ <h1 class="firstHeading" id="firstHeading">    Căn chỉnhunion &lt;int, char&gt; au;</h1> <p>Không có mẫu nào được xác định trong<a href="object" title="cpp/language/object">object</a>Và<a href="reference" title="cpp/language/reference">reference</a>Toán tử gán bản sao được xác định ngầm cho một lớp<i>trọn đời</i>, là một thuộc tính thời gian chạy: Đối với bất kỳ đối tượng hoặc tài liệu tham khảo nào, có một điểm thực hiện chương trình khi cuộc đời của nó bắt đầu, và có một khoảnh khắc khi nó kết thúc.</p>
+<p>Tuổi thọ của một đối tượng bắt đầu khi:</p>
+<ul>
+<li>lưu trữ với sự liên kết và kích thước thích hợp cho loại của nó được lấy, và</li>
+<li>Khởi tạo của nó (nếu có) hoàn tất (bao gồm cả<a href="default_initialization" title="cpp/language/default initialization">default initialization</a>thông qua không có hàm tạo hoặc<a href="default_constructor#Trivial_default_constructor" title="cpp/language/default constructor">trivial default constructor</a>), ngoại trừ điều đó</li>
+<ul>
+<li>Nếu đối tượng là một<a href="union#Member_lifetime" title="cpp/language/union">union member</a>hoặc tiểu mục của chúng, cuộc đời của nó chỉ bắt đầu nếu thành viên công đoàn đó là thành viên khởi tạo trong công đoàn, hoặc nó được thực hiện,</li>
+<li>Nếu đối tượng được lồng trong một đối tượng Liên minh, cuộc sống của nó có thể bắt đầu nếu đối tượng liên minh chứa được gán hoặc xây dựng bởi một chức năng thành viên đặc biệt tầm thường,</li>
+<li>Tuổi thọ của một đối tượng mảng cũng có thể bắt đầu nếu nó được phân bổ bởi<code><a href="../memory/allocator/allocate" title="cpp/memory/allocator/allocate">std::allocator::allocate</a></code>.</li>
+</ul>
+</ul> <p>Một số hoạt động<a href="object#Object_creation" title="cpp/language/object">implicitly create objects</a>của<a href="../named_req/implicitlifetimetype" title="cpp/named req/ImplicitLifetimeType">implicit-lifetime types</a>trong khu vực lưu trữ nhất định và bắt đầu cuộc sống của họ. Nếu một tiểu mục của một đối tượng được tạo ngầm không thuộc loại thời gian ngầm, thì tuổi thọ của nó không bắt đầu ngầm.</p>
+<p>Tuổi thọ của một đối tượng kết thúc khi:</p>
+<ul>
+<li>Nếu nó thuộc loại không thuộc lớp, đối tượng sẽ bị phá hủy (có thể thông qua cuộc gọi giả giả) hoặc</li>
+<li>Nếu nó thuộc loại lớp,<a href="destructor" title="cpp/language/destructor">destructor</a>cuộc gọi bắt đầu, hoặc</li>
+<li>Bộ lưu trữ mà đối tượng chiếm được phát hành, hoặc là<a href="#Storage_reuse">reused</a>bởi một đối tượng không được lồng trong đó.</li>
+</ul> <p>Tuổi thọ của một đối tượng bằng hoặc được lồng trong vòng đời của lưu trữ, xem<a href="storage_duration" title="cpp/language/storage duration">storage duration</a>.</p>
+<p>Cuộc đời của một<a href="reference" title="cpp/language/reference">reference</a>bắt đầu khi khởi tạo của nó hoàn tất và kết thúc như thể nó là một đối tượng vô hướng.</p>
+<p>Lưu ý: Thời gian tồn tại của đối tượng được giới thiệu có thể kết thúc trước khi kết thúc cuộc đời của tham chiếu, điều này tạo ra<a href="reference#Dangling_references" title="cpp/language/reference">dangling references</a>khả thi.</p>
+<p>Thời gian sống của các thành viên dữ liệu phi tĩnh và các tiểu mục cơ sở bắt đầu và kết thúc sau<a class="mw-redirect" href="initializer_list#Initialization_order" title="cpp/language/initializer list">class initialization order</a>.</p>
+<h3 id="Temporary_object_lifetime">Tuổi thọ đối tượng tạm thời</h3> <p>Các đối tượng tạm thời được tạo<span class="t-rev-inl t-since-cxx17"><span>Khi một prvalue là<a href="implicit_conversion#Temporary_materialization" title="cpp/language/implicit conversion">materialized</a>để nó có thể được sử dụng như một glvalue, xảy ra</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Trong các tình huống sau:</p>
+<ul><li> <a href="reference_initialization" title="cpp/language/reference initialization">binding a reference to a prvalue</a> </li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <a href="list_initialization" title="cpp/language/list initialization">initializing</a>một đối tượng của loại<a href="http://en.cppreference.com/w/cpp/utility/initializer_list"><span class="kw962">Điều đó cho tất cả<span class="me2">Khởi tạo_list</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span>từ một danh sách ban đầu</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <ul>
+<li>trả lại một prvalue từ một chức năng</li>
+<li> <a href="expressions#Conversions" title="cpp/language/expressions">conversion</a>Điều đó tạo ra một prvalue (<a href="explicit_cast" title="cpp/language/explicit cast">including</a> <code>T(a, b, c)</code>Và<code>T{}</code>)</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <a href="lambda" title="cpp/language/lambda">lambda expression</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy-initialization</a>yêu cầu chuyển đổi bộ khởi tạo,</li>
+<li> <a href="reference_initialization" title="cpp/language/reference initialization">reference-initialization</a>sang một loại khác nhưng chuyển đổi hoặc sang một trường bitfield.</li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <ul>
+<li>Khi biểu diễn<a href="operator_member_access#Built-in_member_access_operators" title="cpp/language/operator member access">member access</a>trên một lớp prvalue</li>
+<li>Khi thực hiện một<a href="array#Array-to-pointer_decay" title="cpp/language/array">array-to-pointer</a>chuyển đổi hoặc<a href="operator_member_access#Built-in_subscript_operator" title="cpp/language/operator member access">subscripting</a>trên một mảng prvalue</li>
+<li>Đối với các toán hạng không được đánh giá trong<a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>Và<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a> </li>
+<li>"có thể được chuyển đổi hoàn toàn thành một<a href="expressions#Discarded-value_expressions" title="cpp/language/expressions">discarded-value expression</a> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>Ngoài ra, các đối tượng tạm thời được tạo ra:</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>Nếu được hỗ trợ bởi việc thực hiện, khi truyền hoặc trả lại một đối tượng thuộc loại có thể sao chép tầm thường trong<a href="operator_other#Built-in_function_call_operator" title="cpp/language/operator other">function call expression</a>(Các mô hình này vượt qua các cấu trúc trong các thanh ghi CPU)</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul><li>Chuyển đổi danh tính:<a href="exceptions#Exception_objects" title="cpp/language/exceptions">throwing an exception</a> </li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Việc vật chất hóa một đối tượng tạm thời thường bị trì hoãn càng lâu càng tốt để tránh tạo ra đối tượng tạm thời không cần thiết: Xem<a href="copy_elision" title="cpp/language/copy elision">copy elision</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>Tất cả các đối tượng tạm thời bị phá hủy là bước cuối cùng trong việc đánh giá<a href="expressions#Full-expressions" title="cpp/language/expressions">full-expression</a>Điều đó (từ vựng) chứa điểm mà chúng được tạo ra và nếu nhiều đối tượng tạm thời được tạo ra, chúng sẽ bị phá hủy theo thứ tự đối diện với thứ tự sáng tạo. Điều này đúng ngay cả khi đánh giá đó kết thúc bằng một ngoại lệ.</p>
+<p>Có những ngoại lệ sau đây từ đó:</p>
+<ul>
+<li>Tuổi thọ của một đối tượng tạm thời có thể được mở rộng bằng cách liên kết với một tham chiếu, xem<a href="reference_initialization#Lifetime_of_a_temporary" title="cpp/language/reference initialization">reference initialization</a> </li>
+<li>Tuổi thọ của một đối tượng tạm thời được tạo khi đánh giá các đối số mặc định của hàm tạo mặc định hoặc sao chép được sử dụng để khởi tạo hoặc sao chép một phần tử của một mảng kết thúc trước khi phần tử tiếp theo của mảng bắt đầu khởi tạo.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul><li>Cuộc đời của những người tạm thời được tạo ra trong<a href="range-for" title="cpp/language/range-for">range-for</a>Bộ khởi tạo vòng lặp mà nếu không sẽ bị phá hủy ở cuối bộ khởi tạo được mở rộng đến cuối thân vòng lặp, ngoại trừ các tạm thời là các tham số chức năng.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h3 id="Storage_reuse">Tái sử dụng lưu trữ</h3> <p>Một chương trình không bắt buộc phải gọi bộ hủy diệt của một đối tượng để kết thúc cuộc sống của nó nếu đối tượng là<a href="destructor#Trivial_destructor" title="cpp/language/destructor">trivially-destructible</a>(Hãy cẩn thận rằng hành vi chính xác của chương trình có thể phụ thuộc vào chất phá hủy). Tuy nhiên, nếu một chương trình kết thúc thời gian tồn tại của một đối tượng không thể phá hủy không thể tập trung là một biến rõ ràng, thì nó phải đảm bảo rằng một đối tượng mới của cùng loại được xây dựng tại chỗ (ví dụ: thông qua vị trí mới)<span class="t-rev-inl t-since-cxx11"><span>, do thoát luồng cho các đối tượng địa lý,</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>hoặc do thoát chương trình cho các đối tượng tĩnh; nếu không thì hành vi không xác định.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">lớp t {}; // tầm thường</pre></div> <p> <span class="t-rev-inl t-since-cxx11"><span>cấu trúc b</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    ~ B () {} // không tầm thường</pre></div> <p>};<a href="new" title="cpp/language/new">new expression</a> <a href="../memory/new/operator_new" title="cpp/memory/new/operator new">allocation function</a>void x ()<span class="t-spar">Khởi tạo</span>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    dài n; // Tự động, tầm thường</pre></div> <p>    mới (&amp; n) gấp đôi (3.14); // tái sử dụng với một loại khác được ổn</p>
+<p>} // được rồi<code>x</code>khoảng cách<i> </i>khoảng trống h ()<code>y</code>{</p>
+<ul>
+<li>    B B; // tự động không thể phá hủy tự động<code>y</code>    b. ~ b (); // kết thúc tuổi thọ (không bắt buộc, vì không có tác dụng phụ)<code>x</code>    Mới (&amp; b) t; // loại sai: Được rồi cho đến khi người phá hủy được gọi</li>
+<li> <code>y</code>} // Destructor được gọi: Hành vi không xác định<code>x</code>Đó là hành vi không xác định để tái sử dụng lưu trữ hoặc bị chiếm bởi một đối tượng hoàn chỉnh của tĩnh</li>
+<li> <code>x</code>, chủ đề địa phương,</li>
+<li>Mẫu &lt;class inputit, lớp đầu ra, lớp nhị phân&gt;<code>x</code>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<code>y</code>hoặc thời lượng lưu trữ tự động vì các đối tượng đó có thể được lưu trữ trong bộ nhớ chỉ đọc:<span class="t-rev-inl t-since-cxx20"><span>cấu trúc b<code>[[<a href="attributes/no_unique_address" title="cpp/language/attributes/no unique address">no_unique_address</a>]]</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span> </li>
+<li>nhiều nhất là một chuyển đổi đủ điều kiện, và</li>
+<ul>
+<li> <code>x</code>Và<code>y</code>{</li>
+<li> <code>x</code>Và<code>y</code>    B (); // không tầm thường<code>ox</code>Và<code>oy</code>              STD :: Dự kiến ​​&lt;i2, proj2 &gt;&gt; comp = phạm vi :: Ít hơn&gt;<code>ox</code>    ~ B (); // không tầm thường<code>oy</code>.</li>
+</ul>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">};</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>const con b b; // const static<code><a href="../utility/launder" title="cpp/utility/launder">std::launder</a></code>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>khoảng trống h ()</p>
+<ul>
+<li>{</li>
+<li>    b. ~ b (); // kết thúc tuổi thọ của b</li>
+<li>    mới (const_cast &lt;b*&gt; (&amp; b)) const b; // Hành vi không xác định: Đã cố gắng sử dụng lại một const</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>}<code><a href="../utility/launder" title="cpp/utility/launder">std::launder</a></code>:</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h4 id="Providing_storage">Khi đánh giá a</h4> <p>, lưu trữ được coi là tái sử dụng sau khi nó được trả lại từ<span class="kw4">STD</span> <span class="kw4">char</span><span class="t-rev-inl t-since-cxx17"><span>hoặc<a href="../types/byte" title="cpp/types/byte"><code>std::byte</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>, nhưng trước khi đánh giá<i>của biểu thức mới:</i>cấu trúc s</p>
+<ul>
+<li>{</li>
+<li>    int m;</li>
+<li>};</li>
+</ul> <p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">void f ()</pre></div> <h3 id="Access_outside_of_lifetime">{</h3> <p>    S x {1};</p>
+<ol>
+<li>    Mới (&amp; x) s (x.m); // Hành vi không xác định: Bộ lưu trữ được sử dụng lại</li>
+<li>}</li>
+<li>Nếu một đối tượng mới được tạo tại địa chỉ bị chiếm bởi một đối tượng khác, thì tất cả các con trỏ, tài liệu tham khảo và tên của đối tượng gốc sẽ tự động tham khảo đối tượng mới và, một khi tuổi thọ của đối tượng mới bắt đầu, có thể được sử dụng để thao tác với đối tượng mới, nhưng chỉ khi đối tượng gốc có thể thay thế trong suốt.</li>
+<li> <a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>hoặc<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>Sự vật</li>
+</ol> <p>Có thể thay thế trong suốt</p>
+<ol>
+<li> <a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>bởi đối tượng<span class="kw4">Vô hiệu</span><span class="sy2">*</span>.</li>
+<li>nếu như:<span class="kw4">Vô hiệu</span><span class="sy2">*</span>Bộ lưu trữ cho<a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>chính xác bao phủ vị trí lưu trữ<span class="kw4">char</span>thuộc cùng loại với<span class="kw4">STD</span> <span class="kw4">char</span><span class="t-rev-inl t-since-cxx17"><span>thuộc cùng loại với<a href="../types/byte" title="cpp/types/byte"><code>std::byte</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>.</li>
+</ol> <p>(Bỏ qua các trình điều chỉnh CV cấp cao nhất)<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>Và<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>không phải là một đối tượng const hoàn chỉnh<a href="virtual#During_construction_and_destruction" title="cpp/language/virtual">virtual function calls during construction and destruction</a>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>là các mục tiêu trực tiếp của các đối tượng<a class="external text" href="https://wg21.link/p1358r0#2256" rel="nofollow">core issue 2256</a>, hoặc một nhóm phụ thành viên được tuyên bố với</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Cả hai đều là đối tượng hoàn chỉnh, hoặc</pre></div> <p>là các mục tiêu trực tiếp của các đối tượng<a class="external text" href="https://wg21.link/p1971r0#RU007" rel="nofollow">RU007</a>có thể thay thế trong suốt bởi<code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code>Và<code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code>Cấu trúc c</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/119.html" rel="nofollow">CWG 119</a> </td> <td>C ++ 98</td> <td>    int i;<br/>    void f ();</td> <td>    const c &amp; toán tử = (const c &amp;);<br/>};</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/201.html" rel="nofollow">CWG 201</a> </td> <td>C ++ 98</td> <td> <br/>Const C &amp; C :: Toán tử = (Const C &amp; Khác)<br/>{</td> <td>    Nếu (cái này! = &amp; Khác)<br/>    {<br/>        this-&gt; ~ c ();          // trọn đời của *cái này kết thúc<br/><a class="external text" href="https://cplusplus.github.io/CWG/issues/124.html" rel="nofollow">CWG issue 124</a>)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/274.html" rel="nofollow">CWG 274</a> </td> <td>C ++ 98</td> <td>        Mới (này) C (Khác); // đối tượng mới của loại C được tạo<br/>        f ();                 // được xác định rõ<br/>    }<span class="kw4">char</span><span class="sy3">Không có giá trị</span>hoặc<span class="kw4">STD</span> <span class="kw4">char</span><span class="sy3">Không có giá trị</span> </td> <td>    trả lại *cái này;<span class="kw4">char</span><span class="sy3">Không có giá trị</span><br/>Và<span class="kw4">STD</span> <span class="kw4">char</span><span class="sy3">Không có giá trị</span><br/>}</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/597.html" rel="nofollow">CWG 597</a> </td> <td>C ++ 98</td> <td> <br/>C C1;<br/>C C2;<br/>C1 = C2; // được xác định rõ<br/>c1.f ();  // được xác định rõ; C1 đề cập đến một đối tượng mới của loại C<br/>Nếu các điều kiện được liệt kê ở trên không được đáp ứng, một con trỏ hợp lệ đến đối tượng mới vẫn có thể thu được bằng cách áp dụng hàng rào tối ưu hóa con trỏ<br/>Cấu trúc a<span class="kw1">Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;</span>{ </td> <td>    T2 () {} // "mem" không có trong danh sách khởi tạo</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2012.html" rel="nofollow">CWG 2012</a> </td> <td>C ++ 98</td> <td>    int ảo truyền ();<br/>};</td> <td> <br/>Struct B: A</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2107.html" rel="nofollow">CWG 2107</a> </td> <td>C ++ 98</td> <td>Tìm kiếm chuyển tiếp của Const<a class="external text" href="https://cplusplus.github.io/CWG/issues/124.html" rel="nofollow">CWG issue 124</a>{</td> <td>2,4)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2256.html" rel="nofollow">CWG 2256</a> </td> <td>C ++ 98</td> <td>    int Transmogrify () ghi đè {:: new (this) a; trả lại 2; }</td> <td>};</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2470.html" rel="nofollow">CWG 2470</a> </td> <td>C ++ 98</td> <td> </td> <td>nội tuyến int a :: Transmogrify () {:: new (this) b; trả lại 1; }</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2489.html" rel="nofollow">CWG 2489</a> </td> <td>C ++ 98</td> <td>
+<span class="kw4">char</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span> <br/>Kiểm tra khoảng trống ()</td> <td>{<br/>    A i;<br/>    int n = i.transmogrify ();<span class="kw4">char</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2527.html" rel="nofollow">CWG 2527</a> </td> <td>C ++ 98</td> <td>    // int m = i.transmogrify (); // Hành vi không xác định:<br/>    // đối tượng A mới là một tiểu mục cơ sở, trong khi người cũ là một đối tượng hoàn chỉnh</td> <td>    int m = std :: giặt (&amp; i)-&gt; Transmogrify (); // ĐƯỢC RỒI<br/>    khẳng định (m + n == 3);</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2721.html" rel="nofollow">CWG 2721</a> </td> <td>C ++ 98</td> <td>}</td> <td>hơn thứ hai, nếu không</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0137R1" rel="nofollow">P0137R1</a> </td> <td>C ++ 98</td> <td>Tương tự, nếu một đối tượng được tạo trong lưu trữ của thành viên lớp hoặc phần tử mảng, đối tượng được tạo chỉ là một tiểu mục (thành viên hoặc phần tử) của đối tượng gốc chứa đối tượng nếu:<span class="kw4">STD</span> <span class="kw4">char</span>tuổi thọ của đối tượng chứa đã bắt đầu và không kết thúc</td> <td>Bộ lưu trữ cho đối tượng mới chính xác bao phủ lưu trữ của đối tượng gốc</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0593R6" rel="nofollow">P0593R6</a> </td> <td>C ++ 98</td> <td>Đối tượng mới có cùng loại với đối tượng gốc (bỏ qua trình độ hóa CV).</td> <td>Nếu không, tên của tiểu mục gốc không thể được sử dụng để truy cập đối tượng mới mà không có</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P1971R0" rel="nofollow">P1971R0</a> </td> <td>C ++ 98</td> <td>Cung cấp lưu trữ<br/>Như một trường hợp đặc biệt, các đối tượng có thể được tạo trong các mảng</td> <td>Hạn chế bị loại bỏ</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2103R0" rel="nofollow">P2103R0</a> </td> <td>C ++ 98</td> <td>(trong trường hợp đó người ta nói rằng mảng</td> <td>Trả về kết quả của hội nghị derefering</td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul>
+<li>Cuộc đời của mảng đã bắt đầu và không kết thúc</li>
+<li>cho đối tượng) nếu</li>
+</ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul>
+<li>Cuộc đời của mảng đã bắt đầu và không kết thúc</li>
+<li>Bộ lưu trữ cho đối tượng mới hoàn toàn phù hợp với mảng</li>
+</ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul>
+<li>Không có đối tượng mảng thỏa mãn các ràng buộc này được lồng trong mảng.</li>
+<li>Nếu phần đó của mảng đã cung cấp lưu trữ trước đó cho một đối tượng khác, thì tuổi thọ của đối tượng đó kết thúc vì bộ lưu trữ của nó đã được sử dụng lại, tuy nhiên thời gian tồn tại của chính mảng không kết thúc (lưu trữ của nó không được coi là đã được sử dụng lại).</li>
+</ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul>
+<li>Mẫu &lt;typename ... t&gt;</li>
+<li>{</li>
+</ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul>
+<li>int f ()</li>
+<li>{</li>
+</ul>
+<li>Tiêu chuẩn C ++ 03 (ISO/IEC 14882: 2003):</li>
+<ul>
+<li>int f ()</li>
+<li>{</li>
+</ul>
+<li>    S.B3 = 0B11;</li>
+<ul>
+<li>int f ()</li>
+<li>{</li>
+</ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/lifetime" title="c/language/lifetime">C documentation</a></span>vì<span class=""><span>    Căn chỉnhunion &lt;int, char&gt; au;</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/lifetime">https://en.cppreference.com/w/cpp/language/lifetime</a>
+</p>
+</div>

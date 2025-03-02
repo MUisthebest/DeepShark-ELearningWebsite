@@ -1,0 +1,39 @@
+ <h1 class="firstHeading" id="firstHeading">std :: numeric_limits &lt;t&gt; :: tín hiệu_nan</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">Tĩnh T tín hiệu_nan () ném ();</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">TIÊU CHUẨN TƯ TUYỆT VỜI T tín hiệu_nan () NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Trả về giá trị đặc biệt "Tín hiệu<a class="extiw" href="https://en.wikipedia.org/wiki/NaN" title="enwiki:NaN">not-a-number</a>", như được đại diện bởi loại dấu phẩy động<code>T</code>. Chỉ có ý nghĩa nếu<code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2"> </span> <span class="sy1">==</span> <span class="kw2">ĐÚNG VẬY</span></code>. Trong IEEE 754, biểu diễn nhị phân phổ biến nhất của các số điểm nổi, bất kỳ giá trị nào với tất cả các bit của bộ số mũ và ít nhất một bit của bộ phân số đại diện cho NAN. Nó được xác định bằng cách xác định giá trị của phân số biểu thị Nans yên tĩnh hoặc báo hiệu, và liệu bit dấu hiệu có ý nghĩa hay không.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th> <code>T</code> </th> <th> <code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">    STD :: UINT64_T F1N; std :: memcpy (&amp; f1n, &amp; f1, sizeof f1);</span><span class="br0">.</span><span class="br0">)</span></code> </th>
+</tr> <tr class="t-dsc"> <td> <span class="coMULTI">/ * không chuyên hóa */</span> </td> <td> <code>T()</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">bool</span> </td> <td> <code>false</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">wchar_t</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td>char8_t<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char16_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char32_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">STD</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">int</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">int</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">dài</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> <span class="kw4">dài</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">trôi nổi</span> </td> <td>Xác định thực hiện (có thể<code>FLT_SNAN</code>)</td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td>Xác định thực hiện (có thể<code>DBL_SNAN</code>)</td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td>Xác định thực hiện (có thể<code>LDBL_SNAN</code>)</td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Một nan không bao giờ so sánh bằng chính nó. Sao chép NAN là không bắt buộc, bởi IEEE-754, để bảo tồn biểu diễn bit của nó (dấu hiệu và<a href="../../numeric/math/nan" title="cpp/numeric/math/nan">payload</a>là một giá trị không phải là một số (NAN).</p>
+<p>Khi một NAN báo hiệu được sử dụng như một đối số cho biểu thức số học, ngoại lệ dấu phẩy động thích hợp có thể được nâng lên và NAN bị "im lặng", nghĩa là biểu thức trở lại NAN yên tĩnh.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Thể hiện việc sử dụng NAN báo hiệu để nâng cao ngoại lệ điểm nổi:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cfenv&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="has_signaling_nan" title="cpp/types/numeric limits/has signaling NaN"> <span class="t-lines"><span> </span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>int main ()<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="quiet_nan" title="cpp/types/numeric limits/quiet NaN"> <span class="t-lines"><span>{</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>    gấp đôi f1 = std :: nan ("1");<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../numeric/math/isnan" title="cpp/numeric/math/isnan"> <span class="t-lines"><span>isnan</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem số đã cho là NAN<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/numeric_limits/signaling_NaN">https://en.cppreference.com/w/cpp/types/numeric_limits/signaling_NaN</a>
+</p>
+</div>

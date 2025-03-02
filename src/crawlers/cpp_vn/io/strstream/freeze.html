@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Strstream :: Freeze</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void Freeze (Bool Flag = true);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nếu luồng đang sử dụng một mảng được phân bổ động cho đầu ra, hãy vô hiệu hóa (<code>flag == true</code>) hoặc cho phép (<code>flag == false</code>) Phân bổ/giải quyết tự động của bộ đệm. Gọi một cách hiệu quả<code>rdbuf()-&gt;freeze(flag)</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Sau khi gọi đến<code><a href="str" title="cpp/io/strstream/str">str()</a></code>, các luồng động trở nên đóng băng tự động. Một cuộc gọi đến<code>freeze(false)</code>được yêu cầu trước khi thoát khỏi phạm vi trong đó<code>strstream</code>Đối tượng đã được tạo ra. Nếu không, bộ hủy sẽ rò rỉ bộ nhớ. Ngoài ra, đầu ra bổ sung cho một luồng đông lạnh có thể bị cắt ngắn khi nó đến cuối bộ đệm được phân bổ.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>lá cờ</td> <td>-</td> <td>trạng thái mong muốn</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Trstream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../strstreambuf/freeze" title="cpp/io/strstreambuf/freeze"> <span class="t-lines"><span>đông cứng</span></span></a></div> </td> <td>đặt/xóa trạng thái đóng băng của bộ đệm<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::strstreambuf</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/strstream/freeze">https://en.cppreference.com/w/cpp/io/strstream/freeze</a>
+</p>
+</div>

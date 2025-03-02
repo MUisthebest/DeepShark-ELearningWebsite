@@ -1,0 +1,34 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Bắt đầu<small>Thuật toán</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt; </pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">/ * Xem bên dưới */ BẮT ĐẦU (Valarray &lt;T&gt; &amp; V);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Mẫu &lt;Class T&gt; <code><a href="../../iterator/begin" title="cpp/iterator/begin">std::begin</a></code>vì<code>valarray</code>/ * Xem bên dưới */ BẮT ĐẦU (const Valarray &lt;T&gt; &amp; V);</p>
+<span class="t-li">1)</span>Có một loại thành viên<ul><li>            Nhị phân p);<a href="../../iterator" title="cpp/iterator">mutable</a> <a href="../../named_req/randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>Thì</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>    std :: Inone<a href="../../iterator/contiguous_iterator" title="cpp/iterator/contiguous iterator"><code>contiguous_iterator</code></a>Thì</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>Loại trả lại phải<code>value_type</code>, đó là<code>T</code>, Và</li>
+<li>Loại trả lại phải<code>reference</code>, đó là<code>T&amp;</code>.</li>
+</ul> <span class="t-li">2)</span>Có một loại thành viên<ul><li>            Nhị phân p);<a href="../../iterator" title="cpp/iterator">constant</a> <a href="../../named_req/randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>Thì</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>    std :: Inone<a href="../../iterator/contiguous_iterator" title="cpp/iterator/contiguous iterator"><code>contiguous_iterator</code></a>Thì</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>Loại trả lại phải<code>value_type</code>, đó là<code>T</code>, Và</li>
+<li>Loại trả lại phải<code>reference</code>, đó là<code>const T&amp;</code>.</li>
+</ul> <p>Có một loại thành viên<a href="resize" title="cpp/numeric/valarray/resize"><code>resize()</code></a>Có một loại thành viên<code>v</code>Trình lặp được trả về từ chức năng này bị vô hiệu khi hàm thành viên<code>v</code>được kêu gọi</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu giá trị của</td> <td>-</td> <td>hoặc khi cuộc đời của</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>kết thúc, tùy theo điều gì đến trước.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Notes">Ghi chú</h3> <p>một mảng số<code>std::valarray</code>Iterator đến giá trị đầu tiên trong mảng số.<code>begin()</code>Không giống như các chức năng khác<code><a href="http://en.cppreference.com/w/cpp/iterator/begin"><span class="kw679">Điều đó cho tất cả<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>v1 <span class="sy2">gọi</span> v2<span class="br0">)</span></code>lập luận,<code><a href="http://en.cppreference.com/w/cpp/iterator/begin"><span class="kw679">Điều đó cho tất cả<span class="me2">bắt đầu</span></span></a><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/numeric/valarray"><span class="kw1476">Điều đó cho tất cả<span class="me2">Valarray</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="br0">.</span>v1 <span class="sy2">gọi</span> v2<span class="br0">)</span><span class="br0">)</span></code>Không thể chấp nhận các loại thay thế (chẳng hạn như các loại được tạo bởi các mẫu biểu thức) có thể được trả về từ các biểu thức liên quan đến valarrays:</p>
+<p>không di động,<a href="../../language/range-for" title="cpp/language/range-for">range for loops</a>phải được sử dụng thay thế.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Mục đích của chức năng này là cho phép</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Để làm việc với Valarrays, không cung cấp ngữ nghĩa container.</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2058" rel="nofollow">LWG 2058</a> </td> <td>C ++ 11</td> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính<code>begin()</code>#include &lt;THERTHERM&gt;<br/>#include &lt;Istream&gt;</td> <td>#include &lt;ValArray&gt;<br/>trống nhưng có thể sử dụng được, và</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="end2" title="cpp/numeric/valarray/end2"> <span class="t-lines"><span>STD :: Kết thúc<span class="t-dsc-small">Thuật toán</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>chuyên môn<code><a href="../../iterator/end" title="cpp/iterator/end">std::end</a></code> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/valarray/begin2">https://en.cppreference.com/w/cpp/numeric/valarray/begin2</a>
+</p>
+</div>

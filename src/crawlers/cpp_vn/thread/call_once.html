@@ -1,0 +1,40 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Call_once</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/mutex" title="cpp/header/mutex">&lt;mutex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;class có thể gọi, lớp ... args&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Thực thi<a href="../named_req/callable" title="cpp/named req/Callable">Callable</a>sự vật<code>f</code>void call_once (std :: onde_flag &amp; flag, callable &amp;&amp; f, args &amp;&amp; ... args);</p>
+<p>Chính xác một lần, ngay cả khi được gọi đồng thời từ một số chủ đề.</p>
+<ul>
+<li>Chi tiết:<code>std::call_once</code>Nếu, vào thời điểm<code>flag</code>được gọi,<code>f</code>chỉ ra rằng<code>std::call_once</code>đã được gọi,<code>std::call_once</code>được gọi là<i>gọi đồng bộ hóa-với lợi nhuận từ tất cả</i>).</li>
+<li>Là xấu nếu<code>std::call_once</code>cuộc gọi<code><a href="../utility/functional" title="cpp/utility/functional">INVOKE</a><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Callable<span class="sy1">&lt;</span><span class="br0">.</span>f<span class="br0">)</span>, <a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...<span class="br0">)</span></code>thụ động<code><a href="thread" title="cpp/thread/thread">std::thread</a></code>. Không giống như<code><a href="async" title="cpp/thread/async">std::async</a></code>người xây dựng hoặc<code>std::call_once</code>được gọi là<i>được đảm bảo để quan sát bất kỳ tác dụng phụ nào được thực hiện bởi</i>).</li>
+<ul>
+<li>tích cực<code>std::call_once</code>, Và<code>flag</code>Nếu lời mời đó ném một ngoại lệ, nó sẽ được truyền đến người gọi của<code>std::call_once</code>được gọi là<i>tạo thành một tổng số đơn hàng bao gồm 0 trở lên</i>đặc biệt</li>
+<li>).<code>std::call_once</code>được gọi là<i>(loại con trỏ tới loại chức năng):</i>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.<code>flag</code>Nếu lời mời đó trở lại bình thường (một cuộc gọi như vậy<code>std::call_once</code>, một tên mẫu lớp có chủ đề<code>flag</code>bị lật, và tất cả các cuộc gọi khác đến<i>gọi đồng bộ hóa-với lợi nhuận từ tất cả</i>.</li>
+</ul>
+</ul> <p>Tất cả<i>được đảm bảo để quan sát bất kỳ tác dụng phụ nào được thực hiện bởi</i>thụ động<code>flag</code>Các cuộc gọi giống nhau<i>tạo thành một tổng số đơn hàng bao gồm 0 trở lên</i>đặc biệt<i>(loại con trỏ tới loại chức năng):</i>cuộc gọi, theo sau là một<i>được đảm bảo để quan sát bất kỳ tác dụng phụ nào được thực hiện bởi</i>tích cực<i>được đảm bảo để quan sát bất kỳ tác dụng phụ nào được thực hiện bởi</i>tích cực</p>
+<p>gọi theo thứ tự đó.<i>(loại con trỏ tới loại chức năng):</i>Sự trở lại từ<i>gọi đồng bộ hóa-với lợi nhuận từ tất cả</i>thụ động<code>flag</code>Các cuộc gọi giống nhau<code>std::call_once</code>: Điều này có nghĩa là tất cả các cuộc gọi đồng thời đến<i>được đảm bảo để quan sát bất kỳ tác dụng phụ nào được thực hiện bởi</i>tích cực</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>lá cờ</td> <td>-</td> <td>Gọi, không có đồng bộ hóa bổ sung.</td>
+</tr> <tr class="t-par"> <td>có thể sửa đổi các phần tử của phạm vi thông qua trình lặp được thu hút. Nếu như</td> <td>-</td> <td> <a href="../named_req/callable" title="cpp/named req/Callable">Callable</a>một đối tượng, chính xác một hàm được thực thi</td>
+</tr> <tr class="t-par"> <td>, không cho phép định dạng định dạng.</td> <td>-</td> <td>phản đối để gọi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <ul>
+<li> <code><a href="../error/system_error" title="cpp/error/system error">std::system_error</a></code>Đối số để chuyển đến hàm<code>std::call_once</code>Nếu bất kỳ điều kiện nào ngăn chặn các cuộc gọi đến</li>
+<li>Bất kỳ ngoại lệ nào được ném bởi<code>f</code>.</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>từ thực thi theo quy định.<code>std::call_once</code>Nếu các cuộc gọi đồng thời đến<code>f</code>vượt qua các chức năng khác nhau<code>f</code>, nó không được xác định<code>std::call_once</code>sẽ được gọi. Hàm đã chọn chạy trong cùng một luồng với</p>
+<p>Khởi tạo của<a href="../language/storage_duration#Static_local_variables" title="cpp/language/storage duration">function-local statics</a>Lời cầu khẩn nó đã được thông qua.<code>std::call_once</code>.</p>
+<p>được đảm bảo chỉ xảy ra một lần ngay cả khi được gọi từ nhiều luồng và có thể hiệu quả hơn mã tương đương<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/pthread_once.html" rel="nofollow"><code>pthread_once</code></a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Tương đương POSIX của chức năng này là</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2080" rel="nofollow">LWG 2080</a> </td> <td>C ++ 11</td> <td>
+<code><a href="../error/invalid_argument" title="cpp/error/invalid argument">std::invalid_argument</a></code>#include &lt;Prutex&gt;<code>f</code>#include &lt;Chủ đề&gt;<br/> <code>f</code>STD :: ANDY_FLAG flag1, flag2;</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2442" rel="nofollow">LWG 2442</a> </td> <td>C ++ 11</td> <td>void simple_do_once ()</td> <td>{</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="once_flag" title="cpp/thread/once flag"> <span class="t-lines"><span>một lần_flag</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đối tượng trợ giúp để đảm bảo rằng<strong class="selflink"><code>call_once</code></strong>Chỉ gọi chức năng một lần<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/thread/call_once" title="c/thread/call once">C documentation</a></span>vì<code>call_once</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/call_once">https://en.cppreference.com/w/cpp/thread/call_once</a>
+</p>
+</div>

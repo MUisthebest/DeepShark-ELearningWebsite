@@ -1,0 +1,1046 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ 20</h1> <p>Bản sửa đổi hiện tại của tiêu chuẩn C ++</p>
+<h2 id="New_language_features">Các tính năng ngôn ngữ mới</h2> <ul>
+<li> <a href="feature_test" title="cpp/feature test">Feature test macros</a> </li>
+<li> <a href="language/operator_comparison#Three-way_comparison" title="cpp/language/operator comparison">Three-way comparison</a>nhà điều hành<code>&lt;=&gt;</code>Và<a href="language/default_comparisons" title="cpp/language/default comparisons"><code>operator==() = default</code></a> </li>
+<li> <a href="language/aggregate_initialization#Designated_initializers" title="cpp/language/aggregate initialization">Designated initializers</a> </li>
+<li>Các statators và khởi tạo trong<a href="language/range-for" title="cpp/language/range-for">range-<code>for</code></a> </li>
+<li> <a href="keyword/char8_t" title="cpp/keyword/char8 t"><code>char8_t</code></a> </li>
+<li>Mới<a href="language/attributes" title="cpp/language/attributes">attributes</a>:<code>[[<a href="language/attributes/no_unique_address" title="cpp/language/attributes/no unique address">no_unique_address</a>]]</code>Thì<code>[[<a href="language/attributes/likely" title="cpp/language/attributes/likely">likely</a>]]</code>Thì<code>[[<a href="language/attributes/likely" title="cpp/language/attributes/likely">unlikely</a>]]</code> </li>
+<li> <a href="language/parameter_pack" title="cpp/language/parameter pack"><code>Pack-expansions</code></a>TRONG<a href="language/lambda#Lambda_capture" title="cpp/language/lambda">lambda init-captures</a> </li>
+<li>Đã loại bỏ yêu cầu sử dụng<code>typename</code>Để phân loại các loại trong nhiều bối cảnh</li>
+<li> <a href="language/consteval" title="cpp/language/consteval"><code>consteval</code></a>Thì<a href="language/constinit" title="cpp/language/constinit"><code>constinit</code></a> </li>
+<li>Consexpr thoải mái hơn nữa</li>
+<li>Số nguyên đã ký là bổ sung 2 của</li>
+<li> <a href="language/operator_arithmetic" title="cpp/language/operator arithmetic">Bitwise shift operators</a>hành vi thống nhất</li>
+<li> <a href="language/aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a>Sử dụng dấu ngoặc đơn</li>
+<li> <a href="language/coroutines" title="cpp/language/coroutines">coroutines</a> </li>
+<li> <a href="language/modules" title="cpp/language/modules">modules</a> </li>
+<li> <a href="language/constraints" title="cpp/language/constraints">Constraints and concepts</a> </li>
+<li> <a href="language/function_template#Abbreviated_function_template" title="cpp/language/function template">Abbreviated function template</a> </li>
+<li>DR11:<a href="language/new#Defect_reports" title="cpp/language/new">array new</a>có thể suy ra kích thước mảng</li>
+</ul> <h2 id="New_library_features">Các tính năng thư viện mới</h2> <h3 id="New_headers">Tiêu đề mới</h3> <ul>
+<li> <a href="header/bit" title="cpp/header/bit"><code>&lt;bit&gt;</code></a> </li>
+<li> <a href="header/compare" title="cpp/header/compare"><code>&lt;compare&gt;</code></a> </li>
+<li> <a href="header/concepts" title="cpp/header/concepts"><code>&lt;concepts&gt;</code></a> </li>
+<li> <a href="header/coroutine" title="cpp/header/coroutine"><code>&lt;coroutine&gt;</code></a> </li>
+<li> <a href="header/format" title="cpp/header/format"><code>&lt;format&gt;</code></a> </li>
+<li> <a href="header/numbers" title="cpp/header/numbers"><code>&lt;numbers&gt;</code></a> </li>
+<li> <a href="header/ranges" title="cpp/header/ranges"><code>&lt;ranges&gt;</code></a> </li>
+<li> <a href="header/source_location" title="cpp/header/source location"><code>&lt;source_location&gt;</code></a> </li>
+<li> <a href="header/span" title="cpp/header/span"><code>&lt;span&gt;</code></a> </li>
+<li> <a href="header/syncstream" title="cpp/header/syncstream"><code>&lt;syncstream&gt;</code></a> </li>
+<li> <a href="header/version" title="cpp/header/version"><code>&lt;version&gt;</code></a> </li>
+</ul> <p>TRONG<a href="thread" title="cpp/thread">Thread support library</a>:</p>
+<ul>
+<li> <a href="header/barrier" title="cpp/header/barrier"><code>&lt;barrier&gt;</code></a> </li>
+<li> <a href="header/latch" title="cpp/header/latch"><code>&lt;latch&gt;</code></a> </li>
+<li> <a href="header/semaphore" title="cpp/header/semaphore"><code>&lt;semaphore&gt;</code></a> </li>
+<li> <a href="header/stop_token" title="cpp/header/stop token"><code>&lt;stop_token&gt;</code></a> </li>
+</ul> <h3 id="Library_features">Các tính năng thư viện</h3> <ul>
+<li> <a href="utility/feature_test" title="cpp/utility/feature test">Library feature-test macros</a> </li>
+<li> <a href="utility/format" title="cpp/utility/format">Formatting library</a> </li>
+<li> <a href="concepts" title="cpp/concepts">Concepts library</a> </li>
+<li> <a href="chrono#Calendar" title="cpp/chrono">Calendar</a>Và<a href="chrono#Time_zone" title="cpp/chrono">Time zone</a>Thư viện trong<a href="header/chrono" title="cpp/header/chrono"><code>&lt;chrono&gt;</code></a> </li>
+<li> <code><a href="utility/source_location" title="cpp/utility/source location">std::source_location</a></code> </li>
+<li> <a href="container/span" title="cpp/container/span"><code>std::span</code></a> </li>
+<li> <a href="types/endian" title="cpp/types/endian"><code>std::endian</code></a>:<code>big</code>/<code>little</code>/<code>native</code> </li>
+<li>Hoạt động sức mạnh tích hợp của 2 và<a href="numeric/bit_cast" title="cpp/numeric/bit cast"><code>std::bit_cast</code></a>TRONG<a href="header/bit" title="cpp/header/bit"><code>&lt;bit&gt;</code></a> </li>
+<li>Hỗ trợ mảng cho<code><a href="memory/shared_ptr/make_shared" title="cpp/memory/shared ptr/make shared">std::make_shared</a></code> </li>
+<li> <a href="types/remove_cvref" title="cpp/types/remove cvref"><code>std::remove_cvref</code></a> </li>
+<li> <a href="memory/to_address" title="cpp/memory/to address"><code>std::to_address</code></a> </li>
+<li> <a href="atomic/atomic#Specializations_for_floating-point_types" title="cpp/atomic/atomic">Floating-point atomics</a>Thì<a href="memory/shared_ptr/atomic" title="cpp/memory/shared ptr/atomic"><code>std::atomic</code></a>nguyên tử</li>
+<li>Các lớp phối hợp chủ đề:<a href="thread/barrier" title="cpp/thread/barrier"><code>std::barrier</code></a>Thì<a href="thread/latch" title="cpp/thread/latch"><code>std::latch</code></a>, Và<a href="thread/counting_semaphore" title="cpp/thread/counting semaphore"><code>std::counting_semaphore</code></a> </li>
+<li> <a href="thread/jthread" title="cpp/thread/jthread"><code>std::jthread</code></a>Và<a href="thread#Thread_cancellation" title="cpp/thread">thread cancellation</a>Các lớp học:<a href="thread/stop_token" title="cpp/thread/stop token"><code>std::stop_token</code></a>Thì<a href="thread/stop_source" title="cpp/thread/stop source"><code>std::stop_source</code></a>, Và<a href="thread/stop_callback" title="cpp/thread/stop callback"><code>std::stop_callback</code></a> </li>
+<li> <a href="io/basic_osyncstream" title="cpp/io/basic osyncstream"><code>std::basic_osyncstream</code></a> </li>
+<li> <a href="string/basic_string" title="cpp/string/basic string"><code>std::basic_string</code></a>và khác<a href="language/types#char8_t" title="cpp/language/types"><code>char8_t</code></a>Sử dụng</li>
+<li> <code>constexpr</code>vì<a href="header/algorithm" title="cpp/header/algorithm"><code>&lt;algorithm&gt;</code></a>Thì<a href="header/utility" title="cpp/header/utility"><code>&lt;utility&gt;</code></a>Thì<a href="header/complex" title="cpp/header/complex"><code>&lt;complex&gt;</code></a> </li>
+<li> <a href="string/basic_string/starts_with" title="cpp/string/basic string/starts with"><code>string::starts_with</code></a>/<a href="string/basic_string/ends_with" title="cpp/string/basic string/ends with"><code>ends_with</code></a>Và<a href="string/basic_string_view/starts_with" title="cpp/string/basic string view/starts with"><code>string_view::starts_with</code></a>/<a href="string/basic_string_view/ends_with" title="cpp/string/basic string view/ends with"><code>ends_with</code></a> </li>
+<li> <a href="memory/assume_aligned" title="cpp/memory/assume aligned"><code>std::assume_aligned</code></a> </li>
+<li> <a href="utility/functional/bind_front" title="cpp/utility/functional/bind front"><code>std::bind_front</code></a> </li>
+<li> <a href="string/multibyte/c8rtomb" title="cpp/string/multibyte/c8rtomb"><code>std::c8rtomb</code></a>/<a href="string/multibyte/mbrtoc8" title="cpp/string/multibyte/mbrtoc8"><code>std::mbrtoc8</code></a> </li>
+<li> <a href="memory/make_obj_using_allocator" title="cpp/memory/make obj using allocator"><code>std::make_obj_using_allocator</code></a>vân vân</li>
+<li> <a href="memory/shared_ptr/make_shared" title="cpp/memory/shared ptr/make shared"><code>std::make_shared</code></a>/<a href="memory/unique_ptr/make_unique" title="cpp/memory/unique ptr/make unique"><code>std::make_unique</code></a> </li>
+<li>Tra cứu không đồng nhất trong các container liên kết không có thứ tự</li>
+<li> <a href="memory/polymorphic_allocator" title="cpp/memory/polymorphic allocator"><code>std::pmr::polymorphic_allocator</code></a>với các chức năng thành viên bổ sung và<a href="types/byte" title="cpp/types/byte"><code>std::byte</code></a>như đối số mẫu mặc định của nó</li>
+<li> <a href="algorithm/execution_policy_tag" title="cpp/algorithm/execution policy tag"><code>execution::unseq</code></a> </li>
+<li> <a href="numeric/midpoint" title="cpp/numeric/midpoint"><code>std::midpoint</code></a>Và<a href="numeric/lerp" title="cpp/numeric/lerp"><code>std::lerp</code></a> </li>
+<li> <a href="iterator/size" title="cpp/iterator/size"><code>std::size</code></a> </li>
+<li> <a href="types/is_bounded_array" title="cpp/types/is bounded array"><code>std::is_bounded_array</code></a>Thì<a href="types/is_unbounded_array" title="cpp/types/is unbounded array"><code>std::is_unbounded_array</code></a> </li>
+<li> <a href="ranges" title="cpp/ranges">Ranges</a> </li>
+<li>Xóa container thống nhất:<code><a href="container/vector/erase2" title="cpp/container/vector/erase2">std::erase</a></code>/<code><a href="container/vector/erase2" title="cpp/container/vector/erase2">std::erase_if</a></code>, ví dụ.<a href="container/list/erase2" title="cpp/container/list/erase2"><code>std::erase(std::list)</code></a>hoặc<a href="container/map/erase_if" title="cpp/container/map/erase if"><code>erase_if(std::map)</code></a>vân vân</li>
+<li> <a href="numeric/constants" title="cpp/numeric/constants">Mathematical constants</a>TRONG<a href="header/numbers" title="cpp/header/numbers"><code>&lt;numbers&gt;</code></a> </li>
+</ul> <h2 id="Defect_reports">Báo cáo khiếm khuyết</h2> <div style="margin-left:0px"> <table class="mw-collapsible mw-collapsed"> <tr> <th>Báo cáo lỗi cố định trong C ++ 20 (Lõi 158, thư viện 345)</th>
+</tr> <tr> <td> <ul>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue555" rel="nofollow">CWG#555</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue581" rel="nofollow">CWG#581</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue682" rel="nofollow">CWG#682</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue943" rel="nofollow">CWG#943</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1076" rel="nofollow">CWG#1076</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1271" rel="nofollow">CWG#1271</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1299" rel="nofollow">CWG#1299</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1331" rel="nofollow">CWG#1331</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1332" rel="nofollow">CWG#1332</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1426" rel="nofollow">CWG#1426</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1469" rel="nofollow">CWG#1469</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1523" rel="nofollow">CWG#1523</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1581" rel="nofollow">CWG#1581</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1621" rel="nofollow">CWG#1621</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1632" rel="nofollow">CWG#1632</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1636" rel="nofollow">CWG#1636</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1640" rel="nofollow">CWG#1640</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1646" rel="nofollow">CWG#1646</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1704" rel="nofollow">CWG#1704</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1728" rel="nofollow">CWG#1728</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1781" rel="nofollow">CWG#1781</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1836" rel="nofollow">CWG#1836</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1857" rel="nofollow">CWG#1857</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1859" rel="nofollow">CWG#1859</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1862" rel="nofollow">CWG#1862</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1893" rel="nofollow">CWG#1893</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1910" rel="nofollow">CWG#1910</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1912" rel="nofollow">CWG#1912</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1913" rel="nofollow">CWG#1913</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1931" rel="nofollow">CWG#1931</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1937" rel="nofollow">CWG#1937</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1938" rel="nofollow">CWG#1938</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1943" rel="nofollow">CWG#1943</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1983" rel="nofollow">CWG#1983</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2020" rel="nofollow">CWG#2020</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2045" rel="nofollow">CWG#2045</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2051" rel="nofollow">CWG#2051</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2053" rel="nofollow">CWG#2053</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2059" rel="nofollow">CWG#2059</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2080" rel="nofollow">CWG#2080</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2081" rel="nofollow">CWG#2081</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2083" rel="nofollow">CWG#2083</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2088" rel="nofollow">CWG#2088</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2092" rel="nofollow">CWG#2092</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2103" rel="nofollow">CWG#2103</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2112" rel="nofollow">CWG#2112</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2126" rel="nofollow">CWG#2126</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2133" rel="nofollow">CWG#2133</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2164" rel="nofollow">CWG#2164</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2170" rel="nofollow">CWG#2170</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2177" rel="nofollow">CWG#2177</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2207" rel="nofollow">CWG#2207</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2226" rel="nofollow">CWG#2226</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2227" rel="nofollow">CWG#2227</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2229" rel="nofollow">CWG#2229</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2233" rel="nofollow">CWG#2233</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2234" rel="nofollow">CWG#2234</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2235" rel="nofollow">CWG#2235</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2237" rel="nofollow">CWG#2237</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2241" rel="nofollow">CWG#2241</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2249" rel="nofollow">CWG#2249</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2253" rel="nofollow">CWG#2253</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2254" rel="nofollow">CWG#2254</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2255" rel="nofollow">CWG#2255</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2256" rel="nofollow">CWG#2256</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2257" rel="nofollow">CWG#2257</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2260" rel="nofollow">CWG#2260</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2266" rel="nofollow">CWG#2266</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2267" rel="nofollow">CWG#2267</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2273" rel="nofollow">CWG#2273</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2277" rel="nofollow">CWG#2277</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2278" rel="nofollow">CWG#2278</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2280" rel="nofollow">CWG#2280</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2282" rel="nofollow">CWG#2282</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2285" rel="nofollow">CWG#2285</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2287" rel="nofollow">CWG#2287</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2289" rel="nofollow">CWG#2289</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2290" rel="nofollow">CWG#2290</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2292" rel="nofollow">CWG#2292</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2293" rel="nofollow">CWG#2293</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2294" rel="nofollow">CWG#2294</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2295" rel="nofollow">CWG#2295</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2299" rel="nofollow">CWG#2299</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2300" rel="nofollow">CWG#2300</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2303" rel="nofollow">CWG#2303</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2305" rel="nofollow">CWG#2305</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2307" rel="nofollow">CWG#2307</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2309" rel="nofollow">CWG#2309</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2310" rel="nofollow">CWG#2310</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2313" rel="nofollow">CWG#2313</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2315" rel="nofollow">CWG#2315</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2317" rel="nofollow">CWG#2317</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2318" rel="nofollow">CWG#2318</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2321" rel="nofollow">CWG#2321</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2322" rel="nofollow">CWG#2322</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2323" rel="nofollow">CWG#2323</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2330" rel="nofollow">CWG#2330</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2332" rel="nofollow">CWG#2332</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2336" rel="nofollow">CWG#2336</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2338" rel="nofollow">CWG#2338</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2339" rel="nofollow">CWG#2339</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2342" rel="nofollow">CWG#2342</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2343" rel="nofollow">CWG#2343</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2346" rel="nofollow">CWG#2346</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2347" rel="nofollow">CWG#2347</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2351" rel="nofollow">CWG#2351</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2352" rel="nofollow">CWG#2352</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2353" rel="nofollow">CWG#2353</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2354" rel="nofollow">CWG#2354</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2356" rel="nofollow">CWG#2356</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2358" rel="nofollow">CWG#2358</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2359" rel="nofollow">CWG#2359</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2360" rel="nofollow">CWG#2360</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2365" rel="nofollow">CWG#2365</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2366" rel="nofollow">CWG#2366</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2368" rel="nofollow">CWG#2368</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2371" rel="nofollow">CWG#2371</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2372" rel="nofollow">CWG#2372</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2373" rel="nofollow">CWG#2373</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2374" rel="nofollow">CWG#2374</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2376" rel="nofollow">CWG#2376</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2378" rel="nofollow">CWG#2378</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2379" rel="nofollow">CWG#2379</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2380" rel="nofollow">CWG#2380</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2381" rel="nofollow">CWG#2381</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2382" rel="nofollow">CWG#2382</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2384" rel="nofollow">CWG#2384</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2385" rel="nofollow">CWG#2385</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2386" rel="nofollow">CWG#2386</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2387" rel="nofollow">CWG#2387</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2390" rel="nofollow">CWG#2390</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2394" rel="nofollow">CWG#2394</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2399" rel="nofollow">CWG#2399</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2400" rel="nofollow">CWG#2400</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2404" rel="nofollow">CWG#2404</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2406" rel="nofollow">CWG#2406</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2411" rel="nofollow">CWG#2411</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2414" rel="nofollow">CWG#2414</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2416" rel="nofollow">CWG#2416</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2418" rel="nofollow">CWG#2418</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2419" rel="nofollow">CWG#2419</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2422" rel="nofollow">CWG#2422</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2424" rel="nofollow">CWG#2424</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2426" rel="nofollow">CWG#2426</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2427" rel="nofollow">CWG#2427</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2429" rel="nofollow">CWG#2429</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2430" rel="nofollow">CWG#2430</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2431" rel="nofollow">CWG#2431</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2432" rel="nofollow">CWG#2432</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2433" rel="nofollow">CWG#2433</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2436" rel="nofollow">CWG#2436</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2437" rel="nofollow">CWG#2437</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2439" rel="nofollow">CWG#2439</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2441" rel="nofollow">CWG#2441</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2442" rel="nofollow">CWG#2442</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2445" rel="nofollow">CWG#2445</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2446" rel="nofollow">CWG#2446</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2447" rel="nofollow">CWG#2447</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg1052" rel="nofollow">LWG#1052</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg1203" rel="nofollow">LWG#1203</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2040" rel="nofollow">LWG#2040</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2055" rel="nofollow">LWG#2055</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2070" rel="nofollow">LWG#2070</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2089" rel="nofollow">LWG#2089</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2139" rel="nofollow">LWG#2139</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2151" rel="nofollow">LWG#2151</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2154" rel="nofollow">LWG#2154</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2155" rel="nofollow">LWG#2155</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2164" rel="nofollow">LWG#2164</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2183" rel="nofollow">LWG#2183</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2184" rel="nofollow">LWG#2184</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2243" rel="nofollow">LWG#2243</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2292" rel="nofollow">LWG#2292</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2318" rel="nofollow">LWG#2318</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2334" rel="nofollow">LWG#2334</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2412" rel="nofollow">LWG#2412</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2444" rel="nofollow">LWG#2444</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2498" rel="nofollow">LWG#2498</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2499" rel="nofollow">LWG#2499</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2511" rel="nofollow">LWG#2511</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2593" rel="nofollow">LWG#2593</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2597" rel="nofollow">LWG#2597</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2682" rel="nofollow">LWG#2682</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2693" rel="nofollow">LWG#2693</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2741" rel="nofollow">LWG#2741</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2780" rel="nofollow">LWG#2780</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2783" rel="nofollow">LWG#2783</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2797" rel="nofollow">LWG#2797</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2800" rel="nofollow">LWG#2800</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2808" rel="nofollow">LWG#2808</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2814" rel="nofollow">LWG#2814</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2816" rel="nofollow">LWG#2816</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2821" rel="nofollow">LWG#2821</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2831" rel="nofollow">LWG#2831</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2832" rel="nofollow">LWG#2832</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2836" rel="nofollow">LWG#2836</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2840" rel="nofollow">LWG#2840</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2841" rel="nofollow">LWG#2841</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2843" rel="nofollow">LWG#2843</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2849" rel="nofollow">LWG#2849</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2851" rel="nofollow">LWG#2851</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2856" rel="nofollow">LWG#2856</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2859" rel="nofollow">LWG#2859</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2870" rel="nofollow">LWG#2870</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2894" rel="nofollow">LWG#2894</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2897" rel="nofollow">LWG#2897</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2899" rel="nofollow">LWG#2899</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2929" rel="nofollow">LWG#2929</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2932" rel="nofollow">LWG#2932</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2935" rel="nofollow">LWG#2935</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2936" rel="nofollow">LWG#2936</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2937" rel="nofollow">LWG#2937</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2938" rel="nofollow">LWG#2938</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2940" rel="nofollow">LWG#2940</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2941" rel="nofollow">LWG#2941</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2942" rel="nofollow">LWG#2942</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2943" rel="nofollow">LWG#2943</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2944" rel="nofollow">LWG#2944</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2945" rel="nofollow">LWG#2945</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2946" rel="nofollow">LWG#2946</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2948" rel="nofollow">LWG#2948</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2950" rel="nofollow">LWG#2950</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2951" rel="nofollow">LWG#2951</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2952" rel="nofollow">LWG#2952</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2953" rel="nofollow">LWG#2953</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2954" rel="nofollow">LWG#2954</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2955" rel="nofollow">LWG#2955</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2957" rel="nofollow">LWG#2957</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2958" rel="nofollow">LWG#2958</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2961" rel="nofollow">LWG#2961</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2964" rel="nofollow">LWG#2964</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2965" rel="nofollow">LWG#2965</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2966" rel="nofollow">LWG#2966</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2968" rel="nofollow">LWG#2968</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2969" rel="nofollow">LWG#2969</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2970" rel="nofollow">LWG#2970</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2972" rel="nofollow">LWG#2972</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2974" rel="nofollow">LWG#2974</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2975" rel="nofollow">LWG#2975</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2976" rel="nofollow">LWG#2976</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2977" rel="nofollow">LWG#2977</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2978" rel="nofollow">LWG#2978</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2979" rel="nofollow">LWG#2979</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2980" rel="nofollow">LWG#2980</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2981" rel="nofollow">LWG#2981</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2982" rel="nofollow">LWG#2982</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2988" rel="nofollow">LWG#2988</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2989" rel="nofollow">LWG#2989</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2993" rel="nofollow">LWG#2993</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2995" rel="nofollow">LWG#2995</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2996" rel="nofollow">LWG#2996</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2998" rel="nofollow">LWG#2998</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg2999" rel="nofollow">LWG#2999</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3000" rel="nofollow">LWG#3000</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3001" rel="nofollow">LWG#3001</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3004" rel="nofollow">LWG#3004</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3005" rel="nofollow">LWG#3005</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3006" rel="nofollow">LWG#3006</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3007" rel="nofollow">LWG#3007</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3008" rel="nofollow">LWG#3008</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3009" rel="nofollow">LWG#3009</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3012" rel="nofollow">LWG#3012</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3013" rel="nofollow">LWG#3013</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3014" rel="nofollow">LWG#3014</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3015" rel="nofollow">LWG#3015</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3017" rel="nofollow">LWG#3017</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3018" rel="nofollow">LWG#3018</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3022" rel="nofollow">LWG#3022</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3023" rel="nofollow">LWG#3023</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3024" rel="nofollow">LWG#3024</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3025" rel="nofollow">LWG#3025</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3026" rel="nofollow">LWG#3026</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3030" rel="nofollow">LWG#3030</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3031" rel="nofollow">LWG#3031</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3034" rel="nofollow">LWG#3034</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3035" rel="nofollow">LWG#3035</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3037" rel="nofollow">LWG#3037</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3038" rel="nofollow">LWG#3038</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3039" rel="nofollow">LWG#3039</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3040" rel="nofollow">LWG#3040</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3041" rel="nofollow">LWG#3041</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3042" rel="nofollow">LWG#3042</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3043" rel="nofollow">LWG#3043</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3045" rel="nofollow">LWG#3045</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3048" rel="nofollow">LWG#3048</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3050" rel="nofollow">LWG#3050</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3051" rel="nofollow">LWG#3051</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3054" rel="nofollow">LWG#3054</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3055" rel="nofollow">LWG#3055</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3058" rel="nofollow">LWG#3058</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3061" rel="nofollow">LWG#3061</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3062" rel="nofollow">LWG#3062</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3065" rel="nofollow">LWG#3065</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3067" rel="nofollow">LWG#3067</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3070" rel="nofollow">LWG#3070</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3074" rel="nofollow">LWG#3074</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3075" rel="nofollow">LWG#3075</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3076" rel="nofollow">LWG#3076</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3077" rel="nofollow">LWG#3077</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3079" rel="nofollow">LWG#3079</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3080" rel="nofollow">LWG#3080</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3083" rel="nofollow">LWG#3083</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3087" rel="nofollow">LWG#3087</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3091" rel="nofollow">LWG#3091</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3094" rel="nofollow">LWG#3094</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3096" rel="nofollow">LWG#3096</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3100" rel="nofollow">LWG#3100</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3101" rel="nofollow">LWG#3101</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3102" rel="nofollow">LWG#3102</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3103" rel="nofollow">LWG#3103</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3104" rel="nofollow">LWG#3104</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3110" rel="nofollow">LWG#3110</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3111" rel="nofollow">LWG#3111</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3112" rel="nofollow">LWG#3112</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3113" rel="nofollow">LWG#3113</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3115" rel="nofollow">LWG#3115</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3116" rel="nofollow">LWG#3116</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3119" rel="nofollow">LWG#3119</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3122" rel="nofollow">LWG#3122</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3125" rel="nofollow">LWG#3125</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3127" rel="nofollow">LWG#3127</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3128" rel="nofollow">LWG#3128</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3129" rel="nofollow">LWG#3129</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3130" rel="nofollow">LWG#3130</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3131" rel="nofollow">LWG#3131</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3132" rel="nofollow">LWG#3132</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3133" rel="nofollow">LWG#3133</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3137" rel="nofollow">LWG#3137</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3140" rel="nofollow">LWG#3140</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3141" rel="nofollow">LWG#3141</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3144" rel="nofollow">LWG#3144</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3145" rel="nofollow">LWG#3145</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3147" rel="nofollow">LWG#3147</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3148" rel="nofollow">LWG#3148</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3149" rel="nofollow">LWG#3149</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3150" rel="nofollow">LWG#3150</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3151" rel="nofollow">LWG#3151</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3153" rel="nofollow">LWG#3153</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3154" rel="nofollow">LWG#3154</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3156" rel="nofollow">LWG#3156</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3158" rel="nofollow">LWG#3158</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3160" rel="nofollow">LWG#3160</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3168" rel="nofollow">LWG#3168</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3169" rel="nofollow">LWG#3169</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3173" rel="nofollow">LWG#3173</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3175" rel="nofollow">LWG#3175</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3176" rel="nofollow">LWG#3176</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3178" rel="nofollow">LWG#3178</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3179" rel="nofollow">LWG#3179</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3180" rel="nofollow">LWG#3180</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3182" rel="nofollow">LWG#3182</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3183" rel="nofollow">LWG#3183</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3184" rel="nofollow">LWG#3184</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3185" rel="nofollow">LWG#3185</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3186" rel="nofollow">LWG#3186</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3187" rel="nofollow">LWG#3187</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3190" rel="nofollow">LWG#3190</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3191" rel="nofollow">LWG#3191</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3194" rel="nofollow">LWG#3194</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3196" rel="nofollow">LWG#3196</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3198" rel="nofollow">LWG#3198</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3199" rel="nofollow">LWG#3199</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3200" rel="nofollow">LWG#3200</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3201" rel="nofollow">LWG#3201</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3202" rel="nofollow">LWG#3202</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3206" rel="nofollow">LWG#3206</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3208" rel="nofollow">LWG#3208</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3209" rel="nofollow">LWG#3209</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3212" rel="nofollow">LWG#3212</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3213" rel="nofollow">LWG#3213</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3218" rel="nofollow">LWG#3218</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3221" rel="nofollow">LWG#3221</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3222" rel="nofollow">LWG#3222</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3224" rel="nofollow">LWG#3224</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3225" rel="nofollow">LWG#3225</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3226" rel="nofollow">LWG#3226</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3228" rel="nofollow">LWG#3228</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3230" rel="nofollow">LWG#3230</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3231" rel="nofollow">LWG#3231</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3232" rel="nofollow">LWG#3232</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3233" rel="nofollow">LWG#3233</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3235" rel="nofollow">LWG#3235</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3237" rel="nofollow">LWG#3237</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3238" rel="nofollow">LWG#3238</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3239" rel="nofollow">LWG#3239</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3241" rel="nofollow">LWG#3241</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3242" rel="nofollow">LWG#3242</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3243" rel="nofollow">LWG#3243</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3244" rel="nofollow">LWG#3244</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3245" rel="nofollow">LWG#3245</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3246" rel="nofollow">LWG#3246</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3247" rel="nofollow">LWG#3247</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3248" rel="nofollow">LWG#3248</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3250" rel="nofollow">LWG#3250</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3251" rel="nofollow">LWG#3251</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3252" rel="nofollow">LWG#3252</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3253" rel="nofollow">LWG#3253</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3254" rel="nofollow">LWG#3254</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3255" rel="nofollow">LWG#3255</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3256" rel="nofollow">LWG#3256</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3257" rel="nofollow">LWG#3257</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3259" rel="nofollow">LWG#3259</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3260" rel="nofollow">LWG#3260</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3262" rel="nofollow">LWG#3262</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3264" rel="nofollow">LWG#3264</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3266" rel="nofollow">LWG#3266</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3269" rel="nofollow">LWG#3269</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3270" rel="nofollow">LWG#3270</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3272" rel="nofollow">LWG#3272</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3273" rel="nofollow">LWG#3273</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3274" rel="nofollow">LWG#3274</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3276" rel="nofollow">LWG#3276</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3277" rel="nofollow">LWG#3277</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3278" rel="nofollow">LWG#3278</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3279" rel="nofollow">LWG#3279</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3280" rel="nofollow">LWG#3280</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3281" rel="nofollow">LWG#3281</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3282" rel="nofollow">LWG#3282</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3284" rel="nofollow">LWG#3284</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3285" rel="nofollow">LWG#3285</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3286" rel="nofollow">LWG#3286</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3290" rel="nofollow">LWG#3290</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3291" rel="nofollow">LWG#3291</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3292" rel="nofollow">LWG#3292</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3294" rel="nofollow">LWG#3294</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3295" rel="nofollow">LWG#3295</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3296" rel="nofollow">LWG#3296</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3299" rel="nofollow">LWG#3299</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3300" rel="nofollow">LWG#3300</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3301" rel="nofollow">LWG#3301</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3302" rel="nofollow">LWG#3302</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3303" rel="nofollow">LWG#3303</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3304" rel="nofollow">LWG#3304</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3307" rel="nofollow">LWG#3307</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3310" rel="nofollow">LWG#3310</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3313" rel="nofollow">LWG#3313</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3314" rel="nofollow">LWG#3314</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3315" rel="nofollow">LWG#3315</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3316" rel="nofollow">LWG#3316</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3317" rel="nofollow">LWG#3317</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3318" rel="nofollow">LWG#3318</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3319" rel="nofollow">LWG#3319</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3320" rel="nofollow">LWG#3320</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3321" rel="nofollow">LWG#3321</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3322" rel="nofollow">LWG#3322</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3323" rel="nofollow">LWG#3323</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3324" rel="nofollow">LWG#3324</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3325" rel="nofollow">LWG#3325</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3326" rel="nofollow">LWG#3326</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3327" rel="nofollow">LWG#3327</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3328" rel="nofollow">LWG#3328</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3329" rel="nofollow">LWG#3329</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3330" rel="nofollow">LWG#3330</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3331" rel="nofollow">LWG#3331</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3332" rel="nofollow">LWG#3332</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3334" rel="nofollow">LWG#3334</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3335" rel="nofollow">LWG#3335</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3336" rel="nofollow">LWG#3336</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3338" rel="nofollow">LWG#3338</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3340" rel="nofollow">LWG#3340</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3345" rel="nofollow">LWG#3345</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3346" rel="nofollow">LWG#3346</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3347" rel="nofollow">LWG#3347</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3348" rel="nofollow">LWG#3348</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3349" rel="nofollow">LWG#3349</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3350" rel="nofollow">LWG#3350</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3351" rel="nofollow">LWG#3351</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3352" rel="nofollow">LWG#3352</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3354" rel="nofollow">LWG#3354</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3355" rel="nofollow">LWG#3355</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3356" rel="nofollow">LWG#3356</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3358" rel="nofollow">LWG#3358</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3359" rel="nofollow">LWG#3359</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3360" rel="nofollow">LWG#3360</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3362" rel="nofollow">LWG#3362</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3363" rel="nofollow">LWG#3363</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3364" rel="nofollow">LWG#3364</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3367" rel="nofollow">LWG#3367</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3368" rel="nofollow">LWG#3368</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3369" rel="nofollow">LWG#3369</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3371" rel="nofollow">LWG#3371</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3372" rel="nofollow">LWG#3372</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3373" rel="nofollow">LWG#3373</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3374" rel="nofollow">LWG#3374</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3375" rel="nofollow">LWG#3375</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3377" rel="nofollow">LWG#3377</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3379" rel="nofollow">LWG#3379</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3380" rel="nofollow">LWG#3380</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3381" rel="nofollow">LWG#3381</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3382" rel="nofollow">LWG#3382</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3383" rel="nofollow">LWG#3383</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3384" rel="nofollow">LWG#3384</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3385" rel="nofollow">LWG#3385</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3386" rel="nofollow">LWG#3386</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3387" rel="nofollow">LWG#3387</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3388" rel="nofollow">LWG#3388</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3389" rel="nofollow">LWG#3389</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3390" rel="nofollow">LWG#3390</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3393" rel="nofollow">LWG#3393</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3395" rel="nofollow">LWG#3395</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3396" rel="nofollow">LWG#3396</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3397" rel="nofollow">LWG#3397</a> </li>
+<li> <a class="external text" href="https://wg21.link/lwg3398" rel="nofollow">LWG#3398</a> </li>
+</ul> </td>
+</tr>
+</table>
+</div> <h2 id="Compiler_support">Hỗ trợ trình biên dịch</h2> <p>Bài viết chính:<a href="compiler_support#C.2B.2B20_features" title="cpp/compiler support">C++20 compiler support</a></p>
+<h3 id="C.2B.2B20_core_language_features">C ++ 20 Tính năng ngôn ngữ cốt lõi</h3> <table class="wikitable tbody-scroll mw-collapsible t-compiler-support-top"> <tr style="height:15em"> <th>Tính năng C ++ 20<br/><br/> </th> <th>(Các) giấy<br/><br/> </th> <th> <div>GCC</div> </th> <th> <div>Kêu vang</div> </th> <th> <div>MSVC</div> </th> <th> <div>Apple kêu gọi</div> </th> <th> <div>EDG ECCP</div> </th> <th> <div>Intel C ++</div> </th> <th> <div>IBM XL C ++</div> </th> <th> <div>IBM mở XL C ++ cho Aix</div> </th> <th> <div>IBM mở XL C ++ cho z/OS</div> </th> <th> <div>Mặt trời/Oracle C ++</div> </th> <th> <div>Builder Embarcadero C ++</div> </th> <th> <div>Cray</div> </th> <th> <div><span title="ex Portland Group/PGI">NVIDIA HPC C ++ (Ex PGI)*</span></div> </th> <th> <div>NVIDIA NVCC</div> </th> <th> </th>
+</tr> <tr> <td>Cho phép<a href="language/lambda#Lambda_capture" title="cpp/language/lambda">Lambda capture</a> <code>[=, this]</code> </td> <td> <a class="external text" href="https://wg21.link/P0409R2" rel="nofollow">P0409R2</a> </td> <td class="table-yes">8</td> <td class="table-yes">6</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="preprocessor/replace#Function-like_macros" title="cpp/preprocessor/replace"><code>__VA_OPT__</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0306R4" rel="nofollow">P0306R4</a><br/><a class="external text" href="https://wg21.link/P1042R1" rel="nofollow">P1042R1</a> </td> <td class="table-yes">
+<span title="no #__VA_OPT__ support">8 (một phần)*</span><br/><span title="no placemarker token handling changes">10 (một phần)*</span><br/>12</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/aggregate_initialization#Designated_initializers" title="cpp/language/aggregate initialization">Designated initializers</a> </td> <td> <a class="external text" href="https://wg21.link/P0329R4" rel="nofollow">P0329R4</a> </td> <td class="table-yes">
+<span title="As non-standard extension that formed the basis for P0329, missing brace initializers">4.7 (một phần)*</span><br/>8</td> <td class="table-yes">
+<span title="Full C99 compatible superset of P0329, missing brace initializers">3.0 (một phần)*</span><br/>10</td> <td class="table-yes">
+<span title="VS 2019 16.1">19,21*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/lambda#Syntax" title="cpp/language/lambda">template-parameter-list for generic lambdas</a> </td> <td> <a class="external text" href="https://wg21.link/P0428R2" rel="nofollow">P0428R2</a> </td> <td class="table-yes">8</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.0 beta (11M336w), 11.0 (11A420a), 11.1 (11A1027), 11.2 (11B52), 11.2.1 (11B500), 11.3 (11C29), 11.3.1 (11C504)">11.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/bit_field#Cpp20_Default_member_initializers_for_bit_fields" title="cpp/language/bit field">Default member initializers for bit-fields</a> </td> <td> <a class="external text" href="https://wg21.link/P0683R1" rel="nofollow">P0683R1</a> </td> <td class="table-yes">8</td> <td class="table-yes">6</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Trình xây dựng danh sách khởi tạo trong Khấu trừ đối số mẫu của lớp</td> <td> <a class="external text" href="https://wg21.link/P0702R1" rel="nofollow">P0702R1</a> </td> <td class="table-yes">8</td> <td class="table-yes">6</td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <code>const&amp;</code>-đủ điều kiện cho các thành viên</td> <td> <a class="external text" href="https://wg21.link/P0704R1" rel="nofollow">P0704R1</a> </td> <td class="table-yes">8</td> <td class="table-yes">6</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/constraints" title="cpp/language/constraints">Concepts</a> </td> <td> <a class="external text" href="https://wg21.link/P0734R0" rel="nofollow">P0734R0</a> </td> <td class="table-yes">6<br/>(Chỉ TS)<br/>10</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.3">19,23*</span> <span title="no requires-expression support">(một phần)*</span><br/><span title="VS 2022 17.0">19.30*</span> </td> <td class="table-maybe"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span>(một phần)</p>
+</td> <td class="table-yes">6.1</td> <td class="table-no">được hỗ trợ vào năm 2021.6, bị xóa vào năm 2021.7</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/lambda#Lambdas_in_unevaluated_contexts" title="cpp/language/lambda">Lambdas in unevaluated contexts</a> </td> <td> <a class="external text" href="https://wg21.link/P0315R4" rel="nofollow">P0315R4</a> </td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="temp.deduct p9 missing">13 (một phần)*</span><br/><span title="temp.over.link changes">14 (một phần)*</span><br/>17</td> <td class="table-yes">
+<span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-maybe"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span>(một phần)</p>
+</td> <td class="table-yes">6.2</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/operator_comparison#Three-way_comparison" title="cpp/language/operator comparison">Three-way comparison</a>nhà điều hành</td> <td> <a class="external text" href="https://wg21.link/P0515R3" rel="nofollow">P0515R3</a> </td> <td class="table-yes">10</td> <td class="table-yes">8 (một phần)<br/>10</td> <td class="table-yes">
+<span title="VS 2019 16.0">19.20*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>DR: Đơn giản hóa việc bắt giữ Lambda ngầm</td> <td> <a class="external text" href="https://wg21.link/P0588R1" rel="nofollow">P0588R1</a> </td> <td class="table-yes">8</td> <td class="table-no"> </td> <td class="table-yes">
+<span title="VS 2019 16.4">19,24*</span> </td> <td class="table-no"> </td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/range-for#Syntax" title="cpp/language/range-for">init-statements for range-based for</a> </td> <td> <a class="external text" href="https://wg21.link/P0614R1" rel="nofollow">P0614R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.0 beta (11M336w), 11.0 (11A420a), 11.1 (11A1027), 11.2 (11B52), 11.2.1 (11B500), 11.3 (11C29), 11.3.1 (11C504)">11.0.0*</span></p>
+</td> <td class="table-yes">6.0</td> <td class="table-yes">2021.7</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Mặc định có thể xây dựng và không quốc tịch có thể gán<a href="language/lambda" title="cpp/language/lambda">lambdas</a> </td> <td> <a class="external text" href="https://wg21.link/P0624R2" rel="nofollow">P0624R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <code>const</code>không phù hợp với hàm tạo bản sao mặc định</td> <td> <a class="external text" href="https://wg21.link/P0641R2" rel="nofollow">P0641R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Kiểm tra truy cập trên các chuyên ngành</td> <td> <a class="external text" href="https://wg21.link/P0692R1" rel="nofollow">P0692R1</a> </td> <td class="table-yes">Đúng</td> <td class="table-yes">8 (một phần)<br/>14</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 14.0 (14A5228q)">14.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>ADL và các mẫu chức năng không hiển thị</td> <td> <a class="external text" href="https://wg21.link/P0846R0" rel="nofollow">P0846R0</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.1">19,21*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>DR11: Chỉ định khi nào<code>constexpr</code>Định nghĩa chức năng là<a href="language/constant_expression#Functions_and_variables_needed_for_constant_evaluation" title="cpp/language/constant expression">needed for constant evaluation</a> </td> <td> <a class="external text" href="https://wg21.link/P0859R0" rel="nofollow">P0859R0</a> </td> <td class="table-yes">
+<span title="mostly">5.2 (một phần)*</span><br/>9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="The implementation is sufficient to support the C++20 Standard Library."><span title="VS 2019 16.7">19,27*</span>(một phần)*</span><br/><span title="VS 2022 17.1">19.31*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.0 beta (11M336w), 11.0 (11A420a), 11.1 (11A1027), 11.2 (11B52), 11.2.1 (11B500), 11.3 (11C29), 11.3.1 (11C504)">11.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-no"> </td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Thuộc tính<code>[[<a href="language/attributes/likely" title="cpp/language/attributes/likely">likely</a>]]</code>Và<code>[[<a href="language/attributes/likely" title="cpp/language/attributes/likely">unlikely</a>]]</code> </td> <td> <a class="external text" href="https://wg21.link/P0479R5" rel="nofollow">P0479R5</a> </td> <td class="table-yes">9</td> <td class="table-yes">12</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.0 (13A233)">13.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.7</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Làm<a class="mw-redirect" href="keywords/typename" title="cpp/keywords/typename"><code>typename</code></a>nhiều tùy chọn hơn</td> <td> <a class="external text" href="https://wg21.link/P0634R3" rel="nofollow">P0634R3</a> </td> <td class="table-yes">9</td> <td class="table-yes">16</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-no"> </td> <td class="table-yes">5.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/parameter_pack" title="cpp/language/parameter pack"><code>Pack-expansions</code></a>TRONG<a href="language/lambda#Lambda_capture" title="cpp/language/lambda">lambda init-captures</a> </td> <td> <a class="external text" href="https://wg21.link/P0780R2" rel="nofollow">P0780R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">6.1</td> <td class="table-yes">2021.7</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Thuộc tính<code>[[<a href="language/attributes/no_unique_address" title="cpp/language/attributes/no unique address">no_unique_address</a>]]</code> </td> <td> <a class="external text" href="https://wg21.link/P0840R2" rel="nofollow">P0840R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.9">19,28 (16,9)*</span><span title="Implemented means parsed because it's considered ABI breaking because previously the compiler could accept it without errors. Also MSVC has an attribute: [[msvc::no_unique_address]]">*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Các chức năng thành viên đặc biệt tầm thường có điều kiện</td> <td> <a class="external text" href="https://wg21.link/P0848R3" rel="nofollow">P0848R3</a> </td> <td class="table-yes">10</td> <td class="table-yes">16</td> <td class="table-yes">
+<span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-no"> </td> <td class="table-yes">6.1</td> <td class="table-yes">2021.7</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>DR11: Thư giãn<a href="language/structured_binding" title="cpp/language/structured binding">structured bindings</a>Quy tắc tìm điểm tùy chỉnh</td> <td> <a class="external text" href="https://wg21.link/P0961R1" rel="nofollow">P0961R1</a> </td> <td class="table-yes">8</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.1">19,21*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>DR11: Thư giãn<a href="language/range-for" title="cpp/language/range-for">range-for</a>Vòng lặp các quy tắc tìm điểm tùy chỉnh vòng lặp</td> <td> <a class="external text" href="https://wg21.link/P0962R1" rel="nofollow">P0962R1</a> </td> <td class="table-yes">8</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.0 beta (11M336w), 11.0 (11A420a), 11.1 (11A1027), 11.2 (11B52), 11.2.1 (11B500), 11.3 (11C29), 11.3.1 (11C504)">11.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>DR17: Cho phép các ràng buộc có cấu trúc có thể truy cập thành viên</td> <td> <a class="external text" href="https://wg21.link/P0969R0" rel="nofollow">P0969R0</a> </td> <td class="table-yes">8</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.1">19,21*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="memory/new/operator_delete" title="cpp/memory/new/operator delete">Destroying <code>operator delete</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0722R3" rel="nofollow">P0722R3</a> </td> <td class="table-yes">9</td> <td class="table-yes">6</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">6.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Các loại lớp trong<a href="language/template_parameters#Non-type_template_parameter" title="cpp/language/template parameters">Non-type template parameters</a> </td> <td> <a class="external text" href="https://wg21.link/P0732R2" rel="nofollow">P0732R2</a> </td> <td class="table-yes">9</td> <td class="table-maybe">12 (một phần)</td> <td class="table-yes">
+<span title="no proposed changes for User-defined Literals"><span title="VS 2019 16.6">19,26*</span>(một phần)*</span><br/><span title="VS 2019 16.9">19,28 (16,9)*</span> </td> <td class="table-maybe"> <p><span title="Xcode 13.0 (13A233)">13.0.0*</span>(một phần)</p>
+</td> <td class="table-yes">6.2</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Khuyến ái ẩn<a href="language/lambda#Lambda_capture" title="cpp/language/lambda">capture</a>của<code>this</code>thông qua<code>[=]</code> </td> <td> <a class="external text" href="https://wg21.link/P0806R2" rel="nofollow">P0806R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">7</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/explicit" title="cpp/language/explicit"><code>explicit(bool)</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0892R2" rel="nofollow">P0892R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.4">19,24*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Tích hợp<a href="feature_test" title="cpp/feature test">feature-test macros</a> </td> <td> <a class="external text" href="https://wg21.link/P0941R2" rel="nofollow">P0941R2</a> </td> <td class="table-yes">5</td> <td class="table-yes">3.4</td> <td class="table-yes">
+<span title="VS 2017 15.8">19,15*</span>(một phần)<br/><span title="VS 2019 16.0">19.20*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Cấm tổng hợp với các hàm tạo do người dùng phát hành</td> <td> <a class="external text" href="https://wg21.link/P1008R1" rel="nofollow">P1008R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.0">19.20*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <code>constexpr</code> <a href="language/virtual" title="cpp/language/virtual">virtual function</a> </td> <td> <a class="external text" href="https://wg21.link/P1064R0" rel="nofollow">P1064R0</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.9">19,28 (16,9)*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Cải thiện tính nhất quán để so sánh</td> <td> <a class="external text" href="https://wg21.link/P1120R0" rel="nofollow">P1120R0</a> </td> <td class="table-yes">10</td> <td class="table-yes">8 (một phần)<br/>10</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <code><a href="language/types#char8_t" title="cpp/language/types">char8_t</a></code> </td> <td> <a class="external text" href="https://wg21.link/P0482R6" rel="nofollow">P0482R6</a> </td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="Prior to Clang 8, this feature is not enabled by -std=c++20, but can be enabled with -fchar8_t">7*</span> </td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="types/is_constant_evaluated" title="cpp/types/is constant evaluated"><code>std::is_constant_evaluated()</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0595R2" rel="nofollow">P0595R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">19.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-no"> </td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <code>constexpr</code> <code>try</code>-<code>catch</code>khối</td> <td> <a class="external text" href="https://wg21.link/P1002R1" rel="nofollow">P1002R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/consteval" title="cpp/language/consteval">Immediate functions</a>.<code>consteval</code>)</td> <td> <a class="external text" href="https://wg21.link/P1073R3" rel="nofollow">P1073R3</a> </td> <td class="table-yes">
+<span title="no consteval virtual support">10 (một phần)*</span><br/>11</td> <td class="table-yes">11 (một phần)<br/><span title="P1937R2 implemented">14 (một phần)*</span><br/>17</td> <td class="table-yes">
+<span title="no constant-folding immediate invocations"><span title="VS 2019 16.8">19,28 (16,8)*</span><br/>(một phần)*</span><br/><span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span>(một phần)<br/> <span title="Xcode 15.0 (15A240d), 15.0.1 (15A507), 15.1 (15C65)">15.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/namespace" title="cpp/language/namespace">Nested inline namespaces</a> </td> <td> <a class="external text" href="https://wg21.link/P1094R2" rel="nofollow">P1094R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Một cách tiếp cận khác cho<a href="language/template_parameters#Type_template_parameter" title="cpp/language/template parameters">constrained</a> <a href="language/auto" title="cpp/language/auto">declarations</a> </td> <td> <a class="external text" href="https://wg21.link/P1141R2" rel="nofollow">P1141R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span>(một phần)<br/><span title="VS 2019 16.9">19,28 (16,9)*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.5 (12E262), 12.5.1 (12E507)">12.0.5*</span></p>
+</td> <td class="table-yes">6.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Số nguyên đã ký là bổ sung của hai</td> <td> <a class="external text" href="https://wg21.link/P1236R1" rel="nofollow">P1236R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">Đúng</td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">
+<span title="signed integers have always been two's complement">Đúng*</span> </td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>và đa hình<a href="language/typeid" title="cpp/language/typeid"><code>typeid</code></a>TRONG<a href="language/constant_expression" title="cpp/language/constant expression">constant expressions</a> </td> <td> <a class="external text" href="https://wg21.link/P1327R1" rel="nofollow">P1327R1</a> </td> <td class="table-yes">10</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Thay đổi thành viên tích cực của một liên minh bên trong<code>constexpr</code> </td> <td> <a class="external text" href="https://wg21.link/P1330R0" rel="nofollow">P1330R0</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2017 15.0">19.10*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/coroutines" title="cpp/language/coroutines">Coroutines</a> </td> <td> <a class="external text" href="https://wg21.link/P0912R5" rel="nofollow">P0912R5</a> </td> <td class="table-yes">10</td> <td class="table-maybe">8 (một phần)<br/><span title="Fully supported on all targets except Windows, which still has some stability and ABI issues.">17 (một phần)*</span> </td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span>(một phần)<br/><span title="VS 2017 15.0">19.10*</span>(Chỉ TS)<br/><span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-maybe"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span>(một phần)</p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">12.0 (Chỉ mã máy chủ)</td>
+</tr> <tr> <td>Dấu ngoặc đơn<a href="language/aggregate_initialization" title="cpp/language/aggregate initialization">initialization of aggregates</a> </td> <td> <a class="external text" href="https://wg21.link/P0960R3" rel="nofollow">P0960R3</a> </td> <td class="table-yes">10</td> <td class="table-yes">16</td> <td class="table-yes">
+<span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-no"> </td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>DR11: Khấu trừ kích thước mảng trong<a href="language/new" title="cpp/language/new"><code>new</code>-expressions</a> </td> <td> <a class="external text" href="https://wg21.link/P1009R2" rel="nofollow">P1009R2</a> </td> <td class="table-yes">11</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/modules" title="cpp/language/modules">Modules</a> </td> <td> <a class="external text" href="https://wg21.link/P1103R3" rel="nofollow">P1103R3</a> </td> <td class="table-maybe">11 (một phần)</td> <td class="table-maybe">8 (một phần)</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span>(một phần)<br/><span title="VS 2017 15.0">19.10*</span>(Chỉ TS)<br/><span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-maybe"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span>(một phần)</p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Yêu cầu unicode mạnh hơn</td> <td> <a class="external text" href="https://wg21.link/P1041R4" rel="nofollow">P1041R4</a><br/><a class="external text" href="https://wg21.link/P1139R2" rel="nofollow">P1139R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">Đúng</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span>(P1041R4)<br/><span title="VS 2019 16.6">19,26*</span>(P1139R2)</td> <td class="table-yes">Đúng</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-no"> </td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <code>&lt;=&gt; != ==</code> </td> <td> <a class="external text" href="https://wg21.link/P1185R2" rel="nofollow">P1185R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>DR: Các chức năng được mặc định rõ ràng với các thông số kỹ thuật ngoại lệ khác nhau</td> <td> <a class="external text" href="https://wg21.link/P1286R2" rel="nofollow">P1286R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Lambda Capture và Storage Lớp xác định các ràng buộc có cấu trúc</td> <td> <a class="external text" href="https://wg21.link/P1091R3" rel="nofollow">P1091R3</a><br/><a class="external text" href="https://wg21.link/P1381R1" rel="nofollow">P1381R1</a> </td> <td class="table-yes">10</td> <td class="table-yes">8 (một phần)<br/>16</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span>(P1381R1)<br/><span title="VS 2019 16.4">19,24*</span>(P1091R3)</td> <td class="table-maybe"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span>(một phần)</p>
+</td> <td class="table-yes">5.1</td> <td class="table-yes">2021.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">20.7</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Cho phép chuyển đổi các mảng không xác định bị ràng buộc</td> <td> <a class="external text" href="https://wg21.link/P0388R4" rel="nofollow">P0388R4</a> </td> <td class="table-yes">10</td> <td class="table-yes">14</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 14.0 (14A5228q)">14.0.0*</span></p>
+</td> <td class="table-yes">6.0</td> <td class="table-yes">2021.5</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <code>constexpr</code>hoạt động container</td> <td> <a class="external text" href="https://wg21.link/P0784R7" rel="nofollow">P0784R7</a> </td> <td class="table-yes">10</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.9">19,28 (16,9)*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">6.0</td> <td class="table-yes">2021.5</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Khấu hao một số cách sử dụng của<a href="language/cv#Notes" title="cpp/language/cv"><code>volatile</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1152R4" rel="nofollow">P1152R4</a> </td> <td class="table-yes">10</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">6.0</td> <td class="table-yes">2021.5</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/constinit" title="cpp/language/constinit"><code>constinit</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1143R2" rel="nofollow">P1143R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">6.1</td> <td class="table-yes">2021.7</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/operator_other#Built-in_comma_operator" title="cpp/language/operator other">Deprecate comma operator in subscripts</a> </td> <td> <a class="external text" href="https://wg21.link/P1161R3" rel="nofollow">P1161R3</a> </td> <td class="table-yes">10</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">6.0</td> <td class="table-yes">2021.7</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <code>[[<a href="language/attributes/nodiscard" title="cpp/language/attributes/nodiscard">nodiscard</a>]]</code>với tin nhắn</td> <td> <a class="external text" href="https://wg21.link/P1301R4" rel="nofollow">P1301R4</a> </td> <td class="table-yes">10</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">6.0</td> <td class="table-yes">2021.5</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Khởi tạo mặc định tầm thường trong<code>constexpr</code>chức năng</td> <td> <a class="external text" href="https://wg21.link/P1331R2" rel="nofollow">P1331R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">6.1</td> <td class="table-yes">2021.7</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Không được đánh giá<code>asm</code>-DECLARISHING trong<code>constexpr</code>chức năng</td> <td> <a class="external text" href="https://wg21.link/P1668R1" rel="nofollow">P1668R1</a> </td> <td class="table-yes">10</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.9">19,28 (16,9)*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">6.1</td> <td class="table-yes">2021.7</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/enum#Using-enum-declaration" title="cpp/language/enum"><code>using enum</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1099R5" rel="nofollow">P1099R5</a> </td> <td class="table-yes">11</td> <td class="table-yes">13</td> <td class="table-yes">
+<span title="VS 2019 16.4">19,24*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span></p>
+</td> <td class="table-yes">6.3</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Tổng hợp<a href="language/operator_comparison#Three-way_comparison" title="cpp/language/operator comparison">Three-way comparison</a>Đối với danh mục so sánh được chỉ định</td> <td> <a class="external text" href="https://wg21.link/P1186R3" rel="nofollow">P1186R3</a> </td> <td class="table-yes">11</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.4">19,24*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">6.0</td> <td class="table-yes">2021.5</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>DR17:<code>[[<a href="language/attributes/nodiscard" title="cpp/language/attributes/nodiscard">nodiscard</a>]]</code>cho các nhà xây dựng</td> <td> <a class="external text" href="https://wg21.link/P1771R1" rel="nofollow">P1771R1</a> </td> <td class="table-yes">10</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.4">19,24*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-yes">6.0</td> <td class="table-yes">2021.5</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/class_template_argument_deduction" title="cpp/language/class template argument deduction">class template argument deduction</a>cho các mẫu bí danh</td> <td> <a class="external text" href="https://wg21.link/P1814R0" rel="nofollow">P1814R0</a> </td> <td class="table-yes">10</td> <td class="table-no"> </td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-no"> </td> <td class="table-yes">6.5</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">12.0</td>
+</tr> <tr> <td> <a href="language/class_template_argument_deduction" title="cpp/language/class template argument deduction">class template argument deduction</a>cho tổng hợp</td> <td> <a class="external text" href="https://wg21.link/P1816R0" rel="nofollow">P1816R0</a><br/><a class="external text" href="https://wg21.link/P2082R1" rel="nofollow">P2082R1</a> </td> <td class="table-yes">10 (P1816R0)<br/>11 (P2082R1)</td> <td class="table-yes">17</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-no"> </td> <td class="table-yes">6.3</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>DR:<a href="language/return" title="cpp/language/return">Implicit move</a>Đối với nhiều đối tượng cục bộ và tài liệu tham khảo rvalue</td> <td> <a class="external text" href="https://wg21.link/P1825R0" rel="nofollow">P1825R0</a> </td> <td class="table-yes">
+<span title="C++20 mode only">11*</span> </td> <td class="table-yes">13</td> <td class="table-yes">
+<span title="VS 2019 16.4">19,24*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span></p>
+</td> <td class="table-yes">6.0</td> <td class="table-yes">2021.5</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Cho phép so sánh mặc định theo giá trị</td> <td> <a class="external text" href="https://wg21.link/P1946R0" rel="nofollow">P1946R0</a> </td> <td class="table-yes">10</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">6.1</td> <td class="table-yes">2021.7</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Di dời<code>std::weak_equality</code>Và<code>std::strong_equality</code> </td> <td> <a class="external text" href="https://wg21.link/P1959R0" rel="nofollow">P1959R0</a> </td> <td class="table-yes">10</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">6.1</td> <td class="table-yes">2021.7</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-yes">20.11</td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>Sự không nhất quán với các tham số mẫu không thuộc loại</td> <td> <a class="external text" href="https://wg21.link/P1907R1" rel="nofollow">P1907R1</a> </td> <td class="table-yes">10 (một phần)<br/>11</td> <td class="table-maybe">12 (một phần)</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-maybe"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span>(một phần)</p>
+</td> <td class="table-yes">6.2</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>DR98: Pseudo-Destructor End End Object</td> <td> <a class="external text" href="https://wg21.link/P0593R6" rel="nofollow">P0593R6</a> </td> <td class="table-yes">11</td> <td class="table-yes">11</td> <td class="table-yes">Đúng</td> <td class="table-yes"> <p><span title="Xcode 12.5 (12E262), 12.5.1 (12E507)">12.0.5*</span></p>
+</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-no"> </td> <td class="table-yes">12.0</td>
+</tr> <tr> <td>DR11: Chuyển đổi từ<code>T*</code>ĐẾN<span class="kw4">bool</span>nên được coi là thu hẹp</td> <td> <a class="external text" href="https://wg21.link/P1957R2" rel="nofollow">P1957R2</a> </td> <td class="table-yes">
+<span title="C++20 mode only">10*</span><br/><span title="all modes">11*</span> </td> <td class="table-yes">11</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.5 (12E262), 12.5.1 (12E507)">12.0.5*</span></p>
+</td> <td class="table-yes">6.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">11.0</td> <td class="table-no"> </td> <td class="table-yes">12.0</td>
+</tr> <tr style="height:15em"> <th> <br/><br/>Tính năng C ++ 20</th> <th> <br/><br/>(Các) giấy</th> <th> <div>GCC</div> </th> <th> <div>Kêu vang</div> </th> <th> <div>MSVC</div> </th> <th> <div>Apple kêu gọi</div> </th> <th> <div>EDG ECCP</div> </th> <th> <div>Intel C ++</div> </th> <th> <div>IBM XL C ++</div> </th> <th> <div>IBM mở XL C ++ cho Aix</div> </th> <th> <div>IBM mở XL C ++ cho z/OS</div> </th> <th> <div>Mặt trời/Oracle C ++</div> </th> <th> <div>Builder Embarcadero C ++</div> </th> <th> <div>Cray</div> </th> <th> <div><span title="ex Portland Group/PGI">NVIDIA HPC C ++ (Ex PGI)*</span></div> </th> <th> <div>NVIDIA NVCC</div> </th>
+</tr>
+</table> <h3 id="C.2B.2B20_library_features">C ++ 20 Tính năng thư viện</h3> <table class="wikitable tbody-scroll mw-collapsible t-standard-library-support-top"> <tr style="height:15em"> <th>Tính năng C ++ 20<br/><br/> </th> <th>(Các) giấy<br/><br/> </th> <th>
+<div>GCC libstdc ++</div> </th> <th>
+<div>Clang Libc ++</div> </th> <th>
+<div>MSVC STL</div> </th> <th>
+<div><span title="C++ Standard Library">Apple Clang*</span></div> </th> <th>
+<div><span title="C/C++ Standard Library">IBM mở XL C/C ++ cho Aix*</span></div> </th> <th>
+<div><span title="C++ Standard Library">Sun/Oracle C ++*</span></div> </th> <th>
+<div><span title="C++ Standard Library">Embarcadero C ++ Builder*</span></div> </th> <th> </th>
+</tr> <tr> <td> <a href="types/endian" title="cpp/types/endian"><code>std::endian</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0463R1" rel="nofollow">P0463R1</a> </td> <td class="table-yes">8</td> <td class="table-yes">7</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Mở rộng<code><a href="memory/shared_ptr/make_shared" title="cpp/memory/shared ptr/make shared">std::make_shared()</a></code>để hỗ trợ mảng</td> <td> <a class="external text" href="https://wg21.link/P0674R1" rel="nofollow">P0674R1</a> </td> <td class="table-yes">12</td> <td class="table-yes">15</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 14.3 (14E222b)">14.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="atomic/atomic#Specializations_for_floating-point_types" title="cpp/atomic/atomic">Floating-point atomic</a> </td> <td> <a class="external text" href="https://wg21.link/P0020R6" rel="nofollow">P0020R6</a> </td> <td class="table-yes">10</td> <td class="table-yes">18</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="io/basic_syncbuf" title="cpp/io/basic syncbuf">Synchronized buffered</a>.<a href="io/basic_osyncstream" title="cpp/io/basic osyncstream"><code>std::basic_osyncstream</code></a>)</td> <td> <a class="external text" href="https://wg21.link/P0053R7" rel="nofollow">P0053R7</a> </td> <td class="table-yes">11</td> <td class="table-yes">18</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code>constexpr</code>vì<a href="header/algorithm" title="cpp/header/algorithm"><code>&lt;algorithm&gt;</code></a>Và<a href="header/utility" title="cpp/header/utility"><code>&lt;utility&gt;</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0202R3" rel="nofollow">P0202R3</a> </td> <td class="table-yes">10</td> <td class="table-yes">8 (một phần)<br/>12</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span>(một phần)<br/> <span title="Xcode 13.0 (13A233)">13.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Hơn<code>constexpr</code>vì<a href="header/complex" title="cpp/header/complex"><code>&lt;complex&gt;</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0415R1" rel="nofollow">P0415R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">7 (một phần)<br/>16</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span>(một phần)<br/> <span title="Xcode 15.0 (15A240d), 15.0.1 (15A507), 15.1 (15C65)">15.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Làm<code><a href="atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>một liệt kê phạm vi</td> <td> <a class="external text" href="https://wg21.link/P0439R0" rel="nofollow">P0439R0</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="string/basic_string" title="cpp/string/basic string">String</a> <a href="string/basic_string/starts_with" title="cpp/string/basic string/starts with">prefix</a>Và<a href="string/basic_string/ends_with" title="cpp/string/basic string/ends with">suffix</a>Kiểm tra:<a href="string/basic_string/starts_with" title="cpp/string/basic string/starts with"><code>string</code></a><a href="string/basic_string_view/starts_with" title="cpp/string/basic string view/starts with"><code>(_view)</code></a><a href="string/basic_string/starts_with" title="cpp/string/basic string/starts with"><code> ::starts_with</code></a>/<a href="string/basic_string_view/ends_with" title="cpp/string/basic string view/ends with"><code>ends_with</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0457R2" rel="nofollow">P0457R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">6</td> <td class="table-yes">
+<span title="VS 2019 16.1">19,21*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Hỗ trợ thư viện cho<a href="language/operator_comparison#Three-way_comparison" title="cpp/language/operator comparison"><code>operator&lt;=&gt;</code></a> <a href="header/compare" title="cpp/header/compare"><code>&lt;compare&gt;</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0768R1" rel="nofollow">P0768R1</a> </td> <td class="table-yes">10</td> <td class="table-yes">7 (một phần)<br/><span title="missing [alg.three.way]">12 (một phần)*</span><br/>17</td> <td class="table-yes">
+<span title="VS 2019 16.0">19.20*</span>(một phần)<br/><span title="VS 2019 16.9">19,28 (16,9)*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.0 (13A233)">13.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="types/remove_cvref" title="cpp/types/remove cvref"><code>std::remove_cvref</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0550R2" rel="nofollow">P0550R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">6</td> <td class="table-yes">
+<span title="VS 2019 16.0">19.20*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code>[[<a href="language/attributes/nodiscard" title="cpp/language/attributes/nodiscard">nodiscard</a>]]</code>trong<a href="language/attributes/nodiscard#Standard_library" title="cpp/language/attributes/nodiscard">standard library</a> </td> <td> <a class="external text" href="https://wg21.link/P0600R1" rel="nofollow">P0600R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">7 (một phần)<br/>16</td> <td class="table-yes">
+<span title="VS 2017 15.6">19,13*</span>(một phần)<br/><span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span>(một phần)<br/> <span title="Xcode 15.0 (15A240d), 15.0.1 (15A507), 15.1 (15C65)">15.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Sử dụng<code>std::move</code>TRONG<a href="algorithm#Numeric_operations" title="cpp/algorithm">numeric algorithms</a> </td> <td> <a class="external text" href="https://wg21.link/P0616R0" rel="nofollow">P0616R0</a> </td> <td class="table-yes">9</td> <td class="table-yes">12</td> <td class="table-yes">
+<span title="VS 2019 16.3">19,23*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.0 (13A233)">13.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="memory/to_address" title="cpp/memory/to address">Utility</a>Để chuyển đổi một con trỏ thành con trỏ thô</td> <td> <a class="external text" href="https://wg21.link/P0653R2" rel="nofollow">P0653R2</a> </td> <td class="table-yes">8</td> <td class="table-yes">6</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes">Đúng</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Nguyên tử<a href="memory/shared_ptr/atomic2" title="cpp/memory/shared ptr/atomic2"><code>std::shared_ptr</code></a>Và<a href="memory/weak_ptr/atomic2" title="cpp/memory/weak ptr/atomic2"><code>std::weak_ptr</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0718R2" rel="nofollow">P0718R2</a> </td> <td class="table-yes">12</td> <td class="table-no"> </td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="container/span" title="cpp/container/span"><code>std::span</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0122R7" rel="nofollow">P0122R7</a> </td> <td class="table-yes">10</td> <td class="table-yes">7</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="chrono#Calendar" title="cpp/chrono">Calendar</a>Và<a href="chrono#Time_zone" title="cpp/chrono">timezone</a> </td> <td> <a class="external text" href="https://wg21.link/P0355R7" rel="nofollow">P0355R7</a> </td> <td class="table-yes">
+<span title="missing timezones and UTC time">11 (một phần)*</span><br/><span title="missing parse and from_stream">13 (một phần)*</span><br/>14</td> <td class="table-maybe">7 (một phần)</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-maybe"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span>(một phần)</p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="header/version" title="cpp/header/version"><code>&lt;version&gt;</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0754R2" rel="nofollow">P0754R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">7</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>So sánh các container không có thứ tự</td> <td> <a class="external text" href="https://wg21.link/P0809R0" rel="nofollow">P0809R0</a> </td> <td class="table-yes">Đúng</td> <td class="table-yes">Đúng</td> <td class="table-yes">
+<span title="VS 2010">16.0*</span> </td> <td class="table-yes">Đúng</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="named_req/constexpriterator" title="cpp/named req/ConstexprIterator">ConstexprIterator</a>yêu cầu</td> <td> <a class="external text" href="https://wg21.link/P0858R0" rel="nofollow">P0858R0</a> </td> <td class="table-yes">9</td> <td class="table-yes">12</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.0 (13A233)">13.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code><a href="string/basic_string/reserve" title="cpp/string/basic string/reserve">std::basic_string::reserve()</a></code>không nên co lại</td> <td> <a class="external text" href="https://wg21.link/P0966R1" rel="nofollow">P0966R1</a> </td> <td class="table-yes">11</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="atomic/atomic/compare_exchange" title="cpp/atomic/atomic/compare exchange">Atomic Compare-And-Exchange</a>với các bit đệm</td> <td> <a class="external text" href="https://wg21.link/P0528R3" rel="nofollow">P0528R3</a> </td> <td class="table-yes">13</td> <td class="table-no"> </td> <td class="table-yes">
+<span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="atomic/atomic_ref" title="cpp/atomic/atomic ref"><code>std::atomic_ref</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0019R8" rel="nofollow">P0019R8</a> </td> <td class="table-yes">10</td> <td class="table-no"> </td> <td class="table-yes">
+<span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code>contains()</code>Chức năng thành viên của các container kết hợp, ví dụ:<a href="container/map/contains" title="cpp/container/map/contains"><code>std::map::contains()</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0458R2" rel="nofollow">P0458R2</a> </td> <td class="table-yes">9</td> <td class="table-yes">13</td> <td class="table-yes">
+<span title="VS 2019 16.1">19,21*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>DR11: Giải quyết bản sao được đảm bảo cho<a href="memory/scoped_allocator_adaptor/construct" title="cpp/memory/scoped allocator adaptor/construct">piecewise construction</a> </td> <td> <a class="external text" href="https://wg21.link/P0475R1" rel="nofollow">P0475R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">Đúng</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="numeric/bit_cast" title="cpp/numeric/bit cast"><code>std::bit_cast()</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0476R2" rel="nofollow">P0476R2</a> </td> <td class="table-yes">11</td> <td class="table-yes">14</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 14.3 (14E222b)">14.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="header/bit" title="cpp/header/bit">Integral power-of-2 operations</a>:<p><a href="numeric/bit_ceil" title="cpp/numeric/bit ceil"><code>std::bit_ceil()</code></a>Thì<a href="numeric/bit_floor" title="cpp/numeric/bit floor"><code>std::bit_floor()</code></a>Thì<a href="numeric/bit_width" title="cpp/numeric/bit width"><code>std::bit_width()</code></a>Thì<a href="numeric/has_single_bit" title="cpp/numeric/has single bit"><code>std::has_single_bit()</code></a></p>
+</td> <td> <a class="external text" href="https://wg21.link/P0556R3" rel="nofollow">P0556R3</a> <a class="external text" href="https://wg21.link/P1956R1" rel="nofollow">P1956R1</a> </td> <td class="table-yes">9<br/>(P0556R3)<br/>10 (P1956R1)</td> <td class="table-yes">9 (P0556R3)<br/>12 (P1956R1)</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span>(P0556R3)<span title="with Clang">*</span><br/><span title="VS 2019 16.7">19,27*</span>(P1956R1)<span title="with Clang">*</span><br/><span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span>(P0556R3)<br/> <span title="Xcode 13.0 (13A233)">13.0.0*</span>(P1956R1)</p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Cải thiện giá trị trả về của các thuật toán giống như xóa</td> <td> <a class="external text" href="https://wg21.link/P0646R1" rel="nofollow">P0646R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.1">19,21*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a class="mw-redirect" href="memory/new/destroying_delete_t" title="cpp/memory/new/destroying delete t"><code>std::destroying_delete</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0722R3" rel="nofollow">P0722R3</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="types/is_convertible" title="cpp/types/is convertible"><code>std::is_nothrow_convertible</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0758R1" rel="nofollow">P0758R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.3">19,23*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Thêm vào<a href="algorithm/shift" title="cpp/algorithm/shift"><code>std::shift_left/right</code></a>ĐẾN<a href="header/algorithm" title="cpp/header/algorithm"><code>&lt;algorithm&gt;</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0769R2" rel="nofollow">P0769R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">12</td> <td class="table-yes">
+<span title="VS 2019 16.1">19,21*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.0 (13A233)">13.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Constexpr cho<code><a href="algorithm/swap" title="cpp/algorithm/swap">std::swap()</a></code>Và<code>swap</code>các chức năng liên quan</td> <td> <a class="external text" href="https://wg21.link/P0879R0" rel="nofollow">P0879R0</a> </td> <td class="table-yes">10</td> <td class="table-yes">13</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="types/type_identity" title="cpp/types/type identity"><code>std::type_identity</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0887R1" rel="nofollow">P0887R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.1">19,21*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="concepts" title="cpp/concepts">Concepts library</a> </td> <td> <a class="external text" href="https://wg21.link/P0898R3" rel="nofollow">P0898R3</a> </td> <td class="table-yes">10</td> <td class="table-yes">13</td> <td class="table-yes">
+<span title="VS 2019 16.3">19,23*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code>constexpr</code> <a href="container/array/operator_cmp" title="cpp/container/array/operator cmp">comparison operators</a>vì<code><a href="container/array" title="cpp/container/array">std::array</a></code> </td> <td> <a class="external text" href="https://wg21.link/P1023R0" rel="nofollow">P1023R0</a> </td> <td class="table-yes">10</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="utility/functional/unwrap_reference" title="cpp/utility/functional/unwrap reference"><code>std::unwrap_ref_decay</code> and <code>std::unwrap_reference</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0318R1" rel="nofollow">P0318R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.1">19,21*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="utility/functional/bind_front" title="cpp/utility/functional/bind front"><code>std::bind_front()</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0356R5" rel="nofollow">P0356R5</a> </td> <td class="table-yes">9</td> <td class="table-yes">13</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code><a href="utility/functional/reference_wrapper" title="cpp/utility/functional/reference wrapper">std::reference_wrapper</a></code>cho các loại không đầy đủ</td> <td> <a class="external text" href="https://wg21.link/P0357R3" rel="nofollow">P0357R3</a> </td> <td class="table-yes">9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Sửa chữa<a href="io/basic_istream/operator_gtgt2" title="cpp/io/basic istream/operator gtgt2"><code>operator&gt;&gt;(basic_istream&amp;, CharT*)</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0487R1" rel="nofollow">P0487R1</a> </td> <td class="table-yes">11</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.3">19,23*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Hỗ trợ thư viện cho<a href="language/types#char8_t" title="cpp/language/types"><code>char8_t</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0482R6" rel="nofollow">P0482R6</a> </td> <td class="table-yes">9</td> <td class="table-yes">8 (một phần)<br/>16</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span>(một phần)<br/> <span title="Xcode 15.0 (15A240d), 15.0.1 (15A507), 15.1 (15C65)">15.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="memory/uses_allocator_construction_args" title="cpp/memory/uses allocator construction args">Utility functions</a>để thực hiện<a href="memory/make_obj_using_allocator" title="cpp/memory/make obj using allocator">uses-allocator</a> <a href="memory/uninitialized_construct_using_allocator" title="cpp/memory/uninitialized construct using allocator">construction</a> </td> <td> <a class="external text" href="https://wg21.link/P0591R4" rel="nofollow">P0591R4</a> </td> <td class="table-yes">9</td> <td class="table-yes">16</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-yes"> <p><span title="Xcode 15.0 (15A240d), 15.0.1 (15A507), 15.1 (15C65)">15.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>DR17:<code><a href="utility/variant" title="cpp/utility/variant">std::variant</a></code>Và<code><a href="utility/optional" title="cpp/utility/optional">std::optional</a></code>nên tuyên truyền sao chép/di chuyển tầm thường</td> <td> <a class="external text" href="https://wg21.link/P0602R4" rel="nofollow">P0602R4</a> </td> <td class="table-yes">8.3</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Một người lành mạnh<code><a href="utility/variant" title="cpp/utility/variant">std::variant</a></code>Chuyển đổi hàm tạo</td> <td> <a class="external text" href="https://wg21.link/P0608R3" rel="nofollow">P0608R3</a> </td> <td class="table-yes">10</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code><a href="utility/functional/function" title="cpp/utility/functional/function">std::function</a></code>Trình xây dựng di chuyển nên được<a href="language/noexcept" title="cpp/language/noexcept"><code>noexcept</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0771R1" rel="nofollow">P0771R1</a> </td> <td class="table-yes">7.2</td> <td class="table-yes">6</td> <td class="table-yes">
+<span title="VS 2019 16.2">19,22*</span> </td> <td class="table-yes">Đúng</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Các<a href="iterator" title="cpp/iterator">One</a> <a href="ranges" title="cpp/ranges">Ranges</a> <a href="algorithm/ranges" title="cpp/algorithm/ranges">Proposal</a> </td> <td> <a class="external text" href="https://wg21.link/P0896R4" rel="nofollow">P0896R4</a> </td> <td class="table-yes">10</td> <td class="table-yes">13 (một phần)<br/><span title="Prior to libc++ 16, this feature is considered experimental and the -fexperimental-library compiler flag is required">15*</span> </td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-yes"> <p><span title="Xcode 14.3 (14E222b)">14.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Tra cứu không đồng nhất cho<a href="container#Unordered_associative_containers" title="cpp/container">unordered containers</a> </td> <td> <a class="external text" href="https://wg21.link/P0919R3" rel="nofollow">P0919R3</a> <a class="external text" href="https://wg21.link/P1690R1" rel="nofollow">P1690R1</a> </td> <td class="table-yes">11</td> <td class="table-yes">12</td> <td class="table-yes">
+<span title="VS 2019 16.3">19,23*</span>(P0919R3)<br/><span title="VS 2019 16.5">19,25*</span>(P1690R1)</td> <td class="table-yes"> <p><span title="Xcode 13.0 (13A233)">13.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="header/chrono" title="cpp/header/chrono"><code>&lt;chrono&gt;</code></a> <code>zero()</code>Thì<code>min()</code>, Và<code>max()</code>nên được<a href="language/noexcept" title="cpp/language/noexcept"><code>noexcept</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0972R0" rel="nofollow">P0972R0</a> </td> <td class="table-yes">9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code>constexpr</code>TRONG<code><a href="memory/pointer_traits" title="cpp/memory/pointer traits">std::pointer_traits</a></code> </td> <td> <a class="external text" href="https://wg21.link/P1006R1" rel="nofollow">P1006R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="memory/assume_aligned" title="cpp/memory/assume aligned"><code>std::assume_aligned()</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1007R3" rel="nofollow">P1007R3</a> </td> <td class="table-yes">
+<span title="not constexpr until 9.4 and 10.3">9*</span><br/>11</td> <td class="table-yes">15</td> <td class="table-yes">
+<span title="VS 2019 16.9">19,28 (16,9)*</span> </td> <td class="table-yes"> <p><span title="Xcode 14.3 (14E222b)">14.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Tạo con trỏ thông minh với khởi tạo mặc định (ví dụ:<a href="memory/unique_ptr/make_unique" title="cpp/memory/unique ptr/make unique"><code>make_unique_for_overwrite</code></a>)</td> <td> <a class="external text" href="https://wg21.link/P1020R1" rel="nofollow">P1020R1</a><br/><a class="external text" href="https://wg21.link/P1973R1" rel="nofollow">P1973R1</a> </td> <td class="table-yes">11 (độc đáo_ptr)<br/>12 (chia sẻ_ptr)</td> <td class="table-yes">16</td> <td class="table-yes">
+<span title="VS 2019 16.9">19,28 (16,9)*</span> </td> <td class="table-yes"> <p><span title="Xcode 15.0 (15A240d), 15.0.1 (15A507), 15.1 (15C65)">15.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Misc<code>constexpr</code>bit</td> <td> <a class="external text" href="https://wg21.link/P1032R1" rel="nofollow">P1032R1</a> </td> <td class="table-yes">10</td> <td class="table-yes">13</td> <td class="table-yes">
+<span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Loại bỏ các toán tử so sánh của<a href="container/span" title="cpp/container/span"><code>std::span</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1085R2" rel="nofollow">P1085R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Làm cho sự tuyên truyền của người phân bổ trạng thái phù hợp hơn cho<a href="string/basic_string/operator_plus_" title="cpp/string/basic string/operator+"><code>operator+(basic_string)</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1165R1" rel="nofollow">P1165R1</a> </td> <td class="table-yes">10</td> <td class="table-yes">15</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 14.3 (14E222b)">14.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Erasure container nhất quán, ví dụ:<a href="container/vector/erase2" title="cpp/container/vector/erase2"><code>std::erase(std::vector)</code></a>, hoặc<a href="container/map/erase_if" title="cpp/container/map/erase if"><code>std::erase_if(std::map)</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1209R0" rel="nofollow">P1209R0</a> <a class="external text" href="https://wg21.link/P1115R3" rel="nofollow">P1115R3</a> </td> <td class="table-yes">9<br/>(P1209R0)<br/>10 (P1115R3)</td> <td class="table-yes">8 (P1209R0)<br/>11 (P1115R3)</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span>(P1209R0)<br/><span title="VS 2019 16.7">19,27*</span>(P1115R3)</td> <td class="table-yes"> <p><span title="Xcode 10.2 (10E125), 10.2.1 (10E1001), 10.3 (10G8)">10.0.1*</span>(P1209R0)<br/> <span title="Xcode 12.5 (12E262), 12.5.1 (12E507)">12.0.5*</span>(P1115R3)</p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Đơn vị tiêu đề thư viện tiêu chuẩn</td> <td> <a class="external text" href="https://wg21.link/P1502R1" rel="nofollow">P1502R1</a> </td> <td class="table-yes">11</td> <td class="table-no"> </td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="memory/polymorphic_allocator" title="cpp/memory/polymorphic allocator"><code>polymorphic_allocator&lt;&gt;</code></a>như một loại từ vựng</td> <td> <a class="external text" href="https://wg21.link/P0339R6" rel="nofollow">P0339R6</a> </td> <td class="table-yes">9</td> <td class="table-yes">16</td> <td class="table-yes">
+<span title="VS 2019 16.9">19,28 (16,9)*</span> </td> <td class="table-yes"> <p><span title="Xcode 15.0 (15A240d), 15.0.1 (15A507), 15.1 (15C65)">15.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="algorithm/execution_policy_tag" title="cpp/algorithm/execution policy tag"><code>std::execution::unseq</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1001R2" rel="nofollow">P1001R2</a> </td> <td class="table-yes">9</td> <td class="table-no"> </td> <td class="table-yes">
+<span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="numeric/lerp" title="cpp/numeric/lerp"><code>std::lerp()</code></a>Và<a href="numeric/midpoint" title="cpp/numeric/midpoint"><code>std::midpoint()</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0811R3" rel="nofollow">P0811R3</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.3">19,23*</span>(một phần)<br/><span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Cải tiến khả năng sử dụng cho<a href="container/span" title="cpp/container/span"><code>std::span</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1024R3" rel="nofollow">P1024R3</a> </td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="nodiscard missing">9*</span><br/>14</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>DR17: Làm<a href="filesystem/create_directory" title="cpp/filesystem/create directory"><code>create_directory()</code></a>trực quan</td> <td> <a class="external text" href="https://wg21.link/P1164R1" rel="nofollow">P1164R1</a> </td> <td class="table-yes">8.3</td> <td class="table-yes">12</td> <td class="table-yes">
+<span title="VS 2019 16.0">19.20*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.0 (13A233)">13.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="iterator/size" title="cpp/iterator/size"><code>std::ssize()</code></a>và mức độ không dấu cho<a href="container/span" title="cpp/container/span"><code>std::span</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1227R2" rel="nofollow">P1227R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Đặc điểm cho (<a href="types/is_unbounded_array" title="cpp/types/is unbounded array">un</a>)<a href="types/is_bounded_array" title="cpp/types/is bounded array">bounded</a>Mảng</td> <td> <a class="external text" href="https://wg21.link/P1357R1" rel="nofollow">P1357R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="container/array/to_array" title="cpp/container/array/to array"><code>std::to_array()</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0325R4" rel="nofollow">P0325R4</a> </td> <td class="table-yes">10</td> <td class="table-yes">10</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Truy cập hiệu quả để<code><a href="io/basic_stringbuf" title="cpp/io/basic stringbuf">std::basic_stringbuf</a></code>Bộ đệm của s</td> <td> <a class="external text" href="https://wg21.link/P0408R7" rel="nofollow">P0408R7</a> </td> <td class="table-yes">11</td> <td class="table-yes">17</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="types/is_layout_compatible" title="cpp/types/is layout compatible">Layout</a>-<a href="types/is_corresponding_member" title="cpp/types/is corresponding member">compatibility</a>Và<a href="types/is_pointer_interconvertible_base_of" title="cpp/types/is pointer interconvertible base of">pointer</a>-<a href="types/is_pointer_interconvertible_with_class" title="cpp/types/is pointer interconvertible with class">interconvertibility</a>Đặc điểm</td> <td> <a class="external text" href="https://wg21.link/P0466R5" rel="nofollow">P0466R5</a> </td> <td class="table-yes">12</td> <td class="table-no"> </td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span><span title="Initially supported for MSVC only; will be supported for Clang after LLVM-48860 is resolved.">*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="numeric#Bit_manipulation_.28since_C.2B.2B20.29" title="cpp/numeric">Bit operations</a>:<code>std::</code> <p><a href="numeric/rotl" title="cpp/numeric/rotl"><code>rotl()</code></a>Thì<a href="numeric/rotr" title="cpp/numeric/rotr"><code>rotr()</code></a>Thì<a href="numeric/countl_zero" title="cpp/numeric/countl zero"><code>countl_zero()</code></a>Thì<a href="numeric/countl_one" title="cpp/numeric/countl one"><code>countl_one()</code></a>Thì<a href="numeric/countr_zero" title="cpp/numeric/countr zero"><code>countr_zero()</code></a>Thì<a href="numeric/countr_one" title="cpp/numeric/countr one"><code>countr_one()</code></a>Thì<a href="numeric/popcount" title="cpp/numeric/popcount"><code>popcount()</code></a></p>
+</td> <td> <a class="external text" href="https://wg21.link/P0553R4" rel="nofollow">P0553R4</a> </td> <td class="table-yes">9</td> <td class="table-yes">9</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span><span title="with Clang">*</span><br/><span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.4 (11E146), 11.4.1 (11E503a), 11.5 (11E608c)">11.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="numeric/constants" title="cpp/numeric/constants">Mathematical constants</a> </td> <td> <a class="external text" href="https://wg21.link/P0631R8" rel="nofollow">P0631R8</a> </td> <td class="table-yes">10</td> <td class="table-yes">11</td> <td class="table-yes">
+<span title="VS 2019 16.5">19,25*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.5 (12E262), 12.5.1 (12E507)">12.0.5*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="utility/format" title="cpp/utility/format">Text formatting</a> </td> <td> <a class="external text" href="https://wg21.link/P0645R10" rel="nofollow">P0645R10</a> </td> <td class="table-yes">13</td> <td class="table-yes">
+<span title="Support is considered experimental and the -fexperimental-library compiler flag is required">14*</span><br/>17</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="thread/stop_token" title="cpp/thread/stop token"><code>std::stop_token</code></a>Và<a href="thread/jthread" title="cpp/thread/jthread"><code>std::jthread</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0660R10" rel="nofollow">P0660R10</a> </td> <td class="table-yes">10</td> <td class="table-maybe">
+<span title="Missing std::jthread and std::conditional_variable_any::wait_(until/for)">17<br/>(một phần)*</span><br/><span title="Missing std::conditional_variable_any::wait_(until/for)">18<br/>(một phần)*</span> </td> <td class="table-yes">
+<span title="VS 2019 16.9">19,28 (16,9)*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code>constexpr</code> <code><a href="memory/allocator" title="cpp/memory/allocator">std::allocator</a></code>và các tiện ích liên quan</td> <td> <a class="external text" href="https://wg21.link/P0784R7" rel="nofollow">P0784R7</a> </td> <td class="table-yes">10</td> <td class="table-yes">12</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.0 (13A233)">13.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code>constexpr</code> <code><a href="string/basic_string" title="cpp/string/basic string">std::string</a></code> </td> <td> <a class="external text" href="https://wg21.link/P0980R1" rel="nofollow">P0980R1</a> </td> <td class="table-yes">12</td> <td class="table-yes">15</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span><br/><span title="Enabled for Clang 12+"><span title="VS 2022 17.0">19.30*</span>*</span> </td> <td class="table-yes"> <p><span title="Xcode 14.3 (14E222b)">14.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code>constexpr</code> <code><a href="container/vector" title="cpp/container/vector">std::vector</a></code> </td> <td> <a class="external text" href="https://wg21.link/P1004R2" rel="nofollow">P1004R2</a> </td> <td class="table-yes">12</td> <td class="table-yes">15</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span><br/><span title="Enabled for Clang 12+"><span title="VS 2022 17.0">19.30*</span>*</span> </td> <td class="table-yes"> <p><span title="Xcode 14.3 (14E222b)">14.0.3*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Đầu vào<a href="ranges" title="cpp/ranges">range adaptors</a> </td> <td> <a class="external text" href="https://wg21.link/P1035R7" rel="nofollow">P1035R7</a> </td> <td class="table-yes">10</td> <td class="table-yes">16</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-yes"> <p><span title="Xcode 15.0 (15A240d), 15.0.1 (15A507), 15.1 (15C65)">15.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code>constexpr</code> <code><a href="utility/functional/invoke" title="cpp/utility/functional/invoke">std::invoke()</a></code>và các tiện ích liên quan</td> <td> <a class="external text" href="https://wg21.link/P1065R2" rel="nofollow">P1065R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">12</td> <td class="table-yes">
+<span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.0 (13A233)">13.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Nguyên tử chờ đợi và thông báo,<a href="thread/counting_semaphore" title="cpp/thread/counting semaphore"><code>std::counting_semaphore</code></a>Thì<a href="thread/latch" title="cpp/thread/latch"><code>std::latch</code></a>Và<a href="thread/barrier" title="cpp/thread/barrier"><code>std::barrier</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1135R6" rel="nofollow">P1135R6</a> </td> <td class="table-yes">11</td> <td class="table-yes">11</td> <td class="table-yes">
+<span title="VS 2019 16.8">19,28 (16,8)*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="utility/source_location" title="cpp/utility/source location"><code>std::source_location</code></a> </td> <td> <a class="external text" href="https://wg21.link/P1208R6" rel="nofollow">P1208R6</a> </td> <td class="table-yes">11</td> <td class="table-yes">
+<span title="__builtin_source_location implemented, missing libstdc++ implementation (https://reviews.llvm.org/D120159, https://reviews.llvm.org/D120634). Also wrong location reported when used as default argument (https://github.com/llvm/llvm-project/issues/56379)">15*</span><br/>(một phần)<br/>16</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-yes"> <p><span title="Xcode 15.0 (15A240d), 15.0.1 (15A507), 15.1 (15C65)">15.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Thêm<a href="language/operator_comparison#Three-way_comparison" title="cpp/language/operator comparison"><code>&lt;=&gt;</code></a>đến thư viện tiêu chuẩn</td> <td> <a class="external text" href="https://wg21.link/P1614R2" rel="nofollow">P1614R2</a> </td> <td class="table-yes">10</td> <td class="table-maybe">
+<span title="Essential parts implemented, various operator implementations missing.">14*</span><br/>(một phần)</td> <td class="table-yes">
+<span title="VS 2019 16.10">19,29 (16,10)*</span> </td> <td class="table-maybe"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span>(một phần)</p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code>constexpr</code>hàm tạo mặc định của<code><a href="atomic/atomic" title="cpp/atomic/atomic">std::atomic</a></code>Và<code><a href="atomic/atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code> </td> <td> <a class="external text" href="https://wg21.link/P0883R2" rel="nofollow">P0883R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">13</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code>constexpr</code>vì<a href="numeric#Numeric_operations" title="cpp/numeric">numeric algorithms</a> </td> <td> <a class="external text" href="https://wg21.link/P1645R1" rel="nofollow">P1645R1</a> </td> <td class="table-yes">10</td> <td class="table-yes">12</td> <td class="table-yes">
+<span title="VS 2019 16.6">19,26*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.0 (13A233)">13.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <a href="utility#Integer_comparison_functions" title="cpp/utility">Safe integral comparisons</a> </td> <td> <a class="external text" href="https://wg21.link/P0586R2" rel="nofollow">P0586R2</a> </td> <td class="table-yes">10</td> <td class="table-yes">13</td> <td class="table-yes">
+<span title="VS 2019 16.7">19,27*</span> </td> <td class="table-yes"> <p><span title="Xcode 13.3 (13E113)">13.1.6*</span></p>
+</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr style="height:15em"> <th> <br/><br/>Tính năng C ++ 20</th> <th> <br/><br/>(Các) giấy</th> <th>
+<div>GCC libstdc ++</div> </th> <th>
+<div>Clang Libc ++</div> </th> <th>
+<div>MSVC STL</div> </th> <th>
+<div><span title="C++ Standard Library">Apple Clang*</span></div> </th> <th>
+<div><span title="C/C++ Standard Library">IBM mở XL C/C ++ cho Aix*</span></div> </th> <th>
+<div><span title="C++ Standard Library">Sun/Oracle C ++*</span></div> </th> <th>
+<div><span title="C++ Standard Library">Embarcadero C ++ Builder*</span></div> </th>
+</tr>
+</table> <p><span title="pop-up tooltip example: implemented in Circle ver. 3.14 and above">*</span>- Di chuột qua một ô được đánh dấu bằng ngôi sao<span title="another tooltip example">*</span>Để xem các ghi chú bật lên bổ sung.<br/>Dr<i>nn</i>- Số<i>nn</i>Sau khi "DR" biểu thị sửa đổi C ++, báo cáo khiếm khuyết được áp dụng cho, ví dụ: DR20 → C ++ 20.</p>
+<h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr style="vertical-align:top;"> <td> </td> <td>
+<a class="external text" href="https://github.com/makelinux/examples/blob/HEAD/cpp/20.cpp" rel="nofollow">Working C++20 examples</a> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/20">https://en.cppreference.com/w/cpp/20</a>
+</p>
+</div>

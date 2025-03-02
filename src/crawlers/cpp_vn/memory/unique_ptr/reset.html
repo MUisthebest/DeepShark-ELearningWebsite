@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">std :: độc đáo_ptr &lt;t, deleter&gt; :: đặt lại</h1> <table class="t-dcl-begin"> <tr class="t-dcl-h"> <td>Các thành viên của mẫu chính, độc đáo_ptr &lt;t&gt;</td> <td></td> <td></td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">void reset (con trỏ ptr = con trỏ ()) noExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl-h"> <td>Các thành viên của chuyên ngành độc đáo_ptr &lt;t []&gt;</td> <td></td> <td></td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;class u&gt; </pre>
+</td> <td>(2)</td> <td> <span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">void Reset (U PTR) Noexcept;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <p>void reset (std :: nullptr_t = nullptr) noExcept;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Cho quá tải<code>current_ptr</code>Thay thế đối tượng được quản lý.<code>*this</code>, con trỏ được quản lý bởi<ol>
+<li>, thực hiện các hành động sau, theo thứ tự này:<code>old_ptr = current_ptr</code>.</li>
+<li>Lưu một bản sao của con trỏ hiện tại<code>current_ptr = ptr</code>.</li>
+<li>Ghi đè lên con trỏ hiện tại với đối số<code>if (old_ptr) get_deleter()(old_ptr)</code>.</li>
+</ol>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Nếu con trỏ cũ không trống, hãy xóa đối tượng được quản lý trước đó<ol>
+<li> <code>U</code>thành viên<code>pointer</code>, hoặc</li>
+<li> <code>pointer</code>thành viên<code>element_type*</code>Và<code>U</code>là loại con trỏ<code>V*</code>chỉ vào trình tự và mọi số nguyên không âm<code>V(*)[]</code>Chuyển đổi hai thời lượng thành loại chung của chúng và tạo ra một thời lượng mà số lượng đánh dấu là tổng số lượng đánh dấu sau khi chuyển đổi.<code>element_type(*)[]</code>.</li>
+</ol>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;class inputit1, class inputit2,<code>reset(pointer()).</code>
+</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Nếu mảng chứa một số yếu tố</td> <td>-</td> <td>Hoạt động giống như thành viên đặt lại của mẫu chính, ngoại trừ việc nó sẽ chỉ tham gia vào độ phân giải quá tải nếu một trong hai</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>con trỏ đến một đối tượng mới để quản lý</p>
+<p>Để thay thế đối tượng được quản lý trong khi cung cấp một Deleter mới, toán tử chuyển nhượng di chuyển có thể được sử dụng.<code>ptr</code>Một bài kiểm tra cho bản thân, tức là cho dù<code>*this</code>chỉ vào một đối tượng đã được quản lý bởi<code>p.reset(p.release())</code>, không được thực hiện, ngoại trừ nơi được cung cấp dưới dạng tiện ích mở rộng trình biên dịch hoặc như một sự xác nhận gỡ lỗi. Lưu ý rằng mã như<code>p.reset(p.get())</code>làm.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">không liên quan đến bản thân, chỉ có mã như</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2118" rel="nofollow">LWG 2118</a> </td> <td>C ++ 11</td> <td>
+<code>unique_ptr&lt;T[]&gt;::reset</code>được gọi, loại phải hoàn thành. Trong một số triển khai A</td> <td> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="release" title="cpp/memory/unique ptr/release"> <span class="t-lines"><span>giải phóng</span></span></a></div> </td> <td>Nếu loại đó tồn tại, nếu không<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/unique_ptr/reset">https://en.cppreference.com/w/cpp/memory/unique_ptr/reset</a>
+</p>
+</div>

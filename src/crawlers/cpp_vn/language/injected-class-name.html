@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">Tiêu anh-Class-name</h1> <p>Tên lớp được tiêm là tên không đủ tiêu chuẩn của một lớp trong phạm vi của lớp nói trên.</p>
+<p>Trong a<a href="class_template" title="cpp/language/class template">class template</a>, tên lớp được tiêm có thể được sử dụng làm tên mẫu đề cập đến mẫu hiện tại hoặc tên lớp đề cập đến việc khởi tạo hiện tại.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Trong một phạm vi lớp học, tên của lớp hiện tại được đối xử như thể đó là tên thành viên công cộng; Điều này được gọi<i>Tiêu anh-Class-name</i>. Điểm khai báo của tên ngay lập tức theo bước mở của định nghĩa lớp.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int x;</pre></div> <p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc x</pre></div> <h3 id="In_class_template">{</h3> <p>    void f ()</p>
+<p>    {</p>
+<ul>
+<li>        X* p;   // ĐƯỢC RỒI. X đề cập đến tên lớp được tiêm<code>&lt;</code> </li>
+<li>        :: x* q; // Lỗi: Tra cứu tên tìm một tên biến, ẩn tên struct<a href="template_parameters#Template_template_arguments" title="cpp/language/template parameters">template template argument</a> </li>
+<li>    }<a href="elaborated_type_specifier" title="cpp/language/elaborated type specifier">elaborated class specifier</a>};</li>
+</ul> <p>Giống như các thành viên khác, tên gọi lớp được tiêm được kế thừa. Với sự hiện diện của kế thừa tư nhân hoặc được bảo vệ, tên lớp được tiêm của một lớp cơ sở gián tiếp có thể cuối cùng không thể truy cập được trong một lớp dẫn xuất.<code>&lt;&gt;</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc A {};</pre></div> <p>Struct B: Private A {};<a href="template_specialization" title="cpp/language/template specialization">template specialization</a>hoặc<a href="partial_specialization" title="cpp/language/partial specialization">partial specialization</a>Struct C: Công khai B<code>&lt;&gt;</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    A* p;   // Lỗi: tiêm-class-name A không thể truy cập được</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    :: a* q; // OK, không sử dụng tên lớp được tiêm</pre></div> <p>};</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Trong mẫu lớp</pre></div> <h3 id="injected-class-name_and_constructors">Giống như các lớp khác, các mẫu lớp có một tên lớp được tiêm. Tên lớp được tiêm có thể được sử dụng như một tên mẫu hoặc tên loại.</h3> <p>Trong các trường hợp sau, tên lớp được tiêm được coi là một tên mẫu của chính mẫu lớp:</p>
+<p>nó được theo sau bởi<code>C::D</code>Sử dụng chức năng nhị phân đã cho</p>
+<ul>
+<li>nó được sử dụng như một</li>
+<li>nó là định danh cuối cùng trong<code>D</code>của một bản khai mẫu lớp bạn bè.<code>C</code>Mặt khác, nó được coi là một tên loại và tương đương với tên mẫu theo sau là các tham số mẫu của mẫu lớp được đặt trong</li>
+</ul> <p>Mẫu &lt;Mẫu &lt;class, class&gt; class&gt;<code>C</code>cấu trúc a;<span class="t-rev-inl t-since-cxx11"><span> </span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T1, Class T2&gt;</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1004.html" rel="nofollow">CWG 1004</a> </td> <td>C ++ 98</td> <td>Cấu trúc x<br/>{</td> <td>    X &lt;t1, t2&gt;* p;   // ok, x được coi là một tên mẫu<br/> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/injected-class-name">https://en.cppreference.com/w/cpp/language/injected-class-name</a>
+</p>
+</div>

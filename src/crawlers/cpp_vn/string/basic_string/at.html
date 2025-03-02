@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; :: at</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">tham chiếu tại (size_type pos);</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">tham chiếu constexpr tại (size_type pos);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">const_reference tại (size_type pos) const;</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr const_reference tại (size_type pos) const;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Trả về một tham chiếu đến ký tự tại vị trí được chỉ định<code>pos</code>. Kiểm tra giới hạn được thực hiện, ngoại trừ loại<code><a href="../../error/out_of_range" title="cpp/error/out of range">std::out_of_range</a></code>sẽ được ném trên quyền truy cập không hợp lệ.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>Vị trí của nhân vật trở lại</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Tham chiếu đến ký tự được yêu cầu.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Ném<code><a href="../../error/out_of_range" title="cpp/error/out of range">std::out_of_range</a></code>nếu như<code>pos &gt;= size()</code>.</p>
+<p>Nếu một ngoại lệ được ném vì bất kỳ lý do gì, các chức năng này không có hiệu lực (<a href="../../language/exceptions#Exception_safety" title="cpp/language/exceptions">strong exception safety guarantee</a>).</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;stdexcept&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue847" rel="nofollow">LWG 847</a> </td> <td>C ++ 98</td> <td>giá trị ký tự để nối thêm</td> <td>Phạm vi các ký tự để nối</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_at" title="cpp/string/basic string/operator at"> <span class="t-lines"><span>nhà điều hành []</span></span></a></div> </td> <td>#include &lt;nhớ&gt;<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_string_view/at" title="cpp/string/basic string view/at"> <span class="t-lines"><span>bằng không).</span></span></a></div> </td> <td>Truy cập ký tự được chỉ định với giới hạn kiểm tra<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_string_view&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string/at">https://en.cppreference.com/w/cpp/string/basic_string/at</a>
+</p>
+</div>

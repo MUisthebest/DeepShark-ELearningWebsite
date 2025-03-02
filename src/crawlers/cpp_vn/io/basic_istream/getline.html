@@ -1,0 +1,36 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_istream &lt;biểu đồ, đặc điểm&gt; :: getline</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_istream &amp; getline (char_type* s, std :: phát trực tuyến);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_istream &amp; getline (char_type* s, std :: streamsize Count, char_type delim);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trích xuất các ký tự từ luồng cho đến khi kết thúc dòng hoặc dấu phân cách được chỉ định<code>delim</code>.</p>
+<p>Quá tải đầu tiên tương đương với<code>getline(s, count, widen('\n'))</code>.</p>
+<p>Hành xử như<a href="../../named_req/unformattedinputfunction" title="cpp/named req/UnformattedInputFunction">UnformattedInputFunction</a>. Sau khi xây dựng và kiểm tra đối tượng Sentry, trích xuất các ký tự từ<code>*this</code>và lưu trữ chúng ở các vị trí liên tiếp của mảng có phần tử đầu tiên được chỉ ra bởi<code>s</code>, cho đến khi bất kỳ điều nào sau đây xảy ra (được kiểm tra theo thứ tự hiển thị):</p>
+<ol>
+<li>Kết thúc điều kiện tệp xảy ra trong chuỗi đầu vào.</li>
+<li>nhân vật có sẵn tiếp theo<code>c</code>là dấu phân cách, như được xác định bởi<code>Traits::eq(c, delim)</code>. Phân đoạn được trích xuất (không giống như<a href="get" title="cpp/io/basic istream/get"><code>basic_istream::get()</code></a>) và được tính vào<code><a href="gcount" title="cpp/io/basic istream/gcount">gcount()</a></code>, nhưng không được lưu trữ.</li>
+<li> <code>count</code>là không dương tính, hoặc<code>count - 1</code>ký tự đã được trích xuất (<code>setstate(failbit)</code>được gọi trong trường hợp này).</li>
+</ol> <p>Nếu chức năng trích xuất không có ký tự,<code>failbit</code>được đặt ở trạng thái lỗi cục bộ trước<a href="../basic_ios/setstate" title="cpp/io/basic ios/setstate"><code>setstate()</code></a>Chuỗi để giữ tên viết tắt múi giờ hoặc tên tương ứng với</p>
+<p>Trong mọi trường hợp, nếu<code>count &gt; 0</code>, sau đó nó lưu trữ một nhân vật null<code>CharT()</code>vào vị trí tiếp theo của mảng và cập nhật<code><a href="gcount" title="cpp/io/basic istream/gcount">gcount()</a></code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Vì điều kiện #2 được kiểm tra trước điều kiện #3, dòng đầu vào chính xác phù hợp với bộ đệm không kích hoạt<code>failbit</code>.</p>
+<p>Bởi vì ký tự kết thúc được tính là ký tự được trích xuất, một dòng đầu vào trống không kích hoạt<code>failbit</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>con trỏ đến chuỗi ký tự để lưu trữ các ký tự</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Kích thước của chuỗi ký tự được trỏ bởi<code>s</code> </td>
+</tr> <tr class="t-par"> <td>DELIM</td> <td>-</td> <td>phân định ký tự để dừng trích xuất tại. Nó được trích xuất nhưng không được lưu trữ.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Exceptions">Ngoại lệ</h3>
+<code><a href="../ios_base/failure" title="cpp/io/ios base/failure">failure</a></code>Nếu xảy ra lỗi (cờ trạng thái lỗi không<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">goodbit</a></code>) Và<code><a href="../basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>được thiết lập để ném cho trạng thái đó.<p>Nếu một hoạt động nội bộ ném một ngoại lệ, nó sẽ bị bắt và<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">badbit</a></code>được đặt. Nếu như<code><a href="../basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>được đặt cho<code>badbit</code>, ngoại lệ là được tái sinh.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;mảng&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue531" rel="nofollow">LWG 531</a> </td> <td>C ++ 98</td> <td>
+<code>std::getline</code>int main ()<br/>{<code>count</code>    trả lại trước;</td> <td>    std :: istringsTream s1 ("Xin chào, thế giới.");<br/>    char c1 = s1.get (); // đọc 'H'</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../string/basic_string/getline" title="cpp/string/basic string/getline"> <span class="t-lines"><span>Getline</span></span></a></div> </td> <td>Đọc dữ liệu từ luồng I/O thành chuỗi<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="operator_gtgt" title="cpp/io/basic istream/operator gtgt"> <span class="t-lines"><span>Num</span></span></a></div> </td> <td>Mở một tệp và liên kết nó với luồng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="get" title="cpp/io/basic istream/get"> <span class="t-lines"><span>Điền vào thùng chứa với giá trị được chỉ định</span></span></a></div> </td> <td>Đầu vào định dạng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="read" title="cpp/io/basic istream/read"> <span class="t-lines"><span>đọc</span></span></a></div> </td> <td>Đặt một ký tự vào luồng đầu vào<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_istream/getline">https://en.cppreference.com/w/cpp/io/basic_istream/getline</a>
+</p>
+</div>

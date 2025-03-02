@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: chốt :: Count_down</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void Count_down (std :: ptrdiff_t n = 1);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Làm giảm về mặt nguyên tử của bộ đếm bên trong bởi<code>n</code>mà không chặn người gọi.</p>
+<p>Nếu như<code>n</code>lớn hơn giá trị của bộ đếm bên trong hoặc là tiêu cực, hành vi không được xác định.</p>
+<p>Hoạt động này<a href="../../atomic/memory_order#Strongly_happens-before" title="cpp/atomic/memory order">strongly happens-before</a>Tất cả các cuộc gọi không bị chặn về điều này<code>latch</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>giá trị mà bộ đếm bên trong bị giảm</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Ném<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>với mã lỗi được phép cho các loại mutex về lỗi.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/latch/count_down">https://en.cppreference.com/w/cpp/thread/latch/count_down</a>
+</p>
+</div>

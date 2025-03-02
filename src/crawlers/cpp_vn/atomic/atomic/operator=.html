@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Atomic &lt;t&gt; :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Toán tử t = (t mong muốn) noExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Toán tử t = (T mong muốn) NoExcept dễ bay hơi;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Atomic &amp; Toán tử = (const Atomic &amp;) = xóa;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Atomic &amp; Toán tử = (Const Atomic &amp;) Disrily = Delete;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Đầu vào</span>Gán nguyên tử<code>desired</code>đến biến nguyên tử. Tương đương với<code>store(desired)</code>.<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>bool compare_exchange_strong (T &amp; mong đợi, T mong muốn,<code><a href="http://en.cppreference.com/w/cpp/atomic/atomic"><span class="kw2070">Điều đó cho tất cả<span class="me2">nguyên tử</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Chờ đợi</span></code>khoảng cách<code>false</code>Thay thế nguyên tử giá trị cơ bản với<span class="t-v">(2)</span>(Một hoạt động đọc sửa đổi-viết). Bộ nhớ bị ảnh hưởng theo giá trị của</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table>
+</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>Các biến nguyên tử không<a href="../../named_req/copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>bool Atomic_compare_exchange_strong_explict</td> <td>-</td> <td>và quá tải</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">Đầu vào</span> <code>desired</code>
+</div> <h3 id="Notes">Ghi chú</h3> <p>Không giống như hầu hết các toán tử gán, các toán tử gán cho các loại nguyên tử không trả về một tham chiếu đến các đối số bên trái của chúng. Họ trả lại một bản sao của giá trị được lưu trữ thay thế.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="atomic" title="cpp/atomic/atomic/atomic"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>(Chỉ dành cho<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic/operator%3D">https://en.cppreference.com/w/cpp/atomic/atomic/operator%3D</a>
+</p>
+</div>

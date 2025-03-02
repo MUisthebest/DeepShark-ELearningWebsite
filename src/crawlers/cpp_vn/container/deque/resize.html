@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">std :: deque &lt;t, allocator&gt; :: thay đổi kích thước</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx98"> <td> <pre data-language="cpp">void thay đổi kích thước (số lượng size_type);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx98"> <td> <pre data-language="cpp">void thay đổi kích thước (SIZE_TYPE số lượng, const value_type &amp; value);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Thay đổi kích thước container để chứa<code>count</code>các yếu tố, không làm gì nếu<code>count == size()</code>.</p>
+<p>Nếu kích thước hiện tại lớn hơn<code>count</code>, container được giảm xuống đầu tiên<code>count</code>các yếu tố.</p>
+<p>Nếu kích thước hiện tại nhỏ hơn<code>count</code>Thì</p>
+<div class="t-li1">
+<span class="t-li">1)</span>thêm vào<a href="../../named_req/defaultinsertable" title="cpp/named req/DefaultInsertable">default-inserted</a>Các yếu tố được nối thêm.</div> <div class="t-li1">
+<span class="t-li">2)</span>Bản sao bổ sung của<code>value</code>được thêm vào.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Kích thước mới của container</td>
+</tr> <tr class="t-par"> <td>được phân vùng liên quan đến</td> <td>-</td> <td>giá trị để khởi tạo các yếu tố mới với</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Và<a href="../../named_req/defaultinsertable" title="cpp/named req/DefaultInsertable">DefaultInsertable</a>is_array_v</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mảng tích hợp để được chuyển đổi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Tuyến tính trong sự khác biệt giữa kích thước hiện tại và<code>count</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Nếu có giá trị bắt đầu quá tải<span class="t-v">(1)</span>không mong muốn, ví dụ, nếu các yếu tố thuộc loại không phải lớp và không cần thiết, thì có thể tránh được bằng cách cung cấp một<a class="external text" href="https://stackoverflow.com/a/21028912/273767" rel="nofollow">custom <code>Allocator::construct</code></a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Deque&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue679" rel="nofollow">LWG 679</a> </td> <td>C ++ 98</td> <td>
+<code>resize()</code> <code>value</code>void in (Auto Rem, Const Std :: Deque &lt;Int&gt; &amp; C)</td> <td>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1418" rel="nofollow">LWG 1418</a> </td> <td>C ++ 98</td> <td>    for (std :: cout &lt;&lt; rem; const int el: c)<code>resize(size())</code>phù hợp khi sao chép bên phải (cuối phạm vi đích nằm ngoài phạm vi nguồn).</td> <td>Mẫu &lt;class inputit, class outputit&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2033" rel="nofollow">LWG 2033</a> </td> <td>C ++ 11</td> <td>        std :: cout &lt;&lt; el &lt;&lt; '';<code><a href="erase" title="cpp/container/deque/erase">erase()</a></code><br/># Xác định mất giá (MSG) [[không dùng nữa (MSG)]]]]<code>T</code>Thuật toán<a href="../../named_req/moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a> </td> <td>    std :: cout &lt;&lt; '\ n';    <code><a href="pop_back" title="cpp/container/deque/pop back">pop_back()</a></code><br/>}</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="size" title="cpp/container/deque/size"> <span class="t-lines"><span>kích cỡ</span></span></a></div> </td> <td>trả về một trình lặp đến cuối<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="insert" title="cpp/container/deque/insert"> <span class="t-lines"><span>get_allocator</span></span></a></div> </td> <td>Trả về người phân bổ liên quan<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="erase" title="cpp/container/deque/erase"> <span class="t-lines"><span>Prepend_range</span></span></a></div> </td> <td>chèn các yếu tố<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/deque/resize">https://en.cppreference.com/w/cpp/container/deque/resize</a>
+</p>
+</div>

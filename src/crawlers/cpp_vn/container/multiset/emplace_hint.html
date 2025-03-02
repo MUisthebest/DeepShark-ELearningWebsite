@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: multiset &lt;key, so sánh, phân bổ&gt; :: emplace_hint</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;class ... args&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>iterator eMplace_hint (gợi ý const_iterator, args &amp;&amp; ... args);<code>hint</code>Chèn một phần tử mới vào thùng chứa càng gần với vị trí ngay trước đó</p>
+<p>Hàm tạo của phần tử được gọi với các đối số chính xác như được cung cấp cho hàm, được chuyển tiếp với<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...</code>.</p>
+<p>Chèn một phần tử mới vào một vị trí sau vị trí được chỉ định trong container. Phần tử được xây dựng tại chỗ, tức là không có hoạt động sao chép hoặc di chuyển được thực hiện. Chất xây dựng của phần tử được gọi với các đối số chính xác, như được cung cấp cho hàm.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>) được gọi với chính xác các đối số giống như được cung cấp cho hàm, được chuyển tiếp với</td> <td>-</td> <td>gợi ý</td>
+</tr> <tr class="t-par"> <td>iterator trước đó phần tử mới sẽ được xây dựng</td> <td>-</td> <td>Args</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>tererator vào vị trí trước đó phần tử mới sẽ được chèn</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Nếu chèn không thành công vì phần tử đã tồn tại, hãy trả lại một trình lặp cho phần tử đã tồn tại với khóa tương đương.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Nếu một ngoại lệ được ném bởi bất kỳ hoạt động nào, chức năng này không có hiệu lực (đảm bảo ngoại lệ mạnh).<code>hint</code>.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="emplace" title="cpp/container/multiset/emplace"> <span class="t-lines"><span>Giảm sử dụng bộ nhớ bằng cách giải phóng bộ nhớ không sử dụng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xóa nội dung<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="insert" title="cpp/container/multiset/insert"> <span class="t-lines"><span>get_allocator</span></span></a></div> </td> <td>Trả về người phân bổ liên quan<span class="t-rev-inl t-since-cxx17"><span>, các trình lặp lại có thể điều chỉnh được</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/multiset/emplace_hint">https://en.cppreference.com/w/cpp/container/multiset/emplace_hint</a>
+</p>
+</div>

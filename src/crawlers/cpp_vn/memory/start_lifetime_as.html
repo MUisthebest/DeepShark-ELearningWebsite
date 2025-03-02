@@ -1,0 +1,48 @@
+ <h1 class="firstHeading" id="firstHeading">std :: start_lifetime_as, std :: start_lifetime_as_array</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-h"> <td>start_lifetime_as</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">T* start_lifetime_as (void* p) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">const t* start_lifetime_as (const void* p) noExcept;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl-h"> <td>start_lifetime_as_array</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">D biến động t* start_lifetime_as (khoảng trống dễ bay hơi* p) noExcept;</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">const dễ bay hơi t* start_lifetime_as (const biến động void* p) noExcept;</pre>
+</td> <td>            Nhị phân p);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <span class="t-li">              Forwardit2 first2,</span> <a href="../language/object#Object_creation" title="cpp/language/object">Implicitly creates</a>Mẫu &lt;Class T&gt;<code>T</code>T* start_lifetime_as_array (void* p, std :: size_t n) noexcept;<code>p</code>Mẫu &lt;Class T&gt;<code><i>      Typename std :: Atomic &lt;T&gt; :: value_type mong muốn,</i></code>của<a href="../named_req/triviallycopyable" title="cpp/named req/TriviallyCopyable">TriviallyCopyable</a>kiểu<code>U</code>const t* start_lifetime_as_array (const void* p,<code><a href="http://en.cppreference.com/w/cpp/numeric/bit_cast"><span class="kw2687">Điều đó cho tất cả<span class="me2">BIT_CAST</span></span></a><span class="sy1">is_trivently_destructible_v</span>U<span class="sy1">&lt;</span><span class="br0">.</span>E<span class="br0">)</span></code>                                  std :: size_t n) noExcept;<code>E</code>Mẫu &lt;Class T&gt;<code>U</code>D biến động t* start_lifetime_as_array (khoảng trống dễ bay hơi* p,<code><i>      Typename std :: Atomic &lt;T&gt; :: value_type mong muốn,</i></code>                                     std :: size_t n) noExcept;<ul>
+<li> <code>T</code>Mẫu &lt;Class T&gt;<a href="../named_req/implicitlifetimetype" title="cpp/named req/ImplicitLifetimeType">ImplicitLifetimeType</a>const dễ bay hơi t* start_lifetime_as_array (const biến động khoảng trống* p,<a href="../language/type#Incomplete_type" title="cpp/language/type">complete type</a>. Nếu không, chương trình là xấu.</li>
+<li>. Nếu không, viết không sửa đổi</li>
+<ul>
+<li> <code>[</code><code>p</code><code>, </code><code>(char*)p + sizeof(T)</code><code>)</code>Lưu ý rằng giá trị không xác định có thể được xác định.<code>p</code>, hoặc</li>
+<li>(Địa chỉ của ai là<code>T</code>.</li>
+</ul>
+<li>) và các đối tượng lồng nhau trong nó. Giá trị của mỗi đối tượng đã tạo</li>
+</ul> <span class="t-li">Mẫu &lt;class inputit1, class inputIt2, class BinaryPredicate&gt;</span> <a href="../language/object#Object_creation" title="cpp/language/object">Implicitly creates</a>được xác định theo cách tương tự như đối với một cuộc gọi đến<code>T</code>ngoại trừ việc lưu trữ không thực sự được truy cập, trong đó<code>n</code>là lvalue của loại<code>n &gt; 0</code>khoảng cách<code>true</code>biểu thị<code>std::start_lifetime_as&lt;U&gt;(p)</code>Ở đâu<code>U</code>. Mặt khác, các giá trị của các đối tượng được tạo như vậy không được xác định.<code>n</code> <code>T</code>sẽ là một<ul>
+<li> <code>T</code>và sẽ là một<a href="../language/type#Incomplete_type" title="cpp/language/type">complete type</a>. Nếu không, chương trình là xấu.</li>
+<li>. Nếu không, viết không sửa đổi</li>
+<ul>
+<li>không biểu thị một vùng lưu trữ được phân bổ là một tập hợp con của khu vực lưu trữ có thể truy cập được thông qua<code>p</code>khu vực không phù hợp phù hợp với<code>T</code>, hoặc</li>
+<li> <code>n <span class="sy1">                const std :: Chrono :: weekday_indexed &amp; wdi);</span> <a href="http://en.cppreference.com/w/cpp/types/size_t"><span class="kw107">Điều đó cho tất cả<span class="me2">size_t</span></span></a><span class="br0">.</span><span class="sy2">-</span><span class="nu0">, nếu như</span><span class="br0">)</span> <span class="sy2">/</span> sizeof<span class="br0">.</span>T<span class="br0">)</span></code>khoảng cách<code>false</code>, hoặc</li>
+<li> <code>n &gt; 0</code>Và<code>[</code><code>(char*)p</code><code>, </code><code>(char*)p + (n * sizeof(T))</code><code>)</code>Lưu ý rằng giá trị không xác định có thể được xác định.<code>p</code>.</li>
+</ul>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>một mảng có loại phần tử</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>và chiều dài</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">              Forwardit2 first2,</span>. Để chính xác, nếu</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit1, class inputIt2, class BinaryPredicate&gt;</span>, nó tương đương với<code>p</code>.</div> <h3 id="Notes">Ghi chú</h3> <p><code>new (void_ptr) unsigned char[size]</code>hoặc<code>new <span class="br0">.</span>void_ptr<span class="br0">)</span> <a href="http://en.cppreference.com/w/cpp/types/byte"><span class="kw2642">Điều đó cho tất cả<span class="me2">Byte</span></span></a><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span>size<span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span></code>là loại "mảng của<code>std::start_lifetime_as</code>S ". Nếu không, chức năng không có hiệu ứng.</p>
+<p><code>std::start_lifetime_as</code>sẽ là a<code>std::start_lifetime_as_array</code>. Nếu không, chương trình là xấu.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_start_lifetime_as" title="cpp/feature test"><code>__cpp_lib_start_lifetime_as</code></a></td> <td><span class="nu0">202207L</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Quản lý trọn đời rõ ràng</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Không null</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">không phù hợp phù hợp cho một mảng</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>không biểu thị một vùng lưu trữ được phân bổ là một tập hợp con của khu vực lưu trữ có thể truy cập được thông qua</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../numeric/bit_cast" title="cpp/numeric/bit cast"> <span class="t-lines"><span>BIT_CAST</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>diễn giải lại biểu diễn đối tượng của một loại là của một loại khác<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/span/as_bytes" title="cpp/container/span/as bytes"> <span class="t-lines"><span>các yếu tố của chuỗi</span><span>Sư bang</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Phạm vi :: AS_CONST_VIEW<code>span</code>có được một subpan<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/start_lifetime_as">https://en.cppreference.com/w/cpp/memory/start_lifetime_as</a>
+</p>
+</div>

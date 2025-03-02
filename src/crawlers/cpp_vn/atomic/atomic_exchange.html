@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: ATOMIC_EXCHANGE, STD :: ATOMIC_EXCHANGE_EXPLICIT</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/atomic" title="cpp/header/atomic">&lt;atomic&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">T ATOMIC_EXCHANGE (STD :: ATOMIC &lt;T&gt;* OBJ,</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                   Tên std :: Atomic &lt;T&gt; :: value_type mong muốn) NOEXCEPT;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Đầu vào</span>                            Typename std :: Atomic &lt;t&gt; :: value_type mong muốn, <code>obj</code>                            STD :: Memory_order Order) NoExcept;<code>desired</code>Mẫu &lt;Class T&gt;<code>obj</code>T ATOMIC_EXCHANGE_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,<code>obj-&gt;exchange(desired)</code>.</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>                            Typename std :: Atomic &lt;t&gt; :: value_type mong muốn, <code>obj</code>                            STD :: Memory_order Order) NoExcept;<code>desired</code>Mẫu &lt;Class T&gt;<code>obj</code>T ATOMIC_EXCHANGE_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,<code>obj-&gt;exchange(desired, order)</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>      Typename std :: Atomic &lt;T&gt; :: value_type mong muốn,</td> <td>-</td> <td>                            Typename std :: Atomic &lt;t&gt; :: value_type mong muốn, </td>
+</tr> <tr class="t-par"> <td>bool Atomic_compare_exchange_strong_explict</td> <td>-</td> <td>                            STD :: Memory_order Order) NoExcept;</td>
+</tr> <tr class="t-par"> <td>Thay thế nguyên tử giá trị được trỏ đến bởi</td> <td>-</td> <td>với giá trị của</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>và trả về giá trị<code>obj</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>tổ chức trước đó, như thể bằng cách<code><a href="http://en.cppreference.com/w/cpp/atomic/atomic_flag_test_and_set"><span class="kw2669">Điều đó cho tất cả<span class="me2">Atomic_flag_test_and_set</span></span></a></code>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Thay thế nguyên tử giá trị được trỏ đến bởi</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">với giá trị của</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0558R1" rel="nofollow">P0558R1</a> </td> <td>C ++ 11</td> <td>Đọc - Điều chỉnh hoạt động của Write<br/><code>T</code>tải hoạt động</td> <td>
+<code>T</code>bộ nhớ_order_seq_cst<br/>từ<code>obj</code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="atomic/exchange" title="cpp/atomic/atomic/exchange"> <span class="t-lines"><span>trao đổi</span></span></a></div> </td> <td>cửa hàng<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::atomic&lt;T&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="atomic_compare_exchange" title="cpp/atomic/atomic compare exchange"> <span class="t-lines"><span>Atomic_compare_exchange_weak</span><span>Atomic_compare_exchange_weak_explict</span><span>Atomic_compare_exchange_strong</span><span>Atomic_compare_exchange_strong_explict</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>so sánh về mặt nguyên tử với giá trị của đối tượng nguyên tử với đối số không nguyên tử và thực hiện trao đổi nguyên tử nếu tải trọng hoặc nguyên tử nếu không<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../memory/shared_ptr/atomic" title="cpp/memory/shared ptr/atomic"> <span class="t-lines"><span>và trả về giá trị<span class="t-dsc-small">Thuật toán</span> </span><span>tổ chức trước đó, như thể bằng cách<span class="t-dsc-small">Thuật toán</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-deprecated-cxx20">(Không dùng nữa trong C ++ 20)</span></span></span></div> </td> <td>con trỏ đến đối tượng nguyên tử để sửa đổi<code><a href="../memory/shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/atomic/atomic_exchange" title="c/atomic/atomic exchange">C documentation</a></span>vì<code>atomic_exchange, atomic_exchange_explicit</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_exchange">https://en.cppreference.com/w/cpp/atomic/atomic_exchange</a>
+</p>
+</div>

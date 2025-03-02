@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: drop_while_view &lt;v, pre&gt; :: drop_while_view</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">drop_while_view () yêu cầu std :: default_initializable &lt;v&gt; &amp;&amp;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">                           std :: default_initializable &lt;srop&gt; = default;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>drop_while_view</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định.<a href="../../language/value_initialization" title="cpp/language/value initialization">Value-initializes</a>Consexpr rõ ràng drop_while_view (V Base, Pred Pred);</div> <div class="t-li1">
+<span class="t-li">2)</span>Quan điểm cơ bản và vị ngữ.<code>base</code>Di chuyển xây dựng chế độ xem cơ bản từ<code>pred</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>căn cứ</td> <td>-</td> <td>và vị ngữ từ</td>
+</tr> <tr class="t-par"> <td>Sao chép các yếu tố, nhưng được thực thi theo</td> <td>-</td> <td>Chỉ định rằng một đối tượng thuộc loại có thể được xây dựng</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">quan điểm cơ bản</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Bộ điều hợp vòng lặp để chuyển đổi</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3714" rel="nofollow">LWG 3714</a><br/>.<a class="external text" href="https://wg21.link/P2711R1" rel="nofollow">P2711R1</a>)</td> <td>C ++ 20</td> <td>    return /*iterator* /{*this, range :: find_if (base_, std :: ref (*pred_))};</td> <td>đã làm rõ</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2325R3" rel="nofollow">P2325R3</a> </td> <td>C ++ 20</td> <td>nếu như<code>Pred</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="../../concepts/default_initializable" title="cpp/concepts/default initializable"><code>default_initializable</code></a>truy cập giá trị chứa<br/>Nếu a<code>drop_while_view</code>#include &lt;mảng&gt;<code>Pred</code> </td> <td>các<code>drop_while_view</code>, tức là nó phải đáp ứng tất cả các yêu cầu sau:<br/>không<a href="../../concepts/default_initializable" title="cpp/concepts/default initializable"><code>default_initializable</code></a> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/drop_while_view/drop_while_view">https://en.cppreference.com/w/cpp/ranges/drop_while_view/drop_while_view</a>
+</p>
+</div>

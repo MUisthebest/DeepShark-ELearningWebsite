@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: nullptr_t</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/cstddef" title="cpp/header/cstddef">&lt;cstddef&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">sử dụng nullptr_t = declType (nullptr);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p><code>std::nullptr_t</code>là loại con trỏ null nghĩa đen,<a href="../language/nullptr" title="cpp/language/nullptr"><code>nullptr</code></a>. Nó là một loại riêng biệt không phải là loại con trỏ hoặc loại con trỏ đến thành viên. Giá trị của nó là<i>Hằng số con trỏ null</i>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<code><a href="null" title="cpp/types/NULL">NULL</a></code>), và có thể là<a href="../language/implicit_conversion" title="cpp/language/implicit conversion">implicitly converted</a>cho bất kỳ con trỏ và con trỏ đến loại thành viên.</p>
+<p><code>sizeof(std::nullptr_t)</code>hoặc một loại chính sách thực thi được xác định theo thực hiện. Nếu không thì,<code>sizeof(void *)</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Tiêu chuẩn C ++ yêu cầu<a href="https://en.cppreference.com/w/c/types" title="c/types"><code>&lt;stddef.h&gt;</code></a>để đặt nội dung của<a href="../header/cstddef" title="cpp/header/cstddef"><code>&lt;cstddef&gt;</code></a>trong không gian tên toàn cầu, và do đó yêu cầu<code>nullptr_t</code>có sẵn trong không gian tên toàn cầu khi<a href="https://en.cppreference.com/w/c/types" title="c/types"><code>&lt;stddef.h&gt;</code></a>được cung cấp trong</p>
+<p><code>nullptr_t</code>không phải là một phần của C cho đến C23.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Nếu hai hoặc nhiều quá tải chấp nhận các loại con trỏ khác nhau, quá tải cho<code>std::nullptr_t</code>là cần thiết để chấp nhận một đối số con trỏ null.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDdef&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="../language/nullptr" title="cpp/language/nullptr"><code>nullptr</code></a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>#include &lt;CstDdef&gt;</td>
+</tr> <tr class="t-dsc"> <td> <div><a href="null" title="cpp/types/NULL"> <span class="t-lines"><span>VÔ GIÁ TRỊ</span></span></a></div> </td> <td>Hằng số con trỏ null được xác định theo thực hiện<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_null_pointer" title="cpp/types/is null pointer"> <span class="t-lines"><span>IS_NULL_PULIN</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C ++ 14)</span></span></span></div> </td> <td>kiểm tra xem một loại là<code>std::nullptr_t</code> <br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/types/nullptr_t" title="c/types/nullptr t">C documentation</a></span>vì<code>nullptr_t</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/nullptr_t">https://en.cppreference.com/w/cpp/types/nullptr_t</a>
+</p>
+</div>

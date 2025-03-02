@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: fileSystem :: path :: make_preferred</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">đường dẫn &amp; make_preferred ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Chuyển đổi tất cả các dấu phân cách thư mục theo chế độ xem định dạng chung của đường dẫn sang phân tách thư mục ưa thích.</p>
+<p>Ví dụ: trên Windows, ở đâu<code>\</code>là bộ phân cách ưa thích, đường dẫn<code>foo/bar</code>sẽ được chuyển đổi thành<code>foo\bar</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Windows có thể sử dụng<code>/</code>như một người phân tách, nhưng thích<code>\</code>, Vì thế<code>make_preferred</code>Chuyển đổi các dấu gạch chéo về phía trước thành dấu gạch chéo ngược. Mặt khác, POSIX không sử dụng<code>\</code>Là một dấu phân cách, bởi vì dấu gạch chéo ngược là các ký tự tên tệp hợp lệ - đường dẫn Windows trên POSIX thực sự đề cập đến một tệp có tên<code>"a\\b\\c"</code>. Vì lý do này, "dấu phân cách" không được chuyển đổi.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;FileSystem&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span><span class="t-dsc-small">ConstExPR value_type</span>ưa thích_separator</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>Bộ phân tách thư mục thay thế có thể được sử dụng ngoài di động<code>/</code>. Trên Windows, đây là ký tự dấu gạch chéo ngược<code>\</code>. Trên Posix, đây là cùng một chém về phía trước<code>/</code>Là bộ phân cách di động<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/path/make_preferred">https://en.cppreference.com/w/cpp/filesystem/path/make_preferred</a>
+</p>
+</div>

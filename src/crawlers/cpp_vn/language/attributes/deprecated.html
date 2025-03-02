@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">Thuộc tính C ++: Không dùng nữa<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span>
+</h1> <p>Chỉ ra rằng tên hoặc thực thể được khai báo với thuộc tính này là<a class="extiw" href="https://en.wikipedia.org/wiki/Deprecation" title="enwiki:Deprecation">deprecated</a>, đó là, việc sử dụng được cho phép, nhưng không được khuyến khích vì một số lý do.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span>deprecated<span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span></code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>[[deprecated(</code> <span class="t-spar">chuỗi chữ</span> <code>)]]</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">chuỗi chữ</span> </td> <td>-</td> <td>chồng chéo với container.<a href="../string_literal#Unevaluated_strings" title="cpp/language/string literal">unevaluated string literal</a>điều đó có thể được sử dụng để giải thích cơ sở lý luận cho việc không dùng nữa và/hoặc đề xuất một thực thể thay thế</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Chỉ ra rằng việc sử dụng tên hoặc thực thể được khai báo với thuộc tính này được cho phép, nhưng không được khuyến khích vì một số lý do. Trình biên dịch thường đưa ra cảnh báo về việc sử dụng như vậy. Các<span class="t-spar">chuỗi chữ</span>, nếu được chỉ định, thường được bao gồm trong các cảnh báo.</p>
+<p>Thuộc tính này được cho phép trong các khai báo của các tên hoặc thực thể sau:</p>
+<ul>
+<li> <a href="../classes" title="cpp/language/classes">class/struct/union</a>:<code>struct [[deprecated]] S;</code>Thì</li>
+<li> <a href="../typedef" title="cpp/language/typedef">typedef-name</a>, bao gồm cả những người được tuyên bố bởi<a href="../type_alias" title="cpp/language/type alias">alias declaration</a>:<code>[[deprecated]] typedef S* PS;</code>Thì<code>using PS [[deprecated]] = S*;</code>Thì</li>
+<li>biến, bao gồm<a href="../static" title="cpp/language/static">static data member</a>:<code>[[deprecated]] int x;</code>Thì</li>
+<li> <a href="../data_members" title="cpp/language/data members">non-static data member</a>:<code>union U { [[deprecated]] int n; };</code>Thì</li>
+<li> <a href="../function" title="cpp/language/function">function</a>:<code>[[deprecated]] void f();</code>Thì</li>
+<li> <a href="../namespace" title="cpp/language/namespace">namespace</a>:<code>namespace [[deprecated]] NS { int x; }</code>Thì</li>
+<li> <a href="../enum" title="cpp/language/enum">enumeration</a>:<code>enum [[deprecated]] E {};</code>Thì</li>
+<li>Tái lập điều khiển:<code>enum { A [[deprecated]], B [[deprecated]] = 42 };</code>Thì<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+<li> <a href="../template_specialization" title="cpp/language/template specialization">template specialization</a>:<code>template&lt;&gt; struct [[deprecated]] X&lt;int&gt; {};</code>.</li>
+</ul> <p>Một cái tên được tuyên bố không được ghi nhận có thể được xác định không dùng nữa. Một cái tên được tuyên bố không nhận được không thể không được ghi nhận bằng cách kiểm tra lại nó mà không có thuộc tính này.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/attributes/deprecated" title="c/language/attributes/deprecated">C documentation</a></span>vì<code>deprecated</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/attributes/deprecated">https://en.cppreference.com/w/cpp/language/attributes/deprecated</a>
+</p>
+</div>

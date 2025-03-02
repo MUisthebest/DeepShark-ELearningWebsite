@@ -1,0 +1,37 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử ==,! =, &lt;, &lt;=,&gt;,&gt; =, &lt;=&gt;<small>(STD :: Move_Iterator)</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx17"> <td><pre data-language="cpp">Mẫu &lt;class iterator1, class iterator2&gt;</pre></td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Toán tử bool == (const std :: move_iterator &lt;iterator1&gt; &amp; lhs,</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx17"> <td><pre data-language="cpp">                 const std :: move_iterator &lt;iterator2&gt; &amp; rhs);</pre></td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class iterator1, class iterator2&gt;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(3)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx17"> <td><pre data-language="cpp">Toán tử bool constexpr == (const std :: move_itorator &lt;iterator1&gt; &amp; lhs,</pre></td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">                           const std :: move_iterator &lt;iterator2&gt; &amp; rhs);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(4)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx17"> <td><pre data-language="cpp">Mẫu &lt;class iterator1, class iterator2&gt;</pre></td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">toán tử bool! = (const std :: move_iterator &lt;iterator1&gt; &amp; lhs,</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">             Không có p);</td> <td></td> </tr> <tr class="t-dcl t-until-cxx17"> <td><pre data-language="cpp">                 const std :: move_iterator &lt;iterator2&gt; &amp; rhs);</pre></td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;class iterator1, class iterator2&gt;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td></td> </tr> <tr class="t-dcl t-until-cxx17"> <td><pre data-language="cpp">Toán tử bool constexpr! = (const std :: di chuyển</pre></td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">                           const std :: move_iterator &lt;iterator2&gt; &amp; rhs);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class iterator1, class iterator2&gt;</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Toán tử bool &lt;(const std :: move_iterator &lt;iterator1&gt; &amp; lhs,</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p><span class="t-v">                const std :: move_iterator &lt;iterator2&gt; &amp; rhs);</span>Mẫu &lt;class iterator1, class iterator2&gt;<code>bool</code>.</p>
+<p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>giữ tererators hoặc cả hai giữ sentinels), trả về</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>lhs.base() == rhs.base()</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>!(lhs == rhs)</code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <code>lhs.base() &lt; rhs.base()</code>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span> <code>!(rhs &lt; lhs)</code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <code>rhs &lt; lhs</code>
+</div> <div class="t-li1">
+<span class="t-li">từ_sys</span> <code>!(lhs &lt; rhs)</code>
+</div> <div class="t-li1">
+<span class="t-li">6)</span> <code>lhs.base() &lt;=&gt; rhs.base()</code>
+</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Toán tử bool constexpr &lt;(const std :: move_itorator &lt;iterator1&gt; &amp; lhs,</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">                          const std :: move_iterator &lt;iterator2&gt; &amp; rhs);</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_cmp2" title="cpp/iterator/move iterator/operator cmp2"> <span class="t-lines"><span>toán tử ==<span class="t-dsc-small">so sánh trình lặp cơ bản và sentinel cơ bản</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(STD :: Move_Sentinel)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/move_iterator/operator_cmp">https://en.cppreference.com/w/cpp/iterator/move_iterator/operator_cmp</a>
+</p>
+</div>

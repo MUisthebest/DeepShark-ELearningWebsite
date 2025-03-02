@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Generator &lt;Ref, V, Allocator&gt; :: Promise_type :: Xóa toán tử</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">void toán tử xóa (void* ptr, std :: size_t n) noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Xử lý lưu trữ được chỉ ra bởi<code>ptr</code>sử dụng một bộ phân bổ tương đương với<a href="operator_new" title="cpp/coroutine/generator/promise type/operator new">allocate</a>bộ nhớ này.</p>
+<p>Các<code>ptr</code>được chuyển cho chức năng này phải là một trong những<a href="operator_new" title="cpp/coroutine/generator/promise type/operator new"><code>operator new</code></a>quá tải với một đối số kích thước bằng<code>n</code>. Nếu không thì hành vi không xác định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Nếu mảng chứa một số yếu tố</td> <td>-</td> <td>một con trỏ thu được từ cuộc gọi trước đó đến<a href="operator_new" title="cpp/coroutine/generator/promise type/operator new"><code>operator new</code></a> </td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>kích thước của kho lưu trữ được giải quyết</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/coroutine/generator/promise_type/operator_delete">https://en.cppreference.com/w/cpp/coroutine/generator/promise_type/operator_delete</a>
+</p>
+</div>

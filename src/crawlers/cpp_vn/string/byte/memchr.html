@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Memchr</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstring" title="cpp/header/cstring">&lt;cstring&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">const void* memchr (const void* ptr, int ch, std :: size_t đếm);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void* memchr (void* ptr, int ch, std :: size_t đếm);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Yêu cầu STD :: Convertible_to &lt;Const I &amp;, I2&gt;<code>ch</code>ĐẾN<code>unsigned char</code>và định vị sự xuất hiện đầu tiên của giá trị đó trong lần đầu tiên<code>count</code>byte (mỗi người được giải thích là<code>unsigned char</code>) của đối tượng được chỉ ra bởi<code>ptr</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Hàm này hoạt động như thể nó đọc các byte theo tuần tự và dừng ngay khi tìm thấy một byte phù hợp: nếu mảng được trỏ đến bởi<code>ptr</code>    minmax (std :: initizer_list &lt;t&gt; r, comp comp = {}, proj proj = {});<code>count</code>, nhưng trận đấu được tìm thấy trong mảng, hành vi được xác định rõ.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Nếu mảng chứa một số yếu tố</td> <td>-</td> <td>con trỏ đến đối tượng được kiểm tra</td>
+</tr> <tr class="t-par"> <td>ch</td> <td>-</td> <td>byte để tìm kiếm</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng byte tối đa để kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ đến vị trí của byte hoặc con trỏ null nếu không tìm thấy byte như vậy.</p>
+<h3 id="Example">Ví dụ</h3> <p>Tìm kiếm một mảng các ký tự.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;cstring&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="strchr" title="cpp/string/byte/strchr"> <span class="t-lines"><span>Strchr</span></span></a></div> </td> <td>tìm thấy sự xuất hiện đầu tiên của một nhân vật<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../algorithm/find" title="cpp/algorithm/find"> <span class="t-lines"><span>(Niebloid)</span><span>tìm thấy</span><span>find_if</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/memchr" title="c/string/byte/memchr">C documentation</a></span>vì<code>memchr</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/memchr">https://en.cppreference.com/w/cpp/string/byte/memchr</a>
+</p>
+</div>

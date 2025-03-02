@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Hệ thống</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdlib" title="cpp/header/cstdlib">&lt;cstdlib&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">hệ thống int (lệnh const char*);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Gọi bộ xử lý lệnh của môi trường máy chủ (ví dụ:<code>/bin/sh</code>Thì<code>cmd.exe</code>) với tham số<code>command</code>. Trả về một giá trị được xác định theo triển khai (thường là giá trị mà chương trình được gọi trả về).</p>
+<p>Nếu như<code>command</code>là một con trỏ null, kiểm tra xem môi trường máy chủ có bộ xử lý lệnh và trả về giá trị khác không khi và chỉ khi bộ xử lý lệnh tồn tại.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>yêu cầu</td> <td>-</td> <td>Chuỗi ký tự Xác định lệnh sẽ được chạy trong bộ xử lý lệnh. Nếu một con trỏ null được đưa ra, bộ xử lý lệnh sẽ được kiểm tra sự tồn tại</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Giá trị xác định thực hiện. Nếu như<code>command</code>là một con trỏ NULL, trả về giá trị khác biệt khi và chỉ khi bộ xử lý lệnh tồn tại.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Trên các hệ thống POSIX, giá trị trả lại có thể được phân tách bằng cách sử dụng<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/wait.html" rel="nofollow"><code>WEXITSTATUS</code> and <code>WSTOPSIG</code></a>.</p>
+<p>Hàm POSIX liên quan<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/popen.html" rel="nofollow"><code>popen</code></a>làm cho đầu ra được tạo bởi<code>command</code>Có sẵn cho người gọi.</p>
+<p>Một tuôn ra rõ ràng của<code><a href="../../io/cout" title="cpp/io/cout">std::cout</a></code>Bộ điều khiển này có thể được sử dụng để tạo ra một dòng đầu ra ngay lập tức, ví dụ: Khi hiển thị đầu ra từ một quy trình chạy dài, hoạt động ghi nhật ký của nhiều luồng hoặc hoạt động ghi nhật ký của một chương trình có thể gặp sự cố bất ngờ. Một tuôn ra rõ ràng của<code>std::system</code>, nếu quá trình sinh sản thực hiện bất kỳ I/O màn hình nào.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDlib&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Fstream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/program/system" title="c/program/system">C documentation</a></span>vì<code>system</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/program/system">https://en.cppreference.com/w/cpp/utility/program/system</a>
+</p>
+</div>

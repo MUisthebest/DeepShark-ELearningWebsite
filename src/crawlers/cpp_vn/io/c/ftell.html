@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FTELL</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Long ftell (std :: file* stream);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả về giá trị hiện tại của chỉ báo vị trí tệp cho luồng tệp<code>stream</code>.</p>
+<p>Nếu luồng được mở ở chế độ nhị phân, giá trị thu được từ hàm này là số byte từ đầu tệp.</p>
+<p>Nếu luồng mở ở chế độ văn bản, giá trị được trả về bởi hàm này không được xác định và chỉ có ý nghĩa như là đầu vào<code><a href="fseek" title="cpp/io/c/fseek">std::fseek</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>luồng tập tin để kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Chỉ báo vị trí tệp thành công hoặc<code>-1L</code>Nếu thất bại xảy ra. Cũng đặt<code><a href="../../error/errno" title="cpp/error/errno">errno</a></code>, trong trường hợp đó</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Trình diễn<code>std::ftell()</code>với kiểm tra lỗi. Sau đó viết đọc một vài giá trị dấu phẩy động (FP) sang/từ một tệp.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cstdio&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CstDlib&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fgetpos" title="cpp/io/c/fgetpos"> <span class="t-lines"><span>FGETPOS</span></span></a></div> </td> <td>Nhận chỉ báo vị trí tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fseek" title="cpp/io/c/fseek"> <span class="t-lines"><span>FSEEK</span></span></a></div> </td> <td>di chuyển chỉ báo vị trí tệp đến một vị trí cụ thể trong một tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fsetpos" title="cpp/io/c/fsetpos"> <span class="t-lines"><span>fsetpos</span></span></a></div> </td> <td>di chuyển chỉ báo vị trí tệp đến một vị trí cụ thể trong một tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_istream/tellg" title="cpp/io/basic istream/tellg"> <span class="t-lines"><span>Trích xuất các khối ký tự đã có sẵn</span></span></a></div> </td> <td>GCOUNT<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_istream&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_ostream/tellp" title="cpp/io/basic ostream/tellp"> <span class="t-lines"><span>đặt</span></span></a></div> </td> <td>chèn một ký tự<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_ostream&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/ftell" title="c/io/ftell">C documentation</a></span>vì<code>ftell</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/ftell">https://en.cppreference.com/w/cpp/io/c/ftell</a>
+</p>
+</div>

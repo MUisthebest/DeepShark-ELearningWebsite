@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">std :: deque &lt;t, Allecator&gt; :: xuất hiện</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;class ... args&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>iterator xuất hiện (const_iterator pos, args &amp;&amp; ... args);<code>pos</code>.</p>
+<p>Chèn một phần tử mới vào thùng chứa trực tiếp trước khi<code><a href="../../memory/allocator_traits/construct" title="cpp/memory/allocator traits/construct">std::allocator_traits::construct</a></code>Phần tử được xây dựng thông qua</p>
+<p>, thường sử dụng vị trí mới để xây dựng phần tử tại chỗ tại một vị trí được cung cấp bởi container. Tuy nhiên, nếu vị trí cần thiết đã bị chiếm bởi một phần tử hiện có, phần tử được chèn được xây dựng tại một vị trí khác lúc đầu và sau đó di chuyển được gán vào vị trí cần thiết.<code>args...</code>Các lập luận<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...</code>.<code>args...</code>được chuyển tiếp đến hàm tạo như</p>
+<p>, theo thứ tự không đảo ngược.<a href="end" title="cpp/container/deque/end"><code>end()</code></a>có thể trực tiếp hoặc gián tiếp đề cập đến một giá trị trong container.<code>pos == <a href="begin" title="cpp/container/deque/begin">begin()</a></code>hoặc<code>pos == <a href="end" title="cpp/container/deque/end">end()</a></code>Iterator) bị vô hiệu. Tài liệu tham khảo cũng bị vô hiệu, trừ khi</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>, trong trường hợp đó họ không bị vô hiệu.</td>
+</tr> <tr class="t-par"> <td>iterator trước đó phần tử mới sẽ được xây dựng</td> <td>-</td> <td>Args</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T (the container's element type)</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/moveassignable" title="cpp/named req/MoveAssignable">MoveAssignable</a>Thì<a href="../../named_req/moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Và<a href="../../named_req/emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Đối số để chuyển tiếp đến hàm tạo của phần tử</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Tererator trỏ đến phần tử được đặt.<code>pos</code>Tuyến tính trong khoảng cách ít hơn giữa</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>và một trong hai đầu của container.<code>emplace</code>Nếu một ngoại lệ được ném khác với Trình xây dựng sao</p>
+<p>được sử dụng để chèn một phần tử duy nhất ở hai đầu, không có hiệu ứng (đảm bảo ngoại lệ mạnh).</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Nếu không, các hiệu ứng không được xác định.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2164" rel="nofollow">LWG 2164</a> </td> <td>C ++ 11</td> <td>#include &lt;chuỗi&gt;</td> <td>#include &lt;Deque&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="insert" title="cpp/container/deque/insert"> <span class="t-lines"><span>get_allocator</span></span></a></div> </td> <td>Trả về người phân bổ liên quan<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="emplace_back" title="cpp/container/deque/emplace back"> <span class="t-lines"><span>Vị trí</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>xây dựng phần tử tại chỗ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/deque/emplace">https://en.cppreference.com/w/cpp/container/deque/emplace</a>
+</p>
+</div>

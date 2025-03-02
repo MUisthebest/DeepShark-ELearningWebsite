@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Coroutine_traits</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/coroutine" title="cpp/header/coroutine">&lt;coroutine&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class r, class ... args&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>struct Coroutine_traits;<code>promise_type</code>Giống như<code>R::promise_type</code>Xác định loại lời hứa từ loại trả về và loại tham số của coroutine. Việc triển khai thư viện tiêu chuẩn cung cấp loại thành viên có thể truy cập công khai</p>
+<p>Nếu ID đủ điều kiện là hợp lệ và biểu thị một loại. Nếu không, nó không có thành viên như vậy.<code>coroutine_traits</code>Chuyên ngành được xác định theo chương trình của<code>promise_type</code>sẽ xác định một loại thành viên có thể truy cập công khai</p>
+<h3 id="Template_parameters">là không xác định.</h3> <table class="t-par-begin"> <tr class="t-par"> <td>R</td> <td>-</td> <td>; Nếu không, hành vi là không xác định.</td>
+</tr> <tr class="t-par"> <td>Loại trở lại của coroutine</td> <td>-</td> <td>Args<a href="../language/member_functions#ref-qualified_member_functions" title="cpp/language/member functions">implicit object parameter</a>Các loại tham số của coroutine, bao gồm cả</td>
+</tr>
+</table> <h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>promise_type</code> </td> <td> <code>R::promise_type</code>Nếu coroutine là chức năng thành viên không tĩnh</td>
+</tr> </table> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Nếu nó hợp lệ, hoặc được cung cấp bởi các chuyên gia do chương trình xác định</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Mẫu &lt;lớp, lớp ...&gt;<code>Args...</code>struct coroutine_traits {};</p>
+<p>Nếu như<code>std::coroutine_traits&lt;R, Args...&gt;::promise_type</code> </p>
+<p>Mẫu &lt;class r, class ... args&gt;<code>coroutine_traits</code>Yêu cầu yêu cầu {typename r :: Promise_type; }</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">struct coroutine_traits &lt;r, args ...&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">{</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/coroutine/coroutine_traits">https://en.cppreference.com/w/cpp/coroutine/coroutine_traits</a>
+</p>
+</div>

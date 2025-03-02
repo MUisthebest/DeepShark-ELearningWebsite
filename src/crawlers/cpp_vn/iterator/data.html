@@ -1,0 +1,39 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Dữ liệu</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/array" title="cpp/header/array">&lt;array&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/deque" title="cpp/header/deque">&lt;deque&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/forward_list" title="cpp/header/forward list">&lt;forward_list&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/iterator" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/list" title="cpp/header/list">&lt;list&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/map" title="cpp/header/map">&lt;map&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/regex" title="cpp/header/regex">&lt;regex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/set" title="cpp/header/set">&lt;set&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/span" title="cpp/header/span">&lt;span&gt;</a></code> </th> <th> </th> <th><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/string" title="cpp/header/string">&lt;string&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/string_view" title="cpp/header/string view">&lt;string_view&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/unordered_map" title="cpp/header/unordered map">&lt;unordered_map&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/unordered_set" title="cpp/header/unordered set">&lt;unordered_set&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/vector" title="cpp/header/vector">&lt;vector&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td><pre data-language="cpp">Mẫu &lt;Class C&gt;</pre></td> <td>(1)</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td> </tr> <tr class="t-dcl t-since-cxx17"> <td><pre data-language="cpp">Dữ liệu Auto Auto (C &amp; C) -&gt; DeclType (c.Data ());</pre></td> <td>(2)</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td> </tr> <tr class="t-dcl t-since-cxx17"> <td><pre data-language="cpp">Mẫu &lt;Class C&gt;</pre></td> <td>(3)</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td> </tr> <tr class="t-dcl t-since-cxx17"> <td><pre data-language="cpp">Dữ liệu Auto Auto (const C &amp; C) -&gt; DeclType (c.Data ());</pre></td> <td>(4)</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td> </tr> </table> <p>Mẫu &lt;class T, std :: size_t n&gt;</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Mẫu &lt;Class execPolicy,<code>c.data()</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;Class execPolicy,<code>array</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mẫu &lt;Class execPolicy,<code>il.begin()</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ánh xạ_Type</td> <td>-</td> <td>là một tiêu chuẩn<code>data()</code>, điều này trở lại</td>
+</tr> <tr class="t-par"> <td>Mảng</td> <td>-</td> <td>không đủ điều kiện, và</td>
+</tr> <tr class="t-par"> <td>Dữ liệu của constexpr t* (t (&amp; mảng) [n]) noexcept;</td> <td>-</td> <td>Mẫu &lt;Class E&gt;</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>constexpr const e* data (std :: initizer_list &lt;e&gt; il) noexcept;</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1)</span>Có thể ném các trường hợp ngoại lệ do thực hiện.</div> <h3 id="Notes">Ghi chú</h3> <p>Trả về một con trỏ cho khối bộ nhớ chứa các phần tử của phạm vi.<code><a href="../utility/initializer_list" title="cpp/utility/initializer list">std::initializer_list</a></code>IL<code>data</code>.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_nonmember_container_access" title="cpp/feature test"><code>__cpp_lib_nonmember_container_access</code></a></td> <td><span class="nu0">Tương tự như cho</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<code><a href="size" title="cpp/iterator/size">std::size()</a></code>Thì<code>std::data()</code>, Và<code><a href="empty" title="cpp/iterator/empty">std::empty()</a></code> </td>
+</tr>
+</table> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <th>
+<a href="#Version_1">First version</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">một danh sách khởi tạo</pre></div> </td>
+</tr> <tr> <th>
+<a href="#Version_2">Second version</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Một con trỏ tới khối bộ nhớ chứa các phần tử của phạm vi.</pre></div> </td>
+</tr> <tr> <th>
+<a href="#Version_3">Third version</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Quá tải cho</pre></div> </td>
+</tr> <tr> <th>
+<a href="#Version_4">Fourth version</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">là cần thiết vì nó không có chức năng thành viên</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;lớp C&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Dữ liệu tự động của ConstExPR (C &amp; C) -&gt; DeclType (C.Data ())</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../ranges/data" title="cpp/ranges/data"> <span class="t-lines"><span>Phạm vi :: trống</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Kiểm tra xem một phạm vi có trống không<br/><span class="t-mark">(Đối tượng điểm tùy chỉnh)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../ranges/cdata" title="cpp/ranges/cdata"> <span class="t-lines"><span>Phạm vi :: Dữ liệu</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>có được một con trỏ đến đầu của một phạm vi tiếp giáp<br/><span class="t-mark">(Đối tượng điểm tùy chỉnh)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/data">https://en.cppreference.com/w/cpp/iterator/data</a>
+</p>
+</div>

@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: strncmp</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstring" title="cpp/header/cstring">&lt;cstring&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int strncmp (const char* lhs, const char* rhs, std :: size_t đếm);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>So sánh nhiều nhất<code>count</code>ký tự của hai mảng có thể kết thúc null. Việc so sánh được thực hiện từ vựng. Các ký tự theo ký tự null không được so sánh.</p>
+<p>Dấu hiệu của kết quả là dấu hiệu của sự khác biệt giữa các giá trị của cặp ký tự đầu tiên (cả hai được hiểu là<code>unsigned char</code>) khác nhau trong các mảng được so sánh.</p>
+<p>Hành vi không được xác định khi truy cập xảy ra qua cuối một trong hai mảng<code>lhs</code>hoặc<code>rhs</code>. Hành vi không xác định khi<code>lhs</code>hoặc<code>rhs</code>là con trỏ null.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>con trỏ đến các mảng có thể kết thúc để so sánh</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng ký tự tối đa để so sánh</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>DATA2<code>lhs</code>int (*p) () = f;  // con trỏ p đang chỉ vào f<code>rhs</code>theo thứ tự từ vựng.</p>
+<p>Giá trị số nguyên không dấu<code>lhs</code>Và<code>rhs</code>so sánh bằng nhau, hoặc nếu<code>count</code>không đúng. Lưu ý rằng</p>
+<p>Dữ liệu1<code>lhs</code>(*P)();          // chức năng f được gọi qua chức năng lvalue<code>rhs</code>theo thứ tự từ vựng.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Hàm này không nhạy cảm với địa phương, không giống như<code><a href="strcoll" title="cpp/string/byte/strcoll">std::strcoll</a></code>Và<code><a href="strxfrm" title="cpp/string/byte/strxfrm">std::strxfrm</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;cstring&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="strcmp" title="cpp/string/byte/strcmp"> <span class="t-lines"><span>Có thể ném</span></span></a></div> </td> <td>So sánh hai chuỗi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../wide/wcsncmp" title="cpp/string/wide/wcsncmp"> <span class="t-lines"><span>WCSNCMP</span></span></a></div> </td> <td>so sánh một lượng ký tự nhất định từ hai chuỗi rộng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="memcmp" title="cpp/string/byte/memcmp"> <span class="t-lines"><span>MEMCMP</span></span></a></div> </td> <td>So sánh hai bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strcoll" title="cpp/string/byte/strcoll"> <span class="t-lines"><span>Strcoll</span></span></a></div> </td> <td>so sánh hai chuỗi theo địa phương hiện tại<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/strncmp" title="c/string/byte/strncmp">C documentation</a></span>vì<code>strncmp</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/strncmp">https://en.cppreference.com/w/cpp/string/byte/strncmp</a>
+</p>
+</div>
