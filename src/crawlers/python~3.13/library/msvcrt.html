@@ -1,0 +1,110 @@
+ <span id="msvcrt-useful-routines-from-the-ms-vc-runtime"></span><h1>msvcrt — Useful routines from the MS VC++ runtime</h1>  <p>These functions provide access to some useful capabilities on Windows platforms. Some higher-level modules use these functions to build the Windows implementations of their services. For example, the <a class="reference internal" href="getpass#module-getpass" title="getpass: Portable reading of passwords and retrieval of the userid."><code>getpass</code></a> module uses this in the implementation of the <a class="reference internal" href="getpass#module-getpass" title="getpass: Portable reading of passwords and retrieval of the userid."><code>getpass()</code></a> function.</p> <p>Further documentation on these functions can be found in the Platform API documentation.</p> <p>The module implements both the normal and wide char variants of the console I/O api. The normal API deals only with ASCII characters and is of limited use for internationalized applications. The wide char API should be used where ever possible.</p> <div class="versionchanged"> <p><span class="versionmodified changed">Changed in version 3.3: </span>Operations in this module now raise <a class="reference internal" href="exceptions#OSError" title="OSError"><code>OSError</code></a> where <a class="reference internal" href="exceptions#IOError" title="IOError"><code>IOError</code></a> was raised.</p> </div> <section id="file-operations"> <span id="msvcrt-files"></span><h2>File Operations</h2> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.locking">
+<code>msvcrt.locking(fd, mode, nbytes)</code> </dt> <dd>
+<p>Lock part of a file based on file descriptor <em>fd</em> from the C runtime. Raises <a class="reference internal" href="exceptions#OSError" title="OSError"><code>OSError</code></a> on failure. The locked region of the file extends from the current file position for <em>nbytes</em> bytes, and may continue beyond the end of the file. <em>mode</em> must be one of the <code>LK_*</code> constants listed below. Multiple regions in a file may be locked at the same time, but may not overlap. Adjacent regions are not merged; they must be unlocked individually.</p> <p class="audit-hook">Raises an <a class="reference internal" href="sys#auditing"><span class="std std-ref">auditing event</span></a> <code>msvcrt.locking</code> with arguments <code>fd</code>, <code>mode</code>, <code>nbytes</code>.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.LK_LOCK">
+<code>msvcrt.LK_LOCK</code> </dt> <dt class="sig sig-object py" id="msvcrt.LK_RLCK">
+<code>msvcrt.LK_RLCK</code> </dt> <dd>
+<p>Locks the specified bytes. If the bytes cannot be locked, the program immediately tries again after 1 second. If, after 10 attempts, the bytes cannot be locked, <a class="reference internal" href="exceptions#OSError" title="OSError"><code>OSError</code></a> is raised.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.LK_NBLCK">
+<code>msvcrt.LK_NBLCK</code> </dt> <dt class="sig sig-object py" id="msvcrt.LK_NBRLCK">
+<code>msvcrt.LK_NBRLCK</code> </dt> <dd>
+<p>Locks the specified bytes. If the bytes cannot be locked, <a class="reference internal" href="exceptions#OSError" title="OSError"><code>OSError</code></a> is raised.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.LK_UNLCK">
+<code>msvcrt.LK_UNLCK</code> </dt> <dd>
+<p>Unlocks the specified bytes, which must have been previously locked.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.setmode">
+<code>msvcrt.setmode(fd, flags)</code> </dt> <dd>
+<p>Set the line-end translation mode for the file descriptor <em>fd</em>. To set it to text mode, <em>flags</em> should be <a class="reference internal" href="os#os.O_TEXT" title="os.O_TEXT"><code>os.O_TEXT</code></a>; for binary, it should be <a class="reference internal" href="os#os.O_BINARY" title="os.O_BINARY"><code>os.O_BINARY</code></a>.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.open_osfhandle">
+<code>msvcrt.open_osfhandle(handle, flags)</code> </dt> <dd>
+<p>Create a C runtime file descriptor from the file handle <em>handle</em>. The <em>flags</em> parameter should be a bitwise OR of <a class="reference internal" href="os#os.O_APPEND" title="os.O_APPEND"><code>os.O_APPEND</code></a>, <a class="reference internal" href="os#os.O_RDONLY" title="os.O_RDONLY"><code>os.O_RDONLY</code></a>, <a class="reference internal" href="os#os.O_TEXT" title="os.O_TEXT"><code>os.O_TEXT</code></a> and <a class="reference internal" href="os#os.O_NOINHERIT" title="os.O_NOINHERIT"><code>os.O_NOINHERIT</code></a>. The returned file descriptor may be used as a parameter to <a class="reference internal" href="os#os.fdopen" title="os.fdopen"><code>os.fdopen()</code></a> to create a file object.</p> <p>The file descriptor is inheritable by default. Pass <a class="reference internal" href="os#os.O_NOINHERIT" title="os.O_NOINHERIT"><code>os.O_NOINHERIT</code></a> flag to make it non inheritable.</p> <p class="audit-hook">Raises an <a class="reference internal" href="sys#auditing"><span class="std std-ref">auditing event</span></a> <code>msvcrt.open_osfhandle</code> with arguments <code>handle</code>, <code>flags</code>.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.get_osfhandle">
+<code>msvcrt.get_osfhandle(fd)</code> </dt> <dd>
+<p>Return the file handle for the file descriptor <em>fd</em>. Raises <a class="reference internal" href="exceptions#OSError" title="OSError"><code>OSError</code></a> if <em>fd</em> is not recognized.</p> <p class="audit-hook">Raises an <a class="reference internal" href="sys#auditing"><span class="std std-ref">auditing event</span></a> <code>msvcrt.get_osfhandle</code> with argument <code>fd</code>.</p> </dd>
+</dl> </section> <section id="console-i-o"> <span id="msvcrt-console"></span><h2>Console I/O</h2> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.kbhit">
+<code>msvcrt.kbhit()</code> </dt> <dd>
+<p>Returns a nonzero value if a keypress is waiting to be read. Otherwise, return 0.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.getch">
+<code>msvcrt.getch()</code> </dt> <dd>
+<p>Read a keypress and return the resulting character as a byte string. Nothing is echoed to the console. This call will block if a keypress is not already available, but will not wait for <kbd class="kbd docutils literal notranslate">Enter</kbd> to be pressed. If the pressed key was a special function key, this will return <code>'\000'</code> or <code>'\xe0'</code>; the next call will return the keycode. The <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd></kbd> keypress cannot be read with this function.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.getwch">
+<code>msvcrt.getwch()</code> </dt> <dd>
+<p>Wide char variant of <a class="reference internal" href="#msvcrt.getch" title="msvcrt.getch"><code>getch()</code></a>, returning a Unicode value.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.getche">
+<code>msvcrt.getche()</code> </dt> <dd>
+<p>Similar to <a class="reference internal" href="#msvcrt.getch" title="msvcrt.getch"><code>getch()</code></a>, but the keypress will be echoed if it represents a printable character.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.getwche">
+<code>msvcrt.getwche()</code> </dt> <dd>
+<p>Wide char variant of <a class="reference internal" href="#msvcrt.getche" title="msvcrt.getche"><code>getche()</code></a>, returning a Unicode value.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.putch">
+<code>msvcrt.putch(char)</code> </dt> <dd>
+<p>Print the byte string <em>char</em> to the console without buffering.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.putwch">
+<code>msvcrt.putwch(unicode_char)</code> </dt> <dd>
+<p>Wide char variant of <a class="reference internal" href="#msvcrt.putch" title="msvcrt.putch"><code>putch()</code></a>, accepting a Unicode value.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.ungetch">
+<code>msvcrt.ungetch(char)</code> </dt> <dd>
+<p>Cause the byte string <em>char</em> to be “pushed back” into the console buffer; it will be the next character read by <a class="reference internal" href="#msvcrt.getch" title="msvcrt.getch"><code>getch()</code></a> or <a class="reference internal" href="#msvcrt.getche" title="msvcrt.getche"><code>getche()</code></a>.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.ungetwch">
+<code>msvcrt.ungetwch(unicode_char)</code> </dt> <dd>
+<p>Wide char variant of <a class="reference internal" href="#msvcrt.ungetch" title="msvcrt.ungetch"><code>ungetch()</code></a>, accepting a Unicode value.</p> </dd>
+</dl> </section> <section id="other-functions"> <span id="msvcrt-other"></span><h2>Other Functions</h2> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.heapmin">
+<code>msvcrt.heapmin()</code> </dt> <dd>
+<p>Force the <code>malloc()</code> heap to clean itself up and return unused blocks to the operating system. On failure, this raises <a class="reference internal" href="exceptions#OSError" title="OSError"><code>OSError</code></a>.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.set_error_mode">
+<code>msvcrt.set_error_mode(mode)</code> </dt> <dd>
+<p>Changes the location where the C runtime writes an error message for an error that might end the program. <em>mode</em> must be one of the <code>OUT_*</code> constants listed below or <a class="reference internal" href="#msvcrt.REPORT_ERRMODE" title="msvcrt.REPORT_ERRMODE"><code>REPORT_ERRMODE</code></a>. Returns the old setting or -1 if an error occurs. Only available in <a class="reference internal" href="../using/configure#debug-build"><span class="std std-ref">debug build of Python</span></a>.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.OUT_TO_DEFAULT">
+<code>msvcrt.OUT_TO_DEFAULT</code> </dt> <dd>
+<p>Error sink is determined by the app’s type. Only available in <a class="reference internal" href="../using/configure#debug-build"><span class="std std-ref">debug build of Python</span></a>.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.OUT_TO_STDERR">
+<code>msvcrt.OUT_TO_STDERR</code> </dt> <dd>
+<p>Error sink is a standard error. Only available in <a class="reference internal" href="../using/configure#debug-build"><span class="std std-ref">debug build of Python</span></a>.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.OUT_TO_MSGBOX">
+<code>msvcrt.OUT_TO_MSGBOX</code> </dt> <dd>
+<p>Error sink is a message box. Only available in <a class="reference internal" href="../using/configure#debug-build"><span class="std std-ref">debug build of Python</span></a>.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.REPORT_ERRMODE">
+<code>msvcrt.REPORT_ERRMODE</code> </dt> <dd>
+<p>Report the current error mode value. Only available in <a class="reference internal" href="../using/configure#debug-build"><span class="std std-ref">debug build of Python</span></a>.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.CrtSetReportMode">
+<code>msvcrt.CrtSetReportMode(type, mode)</code> </dt> <dd>
+<p>Specifies the destination or destinations for a specific report type generated by <code>_CrtDbgReport()</code> in the MS VC++ runtime. <em>type</em> must be one of the <code>CRT_*</code> constants listed below. <em>mode</em> must be one of the <code>CRTDBG_*</code> constants listed below. Only available in <a class="reference internal" href="../using/configure#debug-build"><span class="std std-ref">debug build of Python</span></a>.</p> </dd>
+</dl> <dl class="py function"> <dt class="sig sig-object py" id="msvcrt.CrtSetReportFile">
+<code>msvcrt.CrtSetReportFile(type, file)</code> </dt> <dd>
+<p>After you use <a class="reference internal" href="#msvcrt.CrtSetReportMode" title="msvcrt.CrtSetReportMode"><code>CrtSetReportMode()</code></a> to specify <a class="reference internal" href="#msvcrt.CRTDBG_MODE_FILE" title="msvcrt.CRTDBG_MODE_FILE"><code>CRTDBG_MODE_FILE</code></a>, you can specify the file handle to receive the message text. <em>type</em> must be one of the <code>CRT_*</code> constants listed below. <em>file</em> should be the file handle your want specified. Only available in <a class="reference internal" href="../using/configure#debug-build"><span class="std std-ref">debug build of Python</span></a>.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.CRT_WARN">
+<code>msvcrt.CRT_WARN</code> </dt> <dd>
+<p>Warnings, messages, and information that doesn’t need immediate attention.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.CRT_ERROR">
+<code>msvcrt.CRT_ERROR</code> </dt> <dd>
+<p>Errors, unrecoverable problems, and issues that require immediate attention.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.CRT_ASSERT">
+<code>msvcrt.CRT_ASSERT</code> </dt> <dd>
+<p>Assertion failures.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.CRTDBG_MODE_DEBUG">
+<code>msvcrt.CRTDBG_MODE_DEBUG</code> </dt> <dd>
+<p>Writes the message to the debugger’s output window.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.CRTDBG_MODE_FILE">
+<code>msvcrt.CRTDBG_MODE_FILE</code> </dt> <dd>
+<p>Writes the message to a user-supplied file handle. <a class="reference internal" href="#msvcrt.CrtSetReportFile" title="msvcrt.CrtSetReportFile"><code>CrtSetReportFile()</code></a> should be called to define the specific file or stream to use as the destination.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.CRTDBG_MODE_WNDW">
+<code>msvcrt.CRTDBG_MODE_WNDW</code> </dt> <dd>
+<p>Creates a message box to display the message along with the <code>Abort</code>, <code>Retry</code>, and <code>Ignore</code> buttons.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.CRTDBG_REPORT_MODE">
+<code>msvcrt.CRTDBG_REPORT_MODE</code> </dt> <dd>
+<p>Returns current <em>mode</em> for the specified <em>type</em>.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.CRT_ASSEMBLY_VERSION">
+<code>msvcrt.CRT_ASSEMBLY_VERSION</code> </dt> <dd>
+<p>The CRT Assembly version, from the <code>crtassem.h</code> header file.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.VC_ASSEMBLY_PUBLICKEYTOKEN">
+<code>msvcrt.VC_ASSEMBLY_PUBLICKEYTOKEN</code> </dt> <dd>
+<p>The VC Assembly public key token, from the <code>crtassem.h</code> header file.</p> </dd>
+</dl> <dl class="py data"> <dt class="sig sig-object py" id="msvcrt.LIBRARIES_ASSEMBLY_NAME_PREFIX">
+<code>msvcrt.LIBRARIES_ASSEMBLY_NAME_PREFIX</code> </dt> <dd>
+<p>The Libraries Assembly name prefix, from the <code>crtassem.h</code> header file.</p> </dd>
+</dl> </section> <div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2001&ndash;2024 Python Software Foundation<br>Licensed under the PSF License.<br>
+    <a href="https://docs.python.org/3.13/library/msvcrt.html" class="_attribution-link">https://docs.python.org/3.13/library/msvcrt.html</a>
+  </p>
+</div>
