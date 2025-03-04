@@ -6,6 +6,8 @@ from googletrans import Translator
 import os
 import json
 import asyncio
+from flask import make_response
+
 
 from bs4 import BeautifulSoup
 
@@ -130,7 +132,7 @@ async def translate_html_content(html_content):
 
 
 @app.route("/tutorial/<path:subpath>", methods=["GET"])
-def viewTutorial(subpath):
+async def viewTutorial(subpath):
     current_dir = os.path.dirname(os.path.abspath(__file__))
     json_file = os.path.join(current_dir, "templates/crawlers/cpp/index.json")
     read_file = os.path.join(current_dir, "templates/crawlers/cpp", subpath + ".html")
@@ -144,12 +146,17 @@ def viewTutorial(subpath):
             with open(read_file, "r", encoding="utf-8") as html_file:
                 html_content = html_file.read()
 
-            translated_content = asyncio.run(translate_html_content(html_content))
+            translated_content = await translate_html_content(html_content)
         else:
             translated_content = "Nội dung không tìm thấy."
             print("Not Found")
 
-        return render_template("index.html", name="", data=entries, content=translated_content)
+        response = make_response(render_template("index.html", name="", data=entries, content=translated_content))
+        response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "0"
+
+        return response
 
     except FileNotFoundError:
         return "File not found", 404
