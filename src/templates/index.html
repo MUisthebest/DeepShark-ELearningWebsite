@@ -13,7 +13,8 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script src="https://cdn.tailwindcss.com"></script>
         <title>DEEPSHARK</title>
-        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
     <body>
         <header>
@@ -37,6 +38,12 @@
                 <a href="#">a</a>
                 <a href="#">a</a>    
             </div>
+            {% if name=="tutorial.html" %}
+                <ul>
+                    <li>a</li>
+                </ul>
+            {% endif %}
+
             <div class="auth-buttons">
                 {% if user %}
                     <div class="profile">
@@ -52,7 +59,12 @@
             </div>
         </header>
         <main>
+            {% if name %}
             {% include name %}
+            {% else %}
+            <p>{{ content|safe }}</p> 
+            <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+            {% endif %}
         </main>
         <footer>
             <div class="content">
@@ -98,6 +110,5 @@
                 }
             });
         </script>
-        
     </body>
     </html>
