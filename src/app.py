@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from googletrans import Translator
 import os
 import json
+import asyncio
 
 from bs4 import BeautifulSoup
 
@@ -78,6 +79,7 @@ def tutorial():
     # cur.close()
     # return render_template("index.html", name="tutorial.html", courses=courses)
 
+
 @app.route("/profile", methods=["GET"])
 def profile():
     user_id = request.cookies.get("user_id")
@@ -98,27 +100,34 @@ def chat():
     return render_template("index.html", name="chat.html", user=user)
 
 
-def translate_html_content(html_content):
-    soup = BeautifulSoup(html_content, 'html.parser')
-    
-    skip_tags = {'pre', 'td', 'th', 'code', 'a', 'script', 'style'}
-    skip_classes = {'t-spar', 't-sdsc-begin'}
-    cnt = 0
+async def translate_html_content(html_content):
+    soup = BeautifulSoup(html_content, "html.parser")
+
+    skip_tags = {"pre", "td", "th", "code", "a", "script", "style"}
+    skip_classes = {"t-spar", "t-sdsc-begin"}
+    elements = []
+    text_to_translate = ""
     for element in soup.find_all(text=True):
         parent = element.parent
-        if parent.name in skip_tags or any(cls in skip_classes for cls in parent.get('class', [])):
+        if parent.name in skip_tags or any(cls in skip_classes for cls in parent.get("class", [])):
             continue
-        
+
         text = element.strip()
         if text:
-            try:
-                element.replace_with(translator.translate(text, dest='vi').text)
-                cnt += 1
-            except Exception as e:
-                print(f"Lỗi dịch thuật: {e}")
-    print(cnt)
+            elements.append(element)
+            text_to_translate += text + "\n\n"
+
+    try:
+        translated_text = await translator.translate(text_to_translate, dest="vi")
+        translated_text = translated_text.text
+        text_components = translated_text.split("\n\n")
+        for element, text in zip(elements, text_components):
+            element.replace_with(text)
+    except Exception as e:
+        print(f"Lỗi dịch thuật: {e}")
 
     return str(soup)
+
 
 @app.route("/tutorial/<path:subpath>", methods=["GET"])
 def viewTutorial(subpath):
@@ -134,21 +143,17 @@ def viewTutorial(subpath):
         if os.path.exists(read_file):
             with open(read_file, "r", encoding="utf-8") as html_file:
                 html_content = html_file.read()
-                
-            translated_content = translate_html_content(html_content)
+
+            translated_content = asyncio.run(translate_html_content(html_content))
         else:
             translated_content = "Nội dung không tìm thấy."
             print("Not Found")
 
-        return render_template(
-            "index.html", 
-            name="",
-            data=entries,
-            content=translated_content 
-        )
+        return render_template("index.html", name="", data=entries, content=translated_content)
 
     except FileNotFoundError:
         return "File not found", 404
-    
+
+
 if __name__ == "__main__":
     app.run(debug=True)
