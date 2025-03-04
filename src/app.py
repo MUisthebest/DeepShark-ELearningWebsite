@@ -24,8 +24,6 @@ load_dotenv()
 
 app = Flask(__name__)
 
-translator = Translator()
-
 # Config from .env
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -119,14 +117,12 @@ async def translate_html_content(html_content):
             elements.append(element)
             text_to_translate += text + "\n\n"
 
-    try:
+    async with Translator() as translator:
         translated_text = await translator.translate(text_to_translate, dest="vi")
         translated_text = translated_text.text
         text_components = translated_text.split("\n\n")
         for element, text in zip(elements, text_components):
             element.replace_with(text)
-    except Exception as e:
-        print(f"Lỗi dịch thuật: {e}")
 
     return str(soup)
 
@@ -145,7 +141,7 @@ async def viewTutorial(subpath):
         if os.path.exists(read_file):
             with open(read_file, "r", encoding="utf-8") as html_file:
                 html_content = html_file.read()
-
+            print("viewTuto")
             translated_content = await translate_html_content(html_content)
         else:
             translated_content = "Nội dung không tìm thấy."
