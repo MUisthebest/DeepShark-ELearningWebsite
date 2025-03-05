@@ -6,7 +6,8 @@ body {
 
 header {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 10px;
     padding: 15px;
     position: relative; /* Đặt vị trí cố định */
     display: flex;
@@ -14,6 +15,15 @@ header {
     top: 0; /* Đặt header ở đầu trang */
     left: 0; /* Đặt header ở bên trái trang */
     overflow-y: auto; /* Đảm bảo nội dung bên trong có thể cuộn nếu cần */
+}
+
+header .love_code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 80%;
+    width: 100%;
 }
 
 main {
@@ -36,7 +46,7 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
-a {
+.content ul a {
     margin-left: 4px;
     color: black;
     margin-right: 4px;
@@ -75,9 +85,25 @@ ul.dev {
     display: block;
 }
 
+span {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+i {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+b {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
 .Cpp_box {
     display: flex;
     flex-direction: column;
+    max-width: calc(20vw);
     width: 100%;
     border: 1px solid #ccc;
 }
@@ -96,15 +122,34 @@ ul.dev {
     display: block; /* Hiện danh sách khi có class 'open' */
 }
 
-.Cpp_box h2 {
+.Cpp_box .root {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    background: linear-gradient(45deg, #2A3335, #5d6dea);
+}
+
+.Cpp_box .root a {
     display: flex;
     font-size: 20px;
     text-align: center;
     justify-content: center;
     cursor: pointer;
     padding: 10px 0;
+    width: 80%;
+    color: #fff;
     font-weight: bold;
-    background: linear-gradient(45deg, #2A3335, #5d6dea);
+    background: transparent;
+}
+
+
+.Cpp_box .root i {
+    display: flex;
+    width: 20%;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 /* Định dạng mục chính */
@@ -112,6 +157,7 @@ ul.dev {
     list-style: none;
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: flex-start;
     font-weight: bold;
@@ -120,7 +166,7 @@ ul.dev {
 }
 
 /* Định dạng biểu tượng thư mục */
-.unit > a::before {
+.unit li > a::before {
     content: "📁"; /* Biểu tượng thư mục đóng */
     margin-right: 8px;
 }
@@ -137,7 +183,7 @@ ul.dev {
 }
 
 
-li {
+header > li {
     display: flex;
     max-width: 200px;
     color: black;
@@ -147,6 +193,26 @@ li {
 .co2 {
     margin-left: 4px;
     margin-right: 4px;
+}
+
+.unit li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.content ul  {
+    list-style-type: disc;
+    text-align: start;
+    padding: 20px;
+}
+
+.unit li i {
+    display: flex;
+    font-size: 10px;
+    align-self: center;
+    justify-self: center;
 }
 
 

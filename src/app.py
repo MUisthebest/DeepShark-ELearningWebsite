@@ -72,7 +72,37 @@ def get_db_course():
 
 @app.route("/tutorial", methods=["GET"])
 def tutorial():
-    return render_template("index.html", name="tutorial.html")
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    json_file = os.path.join(current_dir, "templates/crawlers/cpp/index.json")
+
+    try:
+        with open(json_file, "r", encoding="utf-8") as file:
+            data = json.load(file)
+        entries = data.get("entries", [])
+        type = data.get("types", [])
+
+        if not isinstance(entries, list):
+            return "Invalid JSON format", 400
+
+        grouped_data = {}
+        for entry in entries:
+            if isinstance(entry, dict) and "type" in entry and "name" in entry and "path" in entry:
+                grouped_data.setdefault(entry["type"], []).append({"name": entry["name"], "path": entry["path"]})
+
+        limited_data = {k: v for k, v in list(grouped_data.items())}
+        
+        seen_types = set()
+        unique_items = []
+
+        for type_name, items in limited_data.items():
+            for item in items:
+                if "/" not in item["path"] and type_name not in seen_types:
+                    seen_types.add(type_name)
+                    unique_items.append({"type": type_name, "path": item["path"]})
+                    break 
+        return render_template("index.html", name="tutorial.html", data=limited_data, type=type, unique_items=unique_items)
+    except FileNotFoundError:
+        return "File not found", 404
     # conn = get_db_course()
     # cur = conn.cursor()
     # cur.execute("SELECT name, link, image FROM courses")
@@ -149,9 +179,18 @@ async def viewTutorial(subpath):
             if isinstance(entry, dict) and "type" in entry and "name" in entry and "path" in entry:
                 grouped_data.setdefault(entry["type"], []).append({"name": entry["name"], "path": entry["path"]})
 
-        # Giới hạn 3 loại đầu tiên và mỗi loại chỉ lấy 3 phần tử
-        limited_data = {k: v[:3] for k, v in list(grouped_data.items())}
+        limited_data = {k: v for k, v in list(grouped_data.items())}
+        
+        seen_types = set()
+        unique_items = []
 
+        for type_name, items in limited_data.items():
+            for item in items:
+                if "/" not in item["path"] and type_name not in seen_types:
+                    seen_types.add(type_name)
+                    unique_items.append({"type": type_name, "path": item["path"]})
+                    break 
+                    
         html_content = ""
         if os.path.exists(read_file):
             with open(read_file, "r", encoding="utf-8") as html_file:
@@ -161,7 +200,7 @@ async def viewTutorial(subpath):
             translated_content = "Nội dung không tìm thấy."
             
 
-        response = make_response(render_template("index.html", name="", data=limited_data, content=translated_content, type=type))
+        response = make_response(render_template("index.html", name="tutorial.html", data=limited_data, content=translated_content, type=type, unique_items=unique_items))
         response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
         response.headers["Pragma"] = "no-cache"
         response.headers["Expires"] = "0"

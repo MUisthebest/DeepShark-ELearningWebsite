@@ -5567,7 +5567,7 @@ var pathToRegexp = function(e, t) {
     let t = $.eventTarget(e);
     for (; t && "A" !== t.tagName; )
         t = t.parentNode;
-    if (t.hasAttribute("data-no-ajax")) return;
+    if (t && t.hasAttribute("data-no-ajax")) return;
     if (t && !t.target && isSameOrigin(t.href)) {
         e.preventDefault();
         let s = t.href
