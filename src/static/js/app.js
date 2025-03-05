@@ -5567,18 +5567,34 @@ var pathToRegexp = function(e, t) {
     let t = $.eventTarget(e);
     for (; t && "A" !== t.tagName; )
         t = t.parentNode;
+    if (t.hasAttribute("data-no-ajax")) return;
     if (t && !t.target && isSameOrigin(t.href)) {
         e.preventDefault();
-        let s = t.pathname + t.search + t.hash;
+        let s = t.href
         s = s.replace(/^\/\/+/, "/"),
         page.show(s)
     }
 }
-  , isSameOrigin = e => e.startsWith(`${location.protocol}//${location.hostname}`)
-  , updateCanonicalLink = function() {
-    return this.canonicalLink || (this.canonicalLink = document.head.querySelector('link[rel="canonical"]')),
-    this.canonicalLink.setAttribute("href", `https://${location.host}${location.pathname}`)
+  , isSameOrigin = e => e.startsWith(`http://127.0.0.1:5000/`)
+  ,updateCanonicalLink = function() {
+    this.canonicalLink = this.canonicalLink || document.head.querySelector('link[rel="canonical"]');
+
+    let path = location.pathname;
+
+    // Xóa phần tử xuất hiện ngay sau "/tutorial/"
+    let newPath = path.replace(/^\/tutorial\/[^\/]+/, ""); 
+
+    // Kiểm tra thẻ <a> hiện tại và cập nhật href
+    let linkElement = document.querySelector('a'); // Thay bằng cách chọn đúng thẻ <a> nếu cần
+    if (linkElement) {
+        linkElement.href = `http://127.0.0.1:5000/tutorial${newPath}`;
+    }
+
+    console.log("Final Path:", newPath); // Debug giá trị cuối cùng
+
+    this.canonicalLink.setAttribute("href", `http://127.0.0.1:5000/tutorial${newPath}`);
 };
+
 const trackers = [];
 page.track = function(e) {
     trackers.push(e)
@@ -10332,7 +10348,6 @@ app.templates.notifUpdateReady = () => textNotif('<span data-behavior="reboot">D
 app.templates.notifError = () => textNotif(" Oops, an error occurred. ", ' Try <a href="#" data-behavior="hard-reload">reloading</a>, and if the problem persists,\n<a href="#" data-behavior="reset">resetting the app</a>.<br>\nYou can also report this issue on <a href="https://github.com/freeCodeCamp/devdocs/issues/new" target="_blank" rel="noopener">GitHub</a>. '),
 app.templates.notifQuotaExceeded = () => textNotif(" The offline database has exceeded its size limitation. ", " Unfortunately this quota can't be detected programmatically, and the database can't be opened while over the quota, so it had to be reset. "),
 app.templates.notifCookieBlocked = () => textNotif(" Please enable cookies. ", " DevDocs will not work properly if cookies are disabled. "),
-app.templates.notifInvalidLocation = () => textNotif(` DevDocs must be loaded from ${app.config.production_host} `, " Otherwise things are likely to break. "),
 app.templates.notifImportInvalid = () => textNotif(" Oops, an error occurred. ", " The file you selected is invalid. "),
 app.templates.notifNews = e => notif("Changelog", `<div class="_notif-content _notif-news">${app.templates.newsList(e, {
     years: !1

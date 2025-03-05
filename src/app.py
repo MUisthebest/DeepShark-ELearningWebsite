@@ -7,6 +7,7 @@ import os
 import json
 import asyncio
 from flask import make_response
+from itertools import groupby
 
 
 from bs4 import BeautifulSoup
@@ -103,8 +104,9 @@ def chat():
 async def translate_html_content(html_content):
     soup = BeautifulSoup(html_content, "html.parser")
 
-    skip_tags = {"pre", "td", "th", "code", "a", "script", "style"}
-    skip_classes = {"t-spar", "t-sdsc-begin"}
+    skip_tags = {"pre", "td", "th", "a", "script", "style", "code",
+                 "h1"}
+    skip_classes = {"t-spar", "t-sdsc-begin", "co2"}
     elements = []
     text_to_translate = ""
     for element in soup.find_all(text=True):
@@ -136,18 +138,30 @@ async def viewTutorial(subpath):
     try:
         with open(json_file, "r", encoding="utf-8") as file:
             data = json.load(file)
-            entries = data.get("entries", [])
+        entries = data.get("entries", [])
+        type = data.get("types", [])
+
+        if not isinstance(entries, list):
+            return "Invalid JSON format", 400
+
+        grouped_data = {}
+        for entry in entries:
+            if isinstance(entry, dict) and "type" in entry and "name" in entry and "path" in entry:
+                grouped_data.setdefault(entry["type"], []).append({"name": entry["name"], "path": entry["path"]})
+
+        # Giới hạn 3 loại đầu tiên và mỗi loại chỉ lấy 3 phần tử
+        limited_data = {k: v[:3] for k, v in list(grouped_data.items())}
+
         html_content = ""
         if os.path.exists(read_file):
             with open(read_file, "r", encoding="utf-8") as html_file:
                 html_content = html_file.read()
-            print("viewTuto")
             translated_content = await translate_html_content(html_content)
         else:
             translated_content = "Nội dung không tìm thấy."
-            print("Not Found")
+            
 
-        response = make_response(render_template("index.html", name="", data=entries, content=translated_content))
+        response = make_response(render_template("index.html", name="", data=limited_data, content=translated_content, type=type))
         response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
         response.headers["Pragma"] = "no-cache"
         response.headers["Expires"] = "0"

@@ -1,14 +1,154 @@
 body {
     flex-direction: row;
+    overflow-y: hidden;
+
 }
 
 header {
     flex-direction: column;
     justify-content: space-between;
     padding: 15px;
-    transition: 0.5s linear;
+    position: relative; /* Đặt vị trí cố định */
+    display: flex;
+    height: 100vh; /* Chiều cao bằng chiều cao màn hình */
+    top: 0; /* Đặt header ở đầu trang */
+    left: 0; /* Đặt header ở bên trái trang */
+    overflow-y: auto; /* Đảm bảo nội dung bên trong có thể cuộn nếu cần */
 }
+
+main {
+    padding: 30px;
+    display: flex;
+    overflow-y: auto;
+    flex-grow: 1;
+    flex-direction: column;
+    height: 100vh;
+}
+
 
 footer {
     display: none;
 }
+
+h1 {
+    background: linear-gradient(45deg, #2A3335, #5d6dea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a {
+    margin-left: 4px;
+    color: black;
+    margin-right: 4px;
+}
+
+.t-spar {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+code {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.dev {
+    color: black;
+}
+
+header li {
+    color: black;
+    text-decoration: none;
+}
+
+/* Ẩn danh sách con theo mặc định */
+ul.dev {
+    display: none;
+    list-style-type: none;
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 1px dashed #ccc;
+}
+
+/* Hiển thị danh sách con khi phần tử cha được hover hoặc click */
+.unit.open > .dev {
+    display: block;
+}
+
+.Cpp_box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+
+
+.Cpp {
+    display: none;
+    flex-direction: column;
+    max-height: 400px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.Cpp_box.open .Cpp {
+    display: block; /* Hiện danh sách khi có class 'open' */
+}
+
+.Cpp_box h2 {
+    display: flex;
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px 0;
+    font-weight: bold;
+    background: linear-gradient(45deg, #2A3335, #5d6dea);
+}
+
+/* Định dạng mục chính */
+.unit {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    font-weight: bold;
+    position: relative;
+    margin: 5px 0;
+}
+
+/* Định dạng biểu tượng thư mục */
+.unit > a::before {
+    content: "📁"; /* Biểu tượng thư mục đóng */
+    margin-right: 8px;
+}
+
+/* Định dạng biểu tượng file */
+.dev li a::before {
+    content: "📄"; /* Biểu tượng file */
+    margin-right: 8px;
+}
+
+/* Khi mở, đổi biểu tượng */
+.unit.open > a::before {
+    content: "📂"; /* Biểu tượng thư mục mở */
+}
+
+
+li {
+    display: flex;
+    max-width: 200px;
+    color: black;
+    text-decoration: none;
+}
+
+.co2 {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+
+
+

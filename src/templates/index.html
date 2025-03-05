@@ -38,11 +38,42 @@
                 <a href="#">a</a>
                 <a href="#">a</a>    
             </div>
-            {% if name=="tutorial.html" %}
-                <ul>
-                    <li>a</li>
-                </ul>
-            {% endif %}
+            {% if name=="" %}
+            <div class="Cpp_box">
+                <h2 class="Cpp_title">C++</h2>
+                <div class="Cpp">
+                    {% for type, items in data.items() %}
+                    <div class="unit"><a href="#">{{ type }}</a>
+                        <ul class="dev">
+                            {% for item in items %}
+                                <li><a href="{{ item.path }}">{{ item.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            // Bấm vào tiêu đề "C++" để ẩn/hiện danh sách
+                            document.querySelector(".Cpp_title").addEventListener("click", function() {
+                                document.querySelector(".Cpp_box").classList.toggle("open");
+                            });
+                        
+                            // Bấm vào từng danh mục để mở/đóng danh sách con
+                            document.querySelectorAll(".unit > a").forEach(unit => {
+                                unit.addEventListener("click", function(e) {
+                                    e.preventDefault();
+                                    let parent = this.parentElement;
+                                    parent.classList.toggle("open");
+                                });
+                            });
+                        });
+                        
+                    </script>
+                {% endfor %}
+                </div>
+            </div>
+
+        {% endif %}
+        
 
             <div class="auth-buttons">
                 {% if user %}
@@ -62,8 +93,9 @@
             {% if name %}
             {% include name %}
             {% else %}
-            <p>{{ content|safe }}</p> 
+            <div>{{ content|safe }}</div> 
             <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/tutorial.css') }}">
             {% endif %}
         </main>
         <footer>
