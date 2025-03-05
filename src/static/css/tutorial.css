@@ -23,7 +23,10 @@ header .love_code {
     align-items: center;
     gap: 10px;
     height: 80%;
+    overflow: hidden;
+    max-height: 70vh;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 main {
@@ -76,6 +79,8 @@ ul.dev {
     display: none;
     list-style-type: none;
     margin-left: 20px;
+    max-height: 200px;
+    overflow-y: auto;
     padding-left: 10px;
     border-left: 1px dashed #ccc;
 }
@@ -109,11 +114,10 @@ b {
 }
 
 
-
 .Cpp {
     display: none;
     flex-direction: column;
-    max-height: 400px;
+    max-height: 350px;
     width: 100%;
     overflow-y: auto;
 }
@@ -133,9 +137,9 @@ b {
     display: flex;
     font-size: 20px;
     text-align: center;
-    justify-content: center;
+    justify-content: flex-start;
     cursor: pointer;
-    padding: 10px 0;
+    padding: 10px 25px;
     width: 80%;
     color: #fff;
     font-weight: bold;
@@ -163,6 +167,9 @@ b {
     font-weight: bold;
     position: relative;
     margin: 5px 0;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: 350px;
 }
 
 /* Định dạng biểu tượng thư mục */

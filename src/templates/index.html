@@ -39,19 +39,21 @@
                 <a href="#">a</a>    
             </div>
             {% if name=="tutorial.html" %}
+            <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/tutorial.css') }}">
             <div class="love_code">
                 <div class="Cpp_box">
                     <div class="root">
-                        <a class="Cpp_title" data-no-ajax href="/tutorial/index">C++</a>
+                        <a class="Cpp_title" data-no-ajax href="/tutorial/cpp/index">C++</a>
                         <i class='bx bxs-down-arrow toggle-tree'></i>
                     </div>
                     <div class="Cpp">
-                        {% for type, items in data.items() %}
+                        {% for type, items in cpp.items() %}
                         <div class="unit">
-                            {% for item in unique_items %}
+                            {% for item in label_cpp %}
                                 {% if type == item.type %}
                                     <li>
-                                        <a href="/tutorial/{{ item.path }}" data-no-ajax>{{ type }}</a>
+                                        <a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ type }}</a>
                                         <i class='bx bxs-down-arrow toggle-btn'></i>  
                                     </li>
                                 {% endif %}
@@ -59,39 +61,70 @@
                             
                             <ul class="dev" style="display: none;">  
                                 {% for item in items %}
-                                    <li><a href="/tutorial/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
+                                    <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
-                        
-                        <script>
-                            document.addEventListener("DOMContentLoaded", function() {
-                                // Bấm vào tiêu đề "C++" để ẩn/hiện danh sách
-                                document.querySelector(".Cpp_title").addEventListener("click", function() {
-                                    document.querySelector(".Cpp_box").classList.toggle("open");
-                                });
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="Cpp_box">
+                    <div class="root">
+                        <a class="Cpp_title" data-no-ajax href="/tutorial/python/index">Python</a>
+                        <i class='bx bxs-down-arrow toggle-tree'></i>
+                    </div>
+                    <div class="Cpp">
+                        {% for type, items in python.items() %}
+                        <div class="unit">
+                            {% for item in label_python %}
+                                {% if type == item.type %}
+                                    <li>
+                                        <a href="/tutorial/python/{{ item.path }}" data-no-ajax>{{ type }}</a>
+                                        <i class='bx bxs-down-arrow toggle-btn'></i>  
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
                             
-                                document.querySelectorAll(".toggle-btn").forEach(function (icon) {
-                                    icon.addEventListener("click", function () {
-                                        // Tìm phần tử <ul> gần nhất có class 'dev'
-                                        let devList = this.closest(".unit").querySelector(".dev");
-                                        if (devList) {
-                                            // Toggle hiển thị danh sách
-                                            devList.style.display = (devList.style.display === "none" || devList.style.display === "") ? "block" : "none";
-                                        }
-                                    });
-                                });
-                                document.querySelector(".toggle-tree").addEventListener("click", function () {
-                                    let cppBox = document.querySelector(".Cpp");
-                                    cppBox.style.display = (cppBox.style.display === "none" || cppBox.style.display === "") ? "block" : "none";
-                                });
-                            });
-                            
-                        </script>
+                            <ul class="dev" style="display: none;">  
+                                {% for item in items %}
+                                    <li><a href="/tutorial/python/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     {% endfor %}
                     </div>
                 </div>
             </div>
+            <script>
+            
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Bấm vào tiêu đề "C++" để ẩn/hiện danh sách
+                    document.querySelectorAll(".toggle-tree").forEach(function (icon) {
+                        icon.addEventListener("click", function () {
+                            // Tìm phần tử cha (Cpp_box) gần nhất
+                            let parentBox = this.closest(".Cpp_box");
+                            if (parentBox) {
+                                let cppBox = parentBox.querySelector(".Cpp");
+                                if (cppBox) {
+                                    // Toggle hiển thị danh sách
+                                    cppBox.style.display = (cppBox.style.display === "none" || cppBox.style.display === "") ? "block" : "none";
+                                }
+                            }
+                        });
+                    });
+                
+                    // Bấm vào toggle-btn để ẩn/hiện danh sách trong từng loại mục
+                    document.querySelectorAll(".toggle-btn").forEach(function (icon) {
+                        icon.addEventListener("click", function () {
+                            let devList = this.closest(".unit").querySelector(".dev");
+                            if (devList) {
+                                devList.style.display = (devList.style.display === "none" || devList.style.display === "") ? "block" : "none";
+                            }
+                        });
+                    });
+                });
+                
+            </script>
         {% endif %}
         
 
@@ -114,8 +147,6 @@
             {% include name %}
             {% else %}
             <div class="content">{{ content|safe }}</div> 
-            <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/tutorial.css') }}">
             {% endif %}
         </main>
         <footer>
