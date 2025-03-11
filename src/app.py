@@ -93,6 +93,9 @@ def chat():
 
 async def translate_html_content(html_content):
     soup = BeautifulSoup(html_content, "html.parser")
+    
+    for a_tag in soup.find_all("a"):
+        a_tag["data-no-ajax"] = ""
 
     skip_tags = {"pre", "td", "th", "a", "script", "style", "code",
                  "h1"}
@@ -123,14 +126,12 @@ async def translate_html_content(html_content):
 @app.route("/tutorial", methods=["GET"])
 async def tutorial(subpath=None):
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    
-    # Định nghĩa các đường dẫn JSON cho C++ và Python
+
     json_files = {
         "cpp": os.path.join(current_dir, "templates/crawlers/cpp/index.json"),
         "python": os.path.join(current_dir, "templates/crawlers/python/index.json")
     }
-    
-    # Đọc dữ liệu từ file JSON
+
     def read_json(file_path):
         try:
             with open(file_path, "r", encoding="utf-8") as file:
@@ -138,48 +139,62 @@ async def tutorial(subpath=None):
                 entries = data.get("entries", [])
                 types = data.get("types", [])
 
-                if not isinstance(entries, list):
-                    return None, None
+                if not isinstance(entries, list) or not isinstance(types, list):
+                    return None
 
-                grouped_data = {}
+                tree_structure = {}
+
+                for type_item in types:
+                    type_name = type_item["name"]
+                    tree_structure[type_name] = []
+
                 for entry in entries:
-                    if isinstance(entry, dict) and "type" in entry and "name" in entry and "path" in entry:
-                        grouped_data.setdefault(entry["type"], []).append({"name": entry["name"], "path": entry["path"]})
+                    entry_type = entry["type"]
+                    if entry_type in tree_structure:
+                        tree_structure[entry_type].append({
+                            "name": entry["name"],
+                            "path": entry["path"]
+                        })
 
-                seen_types = set()
-                unique_items = []
-                for type_name, items in grouped_data.items():
-                    for item in items:
-                        if "/" not in item["path"] and type_name not in seen_types:
-                            seen_types.add(type_name)
-                            unique_items.append({"type": type_name, "path": item["path"]})
-                            break 
-                
-                return grouped_data, unique_items
+                return tree_structure
         except FileNotFoundError:
-            return None, None
+            return None
 
-    cpp_data, unique_cpp = read_json(json_files["cpp"])
-    python_data, unique_python = read_json(json_files["python"])
+    cpp_data = read_json(json_files["cpp"])
+    python_data = read_json(json_files["python"])
 
-    html_content = "Nội dung không tìm thấy."
+    translated_content = "Nội dung không tìm thấy."
+
+    # Nếu subpath trùng với type, hiển thị danh sách name của type đó
     if subpath:
-        read_file = os.path.join(current_dir, "templates/crawlers", subpath + ".html")
-        if os.path.exists(read_file):
-            with open(read_file, "r", encoding="utf-8") as html_file:
-                html_content = html_file.read()
-            translated_content = await translate_html_content(html_content)
+        if subpath in cpp_data:
+            translated_content = "<h2>Danh sách bài học trong C++ - Tiêu mục:  {}</h2>".format(subpath)
+            translated_content += "<ul>"
+            for item in cpp_data[subpath]:
+                translated_content += f'<li><a href="/tutorial/cpp/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
+            translated_content += "</ul>"
+
+        elif subpath in python_data:
+            translated_content = "<h2>Danh sách bài học trong Python - {}</h2>".format(subpath)
+            translated_content += "<ul>"
+            for item in python_data[subpath]:
+                translated_content += f'<li><a href="/tutorial/python/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
+            translated_content += "</ul>"
+
         else:
-            translated_content = html_content
+            # Nếu không trùng type, kiểm tra file HTML
+            read_file = os.path.join(current_dir, "templates/crawlers", subpath + ".html")
+            if os.path.exists(read_file):
+                with open(read_file, "r", encoding="utf-8") as html_file:
+                    html_content = html_file.read()
+                translated_content = await translate_html_content(html_content)
 
     response = make_response(render_template(
         "index.html",
         name="tutorial.html",
         cpp=cpp_data,
         python=python_data,
-        content=translated_content if subpath else None,
-        label_cpp=unique_cpp,
-        label_python=unique_python
+        content=translated_content
     ))
 
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
@@ -187,6 +202,7 @@ async def tutorial(subpath=None):
     response.headers["Expires"] = "0"
 
     return response
+
 
 
 if __name__ == "__main__":

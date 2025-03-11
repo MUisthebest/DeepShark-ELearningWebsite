@@ -48,19 +48,14 @@
                         <i class='bx bxs-down-arrow toggle-tree'></i>
                     </div>
                     <div class="Cpp">
-                        {% for type, items in cpp.items() %}
+                        {% for type, files  in cpp.items() %}
                         <div class="unit">
-                            {% for item in label_cpp %}
-                                {% if type == item.type %}
-                                    <li>
-                                        <a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ type }}</a>
-                                        <i class='bx bxs-down-arrow toggle-btn'></i>  
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                            
+                            <li>
+                                <a href="/tutorial/{{ type }}" data-no-ajax>{{ type }}</a>
+                                <i class='bx bxs-down-arrow toggle-btn'></i>  
+                            </li>
                             <ul class="dev" style="display: none;">  
-                                {% for item in items %}
+                                {% for item in files %}
                                     <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
                                 {% endfor %}
                             </ul>
@@ -74,19 +69,14 @@
                         <i class='bx bxs-down-arrow toggle-tree'></i>
                     </div>
                     <div class="Cpp">
-                        {% for type, items in python.items() %}
+                        {% for type, files in python.items() %}
                         <div class="unit">
-                            {% for item in label_python %}
-                                {% if type == item.type %}
-                                    <li>
-                                        <a href="/tutorial/python/{{ item.path }}" data-no-ajax>{{ type }}</a>
-                                        <i class='bx bxs-down-arrow toggle-btn'></i>  
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                            
+                            <li>
+                                <a href="/tutorial/{{ type }}" data-no-ajax>{{ type }}</a>
+                                <i class='bx bxs-down-arrow toggle-btn'></i>  
+                            </li>
                             <ul class="dev" style="display: none;">  
-                                {% for item in items %}
+                                {% for item in files %}
                                     <li><a href="/tutorial/python/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
                                 {% endfor %}
                             </ul>

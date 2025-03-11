@@ -91,6 +91,13 @@ header nav ul li a.active {
     font-weight: bold;
 }
 
+.auth-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .auth-buttons a {
     color: #2A3335;
     text-decoration: none;
@@ -155,6 +162,12 @@ main {
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.032);
 
+}
+
+@media (max-width: 768px) {
+    .hero .buttons a {
+        width: 100%;
+    }
 }
 
 .hero .buttons a > * {
