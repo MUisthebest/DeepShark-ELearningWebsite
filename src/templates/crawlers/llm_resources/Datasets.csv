@@ -1,0 +1,41 @@
+Link Title,URL,Icon
+HuggingFace Datasets,https://huggingface.co/datasets,https://www.google.com/s2/favicons?domain=huggingface.co&sz=32
+Common Crawl,https://commoncrawl.org/,https://www.google.com/s2/favicons?domain=commoncrawl.org&sz=32
+The Pile,https://pile.eleuther.ai/,https://www.google.com/s2/favicons?domain=pile.eleuther.ai&sz=32
+RedPajama,https://github.com/togethercomputer/RedPajama-Data,https://www.google.com/s2/favicons?domain=github.com&sz=32
+LAION-400M,https://laion.ai/blog/laion-400-open-dataset/,https://www.google.com/s2/favicons?domain=laion.ai&sz=32
+OpenWebText2,https://openwebtext2.readthedocs.io/,https://www.google.com/s2/favicons?domain=openwebtext2.readthedocs.io&sz=32
+C4 (Colossal Clean Crawled Corpus),https://www.tensorflow.org/datasets/catalog/c4,https://www.google.com/s2/favicons?domain=www.tensorflow.org&sz=32
+WikiText,https://blog.salesforceairesearch.com/the-wikitext-long-term-dependency-language-modeling-dataset/,https://www.google.com/s2/favicons?domain=blog.salesforceairesearch.com&sz=32
+Books3,https://datasets.pythonmachinelearning.com/books3.tar.gz,https://www.google.com/s2/favicons?domain=datasets.pythonmachinelearning.com&sz=32
+Stack Exchange Data Dump,https://archive.org/details/stackexchange,https://www.google.com/s2/favicons?domain=archive.org&sz=32
+Ubuntu IRC Logs,https://irclogs.ubuntu.com/,https://www.google.com/s2/favicons?domain=irclogs.ubuntu.com&sz=32
+ArXiv Dataset,https://www.kaggle.com/Cornell-University/arxiv,https://www.google.com/s2/favicons?domain=www.kaggle.com&sz=32
+GitHub Code Dataset,https://huggingface.co/datasets/codeparrot/github-code,https://www.google.com/s2/favicons?domain=huggingface.co&sz=32
+OpenAssistant Conversations,https://huggingface.co/datasets/OpenAssistant/oasst1,https://www.google.com/s2/favicons?domain=huggingface.co&sz=32
+Alpaca Dataset,https://github.com/tatsu-lab/stanford_alpaca,https://www.google.com/s2/favicons?domain=github.com&sz=32
+ShareGPT,https://huggingface.co/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered,https://www.google.com/s2/favicons?domain=huggingface.co&sz=32
+OSCAR,https://oscar-corpus.com/,https://www.google.com/s2/favicons?domain=oscar-corpus.com&sz=32
+mC4,https://www.tensorflow.org/datasets/catalog/c4#c4multilingual,https://www.google.com/s2/favicons?domain=www.tensorflow.org&sz=32
+Dolly Dataset,https://www.databricks.com/blog/2023/04/12/dolly-first-open-commercially-viable-instruction-tuned-llm,https://www.google.com/s2/favicons?domain=www.databricks.com&sz=32
+WMT Translation Datasets,https://www.statmt.org/wmt23/,https://www.google.com/s2/favicons?domain=www.statmt.org&sz=32
+PubMed Central,https://www.ncbi.nlm.nih.gov/pmc/tools/openftlist/,https://www.google.com/s2/favicons?domain=www.ncbi.nlm.nih.gov&sz=32
+CodeSearchNet,https://github.com/github/CodeSearchNet,https://www.google.com/s2/favicons?domain=github.com&sz=32
+MATH Dataset,https://github.com/hendrycks/math,https://www.google.com/s2/favicons?domain=github.com&sz=32
+GSM8K,https://github.com/openai/grade-school-math,https://www.google.com/s2/favicons?domain=github.com&sz=32
+BIG-bench,https://github.com/google/BIG-bench,https://www.google.com/s2/favicons?domain=github.com&sz=32
+MMLU,https://github.com/hendrycks/test,https://www.google.com/s2/favicons?domain=github.com&sz=32
+Natural Questions,https://ai.google.com/research/NaturalQuestions,https://www.google.com/s2/favicons?domain=ai.google.com&sz=32
+SQuAD 2.0,https://rajpurkar.github.io/SQuAD-explorer/,https://www.google.com/s2/favicons?domain=rajpurkar.github.io&sz=32
+HotpotQA,https://hotpotqa.github.io/,https://www.google.com/s2/favicons?domain=hotpotqa.github.io&sz=32
+TruthfulQA,https://github.com/sylinrl/TruthfulQA,https://www.google.com/s2/favicons?domain=github.com&sz=32
+Open Images Dataset,https://storage.googleapis.com/openimages/web/index.html,https://www.google.com/s2/favicons?domain=storage.googleapis.com&sz=32
+WebText,https://paperswithcode.com/dataset/webtext,https://www.google.com/s2/favicons?domain=paperswithcode.com&sz=32
+BookCorpus,https://huggingface.co/datasets/bookcorpus,https://www.google.com/s2/favicons?domain=huggingface.co&sz=32
+CC-Stories,https://paperswithcode.com/dataset/cc-stories,https://www.google.com/s2/favicons?domain=paperswithcode.com&sz=32
+RealNews,https://github.com/rowanz/grover/tree/master/realnews,https://www.google.com/s2/favicons?domain=github.com&sz=32
+Anthropic Constitutional AI,https://www.anthropic.com/constitutional-ai-data,https://www.google.com/s2/favicons?domain=www.anthropic.com&sz=32
+ROOTS,https://github.com/bigscience-workshop/roots,https://www.google.com/s2/favicons?domain=github.com&sz=32
+Pile of Law,https://arxiv.org/abs/2207.00220,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Code Alpaca,https://github.com/sahil280114/codealpaca,https://www.google.com/s2/favicons?domain=github.com&sz=32
+Multilingual Amazon Reviews,https://registry.opendata.aws/amazon-reviews-ml/,https://www.google.com/s2/favicons?domain=registry.opendata.aws&sz=32

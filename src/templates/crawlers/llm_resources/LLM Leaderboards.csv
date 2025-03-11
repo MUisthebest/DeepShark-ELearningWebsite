@@ -1,0 +1,21 @@
+Link Title,URL,Icon
+Open LLM Leaderboard,https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard,https://www.google.com/s2/favicons?domain=huggingface.co&sz=32
+Chatbot Arena Leaderboard,https://chat.lmsys.org/?leaderboard,https://www.google.com/s2/favicons?domain=chat.lmsys.org&sz=32
+AlpacaEval Leaderboard,https://tatsu-lab.github.io/alpaca_eval/,https://www.google.com/s2/favicons?domain=tatsu-lab.github.io&sz=32
+MT-Bench Leaderboard,https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge,https://www.google.com/s2/favicons?domain=github.com&sz=32
+Big Code Models Leaderboard,https://huggingface.co/spaces/bigcode/bigcode-models-leaderboard,https://www.google.com/s2/favicons?domain=huggingface.co&sz=32
+HELM Benchmark,https://crfm.stanford.edu/helm/latest/,https://www.google.com/s2/favicons?domain=crfm.stanford.edu&sz=32
+BIG-bench,https://github.com/google/BIG-bench,https://www.google.com/s2/favicons?domain=github.com&sz=32
+C-Eval Leaderboard,https://cevalbenchmark.com/static/leaderboard.html,https://www.google.com/s2/favicons?domain=cevalbenchmark.com&sz=32
+MMLU Leaderboard,https://paperswithcode.com/sota/multi-task-language-understanding-on-mmlu,https://www.google.com/s2/favicons?domain=paperswithcode.com&sz=32
+HumanEval Leaderboard,https://paperswithcode.com/sota/code-generation-on-humaneval,https://www.google.com/s2/favicons?domain=paperswithcode.com&sz=32
+AGIEval Benchmark,https://github.com/microsoft/AGIEval,https://www.google.com/s2/favicons?domain=github.com&sz=32
+OpenCompass Leaderboard,https://opencompass.org.cn/leaderboard-llm,https://www.google.com/s2/favicons?domain=opencompass.org.cn&sz=32
+LongBench Leaderboard,https://github.com/THUDM/LongBench,https://www.google.com/s2/favicons?domain=github.com&sz=32
+Harness Leaderboard,https://www.eleuther.ai/projects/harness/,https://www.google.com/s2/favicons?domain=www.eleuther.ai&sz=32
+GLUE Benchmark,https://gluebenchmark.com/leaderboard,https://www.google.com/s2/favicons?domain=gluebenchmark.com&sz=32
+SuperGLUE Benchmark,https://super.gluebenchmark.com/leaderboard,https://www.google.com/s2/favicons?domain=super.gluebenchmark.com&sz=32
+Multilingual LEaderboard,https://huggingface.co/spaces/mteb/leaderboard,https://www.google.com/s2/favicons?domain=huggingface.co&sz=32
+TruthfulQA Leaderboard,https://github.com/sylinrl/TruthfulQA,https://www.google.com/s2/favicons?domain=github.com&sz=32
+Instruction Tuning Benchmark,https://github.com/google-research/google-research/tree/master/instruction_tuning_benchmark,https://www.google.com/s2/favicons?domain=github.com&sz=32
+LLM Security Leaderboard,https://www.llm-security.org/leaderboard,https://www.google.com/s2/favicons?domain=www.llm-security.org&sz=32
