@@ -1,0 +1,46 @@
+Link Title,URL,Icon
+Attention Is All You Need,https://arxiv.org/abs/1706.03762,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+BERT,https://arxiv.org/abs/1810.04805,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+GPT-3,https://arxiv.org/abs/2005.14165,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+PaLM,https://arxiv.org/abs/2204.02311,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+InstructGPT,https://arxiv.org/abs/2203.02155,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Constitutional AI,https://arxiv.org/abs/2212.08073,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+LLaMA,https://arxiv.org/abs/2302.13971,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+GPT-4,https://arxiv.org/abs/2303.08774,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+PaLM 2,https://arxiv.org/abs/2305.10403,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+RWKV,https://arxiv.org/abs/2305.13048,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Llama 2,https://arxiv.org/abs/2307.09288,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Code Llama,https://arxiv.org/abs/2308.12950,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Mistral 7B,https://arxiv.org/abs/2310.06825,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Phi-2,https://arxiv.org/abs/2311.10617,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Gemini,https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf,https://www.google.com/s2/favicons?domain=storage.googleapis.com&sz=32
+Mixtral 8x7B,https://arxiv.org/abs/2401.04088,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Claude 3,https://www.anthropic.com/news/claude-3-family,https://www.google.com/s2/favicons?domain=www.anthropic.com&sz=32
+Stable LM 3B,https://arxiv.org/abs/2403.07608,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+arXiv LLM Papers,https://arxiv.org/list/cs.CL/recent,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Papers with Code LLM,https://paperswithcode.com/methods/category/language-models,https://www.google.com/s2/favicons?domain=paperswithcode.com&sz=32
+The First Law of Complexodynamics,https://arxiv.org/abs/2312.09818,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+The Unreasonable Effectiveness of RNNs,https://karpathy.github.io/2015/05/21/rnn-effectiveness/,https://www.google.com/s2/favicons?domain=karpathy.github.io&sz=32
+Understanding LSTM Networks,https://colah.github.io/posts/2015-08-Understanding-LSTMs/,https://www.google.com/s2/favicons?domain=colah.github.io&sz=32
+Recurrent Neural Network Regularization,https://arxiv.org/abs/1409.2329,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Keeping Neural Networks Simple,https://arxiv.org/abs/1412.6544,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Pointer Networks,https://arxiv.org/abs/1506.03134,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+ImageNet Classification with Deep CNNs,https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html,https://www.google.com/s2/favicons?domain=papers.nips.cc&sz=32
+Order Matters: Sequence to Sequence for Sets,https://arxiv.org/abs/1511.06391,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+GPipe: Easy Scaling with Micro-Batch Pipeline Parallelism,https://arxiv.org/abs/1811.06965,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Deep Residual Learning for Image Recognition,https://arxiv.org/abs/1512.03385,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Multi-Scale Context Aggregation by Dilated Convolutions,https://arxiv.org/abs/1511.07122,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Neural Message Passing for Quantum Chemistry,https://arxiv.org/abs/1704.01212,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Neural Machine Translation by Jointly Learning to Align and Translate,https://arxiv.org/abs/1409.0473,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Identity Mappings in Deep Residual Networks,https://arxiv.org/abs/1603.05027,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+A Simple Neural Network Module for Relational Reasoning,https://arxiv.org/abs/1706.01427,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Variational Lossy Autoencoder,https://arxiv.org/abs/1611.02731,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Relational Recurrent Neural Networks,https://arxiv.org/abs/1806.01822,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Neural Turing Machines,https://arxiv.org/abs/1410.5401,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Deep Speech 2,https://arxiv.org/abs/1512.02595,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Scaling Laws for Neural Language Models,https://arxiv.org/abs/2001.08361,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+A Tutorial on the MDL Principle,https://arxiv.org/abs/0804.2251,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Machine Super Intelligence,https://arxiv.org/abs/2907.03512,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
+Kolmogorov Complexity and Algorithmic Randomness,https://www.springer.com/gp/book/9783540208068,https://www.google.com/s2/favicons?domain=www.springer.com&sz=32
+Stanford's CS231n CNN for Visual Recognition,http://cs231n.stanford.edu/,https://www.google.com/s2/favicons?domain=cs231n.stanford.edu&sz=32
+Quantifying Complexity in Closed Systems,https://arxiv.org/abs/2201.09152,https://www.google.com/s2/favicons?domain=arxiv.org&sz=32
