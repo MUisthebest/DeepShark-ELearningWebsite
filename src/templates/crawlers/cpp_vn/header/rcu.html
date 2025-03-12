@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">Tiêu đề tiêu chuẩn tiêu đề &lt;RCU&gt;<span class="t-mark-rev t-since-cxx26">(C ++ 26)</span>
+</h1> <p>Tiêu đề này là một phần của<a href="../thread" title="cpp/thread">thread support</a>thư viện.</p>
+<table class="t-dsc-begin"> <tr> <td colspan="2"> <h3 id="Classes">Lớp học</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><a class="new" href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_obj_base&amp;action=edit&amp;redlink=1" title="cpp/thread/rcu obj base (page does not exist)"> <span class="t-lines"><span>RCU_OBJ_BASE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C ++ 26)</span></span></span></div> </td> <td>cho phép một đối tượng được bảo vệ bởi RCU<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a class="new" href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_domain&amp;action=edit&amp;redlink=1" title="cpp/thread/rcu domain (page does not exist)"> <span class="t-lines"><span>RCU_DOMAIN</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C ++ 26)</span></span></span></div> </td> <td>Cung cấp các vùng bảo vệ RCU<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr> <td colspan="2"> <h3 id="Functions">Chức năng</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><a class="new" href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_default_domain&amp;action=edit&amp;redlink=1" title="cpp/thread/rcu default domain (page does not exist)"> <span class="t-lines"><span>RCU_DEFAULT_DOMAIN</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C ++ 26)</span></span></span></div> </td> <td>Trả về một tham chiếu đến một đối tượng thời gian tĩnh của loại<code>std::rcu_domain</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a class="new" href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_synchronize&amp;action=edit&amp;redlink=1" title="cpp/thread/rcu synchronize (page does not exist)"> <span class="t-lines"><span>rcu_synchronize</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C ++ 26)</span></span></span></div> </td> <td>Khối cho đến khi khu vực bảo vệ mở khóa trên miền RCU<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a class="new" href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_barrier&amp;action=edit&amp;redlink=1" title="cpp/thread/rcu barrier (page does not exist)"> <span class="t-lines"><span>RCU_Barrier</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C ++ 26)</span></span></span></div> </td> <td>Có thể đánh giá các hoạt động theo lịch trình trên miền RCU và các khối cho đến khi tất cả các đánh giá trước đó hoàn tất<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a class="new" href="https://en.cppreference.com/mwiki/index.php?title=cpp/thread/rcu_retire&amp;action=edit&amp;redlink=1" title="cpp/thread/rcu retire (page does not exist)"> <span class="t-lines"><span>RCU_RETIRE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C ++ 26)</span></span></span></div> </td> <td>Lên lịch đánh giá một hàm được chỉ định trên miền RCU, có khả năng phân bổ bộ nhớ và gọi các đánh giá theo lịch trình<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <h3 id="Synopsis">kết quả bằng cách xây dựng mọi thành viên dữ liệu của kết quả từ thành viên tương ứng của</h3> <div class="cpp source-cpp"><pre data-language="cpp">không gian tên std {</pre></div> <h4 id="Class_template_std::rcu_obj_base">    Đại diện lớp,<code>std::rcu_obj_base</code>
+</h4> <div class="cpp source-cpp"><pre data-language="cpp">  Mẫu &lt;class T, class d = default_delete &lt;t &gt;&gt; class rcu_obj_base;</pre></div> <h4 id="Class_std::rcu_domain">Lớp học<code>std::rcu_domain</code>
+</h4> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/header/rcu">https://en.cppreference.com/w/cpp/header/rcu</a>
+</p>
+</div>

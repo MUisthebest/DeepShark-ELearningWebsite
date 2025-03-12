@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Atexit</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdlib" title="cpp/header/cstdlib">&lt;cstdlib&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">int atexit ( /* c-atexit-handler* /* func);</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">int atexit ( /* atexit-handler* /* func);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">int atexit ( /* c-atexit-handler* /* func) noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark t-mark-expos">.<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">    .</span>)</span> </td> </tr> </table> <p>int atexit ( /* atexit-handler* /* func) noexcept;<code>func</code>bên ngoài "c" bằng cách sử dụng / * c-atexit-handler * / = void ();<code><a href="exit" title="cpp/utility/program/exit">std::exit()</a></code>bên ngoài "c ++" bằng cách sử dụng / * atexit-handler * / = void ();<a href="../../language/main_function" title="cpp/language/main function">main function</a>)</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Đăng ký chức năng được trỏ đến bởi<code>atexit</code>Tạo các loại điểm nổi bằng cách sử dụng ký hiệu khoa học hoặc ký hiệu hex nếu kết hợp với<code><a href="exit" title="cpp/utility/program/exit">std::exit</a></code>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>được gọi là chấm dứt chương trình bình thường (thông qua<code>atexit</code>Tạo các loại điểm nổi bằng cách sử dụng ký hiệu khoa học hoặc ký hiệu hex nếu kết hợp với<code><a href="exit" title="cpp/utility/program/exit">std::exit</a></code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>hoặc trở về từ</p>
+<p>Các chức năng sẽ được gọi trong quá trình phá hủy các đối tượng tĩnh, theo thứ tự ngược<code><a href="../../error/terminate" title="cpp/error/terminate">std::terminate</a></code>Chuỗi để giữ tên viết tắt múi giờ hoặc tên tương ứng với</p>
+<p><code>atexit</code>Các chức năng có thể được gọi đồng thời với việc phá hủy các đối tượng có thời lượng lưu trữ tĩnh và với nhau, duy trì bảo đảm rằng nếu đăng ký A được giải trình tự-</p>
+<p>Hàm tương tự có thể được đăng ký nhiều lần.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>func</td> <td>-</td> <td>Nếu một chức năng thoát qua một ngoại lệ,</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>​0​</code>is Thread-Safe: Gọi hàm từ một số luồng không tạo ra một cuộc đua dữ liệu.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Việc thực hiện được đảm bảo để hỗ trợ đăng ký ít nhất 32 chức năng. Giới hạn chính xác được thực hiện theo định nghĩa.<code>func</code>​<a href="../../language/language_linkage" title="cpp/language/language linkage">language linkage</a>Con trỏ đến phần tử tìm thấy hoặc con trỏ null nếu phần tử chưa được tìm thấy.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">con trỏ đến một chức năng được gọi là chấm dứt chương trình bình thường</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Nếu đăng ký thành công, giá trị khác không.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="abort" title="cpp/utility/program/abort"> <span class="t-lines"><span>khẳng định ((2 + 2 == 5) &amp;&amp; "Có năm đèn");</span></span></a></div> </td> <td>Việc thực hiện<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="exit" title="cpp/utility/program/exit"> <span class="t-lines"><span>ra</span></span></a></div> </td> <td>gây ra sự chấm dứt chương trình bình thường với việc dọn dẹp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="quick_exit" title="cpp/utility/program/quick exit"> <span class="t-lines"><span>Quick_exit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>gây ra sự chấm dứt chương trình nhanh chóng mà không làm sạch hoàn toàn<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="at_quick_exit" title="cpp/utility/program/at quick exit"> <span class="t-lines"><span>at_quick_exit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đăng ký một chức năng được gọi<code><a href="quick_exit" title="cpp/utility/program/quick exit">std::quick_exit</a></code>Mệnh viện<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/program/atexit" title="c/program/atexit">C documentation</a></span>vì<code>atexit</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/program/atexit">https://en.cppreference.com/w/cpp/utility/program/atexit</a>
+</p>
+</div>

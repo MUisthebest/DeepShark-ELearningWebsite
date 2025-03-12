@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ios &lt;biểu đồ, đặc điểm&gt; :: copyfmt</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">basic_ios &amp; copyfmt (const basic_ios &amp; other);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nếu như<code>other</code>có thể được hủy bỏ và sau đó được chuyển đổi hoàn toàn thành cả hai. ​<code>*this</code>, không có tác dụng. Nếu không, sao chép trạng thái của luồng<code>other</code>Mẫu &lt;Class T&gt;<code>*this</code>. Điều này được thực hiện trong chuỗi sau:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Gọi mọi cuộc gọi lại được đăng ký bởi<code><a href="../ios_base/register_callback" title="cpp/io/ios base/register callback">register_callback()</a></code>đi qua<a href="../ios_base/event" title="cpp/io/ios base/event"><code>erase_event</code></a>như tham số.</div> <div class="t-li1">
+<span class="t-li">2)</span>Sao chép tất cả các đối tượng thành viên từ<code>other</code>ĐẾN<code>*this</code>Khởi tạo một bản dựng mặc định<code><a href="rdstate" title="cpp/io/basic ios/rdstate">rdstate()</a></code>, mặt nạ ngoại lệ, và<code><a href="rdbuf" title="cpp/io/basic ios/rdbuf">rdbuf()</a></code>. Cụ thể, tạo các bản sao của địa phương, các cờ định dạng, nội dung của các mảng<code><a href="../ios_base/iword" title="cpp/io/ios base/iword">std::ios_base::iword</a></code>Và<code><a href="../ios_base/pword" title="cpp/io/ios base/pword">std::ios_base::pword</a></code>(Nhưng không phải<code>iword</code>Và<code>pword</code>chính con trỏ), các cuộc gọi lại và luồng bị buộc.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Gọi mọi cuộc gọi lại được đăng ký bởi<code><a href="../ios_base/register_callback" title="cpp/io/ios base/register callback">register_callback()</a></code>đi qua<a href="../ios_base/event" title="cpp/io/ios base/event"><code>copyfmt_event</code></a>như tham số.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Sao chép mặt nạ ngoại lệ từ<code>other</code>ĐẾN<code>*this</code>như thể bằng cách gọi<code>exceptions(other.exceptions())</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>Một luồng khác để sử dụng làm nguồn</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>Đường chuyền thứ hai thông qua các cuộc gọi lại có thể được sử dụng để sao chép sâu các đối tượng do người dùng xác định chỉ ra bởi các con trỏ trong<code><a href="../ios_base/pword" title="cpp/io/ios base/pword">std::ios_base::pword</a></code>.</p>
+<p><code>copyfmt()</code>có thể được sử dụng để lưu và khôi phục trạng thái của luồng. Boost cung cấp một hạt mịn hơn<a class="external text" href="https://www.boost.org/doc/libs/release/libs/io/doc/ios_state.html" rel="nofollow">I/O state savers</a>thư viện cho cùng một mục đích.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Làm cho<code><a href="../basic_ofstream" title="cpp/io/basic ofstream">std::ofstream</a></code>đối tượng "ra ngoài" cư xử chính xác như<code><a href="../cout" title="cpp/io/cout">std::cout</a></code>, bao gồm cả định dạng,<a href="tie" title="cpp/io/basic ios/tie"><code>tie()</code></a>ĐẾN<code><a href="../cin" title="cpp/io/cin">std::cin</a></code>, vân vân.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;bitset&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Climits&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue256" rel="nofollow">LWG 256</a> </td> <td>C ++ 98</td> <td>#include &lt;Fstream&gt;<br/>#include &lt;Istream&gt;<code>copy_event</code> </td> <td>, số lượng tăng số lặp là tuyến tính. Đáng chú ý,<br/><a href="../ios_base/event" title="cpp/io/ios base/event"><code>copyfmt_event</code></a> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue292" rel="nofollow">LWG 292</a> </td> <td>C ++ 98</td> <td>nếu như<code>other</code>có thể được hủy bỏ và sau đó được chuyển đổi hoàn toàn thành cả hai. ​<code>*this</code>int main ()<br/>{</td> <td>    std :: Ofstream out;<br/>                     Forwardit2 s_first, forwardit2 s_last,</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ios/copyfmt">https://en.cppreference.com/w/cpp/io/basic_ios/copyfmt</a>
+</p>
+</div>

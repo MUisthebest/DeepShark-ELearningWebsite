@@ -1,0 +1,161 @@
+ <h1 class="firstHeading" id="firstHeading">std :: printf, std :: fprintf, std :: sprintf, std :: snprintf</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">int printf (định dạng const char*, ...);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">int fprintf (std :: file* stream, const char* định dạng, ...);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">int sprintf (bộ đệm char*, định dạng const char*, ...);</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">int snprintf (bộ đệm char*, std :: size_t buf_size, const char* định dạng, ...);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Tải dữ liệu từ các vị trí đã cho, chuyển đổi chúng thành tương đương chuỗi ký tự và ghi kết quả thành nhiều loại bồn.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Viết kết quả cho<code><a href="std_streams" title="cpp/io/c/std streams">stdout</a></code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Ghi kết quả vào luồng tệp<code>stream</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Ghi kết quả vào chuỗi ký tự<code>buffer</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Ghi kết quả vào chuỗi ký tự<code>buffer</code>phạm vi của các yếu tố để sắp xếp lại<code>buf_size - 1</code>ký tự được viết. Chuỗi ký tự kết quả sẽ bị kết thúc bằng một ký tự null, trừ khi<code>buf_size</code>bằng không. Nếu như<code>buf_size</code>bằng không, không có gì được viết và<code>buffer</code>Có thể là một con trỏ NULL, tuy nhiên giá trị trả về (số byte sẽ được viết không bao gồm cả Terminator null) vẫn được tính toán và trả về.</div> <p>Nếu một cuộc gọi đến<code>sprintf</code>hoặc<code>snprintf</code>Nguyên nhân sao chép diễn ra giữa các đối tượng chồng chéo, hành vi không được xác định (ví dụ:<code>sprintf(buf, "%s text", buf);</code>).</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>yêu cầu cho bất kỳ</td>
+</tr> <tr class="t-par"> <td>Điều khiển đầu vào và đầu ra thành một chuỗi ký tự. Nó bao gồm và cung cấp quyền truy cập vào</td> <td>-</td> <td>con trỏ đến chuỗi ký tự để ghi vào</td>
+</tr> <tr class="t-par"> <td>buf_size</td> <td>-</td> <td>lên đến<code>buf_size - 1</code>các ký tự có thể được viết, cộng với Terminator null</td>
+</tr> <tr class="t-par"> <td>định dạng</td> <td>-</td> <td>Con trỏ tới chuỗi đa loại được chấm dứt null chỉ định cách diễn giải dữ liệu</td>
+</tr> <tr class="t-par"> <td>...</td> <td>-</td> <td>Đối số chỉ định dữ liệu để in. Nếu bất kỳ đối số sau<a href="../../language/variadic_arguments#Default_conversions" title="cpp/language/variadic arguments">default conversions</a>không phải là loại được mong đợi bởi trình xác định chuyển đổi tương ứng hoặc nếu có ít đối số hơn yêu cầu của<code>format</code>, hành vi là không xác định. Nếu có nhiều lập luận hơn yêu cầu của<code>format</code>, các đối số ngoại lai được đánh giá và bỏ qua</td>
+</tr>
+</table> <p>Các<b>định dạng</b>Chuỗi bao gồm các ký tự byte thông thường (trừ<code>%</code>), được sao chép không thay đổi vào luồng đầu ra và thông số kỹ thuật chuyển đổi. Mỗi thông số kỹ thuật chuyển đổi có định dạng sau:</p>
+<ul>
+<li>giới thiệu<code>%</code>tính cách.</li>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>một hoặc nhiều cờ sửa đổi hành vi của chuyển đổi:</li>
+<ul>
+<li> <code>-</code>: Kết quả của việc chuyển đổi được thay đổi bên trái trong trường (theo mặc định, nó được thay đổi bên phải).</li>
+<li> <code>+</code>: Dấu hiệu của các chuyển đổi đã ký luôn được chuẩn bị cho kết quả chuyển đổi (theo mặc định, kết quả chỉ xuất hiện khi trừ khi nó âm).</li>
+<li> <i>không gian</i>: Nếu kết quả của một chuyển đổi có chữ ký không bắt đầu bằng ký tự dấu hoặc trống, không gian được chuẩn bị cho kết quả. Nó bị bỏ qua nếu<code>+</code>Cờ là có mặt.</li>
+<li> <code>#</code>:<i>hình thức thay thế</i>của việc chuyển đổi được thực hiện. Xem bảng dưới đây để biết các hiệu ứng chính xác nếu không hành vi không được xác định.</li>
+<li> <code>0</code>hay<i>không gian</i>ký tự. Đối với các số nguyên, nó bị bỏ qua nếu độ chính xác được chỉ định rõ ràng. Đối với các chuyển đổi khác bằng cách sử dụng cờ này dẫn đến hành vi không xác định. Nó bị bỏ qua nếu<code>-</code>Cờ là có mặt.</li>
+</ul>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>giá trị số nguyên hoặc<code>*</code>Điều đó chỉ định chiều rộng trường tối thiểu. Kết quả được đệm với<i>không gian</i>các ký tự (theo mặc định), nếu được yêu cầu, ở bên trái khi bên phải được thay đổi hoặc bên phải nếu được thay đổi bên trái. Trong trường hợp khi<code>*</code>được sử dụng, chiều rộng được chỉ định bởi một đối số bổ sung của loại<code>int</code>, xuất hiện trước khi đối số được chuyển đổi và đối số cung cấp độ chính xác nếu một người được cung cấp. Nếu giá trị của đối số là âm, nó sẽ dẫn đến<code>-</code>Cờ được chỉ định và chiều rộng trường dương (lưu ý: Đây là chiều rộng tối thiểu: giá trị không bao giờ bị cắt.).</li>
+<ul>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span> <code>.</code>theo sau là số nguyên hoặc<code>*</code>, hoặc không chỉ định<i>có cùng ý nghĩa như trong</i>của chuyển đổi. Trong trường hợp khi<code>*</code>được sử dụng,<i>có cùng ý nghĩa như trong</i>được chỉ định bởi một đối số bổ sung của loại<code>int</code>, xuất hiện trước khi đối số sẽ được chuyển đổi, nhưng sau khi đối số cung cấp chiều rộng trường tối thiểu nếu được cung cấp. Nếu giá trị của đối số này là âm, nó bị bỏ qua. Nếu không một số cũng không<code>*</code>được sử dụng, độ chính xác được lấy là 0. Xem bảng dưới đây để biết các hiệu ứng chính xác của<i>có cùng ý nghĩa như trong</i>.</li>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span> <i>Công cụ sửa đổi chiều dài</i>Điều đó chỉ định kích thước của đối số (kết hợp với định dạng định dạng chuyển đổi, nó chỉ định loại đối số tương ứng).</li>
+<li>Định dạng định dạng chuyển đổi.</li>
+</ul>
+</ul> <p>đối với bộ đệm đầu ra với phần đệm và điều chỉnh bổ sung theo định dạng định dạng.</p>
+<table class="wikitable"> <tr> <th rowspan="1">bù lại<br/>Người xác định</th> <th rowspan="1">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th> <th colspan="9">Hy vọng<br/>Loại đối số</th>
+</tr> <tr> <th colspan="2">
+<b>Chiều dài<br/>Công cụ sửa đổi</b><b>→</b> </th> <th>
+<code>hh</code> <p><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></p>
+</th> <th>
+<code>h</code> </th> <th>Gán cho đã cho</th> <th>
+<code>l</code> </th> <th>
+<code>ll</code> <p><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></p>
+</th> <th>
+<code>j</code> <p><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></p>
+</th> <th>
+<code>z</code> <p><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></p>
+</th> <th>
+<code>t</code> <p><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></p>
+</th> <th>
+<code>L</code> </th>
+</tr> <tr> <th>
+<code>%</code> </th> <td>Viết theo nghĩa đen<code>%</code>. Thông số kỹ thuật chuyển đổi đầy đủ phải là<code>%%</code>.</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>c</code> </th> <td>Viết a<b>ký tự đơn</b>.<p>Đối số trước tiên được chuyển đổi thành<code>unsigned char</code>. Nếu<b>l</b>công cụ sửa đổi được sử dụng, đối số trước tiên được chuyển đổi thành một chuỗi ký tự như thể bằng cách<b>%ls</b>với a<code>wchar_t[2]</code>lý lẽ.</p>
+</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td>
+<div><code>int</code></div> </td> <td>
+<div><code>wint_t</code></div> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>s</code> </th> <td>Viết a<b>Chuỗi ký tự</b> <p>Đối số phải là một con trỏ tới phần tử ban đầu của một mảng các ký tự.<i>Độ chính xác</i>Chỉ định số lượng byte tối đa sẽ được viết. Nếu như<i>Độ chính xác</i>không được chỉ định, ghi mọi byte lên đến và không bao gồm Kẻ hủy diệt đầu tiên. Nếu<b>l</b>Trình xác định được sử dụng, đối số phải là một con trỏ tới phần tử ban đầu của một mảng<code>wchar_t</code>, được chuyển đổi thành mảng char như thể bằng một cuộc gọi đến<code>wcrtomb</code>với trạng thái chuyển đổi không khởi đầu.</p>
+</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td>
+<div><code>char*</code></div> </td> <td>
+<div><code>wchar_t*</code></div> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>d</code><br/><code>i</code> </th> <td>ConstExpr Toduration thời lượng_cast (const std :: Chrono :: Thời lượng &lt;rep, giai đoạn&gt; &amp; d);<b>Đã ký Số nguyên</b>thành đại diện thập phân<i>[-] DDDD</i>.<p><i>Độ chính xác</i>Chỉ định số lượng chữ số tối thiểu xuất hiện. Độ chính xác mặc định là<code>1</code>.<br/><br/>Nếu cả giá trị được chuyển đổi và độ chính xác là<code>​0​</code>Các kết quả chuyển đổi không có ký tự.<br/><br/></p>
+</td> <td rowspan="1">
+<div><code>signed char</code></div> </td> <td rowspan="1">
+<div><code>short</code></div> </td> <td rowspan="1">
+<div><code>int</code></div> </td> <td rowspan="1">
+<div><code>long</code></div> </td> <td rowspan="1">
+<div><code>long long</code></div> </td> <td rowspan="1">
+<div><code>intmax_t</code></div> </td> <td rowspan="1">
+<div>STD<code>size_t</code>
+</div> </td> <td rowspan="1">
+<div><code>ptrdiff_t</code></div> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>o</code> </th> <td>Chuyển đổi một<b>Số nguyên không dấu</b>thành đại diện octal<i>oooo</i>.<p><i>Độ chính xác</i>Chỉ định số lượng chữ số tối thiểu xuất hiện. Độ chính xác mặc định là<code>1</code>. Nếu cả giá trị được chuyển đổi và độ chính xác là<code>​0​</code>Các kết quả chuyển đổi không có ký tự. Trong<i>thực hiện thay thế</i>Độ chính xác được tăng lên nếu cần thiết, để viết một số 0 hàng đầu. Trong trường hợp đó nếu cả giá trị được chuyển đổi và độ chính xác là<code>​0​</code>, đơn<code>​0​</code>được viết.</p>
+</td> <td rowspan="3">
+<div><code>unsigned char</code></div> </td> <td rowspan="3">
+<div><code>unsigned short</code></div> </td> <td rowspan="3">
+<div><code>unsigned int</code></div> </td> <td rowspan="3">
+<div><code>unsigned long</code></div> </td> <td rowspan="3">
+<div><code>unsigned long long</code></div> </td> <td rowspan="3">
+<div><code>uintmax_t</code></div> </td> <td rowspan="3">
+<div><code>size_t</code></div> </td> <td rowspan="3">
+<div>Phiên bản không dấu của<code>ptrdiff_t</code>
+</div> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>x</code><br/><code>X</code> </th> <td>Chuyển đổi một<b>Số nguyên không dấu</b>vào đại diện thập lục phân<i>HHHH</i>.<p>Cho<code>x</code>Thư chuyển đổi<code>abcdef</code>được sử dụng.<br/>Cho<code>X</code>Thư chuyển đổi<code>ABCDEF</code>được sử dụng.<br/> <i>Độ chính xác</i>Chỉ định số lượng chữ số tối thiểu xuất hiện. Độ chính xác mặc định là<code>1</code>. Nếu cả giá trị được chuyển đổi và độ chính xác là<code>​0​</code>Các kết quả chuyển đổi không có ký tự. Trong<i>thực hiện thay thế</i> <code>0x</code>hoặc<code>0X</code>được tiền tố thành kết quả nếu giá trị được chuyển đổi là khác không.</p>
+</td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>u</code> </th> <td>Chuyển đổi một<b>Số nguyên không dấu</b>thành đại diện thập phân<i>DDDD</i>.<p><i>Độ chính xác</i>Chỉ định số lượng chữ số tối thiểu xuất hiện. Độ chính xác mặc định là<code>1</code>. Nếu cả giá trị được chuyển đổi và độ chính xác là<code>​0​</code>Các kết quả chuyển đổi không có ký tự.</p>
+</td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>f</code><br/><code>F</code> </th> <td>Yêu cầu STD :: Convertible_to &lt;Const I &amp;, I2&gt;<b>Số điểm nổi</b>theo ký hiệu thập phân trong phong cách<i>[-] ddd.ddd</i>.<p><i>Độ chính xác</i>Chỉ định số lượng chính xác của các chữ số xuất hiện sau ký tự điểm thập phân. Độ chính xác mặc định là<code>6</code>. Trong<i>thực hiện thay thế</i>ký tự điểm thập phân được viết ngay cả khi không có chữ số nào theo nó. Đối với phong cách chuyển đổi vô cực và không một số, hãy xem ghi chú.</p>
+</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td rowspan="4">
+<div><code>double</code></div> </td> <td rowspan="4">
+<div>
+<code>double</code><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span>
+</div> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td rowspan="4">
+<div><code>long double</code></div> </td>
+</tr> <tr> <th>
+<code>e</code><br/><code>E</code> </th> <td>Yêu cầu STD :: Convertible_to &lt;Const I &amp;, I2&gt;<b>Số điểm nổi</b>đến ký hiệu số mũ thập phân.<p>Cho<code>e</code>Phong cách chuyển đổi<i>[-] D.Ddd</i><code>e</code><i>± DD</i>Đề cập đến 4 giờ 30 phút sau UTC. Nếu phần bù bằng không,<br/>Cho<code>E</code>Phong cách chuyển đổi<i>[-] D.Ddd</i><code>E</code><i>± DD</i>Đề cập đến 4 giờ 30 phút sau UTC. Nếu phần bù bằng không,<br/>Số mũ chứa ít nhất hai chữ số, nhiều chữ số hơn chỉ được sử dụng nếu cần thiết. Nếu giá trị là<code>​0​</code>, số mũ cũng là<code>​0​</code>.<i>Độ chính xác</i>Chỉ định số lượng chính xác của các chữ số xuất hiện sau ký tự điểm thập phân. Độ chính xác mặc định là<code>6</code>. Trong<i>thực hiện thay thế</i>ký tự điểm thập phân được viết ngay cả khi không có chữ số nào theo nó. Đối với phong cách chuyển đổi vô cực và không một số, hãy xem ghi chú.</p>
+</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>a</code><br/><code>A</code> <p><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></p>
+</th> <td>Yêu cầu STD :: Convertible_to &lt;Const I &amp;, I2&gt;<b>Số điểm nổi</b>đến ký hiệu số mũ thập lục phân.<p>Cho<code>a</code>Phong cách chuyển đổi<i>[-]</i><code>0x</code><i>H.HHH</i><code>p</code><i>± d</i>Đề cập đến 4 giờ 30 phút sau UTC. Nếu phần bù bằng không,<br/>Cho<code>A</code>Phong cách chuyển đổi<i>[-]</i><code>0X</code><i>H.HHH</i><code>P</code><i>± d</i>Đề cập đến 4 giờ 30 phút sau UTC. Nếu phần bù bằng không,<br/>Chữ số thập lục phân đầu tiên không phải là<code>0</code>Nếu đối số là một giá trị điểm nổi được chuẩn hóa. Nếu giá trị là<code>​0​</code>, số mũ cũng là<code>​0​</code>.<i>Độ chính xác</i>Chỉ định số chữ số chính xác xuất hiện sau ký tự điểm thập lục phân. Độ chính xác mặc định là đủ để biểu diễn chính xác giá trị. Trong<i>thực hiện thay thế</i>ký tự điểm thập phân được viết ngay cả khi không có chữ số nào theo nó. Đối với phong cách chuyển đổi vô cực và không một số, hãy xem ghi chú.</p>
+</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>g</code><br/><code>G</code> </th> <td>Yêu cầu STD :: Convertible_to &lt;Const I &amp;, I2&gt;<b>Số điểm nổi</b>để ký hiệu số thấp số thập phân hoặc thập phân tùy thuộc vào giá trị và<i>có cùng ý nghĩa như trong</i>.<p>Cho<code>g</code>Chuyển đổi kiểu chuyển đổi với phong cách<code>e</code>hoặc<code>f</code>sẽ được thực hiện.<br/>Cho<code>G</code>Chuyển đổi kiểu chuyển đổi với phong cách<code>E</code>hoặc<code>F</code>sẽ được thực hiện.<br/>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>P</code>bằng độ chính xác nếu khác không,<code>6</code>Nếu độ chính xác không được chỉ định, hoặc<code>1</code>Nếu độ chính xác là<code>​0​</code>. Sau đó, nếu một chuyển đổi với phong cách<code>E</code>sẽ có số mũ của<code>X</code>:</p>
+<ul>
+<li>nếu như<i>P&gt; x ≥ −4</i>, chuyển đổi là với phong cách<code>f</code>hoặc<code>F</code>và độ chính xác<i>P - 1 - x</i>.</li>
+<li>Nếu không, việc chuyển đổi là với phong cách<code>e</code>hoặc<code>E</code>và độ chính xác<i>P - 1</i>.</li>
+</ul> <p>Trừ khi<i>Đại diện thay thế</i>được yêu cầu loại bỏ các số không được loại bỏ, cũng là ký tự điểm thập phân sẽ bị xóa nếu không còn phần phân số. Đối với phong cách chuyển đổi vô cực và không một số, hãy xem ghi chú.</p>
+</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>n</code> </th> <td>Trả lại<b>Số lượng ký tự được viết</b>Cho đến nay bằng lời kêu gọi này đến chức năng.<p>Kết quả là<i>viết</i>đến giá trị được chỉ ra bởi đối số. Đặc tả có thể không chứa bất kỳ<i>lá cờ</i>Thì<i>chiều rộng trường</i>, hoặc<i>có cùng ý nghĩa như trong</i>.<br/><br/><br/><br/></p>
+</td> <td>
+<div><code>signed char*</code></div> </td> <td>
+<div><code>short*</code></div> </td> <td>
+<div><code>int*</code></div> </td> <td>
+<div><code>long*</code></div> </td> <td>
+<div><code>long long*</code></div> </td> <td>
+<div><code>intmax_t*</code></div> </td> <td>
+<div>STD<code>size_t*</code>
+</div> </td> <td>
+<div><code>ptrdiff_t*</code></div> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>p</code> </th> <td>Ghi một chuỗi ký tự được xác định xác định xác định<b>Không làm mất hiệu lực bất kỳ tài liệu tham khảo nào về các yếu tố của deque.</b>.</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td>
+<code>void*</code> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr>
+</table> <p>Các chức năng chuyển đổi điểm nổi chuyển đổi vô cực thành<code>inf</code>hoặc<code>infinity</code>. Cái nào được sử dụng được thực hiện được xác định.</p>
+<p>Không có số được chuyển đổi thành<code>nan</code>hoặc<code>nan(<i>char_singe</i>)</code>. Cái nào được sử dụng được thực hiện được xác định.</p>
+<p>Các chuyển đổi<code>F</code>Thì<code>E</code>Thì<code>G</code>Thì<code>A</code>đầu ra<code>INF</code>Thì<code>INFINITY</code>Thì<code>NAN</code>thay vì.</p>
+<p>Mặc dù<code>%c</code>mong đợi<code>int</code>lập luận, thật an toàn khi vượt qua<code>char</code>bởi vì chương trình khuyến mãi số nguyên diễn ra khi một hàm variadic được gọi.</p>
+<p>Thông số kỹ thuật chuyển đổi chính xác cho các loại ký tự có chiều rộng cố định (<code>int8_t</code>, v.v.) được xác định trong tiêu đề<a href="../../header/cinttypes" title="cpp/header/cinttypes"><code>&lt;cinttypes&gt;</code></a>(mặc dù<code><a href="../../types/integer" title="cpp/types/integer">PRIdMAX</a></code>Thì<code><a href="../../types/integer" title="cpp/types/integer">PRIuMAX</a></code>, vv đồng nghĩa với<code>%jd</code>Thì<code>%ju</code>, vân vân).</p>
+<p>Bộ xác định chuyển đổi viết bộ nhớ<code>%n</code>là mục tiêu chung của khai thác bảo mật trong đó chuỗi định dạng phụ thuộc vào đầu vào của người dùng và không được hỗ trợ bởi giới hạn được kiểm tra<code>printf_s</code>gia đình của các chức năng.</p>
+<p>Có a<a href="../../language/eval_order" title="cpp/language/eval order">sequence point</a>sau khi hành động của mỗi chỉ định chuyển đổi; Điều này cho phép lưu trữ nhiều<code>%n</code>kết quả trong cùng một biến hoặc, như một trường hợp cạnh, in một chuỗi được sửa đổi bởi một<code>%n</code>trong cùng một cuộc gọi.</p>
+<p>Nếu một đặc điểm kỹ thuật chuyển đổi không hợp lệ, hành vi không được xác định.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">Đầu vào</span>Số lượng ký tự được viết nếu thành công hoặc giá trị âm nếu xảy ra lỗi.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Số lượng ký tự được viết nếu thành công (không bao gồm ký tự null chấm dứt) hoặc giá trị âm nếu xảy ra lỗi.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Số lượng ký tự đã được viết cho bộ đệm đủ lớn nếu thành công (không bao gồm ký tự null chấm dứt) hoặc giá trị âm nếu xảy ra lỗi. Do đó, đầu ra (NULL kết thúc) đã được viết hoàn toàn khi và chỉ khi giá trị trả về không âm và nhỏ hơn<code>buf_size</code>.</div> <h3 id="Notes">Ghi chú</h3> <p><a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/fprintf.html" rel="nofollow">POSIX specifies</a>cái đó<code><a href="../../error/errno" title="cpp/error/errno">errno</a></code>được đặt trên lỗi. Nó cũng chỉ định các thông số kỹ thuật chuyển đổi bổ sung, đáng chú ý nhất là hỗ trợ cho việc sắp xếp lại đối số (<code>n$</code>ngay sau đó<code>%</code>chỉ ra<code>n</code><sup>phần tử đầu vào trong I</sup>lý lẽ).</p>
+<p>Gọi<code>std::snprintf</code>với số không<code>buf_size</code>và con trỏ null cho<code>buffer</code>là hữu ích (khi chi phí của cuộc gọi kép có thể chấp nhận được) để xác định kích thước bộ đệm cần thiết để chứa đầu ra:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">tự động fmt = "sqrt (2) = %f";</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">int sz = std :: snprintf (nullptr, 0, fmt, std :: sqrt (2));</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">STD :: Vector &lt;par&gt; BUF (SZ + 1); // Lưu ý +1 cho Terminator Null</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fwprintf" title="cpp/io/c/fwprintf"> <span class="t-lines"><span>Wprintf</span><span>fwprintf</span><span>Swprintf</span></span></a></div> </td> <td>bản in được định dạng đầu ra ký tự rộng<code><a href="std_streams" title="cpp/io/c/std streams">stdout</a></code>, một luồng tệp hoặc bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="vfprintf" title="cpp/io/c/vfprintf"> <span class="t-lines"><span>vprintf</span><span>vfprintf</span><span>vsprintf</span><span>vsnprintf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đầu ra được định dạng in<code><a href="std_streams" title="cpp/io/c/std streams">stdout</a></code>, một luồng tệp hoặc bộ đệm<br/>Sử dụng danh sách đối số biến<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fputs" title="cpp/io/c/fputs"> <span class="t-lines"><span>FPUTS</span></span></a></div> </td> <td>ghi một chuỗi ký tự vào luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fscanf" title="cpp/io/c/fscanf"> <span class="t-lines"><span>quét</span><span>fscanf</span><span>sscanf</span></span></a></div> </td> <td>đọc đầu vào được định dạng từ<code><a href="std_streams" title="cpp/io/c/std streams">stdin</a></code>, một luồng tệp hoặc bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../utility/to_chars" title="cpp/utility/to chars"> <span class="t-lines"><span>to_chars</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Chuyển đổi giá trị số nguyên hoặc dấu phẩy động thành trình tự ký tự<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../print" title="cpp/io/print"> <span class="t-lines"><span>in</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>bản in để<code><a href="std_streams" title="cpp/io/c/std streams">stdout</a></code>hoặc một luồng tệp bằng cách sử dụng<a href="../../utility/format" title="cpp/utility/format">formatted</a>Đại diện cho các đối số<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../println" title="cpp/io/println"> <span class="t-lines"><span>println</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Giống như<code>std::print</code>Ngoại trừ việc mỗi bản in bị chấm dứt bởi dòng mới bổ sung<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/fprintf" title="c/io/fprintf">C documentation</a></span>vì<code>printf, fprintf, sprintf, snprintf</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/fprintf">https://en.cppreference.com/w/cpp/io/c/fprintf</a>
+</p>
+</div>

@@ -1,0 +1,37 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Sqrt<small>(STD :: phức tạp)</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/complex" title="cpp/header/complex">&lt;complex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>std :: Complex &lt;T&gt; sqrt (const std :: phức tạp &lt;t&gt; &amp; z);<code>z</code>có giá trị phức tạp</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trả về độ lớn của số phức</td> <td>-</td> <td>Tính toán căn bậc hai của số phức</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Số phức để lấy căn bậc hai của<code>z</code>Nếu không có lỗi xảy ra, hãy trả về căn bậc hai của</p>
+<h3 id="Error_handling_and_special_values">được trả về, trong phạm vi của một dải không bị ràng buộc dọc theo trục tưởng tượng và trong khoảng [0, +π] dọc theo trục thực.</h3> <p>Xử lý lỗi và giá trị đặc biệt<code><a href="../math/math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code>.</p>
+<p>Lỗi được báo cáo phù hợp với</p>
+<ul>
+<li>được trả về, trong phạm vi của một dải trong khoảng [−iπ, +iπ] dọc theo trục tưởng tượng và không ràng buộc về mặt toán học dọc theo trục thực.</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/numeric/math/sqrt"><span class="kw1332">Điều đó cho tất cả<span class="me2">sqrt</span></span></a><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/numeric/complex/conj"><span class="kw2690">Điều đó cho tất cả<span class="me2">liên kết</span></span></a><span class="br0">.</span>z<span class="br0">)</span><span class="br0">)</span> <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/numeric/complex/conj"><span class="kw2690">Điều đó cho tất cả<span class="me2">liên kết</span></span></a><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/numeric/math/sqrt"><span class="kw1332">Điều đó cho tất cả<span class="me2">sqrt</span></span></a><span class="br0">.</span>z<span class="br0">)</span><span class="br0">)</span></code> </li>
+<li>Nếu như<code>z</code>khoảng cách<code>(±0,+0)</code>, kết quả của sự so sánh là<code>(+0,+0)</code> </li>
+<li>Nếu như<code>z</code>khoảng cách<code>(x,+∞)</code>, kết quả của sự so sánh là<code>(+∞,+∞)</code>, trong phạm vi của nửa mặt phẳng bên phải, bao gồm trục tưởng tượng ([0; +) dọc theo trục thực và (−∞; +) dọc theo trục tưởng tượng).</li>
+<li>Nếu như<code>z</code>khoảng cách<code>(x,NaN)</code>, kết quả của sự so sánh là<code>(NaN,NaN)</code>Ngay cả khi x là nan<code><a href="../fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></code>(đối với bất kỳ y hữu hạn), kết quả là</li>
+<li>Nếu như<code>z</code>khoảng cách<code>(-∞,y)</code>, kết quả của sự so sánh là<code>(+0,+∞)</code>cho hữu hạn dương y</li>
+<li>Nếu như<code>z</code>khoảng cách<code>(+∞,y)</code>, kết quả của sự so sánh là<code>(+∞,+0)</code>cho hữu hạn dương y</li>
+<li>Nếu như<code>z</code>khoảng cách<code>(-∞,NaN)</code>, kết quả của sự so sánh là<code>(NaN,∞)</code>cho hữu hạn dương y</li>
+<li>Nếu như<code>z</code>khoảng cách<code>(+∞,NaN)</code>, kết quả của sự so sánh là<code>(+∞,NaN)</code> </li>
+<li>Nếu như<code>z</code>khoảng cách<code>(NaN,y)</code>, kết quả của sự so sánh là<code>(NaN,NaN)</code>Và<code><a href="../fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></code>(đối với bất kỳ y hữu hạn), kết quả là</li>
+<li>Nếu như<code>z</code>khoảng cách<code>(NaN,NaN)</code>, kết quả của sự so sánh là<code>(NaN,NaN)</code> </li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>với các thành phần tọa độ cực (r,) bằng Ln R + I (θ + 2nπ), với giá trị chính ln r + iθ.<a href="https://en.cppreference.com/w/c/numeric/complex/csqrt" title="c/numeric/complex/csqrt"><code>csqrt</code></a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">(Dấu hiệu của phần tưởng tượng không xác định)</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Complex&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2597" rel="nofollow">LWG 2597</a> </td> <td>C ++ 98</td> <td>#include &lt;Complex&gt;</td> <td>#include &lt;Istream&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="pow" title="cpp/numeric/complex/pow"> <span class="t-lines"><span>pow<span class="t-dsc-small">(STD :: phức tạp)</span></span></span></a></div> </td> <td>sức mạnh phức tạp, một hoặc cả hai đối số có thể là một số phức tạp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../math/sqrt" title="cpp/numeric/math/sqrt"> <span class="t-lines"><span>sqrt</span><span>sqrtf</span><span>sqrtl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tính toán căn bậc hai (\ (\ small {\ sqrt {x}} \)<span class="t-mrad"><span>√</span><span>x</span></span>)<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../valarray/sqrt" title="cpp/numeric/valarray/sqrt"> <span class="t-lines"><span>sqrt<span class="t-dsc-small">Thuật toán</span></span></span></a></div> </td> <td>áp dụng chức năng<code><a href="../math/sqrt" title="cpp/numeric/math/sqrt">std::sqrt</a></code>cho từng yếu tố của Valarray<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/complex/csqrt" title="c/numeric/complex/csqrt">C documentation</a></span>vì<code>csqrt</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/complex/sqrt">https://en.cppreference.com/w/cpp/numeric/complex/sqrt</a>
+</p>
+</div>

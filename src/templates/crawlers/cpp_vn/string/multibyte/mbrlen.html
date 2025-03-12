@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: MBRLEN</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: size_t mbrlen (const char* s, std :: size_t n, std :: mbstate_t* ps);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Xác định kích thước, tính<code>s</code>, với trạng thái chuyển đổi hiện tại<code>ps</code>.</p>
+<p>Chức năng này tương đương với cuộc gọi<code><a href="http://en.cppreference.com/w/cpp/string/multibyte/mbrtowc"><span class="kw1173">Điều đó cho tất cả<span class="me2">mbrtowc</span></span></a><span class="br0">.</span>nullptr, s, n, ps <span class="sy4">?</span> ps <span class="sy4">:</span> <span class="sy3">Không có giá trị</span>internal<span class="br0">)</span></code>Đối với một số đối tượng ẩn<code>internal</code>nó đến một đối tượng<code><a href="mbstate_t" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></code>    n = 'a';          // Quảng cáo tích phân, sau đó chuyển nhượng<code>ps</code>chỉ được đánh giá một lần.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>con trỏ tới một phần tử của chuỗi ký tự đa</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>giới hạn số lượng byte trong s có thể được kiểm tra</td>
+</tr> <tr class="t-par"> <td>PS</td> <td>-</td> <td>con trỏ tới biến giữ trạng thái chuyển đổi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>​0​</code>Nếu tiếp theo<code>n</code>hoặc ít byte hơn hoàn thành ký tự null.</p>
+<p>Số lượng byte (giữa<code>1</code>Và<code>n</code>) hoàn thành một ký tự đa dạng hợp lệ.</p>
+<p><code>(size_t) - 1</code>Nếu xảy ra lỗi mã hóa.</p>
+<p><code>(size_t) - 2</code>Nếu tiếp theo<code>n</code>Byte là một phần của ký tự đa thể có thể hợp lệ, vẫn chưa hoàn thành sau khi kiểm tra tất cả<code>n</code>Cách thức mà</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;clocale&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CWchar&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="mbrtowc" title="cpp/string/multibyte/mbrtowc"> <span class="t-lines"><span>mbrtowc</span></span></a></div> </td> <td>Chuyển đổi ký tự đa năng tiếp theo thành ký tự rộng, được đưa ra trạng thái<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="mblen" title="cpp/string/multibyte/mblen"> <span class="t-lines"><span>Mblen</span></span></a></div> </td> <td>Trả về số byte trong ký tự đa dạng tiếp theo<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../locale/codecvt/length" title="cpp/locale/codecvt/length"> <span class="t-lines"><span>nhân vật cần thiết để tạo ra một</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>nhân vật, nếu hằng số<code>ExternT</code>DO_ALWAYS_NOCONV<code>InternT</code>Điều khiển đầu vào và đầu ra thành một chuỗi ký tự. Nó bao gồm và cung cấp quyền truy cập vào<br/> <span class="t-mark">Putback<code>std::codecvt&lt;InternT,ExternT,StateT&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/multibyte/mbrlen" title="c/string/multibyte/mbrlen">C documentation</a></span>vì<code>mbrlen</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/multibyte/mbrlen">https://en.cppreference.com/w/cpp/string/multibyte/mbrlen</a>
+</p>
+</div>

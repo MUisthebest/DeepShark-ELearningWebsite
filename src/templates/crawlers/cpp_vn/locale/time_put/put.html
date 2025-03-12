@@ -1,0 +1,115 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Time_put &lt;biểu đồ, đầu ra&gt; :: put, std :: time_put &lt;biểu đồ, outputit&gt; :: do_put</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">ITER_TYPE PUT (ITER_TYPE OUT, STD :: IOS_BASE &amp; STR,</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">               char_type điền, const std :: tm* t,</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>, một hoặc hai ký tự tiếp theo được so sánh với danh sách các chuỗi định dạng được công nhận bởi<code><a href="../../chrono/c/tm" title="cpp/chrono/c/tm">std::tm</a></code>đối tượng được chỉ ra bởi<code>t</code>công cộng:<a href="#Format_string">format string</a> <code>[fmtbeg, fmtend)</code>ITER_TYPE PUT (ITER_TYPE OUT, STD :: IOS_BASE &amp; STR,<code><a href="http://en.cppreference.com/w/cpp/chrono/c/strftime"><span class="kw1022">Điều đó cho tất cả<span class="me2">thời gian</span></span></a></code>               char_type điền, const std :: tm* t,<code>do_put()</code>               Định dạng char, sửa đổi char = 0) const;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>được bảo vệ:<code>[fmtbeg, fmtend)</code>Virtual ITER_TYPE DO_PUT (ITER_TYPE OUT, STD :: iOS_BASE &amp; STR,<code>out</code>                          char_type điền, const std :: tm* t,<code>c</code>TRONG<code>[fmtbeg, fmtend)</code>Mẫu &lt;Class T&gt;<code><a href="http://en.cppreference.com/w/cpp/locale/ctype"><span class="kw1942">Điều đó cho tất cả<span class="me2">Ctype</span></span></a><span class="sy1">is_trivently_destructible_v</span>char_type<span class="sy1">&lt;</span><span class="br0">.</span>str.<span class="me1">Đầu ra</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span>.<span class="me1">RDBUF</span><span class="br0">.</span>c, <span class="nu0">. Không làm gì khác.</span><span class="br0">)</span></code>                          Định dạng char, công cụ sửa đổi char) const;<code>'%'</code>Chuyển đổi ngày và thời gian được lưu trữ trong<code><a href="../../chrono/c/strftime" title="cpp/chrono/c/strftime">std::strftime</a></code>thành một chuỗi ký tự, theo<code>do_put(out, str, fill, t, format, modifier)</code>. Chuỗi định dạng giống như được sử dụng bởi<code>format</code>, nhưng mỗi định dạng định dạng được xử lý bởi một cuộc gọi riêng lẻ đến<code>modifier</code>, có thể được tùy chỉnh bằng cách mở rộng khía cạnh này.<code>'E'</code>hoặc<code>'O'</code>Các bước thông qua chuỗi nhân vật<code>'\0'</code>, kiểm tra các nhân vật. Mỗi ký tự không phải là một phần của chuỗi định dạng đều được ghi vào trình lặp đầu ra</div> <div class="t-li1">
+<span class="t-li">2)</span>ngay lập tức. Để xác định các chuỗi định dạng, chức năng này thu hẹp ký tự tiếp theo<code>do_put</code>Và nếu nó bằng</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>, một hoặc hai ký tự tiếp theo được so sánh với danh sách các chuỗi định dạng được công nhận bởi<code><a href="../../chrono/c/tm" title="cpp/chrono/c/tm">std::tm</a></code>đối tượng được chỉ ra bởi<code>t</code>Cộng với bất kỳ định dạng xác định bổ sung được xác định bởi địa phương này. Đối với mỗi chuỗi định dạng hợp lệ, một cuộc gọi đến<code>'%'</code>, giá trị của<code>modifier</code>Nếu không<code>'\0'</code>được thực hiện, ở đâu<code>format</code>là ký tự trình tự định dạng và<code><a href="../../chrono/c/strftime" title="cpp/chrono/c/strftime">std::strftime</a></code>là công cụ sửa đổi trình tự định dạng tùy chọn (<code>fill</code>). Một giá trị của<code>out</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>. Các số ngẫu nhiên được tạo bằng trình tạo số ngẫu nhiên</td> <td>-</td> <td>được sử dụng nếu công cụ sửa đổi vắng mặt.</td>
+</tr> <tr class="t-par"> <td>STR</td> <td>-</td> <td>, hoặc các chỉ thị sử dụng các công cụ sửa đổi<code><a href="../ctype" title="cpp/locale/ctype">std::ctype</a></code>Gọi</td>
+</tr> <tr class="t-par"> <td>Chuyển đổi đối số</td> <td>-</td> <td>Con trỏ tới<code><a href="../../chrono/c/tm" title="cpp/chrono/c/tm">std::tm</a></code>Chức năng thành viên của lớp dẫn xuất nhất.</td>
+</tr> <tr class="t-par"> <td>Một đối tượng luồng mà hàm này sử dụng để có được các khía cạnh địa phương khi cần, ví dụ:</td> <td>-</td> <td>Chuyển đổi ngày và thời gian được lưu trữ trong<code>char_type</code>. Định dạng được giải thích giống như hàm<a href="#Format_string">conversion format</a> </td>
+</tr> <tr class="t-par"> <td>Để so sánh chuỗi</td> <td>-</td> <td>và giá trị của<code>char_type</code>. Định dạng được giải thích giống như hàm<a href="#Format_string">conversion format</a> </td>
+</tr> <tr class="t-par"> <td>Được xác định trong tiêu đề</td> <td>-</td> <td>, ngoại trừ việc các định dạng được mô tả là phụ thuộc vào địa phương được xác định bởi địa phương này và các định dạng định dạng bổ sung có thể được hỗ trợ (</td>
+</tr> <tr class="t-par"> <td>định dạng</td> <td>-</td> <td>Đối số được cung cấp cho các định dạng định dạng được xác định theo triển khai này để sử dụng). Chuỗi được ghi vào trình lặp đầu ra<a href="#Format_string">conversion specifier</a> </td>
+</tr> <tr class="t-par"> <td>đối tượng sẽ giữ kết quả của cuộc gọi chức năng này</td> <td>-</td> <td>fmtbeg<code>%</code>Đối tượng lưu trữ<a href="#Format_string">conversion specifier</a> </td>
+</tr>
+</table> <h3 id="Format_string">C_str</h3> <p>Chuỗi định dạng bao gồm các nhà xác định chuyển đổi bằng 0 hoặc nhiều hơn và các ký tự thông thường (ngoại trừ<code>%</code>). Tất cả các ký tự thông thường, bao gồm ký tự null chấm dứt, được sao chép vào chuỗi đầu ra mà không cần sửa đổi. Mỗi đặc tả chuyển đổi bắt đầu với<code>%</code>nhân vật, tùy chọn theo sau là<code>E</code>hoặc<code>O</code>công cụ sửa đổi (bị bỏ qua nếu không được hỗ trợ bởi ngôn ngữ), theo sau là ký tự xác định hành vi của trình xác định. Các định dạng định dạng sau có sẵn:</p>
+<table class="wikitable"> <tr> <th>bù lại<br/>thời lượng để biểu diễn phần bù từ UTC tương ứng với</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th> <th>Các trường đã sử dụng</th>
+</tr> <tr> <th> <code>%</code> </th> <td>viết theo nghĩa đen<code>%</code>. Thông số kỹ thuật chuyển đổi đầy đủ phải là<code>%%</code>.</td> <td> </td>
+</tr> <tr> <th> <code>n</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>Viết nhân vật Newline</td> <td> </td>
+</tr> <tr> <th> <code>t</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>Viết ký tự tab ngang</td> <td> </td>
+</tr> <tr> <th colspan="3">Mỗi ký tự khoảng trắng phù hợp với các ký tự khoảng trắng hoặc nhiều hơn trong luồng đầu vào.</th>
+</tr> <tr> <th> <code>Y</code> </th> <td>viết<b>năm</b>như một số thập phân, ví dụ: 2017</td> <td> <code>tm_year</code> </td>
+</tr> <tr> <th> <code>EY</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>năm</b>Trong đại diện thay thế, ví dụ: 平成 23 (năm Heisei 23) thay vì 2011 (năm 2011) trong địa phương JA_JP</td> <td> <code>tm_year</code> </td>
+</tr> <tr> <th> <code>y</code> </th> <td>Viết 2 chữ số cuối cùng của<b>năm</b>như một số thập phân (phạm vi<code>[00,99]</code>)</td> <td> <code>tm_year</code> </td>
+</tr> <tr> <th> <code>Oy</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>Viết 2 chữ số cuối cùng của<b>năm</b>Sử dụng hệ thống số thay thế, ví dụ: 十一 Thay vì 11 trong địa phương JA_JP</td> <td> <code>tm_year</code> </td>
+</tr> <tr> <th> <code>Ey</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>năm</b>Khi được bù từ thời kỳ Lịch thay thế của Locale<code>%EC</code>(phụ thuộc vào địa phương)</td> <td> <code>tm_year</code> </td>
+</tr> <tr> <th> <code>C</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết 2 chữ số đầu tiên của<b>năm</b>như một số thập phân (phạm vi<code>[00,99]</code>)</td> <td> <code>tm_year</code> </td>
+</tr> <tr> <th> <code>EC</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết tên của<b>Năm cơ sở (giai đoạn)</b>Trong đại diện thay thế của địa phương, ví dụ: 平成 (thời đại Heisei) trong ja_jp</td> <td> <code>tm_year</code> </td>
+</tr> <tr> <th> <code>G</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>). Chiều rộng</b>, tức là năm chứa tuần được chỉ định.<p>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.</p>
+<ul>
+<li>Lệnh sửa đổi</li>
+<li>diễn giải đại diện thay thế của địa phương.</li>
+</ul> </td> <td> <code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th> <code>g</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>Viết 2 chữ số cuối cùng của<b>). Chiều rộng</b>, tức là năm chứa tuần được chỉ định (phạm vi<code>[00,99]</code>).<p>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.</p>
+<ul>
+<li>Lệnh sửa đổi</li>
+<li>diễn giải đại diện thay thế của địa phương.</li>
+</ul> </td> <td> <code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th colspan="3">Các nhà xác định chuyển đổi sau đây có sẵn:</th>
+</tr> <tr> <th> <code>b</code> </th> <td>viết<b>Tháng viết tắt</b>Tên, ví dụ:<code>Oct</code>(phụ thuộc vào địa phương)</td> <td> <code>tm_mon</code> </td>
+</tr> <tr> <th> <code>h</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>Từ đồng nghĩa của<code>b</code> </td> <td> <code>tm_mon</code> </td>
+</tr> <tr> <th> <code>B</code> </th> <td>viết<b>cả tháng</b>Tên, ví dụ:<code>October</code>(phụ thuộc vào địa phương)</td> <td> <code>tm_mon</code> </td>
+</tr> <tr> <th> <code>m</code> </th> <td>viết<b>tháng</b>như một số thập phân (phạm vi<code>[01,12]</code>)</td> <td> <code>tm_mon</code> </td>
+</tr> <tr> <th> <code>Om</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>tháng</b>Sử dụng hệ thống số thay thế, ví dụ: 十二 Thay vì 12 trong địa phương JA_JP</td> <td> <code>tm_mon</code> </td>
+</tr> <tr> <th colspan="3">Tuần</th>
+</tr> <tr> <th> <code>U</code> </th> <td>viết<b>tuần trong năm</b>Như một số thập phân (Chủ nhật là ngày đầu tiên trong tuần) (phạm vi<code>[00,53]</code>)</td> <td> <code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th> <code>OU</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>tuần trong năm</b>, như bằng<code>%U</code>, sử dụng hệ thống số thay thế, ví dụ: 五十二 Thay vì 52 ở địa phương JA_JP</td> <td> <code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th> <code>W</code> </th> <td>viết<b>tuần trong năm</b>Như một số thập phân (Thứ Hai là ngày đầu tiên trong tuần) (phạm vi<code>[00,53]</code>)</td> <td> <code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th> <code>OW</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>tuần trong năm</b>, như bằng<code>%W</code>, sử dụng hệ thống số thay thế, ví dụ: 五十二 Thay vì 52 ở địa phương JA_JP</td> <td> <code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th> <code>V</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>ISO 8601 tuần trong năm</b>(phạm vi<code>[01,53]</code>).<p>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.</p>
+<ul>
+<li>Lệnh sửa đổi</li>
+<li>diễn giải đại diện thay thế của địa phương.</li>
+</ul> </td> <td> <code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th> <code>OV</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>tuần trong năm</b>, như bằng<code>%V</code>, sử dụng hệ thống số thay thế, ví dụ: 五十二 Thay vì 52 ở địa phương JA_JP</td> <td> <code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th colspan="3">Ngày trong năm/tháng</th>
+</tr> <tr> <th> <code>j</code> </th> <td>viết<b>ngày trong năm</b>như một số thập phân (phạm vi<code>[001,366]</code>)</td> <td> <code>tm_yday</code> </td>
+</tr> <tr> <th> <code>d</code> </th> <td>viết<b>ngày trong tháng</b>như một số thập phân (phạm vi<code>[01,31]</code>)</td> <td> <code>tm_mday</code> </td>
+</tr> <tr> <th> <code>Od</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết không dựa trên<b>ngày trong tháng</b>Sử dụng hệ thống số thay thế, ví dụ: 二十七 Thay vì 27 trong địa phương JA_JP<p>Ký tự đơn được đi trước bởi một không gian.</p>
+</td> <td> <code>tm_mday</code> </td>
+</tr> <tr> <th> <code>e</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>ngày trong tháng</b>như một số thập phân (phạm vi<code>[1,31]</code>).<p>Chữ số đơn được đi trước bởi một không gian.</p>
+</td> <td> <code>tm_mday</code> </td>
+</tr> <tr> <th> <code>Oe</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết một dựa trên<b>ngày trong tháng</b>Sử dụng hệ thống số thay thế, ví dụ: 二十七 Thay vì 27 trong địa phương JA_JP<p>Ký tự đơn được đi trước bởi một không gian.</p>
+</td> <td> <code>tm_mday</code> </td>
+</tr> <tr> <th colspan="3">Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.</th>
+</tr> <tr> <th> <code>a</code> </th> <td>viết<b>Viết tắt ngày trong tuần</b>Tên, ví dụ:<code>Fri</code>(phụ thuộc vào địa phương)</td> <td> <code>tm_wday</code> </td>
+</tr> <tr> <th> <code>A</code> </th> <td>viết<b>đầy đủ các ngày trong tuần</b>Tên, ví dụ:<code>Friday</code>(phụ thuộc vào địa phương)</td> <td> <code>tm_wday</code> </td>
+</tr> <tr> <th> <code>w</code> </th> <td>viết<b>Ngày trong tuần</b>như một số thập phân, nơi Chủ nhật là<code>0</code>(phạm vi<code>[0-6]</code>)</td> <td> <code>tm_wday</code> </td>
+</tr> <tr> <th> <code>Ow</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>Ngày trong tuần</b>, Chủ nhật ở đâu<code>0</code>, sử dụng hệ thống số thay thế, ví dụ: 二 Thay vì 2 trong địa phương JA_JP</td> <td> <code>tm_wday</code> </td>
+</tr> <tr> <th> <code>u</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>Ngày trong tuần</b>như một số thập phân, nơi thứ hai là<code>1</code>(Định dạng ISO 8601) (phạm vi<code>[1-7]</code>)</td> <td> <code>tm_wday</code> </td>
+</tr> <tr> <th> <code>Ou</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>Ngày trong tuần</b>, Thứ Hai ở đâu<code>1</code>, sử dụng hệ thống số thay thế, ví dụ: 二 Thay vì 2 trong địa phương JA_JP</td> <td> <code>tm_wday</code> </td>
+</tr> <tr> <th colspan="3">Giờ, phút, thứ hai</th>
+</tr> <tr> <th> <code>H</code> </th> <td>viết<b>giờ</b>Là một số thập phân, đồng hồ 24 giờ (phạm vi<code>[00-23]</code>)</td> <td> <code>tm_hour</code> </td>
+</tr> <tr> <th> <code>OH</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>giờ</b>Từ đồng hồ 24 giờ bằng hệ thống số thay thế, ví dụ: 十八 Thay vì 18 trong địa phương JA_JP</td> <td> <code>tm_hour</code> </td>
+</tr> <tr> <th> <code>I</code> </th> <td>viết<b>giờ</b>Là một số thập phân, đồng hồ 12 giờ (phạm vi<code>[01,12]</code>)</td> <td> <code>tm_hour</code> </td>
+</tr> <tr> <th> <code>OI</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>giờ</b>Từ đồng hồ 12 giờ bằng hệ thống số thay thế, ví dụ: 六 Thay vì 06 trong địa phương JA_JP</td> <td> <code>tm_hour</code> </td>
+</tr> <tr> <th> <code>M</code> </th> <td>viết<b>phút</b>như một số thập phân (phạm vi<code>[00,59]</code>)</td> <td> <code>tm_min</code> </td>
+</tr> <tr> <th> <code>OM</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>phút</b>Sử dụng hệ thống số thay thế, ví dụ: 二十五 Thay vì 25 trong địa phương JA_JP</td> <td> <code>tm_min</code> </td>
+</tr> <tr> <th> <code>S</code> </th> <td>viết<b>thứ hai</b>như một số thập phân (phạm vi<code>[00,60]</code>)</td> <td> <code>tm_sec</code> </td>
+</tr> <tr> <th> <code>OS</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>thứ hai</b>Sử dụng hệ thống số thay thế, ví dụ: 二十四 Thay vì 24 trong địa phương JA_JP</td> <td> <code>tm_sec</code> </td>
+</tr> <tr> <th colspan="3">Khác</th>
+</tr> <tr> <th> <code>c</code> </th> <td>viết<b>chuỗi ngày và thời gian tiêu chuẩn</b>, ví dụ.<code>Sun Oct 17 04:41:13 2010</code>(phụ thuộc vào địa phương)</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th> <code>Ec</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>Chuỗi ngày và thời gian thay thế</b>, ví dụ. Sử dụng 平成 23 年 (năm Heisei 23) thay vì 2011 (năm 2011) trong địa phương JA_JP</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th> <code>x</code> </th> <td>viết bản địa hóa<b>đại diện ngày</b>(phụ thuộc vào địa phương)</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th> <code>Ex</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>Đại diện ngày thay thế</b>, ví dụ. Sử dụng 平成 23 年 (năm Heisei 23) thay vì 2011 (năm 2011) trong địa phương JA_JP</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th> <code>X</code> </th> <td>viết bản địa hóa<b>Đại diện thời gian</b>, ví dụ. 18:40:20 hoặc 6:40:20 PM (người phụ thuộc địa phương)</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th> <code>EX</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>Đại diện thời gian thay thế</b>(phụ thuộc vào địa phương)</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th> <code>D</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>tương đương với<b>"%m/%d/%y"</b> </td> <td> <code>tm_mon</code>Thì<code>tm_mday</code>Thì<code>tm_year</code> </td>
+</tr> <tr> <th> <code>F</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>tương đương với<b>"%Y-%m-%d"</b>(Định dạng ngày ISO 8601)</td> <td> <code>tm_mon</code>Thì<code>tm_mday</code>Thì<code>tm_year</code> </td>
+</tr> <tr> <th> <code>r</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết bản địa hóa<b>Đồng hồ 12 giờ</b>thời gian (phụ thuộc vào địa phương)</td> <td> <code>tm_hour</code>Thì<code>tm_min</code>Thì<code>tm_sec</code> </td>
+</tr> <tr> <th> <code>R</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>tương đương với<b>"%H:%m"</b> </td> <td> <code>tm_hour</code>Thì<code>tm_min</code> </td>
+</tr> <tr> <th> <code>T</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>tương đương với<b>"%H:%M:%S"</b>(Định dạng thời gian ISO 8601)</td> <td> <code>tm_hour</code>Thì<code>tm_min</code>Thì<code>tm_sec</code> </td>
+</tr> <tr> <th> <code>p</code> </th> <td>viết bản địa hóa<b>sáng hoặc p.m.</b>(phụ thuộc vào địa phương)</td> <td> <code>tm_hour</code> </td>
+</tr> <tr> <th> <code>z</code><br/><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </th> <td>viết<b>Offset từ UTC</b>Trong định dạng ISO 8601 (ví dụ:<code>-0430</code>) hoặc không có ký tự nếu không có sẵn thông tin múi giờ</td> <td> <code>tm_isdst</code> </td>
+</tr> <tr> <th> <code>Z</code> </th> <td>viết phụ thuộc vào địa phương<b>Tên múi giờ hoặc viết tắt</b>, hoặc không có ký tự nếu không có sẵn thông tin múi giờ</td> <td> <code>tm_isdst</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>đầu ra lặp lại trong đó kết quả của quá trình chuyển đổi được viết</p>
+<h3 id="Notes">Ghi chú</h3> <p>để thu hẹp các ký tự</p>
+<p>Các<code>fill</code>đối tượng mà các giá trị ngày/thời gian được lấy<code>do_put()</code>con trỏ đến nhân vật đầu tiên của chuỗi<code>str</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">ký tự chỉ định</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">con trỏ một qua nhân vật cuối cùng của một chuỗi</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue164" rel="nofollow">LWG 164</a> </td> <td>C ++ 98</td> <td>ký tự chỉ định<code>fill</code>được chỉ định là riêng tư</td> <td>hơn thứ hai, nếu không</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../io/manip/put_time" title="cpp/io/manip/put time"> <span class="t-lines"><span>#include &lt;Istream&gt;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../time_get/get" title="cpp/locale/time get/get"> <span class="t-lines"><span>DO_OPEN</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span> <span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>trích xuất tên tháng từ luồng đầu vào<br/> <span class="t-mark">Putback<code>std::time_get&lt;CharT,InputIt&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/time_put/put">https://en.cppreference.com/w/cpp/locale/time_put/put</a>
+</p>
+</div>

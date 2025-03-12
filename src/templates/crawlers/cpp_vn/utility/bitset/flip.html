@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Bitset &lt;n&gt; :: Flip</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">Bitset &amp; Flip ();</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Bitset &amp; Flip () NoExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-since-cxx23">(Constexpr kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Bitset &amp; Flip (std :: size_t pos);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <p>Lật bit, tức là thay đổi<code>true</code>giá trị<code>false</code>Và<code>false</code>giá trị<code>true</code>. Tương đương với một hoạt động không hợp lý trên một phần hoặc tất cả các bitset.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Lật tất cả các bit (như<code><a href="operator_logic" title="cpp/utility/bitset/operator logic">operator~</a></code>, nhưng tại chỗ).</div> <div class="t-li1">
+<span class="t-li">2)</span>Lật bit tại vị trí<code>pos</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>vị trí của bit để lật</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">2)</span>ném<code><a href="../../error/out_of_range" title="cpp/error/out of range">std::out_of_range</a></code>nếu như<code>pos</code>không tương ứng với một vị trí hợp lệ trong bitset.</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;bitset&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="set" title="cpp/utility/bitset/set"> <span class="t-lines"><span>bộ</span></span></a></div> </td> <td>hoặc giá trị đã cho<code>true</code>Đặt bit thành<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="reset" title="cpp/utility/bitset/reset"> <span class="t-lines"><span>cài lại</span></span></a></div> </td> <td>hoặc giá trị đã cho<code>false</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="operator_logic" title="cpp/utility/bitset/operator logic"> <span class="t-lines"><span>nhà điều hành--</span><span>(int)</span><span>tăng hoặc giảm giá trị nguyên tử của một</span><span>Tham khảo (các) toán hạng được chuyển đổi hoặc quảng bá.</span></span></a></div> </td> <td>Trong mô tả còn lại trong phần này, "(S)",<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../container/vector_bool/flip" title="cpp/container/vector bool/flip"> <span class="t-lines"><span>lớp proxy đại diện cho một tham chiếu đến một bool duy nhất</span></span></a></div> </td> <td>Các sửa đổi cụ thể<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::vector&lt;bool,Allocator&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/bitset/flip">https://en.cppreference.com/w/cpp/utility/bitset/flip</a>
+</p>
+</div>

@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_istream &lt;biểu đồ, đặc điểm&gt; :: bỏ qua</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">basic_istream &amp; bỏ qua (std :: streamsize Count = 1, int_type delim = đặc điểm :: eof ());</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trích xuất và loại bỏ các ký tự khỏi luồng đầu vào cho đến khi và bao gồm<code>delim</code>.</p>
+<p><code>ignore</code>hành xử như một<a href="../../named_req/unformattedinputfunction" title="cpp/named req/UnformattedInputFunction">UnformattedInputFunction</a>. Sau khi xây dựng và kiểm tra đối tượng Sentry, nó trích xuất các ký tự khỏi luồng và loại bỏ chúng cho đến khi xảy ra bất kỳ điều kiện nào sau đây:</p>
+<ul>
+<li> <code>count</code>Nhân vật đã được trích xuất. Bài kiểm tra này bị vô hiệu hóa trong trường hợp đặc biệt khi<code>count</code>Mẫu &lt;class inputit1, class inputit2&gt;<code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/io/streamsize"><span class="kw1808">Điều đó cho tất cả<span class="me2">dòng chảy</span></span></a><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Được xác định trong tiêu đề</span><span class="br0">.</span><span class="br0">)</span></code>.</li>
+<li>Kết thúc điều kiện tệp xảy ra trong chuỗi đầu vào, trong trường hợp đó chức năng gọi<code>setstate(eofbit)</code>.</li>
+<li>nhân vật có sẵn tiếp theo<code>c</code>Trong trình tự đầu vào là<code>delim</code>Sau đó kiểm tra tính cách nào ở vị trí putback. Nếu nhân vật được giữ thì đã có<code>Traits::eq_int_type(Traits::to_int_type(c), delim)</code>. Ký tự phân cách được trích xuất và loại bỏ. Bài kiểm tra này bị vô hiệu hóa nếu<code>delim</code>khoảng cách<code>Traits::eof()</code>.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng ký tự để trích xuất</td>
+</tr> <tr class="t-par"> <td>DELIM</td> <td>-</td> <td>phân định ký tự để dừng trích xuất tại. Nó cũng được trích xuất</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Exceptions">Ngoại lệ</h3>
+<code><a href="../ios_base/failure" title="cpp/io/ios base/failure">failure</a></code>Nếu xảy ra lỗi (cờ trạng thái lỗi không<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">goodbit</a></code>) Và<code><a href="../basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>được thiết lập để ném cho trạng thái đó.<p>Nếu một hoạt động nội bộ ném một ngoại lệ, nó sẽ bị bắt và<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">badbit</a></code>được đặt. Nếu như<code><a href="../basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>được đặt cho<code>badbit</code>, ngoại lệ là được tái sinh.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Ví dụ sau sử dụng<code>ignore</code>Để bỏ qua đầu vào không phải là số lượng:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Limits&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue172" rel="nofollow">LWG 172</a> </td> <td>C ++ 98</td> <td>#include &lt;Istream&gt;<code>count</code>Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,<code>int</code> </td> <td>, số lượng tăng số lặp là tuyến tính. Đáng chú ý,<code><a href="../streamsize" title="cpp/io/streamsize">std::streamsize</a></code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="get" title="cpp/io/basic istream/get"> <span class="t-lines"><span>Điền vào thùng chứa với giá trị được chỉ định</span></span></a></div> </td> <td>Đầu vào định dạng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="getline" title="cpp/io/basic istream/getline"> <span class="t-lines"><span>Getline</span></span></a></div> </td> <td>không thể truy cập được một nhân vật<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_istream/ignore">https://en.cppreference.com/w/cpp/io/basic_istream/ignore</a>
+</p>
+</div>

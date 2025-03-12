@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; :: viết</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">basic_ostream &amp; write (const char_type* s, std :: phát trực tuyến);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>                 std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt;* abbrev = nullptr,<a href="../../named_req/unformattedoutputfunction" title="cpp/named req/UnformattedOutputFunction">UnformattedOutputFunction</a>. Sau khi xây dựng và kiểm tra đối tượng Sentry, xuất ra các ký tự từ các vị trí liên tiếp trong mảng ký tự có phần tử đầu tiên được chỉ ra bởi<code>s</code>. Các ký tự được chèn vào chuỗi đầu ra cho đến khi một trong những điều sau đây xảy ra:</p>
+<ul>
+<li>Phạm vi của các yếu tố<code>count</code>ký tự được chèn</li>
+<li>Chèn vào chuỗi đầu ra không thành công (trong trường hợp đó<code>setstate(badbit)</code>được gọi là).</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>con trỏ đến chuỗi ký tự để ghi</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng ký tự để viết</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Exceptions">Ngoại lệ</h3>
+<code><a href="../ios_base/failure" title="cpp/io/ios base/failure">failure</a></code>Nếu xảy ra lỗi (cờ trạng thái lỗi không<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">goodbit</a></code>) Và<code><a href="../basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>được thiết lập để ném cho trạng thái đó.<p>Nếu một hoạt động nội bộ ném một ngoại lệ, nó sẽ bị bắt và<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">badbit</a></code>được đặt. Nếu như<code><a href="../basic_ios/exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>được đặt cho<code>badbit</code>, ngoại lệ là được tái sinh.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Chức năng này không bị quá tải cho các loại<code>signed char</code>hoặc<code>unsigned char</code>, không giống như định dạng<a href="operator_ltlt2" title="cpp/io/basic ostream/operator ltlt2">operator&lt;&lt;</a>.</p>
+<p>Ngoài ra, không giống như các hàm đầu ra được định dạng, hàm này không đặt<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">failbit</a></code>, trong trường hợp đó</p>
+<p>Khi sử dụng locale không chuyển đổi (locale mặc định không chuyển đổi), trình ghi đè của hàm này trong<code><a href="../basic_ofstream" title="cpp/io/basic ofstream">std::basic_ofstream</a></code>có thể được tối ưu hóa cho số lượng I/O không sao<code><a href="../basic_streambuf/sputn" title="cpp/io/basic streambuf/sputn">std::streambuf::xsputn</a></code>).</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Hàm này có thể được sử dụng để xuất các biểu diễn đối tượng, tức là đầu ra nhị phân</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_ltlt2" title="cpp/io/basic ostream/operator ltlt2"> <span class="t-lines"><span>toán tử &lt;&lt;<span class="t-dsc-small">(STD :: basic_ostream)</span></span></span></a></div> </td> <td>Chèn dữ liệu ký tự hoặc chèn vào luồng rvalue<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="put" title="cpp/io/basic ostream/put"> <span class="t-lines"><span>(Lớp thành viên công cộng của</span></span></a></div> </td> <td>Chèn dữ liệu được định dạng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ostream/write">https://en.cppreference.com/w/cpp/io/basic_ostream/write</a>
+</p>
+</div>

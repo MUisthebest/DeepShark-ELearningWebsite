@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Polar<small>(STD :: phức tạp)</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/complex" title="cpp/header/complex">&lt;complex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Mẫu &lt;Class T&gt; </pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>std :: Complex &lt;T&gt; Polar (const t &amp; r, const t &amp; theta = t ());<code>r</code>Trả về một số phức với cường độ<code>theta</code>.</p>
+<p>đến một phạm vi khác kết thúc tại<code>r</code>và góc pha<code>theta</code>là tiêu cực hoặc NAN, hoặc nếu</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>thường được sử dụng.</td> <td>-</td> <td>là vô hạn.</td>
+</tr> <tr class="t-par"> <td>kích cỡ</td> <td>-</td> <td>Theta</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>góc pha<code>r</code>Và<code>theta</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>std::polar(r, theta)</code>Một số phức được xác định bởi</p>
+<ul>
+<li> <code>r <span class="sy2">*</span> <a href="http://en.cppreference.com/w/cpp/numeric/math/exp"><span class="kw1324">Điều đó cho tất cả<span class="me2">Exp</span></span></a><span class="br0">.</span>theta <span class="sy2">*</span> 1i<span class="br0">)</span></code> </li>
+<li> <code>r * (cos(theta) + sin(theta) * 1i)</code> </li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/numeric/complex"><span class="kw1475">Điều đó cho tất cả<span class="me2">tổ hợp</span></span></a><span class="br0">.</span>r <span class="sy2">*</span> cos<span class="br0">.</span>theta<span class="br0">)</span>, r <span class="sy2">*</span> sin<span class="br0">.</span>theta<span class="br0">)</span><span class="br0">)</span></code>.</li>
+</ul> <p>tương đương với bất kỳ biểu thức nào sau đây:<b>Sử dụng cực thay vì exp có thể là về</b>4,5 lần</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">nhanh hơn trong các vòng vectơ.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cmath&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2459" rel="nofollow">LWG 2459</a> </td> <td>C ++ 98</td> <td>#include &lt;Complex&gt;</td> <td>#include &lt;iomanip&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2870" rel="nofollow">LWG 2870</a> </td> <td>C ++ 98</td> <td>#include &lt;Istream&gt;<code>theta</code>#include &lt;số&gt;</td> <td>sử dụng không gian tên std :: Complex_literals;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="abs" title="cpp/numeric/complex/abs"> <span class="t-lines"><span>tròn<span class="t-dsc-small">(STD :: phức tạp)</span></span></span></a></div> </td> <td>Trả về độ lớn của một số phức<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="arg" title="cpp/numeric/complex/arg"> <span class="t-lines"><span>T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span></span></a></div> </td> <td>trả về góc pha<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="exp" title="cpp/numeric/complex/exp"> <span class="t-lines"><span>Exp<span class="t-dsc-small">(STD :: phức tạp)</span></span></span></a></div> </td> <td>cơ sở phức tạp<i>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</i>theo cấp số nhân<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/complex/polar">https://en.cppreference.com/w/cpp/numeric/complex/polar</a>
+</p>
+</div>

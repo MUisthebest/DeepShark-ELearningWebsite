@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Locale :: Toán tử ==, toán tử! =</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Toán tử bool == (const locale &amp; other) const;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-until-cxx20"> <td> <pre data-language="cpp">toán tử bool! = (const locale &amp; other) const;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> </table> <p>Kiểm tra hai địa phương cho sự bình đẳng. Các địa phương được đặt tên được coi là bằng nhau nếu tên của chúng bằng nhau. Các địa phương không tên được coi là bình đẳng nếu chúng là bản sao của nhau.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>Một<code><a href="../locale" title="cpp/locale/locale">std::locale</a></code>đối tượng để so sánh</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>nếu như<code>other</code>là một bản sao của<code>*this</code>hoặc có một tên giống hệt nhau,<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>false</code>nếu như<code>other</code>là một bản sao của<code>*this</code>hoặc có một tên giống hệt nhau,<code>true</code>Nếu đối số đầu tiên là</div> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="locale" title="cpp/locale/locale/locale"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>xây dựng một địa điểm mới<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="name" title="cpp/locale/locale/name"> <span class="t-lines"><span>tên</span></span></a></div> </td> <td>trả về tên của địa phương hoặc<span class="st0">"*"</span>Nếu không tên<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/locale/operator_cmp">https://en.cppreference.com/w/cpp/locale/locale/operator_cmp</a>
+</p>
+</div>

@@ -1,0 +1,45 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_spanbuf &lt;biểu đồ, đặc điểm&gt; :: setbuf</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Làm cho<code>basic_spanbuf</code>std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; * setBuf (biểu đồ * s, std :: streamsize n) ghi đè;<code>[</code><code>s</code><code>, </code><code>s + n</code><code>)</code>thực hiện I/O trên bộ đệm<code>this<span class="sy2">-</span><span class="sy1">&lt;</span>span<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/container/span"><span class="kw2631">Điều đó cho tất cả<span class="me2">nhịp</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT<span class="sy1">&lt;</span><span class="br0">.</span>s, n<span class="br0">)</span><span class="br0">)</span></code>. Cuộc gọi tương đương<code>this</code>.</p>
+<table class="wikitable"> <tr> <th rowspan="2">(ảnh hưởng đến con trỏ để có được khu vực)<br/>. Các gợi ý để có được và đặt khu vực được đặt như sau, hoặc với giá trị con trỏ null nếu không được đề cập trong bảng:</th> <th colspan="3">Đặt bit ở chế độ mở</th>
+</tr> <tr> <td>
+<code><a href="../basic_streambuf/gptr" title="cpp/io/basic streambuf/gptr">eback()</a></code> </td> <td>
+<code><a href="../basic_streambuf/gptr" title="cpp/io/basic streambuf/gptr">gptr()</a></code> </td> <td>
+<code><a href="../basic_streambuf/gptr" title="cpp/io/basic streambuf/gptr">egptr()</a></code> </td>
+</tr> <tr> <td>
+<code><a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1678">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">TRONG</span></span></a></code> </td> <td>
+<code>s</code> </td> <td>
+<code>s</code> </td> <td>
+<code>s + n</code> </td>
+</tr> <tr> <td colspan="4"> </td>
+</tr> <tr> <th rowspan="2">(ảnh hưởng đến con trỏ để có được khu vực)<br/>Trả về giá trị sau khi cài đặt</th> <th colspan="3">Đặt bit ở chế độ mở</th>
+</tr> <tr> <td>
+<code><a href="../basic_streambuf/pptr" title="cpp/io/basic streambuf/pptr">pbase()</a></code> </td> <td>
+<code><a href="../basic_streambuf/pptr" title="cpp/io/basic streambuf/pptr">pptr()</a></code> </td> <td>
+<code><a href="../basic_streambuf/pptr" title="cpp/io/basic streambuf/pptr">epptr()</a></code> </td>
+</tr> <tr> <td>
+<code><a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1679">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">. Các số ngẫu nhiên được tạo bằng trình tạo số ngẫu nhiên</span></span></a> <span class="sy3">. Trong các cuộc gọi có hiệu lực</span> <span class="sy3">Nếu tồn tại một</span><a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1681">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">Tạo mới</span></span></a></code> </td> <td>
+<code>s</code> </td> <td>
+<code>s</code> </td> <td>
+<code>s + n</code> </td>
+</tr> <tr> <td>
+<code><a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1679">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">. Các số ngẫu nhiên được tạo bằng trình tạo số ngẫu nhiên</span></span></a> <span class="sy3">. Trong các cuộc gọi có hiệu lực</span> <a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1681">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">Tạo mới</span></span></a></code> </td> <td>
+<code>s</code> </td> <td>
+<code>s + n</code> </td> <td>
+<code>s + n</code> </td>
+</tr>
+</table> <p>Byte trong mảng đó để đệm.<code>pubsetbuf()</code>Hàm này được bảo vệ ảo, nó chỉ có thể được gọi qua<code>std::basic_spanbuf</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>hoặc từ các chức năng thành viên của một lớp do người dùng định nghĩa<code>CharT</code>và sau đó trở lại</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>trong bộ đệm do người dùng cung cấp hoặc null<code>CharT</code>trong bộ đệm do người dùng cung cấp</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>this</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>các yếu tố trong bộ đệm do người dùng cung cấp<code><a href="../strstreambuf" title="cpp/io/strstreambuf">std::strstreambuf</a></code>Bộ đệm luồng không dùng<a class="external text" href="https://www.boost.org/doc/libs/release/libs/iostreams/doc/classes/array.html#array" rel="nofollow"><code>boost::basic_array</code></a>hoặc thiết bị Boost.iostreams<code>char</code>Cũng có thể thực hiện bộ đệm I/O trên một người dùng cung cấp</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_streambuf/pubsetbuf" title="cpp/io/basic streambuf/pubsetbuf"> <span class="t-lines"><span>Gọi</span></span></a></div> </td> <td>Sputc<code>setbuf()</code> <br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_streambuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_stringbuf/setbuf" title="cpp/io/basic stringbuf/setbuf"> <span class="t-lines"><span>setbuf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Ghi lại chế độ mở.<br/> <span class="t-mark">Putback<code>std::basic_stringbuf&lt;CharT,Traits,Allocator&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../strstreambuf/setbuf" title="cpp/io/strstreambuf/setbuf"> <span class="t-lines"><span>setbuf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Ghi lại chế độ mở.<br/> <span class="t-mark">Putback<code>std::strstreambuf</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_spanbuf/setbuf">https://en.cppreference.com/w/cpp/io/basic_spanbuf/setbuf</a>
+</p>
+</div>

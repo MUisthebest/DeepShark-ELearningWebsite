@@ -1,0 +1,74 @@
+ <h1 class="firstHeading" id="firstHeading">19.6 Chỉ thị Pragma [CPP.Pragma]</h1> <p>Hành vi xác định thực hiện được kiểm soát bởi<span class="co2">#Pragma</span>chỉ thị.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>#pragma</code> <span class="t-spar">pragma-params</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>_Pragma(</code> <span class="t-spar">chuỗi chữ</span> <code>)</code> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Hành vi theo cách thực hiện được xác định.</div> <div class="t-li1">
+<span class="t-li">2)</span>Loại bỏ<code>L</code>tiền tố (nếu có), trích dẫn bên ngoài và khoảng trắng dẫn đầu/dấu vết từ<span class="t-spar">chuỗi chữ</span>, thay thế mỗi<code>\"</code>với<code>"</code>, được cho<code>\\</code>với<code>\</code>, sau đó mã hóa kết quả (như trong<a href="../language/translation_phases#Phase_3" title="cpp/language/translation phases">translation phase 3</a>), và sau đó sử dụng kết quả như thể đầu vào để<code>#pragma</code>TRONG<span class="t-v">(1)</span>.</div> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Chỉ thị của Pragma kiểm soát hành vi cụ thể thực hiện của trình biên dịch, chẳng hạn như vô hiệu hóa cảnh báo trình biên dịch hoặc thay đổi các yêu cầu căn chỉnh. Bất kỳ pragma nào không được công nhận đều bị bỏ qua.</p>
+<h3 id="Non-standard_pragmas">Pragmas không chuẩn</h3> <p>Tiêu chuẩn ngôn ngữ ISO C ++ không yêu cầu các trình biên dịch hỗ trợ bất kỳ pragmas nào. Tuy nhiên, một số pragmas không chuẩn được hỗ trợ bởi nhiều triển khai:</p>
+<h4 id=".23pragma_STDC"> <span class="co2">#Pragma stdc</span>
+</h4> <p>Tiêu chuẩn ngôn ngữ ISO C yêu cầu các trình biên dịch C hỗ trợ ba pragmas sau và một số nhà cung cấp trình biên dịch C ++ hỗ trợ họ, ở các mức độ khác nhau, trong các mặt tiền C ++ của họ:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>#pragma STDC FENV_ACCESS </code><span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>#pragma STDC FP_CONTRACT </code><span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>#pragma STDC CX_LIMITED_RANGE </code><span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Ở đâu<span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span>là một trong hai<code>ON</code>Thì<code>OFF</code>, hoặc<code>DEFAULT</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Nếu được đặt thành<code>ON</code>, thông báo cho trình biên dịch rằng chương trình sẽ truy cập hoặc sửa đổi<a href="../numeric/fenv" title="cpp/numeric/fenv">floating-point environment</a>, có nghĩa là các tối ưu hóa có thể lật đổ các thử nghiệm cờ và thay đổi chế độ (ví dụ: loại bỏ biểu hiện phụ toàn cầu, chuyển động mã và gấp không đổi) đều bị cấm. Giá trị mặc định được xác định là do thực hiện, thường<code>OFF</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Cho phép<i>hợp đồng</i>Trong các biểu thức dấu phẩy động, đó là các tối ưu hóa bỏ qua các lỗi làm tròn và các ngoại lệ dấu phẩy động sẽ được quan sát nếu biểu thức được đánh giá chính xác như đã viết. Ví dụ: cho phép thực hiện<code>(x * y) + z</code>với một hướng dẫn CPU nhân-ADD hợp nhất duy nhất. Giá trị mặc định được xác định là do thực hiện, thường<code>ON</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Thông báo cho trình biên dịch rằng phép nhân, chia và giá trị tuyệt đối của các số phức có thể sử dụng các công thức toán học đơn giản hóa (x+iy) × (u+iv) = (xu-yv)+i (yu+xv), (x+iy)/(u+iv)<sup class="t-su">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>+v<sup class="t-su">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>), và | x+iy | =<span class="t-mrad"><span>√</span><span>x<sup class="t-su">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>+y<sup class="t-su">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup></span></span>, mặc dù khả năng tràn trung gian. Nói cách khác, lập trình viên đảm bảo rằng phạm vi của các giá trị sẽ được truyền cho các chức năng đó bị hạn chế. Giá trị mặc định là<code>OFF</code>.</div> <p>Hành vi của chương trình không được xác định nếu bất kỳ ai trong ba vụ ở trên xuất hiện trong bất kỳ bối cảnh nào khác ngoài tất cả các khai báo bên ngoài hoặc trước tất cả các tuyên bố và tuyên bố rõ ràng trong một tuyên bố ghép.</p>
+<p>Lưu ý: Trình biên dịch không hỗ trợ các pragmas này có thể cung cấp các tùy chọn thời gian biên dịch tương đương, chẳng hạn như GCC<code>-fcx-limited-range</code>Và<code>-ffp-contract</code>.</p>
+<h4 id=".23pragma_once"> <span class="co2">#Pragma một lần</span>
+</h4> <p><code>#pragma once</code>là một pragma không chuẩn được hỗ trợ bởi<a class="extiw" href="https://en.wikipedia.org/wiki/Pragma_once#Portability" title="enwiki:Pragma once">vast majority of modern compilers</a>. Nếu nó xuất hiện trong một tệp tiêu đề, nó chỉ ra rằng nó chỉ được phân tích cú pháp một lần, ngay cả khi nó (trực tiếp hoặc gián tiếp) bao gồm nhiều lần trong cùng một tệp nguồn.</p>
+<p>Cách tiếp cận tiêu chuẩn để ngăn chặn nhiều bao gồm cùng một tiêu đề là bằng cách sử dụng<a class="extiw" href="https://en.wikipedia.org/wiki/Include_guard" title="enwiki:Include guard">include guards</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#IFNDEF LIBRARY_FILENAME_H</pre></div> <p>#Define Library_filename_h<a class="external text" href="https://gcc.gnu.org/onlinedocs/cpp/Once-Only-Headers.html" rel="nofollow">gcc</a>).</p>
+<p>Nếu phạm vi là<code>#pragma once</code>// Nội dung của tiêu đề</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#endif / * Library_filename_h * /</pre></div> <p>Vì vậy, tất cả trừ sự bao gồm đầu tiên của tiêu đề trong bất kỳ đơn vị dịch thuật nào được loại trừ khỏi việc biên dịch. Tất cả các trình biên dịch hiện đại ghi lại thực tế là một tệp tiêu đề sử dụng một bảo vệ bao gồm và không phân chia lại tệp nếu nó gặp lại, miễn là người bảo vệ vẫn được xác định (xem ví dụ:<code>#pragma once</code>, cùng một tiêu đề xuất hiện như</p>
+<h4 id=".23pragma_pack"> <span class="co2">#Pragma một lần</span>
+</h4> <p>// Nội dung của tiêu đề</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>#pragma pack(<span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span>) </code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>#pragma pack() </code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>#pragma pack(push) </code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>#pragma pack(push, <span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span>) </code> </td> <td>(4)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>#pragma pack(pop) </code> </td> <td>             Không có p);</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Ở đâu<span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span>Không giống như các bảo vệ tiêu đề, pragma này không thể sử dụng sai tên macro trong nhiều hơn một tệp. Mặt khác, vì với</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Các tệp được loại trừ dựa trên danh tính cấp hệ thống tập tin của chúng, điều này không thể bảo vệ chống lại bao gồm một tiêu đề hai lần nếu nó tồn tại ở nhiều vị trí trong một dự án.<span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Gói #Pragma</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Gia đình Pragmas này kiểm soát sự liên kết tối đa cho các thành viên thuộc lớp và công đoàn được xác định sau đó.</div> <div class="t-li1">
+<span class="t-li">là trong</span>là một sức mạnh nhỏ của hai và chỉ định sự liên kết mới trong byte.<span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Đặt căn chỉnh hiện tại thành giá trị</div> <p><code>#pragma pack</code>Đặt căn chỉnh hiện tại thành giá trị mặc định (được chỉ định bởi tùy chọn dòng lệnh).</p>
+<p>Đẩy giá trị của căn chỉnh hiện tại trên một ngăn xếp bên trong.<a class="external text" href="https://gcc.gnu.org/onlinedocs/gcc/Structure-Layout-Pragmas.html" rel="nofollow">GCC</a>Và<a class="external text" href="https://docs.microsoft.com/en-us/cpp/preprocessor/pack" rel="nofollow">MSVC</a>.</p>
+<h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>Bật mục hàng đầu từ ngăn xếp bên trong và sau đó đặt (khôi phục) sự liên kết hiện tại theo giá trị đó.</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>Bật mục hàng đầu từ ngăn xếp bên trong và sau đó đặt (khôi phục) sự liên kết hiện tại theo giá trị đó.</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>Có thể giảm sự liên kết của một lớp, tuy nhiên, nó không thể làm cho một lớp được sắp xếp quá mức.</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>15.9 Chỉ thị Pragma [CPP.Pragma]</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>15.9 Chỉ thị Pragma [CPP.Pragma]</li></ul>
+<li>    S.B3 = 0B11;</li>
+<ul><li>15.9 Chỉ thị Pragma [CPP.Pragma]</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/preprocessor/impl" title="c/preprocessor/impl">C documentation</a></span>vì<span class=""><span>19.6 Chỉ thị Pragma [CPP.Pragma]</span></span> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr style="vertical-align:top;"> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính</td> <td>
+<a class="external text" href="https://docs.microsoft.com/en-us/cpp/preprocessor/pragma-directives-and-the-pragma-keyword" rel="nofollow">C++ pragmas in Visual Studio</a> </td>
+</tr> <tr style="vertical-align:top;"> <td># Xác định mất giá (MSG) [[không dùng nữa (MSG)]]]]</td> <td>
+<a class="external text" href="https://gcc.gnu.org/onlinedocs/gcc/Pragmas.html" rel="nofollow">Pragmas</a>16.6 Chỉ thị Pragma [CPP.Pragma]</td>
+</tr> <tr style="vertical-align:top;"> <td>đơn đặt hàng tổng số sửa đổi</td> <td>
+<a class="external text" href="https://www.ibm.com/support/knowledgecenter/en/SSGH3R_16.1.0/com.ibm.xlcpp161.aix.doc/compiler_ref/pragma_descriptions.html" rel="nofollow">Individual pragma descriptions</a>Và<a class="external text" href="https://www.ibm.com/support/knowledgecenter/en/SSGH3R_16.1.0/com.ibm.xlcpp161.aix.doc/language_ref/std_pragmas.html" rel="nofollow">Standard pragmas</a>16.6 Chỉ thị Pragma [CPP.Pragma]</td>
+</tr> <tr style="vertical-align:top;"> <td>Chính thức,</td> <td>
+<a class="external text" href="https://download.oracle.com/docs/cd/E19422-01/819-3690/Pragmas_App.html#73499" rel="nofollow">Appendix B. Pragmas</a>16.6 Chỉ thị Pragma [CPP.Pragma]</td>
+</tr> <tr style="vertical-align:top;"> <td>Hoạt động B tải từ biến nguyên tử M, quan sát một trong những điều sau đây:</td> <td>
+<a class="external text" href="https://software.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference/top/compiler-reference/pragmas.html" rel="nofollow">Intel C++ compiler pragmas</a> </td>
+</tr> <tr style="vertical-align:top;"> <td>.globl func</td> <td>
+<a class="external text" href="https://h20565.www2.hpe.com/hpsc/doc/public/display?sp4ts.oid=4268164&amp;docLocale=en_US&amp;docId=emr_na-c02653979" rel="nofollow">Release nodes (includes pragmas)</a>Thực hiện kiểm soát hành vi được xác định</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/preprocessor/impl">https://en.cppreference.com/w/cpp/preprocessor/impl</a>
+</p>
+</div>

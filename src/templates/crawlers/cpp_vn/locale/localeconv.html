@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Localeconv</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/clocale" title="cpp/header/clocale">&lt;clocale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: lconv* localeconv ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Các<code>localeconv</code>chức năng có được một con trỏ đến một đối tượng tĩnh của loại<code><a href="lconv" title="cpp/locale/lconv">std::lconv</a></code>, đại diện cho các quy tắc định dạng số và tiền tệ của ngôn ngữ C hiện tại.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ tới hiện tại<code><a href="lconv" title="cpp/locale/lconv">std::lconv</a></code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<h3 id="Notes">Ghi chú</h3> <p>Sửa đổi các tham chiếu đối tượng thông qua con trỏ được trả về là hành vi không xác định.</p>
+<p><code>std::localeconv</code>Sửa đổi một đối tượng tĩnh, gọi nó từ các luồng khác nhau mà không cần đồng bộ hóa là hành vi không xác định.</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;clocale&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="setlocale" title="cpp/locale/setlocale"> <span class="t-lines"><span>setlocale</span></span></a></div> </td> <td>Nhận và đặt Locale hiện tại C<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="lconv" title="cpp/locale/lconv"> <span class="t-lines"><span>LCONV</span></span></a></div> </td> <td>Định dạng chi tiết, được trả lại bởi<code>std::localeconv</code> <br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/locale/localeconv" title="c/locale/localeconv">C documentation</a></span>vì<code>localeconv</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/localeconv">https://en.cppreference.com/w/cpp/locale/localeconv</a>
+</p>
+</div>

@@ -1,0 +1,37 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Integral_Constant</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;class t, t v&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p><code>std::integral_constant</code>struct integral_constant;</p>
+<p>bằng nhau<code>std::integral_constant</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<h3 id="Helper_alias_templates">Xác định loại phổ biến của một trình lặp và một</h3> <p>Kết thúc một hằng số tĩnh của loại được chỉ định. Đây là lớp cơ sở cho các đặc điểm loại C ++.<code>std::bool_constant</code>Một mẫu bí danh người trợ giúp<code>T</code>khoảng cách<code>bool</code>.</p>
+<table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">được xác định cho trường hợp phổ biến trong đó</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <h3 id="Specializations">Tra cứu cho định danh</h3> <p>Mẫu &lt;bool b&gt;<code>T</code>khoảng cách<code>bool</code>được cung cấp:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-header"> <th colspan="2">C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th>
+</tr> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>true_type</code> </td> <td> <code>std::integral_constant&lt;bool, true&gt;</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>false_type</code> </td> <td> <code>std::integral_constant&lt;bool, false&gt;</code> </td>
+</tr> </table> <h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <code>T</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td> <code>std::integral_constant&lt;T, v&gt;</code> </td>
+</tr> </table> <h3 id="Member_constants">Inline Consexpr bool is_execut_policy_v = std :: is_execut_policy &lt;t&gt; :: value;</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Tên</th> <th>vĩ mô</th>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span><span class="t-dsc-small">sử dụng bool_constant = integral_constant &lt;bool, b&gt;;</span>được phân vùng liên quan đến</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>Hai typedefs cho trường hợp phổ biến trong đó<code>T</code>constexpr t<code>v</code> <br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><strong class="selflink"> <span class="t-lines"><span>hằng số tĩnh của loại</span></span></strong></div> </td> <td>toán tử value_type<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><strong class="selflink"> <span class="t-lines"><span>chuyển đổi đối tượng thành</span></span></strong></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C ++ 14)</span></span></span></div> </td> <td>toán tử value_type<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="t-member"> <h2 id="std::integral_constant::operator_value_type">Trả về giá trị được bọc</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Trả về giá trị được bọc</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>std :: integral_constant :: toán tử value_type</p>
+</div> <div class="t-member"> <h2 id="std::integral_constant::operator.28.29">toán tử constexpr value_type () const noexcept;</h2> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">Hàm chuyển đổi. Trả về giá trị được gói.</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>std :: integral_constant :: toán tử ()<code>std::integral_constant</code>Consexpr value_type Toán tử () () const NoExcept;</p>
+</div> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Trả về giá trị được gói. Hàm này cho phép</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_integral_constant_callable" title="cpp/feature test"><code>__cpp_lib_integral_constant_callable</code></a></td> <td><span class="nu0">Khoảng thời gian thực tế (tính bằng giây) được giữ bởi một đối tượng thời lượng</span></td> <td><span class="t-mark">(C ++ 14)</span></td> <td>
+<code>std::integral_constant::operator()</code> </td>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_bool_constant" title="cpp/feature test"><code>__cpp_lib_bool_constant</code></a></td> <td><span class="nu0">) từ danh sách.</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<code>std::bool_constant</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">để phục vụ như một nguồn của các đối tượng chức năng thời gian biên dịch.</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/integral_constant">https://en.cppreference.com/w/cpp/types/integral_constant</a>
+</p>
+</div>

@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: enable_shared_from_this &lt;t&gt; :: toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">enable_shared_from_this &amp; toán tử = (const enable_shared_from_this &amp; rhs) noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Không làm gì cả; trả lại<code>*this</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>khác<code>enable_shared_from_this</code>để gán cho<code>*this</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>Chỉ dành cho giải trình<code><a href="http://en.cppreference.com/w/cpp/memory/weak_ptr"><span class="kw743">Điều đó cho tất cả<span class="me2">yếu_ptr</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>là bộ lặp không đổi, nghĩa là, trình lặp không bao giờ có thể được sử dụng làm trình lặp đầu ra vì các phần tử sửa đổi không được phép.<code><i>yếu-cái này</i></code>không bị ảnh hưởng bởi nhà điều hành phân công này.</p>
+<h3 id="Example">Ví dụ</h3> <p>Ghi chú:<code>enable_shared_from_this::operator=</code>Các khối nguyên tử và đồng bộ hóa<code>protected</code>Để ngăn chặn việc cắt giảm tình cờ nhưng cho phép các lớp dẫn xuất có các toán tử gán mặc định.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">4</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../shared_ptr" title="cpp/memory/shared ptr"> <span class="t-lines"><span>Shared_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Con trỏ thông minh với ngữ nghĩa sở hữu đối tượng được chia sẻ<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/enable_shared_from_this/operator%3D">https://en.cppreference.com/w/cpp/memory/enable_shared_from_this/operator%3D</a>
+</p>
+</div>

@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: phá hủy</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-h"> <td>Chữ ký cuộc gọi</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;No-Nhập đầu vào-Iterator I, No-Sentinel-For &lt;i&gt; S&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">    Yêu cầu std :: Destuctable &lt;std :: iter_value_t &lt;i &gt;&gt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Consexpr void phá hủy (Forwardit First, Forwardit Last);<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>                const std :: Chrono :: file_time &lt;fending&gt; &amp; tp);<div class="cpp source-cpp"><pre data-language="cpp">Consexpr tôi phá hủy (đầu tiên tôi, s cuối cùng) noexcept;</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>                                   Nhị phân p);<span class="t-v">(1)</span>Sử dụng<code>r</code>              std :: dự kiến ​​&lt;i, proj &gt;&gt; pre<code><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>r<span class="br0">)</span></code>(1,3)<code>first</code>Và<code><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/end"><span class="kw2884">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">kết thúc</span></span></a><span class="br0">.</span>r<span class="br0">)</span></code>(1,3)<code>last</code>.</div> <p>Mẫu &lt;phạm vi :: forward_range r, class proj = std :: nhận dạng,<i>          std :: Indirect_binary_predicate &lt;</i>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj&gt;,</p>
+<ul>
+<li>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; pre = ranges :: arem_to&gt;</li>
+<li>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>.</li>
+<li>    adjacent_find (r &amp;&amp; r, pre pre = {}, proj proj = {});<a href="../../language/unqualified_lookup" title="cpp/language/unqualified lookup">normal unqualified lookup</a>(Sau khi chiếu với phép chiếu<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>như phạm vi nguồn, như thể đang sử dụng</li>
+</ul> <p>Phạm vi ::</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>Mẫu &lt;No-SHROW-INPUT-RANGE R&gt;</td>
+</tr> <tr class="t-par"> <td>thường được sử dụng.</td> <td>-</td> <td>    Yêu cầu std :: Destuctable &lt;Ranges :: Range_value_t &lt;r &gt;&gt;</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>ConstExPR Phạm vi :: mượn_iterator_t &lt;r&gt; phá hủy (r &amp;&amp; r) noExcept;<code>last</code>.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Mẫu &lt;class execPolicy, class forwardit, class so sánh&gt;<code>first</code>Và<code>last</code>.</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">for (; đầu tiên! = cuối cùng; ++ đầu tiên)</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <p>phạm vi của các yếu tố để phá hủy<code>ranges::destroy</code>-Không tăng, chuyển nhượng, so sánh hoặc gián tiếp thông qua các trường hợp hợp lệ của</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    std :: phạm vi :: derd_at (std :: addressof (*đầu tiên));</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Mẫu &lt;class forwardit&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="destroy_n" title="cpp/memory/ranges/destroy n"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="destroy_at" title="cpp/memory/ranges/destroy at"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../destroy" title="cpp/memory/destroy"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/ranges/destroy">https://en.cppreference.com/w/cpp/memory/ranges/destroy</a>
+</p>
+</div>

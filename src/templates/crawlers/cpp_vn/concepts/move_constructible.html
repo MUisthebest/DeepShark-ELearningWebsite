@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Move_Constructable</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/concepts" title="cpp/header/concepts">&lt;concepts&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Khái niệm gán được_from =<code>move_constructible</code>khái niệm copy_constructible =<code>T</code>Khái niệm Move_Constructible = std :: Constructible_From &lt;t, t&gt; &amp;&amp; std :: muiverble_to &lt;t, t&gt;;</p>
+<h3 id="Semantic_requirements">        const std :: remove_reference_t &lt;lhs&gt; &amp;,</h3> <p>Nếu như<code>T</code>    std :: constructible_from &lt;t, const t &amp;&gt; &amp;&amp; std :: mctionble_to &lt;const t &amp;, t&gt; &amp;&amp;<code>move_constructible&lt;T&gt;</code>    std :: Constructible_from &lt;t, const t&gt; &amp;&amp; std :: muiverble_to &lt;const t, t&gt;;</p>
+<ul>
+<li> <code>rv</code>là một loại tham chiếu hoặc nếu nó là một loại đối tượng trong đó một đối tượng thuộc loại đó có thể được xây dựng từ một rvalue thuộc loại đó trong cả bối cảnh khởi tạo trực tiếp và sao chép, với ngữ nghĩa thông thường.<code>T</code>, Và</li>
+<li> <code>u2</code>, một loại loại<code>T</code>, một đối tượng riêng biệt của loại<code>rv</code>Thì</li>
+</ul> <p>Loại đối tượng trong đó một đối tượng thuộc loại đó có thể được xây dựng từ một lvalue hoặc const rvalue (có thể là const) của loại đó trong cả bối cảnh sáng tạo trực tiếp và sao chép với ngữ nghĩa thông thường (một bản sao được xây dựng với nguồn không thay đổi).</p>
+<ul>
+<li>là một loại đối tượng, sau đó<code>T u = rv;</code>Thì<code>u</code>hoặc một loại chính sách thực thi được xác định theo thực hiện. Nếu không thì,<code>u2</code>Số lượng các yếu tố để sao chép</li>
+<li> <code>T(rv)</code>hoặc một loại chính sách thực thi được xác định theo thực hiện. Nếu không thì,<code>u2</code>Chỉ khi, được đưa ra</li>
+<li>Nếu như<code>T</code>bằng<code>rv</code>không đủ điều kiện, sau đó</li>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_move_constructible" title="cpp/types/is move constructible"> <span class="t-lines"><span>is_move_constructable</span><span>is_trivently_move_constructable</span><span>is_nothrow_move_constructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem một loại có thể được xây dựng từ tham chiếu rvalue không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/concepts/move_constructible">https://en.cppreference.com/w/cpp/concepts/move_constructible</a>
+</p>
+</div>

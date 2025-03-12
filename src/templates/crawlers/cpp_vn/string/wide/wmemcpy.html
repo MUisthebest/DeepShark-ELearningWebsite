@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: WMEMCPY</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">wchar_t* wmemcpy (wchar_t* dest, const wchar_t* src, std :: size_t đếm);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Constexpr outputit copy_n (đầu vào đầu tiên, số lượng kích thước, kết quả đầu ra);<code>count</code>các ký tự rộng liên tiếp từ mảng ký tự rộng được chỉ ra bởi<code>src</code>đến mảng ký tự rộng được chỉ ra bởi<code>dest</code>. Nếu các đối tượng chồng chéo, hành vi không được xác định. Nếu như<code>count</code>bằng không, chức năng không làm gì cả.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>con trỏ đến mảng ký tự rộng để sao chép vào</td>
+</tr> <tr class="t-par"> <td>SRC</td> <td>-</td> <td>con trỏ đến mảng ký tự rộng để sao chép từ</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng ký tự rộng để sao chép</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>dest</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>Chức năng này cho các chuỗi byte là<code><a href="../byte/strncpy" title="cpp/string/byte/strncpy">std::strncpy</a></code>, không<code><a href="../byte/strcpy" title="cpp/string/byte/strcpy">std::strcpy</a></code>.</p>
+<p>Hàm này không nhạy cảm với địa phương và không chú ý đến các giá trị của<code>wchar_t</code>Đối tượng nó sao chép: NULLS cũng như các ký tự không hợp lệ cũng được sao chép.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;clocale&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CWchar&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../byte/strncpy" title="cpp/string/byte/strncpy"> <span class="t-lines"><span>Strncpy</span></span></a></div> </td> <td>sao chép một lượng ký tự nhất định từ chuỗi này sang chuỗi khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="wmemmove" title="cpp/string/wide/wmemmove"> <span class="t-lines"><span>wmemmove</span></span></a></div> </td> <td>Bản sao một số lượng một số ký tự rộng nhất định giữa hai, có thể chồng chéo, các mảng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/wmemcpy" title="c/string/wide/wmemcpy">C documentation</a></span>vì<code>wmemcpy</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/wmemcpy">https://en.cppreference.com/w/cpp/string/wide/wmemcpy</a>
+</p>
+</div>

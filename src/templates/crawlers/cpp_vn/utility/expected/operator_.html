@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">std :: mong đợi &lt;t, e&gt; :: toán tử-&gt;, std :: mong đợi &lt;t, e&gt; :: toán tử*</h1> <table class="t-dcl-begin"> <tr class="t-dcl-h"> <td>T không<i>không ngụ ý rằng</i>Vô hiệu</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Consexpr Const T* Toán tử-&gt; () const NoExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Toán tử constexpr t*-&gt; () NoExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Consexpr Const T &amp; Toán tử*() Const &amp; NoExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Consexpr T &amp; Toán tử*() &amp; NoExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">constexpr const t &amp;&amp; toán tử*() const &amp;&amp; noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Constexpr t &amp;&amp; toán tử*() &amp;&amp; noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl-h"> <td>Mẫu &lt;class u, class ... args&gt;<i>không ngụ ý rằng</i>Vô hiệu</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Toán tử VOID consexpr*() const NoExcept;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Truy cập giá trị dự kiến ​​có trong<code>*this</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Trả về một con trỏ đến giá trị chứa.</div> <div class="t-li1">
+<span class="t-li">2)</span>Trả về một tham chiếu đến giá trị chứa.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Trả lại không có gì.</div> <p>đến một phạm vi khác kết thúc tại<code>this-&gt;<a href="operator_bool" title="cpp/utility/expected/operator bool">has_value</a>()</code>khoảng cách<span class="kw2">SAI</span>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ hoặc tham chiếu đến giá trị chứa.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Các nhà khai thác này không kiểm tra xem tùy chọn có chứa giá trị không! Bạn có thể làm như vậy bằng cách sử dụng<code>has_value()</code>hoặc đơn giản là<code>operator bool()</code>. Ngoài ra, nếu cần truy cập được kiểm tra,<code>value()</code>hoặc<code>value_or()</code>có thể được sử dụng.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cassert&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Dution&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="value" title="cpp/utility/expected/value"> <span class="t-lines"><span>được phân vùng liên quan đến</span></span></a></div> </td> <td>kiểm tra xem đối tượng có chứa giá trị dự kiến ​​không<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="value_or" title="cpp/utility/expected/value or"> <span class="t-lines"><span>Trả về giá trị bất ngờ</span></span></a></div> </td> <td>value_or<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="operator_bool" title="cpp/utility/expected/operator bool"> <span class="t-lines"><span>(hằng số thành viên tĩnh công cộng)</span><span>/*di chuyển-box*/</span></span></a></div> </td> <td>truy cập giá trị dự kiến<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="error" title="cpp/utility/expected/error"> <span class="t-lines"><span>. Nếu thất bại đã được gây ra bởi một số lỗi khác, hãy đặt</span></span></a></div> </td> <td>Trả về giá trị dự kiến<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/expected/operator*">https://en.cppreference.com/w/cpp/utility/expected/operator*</a>
+</p>
+</div>

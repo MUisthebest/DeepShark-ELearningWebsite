@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_filebuf &lt;biểu đồ, đặc điểm&gt; :: tràn</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Virtual int_type Overflow (int_type c = đặc điểm :: eof ());</p>
+<p>Viết một số dữ liệu từ khu vực đặt vào chuỗi ký tự liên quan (vào tệp).<code><a href="../basic_streambuf/overflow" title="cpp/io/basic streambuf/overflow">std::basic_streambuf::overflow</a></code>Hành xử giống như lớp cơ sở<code><a href="../../locale/codecvt/out" title="cpp/locale/codecvt/out">std::codecvt::out</a></code>, ngoại trừ để viết dữ liệu, lần đầu tiên sử dụng</p>
+<p>Nếu như<code><a href="../../locale/codecvt/always_noconv" title="cpp/locale/codecvt/always noconv">std::codecvt::always_noconv</a></code>của địa điểm thấm nhuần để chuyển đổi các ký tự thành biểu diễn bên ngoài (có thể là đa cấp), được lưu trữ trong bộ đệm tạm thời (được phân bổ lớn khi cần thiết), sau đó sử dụng tệp I/O để sao chép tất cả các byte được chuyển đổi hoàn toàn vào tệp.<code><a href="../../locale/codecvt/out" title="cpp/locale/codecvt/out">std::codecvt::out</a></code>là sự thật, cuộc gọi đến</p>
+<p>có thể bị bỏ qua.<code><a href="../../locale/codecvt_base" title="cpp/locale/codecvt base">std::codecvt_base::error</a></code>; Nếu không nếu<code>Traits::eof()</code>Nếu chuyển đổi thất bại với</p>
+<p>mà không cố gắng bất kỳ đầu ra.<code>is_open() == false</code>), trả lại<code>Traits::eof()</code>Nếu tệp được liên kết không mở (</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>Traits::not_eof(c)</code>trước khi làm bất cứ điều gì.<code>Traits::eof()</code>để chỉ ra thành công hoặc</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_streambuf/overflow" title="cpp/io/basic streambuf/overflow"> <span class="t-lines"><span>Xsputn</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>ghi nhiều ký tự vào chuỗi đầu ra<br/> <span class="t-mark">Putback<code>std::basic_streambuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="underflow" title="cpp/io/basic filebuf/underflow"> <span class="t-lines"><span>showmanyc</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Tùy chọn cung cấp số lượng ký tự có sẵn cho đầu vào từ tệp<br/> <span class="t-mark">(Hàm thành viên được bảo vệ ảo)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_filebuf/overflow">https://en.cppreference.com/w/cpp/io/basic_filebuf/overflow</a>
+</p>
+</div>

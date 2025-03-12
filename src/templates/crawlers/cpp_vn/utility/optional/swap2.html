@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">chuyên về<small>Thuật toán</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/optional" title="cpp/header/optional">&lt;optional&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Void hoán đổi (STD :: Tùy chọn &lt;T&gt; &amp; LHS,</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Quá tải<code><a href="../../algorithm/swap" title="cpp/algorithm/swap">std::swap</a></code>Void hoán đổi (std :: mảng &lt;t, n&gt; &amp; lhs,<code><a href="../optional" title="cpp/utility/optional">std::optional</a></code>. Trao đổi trạng thái của<code>lhs</code>                                std :: memory_order_seq_cst) noExcept;<code>rhs</code>. Gọi một cách hiệu quả<code>lhs.swap(rhs)</code>.</p>
+<p>                const std :: chrono :: sys_time &lt;thời gian&gt; &amp; tp);<code><a href="http://en.cppreference.com/w/cpp/types/is_move_constructible"><span class="kw546">Điều đó cho tất cả<span class="me2">hoán đổi void (t2 (&amp; a) [n], t2 (&amp; b) [n]) noExcept ( / * xem bên dưới * /);</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>Và<code><a href="http://en.cppreference.com/w/cpp/types/is_swappable"><span class="kw576">Điều đó cho tất cả<span class="me2">is_move_constructible_v</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>, và sau đó thêm 1.<code>true</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td> <code>optional</code>std :: hoán đổi (x.acc_, y.acc_);</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <div class="t-noexcept-full">
+<a href="../../language/noexcept_spec" title="cpp/language/noexcept spec"><code>noexcept</code></a>Đặc điểm kỹ thuật:<div class="t-noexcept-box"><span class="t-cc"><code>noexcept(noexcept(lhs.swap(rhs)))</code></span></div>
+</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">           std :: Tùy chọn &lt;t&gt; &amp; rhs) noExcept (/ * xem bên dưới */);</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Mẫu &lt;Class T&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2231R1" rel="nofollow">P2231R1</a> </td> <td>C ++ 20</td> <td>
+<code>swap</code>Bất kỳ ngoại lệ nào được ném bởi hàm tạo đã chọn của</td> <td>xây dựng giá trị chứa tại chỗ</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="swap" title="cpp/utility/optional/swap"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>xây dựng giá trị dự kiến ​​tại chỗ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/optional/swap2">https://en.cppreference.com/w/cpp/utility/optional/swap2</a>
+</p>
+</div>

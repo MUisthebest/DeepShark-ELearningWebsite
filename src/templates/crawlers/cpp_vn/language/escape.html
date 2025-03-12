@@ -1,0 +1,81 @@
+ <h1 class="firstHeading" id="firstHeading">Trình tự thoát</h1> <p>Trình tự thoát được sử dụng để thể hiện một số ký tự đặc biệt trong<a href="string_literal" title="cpp/language/string literal">string literals</a>Và<a href="character_literal" title="cpp/language/character literal">character literals</a>.</p>
+<p>Các chuỗi thoát sau đây có sẵn:</p>
+<table class="wikitable"> <tr> <th>Bỏ trốn<br/>hàm thành viên, xóa các giá trị không xác định và giảm</th> <th>Sự miêu tả</th> <th>Đại diện</th>
+</tr> <tr> <th colspan="3">Trình tự thoát đơn giản</th>
+</tr> <tr> <td> <code>\'</code> </td> <td>Trích dẫn duy nhất</td> <td>Byte<code>0x27</code>Trong mã hóa ASCII</td>
+</tr> <tr> <td> <code>\"</code> </td> <td>Báo giá kép</td> <td>Byte<code>0x22</code>Trong mã hóa ASCII</td>
+</tr> <tr> <td> <code>\?</code> </td> <td>dấu hỏi</td> <td>Byte<code>0x3f</code>Trong mã hóa ASCII</td>
+</tr> <tr> <td> <code>\\</code> </td> <td>đánh dấu dấu vết chéo ngược</td> <td>Byte<code>0x5c</code>Trong mã hóa ASCII</td>
+</tr> <tr> <td> <code>\a</code> </td> <td>chuông có thể nghe được</td> <td>Byte<code>0x07</code>Trong mã hóa ASCII</td>
+</tr> <tr> <td> <code>\b</code> </td> <td>Backspace</td> <td>Byte<code>0x08</code>Trong mã hóa ASCII</td>
+</tr> <tr> <td> <code>\f</code> </td> <td>Form Feed - Trang mới</td> <td>Byte<code>0x0c</code>Trong mã hóa ASCII</td>
+</tr> <tr> <td> <code>\n</code> </td> <td>Line Feed - Dòng mới</td> <td>Byte<code>0x0a</code>Trong mã hóa ASCII</td>
+</tr> <tr> <td> <code>\r</code> </td> <td>vận chuyển trở lại</td> <td>Byte<code>0x0d</code>Trong mã hóa ASCII</td>
+</tr> <tr> <td> <code>\t</code> </td> <td>Tab ngang</td> <td>Byte<code>0x09</code>Trong mã hóa ASCII</td>
+</tr> <tr> <td> <code>\v</code> </td> <td>Tab dọc</td> <td>Byte<code>0x0b</code>Trong mã hóa ASCII</td>
+</tr> <tr> <th colspan="3">Trình tự thoát số</th>
+</tr> <tr> <td> <code>\<i>nnn</i></code> </td> <td rowspan="2">Giá trị bát phân tùy ý</td> <td>Đơn vị mã<code><i>nnn</i></code>(1 ~ 3 chữ số bát phân)</td>
+</tr> <tr> <td> <code>\o{<i>N...</i>}</code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>Đơn vị mã<code><i>N...</i></code>(số lượng chữ số bát phân tùy ý)</td>
+</tr> <tr> <td> <code>\x<i>N...</i></code> </td> <td rowspan="2">Giá trị thập lục phân tùy ý</td> <td rowspan="2">Đơn vị mã<code><i>N...</i></code>(Số chữ số thập lục phân tùy ý)</td>
+</tr> <tr> <td> <code>\x{<i>N...</i>}</code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td>
+</tr> <tr> <th colspan="3">Trình tự thoát có điều kiện<sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> </th>
+</tr> <tr> <td> <code>\<i>Ánh xạ_Type</i></code> </td> <td>Thực hiện xác định</td> <td>Thực hiện xác định</td>
+</tr> <tr> <th colspan="3">Tên nhân vật phổ quát</th>
+</tr> <tr> <td> <code>\u<i>nnnn</i></code> </td> <td rowspan="3">tùy ý<a class="extiw" href="https://en.wikipedia.org/wiki/Unicode" title="enwiki:Unicode">Unicode</a>giá trị;<br/>có thể dẫn đến một số đơn vị mã</td> <td>điểm mã<code>U+<i>nnnn</i></code>(4 chữ số thập lục phân)</td>
+</tr> <tr> <td> <code>\u{<i>N...</i>}</code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>điểm mã<code>U+<i>N...</i></code>(Số chữ số thập lục phân tùy ý)</td>
+</tr> <tr> <td> <code>\U<i>nnnnnnnn</i></code> </td> <td>điểm mã<code>U+<i>nnnnnnnn</i></code>(8 chữ số thập lục phân)</td>
+</tr> <tr> <td> <code>\N{<i>TÊN</i>}</code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>Nhân vật Unicode tùy ý</td> <td>nhân vật được đặt tên bởi<code><i>TÊN</i></code>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<a href="#Named_universal_character_escapes">below</a>)</td>
+</tr>
+</table> <ol class="references"> <li id="cite_note-1"> <span class="reference-text">Trình tự thoát có điều kiện được hỗ trợ có điều kiện. Nhân vật<code><i>Ánh xạ_Type</i></code>Trong mỗi chuỗi thoát có điều kiện là một thành viên của<span class="t-rev-inl t-until-cxx23"><span><a href="charset#Basic_source_character_set" title="cpp/language/charset">basic source character set</a></span><span><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></span></span><span class="t-rev-inl t-since-cxx23"><span><a href="charset#Basic_character_set" title="cpp/language/charset">basic character set</a></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>Đó không phải là nhân vật theo sau<code>\</code>trong bất kỳ chuỗi thoát nào khác.</span> </li> </ol> <h3 id="Range_of_universal_character_names">Phạm vi tên nhân vật phổ quát</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Nếu tên ký tự phổ quát tương ứng với điểm mã không phải là 0x24 (<code>$</code>), 0x40 (<code>@</code>), cũng không 0x60 (<code>`</code>) và dưới 0xA0, chương trình không được hình thành. Nói cách khác, các thành viên của<a href="charset#Basic_source_character_set" title="cpp/language/charset">basic source character set</a>và các ký tự điều khiển (trong phạm vi 0x0-0x1f và 0x7f-0x9f) không thể được thể hiện bằng tên ký tự phổ quát.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11 t-until-cxx20">
+<td> <p>Nếu một tên ký tự phổ quát tương ứng với điểm mã của một thành viên của<a href="charset#Basic_source_character_set" title="cpp/language/charset">basic source character set</a>hoặc kiểm soát các ký tự xuất hiện bên ngoài một<a href="character_literal" title="cpp/language/character literal">character</a>hoặc<a href="string_literal" title="cpp/language/string literal">string literal</a>, chương trình là xấu.</p>
+<p>Nếu một tên ký tự phổ quát tương ứng điểm mã thay thế (phạm vi 0xd800-0xdfff, bao gồm), chương trình sẽ không được hình thành.</p>
+<p>Nếu một tên ký tự phổ quát được sử dụng trong chuỗi UTF-16/32 không tương ứng với điểm mã trong<a class="external text" href="https://www.iso.org/standard/76835.html" rel="nofollow">ISO/IEC 10646</a>(Phạm vi 0x0-0x10ffff, bao gồm), chương trình không được hình thành.</p>
+</td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx20 t-until-cxx23">
+<td> <p>Nếu một tên ký tự phổ quát tương ứng với điểm mã của một thành viên của<a href="charset#Basic_source_character_set" title="cpp/language/charset">basic source character set</a>hoặc kiểm soát các ký tự xuất hiện bên ngoài một<a href="character_literal" title="cpp/language/character literal">character</a>hoặc<a href="string_literal" title="cpp/language/string literal">string literal</a>, chương trình là xấu.</p>
+<p>Nếu một tên ký tự phổ quát không tương ứng với điểm mã trong<a class="external text" href="https://www.iso.org/standard/76835.html" rel="nofollow">ISO/IEC 10646</a>.</p>
+</td> <td>
+<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span><br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <p>Nếu một tên ký tự phổ quát tương ứng với giá trị vô hướng của một ký tự trong<a href="charset#Basic_character_set" title="cpp/language/charset">basic character set</a>hoặc một nhân vật điều khiển xuất hiện bên ngoài một<a href="character_literal" title="cpp/language/character literal">character</a>hoặc<a href="string_literal" title="cpp/language/string literal">string literal</a>, chương trình là xấu.</p>
+<p>Nếu một tên ký tự phổ quát không tương ứng với giá trị vô hướng của một ký tự trong<a href="charset#Translation_character_set" title="cpp/language/charset">translation character set</a>, chương trình là xấu.</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <h4 id="Named_universal_character_escapes">Được đặt tên là ký tự phổ quát trốn thoát</h4> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>\N{</code> <span class="t-spar">Chuồng n-Charchence</span> <code>}</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">Chuồng n-Charchence</span> </td> <td>-</td> <td>một hoặc nhiều<span class="t-spar">N-Char</span>S</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">N-Char</span> </td> <td>-</td> <td>một nhân vật từ<a href="charset#Translation_character_set" title="cpp/language/charset">translation character set</a>, ngoại trừ khung xoăn bên phải<code>}</code>hoặc nhân vật mới</td>
+</tr>
+</table> <p>Tên ký tự phổ quát của cú pháp ở trên là một<i>được đặt tên là ký tự phổ quát</i>. Nó chỉ định ký tự tương ứng trong<a class="external text" href="https://www.unicode.org/versions/latest/" rel="nofollow">Unicode Standard</a>.<a class="external text" href="https://www.unicode.org/versions/latest/ch04.pdf" rel="nofollow">chapter 4.8 Name</a>) nếu<span class="t-spar">Chuồng n-Charchence</span>bằng với tên ký tự của nó hoặc với một trong những bí danh tên nhân vật của nó thuộc loại điều khiển, điều chỉnh, hay Nếu không, chương trình là xấu.</p>
+<p>Những bí danh này được liệt kê trong<a class="external text" href="https://www.unicode.org/reports/tr44/" rel="nofollow">Unicode Character Database</a>'S<a class="external text" href="https://www.unicode.org/Public/UCD/latest/ucd/NameAliases.txt" rel="nofollow">NameAliases.txt</a>. Không có tên hoặc bí danh nào trong số này có không gian dẫn đầu hoặc dấu vết.</p>
+<p>Một hợp lệ<span class="t-spar">Chuồng n-Charchence</span>Phải chỉ chứa các chữ cái tiếng Latin chữ A đến Z, chữ số, không gian và dấu gạch nối. Các nhân vật khác không bao giờ xảy ra trong tên ký tự Unicode, và do đó, sự xuất hiện của chúng trong một<span class="t-spar">Chuồng n-Charchence</span>Luôn luôn kết xuất chương trình không được hình thành.</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p><code>\0</code>là chuỗi thoát hiểm được sử dụng phổ biến nhất, bởi vì nó đại diện cho ký tự null chấm dứt trong<a href="../string#Null-terminated_strings" title="cpp/string">null-terminated strings</a>.</p>
+<p>Nhân vật mới<code>\n</code>có ý nghĩa đặc biệt khi được sử dụng trong<a href="../io/c" title="cpp/io/c">text mode I/O</a>: Nó được chuyển đổi thành biểu diễn dòng mới dành riêng cho hệ điều hành, thường là một chuỗi byte hoặc byte. Thay vào đó, một số hệ thống đánh dấu các dòng của họ với các trường chiều dài.</p>
+<p>Trình tự thoát hiểm có giới hạn ba chữ số bát phân, nhưng chấm dứt ở ký tự đầu tiên không phải là chữ số có octal hợp lệ nếu gặp sớm hơn.</p>
+<p>Trình tự thoát thập lục phân không có giới hạn độ dài và chấm dứt ở ký tự đầu tiên không phải là chữ số thập lục phân hợp lệ. Nếu giá trị được biểu thị bằng một chuỗi thoát thập lục phân duy nhất không phù hợp với phạm vi của các giá trị được biểu thị bằng loại ký tự được sử dụng trong chuỗi này theo nghĩa đen này (<span class="kw4">char</span>Thì<span class="t-rev-inl t-since-cxx20"><span><code>char8_t</code>Thì</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span><span class="t-rev-inl t-since-cxx11"><span><code>char16_t</code>Thì<code>char32_t</code>Thì</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>hoặc<span class="kw4">wchar_t</span>), kết quả là không xác định.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Một tên ký tự phổ quát trong một chuỗi hẹp theo nghĩa đen hoặc một chuỗi 16 bit theo nghĩa đen có thể ánh xạ tới nhiều hơn một đơn vị mã, ví dụ:<code>\U0001f34c</code>là 4<span class="kw4">char</span>Đơn vị mã trong UTF-8 (<code>\xF0\x9F\x8D\x8C</code>) và 2<span class="kw4">char16_t</span>Đơn vị mã trong UTF-16 (<code>\xD83C\xDF4C</code>).</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Trình tự thoát ra câu hỏi<code>\?</code>được sử dụng để ngăn chặn<a href="operator_alternative" title="cpp/language/operator alternative">trigraphs</a>từ việc được giải thích bên trong chuỗi chữ: một chuỗi như<code>"??/"</code>được biên soạn là<code>"\"</code>, nhưng nếu dấu hỏi thứ hai được thoát ra, như trong<code>"?\?/"</code>, nó trở thành<code>"??/"</code>.<span class="t-rev-inl t-since-cxx17"><span>Vì các trigraphs đã được xóa khỏi C ++, chuỗi thoát ra câu hỏi không còn cần thiết nữa. Nó được bảo tồn để tương thích với C ++ 14 (và sửa đổi trước đây) và C.</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span></p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_named_character_escapes" title="cpp/feature test"><code>__cpp_named_character_escapes</code></a></td> <td><span class="nu0">202207L</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Được đặt tên là ký tự phổ quát trốn thoát</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="Defect_Reports">&gt; Multiset lớp;</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/505.html" rel="nofollow">CWG 505</a> </td> <td>C ++ 98</td> <td>int main ()<br/>{</td> <td>    std :: cout &lt;&lt; "this \ nis \ na \ ntest \ n \ n";<br/>    std :: cout &lt;&lt; "Cô ấy nói, \" bán cô ấy vỏ sò trên bờ biển? \ "\ n";</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul><li> <a href="ascii" title="cpp/language/ascii">ASCII chart</a> </li></ul> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/escape" title="c/language/escape">C documentation</a></span>vì<span class=""><span>}</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/escape">https://en.cppreference.com/w/cpp/language/escape</a>
+</p>
+</div>

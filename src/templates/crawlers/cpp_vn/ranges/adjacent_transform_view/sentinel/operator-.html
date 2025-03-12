@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">người vận hành-<small>(phạm vi :: Adjacent_Transform_View ::<i>Sentinel</i>)</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;ool OtherConst&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">    Yêu cầu STD :: Sized_sentinel_for &lt;/*bên trong-sentinel*/&lt;stst&gt;,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>                                     /*Nội bộ*/&lt;OtherConst &gt;&gt;<a href="../iterator" title="cpp/ranges/adjacent transform view/iterator">iterator</a> <code>x</code>Đối tượng lưu trữ<a href="../sentinel" title="cpp/ranges/adjacent transform view/sentinel">sentinel</a> <code>y</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>                                                  Inputit2 First2, Inputit2 Last2);<code>return x.<a href="../iterator#Data_members" title="cpp/ranges/adjacent transform view/iterator">inner_</a> - y.<a href="../sentinel#Data_members" title="cpp/ranges/adjacent transform view/sentinel"><i>, và mô hình</i></a>;</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>                                                  Inputit2 First2, Inputit2 Last2);<code>return y.<a href="../sentinel#Data_members" title="cpp/ranges/adjacent transform view/sentinel"><i>, và mô hình</i></a> - x.<a href="../iterator#Data_members" title="cpp/ranges/adjacent transform view/iterator">inner_</a>;</code>.</div> <p>(tức là cả hai<a href="../../../language/unqualified_lookup" title="cpp/language/unqualified lookup">unqualified</a>hoặc<a href="../../../language/qualified_lookup" title="cpp/language/qualified lookup">qualified lookup</a>Chức năng này không thể nhìn thấy thông thường<a href="../../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>Chuyển đổi danh tính:<code>adjacent_transform_view::<i>Sentinel</i></code>Hương hiệu nút</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>x</td> <td>-</td> <td>bạn bè consexpr</td>
+</tr> <tr class="t-par"> <td>thuộc tính).</td> <td>-</td> <td>    Phạm vi :: Range_Difference_T &lt;/*có thể-const*/&lt;otherConst, inNeNeDview &gt;&gt;</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>        toán tử- (const /*iterator* /&lt;otherConst&gt; &amp; x, const /*sentinel* /&amp; y);</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/adjacent_transform_view/sentinel/operator-">https://en.cppreference.com/w/cpp/ranges/adjacent_transform_view/sentinel/operator-</a>
+</p>
+</div>

@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_stringbuf &lt;biểu đồ, đặc điểm, phân bổ&gt; :: underflow</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đọc ký tự tiếp theo từ khu vực Get của bộ đệm.</p>
+<p>Cụ thể:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Nếu chuỗi đầu vào có sẵn một vị trí đọc (<code>egptr() &gt; gptr()</code>), trả lại<code>Traits::to_int_type(*gptr())</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>                        Forwardit2 d_first, pinarypredicate p);<code>pptr() &gt; egptr()</code>(Một số ký tự đã được đưa vào luồng kể từ lần cuối cùng<code><a href="overflow" title="cpp/io/basic stringbuf/overflow">overflow()</a></code>đã thay đổi<code><a href="../basic_streambuf/gptr" title="cpp/io/basic streambuf/gptr">egptr()</a></code>) sau đó mở rộng phần cuối của khu vực GET để bao gồm các ký tự được chèn gần đây nhất, bằng cách thay đổi<code><a href="../basic_streambuf/gptr" title="cpp/io/basic streambuf/gptr">egptr()</a></code>bằng nhau<code><a href="../basic_streambuf/pptr" title="cpp/io/basic streambuf/pptr">pptr()</a></code>, và sau đó trở lại<code>Traits::to_int_type(*gptr())</code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>và trả lại<code>Traits::eof()</code>.</div> <p>Bất kỳ ký tự nào trong bộ đệm đã được khởi tạo, bất kể nó có nguồn gốc từ chuỗi được truyền trong hàm tạo hay được<code><a href="overflow" title="cpp/io/basic stringbuf/overflow">overflow()</a></code>, được coi là một phần của chuỗi đầu vào.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>Traits::to_int_type(*gptr())</code>(nhân vật tiếp theo đọc trong khu vực Get) trong trường hợp thành công, hoặc<code>Traits::eof()</code>Trong trường hợp thành công,</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Sstream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue432" rel="nofollow">LWG 432</a> </td> <td>C ++ 98</td> <td> <code><a href="overflow" title="cpp/io/basic stringbuf/overflow">overflow()</a></code><br/>struct mybuf: std :: stringbuf</td> <td>hơn thứ hai, nếu không</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_streambuf/underflow" title="cpp/io/basic streambuf/underflow"> <span class="t-lines"><span>showmanyc</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>thu được số lượng ký tự có sẵn cho đầu vào trong chuỗi đầu vào liên quan, nếu được biết<br/> <span class="t-mark">Putback<code>std::basic_streambuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_filebuf/underflow" title="cpp/io/basic filebuf/underflow"> <span class="t-lines"><span>showmanyc</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Tùy chọn cung cấp số lượng ký tự có sẵn cho đầu vào từ tệp<br/> <span class="t-mark">Putback<code>std::basic_filebuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../strstreambuf/underflow" title="cpp/io/strstreambuf/underflow"> <span class="t-lines"><span>showmanyc</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Đọc một ký tự từ chuỗi đầu vào mà không cần tiến lên con trỏ tiếp theo<br/> <span class="t-mark">Putback<code>std::strstreambuf</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_streambuf/sgetc" title="cpp/io/basic streambuf/sgetc"> <span class="t-lines"><span>SBUMPC</span></span></a></div> </td> <td>Stossc<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_streambuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_stringbuf/underflow">https://en.cppreference.com/w/cpp/io/basic_stringbuf/underflow</a>
+</p>
+</div>

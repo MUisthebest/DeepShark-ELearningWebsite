@@ -1,0 +1,54 @@
+ <h1 class="firstHeading" id="firstHeading">cho vòng lặp</h1> <p>stat (abitity_p.c_str (), &amp; aporictues_stat)<span class="t-spar"> </span>một lần, sau đó thực hiện<span class="t-spar">tuyên bố</span>Và<span class="t-spar">Lặp lại biểu hiện</span>nhiều lần, cho đến khi giá trị của<span class="t-spar">tình trạng</span>trở thành sai. Bài kiểm tra diễn ra trước mỗi lần lặp.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <i>Cú pháp chính thức:</i> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>for (</code> <span class="t-spar"> </span> <span class="t-spar">tình trạng</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> <span class="t-spar">Lặp lại biểu hiện</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>)</code> <span class="t-spar">tuyên bố</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <i>Cú pháp không chính thức:</i> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>for (</code> <span class="t-spar">Tuyên bố hoặc biểu hiện</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> <span class="t-spar">tình trạng</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>)</code> <span class="t-spar">tuyên bố</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>bất kỳ số lượng của<a href="attributes" title="cpp/language/attributes">attributes</a>.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar"> </span> </td> <td>-</td> <td>Một trong số<ul>
+<li>chồng chéo với container.<a href="statements#Expression_statements" title="cpp/language/statements">expression statement</a>(có thể là một<i>Tuyên bố NULL</i>(có nghĩa là mỗi đầu ra kết thúc bằng một dòng mới) và in kết quả vào một luồng.<code>;</code>").</li>
+<li>Một<a href="declarations#Simple_declaration" title="cpp/language/declarations">simple declaration</a>, thông thường là một tuyên bố của một biến bộ đếm vòng với trình khởi tạo, nhưng nó có thể tuyên bố tùy ý nhiều biến<span class="t-rev-inl t-since-cxx17"><span>hoặc<a href="structured_binding" title="cpp/language/structured binding">structured bindings</a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul><li>chồng chéo với container.<a href="type_alias" title="cpp/language/type alias">alias declaration</a>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table>Lưu ý rằng bất kỳ<span class="t-spar"> </span>Phải kết thúc bằng một dấu chấm phẩy<code>;</code>, đó là lý do tại sao nó thường được mô tả một cách không chính thức như một biểu thức hoặc một tuyên bố theo sau là một dấu chấm phẩy.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tình trạng</span> </td> <td>-</td> <td>nhiều nhất là một chuyển đổi đủ điều kiện, và<ul>
+<li>chồng chéo với container.<a href="expressions" title="cpp/language/expressions">expression</a>đó là<a class="mw-redirect" href="implicit_cast#Contextual_conversions" title="cpp/language/implicit cast">contextually convertible</a>để bool. Biểu thức này được đánh giá trước mỗi lần lặp và nếu giá trị của nó chuyển đổi thành<code>false</code>, vòng lặp được thoát ra.</li>
+<li>Một<a href="declarations" title="cpp/language/declarations">declaration</a>của một biến duy nhất với bình đẳng nẹp hoặc bình đẳng<a href="initialization" title="cpp/language/initialization">initializer</a>. Bộ khởi tạo được đánh giá trước mỗi lần lặp và nếu giá trị của biến được khai báo chuyển đổi thành<code>false</code>, vòng lặp được thoát ra.</li>
+</ul> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Lặp lại biểu hiện</span> </td> <td>-</td> <td>bất kì<a href="expressions" title="cpp/language/expressions">expression</a>, được thực hiện sau mỗi lần lặp lại của vòng lặp và trước khi đánh giá lại<span class="t-spar">tình trạng</span>. Thông thường, đây là biểu thức tăng bộ đếm vòng lặp.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tuyên bố</span> </td> <td>-</td> <td>bất kì<a href="statements" title="cpp/language/statements">statement</a>, điển hình là một tuyên bố ghép, đó là phần thân của vòng lặp.</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Cú pháp trên tạo ra mã tương đương với:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>{</code><br/> <dl>
+<dd>
+<span class="t-spar"> </span><br/> </dd>
+<dd>
+<code>while (</code> <span class="t-spar">tình trạng</span> <code>) {</code><br/> <dl>
+<dd>
+<span class="t-spar">tuyên bố</span><br/> </dd>
+<dd>
+<span class="t-spar">Lặp lại biểu hiện</span> <code>;</code><br/> </dd>
+</dl> </dd>
+<dd>
+<code>}</code> </dd>
+</dl> <p><code>}</code></p>
+</td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Ngoại trừ điều đó</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Phạm vi của<span class="t-spar"> </span>và phạm vi của<span class="t-spar">tình trạng</span>là như nhau.</div> <div class="t-li1">
+<span class="t-li">2)</span>Phạm vi của<span class="t-spar">tuyên bố</span>và phạm vi của<span class="t-spar">Lặp lại biểu hiện</span>được phân biệt và lồng nhau trong phạm vi của<span class="t-spar"> </span>Và<span class="t-spar">tình trạng</span>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <a href="continue" title="cpp/language/continue">continue</a>TRONG<span class="t-spar">tuyên bố</span>sẽ thực thi<span class="t-spar">Lặp lại biểu hiện</span>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Trống<span class="t-spar">tình trạng</span>Mẫu &lt;class T, class so sánh&gt;<code>while (true)</code>.</div> <p>Nếu việc thực hiện vòng lặp cần phải bị chấm dứt tại một số điểm,<a href="break" title="cpp/language/break">break statement</a>có thể được sử dụng như tuyên bố chấm dứt.</p>
+<p>Nếu việc thực hiện vòng lặp cần được tiếp tục ở cuối thân vòng,<a href="continue" title="cpp/language/continue">continue statement</a>có thể được sử dụng làm phím tắt.</p>
+<p>. Điều này cho phép phát hiện một số lỗi nhất định tại điểm định nghĩa, thay vì khởi tạo và loại bỏ yêu cầu về<a href="while" title="cpp/language/while">while</a>Vòng lặp, nếu<span class="t-spar">tuyên bố</span>là một tuyên bố duy nhất (không phải là một câu lệnh ghép), phạm vi của các biến được khai báo trong nó được giới hạn ở cơ thể vòng lặp như thể nó là một tuyên bố ghép.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">vì (;;)</pre></div> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/for" title="cpp/keyword/for"><code>for</code></a></p>
+<h3 id="Notes">Ghi chú</h3> <p>Là một phần của C ++<a href="memory_model#Forward_progress" title="cpp/language/memory model">forward progress guarantee</a>, hành vi là<a href="ub" title="cpp/language/ub">undefined</a>Nếu một vòng lặp không có<a href="as_if" title="cpp/language/as if">observable behavior</a>    int n;<span class="t-spar"> </span>Và<span class="t-spar">tình trạng</span>// N đi ra khỏi phạm vi<span class="t-spar">tuyên bố</span>(không thực hiện các cuộc gọi đến các chức năng I/O, truy cập các đối tượng dễ bay hơi hoặc thực hiện các hoạt động nguyên tử hoặc đồng bộ hóa) không chấm dứt. Trình biên dịch được phép loại bỏ các vòng như vậy. Trong khi trong tên C được tuyên bố trong phạm vi của</p>
+<div class="cpp source-cpp"><pre data-language="cpp">có thể bị che mờ trong phạm vi của</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">, nó bị cấm trong C ++:</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">for (int i = 0 ;;)</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="range-for" title="cpp/language/range-for"> range-<code>for</code> loop</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>}</td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/for" title="c/language/for">C documentation</a></span>vì<code>for</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/for">https://en.cppreference.com/w/cpp/language/for</a>
+</p>
+</div>

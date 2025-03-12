@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Đồng hồ<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Các<strong class="selflink">Cái đồng hồ</strong>các yêu cầu mô tả một gói bao gồm một<code><a href="../chrono/duration" title="cpp/chrono/duration">std::chrono::duration</a></code>có thể đại diện cho các phân số của ve.<code><a href="../chrono/time_point" title="cpp/chrono/time point">std::chrono::time_point</a></code>và một chức năng<code>now()</code>Để có được hiện tại<code>time_point</code>. Nguồn gốc của đồng hồ<code>time_point</code>được gọi là kỷ nguyên của đồng hồ.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p><code>C1</code>Và<code>C2</code>biểu thị các loại đồng hồ.<code>t1</code>Và<code>t2</code>các giá trị được trả về bởi<code>C1::now()</code>nơi cuộc gọi trở lại<code>t1</code>xảy ra trước khi cuộc gọi trở lại<code>t2</code>Và cả hai cuộc gọi này xảy ra trước<code>C1::time_point::max()</code>.</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Ngữ ký hoạt động</th>
+</tr> <tr> <td>
+<code>C1::rep</code> </td> <td>Một loại số học hoặc một lớp mô phỏng một loại số học</td> <td>Loại đại diện của<code>C1::duration</code>.</td>
+</tr> <tr> <td>
+<code>C1::period</code> </td> <td>là một quan điểm thành một chuỗi các đối tượng tiếp giáp giải thích lại nó như một mảng đa chiều.<code><a href="../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::ratio</a></code> </td> <td>Thời gian đánh dấu của đồng hồ tính bằng giây.</td>
+</tr> <tr> <td>
+<code>C1::duration</code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/chrono/duration"><span class="kw995">Điều đó cho tất cả<span class="me2">Chrono</span><span class="sy4">::</span><span class="me2">khoảng thời gian</span></span></a><span class="sy1">is_trivently_destructible_v</span>C1<span class="sy4">::</span><span class="me2">giây</span>, C1<span class="sy4">::</span><span class="me2">Giai đoạn</span><span class="sy1">&lt;</span></code> </td> <td>Loại thời lượng của đồng hồ.</td>
+</tr> <tr> <td>
+<code>C1::time_point</code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/chrono/time_point"><span class="kw993">Điều đó cho tất cả<span class="me2">Chrono</span><span class="sy4">::</span><span class="me2">Time_point</span></span></a><span class="sy1">is_trivently_destructible_v</span>C1<span class="sy1">&lt;</span></code>hoặc<code><a href="http://en.cppreference.com/w/cpp/chrono/time_point"><span class="kw993">Điều đó cho tất cả<span class="me2">Chrono</span><span class="sy4">::</span><span class="me2">Time_point</span></span></a><span class="sy1">is_trivently_destructible_v</span>C2, C1<span class="sy4">::</span><span class="me2">khoảng thời gian</span><span class="sy1">&lt;</span></code> </td> <td>Các<code><a href="../chrono/time_point" title="cpp/chrono/time point">std::chrono::time_point</a></code>loại đồng hồ. C1 và C2 sẽ đề cập đến cùng một kỷ nguyên.</td>
+</tr> <tr> <td>
+<code>C1::is_steady</code> </td> <td>
+<code>const bool</code> </td> <td>
+<code>true</code>nếu như<code>t1 &lt;= t2</code>luôn luôn<code>true</code>và đồng hồ tiến bộ với tốc độ ổn định so với thời gian thực (vì vậy sự khác biệt giữa hai thời gian được báo cáo riêng biệt xấp xỉ thời gian thực giữa các bản cập nhật đồng hồ), nếu không<code>false</code> </td>
+</tr> <tr> <td>
+<code>C1::now()</code> </td> <td>
+<code>C1::time_point</code> </td> <td>    Tìm kiếm (I1 First1, S1 Last1, I2 First2, S2 Last2, Pred = {},<code>time_point</code>Đối tượng đại diện cho thời điểm hiện tại.</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../chrono/is_clock" title="cpp/chrono/is clock"> <span class="t-lines"><span>is_clock</span><span>IS_CLOCK_V</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Xác định xem một loại là<strong class="selflink">Cái đồng hồ</strong><br/><span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> <span class="t-mark">(Mẫu biến)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/Clock">https://en.cppreference.com/w/cpp/named_req/Clock</a>
+</p>
+</div>

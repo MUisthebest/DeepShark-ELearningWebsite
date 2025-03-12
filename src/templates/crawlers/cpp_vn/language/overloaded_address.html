@@ -1,0 +1,34 @@
+ <h1 class="firstHeading" id="firstHeading">Địa chỉ của một chức năng quá tải</h1> <p>Bên cạnh đó<a href="operator_other" title="cpp/language/operator other">function-call expressions</a>là<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>diễn ra, tên của một hàm quá tải có thể xuất hiện trong 7 bối cảnh sau:</p>
+<table class="wikitable"> <tr> <th>#</th> <th>Bối cảnh</th> <th>Mục tiêu</th>
+</tr> <tr> <td>, nếu như</td> <td>
+<a href="initialization" title="cpp/language/initialization">initializer</a>trong a<a href="declarations" title="cpp/language/declarations">declaration</a>của một đối tượng hoặc<a href="reference_initialization" title="cpp/language/reference initialization">reference</a> </td> <td>đối tượng hoặc tham chiếu được khởi tạo</td>
+</tr> <tr> <td>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</td> <td>Ở phía bên phải của biểu thức gán</td> <td>phía bên trái của nhiệm vụ</td>
+</tr> <tr> <td>Yêu cầu std :: Constructible_From &lt;std :: iter_value_t &lt;i&gt;, std :: iter_reference_t &lt;i &gt;&gt;</td> <td>Là một đối số cuộc gọi chức năng</td> <td>tham số chức năng</td>
+</tr> <tr> <td>4</td> <td>Là đối số toán tử do người dùng xác định</td> <td>tham số toán tử</td>
+</tr> <tr> <td>5</td> <td>các<a href="return" title="cpp/language/return"><code>return</code></a>tuyên bố</td> <td>loại trả về của một hàm</td>
+</tr> <tr> <td>6</td> <td>
+<a href="explicit_cast" title="cpp/language/explicit cast">explicit cast</a>hoặc<a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>lý lẽ</td> <td>loại mục tiêu của một diễn viên</td>
+</tr> <tr> <td>7</td> <td>không thuộc loại<a href="template_parameters" title="cpp/language/template parameters">template argument</a> </td> <td>loại tham số mẫu</td>
+</tr>
+</table> <p>Trong mỗi bối cảnh, tên của một hàm bị quá tải có thể được đi trước bởi người vận hành địa chỉ<code>&amp;</code>và có thể được đặt trong một tập hợp các dấu ngoặc đơn dư thừa.</p>
+<p>Trong tất cả các bối cảnh này, hàm được chọn từ tập quá tải là hàm có loại khớp với chức năng, tham chiếu đến hàm hoặc loại con trỏ đến loại chức năng được mong đợi bởi<i>mục tiêu</i>.</p>
+<p>Các loại tham số và loại trả về của hàm phải khớp chính xác với mục tiêu. Không có chuyển đổi ngầm nào được xem xét (ví dụ: một hàm trả về một con trỏ để dẫn xuất sẽ không được chọn khi khởi tạo một con trỏ để chức năng trả lại một con trỏ về cơ sở).</p>
+<p>Nếu tên hàm đặt tên một mẫu chức năng, thì trước tiên,<a href="template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>được thực hiện và nếu nó thành công, nó tạo ra một chuyên môn mẫu duy nhất được thêm vào tập hợp quá tải để xem xét.<span class="t-rev-inl t-since-cxx20"><span>Tất cả các chức năng có liên quan<a href="constraints" title="cpp/language/constraints">constraints</a>không được thỏa mãn được bỏ khỏi bộ.</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Nếu nhiều hơn một hàm từ tập hợp phù hợp với mục tiêu và ít nhất một hàm là không phải bảng,, các chuyên ngành mẫu được loại bỏ khỏi xem xét.<span class="t-rev-inl t-since-cxx20"><span>Đối với bất kỳ cặp chức năng không bảng nào trong đó<a href="constraints" title="cpp/language/constraints">more constrained</a>hơn một hàm khác, chức năng ít bị ràng buộc bị loại bỏ khỏi tập hợp</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>. Nếu tất cả các ứng cử viên còn lại là chuyên ngành mẫu,<a href="partial_specialization" title="cpp/language/partial specialization">less specialized</a>những người được gỡ bỏ nếu có sẵn nhiều chuyên ngành hơn. Nếu có nhiều hơn một ứng cử viên sau khi xóa, chương trình sẽ không được hình thành.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">int f (int) {return 1; }</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>int f (double) {return 2; }</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li> </li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>void g (int (&amp; f1) (int), int (*f2) (double)) {f1 (0); F2 (0,0); }</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>struct templ {};</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>struct templ {};</li></ul>
+<li>    S.B3 = 0B11;</li>
+<ul><li>struct templ {};</li></ul>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/overloaded_address">https://en.cppreference.com/w/cpp/language/overloaded_address</a>
+</p>
+</div>

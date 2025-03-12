@@ -1,0 +1,191 @@
+ <h1 class="firstHeading" id="firstHeading">Chuyển đổi lvalue-sang rvalue không được áp dụng</h1> <p>Một biểu thức là một chuỗi của<i>người vận hành</i>và của họ<i>Tuyệt vời</i>, Điều đó chỉ định một tính toán.</p>
+<p>Đánh giá biểu hiện có thể tạo ra kết quả (ví dụ: đánh giá<code>2 + 2</code>tạo ra kết quả<code>4</code>) và có thể tạo ra các tác dụng phụ (ví dụ: đánh giá<code><a href="http://en.cppreference.com/w/cpp/io/c/fprintf"><span class="kw1849">Điều đó cho tất cả<span class="me2">printf</span></span></a><span class="br0">.</span><span class="st0">"%d"</span>, <span class="nu0">4</span><span class="br0">)</span></code>In các ký tự<code>'4'</code>trên đầu ra tiêu chuẩn).</p>
+<p>Mỗi biểu thức C ++ được đặc trưng bởi hai thuộc tính độc lập: một loại và một loại giá trị.</p>
+<h4 id="General">Tổng quan</h4> <ul>
+<li> <a href="value_category" title="cpp/language/value category">value categories</a>(Lvalue, rvalue<span class="t-rev-inl t-since-cxx11"><span>, glvalue, prvalue, xvalue</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>) phân loại biểu thức theo giá trị của chúng</li>
+<li> <a href="eval_order" title="cpp/language/eval order">order of evaluation</a>của các đối số và biểu hiện phụ chỉ định thứ tự thu được kết quả trung gian</li>
+</ul> <h3 id="Operators">Người vận hành</h3> <table class="wikitable"> <tr style="text-align:center"> <th colspan="7">Các nhà khai thác chung</th>
+</tr> <tr style="text-align:center"> <td>
+<a href="operator_assignment" title="cpp/language/operator assignment">assignment</a> </td> <td>
+<a href="operator_incdec" title="cpp/language/operator incdec">increment<br/>decrement</a> </td> <td>
+<a href="operator_arithmetic" title="cpp/language/operator arithmetic">arithmetic</a> </td> <td>
+<a href="operator_logical" title="cpp/language/operator logical">logical</a> </td> <td>
+<a href="operator_comparison" title="cpp/language/operator comparison">comparison</a> </td> <td>
+<a href="operator_member_access" title="cpp/language/operator member access">member<br/>access</a> </td> <td>
+<a href="operator_other" title="cpp/language/operator other">other</a> </td>
+</tr> <tr style="text-align:center"> <td rowspan="6"> <p><code>a = b a += b a -= b a *= b a /= b a %= b a &amp;= b a |= b a ^= b a &lt;&lt;= b a &gt;&gt;= b</code></p>
+</td> <td rowspan="6"> <p><code>++a --a a++ a--</code></p>
+</td> <td rowspan="6"> <p><code>+a -a a + b a - b a * b a / b a % b ~a a &amp; b a | b a ^ b a &lt;&lt; b a &gt;&gt; b</code></p>
+</td> <td rowspan="6"> <p><code>!a a &amp;&amp; b a || b</code></p>
+</td> <td rowspan="6"> <p><code>a == b a != b a &lt; b a &gt; b a &lt;= b a &gt;= b a &lt;=&gt; b</code></p>
+</td> <td rowspan="6"> <p><code>a[...] *a &amp;a a-&gt;b a.b a-&gt;*b a.*b</code></p>
+</td> <td>Gọi chức năng</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a(...)</code> </td>
+</tr> <tr style="text-align:center"> <td>dấu phẩy</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a, b</code> </td>
+</tr> <tr style="text-align:center"> <td>có điều kiện</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a ? b : c</code> </td>
+</tr> <tr> <th colspan="7">Các nhà khai thác đặc biệt</th>
+</tr> <tr> <td colspan="7"> <p><a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Chuyển đổi một loại thành loại liên quan khác<br/> <a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>Chuyển đổi trong hệ thống phân cấp thừa kế<br/> <a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>thêm hoặc loại bỏ<a href="cv" title="cpp/language/cv">cv</a>-Qualifiers<br/> <a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>Chuyển đổi loại thành loại không liên quan<br/> <a href="explicit_cast" title="cpp/language/explicit cast">C-style cast</a>Chuyển đổi loại này sang loại khác bằng cách kết hợp<code>static_cast</code>Thì<code>const_cast</code>, Và<code>reinterpret_cast</code> <br/> <a href="new" title="cpp/language/new"><code>new</code></a>Tạo các đối tượng có thời lượng lưu trữ động<br/> <a href="delete" title="cpp/language/delete"><code>delete</code></a>Các đối tượng phá hủy được tạo trước đây bởi biểu thức và bản phát hành mới thu được vùng bộ nhớ<br/> <a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>truy vấn kích thước của một loại<br/> <a href="sizeof..." title="cpp/language/sizeof..."><code>sizeof...</code></a>truy vấn kích thước của một<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/> <a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>truy vấn thông tin loại của một loại<br/> <a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code></a>kiểm tra xem một biểu thức có thể ném một ngoại lệ<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/> <a href="alignof" title="cpp/language/alignof"><code>alignof</code></a>// (thường là 4):<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></p>
+</td>
+</tr>
+</table> <ul>
+<li> <a href="operator_precedence" title="cpp/language/operator precedence">operator precedence</a>Xác định thứ tự mà các toán tử bị ràng buộc với các đối số của họ</li>
+<li> <a href="operator_alternative" title="cpp/language/operator alternative">alternative representations</a>là cách viết thay thế cho một số toán tử</li>
+<li> <a href="operators" title="cpp/language/operators">operator overloading</a>Làm cho nó có thể chỉ định hành vi của các toán tử với các lớp do người dùng xác định.</li>
+</ul> <h4 id="Conversions">    có thể thay đổi int* const q; // không hình thành</h4> <ul>
+<li> <a href="implicit_conversion" title="cpp/language/implicit conversion">standard conversions</a>};</li>
+<li> <a href="const_cast" title="cpp/language/const cast"><code>const_cast</code> conversion</a> </li>
+<li> <a href="static_cast" title="cpp/language/static cast"><code>static_cast</code> conversion</a> </li>
+<li> <a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code> conversion</a> </li>
+<li> <a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code> conversion</a> </li>
+<li> <a href="explicit_cast" title="cpp/language/explicit cast">explicit cast</a>Chuyển đổi bằng ký hiệu đúc kiểu C và ký hiệu kiểu chức năng</li>
+<li> <a href="cast_operator" title="cpp/language/cast operator">user-defined conversion</a>Làm cho nó có thể chỉ định chuyển đổi từ các lớp do người dùng xác định</li>
+</ul> <h4 id="Memory_allocation">Phân bổ bộ nhớ</h4> <ul>
+<li> <a href="new" title="cpp/language/new">new expression</a>phân bổ bộ nhớ một cách linh hoạt</li>
+<li> <a href="delete" title="cpp/language/delete">delete expression</a>Xử lý bộ nhớ một cách linh hoạt</li>
+</ul> <h4 id="Other">Khác</h4> <ul>
+<li> <a href="constant_expression" title="cpp/language/constant expression">constant expressions</a>có thể được đánh giá tại thời điểm biên dịch và được sử dụng trong bối cảnh thời gian biên dịch (đối số mẫu, kích thước mảng, v.v.)</li>
+<li> <a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a> </li>
+<li> <a href="alignof" title="cpp/language/alignof"><code>alignof</code></a> </li>
+<li> <a href="typeid" title="cpp/language/typeid"><code>typeid</code></a> </li>
+<li> <a href="throw" title="cpp/language/throw">throw-expression</a> </li>
+</ul> <h3 id="Primary_expressions">Biểu thức chính</h3> <p>Các toán hạng của bất kỳ toán tử nào có thể là các biểu thức hoặc biểu thức chính khác (ví dụ: trong<code>1 + 2 * 3</code>, toán hạng của toán tử+ là<a href="#Full-expressions">subexpression</a> <code>2 * 3</code>và biểu thức chính<code>1</code>).</p>
+<p>Biểu thức chính là bất kỳ điều nào sau đây:</p>
+<ul>
+<li> <a href="this" title="cpp/language/this"><code>this</code></a> </li>
+<li>nghĩa đen (ví dụ:<code>2</code>hoặc<code>"Hello, world"</code>)</li>
+<li>biểu hiện id, bao gồm<ul>
+<li>Tuyên bố thích hợp<a href="identifiers#Unqualified_identifiers" title="cpp/language/identifiers">unqualified identifiers</a>(ví dụ.<code>n</code>hoặc<code>cout</code>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.</li>
+<li>Tuyên bố thích hợp<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified identifiers</a>(ví dụ.<code><a href="../string/basic_string/npos" title="cpp/string/basic string/npos">std::string::npos</a></code>), Và</li>
+<li>số nhận dạng được khai báo trong<a href="declarations#Declarators" title="cpp/language/declarations">declarators</a> </li>
+</ul> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul><li> <a href="pack_indexing#Pack_indexing_expression" title="cpp/language/pack indexing">pack indexing expression</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <a href="lambda" title="cpp/language/lambda">lambda-expressions</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <ul><li> <a href="fold" title="cpp/language/fold">fold-expressions</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <ul><li> <a href="requires" title="cpp/language/requires">requires-expressions</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Bất kỳ biểu thức nào trong ngoặc đơn cũng được phân loại là một biểu thức chính: điều này đảm bảo rằng dấu ngoặc đơn có ưu tiên cao hơn bất kỳ toán tử nào. Dấu ngoặc đơn bảo tồn giá trị, loại và danh mục giá trị.</p>
+<h4 id="Literals">Nghĩa đen</h4> <p>Biết chữ là mã thông báo của chương trình C ++ đại diện cho các giá trị không đổi được nhúng trong mã nguồn.</p>
+<ul>
+<li> <a href="integer_literal" title="cpp/language/integer literal">integer literals</a>là số thập phân, bát phân, thập lục phân hoặc số nhị phân của loại số nguyên.</li>
+<li> <a href="character_literal" title="cpp/language/character literal">character literals</a>là các ký tự riêng lẻ của loại</li>
+<ul><li> <span class="kw4">char</span>hoặc<span class="kw4">wchar_t</span> </li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <span class="kw4">char16_t</span>hoặc<span class="kw4">char32_t</span> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>char8_t</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li> <a href="floating_literal" title="cpp/language/floating literal">floating-point literals</a>là các giá trị của loại<span class="kw4">trôi nổi</span>Thì<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>, hoặc<span class="kw4">dài</span> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </li>
+<li> <a href="string_literal" title="cpp/language/string literal">string literals</a>là chuỗi các ký tự của loại</li>
+<ul><li> <span class="kw4">hằng số</span> <span class="kw4">char</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span>hoặc<span class="kw4">hằng số</span> <span class="kw4">wchar_t</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span> </li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <span class="kw4">hằng số</span> <span class="kw4">char16_t</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span>hoặc<span class="kw4">hằng số</span> <span class="kw4">char32_t</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <ul><li> <span class="kw4">hằng số</span>char8_t<span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul><li> <a href="bool_literal" title="cpp/language/bool literal">boolean literals</a>là các giá trị của loại<span class="kw4">bool</span>        : keep_ (std :: di chuyển (x)) {}<code>true</code>Và<code>false</code> </li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li> <a href="nullptr" title="cpp/language/nullptr"><code>nullptr</code></a>là con trỏ theo nghĩa đen chỉ định giá trị con trỏ null</li>
+<li> <a href="user_literal" title="cpp/language/user literal">user-defined literals</a>là các giá trị không đổi thuộc loại do người dùng chỉ định</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Full-expressions">Biểu hiện đầy đủ</h3> <p>MỘT<i>Biểu thức cấu thành</i>Mẫu &lt;Đặc điểm lớp&gt;</p>
+<ul>
+<li>Biểu thức cấu thành của một biểu thức là biểu thức đó.</li>
+<li>Các biểu thức cấu thành của một<span class="t-spar">{</span>hoặc của một danh sách biểu thức (có thể là dấu ngoặc đơn) là các biểu thức cấu thành của các yếu tố của danh sách tương ứng.</li>
+<li>Các biểu thức cấu thành của một<span class="t-spar">Niềng-hoặc không bình đẳng</span>của hình thức<code>=</code> <span class="t-spar">Điều khoản khởi tạo</span>là các biểu thức cấu thành của<span class="t-spar">Điều khoản khởi tạo</span>.</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">int num1 = 0;</pre></div> <p>Các<i>Num1 += 1; // Trường hợp 1: Biểu thức cấu thành của `num += 1` là` num += 1`</i>một glvalue<code>E</code>&gt;</p>
+<ul><li> <code>E</code>int arr2 [2] = {2, 22} // trường hợp 2: các biểu thức cấu thành</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <ul><li>nếu như<code>E</code>tạo ra một<a href="aggregate_initialization#Definitions" title="cpp/language/aggregate initialization">aggregate</a>                      // của `{2, 22}` là `2` và` 22`<a href="data_members#Member_initialization" title="cpp/language/data members">default member initializer</a>                      // Trường hợp 3: Các biểu thức cấu thành của `= {2, 22}`</li></ul> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>nếu như<code>E</code>Điều đó như vậy<a href="lambda" title="cpp/language/lambda">lambda expression</a>                      // là các biểu thức cấu thành của `{2, 22}`</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>                      // (tức là `2` và` 22`)<code>E</code>biểu hiện phụ ngay lập tức</li>
+<li>nếu như<code>E</code>các biểu thức cấu thành của<a href="default_arguments" title="cpp/language/default arguments">default argument</a>Các hoạt động của s,</li>
+</ul> <p>MỘT<i>đối tượng, các biểu thức cấu thành của mỗi</i>một glvalue<code>E</code>được sử dụng trong khởi tạo,<code>E</code>, Việc khởi tạo các thực thể được ghi lại bởi bản sao và các biểu thức cấu thành của trình khởi tạo của các bản ghi,<code>E</code>.<span class="t-rev-inl t-since-cxx11"><span>Bất kỳ chức năng nào gọi đó</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span></p>
+<p>MỘT<i>hoàn toàn gọi, hoặc</i>khoảng cách</p>
+<ul>
+<li>chồng chéo với container.<a href="#Potentially-evaluated_expressions">unevaluated operand</a>Thì</li>
+<li>Một<a href="constant_expression" title="cpp/language/constant expression">constant expression</a>Thì</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>chồng chéo với container.<a href="consteval" title="cpp/language/consteval">immediate invocation</a>Thì</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>là một cuộc gọi chức năng hoặc ngầm gọi một hàm, các biểu thức cấu thành của mỗi<a href="declarations#Simple_declaration" title="cpp/language/declarations">simple declaration</a>hoặc a<a href="constructor" title="cpp/language/constructor">member initializer</a>được sử dụng trong cuộc gọi.</li>
+<li>sự biểu hiện phụ<a href="destructor" title="cpp/language/destructor">destructor</a>là một biểu hiện phụ ngay lập tức của<a href="lifetime" title="cpp/language/lifetime">lifetime</a>hoặc biểu hiện phụ của biểu hiện phụ ngay lập tức</li>
+<li>Lưu ý rằng các biểu thức xuất hiện trong 'cơ thể chức năng' của các biểu thức Lambda không phải là biểu hiện phụ của biểu thức Lambda.</li>
+</ul> <p>biểu hiện đầy đủ</p>
+<p>một người khai báo của một<span class="t-rev-inl t-since-cxx14"><span>, bao gồm các biểu thức cấu thành của bộ khởi tạo,</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>một lời cầu khẩn của một</p>
+<h3 id="Potentially-evaluated_expressions">tạo ra ở cuối</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Một biểu thức là<i>nhà điều hành áp dụng, ngoại trừ glvalues ​​của</i>các biểu thức là các hoạt động của</p>
+<ul>
+<li>(bao gồm đánh giá các bộ khởi tạo thành viên mặc định của tổng hợp)<a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>Đối với bộ khởi tạo, thực hiện khởi tạo của thực thể</li>
+<li>(bao gồm đánh giá các bộ khởi tạo thành viên mặc định của tổng hợp)<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>cũng được coi là một phần của biểu hiện đầy đủ.<a href="object#Polymorphic_objects" title="cpp/language/object">polymorphic</a>Biểu thức có khả năng đánh giá</li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>có khả năng đánh giá<i>Trừ khi</i>nó là hoạt động của</p>
+<ul>
+<li>nhà điều hành, hoặc<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>nó là hoạt động của<a href="object#Polymorphic_objects" title="cpp/language/object">polymorphic</a>loại lớp</li>
+<li>nhà điều hành và không chỉ định một lvalue của<a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>nhà điều hành</li>
+<li>Các toán hạng sau đây là<a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code></a>nhà điều hành</li>
+<li>Các toán hạng sau đây là<a href="decltype" title="cpp/language/decltype"><code>decltype</code></a>thời lượng để biểu diễn phần bù từ UTC tương ứng với</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul>
+<li> <span class="t-spar">    {std :: Hash &lt;t&gt; {} (a)} -&gt; std :: mctionble_to &lt;std :: size_t&gt;;</span>của<a href="constraints#Concepts" title="cpp/language/constraints">concept</a>không rõ cái gì và trong đó tiêu đề nào</li>
+<li>Các toán hạng không được đánh giá<a href="constraints#Requires_clauses" title="cpp/language/constraints">requires-clauses</a> </li>
+<li>, họ không được đánh giá:<span class="t-spar">biểu thức mà</span>của<a href="requires" title="cpp/language/requires">requires-expressions</a> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Một biểu thức là<i>nhà điều hành áp dụng, ngoại trừ glvalues ​​của</i>các biểu thức là các hoạt động của</p>
+<ul>
+<li>Toán tử của</li>
+<li>Toán tử của</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Discarded-value_expressions">Biểu thức theo yêu cầu từ khóa của</h3> <p>MỘT<i>Biểu thức xuất hiện trong</i>Yêu cầu-seq<a href="statements#Expression_statements" title="cpp/language/statements">expression statement</a>có khả năng đánh giá<span class="kw4">Vô hiệu</span>.</p>
+<p>Trừ khi<a href="cv" title="cpp/language/cv">volatile-qualified</a>Nó là một toán hạng không được đánh giá, hoặc</p>
+<ul>
+<li>Đó là một biểu hiện phụ của một toán hạng không được đánh giá.</li>
+<li>Biểu cảm giá trị bị loại bỏ</li>
+<li>Biểu thức vứt bỏ giá trị</li>
+<li>là một biểu thức chỉ được sử dụng cho các tác dụng phụ của nó. Giá trị được tính toán từ biểu thức như vậy bị loại bỏ. Những biểu hiện như vậy bao gồm biểu hiện đầy đủ của bất kỳ</li>
+<li>, toán hạng bên trái của toán tử dấu phẩy tích hợp, hoặc toán hạng của biểu thức đúc đúc theo loại</li>
+<li>Chuyển đổi mảng sang trỏ và chức năng thành máy tính không bao giờ được áp dụng cho giá trị được tính bằng biểu thức giá trị bị loại bỏ. Chuyển đổi lvalue sang rvalue được áp dụng khi và chỉ khi biểu thức là</li>
+<li>GLVALUE và có một trong các hình thức sau (có nghĩa là cần thiết, có thể là dấu ngoặc đơn):</li>
+</ul> <p>biểu hiện id,</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Biểu thức đăng ký mảng,<a href="implicit_conversion#Temporary_materialization" title="cpp/language/implicit conversion">temporary materialization</a>Biểu thức truy cập thành viên lớp,</p>
+<p>sự bất công,<span class="kw4">Vô hiệu</span>Hoạt động con trỏ đến thành viên,<code>[[<a href="attributes/nodiscard" title="cpp/language/attributes/nodiscard">nodiscard</a>]]</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table>
+<br/> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <h3 id="Expression-equivalence">Biểu thức có điều kiện trong đó cả hai toán hạng thứ hai và thứ ba là một trong những biểu thức này,</h3> <p>Biểu thức dấu phẩy trong đó toán hạng bên phải là một trong những biểu thức này.<code>e1</code>Thì<code>e2</code>ConstExpr Auto Fold_left (r &amp;&amp; r, t init, f f);<code>eN</code>&gt;<i>Ngoài ra, nếu Lvalue thuộc loại lớp đủ điều kiện dễ bay hơi, thì một hàm tạo sao chép dễ bay hơi là bắt buộc để khởi tạo kết quả tạm thời rvalue.</i>nếu như</p>
+<ol>
+<li>Nếu biểu thức là một prvalue không trống (sau bất kỳ chuyển đổi lvalue sang rvalue nào có thể xảy ra),</li>
+<li>loại bỏ một giá trị được khai báo<a href="constant_expression#Constant_subexpression" title="cpp/language/constant expression">constant subexpressions</a>Trình biên dịch có thể đưa ra cảnh báo khi một biểu thức khác với</li>
+<li>loại bỏ một giá trị được khai báo<a href="noexcept_spec" title="cpp/language/noexcept spec">noexcept</a>Biểu hiện tương đương</li>
+</ol> <p><code>e1</code>khoảng cách<i>Một số biểu thức</i> <code>e2</code>là<code>e1</code>Và<code>e2</code>Biểu hiện tương đương<code>e2</code>Chúng có cùng tác dụng;<code>e1</code>).</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1054.html" rel="nofollow">CWG 1054</a> </td> <td>C ++ 98</td> <td>Hoặc là tất cả<br/>hoặc không phải là;<br/>Hoặc là tất cả</td> <td>hoặc nếu không thì không.<br/>Biểu hiện tương đương với<br/>tương đương với biểu thức (có nghĩa là</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1343.html" rel="nofollow">CWG 1343</a> </td> <td>C ++ 98</td> <td>cũng tương đương với biểu thức<br/>Gán một giá trị cho một biến dễ bay hơi có thể</td> <td>dẫn đến việc đọc không cần thiết do lvalue-to-<br/>Chuyển đổi rvalue được áp dụng cho kết quả chuyển nhượng</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1383.html" rel="nofollow">CWG 1383</a> </td> <td>C ++ 98</td> <td>Giới thiệu biểu thức giá trị vứt bỏ<br/>và loại trừ trường hợp này khỏi danh sách<br/>các trường hợp yêu cầu chuyển đổi</td> <td>giải trình tự các cuộc gọi phá hủy trong<br/>Khởi tạo tổng hợp đã được xác định không</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1576.html" rel="nofollow">CWG 1576</a> </td> <td>C ++ 11</td> <td>biểu hiện đầy đủ trong khởi tạo tổng hợp<br/>được chỉ định tốt</td> <td>Danh sách các biểu thức mà lvalue-to-rvalue<br/>                     Forwardit2 s_first, forwardit2 s_last,</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2249.html" rel="nofollow">CWG 2249</a> </td> <td>C ++ 98</td> <td>Chuyển đổi được áp dụng cho giá trị bị loại bỏ<br/>Biểu thức cũng bao phủ các toán tử quá tải</td> <td>Họ là</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2431.html" rel="nofollow">CWG 2431</a> </td> <td>C ++ 11</td> <td>Chỉ bao gồm các nhà khai thác<br/>với ý nghĩa tích hợp</td> <td>Họ là</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/expressions" title="c/language/expressions">C documentation</a></span>vì<span class=""><span>Chuyển đổi lvalue-sang rvalue không được áp dụng</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/expressions">https://en.cppreference.com/w/cpp/language/expressions</a>
+</p>
+</div>

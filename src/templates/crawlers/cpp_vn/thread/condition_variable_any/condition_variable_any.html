@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: điều kiện_varable_any :: điều kiện_varable_any</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">điều kiện_varable_any ();</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">điều kiện_varable_any (const điều kiện_varable_any &amp;) = xóa;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>void cấu trúc (u* p, args &amp;&amp; ... args);<code>std::condition_variable_any</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Sao chép Constructor bị xóa.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1)</span>Sao chép hàm tạo. Nếu như<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>với<code><a href="../../error/error_condition" title="cpp/error/error condition">std::error_condition</a></code>, một đối tượng riêng biệt của loại<code><a href="../../error/errc" title="cpp/error/errc">std::errc::operation_not_permitted</a></code>Nếu luồng không có đặc quyền tạo biến điều kiện,<code><a href="../../error/errc" title="cpp/error/errc">std::errc::resource_unavailable_try_again</a></code>Nếu một giới hạn tài nguyên phi bộ nhớ ngăn chặn sự khởi tạo này hoặc một giá trị được xác định theo triển khai khác.</div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2092" rel="nofollow">LWG 2092</a> </td> <td>C ++ 11</td> <td>điều kiện lỗi cho<code><a href="../../error/errc" title="cpp/error/errc">resource_unavailable_try_again</a></code>đã sai</td> <td>#include &lt;CstDint&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/thread/cnd_init" title="c/thread/cnd init">C documentation</a></span>vì<code>cnd_init</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/condition_variable_any/condition_variable_any">https://en.cppreference.com/w/cpp/thread/condition_variable_any/condition_variable_any</a>
+</p>
+</div>

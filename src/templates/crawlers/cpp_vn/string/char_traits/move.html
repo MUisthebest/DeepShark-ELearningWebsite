@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: char_traits &lt;par&gt; :: di chuyển, std :: char_traits &lt;wchar_t&gt; :: di chuyển, std :: char_traits &lt;char8_t&gt; :: di chuyển, std :: char_traits</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">static char_type*</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">ForwardItIT2 Sao chép (Chính sách thực thi &amp;&amp; chính sách,</span> </td> </tr> </table> <p>                                       Nothrowforwardit d_first);<code>count</code>    Sao chép (char_type* Dest, const char_type* src, std :: size_t đếm);<code>src</code>ký tự từ chuỗi ký tự được trỏ bởi<code>dest</code>.</p>
+<p>    Di chuyển (char_type* Dest, const char_type* src, std :: size_t đếm);<code>[</code><code>src</code><code>, </code><code>src + count</code><code>)</code>Và<code>[</code><code>dest</code><code>, </code><code>dest + count</code><code>)</code>chồng chéo.</p>
+<p>(Raco).<a href="../../named_req/chartraits" title="cpp/named req/CharTraits">CharTraits</a>các ký tự trong chuỗi ký tự được trỏ bởi<code>X::move</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>chồng chéo, hành vi là không xác định.</td>
+</tr> <tr class="t-par"> <td>SRC</td> <td>-</td> <td>con trỏ đến chuỗi ký tự để sao chép vào</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>con trỏ đến chuỗi ký tự để sao chép từ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>dest</code></p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>bool is_heap (execPolicy &amp;&amp; chính sách,<code>count</code>.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue7" rel="nofollow">LWG 7</a> </td> <td>C ++ 98</td> <td>Thực hiện chính xác ngay cả khi phạm vi<br/><code>src</code>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>[</code><code>dest</code><code>, </code><code>dest + count</code><code>)</code>Bản sao được đảm bảo sẽ thực hiện chính xác nếu<br/>, nhưng không phải là người khác<code>dest</code>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>[</code><code>src</code><code>, </code><code>src + count</code><code>)</code>)</td> <td>vòng tròn (tức là</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/char_traits/move">https://en.cppreference.com/w/cpp/string/char_traits/move</a>
+</p>
+</div>

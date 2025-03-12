@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">std :: fegetenv, std :: fesetenv</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cfenv" title="cpp/header/cfenv">&lt;cfenv&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">int fegetenv (std :: fenv_t* envp)</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">int fesetenv (const std :: fenv_t* envp);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Quản lý trạng thái của môi trường dấu phẩy động.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Cố gắng lưu trữ trạng thái của môi trường dấu phẩy trong đối tượng được chỉ ra bởi<code>envp</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Cố gắng thiết lập môi trường dấu phẩy động từ đối tượng được chỉ ra bởi<code>envp</code>. Giá trị của đối tượng đó phải được lấy trước đây bằng cách gọi đến<code><a href="feholdexcept" title="cpp/numeric/fenv/feholdexcept">std::feholdexcept</a></code>hoặc<code>std::fegetenv</code>hoặc là một hằng số macro nổi. Nếu bất kỳ cờ trạng thái điểm nổi nào được đặt vào<code>envp</code>, chúng trở nên được đặt trong môi trường (và sau đó có thể kiểm tra được<code><a href="fetestexcept" title="cpp/numeric/fenv/fetestexcept">std::fetestexcept</a></code>), nhưng các ngoại lệ dấu phẩy động tương ứng không được nâng lên (thực thi tiếp tục không bị gián đoạn)</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Envp</td> <td>-</td> <td>con trỏ đến đối tượng loại<code><a href="http://en.cppreference.com/w/cpp/numeric/fenv"><span class="kw3379">Điều đó cho tất cả<span class="me2">fenv_t</span></span></a></code>giữ trạng thái của môi trường nổi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>​0​</code>Về thành công, khác không.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="feholdexcept" title="cpp/numeric/fenv/feholdexcept"> <span class="t-lines"><span>FekeepExcept</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Lưu môi trường, xóa tất cả các cờ trạng thái và bỏ qua tất cả các lỗi trong tương lai<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="feupdateenv" title="cpp/numeric/fenv/feupdateenv"> <span class="t-lines"><span>feupdateenv</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Phục hồi môi trường nổi và nâng cao các trường hợp ngoại lệ được nêu ra trước đó<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fe_dfl_env" title="cpp/numeric/fenv/FE DFL ENV"> <span class="t-lines"><span>FE_DFL_ENV</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Môi trường dấu phẩy mặc định<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/fenv/feenv" title="c/numeric/fenv/feenv">C documentation</a></span>vì<code>fegetenv, fesetenv</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/fenv/feenv">https://en.cppreference.com/w/cpp/numeric/fenv/feenv</a>
+</p>
+</div>

@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: CopyConstructable</h1> <p>Chỉ định rằng một thể hiện của loại có thể được sao chép từ một<a href="../language/value_category" title="cpp/language/value category">lvalue expression</a>.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>T</code>thỏa mãn copyconstructable nếu</p>
+<ul><li>phạm vi của các yếu tố để tạo<code>T</code>Phần cuối của phạm vi ban đầu<a href="moveconstructible" title="cpp/named req/MoveConstructible">MoveConstructible</a>, Và</li></ul> <p>Cho quá tải</p>
+<ul>
+<li> <code>v</code>, đầu vào được coi là mã hóa rộng bản địa (do đó không có sự chuyển đổi nào diễn ra trên Windows).<a href="../language/value_category#lvalue" title="cpp/language/value category">lvalue</a>Biểu hiện của loại<code>T</code>hoặc<span class="kw4">hằng số</span>T hoặc một<a href="../language/value_category#rvalue" title="cpp/language/value category">rvalue</a>Biểu hiện của loại<span class="kw4">hằng số</span>một thùng chứa khác để hợp nhất</li>
+<li> <code>u</code>, một định danh tùy ý.</li>
+</ul> <p>Các biểu thức sau phải hợp lệ và có các hiệu ứng được chỉ định của chúng:</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Điều kiện sau</th>
+</tr> <tr> <td>
+<code>T u = v;</code> </td> <td>Giá trị của<code>u</code>tương đương với giá trị của<code>v</code>.<p>Giá trị của<code>v</code>không thay đổi.</p>
+</td>
+</tr> <tr> <td>
+<code>T(v)</code> </td> <td>Giá trị của<code>T(v)</code>tương đương với giá trị của<code>v</code>.<p>Giá trị của<code>v</code>không thay đổi.</p>
+</td>
+</tr>
+</table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>              Không có p);<code>v.~T()</code>cũng phải hợp lệ, và, đối với lvalue<code>v</code>, biểu thức<code>&amp;v</code>Phải có loại<code>T*</code>hoặc<span class="kw4">hằng số</span>T<span class="sy2">*</span>và phải đánh giá đến địa chỉ của<code>v</code>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Cho đến C ++ 11, các lớp đã quá tải người vận hành<span class="sy3">Không có giá trị</span>không thể sao chép và do đó không thể sử dụng được trong<a href="../container" title="cpp/container">standard library containers</a>. Đây là một quyết định thiết kế trong C ++ 98 (thay vì khiếm khuyết, hãy xem<a class="external text" href="https://cplusplus.github.io/LWG/issue390" rel="nofollow">LWG issue 390</a>).</p>
+<p>Kể từ C ++ 11, thư viện tiêu chuẩn sử dụng<code><a href="../memory/addressof" title="cpp/memory/addressof">std::addressof</a></code>Bất cứ khi nào địa chỉ của một đối tượng là cần thiết.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_copy_constructible" title="cpp/types/is copy constructible"> <span class="t-lines"><span>is_copy_constructable</span><span>is_trivently_copy_constructible</span><span>is_nothrow_copy_constructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem một loại có hàm tạo bản sao không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../concepts/copy_constructible" title="cpp/concepts/copy constructible"> <span class="t-lines"><span>(ý tưởng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>mui trần_to<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/CopyConstructible">https://en.cppreference.com/w/cpp/named_req/CopyConstructible</a>
+</p>
+</div>

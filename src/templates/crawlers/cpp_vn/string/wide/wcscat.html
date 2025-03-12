@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: WCSCAT</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">wchar_t* wcscat (wchar_t* dest, const wchar_t* src);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nối thêm một bản sao của chuỗi rộng được trỏ bởi<code>src</code>đến cuối chuỗi rộng được trỏ bởi<code>dest</code>. Nhân vật rộng<code>src[0]</code>thay thế bộ định tuyến null ở cuối<code>dest</code>. Chuỗi rộng kết quả là kết thúc null.</p>
+<p>Hành vi không được xác định nếu mảng đích không đủ lớn cho nội dung của cả hai<code>src</code>Và<code>dest</code>và ký tự rộng NULL.</p>
+<p>Hành vi không được xác định nếu các chuỗi trùng nhau.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>con trỏ tới chuỗi rộng được chấm dứt null để nối vào</td>
+</tr> <tr class="t-par"> <td>SRC</td> <td>-</td> <td>con trỏ tới chuỗi rộng được chấm dứt null để sao chép từ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>không gặp nhau<code>dest</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;clocale&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CWchar&gt; </pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="wcsncat" title="cpp/string/wide/wcsncat"> <span class="t-lines"><span>WCSNCAT</span></span></a></div> </td> <td>nối thêm một lượng một số ký tự rộng nhất định từ chuỗi rộng này sang chuỗi rộng khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../byte/strcat" title="cpp/string/byte/strcat"> <span class="t-lines"><span>Strcat</span></span></a></div> </td> <td>Concatenates hai chuỗi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="wcscpy" title="cpp/string/wide/wcscpy"> <span class="t-lines"><span>WCSCPY</span></span></a></div> </td> <td>sao chép một chuỗi rộng sang một chuỗi rộng khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/wcscat" title="c/string/wide/wcscat">C documentation</a></span>vì<code>wcscat</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/wcscat">https://en.cppreference.com/w/cpp/string/wide/wcscat</a>
+</p>
+</div>

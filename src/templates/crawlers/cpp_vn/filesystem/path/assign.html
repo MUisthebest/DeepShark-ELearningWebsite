@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FileSystem :: path :: gán</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">đường dẫn &amp; gán (string_type &amp;&amp; nguồn);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;class Source&gt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Đường dẫn &amp; gán (Const Nguồn &amp; Nguồn);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Mẫu &lt;Class Inputit&gt;<code>path</code>Đường dẫn &amp; gán (đầu vào đầu tiên, đầu vào cuối cùng);</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Thay thế nội dung cho<code>source</code>Đối tượng bởi một tên đường dẫn mới được xây dựng từ chuỗi ký tự đã cho.</div> <div class="t-li1">
+<span class="t-li">2)</span>Gán tên đường dẫn được xác định bởi chuỗi định dạng được phát hiện<code>source</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>, được để lại ở trạng thái hợp lệ, nhưng không xác định.<code>[first, last)</code>.</div> <p><span class="t-v">(2)</span>Mẫu &lt;Lớp Toduration, Lớp đồng hồ, Thời lượng lớp&gt;<code>Source</code>Và<code>path</code>đường dẫn ("// host/")/"foo" // kết quả cũng là "// host/foo" (cộng đồng không có dấu tách)</p>
+<ul>
+<li> <code>Source</code>lớn hơn hoặc bằng<code><a href="../../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code>hoặc<code><a href="../../string/basic_string_view" title="cpp/string/basic string view">std::basic_string_view</a></code>, hoặc</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/types/decay"><span class="kw632">Điều đó cho tất cả<span class="me2">Tìm kiếm phạm vi</span></span></a><span class="sy1">is_trivently_destructible_v</span>Source&gt;&gt;::value_type</code> <code>char</code>Thì<span class="t-rev-inl t-since-cxx20"><span><code>char8_t</code>Thì</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span><code>char16_t</code>Thì<code>char32_t</code>, hoặc<code>wchar_t</code>).</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>. Nếu có một yếu tố trong</td> <td>-</td> <td>Gán tên đường dẫn được xác định bởi phạm vi ký tự định dạng được phát hiện<code><a href="../../string/basic_string" title="cpp/string/basic string">std::string</a></code>Thì<code><a href="../../string/basic_string_view" title="cpp/string/basic string view">std::string_view</a></code>Gán tên đường dẫn được xác định bởi phạm vi ký tự định dạng được phát hiện</td>
+</tr> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>một phạm vi ký tự để sử dụng, được biểu thị là</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</td>
+</tr> <tr class="t-par-req"> <td colspan="3">// trên Windows,<code>InputIt</code>đường dẫn ("foo") / "c: / thanh";  // Kết quả là "C:/Bar" (thay thế)<code>char</code>Thì<code>wchar_t</code>Thì<code>char16_t</code>Và<code>char32_t</code>)</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3244" rel="nofollow">LWG 3244</a> </td> <td>C ++ 17</td> <td>Chỉ tham gia vào độ phân giải quá tải nếu<code>Source</code>không phải là cùng một loại, và một trong hai:<code>path</code>bị mất tích</td> <td>Được cho</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator=" title="cpp/filesystem/path/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>gán đường dẫn khác<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/path/assign">https://en.cppreference.com/w/cpp/filesystem/path/assign</a>
+</p>
+</div>

@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">Tuyên bố Goto</h1> <p>Chuyển kiểm soát vô điều kiện.</p>
+<p>Được sử dụng khi không thể chuyển kiểm soát đến vị trí mong muốn bằng cách sử dụng các câu lệnh khác.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>goto</code> <span class="t-spar">nhãn</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Câu lệnh GOTO chuyển kiểm soát đến vị trí được chỉ định bởi<a href="statements#Labels" title="cpp/language/statements">label</a>. Câu lệnh GOTO phải có cùng chức năng với<span class="t-spar">nhãn</span>Nó đang đề cập, nó có thể xuất hiện trước hoặc sau nhãn.</p>
+<p>Nếu việc chuyển kiểm soát thoát ra khỏi phạm vi của bất kỳ biến tự động nào (ví dụ: bằng cách nhảy về phía sau đến một điểm trước khi khai báo của các biến đó hoặc bằng cách nhảy về phía trước khỏi một câu lệnh ghép trong đó các biến được phạm vi), các chất phá hủy được gọi cho tất cả các biến có phạm vi bị thoát ra, theo thứ tự ngược lại với thứ tự.</p>
+<p>Các<code>goto</code>Tuyên bố không thể chuyển kiểm soát vào một<a href="try_catch" title="cpp/language/try catch">try-block</a>hoặc vào một điều khoản bắt, nhưng có thể chuyển kiểm soát ra khỏi khối thử hoặc mệnh đề bắt (các quy tắc trên liên quan đến các biến tự động trong phạm vi được tuân thủ).</p>
+<p>Nếu việc chuyển kiểm soát đi vào phạm vi của bất kỳ biến tự động nào (ví dụ: bằng cách nhảy về phía trước một tuyên bố khai báo), chương trình sẽ không được hình thành (không thể biên dịch), trừ khi tất cả các biến có phạm vi được nhập</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Các loại vô hướng được khai báo mà không cần khởi tạo</div> <div class="t-li1">
+<span class="t-li">2)</span>Các loại lớp với các hàm xây dựng mặc định tầm thường và các hàm hủy tầm thường được khai báo mà không cần khởi tạo</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Phiên bản đủ điều kiện CV của một trong các phiên bản trên</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mảng của một trong những điều trên</div> <p>(Lưu ý: Các quy tắc tương tự áp dụng cho tất cả các hình thức chuyển giao kiểm soát)</p>
+<h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/goto" title="cpp/keyword/goto"><code>goto</code></a></p>
+<h3 id="Notes">Ghi chú</h3> <p>Trong ngôn ngữ lập trình C.<code>goto</code>câu lệnh có ít hạn chế hơn và có thể vào phạm vi của bất kỳ biến nào khác ngoài<a href="https://en.cppreference.com/w/c/language/array#Variable-length_arrays" title="c/language/array">variable-length array</a>hoặc con trỏ biến đổi biến đổi.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/goto" title="c/language/goto">C documentation</a></span>vì<code>goto</code> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr> <td> <p>đối tượng cấu trúc<a class="external text" href="http://david.tribble.com/text/goto.html" rel="nofollow">“Goto Considered Harmful”</a>{</p>
+</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/goto">https://en.cppreference.com/w/cpp/language/goto</a>
+</p>
+</div>

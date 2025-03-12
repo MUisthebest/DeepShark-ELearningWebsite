@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">std :: strncpy</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstring" title="cpp/header/cstring">&lt;cstring&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">char* strncpy (char* dest, const char* src, std :: size_t đếm);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Bản sao nhiều nhất<code>count</code>ký tự của chuỗi byte được trỏ bởi<code>src</code>(bao gồm cả ký tự null chấm dứt) vào mảng ký tự được trỏ bởi<code>dest</code>.</p>
+<p>Nếu như<code>count</code>đạt được trước toàn bộ chuỗi<code>src</code>đã được sao chép, mảng ký tự kết quả không được chấm dứt.</p>
+<p>Nếu, sau khi sao chép ký tự null chấm dứt từ<code>src</code>Thì<code>count</code>không đạt được, các ký tự null bổ sung được viết thành<code>dest</code>cho đến khi tổng số<code>count</code>Nhân vật đã được viết.</p>
+<p>Nếu các chuỗi trùng nhau, hành vi không được xác định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>con trỏ đến mảng ký tự để sao chép vào</td>
+</tr> <tr class="t-par"> <td>SRC</td> <td>-</td> <td>con trỏ đến chuỗi byte để sao chép từ</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng ký tự tối đa để sao chép</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>dest</code></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;cstring&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="strcpy" title="cpp/string/byte/strcpy"> <span class="t-lines"><span>strcpy</span></span></a></div> </td> <td>sao chép một chuỗi sang một chuỗi khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="memcpy" title="cpp/string/byte/memcpy"> <span class="t-lines"><span>Memcpy</span></span></a></div> </td> <td>sao chép một bộ đệm sang bộ đệm khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/strncpy" title="c/string/byte/strncpy">C documentation</a></span>vì<code>strncpy</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/strncpy">https://en.cppreference.com/w/cpp/string/byte/strncpy</a>
+</p>
+</div>

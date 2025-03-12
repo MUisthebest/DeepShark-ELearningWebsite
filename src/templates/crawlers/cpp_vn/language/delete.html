@@ -1,0 +1,71 @@
+ <h1 class="firstHeading" id="firstHeading">Xóa biểu thức</h1> <p>Phá hủy (các) đối tượng trước đây được phân bổ bởi<a href="new" title="cpp/language/new">new-expression</a>và các bản phát hành có được diện tích bộ nhớ.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>::</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>delete  </code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>::</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>delete[]</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>-</td> <td>Một trong những điều sau đây:<ul>
+<li>một biểu thức của loại lớp<a href="implicit_conversion" title="cpp/language/implicit conversion">contextually implicitly convertible</a>đến một loại con trỏ đến loại đối tượng</li>
+<li>một prvalue của con trỏ đến loại đối tượng</li>
+</ul> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Phá hủy một đối tượng không phải được tạo bởi một<a href="new" title="cpp/language/new">new-expression</a>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Phá hủy một mảng được tạo bởi một<a href="new" title="cpp/language/new">new[]-expression</a>.</div> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Đưa ra con trỏ được đánh giá từ<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>(sau khi chuyển đổi có thể) như<code>ptr</code>.</p>
+<span class="t-li">1)</span> <code>ptr</code>Phải là một trong những<ul>
+<li>một con trỏ null,</li>
+<li>một con trỏ tới một đối tượng không phải được tạo bởi một<a href="new" title="cpp/language/new">new-expression</a>, hoặc</li>
+<li>một con trỏ tới một mục tiêu con cơ sở của một đối tượng không phải được tạo bởi một<a href="new" title="cpp/language/new">new-expression</a>.</li>
+</ul> <div class="t-li1">Loại chỉ ra<code>ptr</code>// thực hiện đầu tiên<a href="implicit_conversion#Similar_types" title="cpp/language/implicit conversion">similar</a>đến loại đối tượng (hoặc của một tiểu mục cơ sở). Nếu như<code>ptr</code>là bất cứ điều gì khác, bao gồm nếu nó là một con trỏ thu được từ dạng mảng của<a href="new" title="cpp/language/new">new-expression</a>, hành vi là<a href="ub" title="cpp/language/ub">undefined</a>.</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>ptr</code>phải là một con trỏ null hoặc một con trỏ có giá trị trước đó được lấy bằng một dạng mảng của<a href="new" title="cpp/language/new">new-expression</a>    get_leap_second_info (const std :: Chrono :: UTC_TIME &lt;feluration&gt; &amp; ut);<a href="../memory/new/operator_new" title="cpp/memory/new/operator new">allocation function</a>không phải là một hình thức không phân tán (tức là quá tải<span class="t-v">(10)</span>).</div> <div class="t-li1">Loại chỉ ra<code>ptr</code>// thực hiện đầu tiên<a href="implicit_conversion#Similar_types" title="cpp/language/implicit conversion">similar</a>đến loại phần tử của đối tượng mảng. Nếu như<code>ptr</code>là bất cứ điều gì khác, bao gồm nếu nó là một con trỏ thu được từ dạng không phải của<a href="new" title="cpp/language/new">new-expression</a>, hành vi là<a href="ub" title="cpp/language/ub">undefined</a>.</div> <p>Kết quả của biểu hiện xóa luôn có loại<span class="kw4">Vô hiệu</span>.</p>
+<p>Nếu đối tượng bị xóa có loại lớp không đầy đủ tại điểm xóa và lớp hoàn chỉnh có hàm phá hủy không tầm thường hoặc chức năng giải quyết, hành vi không được xác định.</p>
+<p>Nếu như<code>ptr</code>không phải là một con trỏ null<span class="t-rev-inl t-since-cxx20"><span>Đối tượng lưu trữ<a href="../memory/new/operator_delete" title="cpp/memory/new/operator delete">deallocation function</a>không phải là một xóa phá hủy</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, biểu hiện xóa sẽ gọi<a href="destructor" title="cpp/language/destructor">destructor</a>.</p>
+<p>Sau đó, liệu một ngoại lệ có bị ném bởi bất kỳ kẻ phá hoại nào hay không, biểu hiện xóa<a href="../memory/new/operator_delete" title="cpp/memory/new/operator delete">deallocation function</a>: hoặc<code><a href="http://en.cppreference.com/w/cpp/memory/new/operator_delete"><span class="kw692">Xóa toán tử</span></a></code>(phiên bản đầu tiên) hoặc<code><a href="http://en.cppreference.com/w/cpp/memory/new/operator_delete"><span class="kw692">Xóa toán tử</span></a><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span></code>(phiên bản thứ hai)<span class="t-rev-inl t-since-cxx14"><span>, trừ khi biểu hiện mới phù hợp được kết hợp với một biểu thức mới khác</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>.</p>
+<p>Tên của chức năng giải quyết là<a href="lookup" title="cpp/language/lookup">looked up</a>Trong phạm vi của loại động của đối tượng được chỉ ra bởi<code>ptr</code>, có nghĩa là các chức năng giải quyết cụ thể của lớp, nếu có, được tìm thấy trước các chức năng toàn cầu. Nếu như<code>::</code>có mặt trong biểu hiện xóa, chỉ có không gian tên toàn cầu được kiểm tra bởi tra cứu này. Trong mọi trường hợp, bất kỳ tuyên bố nào khác ngoài các chức năng giải quyết thông thường đều bị loại bỏ.</p>
+<p>Nếu Tra cứu tìm thấy nhiều hơn một chức năng định vị, chức năng được gọi được chọn như sau (xem<a href="../memory/new/operator_delete" title="cpp/memory/new/operator delete">deallocation function</a>để mô tả chi tiết hơn về các chức năng này và các hiệu ứng của chúng):</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Nếu ít nhất một trong số các chức năng giải quyết là xóa phá hủy, tất cả các xóa không phá hủy đều bị bỏ qua.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <ul>
+<li>Nếu yêu cầu căn chỉnh của loại vượt quá<code>__STDCPP_DEFAULT_NEW_ALIGNMENT__</code>, Chức năng giải quyết nhận biết liên kết (với tham số loại<code><a href="../memory/new/align_val_t" title="cpp/memory/new/align val t">std::align_val_t</a></code>) được ưa thích. Đối với các loại khác, các chức năng giải quyết liên kết không biết (không có tham số loại<code><a href="../memory/new/align_val_t" title="cpp/memory/new/align val t">std::align_val_t</a></code>) được ưa thích.</li>
+<ul>
+<li>Nếu có nhiều chức năng ưa thích được tìm thấy, chỉ các chức năng ưa thích được xem xét trong bước tiếp theo.</li>
+<li>Nếu không có chức năng ưa thích nào được tìm thấy, các chức năng không được ưu tiên được xem xét trong bước tiếp theo.</li>
+</ul>
+<li>Nếu chỉ còn một chức năng, chức năng đó được chọn.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul><li>Nếu các chức năng giải quyết được tìm thấy là chức năng giải quyết cụ thể theo lớp, kích thước cụ thể (không có tham số loại<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>) được ưu tiên hơn chức năng phân giải cụ thể theo lớp kích thước (với tham số loại<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>).</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <ul>
+<li>Nếu không, tra cứu đạt đến phạm vi toàn cầu và:</li>
+<ul>
+<li>Nếu loại hoàn thành và nếu, chỉ đối với biểu mẫu mảng, toán hạng là một con trỏ đến một loại lớp có chất phá hủy không tầm thường hoặc một mảng (có thể đa chiều)<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>) được chọn.</li>
+<li>Mặt khác, nó không được xác định liệu chức năng giải quyết nhận biết kích thước toàn cầu hay không (với tham số loại<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>) hoặc chức năng giải quyết không biết kích thước toàn cầu (không có tham số loại<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>) được chọn.</li>
+</ul>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <p>Con trỏ tới khối lưu trữ được thu hồi được chuyển đến<a href="../memory/new/operator_delete" title="cpp/memory/new/operator delete">deallocation function</a>Điều đó đã được chọn bởi quá trình ở trên làm đối số đầu tiên. Kích thước của khối được truyền dưới dạng tùy chọn<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>lý lẽ.<span class="t-rev-inl t-since-cxx17"><span>Yêu cầu căn chỉnh được thông qua như là tùy chọn<code><a href="../memory/new/align_val_t" title="cpp/memory/new/align val t">std::align_val_t</a></code>lý lẽ.</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span></p>
+<p>Nếu như<code>ptr</code>là một giá trị con trỏ null, không có bộ hủy nào được gọi và chức năng Deallocation có thể hoặc không thể được gọi (nó không được xác định), nhưng các chức năng giải quyết mặc định được đảm bảo sẽ không làm gì khi được thông qua một con trỏ null.</p>
+<p>Nếu như<code>ptr</code>là một con trỏ tới một tiểu mục lớp cơ sở của đối tượng được phân bổ với<a href="new" title="cpp/language/new">new</a>, kẻ phá hủy lớp cơ sở phải<a href="virtual" title="cpp/language/virtual">virtual</a>Gia số được lặp lại</p>
+<h3 id="Notes">Ghi chú</h3> <p>Một con trỏ tới<span class="kw4">Vô hiệu</span>Không thể bị xóa vì nó không phải là một con trỏ đến một loại đối tượng hoàn chỉnh.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Bởi vì một cặp dấu ngoặc theo cách xóa từ khóa luôn được hiểu là dạng mảng của biểu thức xóa, A<a href="lambda" title="cpp/language/lambda">lambda-expression</a>Với một danh sách chụp trống ngay sau khi xóa phải được đặt trong ngoặc đơn.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// xóa [] {trả về mới int; } (); // Lỗi phân tích cú pháp</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/delete" title="cpp/keyword/delete"><code>delete</code></a></p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/288.html" rel="nofollow">CWG 288</a> </td> <td>C ++ 98</td> <td>xóa ([] {return new int;}) ();  // ĐƯỢC RỒI<br/>Đối với mẫu đầu tiên, loại tĩnh của</td> <td>toán hạng được so sánh với loại động của nó<br/>So sánh loại tĩnh của đối tượng</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/353.html" rel="nofollow">CWG 353</a> </td> <td>C ++ 98</td> <td>bị xóa với loại động của nó<br/>liệu chức năng giải quyết sẽ được gọi nếu</td> <td>Destructor ném một ngoại lệ là không xác định</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/599.html" rel="nofollow">CWG 599</a> </td> <td>C ++ 98</td> <td>luôn luôn được viện dẫn<br/>Mẫu đầu tiên có thể lấy một con trỏ null của</td> <td>Bất kỳ loại nào, bao gồm cả con trỏ chức năng<br/>ngoại trừ các con trỏ đến các loại đối tượng,</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1642.html" rel="nofollow">CWG 1642</a> </td> <td>C ++ 98</td> <td>
+<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>Tất cả các loại con trỏ khác bị từ chối</td> <td>không được phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2474.html" rel="nofollow">CWG 2474</a> </td> <td>C ++ 98</td> <td>có thể là một con trỏ lvalue<br/>Xóa một con trỏ đến một đối tượng tương tự nhưng</td> <td>    T2 () {} // "mem" không có trong danh sách khởi tạo</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2624.html" rel="nofollow">CWG 2624</a> </td> <td>C ++ 98</td> <td>Loại khác nhau dẫn đến hành vi không xác định<br/><a href="http://en.cppreference.com/w/cpp/memory/new/operator_new"><span class="kw690">nhà điều hành mới</span></a><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span>Con trỏ thu được từ không phân tán<span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span> </td> <td>bị cấm</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul><li> <a href="new" title="cpp/language/new">new</a> </li></ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/delete">https://en.cppreference.com/w/cpp/language/delete</a>
+</p>
+</div>

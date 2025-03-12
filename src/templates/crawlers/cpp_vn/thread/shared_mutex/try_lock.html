@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_mutex :: Try_lock</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">bool try_lock ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Cố gắng khóa mutex. Trả lại ngay lập tức. Về lợi nhuận thu nhận khóa thành công<code>true</code>ở trong trạng thái không hợp lệ, tức là<code>false</code>.</p>
+<p>Chức năng này được phép thất bại một cách khó khăn và trở lại<code>false</code>Ngay cả khi Mutex hiện không bị khóa bởi bất kỳ chủ đề nào khác.</p>
+<p>Nếu như<code>try_lock</code>được gọi bởi một chủ đề đã sở hữu<code>mutex</code>Trong bất kỳ chế độ nào (chia sẻ hoặc độc quyền), hành vi không được xác định.</p>
+<p>Trước<code><a href="unlock" title="cpp/thread/shared mutex/unlock">unlock()</a></code>Hoạt động trên cùng một mutex<i>y.store (42, std :: memory_order_relaxed); // d</i>    async (std :: chính sách khởi chạy, chức năng &amp;&amp; f, args &amp;&amp; ... args);<code><a href="../../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>) Hoạt động này nếu nó trở lại<code>true</code>. Lưu ý rằng trước đó<code><a href="lock" title="cpp/thread/shared mutex/lock">lock()</a></code>không đồng bộ hóa với thao tác này nếu nó trả về<code>false</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu khóa được mua thành công, nếu không<code>false</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lock" title="cpp/thread/shared mutex/lock"> <span class="t-lines"><span>khóa</span></span></a></div> </td> <td>Khóa mutex, khối nếu không có sẵn Mutex<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="unlock" title="cpp/thread/shared mutex/unlock"> <span class="t-lines"><span>Mở khóa</span></span></a></div> </td> <td>Mở khóa mutex<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/thread/mtx_trylock" title="c/thread/mtx trylock">C documentation</a></span>vì<code>mtx_trylock</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/shared_mutex/try_lock">https://en.cppreference.com/w/cpp/thread/shared_mutex/try_lock</a>
+</p>
+</div>

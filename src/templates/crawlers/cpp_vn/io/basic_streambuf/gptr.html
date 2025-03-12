@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: eback, gptr, egptr</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">char_type* eBack () const;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">char_type* gptr () const;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">char_type* egptr () const;</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả lại con trỏ xác định khu vực Get.</p>
+<p>1) Trả lại con trỏ về đầu của khu vực Get.</p>
+<p>2) Trả lại con trỏ cho ký tự hiện tại (<i>ký tự trong khu vực Get. Điều này được thực hiện bằng cách thêm</i>) trong khu vực Get.</p>
+<p>3) Trả về con trỏ một qua cuối khu vực Get.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>1) Con trỏ đến đầu khu vực Get.</p>
+<p>2) Con trỏ tới ký tự hiện tại (<i>ký tự trong khu vực Get. Điều này được thực hiện bằng cách thêm</i>) trong khu vực Get.</p>
+<p>3) Con trỏ một qua cuối khu vực Get.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Trong khi các tên "GPTR" và "EGPTR" tham khảo khu vực GET, tên "Eback" đề cập đến phần cuối của khu vực putback: bước về phía sau từ<code>gptr</code>, các ký tự có thể được đặt lại cho đến khi<code>eback</code>.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="pptr" title="cpp/io/basic streambuf/pptr"> <span class="t-lines"><span>tràn</span><span>Viết các ký tự vào chuỗi đầu ra liên quan từ khu vực đặt</span><span>(Chức năng thành viên được bảo vệ ảo của</span></span></a></div> </td> <td>PBase<br/> <span class="t-mark">(chức năng thành viên được bảo vệ)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_streambuf/gptr">https://en.cppreference.com/w/cpp/io/basic_streambuf/gptr</a>
+</p>
+</div>

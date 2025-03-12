@@ -1,0 +1,39 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; :: Seekp</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_ostream &amp; seekp (pos_type pos);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_ostream &amp; seekp (off_type off, std :: ios_base :: seekdir dir);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đặt chỉ báo vị trí đầu ra của dòng điện được liên kết<code>streambuf</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Hành xử như<a href="../../named_req/unformattedoutputfunction" title="cpp/named req/UnformattedOutputFunction">UnformattedOutputFunction</a>(ngoại trừ không thực sự thực hiện đầu ra). Sau khi xây dựng và kiểm tra đối tượng Sentry,</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>nếu như<code>fail() != true</code>, đặt chỉ báo vị trí đầu ra thành giá trị tuyệt đối (liên quan đến đầu của tệp)<code>pos</code>. Sau khi xây dựng và kiểm tra đối tượng Sentry, có thể bỏ qua khoảng trắng hàng đầu, trích xuất một<code>rdbuf<span class="br0">.</span><span class="br0">)</span><span class="sy2">-</span><span class="sy1">&lt;</span>pubseekpos<span class="br0">.</span>pos, <a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1679">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">. Các số ngẫu nhiên được tạo bằng trình tạo số ngẫu nhiên</span></span></a><span class="br0">)</span></code>. Trong trường hợp thất bại, các cuộc gọi<code>setstate<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/io/ios_base/iostate"><span class="kw1704">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">abbrev</span></span></a><span class="br0">)</span></code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>nếu như<code>fail() != true</code>, đặt chỉ báo vị trí đầu ra thành bù<code>off</code>liên quan đến<code>dir</code>. Sau khi xây dựng và kiểm tra đối tượng Sentry, có thể bỏ qua khoảng trắng hàng đầu, trích xuất một<code>rdbuf<span class="br0">.</span><span class="br0">)</span><span class="sy2">-</span><span class="sy1">&lt;</span>pubseekoff<span class="br0">.</span>off, dir, <a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1679">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">. Các số ngẫu nhiên được tạo bằng trình tạo số ngẫu nhiên</span></span></a><span class="br0">)</span></code>. Trong trường hợp thất bại, các cuộc gọi<code>setstate<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/io/ios_base/iostate"><span class="kw1704">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">abbrev</span></span></a><span class="br0">)</span></code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>vị trí tuyệt đối để đặt chỉ báo vị trí đầu ra thành</td>
+</tr> <tr class="t-par"> <td>Nếu không, di chuyển con trỏ tệp như thể bằng cách</td> <td>-</td> <td>Vị trí tương đối (dương hoặc âm) để đặt chỉ báo vị trí đầu ra thành</td>
+</tr> <tr class="t-par"> <td>Chỉ duy trì một vị trí tệp.</td> <td>-</td> <td>tắt<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/seekdir" title="cpp/io/ios base/seekdir"><code>beg</code></a> </td> <td>tìm kiếm</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/seekdir" title="cpp/io/ios base/seekdir"><code>end</code></a> </td> <td>Tìm kiếm loại định hướng</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/seekdir" title="cpp/io/ios base/seekdir"><code>cur</code></a> </td> <td>Các hằng số sau cũng được xác định:</td>
+</tr> </table> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">Đầu vào</span>Sao chép hàm tạo. Nếu như<code><a href="../ios_base/failure" title="cpp/io/ios base/failure">std::ios_base::failure</a></code>trong trường hợp thất bại, nếu<code>exceptions() &amp; failbit != 0</code>.</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Sstream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue129" rel="nofollow">LWG 129</a> </td> <td>C ++ 98</td> <td>#include &lt;chuỗi&gt;</td> <td>, di chuyển-thiết kế bộ phân bổ từ<code>failbit</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue136" rel="nofollow">LWG 136</a> </td> <td>C ++ 98</td> <td>
+<code>seekp</code> </td> <td>int main ()</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue537" rel="nofollow">LWG 537</a> </td> <td>C ++ 98</td> <td>{<code>pos</code> <code>pos_type&amp;</code><br/>    std :: OstringStream os ("Xin chào, thế giới");<code>off</code> <code>off_type&amp;</code> </td> <td>    os.seekp (7);<code>pos_type</code><br/>    hệ điều hành &lt;&lt; 'w';<code>off_type</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2341" rel="nofollow">LWG 2341</a> </td> <td>C ++ 98</td> <td>Tìm kiếm chuyển tiếp của Const<a class="external text" href="https://cplusplus.github.io/LWG/issue129" rel="nofollow">LWG issue 129</a>    os.Seekp (0, std :: ios_base :: end);</td> <td>    hệ điều hành &lt;&lt; '!';</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="tellp" title="cpp/io/basic ostream/tellp"> <span class="t-lines"><span>đặt</span></span></a></div> </td> <td>chèn một ký tự<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_istream/tellg" title="cpp/io/basic istream/tellg"> <span class="t-lines"><span>Trích xuất các khối ký tự đã có sẵn</span></span></a></div> </td> <td>GCOUNT<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_istream&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_istream/seekg" title="cpp/io/basic istream/seekg"> <span class="t-lines"><span>Trả về số lượng ký tự được trích xuất bởi hoạt động đầu vào chưa được định dạng cuối cùng</span></span></a></div> </td> <td>Tellg<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_istream&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ostream/seekp">https://en.cppreference.com/w/cpp/io/basic_ostream/seekp</a>
+</p>
+</div>

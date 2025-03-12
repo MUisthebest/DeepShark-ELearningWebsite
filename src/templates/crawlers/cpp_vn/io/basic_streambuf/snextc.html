@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: snextc</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int_type snextc ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Tiến bộ trình tự đầu vào bằng một ký tự và đọc một ký tự.</p>
+<p>Các chức năng gọi<code><a href="sbumpc" title="cpp/io/basic streambuf/sbumpc">sbumpc()</a></code>Để nâng cao trình tự đầu vào. Nếu chức năng đó trở lại<code>Traits::eof()</code>có nghĩa là trình tự đầu vào đã cạn kiệt và<code><a href="uflow" title="cpp/io/basic streambuf/uflow">uflow()</a></code>không thể truy xuất thêm dữ liệu,<code>Traits::eof()</code>được trả lại. Nếu không thì<code><a href="sgetc" title="cpp/io/basic streambuf/sgetc">sgetc()</a></code>được gọi để đọc nhân vật.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Giá trị của ký tự tiếp theo. Nếu trình tự đầu vào đã cạn kiệt,<code>Traits::eof()</code>bất kể</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="sgetc" title="cpp/io/basic streambuf/sgetc"> <span class="t-lines"><span>SBUMPC</span></span></a></div> </td> <td>Stossc<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="sbumpc" title="cpp/io/basic streambuf/sbumpc"> <span class="t-lines"><span>có được số lượng ký tự ngay lập tức có sẵn trong khu vực Get</span><span>SNEXTC</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span></span></span></div> </td> <td>tiến bộ trình tự đầu vào, sau đó đọc một ký tự mà không cần tiến lên<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_streambuf/snextc">https://en.cppreference.com/w/cpp/io/basic_streambuf/snextc</a>
+</p>
+</div>

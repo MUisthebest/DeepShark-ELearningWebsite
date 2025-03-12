@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FileSystem :: BEGIN (recursive_directory_iterator), std :: fileSystem :: end (recursive_directory_iterator)</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/filesystem" title="cpp/header/filesystem">&lt;filesystem&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">recursive_directory_iterator bắt đầu (recursive_directory_iterator iter) noExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Recursive_Directory_Iterator End (Recursive_Directory_Iterator) NOExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class execPolicy,<code>iter</code>Mẫu &lt;Lớp thời lượng&gt;</div> <div class="t-li1">
+<span class="t-li">2)</span>Trả về một bản dựng mặc định<a href="../recursive_directory_iterator" title="cpp/filesystem/recursive directory iterator"><code>recursive_directory_iterator</code></a>, phục vụ như là người lặp lại. Đối số bị bỏ qua.</div> <p>Các chức năng không phải thành viên này cho phép sử dụng<code>recursive_directory_iterator</code>s với phạm vi dựa trên các vòng lặp<span class="t-rev-inl t-since-cxx20"><span>và làm<code>recursive_directory_iterator</code>Một<a href="../../ranges/range" title="cpp/ranges/range"><code>range</code></a>kiểu</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>vòng lặp</td> <td>-</td> <td>Một<code>recursive_directory_iterator</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>iter</code>Mẫu &lt;Lớp thời lượng&gt;</div> <div class="t-li1">
+<span class="t-li">2)</span>END ITERATOR (được xây dựng mặc định<code>recursive_directory_iterator</code>).</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDlib&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;FileSystem&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3480" rel="nofollow">LWG 3480</a> </td> <td>C ++ 17</td> <td>
+<code>end</code>#include &lt;Istream&gt;</td> <td>không gian tên fs = std :: fileSystem;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../directory_iterator/begin" title="cpp/filesystem/directory iterator/begin"> <span class="t-lines"><span>bắt đầu<span class="t-dsc-small">(STD :: FileSystem :: Thư mục_iterator)</span></span><span>kết thúc<span class="t-dsc-small">(STD :: FileSystem :: Thư mục_iterator)</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>dựa trên phạm vi cho hỗ trợ vòng lặp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/recursive_directory_iterator/begin">https://en.cppreference.com/w/cpp/filesystem/recursive_directory_iterator/begin</a>
+</p>
+</div>

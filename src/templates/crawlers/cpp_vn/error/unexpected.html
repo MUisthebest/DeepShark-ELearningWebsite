@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: bất ngờ</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/exception" title="cpp/header/exception">&lt;exception&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">khoảng trống bất ngờ ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td> <pre data-language="cpp">[[noreturn]] vô hiệu bất ngờ ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(không dùng nữa)</span> <br/><span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span> </td> </tr> </table> <p><code>std::unexpected()</code>được gọi bởi thời gian chạy C ++ khi một<a href="../language/except_spec" title="cpp/language/except spec">dynamic exception specification</a>bị vi phạm: Một ngoại lệ được ném từ một hàm có đặc điểm kỹ thuật ngoại lệ cấm các ngoại lệ của loại này.</p>
+<p><code>std::unexpected()</code>Cũng có thể được gọi trực tiếp từ chương trình.</p>
+<p>Trong cả hai trường hợp,<code>std::unexpected</code>Các cuộc gọi hiện đã được cài đặt<code><a href="unexpected_handler" title="cpp/error/unexpected handler">std::unexpected_handler</a></code>. Mặc định<code><a href="unexpected_handler" title="cpp/error/unexpected handler">std::unexpected_handler</a></code>cuộc gọi<code><a href="terminate" title="cpp/error/terminate">std::terminate</a></code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Nếu một kẻ hủy diệt thiết lập lại trình xử lý bất ngờ trong quá trình tháo gỡ và việc tháo gỡ sau đó đã dẫn đến<code>unexpected</code>Được gọi, trình xử lý đã được cài đặt ở cuối biểu thức ném là cái sẽ được gọi là (Lưu ý: Thật mơ hồ cho dù việc ném lại áp dụng cho người xử lý mới).</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>Nếu một chất hủy diệt thiết lập lại trình xử lý bất ngờ trong quá trình tháo gỡ ngăn xếp, thì không xác định được trình xử lý nào được gọi nếu việc tháo gỡ sau đó dẫn đến<code>unexpected</code>được gọi.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Ném bất kỳ ngoại lệ nào được ném bởi hiện đang được cài đặt<code><a href="unexpected_handler" title="cpp/error/unexpected handler">std::unexpected_handler</a></code>.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2111" rel="nofollow">LWG 2111</a> </td> <td>C ++ 11</td> <td>ảnh hưởng của cuộc gọi<code>set_unexpected</code>Trong quá trình tháo gỡ khác với C ++ 98 và phá vỡ một số ABI</td> <td>làm cho không xác định</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../utility/expected/unexpected" title="cpp/utility/expected/unexpected"> <span class="t-lines"><span>không ngờ tới</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>được đại diện như một giá trị bất ngờ<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="unexpected_handler" title="cpp/error/unexpected handler"> <span class="t-lines"><span>bất ngờ_handler</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span></span></span></div> </td> <td>loại chức năng được gọi bởi<code>std::unexpected</code> <br/> <span class="t-mark">(typedef)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/unexpected">https://en.cppreference.com/w/cpp/error/unexpected</a>
+</p>
+</div>

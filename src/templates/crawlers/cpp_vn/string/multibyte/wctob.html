@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: WCTOB</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int wctob (std :: wint_t c);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Thu hẹp một nhân vật rộng<code>c</code>Nếu ký tự multibyte của nó tương đương ở trạng thái dịch chuyển ban đầu là một byte duy nhất.</p>
+<p>Điều này thường có thể đối với các ký tự từ bộ ký tự ASCII, vì hầu hết các mã hóa Multibyte (như UTF-8) sử dụng byte đơn để mã hóa các ký tự đó.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ánh xạ_Type</td> <td>-</td> <td>nhân vật rộng để thu hẹp</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code><a href="../../io/c" title="cpp/io/c">EOF</a></code>nếu như<code>c</code>không đại diện cho một ký tự đa thể với độ dài<code>1</code>trong trạng thái thay đổi ban đầu.</p>
+<p>Nếu không, đại diện một byte của<code>c</code>(1,3)<code>unsigned char</code>chuyển đổi thành<code>int</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;clocale&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CWchar&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="btowc" title="cpp/string/multibyte/btowc"> <span class="t-lines"><span>btowc</span></span></a></div> </td> <td>Mở rộng một ký tự hẹp một byte sang ký tự rộng, nếu có thể<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../io/basic_ios/narrow" title="cpp/io/basic ios/narrow"> <span class="t-lines"><span>RDBUF</span></span></a></div> </td> <td>quản lý bộ đệm luồng liên quan<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_ios&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../locale/ctype/narrow" title="cpp/locale/ctype/narrow"> <span class="t-lines"><span>RDBUF</span></span></a></div> </td> <td>Sputc<code>do_narrow</code> <br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::ctype&lt;CharT&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/multibyte/wctob" title="c/string/multibyte/wctob">C documentation</a></span>vì<code>wctob</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/multibyte/wctob">https://en.cppreference.com/w/cpp/string/multibyte/wctob</a>
+</p>
+</div>

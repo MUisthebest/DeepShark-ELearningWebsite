@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: WCSLEN</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: size_t wcslen (const wchar_t* str);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả về chiều dài của một chuỗi rộng, đó là số lượng các ký tự không rộng null đi trước ký tự mở rộng null.</p>
+<p>Hành vi không được xác định nếu không có ký tự null trong mảng ký tự rộng được chỉ bằng<code>str</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>con trỏ đến chuỗi rộng được chấm dứt null để được kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Độ dài của chuỗi rộng được chấm dứt null<code>str</code>.</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">std :: size_t wcslen (const wchar_t* bắt đầu)</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    // NB: Bắt đầu không được kiểm tra cho nullptr!</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../byte/strlen" title="cpp/string/byte/strlen"> <span class="t-lines"><span>Strlen</span></span></a></div> </td> <td>Trả về độ dài của một chuỗi đã cho<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../multibyte/mblen" title="cpp/string/multibyte/mblen"> <span class="t-lines"><span>Mblen</span></span></a></div> </td> <td>Trả về số byte trong ký tự đa dạng tiếp theo<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/wcslen" title="c/string/wide/wcslen">C documentation</a></span>vì<code>wcslen</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/wcslen">https://en.cppreference.com/w/cpp/string/wide/wcslen</a>
+</p>
+</div>

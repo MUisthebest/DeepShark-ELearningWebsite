@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: FunctionObject</h1> <p>MỘT<strong class="selflink">FunctionObject</strong>Loại là loại của một đối tượng có thể được sử dụng ở bên trái của toán tử cuộc gọi chức năng.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>T</code>thỏa mãn FunctionObject nếu</p>
+<ul><li>phạm vi của các yếu tố để tạo<code>T</code>Phần cuối của phạm vi ban đầu<code><a href="../types/is_object" title="cpp/types/is object">std::is_object</a></code>, Và</li></ul> <p>Cho quá tải</p>
+<ul>
+<li> <code>f</code>, một giá trị của loại<code>T</code>hoặc<code>const T</code>Thì</li>
+<li> <code>args</code>, Danh sách lập luận phù hợp, có thể trống.</li>
+</ul> <p>Các biểu thức sau phải hợp lệ:</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>f(args)</code> </td> <td>thực hiện một cuộc gọi chức năng</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Các chức năng và tham chiếu đến các hàm không phải là loại đối tượng chức năng, mà có thể được sử dụng khi các loại đối tượng chức năng được mong đợi do chức năng trên con trỏ<a class="mw-redirect" href="../language/implicit_cast" title="cpp/language/implicit cast">implicit conversion</a>.</p>
+<h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <ul>
+<li>Tất cả<a href="../language/pointer#Pointers_to_functions" title="cpp/language/pointer">pointers to functions</a>đáp ứng yêu cầu này.</li>
+<li>Tất cả các đối tượng chức năng được xác định trong<a href="../header/functional" title="cpp/header/functional"><code>&lt;functional&gt;</code></a>.</li>
+<li>Một số loại chức năng trả lại của<a href="../header/functional" title="cpp/header/functional"><code>&lt;functional&gt;</code></a>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Thể hiện các loại đối tượng chức năng khác nhau.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;chức năng&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="callable" title="cpp/named req/Callable"><span class="t-lines"><span>Có thể gọi được</span></span></a></div> </td> <td>một loại mà hoạt động gọi được xác định<br/><span class="t-mark">(Yêu cầu được đặt tên)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/FunctionObject">https://en.cppreference.com/w/cpp/named_req/FunctionObject</a>
+</p>
+</div>

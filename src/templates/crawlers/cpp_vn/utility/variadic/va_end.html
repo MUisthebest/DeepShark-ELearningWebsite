@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">Va_end</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdarg" title="cpp/header/cstdarg">&lt;cstdarg&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void VA_END (STD :: VA_LIST AP);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Các<code>va_end</code>Macro thực hiện dọn dẹp cho một<code>ap</code>đối tượng được khởi tạo bằng một cuộc gọi đến<code><a href="va_start" title="cpp/utility/variadic/va start">va_start</a></code>hoặc<code><a href="va_copy" title="cpp/utility/variadic/va copy">va_copy</a></code>.<code>va_end</code>có thể sửa đổi<code>ap</code>Vì vậy, nó không còn có thể sử dụng được.</p>
+<p>Nếu không có cuộc gọi tương ứng đến<code><a href="va_start" title="cpp/utility/variadic/va start">va_start</a></code>hoặc<code><a href="va_copy" title="cpp/utility/variadic/va copy">va_copy</a></code>Xây dựng một khoảng một khung nhìn trong phạm vi<code>va_end</code>không được gọi trước khi một hàm gọi<code><a href="va_start" title="cpp/utility/variadic/va start">va_start</a></code>hoặc<code><a href="va_copy" title="cpp/utility/variadic/va copy">va_copy</a></code>Trả về, hành vi là không xác định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>AP</td> <td>-</td> <td>một ví dụ của<code><a href="va_list" title="cpp/utility/variadic/va list">va_list</a></code>gõ để dọn dẹp</td>
+</tr>
+</table> <h3 id="Expanded_value">Giá trị mở rộng</h3> <p>Gán cho đã cho</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="va_start" title="cpp/utility/variadic/va start"> <span class="t-lines"><span>Va_Start</span></span></a></div> </td> <td>Cho phép truy cập vào các đối số chức năng Variadic<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="va_copy" title="cpp/utility/variadic/va copy"> <span class="t-lines"><span>Va_Copy</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tạo một bản sao của các đối số chức năng Variadic<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="va_arg" title="cpp/utility/variadic/va arg"> <span class="t-lines"><span>Va_arg</span></span></a></div> </td> <td>Truy cập đối số chức năng Variadic tiếp theo<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/variadic/va_end" title="c/variadic/va end">C documentation</a></span>vì<code>va_end</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/variadic/va_end">https://en.cppreference.com/w/cpp/utility/variadic/va_end</a>
+</p>
+</div>

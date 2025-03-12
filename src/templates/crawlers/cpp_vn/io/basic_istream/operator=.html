@@ -1,0 +1,11 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_istream &lt;biểu đồ, đặc điểm&gt; :: toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">basic_istream &amp; toán tử = (const basic_istream &amp; rhs) = xóa;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>được bảo vệ:</div> <div class="t-li1">
+<span class="t-li">2)</span>basic_istream &amp; toán tử = (basic_istream &amp;&amp; rhs);<a href="gcount" title="cpp/io/basic istream/gcount"><code>gcount()</code></a>Toán tử gán bản sao được bảo vệ và bị xóa. Các luồng đầu vào không thể sao chép.<a href="../basic_ios/rdbuf" title="cpp/io/basic ios/rdbuf"><code>rdbuf()</code></a>    mẫu &lt;<code>rhs</code>Toán tử chuyển nhượng di chuyển trao đổi<code>swap(*rhs)</code>các giá trị và tất cả các thành viên dữ liệu của lớp cơ sở, ngoại trừ<code><a href="../basic_ifstream" title="cpp/io/basic ifstream">std::basic_ifstream</a></code>Và<code><a href="../basic_istringstream" title="cpp/io/basic istringstream">std::basic_istringstream</a></code>, như thể bằng cách gọi</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>. Toán tử gán di chuyển này được bảo vệ: Nó chỉ được gọi bởi các toán tử gán di chuyển của các lớp luồng đầu vào di động dẫn xuất<code>*this</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">, trong đó biết làm thế nào để di chuyển chính xác-chỉ định các streambuffer liên quan.</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_istream/operator%3D">https://en.cppreference.com/w/cpp/io/basic_istream/operator%3D</a>
+</p>
+</div>

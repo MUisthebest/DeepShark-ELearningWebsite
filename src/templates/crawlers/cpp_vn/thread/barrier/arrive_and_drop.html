@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Rào cản &lt;FallionInfunction&gt; :: đến_and_drop</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void đến_and_drop ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Giảm số lượng dự kiến ​​ban đầu cho tất cả các giai đoạn tiếp theo bằng một, và sau đó giảm số lượng dự kiến ​​cho giai đoạn hiện tại.</p>
+<p>Hàm này được thực thi về mặt nguyên tử. Cuộc gọi đến chức năng này<a href="../../atomic/memory_order#Strongly_happens-before" title="cpp/atomic/memory order">strongly happens-before</a>Sự khởi đầu của bước hoàn thành pha cho giai đoạn hiện tại.</p>
+<p>Hành vi không được xác định nếu số lượng dự kiến ​​cho pha hiện tại bằng không.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Ném<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>với mã lỗi được phép cho các loại mutex về lỗi.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Hàm này có thể khiến bước hoàn thành cho giai đoạn hiện tại bắt đầu.</p>
+<p>Nếu số lượng dự kiến ​​hiện tại bằng 0 trước khi gọi hàm này, thì số lượng dự kiến ​​ban đầu cho tất cả các giai đoạn tiếp theo cũng bằng không, có nghĩa là<code>barrier</code>không thể được sử dụng lại.</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/barrier/arrive_and_drop">https://en.cppreference.com/w/cpp/thread/barrier/arrive_and_drop</a>
+</p>
+</div>

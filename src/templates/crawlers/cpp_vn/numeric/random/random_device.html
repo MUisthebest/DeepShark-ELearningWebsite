@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Random_device</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/random" title="cpp/header/random">&lt;random&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">lớp ngẫu nhiên_device;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p><code>std::random_device</code>là một trình tạo số ngẫu nhiên số nguyên được phân phối đồng đều, tạo ra các số ngẫu nhiên không xác định.</p>
+<p><code>std::random_device</code>Có thể được thực hiện theo một công cụ số giả ngẫu nhiên do triển khai xác định nếu nguồn không xác định (ví dụ: thiết bị phần cứng) không có sẵn cho việc triển khai. Trong trường hợp này mỗi<a href="#top"><code>std::random_device</code></a>Đối tượng có thể tạo cùng một chuỗi số.</p>
+<h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>ATOMIC_UNSIGNED_LOCK_FREE</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>result_type</code> <span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td> <span class="kw4">STD</span> <span class="kw4">int</span> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr> <td colspan="2"> <h5 id="Construction">Sự thi công</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="random_device/random_device" title="cpp/numeric/random/random device/random device"> <span class="t-lines"><span>chuyên môn)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Thuật ngữ nhân<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>chuyên môn)</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark">(đã xóa)</span> <span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>toán tử gán bị xóa<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Generation">Thế hệ</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="random_device/operator()" title="cpp/numeric/random/random device/operator()"> <span class="t-lines"><span>chuyển đổi đối tượng thành</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>3.5)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Characteristics">Đặc trưng</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="random_device/entropy" title="cpp/numeric/random/random device/entropy"> <span class="t-lines"><span>entropy</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được ước tính entropy cho trình tạo số ngẫu nhiên không xác định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="random_device/min" title="cpp/numeric/random/random device/min"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span> <span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Loại tích phân được tạo ra bởi động cơ. Kết quả không được xác định nếu đây không phải là một loại tích phân không dấu.<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="random_device/max" title="cpp/numeric/random/random device/max"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span> <span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xây dựng và gieo hạt<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Một triển khai đáng chú ý trong đó<a href="#top"><code>std::random_device</code></a>là xác định trong các phiên bản cũ của MingW-W64 (<a class="external text" href="https://sourceforge.net/p/mingw-w64/bugs/338/" rel="nofollow">bug 338</a>, đã sửa từ GCC 9.2). Các phiên bản MingW-W64 mới nhất có thể được tải xuống từ<a class="external text" href="https://gcc-mcf.lhmouse.com/" rel="nofollow">GCC with the MCF thread model</a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Map&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/random/random_device">https://en.cppreference.com/w/cpp/numeric/random/random_device</a>
+</p>
+</div>

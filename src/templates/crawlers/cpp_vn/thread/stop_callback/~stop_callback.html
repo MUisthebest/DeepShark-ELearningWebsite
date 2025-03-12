@@ -1,0 +1,11 @@
+ <h1 class="firstHeading" id="firstHeading">std :: stop_callback &lt;callback&gt; :: ~ stop_callback</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">~ stop_callback ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Phá hủy<code>stop_callback</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<p>Nếu như<code>*this</code>Toán tử gán bản sao được xác định ngầm cho một lớp<code>stop_token</code>Với trạng thái dừng liên kết, hủy bỏ cuộc gọi lại từ nó.</p>
+<p>Nếu chức năng gọi lại được gọi đồng thời trên một luồng khác, bộ hủy không hoàn thành cho đến khi gọi chức năng gọi lại hoàn tất. Nếu chức năng gọi lại đang được gọi trên cùng một luồng, bộ hủy sẽ được gọi, thì bộ hủy sẽ trả về mà không chờ gọi gọi gọi lại (xem ghi chú).</p>
+<h3 id="Notes">Ghi chú</h3> <p>Các<code>stop_callback</code>Destructor được thiết kế để ngăn chặn điều kiện chủng tộc và bế tắc. Nếu một chủ đề khác hiện đang gọi cuộc gọi lại, thì bộ hủy không thể quay lại cho đến khi hoàn thành, nếu không đối tượng chức năng có khả năng bị phá hủy trong khi nó đang được thực thi. Hàm gọi lại không bắt buộc phải không thể sao chép cũng như không thể di chuyển - nó sống trong<code>stop_callback</code>tự phản đối ngay cả sau khi đăng ký.</p>
+<p>Mặt khác, nếu luồng hiện tại gọi bộ hủy diệt là cùng một luồng đang gọi cuộc gọi lại, thì bộ hủy không thể chờ hoặc nếu không sẽ xảy ra bế tắc. Có thể và hợp lệ cho cùng một luồng để phá hủy<code>stop_callback</code>trong khi nó đang gọi chức năng gọi lại của nó, bởi vì chức năng gọi lại có thể tự phá hủy<code>stop_callback</code>, trực tiếp hoặc gián tiếp.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/stop_callback/%7Estop_callback">https://en.cppreference.com/w/cpp/thread/stop_callback/%7Estop_callback</a>
+</p>
+</div>

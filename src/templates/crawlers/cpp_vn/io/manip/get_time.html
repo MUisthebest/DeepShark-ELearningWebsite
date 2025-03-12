@@ -1,0 +1,168 @@
+ <h1 class="firstHeading" id="firstHeading">std :: get_time</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/iomanip" title="cpp/header/iomanip">&lt;iomanip&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;biểu đồ lớp&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>/*không xác định*/ get_money (moneyt &amp; mon, bool intl = false);<code>in &gt;&gt; get_time(tmb, fmt)</code>/* không xác định*/ get_time (std :: tm* tmb, biểu đồ const* fmt);<code>fmt</code>, phân tích cú pháp đầu vào ký tự là giá trị ngày/thời gian theo chuỗi định dạng<code><a href="../../locale/time_get" title="cpp/locale/time get">std::time_get</a></code>Theo<code>in</code>Facet of the Locale hiện đang thấm nhuần trong luồng đầu vào<code><a href="../../chrono/c/tm" title="cpp/chrono/c/tm">std::tm</a></code>đối tượng được chỉ ra bởi<code>tmb</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>. Giá trị kết quả được lưu trữ trong một</td> <td>-</td> <td>TMB<code><a href="../../chrono/c/tm" title="cpp/chrono/c/tm">std::tm</a></code>con trỏ hợp lệ đến</td>
+</tr> <tr class="t-par"> <td>Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;</td> <td>-</td> <td>đối tượng nơi kết quả sẽ được lưu trữ<code>CharT</code>con trỏ đến một kết thúc không<p>Chuỗi chỉ định định dạng chuyển đổi<code>%</code>Chuỗi định dạng bao gồm các nhà xác định chuyển đổi bằng 0 hoặc nhiều hơn, ký tự khoảng trắng và các ký tự thông thường (ngoại trừ<code>%</code>nhân vật, tùy chọn theo sau là<code>E</code>hoặc<code>O</code>). Mỗi ký tự thông thường dự kiến ​​sẽ khớp với một ký tự trong luồng đầu vào trong so sánh không nhạy cảm trường hợp. Mỗi ký tự khoảng trắng phù hợp với khoảng trắng tùy ý trong chuỗi đầu vào. Mỗi đặc tả chuyển đổi bắt đầu với<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/strptime.html" rel="nofollow"><code>strptime()</code></a>:</p>
+<table class="wikitable"> <tr> <th>bù lại<br/>thời lượng để biểu diễn phần bù từ UTC tương ứng với</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th> <th>công cụ sửa đổi (bị bỏ qua nếu không được hỗ trợ bởi ngôn ngữ), theo sau là ký tự xác định hành vi của trình xác định. Các định dạng xác định định dạng phù hợp với chức năng POSIX</th>
+</tr> <tr> <th>
+<code>%</code> </th> <td>Viết cho các lĩnh vực<code>%</code>. Thông số kỹ thuật chuyển đổi đầy đủ phải là<code>%%</code> </td> <td>Gán cho đã cho</td>
+</tr> <tr> <th>
+<code>t</code> </th> <td>Phù hợp với bất kỳ khoảng trắng nào</td> <td>Gán cho đã cho</td>
+</tr> <tr> <th>
+<code>n</code> </th> <td>Phù hợp với bất kỳ khoảng trắng nào</td> <td>Gán cho đã cho</td>
+</tr> <tr> <th colspan="3">Mỗi ký tự khoảng trắng phù hợp với các ký tự khoảng trắng hoặc nhiều hơn trong luồng đầu vào.</th>
+</tr> <tr> <th>
+<code>Y</code> </th> <td>Phù hợp với bất kỳ khoảng trắng nào<b>năm</b>phân tích cú pháp đầy đủ</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>EY</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>năm</b>phân tích cú pháp</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>y</code> </th> <td>Kết quả trong 2000-2068<b>năm</b>phân tích 2 chữ số cuối cùng của<code>[69,99]</code>như một số thập phân. Phạm vi<code>[00,68]</code>Kết quả trong các giá trị 1969 đến 1999, phạm vi</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>Oy</code> </th> <td>Kết quả trong 2000-2068<b>năm</b>phân tích 2 chữ số cuối cùng của</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>Ey</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>năm</b>Khi được bù từ thời kỳ Lịch thay thế của Locale<code>%EC</code> </td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>C</code> </th> <td>phân tích cú pháp<b>năm</b>như một số thập phân (phạm vi<code>[00,99]</code>)</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>EC</code> </th> <td>phân tích 2 chữ số đầu tiên của</td> <td>
+<code>tm_year</code> </td>
+</tr> <tr> <th colspan="3">Các nhà xác định chuyển đổi sau đây có sẵn:</th>
+</tr> <tr> <th>
+<code>b</code> </th> <td>Phân tích tên của năm cơ sở (giai đoạn) trong đại diện thay thế của địa phương, ví dụ: 平成 (thời đại Heisei) trong ja_jp<code>Oct</code> </td> <td>
+<code>tm_mon</code> </td>
+</tr> <tr> <th>
+<code>h</code> </th> <td>Từ đồng nghĩa của<code>b</code> </td> <td>
+<code>tm_mon</code> </td>
+</tr> <tr> <th>
+<code>B</code> </th> <td>Từ đồng nghĩa của<code>b</code> </td> <td>
+<code>tm_mon</code> </td>
+</tr> <tr> <th>
+<code>m</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tháng</b>như một số thập phân (phạm vi<code>[01,12]</code>phân tích cú pháp</td> <td>
+<code>tm_mon</code> </td>
+</tr> <tr> <th>
+<code>Om</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tháng</b>phân tích cú pháp</td> <td>
+<code>tm_mon</code> </td>
+</tr> <tr> <th colspan="3">Tuần</th>
+</tr> <tr> <th>
+<code>U</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tuần trong năm</b>Như một số thập phân (Chủ nhật là ngày đầu tiên trong tuần) (phạm vi<code>[00,53]</code>phân tích cú pháp</td> <td>
+<code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th>
+<code>OU</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tuần trong năm</b>, như bằng<code>%U</code>phân tích cú pháp</td> <td>
+<code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th>
+<code>W</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tuần trong năm</b>Như một số thập phân (Thứ Hai là ngày đầu tiên trong tuần) (phạm vi<code>[00,53]</code>phân tích cú pháp</td> <td>
+<code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th>
+<code>OW</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>tuần trong năm</b>, như bằng<code>%W</code>phân tích cú pháp</td> <td>
+<code>tm_year</code>Thì<code>tm_wday</code>Thì<code>tm_yday</code> </td>
+</tr> <tr> <th colspan="3">Ngày trong năm/tháng</th>
+</tr> <tr> <th>
+<code>j</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>ngày trong năm</b>như một số thập phân (phạm vi<code>[001,366]</code>phân tích cú pháp</td> <td>
+<code>tm_yday</code> </td>
+</tr> <tr> <th>
+<code>d</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>ngày trong tháng</b>như một số thập phân (phạm vi<code>[01,31]</code>phân tích cú pháp</td> <td>
+<code>tm_mday</code> </td>
+</tr> <tr> <th>
+<code>Od</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>ngày trong tháng</b>phân tích cú pháp</td> <td>
+<code>tm_mday</code> </td>
+</tr> <tr> <th>
+<code>e</code> </th> <td>Từ đồng nghĩa của<code>d</code> </td> <td>
+<code>tm_mday</code> </td>
+</tr> <tr> <th>
+<code>Oe</code> </th> <td>Từ đồng nghĩa của<code>Od</code> </td> <td>
+<code>tm_mday</code> </td>
+</tr> <tr> <th colspan="3">Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.</th>
+</tr> <tr> <th>
+<code>a</code> </th> <td>Sử dụng hệ thống số thay thế, ví dụ: Parses là 27 ở địa phương JA_JP, các số 0 hàng đầu được phép nhưng không bắt buộc<code>Fri</code> </td> <td>
+<code>tm_wday</code> </td>
+</tr> <tr> <th>
+<code>A</code> </th> <td>Từ đồng nghĩa của<code>a</code> </td> <td>
+<code>tm_wday</code> </td>
+</tr> <tr> <th>
+<code>w</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>Ngày trong tuần</b>như một số thập phân, nơi Chủ nhật là<code>0</code>(phạm vi<code>[0-6]</code>)</td> <td>
+<code>tm_wday</code> </td>
+</tr> <tr> <th>
+<code>Ow</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>Ngày trong tuần</b>như một số thập phân, nơi Chủ nhật là<code>0</code>phân tích cú pháp</td> <td>
+<code>tm_wday</code> </td>
+</tr> <tr> <th colspan="3">Giờ, phút, thứ hai</th>
+</tr> <tr> <th>
+<code>H</code> </th> <td>, sử dụng hệ thống số thay thế, ví dụ: Parses AS 2 in JA_JP Locale<b>giờ</b>Là một số thập phân, đồng hồ 24 giờ (phạm vi<code>[00-23]</code>phân tích cú pháp</td> <td>
+<code>tm_hour</code> </td>
+</tr> <tr> <th>
+<code>OH</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>giờ</b>phân tích cú pháp</td> <td>
+<code>tm_hour</code> </td>
+</tr> <tr> <th>
+<code>I</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>giờ</b>Là một số thập phân, đồng hồ 12 giờ (phạm vi<code>[01,12]</code>phân tích cú pháp</td> <td>
+<code>tm_hour</code> </td>
+</tr> <tr> <th>
+<code>OI</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>giờ</b>phân tích cú pháp</td> <td>
+<code>tm_hour</code> </td>
+</tr> <tr> <th>
+<code>M</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>phút</b>như một số thập phân (phạm vi<code>[00,59]</code>phân tích cú pháp</td> <td>
+<code>tm_min</code> </td>
+</tr> <tr> <th>
+<code>OM</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>phút</b>phân tích cú pháp</td> <td>
+<code>tm_min</code> </td>
+</tr> <tr> <th>
+<code>S</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>thứ hai</b>như một số thập phân (phạm vi<code>[00,60]</code>phân tích cú pháp</td> <td>
+<code>tm_sec</code> </td>
+</tr> <tr> <th>
+<code>OS</code> </th> <td>), các số 0 hàng đầu được phép nhưng không bắt buộc<b>thứ hai</b>phân tích cú pháp</td> <td>
+<code>tm_sec</code> </td>
+</tr> <tr> <th colspan="3">Khác</th>
+</tr> <tr> <th>
+<code>c</code> </th> <td>Sử dụng hệ thống số thay thế, ví dụ: Parses là 24 trong địa phương JA_JP<code>Sun Oct 17 04:41:13 2010</code>(phụ thuộc vào địa phương)</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>Ec</code> </th> <td>Phân tích định dạng chuỗi thời gian và tiêu chuẩn của địa phương, ví dụ:</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>x</code> </th> <td>Phân tích định dạng chuỗi thời gian và ngày thay thế của địa phương, ví dụ: mong đợi 平成 23 (năm Heisei 23) thay vì 2011 (năm 2011) tại địa phương JA_JP</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>Ex</code> </th> <td>Phân tích đại diện ngày tiêu chuẩn của địa phương</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>X</code> </th> <td>phân tích các đại diện ngày thay thế của địa phương, ví dụ: mong đợi 平成 23 (năm Heisei 23) thay vì 2011 (năm 2011) tại địa phương JA_JP</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>EX</code> </th> <td>Phân tích đại diện thời gian tiêu chuẩn của địa phương</td> <td>Xem thêm việc triển khai</td>
+</tr> <tr> <th>
+<code>D</code> </th> <td>tương đương với<b>Phân tích đại diện thời gian thay thế của địa phương</b> </td> <td>
+<code>tm_mon</code>Thì<code>tm_mday</code>Thì<code>tm_year</code> </td>
+</tr> <tr> <th>
+<code>r</code> </th> <td>" %m / %d / %y"<b>phân tích thời gian đồng hồ 12 giờ tiêu chuẩn của địa phương (trong POSIX,</b>)</td> <td>
+<code>tm_hour</code>Thì<code>tm_min</code>Thì<code>tm_sec</code> </td>
+</tr> <tr> <th>
+<code>R</code> </th> <td>tương đương với<b>" %I: %m: %s %p"</b> </td> <td>
+<code>tm_hour</code>Thì<code>tm_min</code> </td>
+</tr> <tr> <th>
+<code>T</code> </th> <td>tương đương với<b>" %H: %m"</b> </td> <td>
+<code>tm_hour</code>Thì<code>tm_min</code>Thì<code>tm_sec</code> </td>
+</tr> <tr> <th>
+<code>p</code> </th> <td>" %H: %M: %S"<b>sáng hoặc p.m.</b> </td> <td>
+<code>tm_hour</code> </td>
+</tr>
+</table> <p>Ghi chú:<code>tm_isdst</code>phân tích cú pháp của địa điểm tương đương với<code>mktime</code></p>
+</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>, mong đợi các ký hiệu tiền tệ tùy chọn khác</p>
+<ul><li>nếu như<code>in</code>Một đối tượng của loại không xác định sao cho<code><a href="http://en.cppreference.com/w/cpp/io/basic_istream"><span class="kw1717">Điều đó cho tất cả<span class="me2">basic_istream</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span></code>, biểu thức<code>in &gt;&gt; get_time(tmb, fmt)</code> <ul>
+<li>và kết quả của việc chuyển đổi bằng<code><a href="http://en.cppreference.com/w/cpp/io/basic_istream"><span class="kw1717">Điều đó cho tất cả<span class="me2">basic_istream</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span></code> </li>
+<li>là một đối tượng của loại<code>in</code> </li>
+<li>có giá trị<code>f(in, tmb, fmt)</code> </li>
+</ul> </li></ul> <p>hành xử như thể nó được gọi<code>f</code>        const std :: remove_reference_t &lt;u&gt; &amp;&gt;;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">không được viết và cần được đặt rõ ràng để sử dụng với các chức năng như</pre></div> <h3 id="Notes">Ghi chú</h3> <p>Mẫu &lt;biểu đồ lớp, đặc điểm lớp&gt;<code><a href="../../locale/time_get/get" title="cpp/locale/time get/get">std::time_get::do_get</a></code>void f (std :: basic_ios &lt;biểu đồ, đặc điểm&gt; &amp; str, std :: tm* tmb, biểu đồ const* fmt)<code>*tmb</code>{<code>fmt</code>    sử dụng iter = std :: istreambuf_itorator &lt;biểu đồ, đặc điểm&gt;;<code>*tmb</code>    sử dụng timetget = time_get &lt;biểu đồ, iter&gt;;<code>std::get_time</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p> <code>%b</code>    std :: iOS_Base :: iostate err = std :: iOS_Base :: Goodbit;<a class="external text" href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=78714" rel="nofollow">bug #78714</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    Const Timeget &amp; tg = std :: use_facet &lt;meoget&gt; (str.getloc ());</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../locale/time_get" title="cpp/locale/time get"> <span class="t-lines"><span>Time_get</span></span></a></div> </td> <td>Phân tích giá trị thời gian/ngày từ một chuỗi ký tự đầu vào vào<code><a href="../../chrono/c/tm" title="cpp/chrono/c/tm">std::tm</a></code> <br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="put_time" title="cpp/io/manip/put time"> <span class="t-lines"><span>#include &lt;Istream&gt;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../chrono/parse" title="cpp/chrono/parse"> <span class="t-lines"><span>phân tích cú pháp</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>chrono</code>Đối tượng từ một luồng<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/manip/get_time">https://en.cppreference.com/w/cpp/io/manip/get_time</a>
+</p>
+</div>

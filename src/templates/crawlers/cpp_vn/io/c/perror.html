@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Perror</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void perror (const char *s);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>In mô tả văn bản của mã lỗi hiện đang được lưu trữ trong biến hệ thống<code><a href="../../error/errno" title="cpp/error/errno">errno</a></code>ĐẾN<code><a href="std_streams" title="cpp/io/c/std streams">stderr</a></code>.</p>
+<p>Mô tả được hình thành bằng cách kết hợp các thành phần sau:</p>
+<ul>
+<li>nội dung của chuỗi byte kết thúc null được trỏ đến bởi<code>s</code>, tiếp theo là<code>": "</code>(Trừ khi<code>s</code>là một con trỏ null hoặc nhân vật được chỉ ra bởi<code>s</code>là nhân vật null).</li>
+<li>Chuỗi thông báo lỗi do triển khai xác định mô tả mã lỗi được lưu trữ trong<code>errno</code>, tiếp theo là<code>'\n'</code>. Chuỗi thông báo lỗi giống hệt với kết quả của<code><a href="http://en.cppreference.com/w/cpp/string/byte/strerror"><span class="kw1164">Điều đó cho tất cả<span class="me2">    const double not_a_number = std :: log (-1.0);</span></span></a><span class="br0">.</span><span class="kw2">errno</span><span class="br0">)</span></code>.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>con trỏ đến chuỗi kết thúc không có thông điệp giải thích</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cerrno&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cmath&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../error/errno" title="cpp/error/errno"> <span class="t-lines"><span>errno</span></span></a></div> </td> <td>Macro mở rộng sang biến số lỗi-local tương thích POSIX<br/><span class="t-mark">(biến macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../string/byte/strerror" title="cpp/string/byte/strerror"> <span class="t-lines"><span>    const double not_a_number = std :: log (-1.0);</span></span></a></div> </td> <td>    std :: cout &lt;&lt; not_a_number &lt;&lt; '\ n';<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/perror" title="c/io/perror">C documentation</a></span>vì<code>perror</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/perror">https://en.cppreference.com/w/cpp/io/c/perror</a>
+</p>
+</div>

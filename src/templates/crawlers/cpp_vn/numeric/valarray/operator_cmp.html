@@ -1,0 +1,36 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử ==,! =, &lt;, &lt;=,&gt;,&gt; = (std :: valarray)</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/valarray" title="cpp/header/valarray">&lt;valarray&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt; </pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">std :: valarray &lt;ool&gt; toán tử == (const std :: valarray &lt;t&gt; &amp; lhs, const std :: valarray &lt;t&gt; &amp; rhs);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt; </pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>std :: Valarray &lt;ool&gt; toán tử! = (const std :: valarray &lt;t&gt; &amp; lhs, const std :: valarray &lt;t&gt; &amp; rhs);</p>
+<div class="t-li1">
+<span class="t-li">1)</span>std :: Valarray &lt;bool&gt; toán tử&gt; (const std :: valarray &lt;t&gt; &amp; lhs, const std :: valarray &lt;t&gt; &amp; rhs);<code>bool</code>std :: Valarray &lt;bool&gt; toán tử &lt;(const std :: valarray &lt;t&gt; &amp; lhs, const std :: valarray &lt;t&gt; &amp; rhs);<code>lhs</code>Và<code>rhs</code>.</div> <p>đến một phạm vi khác kết thúc tại<code>size() != v.size()</code>.</p>
+<div class="t-li1">
+<span class="t-li">2)</span>std :: Valarray &lt;bool&gt; toán tử&gt; (const std :: valarray &lt;t&gt; &amp; lhs, const std :: valarray &lt;t&gt; &amp; rhs);<code>bool</code>std :: Valarray &lt;ool&gt; toán tử &lt;= (const std :: valarray &lt;t&gt; &amp; lhs, const std :: valarray &lt;t&gt; &amp; rhs);<code>lhsv</code>Mẫu &lt;Class T&gt; <code>rhs</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>std :: Valarray &lt;bool&gt; toán tử&gt; (const std :: valarray &lt;t&gt; &amp; lhs, const std :: valarray &lt;t&gt; &amp; rhs);<code>bool</code>Mẫu &lt;Class T&gt; <code>lhs</code>Và<code>rhsv</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>std :: valarray &lt;ool&gt; toán tử&gt; = (const std :: valarray &lt;t&gt; &amp; lhs, const std :: valarray &lt;t&gt; &amp; rhs);</td>
+</tr> <tr class="t-par"> <td>Mẫu &lt;Class T&gt; </td> <td>-</td> <td>std :: valarray &lt;ool&gt; toán tử == (const typename std :: valarray &lt;t&gt; :: value_type &amp; lhsv,</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>                                const std :: Valarray &lt;t&gt; &amp; rhs);<code>bool</code>Mẫu &lt;Class T&gt; </p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Mỗi toán tử chỉ có thể được khởi tạo nếu các yêu cầu sau được đáp ứng:</p>
+<ul>
+<li>Toán tử được chỉ định có thể được áp dụng cho loại<code>T</code>.</li>
+<li>Giá trị kết quả có thể được chuyển đổi rõ ràng thành<code>bool</code>.</li>
+</ul> <p>được sử dụng do<code><a href="../valarray" title="cpp/numeric/valarray">std::valarray</a></code>Chức năng có thể được thực hiện với loại trả về khác với</p>
+<ul>
+<li>Tất cả<span class="kw4">hằng số</span>Tại điểm trong mã<code><a href="../valarray" title="cpp/numeric/valarray">std::valarray</a></code>. Trong trường hợp này, loại thay thế có các thuộc tính sau:</li>
+<li> <code><a href="../valarray" title="cpp/numeric/valarray">std::valarray</a></code>Thì<code><a href="slice_array" title="cpp/numeric/valarray/slice array">std::slice_array</a></code>Thì<code><a href="gslice_array" title="cpp/numeric/valarray/gslice array">std::gslice_array</a></code>Thì<code><a href="mask_array" title="cpp/numeric/valarray/mask array">std::mask_array</a></code>Và<code><a href="indirect_array" title="cpp/numeric/valarray/indirect array">std::indirect_array</a></code>được cung cấp.</li>
+<li>có thể được xây dựng từ loại thay thế.<span class="kw4">hằng số</span> <a href="http://en.cppreference.com/w/cpp/numeric/valarray"><span class="kw1476">Điều đó cho tất cả<span class="me2">Valarray</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span> <span class="t-rev-inl t-since-cxx11"><span>                             STD :: Memory_order Order) NoExcept;<a href="begin2" title="cpp/numeric/valarray/begin2"><code>begin()</code></a>Và<a href="end2" title="cpp/numeric/valarray/end2"><code>end()</code></a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Cho mọi chức năng lấy một</li>
+<li>, các chức năng giống hệt nhau lấy các loại thay thế sẽ được thêm vào;<span class="kw4">hằng số</span> <a href="http://en.cppreference.com/w/cpp/numeric/valarray"><span class="kw1476">Điều đó cho tất cả<span class="me2">Valarray</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span>Cho mọi chức năng lấy hai chức năng<span class="kw4">hằng số</span> <a href="http://en.cppreference.com/w/cpp/numeric/valarray"><span class="kw1476">Điều đó cho tất cả<span class="me2">Valarray</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span>đối số, các chức năng giống hệt nhau lấy mọi kết hợp của</li>
+<li>và các loại thay thế sẽ được thêm vào.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">std :: Valarray &lt;ool&gt; toán tử! = (const typename std :: valarray &lt;t&gt; :: value_type &amp; lhsv,</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">                                const std :: Valarray &lt;t&gt; &amp; rhs);</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3074" rel="nofollow">LWG 3074</a> </td> <td>C ++ 98</td> <td>
+<code>T</code>vy, vx<code>valarray</code>vì<span class="t-v">sở hữu phần tử được trích xuất hoặc xử lý nút trống trong trường hợp phần tử không được tìm thấy trong</span>Thì<br/>Mẫu &lt;Class T&gt; </td> <td>Một mảng số chứa kết quả tính toán của tiếp tuyến nghịch đảo.<code>T</code>          khoảng cách lớp = std :: ptrdiff_t&gt;<code>valarray</code> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/valarray/operator_cmp">https://en.cppreference.com/w/cpp/numeric/valarray/operator_cmp</a>
+</p>
+</div>

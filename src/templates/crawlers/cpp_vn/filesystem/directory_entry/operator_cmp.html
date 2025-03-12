@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">std :: fileSystem :: thư mục_entry :: toán tử ==,! =, &lt;, &lt;=,&gt;,&gt; =, &lt;=&gt;</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Toán tử bool == (Const Directory_Entry &amp; RHS) const NoExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td> <pre data-language="cpp">toán tử bool! = (const thư mục_entry &amp; rhs) const noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td> <pre data-language="cpp">toán tử bool &lt;(const Directory_entry &amp; RHS) const NoExcept;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td> <pre data-language="cpp">toán tử bool &lt;= (const thư mục_entry &amp; rhs) const noexcept;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td> <pre data-language="cpp">toán tử bool&gt; (const thư mục_entry &amp; rhs) const noexcept;</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td> <pre data-language="cpp">toán tử bool&gt; = (const thư mục_entry &amp; rhs) const noexcept;</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">std :: strong_ordering toán tử &lt;=&gt; (const thư mục_entry &amp; rhs) const noexcept;</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>So sánh đường dẫn với mục nhập thư mục<code>rhs</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<code>&lt;</code>Thì<code>&lt;=</code>Thì<code>&gt;</code>Thì<code>&gt;=</code>, Và<code>!=</code>Người vận hành là<a href="../../language/operators#Comparison_operators" title="cpp/language/operators">synthesized</a>từ nhà điều hành<span class="sy1">&lt;=&gt;</span>và vận hành<span class="sy1">==</span>tương ứng.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>thư mục_entry để so sánh</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>nếu như<code>path() == rhs.path()</code>Thì<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>true</code>nếu như<code>path() != rhs.path()</code>Thì<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <code>true</code>nếu như<code>path() &lt; rhs.path()</code>Thì<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">là trong</span> <code>true</code>nếu như<code>path() &lt;= rhs.path()</code>Thì<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <code>true</code>nếu như<code>path() &gt; rhs.path()</code>Thì<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">từ_sys</span> <code>true</code>nếu như<code>path() &gt;= rhs.path()</code>Thì<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">6)</span>Kết quả của<code>path() &lt;=&gt; rhs.path()</code>.</div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="path" title="cpp/filesystem/directory entry/path"> <span class="t-lines"><span>con đường</span><span>nhà điều hành const con đường &amp;</span></span></a></div> </td> <td>Trả về đường dẫn mà mục nhập đề cập đến<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/directory_entry/operator_cmp">https://en.cppreference.com/w/cpp/filesystem/directory_entry/operator_cmp</a>
+</p>
+</div>

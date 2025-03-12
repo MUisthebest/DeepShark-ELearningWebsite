@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: scoped_allocator_adaptor &lt;outeralloc, inneralloc ...&gt; :: outer_allocator</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/scoped_allocator" title="cpp/header/scoped allocator">&lt;scoped_allocator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">outer_allocator_type &amp; outer_allocator () noExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">const outer_allocator_type &amp; outer_allocator () const noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Có được một tham chiếu đến bộ phân bổ bên ngoài được sử dụng để khai báo lớp này.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class execPolicy,<code>static_cast&lt;OuterAlloc&amp;&gt;(*this)</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;Class execPolicy,<code>static_cast&lt;const OuterAlloc&amp;&gt;(*this)</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một tham chiếu đến<code>OuterAlloc</code>.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="inner_allocator" title="cpp/memory/scoped allocator adaptor/inner allocator"> <span class="t-lines"><span>Tạo một phiên bản mới scoped_allocator_adaptor</span></span></a></div> </td> <td>thu được một<code>inner_allocator</code>và không có thành viên khả thi<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/scoped_allocator_adaptor/outer_allocator">https://en.cppreference.com/w/cpp/memory/scoped_allocator_adaptor/outer_allocator</a>
+</p>
+</div>

@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">Flt_rounds</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cfloat" title="cpp/header/cfloat">&lt;cfloat&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">#define flt_round / * Xác định triển khai * / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Chỉ định hướng làm tròn hiện tại của các hoạt động số học điểm nổi.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>vĩ mô</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <code>-1</code> </td> <td>Hướng làm tròn mặc định không được biết đến</td>
+</tr> <tr class="t-dsc"> <td> <code>0</code> </td> <td>về phía bằng không; Ý nghĩa tương tự như<code><a href="../../numeric/fenv/fe_round" title="cpp/numeric/fenv/FE round">FE_TOWARDZERO</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>1</code> </td> <td>đến gần nhất; Ý nghĩa tương tự như<code><a href="../../numeric/fenv/fe_round" title="cpp/numeric/fenv/FE round">FE_TONEAREST</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>2</code> </td> <td>hướng tới vô cùng tích cực; Ý nghĩa tương tự như<code><a href="../../numeric/fenv/fe_round" title="cpp/numeric/fenv/FE round">FE_UPWARD</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>3</code> </td> <td>hướng tới vô cùng tiêu cực; Ý nghĩa tương tự như<code><a href="../../numeric/fenv/fe_round" title="cpp/numeric/fenv/FE round">FE_DOWNWARD</a></code> </td>
+</tr> <tr class="t-dsc"> <td>các giá trị khác</td> <td>Hành vi xác định thực hiện</td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Chế độ làm tròn có thể được thay đổi với<code><a href="../../numeric/fenv/feround" title="cpp/numeric/fenv/feround">std::fesetround</a></code>Và<code>FLT_ROUNDS</code>phản ánh sự thay đổi đó.</p>
+<p>Các giá trị có thể của flt_round phù hợp với các giá trị có thể của<code><a href="../numeric_limits/float_round_style" title="cpp/types/numeric limits/float round style">std::float_round_style</a></code>, trở lại bởi<code><a href="../numeric_limits/round_style" title="cpp/types/numeric limits/round style">std::numeric_limits::round_style</a></code>.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../numeric_limits/float_round_style" title="cpp/types/numeric limits/float round style"> <span class="t-lines"><span>float_round_style</span></span></a></div> </td> <td>Cho biết các chế độ làm tròn điểm nổi<br/> <span class="t-mark">(enum)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../numeric/fenv/feround" title="cpp/numeric/fenv/feround"> <span class="t-lines"><span>Fegetround</span><span>Fesetround</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Nhận hoặc đặt hướng làm tròn<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../numeric/fenv/fe_round" title="cpp/numeric/fenv/FE round"> <span class="t-lines"><span>Fe_Downward</span><span>Fe_tonearest</span><span>Fe_Towardzero</span><span>Fe_upward</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>hướng làm tròn điểm nổi<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/types/limits/FLT_ROUNDS" title="c/types/limits/FLT ROUNDS">C documentation</a></span>vì<code>FLT_ROUNDS</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/climits/FLT_ROUNDS">https://en.cppreference.com/w/cpp/types/climits/FLT_ROUNDS</a>
+</p>
+</div>

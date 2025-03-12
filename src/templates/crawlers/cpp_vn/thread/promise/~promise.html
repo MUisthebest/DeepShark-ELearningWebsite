@@ -1,0 +1,10 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Hứa &lt;r&gt; :: ~ hứa</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">~ hứa ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Từ bỏ trạng thái chia sẻ:</p>
+<ul>
+<li>Nếu trạng thái chia sẻ đã sẵn sàng,<a href="../promise" title="cpp/thread/promise">releases</a>Nó.</li>
+<li>Nếu trạng thái chia sẻ chưa sẵn sàng, hãy lưu trữ một đối tượng ngoại lệ của loại<code><a href="../future_error" title="cpp/thread/future error">std::future_error</a></code>Với một điều kiện lỗi<code><a href="../future_errc" title="cpp/thread/future errc">std::future_errc::broken_promise</a></code>, làm cho nhà nước được chia sẻ sẵn sàng và phát hành nó.</li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/promise/%7Epromise">https://en.cppreference.com/w/cpp/thread/promise/%7Epromise</a>
+</p>
+</div>

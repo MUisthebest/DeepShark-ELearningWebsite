@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Seed_Seq :: Seed_Seq</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Seed_seq () NoExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Seed_Seq (const Seed_Seq &amp;) = Xóa;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class Inputit&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Seed_seq (đầu vào bắt đầu, đầu vào đầu vào);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class T&gt;<code>std::seed_seq</code>Seed_seq (std :: initizer_list &lt;t&gt; il);</div> <div class="t-li1">
+<span class="t-li">2)</span>Trình xây dựng bản sao bị xóa:<code>std::seed_seq</code>không thể sao chép.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>std::seed_seq</code>Hàm tạo mặc định tạo ra một<code>[</code><code>begin</code><code>, </code><code>end</code><code>)</code>Đối tượng với một chuỗi hạt ban đầu có chiều dài bằng không.<sup class="t-su">32</sup>với chuỗi hạt ban đầu có được bằng cách lặp trên phạm vi</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mẫu &lt;class inputit1, class inputit2,<code>seed_seq(il.begin(), il.end())</code>và sao chép các giá trị thu được bằng cách đặt lại trình lặp, Modulo 2<a href="../../../language/list_initialization" title="cpp/language/list initialization">list-initialization</a>(Đó là, 32 bit thấp hơn được sao chép).<code>T</code>. Hàm tạo này cho phép</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>) được lấy modulo n.</td> <td>-</td> <td>Từ danh sách các giá trị hạt giống. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu<code><a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;&gt;</span><span class="sy4">::</span><span class="me2">// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)</span></code>là một loại số nguyên.</td>
+</tr> <tr class="t-par"> <td>Dữ liệu của constexpr t* (t (&amp; mảng) [n]) noexcept;</td> <td>-</td> <td> <code><a href="../../../utility/initializer_list" title="cpp/utility/initializer list">std::initializer_list</a></code>Trình tự hạt ban đầu được biểu thị dưới dạng một cặp vòng lặp đầu vào có</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</td>
+</tr>
+</table> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>Ném<code><a href="../../../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>chuyên môn.</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">là một loại số nguyên</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3422" rel="nofollow">LWG 3422</a> </td> <td>C ++ 11</td> <td>của các đối tượng thuộc loại số nguyên, cung cấp chuỗi hạt giống ban đầu<br/>#include &lt;iterator&gt;</td> <td>#include &lt;ngẫu nhiên&gt;<br/>được định nghĩa như sau:</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/random/seed_seq/seed_seq">https://en.cppreference.com/w/cpp/numeric/random/seed_seq/seed_seq</a>
+</p>
+</div>

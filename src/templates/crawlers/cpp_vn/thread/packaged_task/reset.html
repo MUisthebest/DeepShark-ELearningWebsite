@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Packaged_task &lt;r (args ...)&gt; :: Đặt lại</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void reset ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Đặt lại nhà nước từ bỏ kết quả của các vụ hành quyết trước đó. Trạng thái chia sẻ mới được xây dựng.</p>
+<p>Mẫu &lt;class inputit1, class inputit2,<code>*this = packaged_task(std::move(f))</code>là<code>f</code>là nhiệm vụ được lưu trữ.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <ul>
+<li> <code><a href="../future_error" title="cpp/thread/future error">std::future_error</a></code>nếu như<code>*this</code>không có trạng thái chung. Điều kiện lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>no_state</code></a>.</li>
+<li> <code><a href="../../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>Nếu không có đủ bộ nhớ cho một trạng thái chia sẻ mới.</li>
+<li>Bất kỳ ngoại lệ nào được ném bởi<a href="packaged_task" title="cpp/thread/packaged task/packaged task">move constructor</a>của cái mới<code>packaged_task</code>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cmath&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Tương lai&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/packaged_task/reset">https://en.cppreference.com/w/cpp/thread/packaged_task/reset</a>
+</p>
+</div>

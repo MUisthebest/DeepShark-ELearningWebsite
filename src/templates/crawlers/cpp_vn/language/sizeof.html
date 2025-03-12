@@ -1,0 +1,47 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử kích thước</h1> <p>Truy vấn kích thước của đối tượng hoặc loại.</p>
+<p>Được sử dụng khi kích thước thực tế của đối tượng phải được biết.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>sizeof(</code> <span class="t-spar">kiểu</span> <code>)</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>sizeof</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Cả hai phiên bản đều là biểu thức không đổi của loại<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>.</p>
+<table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">kiểu</span> </td> <td>-</td> <td>Một<span class="t-spar">Loại ID</span>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<a href="type#Type_naming" title="cpp/language/type">type naming</a>)</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>-</td> <td>một biểu thức có<a href="operator_precedence" title="cpp/language/operator precedence">operator precedence</a>không thấp hơn<code>sizeof</code>(ví dụ.<code>sizeof a + b</code>được phân tích cú pháp như<code>(sizeof a) + b</code>Một số ưu điểm của căn hộ được đặt so với tiêu chuẩn khác<code>sizeof (a + b)</code>)</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <div class="t-li1">
+<span class="t-li">1)</span>Mang lại kích thước trong byte của<a href="object" title="cpp/language/object">object representation</a>của<span class="t-spar">kiểu</span>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mang lại kích thước tính bằng byte của biểu diễn đối tượng của loại<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>, nếu biểu thức đó được đánh giá.</div> <h3 id="Notes">Ghi chú</h3> <p>Tùy thuộc vào kiến ​​trúc máy tính, một<a class="extiw" href="https://en.wikipedia.org/wiki/byte" title="enwiki:byte">byte</a>Có thể bao gồm 8<i>hoặc nhiều hơn</i>bit, con số chính xác được ghi lại trong<code><a href="../types/climits" title="cpp/types/climits">CHAR_BIT</a></code>.</p>
+<p>ưu tiên_queue (comp, container, alloc)<code>sizeof</code>Biểu thức luôn đánh giá<code>1</code>:</p>
+<ul>
+<li> <code>sizeof(char)</code> </li>
+<li> <code>sizeof(signed char)</code> </li>
+<li> <code>sizeof(unsigned char)</code> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li> <code>sizeof<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/types/byte"><span class="kw2642">Điều đó cho tất cả<span class="me2">Byte</span></span></a><span class="br0">)</span></code> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li> <code>sizeof(char8_t)</code> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p><code>sizeof</code>không thể được sử dụng với các loại chức năng, loại không đầy đủ hoặc trường bit<span class="t-rev-inl t-until-cxx11"><span>                               // bắt đầu bên ngoài biểu thức gia tăng (k)</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>    trả lại x;</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<p>Khi được áp dụng cho một loại tham chiếu, kết quả là kích thước của loại được tham chiếu.</p>
+<p>Khi được áp dụng cho loại lớp, kết quả là số byte bị chiếm bởi một đối tượng hoàn chỉnh của lớp đó, bao gồm bất kỳ phần đệm bổ sung nào cần thiết để đặt đối tượng đó vào một mảng. Số lượng byte bị chiếm bởi một<a href="object#Subobjects" title="cpp/language/object">potentially-overlapping subobject</a>có thể ít hơn kích thước của đối tượng đó.</p>
+<p>Kết quả của<code>sizeof</code>luôn luôn không khác biệt, ngay cả khi được áp dụng cho một loại lớp trống.</p>
+<p>Khi áp dụng cho một biểu thức,<code>sizeof</code>làm<a href="expressions#Potentially-evaluated_expressions" title="cpp/language/expressions">not evaluate the expression</a> <span class="t-rev-inl t-since-cxx11"><span>(tức là biểu thức là một toán hạng không được đánh giá)</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>và ngay cả khi biểu thức chỉ định một đối tượng đa hình, kết quả là kích thước của loại tĩnh của biểu thức. Không phải là chuyển đổi từ lvalue-to-rvalue, mảng sang con trỏ hoặc chức năng sang con trỏ.<span class="t-rev-inl t-since-cxx17"><span><a href="implicit_conversion#Temporary_materialization" title="cpp/language/implicit conversion">Temporary materialization</a>Tuy nhiên, là (chính thức) được thực hiện cho các đối số prvalue: chương trình không được hình thành nếu đối số không bị phá hủy.</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span></p>
+<h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/sizeof" title="cpp/keyword/sizeof"><code>sizeof</code></a></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Đầu ra ví dụ tương ứng với một hệ thống có con trỏ 64 bit và int 32 bit (a.k.a.<a href="types#Data_models" title="cpp/language/types"><b>LP64</b> or <b>LLP64</b></a>).</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDlib&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1122.html" rel="nofollow">CWG 1122</a> </td> <td>C ++ 98</td> <td> <code>sizeof</code>.<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>Cấu trúc trống {};</td> <td>cơ sở cấu trúc {int a; };</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1553.html" rel="nofollow">CWG 1553</a> </td> <td>C ++ 11</td> <td>
+<code>sizeof</code>cấu trúc có nguồn gốc: cơ sở {int b; };</td> <td>bị cấm</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="alignof" title="cpp/language/alignof"> <code>alignof</code> operator</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>// (thường là 4):</td>
+</tr> <tr class="t-dsc"> <td> <a href="sizeof..." title="cpp/language/sizeof..."> <code>sizeof...</code> operator</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>struct bit {unsign bit: 1; };<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/numeric_limits" title="cpp/types/numeric limits"> <span class="t-lines"><span>Numeric_limits</span></span></a></div> </td> <td>Cung cấp một giao diện cho các thuộc tính truy vấn của tất cả các loại số cơ bản<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/sizeof" title="c/language/sizeof">C documentation</a></span>vì<code>sizeof</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/sizeof">https://en.cppreference.com/w/cpp/language/sizeof</a>
+</p>
+</div>

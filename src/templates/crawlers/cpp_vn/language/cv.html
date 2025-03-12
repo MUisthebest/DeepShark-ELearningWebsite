@@ -1,0 +1,77 @@
+ <h1 class="firstHeading" id="firstHeading">Vòng loại CV (Const và A dễ bay)</h1> <p>Xuất hiện trong bất kỳ loại xác định loại nào, bao gồm cả<span class="t-spar">DEM-SPECIFIER-SEQ</span>của<a href="declarations" title="cpp/language/declarations">declaration grammar</a>, để chỉ định độ cao hoặc biến động của đối tượng được khai báo hoặc thuộc loại được đặt tên.</p>
+<ul>
+<li> <span class="kw4">hằng số</span>- Xác định rằng loại là<i>không thay đổi</i>.</li>
+<li> <span class="kw4">bay hơi</span>- Xác định rằng loại là<i>bay hơi</i>.</li>
+</ul> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Bất kỳ (có thể<a href="type#Incomplete_type" title="cpp/language/type">incomplete</a>) gõ các loại khác<a href="functions" title="cpp/language/functions">function type</a>hoặc<a href="reference" title="cpp/language/reference">reference type</a>là một loại trong một nhóm gồm bốn loại khác biệt nhưng liên quan:</p>
+<ul>
+<li>MỘT<i>CV-UNTQUEND</i>phiên bản.</li>
+<li>MỘT<i>const-đủ điều kiện</i>phiên bản.</li>
+<li>MỘT<i>đủ điều kiện dễ bay hơi</i>phiên bản.</li>
+<li>MỘT<i>const-volatile-đủ điều kiện</i>phiên bản.</li>
+</ul> <p>Bốn loại trong cùng một nhóm có cùng<a href="object#Object_representation_and_value_representation" title="cpp/language/object">representation</a>Và<a href="object#Alignment" title="cpp/language/object">alignment</a>yêu cầu.</p>
+<p><a href="array" title="cpp/language/array">Array types</a>được coi là có trình độ CV tương tự như các loại phần tử của chúng.</p>
+<h4 id="const_and_volatile_objects">các đối tượng ổn định và dễ bay hơi</h4> <p>Khi một đối tượng được tạo lần đầu tiên, các trình điều chỉnh CV được sử dụng (có thể là một phần của<span class="t-spar">DEM-SPECIFIER-SEQ</span>hoặc một phần của một<span class="t-spar">người khai báo</span>trong a<a href="declarations" title="cpp/language/declarations">declaration</a>, hoặc một phần của<span class="t-spar">Loại ID</span>trong a<a href="new" title="cpp/language/new">new-expression</a>) Xác định độ lệch hoặc biến động của đối tượng, như sau:</p>
+<ul><li>MỘT<i>đối tượng const</i>khoảng cách</li></ul> <dl>
+<dd>
+<ul>
+<li>một đối tượng có loại có trình độ const hoặc</li>
+<li>không<a href="#mutable">mutable</a>tiểu mục của một đối tượng const.</li>
+</ul> </dd>
+<dd>Đối tượng đó không thể được sửa đổi: cố gắng thực hiện trực tiếp là lỗi thời gian biên dịch và cố gắng thực hiện gián tiếp (ví dụ: bằng cách sửa đổi đối tượng const thông qua tham chiếu hoặc con trỏ đến loại không phải là const) dẫn đến hành vi không xác định.</dd>
+</dl> <ul><li>MỘT<i>đối tượng dễ bay hơi</i>khoảng cách</li></ul> <dl>
+<dd>
+<ul>
+<li>một đối tượng có loại đủ điều kiện dễ bay hơi,</li>
+<li>một tiểu mục của một đối tượng dễ bay hơi hoặc</li>
+<li>Một<a href="#mutable">mutable</a>tiểu mục của một đối tượng phản động const.</li>
+</ul> </dd>
+<dd>Mỗi quyền truy cập (hoạt động đọc hoặc ghi, gọi chức năng thành viên, v.v.) được thực hiện thông qua biểu thức glvalue của loại đủ điều kiện dễ bay hơi được coi là một tác dụng phụ có thể nhìn thấy cho<a href="as_if" title="cpp/language/as if">purposes of optimization</a>.<a href="eval_order" title="cpp/language/eval order">sequenced-before</a>hoặc giải trình tự-sau khi truy cập dễ bay hơi. Điều này làm cho các vật thể dễ bay hơi phù hợp để giao tiếp với<a href="../utility/program/signal" title="cpp/utility/program/signal">signal handler</a>, nhưng không phải với một chủ đề thực thi khác, hãy xem<code><a href="../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>). Mọi nỗ lực truy cập một đối tượng dễ bay hơi thông qua một<a href="value_category#glvalue" title="cpp/language/value category">glvalue</a>thuộc loại không bay hơi (ví dụ: thông qua tham chiếu hoặc con trỏ đến loại không bay hơi) dẫn đến hành vi không xác định.</dd>
+</dl> <ul><li>MỘT<i>đối tượng dễ bay hơi</i>khoảng cách</li></ul> <dl>
+<dd>
+<ul>
+<li>một đối tượng có loại có trình độ điều trị bằng bay hơi,</li>
+<li>không<a href="#mutable">mutable</a>Tiểu mục của một đối tượng dễ bay hơi,</li>
+<li>một tiểu đơn con của một đối tượng dễ bay hơi hoặc</li>
+<li>không<a href="#mutable">mutable</a>tiểu mục dễ bay hơi của một đối tượng const.</li>
+</ul> </dd>
+<dd>Hoạt động như một đối tượng const và một đối tượng dễ bay hơi.</dd>
+</dl> <p>Từng máy điều kiện CV (<span class="kw4">hằng số</span>Và<span class="kw4">bay hơi</span>) có thể xuất hiện nhiều nhất một lần trong bất kỳ trình tự trình độ CV nào. Ví dụ,<span class="kw4">hằng số</span> <span class="kw4">hằng số</span>Và<span class="kw4">bay hơi</span> <span class="kw4">hằng số</span> <span class="kw4">bay hơi</span>không phải là trình tự cv-trình độ cv hợp lệ.</p>
+<h3 id="mutable_specifier"> <code>mutable</code>thời lượng để biểu diễn phần bù từ UTC tương ứng với</h3> <ul><li>Mutable - cho phép sửa đổi thành viên lớp được tuyên bố có thể thay đổi ngay cả khi đối tượng chứa được khai báo const (nghĩa là, thành viên lớp có thể thay đổi).</li></ul> <p>Có thể xuất hiện trong tuyên bố của một người không tĩnh<a href="data_members" title="cpp/language/data members">class members</a>thuộc loại không tham chiếu không tham chiếu:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Lớp X.</pre></div> <p>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    có thể thay đổi const int* p; // ĐƯỢC RỒI</pre></div> <h3 id="Conversions">    có thể thay đổi int* const q; // không hình thành</h3> <p>    Int &amp; r có thể thay đổi; // không hình thành<i>};</i>hoặc<i>Một phạm vi phân loại đầy đủ đáp ứng các tiêu chí này.</i>Mutable được sử dụng để chỉ định rằng thành viên không ảnh hưởng đến trạng thái có thể nhìn thấy bên ngoài của lớp (thường được sử dụng cho mutexes, bộ nhớ ghi nhớ, đánh giá lười biếng và thiết bị truy cập).</p>
+<ul>
+<li> <i>    STD có thể thay đổi :: Mutex m; // "Quy tắc M &amp; M": Mutable và Mutex đi cùng nhau</i>is_trivently_destructible_v<span class="kw4">hằng số</span> </li>
+<li> <i>    STD có thể thay đổi :: Mutex m; // "Quy tắc M &amp; M": Mutable và Mutex đi cùng nhau</i>is_trivently_destructible_v<span class="kw4">bay hơi</span> </li>
+<li> <i>    STD có thể thay đổi :: Mutex m; // "Quy tắc M &amp; M": Mutable và Mutex đi cùng nhau</i>is_trivently_destructible_v<span class="kw4">hằng số</span> <span class="kw4">bay hơi</span> </li>
+<li> <span class="kw4">hằng số</span>is_trivently_destructible_v<span class="kw4">hằng số</span> <span class="kw4">bay hơi</span> </li>
+<li> <span class="kw4">bay hơi</span>is_trivently_destructible_v<span class="kw4">hằng số</span> <span class="kw4">bay hơi</span> </li>
+</ul> <p>    data int = 0;<a class="mw-redirect" href="implicit_cast#Qualification_conversions" title="cpp/language/implicit cast">qualification conversions</a> </p>
+<p>công cộng:<a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>, ngoại trừ việc các chuyển đổi thu hẹp bị cấm</p>
+<h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/const" title="cpp/keyword/const"><code>const</code></a>Thì<a href="../keyword/volatile" title="cpp/keyword/volatile"><code>volatile</code></a>Thì<a href="../keyword/mutable" title="cpp/keyword/mutable"><code>mutable</code></a></p>
+<h3 id="Notes">Ghi chú</h3> <p>Các<span class="kw4">hằng số</span>    int get () const<span class="t-rev-inl t-since-cxx14"><span>không<a href="variable_template" title="cpp/language/variable template">template</a></span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span><span class="t-rev-inl t-since-cxx17"><span>không<a href="inline" title="cpp/language/inline">inline</a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>    {<span class="kw4">Extern</span>        std :: lock_guard &lt;std :: mutex&gt; lk (m);<a href="storage_duration#Linkage" title="cpp/language/storage duration">internal linkage</a>        trả về dữ liệu;</p>
+<p>    }<a href="storage_duration" title="cpp/language/storage duration">storage-class-specifier</a> </p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>    void inc ()</p>
+<ul>
+<li>    {<a href="operator_incdec" title="cpp/language/operator incdec">increment/decrement</a>        std :: lock_guard &lt;std :: mutex&gt; lk (m);</li>
+<li>        dữ liệu ++;<a href="operator_assignment" title="cpp/language/operator assignment">direct assignment</a>    }<a href="expressions#Unevaluated_expressions" title="cpp/language/expressions">unevaluated context</a>};<a href="expressions#Discarded-value_expressions" title="cpp/language/expressions">discarded-value expression</a>Số lượng các yếu tố để sao chép</li>
+<li>Chuyển đổi</li>
+<li>Có một phần đơn hàng của các bộ chế độ cv theo thứ tự tăng các hạn chế. Loại có thể được nói<a href="structured_binding" title="cpp/language/structured binding">structured binding</a>tuyên ngôn.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">hơn</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">CV-đủ điều kiện hơn:</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1428.html" rel="nofollow">CWG 1428</a> </td> <td>C ++ 98</td> <td>không đủ tiêu chuẩn</td> <td>không đủ tiêu chuẩn</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1528.html" rel="nofollow">CWG 1528</a> </td> <td>C ++ 98</td> <td>không đủ tiêu chuẩn<br/>Tài liệu tham khảo và con trỏ đến các loại đủ điều kiện CV có thể được chuyển đổi hoàn toàn thành các tài liệu tham khảo và con trỏ sang các loại đủ điều kiện CV, xem</td> <td>Để chuyển đổi tham chiếu hoặc một con trỏ thành loại đủ điều kiện CV thành tham chiếu hoặc con trỏ sang loại ít chất lượng CV,<br/>vòng loại được sử dụng trên một tuyên bố của một người không bay hơi</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1799.html" rel="nofollow">CWG 1799</a> </td> <td>C ++ 98</td> <td>biến không được khai báo<br/><span class="kw4">hằng số</span>cho nó</td> <td>. Điều này khác với C nơi các biến phạm vi tệp const có liên kết bên ngoài.<br/>Ngữ pháp ngôn ngữ C ++ coi có thể thay đổi là một</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/const" title="c/language/const">C documentation</a></span>vì<span class=""><span><code>const</code>int main ()</span></span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/volatile" title="c/language/volatile">C documentation</a></span>vì<span class=""><span><code>volatile</code>int main ()</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/cv">https://en.cppreference.com/w/cpp/language/cv</a>
+</p>
+</div>

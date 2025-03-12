@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Generator &lt;Ref, V, Allocator&gt; :: Promise_type :: Nhà điều hành Mới</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Void* Toán tử Mới (STD :: size_t Size)</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">    Yêu cầu STD :: CORE_AS &lt;Allocator, Void&gt; ||</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">             std :: default_initializable &lt;allocator&gt;;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p><a href="../../../language/coroutines#Dynamic_allocation" title="cpp/language/coroutines">Allocates</a> <code>size</code>Mẫu &lt;class alloc, class ... args&gt;</p>
+<p>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>A</code>{</p>
+<ul>
+<li> <code>Allocator</code>    Yêu cầu STD :: CORE_AS &lt;Allocator, Void&gt; ||<span class="kw4">Vô hiệu</span>Thì</li>
+<li> <code>Alloc</code>vì<span class="t-v">sở hữu phần tử được trích xuất hoặc xử lý nút trống trong trường hợp phần tử không được tìm thấy trong</span>, hoặc</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/memory/allocator"><span class="kw702">Điều đó cho tất cả<span class="me2">người phân bổ</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">Vô hiệu</span><span class="sy1">&lt;</span></code>Nếu đối số đầu tiên là</li>
+</ul> <p>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>B</code>{<code><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>A<span class="sy1">&lt;</span><span class="sy4">::</span><span class="kw1">             STD :: mui trần_to &lt;const alloc &amp;, allocator&gt;</span> rebind_alloc<span class="sy1">is_trivently_destructible_v</span>U<span class="sy1">&lt;</span></code>Ở đâu<code>U</code>void* Toán tử Mới (STD :: size_t size, std :: allocator_arg_t,<a href="../../../preprocessor/replace#Predefined_macros" title="cpp/preprocessor/replace"><code>__STDCPP_DEFAULT_NEW_ALIGNMENT__</code></a>.</p>
+<p>                    const alloc &amp; alloc, const args &amp; ...);<code>b</code>nó đến một đối tượng<code>B</code>Mẫu &lt;class this, class alloc, class ... args&gt;</p>
+<div class="t-li1">
+<span class="t-li">1)</span> <code>A()</code>Thì</div> <div class="t-li1">
+<span class="t-li">          std :: Indirect_strict_weak_order &lt;</span> <code>A(alloc)</code>.</div> <p>, trả lại<code>b</code>    Yêu cầu STD :: CORE_AS &lt;Allocator, Void&gt; ||<code>U</code>             STD :: mui trần_to &lt;const alloc &amp;, allocator&gt;<a href="../../../language/coroutines#Execution" title="cpp/language/coroutines">coroutine state</a>void* Toán tử Mới (STD :: size_t size, const this &amp;, std :: allocator_arg_t,<code>size</code>                    const alloc &amp; alloc, const args &amp; ...);<a href="operator_delete" title="cpp/coroutine/generator/promise type/operator delete"><code>operator delete</code></a>BYTE của bộ phận lưu trữ không được cung cấp bằng cách sử dụng bộ phân bổ do người dùng cung cấp.<code>b</code>.</p>
+<p>Ghi chú:<code><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>B<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Không làm mất hiệu lực bất kỳ tài liệu tham khảo nào về các yếu tố của deque.</span></code>, nếu nó không</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>kích cỡ</td> <td>-</td> <td>bản mẫu</td>
+</tr> <tr class="t-par"> <td>Sử dụng ngữ nghĩa di chuyển. Người phân bổ có được bằng cách xây dựng di chuyển từ bộ phân bổ thuộc</td> <td>-</td> <td>là một loại không xác định có kích thước và căn chỉnh<code>Alloc</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Khởi tạo một bộ phân bổ</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>với:</div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/coroutine/generator/promise_type/operator_new">https://en.cppreference.com/w/cpp/coroutine/generator/promise_type/operator_new</a>
+</p>
+</div>

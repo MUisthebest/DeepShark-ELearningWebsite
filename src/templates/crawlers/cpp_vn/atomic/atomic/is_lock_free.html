@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: ATOMIC &lt;T&gt; :: IS_LOCK_FREE</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">bool is_lock_free () const noexcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">bool is_lock_free () const không biến động noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Kiểm tra xem các hoạt động nguyên tử trên tất cả các đối tượng thuộc loại này có khóa không.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu các hoạt động nguyên tử trên các đối tượng thuộc loại này không có khóa,<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Notes">Ghi chú</h3> <p>Xác định xem đối tượng nguyên tử chỉ bằng cách<code><a href="../atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>được thực hiện không có khóa, như thể bằng cách gọi<i>. Trong bất kỳ thực thi chương trình nào, kết quả của truy vấn không khóa là giống nhau cho tất cả các đối tượng nguyên tử cùng loại.</i>Không khóa, ví dụ: Nếu chỉ các truy cập bộ nhớ được căn chỉnh là nguyên tử tự nhiên trên một kiến ​​trúc nhất định, các đối tượng bị sai lệch cùng loại phải sử dụng khóa.</p>
+<p>Đối với các loại nguyên tử tích hợp không bao giờ không khóa,</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Atomic&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Thỉnh thoảng</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../atomic_is_lock_free" title="cpp/atomic/atomic is lock free"> <span class="t-lines"><span>ATOMIC_IS_LOCK_FREE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem các hoạt động của loại nguyên tử có khóa không<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../memory/shared_ptr/atomic" title="cpp/memory/shared ptr/atomic"> <span class="t-lines"><span>ATOMIC_IS_LOCK_FREE<span class="t-dsc-small">Thuật toán</span></span></span></a></div> </td> <td>con trỏ đến đối tượng nguyên tử để sửa đổi<code><a href="../../memory/shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_always_lock_free" title="cpp/atomic/atomic/is always lock free"> <span class="t-lines"><span>Chờ đợi</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span> <span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>thông báo_one<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic/is_lock_free">https://en.cppreference.com/w/cpp/atomic/atomic/is_lock_free</a>
+</p>
+</div>

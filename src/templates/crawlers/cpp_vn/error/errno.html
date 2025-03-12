@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">errno</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/cerrno" title="cpp/header/cerrno">&lt;cerrno&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">#define errno / * thực hiện xác định * / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p><code>errno</code>là một macro tiền xử lý được sử dụng để chỉ định lỗi. Nó mở rộng sang một<span class="t-rev-inl t-until-cxx11"><span>năng động</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>Chủ đề địa phương</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>loại lvalue có thể sửa đổi<code>int</code>.</p>
+<p>Một số chức năng thư viện tiêu chuẩn cho thấy lỗi bằng cách viết các số nguyên dương để<code>errno</code>. Thông thường, giá trị của<code>errno</code>được đặt thành một trong các mã lỗi, được liệt kê trong<a href="../header/cerrno" title="cpp/header/cerrno"><code>&lt;cerrno&gt;</code></a>dưới dạng các hằng số vĩ mô bắt đầu bằng chữ cái<code>E</code>, tiếp theo là chữ cái hoặc chữ số.</p>
+<p>Giá trị của<code>errno</code>khoảng cách<code>​0​</code>tại chương trình khởi động, và mặc dù các chức năng thư viện được phép viết các số nguyên dương để<code>errno</code>Có xảy ra lỗi hay không, các chức năng thư viện không bao giờ lưu trữ<code>​0​</code>TRONG<code>errno</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cerrno&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;clocale&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue310" rel="nofollow">LWG 310</a> </td> <td>C ++ 98</td> <td>Constexpr unanyfunction for_each (đầu vào đầu tiên, đầu vào cuối cùng, không có chức năng f)<code>errno</code>#include &lt;Cmath&gt;<br/>#include &lt;cstring&gt;</td> <td>
+<code>errno</code>#include &lt;Istream&gt;<br/> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="errno_macros" title="cpp/error/errno macros"> <span class="t-lines"><span>E2big, Eacces, ..., Exdev</span></span></a></div> </td> <td>Macro cho các điều kiện lỗi tương thích POSIX tiêu chuẩn<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/c/perror" title="cpp/io/c/perror"> <span class="t-lines"><span>int main ()</span></span></a></div> </td> <td>{<code><a href="../io/c/std_streams" title="cpp/io/c/std streams">stderr</a></code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/byte/strerror" title="cpp/string/byte/strerror"> <span class="t-lines"><span>    const double not_a_number = std :: log (-1.0);</span></span></a></div> </td> <td>    std :: cout &lt;&lt; not_a_number &lt;&lt; '\ n';<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/error/errno" title="c/error/errno">C documentation</a></span>vì<code>errno</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/errno">https://en.cppreference.com/w/cpp/error/errno</a>
+</p>
+</div>

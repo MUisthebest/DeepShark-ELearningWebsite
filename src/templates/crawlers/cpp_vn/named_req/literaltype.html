@@ -1,0 +1,51 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Theo nghĩa đen<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Chỉ định rằng một loại là một<i>Loại nghĩa đen</i>. Các loại nghĩa đen là các loại<a href="../language/constexpr#constexpr_variable" title="cpp/language/constexpr"><code>constexpr</code> variables</a>và chúng có thể được xây dựng, thao túng và trở về từ<a href="../language/constexpr#constexpr_function" title="cpp/language/constexpr"><code>constexpr</code> functions</a>.</p>
+<p>Lưu ý: Tiêu chuẩn không xác định yêu cầu được đặt tên với tên này. Đây là một loại loại được xác định bởi ngôn ngữ cốt lõi. Nó được bao gồm ở đây như một yêu cầu được đặt tên chỉ cho tính nhất quán.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Một loại theo nghĩa đen là bất kỳ điều gì sau đây:</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <ul><li>Có thể đủ điều kiện CV<code>void</code>(để có thể<code>constexpr</code>các chức năng có thể trả về void);</li></ul> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <ul>
+<li> <a href="scalartype" title="cpp/named req/ScalarType">scalar type</a>Số lượng các yếu tố để sao chép</li>
+<li> <a href="../language/reference" title="cpp/language/reference">reference type</a>Số lượng các yếu tố để sao chép</li>
+<li>chồng chéo với container.<a href="../language/array" title="cpp/language/array">array</a>thuộc loại nghĩa đen;</li>
+<li>Có thể loại lớp đủ điều kiện CV có tất cả các thuộc tính sau:</li>
+<ul>
+<li>Toán tử gán bản sao được xác định ngầm cho một lớp<span class="t-rev-inl t-until-cxx20"><span>tầm thường</span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span><code>constexpr</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span> <a href="../language/destructor" title="cpp/language/destructor">destructor</a>Thì</li>
+<li>bool Atomic_compare_exchange_weak_explict</li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>Một<a href="../language/lambda" title="cpp/language/lambda">lambda type</a>Thì</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul>
+<li>chồng chéo với container.<a href="../language/aggregate_initialization#Definitions" title="cpp/language/aggregate initialization">aggregate</a>loại liên minh mà</li>
+<ul>
+<li>T Atomic_fetch_add_explicit (std :: Atomic &lt;t&gt;* obj,<a href="../language/union#Union-like_classes" title="cpp/language/union">variant members</a>, hoặc</li>
+<li>có ít nhất một thành viên biến thể thuộc loại nghĩa đen không bay hơi,</li>
+</ul>
+<li>một liên minh<a href="../language/aggregate_initialization#Definitions" title="cpp/language/aggregate initialization">aggregate</a>loại, và mỗi loại của nó<a href="../language/union#Anonymous_unions" title="cpp/language/union">anonymous union</a>(con trỏ tới C);</li>
+<ul>
+<li>T Atomic_fetch_add_explicit (std :: Atomic &lt;t&gt;* obj,<a href="../language/union#Union-like_classes" title="cpp/language/union">variant members</a>, hoặc</li>
+<li>có ít nhất một thành viên biến thể thuộc loại nghĩa đen không bay hơi,</li>
+</ul>
+<li>một loại có ít nhất một<code>constexpr</code>(có thể là mẫu) hàm tạo không phải là một hàm tạo bản sao hoặc di chuyển,</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Một loại có thể là theo nghĩa đen ngay cả khi tất cả các hàm tạo ConsexPR của nó bị xóa, không thể truy cập hoặc không thể tham gia vào độ phân giải quá tải.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">struct a {consexpr a (int) = xóa; char c; }; // A là một loại nghĩa đen</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>constexpr a v = std :: bit_cast &lt;a&gt; ('0'); // ok trong c ++ 20</p>
+<div class="cpp source-cpp"><pre data-language="cpp">                                       // V có loại theo nghĩa đen và do đó có thể là constexpr</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Loại nghĩa đen mở rộng nghĩa đen:</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1453.html" rel="nofollow">CWG 1453</a> </td> <td>C ++ 11</td> <td>#include &lt;CstDdef&gt;</td> <td>không được phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1951.html" rel="nofollow">CWG 1951</a> </td> <td>C ++ 11<br/>C ++ 14</td> <td>#include &lt;Istream&gt;<code>void</code>(C ++ 14)<br/>#include &lt;stdexcept&gt;</td> <td>Họ là</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2096.html" rel="nofollow">CWG 2096</a> </td> <td>C ++ 11</td> <td> <br/>lớp conststr // conststr là một loại nghĩa đen</td> <td>{<br/>    const char* p;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2598.html" rel="nofollow">CWG 2598</a> </td> <td>C ++ 11</td> <td>    std :: size_t sz;<br/>công cộng:</td> <td>    Mẫu &lt;std :: size_t n&gt;<br/>void x :: f () // Định nghĩa </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_literal_type" title="cpp/types/is literal type"> <span class="t-lines"><span>is_literal_type</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-deprecated-cxx17">(không được dùng trong C ++ 17)</span></span><span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span></span></span></div> </td> <td>Kiểm tra xem một loại là loại theo nghĩa đen<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/LiteralType">https://en.cppreference.com/w/cpp/named_req/LiteralType</a>
+</p>
+</div>

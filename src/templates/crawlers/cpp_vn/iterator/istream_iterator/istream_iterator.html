@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">std :: istream_itorator &lt;t, biểu đồ, đặc điểm, khoảng cách&gt; :: istream_iterator</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">isTream_Iterator ();</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">constexpr istream_iterator ();</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr isTream_Iterator (std :: default_sentinel_t);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">isTream_Iterator (istream_type &amp; stream);</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(4)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">isTream_Iterator (const istream_iterator &amp; other);</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">isTream_Iterator (const istream_iterator &amp; other) = mặc định;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Đầu vào</span>Xây dựng trình lặp cuối dòng<span class="t-rev-inl t-since-cxx11"><span>, giá trị-khởi xướng giá trị được lưu trữ. Trình xây dựng này là Consexpr nếu bộ khởi tạo trong định nghĩa<code>auto x = T();</code>là một bộ khởi tạo không đổi</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Khởi tạo trình lặp, lưu trữ địa chỉ của<code>stream</code>Trong một thành viên dữ liệu và thực hiện lần đọc đầu tiên từ luồng đầu vào để khởi tạo thành viên dữ liệu giá trị được lưu trong bộ nhớ cache.</div> <div class="t-li1">
+<span class="t-li">là trong</span>) để null giá trị con trỏ và thành viên địa phương<code>other</code>.<span class="t-rev-inl t-since-cxx11"><span>Nếu như<code><a href="http://en.cppreference.com/w/cpp/types/is_copy_constructible"><span class="kw541">Điều đó cho tất cả<span class="me2">is_trivently_copy_constructible</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">được phân vùng liên quan đến</span></code>khoảng cách<code>true</code>, Trình xây dựng bản sao này là một hàm tạo bản sao tầm thường.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>
+</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>phát trực tuyến để khởi tạo<code>istream_iterator</code>với</td>
+</tr> <tr class="t-par"> <td>khác</td> <td>-</td> <td>khác<code>istream_iterator</code>cùng loại</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;THERTHERM&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1280" rel="nofollow">LWG 1280</a> </td> <td>C ++ 98</td> <td>đã được sắp xếp bởi<span class="t-v">(3)</span>#include &lt;iterator&gt;<code>stream</code>#include &lt;Sstream&gt;</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0738R2" rel="nofollow">P0738R2</a> </td> <td>C ++ 98</td> <td>, bao gồm cả giá trị được lưu trong bộ nhớ cache</td> <td>Trả về phần tử hiện tại</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/istream_iterator/istream_iterator">https://en.cppreference.com/w/cpp/iterator/istream_iterator/istream_iterator</a>
+</p>
+</div>

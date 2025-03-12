@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: strrchr</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstring" title="cpp/header/cstring">&lt;cstring&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">const char* strrchr (const char* str, int ch);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">char* strrchr (char* str, int ch);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Tìm thấy sự xuất hiện cuối cùng của<code>ch</code>(sau khi chuyển đổi sang<code>char</code>) trong chuỗi byte được trỏ bởi<code>str</code>. Ký tự null chấm dứt được coi là một phần của chuỗi và có thể được tìm thấy nếu tìm kiếm<code>'\0'</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc không</td>
+</tr> <tr class="t-par"> <td>ch</td> <td>-</td> <td>Đối với một chuỗi con không trống, nếu</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ đến nhân vật tìm thấy trong<code>str</code>, hoặc con trỏ null nếu không tìm thấy ký tự như vậy.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;cstring&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="strchr" title="cpp/string/byte/strchr"> <span class="t-lines"><span>Strchr</span></span></a></div> </td> <td>tìm thấy sự xuất hiện đầu tiên của một nhân vật<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../wide/wcsrchr" title="cpp/string/wide/wcsrchr"> <span class="t-lines"><span>WCSRCHR</span></span></a></div> </td> <td>tìm thấy sự xuất hiện cuối cùng của một ký tự rộng trong một chuỗi rộng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_string/rfind" title="cpp/string/basic string/rfind"> <span class="t-lines"><span>nối các ký tự đến cuối</span></span></a></div> </td> <td>cộng sự một loạt các ký tự đến cuối<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_string&lt;CharT,Traits,Allocator&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/strrchr" title="c/string/byte/strrchr">C documentation</a></span>vì<code>strrchr</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/strrchr">https://en.cppreference.com/w/cpp/string/byte/strrchr</a>
+</p>
+</div>

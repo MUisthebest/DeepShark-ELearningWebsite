@@ -1,0 +1,141 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Chrono :: Parse</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/chrono" title="cpp/header/chrono">&lt;chrono&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Biểu đồ lớp, Class Parsable&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">/* không xác định*/ parse (biểu đồ const* fmt, parsable &amp; tp);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">/ * không xác định */ parse (const std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt; &amp; fmt,</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">                         Parsable &amp; tp);</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">/* không xác định*/ parse (biểu đồ const* fmt, parsable &amp; tp,</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">                         std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt; &amp; abbrev);</pre>
+</td> <td>            Nhị phân p);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;<code>manip</code>/ * không xác định */ parse (const std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt; &amp; fmt,<code><a href="http://en.cppreference.com/w/cpp/io/basic_istream"><span class="kw1717">Điều đó cho tất cả<span class="me2">basic_istream</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span></code>sự vật<code>is</code>, biểu thức<code>is &gt;&gt; manip</code>cuộc gọi<code>from_stream</code>                         Có thể phân tích được &amp; tp,<a href="../language/adl" title="cpp/language/adl">argument-dependent lookup</a>                         std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt; &amp; abbrev);</p>
+<div class="t-li1">
+<span class="t-li">1)</span> <code>from_stream(is, fmt, tp)</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>from_stream(is, fmt.c_str(), tp)</code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <code>from_stream<span class="br0">.</span>is, fmt, tp, <a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span>abbrev<span class="br0">)</span><span class="br0">)</span></code>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span> <code>from_stream<span class="br0">.</span>is, fmt.<span class="me1">/ * không xác định */ parse (const std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt; &amp; fmt,</span><span class="br0">.</span><span class="br0">)</span>, tp, <a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span>abbrev<span class="br0">)</span><span class="br0">)</span></code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <code>from_stream<span class="br0">.</span>is, fmt, tp,<br/> <span class="kw1">Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;</span><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1231">Điều đó cho tất cả<span class="me2">BASIC_STRING</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits, Alloc<span class="sy1">&lt;</span><span class="sy2">*</span><span class="sy1">&lt;</span><span class="br0">.</span>nullptr<span class="br0">)</span>, <span class="sy3">Không có giá trị</span>offset<span class="br0">)</span></code>
+</div> <div class="t-li1">
+<span class="t-li">từ_sys</span> <code>from_stream<span class="br0">.</span>is, fmt.<span class="me1">/ * không xác định */ parse (const std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt; &amp; fmt,</span><span class="br0">.</span><span class="br0">)</span>, tp,<br/> <span class="kw1">Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;</span><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1231">Điều đó cho tất cả<span class="me2">BASIC_STRING</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits, Alloc<span class="sy1">&lt;</span><span class="sy2">*</span><span class="sy1">&lt;</span><span class="br0">.</span>nullptr<span class="br0">)</span>, <span class="sy3">Không có giá trị</span>offset<span class="br0">)</span></code>
+</div> <div class="t-li1">
+<span class="t-li">6)</span> <code>from_stream<span class="br0">.</span>is, fmt, tp, <a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span>abbrev<span class="br0">)</span>, <span class="sy3">Không có giá trị</span>offset<span class="br0">)</span></code>
+</div> <div class="t-li1">
+<span class="t-li">. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu biểu thức</span> <code>from_stream<span class="br0">.</span>is, fmt.<span class="me1">/ * không xác định */ parse (const std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt; &amp; fmt,</span><span class="br0">.</span><span class="br0">)</span>, tp, <a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span>abbrev<span class="br0">)</span>, <span class="sy3">Không có giá trị</span>offset<span class="br0">)</span></code>.</div> <p>              Không có p);<code>is &gt;&gt; manip</code>                         Parsable &amp; tp, std :: Chrono :: Biên bản &amp; Offset);<code><a href="http://en.cppreference.com/w/cpp/io/basic_istream"><span class="kw1717">Điều đó cho tất cả<span class="me2">basic_istream</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span></code>      Tên std :: Atomic &lt;T&gt; :: value_type mong muốn) NOEXCEPT;<code>is</code>.</p>
+<p>Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;<code>from_stream</code>/* không xác định*/ parse (biểu đồ const* fmt, parsable &amp; tp,</p>
+<p>                         std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt; &amp; abbrev,<code>operator&gt;&gt;</code>                         std :: Chrono :: Biên bản &amp; Offset);</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;</td> <td>-</td> <td>/ * không xác định */ parse (const std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt; &amp; fmt,</td>
+</tr> <tr class="t-par"> <td>   &lt;&lt; TP - i.first.offset &lt;&lt; "UTC hoặc \ n"</td> <td>-</td> <td>                         Có thể phân tích được &amp; tp,</td>
+</tr> <tr class="t-par"> <td>                         std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt; &amp; abbrev,</td> <td>-</td> <td>                         std :: Chrono :: Biên bản &amp; Offset);<code>%Z</code>thời lượng để biểu diễn phần bù từ UTC tương ứng với</td>
+</tr> <tr class="t-par"> <td>loại không xác định sao cho một</td> <td>-</td> <td>(Không đủ tiêu chuẩn, để kích hoạt<code>%z</code>thời lượng để biểu diễn phần bù từ UTC tương ứng với</td>
+</tr>
+</table> <h3 id="Format_string">C_str</h3> <p>static_cast</p>
+<p>C_str</p>
+<p>static_cast<code>%</code>C_str<code>E</code>hoặc<code>O</code>là một loại loại<code>%</code>Những quá tải này chỉ tham gia vào độ phân giải quá tải nếu tương ứng<i><code>N</code></i>Biểu hiện được hình thành tốt.<code>%</code>Việc triển khai được khuyến nghị để gây khó khăn cho việc sử dụng các tài liệu tham khảo có khả năng treo lủng lẳng vào chuỗi định dạng, ví dụ: bằng cách làm cho các loại trả về không thể chuyển động và ngăn chặn</p>
+<p>Từ việc chấp nhận lvalues ​​của các loại trả lại.<code>%</code>FMT</p>
+<p>Nếu như<code>from_stream</code>Chuỗi định dạng (xem bên dưới)<code>is.<span class="me1">đối tượng giữ kết quả phân tích cú pháp</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/io/ios_base/iostate"><span class="kw1704">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">abbrev</span></span></a><span class="br0">)</span></code>Chuỗi để giữ tên viết tắt múi giờ hoặc tên tương ứng với</p>
+<p>người xác định</p>
+<table class="wikitable"> <tr> <th>bù lại<br/>thời lượng để biểu diễn phần bù từ UTC tương ứng với</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr> <th> <code>%%</code> </th> <td>người xác định<code>%</code>tính cách.</td>
+</tr> <tr> <th> <code>%n</code> </th> <td>Chuỗi định dạng</td>
+</tr> <tr> <th> <code>%t</code> </th> <td>Chuỗi định dạng bao gồm các nhà xác định chuyển đổi bằng 0 hoặc nhiều hơn và các ký tự thông thường. Mỗi ký tự thông thường, không bao gồm các ký tự khoảng trắng và ký tự null chấm dứt, khớp với một ký tự giống hệt nhau từ luồng đầu vào hoặc khiến hàm bị lỗi nếu ký tự tiếp theo trên luồng không so sánh bằng nhau.</td>
+</tr> <tr> <th colspan="3">Mỗi ký tự khoảng trắng phù hợp với các ký tự khoảng trắng hoặc nhiều hơn trong luồng đầu vào.</th>
+</tr> <tr> <th> <code>%C</code> <br/> <code>%<i>N</i>C</code> <br/> <code>%EC</code> </th> <td>Mỗi trình xác định chuyển đổi không biến đổi bắt đầu bằng một<i>N</i>diễn giải đại diện thay thế của địa phương.<p>diễn giải đại diện thay thế của địa phương.<code>%EC</code>tính cách. Một số bộ chỉ định chuyển đổi có dạng sửa đổi trong đó tham số chiều rộng được đưa ra dưới dạng số nguyên thập phân dương (hiển thị dưới dạng</p>
+</td>
+</tr> <tr> <th> <code>%y</code> <br/> <code>%<i>N</i>y</code> <br/> <code>%Ey</code> <br/> <code>%Oy</code> </th> <td>bên dưới) được chèn sau<i>N</i>diễn giải đại diện thay thế của địa phương.<p>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.<code>%Ey</code>Và<code>%Oy</code>Phân tích hai chữ số thập phân cuối cùng của năm. Nếu thế kỷ không được chỉ định khác (ví dụ: với %c), các giá trị trong phạm vi [69, 99] được cho là đề cập đến các năm 1969 đến 1999, và các giá trị trong phạm vi [00, 68] được cho là đề cập đến các năm 2000 đến 2068.</p>
+</td>
+</tr> <tr> <th> <code>%Y</code> <br/> <code>%<i>N</i>Y</code> <br/> <code>%EY</code> </th> <td>Không phân tích mọi thứ được chỉ định bởi chuỗi định dạng hoặc nếu không đủ thông tin được phân tích cú pháp để chỉ định kết quả hoàn chỉnh hoặc nếu phân tích cú pháp tiết lộ thông tin trái ngược nhau,<i>N</i>Các lệnh sửa đổi<p>diễn giải đại diện thay thế của địa phương.<code>%EY</code>. Nếu chiều rộng được chỉ định, nó chỉ được áp dụng cho</p>
+</td>
+</tr> <tr> <th colspan="3">Các nhà xác định chuyển đổi sau đây có sẵn:</th>
+</tr> <tr> <th> <code>%b</code><br/><code>%B</code><br/><code>%h</code> </th> <td>Chuyển đổi</td>
+</tr> <tr> <th> <code>%m</code><br/> <code>%<i>N</i>m</code><br/><code>%Om</code> </th> <td>người xác định<code>1</code>. Chiều rộng<i>N</i>diễn giải đại diện thay thế của địa phương.<p>diễn giải đại diện thay thế của địa phương.<code>%Om</code>. Nếu chiều rộng được chỉ định, nó chỉ được áp dụng cho</p>
+</td>
+</tr> <tr> <th colspan="3">Phân tích thế kỷ như một số thập phân. Chiều rộng</th>
+</tr> <tr> <th> <code>%d</code><br/><code>%<i>N</i>d</code><br/><code>%Od</code><br/><code>%e</code><br/> <code>%<i>N</i>e</code><br/><code>%Oe</code> </th> <td>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.<i>N</i>diễn giải đại diện thay thế của địa phương.<p>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.<code>%Od</code>Và<code>%Oe</code>Phân tích hai chữ số thập phân cuối cùng của năm. Nếu thế kỷ không được chỉ định khác (ví dụ: với %c), các giá trị trong phạm vi [69, 99] được cho là đề cập đến các năm 1969 đến 1999, và các giá trị trong phạm vi [00, 68] được cho là đề cập đến các năm 2000 đến 2068.</p>
+</td>
+</tr> <tr> <th colspan="3">Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.</th>
+</tr> <tr> <th> <code>%a</code><br/><code>%A</code> </th> <td>Các lệnh sửa đổi</td>
+</tr> <tr> <th> <code>%u</code><br/><code>%<i>N</i>u</code> </th> <td>Giải thích đại diện thay thế của địa phương.<code>1</code>diễn giải đại diện thay thế của địa phương.<i>N</i>Tháng</td>
+</tr> <tr> <th> <code>%w</code><br/><code>%<i>N</i>w</code><br/><code>%Ow</code> </th> <td>Lệnh sửa đổi<code>0</code>diễn giải đại diện thay thế của địa phương.<i>N</i>Tháng<p>diễn giải đại diện thay thế của địa phương.<code>%Ow</code>. Nếu chiều rộng được chỉ định, nó chỉ được áp dụng cho</p>
+</td>
+</tr> <tr> <th colspan="3">). Chiều rộng</th>
+</tr> <tr> <td colspan="3"> <p>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.</p>
+<ul>
+<li>Lệnh sửa đổi</li>
+<li>diễn giải đại diện thay thế của địa phương.</li>
+</ul> </td>
+</tr> <tr> <th> <code>%g</code><br/><code>%<i>N</i>g</code> </th> <td>Ngày<i>N</i>diễn giải đại diện thay thế của địa phương.</td>
+</tr> <tr> <th> <code>%G</code><br/><code>%<i>N</i>G</code> </th> <td>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.<i>N</i>Các lệnh sửa đổi</td>
+</tr> <tr> <th> <code>%V</code><br/><code>%<i>N</i>V</code> </th> <td>Giải thích đại diện thay thế của địa phương.<i>N</i>diễn giải đại diện thay thế của địa phương.</td>
+</tr> <tr> <th colspan="3">Phân tích các tên trong tuần không nhạy cảm với trường hợp hoặc viết tắt của địa phương.</th>
+</tr> <tr> <th> <code>%j</code><br/><code>%<i>N</i>j</code> </th> <td>Phân tích các ngày trong tuần ISO dưới dạng số thập phân (1-7), trong đó thứ Hai<code>1</code>. Chiều rộng<i>N</i>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 1. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.</td>
+</tr> <tr> <th> <code>%U</code><br/><code>%<i>N</i>U</code><br/><code>%OU</code> </th> <td>Phân tích các ngày trong tuần là một số thập phân (0-6), nơi Chủ nhật<i>N</i>diễn giải đại diện thay thế của địa phương.<p>diễn giải đại diện thay thế của địa phương.<code>%OU</code>. Nếu chiều rộng được chỉ định, nó chỉ được áp dụng cho</p>
+</td>
+</tr> <tr> <th> <code>%W</code><br/><code>%<i>N</i>W</code><br/><code>%OW</code> </th> <td>diễn giải đại diện thay thế của địa phương.<i>N</i>diễn giải đại diện thay thế của địa phương.<p>diễn giải đại diện thay thế của địa phương.<code>%OW</code>. Nếu chiều rộng được chỉ định, nó chỉ được áp dụng cho</p>
+</td>
+</tr> <tr> <th colspan="3">Bao gồm thứ Năm đầu tiên của năm</th>
+</tr> <tr> <th> <code>%D</code> </th> <td>Mẫu &lt;class inputit1, class inputit2,<code>"%m/%d/%y"</code>.</td>
+</tr> <tr> <th> <code>%F</code><br/><code>%<i>N</i>F</code> </th> <td>Mẫu &lt;class inputit1, class inputit2,<code>"%Y-%m-%d"</code>Phân tích hai chữ số thập phân cuối cùng của năm ISO 8601 trong tuần. Chiều rộng<code>%Y</code>.</td>
+</tr> <tr> <th> <code>%x</code><br/><code>%Ex</code> </th> <td>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.<p>diễn giải đại diện thay thế của địa phương.<code>%Ex</code>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 4. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.</p>
+</td>
+</tr> <tr> <th colspan="3">Thời gian trong ngày</th>
+</tr> <tr> <th> <code>%H</code><br/><code>%<i>N</i>H</code><br/><code>%OH</code> </th> <td>Phân tích các tuần ISO 8601 trong năm dưới dạng số thập phân. Chiều rộng<i>N</i>diễn giải đại diện thay thế của địa phương.<p>diễn giải đại diện thay thế của địa phương.<code>%OH</code>. Nếu chiều rộng được chỉ định, nó chỉ được áp dụng cho</p>
+</td>
+</tr> <tr> <th> <code>%I</code><br/><code>%<i>N</i>I</code><br/><code>%OI</code> </th> <td>). Chiều rộng<i>N</i>diễn giải đại diện thay thế của địa phương.<p>diễn giải đại diện thay thế của địa phương.<code>%OI</code>. Nếu chiều rộng được chỉ định, nó chỉ được áp dụng cho</p>
+</td>
+</tr> <tr> <th> <code>%M</code><br/><code>%<i>N</i>M</code><br/><code>%OM</code> </th> <td>Lệnh sửa đổi<i>N</i>diễn giải đại diện thay thế của địa phương.<p>diễn giải đại diện thay thế của địa phương.<code>%OM</code>. Nếu chiều rộng được chỉ định, nó chỉ được áp dụng cho</p>
+</td>
+</tr> <tr> <th> <code>%S</code><br/><code>%<i>N</i>S</code><br/><code>%OS</code> </th> <td>Lệnh sửa đổi<i>N</i>diễn giải đại diện thay thế của địa phương.<p>diễn giải đại diện thay thế của địa phương.<code>%OS</code>. Nếu chiều rộng được chỉ định, nó chỉ được áp dụng cho</p>
+</td>
+</tr> <tr> <th> <code>%p</code> </th> <td>Phân tích các đại diện ngày của địa phương.</td>
+</tr> <tr> <th> <code>%R</code> </th> <td>Mẫu &lt;class inputit1, class inputit2,<code>"%H:%M"</code>.</td>
+</tr> <tr> <th> <code>%T</code> </th> <td>Mẫu &lt;class inputit1, class inputit2,<code>"%H:%M:%S"</code>.</td>
+</tr> <tr> <th> <code>%r</code> </th> <td>Lệnh sửa đổi</td>
+</tr> <tr> <th> <code>%X</code><br/><code>%EX</code> </th> <td>diễn giải biểu diễn ngày thay thế của địa phương.<p>diễn giải đại diện thay thế của địa phương.<code>%EX</code>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.</p>
+</td>
+</tr> <tr> <th colspan="3">Linh tinh</th>
+</tr> <tr> <th> <code>%c</code><br/><code>%Ec</code> </th> <td>Lệnh sửa đổi<p>diễn giải đại diện thay thế của địa phương.<code>%Ec</code>Phân tích cú pháp giờ (đồng hồ 12 giờ) dưới dạng số thập phân. Chiều rộng</p>
+</td>
+</tr> <tr> <th> <code>%z</code><br/><code>%Ez</code><br/><code>%Oz</code> </th> <td>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.<code>[+|-]hh[mm]</code>Lệnh sửa đổi<code>-0430</code>diễn giải đại diện thay thế của địa phương.<code>04</code>Phân tích cú pháp phút như một số thập phân. Chiều rộng<p>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.<code>%Ez</code>Và<code>%Oz</code>Lệnh sửa đổi<code>[+|-]h[h][:mm]</code>diễn giải đại diện thay thế của địa phương.<code>:</code>Phân tích cú pháp thứ hai như một số thập phân. Chiều rộng</p>
+</td>
+</tr> <tr> <th> <code>%Z</code> </th> <td>Chỉ định số lượng ký tự tối đa để đọc. Chiều rộng mặc định là 2. Các số 0 hàng đầu được cho phép nhưng không bắt buộc.<code>A</code>Phân tích cú pháp các chỉ định AM/PM liên quan đến đồng hồ 12 giờ.<code>Z</code>Thì<code>a</code>Phân tích cú pháp các chỉ định AM/PM liên quan đến đồng hồ 12 giờ.<code>z</code>Thì<code>0</code>Phân tích cú pháp các chỉ định AM/PM liên quan đến đồng hồ 12 giờ.<code>9</code>Thì<code>-</code>Thì<code>+</code>Thì<code>_</code>, Và<code>/</code>.</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3554" rel="nofollow">LWG 3554</a> </td> <td>C ++ 20</td> <td>Phân tích thời gian đồng hồ 12 giờ của địa phương.</td> <td>Được cho</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="system_clock/from_stream" title="cpp/chrono/system clock/from stream"> <span class="t-lines"><span>từ_stream<span class="t-dsc-small">Phân tích các đại diện thời gian của địa phương.</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>sys_time</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="utc_clock/from_stream" title="cpp/chrono/utc clock/from stream"> <span class="t-lines"><span>từ_stream<span class="t-dsc-small">Lệnh sửa đổi</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>utc_time</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="tai_clock/from_stream" title="cpp/chrono/tai clock/from stream"> <span class="t-lines"><span>từ_stream<span class="t-dsc-small">diễn giải biểu diễn thời gian thay thế của địa phương.</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>tai_time</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="gps_clock/from_stream" title="cpp/chrono/gps clock/from stream"> <span class="t-lines"><span>từ_stream<span class="t-dsc-small">(STD :: Chrono :: GPS_TIME)</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>gps_time</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="file_clock/from_stream" title="cpp/chrono/file clock/from stream"> <span class="t-lines"><span>từ_stream<span class="t-dsc-small">(STD :: Chrono :: File_Time)</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>file_time</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="local_t/from_stream" title="cpp/chrono/local t/from stream"> <span class="t-lines"><span>từ_stream<span class="t-dsc-small">(STD :: Chrono :: Local_time)</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>local_time</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="year/from_stream" title="cpp/chrono/year/from stream"> <span class="t-lines"><span>từ_stream</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>year</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="month/from_stream" title="cpp/chrono/month/from stream"> <span class="t-lines"><span>từ_stream</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>month</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="day/from_stream" title="cpp/chrono/day/from stream"> <span class="t-lines"><span>từ_stream</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>day</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="weekday/from_stream" title="cpp/chrono/weekday/from stream"> <span class="t-lines"><span>từ_stream</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>weekday</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="month_day/from_stream" title="cpp/chrono/month day/from stream"> <span class="t-lines"><span>từ_stream</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>month_day</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="year_month/from_stream" title="cpp/chrono/year month/from stream"> <span class="t-lines"><span>từ_stream</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>year_month</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="year_month_day/from_stream" title="cpp/chrono/year month day/from stream"> <span class="t-lines"><span>từ_stream</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân tích cú pháp a<code>year_month_day</code>từ một luồng theo định dạng được cung cấp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/manip/get_time" title="cpp/io/manip/get time"> <span class="t-lines"><span>Phân tích các đại diện ngày và giờ của địa phương.</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Lệnh sửa đổi<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/parse">https://en.cppreference.com/w/cpp/chrono/parse</a>
+</p>
+</div>

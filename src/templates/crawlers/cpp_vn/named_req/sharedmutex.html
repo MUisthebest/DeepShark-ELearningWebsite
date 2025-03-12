@@ -1,0 +1,40 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: SharedMutex<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>
+</h1> <p>Các<strong class="selflink">SharedMutex</strong>Yêu cầu mở rộng<a href="mutex" title="cpp/named req/Mutex">Mutex</a>Yêu cầu bao gồm chế độ sở hữu khóa được chia sẻ.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <ul><li> <a href="mutex" title="cpp/named req/Mutex">Mutex</a> </li></ul> <p>Ngoài ra, một đối tượng<code>m</code>Loại SharedMutex hỗ trợ một chế độ sở hữu khác: Chia sẻ. Nhiều luồng (hay nói chung hơn, các tác nhân thực thi) có thể đồng thời sở hữu mutex này ở chế độ chia sẻ, nhưng không có chủ đề nào có thể có được quyền sở hữu chung nếu có chủ đề sở hữu nó ở chế độ độc quyền và không có chủ đề nào có thể có được quyền sở hữu độc quyền nếu có chủ đề sở hữu nó ở chế độ chia sẻ. Nếu nhiều hơn số lượng luồng được xác định bởi triển khai (không dưới 10000) giữ một khóa được chia sẻ, một nỗ lực khác để có được mutex trong các khối chế độ chia sẻ cho đến khi số lượng chủ sở hữu được chia sẻ giảm xuống dưới ngưỡng đó.</p>
+<ul>
+<li>              Không có p);<code>m.lock_shared()</code>Có các thuộc tính sau:</li>
+<ul>
+<li>Hoạt động như một hoạt động nguyên tử.</li>
+<li>Chặn luồng gọi cho đến khi có thể lấy được quyền sở hữu chung của MUTEX.</li>
+<li>Trước<code>m.unlock()</code>hoạt động trên cùng một mutex<i>Phát hành hoạt động</i>Hoạt động khóa này (tương đương với việc phát hành-Acquire<code><a href="../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>).</li>
+<li>Hành vi không được xác định nếu luồng gọi đã sở hữu mutex ở bất kỳ chế độ nào.</li>
+<li>Nếu một ngoại lệ được ném, khóa được chia sẻ không được mua.</li>
+</ul>
+<li>              Không có p);<code>m.try_lock_shared()</code>Có các thuộc tính sau:</li>
+<ul>
+<li>Hoạt động như một hoạt động nguyên tử.</li>
+<li>Nỗ lực để có được quyền sở hữu chung của Mutex cho luồng gọi mà không chặn. Nếu không có được quyền sở hữu, trả lại ngay lập tức. Chức năng được phép thất bại một cách mạnh mẽ và trả lại ngay cả khi Mutex hiện không thuộc sở hữu của bất kỳ chủ đề nào trong bất kỳ chế độ nào.</li>
+<li>Nếu như<code>try_lock_shared()</code>thành công, trước<code>unlock()</code>hoạt động trên cùng một đối tượng<i>Phát hành hoạt động</i>Hoạt động này (tương đương với Acquire phát hành<code><a href="../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>).</li>
+<li>Hành vi không được xác định nếu luồng gọi đã sở hữu mutex ở bất kỳ chế độ nào.</li>
+</ul>
+<li>              Không có p);<code>m.unlock_shared()</code>Có các thuộc tính sau:</li>
+<ul>
+<li>Hoạt động như một hoạt động nguyên tử.</li>
+<li>Phát hành quyền sở hữu của chủ đề gọi của Mutex và<i>y.store (42, std :: memory_order_relaxed); // d</i>Các hoạt động khóa thành công tiếp theo trên cùng một đối tượng.</li>
+<li>Hành vi không được xác định nếu luồng gọi không sở hữu mutex.</li>
+</ul>
+<li>Tất cả các hoạt động khóa và mở khóa trên một mutex duy nhất xảy ra trong một thứ tự tổng số.</li>
+</ul> <h3 id="Library_types">Các loại thư viện</h3> <p>Các loại thư viện tiêu chuẩn sau đây thỏa mãn<strong class="selflink">SharedMutex</strong>:</p>
+<ul>
+<li> <code><a href="../thread/shared_mutex" title="cpp/thread/shared mutex">std::shared_mutex</a></code><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </li>
+<li> <code><a href="../thread/shared_timed_mutex" title="cpp/thread/shared timed mutex">std::shared_timed_mutex</a></code><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </li>
+</ul> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="../thread" title="cpp/thread">Thread support library</a> </li>
+<li> <a href="mutex" title="cpp/named req/Mutex">Mutex</a> </li>
+<li> <a href="timedmutex" title="cpp/named req/TimedMutex">TimedMutex</a> </li>
+<li> <a href="sharedtimedmutex" title="cpp/named req/SharedTimedMutex">SharedTimedMutex</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/SharedMutex">https://en.cppreference.com/w/cpp/named_req/SharedMutex</a>
+</p>
+</div>

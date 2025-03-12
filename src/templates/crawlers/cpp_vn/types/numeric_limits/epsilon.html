@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">std :: numeric_limits &lt;t&gt; :: epsilon</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">T tĩnh t epsilon () ném ();</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Consexpr t static t epsilon () Noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Trả về máy epsilon, nghĩa là sự khác biệt giữa<code>1.0</code>và giá trị tiếp theo có thể thể hiện bằng loại dấu phẩy động<code>T</code>. Nó chỉ có ý nghĩa nếu<code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Mẫu &lt;Class T&gt;</span> <span class="sy1">==</span> <span class="kw2">SAI</span></code>.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th> <code>T</code> </th> <th> <code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Epsilon</span><span class="br0">.</span><span class="br0">)</span></code> </th>
+</tr> <tr class="t-dsc"> <td> <span class="coMULTI">/ * không chuyên hóa */</span> </td> <td> <code>T()</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">bool</span> </td> <td> <code>false</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">wchar_t</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td>char8_t<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char16_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char32_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">STD</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">int</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">int</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">dài</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> <span class="kw4">dài</span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">trôi nổi</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">FLT_EPSILON</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">DBL_EPSILON</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">LDBL_EPSILON</a></code> </td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Thể hiện việc sử dụng Epsilon máy để so sánh các giá trị dấu phẩy động cho sự bình đẳng:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;THERTHERM&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cmath&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../numeric/math/nextafter" title="cpp/numeric/math/nextafter"> <span class="t-lines"><span>NEXTAFAFTER</span><span>NextAfterf</span><span>NextAfterl</span><span>NEXTTOWARD</span><span>NEXTTOWARDF</span><span>NEXTTOWARDL</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tiếp theo giá trị điểm nổi có thể đại diện cho giá trị đã cho<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/numeric_limits/epsilon">https://en.cppreference.com/w/cpp/types/numeric_limits/epsilon</a>
+</p>
+</div>

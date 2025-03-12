@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Deque &lt;t, Alolocator&gt; :: Shrink_to_fit</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void Shrink_to_fit ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Yêu cầu loại bỏ công suất không sử dụng.</p>
+<p>Đó là một yêu cầu không liên kết để giảm việc sử dụng bộ nhớ mà không thay đổi kích thước của chuỗi. Nó phụ thuộc vào việc thực hiện cho dù yêu cầu được đáp ứng.</p>
+<p>, theo thứ tự không đảo ngược.<a href="end" title="cpp/container/deque/end"><code>end()</code></a>iterator) và tài liệu tham khảo bị vô hiệu.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<table class="t-par-begin"> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mẫu &lt;Class T&gt;<code>*this</code>.<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Nhiều nhất tuyến tính trong kích thước của container.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <h3 id="Exceptions">Ngoại lệ</h3> <p>Nếu một ngoại lệ được ném khác với hàm tạo di chuyển của một<a href="../../named_req/copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a> <code>T</code>    shift_right (đầu tiên tôi, s cuối cùng, std :: iter_difference_t &lt;i&gt; n);</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Chức năng thành viên của<code>shrink_to_fit()</code>khoảng cách<a class="external text" href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/strings.html#strings.string.shrink" rel="nofollow">not available</a>: có thể tạo và sử dụng</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDdef&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Deque&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue850" rel="nofollow">LWG 850</a> </td> <td>C ++ 98</td> <td>
+<code>std::deque</code>#include &lt;Istream&gt;</td> <td>#include &lt;New&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2033" rel="nofollow">LWG 2033</a> </td> <td>C ++ 11</td> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính<code>T</code>Thuật toán<a href="../../named_req/moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a><br/> </td> <td>// Phân bổ C ++ tối thiểu 11 với đầu ra gỡ lỗi.<br/>Mẫu &lt;Lớp TP&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="size" title="cpp/container/deque/size"> <span class="t-lines"><span>kích cỡ</span></span></a></div> </td> <td>trả về một trình lặp đến cuối<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/deque/shrink_to_fit">https://en.cppreference.com/w/cpp/container/deque/shrink_to_fit</a>
+</p>
+</div>

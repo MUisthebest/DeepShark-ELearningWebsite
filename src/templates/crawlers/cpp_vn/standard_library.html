@@ -1,0 +1,445 @@
+ <h1 class="firstHeading" id="firstHeading">Thư viện tiêu chuẩn C ++</h1> <p>Thư viện tiêu chuẩn C ++ cung cấp một loạt các cơ sở có thể sử dụng trong C ++ tiêu chuẩn.</p>
+<h3 id="Category">Loại</h3> <p>Các<a href="utility#Language_support" title="cpp/utility">language support library</a>Cung cấp các thành phần được yêu cầu bởi một số phần của ngôn ngữ C ++, chẳng hạn như phân bổ bộ nhớ (<a href="language/new" title="cpp/language/new">new</a>/<a href="language/delete" title="cpp/language/delete">delete</a>) Và<a href="language/exceptions" title="cpp/language/exceptions">exception processing</a>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<a href="concepts" title="cpp/concepts">concepts library</a>mô tả các thành phần thư viện mà các chương trình C ++ có thể sử dụng để thực hiện xác thực thời gian biên dịch của<a href="language/template_parameters" title="cpp/language/template parameters">template arguments</a>và thực hiện công văn chức năng dựa trên các thuộc tính của các loại.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Các<a href="error" title="cpp/error">diagnostics library</a>Cung cấp một khung phù hợp để báo cáo lỗi trong chương trình C ++, bao gồm cả<a href="error#Exception_categories" title="cpp/error">predefined exception classes</a>.</p>
+<p>Các<a href="memory" title="cpp/memory">memory management library</a>cung cấp các thành phần để quản lý bộ nhớ, bao gồm cả<a href="memory#Smart_pointers" title="cpp/memory">smart pointers</a><span class="t-rev-inl t-since-cxx11"><span>Và<a href="memory/scoped_allocator_adaptor" title="cpp/memory/scoped allocator adaptor">scoped allocator</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Các<a href="meta" title="cpp/meta">metaprogramming library</a>mô tả các cơ sở để sử dụng trong<a href="language/templates" title="cpp/language/templates">templates</a>và trong quá trình đánh giá liên tục, bao gồm cả<a href="meta#Type_traits" title="cpp/meta">type traits</a><span class="t-rev-inl t-since-cxx14"><span>Thì<a href="utility/integer_sequence" title="cpp/utility/integer sequence">integer sequence</a>Thì</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>Và<a href="numeric/ratio" title="cpp/numeric/ratio">rational arithmetic</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Các<a href="utility#General-purpose_utilities" title="cpp/utility">general utilities library</a>bao gồm các thành phần được sử dụng bởi các yếu tố thư viện khác, chẳng hạn như<a href="memory#Allocators" title="cpp/memory">predefined storage allocator</a>để quản lý lưu trữ động và các thành phần được sử dụng làm cơ sở hạ tầng trong các chương trình C ++, chẳng hạn như<span class="t-rev-inl t-since-cxx11"><span> <a href="utility/tuple" title="cpp/utility/tuple">tuples</a>Và</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> <a href="utility/functional" title="cpp/utility/functional">function wrappers</a>.</p>
+<p>Các<a href="string" title="cpp/string">strings library</a>Cung cấp hỗ trợ cho văn bản thao tác được biểu thị dưới dạng các chuỗi đồng nhất của các loại sau:<span class="kw4">char</span><span class="t-rev-inl t-since-cxx20"><span>Thì<code>char8_t</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span><span class="t-rev-inl t-since-cxx11"><span>Thì<code>char16_t</code>Thì<code>char32_t</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Thì<span class="kw4">wchar_t</span>và bất kỳ loại giống như nhân vật khác.</p>
+<p>Các<a href="container" title="cpp/container">containers</a>Thì<a href="iterator" title="cpp/iterator">iterators</a><span class="t-rev-inl t-since-cxx20"><span>Thì<a href="ranges" title="cpp/ranges">ranges</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, Và<a href="algorithm" title="cpp/algorithm">algorithms</a>Các thư viện cung cấp một chương trình C ++ có quyền truy cập vào một tập hợp con của các thuật toán và cấu trúc dữ liệu được sử dụng rộng rãi nhất.</p>
+<p>Các<a href="numeric" title="cpp/numeric">numerics library</a>cung cấp<a href="numeric#Numeric_algorithms" title="cpp/numeric">numeric algorithms</a>Và<a href="numeric/complex" title="cpp/numeric/complex">complex number</a>Các thành phần mở rộng hỗ trợ cho xử lý số. Các<a href="numeric/valarray" title="cpp/numeric/valarray">valarray</a>Thành phần cung cấp hỗ trợ cho việc xử lý N-AT-A-A-Time, có khả năng được triển khai dưới dạng các hoạt động song song trên các nền tảng hỗ trợ xử lý đó.<span class="t-rev-inl t-since-cxx11"><span>Các<a href="numeric/random" title="cpp/numeric/random">random number component</a>Cung cấp các cơ sở để tạo số giả ngẫu nhiên.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span></p>
+<p>Các<a href="chrono" title="cpp/chrono">time library</a>Cung cấp các tiện ích thời gian hữu ích nói chung.</p>
+<p>Các<a href="locale" title="cpp/locale">localization library</a>Cung cấp hỗ trợ quốc tế hóa mở rộng để xử lý văn bản.</p>
+<p>Các<a href="io" title="cpp/io">input/output library</a>Cung cấp<a href="io#Stream-based_I.2FO" title="cpp/io">iostream components</a>Đó là cơ chế chính cho đầu vào và đầu ra chương trình C ++. Chúng có thể được sử dụng với các yếu tố khác của thư viện, đặc biệt là các chuỗi, địa phương và trình lặp.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Các<a href="regex" title="cpp/regex">regular expressions library</a>Cung cấp kết hợp biểu thức thường xuyên và tìm kiếm.</p>
+<p>Các<a href="thread" title="cpp/thread">thread support library</a>cung cấp các thành phần để tạo và quản lý các chủ đề, bao gồm cả<a href="atomic/atomic" title="cpp/atomic/atomic">atomic operations</a>Thì<a href="thread/mutex" title="cpp/thread/mutex">mutual exclusion</a>và giao tiếp giữa các luồng.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Library_contents">Nội dung thư viện</h3> <p>Thư viện tiêu chuẩn C ++ cung cấp các định nghĩa cho<a href="language/basic_concepts" title="cpp/language/basic concepts">entities</a>Và<a href="preprocessor/replace" title="cpp/preprocessor/replace">macros</a>được mô tả trong các bản tóm tắt của<a class="mw-redirect" href="headers" title="cpp/headers">C++ standard library headers</a>, trừ khi có quy định khác.</p>
+<p>Tất cả các thực thể thư viện ngoại trừ<code><a href="memory/new/operator_new" title="cpp/memory/new/operator new">operator new</a></code>Và<code><a href="memory/new/operator_delete" title="cpp/memory/new/operator delete">operator delete</a></code>được xác định trong không gian tên<code>std</code>hoặc<a href="language/namespace" title="cpp/language/namespace">namespaces</a>lồng trong không gian tên<code>std</code>(Ngoại trừ các thực thể cho các cơ sở thư viện tiêu chuẩn C, xem bên dưới).<span class="t-rev-inl t-since-cxx11"><span>Nó không xác định liệu các tên được khai báo trong một không gian tên cụ thể có được khai báo trực tiếp trong không gian tên đó hay trong một<a href="language/namespace#Inline_namespaces" title="cpp/language/namespace">inline namespace</a>bên trong không gian tên đó.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span></p>
+<h4 id="Headers">Tiêu đề</h4> <p>Mỗi yếu tố của thư viện tiêu chuẩn C ++ được khai báo hoặc xác định (khi thích hợp) trong<i>tiêu đề</i>. Tiêu đề không nhất thiết phải là một tệp nguồn, cũng không phải là các chuỗi được phân tách bởi &lt;và&gt; trong các tên tiêu đề nhất thiết phải có tên tệp nguồn hợp lệ.</p>
+<p>Thư viện tiêu chuẩn C ++ cung cấp<i>Tiêu đề thư viện C ++</i>Và<i>Các tiêu đề C ++ bổ sung cho các cơ sở thư viện C</i>(nhìn thấy '<a class="mw-redirect" href="headers" title="cpp/headers">headers</a>'Trang để mô tả):</p>
+<table class="wikitable"> <tr style="text-align:center; font-size:16px; line-height:16px;"> <th colspan="5">Tiêu đề thư viện C ++</th>
+</tr> <tr> <td>
+<a href="header/algorithm" title="cpp/header/algorithm"><code>&lt;algorithm&gt;</code></a> </td> <td>
+<a href="header/iomanip" title="cpp/header/iomanip"><code>&lt;iomanip&gt;</code></a> </td> <td>
+<a href="header/list" title="cpp/header/list"><code>&lt;list&gt;</code></a> </td> <td>
+<a href="header/queue" title="cpp/header/queue"><code>&lt;queue&gt;</code></a> </td> <td>
+<a href="header/string" title="cpp/header/string"><code>&lt;string&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/bitset" title="cpp/header/bitset"><code>&lt;bitset&gt;</code></a> </td> <td>
+<a href="header/ios" title="cpp/header/ios"><code>&lt;ios&gt;</code></a> </td> <td>
+<a href="header/locale" title="cpp/header/locale"><code>&lt;locale&gt;</code></a> </td> <td>
+<a href="header/set" title="cpp/header/set"><code>&lt;set&gt;</code></a> </td> <td>
+<a href="header/strstream" title="cpp/header/strstream"><code>&lt;strstream&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/complex" title="cpp/header/complex"><code>&lt;complex&gt;</code></a> </td> <td>
+<a href="header/iosfwd" title="cpp/header/iosfwd"><code>&lt;iosfwd&gt;</code></a> </td> <td>
+<a href="header/map" title="cpp/header/map"><code>&lt;map&gt;</code></a> </td> <td>
+<a href="header/sstream" title="cpp/header/sstream"><code>&lt;sstream&gt;</code></a> </td> <td>
+<a href="header/typeinfo" title="cpp/header/typeinfo"><code>&lt;typeinfo&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/deque" title="cpp/header/deque"><code>&lt;deque&gt;</code></a> </td> <td>
+<a href="header/iostream" title="cpp/header/iostream"><code>&lt;iostream&gt;</code></a> </td> <td>
+<a href="header/memory" title="cpp/header/memory"><code>&lt;memory&gt;</code></a> </td> <td>
+<a href="header/stack" title="cpp/header/stack"><code>&lt;stack&gt;</code></a> </td> <td>
+<a href="header/utility" title="cpp/header/utility"><code>&lt;utility&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/exception" title="cpp/header/exception"><code>&lt;exception&gt;</code></a> </td> <td>
+<a href="header/istream" title="cpp/header/istream"><code>&lt;istream&gt;</code></a> </td> <td>
+<a href="header/new" title="cpp/header/new"><code>&lt;new&gt;</code></a> </td> <td>
+<a href="header/stdexcept" title="cpp/header/stdexcept"><code>&lt;stdexcept&gt;</code></a> </td> <td>
+<a href="header/valarray" title="cpp/header/valarray"><code>&lt;valarray&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/fstream" title="cpp/header/fstream"><code>&lt;fstream&gt;</code></a> </td> <td>
+<a href="header/iterator" title="cpp/header/iterator"><code>&lt;iterator&gt;</code></a> </td> <td>
+<a href="header/numeric" title="cpp/header/numeric"><code>&lt;numeric&gt;</code></a> </td> <td>
+<a href="header/streambuf" title="cpp/header/streambuf"><code>&lt;streambuf&gt;</code></a> </td> <td>
+<a href="header/vector" title="cpp/header/vector"><code>&lt;vector&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/functional" title="cpp/header/functional"><code>&lt;functional&gt;</code></a> </td> <td>
+<a href="header/limits" title="cpp/header/limits"><code>&lt;limits&gt;</code></a> </td> <td>
+<a href="header/ostream" title="cpp/header/ostream"><code>&lt;ostream&gt;</code></a> </td> <td> </td> <td> </td>
+</tr> <tr style="text-align:center"> <th colspan="5">Các tiêu đề được thêm vào trong C ++ 11</th>
+</tr> <tr> <td>
+<a href="header/array" title="cpp/header/array"><code>&lt;array&gt;</code></a> </td> <td>
+<a href="header/condition_variable" title="cpp/header/condition variable"><code>&lt;condition_variable&gt;</code></a> </td> <td>
+<a href="header/mutex" title="cpp/header/mutex"><code>&lt;mutex&gt;</code></a> </td> <td>
+<a href="header/scoped_allocator" title="cpp/header/scoped allocator"><code>&lt;scoped_allocator&gt;</code></a> </td> <td>
+<a href="header/type_traits" title="cpp/header/type traits"><code>&lt;type_traits&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/atomic" title="cpp/header/atomic"><code>&lt;atomic&gt;</code></a> </td> <td>
+<a href="header/forward_list" title="cpp/header/forward list"><code>&lt;forward_list&gt;</code></a> </td> <td>
+<a href="header/random" title="cpp/header/random"><code>&lt;random&gt;</code></a> </td> <td>
+<a href="header/system_error" title="cpp/header/system error"><code>&lt;system_error&gt;</code></a> </td> <td>
+<a href="header/typeindex" title="cpp/header/typeindex"><code>&lt;typeindex&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/chrono" title="cpp/header/chrono"><code>&lt;chrono&gt;</code></a> </td> <td>
+<a href="header/future" title="cpp/header/future"><code>&lt;future&gt;</code></a> </td> <td>
+<a href="header/ratio" title="cpp/header/ratio"><code>&lt;ratio&gt;</code></a> </td> <td>
+<a href="header/thread" title="cpp/header/thread"><code>&lt;thread&gt;</code></a> </td> <td>
+<a href="header/unordered_map" title="cpp/header/unordered map"><code>&lt;unordered_map&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/codecvt" title="cpp/header/codecvt"><code>&lt;codecvt&gt;</code></a> </td> <td>
+<a href="header/initializer_list" title="cpp/header/initializer list"><code>&lt;initializer_list&gt;</code></a> </td> <td>
+<a href="header/regex" title="cpp/header/regex"><code>&lt;regex&gt;</code></a> </td> <td>
+<a href="header/tuple" title="cpp/header/tuple"><code>&lt;tuple&gt;</code></a> </td> <td>
+<a href="header/unordered_set" title="cpp/header/unordered set"><code>&lt;unordered_set&gt;</code></a> </td>
+</tr> <tr style="text-align:center"> <th colspan="5">Các tiêu đề được thêm vào trong C ++ 14</th>
+</tr> <tr> <td>
+<a href="header/shared_mutex" title="cpp/header/shared mutex"><code>&lt;shared_mutex&gt;</code></a> </td> <td> </td> <td> </td> <td> </td> <td> </td>
+</tr> <tr style="text-align:center"> <th colspan="5">Tiêu đề được thêm vào C ++ 17</th>
+</tr> <tr> <td>
+<a href="header/any" title="cpp/header/any"><code>&lt;any&gt;</code></a> </td> <td>
+<a href="header/execution" title="cpp/header/execution"><code>&lt;execution&gt;</code></a> </td> <td>
+<a href="header/memory_resource" title="cpp/header/memory resource"><code>&lt;memory_resource&gt;</code></a> </td> <td>
+<a href="header/string_view" title="cpp/header/string view"><code>&lt;string_view&gt;</code></a> </td> <td>
+<a href="header/variant" title="cpp/header/variant"><code>&lt;variant&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/charconv" title="cpp/header/charconv"><code>&lt;charconv&gt;</code></a> </td> <td>
+<a href="header/filesystem" title="cpp/header/filesystem"><code>&lt;filesystem&gt;</code></a> </td> <td>
+<a href="header/optional" title="cpp/header/optional"><code>&lt;optional&gt;</code></a> </td> <td> </td> <td> </td>
+</tr> <tr style="text-align:center"> <th colspan="5">Các tiêu đề được thêm vào trong C ++ 20</th>
+</tr> <tr> <td>
+<a href="header/barrier" title="cpp/header/barrier"><code>&lt;barrier&gt;</code></a> </td> <td>
+<a href="header/concepts" title="cpp/header/concepts"><code>&lt;concepts&gt;</code></a> </td> <td>
+<a href="header/latch" title="cpp/header/latch"><code>&lt;latch&gt;</code></a> </td> <td>
+<a href="header/semaphore" title="cpp/header/semaphore"><code>&lt;semaphore&gt;</code></a> </td> <td>
+<a href="header/stop_token" title="cpp/header/stop token"><code>&lt;stop_token&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/bit" title="cpp/header/bit"><code>&lt;bit&gt;</code></a> </td> <td>
+<a href="header/coroutine" title="cpp/header/coroutine"><code>&lt;coroutine&gt;</code></a> </td> <td>
+<a href="header/numbers" title="cpp/header/numbers"><code>&lt;numbers&gt;</code></a> </td> <td>
+<a href="header/source_location" title="cpp/header/source location"><code>&lt;source_location&gt;</code></a> </td> <td>
+<a href="header/syncstream" title="cpp/header/syncstream"><code>&lt;syncstream&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/compare" title="cpp/header/compare"><code>&lt;compare&gt;</code></a> </td> <td>
+<a href="header/format" title="cpp/header/format"><code>&lt;format&gt;</code></a> </td> <td>
+<a href="header/ranges" title="cpp/header/ranges"><code>&lt;ranges&gt;</code></a> </td> <td>
+<a href="header/span" title="cpp/header/span"><code>&lt;span&gt;</code></a> </td> <td>
+<a href="header/version" title="cpp/header/version"><code>&lt;version&gt;</code></a> </td>
+</tr> <tr style="text-align:center"> <th colspan="5">Các tiêu đề được thêm vào trong C ++ 23</th>
+</tr> <tr> <td>
+<a href="header/expected" title="cpp/header/expected"><code>&lt;expected&gt;</code></a> </td> <td>
+<a href="header/flat_set" title="cpp/header/flat set"><code>&lt;flat_set&gt;</code></a> </td> <td>
+<a href="header/mdspan" title="cpp/header/mdspan"><code>&lt;mdspan&gt;</code></a> </td> <td>
+<a href="header/spanstream" title="cpp/header/spanstream"><code>&lt;spanstream&gt;</code></a> </td> <td>
+<a href="header/stdfloat" title="cpp/header/stdfloat"><code>&lt;stdfloat&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/flat_map" title="cpp/header/flat map"><code>&lt;flat_map&gt;</code></a> </td> <td>
+<a href="header/generator" title="cpp/header/generator"><code>&lt;generator&gt;</code></a> </td> <td>
+<a href="header/print" title="cpp/header/print"><code>&lt;print&gt;</code></a> </td> <td>
+<a href="header/stacktrace" title="cpp/header/stacktrace"><code>&lt;stacktrace&gt;</code></a> </td> <td> </td>
+</tr> <tr style="text-align:center"> <th colspan="5">Các tiêu đề được thêm vào trong C ++ 26</th>
+</tr> <tr> <td>
+<a href="header/debugging" title="cpp/header/debugging"><code>&lt;debugging&gt;</code></a> </td> <td>
+<a href="header/hazard_pointer" title="cpp/header/hazard pointer"><code>&lt;hazard_pointer&gt;</code></a> </td> <td>
+<a href="header/linalg" title="cpp/header/linalg"><code>&lt;linalg&gt;</code></a> </td> <td>
+<a href="header/rcu" title="cpp/header/rcu"><code>&lt;rcu&gt;</code></a> </td> <td>
+<a href="header/text_encoding" title="cpp/header/text encoding"><code>&lt;text_encoding&gt;</code></a> </td>
+</tr> <tr style="text-align:center; font-size:16px; line-height:16px;"> <th colspan="5">Đã loại bỏ các tiêu đề</th>
+</tr> <tr> <td>
+<a href="header/codecvt" title="cpp/header/codecvt"><code>&lt;codecvt&gt;</code></a> </td> <td colspan="4">
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><span class="t-mark-rev t-deprecated-cxx17">(không được dùng trong C ++ 17)</span><span class="t-mark-rev t-until-cxx26">(Đã xóa trong C ++ 26)</span> </td>
+</tr>
+</table> <table class="wikitable"> <tr style="text-align:center; font-size:16px; line-height:16px;"> <th colspan="4">Tiêu đề C ++ cho các cơ sở thư viện C</th>
+</tr> <tr> <td>
+<a href="header/cassert" title="cpp/header/cassert"><code>&lt;cassert&gt;</code></a> </td> <td>
+<a href="header/clocale" title="cpp/header/clocale"><code>&lt;clocale&gt;</code></a> </td> <td>
+<a href="header/cstdarg" title="cpp/header/cstdarg"><code>&lt;cstdarg&gt;</code></a> </td> <td>
+<a href="header/cstring" title="cpp/header/cstring"><code>&lt;cstring&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/cctype" title="cpp/header/cctype"><code>&lt;cctype&gt;</code></a> </td> <td>
+<a href="header/cmath" title="cpp/header/cmath"><code>&lt;cmath&gt;</code></a> </td> <td>
+<a href="header/cstddef" title="cpp/header/cstddef"><code>&lt;cstddef&gt;</code></a> </td> <td>
+<a href="header/ctime" title="cpp/header/ctime"><code>&lt;ctime&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/cerrno" title="cpp/header/cerrno"><code>&lt;cerrno&gt;</code></a> </td> <td>
+<a href="header/csetjmp" title="cpp/header/csetjmp"><code>&lt;csetjmp&gt;</code></a> </td> <td>
+<a href="header/cstdio" title="cpp/header/cstdio"><code>&lt;cstdio&gt;</code></a> </td> <td>
+<a href="header/cwchar" title="cpp/header/cwchar"><code>&lt;cwchar&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/cfloat" title="cpp/header/cfloat"><code>&lt;cfloat&gt;</code></a> </td> <td>
+<a href="header/csignal" title="cpp/header/csignal"><code>&lt;csignal&gt;</code></a> </td> <td>
+<a href="header/cstdlib" title="cpp/header/cstdlib"><code>&lt;cstdlib&gt;</code></a> </td> <td>
+<a href="header/cwctype" title="cpp/header/cwctype"><code>&lt;cwctype&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/climits" title="cpp/header/climits"><code>&lt;climits&gt;</code></a> </td> <td> </td> <td> </td> <td> </td>
+</tr> <tr style="text-align:center"> <th colspan="4">Các tiêu đề được thêm vào trong C ++ 11</th>
+</tr> <tr> <td>
+<a href="header/cfenv" title="cpp/header/cfenv"><code>&lt;cfenv&gt;</code></a> </td> <td>
+<a href="header/cinttypes" title="cpp/header/cinttypes"><code>&lt;cinttypes&gt;</code></a> </td> <td>
+<a href="header/cstdint" title="cpp/header/cstdint"><code>&lt;cstdint&gt;</code></a> </td> <td>
+<a href="header/cuchar" title="cpp/header/cuchar"><code>&lt;cuchar&gt;</code></a> </td>
+</tr> <tr style="text-align:center; font-size:16px; line-height:16px;"> <th colspan="5">Đã loại bỏ các tiêu đề</th>
+</tr> <tr> <td>
+<a href="header/ccomplex" title="cpp/header/ccomplex"><code>&lt;ccomplex&gt;</code></a> </td> <td colspan="4">
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><span class="t-mark-rev t-deprecated-cxx17">(không được dùng trong C ++ 17)</span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td>
+</tr> <tr> <td>
+<a href="header/ciso646" title="cpp/header/ciso646"><code>&lt;ciso646&gt;</code></a> </td> <td colspan="4">
+<span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td>
+</tr> <tr> <td>
+<a href="header/cstdalign" title="cpp/header/cstdalign"><code>&lt;cstdalign&gt;</code></a> </td> <td colspan="4">
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><span class="t-mark-rev t-deprecated-cxx17">(không được dùng trong C ++ 17)</span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td>
+</tr> <tr> <td>
+<a href="header/cstdbool" title="cpp/header/cstdbool"><code>&lt;cstdbool&gt;</code></a> </td> <td colspan="4">
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><span class="t-mark-rev t-deprecated-cxx17">(không được dùng trong C ++ 17)</span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td>
+</tr> <tr> <td>
+<a href="header/ctgmath" title="cpp/header/ctgmath"><code>&lt;ctgmath&gt;</code></a> </td> <td colspan="4">
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><span class="t-mark-rev t-deprecated-cxx17">(không được dùng trong C ++ 17)</span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td>
+</tr>
+</table> <p>MỘT<a href="freestanding" title="cpp/freestanding">freestanding implementation</a>có một bộ tiêu đề được xác định theo triển khai, xem<a href="freestanding#header_requirements" title="cpp/freestanding">here</a>Đối với yêu cầu tối thiểu trên tập hợp các tiêu đề.</p>
+<h3 id="C_standard_library">C Thư viện tiêu chuẩn</h3> <p>Thư viện tiêu chuẩn C ++ cũng có sẵn các cơ sở của thư viện tiêu chuẩn C, được điều chỉnh phù hợp để đảm bảo an toàn loại tĩnh. Các mô tả của nhiều chức năng thư viện dựa trên thư viện tiêu chuẩn C cho ngữ nghĩa của các chức năng đó.</p>
+<p>Trong một số trường hợp, các chữ ký được chỉ định trong C ++ tiêu chuẩn có thể khác với chữ ký trong thư viện tiêu chuẩn C và quá tải bổ sung có thể được khai báo, nhưng hành vi và điều kiện tiên quyết<span class="t-rev-inl t-since-cxx17"><span>(bao gồm cả những điều được ngụ ý bởi c's<a href="https://en.cppreference.com/w/c/language/restrict" title="c/language/restrict">restrict</a>)</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>là như nhau trừ khi có quy định khác.</p>
+<p>Để tương thích với thư viện tiêu chuẩn C, thư viện tiêu chuẩn C ++ cung cấp các tiêu đề C được liệt kê dưới đây. Việc sử dụng dự định của các tiêu đề này chỉ dành cho khả năng tương tác. Có thể các tệp nguồn C ++ cần bao gồm một trong các tiêu đề này để có giá trị ISO C. Các tệp nguồn không có ý định cũng có giá trị ISO C không nên sử dụng bất kỳ tiêu đề C nào. Nhìn thấy<a class="mw-redirect" href="headers#C_compatibility_headers" title="cpp/headers">here</a>cho mô tả.</p>
+<table class="wikitable"> <tr style="text-align:center; font-size:16px; line-height:16px;"> <th colspan="4">C tiêu đề</th>
+</tr> <tr> <td>
+<a href="header/cassert" title="cpp/header/cassert"><code>&lt;assert.h&gt;</code></a> </td> <td>
+<a href="header/climits" title="cpp/header/climits"><code>&lt;limits.h&gt;</code></a> </td> <td>
+<a href="header/cstdarg" title="cpp/header/cstdarg"><code>&lt;stdarg.h&gt;</code></a> </td> <td>
+<a href="header/cstring" title="cpp/header/cstring"><code>&lt;string.h&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/cctype" title="cpp/header/cctype"><code>&lt;ctype.h&gt;</code></a> </td> <td>
+<a href="header/clocale" title="cpp/header/clocale"><code>&lt;locale.h&gt;</code></a> </td> <td>
+<a href="header/cstddef" title="cpp/header/cstddef"><code>&lt;stddef.h&gt;</code></a> </td> <td>
+<a href="header/ctime" title="cpp/header/ctime"><code>&lt;time.h&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/cerrno" title="cpp/header/cerrno"><code>&lt;errno.h&gt;</code></a> </td> <td>
+<a href="header/cmath" title="cpp/header/cmath"><code>&lt;math.h&gt;</code></a> </td> <td>
+<a href="header/cstdio" title="cpp/header/cstdio"><code>&lt;stdio.h&gt;</code></a> </td> <td>
+<a href="header/cwchar" title="cpp/header/cwchar"><code>&lt;wchar.h&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/cfloat" title="cpp/header/cfloat"><code>&lt;float.h&gt;</code></a> </td> <td>
+<a href="header/csetjmp" title="cpp/header/csetjmp"><code>&lt;setjmp.h&gt;</code></a> </td> <td>
+<a href="header/cstdlib" title="cpp/header/cstdlib"><code>&lt;stdlib.h&gt;</code></a> </td> <td>
+<a href="header/cwctype" title="cpp/header/cwctype"><code>&lt;wctype.h&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/ciso646" title="cpp/header/ciso646"><code>&lt;iso646.h&gt;</code></a> </td> <td>
+<a href="header/csignal" title="cpp/header/csignal"><code>&lt;signal.h&gt;</code></a> </td> <td> </td> <td> </td>
+</tr> <tr style="text-align:center"> <th colspan="4">Các tiêu đề được thêm vào trong C ++ 11</th>
+</tr> <tr> <td>
+<a href="header/ccomplex" title="cpp/header/ccomplex"><code>&lt;complex.h&gt;</code></a> </td> <td>
+<a href="header/cinttypes" title="cpp/header/cinttypes"><code>&lt;inttypes.h&gt;</code></a> </td> <td>
+<a href="header/cstdbool" title="cpp/header/cstdbool"><code>&lt;stdbool.h&gt;</code></a> </td> <td>
+<a href="header/ctgmath" title="cpp/header/ctgmath"><code>&lt;tgmath.h&gt;</code></a> </td>
+</tr> <tr> <td>
+<a href="header/cfenv" title="cpp/header/cfenv"><code>&lt;fenv.h&gt;</code></a> </td> <td>
+<a href="header/cstdalign" title="cpp/header/cstdalign"><code>&lt;stdalign.h&gt;</code></a> </td> <td>
+<a href="header/cstdint" title="cpp/header/cstdint"><code>&lt;stdint.h&gt;</code></a> </td> <td>
+<a href="header/cuchar" title="cpp/header/cuchar"><code>&lt;uchar.h&gt;</code></a> </td>
+</tr> <tr style="text-align:center"> <th colspan="4">Các tiêu đề được thêm vào trong C ++ 23</th>
+</tr> <tr> <td>
+<a href="header/stdatomic.h" title="cpp/header/stdatomic.h"><code>&lt;stdatomic.h&gt;</code></a> </td> <td> </td> <td> </td> <td> </td>
+</tr>
+</table> <p>Ngoại trừ được ghi nhận khác, nội dung của mỗi tiêu đề<code>c<i>xxx</i></code>giống như tiêu đề tương ứng<code><i>xxx</i>.h</code>như được chỉ định trong<a href="https://en.cppreference.com/w/c/header" title="c/header">C standard library</a>. Tuy nhiên, trong thư viện tiêu chuẩn C ++, các khai báo (ngoại trừ các tên được xác định là macro trong c) nằm trong phạm vi không gian tên của không gian tên<code>std</code>. Nó không được xác định liệu các tên này (bao gồm cả quá tải được thêm vào) được khai báo đầu tiên trong phạm vi không gian tên toàn cầu và sau đó được tiêm vào không gian tên<code>std</code>Bằng cách rõ ràng<a href="language/namespace#Using-declarations" title="cpp/language/namespace">using-declarations</a>.</p>
+<p>Tên được định nghĩa là macro trong c (<a href="error/assert" title="cpp/error/assert"><code>assert</code></a>Thì<a href="types/offsetof" title="cpp/types/offsetof"><code>offsetof</code></a>Thì<a href="utility/program/setjmp" title="cpp/utility/program/setjmp"><code>setjmp</code></a>Thì<a href="utility/variadic/va_arg" title="cpp/utility/variadic/va arg"><code>va_arg</code></a>Thì<a href="utility/variadic/va_end" title="cpp/utility/variadic/va end"><code>va_end</code></a>Và<a href="utility/variadic/va_start" title="cpp/utility/variadic/va start"><code>va_start</code></a>) phải được định nghĩa là macro trong thư viện tiêu chuẩn C ++, ngay cả khi C cấp giấy phép để thực hiện dưới dạng chức năng.</p>
+<p>Các tên được định nghĩa là các hàm trong C phải được định nghĩa là các hàm trong thư viện tiêu chuẩn C ++. Điều này không cho phép thực hành, được phép trong C, cung cấp một macro mặt nạ ngoài nguyên mẫu chức năng. Cách duy nhất để đạt được hành vi nội tuyến tương đương trong C ++ là cung cấp một định nghĩa như một bên ngoài<a href="language/inline" title="cpp/language/inline">inline function</a>.</p>
+<p>Số nhận dạng là từ khóa hoặc toán tử trong C ++ không thể được định nghĩa là macro trong các tiêu đề thư viện tiêu chuẩn C ++. Cụ thể, bao gồm cả tiêu đề tiêu chuẩn<a href="header/ciso646" title="cpp/header/ciso646"><code>&lt;iso646.h&gt;</code></a>không có tác dụng.</p>
+<h4 id="Names_associated_with_safe_functions_in_standard_C_.28since_C.2B.2B17.29">Tên liên quan đến các chức năng an toàn trong tiêu chuẩn C<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>
+</h4> <p>Nếu có bất kỳ tiêu đề C ++ nào được bao gồm, thì đó được xác định là có thể xác định xem có bất kỳ tên phụ lục K tiêu chuẩn nào sau đây<code>std</code>):</p>
+<table class="wikitable"> <tr style="text-align:center"> <th colspan="4">C Tên phụ lục tiêu chuẩn K</th>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/error/abort_handler_s" title="c/error/abort handler s"><code>abort_handler_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/multibyte/mbstowcs" title="c/string/multibyte/mbstowcs"><code>mbstowcs_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/byte/strncat" title="c/string/byte/strncat"><code>strncat_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfwscanf" title="c/io/vfwscanf"><code>vswscanf_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/chrono/asctime" title="c/chrono/asctime"><code>asctime_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/byte/memcpy" title="c/string/byte/memcpy"><code>memcpy_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/byte/strncpy" title="c/string/byte/strncpy"><code>strncpy_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfwprintf" title="c/io/vfwprintf"><code>vwprintf_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch"><code>bsearch_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/byte/memmove" title="c/string/byte/memmove"><code>memmove_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/byte/strtok" title="c/string/byte/strtok"><code>strtok_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfwscanf" title="c/io/vfwscanf"><code>vwscanf_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/error/set_constraint_handler_s" title="c/error/set constraint handler s"><code>constraint_handler_t</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/byte/memset" title="c/string/byte/memset"><code>memset_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/fwprintf" title="c/io/fwprintf"><code>swprintf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/multibyte/wcrtomb" title="c/string/multibyte/wcrtomb"><code>wcrtomb_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/chrono/ctime" title="c/chrono/ctime"><code>ctime_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/fprintf" title="c/io/fprintf"><code>printf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/fwscanf" title="c/io/fwscanf"><code>swscanf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/wide/wcscat" title="c/string/wide/wcscat"><code>wcscat_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/error" title="c/error"><code>errno_t</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/algorithm/qsort" title="c/algorithm/qsort"><code>qsort_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/tmpfile" title="c/io/tmpfile"><code>tmpfile_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/wide/wcscpy" title="c/string/wide/wcscpy"><code>wcscpy_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/io/fopen" title="c/io/fopen"><code>fopen_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/error" title="c/error"><code>RSIZE_MAX</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/tmpnam" title="c/io/tmpnam"><code>TMP_MAX_S</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/wide/wcsncat" title="c/string/wide/wcsncat"><code>wcsncat_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/io/fprintf" title="c/io/fprintf"><code>fprintf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/error" title="c/error"><code>rsize_t</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/tmpnam" title="c/io/tmpnam"><code>tmpnam_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/wide/wcsncpy" title="c/string/wide/wcsncpy"><code>wcsncpy_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/io/freopen" title="c/io/freopen"><code>freopen_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/fscanf" title="c/io/fscanf"><code>scanf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfprintf" title="c/io/vfprintf"><code>vfprintf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/wide/wcslen" title="c/string/wide/wcslen"><code>wcsnlen_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/io/fscanf" title="c/io/fscanf"><code>fscanf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/error/set_constraint_handler_s" title="c/error/set constraint handler s"><code>set_constraint_handler_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf"><code>vfscanf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/multibyte/wcsrtombs" title="c/string/multibyte/wcsrtombs"><code>wcsrtombs_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/io/fwprintf" title="c/io/fwprintf"><code>fwprintf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/fprintf" title="c/io/fprintf"><code>snprintf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfwprintf" title="c/io/vfwprintf"><code>vfwprintf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/wide/wcstok" title="c/string/wide/wcstok"><code>wcstok_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/io/fwscanf" title="c/io/fwscanf"><code>fwscanf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/fwprintf" title="c/io/fwprintf"><code>snwprintf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfwscanf" title="c/io/vfwscanf"><code>vfwscanf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/multibyte/wcstombs" title="c/string/multibyte/wcstombs"><code>wcstombs_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/io/gets" title="c/io/gets"><code>gets_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/fscanf" title="c/io/fscanf"><code>sscanf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfprintf" title="c/io/vfprintf"><code>vprintf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/wide/wmemcpy" title="c/string/wide/wmemcpy"><code>wmemcpy_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/chrono/gmtime" title="c/chrono/gmtime"><code>gmtime_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/multibyte/mbstowcs" title="c/string/multibyte/mbstowcs"><code>mbstowcs_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf"><code>vscanf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfwscanf" title="c/io/vfwscanf"><code>vswscanf_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/error/abort_handler_s" title="c/error/abort handler s"><code>abort_handler_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/byte/strcat" title="c/string/byte/strcat"><code>strcat_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfprintf" title="c/io/vfprintf"><code>vsnprintf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/wide" title="c/string/wide"><code>wmemmove</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/error/ignore_handler_s" title="c/error/ignore handler s"><code>ignore_handler_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/byte/strcpy" title="c/string/byte/strcpy"><code>strcpy_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfwprintf" title="c/io/vfwprintf"><code>vsnwprintf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/fwprintf" title="c/io/fwprintf"><code>wprintf_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/chrono/localtime" title="c/chrono/localtime"><code>localtime_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/byte/strerror" title="c/string/byte/strerror"><code>strerrorlen_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfprintf" title="c/io/vfprintf"><code>vsprintf_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/fwscanf" title="c/io/fwscanf"><code>wscanf_s</code></a> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/io/tmpnam" title="c/io/tmpnam"><code>L_tmpnam_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/byte/strerror" title="c/string/byte/strerror"><code>strerror_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf"><code>vsscanf_s</code></a> </td> <td> </td>
+</tr> <tr> <td>
+<a href="https://en.cppreference.com/w/c/string/multibyte/mbsrtowcs" title="c/string/multibyte/mbsrtowcs"><code>mbsrtowcs_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/string/byte/strlen" title="c/string/byte/strlen"><code>strlen_s</code></a> </td> <td>
+<a href="https://en.cppreference.com/w/c/io/vfwprintf" title="c/io/vfwprintf"><code>vswprintf_s</code></a> </td> <td> </td>
+</tr>
+</table> <h3 id="Using_the_library">Sử dụng thư viện</h3> <h4 id="Including_headers">Bao gồm các tiêu đề</h4> <p>Các thực thể trong thư viện tiêu chuẩn C ++ được xác định trong các tiêu đề, có nội dung được cung cấp cho một đơn vị dịch khi nó chứa<a href="preprocessor/include" title="cpp/preprocessor/include"><code> #include</code></a>Chỉ thị tiền xử lý.</p>
+<p>Một đơn vị dịch có thể bao gồm các tiêu đề thư viện theo bất kỳ thứ tự nào. Mỗi có thể được bao gồm nhiều hơn một lần, không có tác dụng khác với việc được đưa vào chính xác một lần, ngoại trừ ảnh hưởng của việc bao gồm cả<a href="header/cassert" title="cpp/header/cassert"><code>&lt;cassert&gt;</code></a>hoặc<a href="header/cassert" title="cpp/header/cassert"><code>&lt;assert.h&gt;</code></a>phụ thuộc mỗi lần vào định nghĩa hiện tại từ vựng của<code>NDEBUG</code>.</p>
+<p>Một đơn vị dịch chỉ có thể bao gồm một tiêu đề bên ngoài bất kỳ tuyên bố hoặc định nghĩa nào và từ trước khi tham chiếu đầu tiên trong đơn vị dịch đó cho bất kỳ thực thể nào được tuyên bố trong tiêu đề đó. Không cần chẩn đoán.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>TRONG<a href="language/modules" title="cpp/language/modules">module units</a>, tiêu đề chỉ có thể được đưa vào<a href="language/modules#Global_module_fragment" title="cpp/language/modules">global module fragments</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <h4 id="Importing_headers">Nhập tiêu đề</h4> <p>Các<a href="#Headers">C++ library headers</a>, hoặc, đối với việc thực hiện độc lập, tập hợp con của các tiêu đề như vậy được cung cấp bởi việc thực hiện, được gọi chung là<i>Nhập tiêu đề thư viện C ++ có thể nhập</i>.</p>
+<p>Nội dung của các tiêu đề thư viện C ++ có thể nhập được cung cấp cho một đơn vị dịch khi nó chứa<a href="language/modules#Importing_modules_and_headers" title="cpp/language/modules">import declaration</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <h4 id="Importing_modules">Nhập các mô -đun</h4> <p>Thư viện tiêu chuẩn C ++ cung cấp các phần sau<i>Mô -đun thư viện C ++</i>:</p>
+<ul>
+<li>Các<a href="language/modules#Module_declarations" title="cpp/language/modules">named module</a> <code>std</code>xuất khẩu khai báo trong không gian tên<code>std</code>được cung cấp bởi các tiêu đề thư viện C ++ có thể nhập (ví dụ:<code><a href="numeric/rotr" title="cpp/numeric/rotr">std::rotr</a></code>từ<a href="header/bit" title="cpp/header/bit"><code>&lt;bit&gt;</code></a>) và<a href="#Headers">C++ headers for C library facilities</a>(ví dụ.<code><a href="io/c/puts" title="cpp/io/c/puts">std::puts</a></code>từ<a href="header/cstdio" title="cpp/header/cstdio"><code>&lt;cstdio&gt;</code></a>). Nó cũng xuất khẩu khai báo trong không gian tên toàn cầu cho bộ lưu trữ<a href="memory/new/operator_new" title="cpp/memory/new/operator new">allocation</a>Và<a href="memory/new/operator_delete" title="cpp/memory/new/operator delete">deallocation</a>các chức năng được cung cấp bởi<a href="header/new" title="cpp/header/new"><code>&lt;new&gt;</code></a>(ví dụ.<code><a href="memory/new/operator_new" title="cpp/memory/new/operator new">::operator new</a></code>).</li>
+<li>Mô -đun được đặt tên<code>std.compat</code>Xuất cùng các khai báo như mô -đun được đặt tên<code>std</code>, và thêm các tuyên bố xuất khẩu trong không gian tên toàn cầu tương ứng với các tuyên bố trong không gian tên<code>std</code>được cung cấp bởi các tiêu đề C ++ cho các cơ sở thư viện C (ví dụ:<code><a href="io/c/fclose" title="cpp/io/c/fclose">::fclose</a></code>).</li>
+</ul> <p>Đối với mỗi tuyên bố trong thư viện tiêu chuẩn,</p>
+<ul>
+<li>mô -đun nó<a href="language/modules#Module_ownership" title="cpp/language/modules">attaches to</a>không xác định, và</li>
+<li>nó biểu thị giống nhau<a href="language/basic_concepts" title="cpp/language/basic concepts">entity</a>Bất kể nó có thể đạt được thông qua bao gồm một tiêu đề, nhập đơn vị tiêu đề hoặc nhập mô -đun thư viện C ++.</li>
+</ul> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="feature_test#cpp_lib_modules" title="cpp/feature test"><code>__cpp_lib_modules</code></a></td> <td><span class="nu0">202207L</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Mô -đun thư viện tiêu chuẩn<code>std</code>Và<code>std.compat</code> </td>
+</tr>
+</table> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h4 id="Linkage">Liên kết</h4> <p>Các thực thể trong thư viện tiêu chuẩn C ++ có<a href="language/storage_duration#external_linkage" title="cpp/language/storage duration">external linkage</a>. Trừ khi có quy định khác, các đối tượng và chức năng có mặc định<span class="kw4">Extern</span> <span class="st0">"C ++"</span> <a href="language/language_linkage" title="cpp/language/language linkage">linkage</a>.</p>
+<p>Liệu một tên từ thư viện tiêu chuẩn C được khai báo với liên kết bên ngoài có hay không<span class="kw4">Extern</span> <span class="st0">"C"</span>hoặc<span class="kw4">Extern</span> <span class="st0">"C ++"</span>Liên kết được thực hiện theo định nghĩa. Tiêu chuẩn C ++ khuyến nghị sử dụng<span class="kw4">Extern</span> <span class="st0">"C ++"</span>Trong trường hợp này.</p>
+<p>Các đối tượng và chức năng được xác định trong thư viện và được yêu cầu bởi chương trình C ++ được bao gồm trong chương trình trước khi khởi động chương trình.</p>
+<h3 id="Requirements_on_standard_library_implementations">Yêu cầu về triển khai thư viện tiêu chuẩn</h3> <h4 id="Guarantees">Đảm bảo</h4> <p>Tiêu đề C ++ phải cung cấp<a href="language/declarations" title="cpp/language/declarations">declarations</a>Và<a href="language/definition" title="cpp/language/definition">definitions</a>xuất hiện trong</p>
+<ul>
+<li>Bản tóm tắt của tiêu đề đó, hoặc</li>
+<li>Bản tóm tắt của một tiêu đề khác dường như được bao gồm trong bản tóm tắt của tiêu đề đó.</li>
+</ul> <p>Cho các loại và macro được xác định trong nhiều tiêu đề (chẳng hạn như<a href="types/null" title="cpp/types/NULL"><code>NULL</code></a>), bao gồm bất kỳ số lượng tiêu đề này theo bất kỳ thứ tự nào không bao giờ vi phạm<a href="language/definition#One_Definition_Rule" title="cpp/language/definition">one definition rule</a>.</p>
+<p>Trừ khi có quy định khác, tất cả<a href="preprocessor/replace#Object-like_macros" title="cpp/preprocessor/replace">object-like macros</a>được xác định bởi thư viện tiêu chuẩn C mở rộng thành tích phân<a href="language/constant_expression" title="cpp/language/constant expression">constant expressions</a>có thể được sử dụng trong<a href="preprocessor/conditional" title="cpp/preprocessor/conditional"><code>#if</code></a>Chỉ thị tiền xử lý.</p>
+<p>Gọi một chữ ký chức năng phi thành viên của thư viện tiêu chuẩn luôn dẫn đến việc thực sự gọi chức năng đó. Do đó, việc triển khai thư viện tiêu chuẩn phù hợp không thể xác định các chức năng phi thành viên bổ sung có thể được gọi bởi chương trình C ++ hợp lệ.</p>
+<p>Chữ ký chức năng không thành viên không bao giờ được khai báo với<a href="language/default_arguments" title="cpp/language/default arguments">default arguments</a>.</p>
+<p>Trừ khi có quy định khác, các cuộc gọi được thực hiện bởi các chức năng trong thư viện tiêu chuẩn cho người không vận hành, các chức năng không thành viên không sử dụng các chức năng từ một chức năng khác<a href="language/namespace" title="cpp/language/namespace">namespace</a>được tìm thấy thông qua<a href="language/adl" title="cpp/language/adl">argument-dependent name lookup</a>.</p>
+<p>Cho mỗi<a href="language/friend" title="cpp/language/friend">friend declaration</a>của một hàm (mẫu) trong định nghĩa của một lớp (mẫu), không có khai báo nào khác được cung cấp cho hàm đó (mẫu).</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Chữ ký chức năng thư viện tiêu chuẩn chỉ có thể được khai báo là<span class="kw4">constexpr</span>Nếu họ được yêu cầu<a href="language/constexpr" title="cpp/language/constexpr">constexpr</a>(libstdc ++ cmath<a class="external text" href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=102916" rel="nofollow">is notably non-conforming</a>đây). Nếu một tiêu đề cung cấp bất kỳ khai báo không xác định nào của các hàm hoặc hàm tạo ConsexPR, các định nghĩa tương ứng cũng nên được cung cấp trong tiêu đề đó.</p>
+<p>Trừ khi có quy định khác, mỗi hàm thư viện tiêu chuẩn phải đáp ứng từng yêu cầu sau đây để ngăn chặn<a href="language/memory_model#Threads_and_data_races" title="cpp/language/memory model">data races</a>:</p>
+<ul>
+<li>Hàm thư viện tiêu chuẩn C ++ không thể (trực tiếp hoặc gián tiếp) truy cập các đối tượng có thể truy cập bằng các luồng khác với luồng hiện tại trừ khi các đối tượng được truy cập (trực tiếp hoặc gián tiếp) thông qua các đối số chức năng, bao gồm cả<code>this</code>.</li>
+<li>Chức năng thư viện tiêu chuẩn C ++ không thể (trực tiếp hoặc gián tiếp) sửa đổi các đối tượng có thể truy cập bằng các luồng khác với luồng hiện tại trừ khi các đối tượng được truy cập (trực tiếp hoặc gián tiếp) thông qua các đối số không phải của chức năng, bao gồm cả<code>this</code>.<ul><li>Ví dụ, một đối tượng có thời lượng lưu trữ tĩnh không thể được sử dụng cho các mục đích nội bộ mà không đồng bộ hóa vì làm như vậy có thể gây ra một cuộc đua dữ liệu ngay cả trong các chương trình không chia sẻ rõ ràng các đối tượng giữa các luồng.</li></ul> </li>
+<li>Chức năng thư viện tiêu chuẩn C ++ không thể truy cập các đối tượng có thể truy cập gián tiếp thông qua các đối số của nó hoặc thông qua các phần tử của nó<a href="container" title="cpp/container">container</a>Các đối số ngoại trừ bằng cách gọi các chức năng theo yêu cầu của đặc điểm kỹ thuật của nó trên các yếu tố container đó.</li>
+<li>Một hoạt động trên<a href="iterator" title="cpp/iterator">iterators</a>Có được bằng cách gọi một hàm chứa thư viện tiêu chuẩn hoặc chức năng thành viên chuỗi có thể truy cập, nhưng không sửa đổi container bên dưới.<ul><li>Cụ thể, các hoạt động container vô hiệu hóa xung đột với các hoạt động trên các trình lặp liên quan đến thùng chứa đó.</li></ul> </li>
+<li>Chức năng thư viện tiêu chuẩn C ++ chỉ có thể thực hiện tất cả các hoạt động chỉ trong luồng hiện tại nếu các hoạt động đó có hiệu ứng<a href="language/memory_model#Memory_order" title="cpp/language/memory model">visible</a>cho người dùng.<ul><li>Hoạt động mà không có tác dụng phụ có thể nhìn thấy có thể được song song.</li></ul> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Đối với mỗi lớp được xác định trong thư viện tiêu chuẩn C ++ cần phải có<a href="language/derived_class" title="cpp/language/derived class">derived</a>từ một lớp khác được xác định trong thư viện tiêu chuẩn C ++,</p>
+<ul>
+<li>lớp cơ sở phải là<a href="language/derived_class#Virtual_base_classes" title="cpp/language/derived class">virtual</a>Nếu nó được chỉ định là<span class="kw1">ảo</span>Thì</li>
+<li>lớp cơ sở không thể là ảo nếu nó không được chỉ định là<span class="kw1">ảo</span>, Và</li>
+<li>Trừ khi có quy định khác, các loại có tên riêng biệt sẽ là loại riêng biệt.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Trừ khi có quy định khác, tất cả các loại được chỉ định trong thư viện tiêu chuẩn C ++ không phải là không<a href="language/final" title="cpp/language/final">final</a>loại.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Nếu một hàm được xác định trong thư viện tiêu chuẩn C ++ được chỉ định để ném<a href="language/exceptions" title="cpp/language/exceptions">exception</a>.</p>
+<p>Các chức năng từ thư viện tiêu chuẩn C chỉ có thể ném các ngoại lệ khi một hàm đó gọi chức năng do chương trình cung cấp có ngoại lệ (<a href="algorithm/qsort" title="cpp/algorithm/qsort"><code>qsort()</code></a>Và<a href="algorithm/bsearch" title="cpp/algorithm/bsearch"><code>bsearch()</code></a>đáp ứng điều kiện này).</p>
+<p>Các hoạt động phá hủy được xác định trong thư viện tiêu chuẩn C ++ không bao giờ ném ngoại lệ. Mọi chất phá hủy trong thư viện tiêu chuẩn C ++ đều hoạt động như thể nó có một<a href="language/noexcept_spec" title="cpp/language/noexcept spec">non-throwing exception specification</a>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Nếu một hàm trong các lỗi báo cáo thư viện tiêu chuẩn C ++ thông qua một<code><a href="error/error_code" title="cpp/error/error code">std::error_code</a></code>đối tượng, đối tượng đó<a href="error/error_code/category" title="cpp/error/error code/category"><code>category()</code></a>Thành viên phải trở lại<code><a href="error/system_category" title="cpp/error/system category">std::system_category()</a></code>cho các lỗi bắt nguồn từ hệ điều hành hoặc tham chiếu đến một<code><a href="error/error_category" title="cpp/error/error category">std::error_category</a></code>Đối tượng cho các lỗi bắt nguồn từ nơi khác. Các giá trị có thể của<a href="error/error_code/value" title="cpp/error/error code/value"><code>value()</code></a>Đối với mỗi loại lỗi này nên được xác định.</p>
+<p>Các đối tượng của các loại được xác định trong thư viện tiêu chuẩn C ++ có thể là<a href="language/move_constructor" title="cpp/language/move constructor">moved from</a>. Các hoạt động di chuyển có thể được chỉ định rõ ràng hoặc được tạo ra hoàn toàn. Trừ khi có quy định khác, các đối tượng chuyển động như vậy sẽ được đặt ở trạng thái hợp lệ nhưng không xác định.</p>
+<p>Một đối tượng của một loại được xác định trong thư viện tiêu chuẩn C ++ có thể<a href="language/move_assignment" title="cpp/language/move assignment">move-assigned</a>cho chính nó. Trừ khi có quy định khác, một gán như vậy đặt đối tượng ở trạng thái hợp lệ nhưng không xác định.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Implementation_freedom">Tự do thực hiện</h4> <p>Nó không được xác định cho dù bất kỳ chức năng thành viên hoặc không thành viên nào trong thư viện tiêu chuẩn C ++ được định nghĩa là<a href="language/inline" title="cpp/language/inline">inline</a>.</p>
+<p>Cho một<a href="language/virtual" title="cpp/language/virtual">virtual</a>Có thể khai báo chức năng thành viên thư viện tiêu chuẩn C ++, một bộ chữ ký chức năng thành viên khác nhau có thể được khai báo, với điều kiện là bất kỳ cuộc gọi nào đến chức năng thành viên sẽ chọn quá tải từ tập hợp các khai báo đã cho hoạt động như thể quá tải được chọn. Điều này cho phép, ví dụ:</p>
+<ul>
+<li>Thêm tham số với các đối số mặc định,</li>
+<li>Thay thế chức năng thành viên bằng các đối số mặc định bằng hai chức năng thành viên bằng hành vi tương đương hoặc</li>
+<li>Thêm chữ ký bổ sung cho tên chức năng thành viên.</li>
+</ul> <p>Trừ khi có quy định khác, nó được xác định là có chức năng nào trong thư viện tiêu chuẩn C ++ có thể được tái nhập lại.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Việc triển khai thư viện tiêu chuẩn C ++ có thể chia sẻ các đối tượng nội bộ của riêng họ giữa các luồng nếu các đối tượng không hiển thị cho người dùng và được bảo vệ chống lại các cuộc đua dữ liệu.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Nó không được xác định cho dù bất kỳ chữ ký chức năng hay lớp nào trong thư viện tiêu chuẩn C ++ là một người bạn của một lớp khác trong thư viện tiêu chuẩn C ++.</p>
+<p>Tên và chữ ký chức năng toàn cầu được mô tả<a href="#Library_contents">here</a>được bảo lưu để thực hiện.</p>
+<p>Bất kỳ lớp nào trong thư viện tiêu chuẩn C ++ đều có thể được lấy từ một lớp có tên dành cho việc triển khai. Nếu một lớp được xác định trong thư viện tiêu chuẩn C ++ được yêu cầu bắt nguồn từ các lớp khác trong thư viện tiêu chuẩn C ++, lớp đó có thể được lấy trực tiếp từ cơ sở cần thiết hoặc gián tiếp thông qua một hệ thống phân cấp của các lớp cơ sở với tên dành cho việc triển khai.</p>
+<p>Nếu một hàm được xác định trong thư viện tiêu chuẩn C ++ không được chỉ định để ném một ngoại lệ nhưng không có thông số kỹ thuật ngoại lệ không ném, thì ngoại lệ được đưa ra là do thực hiện, nhưng loại của nó phải là<code><a href="error/exception" title="cpp/error/exception">std::exception</a></code>hoặc bất kỳ loại nào bắt nguồn từ<code><a href="error/exception" title="cpp/error/exception">std::exception</a></code>.</p>
+<p>Thông số kỹ thuật ngoại lệ cho một chức năng không phải là Virtual có thể được củng cố bằng cách thêm một đặc điểm ngoại lệ không ném.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1" rel="nofollow">LWG 1</a> </td> <td>C ++ 98</td> <td>các mối liên kết ngôn ngữ của các tên từ<br/>Thư viện tiêu chuẩn C không xác định</td> <td>Họ là<br/>thực hiện xác định</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue119" rel="nofollow">LWG 119</a> </td> <td>C ++ 98</td> <td>Các thông số kỹ thuật ngoại lệ của ảo<br/>các chức năng có thể được tăng cường</td> <td>chỉ được phép cho<br/>Các chức năng không phải là Virtual</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue147" rel="nofollow">LWG 147</a> </td> <td>C ++ 98</td> <td>đặc tả về không phải thành viên<br/>Chức năng chỉ được coi là chức năng toàn cầu</td> <td>cũng xem xét<br/>Các chức năng không toàn cầu</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue225" rel="nofollow">LWG 225</a> </td> <td>C ++ 98</td> <td>Các chức năng thư viện tiêu chuẩn có thể gọi các chức năng không phải thành viên<br/>từ các không gian tên khác do tra cứu phụ thuộc vào đối số</td> <td>bị cấm trừ khi<br/>nếu không được chỉ định</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue336" rel="nofollow">LWG 336</a> </td> <td>C ++ 98</td> <td>
+<a href="header/strstream" title="cpp/header/strstream"><code>&lt;strstream&gt;</code></a>không phải là tiêu đề thư viện C ++</td> <td>Nó là tiêu đề thư viện C ++</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue343" rel="nofollow">LWG 343</a> </td> <td>C ++ 98</td> <td>Các phụ thuộc tiêu đề thư viện không được chỉ định</td> <td>được chỉ định (được liệt kê trong bản tóm tắt)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue456" rel="nofollow">LWG 456</a> </td> <td>C ++ 98</td> <td>Tiêu đề C ++ cho các cơ sở thư viện C có thể<br/>Chỉ cung cấp các định nghĩa trong không gian tên<code>std</code> </td> <td>được phép xác định trong không gian tên toàn cầu<br/>Và sau đó tiêm vào không gian tên<code>std</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue465" rel="nofollow">LWG 465</a> </td> <td>C ++ 98</td> <td>số nhận dạng là từ khóa hoặc toán tử trong C ++ có thể<br/>được định nghĩa là macro trong các tiêu đề thư viện tiêu chuẩn C ++<br/>(chỉ một<a href="header/ciso646" title="cpp/header/ciso646"><code>&lt;ciso646&gt;</code></a>được yêu cầu không định nghĩa chúng là macro)</td> <td>Tất cả tiêu chuẩn C ++<br/>Tiêu đề thư viện không thể<br/>Xác định chúng là macro</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1178" rel="nofollow">LWG 1178</a> </td> <td>C ++ 98</td> <td>Tiêu đề C ++ phải bao gồm tiêu đề C ++<br/>chứa bất kỳ định nghĩa cần thiết nào</td> <td>Tiêu đề C ++ phải cung cấp khai báo<br/>và các định nghĩa trực tiếp hoặc<br/>Bao gồm một cách gián tiếp trong bản tóm tắt của nó</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2013" rel="nofollow">LWG 2013</a> </td> <td>C ++ 11</td> <td>nó không được xác định liệu các chức năng không<br/>Yêu cầu của tiêu chuẩn là Consexpr có thể<br/>được tuyên bố<span class="kw4">constexpr</span>bởi thư viện tiêu chuẩn</td> <td>bị cấm</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/standard_library">https://en.cppreference.com/w/cpp/standard_library</a>
+</p>
+</div>

@@ -1,0 +1,36 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Khoảng cách</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/iterator" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;Class Inputit&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark">(Constexpr kể từ C ++ 17)</span> </td> </tr> </table> <p>Typename std :: iterator_traits &lt;futputit&gt; :: arget_type <code>first</code>ĐẾN<code>last</code>.</p>
+<p>Nếu như<code>InputIt</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="../named_req/randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>Trả về số lượng bước từ<code>last</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="../iterator#Ranges" title="cpp/iterator">reachable</a>từ<code>first</code>.</p>
+<p>Nếu như<code>InputIt</code>khoảng cách<a href="../named_req/randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>Trả về số lượng bước từ<code>first</code>Và<code>last</code>, hành vi không xác định nếu</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>đến phạm vi bắt đầu tại</td> <td>-</td> <td>, hành vi không xác định nếu</td>
+</tr> <tr class="t-par"> <td>cuối cùng</td> <td>-</td> <td>không thể tiếp cận với nhau.</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>trình lặp chỉ vào phần tử đầu tiên<code>InputIt</code>Số lượng các yếu tố<a href="../named_req/randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Trình lặp chỉ vào cuối phạm vi<code>first</code>ĐẾN<code>last</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>. Hoạt động hiệu quả hơn nếu<code>first</code>có thể truy cập được từ<code>last</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>    if (pre (*đầu tiên))</p>
+<p>            Forwardit2 first2, forwardit2 last2,<code>InputIt</code>Số lượng các yếu tố<a href="../named_req/randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>nên được nâng cao</p>
+<h3 id="Possible_implementation">. ​</h3> <p>được tìm thấy,<a class="external text" href="https://github.com/gcc-mirror/gcc/blob/d9375e490072d1aae73a93949aa158fcd2a27018/libstdc%2B%2B-v3/include/bits/stl_iterator_base_funcs.h#L135" rel="nofollow">libstdc++</a>Và<a class="external text" href="https://github.com/llvm-mirror/libcxx/blob/a12cb9d211019d99b5875b6d8034617cbc24c2cc/include/iterator#L611" rel="nofollow">libc++</a>.</p>
+<table class="eq-fun-cpp-table"> <tr> <th>Số lượng gia số cần thiết để đi từ<span class="kw4">constexpr</span>#include &lt;Istream&gt;</th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Giá trị có thể âm nếu các trình lặp truy cập ngẫu nhiên được sử dụng và</pre></div> </td>
+</tr> <tr> <th>Triển khai C ++ 98 qua công văn thẻ, với<span class="kw1">nếu như</span> <span class="kw4">constexpr</span> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Chi tiết không gian tên</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    Mẫu &lt;class it&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue940" rel="nofollow">LWG 940</a> </td> <td>C ++ 98</td> <td>    Constexpr // Yêu cầu kể từ C ++ 17<code>first</code>có thể truy cập được từ<code>last</code> </td> <td>hơn thứ hai, nếu không</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="advance" title="cpp/iterator/advance"> <span class="t-lines"><span>nâng cao</span></span></a></div> </td> <td>tiến lên một trình lặp bằng khoảng cách nhất định<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../algorithm/count" title="cpp/algorithm/count"> <span class="t-lines"><span>(Niebloid)</span><span>đếm</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ranges/distance" title="cpp/iterator/ranges/distance"> <span class="t-lines"><span>Phạm vi :: Khoảng cách</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Trả về khoảng cách giữa một trình lặp và một sentinel, hoặc giữa đầu và cuối phạm vi<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/distance">https://en.cppreference.com/w/cpp/iterator/distance</a>
+</p>
+</div>

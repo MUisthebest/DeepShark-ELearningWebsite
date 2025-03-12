@@ -1,0 +1,36 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: SharedTimedMutex<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span>
+</h1> <p>Các<strong class="selflink">SharedTimedMutex</strong>Yêu cầu mở rộng<a href="timedmutex" title="cpp/named req/TimedMutex">TimedMutex</a>Yêu cầu bao gồm chế độ sở hữu khóa được chia sẻ.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <ul>
+<li> <a href="timedmutex" title="cpp/named req/TimedMutex">TimedMutex</a> </li>
+<li> <a href="sharedmutex" title="cpp/named req/SharedMutex">SharedMutex</a> </li>
+</ul> <p>Ngoài ra, một đối tượng<code>m</code>của SharedTimedMutex loại hỗ trợ các hoạt động chia sẻ theo thời gian:</p>
+<ul>
+<li>              Không có p);<code>m.try_lock_shared_for(duration)</code>có các thuộc tính sau</li>
+<ul>
+<li>Hoạt động như một hoạt động nguyên tử.</li>
+<li>Nỗ lực để có được quyền sở hữu chung của Mutex trong thời gian được chỉ định bởi<code>duration</code>. Nếu như<code>duration</code>ít hơn hoặc bằng<code>duration.zero()</code>, cố gắng để có được quyền sở hữu mà không phải chờ đợi (như thể bằng cách<code>try_lock()</code>). Mặt khác, chức năng này chặn cho đến khi mutex được thu thập hoặc cho đến khi thời gian được chỉ định bởi<code>duration</code>vượt qua. Nó trở lại bên trong<code>duration</code>Chỉ khi nó thành công, nhưng nó cho phép không có được mutex ngay cả khi vào một thời điểm nào đó trong thời gian<code>duration</code>Nó không thuộc sở hữu của một chủ đề khác. Trong mọi trường hợp, nó trở lại<code>true</code>Nếu Mutex được mua lại và<code>false</code>Nếu đối số đầu tiên là</li>
+<li>Nếu như<code>try_lock_shared_for(duration)</code>thành công, trước<code>unlock()</code>hoạt động trên cùng một đối tượng<i>Phát hành hoạt động</i>Hoạt động này (tương đương với Acquire phát hành<code><a href="../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>).</li>
+<li>Hành vi không được xác định nếu luồng gọi đã sở hữu mutex ở bất kỳ chế độ nào.</li>
+<li>Một ngoại lệ có thể được ném bởi đồng hồ, điểm thời gian hoặc thời lượng trong quá trình thực hiện (đồng hồ, điểm thời gian và thời lượng được cung cấp bởi thư viện tiêu chuẩn không bao giờ ném).</li>
+<li>Nếu một ngoại lệ được ném, khóa được chia sẻ không được mua.</li>
+</ul>
+<li>              Không có p);<code>m.try_lock_shared_until(time_point)</code>có các thuộc tính sau</li>
+<ul>
+<li>Hoạt động như một hoạt động nguyên tử.</li>
+<li>Cố gắng để có được quyền sở hữu chung của Mutex trong thời gian còn lại cho đến khi<code>time_point</code>. Nếu như<code>time_point</code>đã được thông qua, cố gắng để có được quyền sở hữu mà không cần khóa (như thể bằng cách<code>try_lock()</code>). Mặt khác, chức năng này chặn cho đến khi mutex được thu thập hoặc cho đến khi thời gian được chỉ định bởi<code>time_point</code>vượt qua. Nó trở lại trước<code>time_point</code>chỉ khi nó thành công, nhưng nó cho phép không có được mutex ngay cả khi vào một thời điểm nào đó trước đây<code>time_point</code>Nó không thuộc sở hữu của một chủ đề khác. Trong mọi trường hợp, nó trở lại<code>true</code>Nếu Mutex được mua lại và<code>false</code>Nếu đối số đầu tiên là</li>
+<li>Nếu như<code>try_lock_shared_until(time_point)</code>thành công, trước<code>unlock()</code>hoạt động trên cùng một đối tượng<i>Phát hành hoạt động</i>Hoạt động này (tương đương với Acquire phát hành<code><a href="../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>).</li>
+<li>Hành vi không được xác định nếu luồng gọi đã sở hữu mutex ở bất kỳ chế độ nào.</li>
+<li>Một ngoại lệ có thể được ném bởi đồng hồ, điểm thời gian hoặc thời lượng trong quá trình thực hiện (đồng hồ, điểm thời gian và thời lượng được cung cấp bởi thư viện tiêu chuẩn không bao giờ ném).</li>
+<li>Nếu một ngoại lệ được ném, khóa được chia sẻ không được mua.</li>
+</ul>
+</ul> <h3 id="Library_types">Các loại thư viện</h3> <p>Các loại thư viện tiêu chuẩn sau đây thỏa mãn<strong class="selflink">SharedTimedMutex</strong>:</p>
+<ul><li> <code><a href="../thread/shared_timed_mutex" title="cpp/thread/shared timed mutex">std::shared_timed_mutex</a></code> </li></ul> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="../thread" title="cpp/thread">Thread support library</a> </li>
+<li> <a href="mutex" title="cpp/named req/Mutex">Mutex</a> </li>
+<li> <a href="timedmutex" title="cpp/named req/TimedMutex">TimedMutex</a> </li>
+<li> <a href="sharedmutex" title="cpp/named req/SharedMutex">SharedMutex</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/SharedTimedMutex">https://en.cppreference.com/w/cpp/named_req/SharedTimedMutex</a>
+</p>
+</div>

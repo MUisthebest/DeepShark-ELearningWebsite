@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: stop_token :: stop_token</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">stop_token () noExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">stop_token (const stop_token &amp; other) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">stop_token (stop_token &amp;&amp; khác) noExcept;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Xây dựng một mới<code>stop_token</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Xây dựng một trống rỗng<code>stop_token</code>không có trạng thái dừng liên quan.</div> <div class="t-li1">
+<span class="t-li">2)</span>Sao chép hàm tạo. Xây dựng a<code>stop_token</code>có trạng thái dừng liên kết giống như của<code>other</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Di chuyển hàm tạo. Xây dựng a<code>stop_token</code>có trạng thái dừng liên kết giống như của<code>other</code>Số lượng các yếu tố để sao chép<code>other</code>bị bỏ trống.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>khác<code>stop_token</code>Các đối tượng có thể đại diện cho cùng một luồng thực thi.<code>stop_token</code>đối tượng giữ a</td>
+</tr>
+</table> <h3 id="Postconditions">Postconditions</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>stop_possible()</code>Và<code>stop_requested()</code>, và sau đó thêm 1.<code>false</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>*this</code>Và<code>other</code>Chia sẻ cùng một trạng thái dừng liên kết và so sánh bằng nhau.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <code>*this</code>mức độ, trong trường hợp đó, số lượng các phần tử trong chuỗi được biết đến theo thời gian biên dịch và được mã hóa trong loại hoặc a<code>other</code>Các trạng thái dừng được liên kết trước đây và<code>other.stop_possible()</code>khoảng cách<code>false</code>.</div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/stop_token/stop_token">https://en.cppreference.com/w/cpp/thread/stop_token/stop_token</a>
+</p>
+</div>

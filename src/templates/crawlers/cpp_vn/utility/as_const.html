@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: AS_CONST</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/utility" title="cpp/header/utility">&lt;utility&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Consexpr std :: add_const_t &lt;t&gt; &amp; as_const (t &amp; t) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class T&gt;<code>t</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>void as_const (const t &amp;&amp;) = xóa;</div> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Các hình thức tham chiếu lvalue cho loại const của</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_as_const" title="cpp/feature test"><code>__cpp_lib_as_const</code></a></td> <td><span class="nu0">201510L</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<a href="#Top"><code>std::as_const</code></a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">quá tải tham chiếu const rvalue bị xóa để không cho phép đối số rvalue.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_const" title="cpp/types/is const"> <span class="t-lines"><span>is_const</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có đủ điều kiện không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/add_cv" title="cpp/types/add cv"> <span class="t-lines"><span>add_cv</span><span>add_const</span><span>add_volatile</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Thêm<span class="kw4">hằng số</span>và/hoặc<span class="kw4">bay hơi</span>Trình xác định cho loại đã cho<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/remove_cv" title="cpp/types/remove cv"> <span class="t-lines"><span>remove_cv</span><span>Remove_const</span><span>remove_volatile</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>loại bỏ<span class="kw4">hằng số</span>và/hoặc<span class="kw4">bay hơi</span>Trình xác định từ loại đã cho<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../ranges/as_const_view" title="cpp/ranges/as const view"> <span class="t-lines"><span>thành các subranges giữa mỗi cặp phần tử liền kề mà vị từ đã cho</span><span>(Đối tượng bộ điều hợp phạm vi)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Phạm vi :: AS_CONST_VIEW<a href="../ranges/view" title="cpp/ranges/view"><code>view</code></a>Lượt xem :: AS_CONST<a href="../ranges/constant_range" title="cpp/ranges/constant range"><code>constant_range</code></a><br/><span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> <span class="t-mark">bao gồm các yếu tố của người khác</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/as_const">https://en.cppreference.com/w/cpp/utility/as_const</a>
+</p>
+</div>

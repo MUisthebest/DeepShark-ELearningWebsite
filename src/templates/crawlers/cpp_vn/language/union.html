@@ -1,0 +1,61 @@
+ <h1 class="firstHeading" id="firstHeading">    S s = {"xin chào, thế giới"};</h1> <p>Một liên minh là một loại lớp đặc biệt chỉ có thể chứa một trong những<a href="data_members" title="cpp/language/data members">data members</a>tại một thời điểm.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Bộ xác định lớp cho một tuyên bố công đoàn tương tự như<a href="class" title="cpp/language/class">class or struct</a>    Constexpr tĩnh Int x = 42; // ngầm nội tuyến, định nghĩa S :: x</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>union</code> <span class="t-spar">attr</span> <span class="t-spar">tên lớp học</span> <code>{</code> <span class="t-spar">Đặc điểm cụ thể thành viên</span> <code>}</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>Trình tự tùy chọn của bất kỳ số lượng nào<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tên lớp học</span> </td> <td>-</td> <td>Tên của công đoàn đang được xác định. Tùy chọn được chuẩn bị bởi<span class="t-spar">tên lồng nhau</span>(Trình tự tên và toán tử độ phân giải phạm vi, kết thúc bằng toán tử phân giải phạm vi). Tên có thể bị bỏ qua, trong trường hợp đó, công đoàn là<i>vô danh</i> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Đặc điểm cụ thể thành viên</span> </td> <td>-</td> <td>Danh sách các nhà xác định truy cập, các khai báo và định nghĩa chức năng đối tượng thành viên và thành viên.</td>
+</tr>
+</table> <p>Một công đoàn có thể có các chức năng thành viên (bao gồm các hàm tạo và hàm hủy), nhưng không phải là các chức năng ảo.</p>
+<p>Một công đoàn không thể có các lớp cơ sở và không thể được sử dụng làm lớp cơ sở.</p>
+<p>Một công đoàn không thể có các thành viên dữ liệu phi tĩnh của các loại tham chiếu.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Các công đoàn không thể chứa thành viên dữ liệu không tĩnh với chức năng thành viên đặc biệt không tầm thường (<a href="copy_constructor" title="cpp/language/copy constructor">copy constructor</a>Thì<a href="copy_assignment" title="cpp/language/copy assignment">copy-assignment</a>Đối với bộ khởi tạo, thực hiện khởi tạo của thực thể<a href="destructor" title="cpp/language/destructor">destructor</a>).</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>Nếu một liên minh chứa một thành viên dữ liệu không tĩnh với chức năng thành viên đặc biệt không tầm thường (<a href="copy_constructor" title="cpp/language/copy constructor">copy</a>/<a href="move_constructor" title="cpp/language/move constructor">move</a>người xây dựng,<a href="copy_assignment" title="cpp/language/copy assignment">copy</a>/<a href="move_assignment" title="cpp/language/move assignment">move</a>nhiệm vụ, hoặc<a href="destructor" title="cpp/language/destructor">destructor</a>), chức năng đó bị xóa theo mặc định trong liên minh và cần được định nghĩa rõ ràng bởi lập trình viên.</p>
+<p>Nếu một liên minh chứa một thành viên dữ liệu phi tĩnh với một thành viên không tầm thường<a href="default_constructor" title="cpp/language/default constructor">default constructor</a>, hàm tạo mặc định của liên minh bị xóa theo mặc định trừ khi một<a href="#Union-like_classes">variant member</a>của Liên minh có một bộ khởi tạo thành viên mặc định.</p>
+<p>Nhiều nhất là một<a href="#Union-like_classes">variant member</a>có thể có a<a href="data_members#Member_initialization" title="cpp/language/data members">default member initializer</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Giống như trong<a href="classes" title="cpp/language/classes">struct</a>khai báo, quyền truy cập thành viên mặc định trong một liên minh là<a href="access" title="cpp/language/access">public</a>.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Liên minh ít nhất là lớn như cần thiết để giữ thành viên dữ liệu lớn nhất của mình, nhưng thường không lớn hơn. Các thành viên dữ liệu khác được dự định sẽ được phân bổ trong cùng một byte như một phần của thành viên lớn nhất đó. Các chi tiết về phân bổ đó được xác định theo triển khai, ngoại trừ tất cả các thành viên dữ liệu phi tĩnh đều có cùng một địa chỉ. Đó là hành vi không xác định để đọc từ thành viên của Liên minh không được viết gần đây nhất. Nhiều trình biên dịch thực hiện, như một phần mở rộng ngôn ngữ không chuẩn, khả năng đọc các thành viên không hoạt động của một công đoàn.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDint&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <p> </p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Liên minh s</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    std :: int32_t n;     // chiếm 4 byte</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>    std :: uint16_t s [2]; // chiếm 4 byte<a href="../named_req/standardlayouttype" title="cpp/named req/StandardLayoutType">standard-layout</a>    std :: uint8_t c;     // chiếm 1 byte</p>
+<h4 id="Member_lifetime">};                      // Toàn bộ công đoàn chiếm 4 byte</h4> <p>Các<a href="lifetime" title="cpp/language/lifetime">lifetime</a> </p>
+<p>int main ()<code>E1 = E2</code>{<code>E1</code>    S s = {0x12345678}; // Khởi tạo thành viên đầu tiên, s.n hiện là thành viên đang hoạt động</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    // Tại thời điểm này, đọc từ S.S hoặc S.C là hành vi không xác định</pre></div> <p>Tầm thường<span class="t-rev-inl t-since-cxx11"><span>    std :: cout &lt;&lt; std :: hex &lt;&lt; "s.n =" &lt;&lt; s.n &lt;&lt; '\ n';</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>    S.S [0] = 0x0011; // s.s hiện là thành viên tích cực<a href="lifetime#Implicit-lifetime_types" title="cpp/language/lifetime">implicit-lifetime type</a>    // Tại thời điểm này, đọc từ N hoặc C là UB nhưng hầu hết các trình biên dịch xác định nó</p>
+<h4 id="Anonymous_unions">    std :: cout &lt;&lt; "s.c hiện là" &lt;&lt; +s.c &lt;&lt; '\ n' // 11 hoặc 00, tùy thuộc vào nền tảng</h4> <p>MỘT<i>              &lt;&lt; "s.n bây giờ là" &lt;&lt; s.n &lt;&lt; '\ n'; // 12340011 hoặc 00115678</i>}</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>union</code> <code>{</code> <span class="t-spar">Đặc điểm cụ thể thành viên</span> <code>}</code> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>S.N = 12345678<span class="t-rev-inl t-since-cxx11"><span>Và<a href="static_assert" title="cpp/language/static assert"><code>static_assert</code></a>Tuyên bố</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<p>s.c bây giờ là 0</p>
+<div class="cpp source-cpp"><pre data-language="cpp">s.n bây giờ là 115678</pre></div> <p>Mỗi thành viên được phân bổ như thể đó là thành viên duy nhất của lớp.</p>
+<h4 id="Union-like_classes">Nếu các thành viên của một công đoàn là các lớp với các hàm tạo và hàm hủy do người dùng xác định</h4> <p>MỘT<i>#include &lt;Istream&gt;</i>#include &lt;chuỗi&gt;<i>#include &lt;Vector&gt;</i>:</p>
+<ul>
+<li> </li>
+<li>Liên minh s</li>
+</ul> <p>{<a class="extiw" href="https://en.wikipedia.org/wiki/tagged_union" title="enwiki:tagged union">tagged union</a>.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    std :: chuỗi str;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">int main ()</pre></div> </div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>    ~ S () {} // cần biết thành viên nào đang hoạt động, chỉ có thể trong lớp giống như công đoàn <code><a href="../utility/variant" title="cpp/utility/variant">std::variant</a></code>};          // Toàn bộ công đoàn chiếm tối đa (sizeof (chuỗi), sizeof (vector &lt;tot&gt;)))</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">int main ()</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1940.html" rel="nofollow">CWG 1940</a> </td> <td>C ++ 11</td> <td>{</td> <td>
+<code>static_assert</code>}</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../utility/variant" title="cpp/utility/variant"> <span class="t-lines"><span>khác nhau</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>một liên minh phân biệt đối xử an toàn<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/union" title="c/language/union">C documentation</a></span>vì<span class=""><span>    S s = {"xin chào, thế giới"};</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/union">https://en.cppreference.com/w/cpp/language/union</a>
+</p>
+</div>

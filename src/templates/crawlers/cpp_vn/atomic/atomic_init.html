@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Atomic_init</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/atomic" title="cpp/header/atomic">&lt;atomic&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Không dùng nữa trong C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Void Atomic_init</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Không dùng nữa trong C ++ 20)</span> </td> </tr> </table> <p>    (std :: nguyên tử &lt;t&gt;* obj,<code>obj</code>      Tên std :: Atomic &lt;T&gt; :: value_type mong muốn) NOEXCEPT;<code>desired</code>Mẫu &lt;Class T&gt;</p>
+<p>Nếu như<code>obj</code>Void Atomic_init<code>obj</code>Hoạt động tương đương cho quá tải</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>      Typename std :: Atomic &lt;T&gt; :: value_type mong muốn,</td> <td>-</td> <td>    (STD dễ bay hơi :: Atomic &lt;T&gt;* obj,</td>
+</tr> <tr class="t-par"> <td>bool Atomic_compare_exchange_strong_explict</td> <td>-</td> <td>      Tên std :: Atomic &lt;T&gt; :: value_type mong muốn) NOEXCEPT;</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>Khởi tạo đối tượng nguyên tử được xây dựng mặc định<code><a href="atomic" title="cpp/atomic/atomic">std::atomic</a></code>với giá trị</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0558R1" rel="nofollow">P0558R1</a> </td> <td>C ++ 11</td> <td>Đọc - Điều chỉnh hoạt động của Write<br/><code>T</code>tải hoạt động</td> <td>
+<code>T</code>bộ nhớ_order_seq_cst<br/>từ<code>obj</code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="atomic_var_init" title="cpp/atomic/ATOMIC VAR INIT"> <span class="t-lines"><span>ATOMIC_VAR_INIT</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span><span class="t-mark-rev t-deprecated-cxx20">(Không dùng nữa trong C ++ 20)</span></span></span></div> </td> <td>Khởi tạo liên tục của một biến nguyên tử của thời gian lưu trữ tĩnh<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="atomic/atomic" title="cpp/atomic/atomic/atomic"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>(Chỉ dành cho<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::atomic&lt;T&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/atomic/atomic_init" title="c/atomic/atomic init">C documentation</a></span>vì<code>atomic_init</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_init">https://en.cppreference.com/w/cpp/atomic/atomic_init</a>
+</p>
+</div>

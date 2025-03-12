@@ -1,0 +1,34 @@
+ <h1 class="firstHeading" id="firstHeading">std :: comp_ellint_1, std :: comp_ellint_1f, std :: comp_ellint_1l</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx23"> <td><pre data-language="cpp">gấp đôi comp_ellint_1 (kép k);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">float comp_ellint_1 (float k);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Double comp_ellint_1 (Double K dài k);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">/ * điểm nổi-loại */ comp_ellint_1 (/ *-điểm nổi kiểu */ k);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl-h"> <td> <a href="#Notes">Additional overloads</a>
+</td> <td></td> <td></td> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">float comp_ellint_1f (float k);</pre>
+</td> <td>, kết quả là hữu hạn.</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>loại tham chiếu<a class="extiw" href="https://en.wikipedia.org/wiki/Elliptic_integral#Complete_elliptic_integral_of_the_first_kind" title="enwiki:Elliptic integral">complete elliptic integral of the first kind</a>của<code>k</code>.<span class="t-rev-inl t-since-cxx23"><span>Double Double Acosl (Double Num dài);<code>std::comp_ellint_1</code>constexpr / *-point-point-type * / /<code>k</code>.</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;arithmetic1, orithmetic2, số học lớp3&gt; lớp</span>ACO kép (số nguyên);<code>double</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>một trình lặp hợp lệ vào thùng chứa này</td> <td>-</td> <td>Double comp_ellint_1l (Double k);</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Mẫu &lt;Class Integer&gt;<code>k</code>        : keep_ (std :: di chuyển (x)) {}<code><a href="http://en.cppreference.com/w/cpp/numeric/special_functions/ellint_1"><span class="kw1417">Điều đó cho tất cả<span class="me2">ellint_1</span></span></a><span class="br0">.</span>k, π<span class="sy2">/</span><span class="nu0">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</span><span class="br0">)</span></code>, \ (\ nhỏ e^z \) e</p>
+<h3 id="Error_handling">Xử lý lỗi</h3> <p>n+m<code><a href="../math/math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code>.</p>
+<ul>
+<li>gấp đôi comp_ellint_1 (số nguyên k);</li>
+<li>Mô đun hình elip hoặc độ lệch tâm (giá trị dấu phẩy động hoặc số nguyên)</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Lỗi có thể được báo cáo theo quy định trong<a class="mw-redirect" href="https://en.cppreference.com/w/cpp/experimental/special_math" title="cpp/experimental/special math">ISO 29124:2010</a>Nếu đối số là NAN, NAN được trả lại và không được báo cáo về tên miền<code>__STDCPP_MATH_SPEC_FUNCS__</code>là âm, có thể xảy ra lỗi miền miền<code>__STDCPP_WANT_MATH_SPEC_FUNCS__</code>lớn hơn hoặc bằng 128, hành vi được xác định là thực hiện</p>
+<p>Các triển khai không hỗ trợ C ++ 17, nhưng hỗ trợ<code>tr1/cmath</code>, cung cấp chức năng này nếu<code>std::tr1</code>.</p>
+<p>được xác định bởi việc triển khai thành một giá trị ít nhất là 201003L và nếu người dùng xác định<a class="external text" href="https://www.boost.org/doc/libs/release/libs/math/doc/html/math_toolkit/ellint/ellint_1.html" rel="nofollow">available in boost.math</a>.</p>
+<p>, kết quả bằng<span class="t-v">, kết quả là hữu hạn.</span>trong khoảng [−π; π].<code>num</code>Nếu việc triển khai hỗ trợ số học dấu nổi của IEEE (IEC 60559),<code>std::comp_ellint_1(num)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::comp_ellint_1(static_cast&lt;double&gt;(num))</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Các<a class="extiw" href="https://en.wikipedia.org/wiki/Pendulum_(mechanics)#Arbitrary-amplitude_period" title="enwiki:Pendulum (mechanics)">period of a pendulum</a>Nếu không có lỗi xảy ra, giá trị của tích phân elip hoàn chỉnh của loại đầu tiên<span class="t-mrad"><span>√</span><span>Nếu đối số là NAN, NAN được trả về và lỗi miền không được báo cáo.</span></span>Nếu | k |&gt; 1, có thể xảy ra lỗi miền.<code>std::comp_ellint_1</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">chiều dài l, được gia tốc do trọng lực g và góc ban đầu bằng 4⋅</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">l/g</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="ellint_1" title="cpp/numeric/special functions/ellint 1"> <span class="t-lines"><span>ellint_1</span><span>ellint_1f</span><span>ellint_1l</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(không đầy đủ) Tích hợp elip của loại đầu tiên<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr> <td>
+<a class="external text" href="https://mathworld.wolfram.com/CompleteEllipticIntegraloftheFirstKind.html" rel="nofollow">Weisstein, Eric W. "Complete Elliptic Integral of the First Kind."</a>Nếu đối số là +, +được trả về.</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/special_functions/comp_ellint_1">https://en.cppreference.com/w/cpp/numeric/special_functions/comp_ellint_1</a>
+</p>
+</div>

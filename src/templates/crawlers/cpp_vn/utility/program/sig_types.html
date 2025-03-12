@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">Sigterm, Sigsegv, Sigint, Sigill, Sigabrt, Sigfpe</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/csignal" title="cpp/header/csignal">&lt;csignal&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">#define sigterm /*Xác định triển khai* / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">#Define SigSegv /*Xác định triển khai* / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">#Define sigint /*Xác định triển khai* / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">#Define Sigill /*Xác định triển khai* / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">#Define Sigabrt /*Xác định triển khai* / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">#Define sigfpe /*Xác định triển khai* / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Mỗi hằng số macro trên mở rộng thành một biểu thức hằng số nguyên với các giá trị riêng biệt, đại diện cho các tín hiệu khác nhau được gửi đến chương trình.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <code>SIGTERM</code> </td> <td>Yêu cầu chấm dứt, được gửi đến chương trình</td>
+</tr> <tr class="t-dsc"> <td> <code>SIGSEGV</code> </td> <td>Truy cập bộ nhớ không hợp lệ (lỗi phân đoạn)</td>
+</tr> <tr class="t-dsc"> <td> <code>SIGINT</code> </td> <td>ngắt bên ngoài, thường được bắt đầu bởi người dùng</td>
+</tr> <tr class="t-dsc"> <td> <code>SIGILL</code> </td> <td>Hình ảnh chương trình không hợp lệ, chẳng hạn như hướng dẫn không hợp lệ</td>
+</tr> <tr class="t-dsc"> <td> <code>SIGABRT</code> </td> <td>Điều kiện chấm dứt bất thường, như là ví dụ: bắt đầu bởi<code><a href="abort" title="cpp/utility/program/abort">std::abort()</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>SIGFPE</code> </td> <td>Hoạt động số học sai lầm như phân chia cho 0</td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Tên tín hiệu bổ sung<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/signal.h.html" rel="nofollow">are specified by POSIX</a>.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="signal" title="cpp/utility/program/signal"> <span class="t-lines"><span>tín hiệu</span></span></a></div> </td> <td>Đặt trình xử lý tín hiệu cho tín hiệu cụ thể<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="raise" title="cpp/utility/program/raise"> <span class="t-lines"><span>nâng lên</span></span></a></div> </td> <td>Chạy bộ xử lý tín hiệu cho tín hiệu cụ thể<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/program/SIG_types" title="c/program/SIG types">C documentation</a></span>vì<span class=""><span>Các loại tín hiệu</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/program/SIG_types">https://en.cppreference.com/w/cpp/utility/program/SIG_types</a>
+</p>
+</div>

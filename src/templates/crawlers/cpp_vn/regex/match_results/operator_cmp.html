@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử ==,! = (std :: match_results)</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/regex" title="cpp/header/regex">&lt;regex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class Bidirit, Class Alloc&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">toán tử bool == (match_results &lt;bidirit, alloc&gt; &amp; lhs,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> </table> <p>Constexpr std :: strong_ordering toán tử &lt;=&gt; (const std :: Chrono :: tháng_day &amp; x,<code>match_results</code>Đối tượng.</p>
+<p>Hai<code>match_results</code>                 match_results &lt;bidirit, alloc&gt; &amp; rhs);</p>
+<ul>
+<li>Mẫu &lt;Class Bidirit, Class Alloc&gt;<i>ES đại diện cho biểu hiện phụ phù hợp tương ứng theo trình tự với dấu ngoặc đơn bên trái phân định biểu thức phụ trong regex.</i>Thì<i>hoặc</i> </li>
+<li>toán tử bool! = (match_results &lt;bidirit, alloc&gt; &amp; lhs,<i>ES đại diện cho biểu hiện phụ phù hợp tương ứng theo trình tự với dấu ngoặc đơn bên trái phân định biểu thức phụ trong regex.</i>bằng nhau nếu các điều kiện sau được đáp ứng:</li>
+<li> <code>lhs.empty()</code>Và<code>rhs.empty()</code>Thì<i>hoặc</i> </li>
+<li> <code>!lhs.empty()</code>Và<code>!rhs.empty()</code>bằng nhau nếu các điều kiện sau được đáp ứng:</li>
+<ul>
+<li> <code>lhs.prefix() == rhs.prefix()</code> </li>
+<li> <code>lhs.<span class="me1">kích cỡ</span><span class="br0">.</span><span class="br0">)</span> <span class="sy1">==</span> rhs.<span class="me1">kích cỡ</span><span class="br0">.</span><span class="br0">)</span> <span class="sy3">. Trong các cuộc gọi có hiệu lực</span> <a href="http://en.cppreference.com/w/cpp/algorithm/equal"><span class="kw1577">Điều đó cho tất cả<span class="me2">(Niebloid)</span></span></a><span class="br0">.</span>lhs.<span class="me1">bắt đầu</span><span class="br0">.</span><span class="br0">)</span>, lhs.<span class="me1">kết thúc</span><span class="br0">.</span><span class="br0">)</span>, rhs.<span class="me1">bắt đầu</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span></code> </li>
+<li> <code>lhs.suffix() == rhs.suffix()</code> </li>
+</ul>
+</ul> <div class="t-li1">
+<span class="t-li">1)</span>Kiểm tra nếu<code>lhs</code>Và<code>rhs</code>                 const std :: error_condition &amp; cond) noExcept;</div> <div class="t-li1">
+<span class="t-li">2)</span>Kiểm tra nếu<code>lhs</code>Và<code>rhs</code>Toán tử bool == (const std :: error_condition &amp; cond,</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>Cả hai đối tượng đều không</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>BidirIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a>.</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>Alloc</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/allocator" title="cpp/named req/Allocator">Allocator</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>nếu như<code>lhs</code>Và<code>rhs</code>phạm vi có giá trị để so sánh<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>true</code>nếu như<code>lhs</code>Và<code>rhs</code>toán tử bool! = (const scoped_allocator_adaptor &lt;outeralloc1, innerallocs ...&gt; &amp; lhs, <code>false</code>Nếu đối số đầu tiên là</div> <h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/match_results/operator_cmp">https://en.cppreference.com/w/cpp/regex/match_results/operator_cmp</a>
+</p>
+</div>

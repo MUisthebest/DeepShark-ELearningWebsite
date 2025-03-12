@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FGETWS</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">wchar_t* fgetws (wchar_t* str, int Count, std :: file* stream);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đọc nhiều nhất<code>count - 1</code>các ký tự rộng từ luồng tệp đã cho và lưu trữ chúng trong<code>str</code>. Chuỗi rộng được sản xuất luôn luôn kết thúc. Phân tích cú pháp dừng nếu kết thúc tập tin xảy ra hoặc một ký tự rộng mới được tìm thấy, trong trường hợp đó<code>str</code>sẽ chứa ký tự dòng rộng đó.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>chuỗi rộng để đọc các ký tự để</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>chiều dài của<code>str</code> </td>
+</tr> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>luồng tệp để đọc dữ liệu từ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>str</code>Về thành công, một con trỏ null về một lỗi.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;mảng&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;clocale&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fwscanf" title="cpp/io/c/fwscanf"> <span class="t-lines"><span>WSCANF</span><span>fwscanf</span><span>swscanf</span></span></a></div> </td> <td>đọc đầu vào ký tự được định dạng từ<code><a href="std_streams" title="cpp/io/c/std streams">stdin</a></code>, một luồng tệp hoặc bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fgetwc" title="cpp/io/c/fgetwc"> <span class="t-lines"><span>FGETWC</span><span>getwc</span></span></a></div> </td> <td>Nhận một ký tự rộng từ luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fputws" title="cpp/io/c/fputws"> <span class="t-lines"><span>fputws</span></span></a></div> </td> <td>ghi một chuỗi rộng vào luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/fgetws" title="c/io/fgetws">C documentation</a></span>vì<code>fgetws</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/fgetws">https://en.cppreference.com/w/cpp/io/c/fgetws</a>
+</p>
+</div>

@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Chuyển tiếp</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/utility" title="cpp/header/utility">&lt;utility&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx14"> <td><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">T &amp;&amp; chuyển tiếp (tên typename std :: remove_reference &lt;t&gt; :: type &amp; t) noExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx14"> <td><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">constexpr t &amp;&amp; forward (std :: remove_reference_t &lt;t&gt; &amp; t) noexcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class T&gt;</div> <p>      std :: memory_order order = std :: memory_order_seq_cst) noexcept dễ bay hơi;<code>t</code>Điều đó như vậy<a href="../language/reference#Forwarding_references" title="cpp/language/reference">forwarding reference</a>T &amp;&amp; chuyển tiếp (tên kiểu std :: remove_reference &lt;t&gt; :: type &amp;&amp; t) noExcept;<a href="../language/value_category" title="cpp/language/value category">value category</a>Mẫu &lt;Class T&gt;</p>
+<p>constexpr t &amp;&amp; forward (std :: remove_reference_t &lt;t&gt; &amp;&amp; t) noexcept;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Chuyển tiếp lvalues ​​là lvalues ​​hoặc là rvalues, tùy thuộc vào T.</pre></div> <ul>
+<li>Nếu một cuộc gọi đến<code>wrapper()</code>.<code>std::string</code>, sau đó<code>T</code>}<code>std::string</code>Ví dụ: nếu được sử dụng trong một trình bao bọc như sau, mẫu hoạt động như được mô tả dưới đây:<code>std::string&amp;</code>Thì<code>const std::string&amp;</code>, hoặc<code>std::string&amp;&amp;</code>), Và<code>std::forward</code>Mẫu &lt;Class T&gt;<code>foo</code>.</li>
+<li>Nếu một cuộc gọi đến<code>wrapper()</code>Void Wrapper (T &amp;&amp; Arg)<code>std::string</code>, sau đó<code>T</code>}<code>const std::string&amp;</code>, Và<code>std::forward</code>    // arg luôn là lvalue<code>foo</code>.</li>
+<li>Nếu một cuộc gọi đến<code>wrapper()</code>    foo (std :: chuyển tiếp &lt;t&gt; (arg)); // chuyển tiếp như lvalue hoặc as rvalue, tùy thuộc vào t<code>std::string</code>, sau đó<code>T</code>}<code>std::string&amp;</code>, Và<code>std::forward</code>vượt qua một rvalue<code>foo</code>.</li>
+</ul> <div class="t-li1">
+<span class="t-li">2)</span>được suy luận cho</div> <p>(không</p>
+<p>đảm bảo rằng một tham chiếu rvalue được chuyển cho</p>
+<div class="cpp source-cpp"><pre data-language="cpp">vượt qua một const lvalue</pre></div> <p>được suy luận cho</p>
+<div class="cpp source-cpp"><pre data-language="cpp">đảm bảo rằng một tham chiếu const lvalue được chuyển cho</pre></div> <p>vượt qua một lvalue không tập hợp<span class="t-v">(2)</span>được suy luận cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>(Raco).<a href="../language/template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>đảm bảo rằng một tham chiếu lvalue không tập hợp được chuyển cho<code>T&amp;&amp;</code>Chuyển tiếp rvalues ​​như rvalues ​​và cấm chuyển tiếp rvalues ​​là lvalues.<a href="../language/reference#Forwarding_references" title="cpp/language/reference">forwarding references</a>Quá tải này cho phép chuyển tiếp kết quả của một biểu thức (chẳng hạn như cuộc gọi chức năng), có thể là rvalue hoặc lvalue, là danh mục giá trị ban đầu của đối số tham chiếu chuyển tiếp.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Chuyển đổi đối số</td> <td>-</td> <td>Ví dụ: nếu một trình bao bọc không chỉ chuyển tiếp đối số của nó, mà gọi chức năng thành viên trên đối số và chuyển tiếp kết quả của nó:</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>static_cast&lt;T&amp;&amp;&gt;(t)</code></p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>// Biến đổi trình bao bọc<code>T</code>Mẫu &lt;Class T&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Void Wrapper (T &amp;&amp; Arg)</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">{</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="move" title="cpp/utility/move"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được một tham chiếu rvalue<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="move_if_noexcept" title="cpp/utility/move if noexcept"> <span class="t-lines"><span>Move_if_NoExcept</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được một tham chiếu rvalue nếu hàm tạo di chuyển không ném<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/forward">https://en.cppreference.com/w/cpp/utility/forward</a>
+</p>
+</div>

@@ -1,0 +1,128 @@
+ <h1 class="firstHeading" id="firstHeading">Số nguyên theo nghĩa đen</h1> <p>Cho phép các giá trị của loại số nguyên được sử dụng trực tiếp trong các biểu thức.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Một số nguyên theo nghĩa đen có biểu mẫu</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">thập phân chữ</span> <span class="t-spar">Ví dụ. Các biến sau cũng được khởi tạo thành cùng một giá trị:</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Octal-Leteral</span> <span class="t-spar">Ví dụ. Các biến sau cũng được khởi tạo thành cùng một giá trị:</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Hex-Lem</span> <span class="t-spar">Ví dụ. Các biến sau cũng được khởi tạo thành cùng một giá trị:</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">nhị phân</span> <span class="t-spar">Ví dụ. Các biến sau cũng được khởi tạo thành cùng một giá trị:</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td>
+</tr>
+</table> <p>Ở đâu</p>
+<ul>
+<li> <span class="t-spar">thập phân chữ</span>là một chữ số thập phân khác không (<code>1</code>Thì<code>2</code>Thì<code>3</code>Thì<code>4</code>Thì<code>5</code>Thì<code>6</code>Thì<code>7</code>Thì<code>8</code>Thì<code>9</code>), theo sau là số không hoặc nhiều chữ số thập phân (<code>0</code>Thì<code>1</code>Thì<code>2</code>Thì<code>3</code>Thì<code>4</code>Thì<code>5</code>Thì<code>6</code>Thì<code>7</code>Thì<code>8</code>Thì<code>9</code>)</li>
+<li> <span class="t-spar">Octal-Leteral</span>là chữ số bằng không (<code>0</code>) theo sau là số không hoặc nhiều chữ số bát phân (<code>0</code>Thì<code>1</code>Thì<code>2</code>Thì<code>3</code>Thì<code>4</code>Thì<code>5</code>Thì<code>6</code>Thì<code>7</code>)</li>
+<li> <span class="t-spar">Hex-Lem</span>là chuỗi ký tự<code>0x</code>hoặc trình tự ký tự<code>0X</code>tiếp theo là một hoặc nhiều chữ số thập lục phân (<code>0</code>Thì<code>1</code>Thì<code>2</code>Thì<code>3</code>Thì<code>4</code>Thì<code>5</code>Thì<code>6</code>Thì<code>7</code>Thì<code>8</code>Thì<code>9</code>Thì<code>a</code>Thì<code>A</code>Thì<code>b</code>Thì<code>B</code>Thì<code>c</code>Thì<code>C</code>Thì<code>d</code>Thì<code>D</code>Thì<code>e</code>Thì<code>E</code>Thì<code>f</code>Thì<code>F</code>)</li>
+<li> <span class="t-spar">nhị phân</span>là chuỗi ký tự<code>0b</code>hoặc trình tự ký tự<code>0B</code>tiếp theo là một hoặc nhiều chữ số nhị phân (<code>0</code>Thì<code>1</code>)</li>
+<li> <span class="t-spar">Ví dụ. Các biến sau cũng được khởi tạo thành cùng một giá trị:</span>, nếu được cung cấp, có thể chứa một hoặc cả hai điều sau đây (nếu cả hai được cung cấp, chúng có thể xuất hiện theo bất kỳ thứ tự nào:</li>
+<li> <span class="t-spar">không dấu-suffix</span>(Nhân vật<code>u</code>hoặc nhân vật<code>U</code>)</li>
+<li>Một trong số</li>
+<ul><li> <span class="t-spar">Suffix dài</span>(Nhân vật<code>l</code>hoặc nhân vật<code>L</code>)</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <span class="t-spar">Điều đó không có</span>(Trình tự ký tự<code>ll</code>hoặc trình tự ký tự<code>LL</code>)</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul><li> <span class="t-spar">Tự động y = 0xa+2.0;   // ĐƯỢC RỒI</span>(Nhân vật<code>z</code>hoặc nhân vật<code>Z</code>)</li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <p>Trích dẫn đơn tùy chọn (<span class="st0">void print_info (std :: string_view rem, const std :: map &lt;int, char&gt; &amp; v)</span>) có thể được chèn giữa các chữ số dưới dạng phân tách; Họ bị bỏ qua khi xác định giá trị của nghĩa đen.</p>
+</td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <p>Một số nguyên theo nghĩa đen (như bất kỳ nghĩa đen nào) là một<a href="expressions#Primary_expressions" title="cpp/language/expressions">primary expression</a>.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <div class="t-li1">
+<span class="t-li">1)</span>Số nguyên thập phân theo nghĩa đen (cơ sở 10).</div> <div class="t-li1">
+<span class="t-li">2)</span>Octal Integer theo nghĩa đen (cơ sở 8).</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Số nguyên thập lục phân theo nghĩa đen (cơ sở 16, các chữ cái<code>'a'</code>Phân tích cú pháp các chỉ định AM/PM liên quan đến đồng hồ 12 giờ.<code>'f'</code>biểu thị các giá trị (thập phân) 10 đến 15).</div> <div class="t-li1">
+<span class="t-li">là trong</span>Số nguyên nhị phân theo nghĩa đen (cơ sở 2).</div> <p>Chữ số đầu tiên của một số nguyên theo nghĩa đen là quan trọng nhất.</p>
+<p>Ví dụ. Các biến sau được khởi tạo thành cùng một giá trị:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int d = 42;</pre></div> <p>int o = 052;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int x = 0x2a;</pre></div> <h3 id="The_type_of_the_literal">int x = 0x2a;</h3> <p>int b = 0b101010; // C ++ 14<span class="t-spar">Ví dụ. Các biến sau cũng được khởi tạo thành cùng một giá trị:</span>dài không dấu L1 = 18446744073709550592ULL;       // C ++ 11</p>
+<table class="wikitable"> <tr style="text-align:center"> <th>                const std :: Chrono :: Thời lượng &lt;rep, giai đoạn&gt; &amp; d);</th> <th>không dấu dài l2 = 18'446'744'073'709'550'592llu; // C ++ 14</th> <th>dài không dấu L3 = 1844'6744'0737'0955'0592ULL;   // C ++ 14</th>
+</tr> <tr style="text-align:left"> <td>dài không dấu L4 = 184467'440737'0'95505'92llu;   // C ++ 14</td> <td> <ul>
+<li> <code>int</code> </li>
+<li> <code>long int</code> </li>
+<li> <code>long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> </td> <td> <ul>
+<li> <code>int</code> </li>
+<li> <code>unsigned int</code> </li>
+<li> <code>long int</code> </li>
+<li> <code>unsigned long int</code> </li>
+<li> <code>long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li> <code>unsigned long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> </td>
+</tr> <tr> <td>
+<code>u</code>hoặc<code>U</code> </td> <td> <ul>
+<li> <code>unsigned int</code> </li>
+<li> <code>unsigned long int</code> </li>
+<li> <code>unsigned long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> </td> <td> <ul>
+<li> <code>unsigned int</code> </li>
+<li> <code>unsigned long int</code> </li>
+<li> <code>unsigned long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> </td>
+</tr> <tr> <td>
+<code>l</code>hoặc<code>L</code> </td> <td> <ul>
+<li> <code>long int</code> </li>
+<li> <code>unsigned long int</code> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </li>
+<li> <code>long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> </td> <td> <ul>
+<li> <code>long int</code> </li>
+<li> <code>unsigned long int</code> </li>
+<li> <code>long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li> <code>unsigned long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> </td>
+</tr> <tr> <td>cả hai<code>l</code>/<code>L</code><br/>Và<code>u</code>/<code>U</code> </td> <td> <ul>
+<li> <code>unsigned long int</code> </li>
+<li> <code>unsigned long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> </td> <td> <ul>
+<li> <code>unsigned long int</code> </li>
+<li> <code>unsigned long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> </td>
+</tr> <tr> <td>
+<code>ll</code>hoặc<code>LL</code> </td> <td> <ul><li> <code>long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li></ul> </td> <td> <ul>
+<li> <code>long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+<li> <code>unsigned long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> </td>
+</tr> <tr> <td>cả hai<code>ll</code>/<code>LL</code><br/>Và<code>u</code>/<code>U</code> </td> <td> <ul><li> <code>unsigned long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li></ul> </td> <td> <ul><li> <code>unsigned long long int</code> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li></ul> </td>
+</tr> <tr> <td>
+<code>z</code>hoặc<code>Z</code> </td> <td> <ul><li>Loại chữ số nguyên là loại đầu tiên trong đó giá trị có thể phù hợp, từ danh sách các loại phụ thuộc vào cơ sở số và loại nào<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </li></ul> </td> <td> <ul>
+<li>Loại chữ số nguyên là loại đầu tiên trong đó giá trị có thể phù hợp, từ danh sách các loại phụ thuộc vào cơ sở số và loại nào<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </li>
+<li> <code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </li>
+</ul> </td>
+</tr> <tr> <td>cả hai<code>z</code>/<code>Z</code><br/>Và<code>u</code>/<code>U</code> </td> <td> <ul><li> <code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </li></ul> </td> <td> <ul><li> <code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </li></ul> </td>
+</tr>
+</table> <p>số nguyên-suffix<span class="t-rev-inl t-since-cxx23"><span>đã được sử dụng:<span class="t-spar">Tự động y = 0xa+2.0;   // ĐƯỢC RỒI</span></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>Cơ sở nhị phân, bát phân hoặc thập lục phân<code>__int128</code>(không có hậu tố)</p>
+<h3 id="Notes">Ghi chú</h3> <p>phiên bản đã ký của<code>0xDeAdBeEfU</code>Và<code>0XdeadBEEFu</code>phiên bản đã ký của<span class="t-rev-inl t-since-cxx11"><span>Nếu giá trị của số nguyên theo nghĩa đen<span class="t-spar">Điều đó không có</span>, đó là<code>ll</code>hoặc<code>LL</code>Kích thước-Suffix<code>lL</code>hoặc<code>Ll</code>)</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<p>quá lớn để phù hợp với bất kỳ loại nào được phép bởi kết hợp hậu tố/cơ sở và trình biên dịch hỗ trợ một loại số nguyên mở rộng (chẳng hạn như<code>-1</code>) có thể đại diện cho giá trị của nghĩa đen, theo nghĩa đen có thể được đưa ra rằng loại số nguyên mở rộng-nếu không thì chương trình không được hình thành.<a href="operator_arithmetic" title="cpp/language/operator arithmetic">unary minus operator</a>Các chữ cái trong các chữ số nguyên là không nhạy cảm trường hợp:</p>
+<p>đại diện cho cùng một số<code>long int</code>(Một ngoại lệ là<code>unsigned long int</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>dài-suffix dài<a href="../preprocessor/conditional" title="cpp/preprocessor/conditional">#if</a>hoặc<a href="../preprocessor/conditional" title="cpp/preprocessor/conditional">#elif</a>, không bao giờ<code><a href="../types/integer" title="cpp/types/integer">std::intmax_t</a></code>Không có chữ số nguyên âm. Biểu thức như<code><a href="../types/integer" title="cpp/types/integer">std::uintmax_t</a></code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Áp dụng<a href="translation_phases#maximal_munch" title="cpp/language/translation phases">maximal munch</a>đến giá trị được biểu thị bằng nghĩa đen, có thể liên quan đến chuyển đổi loại ẩn.<code>e</code>Và<code>E</code>Trong C trước C99 (nhưng không phải trong C ++), các giá trị thập phân không trộn lẫn không phù hợp<code>+</code>hoặc<code>-</code>được phép có loại</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Khi được sử dụng trong một biểu thức kiểm soát của</pre></div> <p>, tất cả các hằng số số nguyên đã ký hoạt động như thể chúng có loại</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_binary_literals" title="cpp/feature test"><code>__cpp_binary_literals</code></a></td> <td><span class="nu0">Khoảng thời gian thực tế (tính bằng giây) được giữ bởi một đối tượng thời lượng</span></td> <td><span class="t-mark">(C ++ 14)</span></td> <td>
+<a href="#Syntax">Binary literals</a> </td>
+</tr> <tr> <td><a href="../feature_test#cpp_size_t_suffix" title="cpp/feature test"><code>__cpp_size_t_suffix</code></a></td> <td><span class="nu0">và tất cả các hằng số số nguyên không dấu hoạt động như thể chúng có loại</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Bởi vì<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>, nghĩa đen theo nghĩa thập lục địa kết thúc trong</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">, khi theo sau là các nhà khai thác</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">, phải được tách ra khỏi toán tử với khoảng trắng hoặc dấu ngoặc đơn trong nguồn:</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2698.html" rel="nofollow">CWG 2698</a> </td> <td>C ++ 23</td> <td>Tự động x = 0xe+2.0;   // lỗi<span class="t-spar">Tự động y = 0xa+2.0;   // ĐƯỢC RỒI</span>Tự động Z = 0xE +2.0;  // ĐƯỢC RỒI</td> <td>Tự động Q = (0xe) +2.0; // ĐƯỢC RỒI</td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>Hậu tố theo nghĩa đen cho</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>Hậu tố theo nghĩa đen cho</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>Hậu tố theo nghĩa đen cho</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>#include &lt;CstDdef&gt;</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>#include &lt;CstDdef&gt;</li></ul>
+<li>    S.B3 = 0B11;</li>
+<ul><li>#include &lt;Istream&gt;</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="user_literal" title="cpp/language/user literal"> user-defined literals</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>    std :: cout &lt;&lt; '\ n';</td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/integer_constant" title="c/language/integer constant">C documentation</a></span>vì<span class=""><span>#include &lt;type_traits&gt;</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/integer_literal">https://en.cppreference.com/w/cpp/language/integer_literal</a>
+</p>
+</div>

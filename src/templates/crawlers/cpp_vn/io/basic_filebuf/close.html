@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_filebuf &lt;biểu đồ, đặc điểm&gt; :: đóng</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: basic_filebuf &lt;biểu đồ, đặc điểm&gt;* đóng ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nếu một khu vực đặt tồn tại (ví dụ: tệp được mở để viết), các cuộc gọi đầu tiên<code>overflow(Traits::eof())</code>Để viết tất cả các đầu ra đang chờ xử lý vào tệp, bao gồm bất kỳ chuỗi không thay đổi nào.</p>
+<p>Nếu chức năng được gọi gần đây nhất, ra khỏi<a href="underflow" title="cpp/io/basic filebuf/underflow"><code>underflow()</code></a>Thì<a href="overflow" title="cpp/io/basic filebuf/overflow"><code>overflow()</code></a>Thì<a href="seekpos" title="cpp/io/basic filebuf/seekpos"><code>seekpos()</code></a>, Và<a href="seekoff" title="cpp/io/basic filebuf/seekoff"><code>seekoff()</code></a>, đã từng là<a href="overflow" title="cpp/io/basic filebuf/overflow"><code>overflow()</code></a>, sau đó gọi<a href="../../locale/codecvt/unshift" title="cpp/locale/codecvt/unshift"><code>std::codecvt::unshift()</code></a>, có lẽ nhiều lần, để xác định chuỗi không thay đổi theo địa phương thấm<code>overflow(Traits::eof())</code>.</p>
+<p>Sau đó, đóng tệp như thể bằng cách gọi<code><a href="../c/fclose" title="cpp/io/c/fclose">std::fclose()</a></code>, bất kể bất kỳ cuộc gọi nào trước đó đã thành công hay không.</p>
+<p>Nếu bất kỳ cuộc gọi chức năng nào được thực hiện, bao gồm cả cuộc gọi đến<code><a href="../c/fclose" title="cpp/io/c/fclose">std::fclose()</a></code>, thất bại, trả về một con trỏ null. Nếu bất kỳ cuộc gọi chức năng nào tạo ra một ngoại lệ, thì ngoại lệ sẽ bị bắt và rethrown sau khi đóng tệp. Nếu tệp đã được đóng, trả về một con trỏ null ngay lập tức.</p>
+<p>Trong mọi trường hợp, cập nhật biến thành viên riêng được truy cập bởi<code><a href="is_open" title="cpp/io/basic filebuf/is open">is_open()</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>this</code>Về thành công, một con trỏ null về thất bại.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>close()</code>thường được gọi thông qua kẻ hủy diệt của<code><a href="../basic_filebuf" title="cpp/io/basic filebuf">std::basic_filebuf</a></code>(đến lượt nó, thường được gọi bởi kẻ hủy diệt<code><a href="../basic_fstream" title="cpp/io/basic fstream">std::basic_fstream</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue443" rel="nofollow">LWG 443</a> </td> <td>C ++ 98</td> <td>Tệp được viết bằng cách sử dụng<code>overflow<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/io/c"><span class="kw1886">EOF</span></a><span class="br0">)</span></code> </td> <td>đổi thành<code>overflow(Traits::eof())</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue622" rel="nofollow">LWG 622</a> </td> <td>C ++ 98</td> <td>Không rõ làm thế nào để xử lý<br/>Ngoại lệ bị ném trong khi đóng cửa</td> <td>nó được tái hiện sau khi đóng tệp</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_open" title="cpp/io/basic filebuf/is open"> <span class="t-lines"><span>Bản gốc_Handle</span></span></a></div> </td> <td>Trả về tay cầm được xác định thực hiện cơ bản<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="~basic_filebuf" title="cpp/io/basic filebuf/~basic filebuf"> <span class="t-lines"><span>một đối tượng ngoại lệ khác để gán với</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Hằng số thành viên<code>basic_filebuf</code>Chức năng thành viên công cộng<br/> <span class="t-mark">(chức năng thành viên công cộng ảo)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_filebuf/close">https://en.cppreference.com/w/cpp/io/basic_filebuf/close</a>
+</p>
+</div>

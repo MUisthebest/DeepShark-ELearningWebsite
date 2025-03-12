@@ -1,0 +1,46 @@
+ <h1 class="firstHeading" id="firstHeading">std :: forward_list &lt;t, allocator&gt; :: splice_after</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void splice_after (const_iterator pos, forward_list &amp; other);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void splice_after (const_iterator pos, forward_list &amp;&amp; other);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void splice_after (const_iterator pos, forward_list &amp; other,</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                   const_iterator nó);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void splice_after (const_iterator pos, forward_list &amp;&amp; other,</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                   const_iterator nó);</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>void splice_after (const_iterator pos, forward_list &amp; other,<code>forward_list</code>ĐẾN<code>*this</code>                   const_iterator đầu tiên, const_iterator cuối cùng);<code>pos</code>.</p>
+<p>void splice_after (const_iterator pos, forward_list &amp;&amp; other,<code>*this</code>                   const_iterator đầu tiên, const_iterator cuối cùng);<code>other</code>.</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Di chuyển các yếu tố từ người khác<code>other</code>Mẫu &lt;Class T&gt;<code>*this</code>. Các phần tử được chèn sau khi phần tử được trỏ bởi<code>other</code>Không có yếu tố nào được sao chép. Không có trình lặp hoặc tài liệu tham khảo trở nên vô hiệu. Các lần lặp đến các yếu tố di chuyển bây giờ được đề cập đến</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>, không vào<code>it</code>từ<code>other</code>Mẫu &lt;Class T&gt;<code>*this</code>Di chuyển tất cả các yếu tố từ<code>pos == it</code>(Cho đến C ++ 14)<code>pos == ++it</code>.</div> <div class="t-li1">
+<span class="t-li">    trả về std :: find_if_not (đầu tiên, cuối cùng, p) == cuối cùng;</span>. Container<code>(</code><code>first</code><code>, </code><code>last</code><code>)</code>từ<code>other</code>Mẫu &lt;Class T&gt;<code>*this</code>trở nên trống sau khi hoạt động.<code>first</code>Di chuyển phần tử được trỏ đến bởi bộ lặp sau</div> <p>đến một phạm vi khác kết thúc tại</p>
+<ul>
+<li> <code>get_allocator() != other.get_allocator()</code>Thì</li>
+<li> <code>pos</code>. Không có tác dụng nếu<code>before_begin()</code>Di chuyển các yếu tố trong phạm vi<a href="../../iterator#Dereferenceability_and_validity" title="cpp/iterator">dereferenceable iterator</a>TRONG<code>[</code><code>begin()</code><code>, </code><code>end()</code><code>)</code>Thì</li>
+<li>BẰNG<span class="t-v">Outputit adjacent_difference (đầu vào đầu tiên, đầu vào cuối cùng, </span>Thì<code>*this</code>Và<code>other</code>. Phần tử được trỏ đến bởi</li>
+<li>BẰNG<span class="t-v">ConstExpr Outputit Adjacent_Difference (Inputit First, Inputit Last, </span>không được di chuyển.<code>it</code>Cụ thể,<a href="../../iterator#Dereferenceability_and_validity" title="cpp/iterator">dereferenceable iterator</a>Mẫu &lt;Class T&gt;<code>other</code>, hoặc</li>
+<li>BẰNG<span class="t-v">Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,</span>Thì</li>
+<ul>
+<li> <code>(</code><code>first</code><code>, </code><code>last</code><code>)</code>Cụ thể,<a href="../../iterator#Ranges" title="cpp/iterator">valid range</a>TRONG<code>other</code>Thì</li>
+<li>là không<code>(</code><code>first</code><code>, </code><code>last</code><code>)</code>cũng không a<a href="../../iterator#Dereferenceability_and_validity" title="cpp/iterator">dereferenceable</a>, hoặc</li>
+<li> <code>pos</code>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>(</code><code>first</code><code>, </code><code>last</code><code>)</code>.</li>
+</ul>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>Tham khảo cùng một đối tượng,</td>
+</tr> <tr class="t-par"> <td>khác</td> <td>-</td> <td>, người lặp sau</td>
+</tr> <tr class="t-par"> <td>Một số vòng lặp trong</td> <td>-</td> <td>không<code>other</code>ĐẾN<code>*this</code> </td>
+</tr> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>phần tử sau đó nội dung sẽ được chèn<code>other</code>ĐẾN<code>*this</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <div class="t-li1">
+<span class="t-li">Đầu vào</span>Tuyến tính trong kích thước của<code>other</code>.</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>trình rút vào các yếu tố để hoán đổi</div> <div class="t-li1">
+<span class="t-li">    trả về std :: find_if_not (đầu tiên, cuối cùng, p) == cuối cùng;</span>bool is_heap (execPolicy &amp;&amp; chính sách,<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>first, last<span class="br0">)</span></code>.</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">một thùng chứa khác để di chuyển nội dung từ</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2045" rel="nofollow">LWG 2045</a> </td> <td>C ++ 11</td> <td>Nó<br/><code>get_allocator() != other.get_allocator()</code> </td> <td>là giá trị trả về, vẫn có thể giảm được, nhưng bản thân các yếu tố có giá trị không xác định. Một cuộc gọi đến<br/>kích cỡ.</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="merge" title="cpp/container/forward list/merge"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>Chèn_after<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="remove" title="cpp/container/forward list/remove"> <span class="t-lines"><span>Được xác định trong tiêu đề</span><span>di dời</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="before_begin" title="cpp/container/forward list/before begin"> <span class="t-lines"><span>chức năng thành viên và điều đó</span><span>Sự phức tạp của luôn là tuyến tính),</span></span></a></div> </td> <td>Các yêu cầu được áp đặt trên các yếu tố phụ thuộc vào các hoạt động thực tế được thực hiện trên container. Nói chung, loại nguyên tố được yêu cầu đáp ứng các yêu cầu của<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/forward_list/splice_after">https://en.cppreference.com/w/cpp/container/forward_list/splice_after</a>
+</p>
+</div>

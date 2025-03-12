@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">std :: fileSystem :: path :: String, std :: fileSystem :: path :: wstring, std :: file</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;biểu đồ lớp, đặc điểm của lớp = std :: char_traits &lt;plart&gt;,</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="5">(2)</td> <td rowspan="5"><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">          lớp alloc = std :: allocator &lt;Phange&gt;&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    Chuỗi (const alloc &amp; a = alloc ()) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: chuỗi chuỗi () const;</pre>
+</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(3)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td> <pre data-language="cpp">std :: wString wString () const;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">std :: u16String u16String () const;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>std :: u32String u32String () const;</p>
+<ul>
+<li>Nếu như<code>path::value_type</code>khoảng cách<span class="kw4">char</span>std :: chuỗi generic_u8String () const;<code>string()</code>std :: u8String generic_u8String () const;</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>path::value_type</code>khoảng cách<span class="kw4">wchar_t</span>Trả về tên đường dẫn nội bộ trong định dạng tên đường dẫn chung, được chuyển đổi thành loại chuỗi cụ thể. Chuyển đổi, nếu có, được chỉ định như sau:<span class="kw4">wchar_t</span>, chuyển đổi, nếu có, phụ thuộc vào hệ thống. Đây là trường hợp trên các hệ thống POSIX điển hình (như Linux), trong đó mã hóa gốc là UTF-8 và</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>path::value_type</code>khoảng cách<span class="kw4">char16_t</span>thực hiện không chuyển đổi.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>path::value_type</code>khoảng cách<span class="kw4">char32_t</span>, Chuyển đổi, nếu có, là không xác định. Đây là trường hợp trên Windows, trong đó</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>path::value_type</code>là 16 bit và mã hóa gốc là UTF-16.</li>
+</ul> <div class="t-li1">
+<span class="t-li">1)</span>, mã hóa gốc là UTF-32 và phương thức chuyển đổi không được xác định.<code>a</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>là char8_t, mã hóa gốc là UTF-8 và phương thức chuyển đổi không được xác định.<code>u8string()</code>ký tự được sử dụng làm dấu phân cách thư mục.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>std :: chuỗi u8String () const;</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">STD :: U8String U8String () const;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Trả về tên đường dẫn nội bộ trong định dạng tên đường dẫn gốc, được chuyển đổi thành loại chuỗi cụ thể. Chuyển đổi, nếu có, được thực hiện như sau:</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="generic_string" title="cpp/filesystem/path/generic string"> <span class="t-lines"><span>Generic_String</span><span>Generic_wstring</span><span>Generic_u8String</span><span>Generic_u16String</span><span>Generic_u32String</span></span></a></div> </td> <td>Trả về đường dẫn trong định dạng tên đường dẫn chung được chuyển đổi thành một chuỗi<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/path/string">https://en.cppreference.com/w/cpp/filesystem/path/string</a>
+</p>
+</div>

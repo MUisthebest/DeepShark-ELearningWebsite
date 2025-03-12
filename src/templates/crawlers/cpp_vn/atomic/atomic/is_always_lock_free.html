@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: ATOMIC &lt;T&gt; :: IS_ALWAYS_LOCK_FREE</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">constic static bool is_always_lock_free = /*do thực hiện xác định* /;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Bằng nhau<code>true</code>Nếu loại nguyên tử này luôn không có khóa và<code>false</code>Nếu nó không bao giờ hoặc đôi khi không có khóa.</p>
+<p>Giá trị của hằng số này phù hợp với cả macro<code>ATOMIC_xxx_LOCK_FREE</code>, nơi được xác định, với chức năng thành viên<code>is_lock_free</code>và chức năng phi thành viên<code><a href="../atomic_is_lock_free" title="cpp/atomic/atomic is lock free">std::atomic_is_lock_free</a></code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Không có chức năng không thành viên tương đương với hằng số thành viên tĩnh này vì các chức năng không thành viên sẽ đưa con trỏ đến các loại nguyên tử, và do đó không hữu ích trong<a href="../../language/constant_expression" title="cpp/language/constant expression">constant expressions</a>.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_atomic_is_always_lock_free" title="cpp/feature test"><code>__cpp_lib_atomic_is_always_lock_free</code></a></td> <td><span class="nu0">Thuật toán song song</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<code>constexpr atomic&lt;T&gt;::is_always_lock_free</code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_lock_free" title="cpp/atomic/atomic/is lock free"> <span class="t-lines"><span>mẫu hoặc trong các chuyên ngành một phần cho</span></span></a></div> </td> <td>(người xây dựng)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../atomic_is_lock_free" title="cpp/atomic/atomic is lock free"> <span class="t-lines"><span>ATOMIC_IS_LOCK_FREE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem các hoạt động của loại nguyên tử có khóa không<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic/is_always_lock_free">https://en.cppreference.com/w/cpp/atomic/atomic/is_always_lock_free</a>
+</p>
+</div>

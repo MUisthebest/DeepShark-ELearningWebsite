@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: recursive_timed_mutex :: Mở khóa</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">khoảng trống mở khóa ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Mở khóa Mutex nếu mức độ sở hữu của nó là<code>1</code>(Có chính xác một cuộc gọi nữa đến<code><a href="lock" title="cpp/thread/recursive timed mutex/lock">lock()</a></code>hơn đã có cuộc gọi đến<code>unlock()</code>Được thực hiện bởi chủ đề này), giảm mức quyền sở hữu xuống 1 nếu không.</p>
+<p>Mutex phải được khóa bởi luồng thực thi hiện tại, nếu không, hành vi không được xác định.</p>
+<p>Hoạt động này<i>y.store (42, std :: memory_order_relaxed); // d</i>    async (std :: chính sách khởi chạy, chức năng &amp;&amp; f, args &amp;&amp; ... args);<code><a href="../../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>) Bất kỳ hoạt động khóa tiếp theo có được quyền sở hữu cùng một mutex.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>unlock()</code>thường không được gọi là trực tiếp:<code><a href="../unique_lock" title="cpp/thread/unique lock">std::unique_lock</a></code>Và<code><a href="../lock_guard" title="cpp/thread/lock guard">std::lock_guard</a></code>được sử dụng để quản lý khóa độc quyền.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lock" title="cpp/thread/recursive timed mutex/lock"> <span class="t-lines"><span>khóa</span></span></a></div> </td> <td>Khóa mutex, khối nếu không có sẵn Mutex<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_lock" title="cpp/thread/recursive timed mutex/try lock"> <span class="t-lines"><span>Try_lock</span></span></a></div> </td> <td>cố gắng khóa mutex, trả về nếu không có sẵn mutex<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_lock_for" title="cpp/thread/recursive timed mutex/try lock for"> <span class="t-lines"><span>Try_lock_for</span></span></a></div> </td> <td>cố gắng khóa mutex, trả về nếu catex đã được<br/>Không có sẵn trong thời gian chờ quy định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_lock_until" title="cpp/thread/recursive timed mutex/try lock until"> <span class="t-lines"><span>Try_lock_until</span></span></a></div> </td> <td>cố gắng khóa mutex, trả về nếu catex đã được<br/>Không có sẵn cho đến khi đạt được điểm thời gian được chỉ định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/thread/mtx_unlock" title="c/thread/mtx unlock">C documentation</a></span>vì<code>mtx_unlock</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex/unlock">https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex/unlock</a>
+</p>
+</div>

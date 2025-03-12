@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tương lai &lt;T&gt; :: Nhận</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">T get ();</pre>
+</td> <td>(1)</td> <td> <span class="t-mark">(chỉ thành viên của chung chung<code>future</code>(Chỉ thành viên của chính</span><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">T &amp; get ();</pre>
+</td> <td>(2)</td> <td> <span class="t-mark">             std :: memory_order order = std :: memory_order_seq_cst) const noexcept;<code>future&lt;T&amp;&gt;</code>(Chỉ thành viên</span><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">void get ();</pre>
+</td> <td>(3)</td> <td> <span class="t-mark">             std :: memory_order order = std :: memory_order_seq_cst) const noexcept;<code>future&lt;void&gt;</code>(Chỉ thành viên</span><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Các<code>get</code>chức năng thành viên đợi cho đến khi<code>future</code>có kết quả hợp lệ và (tùy thuộc vào mẫu được sử dụng) lấy nó. Nó gọi hiệu quả<code><a href="wait" title="cpp/thread/future/wait">wait()</a></code>Để chờ đợi kết quả.</p>
+<p>Mẫu chung và hai chuyên môn về mẫu có chứa một phiên bản duy nhất của<code>get</code>. Ba phiên bản của<code>get</code>chỉ khác nhau trong loại trả lại.</p>
+<p>đến một phạm vi khác kết thúc tại<code><a href="valid" title="cpp/thread/future/valid">valid()</a></code>khoảng cách<code>false</code>Phạm vi trả lại :: Tiếp theo</p>
+<p>Bất kỳ trạng thái chung được phát hành.<code><a href="valid" title="cpp/thread/future/valid">valid()</a></code>khoảng cách<code>false</code>Sau khi gọi đến chức năng thành viên này.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Giá trị<code>v</code>được lưu trữ ở trạng thái chia sẻ, như<code>std::move(v)</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Các tham chiếu được lưu trữ dưới dạng giá trị trong trạng thái chia sẻ.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Không có gì.</div> <h3 id="Exceptions">Ngoại lệ</h3> <p>Nếu một ngoại lệ được lưu trữ ở trạng thái chia sẻ được tham chiếu bởi tương lai (ví dụ: thông qua cuộc gọi đến<a href="../promise/set_exception" title="cpp/thread/promise/set exception"><code>std::promise::set_exception()</code></a>) Sau đó, ngoại lệ đó sẽ được ném.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Việc triển khai được khuyến khích phát hiện trường hợp khi<code><a href="valid" title="cpp/thread/future/valid">valid()</a></code>khoảng cách<code>false</code>Trước cuộc gọi và ném một<code><a href="../future_error" title="cpp/thread/future error">std::future_error</a></code>với một điều kiện lỗi của<code><a href="../future_errc" title="cpp/thread/future errc">std::future_errc::no_state</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Tương lai&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="valid" title="cpp/thread/future/valid"> <span class="t-lines"><span>có hiệu lực</span></span></a></div> </td> <td>kiểm tra xem tương lai có trạng thái chung không<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/future/get">https://en.cppreference.com/w/cpp/thread/future/get</a>
+</p>
+</div>

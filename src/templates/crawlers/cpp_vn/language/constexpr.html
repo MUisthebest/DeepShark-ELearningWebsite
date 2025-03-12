@@ -1,0 +1,135 @@
+ <h1 class="firstHeading" id="firstHeading">Đặc biệt cụ thể của ConsEXPR<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <ul><li>
+<code>constexpr</code>- Chỉ định rằng giá trị của một biến hoặc hàm có thể xuất hiện trong<a href="constant_expression" title="cpp/language/constant expression">constant expressions</a> </li></ul> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Các<span class="kw4">constexpr</span>Công cụ xác định tuyên bố rằng có thể đánh giá giá trị của hàm hoặc biến tại thời điểm biên dịch. Sau đó, các biến và hàm như vậy có thể được sử dụng khi chỉ biên dịch thời gian<a href="constant_expression" title="cpp/language/constant expression">constant expressions</a>được cho phép (với điều kiện là các đối số chức năng thích hợp được đưa ra).</p>
+<p>MỘT<span class="kw4">constexpr</span>Trình xác định được sử dụng trong khai báo đối tượng<span class="t-rev-inl t-until-cxx14"><span id="constexpr-method-is-const">hoặc chức năng thành viên không tĩnh</span><span><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span></span></span>nó là chuyển tiếp:<span class="kw4">hằng số</span>. MỘT<span class="kw4">constexpr</span>trình xác định được sử dụng trong một hàm<span class="t-rev-inl t-since-cxx17"><span>hoặc<a href="static" title="cpp/language/static">static</a>Thành viên dữ liệu</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Tuyên bố ngụ ý<span class="kw1">};</span>. Nếu bất kỳ tuyên bố nào về một mẫu chức năng hoặc mẫu có<span class="kw4">constexpr</span>Đặc biệt, sau đó mọi khai báo phải chứa trình xác định đó.</p>
+<h4 id="constexpr_variable"> <span class="kw4">constexpr</span>địa chỉ qua cuối một đối tượng có thời lượng lưu trữ tĩnh</h4> <p>MỘT<b><span class="kw4">constexpr</span>địa chỉ qua cuối một đối tượng có thời lượng lưu trữ tĩnh</b>Phải đáp ứng các yêu cầu sau:</p>
+<ul>
+<li>Loại của nó phải là một<a href="../named_req/literaltype" title="cpp/named req/LiteralType">LiteralType</a> </li>
+<li>nó phải được khởi tạo ngay lập tức</li>
+<li>các<a href="eval_order" title="cpp/language/eval order">full-expression</a>về việc khởi tạo của nó, bao gồm tất cả các chuyển đổi ngầm, các cuộc gọi của các hàm tạo, v.v., phải là một<a href="constant_expression" title="cpp/language/constant expression">constant expression</a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul>
+<li>Nó phải có sự phá hủy liên tục, tức là:</li>
+<ul>
+<li>Nó không thuộc loại lớp cũng không phải (có thể là đa chiều) của chúng, hoặc</li>
+<li>Nó thuộc loại lớp hoặc (có thể là đa chiều) mảng của chúng, loại lớp đó có chất hủy diệt Consexpr và cho biểu thức giả thuyết<code>e</code>tác dụng duy nhất của ai là phá hủy đối tượng,<code>e</code>sẽ là một biểu thức hằng số lõi nếu tuổi thọ của đối tượng và các tiểu mục không có thể cắt của nó (nhưng không phải là các tiểu mục có thể thay đổi của nó) được coi là bắt đầu bên trong<code>e</code>.</li>
+</ul>
+</ul> <p>Để kiểm soát cách giải quyết thời gian địa phương mơ hồ hoặc không tồn tại. Đi qua<span class="kw4">constexpr</span>Biến là không<a href="tu_local" title="cpp/language/tu local">translation-unit-local</a>, nó không nên được khởi tạo để trỏ đến, hoặc đề cập đến, hoặc có một tiểu đơn vị (có thể đệ quy) chỉ ra hoặc đề cập đến, một thực thể đơn vị dịch thuật có thể sử dụng trong các biểu thức không đổi. Việc khởi tạo như vậy không được phép trong một<a href="modules" title="cpp/language/modules">module interface unit</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h4 id="constexpr_function"> <span class="kw4">constexpr</span>chức năng</h4> <p>MỘT<b><span class="kw4">constexpr</span>chức năng</b>Phải đáp ứng các yêu cầu sau:</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <ul>
+<li>nó không được<a href="virtual" title="cpp/language/virtual">virtual</a> </li>
+<li>nó không phải là một<a href="function-try-block" title="cpp/language/function-try-block">function-try-block</a> </li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>nó không phải là một<a href="coroutines" title="cpp/language/coroutines">coroutine</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul><li>cho hàm tạo<span class="t-rev-inl t-since-cxx20"><span>và người phá hủy</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, lớp phải không có lớp cơ sở ảo</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <ul>
+<li>giá trị trả về của nó (nếu có) và mỗi tham số của nó phải là của<a href="../named_req/literaltype" title="cpp/named req/LiteralType">LiteralType</a> </li>
+<li>tồn tại ít nhất một tập hợp các giá trị đối số sao cho việc gọi hàm có thể là biểu hiện phụ được đánh giá<a href="constant_expression#Core_constant_expressions" title="cpp/language/constant expression">core constant expression</a>(Đối với các nhà xây dựng, sử dụng trong một<a href="constant_initialization" title="cpp/language/constant initialization">constant initializer</a>là đủ). Không cần chẩn đoán cho việc vi phạm viên đạn này.</li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx14">
+<td> <ul>
+<li>Cơ thể chức năng phải bị xóa hoặc mặc định hoặc chỉ chứa các mục sau:</li>
+<ul>
+<li> <a href="statements#Expression_statements" title="cpp/language/statements">null statements</a>(dấu chấm phẩy đơn giản)</li>
+<li> <a href="static_assert" title="cpp/language/static assert">static_assert</a>Tuyên bố</li>
+<li> <a href="typedef" title="cpp/language/typedef">typedef</a>Tuyên bố và<a href="type_alias" title="cpp/language/type alias">alias</a>Tuyên bố không xác định các lớp hoặc bảng liệt kê</li>
+<li> <a href="namespace#Using-declarations" title="cpp/language/namespace">using declarations</a> </li>
+<li> <a href="namespace#Using-directives" title="cpp/language/namespace">using directives</a> </li>
+<li>Nếu hàm không phải là hàm tạo, chính xác là một<a href="return" title="cpp/language/return">return</a>tuyên bố</li>
+</ul>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span></td>
+</tr> <tr class="t-rev t-since-cxx14 t-until-cxx23">
+<td> <ul>
+<li> <span id="relaxed-constexpr">cơ thể chức năng phải<b>không</b>bao gồm</span>:</li>
+<ul>
+<li>Một<a href="goto" title="cpp/language/goto">goto</a>tuyên bố</li>
+<li>một tuyên bố với một<a href="statements#Labeled_statements" title="cpp/language/statements">label</a>REALLOCATION thường là các hoạt động tốn kém về mặt hiệu suất. Các<span class="kw1">Khác với cái đầu tiên</span>Và<span class="kw1">#include &lt;Istream&gt;</span> </li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <ul>
+<li>Một<a href="try_catch" title="cpp/language/try catch">try-block</a> </li>
+<li>chồng chéo với container.<a href="asm" title="cpp/language/asm">asm declaration</a> </li>
+<li>một định nghĩa về một biến mà<a href="default_initialization" title="cpp/language/default initialization">no initialization is performed</a> </li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> </table> <dl>
+<dd>
+<ul>
+<li>một định nghĩa về một biến của loại không theo nghĩa chữ</li>
+<li>một định nghĩa về một biến tĩnh hoặc luồng<a href="storage_duration" title="cpp/language/storage duration">storage duration</a> </li>
+</ul> </dd>
+<dd>(Một cơ thể chức năng là<code>= default;</code>hoặc<code>= delete;</code>không chứa điều gì ở trên.)</dd>
+</dl> </td> <td>
+<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span><br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <h4 id="constexpr_constructor"> <span class="kw4">constexpr</span>người xây dựng</h4> <p>MỘT<b><span class="kw4">constexpr</span>người xây dựng</b>Cơ thể chức năng của ai không<code>= delete;</code>Phải đáp ứng các yêu cầu bổ sung sau:</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <ul>
+<li>cho người xây dựng một<a href="class" title="cpp/language/class">class or struct</a>, mọi đối tượng phụ lớp cơ sở và mọi<a href="union#Union-like_classes" title="cpp/language/union">non-variant</a>Thành viên dữ liệu phi tĩnh phải được khởi tạo. Nếu lớp là một<a href="union#Union-like_classes" title="cpp/language/union">union-like class</a>, Đối với mỗi thành viên Liên minh ẩn danh không trống, chính xác là một thành viên biến thể phải được khởi tạo</li>
+<li>cho người xây dựng một người không trống<a href="union" title="cpp/language/union">union</a>, chính xác một thành viên dữ liệu không tĩnh phải được khởi tạo</li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> </table> <ul><li>Mỗi hàm tạo được chọn để khởi tạo các thành viên dữ liệu không tĩnh và lớp cơ sở phải là một hàm tạo consexpr.</li></ul> <h4 id="constexpr_destructor"> <span class="kw4">constexpr</span>Tay cầm nút chỉ di chuyển, gán bản sao không được xác định.</h4> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Destructions không thể<span class="kw4">constexpr</span>, nhưng a<a href="destructor#Trivial_destructor" title="cpp/language/destructor">trivial destructor</a>có thể được gọi hoàn toàn trong các biểu thức không đổi.</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>MỘT<b><span class="kw4">constexpr</span>Tay cầm nút chỉ di chuyển, gán bản sao không được xác định.</b>Cơ thể chức năng của ai không<code>= delete;</code>Phải đáp ứng các yêu cầu bổ sung sau:</p>
+<ul><li>Mọi chất phá hủy được sử dụng để phá hủy các thành viên dữ liệu không tĩnh và lớp cơ sở phải là một chất hủy diệt Consexpr.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> </td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> </table> <p>Đối với các mẫu chức năng ConstExPR và các chức năng thành viên của ConstExPR của các mẫu lớp, ít nhất một chuyên môn phải đáp ứng các yêu cầu đã nêu trên. Các chuyên ngành khác vẫn được coi là consexpr, mặc dù một cuộc gọi đến một hàm như vậy không thể xuất hiện trong một biểu thức không đổi.<span class="t-rev-inl t-until-cxx23"><span>Nếu không có chuyên môn hóa của mẫu sẽ đáp ứng các yêu cầu đối với hàm ConsexPR khi được coi là hàm không phải bảng, thì mẫu không được hình thành, không cần chẩn đoán.</span><span><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></span></span></p>
+<h3 id="Notes">Ghi chú</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <p>Bởi vì<a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code></a>Nhà điều hành luôn trả về<code>true</code>Đối với một biểu thức không đổi, nó có thể được sử dụng để kiểm tra xem một lời mời cụ thể của hàm consexpr có nhánh biểu thức không đổi không:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Constexpr int f (); </pre></div> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <p>Consexpr bool B1 = NoExcept (f ()); // chức năng constexpr không xác định, không xác định</p>
+<div class="cpp source-cpp"><pre data-language="cpp">constexpr int f () {return 0; }</pre></div> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>constexpr bool b2 = noexcept (f ()); // true, f () là một biểu thức không đổi<code><a href="../memory/unique_ptr" title="cpp/memory/unique ptr">std::unique_ptr</a></code>Có thể viết một hàm Consexpr mà gọi không bao giờ có thể đáp ứng các yêu cầu của biểu thức hằng số lõi:<a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a>.</p>
+<p>void f (int &amp; i) // không phải là hàm constexpr<a href="constant_expression#Constant_expression" title="cpp/language/constant expression">reference constant expressions</a>):</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Mặc dù<span class="kw1">    i = 0;</span>}</p>
+<p> </p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="wikitable sortable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td rowspan="9"><a href="../feature_test#cpp_constexpr" title="cpp/feature test"><code>__cpp_constexpr</code></a></td> <td><span class="nu0">200704l</span></td> <td><span class="t-mark">unininitialized_copy_n</span></td> <td>
+<span class="kw4">constexpr</span> </td>
+</tr> <tr> <td><span class="nu0">Khoảng thời gian thực tế (tính bằng giây) được giữ bởi một đối tượng thời lượng</span></td> <td><span class="t-mark">(C ++ 14)</span></td> <td>
+<a href="#relaxed-constexpr">Relaxed <span class="kw4">constexpr</span></a>Thì<a href="#constexpr-method-is-const">non-<span class="kw4">hằng số</span> <span class="kw4">constexpr</span> methods</a> </td>
+</tr> <tr> <td><span class="nu0">Thuật toán song song</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<a href="lambda" title="cpp/language/lambda">Constexpr lambda</a> </td>
+</tr> <tr> <td><span class="nu0">201907L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>Tầm thường<a href="default_initialization" title="cpp/language/default initialization">default initialization</a>Và<a href="asm" title="cpp/language/asm">asm-declaration</a>TRONG<span class="kw4">constexpr</span>chức năng</td>
+</tr> <tr> <td><span class="nu0">Chuyên môn này của</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>Thay đổi thành viên tích cực của một liên minh trong đánh giá liên tục</td>
+</tr> <tr> <td><span class="nu0">3)</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Không<a href="../named_req/literaltype" title="cpp/named req/LiteralType">literal</a>Biến, nhãn, và<a href="../language" title="cpp/language"><code>goto</code></a>Các câu lệnh trong các chức năng của Consexpr</td>
+</tr> <tr> <td><span class="nu0">202207L</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Thư giãn một số<span class="kw4">constexpr</span>hạn chế</td>
+</tr> <tr> <td><span class="nu0">  trả về static_cast &lt;t &amp;&gt; (t);</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Cho phép<span class="kw4">năng động</span> <span class="kw4">constexpr</span>các biến trong<span class="kw4">constexpr</span>chức năng</td>
+</tr> <tr> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>Constexpr đúc từ<span class="kw4">Vô hiệu</span><span class="sy2">*</span>: Hướng tới các nhiệm vụ loại Constexpr</td>
+</tr> <tr> <td><a href="../feature_test#cpp_constexpr_in_decltype" title="cpp/feature test"><code>__cpp_constexpr_in_decltype</code></a></td> <td><span class="nu0">là một biểu hiện mà đánh giá là</span></td> <td><span class="t-mark">unininitialized_copy_n<br/>(Dr)</span></td> <td>Tạo ra các định nghĩa chức năng và biến đổi khi<a href="constant_expression#Functions_and_variables_needed_for_constant_evaluation" title="cpp/language/constant expression">needed for constant evaluation</a> </td>
+</tr> <tr> <td><a href="../feature_test#cpp_constexpr_dynamic_alloc" title="cpp/feature test"><code>__cpp_constexpr_dynamic_alloc</code></a></td> <td><span class="nu0">201907L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>của một biểu thức<span class="kw4">constexpr</span>chức năng</td>
+</tr>
+</table> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/constexpr" title="cpp/keyword/constexpr"><code>constexpr</code></a></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Constexpr void g (int &amp; i) // được hình thành tốt từ C ++ 23<span class="kw4">constexpr</span>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    f (i); // gọi vô điều kiện f, không thể là một biểu thức không đổi</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">}</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1712.html" rel="nofollow">CWG 1712</a> </td> <td>C ++ 14</td> <td>Các nhà xây dựng ConsExPR được phép cho các lớp không phải là loại theo nghĩa đen. Ví dụ: hàm tạo mặc định của<br/>là Constexpr, cho phép<span class="kw4">constexpr</span>thời lượng để biểu diễn phần bù từ UTC tương ứng với<br/>Các biến tham chiếu có thể được khai báo conspr (bộ khởi tạo của chúng phải<br/>Constexpr tĩnh Int Const &amp; X = 42; // tham chiếu constexpr đến đối tượng const int<span class="kw4">constexpr</span>                                    // (đối tượng có thời lượng lưu trữ tĩnh</td> <td>                                    // do mở rộng cuộc sống bằng một tham chiếu tĩnh)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1911.html" rel="nofollow">CWG 1911</a> </td> <td>C ++ 11</td> <td>thử</td> <td>Các khối và lắp ráp nội tuyến được cho phép trong các chức năng của ConsexPR, việc ném các ngoại lệ hoặc thực thi lắp ráp vẫn không được phép trong một biểu thức không đổi.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2004.html" rel="nofollow">CWG 2004</a> </td> <td>C ++ 11</td> <td>Nếu một biến có sự phá hủy liên tục, không cần phải tạo mã máy để gọi Destructor cho nó, ngay cả khi chất phá hủy của nó không tầm thường.<br/>Xác định C ++ 11/14</td> <td>các chức năng tính toán giai thừa; Xác định một loại theo nghĩa đen mở rộng nghĩa đen:<br/>#include &lt;Istream&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2163.html" rel="nofollow">CWG 2163</a> </td> <td>C ++ 14</td> <td>#include &lt;stdexcept&gt;<br/> </td> <td>// C ++ 11 Chức năng Constexpr Sử dụng đệ quy thay vì lặp lại</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2268.html" rel="nofollow">CWG 2268</a> </td> <td>C ++ 11</td> <td>Consexpr Int Factorial (int n)<br/>{<a class="external text" href="https://cplusplus.github.io/CWG/issues/2004.html" rel="nofollow">CWG issue 2004</a> </td> <td>    trả lại n &lt;= 1? 1: (N * Factorial (n - 1));<br/>}</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="constant_expression" title="cpp/language/constant expression">constant expression</a> </td> <td> <a href="expressions" title="cpp/language/expressions">expression</a>Hiến thức Int Sqrsqr (int n)</td>
+</tr> <tr class="t-dsc"> <td> <a href="consteval" title="cpp/language/consteval"> <code>consteval</code> specifier</a><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span> </td> <td> <i>chức năng ngay lập tức</i>// C ++ 14 Chức năng Constexpr có thể sử dụng các biến và vòng lặp cục bộ</td>
+</tr> <tr class="t-dsc"> <td> <a href="constinit" title="cpp/language/constinit"> <code>constinit</code> specifier</a><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span> </td> <td>int r2 = sqr (x);            // Lỗi: cuộc gọi không tạo ra một hằng số<a href="zero_initialization" title="cpp/language/zero initialization">zero initialization</a>Và<a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/constexpr" title="c/language/constexpr">C documentation</a></span>vì<code>constexpr</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/constexpr">https://en.cppreference.com/w/cpp/language/constexpr</a>
+</p>
+</div>

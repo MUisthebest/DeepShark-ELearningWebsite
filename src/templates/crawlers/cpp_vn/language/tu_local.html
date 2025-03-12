@@ -1,0 +1,38 @@
+ <h1 class="firstHeading" id="firstHeading">Các thực thể đơn vị-đơn vị<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>
+</h1> <p>Các thực thể đơn vị-đơn vị (TU-local) được giới thiệu để ngăn chặn các thực thể được cho là cục bộ (không được sử dụng trong bất kỳ đơn vị dịch thuật nào khác) đang được tiếp xúc và sử dụng trong các đơn vị dịch khác.</p>
+<p>Một ví dụ từ<a class="external text" href="https://vector-of-bool.github.io/2019/03/31/modules-2.html" rel="nofollow">Understanding C++ Modules: Part 2</a>minh họa vấn đề không hạn chế phơi nhiễm:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// Đơn vị mô-đun không có ràng buộc Tu-Local</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">Module xuất khẩu foo;</pre></div> <h3 id="TU-local_entities"> </h3> <p>Một thực thể là<i>Tu-local</i>    constexpr int ia = a; // Lỗi: A không phải là biểu thức hằng số prvalue</p>
+<ol>
+<li>Nhập &lt;iostream&gt;;<ol>
+<li> <a href="storage_duration#internal_linkage" title="cpp/language/storage duration">internal linkage</a>, hoặc</li>
+<li>không gian tên<a href="lambda" title="cpp/language/lambda">lambda expression</a>{</li>
+</ol> </li>
+<li>   lớp Lolwatchthis {// Liên kết nội bộ, không thể được xuất<a href="class" title="cpp/language/class">class-specifier</a>       khoảng trống tĩnh say_hello ()</li>
+<li>       {</li>
+<li>           std :: cout &lt;&lt; "Xin chào, mọi người! \ n";</li>
+<li>       }</li>
+</ol> <div class="cpp source-cpp"><pre data-language="cpp">   };</pre></div> <p>}<i>Tu-local</i>bằng nhau.</p>
+<ol>
+<li> </li>
+<li>Xuất lolwatchthis lolwut () {// LolWatchthis được tiếp xúc dưới dạng loại trả lại<a href="object#Subobjects" title="cpp/language/object">subobjects</a>    trả lại lolwatchthis ();<a href="constant_expression#Usable_in_constant_expressions" title="cpp/language/constant expression">usable in constant expressions</a>.</li>
+</ol> <div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <h3 id="Exposures">// main.cpp</h3> <p>nhập khẩu foo;<i> </i>int main ()</p>
+<ol>
+<li>{</li>
+<li>    Auto Evil = Lolwut ();        // 'Evil' có loại 'lolwatchthis'</li>
+<li>    DeclType (ác) :: Say_hello (); // Định nghĩa của 'Lolwatchthis' không còn nội bộ nữa</li>
+</ol> <div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <p>Các thực thể TU-Local<i>một loại, hàm, biến hoặc mẫu</i>có tên với</p>
+<ol>
+<li>không có tên với liên kết và được khai báo, hoặc được giới thiệu bởi một<a href="auto" title="cpp/language/auto">placeholder type</a>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.</li>
+<li>, trong định nghĩa của một thực thể TU-Local,</li>
+<li>một loại không có tên được xác định bên ngoài</li>
+<li>, cơ thể chức năng, hoặc bộ khởi tạo hoặc được giới thiệu bởi một bộ đặc biệt loại xác định (người nhận loại, bộ chỉ định lớp hoặc trình chính xác) được sử dụng để chỉ khai báo các thực thể TU-Local,<a href="definition#ODR-use" title="cpp/language/definition">odr-use</a>Thì</li>
+</ol> <p>một chuyên môn của một mẫu TU-local,</p>
+<h3 id="TU-local_constraints">chuyên môn hóa một mẫu với bất kỳ đối số mẫu Tu-local nào hoặc</h3> <p>Một chuyên môn của một mẫu có khai báo (có thể khởi tạo) là một phơi nhiễm (được định nghĩa dưới đây).<a href="declarations" title="cpp/language/declarations">declaration</a>// Các thực thể TU-Local có liên kết nội bộ<a href="class_template_argument_deduction#Deduction_for_class_templates" title="cpp/language/class template argument deduction">deduction guide</a>Không gian tên {// Tất cả các tên được khai báo trong không gian tên không tên có liên kết nội bộ<a href="modules" title="cpp/language/modules">module interface unit</a>    int tul_var = 1;                          // Biến TU-Local</p>
+<p>    int tul_func () {return 1; } // chức năng Tu-Local</p>
+<h3 id="Example">Ví dụ</h3> <p>    struct tul_type {int mem; };             // TU-local (lớp)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <p>Mẫu &lt;Typename T&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">tĩnh int tul_func_temp () {return 1; } // TU-Local Memplate</pre></div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/tu_local">https://en.cppreference.com/w/cpp/language/tu_local</a>
+</p>
+</div>

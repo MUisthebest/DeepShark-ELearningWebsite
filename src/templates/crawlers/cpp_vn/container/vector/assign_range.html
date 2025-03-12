@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Vector &lt;T, Allocator&gt; :: gán_range</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>void gán_range (r &amp;&amp; rg);<code>rg</code>.</p>
+<p>, theo thứ tự không đảo ngược.<a href="end" title="cpp/container/vector/end"><code>end()</code></a>ConstExpr void gán_range (R &amp;&amp; rg);</p>
+<p>iterator) và tất cả các tham chiếu đến các yếu tố bị vô hiệu.<code>rg</code>Mỗi lần lặp trong</p>
+<p>đến một phạm vi khác kết thúc tại<code>rg</code>Mỗi người lặp trong phạm vi</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>được hủy bỏ chính xác một lần.</td> <td>-</td> <td>chồng chéo với container.<a href="../../ranges/input_range" title="cpp/ranges/input range"><code>input_range</code></a>MỘT</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code><a href="http://en.cppreference.com/w/cpp/concepts/assignable_from"><span class="kw2942">Điều đó cho tất cả<span class="me2">// Lưu ý: Vì biểu thức #2 đã yêu cầu biến thể rvalue không liên tục</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy3">Không có giá trị</span>, <a href="http://en.cppreference.com/w/cpp/ranges/iterator_t"><span class="kw2895">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">với loại tham chiếu chuyển đổi sang loại phần tử của container</span></span></a><span class="sy1">is_trivently_destructible_v</span>R<span class="sy1">2,4)</span></code>Range_Reference_T</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T</code>// thực hiện đầu tiên<a href="../../named_req/emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>phải được mô hình hóa. Nếu không, chương trình là xấu.<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>. Nếu như<code>R</code>iterator) và các tham chiếu đến các yếu tố bị vô hiệu.<a href="../../ranges/sized_range" title="cpp/ranges/sized range"><code>sized_range</code></a>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<a href="../../ranges/forward_range" title="cpp/ranges/forward range"><code>forward_range</code></a>Thì<code>T</code>Mô hình cũng không<a href="../../named_req/moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>cũng phải được</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_containers_ranges" title="cpp/feature test"><code>__cpp_lib_containers_ranges</code></a></td> <td><span class="nu0">và không trả lại gì.</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<a href="../../ranges/to#container_compatible_range" title="cpp/ranges/to">Ranges-aware</a>, các hiệu ứng không được xác định.</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">vào container. Nếu không, hành vi là không xác định.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="insert_range" title="cpp/container/vector/insert range"> <span class="t-lines"><span>thu hẹp_to_fit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Dr*<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="append_range" title="cpp/container/vector/append range"> <span class="t-lines"><span>Xóa</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>xóa các yếu tố<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="assign" title="cpp/container/vector/assign"> <span class="t-lines"><span>Loại số nguyên đã ký (thường là</span></span></a></div> </td> <td>con trỏ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/vector/assign_range">https://en.cppreference.com/w/cpp/container/vector/assign_range</a>
+</p>
+</div>

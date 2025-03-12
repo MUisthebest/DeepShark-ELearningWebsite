@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: pubsetbuf, std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: setbuf</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_streambuf &lt;biểu đồ, đặc điểm&gt;* pubsetbuf (char_type* s, std :: streamsize n)</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Cuộc gọi<code>setbuf(s, n)</code>Virtual POS_Type Seekoff (Off_Type TẮT, STD :: IOS_BASE :: SeekDir Dir,</div> <div class="t-li1">
+<span class="t-li">2)</span>được bảo vệ:</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>hoặc từ các chức năng thành viên của một lớp do người dùng định nghĩa<code>CharT</code>và sau đó trở lại</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>trong bộ đệm do người dùng cung cấp hoặc null<code>CharT</code>trong bộ đệm do người dùng cung cấp</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Phiên bản lớp cơ sở của chức năng này không có hiệu lực. Các lớp dẫn xuất có thể ghi đè chức năng này để cho phép định vị tương đối của chỉ báo vị trí.<code>setbuf(s, n)</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>this</code>
+</div> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Được gọi trước khi bất kỳ I/O nào diễn ra được yêu cầu để đặt đầu ra không bị truy cập.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Virtual basic_streambuf &lt;biểu đồ, đặc điểm&gt;* setbuf (char_type* s, std :: streamsize n)</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Fstream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue158" rel="nofollow">LWG 158</a> </td> <td>C ++ 98</td> <td>Phiên bản lớp cơ sở của chức năng này không có hiệu lực. Các lớp dẫn xuất có thể ghi đè chức năng này để cho phép loại bỏ hoặc thay thế chuỗi ký tự được kiểm soát (bộ đệm) bằng một mảng do người dùng cung cấp hoặc cho bất kỳ mục đích cụ thể nào khác.<code>setbuf</code>#include &lt;Fstream&gt;<br/>nếu như<code><a href="gptr" title="cpp/io/basic streambuf/gptr">gptr()</a></code>#include &lt;Istream&gt;<code><a href="gptr" title="cpp/io/basic streambuf/gptr">egptr()</a></code> </td> <td> <br/>#include &lt;chuỗi&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_stringbuf/setbuf" title="cpp/io/basic stringbuf/setbuf"> <span class="t-lines"><span>setbuf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Ghi lại chế độ mở.<br/> <span class="t-mark">Putback<code>std::basic_stringbuf&lt;CharT,Traits,Allocator&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_filebuf/setbuf" title="cpp/io/basic filebuf/setbuf"> <span class="t-lines"><span>setbuf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>tràn<br/> <span class="t-mark">Putback<code>std::basic_filebuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../strstreambuf/setbuf" title="cpp/io/strstreambuf/setbuf"> <span class="t-lines"><span>setbuf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Ghi lại chế độ mở.<br/> <span class="t-mark">Putback<code>std::strstreambuf</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../c/setbuf" title="cpp/io/c/setbuf"> <span class="t-lines"><span>setbuf</span></span></a></div> </td> <td>Đặt bộ đệm cho luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_streambuf/pubsetbuf">https://en.cppreference.com/w/cpp/io/basic_streambuf/pubsetbuf</a>
+</p>
+</div>

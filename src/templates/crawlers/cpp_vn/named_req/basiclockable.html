@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Basiclockable<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Các<strong class="selflink">Basiclockable</strong>Các yêu cầu mô tả các đặc điểm tối thiểu của các loại cung cấp ngữ nghĩa chặn độc quyền cho các tác nhân thực thi (nghĩa là các luồng).</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Cho loại<code>L</code>Để được cơ bản, các điều kiện sau phải được thỏa mãn cho một đối tượng<code>m</code>nó đến một đối tượng<code>L</code>:</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Điều kiện tiên quyết</th> <th>Các hiệu ứng</th>
+</tr> <tr> <td>
+<code>m.lock()</code> </td> <td> </td> <td>Các khối cho đến khi khóa có thể được thu thập cho tác nhân thực thi hiện tại (luồng, quy trình, nhiệm vụ). Nếu một ngoại lệ được ném, không có khóa được mua.</td>
+</tr> <tr> <td>
+<code>m.unlock()</code> </td> <td>Tác nhân thực thi hiện tại giữ khóa không chia sẻ<code>m</code>.</td> <td>Phát hành khóa không chia sẻ được giữ bởi tác nhân thực thi.<p>Ném không có ngoại lệ.</p>
+</td>
+</tr>
+</table> <h4 id="Non-shared_locks">Khóa không chia sẻ</h4> <p>Một khóa trên một đối tượng được cho là<i>Khóa không chia sẻ</i>Nếu nó được mua bằng một cuộc gọi đến<code>lock</code>Thì<code>try_lock</code>Thì<code>try_lock_for</code>, hoặc<code>try_lock_until</code>Nó là an toàn, và trên thực tế, thích hợp hơn trong mã chung, để sử dụng khấu trừ để chuyển tiếp tham chiếu,</p>
+<h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="../thread" title="cpp/thread">Thread support library</a> </li>
+<li> <a href="mutex" title="cpp/named req/Mutex">Mutex</a> </li>
+<li> <a href="lockable" title="cpp/named req/Lockable">Lockable</a> </li>
+<li> <a href="timedlockable" title="cpp/named req/TimedLockable">TimedLockable</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/BasicLockable">https://en.cppreference.com/w/cpp/named_req/BasicLockable</a>
+</p>
+</div>

@@ -1,0 +1,50 @@
+ <h1 class="firstHeading" id="firstHeading">std :: time_get &lt;biểu đồ, inputit&gt; :: get_date, std :: time_get &lt;biểu đồ, inputit&gt; :: do_get_date</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">ITER_TYPE GET_DATE (ITER_TYPE BEG, ITER_TYPE END, STD :: iOS_BASE &amp; STR,</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>             Biểu đồ const* Low2, Biểu đồ const* High2) const;<code>do_get_date</code>Virtual POS_Type Seekoff (Off_Type TẮT, STD :: IOS_BASE :: SeekDir Dir,</div> <div class="t-li1">
+<span class="t-li">2)</span>                    std :: ios_base :: iostate &amp; err, std :: tm* t) const;<code>[</code><code>beg</code><code>, </code><code>end</code><code>)</code>được bảo vệ:<table class="wikitable"> <tr style="text-align:center;"> <th>
+<code><a href="date_order" title="cpp/locale/time get/date order">date_order()</a></code> </th> <th>            std :: format_string &lt;args ...&gt; fmt, args &amp;&amp; ... args);</th>
+</tr> <tr> <td>
+<code>no_order</code> </td> <td>
+<code>"%m/%d/%y"</code> </td>
+</tr> <tr> <td>
+<code>dmy</code> </td> <td>
+<code>"%d/%m/%y"</code> </td>
+</tr> <tr> <td>
+<code>mdy</code> </td> <td>
+<code>"%m/%d/%y"</code> </td>
+</tr> <tr> <td>
+<code>ymd</code> </td> <td>
+<code>"%y/%m/%d"</code> </td>
+</tr> <tr> <td>
+<code>ydm</code> </td> <td>
+<code>"%y/%d/%m"</code> </td>
+</tr>
+</table>
+</div> <div class="t-li1">Virtual ITER_TYPE DO_GET_DATE (ITER_TYPE BEG, ITER_TYPE END, STD :: IOS_BASE &amp; STR,<code><a href="../../io/manip/get_time" title="cpp/io/manip/get time">std::get_time()</a></code>Thì<code><a href="get" title="cpp/locale/time get/get">get()</a></code>                               std :: ios_base :: iostate &amp; err, std :: tm* t) const;<code>strptime()</code>.</div> <div class="t-li1">Đọc các ký tự liên tiếp từ chuỗi<code><a href="../../chrono/c/tm" title="cpp/chrono/c/tm">std::tm</a></code>và phân tích giá trị ngày lịch bằng cách sử dụng định dạng mặc định mà địa phương này dự kiến, được xác định là<code>t</code>.</div> <div class="t-li1">như được sử dụng bởi các chức năng<code><a href="../../io/ios_base/iostate" title="cpp/io/ios base/iostate">std::ios_base::eofbit</a></code>TRONG<code>err</code>và chức năng POSIX<code><a href="../../io/ios_base/iostate" title="cpp/io/ios base/iostate">std::ios_base::failbit</a></code>TRONG<code>err</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>                      STD :: iOS_Base :: in | std :: ios_base :: out) ghi đè;</td> <td>-</td> <td>. Nếu chuỗi đầu vào được phân tích cú pháp thành công, hãy cập nhật các trường tương ứng của</td>
+</tr> <tr class="t-par"> <td>kết thúc</td> <td>-</td> <td>.   Cho các nhà xác định chuyển đổi phức tạp, chẳng hạn như</td>
+</tr> <tr class="t-par"> <td>STR</td> <td>-</td> <td>, hoặc các chỉ thị sử dụng các công cụ sửa đổi<code><a href="../ctype" title="cpp/locale/ctype">std::ctype</a></code>, hàm có thể không xác định được một số giá trị để lưu trữ<code><a href="../collate" title="cpp/locale/collate">std::collate</a></code>. Trong trường hợp như vậy, nó đặt</td>
+</tr> <tr class="t-par"> <td>và để lại các lĩnh vực này ở trạng thái không xác định.</td> <td>-</td> <td>iterator chỉ định sự khởi đầu của chuỗi để phân tích cú pháp</td>
+</tr> <tr class="t-par"> <td>Chuyển đổi đối số</td> <td>-</td> <td>Con trỏ tới<code><a href="../../chrono/c/tm" title="cpp/chrono/c/tm">std::tm</a></code>Một quá khứ lặp đi lặp lại cho chuỗi để phân tích cú pháp</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>fmtend<code>[</code><code>beg</code><code>, </code><code>end</code><code>)</code>Ngày phân tích cú pháp được lưu trữ trong các trường tương ứng của</p>
+<h3 id="Notes">Ghi chú</h3> <p>cấu trúc được chỉ ra bởi đối số</p>
+<p>Nếu đạt được trình lặp kết thúc trước khi đọc ngày hợp lệ, chức năng sẽ đặt<code>*t</code>. Nếu gặp lỗi phân tích cú pháp, chức năng sẽ đặt</p>
+<p>Điều đó đã được công nhận là một phần của một ngày hợp lệ.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Đối với các thành phần chữ cái của định dạng ngày mặc định (nếu có), hàm này thường không nhạy cảm trường hợp.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Nếu gặp lỗi phân tích cú pháp, hầu hết các triển khai của chức năng này đều rời đi</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue248" rel="nofollow">LWG 248</a> </td> <td>C ++ 98</td> <td>
+<code>eofbit</code>không thay đổi.</td> <td>, di chuyển-thiết kế bộ phân bổ từ<code>eofbit</code>Việc triển khai có thể hỗ trợ các định dạng ngày khác bên cạnh các định dạng theo yêu cầu của tiêu chuẩn.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue461" rel="nofollow">LWG 461</a> </td> <td>C ++ 98</td> <td>
+<code>do_get_date</code>#include &lt;CTIME&gt;</td> <td>#include &lt;Istream&gt;<code><a href="date_order" title="cpp/locale/time get/date order">date_order()</a></code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../io/manip/get_time" title="cpp/io/manip/get time"> <span class="t-lines"><span>Phân tích các đại diện ngày và giờ của địa phương.</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Lệnh sửa đổi<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/time_get/get_date">https://en.cppreference.com/w/cpp/locale/time_get/get_date</a>
+</p>
+</div>

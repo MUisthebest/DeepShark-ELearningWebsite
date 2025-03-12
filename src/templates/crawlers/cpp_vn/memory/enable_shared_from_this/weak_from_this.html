@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: enable_shared_from_this &lt;t&gt; :: stress_from_this</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">std :: weak_ptr &lt;t&gt; stress_from_this () noExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">std :: stress_ptr &lt;t const&gt; stress_from_this () const noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>    Tìm kiếm (I1 First1, S1 Last1, I2 First2, S2 Last2, Pred = {},<code><a href="http://en.cppreference.com/w/cpp/memory/weak_ptr"><span class="kw743">Điều đó cho tất cả<span class="me2">yếu_ptr</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>theo dõi quyền sở hữu của<code>*this</code>bởi tất cả hiện có<code><a href="../shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>Điều đó đề cập đến<code>*this</code>.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code><a href="http://en.cppreference.com/w/cpp/memory/weak_ptr"><span class="kw743">Điều đó cho tất cả<span class="me2">yếu_ptr</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>chia sẻ quyền sở hữu của<code>*this</code>với sự tồn tại trước<code><a href="../shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>struct common_type &lt;std :: Chrono :: Time_Point &lt;Đồng hồ, Thời lượng1&gt;, </p>
+<h3 id="Notes">Ghi chú</h3> <p><code>weak_from_this</code>chỉ sao chép các bản trình bày<code>weak_ptr</code>thành viên là một phần của<code>enable_shared_from_this</code>.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_enable_shared_from_this" title="cpp/feature test"><code>__cpp_lib_enable_shared_from_this</code></a></td> <td><span class="nu0">Thuật toán song song</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<code>std::enable_shared_from_this::weak_from_this</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../shared_ptr" title="cpp/memory/shared ptr"> <span class="t-lines"><span>Shared_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Con trỏ thông minh với ngữ nghĩa sở hữu đối tượng được chia sẻ<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/enable_shared_from_this/weak_from_this">https://en.cppreference.com/w/cpp/memory/enable_shared_from_this/weak_from_this</a>
+</p>
+</div>

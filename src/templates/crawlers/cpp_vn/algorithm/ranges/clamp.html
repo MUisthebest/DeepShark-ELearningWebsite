@@ -1,0 +1,39 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Phạm vi :: Kẹp</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/algorithm" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-h"> <td>Chữ ký cuộc gọi</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class T, class proj = std :: nhận dạng,</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Nếu như<code>v</code>, trả lại<code>lo</code>; Nếu không nếu<code>lo</code>So sánh ít hơn<code>hi</code>, trả lại<code>v</code>; Nếu không nếu<code>hi</code>So sánh ít hơn<code>v</code>.</p>
+<p>đến một phạm vi khác kết thúc tại<code>lo</code>Để so sánh các giá trị.<code>hi</code>.</p>
+<p>Mẫu &lt;phạm vi :: forward_range r, class proj = std :: nhận dạng,<i>          std :: Indirect_binary_predicate &lt;</i>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj&gt;,</p>
+<ul>
+<li>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; pre = ranges :: arem_to&gt;</li>
+<li>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>.</li>
+<li>    adjacent_find (r &amp;&amp; r, pre pre = {}, proj proj = {});<a href="../../language/unqualified_lookup" title="cpp/language/unqualified lookup">normal unqualified lookup</a>(Sau khi chiếu với phép chiếu<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>như phạm vi nguồn, như thể đang sử dụng</li>
+</ul> <p>Phạm vi ::</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu giá trị của</td> <td>-</td> <td>là lớn hơn</td>
+</tr> <tr class="t-par"> <td>          std :: indirect_strict_weak_order &lt;std :: dự kiến ​​&lt;const t*, proj &gt;&gt; comp =</td> <td>-</td> <td>giá trị để kẹp<code>v</code>ĐẾN</td>
+</tr> <tr class="t-par"> <td>sau đó</td> <td>-</td> <td>              Phạm vi :: Ít hơn&gt;</td>
+</tr> <tr class="t-par"> <td>niebloids</td> <td>-</td> <td>constexpr const t &amp;<code>v</code>Thì<code>lo</code>Và<code>hi</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>được tránh,<code>lo</code>so sánh để áp dụng cho các yếu tố dự kiến<code>v</code>dự đoán để áp dụng cho<code>lo</code>Tham chiếu đến<code>hi</code>so sánh để áp dụng cho các yếu tố dự kiến<code>hi</code>dự đoán để áp dụng cho<code>v</code>, tham khảo<code>v</code>.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Nếu giá trị dự kiến ​​của</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">ít hơn giá trị dự kiến ​​của</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3>Mẫu &lt;Class T&gt;<code>std::ranges::clamp</code>Constexpr Const T &amp; Kẹp (Const T &amp; V, Const T &amp; Lo, Const T &amp; Hi)<div class="cpp source-cpp"><pre data-language="cpp">Nếu giá trị dự kiến ​​của</pre></div> <p>Nếu như<code>v</code>    Trả về kẹp (v, lo, hi, ít {});<code>v</code>}</p>
+<p>ít hơn giá trị dự kiến ​​của<code><a href="../../utility/functional/invoke" title="cpp/utility/functional/invoke">std::invoke</a></code>Nhiều nhất là hai so sánh và ba ứng dụng của phép chiếu.<a href="../../concepts/invocable" title="cpp/concepts/invocable">the semantic requirements of <code>std::regular_invocable</code></a>Cấu trúc kẹp_fn<code><a href="../../iterator/indirect_strict_weak_order" title="cpp/iterator/indirect strict weak order">std::indirect_strict_weak_order</a></code>).</p>
+<p>{<code>proj</code>    Mẫu &lt;class T, class proj = std :: nhận dạng,<code>v</code>             std :: indirect_strict_weak_order &lt;std :: dự kiến ​​&lt;const t*, proj &gt;&gt;</p>
+<ul>
+<li> <a class="external text" href="https://github.com/gcc-mirror/gcc/blob/f3169941996c76ecbfae9c37709d2b57652be555/libstdc%2B%2B-v3/include/bits/ranges_algo.h#L3196-L3218" rel="nofollow">libstdc++</a>                 Comp = std :: phạm vi :: Ít hơn&gt;</li>
+<li> <a class="external text" href="https://github.com/llvm/llvm-project/issues/64717" rel="nofollow">libc++</a>    Consexpr Const T &amp; Toán tử () (Const T &amp; V, Const T &amp; Lo, Const T &amp; Hi,</li>
+<li> <a class="external text" href="https://github.com/microsoft/STL/issues/1893" rel="nofollow">MSVC STL</a>                                  Comp comp = {}, proj proj = {}) const</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    {</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">        Auto &amp;&amp; pv = std :: gọi (proj, v);</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="min" title="cpp/algorithm/ranges/min"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="max" title="cpp/algorithm/ranges/max"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../utility/in_range" title="cpp/utility/in range"> <span class="t-lines"><span>in_range</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>kiểm tra xem giá trị số nguyên nằm trong phạm vi của một loại số nguyên nhất định<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../clamp" title="cpp/algorithm/clamp"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/ranges/clamp">https://en.cppreference.com/w/cpp/algorithm/ranges/clamp</a>
+</p>
+</div>

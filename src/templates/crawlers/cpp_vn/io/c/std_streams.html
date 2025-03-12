@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">stdin, stdout, stderr</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">#Define stdin / * thực hiện được xác định * / /</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">#Define stdout / * thực hiện xác định * / /</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">#Define stderr / * thực hiện xác định * / /</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Ba luồng văn bản được xác định trước. Các luồng này được mở ra ngầm và không định hướng trong việc khởi động chương trình.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Liên kết với<i>Đầu vào tiêu chuẩn</i>Stream, được sử dụng để đọc đầu vào thông thường. Khi khởi động chương trình, luồng được đệm hoàn toàn nếu và chỉ khi luồng có thể được xác định không tham khảo một thiết bị tương tác.</div> <div class="t-li1">
+<span class="t-li">2)</span>Liên kết với<i>đầu ra tiêu chuẩn</i>Stream, được sử dụng để viết đầu ra thông thường. Khi khởi động chương trình, luồng được đệm hoàn toàn nếu và chỉ khi luồng có thể được xác định không tham khảo một thiết bị tương tác.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Liên kết với<i>lỗi tiêu chuẩn</i>Stream, được sử dụng để viết đầu ra chẩn đoán. Tại chương trình khởi động, luồng không được đệm hoàn toàn.</div> <p>Những gì cấu thành một thiết bị tương tác được xác định là thực hiện.</p>
+<p>Những macro này được mở rộng thành các biểu thức<code><a href="http://en.cppreference.com/w/cpp/io/c/FILE"><span class="kw1881">Điều đó cho tất cả<span class="me2">TÀI LIỆU</span></span></a><span class="sy2">*</span></code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Mặc dù không được ủy quyền bởi POSIX, Công ước UNIX là<code>stdin</code>Và<code>stdout</code>được dây đệm nếu được liên kết với thiết bị đầu cuối và<code>stderr</code>không bị ảnh hưởng.</p>
+<p>Những macro này có thể được mở rộng thành lvalues ​​có thể sửa đổi. Nếu bất kỳ trong số này<code><a href="http://en.cppreference.com/w/cpp/io/c/FILE"><span class="kw1881">Điều đó cho tất cả<span class="me2">TÀI LIỆU</span></span></a><span class="sy2">*</span></code>Lvalue được sửa đổi, các hoạt động tiếp theo trên luồng tương ứng dẫn đến hành vi không xác định hoặc không xác định.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Ví dụ này cho thấy một chức năng tương tự như<code><a href="fprintf" title="cpp/io/c/fprintf">std::printf</a></code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Khái niệm&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cstdio&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../cin" title="cpp/io/cin"> <span class="t-lines"><span>cin</span><span>wcin</span></span></a></div> </td> <td>Đọc từ luồng đầu vào C tiêu chuẩn<code>stdin</code><br/><span class="t-mark">(Đối tượng toàn cầu)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../cout" title="cpp/io/cout"> <span class="t-lines"><span>cout</span><span>wcout</span></span></a></div> </td> <td>ghi vào luồng đầu ra C tiêu chuẩn<code>stdout</code><br/><span class="t-mark">(Đối tượng toàn cầu)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../cerr" title="cpp/io/cerr"> <span class="t-lines"><span>cerr</span><span>wcerr</span></span></a></div> </td> <td>ghi vào luồng lỗi C tiêu chuẩn<code>stderr</code>, không bị ảnh hưởng<br/><span class="t-mark">(Đối tượng toàn cầu)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../clog" title="cpp/io/clog"> <span class="t-lines"><span>làm tắc nghẽn</span><span>wclog</span></span></a></div> </td> <td>ghi vào luồng lỗi C tiêu chuẩn<code>stderr</code><br/><span class="t-mark">(Đối tượng toàn cầu)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fprintf" title="cpp/io/c/fprintf"> <span class="t-lines"><span>printf</span><span>fprintf</span><span>Sprintf</span><span>snprintf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đầu ra được định dạng in<code>stdout</code>, một luồng tệp hoặc bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="file" title="cpp/io/c/FILE"> <span class="t-lines"><span>TÀI LIỆU</span></span></a></div> </td> <td>Loại đối tượng, có khả năng chứa tất cả thông tin cần thiết để kiểm soát luồng I/O C<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/std_streams" title="c/io/std streams">C documentation</a></span>vì<code>stdin, stdout, stderr</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/std_streams">https://en.cppreference.com/w/cpp/io/c/std_streams</a>
+</p>
+</div>

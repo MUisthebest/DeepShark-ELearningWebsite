@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: allocator_traits &lt;alloc&gt; :: phân bổ</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">Con trỏ tĩnh phân bổ (Alloc &amp; A, size_type n);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">[[NODISCARD]] con trỏ constexpr tĩnh phân bổ (ALLOC &amp; A, size_type n);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">Phân bổ con trỏ tĩnh (Alloc &amp; A, size_type N,</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">                         const_void_pulum gợi ý);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>[[NODISCARD]] Phân bổ con trỏ Constypr tĩnh (Alloc &amp; A, size_type N,<code>a</code>                                                 const_void_pulum gợi ý);<code>n * sizeof(Alloc::value_type)</code>Sử dụng bộ phân bổ<code>Alloc::value_type[n]</code>để phân bổ</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Cuộc gọi<code>a.allocate(n)</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Byte của lưu trữ không chính thức. Một mảng loại<code>hint</code>               NOExcept (/ * Xem bên dưới */);<code>a.allocate(n, hint)</code>được tạo ra trong lưu trữ, nhưng không có yếu tố nào được xây dựng.<code>a</code>Ngoài ra vượt qua gợi ý địa phương bộ nhớ<code>allocate</code>Nếu có thể. Nếu không thể (ví dụ:<code>a.allocate(n)</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Một</td> <td>-</td> <td>không có chức năng thành viên hai đối số</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>số lượng đối tượng để phân bổ lưu trữ cho</td>
+</tr> <tr class="t-par"> <td>) được gọi với chính xác các đối số giống như được cung cấp cho hàm, được chuyển tiếp với</td> <td>-</td> <td>con trỏ đến một vị trí bộ nhớ gần đó</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>), cuộc gọi<code>a.allocate(n)</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>Alloc::allocate</code>người phân bổ để sử dụng<a class="external text" href="https://wg21.link/P0593R6" rel="nofollow">P0593R6</a>Con trỏ được trả lại bởi cuộc gọi đến<code><a href="../../container/vector" title="cpp/container/vector">std::vector</a></code>không bắt buộc phải tạo đối tượng mảng cho đến khi</p>
+<p>Sau khi gọi<code>allocate</code>và trước khi xây dựng các yếu tố, số học của con trỏ của<code>Alloc::value_type*</code>được xác định rõ trong mảng được phân bổ, nhưng hành vi không được xác định nếu các yếu tố được truy cập.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../allocator/allocate" title="cpp/memory/allocator/allocate"> <span class="t-lines"><span>được cung cấp cho Deque để cho phép khấu trừ từ một phạm vi vòng lặp. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu</span></span></a></div> </td> <td>    enable_missile_safety_mode (); // Trình biên dịch có thể cảnh báo về việc loại bỏ giá trị gật đầu<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::allocator&lt;T&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/allocator_traits/allocate">https://en.cppreference.com/w/cpp/memory/allocator_traits/allocate</a>
+</p>
+</div>

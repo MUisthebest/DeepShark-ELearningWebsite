@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Bỏ qua</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/tuple" title="cpp/header/tuple">&lt;tuple&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">const /*không xác định* / bỏ qua;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Inline Consexpr /*không xác định* / bỏ qua;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Một đối tượng thuộc loại không xác định sao cho bất kỳ giá trị nào có thể được gán cho nó mà không có hiệu lực. Dự định sử dụng với<code><a href="tie" title="cpp/utility/tuple/tie">std::tie</a></code>Khi giải nén a<code><a href="../tuple" title="cpp/utility/tuple">std::tuple</a></code>, như một người giữ chỗ cho các đối số không được sử dụng.</p>
+<p>Trong khi hành vi của<code>std::ignore</code>bên ngoài<code><a href="tie" title="cpp/utility/tuple/tie">std::tie</a></code>không được chỉ định chính thức, một số hướng dẫn mã khuyến nghị sử dụng<code>std::ignore</code>để tránh cảnh báo từ các giá trị trả lại không sử dụng của<code>[[<a href="../../language/attributes/nodiscard" title="cpp/language/attributes/nodiscard">nodiscard</a>]]</code>chức năng.</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">chi tiết không gian tên {</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <ol>
+<li>Thể hiện việc sử dụng<code>std::ignore</code>struct bỏ qua_t<code>[[<a href="../../language/attributes/nodiscard" title="cpp/language/attributes/nodiscard">nodiscard</a>]]</code>    skip_existing = / * không xác định * /,</li>
+<li>{<code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span>iterator, <span class="kw4">bool</span><span class="sy1">&lt;</span></code>| là giữa<code>std::set::<a href="../../container/set/insert" title="cpp/container/set/insert">insert</a>()</code>    Mẫu &lt;Typename T&gt;</li>
+</ol> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    Constexpr // Yêu cầu kể từ C ++ 14</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    Toán tử void = (T &amp;&amp;) const NoExcept {}</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="tie" title="cpp/utility/tuple/tie"> <span class="t-lines"><span>cà vạt</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tạo ra a<code><a href="../tuple" title="cpp/utility/tuple">tuple</a></code>của các tài liệu tham khảo lvalue hoặc giải nén một bộ phận vào các đối tượng riêng lẻ<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/tuple/ignore">https://en.cppreference.com/w/cpp/utility/tuple/ignore</a>
+</p>
+</div>

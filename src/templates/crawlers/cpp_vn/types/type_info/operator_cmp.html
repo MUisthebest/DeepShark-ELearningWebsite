@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: type_info :: toán tử ==, std :: type_info :: toán tử! =</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="4">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">toán tử bool == (const type_info &amp; rhs) const;</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx23"> <td> <pre data-language="cpp">toán tử bool == (const type_info &amp; rhs) const noexcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Toán tử bool constexpr == (const type_info &amp; rhs) const noexcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">toán tử bool! = (const type_info &amp; rhs) const;</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">toán tử bool! = (const type_info &amp; rhs) const noexcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> </table> <p>Kiểm tra xem các đối tượng đề cập đến các loại tương tự.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>đối tượng thông tin loại khác để so sánh với</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu hoạt động so sánh đúng,<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_constexpr_typeinfo" title="cpp/feature test"><code>__cpp_lib_constexpr_typeinfo</code></a></td> <td><span class="nu0">Chỉ giải thích*</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Constexpr cho<code>std::type_info::operator==</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;chuỗi&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="before" title="cpp/types/type info/before"> <span class="t-lines"><span>Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,</span></span></a></div> </td> <td>Kiểm tra xem loại được giới thiệu có đi trước loại khác của loại khác không<code>type_info</code><br/>Đối tượng theo thứ tự được xác định thực hiện, tức là đặt hàng các loại được giới thiệu<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/type_info/operator_cmp">https://en.cppreference.com/w/cpp/types/type_info/operator_cmp</a>
+</p>
+</div>

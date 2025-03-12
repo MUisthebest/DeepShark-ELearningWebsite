@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">std :: copy_backward</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/algorithm" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class bidirit1, lớp bidirit2&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Bidirit2 copy_backward (bidirit1 đầu tiên, bidirit1 cuối cùng, bidirit2 d_last);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;class bidirit1, lớp bidirit2&gt;<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>Consexpr bidirit2 copy_backward (bidirit1 đầu tiên, bidirit1 cuối cùng, bidirit2 d_last);<code>d_last</code>Sao chép các yếu tố từ phạm vi</p>
+<p>đến một phạm vi khác kết thúc tại<code>d_last</code>. Các yếu tố được sao chép theo thứ tự ngược lại (phần tử cuối cùng được sao chép trước), nhưng thứ tự tương đối của chúng được bảo tồn.<code>(</code><code>first</code><code>, </code><code>last</code><code>)</code>.<code><a href="copy" title="cpp/algorithm/copy">std::copy</a></code>Hành vi không xác định nếu<code>std::copy_backward</code>là bên trong</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>Phải được sử dụng thay vì</td>
+</tr> <tr class="t-par"> <td>Trong trường hợp đó.</td> <td>-</td> <td>phạm vi của các yếu tố để sao chép từ</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>BidirIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>d_last</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>không được phép<code>last - first</code>Phần cuối của phạm vi đích</p>
+<h3 id="Notes">Ghi chú</h3> <p>Chính xác \ (\ scriptsize n \) n ứng dụng của vị ngữ<code><a href="copy" title="cpp/algorithm/copy">std::copy</a></code>, và nhiều nhất là các bài tập NN.<code>std::copy_backward</code>Cho quá tải với một</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Tererator đến phần tử cuối cùng được sao chép.</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">bài tập.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Mẫu &lt;class bidirit1, lớp bidirit2&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1206" rel="nofollow">LWG 1206</a> </td> <td>C ++ 98</td> <td>BIDIRIT2 COPY_BACKWARD (BIDIRIT1 FIRST, BIDIRIT1 LAST, BIDIRIT2 D_LAST)<code>d_last == last</code><br/>{<code>d_last == first</code> </td> <td>    while (đầu tiên! = cuối cùng)<br/>        *(-d_last) = *(-cuối cùng);</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="copy" title="cpp/algorithm/copy"> <span class="t-lines"><span>Được xác định trong tiêu đề</span><span>sao chép</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ranges/copy_backward" title="cpp/algorithm/ranges/copy backward"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/copy_backward">https://en.cppreference.com/w/cpp/algorithm/copy_backward</a>
+</p>
+</div>

@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: InflicitLifetImetype</h1> <p>Lưu ý: Tiêu chuẩn không xác định yêu cầu được đặt tên với tên này. Đây là một loại loại được xác định bởi ngôn ngữ cốt lõi. Nó được bao gồm ở đây như một yêu cầu được đặt tên chỉ cho tính nhất quán.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Các loại sau được gọi chung<i>Các loại thời gian hiện tại</i>:</p>
+<ul>
+<li> <a href="scalartype" title="cpp/named req/ScalarType">scalar types</a> </li>
+<li> <a href="../language/classes#Implicit-lifetime_class" title="cpp/language/classes">implicit-lifetime class types</a> </li>
+<li>loại mảng</li>
+<li>Phiên bản đủ điều kiện CV của các loại này</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Một số hoạt động có thể<a href="../language/object#Object_creation" title="cpp/language/object">implicitly create</a>và bắt đầu<a href="../language/lifetime" title="cpp/language/lifetime">lifetime</a>đối tượng của các loại thời gian bán thời gian ngầm, nếu làm như vậy sẽ ngăn chặn<a href="../language/ub" title="cpp/language/ub">undefined behavior</a>. Tuy nhiên, các hoạt động như vậy không bắt đầu thời gian sống của các tiểu mục của các đối tượng như vậy không thuộc các loại thời gian bán thời gian ngầm.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2489.html" rel="nofollow">CWG 2489</a> </td> <td>C ++ 20</td> <td>một hoạt động bắt đầu cuộc đời của một<span class="kw4">char</span>mảng hoàn toàn tạo ra các đối tượng</td> <td>nó không</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/ImplicitLifetimeType">https://en.cppreference.com/w/cpp/named_req/ImplicitLifetimeType</a>
+</p>
+</div>

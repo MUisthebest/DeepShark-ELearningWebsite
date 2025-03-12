@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: LIÊN QUAN :: String_View_Literals :: Toán tử "" SV</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/string_view" title="cpp/header/string view">&lt;string_view&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">ConstExPR STD :: String_View</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">    toán tử "" sv (const char* str, std :: size_t len) noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">ConstExPR STD :: U8String_View</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">    toán tử "" sv (const char8_t* str, std :: size_t len) noexcept;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">ConstExPR STD :: U16String_View</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>    toán tử "" sv (const char16_t* str, std :: size_t len) noexcept;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class execPolicy,<code><a href="http://en.cppreference.com/w/cpp/string/basic_string_view"><span class="kw1251">Điều đó cho tất cả<span class="me2">    -&gt; zoned_time &lt;std :: common_type_t &lt;thời gian, std :: chrono :: giây&gt;, / * xem bên dưới * /&gt;;</span></span></a><span class="br0">danh tính</span>str, len<span class="br0">{</span></code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;Class execPolicy,<code><a href="http://en.cppreference.com/w/cpp/string/basic_string_view"><span class="kw3264">Điều đó cho tất cả<span class="me2">ConstExPR STD :: U32String_View</span></span></a><span class="br0">danh tính</span>str, len<span class="br0">{</span></code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;Class execPolicy,<code><a href="http://en.cppreference.com/w/cpp/string/basic_string_view"><span class="kw1255">Điều đó cho tất cả<span class="me2">    toán tử "" sv (const char32_t* str, std :: size_t len) noexcept;</span></span></a><span class="br0">danh tính</span>str, len<span class="br0">{</span></code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mẫu &lt;Class execPolicy,<code><a href="http://en.cppreference.com/w/cpp/string/basic_string_view"><span class="kw1257">Điều đó cho tất cả<span class="me2">Constexpr std :: wString_view</span></span></a><span class="br0">danh tính</span>str, len<span class="br0">{</span></code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Mẫu &lt;Class execPolicy,<code><a href="http://en.cppreference.com/w/cpp/string/basic_string_view"><span class="kw1253">Điều đó cho tất cả<span class="me2">    toán tử "" sv (const wchar_t* str, std :: size_t len) noexcept;</span></span></a><span class="br0">danh tính</span>str, len<span class="br0">{</span></code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>con trỏ đến đầu của mảng ký tự thô theo nghĩa đen</td>
+</tr> <tr class="t-par"> <td>Len</td> <td>-</td> <td>chiều dài của mảng ký tự thô theo nghĩa đen</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Các<code><a href="../basic_string_view" title="cpp/string/basic string view">std::basic_string_view</a></code>giờ</p>
+<h3 id="Notes">Ghi chú</h3> <p>với phần thực tế và phần tưởng tượng<code>std::literals::string_view_literals</code>    trả lại std :: chrono :: day (d);<code>literals</code>Và<code>string_view_literals</code>Tạo thành một chế độ xem chuỗi của một ký tự theo nghĩa đen.</p>
+<ul>
+<li> <code>using namespace std::literals</code>Thì</li>
+<li> <code>using namespace std::string_view_literals</code>, hoặc</li>
+<li> <code>using namespace std::literals::string_view_literals</code>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">U8String_View</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">U16String_View</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="basic_string_view" title="cpp/string/basic string view/basic string view"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Nếu a<code>basic_string_view</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href='../basic_string/operator""s' title='cpp/string/basic string/operator""s'> <span class="t-lines"><span>toán tử "" s</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C ++ 14)</span></span></span></div> </td> <td>Chuyển đổi một mảng ký tự theo nghĩa đen thành<code>basic_string</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string_view/operator%22%22sv">https://en.cppreference.com/w/cpp/string/basic_string_view/operator%22%22sv</a>
+</p>
+</div>

@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">Hướng dẫn khấu trừ cho<code>std::span</code>
+</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/span" title="cpp/header/span">&lt;span&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class it, lớp Chứng thực&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">span (nó, chứng thực) -&gt; span &lt;std :: remove_reference_t &lt;std :: iter_reference_t &lt;it &gt;&gt;&gt;;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class T, std :: size_t n&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">span (t (&amp;) [n]) -&gt; span &lt;t, n&gt;;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class T, std :: size_t n&gt;</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>ưu tiên_queue (comp, container, alloc)<a href="../../language/class_template_argument_deduction" title="cpp/language/class template argument deduction">deduction guides</a>Đối với tất cả các loại con trỏ. Những chuyên môn này có bố cục tiêu chuẩn<code>span</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>span (std :: mảng &lt;t, n&gt; &amp;) -&gt; span &lt;t, n&gt;;<code>It</code>Phần cuối của phạm vi ban đầu<a href="../../iterator/contiguous_iterator" title="cpp/iterator/contiguous iterator"><code>contiguous_iterator</code></a>
+</div> <div class="t-li1">
+<span class="t-li">    const std :: chrono :: giây* offset;     // Chỉ giải thích</span>Mẫu &lt;class T, std :: size_t n&gt;<code><a href="../array" title="cpp/container/array">std::array</a></code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>span (const std :: mảng &lt;t, n&gt; &amp;) -&gt; span &lt;const t, n&gt;;<code>R</code>Phần cuối của phạm vi ban đầu<a href="../../ranges/contiguous_range" title="cpp/ranges/contiguous range"><code>contiguous_range</code></a>
+</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class R&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">span (r &amp;&amp;) -&gt; span &lt;std :: remove_reference_t &lt;std :: ranges :: range_reference_t &lt;r &gt;&gt;&gt;;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/span/deduction_guides">https://en.cppreference.com/w/cpp/container/span/deduction_guides</a>
+</p>
+</div>

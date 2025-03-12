@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">Mẫu thành viên</h1> <p>Khai báo mẫu (<a href="class_template" title="cpp/language/class template">class</a>Thì<a href="function_template" title="cpp/language/function template">function</a><span class="t-rev-inl t-since-cxx14"><span>, Và<a href="variable_template" title="cpp/language/variable template">variables</a></span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>) có thể xuất hiện bên trong một<a href="class" title="cpp/language/class">member specification</a>của bất kỳ lớp, cấu trúc hoặc liên minh nào không<a href="class#Local_classes" title="cpp/language/class">local classes</a>.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;THERTHERM&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <p>#include &lt;chuỗi&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Vector&gt;</pre></div> <p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Máy in cấu trúc</pre></div> <h3 id="Member_function_templates">{</h3> <p><a href="destructor" title="cpp/language/destructor">Destructors</a>Và<a href="copy_constructor" title="cpp/language/copy constructor">copy constructors</a>    // functor chung<a href="copy_constructor#Implicitly-declared_copy_constructor" title="cpp/language/copy constructor">implicitly-declared copy constructor</a>fileSystem_error (const fileSystem_error &amp; other) noExcept;</p>
+<p>    STD :: Ostream &amp; OS;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    Máy in (STD :: Ostream &amp; OS): OS (OS) {}</pre></div> <p>    Mẫu &lt;Typename T&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    void Toán tử () (const t &amp; obj) {os &lt;&lt; obj &lt;&lt; ''; } // Mẫu thành viên</pre></div> <p><br/>};<i>tương đương</i> <a href="function_template#Function_template_overloading" title="cpp/language/function template">function template overloading</a>int main ()</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <h3 id="Conversion_function_templates">    STD :: Vector &lt;Int&gt; V {1,2,3};</h3> <p>Một người dùng định nghĩa<a href="cast_operator" title="cpp/language/cast operator">conversion function</a>    std :: for_each (v.begin (), v.end (), máy in (std :: cout));</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    std :: chuỗi s {"abc"};</pre></div> <p>Là người phân bổ.<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>    std :: phạm vi :: for_each (s, máy in (std :: cout));<a href="lookup" title="cpp/language/lookup">name lookup</a>}<a href="template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>1 2 3 A B C</p>
+<p>Chuyên môn một phần của mẫu thành viên có thể xuất hiện cả ở phạm vi lớp học và khi kèm theo phạm vi không gian tên. Các chuyên ngành rõ ràng có thể xuất hiện trong bất kỳ phạm vi nào trong đó mẫu chính có thể xuất hiện.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <p>Cấu trúc a</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <h3 id="Member_variable_templates">    mẫu &lt;class t&gt; struct b;        // Mẫu thành viên chính</h3> <p>    mẫu &lt;class t&gt; struct b &lt;t*&gt; {}; // OK: Chuyên ngành một phần<a href="variable_template" title="cpp/language/variable template">variable templates</a> </p>
+</td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1878.html" rel="nofollow">CWG 1878</a> </td> <td>C ++ 14</td> <td>// Template &lt;&gt; struct b &lt;int*&gt; {};      // OK qua CWG 727: Chuyên ngành đầy đủ</td> <td>};</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/member_template">https://en.cppreference.com/w/cpp/language/member_template</a>
+</p>
+</div>

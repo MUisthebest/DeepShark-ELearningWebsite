@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: wString_convert &lt;codecvt, elem, wide_alloc, byte_alloc&gt; :: đã chuyển đổi</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: size_t đã chuyển đổi () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả về số lượng ký tự nguồn được xử lý bởi gần đây nhất<code><a href="from_bytes" title="cpp/locale/wstring convert/from bytes">from_bytes()</a></code>hoặc<code><a href="to_bytes" title="cpp/locale/wstring convert/to bytes">to_bytes()</a></code>.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Số lượng ký tự được tiêu thụ bởi hoạt động chuyển đổi gần đây nhất.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;codecvt&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2174" rel="nofollow">LWG 2174</a> </td> <td>C ++ 11</td> <td>
+<code>wstring_convert::converted</code>#include &lt;Locale&gt;</td> <td>Thực hiện quá tải</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="to_bytes" title="cpp/locale/wstring convert/to bytes"> <span class="t-lines"><span>thực hiện chuyển đổi giữa chuỗi byte</span></span></a></div> </td> <td>và chuỗi rộng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="from_bytes" title="cpp/locale/wstring convert/from bytes"> <span class="t-lines"><span>    lớp byte_alloc = std :: allocator &lt;par&gt;</span></span></a></div> </td> <td>&gt; Lớp WSTRING_CONVERT;<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/wstring_convert/converted">https://en.cppreference.com/w/cpp/locale/wstring_convert/converted</a>
+</p>
+</div>

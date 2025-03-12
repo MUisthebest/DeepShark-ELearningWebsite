@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iOS_Base :: Xalloc</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">tĩnh int xalloc ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả về giá trị chỉ mục duy nhất (toàn chương trình) có thể được sử dụng để truy cập một<code>long</code>Và một<code>void*</code>các yếu tố trong kho lưu trữ riêng của<code>std::ios_base</code>. Sau khi xây dựng và kiểm tra đối tượng Sentry, có thể bỏ qua khoảng trắng hàng đầu, trích xuất một<code><a href="iword" title="cpp/io/ios base/iword">iword()</a></code>Và<code><a href="pword" title="cpp/io/ios base/pword">pword()</a></code>. Cuộc gọi đến<code>xalloc</code>không phân bổ bộ nhớ.</p>
+<p><span class="t-rev-inl t-since-cxx14"><span>Hàm này là an toàn cho luồng; Truy cập đồng thời bởi nhiều luồng không dẫn đến một cuộc đua dữ liệu.</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span></p>
+<p>Tăng hiệu quả một thành viên dữ liệu tĩnh riêng của<code>std::ios_base</code>, như thể bằng cách thực hiện<code>return index++;</code>Sử dụng chức năng nhị phân đã cho<code>index</code>là tên của thành viên tĩnh đó<span class="t-rev-inl t-since-cxx14"><span>(có thể là<code><a href="../../atomic/atomic" title="cpp/atomic/atomic">std::atomic</a></code>Để hỗ trợ truy cập đồng thời bằng nhiều luồng hoặc đồng bộ hóa)</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span></p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Số nguyên duy nhất để sử dụng làm chỉ mục PWord/iWord.</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example">
+<p>Sử dụng lưu trữ pword lớp cơ sở để nhận dạng loại thời gian chạy của các đối tượng luồng dẫn xuất.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="pword" title="cpp/io/ios base/pword"> <span class="t-lines"><span>iWord</span></span></a></div> </td> <td>thay đổi kích thước lưu trữ riêng nếu cần thiết và truy cập vào<span class="kw4">Vô hiệu</span><span class="sy2">*</span>phần tử tại chỉ mục đã cho<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="iword" title="cpp/io/ios base/iword"> <span class="t-lines"><span>Mảng mở rộng nội bộ</span></span></a></div> </td> <td>thay đổi kích thước lưu trữ riêng nếu cần thiết và truy cập vào<span class="kw4">dài</span>phần tử tại chỉ mục đã cho<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ios_base/xalloc">https://en.cppreference.com/w/cpp/io/ios_base/xalloc</a>
+</p>
+</div>

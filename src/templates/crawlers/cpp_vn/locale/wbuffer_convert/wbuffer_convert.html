@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: wbuffer_convert &lt;codecvt, elem, tr&gt; :: wbuffer_convert</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">wbuffer_convert (): wbuffer_convert (nullptr) {}</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Wbuffer_convert (STD :: Streambuf* bytebuf,</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">                          Codecvt* pcvt = new Codecvt,</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định.</div> <div class="t-li1">
+<span class="t-li">2)</span>được bảo vệ:<code>wbuffer_convert</code>                          state_type state = state_type ());<code>codecvt</code>wbuffer_convert (const std :: wbuffer_convert &amp;) = xóa;</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>đối tượng với luồng byte bên dưới được chỉ định, được chỉ định<code>wbuffer_convert</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="../../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Mặt và trạng thái chuyển đổi ban đầu được chỉ định (tất cả các tham số là tùy chọn).</td> <td>-</td> <td>Trình xây dựng bản sao bị xóa,</td>
+</tr> <tr class="t-par"> <td>bytebuf</td> <td>-</td> <td>Con trỏ tới STD :: Streambuf để làm luồng ký tự hẹp cơ bản<code><a href="../codecvt" title="cpp/locale/codecvt">std::codecvt</a></code>PCVT</td>
+</tr> <tr class="t-par"> <td>Loại đại diện cho trạng thái thay đổi</td> <td>-</td> <td>con trỏ đến độc lập (không được quản lý bởi một địa phương)</td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0935R0" rel="nofollow">P0935R0</a> </td> <td>C ++ 11</td> <td>Xây dựng bộ điều hợp với nội dung của</td> <td>3,5,12)</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">mặt. Hành vi không được xác định nếu con trỏ này là null</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Giá trị ban đầu của trạng thái chuyển đổi ký tự</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/wbuffer_convert/wbuffer_convert">https://en.cppreference.com/w/cpp/locale/wbuffer_convert/wbuffer_convert</a>
+</p>
+</div>

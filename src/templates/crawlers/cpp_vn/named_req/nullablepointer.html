@@ -1,0 +1,58 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: nullablepulum<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Chỉ định rằng loại là một đối tượng giống như con trỏ có thể được so sánh với<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>Đối tượng.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Loại phải đáp ứng tất cả các yêu cầu sau:</p>
+<ul>
+<li> <a href="equalitycomparable" title="cpp/named req/EqualityComparable">EqualityComparable</a> </li>
+<li> <a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a> </li>
+<li> <a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a> </li>
+<li> <a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <ul><li>lvalues ​​của loại là<a href="swappable" title="cpp/named req/Swappable">Swappable</a> </li></ul> </td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <ul><li> <a href="swappable" title="cpp/named req/Swappable">Swappable</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <ul><li> <a href="destructible" title="cpp/named req/Destructible">Destructible</a> </li></ul> <p>Ngoài ra, một đối tượng được cung cấp giá trị của loại phải tạo ra giá trị null của loại đó. Giá trị null này chỉ tương đương với chính nó. Khởi tạo mặc định của loại có thể có giá trị không xác định.</p>
+<p>Một đối tượng của loại phải là<a href="../language/implicit_conversion#Contextual_conversions" title="cpp/language/implicit conversion">contextually convertible</a>ĐẾN<code>bool</code>. Hiệu quả của việc chuyển đổi này trả về<code>false</code>Nếu giá trị tương đương với giá trị null của nó và<code>true</code>Nếu đối số đầu tiên là</p>
+<p>Không có hoạt động nào mà loại này thực hiện có thể ném các ngoại lệ.</p>
+<p>Loại phải đáp ứng các biểu thức bổ sung sau, được đưa ra hai giá trị<code>p</code>Và<code>q</code>đó là loại, và<code>np</code>là một giá trị của<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>loại (có thể<code>const</code>đạt tiêu chuẩn):</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Sự biểu lộ</th> <th>Các hiệu ứng</th>
+</tr> <tr class="t-dsc"> <td> <code>Type p(np);</code> <p><code>Type p = np;</code></p>
+</td> <td>Sau đó,<code>p</code>Mẫu &lt;class T, class so sánh&gt;<code>nullptr</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>Type(np)</code> </td> <td>Một đối tượng tạm thời tương đương với<code>nullptr</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>p = np</code> </td> <td>Phải trả lại a<code>Type&amp;</code>và sau đó,<code>p</code>Mẫu &lt;class T, class so sánh&gt;<code>nullptr</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>p != q</code> </td> <td> <br/> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <p>Phải trả về một giá trị đó là<a href="../language/implicit_conversion#Contextual_conversions" title="cpp/language/implicit conversion">contextually convertible</a>ĐẾN<code>bool</code></p>
+</td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <p><code>decltype(p != q)</code>Range constexpr :: mượn_subrange_t &lt;r&gt;<a href="../concepts/boolean-testable" title="cpp/concepts/boolean-testable"><code>boolean-testable</code></a></p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>Hiệu ứng là<code>!(p == q)</code></p>
+</td>
+</tr> <tr class="t-dsc"> <td> <code>p == np</code> <p><code>np == p</code></p>
+</td> <td> <br/> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <p>Phải trả về một giá trị đó là<a href="../language/implicit_conversion#Contextual_conversions" title="cpp/language/implicit conversion">contextually convertible</a>ĐẾN<code>bool</code></p>
+</td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <p><code>decltype(p == np)</code>Và<code>decltype(np == p)</code>Mỗi mô hình<a href="../concepts/boolean-testable" title="cpp/concepts/boolean-testable"><code>boolean-testable</code></a></p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>Hiệu ứng là<code>(p == Type())</code></p>
+</td>
+</tr> <tr class="t-dsc"> <td> <code>p != np</code> <p><code>np != p</code></p>
+</td> <td> <br/> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <p>Phải trả về một giá trị đó là<a href="../language/implicit_conversion#Contextual_conversions" title="cpp/language/implicit conversion">contextually convertible</a>ĐẾN<code>bool</code></p>
+</td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <p><code>decltype(p != np)</code>Và<code>decltype(np != p)</code>Mỗi mô hình<a href="../concepts/boolean-testable" title="cpp/concepts/boolean-testable"><code>boolean-testable</code></a></p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>Hiệu ứng là<code>!(p == np)</code></p>
+</td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Lưu ý rằng việc phá hủy (<code>operator*</code>hoặc<code>operator-&gt;</code>) không cần thiết của một loại nullablepulum. Một loại tối giản đáp ứng các yêu cầu này là</p>
+<div class="cpp source-cpp"><pre data-language="cpp">xử lý lớp học</pre></div> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>{</p>
+<ul>
+<li>&lt;std :: Flat_map&gt;<code>X::pointer</code>Thì<code>X::const_pointer</code>Thì<code>X::void_pointer</code>Và<code>X::const_void_pointer</code>    int id = 0;<a href="allocator" title="cpp/named req/Allocator">Allocator</a>kiểu<code>X</code>.</li>
+<li>mang lại nhân vật được lưu trữ.<code>X::pointer</code>của<code><a href="../memory/unique_ptr" title="cpp/memory/unique ptr">std::unique_ptr</a></code>.</li>
+<li>phạm vi của các yếu tố để tạo<code><a href="../error/exception_ptr" title="cpp/error/exception ptr">std::exception_ptr</a></code>.</li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/NullablePointer">https://en.cppreference.com/w/cpp/named_req/NullablePointer</a>
+</p>
+</div>

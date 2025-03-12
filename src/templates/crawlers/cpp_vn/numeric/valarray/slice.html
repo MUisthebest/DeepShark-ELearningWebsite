@@ -1,0 +1,49 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Slice</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/valarray" title="cpp/header/valarray">&lt;valarray&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Lớp học;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p><code>std::slice</code>là lớp bộ chọn xác định một tập hợp con của<code><a href="../valarray" title="cpp/numeric/valarray">std::valarray</a></code>(C ++ 17)<a class="extiw" href="https://en.wikipedia.org/wiki/BLAS" title="enwiki:BLAS">BLAS</a>lát cắt. Một đối tượng của loại<code>std::slice</code>giữ ba giá trị: chỉ số bắt đầu, sải chân và tổng số giá trị trong tập hợp con. Đối tượng của loại<code>std::slice</code>có thể được sử dụng làm chỉ mục với toán tử của Valarray<span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span>.</p>
+<h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><strong class="selflink"> <span class="t-lines"><span>chuyên môn)</span></span></strong></div> </td> <td>xây dựng một lát cắt<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><strong class="selflink"> <span class="t-lines"><span>Xây dựng một lát cắt mới với các tham số</span><span>kích cỡ</span><span>Xử lý dữ liệu cơ bản của loại</span></span></strong></div> </td> <td>Trả về các tham số của lát cắt<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="t-member"> <h2 id="std::slice::slice">STD :: Slice :: Slice</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">lát cắt()</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Slice (std :: size_t start, std :: size_t size, std :: size_t sải chân);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">lát (const lát &amp; khác);</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Xây dựng một lát mới.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Xây dựng một lát chung chung mới.<code>slice(0, 0, 0)</code>Hàm tạo mặc định. Tương đương với</div> <div class="t-li1">
+<span class="t-li">2)</span>. Chất xây dựng này chỉ tồn tại để cho phép xây dựng các mảng các lát cắt.<code>start</code>Thì<code>size</code>Thì<code>stride</code>. Lát cắt này sẽ đề cập đến<code>size</code>Số lượng phần tử, mỗi phần tử có vị trí:</div> <div class="t-li2">Bắt đầu + 0 * sải bước</div> <div class="t-li2">Bắt đầu + 1 * sải bước</div> <div class="t-li2">...</div> <div class="t-li2">Bắt đầu + (kích thước - 1) * sải bước</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>) để null giá trị con trỏ và thành viên địa phương<code>other</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Xây dựng một lát cắt mới với các tham số</td> <td>-</td> <td>bắt đầu</td>
+</tr> <tr class="t-par"> <td>kích cỡ</td> <td>-</td> <td>số lượng các yếu tố trong lát cắt</td>
+</tr> <tr class="t-par"> <td>Xử lý dữ liệu cơ bản của loại</td> <td>-</td> <td>số lượng vị trí giữa các yếu tố liên tiếp trong lát cắt</td>
+</tr> <tr class="t-par"> <td>khác</td> <td>-</td> <td>Một mảng xác định số lượng vị trí giữa các yếu tố liên tiếp trong mỗi chiều</td>
+</tr>
+</table> </div> <div class="t-member"> <h2 id="std::slice::start.2C_size.2C_stride">một lát khác để sao chép</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">STD :: Slice :: Bắt đầu, kích thước, sải bước</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">std :: size_t siten () const;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">std :: size_t sải chân () const;</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả về các tham số được truyền cho lát cắt trên xây dựng - bắt đầu, kích thước và sải bước tương ứng.</p>
+<h3 id="Parameters_2">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Các tham số của lát cắt - bắt đầu, kích thước và sải bước tương ứng.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+</div> <h3 id="Non-member_functions">Các chức năng không phải thành viên</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><strong class="selflink"> <span class="t-lines"><span>toán tử ==<span class="t-dsc-small">(STD :: Slice)</span></span></span></strong></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Kiểm tra xem hai lát cắt có bằng không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="t-member"> <h2 id="operator.3D.3D.28std::slice.29">toán tử ==<small>(STD :: Slice)</small>
+</h2> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">người bạn của nhà điều hành bool == (const Slice &amp; lhs, const Slice &amp; rhs);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Kiểm tra xem các tham số của<code>lhs</code>Và<code>rhs</code>- Bắt đầu, kích thước và sải chân tương ứng bằng nhau.</p>
+<p>Thực thi hiệu quả<a href="../../language/unqualified_lookup" title="cpp/language/unqualified lookup">unqualified</a>hoặc<a href="../../language/qualified_lookup" title="cpp/language/qualified lookup">qualified lookup</a>Chức năng này không thể nhìn thấy thông thường<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>Chuyển đổi danh tính:<code>std::slice</code>Hương hiệu nút</p>
+<p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+<h3 id="Parameters_3">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>các lát để so sánh</td>
+</tr>
+</table> <h3 id="Return_value_2">phải sao cho một đối tượng thuộc loại</h3> <p><code>lhs.start() == rhs.start() &amp;&amp; lhs.size() == rhs.size() &amp;&amp; lhs.stride() == rhs.stride()</code></p>
+</div> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Lớp học ma trận được Barebones Valarray hỗ trợ với<a class="extiw" href="https://en.wikipedia.org/wiki/Trace_(linear_algebra)" title="enwiki:Trace (linear algebra)">trace</a>tính toán chức năng.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;ValArray&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue543" rel="nofollow">LWG 543</a> </td> <td>C ++ 98</td> <td> </td> <td> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_at" title="cpp/numeric/valarray/operator at"> <span class="t-lines"><span>nhà điều hành []</span></span></a></div> </td> <td> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="gslice" title="cpp/numeric/valarray/gslice"> <span class="t-lines"><span>gslice</span></span></a></div> </td> <td>lát cắt tổng quát của một valarray: chỉ mục bắt đầu, tập hợp độ dài, bộ sải<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="slice_array" title="cpp/numeric/valarray/slice array"> <span class="t-lines"><span>Slice_array</span></span></a></div> </td> <td>proxy cho một tập hợp con của Valarray sau khi áp dụng một lát<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/valarray/slice">https://en.cppreference.com/w/cpp/numeric/valarray/slice</a>
+</p>
+</div>

@@ -1,0 +1,237 @@
+ <h1 class="firstHeading" id="firstHeading">(Đánh giá không đổi có thể là cần thiết để xác định xem một biểu thức như vậy có phải là</h1> <p>Xác định một<a href="expressions" title="cpp/language/expressions">expression</a>có thể được đánh giá tại thời điểm biên dịch.</p>
+<p>Các biểu thức như vậy có thể được sử dụng làm đối số mẫu không theo kiểu, kích thước mảng và trong các bối cảnh khác yêu cầu các biểu thức không đổi, ví dụ:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int n = 1;</pre></div> <h3 id="Core_constant_expressions">std :: mảng &lt;int, n&gt; a1;  // Lỗi: n không phải là một biểu thức không đổi</h3> <p>MỘT<i>const int cn = 2;</i>std :: mảng &lt;int, cn&gt; a2; // OK: CN là một biểu thức không đổi<b>Biểu thức liên tục cốt lõi</b>Biểu hiện không đổi cốt lõi</p>
+<ol> <li>các<a href="this" title="cpp/language/this"><code>this</code></a>bất kỳ biểu hiện nào có đánh giá<a href="constexpr#constexpr_function" title="cpp/language/constexpr">constexpr function</a>Sẽ không</li>
+<li>Đánh giá bất kỳ một trong những điều sau đây:<a href="storage_duration" title="cpp/language/storage duration">storage duration</a>, Và<a href="#Usable_in_constant_expressions">unusable in constant expressions</a> </li>
+<li>con trỏ, ngoại trừ trong một<a href="constexpr" title="cpp/language/constexpr">constexpr</a> <div class="cpp source-cpp"><pre data-language="cpp">điều đó đang được đánh giá như một phần của biểu thức</pre></div> </li>
+<li>một luồng điều khiển đi qua một tuyên bố biến một biến với tĩnh hoặc địa phương</li>
+<li>Biểu thức cuộc gọi chức năng gọi hàm (hoặc hàm tạo) không được khai báo<a href="constexpr" title="cpp/language/constexpr">constexpr function/constructor</a>yêu cầu.</li>
+<li>consexpr int n = std :: numeric_limits &lt;int&gt; :: max (); // ok: max () là constexpr<a href="#Usable_in_constant_expressions">usable in constant expressions</a>ConstExpr int m = std :: Time (nullptr); // Lỗi: std :: Time () không phải là constexpr</li>
+<li>một chức năng gọi đến hàm consexpr được khai báo, nhưng không được xác định</li>
+<li>Một cuộc gọi chức năng đến một chức năng Constexpr/Mẫu Construction Instantiation trong đó việc khởi tạo không thỏa mãn<div class="cpp source-cpp"><pre data-language="cpp">một chức năng gọi đến một hàm ảo consexpr, được gọi trên một đối tượng không</pre></div> </li>
+<li> <span class="t-mark-rev t-until-cxx17">xáo trộn</span>Một<a href="lambda" title="cpp/language/lambda">lambda expression</a> </li>
+<li>consexpr int n = std :: numeric_limits &lt;int&gt; :: max () + 1; // Lỗi: tràn<a href="implicit_conversion" title="cpp/language/implicit conversion">implicit conversion</a>một biểu thức sẽ vượt quá giới hạn được xác định theo thực hiện<ol type="a"> <li>Một biểu thức có sự đánh giá dẫn đến bất kỳ hình thức nào của hành vi không xác định ngôn ngữ cốt lõi (bao gồm cả tràn số nguyên đã ký, phân chia theo số không, số học con trỏ bên ngoài giới hạn mảng, v.v.). Liệu hành vi không xác định của thư viện tiêu chuẩn có được phát hiện không được xác định.<a href="#Usable_in_constant_expressions">usable in constant expressions</a>Thì<div class="cpp source-cpp"><pre data-language="cpp">consexpr Double D1 = 2.0 / 1.0; // ĐƯỢC RỒI</pre></div> </li>
+<li>consexpr Double D2 = 2.0 / 0,0; // Lỗi: không được xác định</li>
+</ol> </li>
+<li>consexpr int n = std :: numeric_limits &lt;int&gt; :: max () + 1; // Lỗi: tràn<a href="implicit_conversion" title="cpp/language/implicit conversion">implicit conversion</a>int x, y, z [30];<a href="union" title="cpp/language/union">union</a>ConstExpr Auto e1 = &amp; y - &amp; x;        // Lỗi: Không xác định</li>
+<li>ConstExpr Auto E2 = &amp; Z [20] - &amp; Z [3]; // ĐƯỢC RỒI<a href="default_initialization" title="cpp/language/default initialization">whose value is indeterminate</a> </li>
+<li>Consexpr std :: Bitset &lt;2&gt; a; </li>
+<li> <span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>constexpr bool b = a [2]; // UB, nhưng không xác định nếu được phát hiện</li>
+<li>chồng chéo với container.<span class="t-spar">một lvalue-to-rvalue</span>Trừ khi được áp dụng cho một glvalue không thể bay theo nghĩa đen ...<a href="#Usable_in_constant_expressions">usable in constant expressions</a>chỉ định một đối tượng là</li>
+<li>chuyển đổi từ<a href="pointer#Pointers_to_void" title="cpp/language/pointer">pointer to <span class="kw4">Vô hiệu</span></a> <span class="t-rev-inl t-until-cxx26"><span>int main ()</span><span><span class="t-mark-rev t-until-cxx26">(Cho đến C ++ 26)</span></span></span> <span class="t-rev-inl t-since-cxx26"><span>{<code>T*</code>    const std :: size_t tabsize = 50;<a href="implicit_conversion#Similar_types" title="cpp/language/implicit conversion">similar</a>ĐẾN<code>T</code></span><span><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></span></span> </li>
+<li> <span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> <a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a> </li>
+<li> <a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a> </li>
+<li> <span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>    Tab int [tabSize]; // OK: TabSize là một biểu thức không đổi</li>
+<li> <span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span>                      // Vì tabsize có thể sử dụng được trong các biểu thức không đổi</li>
+<li> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span>                      // vì nó có loại tích phân đủ điều kiện và<div class="cpp source-cpp"><pre data-language="cpp">                      // Bộ khởi tạo của nó là trình khởi tạo không đổi</pre></div> </li>
+<li> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </li>
+<li> <span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>Một<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>    std :: size_t n = 50;</li>
+<li>Một<a href="new" title="cpp/language/new">new-expression</a><span class="t-rev-inl t-since-cxx20"><span>                  // vì bộ khởi tạo của nó không phải là bộ khởi tạo không đổi<code><a href="../memory/allocator/allocate" title="cpp/memory/allocator/allocate">std::allocator&lt;T&gt;::allocate</a></code>    int tab2 [sz]; // Lỗi: SZ không phải là một biểu thức không đổi<a href="../memory/new/operator_new" title="cpp/memory/new/operator new">allocation function</a>                  // Vì SZ không thể sử dụng được trong các biểu thức không đổi</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span> </li>
+<li>Một<a href="delete" title="cpp/language/delete">delete-expression</a><span class="t-rev-inl t-since-cxx20"><span>                  // vì bộ khởi tạo của nó không phải là bộ khởi tạo không đổi<code><a href="../memory/allocator/deallocate" title="cpp/memory/allocator/deallocate">std::allocator&lt;T&gt;::deallocate</a></code>}</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span> </li>
+<li> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>đề cập đến một đối tượng không bay hơi có tuổi thọ bắt đầu trong việc đánh giá biểu thức này<a href="coroutines#co_await" title="cpp/language/coroutines">await-expression</a>hoặc a<a href="coroutines#co_yield" title="cpp/language/coroutines">yield-expression</a> </li>
+<li> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>Một<a href="operator_comparison#Three-way_comparison" title="cpp/language/operator comparison">three-way comparison</a>một lvalue-to-rvalue</li>
+<li>hoặc sửa đổi áp dụng cho một thành viên không hoạt động của một</li>
+<li> <span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span>hoặc tiểu mục của nó (ngay cả khi nó chia sẻ một chuỗi ban đầu chung với thành viên hoạt động)</li>
+<li>Chuyển đổi tiềm ẩn lvalue-to-rvalue trên một đối tượng</li>
+<li>chồng chéo với container.<a href="asm" title="cpp/language/asm">asm-declaration</a> </li>
+<li>Một lời cầu khẩn của Trình xây dựng/Di chuyển tiềm ẩn/Chuyển giao<code><a href="../utility/variadic/va_arg" title="cpp/utility/variadic/va arg">va_arg</a></code>một biểu thức chuyển nhượng sẽ thay đổi thành viên tích cực của một công đoàn<code><a href="../utility/variadic/va_start" title="cpp/utility/variadic/va start">va_start</a></code>biểu hiện id</li>
+<li>Một<a href="goto" title="cpp/language/goto"><code>goto</code></a>tuyên bố</li>
+<li>Một<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>hoặc<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>đề cập đến một biến hoặc thành viên dữ liệu thuộc loại tham chiếu, trừ khi tham chiếu là</li>
+<li>hoặc tuổi thọ của nó bắt đầu trong việc đánh giá biểu thức này<code>this</code>với bất kỳ loại con trỏ nào đối tượng<div class="cpp source-cpp"><pre data-language="cpp">sang một loại con trỏ-đối tượng</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>trừ khi con trỏ trỏ đến một đối tượng có loại<code>this</code>Cuộc gọi giả Destructor</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Tăng hoặc một toán tử giảm</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> </li>
+</ol> <p>Sửa đổi một đối tượng, trừ khi đối tượng có loại nghĩa đen không bay hơi và tuổi thọ của nó bắt đầu trong việc đánh giá biểu thức</p>
+<h3 id="Constant_expression">constexpr int inc (int &amp; n)</h3> <p>MỘT<i>Các biểu thức hoặc chuyển đổi sau</i>là một trong hai</p>
+<ul>
+<li> <span class="t-rev-inl t-until-cxx14"><span>    trả về ++ n;</span><span><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span></span></span><span class="t-rev-inl t-since-cxx14"><span>}</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span> </li>
+<ul><li>constexpr int g (int k)</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <ul><li>{</li></ul> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <ul>
+<li>Một<span class="t-rev-inl t-since-cxx20"><span>không<a href="consteval" title="cpp/language/consteval">immediate</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>chức năng</li>
+<li>    constexpr int x = inc (k); // Lỗi: tăng (k) không phải là hằng số lõi</li>
+<li>                               // Biểu hiện vì tuổi thọ của k<span class="t-rev-inl t-until-cxx14"><span>                               // bắt đầu bên ngoài biểu thức gia tăng (k)</span><span><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span></span></span><span class="t-rev-inl t-since-cxx14"><span>    trả lại x;</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>}</li>
+<li> </li>
+<ul>
+<li>constexpr int h (int k)</li>
+<li>{</li>
+<li>    int x = inc (k); // ok: x không bắt buộc phải được khởi tạo<span class="t-rev-inl t-since-cxx20"><span>không<a href="consteval" title="cpp/language/consteval">immediate</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>chức năng</li>
+<li>                     // với biểu thức hằng số lõi</li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>    trả lại x;<a href="consteval" title="cpp/language/consteval">immediate function</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul><li>}</li></ul> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h4 id="Integral_constant_expression">                        // H (1) là một biểu thức hằng số lõi vì</h4> <p><i>                        // H (1) là một biểu thức hằng số lõi vì</i>                        // Lifetime của K bắt đầu bên trong biểu thức H (1)<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">contextually implicitly converted</a>một cuộc gọi phá hủy hoặc giả giả gọi cho một đối tượng mà cuộc đời không bắt đầu trong việc đánh giá biểu thức này</p>
+<p>Biểu hiện được áp dụng cho một glvalue thuộc loại đa hình</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx14">
+<td> <ul>
+<li> <a href="array" title="cpp/language/array">array bounds</a> </li>
+<li>Các bối cảnh sau đây yêu cầu một biểu thức không đổi tích phân:<a href="new" title="cpp/language/new">new-expressions</a>các kích thước trong</li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span></td>
+</tr> </table> <ul>
+<li> <a href="bit_field" title="cpp/language/bit field">bit-field lengths</a> </li>
+<li>là một chức năng phân bổ toàn cầu có thể thay thế và lưu trữ được phân bổ được giải quyết trong việc đánh giá biểu thức này</li>
+<li> <a href="alignas" title="cpp/language/alignas">alignments</a>.</li>
+</ul> <h4 id="Converted_constant_expression">hoặc một cuộc gọi đến</h4> <p>MỘT<i>, trừ khi nó giải quyết một khu vực lưu trữ được phân bổ trong việc đánh giá biểu thức này</i>nó đến một đối tượng<code>T</code>Coroutines: An<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">implicitly converted</a>Khi kết quả không xác định</p>
+<ul>
+<li>một nhà điều hành bình đẳng hoặc quan hệ có kết quả không được xác định</li>
+<li>một nhiệm vụ hoặc một toán tử gán hợp chất</li>
+<li>một biểu thức ném</li>
+<li>một lời cầu khẩn của</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul>
+<li>macro, cho dù là một lời cầu khẩn của</li>
+<li>Macro có thể được đánh giá là không xác định</li>
+<li>Biểu thức sẽ ném một ngoại lệ</li>
+<li>bên trong biểu hiện lambda, một tham chiếu đến</li>
+<li>hoặc một biến được xác định bên ngoài Lambda, nếu tài liệu tham khảo đó sẽ là một sử dụng ODR<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code> </li>
+<li>void g ()<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul><li>{<a href="reference_initialization" title="cpp/language/reference initialization">reference binding</a>    const int n = 0;</li></ul> <p> </p>
+<ul>
+<li> <a href="switch" title="cpp/language/switch">case expressions</a> </li>
+<li> <a href="enum" title="cpp/language/enum">enumerator initializers</a>    Constexpr int j = *&amp; n; // OK: Bên ngoài biểu hiện lambda</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <ul>
+<li> <a href="array" title="cpp/language/array">array bounds</a> </li>
+<li>Các bối cảnh sau đây yêu cầu một biểu thức không đổi tích phân:<a href="new" title="cpp/language/new">new-expressions</a>các kích thước trong</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <ul><li> <span class="t-rev-inl t-until-cxx17"><span>    {</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span>không thuộc loại<a href="template_parameters" title="cpp/language/template parameters">template arguments</a>.</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul><li>        Constexpr int i = n;   // OK: 'N' không được sử dụng ODR và ​​không bị bắt ở đây.<a href="pack_indexing" title="cpp/language/pack indexing">pack indexing expression</a>Và<a href="pack_indexing" title="cpp/language/pack indexing">pack indexing specifier</a>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <p>MỘT<i>        Constexpr int j = *&amp; n; // Ill-formed: '&amp; n' sẽ là một ODR của 'n'.<span class="kw4">bool</span></i>    };<a class="mw-redirect" href="implicit_cast#Contextual_conversions" title="cpp/language/implicit cast">contextually converted to <span class="kw4">bool</span></a>}</p>
+<p>Lưu ý rằng nếu sử dụng ODR diễn ra trong một cuộc gọi chức năng để đóng cửa, nó sẽ không đề cập đến<span class="kw4">bool</span>:</p>
+<ul><li> <a href="noexcept_spec" title="cpp/language/noexcept spec"><span class="kw1">Noexcept</span> specifications</a> </li></ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <ul><li> <a href="static_assert" title="cpp/language/static assert">static_assert declarations</a> </li></ul> </td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17 t-until-cxx23">
+<td> <ul><li> <a href="if#Constexpr_if" title="cpp/language/if">constexpr if-statements</a> </li></ul> </td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span><br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li> <a href="explicit" title="cpp/language/explicit">conditional <span class="kw1">Chuyển đổi hàm tạo từ MDSPAN khác.</span> specifiers</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h4 id="Historical_categories">hoặc đến một biến kèm theo, vì nó truy cập vào thành viên dữ liệu đóng cửa</h4> <p>// OK: 'V' &amp; 'M' được sử dụng ODR nhưng không xảy ra trong biểu hiện không đổi</p>
+<ul>
+<li>MỘT<i>// trong Lambda lồng nhau</i>auto monad = [] (auto v) {return [=] {return v; }; };</li>
+<li>MỘT<i>auto bind = [] (auto m) {return [=] (tự động fvm) {return fvm (m ()); }; };</i> </li>
+<li>MỘT<i>// OK để bắt các đối tượng tự động được tạo trong quá trình đánh giá biểu thức liên tục.</i>static_assert (BIND (monad (2)) (monad) () == monad (2) ());<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>Lưu ý: Chỉ là một biểu thức hằng số lõi không có bất kỳ ý nghĩa ngữ nghĩa trực tiếp nào: một biểu thức phải là một trong những tập hợp con của các biểu thức không đổi (xem bên dưới) sẽ được sử dụng trong một số bối cảnh nhất định.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <h3 id="Constant_subexpression">Biểu hiện không đổi</h3> <p>MỘT<i>Biểu hiện không đổi</i>một lvalue<a href="expressions#Full-expressions" title="cpp/language/expressions">subexpression</a>một glvalue<code>e</code>Biểu thức không đổi cốt lõi đề cập đến<code>e</code>một đối tượng có thời lượng lưu trữ tĩnh không phải là tạm thời hoặc<a href="#Core_constant_expressions">core constant expression</a>là<code>e</code>một đối tượng có thời lượng lưu trữ tĩnh là tạm thời, nhưng giá trị của nó thỏa mãn các ràng buộc đối với các prvalues ​​bên dưới, hoặc</p>
+<ul><li> <a href="throw" title="cpp/language/throw"><code>throw</code> expression</a> </li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li> <a href="coroutines" title="cpp/language/coroutines">yield expression</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li> <a href="operator_assignment" title="cpp/language/operator assignment">assignment expression</a> </li>
+<li> <a href="operator_other#Built-in_comma_operator" title="cpp/language/operator other">comma expression</a> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Usable_in_constant_expressions">Một biểu thức hằng số lõi prvalue có giá trị thỏa mãn các ràng buộc sau:</h3> <p>Nếu giá trị là một đối tượng thuộc loại lớp, mỗi thành viên dữ liệu không tĩnh của loại tham chiếu đề cập đến một thực thể thỏa mãn các ràng buộc đối với<i>    constexpr const int &amp; ra = a; // OK: A là biểu thức hằng số glvalue</i>glvalues<code>P</code>nếu như</p>
+<ul>
+<li>bên trên</li>
+<li>Nếu giá trị thuộc loại con trỏ, nó sẽ giữ</li>
+<li>địa chỉ của một đối tượng có thời lượng lưu trữ tĩnh<a href="constant_initialization" title="cpp/language/constant initialization">constant-initialized</a>địa chỉ qua cuối một đối tượng có thời lượng lưu trữ tĩnh</li>
+<ul>
+<li>địa chỉ của a</li>
+<li>Giá trị con trỏ null</li>
+</ul>
+<li>Nếu giá trị thuộc loại con trỏ đến thành viên, nó không chỉ định<code>P</code> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Cho đến khi một trong các điều kiện sau đây được đáp ứng:<code>P</code>Nếu giá trị là một đối tượng của loại lớp hoặc loại mảng, mỗi tiểu mục sẽ thỏa mãn các ràng buộc này cho các giá trị<a href="modules" title="cpp/language/modules">imported</a>Kiểm tra khoảng trống ()<a href="tu_local" title="cpp/language/tu local">translation-unit-local entity</a>{</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>    static const int a = std :: Random_device {} ();<i>    constexpr const int &amp; ra = a; // OK: A là biểu thức hằng số glvalue</i>    constexpr int ia = a; // Lỗi: A không phải là biểu thức hằng số prvalue</p>
+<ul><li> </li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Một<a href="template_parameters#template_parameter_object" title="cpp/language/template parameters">template parameter object</a>, hoặc</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>    const int b = 42;</li>
+<li>    constexpr const int &amp; rb = b; // Lỗi: B không phải là biểu thức hằng số glvalue</li>
+<li>    Consexpr int ib = b; // OK: B là một biểu thức hằng số prvalue<a href="reference_initialization#Lifetime_of_a_temporary" title="cpp/language/reference initialization">extended</a>}</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Biểu hiện không đổi tích phân</pre></div> <h3 id="Manifestly_constant-evaluated_expressions">Biểu hiện không đổi tích phân</h3> <p>là một biểu thức của loại liệt kê tích phân hoặc không bị hủy được chuyển đổi thành một prvalue, trong đó biểu thức được chuyển đổi là một biểu thức hằng số lõi. Nếu một biểu thức của loại lớp được sử dụng trong đó dự kiến ​​một biểu thức không đổi tích phân, biểu thức là<i>đến một loại bảng liệt kê tích phân hoặc không bị nhiễm.</i>:</p>
+<ul>
+<li> <a href="array" title="cpp/language/array">array bounds</a> </li>
+<li>Các bối cảnh sau đây yêu cầu một biểu thức không đổi tích phân:<a href="new" title="cpp/language/new">new-expressions</a>các kích thước trong</li>
+<li> <a href="bit_field" title="cpp/language/bit field">bit-field lengths</a> </li>
+<li> <a href="enum" title="cpp/language/enum">enumeration initializers</a> </li>
+<li> <a href="alignas" title="cpp/language/alignas">alignments</a> </li>
+<li> <a href="switch" title="cpp/language/switch"><span class="kw1">Khác với cái đầu tiên</span> expressions</a> </li>
+<li>không thuộc loại<a href="template_parameters" title="cpp/language/template parameters">template arguments</a> </li>
+<li>Đối với loại T, trong đó biểu thức được chuyển đổi là một biểu thức không đổi và chuỗi chuyển đổi ngầm chỉ chứa:<a href="noexcept_spec" title="cpp/language/noexcept spec"><span class="kw1">Noexcept</span> specifications</a> </li>
+<li>Đối với loại T, trong đó biểu thức được chuyển đổi là một biểu thức không đổi và chuỗi chuyển đổi ngầm chỉ chứa:<a href="static_assert" title="cpp/language/static assert">static_assert declarations</a> </li>
+<li>chuyển đổi biểu thức không đổi<a href="constexpr" title="cpp/language/constexpr">constexpr variables</a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>là một biểu thức<a href="if#Constexpr_if" title="cpp/language/if">constexpr if-statements</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul>
+<li>Đối với loại T, trong đó biểu thức được chuyển đổi là một biểu thức không đổi và chuỗi chuyển đổi ngầm chỉ chứa:<a href="explicit" title="cpp/language/explicit">conditional <span class="kw1">Chuyển đổi hàm tạo từ MDSPAN khác.</span> specifiers</a> </li>
+<li> <a href="consteval" title="cpp/language/consteval">immediate invocations</a> </li>
+<li>Chuyển đổi do người dùng xác định (do đó có thể sử dụng một lớp khi có thể sử dụng loại tích phân)<a href="constraints#Concepts" title="cpp/language/constraints">concept</a>Chuyển đổi lvalue sang rvalue<a href="constraints#Nested_requirements" title="cpp/language/constraints">nested requirements</a>, Và<a href="constraints#Requires_clauses" title="cpp/language/constraints">requires clauses</a>Chương trình khuyến mãi tích hợp</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>Chuyển đổi tích phân không narrow</li>
+<li>Chuyển đổi mảng sang trỏ<a href="constant_initialization" title="cpp/language/constant initialization">constant initializers</a>)</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Chuyển đổi chức năng sang trỏ<code><a href="../types/is_constant_evaluated" title="cpp/types/is constant evaluated">std::is_constant_evaluated</a></code><span class="t-rev-inl t-since-cxx23"><span>Và<a href="if#Consteval_if" title="cpp/language/if"><code>if consteval</code></a></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>.</p>
+<p>Chuyển đổi con trỏ hàm (con trỏ tới chức năng NoExcept lên chức năng đến chức năng)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Chuyển đổi trình độ</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Functions_and_variables_needed_for_constant_evaluation">chuyển đổi con trỏ null từ</h3> <p>Chuyển đổi con trỏ thành viên NULL từ<i>Và nếu có</i>:</p>
+<ul>
+<li>diễn ra, nó là ràng buộc trực tiếp (không phải là một trong đó xây dựng một đối tượng tạm thời)</li>
+<li>Các bối cảnh sau đây yêu cầu một biểu thức không đổi được chuyển đổi:</li>
+<li>Khi loại cơ bản được cố định<a href="list_initialization#Narrowing_conversions" title="cpp/language/list initialization">a conversion is narrowing</a>)</li>
+<li>các kích thước trong<code>&amp;</code>Khác với cái đầu tiên<a href="templates#Templated_entity" title="cpp/language/templates">templated entity</a>Tích hợp và liệt kê<a href="dependent_name#Value-dependent_expressions" title="cpp/language/dependent name">value-dependent</a>)</li>
+<li>chỉ số của<a href="expressions#Unevaluated_expressions" title="cpp/language/expressions">unevaluated operand</a> </li>
+</ul> <p>Biểu thức không đổi được chuyển đổi theo ngữ cảnh<i>Các danh mục của các biểu thức không đổi được liệt kê dưới đây không còn được sử dụng trong tiêu chuẩn vì C ++ 14:</i>, trong đó biểu thức được chuyển đổi là một biểu thức không đổi và chuỗi chuyển đổi chỉ chứa các chuyển đổi ở trên.<a href="definition#Naming_a_function" title="cpp/language/definition">named by</a>Các bối cảnh sau đây yêu cầu một biểu thức không đổi được chuyển đổi theo ngữ cảnh</p>
+<p>Các thể loại lịch sử<i>Các danh mục của các biểu thức không đổi được liệt kê dưới đây không còn được sử dụng trong tiêu chuẩn vì C ++ 14:</i>biểu hiện không đổi theo nghĩa đen<a href="expressions#Primary_expressions" title="cpp/language/expressions">id-expression</a>là một biểu thức hằng số lõi prvalue của loại nghĩa đen không phải trỏ (sau khi chuyển đổi theo yêu cầu của bối cảnh). Một biểu thức không đổi theo nghĩa đen của mảng hoặc loại lớp yêu cầu mỗi tiểu mục được khởi tạo với một biểu thức không đổi.</p>
+<p>tham chiếu biểu thức không đổi<a href="function_template" title="cpp/language/function template">function template</a>#include &lt;Istream&gt;<span class="t-rev-inl t-since-cxx14"><span>hoặc<a href="variable_template" title="cpp/language/variable template">variable template</a>#include &lt;Istream&gt;</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>là biểu thức hằng số lõi lvalue chỉ định một đối tượng có thời lượng lưu trữ tĩnh hoặc hàm.<span class="t-rev-inl t-since-cxx14"><span>địa chỉ biểu thức không đổi</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>là biểu thức hằng số lõi prvalue (sau khi chuyển đổi theo yêu cầu của ngữ cảnh)</p>
+<h3 id="Notes">Ghi chú</h3> <p>hoặc thuộc loại con trỏ, trỏ đến một đối tượng có thời lượng lưu trữ tĩnh, một lần kết thúc một mảng có thời lượng lưu trữ tĩnh, đến một hàm hoặc là một con trỏ null.<span class="kw4">constexpr</span>Biểu hiện phụ liên tục<span class="kw4">constexpr</span>.<a href="copy_elision" title="cpp/language/copy elision">Named return value optimization</a>biểu hiện phụ liên tục</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_constexpr_in_decltype" title="cpp/feature test"><code>__cpp_constexpr_in_decltype</code></a></td> <td><span class="nu0">là một biểu hiện mà đánh giá là</span></td> <td>
+<span class="t-mark">unininitialized_copy_n</span><br/><span class="t-mark">(Dr)</span>
+</td> <td>Tạo ra các định nghĩa chức năng và biến đổi khi<a href="#Functions_and_variables_needed_for_constant_evaluation">needed for constant evaluation</a> </td>
+</tr> <tr> <td><a href="../feature_test#cpp_constexpr_dynamic_alloc" title="cpp/feature test"><code>__cpp_constexpr_dynamic_alloc</code></a></td> <td><span class="nu0">201907L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>của một biểu thức<span class="kw4">constexpr</span>chức năng</td>
+</tr> <tr> <td><a href="../feature_test#cpp_constexpr" title="cpp/feature test"><code>__cpp_constexpr</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>Constexpr đúc từ<span class="kw4">Vô hiệu</span><span class="sy2">*</span>: Hướng tới các nhiệm vụ loại Constexpr</td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1293.html" rel="nofollow">CWG 1293</a> </td> <td>C ++ 11</td> <td>sẽ không ngăn chặn<br/>từ là a</td> <td>không phải là bất kỳ biểu thức nào sau đây:</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1311.html" rel="nofollow">CWG 1311</a> </td> <td>C ++ 11</td> <td>Có thể sử dụng trong các biểu thức không đổi</td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1312.html" rel="nofollow">CWG 1312</a> </td> <td>C ++ 11</td> <td>
+<span class="kw1">is_const_v</span>Trong danh sách trên, một biến là<br/>Có thể sử dụng trong các biểu thức không đổi<span class="kw4">Vô hiệu</span><span class="sy2">*</span>Tại một điểm</td> <td>biến là<br/>một biến Constexpr, hoặc<i>không ngụ ý rằng</i> <span class="kw4">Vô hiệu</span><span class="sy2">*</span>ĐẾN<br/>nó là a</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1313.html" rel="nofollow">CWG 1313</a> </td> <td>C ++ 11</td> <td>biến<br/>loại tham chiếu hoặc</td> <td>thuộc loại tích phân hoặc bảng liệt kê đủ điều kiện const<br/>và định nghĩa của biến có thể truy cập được từ</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1405.html" rel="nofollow">CWG 1405</a> </td> <td>C ++ 11</td> <td>không nằm trong cùng một đơn vị dịch với định nghĩa của biến (nghĩa là định nghĩa là<br/>), biến không được khởi tạo để trỏ đến hoặc tham khảo hoặc có một tiểu thư (có thể đệ quy) chỉ ra hoặc đề cập đến, một</td> <td>có thể sử dụng được trong các biểu thức không đổi</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1454.html" rel="nofollow">CWG 1454</a> </td> <td>C ++ 11</td> <td>Một đối tượng hoặc tham chiếu là<br/>Có thể sử dụng trong các biểu thức không đổi</td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1455.html" rel="nofollow">CWG 1455</a> </td> <td>C ++ 11</td> <td>Nếu nó là</td> <td>một biến có thể sử dụng trong các biểu thức không đổi hoặc</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1456.html" rel="nofollow">CWG 1456</a> </td> <td>C ++ 11</td> <td>một đối tượng theo nghĩa đen, hoặc<br/>một tiểu mục hoặc thành viên tham chiếu không thể sửa chữa của bất kỳ điều nào ở trên hoặc</td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1535.html" rel="nofollow">CWG 1535</a> </td> <td>C ++ 11</td> <td>Một<span class="kw1">một đối tượng tạm thời của loại theo nghĩa đen không thể bay được</span>đối với một biến có thể sử dụng trong các biểu thức không đổi.<br/>const std :: size_t sz = 10; // SZ có thể sử dụng được trong các biểu thức không đổi<br/>Rõ ràng là các biểu thức đánh giá không đổi</td> <td>Các biểu thức sau (bao gồm cả chuyển đổi sang loại đích) là<br/>rõ ràng là hằng số được đánh giá<br/>các kích thước trong</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1581.html" rel="nofollow">CWG 1581</a> </td> <td>C ++ 11</td> <td>Khác với cái đầu tiên<br/>trường hợp</td> <td>Thực hiện quá tải</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1694.html" rel="nofollow">CWG 1694</a> </td> <td>C ++ 11</td> <td>biểu hiện trong<br/>biểu hiện trong</td> <td>Các chức năng và biến cần thiết để đánh giá liên tục<br/>Các biểu thức hoặc chuyển đổi sau</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1952.html" rel="nofollow">CWG 1952</a> </td> <td>C ++ 11</td> <td>biểu hiện trong<br/>Biểu thức ràng buộc trong</td> <td>định nghĩa,<br/>, khi xác định xem các ràng buộc có được thỏa mãn hay không</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2126.html" rel="nofollow">CWG 2126</a> </td> <td>C ++ 11</td> <td>Khởi tạo các biến có loại tham chiếu hoặc loại tích phân hoặc phân ly đủ điều kiện, nhưng chỉ khi các bộ khởi tạo là biểu thức không đổi<br/>Khởi tạo các biến cục bộ tĩnh và luồng, nhưng chỉ khi tất cả các biểu thức phụ của các bộ khởi tạo (bao gồm các lệnh gọi hàm tạo và chuyển đổi ẩn) là các biểu thức không đổi (nghĩa là, nếu các bộ khởi tạo là</td> <td>Liệu một đánh giá có xảy ra trong một bối cảnh được đánh giá không đổi rõ ràng có thể được phát hiện bằng cách</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2167.html" rel="nofollow">CWG 2167</a> </td> <td>C ++ 11</td> <td>Để kiểm tra hai điều kiện cuối cùng, các trình biên dịch trước tiên có thể thực hiện đánh giá hằng số thử nghiệm của các bộ khởi tạo. Không nên phụ thuộc vào kết quả trong trường hợp này.<br/>int y = 0;</td> <td>không phải là thành viên<br/>const int a = std :: is_constant_evalates ()? y: 1;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2299.html" rel="nofollow">CWG 2299</a> </td> <td>C ++ 14</td> <td>// Đánh giá liên tục thử nghiệm thất bại. Việc đánh giá liên tục bị loại bỏ.<a href="../header/cstdarg" title="cpp/header/cstdarg"><code>&lt;cstdarg&gt;</code></a><br/>// Biến A được khởi tạo động với 1</td> <td>
+<code>va_arg</code> <br/><code>va_start</code>    partial_sort (đầu tiên tôi, tôi giữa, s cuối cùng, comp comp = {}, proj proj = {});</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2400.html" rel="nofollow">CWG 2400</a> </td> <td>C ++ 11</td> <td>const int b = std :: is_constant_evalates ()? 2: y;<br/>// Đánh giá không đổi với STD :: IS_CONSTANT_EVALION () == Thành công thực sự.<br/>// Biến B được khởi tạo tĩnh với 2</td> <td>Các chức năng và biến cần thiết để đánh giá liên tục<br/>Các biểu thức hoặc chuyển đổi sau</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2418.html" rel="nofollow">CWG 2418</a> </td> <td>C ++ 11</td> <td>có khả năng đánh giá không đổi<br/>rõ ràng là các biểu thức đánh giá không đổi</td> <td>Mẫu &lt;class inputit, class outputit&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2490.html" rel="nofollow">CWG 2490</a> </td> <td>C ++ 20</td> <td>biểu thức có khả năng đánh giá<br/>biểu hiện phụ ngay lập tức của một danh sách ban đầu (đánh giá không đổi có thể là cần thiết để xác định xem liệu</td> <td>Địa chỉ của (Unary</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="constexpr" title="cpp/language/constexpr"> <code>constexpr</code> specifier</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>) các biểu thức xảy ra trong một</td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/is_literal_type" title="cpp/types/is literal type"> <span class="t-lines"><span>is_literal_type</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-deprecated-cxx17">(không được dùng trong C ++ 17)</span></span><span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span></span></span></div> </td> <td>Kiểm tra xem một loại là loại theo nghĩa đen<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/constant_expression" title="c/language/constant expression">C documentation</a></span>vì<span class=""><span>(Đánh giá không đổi có thể là cần thiết để xác định xem một biểu thức như vậy có phải là</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/constant_expression">https://en.cppreference.com/w/cpp/language/constant_expression</a>
+</p>
+</div>

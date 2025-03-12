@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">std :: inout_ptr</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;class pulum = void, class smart, class ... args&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Giá trị được đặt thành<code>inout_ptr_t</code>tự động inout_ptr (Smart &amp; s, args &amp;&amp; ... args);</p>
+<p>với các đối số mẫu được suy luận ghi lại các đối số để đặt lại bằng tham chiếu.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>Chương trình không được hình thành nếu việc xây dựng giá trị trả lại (xem bên dưới) không được hình thành.</td>
+</tr> <tr class="t-par"> <td>, không cho phép định dạng định dạng.</td> <td>-</td> <td>đối tượng (thường là một con trỏ thông minh) để thích nghi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code><a href="http://en.cppreference.com/w/cpp/memory/inout_ptr_t"><span class="kw3374">Điều đó cho tất cả<span class="me2">INOUT_PTR_T</span></span></a><span class="sy1">is_trivently_destructible_v</span>Smart, P, Args<span class="sy3">. Trong các cuộc gọi có hiệu lực</span><span class="sy1">&lt;</span><span class="br0">.</span>s, <a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...<span class="br0">)</span></code>là<code>P</code>khoảng cách</p>
+<ul>
+<li> <code>Pointer</code>Sử dụng chức năng nhị phân đã cho<code>Pointer</code>Các đối số để đặt lại để bắt giữ<code>void</code>không giống như</li>
+<li> <code>Smart::pointer</code>, nếu không thì,</li>
+<li> <code>Smart::element_type*</code>Sử dụng chức năng nhị phân đã cho<code>Smart::element_type</code>, nếu nó hợp lệ và biểu thị một loại, nếu không,</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/memory/pointer_traits"><span class="kw758">Điều đó cho tất cả<span class="me2">con trỏ_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>Smart<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">                          std :: remove_cv_t &lt;typename t :: value_type &gt;&gt;</span><span class="sy2">*</span></code>.</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>là hợp lệ và biểu thị một loại, nếu không,<code>Pointer</code>Người dùng có thể chỉ định đối số mẫu cho tham số mẫu<code>Pointer*</code>.</p>
+<p>, để tương tác với các chức năng nước ngoài có<code>inout_ptr_t</code>Vì tất cả các đối số để đặt lại được ghi lại bằng tham chiếu, phần đã trả lại</p>
+<table class="wikitable sortable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td rowspan="2"><a href="../../feature_test#cpp_lib_out_ptr" title="cpp/feature test"><code>__cpp_lib_out_ptr</code></a></td> <td><span class="nu0">Chỉ giải thích*</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<code>std::out_ptr</code>Thì<code>std::inout_ptr</code> </td>
+</tr> <tr> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>tự do<code>std::out_ptr</code>Và<code>std::inout_ptr</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../out_ptr_t/out_ptr" title="cpp/memory/out ptr t/out ptr"> <span class="t-lines"><span>out_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>tạo ra một<code>out_ptr_t</code>với một con trỏ thông minh liên quan và đặt lại các đối số<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../unique_ptr/make_unique" title="cpp/memory/unique ptr/make unique"> <span class="t-lines"><span>make_unique</span><span>make_unique_for_overwrite</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C ++ 14)</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Tạo một con trỏ độc đáo quản lý một đối tượng mới<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../shared_ptr/make_shared" title="cpp/memory/shared ptr/make shared"> <span class="t-lines"><span>make_shared</span><span>make_shared_for_overwrite</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Tạo một con trỏ được chia sẻ để quản lý một đối tượng mới<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/inout_ptr_t/inout_ptr">https://en.cppreference.com/w/cpp/memory/inout_ptr_t/inout_ptr</a>
+</p>
+</div>

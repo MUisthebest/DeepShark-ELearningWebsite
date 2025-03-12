@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Promise &lt;R&gt; :: SET_VALUE_AT_THREAD_EXIT</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">void set_value_at_thread_exit (const r &amp; value);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark">(chỉ thành viên của chung chung<code>promise</code>(Chỉ thành viên của chính</span><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">void set_value_at_thread_exit (giá trị R &amp;&amp;);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark">(chỉ thành viên của chung chung<code>promise</code>(Chỉ thành viên của chính</span><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">void set_value_at_thread_exit (R &amp; value);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark">             std :: memory_order order = std :: memory_order_seq_cst) const noexcept;<code>promise&lt;R&amp;&gt;</code>(Chỉ thành viên</span><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">void set_value_at_thread_exit ()</pre>
+</td> <td>(4)</td> <td> <span class="t-mark">             std :: memory_order order = std :: memory_order_seq_cst) const noexcept;<code>promise&lt;void&gt;</code>(Chỉ thành viên</span><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Cửa hàng<code>value</code>vào nhà nước được chia sẻ mà không làm cho nhà nước sẵn sàng ngay lập tức. Trạng thái được thực hiện sẵn sàng khi luồng hiện tại thoát ra, sau khi tất cả các biến có thời lượng lưu trữ địa lý đã bị phá hủy.</p>
+<p>Hoạt động hoạt động như thể<code><a href="set_value" title="cpp/thread/promise/set value">set_value</a></code>Thì<code><a href="set_exception" title="cpp/thread/promise/set exception">set_exception</a></code>Thì<code>set_value_at_thread_exit</code>, Và<code><a href="set_exception_at_thread_exit" title="cpp/thread/promise/set exception at thread exit">set_exception_at_thread_exit</a></code>Có được một mutex duy nhất được liên kết với đối tượng Promise trong khi cập nhật đối tượng Promise.</p>
+<p>Một ngoại lệ được ném nếu không có trạng thái chung hoặc trạng thái được chia sẻ đã lưu trữ một giá trị hoặc ngoại lệ.</p>
+<p>Các cuộc gọi đến chức năng này không giới thiệu các cuộc đua dữ liệu với các cuộc gọi đến<code><a href="get_future" title="cpp/thread/promise/get future">get_future</a></code>(do đó họ không cần phải đồng bộ hóa với nhau).</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>được phân vùng liên quan đến</td> <td>-</td> <td>giá trị để lưu trữ ở trạng thái chia sẻ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../future_error" title="cpp/thread/future error">std::future_error</a></code>về các điều kiện sau:</p>
+<ul>
+<li> <code>*this</code>không có trạng thái chung. Mã lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>no_state</code></a>.</li>
+<li>Trạng thái được chia sẻ đã lưu trữ một giá trị hoặc ngoại lệ. Mã lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>promise_already_satisfied</code></a>.</li>
+</ul> <p>là loại mảng</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Bất kỳ ngoại lệ nào được ném bởi hàm tạo bản sao của<code>value</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Bất kỳ ngoại lệ nào được ném bởi hàm tạo di chuyển của<code>value</code>.</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Tương lai&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="set_value" title="cpp/thread/promise/set value"> <span class="t-lines"><span>set_value</span></span></a></div> </td> <td>Đặt kết quả thành giá trị cụ thể<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/promise/set_value_at_thread_exit">https://en.cppreference.com/w/cpp/thread/promise/set_value_at_thread_exit</a>
+</p>
+</div>

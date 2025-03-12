@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">Thuộc tính C ++: carries_dependency<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Chỉ ra rằng chuỗi phụ thuộc trong tiêu cực phát hành<code><a href="../../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>Tuyên truyền vào và ra khỏi hàm, cho phép trình biên dịch bỏ qua các hướng dẫn hàng rào bộ nhớ không cần thiết.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span>carries_dependency<span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span></code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Thuộc tính này có thể xuất hiện trong hai tình huống:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Nó có thể áp dụng cho các khai báo tham số của một hàm hoặc biểu hiện lambda, trong trường hợp đó, nó chỉ ra rằng việc khởi tạo tham số mang sự phụ thuộc vào chuyển đổi lvalue sang rvalue của đối tượng đó.</div> <div class="t-li1">
+<span class="t-li">2)</span>Nó có thể áp dụng cho toàn bộ khai báo hàm, trong trường hợp đó chỉ ra rằng giá trị trả về mang tính phụ thuộc vào việc đánh giá biểu thức cuộc gọi hàm.</div> <p>Thuộc tính này phải xuất hiện trên khai báo đầu tiên về hàm hoặc một trong các tham số của nó trong bất kỳ đơn vị dịch nào. Nếu nó không được sử dụng trong khai báo đầu tiên về một hàm hoặc một trong các tham số của nó trong một đơn vị dịch khác, chương trình sẽ không được hình thành; Không cần chẩn đoán.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Thích nghi gần như không thay đổi từ<a class="external text" href="https://stackoverflow.com/a/6411703" rel="nofollow">SO</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Atomic&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../atomic/kill_dependency" title="cpp/atomic/kill dependency"> <span class="t-lines"><span>Kill_dependency</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xóa đối tượng được chỉ định khỏi<code><a href="../../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order_consume</a></code>Cây phụ thuộc<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/attributes/carries_dependency">https://en.cppreference.com/w/cpp/language/attributes/carries_dependency</a>
+</p>
+</div>

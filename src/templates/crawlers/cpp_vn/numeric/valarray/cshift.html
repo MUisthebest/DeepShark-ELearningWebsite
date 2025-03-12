@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Valarray &lt;T&gt; :: Cshift</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Valarray &lt;T&gt; cShift (số lượng) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả về một valarray mới có cùng kích thước với các yếu tố có vị trí được thay đổi theo hình tròn bởi<code>count</code>các yếu tố.</p>
+<p>Giá trị không âm của<code>count</code>dịch chuyển các yếu tố tròn trái<code>count</code>địa điểm và giá trị âm của<code>count</code>dịch chuyển các yếu tố theo hình tròn<code>-count</code>địa điểm.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>số lượng vị trí để thay đổi các yếu tố bằng cách</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Valarray kết quả với các yếu tố thay đổi tròn.</p>
+<h3 id="Notes">Ghi chú</h3> <p>được sử dụng do<code><a href="../valarray" title="cpp/numeric/valarray">std::valarray</a></code>Chức năng có thể được thực hiện với loại trả về khác với</p>
+<ul>
+<li>Tất cả<span class="kw4">hằng số</span>Tại điểm trong mã<code><a href="../valarray" title="cpp/numeric/valarray">std::valarray</a></code>. Trong trường hợp này, loại thay thế có các thuộc tính sau:</li>
+<li> <code><a href="../valarray" title="cpp/numeric/valarray">std::valarray</a></code>Thì<code><a href="slice_array" title="cpp/numeric/valarray/slice array">std::slice_array</a></code>Thì<code><a href="gslice_array" title="cpp/numeric/valarray/gslice array">std::gslice_array</a></code>Thì<code><a href="mask_array" title="cpp/numeric/valarray/mask array">std::mask_array</a></code>Và<code><a href="indirect_array" title="cpp/numeric/valarray/indirect array">std::indirect_array</a></code>được cung cấp.</li>
+<li>có thể được xây dựng từ loại thay thế.<span class="kw4">hằng số</span> <a href="http://en.cppreference.com/w/cpp/numeric/valarray"><span class="kw1476">Điều đó cho tất cả<span class="me2">Valarray</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span> <span class="t-rev-inl t-since-cxx11"><span>                             STD :: Memory_order Order) NoExcept;<a href="begin2" title="cpp/numeric/valarray/begin2"><code>begin()</code></a>Và<a href="end2" title="cpp/numeric/valarray/end2"><code>end()</code></a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Cho mọi chức năng lấy một</li>
+<li>, các chức năng giống hệt nhau lấy các loại thay thế sẽ được thêm vào;<span class="kw4">hằng số</span> <a href="http://en.cppreference.com/w/cpp/numeric/valarray"><span class="kw1476">Điều đó cho tất cả<span class="me2">Valarray</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span>Cho mọi chức năng lấy hai chức năng<span class="kw4">hằng số</span> <a href="http://en.cppreference.com/w/cpp/numeric/valarray"><span class="kw1476">Điều đó cho tất cả<span class="me2">Valarray</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span>đối số, các chức năng giống hệt nhau lấy mọi kết hợp của</li>
+<li>và các loại thay thế sẽ được thêm vào.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;ValArray&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue618" rel="nofollow">LWG 618</a> </td> <td>C ++ 98</td> <td> <br/>int main ()<a href="size" title="cpp/numeric/valarray/size"><code>size()</code></a>khoảng cách<code>​0​</code> </td> <td>{<br/>    std :: Valarray &lt;Int&gt; V {1, 2, 3, 4, 5, 6, 7, 8};</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="shift" title="cpp/numeric/valarray/shift"> <span class="t-lines"><span>Trả về phần tử lớn nhất</span></span></a></div> </td> <td>sự thay đổi<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/valarray/cshift">https://en.cppreference.com/w/cpp/numeric/valarray/cshift</a>
+</p>
+</div>

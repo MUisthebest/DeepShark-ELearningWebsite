@@ -1,0 +1,11 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iOS_Base :: Sự kiện</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">sự kiện enum {erase_event, imbue_event, copyfmt_event};</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Chỉ định loại sự kiện được truyền cho các chức năng được đăng ký bởi<code><a href="register_callback" title="cpp/io/ios base/register callback">register_callback()</a></code>về các sự kiện cụ thể. Các hằng số sau được xác định:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <code>erase_event</code> </td> <td>phát hành trên<code>~ios_base()</code>hoặc<a href="../basic_ios/copyfmt" title="cpp/io/basic ios/copyfmt"><code>basic_ios::copyfmt()</code></a>(trước khi bản sao của các thành viên diễn ra)</td>
+</tr> <tr class="t-dsc"> <td> <code>imbue_event</code> </td> <td>phát hành trên<code><a href="imbue" title="cpp/io/ios base/imbue">imbue()</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>copyfmt_event</code> </td> <td>phát hành trên<a href="../basic_ios/copyfmt" title="cpp/io/basic ios/copyfmt"><code>basic_ios::copyfmt()</code></a>(Sau khi bản sao của các thành viên diễn ra, nhưng trước khi cài đặt ngoại lệ được sao chép)</td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ios_base/event">https://en.cppreference.com/w/cpp/io/ios_base/event</a>
+</p>
+</div>

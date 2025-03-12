@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Strchr</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstring" title="cpp/header/cstring">&lt;cstring&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">const char* strchr (const char* str, int ch);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">char* strchr (char* str, int ch);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Tìm thấy sự xuất hiện đầu tiên của nhân vật<code>static_cast&lt;char&gt;(ch)</code>trong chuỗi byte được trỏ bởi<code>str</code>.</p>
+<p>Ký tự null chấm dứt được coi là một phần của chuỗi và có thể được tìm thấy nếu tìm kiếm<code>'\0'</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc không</td>
+</tr> <tr class="t-par"> <td>ch</td> <td>-</td> <td>Đối với một chuỗi con không trống, nếu</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ đến nhân vật tìm thấy trong<code>str</code>, hoặc một con trỏ null nếu không tìm thấy ký tự như vậy.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;cstring&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="memchr" title="cpp/string/byte/memchr"> <span class="t-lines"><span>MEMCHR</span></span></a></div> </td> <td>tìm kiếm một mảng cho lần xuất hiện đầu tiên của một nhân vật<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_string/find" title="cpp/string/basic string/find"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>Xóa nhân vật cuối cùng<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_string&lt;CharT,Traits,Allocator&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../wide/wcschr" title="cpp/string/wide/wcschr"> <span class="t-lines"><span>WCSCHR</span></span></a></div> </td> <td>tìm thấy sự xuất hiện đầu tiên của một ký tự rộng trong một chuỗi rộng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strrchr" title="cpp/string/byte/strrchr"> <span class="t-lines"><span>strrchr</span></span></a></div> </td> <td>tìm thấy sự xuất hiện cuối cùng của một nhân vật<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strpbrk" title="cpp/string/byte/strpbrk"> <span class="t-lines"><span>strpbrk</span></span></a></div> </td> <td>Tìm vị trí đầu tiên của bất kỳ ký tự nào từ một bộ phân cách<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/strchr" title="c/string/byte/strchr">C documentation</a></span>vì<code>strchr</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/strchr">https://en.cppreference.com/w/cpp/string/byte/strchr</a>
+</p>
+</div>

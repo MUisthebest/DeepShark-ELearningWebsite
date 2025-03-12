@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: uninitialized_construct_using_allocator</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class t, class alloc, class ... args&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Consexpr t make_obj_using_allocator (const alloc &amp; alloc, args &amp;&amp; ... args);<code>T</code>Tạo một đối tượng của loại đã cho<a href="uses_allocator" title="cpp/memory/uses allocator">uses-allocator construction</a>Consexpr t* uninitialized_construct_using_allocator (t* p,<code>p</code>.</p>
+<p>Mẫu &lt;class inputit1, class inputit2,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">                                                      const alloc &amp; alloc,</pre></div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>                                                      Args &amp;&amp; ... args);</td>
+</tr> <tr class="t-par"> <td>Sử dụng ngữ nghĩa di chuyển. Người phân bổ có được bằng cách xây dựng di chuyển từ bộ phân bổ thuộc</td> <td>-</td> <td>trả về std :: make_from_tuple &lt;t&gt; (</td>
+</tr> <tr class="t-par"> <td>iterator trước đó phần tử mới sẽ được xây dựng</td> <td>-</td> <td>    STD :: use_allocator_construction_args &lt;t&gt; (alloc, std :: forward &lt;gars&gt; (args) ...)</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>tại vị trí bộ nhớ không được chỉ định được chỉ định bởi<code>T</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>người phân bổ sử dụng<code>T</code>các đối số để chuyển đến nhà xây dựng của T<code><a href="new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="uses_allocator" title="cpp/memory/uses allocator"> <span class="t-lines"><span>sử dụng_allocator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem loại được chỉ định có hỗ trợ sử dụng xây dựng người khác không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="make_obj_using_allocator" title="cpp/memory/make obj using allocator"> <span class="t-lines"><span>make_obj_using_allocator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>tạo ra một đối tượng thuộc loại đã cho bằng phương pháp xây dựng người sử dụng<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/uninitialized_construct_using_allocator">https://en.cppreference.com/w/cpp/memory/uninitialized_construct_using_allocator</a>
+</p>
+</div>

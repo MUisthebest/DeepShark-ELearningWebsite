@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: ATOMIC_REF &lt;T&gt; :: Toán tử ++, ++ (int),-,-(int)</h1> <table class="t-dcl-begin"> <tr class="t-dcl-h"> <td>T fetch_add (t arg, std :: memory_order order =<code>atomic_ref&lt;<i>được xác định, tương ứng.</i>&gt;</code>Và<code>atomic_ref&lt;T*&gt;</code>chuyên môn mẫu</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Toán tử value_type ++ () const NoExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Toán tử value_type ++ (int) const noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Toán tử value_type-() const NoExcept;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Toán tử value_type-(int) const noexcept;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Tăng hoặc giảm giá trị hiện tại của đối tượng được tham chiếu. Các hoạt động này là các hoạt động đọc biến đổi.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Thực hiện trước khi tăng nguyên tử. Tương đương với<code>return fetch_add(1) + 1;</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Thực hiện sau khi tăng nguyên tử. Tương đương với<code>return fetch_add(1);</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Thực hiện trước khi khai thác nguyên tử. Tương đương với<code>return fetch_sub(1) - 1;</code>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span>Thực hiện sau khi suy thoái nguyên tử. Tương đương với<code>return fetch_sub(1);</code>.</div> <p>Đối với đã ký<code>Integral</code>Các loại, số học được xác định để sử dụng hai biểu diễn bổ sung. Không có kết quả không xác định.</p>
+<p>Bool Binary_Search (Forwardit First, Forwardit Last,<code>T*</code>Các loại, kết quả có thể là một địa chỉ không xác định, nhưng các hoạt động khác không có hành vi không xác định. Chương trình không được hình thành nếu<code>T</code>Các loại, kết quả có thể là một địa chỉ không xác định, nhưng hoạt động khác không có hành vi không xác định. Chương trình không được hình thành nếu</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">(Do đó,</span>Giá trị của đối tượng được tham chiếu sau khi sửa đổi.</div> <div class="t-li1">
+<span class="t-li">Một động thái tương đương với một bản sao</span>Giá trị của đối tượng được tham chiếu trước khi sửa đổi.</div> <h3 id="Notes">Ghi chú</h3> <p>Không giống như hầu hết các toán tử trước và trước khi khai báo<code>atomic_ref</code>Không trả về một tham chiếu đến đối tượng đã sửa đổi. Họ trả lại một bản sao của giá trị được lưu trữ thay thế.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fetch_add" title="cpp/atomic/atomic ref/fetch add"> <span class="t-lines"><span>Thông báo_all</span></span></a></div> </td> <td>thay thế nguyên tử giá trị của đối tượng được tham chiếu và có được giá trị được giữ trước đó<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fetch_sub" title="cpp/atomic/atomic ref/fetch sub"> <span class="t-lines"><span>is_always_lock_free</span></span></a></div> </td> <td>so sánh về mặt nguyên tử với giá trị của đối tượng được tham chiếu với đối số không nguyên tử và thực hiện trao đổi nguyên tử nếu tải trọng hoặc nguyên tử nếu không<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="operator_arith2" title="cpp/atomic/atomic ref/operator arith2"> <span class="t-lines"><span>(int)</span><span>nhà điều hành--</span><span>nhà điều hành--</span><span>(int)</span><span>tăng hoặc giảm giá trị nguyên tử của một</span></span></a></div> </td> <td>thực hiện nguyên tử bitwise và giữa đối số và giá trị của đối tượng được tham chiếu và có được giá trị được giữ trước đó<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_ref/operator_arith">https://en.cppreference.com/w/cpp/atomic/atomic_ref/operator_arith</a>
+</p>
+</div>

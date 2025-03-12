@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: WCSTOK</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">wchar_t* wcstok (wchar_t* str, const wchar_t* delim, wchar_t ** ptr);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Tìm mã thông báo tiếp theo trong chuỗi rộng được chấm dứt null được trỏ bởi<code>str</code>. Các ký tự phân tách được xác định bởi chuỗi rộng được chấm dứt null được trỏ đến bởi<code>delim</code>.</p>
+<div class="t-li1">Hàm này được thiết kế để được gọi là bội số thời gian để có được mã thông báo liên tiếp từ cùng một chuỗi.</div> <ul>
+<li>Nếu như<code>str != nullptr</code>, cuộc gọi được coi là cuộc gọi đầu tiên đến<code>std::wcstok</code>cho chuỗi rộng đặc biệt này. Chức năng tìm kiếm ký tự rộng đầu tiên là<i>không</i>chứa trong<code>delim</code>.</li>
+<li>Nếu không có nhân vật rộng như vậy được tìm thấy, không có mã thông báo nào<code>str</code>Tất cả, và chức năng trả về một con trỏ null.</li>
+<li>Nếu nhân vật rộng như vậy được tìm thấy, đó là<i>bắt đầu của mã thông báo</i>. Chức năng sau đó tìm kiếm từ điểm đó cho nhân vật rộng đầu tiên<i>khoảng cách</i>chứa trong<code>delim</code>.</li>
+<ul>
+<li>Nếu không có nhân vật rộng như vậy được tìm thấy,<code>str</code>chỉ có một mã thông báo và các cuộc gọi trong tương lai đến<code>std::wcstok</code>Sẽ trả lại một con trỏ null.</li>
+<li>Nếu nhân vật rộng như vậy được tìm thấy, đó là<i>thay thế</i>bởi nhân vật rộng lớn<code>L'\0'</code>và trạng thái phân tích cú pháp (thường là một con trỏ tới ký tự rộng sau) được lưu trữ ở vị trí do người dùng cung cấp<code>*ptr</code>.</li>
+</ul>
+<li>Hàm sau đó trả lại con trỏ về đầu mã thông báo.</li>
+<li>Nếu như<code>str == nullptr</code>, cuộc gọi được coi là một cuộc gọi tiếp theo đến<code>std::wcstok</code>: Chức năng tiếp tục từ nơi nó còn lại trong lần gọi trước đó với cùng một<code>*ptr</code>. Hành vi giống như nếu con trỏ tới ký tự rộng theo mã thông báo được phát hiện cuối cùng được truyền<code>str</code>.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>Con trỏ tới chuỗi rộng kết thúc null để tokenize</td>
+</tr> <tr class="t-par"> <td>DELIM</td> <td>-</td> <td>Con trỏ đến chuỗi rộng được chấm dứt null xác định các dấu phân cách</td>
+</tr> <tr class="t-par"> <td>Nếu mảng chứa một số yếu tố</td> <td>-</td> <td>con trỏ đến một đối tượng thuộc loại<code>wchar_t*</code>, được WCSTOK sử dụng để lưu trữ trạng thái nội bộ của nó</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ đến đầu mã thông báo tiếp theo hoặc con trỏ NULL nếu không còn mã thông báo nữa.</p>
+<h3 id="Note">điều đó làm cho phạm vi đó bằng phạm vi</h3> <p>Chức năng này là phá hoại: nó viết<code>L'\0'</code>các ký tự trong các phần tử của chuỗi<code>str</code>. Cụ thể, một chuỗi rộng theo nghĩa đen không thể được sử dụng làm đối số đầu tiên của<code>std::wcstok</code>.</p>
+<p>Không gian tên std :: Phạm vi<code><a href="../byte/strtok" title="cpp/string/byte/strtok">std::strtok</a></code>, chức năng này không cập nhật lưu trữ tĩnh: nó lưu trữ trạng thái phân tích cú pháp ở vị trí do người dùng cung cấp.</p>
+<p>Không giống như hầu hết các tokenizer khác, các phân định trong<code>std::wcstok</code>Có thể khác nhau cho mỗi mã thông báo tiếp theo và thậm chí có thể phụ thuộc vào nội dung của các mã thông báo trước đó.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CWchar&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../byte/strtok" title="cpp/string/byte/strtok"> <span class="t-lines"><span>Strtok</span></span></a></div> </td> <td>Tìm mã thông báo tiếp theo trong chuỗi byte<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/wcstok" title="c/string/wide/wcstok">C documentation</a></span>vì<code>wcstok</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/wcstok">https://en.cppreference.com/w/cpp/string/wide/wcstok</a>
+</p>
+</div>

@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Atomic_flag :: Atomic_flag</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/atomic" title="cpp/header/atomic">&lt;atomic&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">ATOMIC_FLAG () NoExcept = Mặc định;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ConstExpr Atomic_flag () NoExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">ATOMIC_FLAG (const Atomic_flag &amp;) = xóa;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xây dựng một mới<code><a href="../atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <span class="t-li">1)</span>Trình xây dựng mặc định tầm thường, khởi tạo<code><a href="../atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>đến trạng thái không xác định.</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <span class="t-li">1)</span>Khởi tạo<code><a href="../atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>để xóa trạng thái.</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <div class="t-li1">
+<span class="t-li">2)</span>Trình xây dựng bản sao bị xóa;<code><a href="../atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>không thể sao chép.</div> <p>Ngoài ra,<code><a href="../atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>có thể được khởi tạo giá trị để xóa trạng thái với biểu thức<code><a href="../atomic_flag_init" title="cpp/atomic/ATOMIC FLAG INIT">ATOMIC_FLAG_INIT</a></code>. Cho một<code>atomic_flag</code>với tĩnh<a href="../../language/storage_duration#Storage_duration" title="cpp/language/storage duration">storage duration</a>, điều này đảm bảo<a href="../../language/initialization#Static_initialization" title="cpp/language/initialization">static initialization</a>: Cờ có thể được sử dụng trong các hàm tạo của các đối tượng tĩnh.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../atomic_flag_init" title="cpp/atomic/ATOMIC FLAG INIT"> <span class="t-lines"><span>Atomic_flag_init</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>khởi tạo một<code><a href="../atomic_flag" title="cpp/atomic/atomic flag">std::atomic_flag</a></code>ĐẾN<code>false</code> <br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_flag/atomic_flag">https://en.cppreference.com/w/cpp/atomic/atomic_flag/atomic_flag</a>
+</p>
+</div>

@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: độc đáo_lock &lt;mutex&gt; :: Mở khóa</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">khoảng trống mở khóa ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Mở khóa (tức là, phát hành quyền sở hữu) quyền sở hữu của Mutex và phát hành.</p>
+<p><code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>được ném nếu không có mutex liên quan hoặc nếu mutex không bị khóa.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <ul>
+<li>Bất kỳ trường hợp ngoại lệ nào được ném bởi<code>mutex()-&gt;unlock()</code>.</li>
+<li>Nếu không có mutex liên quan hoặc mutex không bị khóa,<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>với mã lỗi của<code><a href="../../error/errc" title="cpp/error/errc">std::errc::operation_not_permitted</a></code>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lock" title="cpp/thread/unique lock/lock"> <span class="t-lines"><span>khóa</span></span></a></div> </td> <td>Mở khóa (tức là phát hành quyền sở hữu) Mutex, nếu được sở hữu và có được quyền sở hữu của người khác<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="release" title="cpp/thread/unique lock/release"> <span class="t-lines"><span>giải phóng</span></span></a></div> </td> <td>hoán đổi trạng thái với người khác<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/unique_lock/unlock">https://en.cppreference.com/w/cpp/thread/unique_lock/unlock</a>
+</p>
+</div>

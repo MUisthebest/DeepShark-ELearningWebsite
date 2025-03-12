@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Counting_Semaphore &lt;ItherMaxValue&gt; :: Try_acquire</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">bool try_acquire () noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Cố gắng làm giảm nguyên tử quầy trong<code>1</code>Nếu nó lớn hơn<code>​0​</code>; Không có chặn xảy ra bất kể.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu nó làm giảm bộ đếm nội bộ, nếu không<code>false</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Việc triển khai được phép không làm giảm bộ đếm ngay cả khi nó lớn hơn<code>​0​</code>- tức là, họ được phép thất bại và trở lại<code>false</code>.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="release" title="cpp/thread/counting semaphore/release"> <span class="t-lines"><span>giải phóng</span></span></a></div> </td> <td>có thể thất bại một cách mạnh mẽ.<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="acquire" title="cpp/thread/counting semaphore/acquire"> <span class="t-lines"><span>gia tăng bộ đếm nội bộ và người mua lại</span></span></a></div> </td> <td>giành được<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_acquire_for" title="cpp/thread/counting semaphore/try acquire for"> <span class="t-lines"><span>cố gắng làm giảm bộ đếm nội bộ mà không chặn</span></span></a></div> </td> <td>Try_acquire_for<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_acquire_until" title="cpp/thread/counting semaphore/try acquire until"> <span class="t-lines"><span>cố gắng làm giảm bộ đếm nội bộ, chặn đến một thời gian</span></span></a></div> </td> <td>Try_acquire_until<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/counting_semaphore/try_acquire">https://en.cppreference.com/w/cpp/thread/counting_semaphore/try_acquire</a>
+</p>
+</div>

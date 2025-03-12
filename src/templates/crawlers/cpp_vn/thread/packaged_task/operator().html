@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: PackAged_Task &lt;r (args ...)&gt; :: Toán tử ()</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void toán tử () (argtypes ... args);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Gọi nhiệm vụ được lưu trữ như thể<code><a href="../../utility/functional" title="cpp/utility/functional">INVOKE&lt;R&gt;</a>(f, args...)</code>là<code>f</code>là nhiệm vụ được lưu trữ. Giá trị trả lại của nhiệm vụ hoặc bất kỳ trường hợp ngoại lệ nào được lưu trữ ở trạng thái chia sẻ. Trạng thái được chia sẻ đã sẵn sàng và bất kỳ chủ đề đang chờ đợi điều này là không bị chặn.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>iterator trước đó phần tử mới sẽ được xây dựng</td> <td>-</td> <td>các tham số để truyền khi gọi nhiệm vụ được lưu trữ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../future_error" title="cpp/thread/future error">std::future_error</a></code>về các điều kiện lỗi sau:</p>
+<ul>
+<li>Nhiệm vụ được lưu trữ đã được viện dẫn. Danh mục lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>promise_already_satisfied</code></a>.</li>
+<li> <code>*this</code>không có trạng thái chung. Danh mục lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>no_state</code></a>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2142" rel="nofollow">LWG 2142</a> </td> <td>C ++ 11</td> <td>một cuộc gọi thành công cho nhà điều hành<span class="br0">.</span><span class="br0">)</span>đồng bộ với<br/>một cuộc gọi đến bất kỳ chức năng thành viên nào của một<code><a href="../future" title="cpp/thread/future">std::future</a></code>hoặc<br/><code><a href="../shared_future" title="cpp/thread/shared future">std::shared_future</a></code>chia sẻ trạng thái chia sẻ của họ với<code>*this</code> </td> <td>Không đồng bộ hóa bổ sung<br/>đảm bảo khác với những gì là<br/>đã được cung cấp bởi nhà nước được chia sẻ</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="make_ready_at_thread_exit" title="cpp/thread/packaged task/make ready at thread exit"> <span class="t-lines"><span>#include &lt;Prutex&gt;</span></span></a></div> </td> <td>#include &lt;chuỗi&gt;<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/packaged_task/operator()">https://en.cppreference.com/w/cpp/thread/packaged_task/operator()</a>
+</p>
+</div>

@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Signbit</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx23"> <td><pre data-language="cpp">Bool Signbit (Num Num);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Bool Signbit (Double Num);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl-h"> <td> <a href="#Notes">Additional overloads</a>
+</td> <td></td> <td></td> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Bool Signbit (num gấp đôi dài);</pre>
+</td> <td>, kết quả là hữu hạn.</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>consexpr bool isfinite ( / *-point-point kiểu * / num);<code>num</code>và cơ bản<span class="t-rev-inl t-since-cxx23"><span>bool isfinite (số nguyên);<code>num</code>.</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;arithmetic1, orithmetic2, số học lớp3&gt; lớp</span>ACO kép (số nguyên);<code>double</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>trả lại hệ điều hành &lt;&lt; s.str ();</td> <td>-</td> <td>Tính giá trị chính của cosin hồ quang của</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>nếu như<code>num</code>là tiêu cực,<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Notes">Ghi chú</h3> <p>constexpr bool signbit ( / * loại dấu phẩy động * / num);<code><a href="copysign" title="cpp/numeric/math/copysign">std::copysign</a></code>Thì<code>std::signbit</code>Mẫu &lt;Class Integer&gt;</p>
+<p>, kết quả bằng<span class="t-v">, kết quả là hữu hạn.</span>trong khoảng [−π; π].<code>num</code>Nếu việc triển khai hỗ trợ số học dấu nổi của IEEE (IEC 60559),<code>std::signbit(num)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::signbit(static_cast&lt;double&gt;(num))</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Bool Signbit (Số nguyên);</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Chức năng này phát hiện bit dấu hiệu của số không, vô hạn và nans. Cùng với</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fabs" title="cpp/numeric/math/fabs"> <span class="t-lines"><span>tròn<span class="t-dsc-small">(trôi nổi)</span></span><span>fabs</span><span>fabsf</span><span>FABSL</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Giá trị tuyệt đối của giá trị điểm nổi (\ (\ small {| x |} \) | x |)<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="copysign" title="cpp/numeric/math/copysign"> <span class="t-lines"><span>copysign</span><span>copysignf</span><span>copysignl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>sao chép dấu hiệu của giá trị điểm nổi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/math/signbit" title="c/numeric/math/signbit">C documentation</a></span>vì<code>signbit</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/math/signbit">https://en.cppreference.com/w/cpp/numeric/math/signbit</a>
+</p>
+</div>

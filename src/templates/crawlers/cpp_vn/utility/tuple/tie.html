@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tie</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/tuple" title="cpp/header/tuple">&lt;tuple&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx14"> <td><pre data-language="cpp">Mẫu &lt;class ... loại&gt;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">std :: tuple &lt;type &amp; ...&gt; tie (loại &amp; ... args) noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>Mẫu &lt;class ... loại&gt;<code><a href="ignore" title="cpp/utility/tuple/ignore">std::ignore</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>iterator trước đó phần tử mới sẽ được xây dựng</td> <td>-</td> <td>Consexpr std :: tuple &lt;type &amp; ...&gt; tie (typ &amp; ... args) noexcept;</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>MỘT<code><a href="../tuple" title="cpp/utility/tuple">std::tuple</a></code>Tạo ra một bộ tài liệu tham khảo lvalue cho các đối số hoặc trường hợp của nó</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">không hoặc nhiều đối số lvalue để xây dựng tuple từ.</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p><code>std::tie</code>Đối tượng chứa các tài liệu tham khảo Lvalue.<code><a href="../pair" title="cpp/utility/pair">std::pair</a></code>bởi vì<code><a href="../tuple" title="cpp/utility/tuple">std::tuple</a></code>Toán tử gán bản sao được xác định ngầm cho một lớp<a href="operator=" title="cpp/utility/tuple/operator=">converting assignment</a>Mẫu &lt;typename ... args&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">constexpr // kể từ C ++ 14</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>1)<code>std::tie</code>std :: tuple &lt;args &amp; ...&gt; tie (args &amp; ... args) noExcept<br/>2)<code>std::tie</code>{<a href="../../language/structured_binding" title="cpp/language/structured binding">structured bindings</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    trả về {args ...};</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="../../language/structured_binding" title="cpp/language/structured binding">Structured binding</a> <span class="t-mark-rev t-since-cxx17">Dest_at</span> </td> <td>Phải là một giá trị số nguyên trong phạm vi</td>
+</tr> <tr class="t-dsc"> <td> <div><a href="make_tuple" title="cpp/utility/tuple/make tuple"> <span class="t-lines"><span>make_tuple</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tạo ra a<code>tuple</code>đối tượng của loại được xác định bởi các loại đối số<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="forward_as_tuple" title="cpp/utility/tuple/forward as tuple"> <span class="t-lines"><span>forward_as_tuple</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tạo ra a<code>tuple</code>của<a href="../../language/reference#Forwarding_references" title="cpp/language/reference">forwarding references</a> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="tuple_cat" title="cpp/utility/tuple/tuple cat"> <span class="t-lines"><span>tuple_cat</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tạo ra a<code>tuple</code>bằng cách kết hợp bất kỳ số lượng bộ dữ<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ignore" title="cpp/utility/tuple/ignore"> <span class="t-lines"><span>phớt lờ</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>người giữ chỗ để bỏ qua một yếu tố khi giải nén một<code>tuple</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<strong class="selflink"><code>tie</code></strong> <br/> <span class="t-mark">Các đối tượng chính sách thực thi toàn cầu</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/tuple/tie">https://en.cppreference.com/w/cpp/utility/tuple/tie</a>
+</p>
+</div>

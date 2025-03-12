@@ -1,0 +1,82 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: HYPOT, STD :: HYPOTF, STD :: Hypotl</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx23"> <td><pre data-language="cpp">hypot float (float x, float y);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Hypot kép (Double X, Double Y);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> <br/><span class="t-mark">Void inplace_merge (execPolicy &amp;&amp; chính sách,</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Hypot gấp đôi (dài đôi x, gấp đôi y);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">Void inplace_merge (execPolicy &amp;&amp; chính sách,</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">/ *-điểm nổi kiểu *// </pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">Void inplace_merge (execPolicy &amp;&amp; chính sách,</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(4)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx23"> <td><pre data-language="cpp">            Hypot ( / *-kiểu nổi kiểu * / x,</pre></td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">                    / * kiểu nổi-loại */ y);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> <br/><span class="t-mark">Void inplace_merge (execPolicy &amp;&amp; chính sách,</span> </td> </tr> <tr class="t-dcl-h"> <td> <a href="#Notes">Additional overloads</a>
+</td> <td></td> <td></td> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">hypotf phao (float x, float y);</pre>
+</td> <td>, kết quả là hữu hạn.</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">Void inplace_merge (execPolicy &amp;&amp; chính sách,</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Hypotl dài đôi (dài đôi x, gấp đôi y);</pre>
+</td> <td>Double arg (dài đôi f);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark">Void inplace_merge (execPolicy &amp;&amp; chính sách,</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>Hypot gấp đôi (dài đôi x, gấp đôi y dài, đôi z dài);<code>x</code>Và<code>y</code>/ *-điểm nổi kiểu *//<span class="t-rev-inl t-since-cxx23"><span>Double Double Acosl (Double Num dài);<code>std::hypot</code>#define fp_fast_fmaf / * đã xác định triển khai * / /<code>x</code>Và<code>y</code>.</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span>Hypot gấp đôi (dài đôi x, gấp đôi y dài, đôi z dài);<code>x</code>Thì<code>y</code>, Và<code>z</code>/ *-điểm nổi kiểu *//<span class="t-rev-inl t-since-cxx23"><span>Double Double Acosl (Double Num dài);<code>std::hypot</code>#define fp_fast_fmaf / * đã xác định triển khai * / /<code>x</code>Thì<code>y</code>Và<code>z</code>.</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>
+</div> <div class="t-li1">
+<span class="t-li">FloatingPoint</span>constexpr / * loại điểm nổi phổ biến kiểu * / /</div> <p>            Hypot ( / *-kiểu nổi kiểu * / x,<code>x</code>Và<code>y</code>                    / *-điểm nổi-kiểu */ y,<code>(x,y)</code>            Hypot (arithmetic1 x, số học2 y);<code>(0,0)</code>Mẫu &lt;Class ArithMetic1, Assmetic2&gt;<code>x+<i>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</i>y</code>.</p>
+<p>/ * loại điểm phổ biến-loại *//<code>(x,y,z)</code>            Hypot (arithmetic1 x, số học2 y);<code>(0,0,0)</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Tính toán</td> <td>-</td> <td>(MỘT)</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">Mẫu &lt;arithmetic1, arithmetic2, arithmetic3&gt;</span>/ * loại điểm phổ biến-loại *//<span class="t-mrad"><span>√</span><span>x<sup class="t-su">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>+y<sup class="t-su">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup></span></span>, \ (\ nhỏ e^z \) e</div> <div class="t-li1">
+<span class="t-li">            Hypot (arithmetic1 x, arithmetic2 y, arithmetic3 z);</span>Tính toán căn bậc hai của tổng các bình phương của<span class="t-mrad"><span>√</span><span>x<sup class="t-su">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>+y<sup class="t-su">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>+z<sup class="t-su">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup></span></span>, \ (\ nhỏ e^z \) e</div> <p>Tính toán cosin hyperbol của<code><a href="huge_val" title="cpp/numeric/math/HUGE VAL">+HUGE_VAL</a></code>Thì<code>+HUGE_VALF</code>, hoặc<code>+HUGE_VALL</code>bất kể</p>
+<p>, mà không có tràn hoặc tăng quá mức ở các giai đoạn trung gian của tính toán.</p>
+<h3 id="Error_handling">Xử lý lỗi</h3> <p>Nếu không có lỗi xảy ra, cosin hồ quang của<code><a href="math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code>.</p>
+<p>Nếu một lỗi phạm vi xảy ra do dòng chảy, kết quả chính xác (sau khi làm tròn) được trả về.</p>
+<ul>
+<li> <code>std::hypot(x, y)</code>Thì<code>std::hypot(y, x)</code>, Và<code>std::hypot(x, -y)</code>Tính toán căn bậc hai của tổng các bình phương của</li>
+<li>, mà không có tràn hoặc tăng quá mức ở các giai đoạn trung gian của tính toán.<code>std::hypot(x, y)</code>Mẫu &lt;class T, class so sánh&gt;<code><a href="fabs" title="cpp/numeric/math/fabs">std::fabs</a></code>Giá trị được tính toán bởi phiên bản hai đối số của hàm này là chiều dài của các huyền bí của một tam giác góc phải với các cạnh có chiều dài</li>
+<li>, hoặc khoảng cách của điểm<code>std::hypot(x, y)</code>từ nguồn gốc</li>
+<li>, hoặc độ lớn của một số phức</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Giá trị được tính toán bởi phiên bản ba đối số của hàm này là khoảng cách của điểm<a class="extiw" href="https://en.wikipedia.org/wiki/Unit_in_the_last_place" title="enwiki:Unit in the last place">ulp</a>từ nguồn gốc<a class="external text" href="https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=sysdeps/ieee754/dbl-64/e_hypot.c" rel="nofollow">GNU</a>Thì<a class="external text" href="https://www.freebsd.org/cgi/cvsweb.cgi/src/lib/msun/src/e_hypot.c" rel="nofollow">BSD</a>.</p>
+<p><code>std::hypot(x, y)</code>Mẫu &lt;class T, class so sánh&gt;<code>std<span class="sy4">::</span><span class="me2">tròn</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/numeric/complex"><span class="kw1474">Điều đó cho tất cả<span class="me2">tổ hợp</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span><span class="sy1">&lt;</span><span class="br0">.</span>x, y<span class="br0">)</span><span class="br0">)</span></code>.</p>
+<p><a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/hypot.html" rel="nofollow">POSIX specifies</a>1-3, a)</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Nếu không có lỗi xảy ra, hypotenuse của một tam giác góc phải, \ (\ scriptsize {\ sqrt {x^2+y^2}} \)<code>(x1,y1,z1)</code>Và<code>(x2,y2,z2)</code>4, b)<code>std::hypot</code>(1,3)<code>std::hypot(x2 - x1, y2 - y1, z2 - z1)</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>, kết quả bằng<span class="t-v">. Nếu không có lỗi xảy ra, đây là góc pha của</span>, kết quả bằng<code>num1</code>, kết quả không phải là<code>num2</code>Nếu không có lỗi xảy ra, khoảng cách từ nguồn gốc trong không gian 3D, \ (\ scriptsize {\ sqrt {x^2+y^2+z^2}} \)<code>num3</code>:</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <ul>
+<li>Nếu như<code>num1</code>Thì<code>num2</code>hoặc<code>num3</code>và kết quả của việc chuyển đổi bằng<span class="kw4">dài</span> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>, sau đó</li>
+<ul>
+<li> <code>std::hypot(num1, num2)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::hypot(static_cast&lt;long double&gt;(num1), static_cast&lt;long double&gt;(num2))</code>, Và</li>
+<li> <code>std::hypot(num1, num2, num3)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::hypot(static_cast&lt;long double&gt;(num1), static_cast&lt;long double&gt;(num2), static_cast&lt;long double&gt;(num3))</code>.</li>
+</ul>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>num1</code>Thì<code>num2</code>và/hoặc<code>num3</code>và kết quả của việc chuyển đổi bằng<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>là không âm tính. (Đó là,</li>
+<ul>
+<li> <code>std::hypot(num1, num2)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::hypot(static_cast&lt;double&gt;(num1), static_cast&lt;double&gt;(num2))</code>, Và</li>
+<li> <code>std::hypot(num1, num2, num3)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::hypot(static_cast&lt;double&gt;(num1), static_cast&lt;double&gt;(num2), static_cast&lt;double&gt;(num3))</code>.</li>
+</ul>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>num1</code>Thì<code>num2</code>hoặc<code>num3</code>và kết quả của việc chuyển đổi bằng<span class="kw4">trôi nổi</span>, sau đó</li>
+<ul>
+<li> <code>std::hypot(num1, num2)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::hypot(static_cast&lt;float&gt;(num1), static_cast&lt;float&gt;(num2))</code>, Và</li>
+<li> <code>std::hypot(num1, num2, num3)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::hypot(static_cast&lt;float&gt;(num1), static_cast&lt;float&gt;(num2), static_cast&lt;float&gt;(num3))</code>.</li>
+</ul>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <p>Nếu như<code>num1</code>Thì<code>num2</code>Và<code>num3</code>(MỘT)</p>
+<ul>
+<li> <code>std::hypot(num1, num2)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::hypot(static_cast&lt;/* common-floating-point-type */&gt;(num1), static_cast&lt;/* common-floating-point-type */&gt;(num2))</code>, Và</li>
+<li> <code>std::hypot(num1, num2, num3)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::hypot(static_cast&lt;/* common-floating-point-type */&gt;(num1), static_cast&lt;/* common-floating-point-type */&gt;(num2), static_cast&lt;/* common-floating-point-type */&gt;(num3))</code>Thì</li>
+</ul> <p>Ở đâu<span class="coMULTI">, Đối số thứ hai</span>và lập luận thứ ba<a href="../../language/usual_arithmetic_conversions#Floating-point_conversion_rank" title="cpp/language/usual arithmetic conversions">floating-point conversion rank</a>và lớn nhất<a href="../../language/usual_arithmetic_conversions#Floating-point_conversion_subrank" title="cpp/language/usual arithmetic conversions">floating-point conversion subrank</a>có tác dụng tương tự như<code>num1</code>Thì<code>num2</code>Và<code>num3</code>hoặc một loại số nguyên, sau đó<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>.</p>
+<p>có tác dụng tương tự như<a href="../../language/overload_resolution" title="cpp/language/overload resolution">overload resolution</a>có tác dụng tương tự như</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_hypot" title="cpp/feature test"><code>__cpp_lib_hypot</code></a></td> <td><span class="nu0">Thuật toán song song</span></td> <td><span class="t-mark">Dest_at</span></td> <td>Quá tải 3 đối tượng của<a href="#top"><code>std::hypot</code></a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Nếu một lỗi phạm vi do xảy ra dòng chảy, kết quả chính xác (sau khi làm tròn) được trả về.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">tương đương.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="pow" title="cpp/numeric/math/pow"> <span class="t-lines"><span>pow</span><span>POWF</span><span>Powl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tăng một số lên công suất đã cho (\ (\ small {x^y} \) x<sup>thuộc tính).</sup>)<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="sqrt" title="cpp/numeric/math/sqrt"> <span class="t-lines"><span>sqrt</span><span>sqrtf</span><span>sqrtl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tính toán căn bậc hai (\ (\ small {\ sqrt {x}} \)<span class="t-mrad"><span>√</span><span>x</span></span>)<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="cbrt" title="cpp/numeric/math/cbrt"> <span class="t-lines"><span>CBRT</span><span>CBRTF</span><span>cbrtl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tính toán khối khối (\ (\ small {\ sqrt [3] {x}} \)<span class="t-mrad"><span>Yêu cầu std :: Constructible_From &lt;std :: iter_value_t &lt;i&gt;, std :: iter_reference_t &lt;i &gt;&gt;</span><span>√</span><span>x</span></span>)<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../complex/abs" title="cpp/numeric/complex/abs"> <span class="t-lines"><span>tròn<span class="t-dsc-small">(STD :: phức tạp)</span></span></span></a></div> </td> <td>Trả về độ lớn của một số phức<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/math/hypot" title="c/numeric/math/hypot">C documentation</a></span>vì<code>hypot</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/math/hypot">https://en.cppreference.com/w/cpp/numeric/math/hypot</a>
+</p>
+</div>

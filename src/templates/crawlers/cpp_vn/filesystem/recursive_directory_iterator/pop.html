@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: fileSystem :: recursive_directory_iterator :: pop</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">void pop ();</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">void pop (std :: error_code &amp; ec);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Di chuyển bộ lặp một cấp trong phân cấp thư mục. Vô hiệu hóa tất cả các bản sao của giá trị trước đó của<code>*this</code>.</p>
+<p>Nếu thư mục phụ huynh nằm bên ngoài phân cấp thư mục được lặp lại trên (tức là<code>depth() == 0</code>), bộ<code>*this</code>đến một trình lặp thư mục kết thúc.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Mã lỗi khác để khởi tạo với</td> <td>-</td> <td>Mã lỗi để lưu trữ trạng thái lỗi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Bất kỳ quá tải không được đánh dấu<code>noexcept</code>có thể ném<code><a href="../../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>Nếu phân bổ bộ nhớ không thành công.<br/></p>
+<div class="t-li1">
+<span class="t-li">1)</span>Ném<code><a href="../filesystem_error" title="cpp/filesystem/filesystem error">std::filesystem::filesystem_error</a></code>Trả về thư mục làm việc hiện tại.</div> <div class="t-li1">
+<span class="t-li">2)</span>Đặt a<code><a href="http://en.cppreference.com/w/cpp/error/error_code"><span class="kw879">Điều đó cho tất cả<span class="me2">ERROR_CODE</span></span></a><span class="sy3">Không có giá trị</span></code>tham số đến mã lỗi API OS nếu cuộc gọi API OS không thành công và thực thi<code>ec.<a href="../../error/error_code/clear" title="cpp/error/error code/clear">clear</a>()</code>Nếu không có lỗi xảy ra.</div> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/recursive_directory_iterator/pop">https://en.cppreference.com/w/cpp/filesystem/recursive_directory_iterator/pop</a>
+</p>
+</div>

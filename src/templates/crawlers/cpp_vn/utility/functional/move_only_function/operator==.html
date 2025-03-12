@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">Toán tử == (STD :: Move_only_function)</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Toán tử bool bạn bè == (const Move_only_function &amp; f, std :: nullptr_t) noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Kiểm tra xem trình bao bọc có phải không<code>f</code>có mục tiêu có thể gọi bằng cách so sánh chính thức với<code>std::nullptr</code>. Máy bao bọc trống (nghĩa là các trình bao bọc không có mục tiêu) so sánh các hàm không bình đẳng, không sử dụng so sánh không bình đẳng.</p>
+<p>Thực thi hiệu quả<a href="../../../language/unqualified_lookup" title="cpp/language/unqualified lookup">unqualified</a>hoặc<a href="../../../language/qualified_lookup" title="cpp/language/qualified lookup">qualified lookup</a>Chức năng này không thể nhìn thấy thông thường<a href="../../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>Chuyển đổi danh tính:<code>std::move_only_function&lt;FunctionType&gt;</code>Hương hiệu nút</p>
+<p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>có thể sửa đổi các phần tử của phạm vi thông qua trình lặp được thu hút. Nếu như</td> <td>-</td> <td> <code>std::move_only_function</code>để so sánh</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>!f</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;chức năng&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Mẫu &lt;class r, class ... argtypes&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_bool" title="cpp/utility/functional/move only function/operator bool"> <span class="t-lines"><span>(hằng số thành viên tĩnh công cộng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>(có hay không chuyên ngành),<code>std::move_only_function</code>lớp Copyable_function &lt;r (args ...) const&gt;;<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../function/operator_cmp" title="cpp/utility/functional/function/operator cmp"> <span class="t-lines"><span>toán tử ==</span><span>toán tử! =</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span></span></span></div> </td> <td>so sánh a<code><a href="../function" title="cpp/utility/functional/function">std::function</a></code>với<code>nullptr</code> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/functional/move_only_function/operator%3D%3D">https://en.cppreference.com/w/cpp/utility/functional/move_only_function/operator%3D%3D</a>
+</p>
+</div>

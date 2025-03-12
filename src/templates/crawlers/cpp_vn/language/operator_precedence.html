@@ -1,0 +1,151 @@
+ <h1 class="firstHeading" id="firstHeading">Ưu tiên của toán tử C ++</h1> <p>Bảng sau đây liệt kê mức độ ưu tiên và tính kết hợp của các toán tử C ++. Các nhà khai thác được liệt kê từ trên xuống dưới, trong ưu tiên giảm dần.</p>
+<table class="wikitable"> <tr> <th>Ưu tiên</th> <th>Nhà điều hành</th> <th>Sự miêu tả</th> <th>Sự kết hợp</th>
+</tr> <tr> <th>, nếu như</th> <td>
+<code>::</code> </td> <td>
+<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">Scope resolution</a> </td> <td rowspan="6">Trái sang phải →</td>
+</tr> <tr> <th rowspan="5">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</th> <td>
+<code>a++</code> <code>a--</code> </td> <td>Hậu tố/postfix<a href="operator_incdec" title="cpp/language/operator incdec">increment and decrement</a> </td>
+</tr> <tr> <td>
+<code><i>kiểu</i>()</code> <code><i>kiểu</i>{} </code> </td> <td>
+<a href="explicit_cast" title="cpp/language/explicit cast">Functional cast</a> </td>
+</tr> <tr> <td>
+<code>a()</code> </td> <td>
+<a href="operator_other#Built-in_function_call_operator" title="cpp/language/operator other">Function call</a> </td>
+</tr> <tr> <td>
+<code>a[]</code> </td> <td>
+<a href="operator_member_access#Built-in_subscript_operator" title="cpp/language/operator member access">Subscript</a> </td>
+</tr> <tr> <td>
+<code>.</code> <code>-&gt;</code> </td> <td>
+<a href="operator_member_access#Built-in_member_access_operators" title="cpp/language/operator member access">Member access</a> </td>
+</tr> <tr> <th rowspan="10">Yêu cầu std :: Constructible_From &lt;std :: iter_value_t &lt;i&gt;, std :: iter_reference_t &lt;i &gt;&gt;</th> <td>
+<code>++a</code> <code>--a</code> </td> <td>Khác biệt<a href="operator_incdec" title="cpp/language/operator incdec">increment and decrement</a> </td> <td rowspan="10">Quyền sang trái ←</td>
+</tr> <tr> <td>
+<code>+a</code> <code>-a</code> </td> <td>Unary<a href="operator_arithmetic#Unary_arithmetic_operators" title="cpp/language/operator arithmetic">plus and minus</a> </td>
+</tr> <tr> <td>
+<code>!</code> <code>~</code> </td> <td>
+<a href="operator_logical" title="cpp/language/operator logical">Logical NOT</a>Và<a href="operator_arithmetic#Bitwise_logic_operators" title="cpp/language/operator arithmetic">bitwise NOT</a> </td>
+</tr> <tr> <td>
+<code>(<i>kiểu</i>)</code> </td> <td>
+<a href="explicit_cast" title="cpp/language/explicit cast">C-style cast</a> </td>
+</tr> <tr> <td>
+<code>*a</code> </td> <td>
+<a href="operator_member_access#Built-in_indirection_operator" title="cpp/language/operator member access">Indirection</a>(Dereference)</td>
+</tr> <tr> <td>
+<code>&amp;a</code> </td> <td>
+<a href="operator_member_access#Built-in_address-of_operator" title="cpp/language/operator member access">Address-of</a> </td>
+</tr> <tr> <td>
+<a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a> </td> <td>
+<a href="sizeof" title="cpp/language/sizeof">Size-of</a><sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[note 1]</a></sup> </td>
+</tr> <tr> <td>
+<a href="../keyword/co_await" title="cpp/keyword/co await"><code>co_await</code></a> </td> <td>
+<a href="coroutines" title="cpp/language/coroutines">await-expression</a> <span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span> </td>
+</tr> <tr> <td>
+<a href="new" title="cpp/language/new"><code>new</code></a> <a href="new" title="cpp/language/new"><code>new[]</code></a> </td> <td>
+<a href="new" title="cpp/language/new">Dynamic memory allocation</a> </td>
+</tr> <tr> <td>
+<a href="delete" title="cpp/language/delete"><code>delete</code></a> <a href="delete" title="cpp/language/delete"><code>delete[]</code></a> </td> <td>
+<a href="delete" title="cpp/language/delete">Dynamic memory deallocation</a> </td>
+</tr> <tr> <th>4</th> <td>
+<code>.*</code> <code>-&gt;*</code> </td> <td>
+<a href="operator_member_access#Built-in_pointer-to-member_access_operators" title="cpp/language/operator member access">Pointer-to-member</a> </td> <td rowspan="12">Trái sang phải →</td>
+</tr> <tr> <th>5</th> <td>
+<code>a*b</code> <code>a/b</code> <code>a%b</code> </td> <td>
+<a href="operator_arithmetic#Multiplicative_operators" title="cpp/language/operator arithmetic">Multiplication, division, and remainder</a> </td>
+</tr> <tr> <th>6</th> <td>
+<code>a+b</code> <code>a-b</code> </td> <td>
+<a href="operator_arithmetic#Additive_operators" title="cpp/language/operator arithmetic">Addition and subtraction</a> </td>
+</tr> <tr> <th>7</th> <td>
+<code>&lt;&lt;</code> <code>&gt;&gt;</code> </td> <td>Bitwise<a href="operator_arithmetic#Bitwise_shift_operators" title="cpp/language/operator arithmetic">left shift and right shift</a> </td>
+</tr> <tr> <th>8</th> <td>
+<code>&lt;=&gt;</code> </td> <td>
+<a href="operator_comparison#Three-way_comparison" title="cpp/language/operator comparison">Three-way comparison operator</a> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr> <tr> <th>9</th> <td>
+<code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code> </td> <td>Bool Binary_Search (Forwardit First, Forwardit Last,<a href="operator_comparison" title="cpp/language/operator comparison">relational operators</a>&lt;và ≤ và&gt; và tương ứng</td>
+</tr> <tr> <th>10</th> <td>
+<code>==</code> <code>!=</code> </td> <td>Bool Binary_Search (Forwardit First, Forwardit Last,<a href="operator_comparison" title="cpp/language/operator comparison">equality operators</a>= và ≠ tương ứng</td>
+</tr> <tr> <th>11</th> <td>
+<code>a&amp;b</code> </td> <td>
+<a href="operator_arithmetic#Bitwise_logic_operators" title="cpp/language/operator arithmetic">Bitwise AND</a> </td>
+</tr> <tr> <th>12</th> <td>
+<code>^</code> </td> <td>
+<a href="operator_arithmetic#Bitwise_logic_operators" title="cpp/language/operator arithmetic">Bitwise XOR</a>(độc quyền hoặc)</td>
+</tr> <tr> <th>13</th> <td>
+<code>|</code> </td> <td>
+<a href="operator_arithmetic#Bitwise_logic_operators" title="cpp/language/operator arithmetic">Bitwise OR</a>(Bao gồm hoặc)</td>
+</tr> <tr> <th>14</th> <td>
+<code>&amp;&amp;</code> </td> <td>
+<a href="operator_logical" title="cpp/language/operator logical">Logical AND</a> </td>
+</tr> <tr> <th>15</th> <td>
+<code>||</code> </td> <td>
+<a href="operator_logical" title="cpp/language/operator logical">Logical OR</a> </td>
+</tr> <tr> <th rowspan="8">16</th> <td>
+<code>a?b:c</code> </td> <td>
+<a href="operator_other#Conditional_operator" title="cpp/language/operator other">Ternary conditional</a><sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[note 2]</a></sup> </td> <td rowspan="8">Quyền sang trái ←</td>
+</tr> <tr> <td>
+<a href="throw" title="cpp/language/throw"><code>throw</code></a> </td> <td>
+<a href="throw" title="cpp/language/throw">throw operator</a> </td>
+</tr> <tr> <td>
+<a href="../keyword/co_yield" title="cpp/keyword/co yield"><code>co_yield</code></a> </td> <td>
+<a href="coroutines" title="cpp/language/coroutines">yield-expression</a> <span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span> </td>
+</tr> <tr> <td>
+<code>=</code> </td> <td>
+<a href="operator_assignment#Builtin_direct_assignment" title="cpp/language/operator assignment">Direct assignment</a>(Được cung cấp theo mặc định cho các lớp C ++)</td>
+</tr> <tr> <td>
+<code>+=</code> <code>-=</code> </td> <td>
+<a href="operator_assignment#Builtin_compound_assignment" title="cpp/language/operator assignment">Compound assignment</a>theo tổng số và sự khác biệt</td>
+</tr> <tr> <td>
+<code>*=</code> <code>/=</code> <code>%=</code> </td> <td>
+<a href="operator_assignment#Builtin_compound_assignment" title="cpp/language/operator assignment">Compound assignment</a>theo sản phẩm, thương số và phần còn lại</td>
+</tr> <tr> <td>
+<code>&lt;&lt;=</code> <code>&gt;&gt;=</code> </td> <td>
+<a href="operator_assignment#Builtin_compound_assignment" title="cpp/language/operator assignment">Compound assignment</a>bằng cách thay đổi bên trái và dịch chuyển phải</td>
+</tr> <tr> <td>
+<code>&amp;=</code> <code>^=</code> <code>|=</code> </td> <td>
+<a href="operator_assignment#Builtin_compound_assignment" title="cpp/language/operator assignment">Compound assignment</a>bằng cách bitwise và, xor, và hoặc</td>
+</tr> <tr> <th>17</th> <td>
+<code>,</code> </td> <td>
+<a href="operator_other#Built-in_comma_operator" title="cpp/language/operator other">Comma</a> </td> <td>Trái sang phải →</td>
+</tr>
+</table> <ol class="references"> <li id="cite_note-1"> <span class="reference-text">Các hoạt động của<code>sizeof</code>Không thể là một loại diễn viên kiểu C: Biểu thức<code>sizeof (int) * p</code>được giải thích rõ ràng là<code>(sizeof(int)) * p</code>, nhưng không<code>sizeof((int)*p)</code>.</span> </li> <li id="cite_note-2"> <span class="reference-text">Biểu thức ở giữa toán tử có điều kiện (giữa<code>?</code>Và<code>:</code>) được phân tích cú pháp như thể dấu ngoặc đơn: ưu tiên của nó liên quan đến<code>?:</code>bị bỏ qua.</span> </li> </ol> <p>Khi phân tích cú pháp một biểu thức, một toán tử được liệt kê trên một số hàng của bảng ở trên với độ ưu tiên sẽ được ràng buộc chặt chẽ hơn (như thể theo dấu ngoặc đơn) với các đối số của nó hơn bất kỳ toán tử nào được liệt kê trên một hàng bên dưới với mức độ ưu tiên thấp hơn. Ví dụ: các biểu thức<code><a href="http://en.cppreference.com/w/cpp/io/cout"><span class="kw1762">Điều đó cho tất cả<span class="me2">cout</span></span></a> <span class="sy1">, nối thêm</span> a <span class="sy3">Không có giá trị</span> b</code>Và<code>*p++</code>được phân tích cú pháp như<code><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/io/cout"><span class="kw1762">Điều đó cho tất cả<span class="me2">cout</span></span></a> <span class="sy1">, nối thêm</span> a<span class="br0">)</span> <span class="sy3">Không có giá trị</span> b</code>Và<code>*(p++)</code>, và không phải như<code><a href="http://en.cppreference.com/w/cpp/io/cout"><span class="kw1762">Điều đó cho tất cả<span class="me2">cout</span></span></a> <span class="sy1">, nối thêm</span> <span class="br0">.</span>a <span class="sy3">Không có giá trị</span> b<span class="br0">)</span></code>hoặc<code>(*p)++</code>.</p>
+<p>Các nhà khai thác có cùng mức độ được ràng buộc với các lập luận của họ theo hướng kết hợp của họ. Ví dụ, biểu thức<code>a = b = c</code>được phân tích cú pháp như<code>a = (b = c)</code>, và không phải như<code>(a = b) = c</code>bởi vì sự kết hợp từ phải sang trái của nhiệm vụ, nhưng<code>a + b - c</code>của các chuyên ngành loại con trỏ của<code>(a + b) - c</code>Và không<code>a + (b - c)</code>bởi vì sự kết hợp từ trái sang phải của việc bổ sung và trừ.</p>
+<p>Đặc điểm kỹ thuật kết hợp là dự phòng cho các toán tử Unary và chỉ được hiển thị cho tính đầy đủ: Các toán tử tiền tố đơn luôn liên kết từ phải sang trái (<code>delete ++*p</code>khoảng cách<code>delete(++(*p))</code>) và các nhà khai thác postfix luôn liên kết từ trái sang phải (<code>a[1][2]++</code>khoảng cách<code>((a[1])[2])++</code>). Lưu ý rằng sự kết hợp có ý nghĩa đối với các nhà khai thác truy cập thành viên, mặc dù chúng được nhóm với các toán tử postfix đơn giản:<code>a.b++</code>của các chuyên ngành loại con trỏ của<code>(a.b)++</code>Và không<code>a.(b++)</code>.</p>
+<p>Nhà điều hành được ưu tiên không bị ảnh hưởng bởi<a href="operators" title="cpp/language/operators">operator overloading</a>. Ví dụ,<code><a href="http://en.cppreference.com/w/cpp/io/cout"><span class="kw1762">Điều đó cho tất cả<span class="me2">cout</span></span></a> <span class="sy1">, nối thêm</span> a <span class="sy4">?</span> b <span class="sy4">:</span> c<span class="sy4">Số lượng các yếu tố để sao chép</span></code>phân tích cú pháp như<code><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/io/cout"><span class="kw1762">Điều đó cho tất cả<span class="me2">cout</span></span></a> <span class="sy1">, nối thêm</span> a<span class="br0">)</span> <span class="sy4">?</span> b <span class="sy4">:</span> c<span class="sy4">Số lượng các yếu tố để sao chép</span></code>bởi vì sự ưu tiên của dịch chuyển trái số học cao hơn toán tử có điều kiện.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Ưu tiên và kết hợp là các khái niệm thời gian biên dịch và độc lập với<a href="eval_order" title="cpp/language/eval order">order of evaluation</a>, đó là một khái niệm thời gian chạy.</p>
+<p>Bản thân tiêu chuẩn không chỉ định mức độ ưu tiên. Chúng có nguồn gốc từ ngữ pháp.</p>
+<p><a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>Thì<a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Thì<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>Thì<a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>Thì<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>Thì<a href="sizeof..." title="cpp/language/sizeof..."><code>sizeof...</code></a>Thì<a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code></a>Và<a href="alignof" title="cpp/language/alignof"><code>alignof</code></a>không được bao gồm vì chúng không bao giờ mơ hồ.</p>
+<p>Một số nhà khai thác có<a href="operator_alternative" title="cpp/language/operator alternative">alternate spellings</a>Mẫu chính không có thành viên<code>and</code>vì<code>&amp;&amp;</code>Thì<code>or</code>vì<code>||</code>Thì<code>not</code>vì<code>!</code>không phải là std</p>
+<p>Trong C, toán tử điều kiện ternary có quyền ưu tiên cao hơn các toán tử gán. Do đó, biểu thức<code>e = a &lt; d ? a++ : a = d</code>, được phân tích cú pháp trong C ++ là<code>e = ((a &lt; d) ? (a++) : (a = d))</code>, sẽ không biên dịch trong C do các ràng buộc ngữ pháp hoặc ngữ nghĩa trong C. Xem trang C tương ứng để biết chi tiết.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="wikitable"> <tr style="text-align:center"> <th colspan="7">Các nhà khai thác chung</th>
+</tr> <tr style="text-align:center"> <td>
+<a href="operator_assignment" title="cpp/language/operator assignment">assignment</a> </td> <td>
+<a href="operator_incdec" title="cpp/language/operator incdec">increment<br/>decrement</a> </td> <td>
+<a href="operator_arithmetic" title="cpp/language/operator arithmetic">arithmetic</a> </td> <td>
+<a href="operator_logical" title="cpp/language/operator logical">logical</a> </td> <td>
+<a href="operator_comparison" title="cpp/language/operator comparison">comparison</a> </td> <td>
+<a href="operator_member_access" title="cpp/language/operator member access">member<br/>access</a> </td> <td>
+<a href="operator_other" title="cpp/language/operator other">other</a> </td>
+</tr> <tr style="text-align:center"> <td rowspan="6"> <p><code>a = b a += b a -= b a *= b a /= b a %= b a &amp;= b a |= b a ^= b a &lt;&lt;= b a &gt;&gt;= b</code></p>
+</td> <td rowspan="6"> <p><code>++a --a a++ a--</code></p>
+</td> <td rowspan="6"> <p><code>+a -a a + b a - b a * b a / b a % b ~a a &amp; b a | b a ^ b a &lt;&lt; b a &gt;&gt; b</code></p>
+</td> <td rowspan="6"> <p><code>!a a &amp;&amp; b a || b</code></p>
+</td> <td rowspan="6"> <p><code>a == b a != b a &lt; b a &gt; b a &lt;= b a &gt;= b a &lt;=&gt; b</code></p>
+</td> <td rowspan="6"> <p><code>a[...] *a &amp;a a-&gt;b a.b a-&gt;*b a.*b</code></p>
+</td> <td>Gọi chức năng</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a(...)</code> </td>
+</tr> <tr style="text-align:center"> <td>dấu phẩy</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a, b</code> </td>
+</tr> <tr style="text-align:center"> <td>có điều kiện</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a ? b : c</code> </td>
+</tr> <tr> <th colspan="7">Các nhà khai thác đặc biệt</th>
+</tr> <tr> <td colspan="7"> <p><a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Chuyển đổi một loại thành loại liên quan khác<br/> <a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>Chuyển đổi trong hệ thống phân cấp thừa kế<br/> <a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>thêm hoặc loại bỏ<a href="cv" title="cpp/language/cv">cv</a>-Qualifiers<br/> <a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>Chuyển đổi loại thành loại không liên quan<br/> <a href="explicit_cast" title="cpp/language/explicit cast">C-style cast</a>Chuyển đổi loại này sang loại khác bằng cách kết hợp<code>static_cast</code>Thì<code>const_cast</code>, Và<code>reinterpret_cast</code> <br/> <a href="new" title="cpp/language/new"><code>new</code></a>Tạo các đối tượng có thời lượng lưu trữ động<br/> <a href="delete" title="cpp/language/delete"><code>delete</code></a>Các đối tượng phá hủy được tạo trước đây bởi biểu thức và bản phát hành mới thu được vùng bộ nhớ<br/> <a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>truy vấn kích thước của một loại<br/> <a href="sizeof..." title="cpp/language/sizeof..."><code>sizeof...</code></a>truy vấn kích thước của một<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/> <a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>truy vấn thông tin loại của một loại<br/> <a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code></a>kiểm tra xem một biểu thức có thể ném một ngoại lệ<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/> <a href="alignof" title="cpp/language/alignof"><code>alignof</code></a>// (thường là 4):<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></p>
+</td>
+</tr>
+</table> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/operator_precedence" title="c/language/operator precedence">C documentation</a></span>vì<span class=""><span>C Ưu tiên của nhà điều hành</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/operator_precedence">https://en.cppreference.com/w/cpp/language/operator_precedence</a>
+</p>
+</div>

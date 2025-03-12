@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">std :: is_eq, std :: is_neq, std :: is_lt, std :: is_gt, std :: is_lteq, std :: is_gteq</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/compare" title="cpp/header/compare">&lt;compare&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">consexpr bool is_eq (std :: partial_ordering cmp) noexcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr bool is_neq (std :: partial_ordering cmp) noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">consexpr bool is_lt (std :: partial_ordering cmp) noexcept;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">consexpr bool is_lteq (std :: partial_ordering cmp) noexcept;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr bool is_gt (std :: partial_ordering cmp) noexcept;</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr bool is_gteq (std :: partial_ordering cmp) noexcept;</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Các chức năng này có kết quả của so sánh 3 chiều và chuyển đổi nó thành kết quả của một trong sáu nhà khai thác quan hệ</p>
+<p>Cụ thể, các chức năng này trở lại</p>
+<div class="t-li1">
+<span class="t-li">1)</span> <code>cmp == 0</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>cmp != 0</code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <code>cmp &lt; 0</code>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span> <code>cmp &lt;= 0</code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <code>cmp &gt; 0</code>
+</div> <div class="t-li1">
+<span class="t-li">từ_sys</span> <code>cmp &gt;= 0</code>
+</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>T min (std :: initizer_list &lt;t&gt; ilist, so sánh comp);</td> <td>-</td> <td>kết quả so sánh 3 chiều</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>bool</code>kết quả của hoạt động quan hệ tương ứng</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="partial_ordering" title="cpp/utility/compare/partial ordering"> <span class="t-lines"><span>Partial_ordering</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Loại kết quả của so sánh 3 chiều hỗ trợ tất cả 6 toán tử, không thể thay thế và cho phép các giá trị không thể so sánh được<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/compare/named_comparison_functions">https://en.cppreference.com/w/cpp/utility/compare/named_comparison_functions</a>
+</p>
+</div>

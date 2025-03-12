@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: regex_traits &lt;Phange&gt; :: dịch_nocase</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Biểu đồ dịch_nocase (biểu đồ c) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Có được khóa so sánh cho nhân vật<code>c</code>, sao cho tất cả các ký tự tương đương với nhân vật này trong địa phương thấm nhuần, bỏ qua sự khác biệt về trường hợp, nếu có, tạo ra cùng một khóa.</p>
+<p>Khi thư viện regex cần khớp hai ký tự<code>c1</code>Và<code>c2</code>và cờ<code><a href="../syntax_option_type" title="cpp/regex/syntax option type">std::regex_constants::icase</a></code>khoảng cách<code>true</code>, nó thực thi<code>regex_traits&lt;&gt;::translate_nocase(c1) == regex_traits&lt;&gt;::translate_nocase(c2)</code>.</p>
+<p>Chuyên ngành thư viện tiêu chuẩn của<code><a href="../regex_traits" title="cpp/regex/regex traits">std::regex_traits</a></code>Không chính thức,<code><a href="http://en.cppreference.com/w/cpp/locale/use_facet"><span class="kw1901">Điều đó cho tất cả<span class="me2">use_facet</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/locale/ctype"><span class="kw1942">Điều đó cho tất cả<span class="me2">Ctype</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT<span class="sy1">2,4)</span><span class="br0">.</span>getloc<span class="br0">.</span><span class="br0">)</span><span class="br0">)</span>.<span class="me1">dung nạp</span><span class="br0">.</span>c<span class="br0">)</span></code>, đó là, chuyển đổi<code>c</code>Để viết thường, sử dụng địa phương hiện đang thấm nhuần.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ánh xạ_Type</td> <td>-</td> <td>nhân vật cần được kiểm tra để tương đương, bỏ qua trường hợp</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Khóa so sánh không phân biệt trường hợp cho<code>c</code>Phím đối chiếu cho chuỗi ký tự</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/regex_traits/translate_nocase">https://en.cppreference.com/w/cpp/regex/regex_traits/translate_nocase</a>
+</p>
+</div>

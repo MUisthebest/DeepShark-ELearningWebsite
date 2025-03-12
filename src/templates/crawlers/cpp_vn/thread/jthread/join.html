@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">std :: jthread :: Tham gia</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void tham gia ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Chặn luồng hiện tại cho đến khi luồng được xác định bởi<code>*this</code>Hoàn thành việc thực hiện của nó.</p>
+<p>Việc hoàn thành chuỗi được xác định bởi<code>*this</code> <i>Bất kể chủ đề, đánh giá a</i>lợi nhuận thành công tương ứng từ<code>join()</code>.</p>
+<p>Không có sự đồng bộ hóa được thực hiện trên<code>*this</code>chính nó. Gọi đồng thời<code>join()</code>Trên cùng một đối tượng jthread từ nhiều luồng tạo thành một cuộc đua dữ liệu dẫn đến hành vi không xác định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Postconditions">Postconditions</h3> <p><code>joinable()</code>khoảng cách<code>false</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>, không làm gì cả.</p>
+<h3 id="Error_conditions">Điều kiện lỗi</h3> <ul>
+<li> <code><a href="../../error/errc" title="cpp/error/errc">resource_deadlock_would_occur</a></code>nếu như<code>this<span class="sy2">-</span><span class="sy1">&lt;</span>get_id<span class="br0">.</span><span class="br0">)</span> <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/thread/get_id"><span class="kw2152">Điều đó cho tất cả<span class="me2">this_thread</span><span class="sy4">::</span><span class="me2">get_id</span></span></a><span class="br0">.</span><span class="br0">)</span></code>(bế tắc được phát hiện).</li>
+<li> <code><a href="../../error/errc" title="cpp/error/errc">no_such_process</a></code>Nếu luồng không hợp lệ.</li>
+<li> <code><a href="../../error/errc" title="cpp/error/errc">invalid_argument</a></code>nếu như<code>joinable()</code>khoảng cách<code>false</code>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>#include &lt;Chủ đề&gt;</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li> </li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="detach" title="cpp/thread/jthread/detach"> <span class="t-lines"><span>tách rời</span></span></a></div> </td> <td>cho phép luồng thực thi độc lập với tay cầm luồng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="joinable" title="cpp/thread/jthread/joinable"> <span class="t-lines"><span>có thể tham gia</span></span></a></div> </td> <td>Kiểm tra xem luồng có thể kết hợp hay không, tức là có khả năng chạy trong bối cảnh song song<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/thread/thrd_join" title="c/thread/thrd join">C documentation</a></span>vì<code>thrd_join</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/jthread/join">https://en.cppreference.com/w/cpp/thread/jthread/join</a>
+</p>
+</div>

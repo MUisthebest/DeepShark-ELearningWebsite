@@ -1,0 +1,91 @@
+ <h1 class="firstHeading" id="firstHeading">Đại diện vận hành thay thế</h1> <p>Mã nguồn C ++ (và C) có thể được viết trong bất kỳ bộ ký tự 7 bit không phải ASCII nào bao gồm<a class="extiw" href="https://en.wikipedia.org/wiki/ISO_646" title="enwiki:ISO 646">ISO 646:1983</a>Bộ nhân vật bất biến. Tuy nhiên, một số toán tử và dấu chấm câu C ++ yêu cầu các ký tự nằm ngoài mã ISO 646:<code>{, }, [, ], #, \, ^, |, ~</code>. Để có thể sử dụng mã hóa ký tự trong đó một số hoặc tất cả các biểu tượng này không tồn tại (chẳng hạn như tiếng Đức<a class="extiw" href="https://en.wikipedia.org/wiki/DIN_66003" title="enwiki:DIN 66003">DIN 66003</a>), C ++ định nghĩa các lựa chọn thay thế sau bao gồm các ký tự tương thích ISO 646.</p>
+<h3 id="Alternative_tokens">Mã thông báo thay thế</h3> <p>Có những cách viết thay thế cho một số toán tử và các mã thông báo khác sử dụng các ký tự không phải là ISO646. Trong tất cả các khía cạnh của ngôn ngữ, mỗi mã thông báo thay thế hoạt động chính xác giống như mã thông báo chính của nó, ngoại trừ chính tả của nó (<a href="../preprocessor/replace" title="cpp/preprocessor/replace">stringification operator</a>có thể làm cho chính tả có thể nhìn thấy). Các mã thông báo thay thế hai chữ cái đôi khi được gọi là "Digraphs". Mặc dù dài bốn chữ,<code>%:%:</code>cũng được coi là một digraph.</p>
+<table class="wikitable"> <tr> <th>    X () &lt;%%&gt;</th> <th>Thay thế</th>
+</tr> <tr> <td>
+<code>&amp;&amp;</code> </td> <td>
+<a href="../keyword/and" title="cpp/keyword/and"><code>and</code></a> </td>
+</tr> <tr> <td>
+<code>&amp;=</code> </td> <td>
+<a href="../keyword/and_eq" title="cpp/keyword/and eq"><code>and_eq</code></a> </td>
+</tr> <tr> <td>
+<code>&amp;</code> </td> <td>
+<a href="../keyword/bitand" title="cpp/keyword/bitand"><code>bitand</code></a> </td>
+</tr> <tr> <td>
+<code>|</code> </td> <td>
+<a href="../keyword/bitor" title="cpp/keyword/bitor"><code>bitor</code></a> </td>
+</tr> <tr> <td>
+<code>~</code> </td> <td>
+<a href="../keyword/compl" title="cpp/keyword/compl"><code>compl</code></a> </td>
+</tr> <tr> <td>
+<code>!</code> </td> <td>
+<a href="../keyword/not" title="cpp/keyword/not"><code>not</code></a> </td>
+</tr> <tr> <td>
+<code>!=</code> </td> <td>
+<a href="../keyword/not_eq" title="cpp/keyword/not eq"><code>not_eq</code></a> </td>
+</tr> <tr> <td>
+<code>||</code> </td> <td>
+<a href="../keyword/or" title="cpp/keyword/or"><code>or</code></a> </td>
+</tr> <tr> <td>
+<code>|=</code> </td> <td>
+<a href="../keyword/or_eq" title="cpp/keyword/or eq"><code>or_eq</code></a> </td>
+</tr> <tr> <td>
+<code>^</code> </td> <td>
+<a href="../keyword/xor" title="cpp/keyword/xor"><code>xor</code></a> </td>
+</tr> <tr> <td>
+<code>^=</code> </td> <td>
+<a href="../keyword/xor_eq" title="cpp/keyword/xor eq"><code>xor_eq</code></a> </td>
+</tr> <tr> <td><code>{</code></td> <td>
+<code>&lt;%</code> </td>
+</tr> <tr> <td><code>}</code></td> <td>
+<code>%&gt;</code> </td>
+</tr> <tr> <td><code>[</code></td> <td>
+<code>&lt;:</code> </td>
+</tr> <tr> <td><code>]</code></td> <td>
+<code>:&gt;</code> </td>
+</tr> <tr> <td><code>#</code></td> <td>
+<code>%:</code> </td>
+</tr> <tr> <td><code>##</code></td> <td>
+<code>%:%:</code> </td>
+</tr>
+</table> <p>Khi chuỗi ký tự<code>&lt;::</code>không theo sau bởi<code>:</code>hoặc<code>&gt;</code>    toán tử-= (const std :: chrono :: tháng &amp; dm) const noexcept;<code>&lt;</code>ký tự được coi là mã thông báo tiền xử lý mà không phải là ký tự đầu tiên của mã thông báo thay thế<code>&lt;:</code>. Do đó<code><a href="http://en.cppreference.com/w/cpp/container/vector"><span class="kw1272">Điều đó cho tất cả<span class="me2">Vector</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1233">Điều đó cho tất cả<span class="me2">ngoại trừ việc phần tử được xây dựng là</span></span></a><span class="sy1">&lt;</span></code>sẽ không bị coi là<code><a href="http://en.cppreference.com/w/cpp/container/vector"><span class="kw1272">Điều đó cho tất cả<span class="me2">Vector</span></span></a><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="sy4">:</span><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1233">Điều đó cho tất cả<span class="me2">ngoại trừ việc phần tử được xây dựng là</span></span></a><span class="sy1">&lt;</span></code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Các ký tự<code>&amp;</code>Và<code>!</code>là bất biến theo ISO-646, nhưng các lựa chọn thay thế được cung cấp cho các mã thông báo sử dụng các ký tự này để phù hợp với các ký tự lịch sử hạn chế hơn nữa.</p>
+<p>Không có cách đánh vần thay thế (chẳng hạn như<code>eq</code>) cho toán tử bình đẳng<code>==</code>bởi vì nhân vật<code>=</code>đã có mặt trong tất cả các ký tự được hỗ trợ.</p>
+<h3 id="Compatibility_with_C">Khả năng tương thích với c</h3> <p>Các từ tương tự được xác định trong ngôn ngữ lập trình C trong tệp bao gồm<a href="https://en.cppreference.com/w/c/language/operator_alternative" title="c/language/operator alternative"><code>&lt;iso646.h&gt;</code></a>như macro. Bởi vì trong C ++, chúng được tích hợp vào ngôn ngữ, phiên bản C ++ của<a href="../header/ciso646" title="cpp/header/ciso646"><code>&lt;iso646.h&gt;</code></a>, cũng như<a href="../header/ciso646" title="cpp/header/ciso646"><code>&lt;ciso646&gt;</code></a>, không định nghĩa bất cứ điều gì. Các máy tính không từ không trong (ví dụ<code>&lt;%</code>), tuy nhiên, là một phần của ngôn ngữ cốt lõi và có thể được sử dụng mà không bao gồm bất kỳ tiêu đề nào (nếu không, chúng sẽ không thể sử dụng được trên bất kỳ ký tự nào không có<code>#</code>).</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Ví dụ sau đây cho thấy việc sử dụng một số mã thông báo thay thế.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">%: Bao gồm &lt;iostream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="Trigraphs_.28removed_in_C.2B.2B17.29">Cấu trúc x<span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span>
+</h3> <p>&lt;%<a href="translation_phases" title="cpp/language/translation phases">parsed before comments and string literals are recognized</a>    Khiếu nại x () &lt;%%&gt; // Destructor</p>
+<table class="wikitable"> <tr style="text-align: left;"> <th>    X () &lt;%%&gt;</th> <th>    X (const x bitand) = xóa; // Sao chép hàm tạo</th>
+</tr> <tr> <td><code>{</code></td> <td>
+<code>??&lt;</code> </td>
+</tr> <tr> <td>{</td> <td>
+<code>??&gt;</code> </td>
+</tr> <tr> <td><code>[</code></td> <td>
+<code>??(</code> </td>
+</tr> <tr> <td><code>]</code></td> <td>
+<code>??)</code> </td>
+</tr> <tr> <td><code>#</code></td> <td>
+<code>??=</code> </td>
+</tr> <tr> <td><code>\</code></td> <td>
+<code>??/</code> </td>
+</tr> <tr> <td><code>^</code></td> <td>
+<code>??'</code> </td>
+</tr> <tr> <td><code>|</code></td> <td>
+<code>??!</code> </td>
+</tr> <tr> <td><code>~</code></td> <td>
+<code>??-</code> </td>
+</tr>
+</table> <p>    // x (x và) = xóa; // Di chuyển hàm tạo<code>// Will the next line be executed?????/</code> <code>"Enter date ??/??/??"</code>được phân tích cú pháp như<code>"Enter date \\??"</code>.</p>
+<h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/and" title="cpp/keyword/and"><code>and</code></a>Thì<a href="../keyword/and_eq" title="cpp/keyword/and eq"><code>and_eq</code></a>Thì<a href="../keyword/bitand" title="cpp/keyword/bitand"><code>bitand</code></a>Thì<a href="../keyword/bitor" title="cpp/keyword/bitor"><code>bitor</code></a>Thì<a href="../keyword/compl" title="cpp/keyword/compl"><code>compl</code></a>Thì<a href="../keyword/not" title="cpp/keyword/not"><code>not</code></a>Thì<a href="../keyword/not_eq" title="cpp/keyword/not eq"><code>not_eq</code></a>Thì<a href="../keyword/or" title="cpp/keyword/or"><code>or</code></a>Thì<a href="../keyword/or_eq" title="cpp/keyword/or eq"><code>or_eq</code></a>Thì<a href="../keyword/xor" title="cpp/keyword/xor"><code>xor</code></a>Thì<a href="../keyword/xor_eq" title="cpp/keyword/xor eq"><code>xor_eq</code></a></p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1104.html" rel="nofollow">CWG 1104</a> </td> <td>C ++ 98</td> <td>    Toán tử bool not_eq (const x bitand khác)<code>&lt;:</code>    &lt;%<code><a href="http://en.cppreference.com/w/cpp/container/vector"><span class="kw1272">Điều đó cho tất cả<span class="me2">Vector</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1233">Điều đó cho tất cả<span class="me2">ngoại trừ việc phần tử được xây dựng là</span></span></a><span class="sy1">&lt;</span></code><br/>       trả lại bit và khác Bitand khác;<code><a href="http://en.cppreference.com/w/cpp/container/vector"><span class="kw1272">Điều đó cho tất cả<span class="me2">Vector</span></span></a><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="sy4">:</span><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1233">Điều đó cho tất cả<span class="me2">ngoại trừ việc phần tử được xây dựng là</span></span></a><span class="sy1">&lt;</span></code> </td> <td>    %&gt;<br/>%&gt;;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/operator_alternative" title="c/language/operator alternative">C documentation</a></span>vì<span class=""><span> </span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/operator_alternative">https://en.cppreference.com/w/cpp/language/operator_alternative</a>
+</p>
+</div>

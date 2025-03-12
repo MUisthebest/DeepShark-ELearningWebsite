@@ -1,0 +1,53 @@
+ <h1 class="firstHeading" id="firstHeading">Chuyên môn hóa mẫu rõ ràng (đầy đủ)</h1> <p>Cho phép tùy chỉnh mã mẫu cho một tập hợp các đối số mẫu nhất định.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>template &lt;&gt;</code> <span class="t-spar">tuyên ngôn</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Bất kỳ điều nào sau đây đều có thể được chuyên môn hoàn toàn:</p>
+<ol>
+<li> <a href="function_template" title="cpp/language/function template">function template</a> </li>
+<li> <a href="class_template" title="cpp/language/class template">class template</a> </li>
+<li> <span class="t-rev-inl t-since-cxx14"><span><a href="variable_template" title="cpp/language/variable template">variable template</a></span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span> </li>
+<li> <a href="member_functions" title="cpp/language/member functions">member function</a>của một mẫu lớp</li>
+<li> <a href="static" title="cpp/language/static">static data member</a>của một mẫu lớp</li>
+<li> <a href="nested_types" title="cpp/language/nested types">member class</a>của một mẫu lớp</li>
+<li>là bộ lặp không đổi, nghĩa là, trình lặp không bao giờ có thể được sử dụng làm trình lặp đầu ra vì các phần tử sửa đổi không được phép.<a href="enum" title="cpp/language/enum">enumeration</a>của một mẫu lớp</li>
+<li> <a href="member_template" title="cpp/language/member template">member class template</a>của một lớp hoặc mẫu lớp</li>
+<li> <a href="member_template#Member_function_templates" title="cpp/language/member template">member function template</a>của một lớp hoặc mẫu lớp</li>
+<li> <span class="t-rev-inl t-since-cxx14"><span><a href="member_template#Member_variable_templates" title="cpp/language/member template">member variable template</a>của một lớp hoặc mẫu lớp</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span> </li>
+</ol> <div class="t-example">
+<p>Ví dụ,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;type_traits&gt;</pre></div> </div> <h3 id="In_detail">    void add (int x) // thành viên "Thêm" có quyền truy cập công khai</h3> <p> <a href="member_template" title="cpp/language/member template">member template</a>Mẫu &lt;Typename T&gt; // Mẫu chính</p>
+<div class="cpp source-cpp"><pre data-language="cpp">struct is_void: std :: false_type {};</pre></div> <p>Mẫu &lt;&gt; // Chuyên môn hóa rõ ràng cho t = void</p>
+<div class="cpp source-cpp"><pre data-language="cpp">struct is_void &lt;oid&gt;: std :: true_type {};</pre></div> <p> <a class="mw-redirect" href="incomplete_type" title="cpp/language/incomplete type">incomplete type</a>int main ()</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    static_assert (is_void &lt;par&gt; :: value == false,<span class="t-rev-inl t-since-cxx14"><span>địa chỉ biểu thức không đổi</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>        "Đối với bất kỳ loại T nào khác ngoài khoảng trống, lớp có nguồn gốc từ false_type");<a href="inline" title="cpp/language/inline"><code>inline</code></a><span class="t-rev-inl t-since-cxx11"><span>/<a href="constexpr" title="cpp/language/constexpr"><code>constexpr</code></a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx20"><span>/<a href="constinit" title="cpp/language/constinit"><code>constinit</code></a>/<a href="consteval" title="cpp/language/consteval"><code>consteval</code></a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>    static_assert (is_void &lt;oid&gt; :: value == true,<span class="t-rev-inl t-since-cxx11"><span>        "Nhưng khi T bị vô hiệu, lớp có nguồn gốc từ TRUE_TYPE");<a href="attributes" title="cpp/language/attributes">attributes</a>}</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span></p>
+<div class="cpp source-cpp"><pre data-language="cpp">Chuyên môn hóa rõ ràng có thể được khai báo trong bất kỳ phạm vi nào trong đó mẫu chính của nó có thể được xác định (có thể khác với phạm vi mà mẫu chính được xác định</pre></div> <h3 id="Explicit_specializations_of_function_templates">). Chuyên môn hóa rõ ràng phải xuất hiện sau khi khai báo mẫu không chuyên hóa.</h3> <p>không gian tên n<a href="template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    Mẫu &lt;class t&gt; // mẫu chính</pre></div> <p>    lớp x {/*...*/};<a href="function_template" title="cpp/language/function template">function template</a>).</p>
+<p><a href="default_arguments" title="cpp/language/default arguments">Default function arguments</a>    Mẫu &lt;&gt; // Chuyên môn hóa trong cùng một không gian tên</p>
+<p>    Lớp X &lt;Int&gt; {/*...*/};<a href="friend" title="cpp/language/friend">friend declaration</a>.</p>
+<h3 id="Members_of_specializations"> </h3> <p>    Mẫu &lt;class t&gt; // mẫu chính<code>template&lt;&gt;</code>    lớp y {/*...*/};<code>template&lt;parameters&gt;</code>    mẫu &lt;&gt; // chuyển tiếp chuyên ngành khai báo cho nhân đôi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    lớp y &lt;double&gt;;</pre></div> <p><br/>}</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Mẫu &lt;&gt; // OK: Chuyên môn hóa trong cùng một không gian tên</p>
+<div class="cpp source-cpp"><pre data-language="cpp">lớp n :: y &lt;double&gt; {/*...*/};</pre></div> <p>Chuyên môn hóa phải được khai báo trước khi sử dụng đầu tiên sẽ gây ra sự khởi tạo ngầm, trong mỗi đơn vị dịch thuật nơi việc sử dụng đó xảy ra:<code>template&lt;&gt;</code>Chuỗi lớp {};</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Mẫu &lt;Class T&gt;<code>template&lt;arguments&gt;</code>lớp mảng {/*...*/};</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/531.html" rel="nofollow">CWG 531</a> </td> <td>C ++ 98</td> <td>Mẫu &lt;class t&gt; // mẫu chính<br/>void sort (mảng &lt;t&gt; &amp; v) {/*....*/}</td> <td>Mẫu &lt;class inputit, class outputit&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/727.html" rel="nofollow">CWG 727</a> </td> <td>C ++ 98</td> <td>mảng int [5];<br/>mẫu &lt;int x&gt; class B &lt;x, &amp; mảng&gt; {}; // Lỗi: loại đối số &amp; mảng là</td> <td>                                       // int (*) [x], phụ thuộc vào tham số x</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/730.html" rel="nofollow">CWG 730</a> </td> <td>C ++ 98</td> <td> <br/>void f (mảng &lt;chuỗi&gt; &amp; v)</td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2478.html" rel="nofollow">CWG 2478</a> </td> <td>C ++ 20</td> <td>{<br/>    sắp xếp (v); // ngầm khởi động (mảng &lt;ring&gt; &amp;), </td> <td>void sort &lt;String&gt; (mảng &lt;chuỗi&gt; &amp; v); // sau khi khởi tạo ngầm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2604.html" rel="nofollow">CWG 2604</a> </td> <td>C ++ 11</td> <td> <br/>Mẫu &lt;&gt; // Lỗi: Chuyên môn hóa rõ ràng của Sắp xếp (mảng &lt;String&gt;)</td> <td>void sort &lt;String&gt; (mảng &lt;chuỗi&gt; &amp; v); // sau khi khởi tạo ngầm</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="templates" title="cpp/language/templates">templates</a> </li>
+<li> <a href="class_template" title="cpp/language/class template">class template</a> </li>
+<li> <a href="function_template" title="cpp/language/function template">function template</a> </li>
+<li> <a href="partial_specialization" title="cpp/language/partial specialization">partial specialization</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/template_specialization">https://en.cppreference.com/w/cpp/language/template_specialization</a>
+</p>
+</div>

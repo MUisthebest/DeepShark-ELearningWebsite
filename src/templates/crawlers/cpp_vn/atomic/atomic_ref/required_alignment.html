@@ -1,0 +1,8 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: ATOMIC_REF &lt;T&gt; :: Yêu cầu_alignment</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Constexpr static std :: size_t request_alignment = /*thực hiện xác định* /;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Giá trị của<code>required_alignment</code>là sự liên kết cần thiết cho một đối tượng được tham chiếu bởi một tham chiếu nguyên tử, ít nhất là<code>alignof(T)</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Phần cứng có thể yêu cầu một đối tượng được tham chiếu bởi một<code>atomic_ref&lt;T&gt;</code>có sự liên kết chặt chẽ hơn<code>T</code>các đối tượng và liệu các hoạt động trên một<code>atomic_ref</code>không có khóa có thể phụ thuộc vào sự liên kết của đối tượng được tham chiếu.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_ref/required_alignment">https://en.cppreference.com/w/cpp/atomic/atomic_ref/required_alignment</a>
+</p>
+</div>

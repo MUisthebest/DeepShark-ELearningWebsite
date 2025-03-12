@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: pmr :: toán tử ==, std :: pmr :: toán tử! =</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/memory_resource" title="cpp/header/memory resource">&lt;memory_resource&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Toán tử bool == (const std :: pmr :: memory_resource &amp; a,</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td> <pre data-language="cpp">                 const std :: pmr :: memory_resource &amp; b) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> </table> <p>Toán tử bool! = (const std :: pmr :: memory_resource &amp; a,<code>memory_resource</code>S<code>a</code>Và<code>b</code>                 const std :: pmr :: memory_resource &amp; b) noExcept;<code>memory_resource</code>S so sánh bằng nhau khi và chỉ khi bộ nhớ được phân bổ từ một<code>memory_resource</code>có thể được giải quyết từ người khác và ngược lại.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>&amp;a == &amp;b || a.is_equal(b)</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>!(a == b)</code>
+</div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_equal" title="cpp/memory/memory resource/is equal"> <span class="t-lines"><span>is_equal</span></span></a></div> </td> <td>So sánh cho sự bình đẳng với người khác<code>memory_resource</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/memory_resource/operator_eq">https://en.cppreference.com/w/cpp/memory/memory_resource/operator_eq</a>
+</p>
+</div>

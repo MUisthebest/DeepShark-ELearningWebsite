@@ -2,4 +2,3 @@
 .venv/
 venv/
 .env
-*.csv

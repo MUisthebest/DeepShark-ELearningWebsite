@@ -1,0 +1,10 @@
+ <h1 class="firstHeading" id="firstHeading">std :: pmr :: memory_resource :: DO_IS_EQUAL</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">BOOL ảo DO_IS_Equal (const std :: pmr :: memory_resource &amp; other) const NoExcept = 0;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>void Atomic_flag_wait_explicit (đối tượng Atomic_flag* dễ bay hơi<code>*this</code>cho sự bình đẳng với<code>other</code>.</p>
+<p>Hai<code>memory_resource</code>S so sánh bằng nhau khi và chỉ khi bộ nhớ được phân bổ từ một<code>memory_resource</code>có thể được giải quyết từ người khác và ngược lại.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Loại có nguồn gốc nhiều nhất<code>other</code>có thể không phù hợp với loại có nguồn gốc nhất của<code>*this</code>. Do đó, một triển khai lớp dẫn xuất thường phải kiểm tra xem các loại có nguồn gốc nhiều nhất<code>*this</code>Và<code>other</code>khớp bằng cách sử dụng<a href="../../language/dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>, và ngay lập tức trở lại<code>false</code>Nếu các diễn viên thất bại.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_equal" title="cpp/memory/memory resource/is equal"> <span class="t-lines"><span>is_equal</span></span></a></div> </td> <td>So sánh cho sự bình đẳng với người khác<code>memory_resource</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/memory_resource/do_is_equal">https://en.cppreference.com/w/cpp/memory/memory_resource/do_is_equal</a>
+</p>
+</div>

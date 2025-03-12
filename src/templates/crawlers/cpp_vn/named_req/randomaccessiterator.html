@@ -1,0 +1,81 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: LegacyRandomAccessIterator</h1> <p>MỘT<strong class="selflink">LegacyRandomAccessIterator</strong>Điều đó như vậy<a href="bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a>có thể được di chuyển để chỉ ra bất kỳ yếu tố nào trong thời gian không đổi.</p>
+<p>Để kiểm soát cách giải quyết thời gian địa phương mơ hồ hoặc không tồn tại. Đi qua<strong class="selflink">LegacyRandomAccessIterator</strong> <code>it</code>bắt nguồn từ a<a href="container" title="cpp/named req/Container">Container</a>, sau đó<code>it</code>                                   OUTPUTITIT D_FIRST, PRECEPREDATICATE P);<code>value_type</code>giống như của container, vì vậy là hội nghị (<code>*it</code>) lấy được container<code>value_type</code>.</p>
+<p>Một con trỏ tới một yếu tố của một mảng đáp ứng tất cả các yêu cầu của LegacyRandomAccessIterator.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>It</code>thỏa mãn LegacyrandomAccessIterator nếu</p>
+<ul><li>phạm vi của các yếu tố để tạo<code>It</code>Phần cuối của phạm vi ban đầu<a href="bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a> </li></ul> <p>Và, đã cho</p>
+<ul>
+<li> <code>value_type</code>, loại được biểu thị bằng<a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>Nó<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)</span> </li>
+<li> <code>difference_type</code>, loại được biểu thị bằng<a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>Nó<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">trong khoảng thời gian</span> </li>
+<li> <code>reference</code>, loại được biểu thị bằng<a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>Nó<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">và không có thành viên khả thi</span> </li>
+<li> <code>i</code>Thì<code>a</code>Thì<code>b</code>, đối tượng loại<code>It</code>hoặc<span class="kw4">hằng số</span>Nó</li>
+<li> <code>r</code>TRÊN<code>It</code> </li>
+<li> <code>n</code>, một số nguyên của loại<code>difference_type</code> </li>
+</ul> <p>Các biểu thức sau phải hợp lệ và có các hiệu ứng được chỉ định của chúng:</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Ngữ ký hoạt động</th> <th>Ghi chú</th>
+</tr> <tr> <td>
+<code>r += n</code> </td> <td>
+<code>It&amp;</code> </td> <td>
+<code>difference_type m = n; if (m &gt;= 0) while (m--) ++r; else while (m++) --r; return r;</code> </td> <td> <ul>
+<li>
+<code>n</code>có thể cả tích cực hoặc tiêu cực</li>
+<li>Sự phức tạp là không đổi (nghĩa là việc thực hiện không thể thực hiện vòng lặp trong khi được hiển thị trong ngữ nghĩa hoạt động)</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>a + n</code> <p><code>n + a</code></p>
+</td> <td>
+<code>It</code> </td> <td>
+<code>It temp = a; return temp += n;</code> </td> <td> <ul>
+<li>
+<code>n</code>có thể cả tích cực hoặc tiêu cực</li>
+<li>
+<code>a + n == n + a</code> </li>
+</ul> </td>
+</tr> <tr> <td><code>r -= n</code></td> <td><code>It&amp;</code></td> <td>
+<code>return r += -n;</code> </td> <td>Giá trị tuyệt đối của<code>n</code>phải nằm trong phạm vi của các giá trị đại diện của<code>difference_type</code>.</td>
+</tr> <tr> <td><code>i - n</code></td> <td><code>It</code></td> <td><code>It temp = i; return temp -= n;</code></td> <td> </td>
+</tr> <tr> <td><code>b - a</code></td> <td><code>difference_type</code></td> <td>
+<code>return n;</code><br/>(xem điều kiện tiên quyết)</td> <td> <p>Điều kiện tiên quyết:</p>
+<ul><li>tồn tại một giá trị<code>n</code>nó đến một đối tượng<code>difference_type</code>chỉ vào trình tự và mọi số nguyên không âm<code>a + n == b</code> </li></ul> <p>Postcondition:</p>
+<ul><li> <code>b == a + (b - a)</code>.</li></ul> </td>
+</tr> <tr> <td><code>i[n]</code></td> <td>chuyển đổi thành<code>reference</code>
+</td> <td><code>*(i + n)</code></td> <td> </td>
+</tr> <tr> <td><code>a &lt; b</code></td> <td>theo ngữ cảnh chuyển đổi thành<span class="kw4">bool</span>
+</td> <td>Mẫu &lt;class inputit1, class inputit2,<code>return b - a &gt; 0;</code> </td> <td>Điều kiện tiên quyết:<ul><li>Tương tự như của<code>b - a</code> </li></ul> <p>Tổng số quan hệ đặt hàng nghiêm ngặt:</p>
+<ul>
+<li> <code>!(a &lt; a)</code> </li>
+<li>nếu như<code>a &lt; b</code>phải ít nhất được đặt hàng một phần đối với<code>!(b &lt; a)</code> </li>
+<li>nếu như<code>a &lt; b</code>Và<code>b &lt; c</code>phải ít nhất được đặt hàng một phần đối với<code>a &lt; c</code> </li>
+<li> <code>a &lt; b</code>hoặc<code>b &lt; a</code>hoặc<code>a == b</code><br/>(chính xác là một trong các biểu thức là đúng)</li>
+</ul> </td>
+</tr> <tr> <td><code>a &gt; b</code></td> <td>theo ngữ cảnh chuyển đổi thành<span class="kw4">bool</span>
+</td> <td><code>b &lt; a</code></td> <td>Tổng quan hệ đặt hàng ngược lại với<code>a &lt; b</code> </td>
+</tr> <tr> <td><code>a &gt;= b</code></td> <td>theo ngữ cảnh chuyển đổi thành<span class="kw4">bool</span>
+</td> <td><code>!(a &lt; b)</code></td> <td> </td>
+</tr> <tr> <td><code>a &lt;= b</code></td> <td>theo ngữ cảnh chuyển đổi thành<span class="kw4">bool</span>
+</td> <td><code>!(a &gt; b)</code></td> <td> </td>
+</tr>
+</table> <p>Các quy tắc trên ngụ ý rằng LegacyRandomAccessIterator cũng thực hiện<a href="lessthancomparable" title="cpp/named req/LessThanComparable">LessThanComparable</a>.</p>
+<p>MỘT<i>có thể thay đổi</i>LegacyRandomAccessIterator là một<a href="outputiterator" title="cpp/named req/OutputIterator">LegacyOutputIterator</a>yêu cầu.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <h3 id="Concept">  lớp yếu_ordering;</h3> <p>Đối với định nghĩa của<code><a href="../iterator/iterator_traits" title="cpp/iterator/iterator traits">std::iterator_traits</a></code>, các khái niệm chỉ dành cho giải thích sau đây được xác định.</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Mẫu &lt;Class I&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Khái niệm __legacybidirectionaliterator =<code>__LegacyBidirectionalIterator</code>        std :: input_or_output_iterator &lt;i&gt; &amp;&amp;<a href="bidirectionaliterator#Concept" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator#Concept</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue299" rel="nofollow">LWG 299</a><br/>.<a class="external text" href="https://wg21.link/N3066" rel="nofollow">N3066</a>)</td> <td>C ++ 98</td> <td>loại trả lại của<code>a[n]</code>, số lần tăng số lặp là tuyến tính.<br/>        {<span class="kw4">hằng số</span>// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)<span class="sy3">Không có giá trị</span> </td> <td>    __Legacybidirectionaliterator &lt;i&gt; &amp;&amp; std :: hoàn toàn_ordered &lt;i&gt; &amp;&amp;<br/>        Yêu cầu (I I, typename std :: tăng thêm_traits &lt;i&gt; :: argen_type n)<code>reference</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue448" rel="nofollow">LWG 448</a> </td> <td>C ++ 98</td> <td>loại trả lại của<code>a[n]</code>, số lần tăng số lặp là tuyến tính.<br/>        {<code>value_type</code> </td> <td>            {i += n} -&gt; std :: more_as &lt;i &amp;&gt;;<br/>chuyển đổi thành<span class="kw4">hằng số</span>// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)<span class="sy3">Không có giá trị</span><sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1079" rel="nofollow">LWG 1079</a> </td> <td>C ++ 98</td> <td>
+<code>b - a</code>            {i -= n} -&gt; std :: more_as &lt;i &amp;&gt;;<code>a &lt; b</code>Thì<br/>dẫn đến định nghĩa tròn</td> <td>#include &lt;Istream&gt;<code>a &lt; b</code>            {i + n} -&gt; std :: are more_as &lt;i&gt;;</td>
+</tr>
+</table> <ol class="references"> <li id="cite_note-1"> <span class="reference-text"><a class="external text" href="https://cplusplus.github.io/LWG/issue299" rel="nofollow">LWG issue 299</a>            {n + i} -&gt; std :: more_as &lt;i&gt;;</span> </li> </ol> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../iterator/random_access_iterator" title="cpp/iterator/random access iterator"> <span class="t-lines"><span>Random_Access_Iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Chỉ định toán tử đó<a href="../iterator/bidirectional_iterator" title="cpp/iterator/bidirectional iterator"><code>bidirectional_iterator</code></a>là một trình lặp lại truy cập ngẫu nhiên, hỗ trợ tiến bộ trong thời gian không đổi và đăng ký<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../iterator" title="cpp/iterator"><b>Thư viện Iterator</b></a> </td> <td>thay vào đó được yêu cầu phải có độ phân biệt rõ ràng</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/RandomAccessIterator">https://en.cppreference.com/w/cpp/named_req/RandomAccessIterator</a>
+</p>
+</div>

@@ -33,3 +33,6 @@ google-generativeai==0.8.4
 markdown==3.7
 googletrans==4.0.2
 markdown-it-py==3.0.0
+beautifulsoup4==4.13.3
+googletrans==4.0.2
+flask[async]

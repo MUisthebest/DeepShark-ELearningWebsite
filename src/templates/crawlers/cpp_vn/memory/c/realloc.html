@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Realloc</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdlib" title="cpp/header/cstdlib">&lt;cstdlib&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void* realloc (void* ptr, std :: size_t new_size);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Phân bổ lại khu vực đã cho của bộ nhớ (<a href="../../language/object#Object_creation" title="cpp/language/object">implicitly creating</a>các đối tượng trong khu vực đích). Nó phải được phân bổ trước đây bởi<code><a href="malloc" title="cpp/memory/c/malloc">std::malloc</a></code>Thì<code><a href="calloc" title="cpp/memory/c/calloc">std::calloc</a></code>hoặc<code>std::realloc</code>và chưa được giải phóng với<code><a href="free" title="cpp/memory/c/free">std::free</a></code>, nếu không, kết quả không được xác định.</p>
+<p>Việc phân bổ lại được thực hiện bởi một trong hai:</p>
+<div class="t-li1">
+<span class="t-li">}</span>mở rộng hoặc ký hợp đồng khu vực hiện có được chỉ ra bởi<code>ptr</code>, nếu có thể. Các nội dung của khu vực vẫn không thay đổi cho các kích thước mới và cũ hơn. Nếu khu vực được mở rộng, nội dung của phần mới của mảng không được xác định.</div> <div class="t-li1">
+<span class="t-li">{</span>phân bổ một khối bộ nhớ mới có kích thước<code>new_size</code>Byte, sao chép vùng bộ nhớ với kích thước bằng nhỏ hơn của kích thước mới và cũ, và giải phóng khối cũ.</div> <p>Nếu không có đủ bộ nhớ, khối bộ nhớ cũ không được giải phóng và con trỏ null được trả về.</p>
+<p>Nếu như<code>ptr</code>là một con trỏ null, hành vi giống như gọi<code><a href="http://en.cppreference.com/w/cpp/memory/c/malloc"><span class="kw761">Điều đó cho tất cả<span class="me2">MALLOC</span></span></a><span class="br0">.</span>new_size<span class="br0">)</span></code>.</p>
+<p>Nếu như<code>new_size</code>bằng không, hành vi được thực hiện được xác định: con trỏ null có thể được trả về (trong trường hợp đó, khối bộ nhớ cũ có thể hoặc không được giải phóng) hoặc một số con trỏ không null có thể được trả về có thể không được sử dụng để truy cập lưu trữ.<span class="t-rev-inl t-since-cxx20"><span>Việc sử dụng như vậy không được chấp nhận (thông qua<a class="external text" href="https://open-std.org/JTC1/SC22/WG14/www/docs/n2396.htm#dr_400" rel="nofollow">C DR 400</a>).</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span></p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Các chức năng sau được yêu cầu là an toàn cho luồng:</p>
+<ul>
+<li>Các phiên bản thư viện của<a href="../new/operator_new" title="cpp/memory/new/operator new"><code>operator new</code></a>Và<a href="../new/operator_delete" title="cpp/memory/new/operator delete"><code>operator delete</code></a> </li>
+<li>Phiên bản thay thế người dùng của toàn cầu<a href="../new/operator_new" title="cpp/memory/new/operator new"><code>operator new</code></a>Và<a href="../new/operator_delete" title="cpp/memory/new/operator delete"><code>operator delete</code></a> </li>
+<li> <code><a href="calloc" title="cpp/memory/c/calloc">std::calloc</a></code>Thì<code><a href="malloc" title="cpp/memory/c/malloc">std::malloc</a></code>Thì<code>std::realloc</code><span class="t-rev-inl t-since-cxx17"><span>Thì<code><a href="aligned_alloc" title="cpp/memory/c/aligned alloc">std::aligned_alloc</a></code></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Thì<code><a href="free" title="cpp/memory/c/free">std::free</a></code> </li>
+</ul> <p>Các cuộc gọi đến các chức năng này phân bổ hoặc xử lý một đơn vị lưu trữ cụ thể xảy ra trong một đơn đặt hàng duy nhất và mỗi cuộc gọi giải quyết như vậy<a href="../../atomic/memory_order" title="cpp/atomic/memory order">happens-before</a>Phân bổ tiếp theo (nếu có) theo thứ tự này.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Nếu mảng chứa một số yếu tố</td> <td>-</td> <td>con trỏ đến vùng bộ nhớ được phân bổ lại</td>
+</tr> <tr class="t-par"> <td>, phần còn lại của tập tin bị loại bỏ. Nếu tệp trước đây nhỏ hơn</td> <td>-</td> <td>Kích thước mới của mảng</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Khi thành công, trả lại một con trỏ đến đầu bộ nhớ mới được phân bổ. Để tránh rò rỉ bộ nhớ, con trỏ được trả lại phải được giải quyết với<code><a href="free" title="cpp/memory/c/free">std::free</a></code>hoặc<code>std::realloc</code>. Con trỏ ban đầu<code>ptr</code>bị vô hiệu và bất kỳ quyền truy cập nào vào nó là<a href="../../language/ub" title="cpp/language/ub">undefined behavior</a>(ngay cả khi việc phân bổ lại tại chỗ).</p>
+<p>Khi thất bại, trả về một con trỏ null. Con trỏ ban đầu<code>ptr</code>vẫn hợp lệ và có thể cần phải được giải quyết với<code><a href="free" title="cpp/memory/c/free">std::free</a></code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Bởi vì việc phân bổ lại có thể liên quan đến việc sao chép theo tỷ lệ (bất kể nó mở rộng hay hợp đồng khu vực), nó là cần thiết (nhưng không đủ) để các đối tượng đó là của<a href="../../named_req/triviallycopyable" title="cpp/named req/TriviallyCopyable">TriviallyCopyable</a>    phân vùng (r &amp;&amp; r, pred, proj proj = {});</p>
+<p>Một số thư viện không chuẩn xác định một tính trạng loại "BitWisemoveD" hoặc "Relocatable", mô tả một loại không có:</p>
+<ul>
+<li>các tài liệu tham khảo bên ngoài (ví dụ: các nút của danh sách hoặc cây giữ tham chiếu đến một phần tử khác) và</li>
+<li>Tài liệu tham khảo nội bộ (ví dụ: con trỏ thành viên có thể giữ địa chỉ của một thành viên khác).</li>
+</ul> <p>Các đối tượng thuộc loại đó có thể được truy cập sau khi lưu trữ của chúng được phân bổ lại ngay cả khi các hàm tạo bản sao của chúng không tầm thường.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cassert&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/memory/realloc" title="c/memory/realloc">C documentation</a></span>vì<code>realloc</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/c/realloc">https://en.cppreference.com/w/cpp/memory/c/realloc</a>
+</p>
+</div>

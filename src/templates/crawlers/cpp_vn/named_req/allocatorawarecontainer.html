@@ -1,0 +1,69 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: ALLOCATORAWARECONTAINER<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>MỘT<strong class="selflink">Allocatorawarecontainer</strong>Điều đó như vậy<a href="container" title="cpp/named req/Container">Container</a>giữ một ví dụ của một<a href="allocator" title="cpp/named req/Allocator">Allocator</a>và sử dụng thể hiện đó trong tất cả các chức năng thành viên của nó để phân bổ và xử lý bộ nhớ và xây dựng và phá hủy các đối tượng trong bộ nhớ đó (các đối tượng như vậy có thể là các phần tử container, nút hoặc, cho các thùng chứa không có thứ tự, mảng xô)<span class="t-rev-inl t-since-cxx23"><span>, và sau đó gọi<code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code>Các chuyên ngành không sử dụng các phân bổ để xây dựng/phá hủy các yếu tố của chúng</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>.</p>
+<p>Các quy tắc sau đây áp dụng cho việc xây dựng container:</p>
+<ul>
+<li>Sao chép các hàm tạo của Allocatorawarecontainers có được các trường hợp phân bổ của họ bằng cách gọi<code><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>allocator_type<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Xây dựng container với</span></code>Trên bộ phân bổ của container được sao chép.</li>
+<li>Di chuyển các nhà xây dựng có được các trường hợp phân bổ của họ bằng cách di chuyển-quy định từ bộ phân bổ thuộc về container cũ.</li>
+<li>Tất cả các nhà xây dựng khác đều có một<code>const allocator_type&amp;</code>là một chuyên ngành có thể</li>
+</ul> <p>Cách duy nhất để thay thế một bộ phân bổ là gán bản sao, gán di chuyển và hoán đổi:</p>
+<ul>
+<li>Phân nhận bản sao sẽ chỉ thay thế bộ phân bổ nếu<code><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>allocator_type<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Tuyên truyền_on_container_copy_assignment</span><span class="sy4">::</span><span class="me2">được phân vùng liên quan đến</span></code>khoảng cách<code>true</code>.</li>
+<li>Phân nhận di chuyển sẽ chỉ thay thế người phân bổ nếu<code><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>allocator_type<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Allocator_Type</span><span class="sy4">::</span><span class="me2">được phân vùng liên quan đến</span></code>khoảng cách<code>true</code>.</li>
+<li>Hoán đổi sẽ chỉ thay thế bộ phân bổ nếu<code><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>allocator_type<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">và các phân bổ không so sánh bằng nhau.</span><span class="sy4">::</span><span class="me2">được phân vùng liên quan đến</span></code>khoảng cách<code>true</code>. Cụ thể, nó sẽ trao đổi các phiên bản phân bổ thông qua một cuộc gọi không đủ tiêu chuẩn cho hoán đổi chức năng không thành viên, xem<a href="swappable" title="cpp/named req/Swappable">Swappable</a>.</li>
+</ul> <p>Lưu ý: Trao đổi hai container với những người phân bổ không đồng đều nếu<code>propagate_on_container_swap</code>khoảng cách<code>false</code>là hành vi không xác định.</p>
+<ul><li>Người truy cập<code>get_allocator()</code>Có được một bản sao của bộ phân bổ được sử dụng để xây dựng container hoặc được cài đặt bởi hoạt động thay thế phân bổ gần đây nhất.</li></ul> <h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <h4 id="Legend">Huyền thoại</h4> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <code>X</code> </td> <td>Loại container</td>
+</tr> <tr class="t-dsc"> <td> <code>T</code> </td> <td>Loại phần tử</td>
+</tr> <tr class="t-dsc"> <td> <code>A</code> </td> <td>Người phân bổ cho<code>T</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>a</code>Thì<code>b</code> </td> <td>Đối tượng của loại<code>X</code>(Lvalue không tập hợp)</td>
+</tr> <tr class="t-dsc"> <td> <code>t</code> </td> <td>Đối tượng của loại<code>X</code>(lvalue hoặc const rvalue)</td>
+</tr> <tr class="t-dsc"> <td> <code>rv</code> </td> <td>Đối tượng của loại<code>X</code>(Rvalue không tập hợp)</td>
+</tr> <tr class="t-dsc"> <td> <code>m</code> </td> <td>Đối tượng của loại<code>A</code> </td>
+</tr> </table> <h4 id="Types">Loại</h4> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td><code>allocator_type</code></td> <td><code>A</code></td> <td>
+<code>allocator_type::value_type</code>phải giống như<code>X::value_type</code> </td>
+</tr> </table> <h4 id="Member_functions_and_operators">Chức năng và toán tử thành viên</h4> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Tiền/yêu cầu</th> <th>Bài/hiệu ứng</th> <th>Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</th>
+</tr> <tr> <td><code>get_allocator()</code></td> <td><code>A</code></td> <td></td> <td></td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>X u;</code></td> <td></td> <td>
+<code>A</code>khoảng cách<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>
+</td> <td><code>u.empty() == true &amp;&amp; u.get_allocator() == A()</code></td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>X u(m);</code></td> <td></td> <td></td> <td><code>u.empty() == true &amp;&amp; u.get_allocator() == m</code></td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>X u(t,m);</code></td> <td> </td> <td>
+<code>T</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code> </td> <td><code>u == t &amp;&amp; u.get_allocator() == m</code></td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td><code>X u(rv);</code></td> <td> </td> <td>Di chuyển hàm tạo của<code>A</code>không được ném ngoại lệ</td> <td>
+<code>u</code>có cùng một yếu tố và một bộ phân bổ bằng nhau như<code>rv</code>đã có trước khi xây dựng</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>X u(rv,m);</code></td> <td> </td> <td>
+<code>T</code>khoảng cách<a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mẫu &lt;Class T&gt;<code>X</code> </td> <td>Các yếu tố của<code>u</code>giống nhau hoặc bản sao của các bản sao của<code>rv</code>Và<code>u.get_allocator() == m</code> </td> <td>Toán tử bool &lt;(const std :: deque &lt;t, alloc&gt; &amp; lhs,<code>m == rv.get_allocator()</code>, nếu không thì tuyến tính</td>
+</tr> <tr> <td><code>a = t</code></td> <td>
+<code>X&amp;</code> </td> <td>
+<code>T</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>Và<a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>
+</td> <td><code>a == t</code></td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td><code>a = rv</code></td> <td>
+<code>X&amp;</code> </td> <td>Nếu bộ phân bổ sẽ<i>không</i>được thay thế bằng cách ký di chuyển (xem ở trên), sau đó<code>T</code>khoảng cách<a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>Và<a href="moveassignable" title="cpp/named req/MoveAssignable">MoveAssignable</a> </td> <td>Tất cả các yếu tố hiện có của<code>a</code>là di chuyển được gán hoặc phá hủy; nếu như<code>a</code>Và<code>rv</code>Không tham khảo cùng một đối tượng,<code>a</code>bằng với giá trị<code>rv</code>đã có trước khi chuyển nhượng</td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td><code>a.swap(b)</code></td> <td><code>void</code></td> <td></td> <td>Trao đổi nội dung của<code>a</code>Và<code>b</code>
+</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Container nhận thức hàng luôn gọi luôn gọi<code><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>A<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Xử lý lưu trữ</span><span class="br0">.</span>m, p, args<span class="br0">)</span></code>Để xây dựng một đối tượng thuộc loại<code>T</code>bằng không).<code>p</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<code>args</code>    mẫu &lt;<code>m == get_allocator()</code>.<span class="t-rev-inl t-until-cxx20"><span>Mặc định<code>construct</code>TRONG<code><a href="../memory/allocator" title="cpp/memory/allocator">std::allocator</a></code>cuộc gọi<code>::new((void*)p) T(args)</code></span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span><code><a href="../memory/allocator" title="cpp/memory/allocator">std::allocator</a></code>T Atomic_fetch_add_explicit (std :: Atomic &lt;t&gt;* obj,<code>construct</code>thành viên và<code><a href="http://en.cppreference.com/w/cpp/memory/construct_at"><span class="kw3205">Điều đó cho tất cả<span class="me2">(Niebloid)</span></span></a><span class="br0">.</span>p, args<span class="br0">)</span></code>được gọi khi xây dựng các yếu tố</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, nhưng các phân bổ chuyên dụng có thể chọn một định nghĩa khác nhau.</p>
+<h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>Tất cả các thùng chứa thư viện tiêu chuẩn ngoại trừ<code><a href="../container/array" title="cpp/container/array">std::array</a></code>là Allocatorawarecontainers:</p>
+<ul>
+<li> <code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code> </li>
+<li> <code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> </li>
+<li> <code><a href="../container/forward_list" title="cpp/container/forward list">std::forward_list</a></code> </li>
+<li> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> </li>
+<li> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </li>
+<li> <code><a href="../container/map" title="cpp/container/map">std::map</a></code> </li>
+<li> <code><a href="../container/multimap" title="cpp/container/multimap">std::multimap</a></code> </li>
+<li> <code><a href="../container/set" title="cpp/container/set">std::set</a></code> </li>
+<li> <code><a href="../container/multiset" title="cpp/container/multiset">std::multiset</a></code> </li>
+<li> <code><a href="../container/unordered_map" title="cpp/container/unordered map">std::unordered_map</a></code> </li>
+<li> <code><a href="../container/unordered_multimap" title="cpp/container/unordered multimap">std::unordered_multimap</a></code> </li>
+<li> <code><a href="../container/unordered_set" title="cpp/container/unordered set">std::unordered_set</a></code> </li>
+<li> <code><a href="../container/unordered_multiset" title="cpp/container/unordered multiset">std::unordered_multiset</a></code> </li>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2839" rel="nofollow">LWG 2839</a> </td> <td>C ++ 11</td> <td>Không được phép tự di chuyển các thùng chứa tiêu chuẩn</td> <td>cho phép nhưng kết quả không được xác định</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/AllocatorAwareContainer">https://en.cppreference.com/w/cpp/named_req/AllocatorAwareContainer</a>
+</p>
+</div>

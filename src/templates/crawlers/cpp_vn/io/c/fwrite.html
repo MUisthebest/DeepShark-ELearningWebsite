@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: fwrite</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: size_t fwrite (const void* bộ đệm, std :: size_t size, std :: size_t Count, std :: file* stream);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Viết lên đến<code>count</code>Đối tượng nhị phân từ mảng đã cho<code>buffer</code>đến luồng đầu ra<code>stream</code>. Các đối tượng được viết như thể bằng cách giải thích lại từng đối tượng dưới dạng một mảng<code>unsigned char</code>và gọi<code><a href="fputc" title="cpp/io/c/fputc">std::fputc</a></code> <code>size</code>thời gian cho mỗi đối tượng viết chúng<code>unsigned char</code>s vào<code>stream</code>, theo thứ tự. Chỉ báo vị trí tệp cho luồng được nâng cao bởi số lượng ký tự được viết.</p>
+<p>Nếu các đối tượng không<a href="../../named_req/triviallycopyable" title="cpp/named req/TriviallyCopyable">TriviallyCopyable</a>Hoạt động tương đương cho quá tải</p>
+<p>Nếu xảy ra lỗi, giá trị kết quả của chỉ báo vị trí tệp cho luồng không xác định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Điều khiển đầu vào và đầu ra thành một chuỗi ký tự. Nó bao gồm và cung cấp quyền truy cập vào</td> <td>-</td> <td>con trỏ đến đối tượng đầu tiên trong mảng được viết</td>
+</tr> <tr class="t-par"> <td>kích cỡ</td> <td>-</td> <td>Kích thước của mỗi đối tượng</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>số lượng đối tượng được viết</td>
+</tr> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>yêu cầu cho bất kỳ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Số lượng đối tượng được viết thành công, có thể nhỏ hơn<code>count</code>Nếu xảy ra lỗi.</p>
+<p>Nếu như<code>size</code>hoặc<code>count</code>là không,<code>fwrite</code>Trả về 0 và không thực hiện hành động nào khác.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;mảng&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cstdio&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fprintf" title="cpp/io/c/fprintf"> <span class="t-lines"><span>printf</span><span>fprintf</span><span>Sprintf</span><span>snprintf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đầu ra được định dạng in<code><a href="std_streams" title="cpp/io/c/std streams">stdout</a></code>, một luồng tệp hoặc bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fputs" title="cpp/io/c/fputs"> <span class="t-lines"><span>FPUTS</span></span></a></div> </td> <td>ghi một chuỗi ký tự vào luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fread" title="cpp/io/c/fread"> <span class="t-lines"><span>fread</span></span></a></div> </td> <td>đọc từ một tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/fwrite" title="c/io/fwrite">C documentation</a></span>vì<code>fwrite</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/fwrite">https://en.cppreference.com/w/cpp/io/c/fwrite</a>
+</p>
+</div>

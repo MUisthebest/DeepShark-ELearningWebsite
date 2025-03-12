@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">std :: numeric_limits &lt;t&gt; :: vô cực</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">t tĩnh t vô số () ném ();</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Constexpr t infinity () NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Trả về giá trị đặc biệt "vô cực dương", được biểu thị bằng loại điểm nổi<code>T</code>. Chỉ có ý nghĩa nếu<code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">has_infinity</span> <span class="sy1">==</span> <span class="kw2">ĐÚNG VẬY</span></code>. Trong IEEE 754, biểu diễn nhị phân phổ biến nhất của các số điểm nổi, vô cực dương là giá trị với tất cả các bit của bộ số mũ và tất cả các bit của phân số được xóa.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th> <code>T</code> </th> <th> <code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">vô cùng</span><span class="br0">.</span><span class="br0">)</span></code> </th>
+</tr> <tr class="t-dsc"> <td> <span class="coMULTI">/ * không chuyên hóa */</span> </td> <td> <code>T()</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">bool</span> </td> <td> <code>false</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">wchar_t</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td>char8_t<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char16_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char32_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">STD</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">int</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">int</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">dài</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> <span class="kw4">dài</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">trôi nổi</span> </td> <td> <code><a href="../../numeric/math/huge_val" title="cpp/numeric/math/HUGE VAL">HUGE_VALF</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td> <code><a href="../../numeric/math/huge_val" title="cpp/numeric/math/HUGE VAL">HUGE_VAL</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td> <code><a href="../../numeric/math/huge_val" title="cpp/numeric/math/HUGE VAL">HUGE_VALL</a></code> </td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Limits&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="has_infinity" title="cpp/types/numeric limits/has infinity"> <span class="t-lines"><span>has_infinity</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>Xác định các loại điểm nổi có thể biểu thị giá trị đặc biệt "vô cực dương"<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/numeric_limits/infinity">https://en.cppreference.com/w/cpp/types/numeric_limits/infinity</a>
+</p>
+</div>

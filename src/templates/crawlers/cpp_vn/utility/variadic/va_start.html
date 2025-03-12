@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">Va_Start</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdarg" title="cpp/header/cstdarg">&lt;cstdarg&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void Va_Start (std :: va_list AP, parm_n);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Các<code>va_start</code>Macro cho phép truy cập vào các đối số biến theo đối số được đặt tên<code>parm_n</code>.</p>
+<p><code>va_start</code>nên được gọi với một thể hiện đến một trường hợp hợp lệ<code><a href="va_list" title="cpp/utility/variadic/va list">va_list</a></code>sự vật<code>ap</code>Trước khi mọi cuộc gọi đến<code><a href="va_arg" title="cpp/utility/variadic/va arg">va_arg</a></code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<code>parm_n</code>Điều đó như vậy<a href="../../language/parameter_pack#Pack_expansion" title="cpp/language/parameter pack">pack expansion</a>Các loại lớp không Pod<a href="../../language/lambda#Lambda_capture" title="cpp/language/lambda">lambda capture</a>được hình thành tốt và là một rvalue.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Nếu như<code>parm_n</code>được khai báo với loại tham chiếu hoặc với một loại không tương thích với loại kết quả từ<a href="../../language/variadic_arguments#Default_conversions" title="cpp/language/variadic arguments">default argument promotions</a>Hoạt động tương đương cho quá tải</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>AP</td> <td>-</td> <td>một ví dụ của<code><a href="va_list" title="cpp/utility/variadic/va list">va_list</a></code>kiểu</td>
+</tr> <tr class="t-par"> <td>parm_n</td> <td>-</td> <td>tham số được đặt tên trước tham số biến đầu tiên</td>
+</tr>
+</table> <h3 id="Expanded_value">Giá trị mở rộng</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>va_start</code>được yêu cầu hỗ trợ<code>parm_n</code>với quá tải<code>operator&amp;</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDarg&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/273.html" rel="nofollow">CWG 273</a> </td> <td>C ++ 98</td> <td>
+<code>va_start</code> <code>operator&amp;</code>phá hủy một ví dụ về phân bổ</td> <td> <code>operator&amp;</code>phá hủy một ví dụ về phân bổ</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="va_arg" title="cpp/utility/variadic/va arg"> <span class="t-lines"><span>Va_arg</span></span></a></div> </td> <td>Truy cập đối số chức năng Variadic tiếp theo<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="va_end" title="cpp/utility/variadic/va end"> <span class="t-lines"><span>Va_end</span></span></a></div> </td> <td>kết thúc việc chuyển giao của các đối số chức năng variadic<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/variadic/va_start" title="c/variadic/va start">C documentation</a></span>vì<code>va_start</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/variadic/va_start">https://en.cppreference.com/w/cpp/utility/variadic/va_start</a>
+</p>
+</div>

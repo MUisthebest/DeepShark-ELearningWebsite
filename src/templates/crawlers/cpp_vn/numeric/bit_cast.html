@@ -1,0 +1,40 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: bit_cast</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/bit" title="cpp/header/bit">&lt;bit&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class to, class từ&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>constexpr đến bit_cast (const từ &amp; từ) noexcept;<code>To</code>Lấy giá trị của loại<code>From</code>bằng cách giải thích lại biểu diễn đối tượng của<code>To</code>. Từng bit trong biểu diễn giá trị của phần đã trả về<code>from</code>đối tượng bằng với bit tương ứng trong biểu diễn đối tượng của<code>To</code>. Các giá trị của các bit đệm trong phần đã trả về</p>
+<p>Đối tượng không xác định.<code>To</code>Nếu không có giá trị của loại</p>
+<p>Tương ứng với biểu diễn giá trị được tạo ra, hành vi không được xác định. Nếu có nhiều giá trị như vậy, giá trị nào được tạo ra là không xác định.<i>Cấu trúc T2</i>Một chút trong biểu diễn giá trị của kết quả là</p>
+<ul>
+<li>Nếu nó<code>From</code>không tương ứng với một chút trong biểu diễn giá trị của</li>
+<li>(tức là nó tương ứng với một bit đệm) hoặc<a href="../language/lifetime" title="cpp/language/lifetime">lifetime</a>, hoặc</li>
+<li>có một<a href="../language/default_initialization" title="cpp/language/default initialization">indeterminate value</a>.</li>
+</ul> <p>tương ứng với một chút của một đối tượng không nằm trong<code>unsigned char</code>hoặc<code>std::byte</code>Đối với mỗi bit trong biểu diễn giá trị của kết quả không xác định, đối tượng nhỏ nhất chứa bit đó có giá trị không xác định; hành vi không xác định trừ khi đối tượng đó là của</p>
+<p>                const std :: chrono :: sys_time &lt;thời gian&gt; &amp; tp);<code>sizeof(To) == sizeof(From)</code>Newoff<code>To</code>Và<code>From</code>&gt;<a href="../named_req/triviallycopyable" title="cpp/named req/TriviallyCopyable">TriviallyCopyable</a>loại.</p>
+<p>kiểu. Kết quả không chứa bất kỳ giá trị không xác định nào.<code>constexpr</code>Mẫu chức năng này là<code>To</code>Thì<code>From</code>Nếu và chỉ khi mỗi<code>To</code>Và<code>From</code>:</p>
+<ul>
+<li>và các loại của tất cả các tiểu mục của</li>
+<li>không phải là một loại công đoàn;</li>
+<li>không phải là một loại con trỏ;</li>
+<li>không phải là một con trỏ đến loại thành viên;</li>
+<li>không phải là một loại đủ điều kiện dễ bay hơi; Và</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>từ</td> <td>-</td> <td>không có thành viên dữ liệu không tĩnh của loại tham chiếu.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>  std :: di chuyển &lt;u&gt; &amp;&amp;<code>To</code>nguồn bit cho giá trị trả về</p>
+<h3 id="Possible_implementation">. ​</h3> <p>có biểu diễn giá trị như mô tả ở trên.<code>std::bit_cast</code>Để thực hiện<a href="../language/constexpr" title="cpp/language/constexpr">constexpr</a>Thì<code><a href="../string/byte/memcpy" title="cpp/string/byte/memcpy">std::memcpy</a></code>, bỏ qua thực tế rằng nó</p>
+<div class="cpp source-cpp"><pre data-language="cpp">có thể được sử dụng, khi cần thiết, để giải thích biểu diễn đối tượng là một trong một loại khác:</pre></div> <h3 id="Notes">Ghi chú</h3> <p><a href="../language/reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>Mẫu &lt;class to, class từ&gt;<a href="../language/explicit_cast" title="cpp/language/explicit cast">explicit cast</a>std :: enable_if_t &lt;<a href="../language/reinterpret_cast#Type_aliasing" title="cpp/language/reinterpret cast">type aliasing rule</a>.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_bit_cast" title="cpp/feature test"><code>__cpp_lib_bit_cast</code></a></td> <td><span class="nu0">201806L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<a href="#Top"><code>std::bit_cast</code></a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    sizeof (to) == sizeof (từ) &amp;&amp;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">    std :: is_trivally_copyable_v &lt;from&gt; &amp;&amp;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2482.html" rel="nofollow">CWG 2482</a> </td> <td>C ++ 20</td> <td>    std :: is_trivally_copyable_v &lt;to&gt;,</td> <td>Mẫu &lt;class inputit, class outputit&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../memory/start_lifetime_as" title="cpp/memory/start lifetime as"> <span class="t-lines"><span>start_lifetime_as</span><span>start_lifetime_as_array</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Hoàn toàn tạo ra các đối tượng trong lưu trữ nhất định với biểu diễn đối tượng được sử dụng lại<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/bit_cast">https://en.cppreference.com/w/cpp/numeric/bit_cast</a>
+</p>
+</div>

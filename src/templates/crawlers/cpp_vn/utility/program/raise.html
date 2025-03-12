@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Nâng cao</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/csignal" title="cpp/header/csignal">&lt;csignal&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int nâng cao (int sig);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Gửi tín hiệu SIG đến chương trình. Trình xử lý tín hiệu (được chỉ định bằng cách sử dụng<code><a href="signal" title="cpp/utility/program/signal">std::signal()</a></code>chức năng) được gọi.</p>
+<p>Nếu chiến lược xử lý tín hiệu do người dùng xác định không được đặt bằng cách sử dụng<code><a href="signal" title="cpp/utility/program/signal">std::signal()</a></code>Tuy nhiên, nó được xác định bằng cách thực hiện liệu tín hiệu sẽ bị bỏ qua hay người xử lý mặc định sẽ được gọi.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>sig</td> <td>-</td> <td>tín hiệu sẽ được gửi. Nó có thể là một giá trị được xác định bằng triển khai hoặc một trong các giá trị sau:<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="sig_types" title="cpp/utility/program/SIG types"> <span class="t-lines"><span>Sigabrt</span><span>Sigfpe</span><span>Sigill</span><span>Sigint</span><span>Sigsegv</span><span>Sigterm</span></span></a></div> </td> <td>Xác định các loại tín hiệu<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> </table> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>​0​</code>Sau khi thành công, giá trị khác không về thất bại.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Csignal&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="signal" title="cpp/utility/program/signal"> <span class="t-lines"><span>tín hiệu</span></span></a></div> </td> <td>Đặt trình xử lý tín hiệu cho tín hiệu cụ thể<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/program/raise" title="c/program/raise">C documentation</a></span>vì<code>raise</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/program/raise">https://en.cppreference.com/w/cpp/utility/program/raise</a>
+</p>
+</div>

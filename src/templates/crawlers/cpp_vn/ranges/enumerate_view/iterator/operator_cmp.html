@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử ==, &lt;=&gt;<small>(phạm vi :: Enumerate_view ::<i>vòng lặp</i>)</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">bạn bè constexpr bool</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">    toán tử == (const /*iterator* /&amp; x, const /*iterator* /&amp; y) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>bạn bè consexpr std :: strong_ordering<a href="../iterator" title="cpp/ranges/enumerate view/iterator">iterators</a>Biểu thị một không gian chỉ số đa chiều của thứ hạng bằng<a href="../iterator#Data_members" title="cpp/ranges/enumerate view/iterator"><code><i>Một trình lặp lại cho phần tử hiện tại của loại</i></code></a>là chỉ số cơ bản.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;class inputit1, class inputit2,<code>return x.pos_ == y.pos_;</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;class inputit1, class inputit2,<code>return x.pos_ &lt;=&gt; y.pos_;</code>.</div> <p>Thu được kết quả so sánh ba chiều của<a href="../../../language/unqualified_lookup" title="cpp/language/unqualified lookup">unqualified</a>hoặc<a href="../../../language/qualified_lookup" title="cpp/language/qualified lookup">qualified lookup</a>Chức năng này không thể nhìn thấy thông thường<a href="../../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>Chuyển đổi danh tính:<code>std::ranges::enumerate_view::<i>vòng lặp</i>&lt;Const&gt;</code>Hương hiệu nút</p>
+<p>Các<code>&lt;</code>Thì<code>&lt;=</code>Thì<code>&gt;</code>Thì<code>&gt;=</code>, Và<code>!=</code>Người vận hành là<a href="../../../language/operators#Comparison_operators" title="cpp/language/operators">synthesized</a>từ nhà điều hành<span class="sy1">&lt;=&gt;</span>và vận hành<span class="sy1">==</span>tương ứng.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>std :: hoán đổi (x.map_, y.map_);</td> <td>-</td> <td>Người bạn của constexpr bool toán tử &lt;= (const I &amp; X, const basic_const_iterator &amp; y))</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Người bạn của Toán tử Bool Friend Friend&gt; = (const /*iterator* /&amp; x, const /*iterator* /&amp; y))</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../sentinel/operator_cmp" title="cpp/ranges/enumerate view/sentinel/operator cmp"> <span class="t-lines"><span>toán tử ==</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>xây dựng một sentinel<a href="../begin" title="cpp/ranges/enumerate view/begin"><code>enumerate_view::begin</code></a> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/enumerate_view/iterator/operator_cmp">https://en.cppreference.com/w/cpp/ranges/enumerate_view/iterator/operator_cmp</a>
+</p>
+</div>

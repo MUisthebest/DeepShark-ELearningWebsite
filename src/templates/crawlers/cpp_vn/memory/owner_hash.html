@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Chủ sở hữu_hash</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx26"> <td> <pre data-language="cpp">Cấu trúc chủ sở hữu_hash;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> </tr> </table> <p>Đối tượng chức năng này cung cấp băm dựa trên chủ sở hữu (trái ngược với giá trị dựa trên giá trị) của cả hai<code><a href="weak_ptr" title="cpp/memory/weak ptr">std::weak_ptr</a></code>Và<code><a href="shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>.</p>
+<h3 id="Nested_types">Các loại lồng nhau</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Loại lồng nhau</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>is_transparent</code> </td> <td> <a href="../utility/functional#Transparent_function_objects" title="cpp/utility/functional">unspecified</a> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><strong class="selflink"> <span class="t-lines"><span>chuyển đổi đối tượng thành</span></span></strong></div> </td> <td>Tính toán băm của con trỏ sở hữu chung<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="t-member"> <h2 id="std::owner_less::operator.28.29">std :: chủ sở hữu_less :: toán tử ()</h2> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx26"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> </tr> <tr class="t-dcl t-since-cxx26"> <td> <pre data-language="cpp">std :: size_t toán tử () (const std :: shared_ptr &lt;t&gt; &amp; key) const noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> </tr> </table> <p>Mẫu &lt;class inputit1, class inputit2,<code>return key.owner_hash();</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu mảng chưa được phân vùng theo thứ tự tăng dần đối với khóa, theo cùng một tiêu chí</td> <td>-</td> <td>Mẫu &lt;Class T&gt;</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>std :: size_t Toán tử () (const std :: weak_ptr &lt;t&gt; &amp; key) const noexcept;<code><a href="shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>hoặc<code><a href="weak_ptr" title="cpp/memory/weak ptr">std::weak_ptr</a></code>con trỏ sở hữu chung được băm</p>
+</div> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_smart_ptr_owner_equality" title="cpp/feature test"><code>__cpp_lib_smart_ptr_owner_equality</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>Cho phép sử dụng<code>std::shared_ptr</code>Và<code>std::weak_ptr</code>như chìa khóa trong<a href="../container#Unordered_associative_containers" title="cpp/container">unordered associative containers</a> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="shared_ptr/owner_hash" title="cpp/memory/shared ptr/owner hash"> <span class="t-lines"><span>Chủ sở hữu_hash</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C ++ 26)</span></span></span></div> </td> <td>Giá trị băm giống hệt nhau cho bất kỳ<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::shared_ptr&lt;T&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="weak_ptr/owner_hash" title="cpp/memory/weak ptr/owner hash"> <span class="t-lines"><span>Chủ sở hữu_hash</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C ++ 26)</span></span></span></div> </td> <td>đối tượng chia sẻ cùng một quyền sở hữu.<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::weak_ptr&lt;T&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/owner_hash">https://en.cppreference.com/w/cpp/memory/owner_hash</a>
+</p>
+</div>

@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iOS_Base :: Sync_with_stdio</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">static bool sync_with_stdio (bool sync = true);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đặt xem các luồng C ++ tiêu chuẩn có được đồng bộ hóa với các luồng C tiêu chuẩn hay không sau mỗi hoạt động đầu vào/đầu ra.</p>
+<p>Các luồng C ++ tiêu chuẩn là như sau:<code><a href="../cin" title="cpp/io/cin">std::cin</a></code>Thì<code><a href="../cout" title="cpp/io/cout">std::cout</a></code>Thì<code><a href="../cerr" title="cpp/io/cerr">std::cerr</a></code>Thì<code><a href="../clog" title="cpp/io/clog">std::clog</a></code>Thì<code><a href="../cin" title="cpp/io/cin">std::wcin</a></code>Thì<code><a href="../cout" title="cpp/io/cout">std::wcout</a></code>Thì<code><a href="../cerr" title="cpp/io/cerr">std::wcerr</a></code>Và<code><a href="../clog" title="cpp/io/clog">std::wclog</a></code>.</p>
+<p>Các luồng C tiêu chuẩn như sau:<code><a href="../c/std_streams" title="cpp/io/c/std streams">stdin</a></code>Thì<code><a href="../c/std_streams" title="cpp/io/c/std streams">stdout</a></code>Và<code><a href="../c/std_streams" title="cpp/io/c/std streams">stderr</a></code>.</p>
+<p>Đối với một luồng tiêu chuẩn<code>str</code>, đồng bộ với luồng C<code>f</code>, Các cặp chức năng sau đây có tác dụng giống hệt nhau:</p>
+<div class="t-li1">
+<span class="t-li">1)</span> <code><a href="http://en.cppreference.com/w/cpp/io/c/fputc"><span class="kw1828">Điều đó cho tất cả<span class="me2">fputc</span></span></a><span class="br0">.</span>f, c<span class="br0">)</span></code>Và<code>str.rdbuf()-&gt;sputc(c)</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span> <code><a href="http://en.cppreference.com/w/cpp/io/c/fgetc"><span class="kw1825">Điều đó cho tất cả<span class="me2">FGETC</span></span></a><span class="br0">.</span>f<span class="br0">)</span></code>Và<code>str.rdbuf()-&gt;sbumpc()</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <code><a href="http://en.cppreference.com/w/cpp/io/c/ungetc"><span class="kw1835">Điều đó cho tất cả<span class="me2">Ungetc</span></span></a><span class="br0">.</span>c, f<span class="br0">)</span></code>Và<code>str.rdbuf()-&gt;sputbackc(c)</code>.</div> <p>Trong thực tế, điều này có nghĩa là các luồng C ++ được đồng bộ hóa được không bị ảnh hưởng và mỗi hoạt động I/O trên luồng C ++ được áp dụng ngay lập tức cho bộ đệm của luồng C tương ứng. Điều này làm cho nó có thể tự do trộn C ++ và C I/O.</p>
+<p>Ngoài ra, các luồng C ++ được đồng bộ hóa được đảm bảo là an toàn cho luồng (đầu ra các ký tự riêng lẻ từ nhiều luồng có thể xen kẽ, nhưng không có chủng tộc dữ liệu nào xảy ra).</p>
+<p>Nếu việc đồng bộ hóa bị tắt, các luồng tiêu chuẩn C ++ được phép đệm I/O của chúng một cách độc lập, có thể nhanh hơn đáng kể trong một số trường hợp.</p>
+<p>Theo mặc định, tất cả tám luồng C ++ tiêu chuẩn được đồng bộ hóa với các luồng C tương ứng của chúng.</p>
+<p>Nếu chức năng này được gọi sau khi I/O đã xảy ra trên luồng tiêu chuẩn, hành vi được xác định là thực hiện: Các triển khai không có hiệu lực để phá hủy bộ đệm đọc.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>tìm kiếm</td> <td>-</td> <td>Cài đặt đồng bộ hóa mới</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Trạng thái đồng bộ hóa trước khi gọi đến chức năng.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cstdio&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue49" rel="nofollow">LWG 49</a> </td> <td>C ++ 98</td> <td> <br/>int main ()</td> <td>{</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../cout" title="cpp/io/cout"> <span class="t-lines"><span>cout</span><span>wcout</span></span></a></div> </td> <td>ghi vào luồng đầu ra C tiêu chuẩn<code><a href="../c/std_streams" title="cpp/io/c/std streams">stdout</a></code><br/><span class="t-mark">(Đối tượng toàn cầu)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../cerr" title="cpp/io/cerr"> <span class="t-lines"><span>cerr</span><span>wcerr</span></span></a></div> </td> <td>ghi vào luồng lỗi C tiêu chuẩn<code><a href="../c/std_streams" title="cpp/io/c/std streams">stderr</a></code>, không bị ảnh hưởng<br/><span class="t-mark">(Đối tượng toàn cầu)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../clog" title="cpp/io/clog"> <span class="t-lines"><span>làm tắc nghẽn</span><span>wclog</span></span></a></div> </td> <td>ghi vào luồng lỗi C tiêu chuẩn<code><a href="../c/std_streams" title="cpp/io/c/std streams">stderr</a></code><br/><span class="t-mark">(Đối tượng toàn cầu)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ios_base/sync_with_stdio">https://en.cppreference.com/w/cpp/io/ios_base/sync_with_stdio</a>
+</p>
+</div>

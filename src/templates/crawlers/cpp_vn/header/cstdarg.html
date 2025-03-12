@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">Tiêu đề tiêu chuẩn tiêu đề &lt;CstDarg&gt;</h1> <p>Tiêu đề này ban đầu là trong thư viện tiêu chuẩn C<a href="https://en.cppreference.com/w/c/variadic" title="c/variadic"><code>&lt;stdarg.h&gt;</code></a>.</p>
+<p>Tiêu đề này cung cấp hỗ trợ cho<a href="../utility/variadic" title="cpp/utility/variadic">C-style variadic functions</a>, trong khi<a href="https://en.cppreference.com/w/c/language/conversion#Default_argument_promotions" title="c/language/conversion">C definition</a>của "các chương trình khuyến mãi đối số mặc định" được thay thế bằng<a href="../language/variadic_arguments#Default_conversions" title="cpp/language/variadic arguments">C++ definition</a>.</p>
+<table class="t-dsc-begin"> <tr> <td colspan="2"> <h3 id="Types">Loại</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/variadic/va_list" title="cpp/utility/variadic/va list"> <span class="t-lines"><span>Va_List</span></span></a></div> </td> <td>giữ thông tin cần thiết bởi<code><a href="../utility/variadic/va_start" title="cpp/utility/variadic/va start">va_start</a></code>Thì<code><a href="../utility/variadic/va_arg" title="cpp/utility/variadic/va arg">va_arg</a></code>Thì<code><a href="../utility/variadic/va_end" title="cpp/utility/variadic/va end">va_end</a></code>, Và<code><a href="../utility/variadic/va_copy" title="cpp/utility/variadic/va copy">va_copy</a></code> <br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr> <td colspan="2"> <h3 id="Macros">Macro</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/variadic/va_start" title="cpp/utility/variadic/va start"> <span class="t-lines"><span>Va_Start</span></span></a></div> </td> <td>Cho phép truy cập vào các đối số chức năng Variadic<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/variadic/va_arg" title="cpp/utility/variadic/va arg"> <span class="t-lines"><span>Va_arg</span></span></a></div> </td> <td>Truy cập đối số chức năng Variadic tiếp theo<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/variadic/va_copy" title="cpp/utility/variadic/va copy"> <span class="t-lines"><span>Va_Copy</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tạo một bản sao của các đối số chức năng Variadic<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/variadic/va_end" title="cpp/utility/variadic/va end"> <span class="t-lines"><span>Va_end</span></span></a></div> </td> <td>kết thúc việc chuyển giao của các đối số chức năng variadic<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> </table> <h3 id="Synopsis">kết quả bằng cách xây dựng mọi thành viên dữ liệu của kết quả từ thành viên tương ứng của</h3> <div class="cpp source-cpp"><pre data-language="cpp">không gian tên std {</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2645.html" rel="nofollow">CWG 2645</a> </td> <td>C ++ 98</td> <td>  Sử dụng Va_List = /*Xem Mô tả* /;</td> <td>}</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/header/cstdarg">https://en.cppreference.com/w/cpp/header/cstdarg</a>
+</p>
+</div>

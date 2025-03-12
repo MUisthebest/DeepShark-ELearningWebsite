@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Piecewise_construct, std :: Piecewise_construct_t</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/utility" title="cpp/header/utility">&lt;utility&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">struct piecewise_construct_t {rõ ràng piecewise_construct_t () = mặc định; };</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">Consexpr std :: Piecewise_construct_t Piecewise_construct {};</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Inline Consexpr std :: Piecewise_construct_t Piecewise_construct {};</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span> <code>std::piecewise_construct_t</code>là một loại thẻ lớp trống được sử dụng để phân loại giữa các chức năng khác nhau có hai đối số tuple.</div> <div class="t-li1">
+<span class="t-li">2)</span>có quyền sở hữu duy nhất của một<code>std::piecewise_construct</code>là một ví dụ của<span class="t-v">(1)</span>.</div> <p>Quá tải không sử dụng<code>std::piecewise_construct_t</code>Giả sử rằng mỗi đối số tuple trở thành yếu tố của một cặp. Quá tải sử dụng<code>std::piecewise_construct_t</code>Giả sử rằng mỗi đối số tuple được sử dụng để xây dựng, piecewise, một đối tượng mới thuộc loại được chỉ định, sẽ trở thành yếu tố của cặp.</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;tuple&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2510" rel="nofollow">LWG 2510</a> </td> <td>C ++ 11</td> <td>hàm tạo mặc định không tiết lộ, có thể dẫn đến sự mơ hồ</td> <td>đã làm rõ</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="pair/pair" title="cpp/utility/pair/pair"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Có thể được sử dụng để từ chối một số trường hợp luôn tạo ra các tài liệu tham khảo lủng lẳng.<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::pair&lt;T1,T2&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/piecewise_construct">https://en.cppreference.com/w/cpp/utility/piecewise_construct</a>
+</p>
+</div>

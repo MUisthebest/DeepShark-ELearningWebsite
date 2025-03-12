@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: unetered_map &lt;key, t, băm, keyequal, phân bổ&gt; :: find</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">tìm kiếm (khóa const &amp; khóa);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">const_iterator find (const key &amp; key) const;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class K&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">tìm kiếm (const k &amp; x);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Đầu vào</span>Mẫu &lt;Class K&gt;<code>key</code>.</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>const_iterator tìm (const k &amp; x) const;<i>tương đương</i>đến giá trị<code>x</code>Thực hiện các hoạt động số học cơ bản giữa hai thời lượng hoặc giữa thời lượng và số lượng đánh dấu.<code>Hash::is_transparent</code>Và<code>KeyEqual::is_transparent</code>là hợp lệ và mỗi biểu thị một loại. Điều này giả định rằng như vậy<code>Hash</code>có thể gọi được với cả hai<code>K</code>Và<code>Key</code>loại, và đó là<code>KeyEqual</code>là trong suốt, mà cùng nhau, cho phép gọi chức năng này mà không cần xây dựng một thể hiện<code>Key</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu mảng chưa được phân vùng theo thứ tự tăng dần đối với khóa, theo cùng một tiêu chí</td> <td>-</td> <td>Giá trị khóa của phần tử để tìm kiếm</td>
+</tr> <tr class="t-par"> <td>x</td> <td>-</td> <td>giá trị của bất kỳ loại nào có thể được minh bạch so với một khóa</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Tìm một phần tử có khóa tương đương với<code>key</code>Tìm một phần tử có khóa so sánh<code><a href="end" title="cpp/container/unordered map/end">end()</a></code>Trình rút vào một phần tử có khóa tương đương với</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Không đổi trung bình, trường hợp xấu nhất tuyến tính trong kích thước của container.</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_generic_unordered_lookup" title="cpp/feature test"><code>__cpp_lib_generic_unordered_lookup</code></a></td> <td><span class="nu0">201811l</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>Tra cứu so sánh không đồng nhất trong<a href="../../container#Unordered_associative_containers_.28since_C.2B.2B11.29" title="cpp/container">unordered associative containers</a>. Nếu không tìm thấy yếu tố như vậy, quá khứ (xem<span class="t-v">ConstExpr Outputit Adjacent_Difference (Inputit First, Inputit Last, </span> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDdef&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;chức năng&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="count" title="cpp/container/unordered map/count"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>chèn_or_assign<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="equal_range" title="cpp/container/unordered map/equal range"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/unordered_map/find">https://en.cppreference.com/w/cpp/container/unordered_map/find</a>
+</p>
+</div>

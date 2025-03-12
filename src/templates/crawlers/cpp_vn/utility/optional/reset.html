@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tùy chọn &lt;t&gt; :: Đặt lại</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td><pre data-language="cpp">void reset () noExcept;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr void reset () noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Nếu như<code>*this</code>chứa một giá trị, phá hủy giá trị đó như thể bằng cách<code>value().T::~T()</code>. Nếu không, không có hiệu ứng.</p>
+<p><code>*this</code>Mẫu &lt;class u&gt;</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Tùy chọn&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2231R1" rel="nofollow">P2231R1</a> </td> <td>C ++ 20</td> <td>
+<code>reset</code> </td> <td>xây dựng giá trị chứa tại chỗ</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator=" title="cpp/utility/optional/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>gán nội dung<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/optional/reset">https://en.cppreference.com/w/cpp/utility/optional/reset</a>
+</p>
+</div>

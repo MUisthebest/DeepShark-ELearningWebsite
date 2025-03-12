@@ -1,0 +1,8 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_lock &lt;mutex&gt; :: ~ shared_lock</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">~ chia sẻ_lock ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>Phá hủy khóa.</p>
+<p>Nếu như<code>*this</code>có một mutex liên quan ((<code><a href="mutex" title="cpp/thread/shared lock/mutex">mutex()</a></code>trả lại một con trỏ không null) và đã có được quyền sở hữu nó (<code>owns()</code>(C ++ 20)<code>true</code>), mutex được mở khóa bằng cách gọi<code><a href="../shared_mutex/unlock_shared" title="cpp/thread/shared mutex/unlock shared">unlock_shared()</a></code>.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/shared_lock/%7Eshared_lock">https://en.cppreference.com/w/cpp/thread/shared_lock/%7Eshared_lock</a>
+</p>
+</div>

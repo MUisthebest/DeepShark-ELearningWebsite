@@ -1,0 +1,337 @@
+ <h1 class="firstHeading" id="firstHeading">                 "Xor-ing bit:" &lt;&lt; x4 &lt;&lt; std :: setw (35) &lt;&lt; bin32 (x4) &lt;&lt; "\ n"</h1> <p>Trả về kết quả của hoạt động số học cụ thể.</p>
+<table class="wikitable"> <tr> <th rowspan="2">Tên nhà điều hành</th> <th rowspan="2">Cú pháp</th> <th rowspan="2">
+<a href="operators" title="cpp/language/operators">Over​load​able</a> </th> <th colspan="2">Ví dụ nguyên mẫu (cho<span class="kw1">lớp học</span>T)</th>
+</tr> <tr> <th>Định nghĩa lớp bên trong</th> <th>Định nghĩa lớp bên ngoài</th>
+</tr> <tr> <td>Unary Plus</td> <td>
+<code>+a</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator+() const;</code> </td> <td>
+<code>T operator+(const T &amp;a);</code> </td>
+</tr> <tr> <td>Mút đơn</td> <td>
+<code>-a</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator-() const;</code> </td> <td>
+<code>T operator-(const T &amp;a);</code> </td>
+</tr> <tr> <td>phép cộng</td> <td>
+<code>a + b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator+(const T2 &amp;b) const;</code> </td> <td>
+<code>T operator+(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td>phép trừ</td> <td>
+<code>a - b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator-(const T2 &amp;b) const;</code> </td> <td>
+<code>T operator-(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td>phép nhân</td> <td>
+<code>a * b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator*(const T2 &amp;b) const;</code> </td> <td>
+<code>T operator*(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td>phân công</td> <td>
+<code>a / b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator/(const T2 &amp;b) const;</code> </td> <td>
+<code>T operator/(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td>phần còn lại</td> <td>
+<code>a % b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator%(const T2 &amp;b) const;</code> </td> <td>
+<code>T operator%(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td>Bit whole không</td> <td>
+<code>~a</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator~() const;</code> </td> <td>
+<code>T operator~(const T &amp;a);</code> </td>
+</tr> <tr> <td>bitwise và</td> <td>
+<code>a &amp; b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator&amp;(const T2 &amp;b) const;</code> </td> <td>
+<code>T operator&amp;(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td>BitWise hoặc</td> <td>
+<code>a | b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator|(const T2 &amp;b) const;</code> </td> <td>
+<code>T operator|(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td>BitWise XOR</td> <td>
+<code>a ^ b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator^(const T2 &amp;b) const;</code> </td> <td>
+<code>T operator^(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td>Bitwise trái thay đổi</td> <td>
+<code>a &lt;&lt; b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator&lt;&lt;(const T2 &amp;b) const;</code> </td> <td>
+<code>T operator&lt;&lt;(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td>BitWise phải thay đổi</td> <td>
+<code>a &gt;&gt; b</code> </td> <td class="table-yes">Đúng</td> <td>
+<code>T T::operator&gt;&gt;(const T2 &amp;b) const;</code> </td> <td>
+<code>T operator&gt;&gt;(const T &amp;a, const T2 &amp;b);</code> </td>
+</tr> <tr> <td colspan="5"> <b>Ghi chú</b><br/> <ul>
+<li>Tất cả các toán tử tích hợp trả về các giá trị và hầu hết<a href="operators" title="cpp/language/operators">user-defined overloads</a>Cũng trả về các giá trị để các toán tử do người dùng xác định có thể được sử dụng theo cách tương tự như các bản dựng. Tuy nhiên, trong quá tải toán tử do người dùng xác định<span class="kw4">Vô hiệu</span>). Cụ thể, việc chèn luồng và quá tải khai thác luồng của toán tử<span class="sy1">, nối thêm</span>và vận hành<span class="sy1">2,4)</span>Không chính thức,<code>T&amp;</code>.</li>
+<li> <code>T2</code>có thể là bất kỳ loại bao gồm<code>T</code>.</li>
+</ul> </td>
+</tr>
+</table> <h3 id="General_explanation">Giải thích chung</h3> <p>Tất cả các toán tử số học tích hợp tính toán kết quả của hoạt động số học cụ thể và trả về kết quả của nó. Các đối số không được sửa đổi.</p>
+<h4 id="Conversions">    có thể thay đổi int* const q; // không hình thành</h4> <p>Nếu toán hạng được chuyển cho toán tử số học tích hợp là loại bảng liệt kê không thể thiếu hoặc không bịa<a href="implicit_conversion#Integral_promotion" title="cpp/language/implicit conversion">integral promotion</a>. Nếu một toán hạng có mảng hoặc loại chức năng,<a href="implicit_conversion#Array-to-pointer_conversion" title="cpp/language/implicit conversion">array-to-pointer</a>Và<a href="implicit_conversion#Function-to-pointer" title="cpp/language/implicit conversion">function-to-pointer</a>Chuyển đổi được áp dụng.</p>
+<p>Đối với các toán tử nhị phân (ngoại trừ ca), nếu các toán hạng được quảng bá có các loại khác nhau,<a href="usual_arithmetic_conversions" title="cpp/language/usual arithmetic conversions">usual arithmetic conversions</a>được áp dụng.</p>
+<h4 id="Overflows">Tràn</h4> <p>Số học số nguyên không dấu luôn được thực hiện modulo 2<sup class="t-su">Trả về một kết quả, kết quả được bỏ qua. Nếu như</sup>trong đó n là số lượng bit trong số nguyên cụ thể đó. Ví dụ. vì<span class="kw4">STD</span> <span class="kw4">int</span>, thêm một vào<code><a href="../types/climits" title="cpp/types/climits">UINT_MAX</a></code>cho<code>​0​</code>và trừ một cái từ<code>​0​</code>cho<code><a href="../types/climits" title="cpp/types/climits">UINT_MAX</a></code>.</p>
+<p>Khi hoạt động số học số nguyên đã ký tràn (kết quả không phù hợp với loại kết quả), hành vi không được xác định, - các biểu hiện có thể của một hoạt động như vậy bao gồm:</p>
+<ul>
+<li>nó bao quanh theo các quy tắc của đại diện (thông thường<a href="types#Range_of_values" title="cpp/language/types">two's complement</a>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.</li>
+<li>Nó bẫy - trên một số nền tảng hoặc do các tùy chọn trình biên dịch (ví dụ:<code>-ftrapv</code>trong gcc và clang),</li>
+<li>Nó bão hòa đến giá trị tối thiểu hoặc tối đa (trên nhiều DSP),</li>
+<li>nó là hoàn toàn<a class="external text" href="https://blog.llvm.org/2011/05/what-every-c-programmer-should-know_14.html" rel="nofollow">optimized out by the compiler</a>.</li>
+</ul> <h4 id="Floating-point_environment">Môi trường nổi</h4> <p>Nếu như<a href="../preprocessor/impl" title="cpp/preprocessor/impl"><code> #pragma STDC FENV_ACCESS</code></a>được hỗ trợ và đặt thành<code>ON</code>, tất cả các nhà khai thác số học dấu nổi đều tuân theo điểm nổi hiện tại<a href="../numeric/fenv/fe_round" title="cpp/numeric/fenv/FE round">rounding direction</a>và báo cáo các lỗi số học điểm nổi như được chỉ định trong<a href="../numeric/math/math_errhandling" title="cpp/numeric/math/math errhandling"><code>math_errhandling</code></a>trừ khi một phần của một<a href="initialization#Non-local_variables" title="cpp/language/initialization">static initializer</a>(Trong trường hợp đó, các trường hợp ngoại lệ điểm nổi không được nâng lên và chế độ làm tròn đến gần nhất).</p>
+<h4 id="Floating-point_contraction">Cơn co thắt nổi</h4> <p>Trừ khi<a href="../preprocessor/impl" title="cpp/preprocessor/impl"><code> #pragma STDC FP_CONTRACT</code></a>được hỗ trợ và đặt thành<code>OFF</code>, tất cả các số học dấu phẩy động có thể được thực hiện như thể các kết quả trung gian có phạm vi và độ chính xác vô hạn, nghĩa là các tối ưu hóa bỏ qua các lỗi làm tròn và ngoại lệ điểm nổi được cho phép. Ví dụ: C ++ cho phép thực hiện<code>(x * y) + z</code>với một hướng dẫn CPU nhân-ADD được hợp nhất hoặc tối ưu hóa<code>a = x * x * x * x;</code>(1,3)<code>tmp = x * x; a = tmp * tmp</code>.</p>
+<p>Không liên quan đến hợp đồng, kết quả trung gian của số học nổi có thể có phạm vi và độ chính xác khác với kết quả được chỉ định bởi loại của nó, xem<code><a href="../types/climits/flt_eval_method" title="cpp/types/climits/FLT EVAL METHOD">FLT_EVAL_METHOD</a></code>.</p>
+<p>Chính thức, tiêu chuẩn C ++ không đảm bảo về độ chính xác của các hoạt động dấu phẩy động.</p>
+<h3 id="Unary_arithmetic_operators">J &amp; K &amp; L; // tương đương với (j &amp; k) &amp; l</h3> <p>Các biểu thức toán học số học không có biểu mẫu</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>+</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>-</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Unary Plus (khuyến mãi).</div> <div class="t-li1">
+<span class="t-li">2)</span>Mút đơn (phủ định).</div> <p>Unary<code>+</code>Và<code>-</code>{<a href="operator_precedence" title="cpp/language/operator precedence">precedence</a>hơn tất cả các toán tử số học nhị phân, vì vậy<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>Không thể chứa các toán tử số học nhị phân cấp cao nhất. Các nhà khai thác này liên kết từ phải sang trái:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">+a - b; // tương đương với ( +a) - b, không +(a - b)</pre></div> <h4 id="Built-in_unary_arithmetic_operators">-c + d; // tương đương với (-c) + d, không -(a + b)</h4> <div class="t-li1">
+<span class="t-li">1)</span> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>+-e; // tương đương với + (-e), unary + là không có op nếu `e` là loại tích hợp<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>     // Bởi vì bất kỳ chương trình khuyến mãi có thể nào được thực hiện trong quá trình phủ định<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>.</div> <div class="t-li1">Các toán tử số học không tích hợp<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>Đối với nhà điều hành Unary Plus tích hợp,<code>char</code>Phải là một prvalue của số học, liệt kê không bị trục xuất hoặc loại con trỏ. Quảng cáo tích phân được thực hiện trên<code>int</code> <span class="t-rev-inl t-since-cxx11"><span>Nếu nó có loại bảng liệt kê tích phân hoặc không bị hủy. Loại kết quả là loại (có thể được quảng bá) của<a href="lambda" title="cpp/language/lambda">lambda expression</a>Kết quả của chương trình khuyến mãi tích hợp là giá trị của</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>. Hoạt động Unary tích hợp là không có op nếu toán hạng là prvalue của một loại tích phân được quảng bá hoặc loại con trỏ. Mặt khác, loại loại hoặc giá trị của toán hạng được thay đổi bằng cách quảng bá tích hợp hoặc lvalue-to-rvalue, mảng thành con trỏ, chức năng thành con trỏ hoặc chuyển đổi do người dùng xác định. Ví dụ,</div> <div class="t-li1">
+<span class="t-li">2)</span>được chuyển đổi thành<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>và không có thể công không bị mắc kẹt<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>được chuyển đổi thành con trỏ chức năng<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>.</div>trong các biểu thức cộng với unary.<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>Đối với các toán tử trừ khi tích hợp,<code>a</code>, giá trị của<code>-a</code>Phải là một prvalue của loại bảng điều khiển số học hoặc không bị nhiễm trùng. Quảng cáo tích phân được thực hiện trên<sup class="t-su">N</sup>. Loại kết quả là loại của loại được quảng bá<code>N</code>Kết quả của sự phủ định tích hợp là tiêu cực của những người được quảng bá<ul><li>. Cho không dấu</li></ul> <h4 id="Overloads">(Constexpr kể từ C ++ 14)</h4> <p>TRONG<a href="overload_resolution#Call_to_an_overloaded_operator" title="cpp/language/overload resolution">overload resolution against user-defined operators</a>là \ ({\ Small 2^n-a} \) 2<code>A</code>-a, ở đâu<code>T</code>Tất cả các toán tử logic bitwise khác đều có thấp hơn</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Nói cách khác, kết quả là hai phần bổ sung của toán hạng (trong đó toán hạng và kết quả được coi là không dấu).</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">, đối với mỗi loại số học được thúc đẩy CV-UNTQUED</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">và cho mọi loại</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">, Chữ ký chức năng sau tham gia vào độ phân giải quá tải:</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Người vận hành+(a)</pre></div> </div> <h3 id="Additive_operators">Đối với các toán tử không phải là người vận hành,</h3> <p>Một nhà điều hành- (a)</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>+</code> <span class="t-spar">RHS</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>-</code> <span class="t-spar">RHS</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>#include &lt;Istream&gt;</div> <div class="t-li1">
+<span class="t-li">2)</span> </div> <p>int main ()<code>+</code>Và<code>-</code>{<a href="operator_precedence" title="cpp/language/operator precedence">precedence</a>    char c = 0x6a;<code>*</code>Thì<code>/</code>Và<code>%</code>    int n1 = 1;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    Char không dấu N2 = 1;</pre></div> <h4 id="Built-in_additive_operators">    không dấu int n3 = 1;</h4> <p>    std :: cout &lt;&lt; "char:" &lt;&lt; c &lt;&lt; "int:" &lt;&lt; +c &lt;&lt; "\ n"<span class="t-spar">Số lượng bọ ve trừ đi từ</span>Và<span class="t-spar">RHS</span>                 "-1, trong đó 1 được ký:" &lt;&lt; -n1 &lt;&lt; "\ n"</p>
+<ul>
+<li>                 "-1, trong đó 1 là char không dấu:" &lt;&lt; -n2 &lt;&lt; "\ n"<a href="usual_arithmetic_conversions" title="cpp/language/usual arithmetic conversions">usual arithmetic conversions</a>Kết quả của phép nhân tích hợp là sản phẩm của các toán hạng.</li>
+<li>    char a [3];</li>
+</ul> <p>    std :: cout &lt;&lt; "2 * (-10), trong đó 2 là char =" &lt;&lt; c * n &lt;&lt; "\ n"<span class="t-spar">Số lượng bọ ve trừ đi từ</span>Và<span class="t-spar">RHS</span>                 "2 * (-10), trong đó 2 là không dấu =" &lt;&lt; un * n &lt;&lt; "\ n"</p>
+<span class="t-li">1)</span>}<ul>
+<li>Char: J Int: 106</li>
+<li>-1, trong đó 1 được ký: -1<a href="#Pointer_arithmetic">pointer arithmetic</a>).</li>
+</ul> <span class="t-li">2)</span>-1, trong đó 1 là char không dấu: -1<ul>
+<li>-1, trong đó 1 không dấu int: 4294967295<span class="t-spar">RHS</span>từ<span class="t-spar">Số lượng bọ ve trừ đi từ</span>.</li>
+<li> <span class="t-spar">Số lượng bọ ve trừ đi từ</span>Kích thước của mảng: 3<span class="t-spar">RHS</span>Kích thước của con trỏ: 8<a href="#Pointer_arithmetic">pointer arithmetic</a>).</li>
+<li>Các toán tử phụ gia<span class="t-spar">RHS</span>Các biểu thức toán tử phụ gia có biểu mẫu<span class="t-spar">Số lượng bọ ve trừ đi từ</span>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<a href="#Pointer_arithmetic">pointer arithmetic</a>).</li>
+</ul> <p>và cho mọi loại đối tượng<code><a href="../types/numeric_limits/is_iec559" title="cpp/types/numeric limits/is iec559">std::numeric_limits::is_iec559</a></code>):</p>
+<ul>
+<li>, Chữ ký chức năng sau tham gia vào độ phân giải quá tải:</li>
+<li>Nhị phân<code><a href="../numeric/fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></code>T* Toán tử+(STD :: PTRDIFF_T, T*)</li>
+<li>hơn tất cả các toán tử số học nhị phân khác ngoại trừ<code><a href="../numeric/fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></code>T* Toán tử+(STD :: PTRDIFF_T, T*)</li>
+</ul> <h4 id="Pointer_arithmetic">a + b * c;  // tương đương với a + (b * c), không (a + b) * c</h4> <p>d / e - f;  // Tương đương với (d / e) - f, không phải d / (e - f)<code>J</code>g + h &gt;&gt; i; // tương đương với (g + h) &gt;&gt; i, không g + (h &gt;&gt; i)<code>P</code> <code>P</code>.</p>
+<ul>
+<li>Nếu như<code>P</code>J - K + L - M; // tương đương với ((j - k) + l) - m<a href="pointer#Null_pointers" title="cpp/language/pointer">null pointer value</a>Và<code>J</code>thành một phạm vi được sắp xếp<code>​0​</code>Các toán tử phụ gia tích hợp</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>P</code>Để bổ sung tích hợp, một trong các điều kiện sau đây phải được thỏa mãn:<code>i</code>Phải là prvalues, và một trong những điều kiện sau đây phải được thỏa mãn:<code>x</code>với<code>n</code>Cả hai toán hạng đều có loại bảng liệt kê số học hoặc không bị nhiễm. Trong trường hợp này,<code>J</code>(1,3)<code>j</code>Thì<code>P</code>có loại tích phân. Trong trường hợp này, giá trị tích phân được trừ khỏi con trỏ (xem</li>
+<li>đều hợp lệ và mỗi biểu thị một loại;<code>P + J</code>Và<code>J + P</code> </li>
+<ul>
+<li>Chính xác một toán hạng có loại bảng liệt kê tích phân hoặc không chính xác. Trong trường hợp này, quảng cáo tích phân được áp dụng cho toán hạng đó.<code>i+j</code>Cả hai toán hạng có loại số học. Trong trường hợp này, kết quả là tổng của các toán hạng.<code>x</code>nếu như<code>i + j</code>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>[</code><code>​0​</code><code>, </code><code>n</code><code>)</code>, Và</li>
+<li>Tham khảo (các) toán hạng được chuyển đổi hoặc quảng bá.<code>x</code>nếu như<code>i + j</code>khoảng cách<code>n</code>.</li>
+</ul>
+<li>              Không có p);<code>P - J</code> </li>
+<ul>
+<li>Để bổ sung tích hợp, một trong các điều kiện sau đây phải được thỏa mãn:<code>i-j</code>Cả hai toán hạng có loại số học. Trong trường hợp này, kết quả là tổng của các toán hạng.<code>x</code>nếu như<code>i - j</code>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>[</code><code>​0​</code><code>, </code><code>n</code><code>)</code>, Và</li>
+<li>Một toán hạng là một con trỏ đến một loại đối tượng được xác định hoàn toàn và toán hạng còn lại có loại tích phân. Trong trường hợp này, giá trị tích phân được thêm vào con trỏ (xem<code>x</code>nếu như<code>i - j</code>khoảng cách<code>n</code>.</li>
+</ul>
+<li>Khác<code>j</code>Nếu một toán hạng là NAN, kết quả là NAN.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>P</code>Cả hai toán hạng có loại số học. Trong trường hợp này, kết quả là sự khác biệt do phép trừ của<code>y</code>là một con trỏ đến một loại đối tượng được xác định hoàn toàn và<code>J</code>(1,3)<code>j</code>Thì<code>P</code>có loại tích phân. Trong trường hợp này, giá trị tích phân được trừ khỏi con trỏ (xem</li>
+<li>đều hợp lệ và mỗi biểu thị một loại;<code>P + J</code>Và<code>J + P</code> </li>
+<ul>
+<li>Cả hai toán hạng đều là con trỏ đến các phiên bản đủ điều kiện CV hoặc CV-Unquilified của cùng loại đối tượng được xác định hoàn toàn. Trong trường hợp này<code>y</code>nếu như<code>j</code>khoảng cách<code>​0​</code>, Và</li>
+<li>được trừ từ<code>y</code>nếu như<code>j</code>khoảng cách<code>1</code>.</li>
+</ul>
+<li>              Không có p);<code>P - J</code> </li>
+<ul>
+<li>chỉ đến<code>y</code>nếu như<code>j</code>khoảng cách<code>​0​</code>, Và</li>
+<li>Nếu cả hai toán hạng có loại dấu phẩy động và loại hỗ trợ số học nổi IEEE IEEE (xem<code>y</code>nếu như<code>j</code>khoảng cách<code>-1</code>.</li>
+</ul>
+<li>Khác<code>j</code>Nếu một toán hạng là NAN, kết quả là NAN.</li>
+<li>Nếu không, hành vi là không xác định.</li>
+</ul> <p>Infinity trừ đi vô cực là nan, và<code>P</code>Và<code>Q</code>được nâng lên.<code><a href="../types/ptrdiff_t" title="cpp/types/ptrdiff t">std::ptrdiff_t</a></code>.</p>
+<ul>
+<li>Nếu như<code>P</code>Và<code>Q</code>Infinity cộng với vô cùng tiêu cực là Nan, và<a href="pointer#Null_pointers" title="cpp/language/pointer">null pointer values</a>, kết quả của sự so sánh là<code>​0​</code>.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>P</code>Và<code>Q</code>được nâng lên.<code>i</code>Con trỏ số học<code>j</code>Khi một biểu thức<code>x</code>, biểu thức<code>P - Q</code>được hủy bỏ chính xác một lần. Hành vi không xác định nếu<code>i − j</code>.</li>
+<ul><li>Nếu như<code>i − j</code>có loại tích phân được thêm vào hoặc trừ khỏi biểu thức<code><a href="../types/ptrdiff_t" title="cpp/types/ptrdiff t">std::ptrdiff_t</a></code>Hoạt động tương đương cho quá tải</li></ul>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>P</code>Và<code>Q</code>thuộc loại con trỏ, kết quả có loại<code>​0​</code>.</li>
+<li>Nếu không, hành vi là không xác định.</li>
+</ul> <p>Đánh giá thành a<a href="../named_req/randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>yêu cầu.</p>
+<p>, kết quả là một giá trị con trỏ null.<code>P</code>hoặc<code>Q</code>chỉ vào<code>T</code>phần tử của một đối tượng mảng<code>T</code>các yếu tố, với giá trị của<a href="implicit_conversion#Similar_types" title="cpp/language/implicit conversion">similar</a>được thêm hoặc trừ như sau:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">chỉ vào</pre></div> <h4 id="Overloads_2">(Constexpr kể từ C ++ 14)</h4> <p>TRONG<a href="overload_resolution#Call_to_an_overloaded_operator" title="cpp/language/overload resolution">overload resolution against user-defined operators</a> <code>L</code>Và<code>R</code>những con trỏ đã qua cuối yếu tố cuối cùng của<code>T</code>Tất cả các toán tử logic bitwise khác đều có thấp hơn</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">yếu tố của</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">là một con trỏ qua cuối yếu tố cuối cùng của</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Giá trị dẫn đến hành vi không xác định.</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">trỏ đến một đối tượng hoàn chỉnh, tiểu mục lớp cơ sở hoặc tiểu đơn thành viên</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">, với giá trị của</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được thêm hoặc trừ như sau:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Ở đâu<code>LR</code>Xác định loại và thuộc tính của đối tượng hệ thống tập tin được xác định bởi<a href="usual_arithmetic_conversions" title="cpp/language/usual arithmetic conversions">usual arithmetic conversions</a>    __ComparisonCommOnTyPewith &lt;t, u&gt; &amp;&amp;<code>L</code>Và<code>R</code>.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">chỉ vào</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">con trỏ đã qua cuối</pre></div> </div> <h4 id="Multiplicative_operators">phải là một loại prvalue của loại liệt kê tích phân hoặc không có đoạn</h4> <p>Giá trị dẫn đến hành vi không xác định.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>*</code> <span class="t-spar">RHS</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>/</code> <span class="t-spar">RHS</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>%</code> <span class="t-spar">RHS</span> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Khi hai biểu thức con trỏ</div> <div class="t-li1">
+<span class="t-li">2)</span>được trừ, loại kết quả là</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Cả hai đánh giá đến</div> <p>trỏ đến, tương ứng,<a href="operator_precedence" title="cpp/language/operator precedence">precedence</a>Th và</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Các phần tử mảng của cùng một đối tượng mảng</pre></div> <h4 id="Built-in_multiplicative_operators">không thể đại diện bởi</h4> <p>trỏ đến cùng một đối tượng hoàn chỉnh, tiểu mục lớp cơ sở hoặc phân nhóm thành viên, kết quả là<a href="usual_arithmetic_conversions" title="cpp/language/usual arithmetic conversions">Usual arithmetic conversions</a>Kết quả của phép nhân tích hợp là sản phẩm của các toán hạng.</p>
+<p>    std :: cout &lt;&lt; "2 * (-10), trong đó 2 là char =" &lt;&lt; c * n &lt;&lt; "\ n"<span class="t-spar">Số lượng bọ ve trừ đi từ</span>Và<span class="t-spar">RHS</span>có loại con trỏ đến (có thể là CV đủ điều kiện)</p>
+<div class="t-li1">
+<span class="t-li">1)</span>", Ở đâu</div>và cho mọi loại đối tượng<code><a href="../types/numeric_limits/is_iec559" title="cpp/types/numeric limits/is iec559">std::numeric_limits::is_iec559</a></code>):<ul>
+<li>, hành vi không xác định:</li>
+<li>int mảng [5] = {1, 2, 3, 4, 5};<code><a href="../numeric/fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></code>T* Toán tử+(STD :: PTRDIFF_T, T*)</li>
+</ul> <div class="t-li1">
+<span class="t-li">2)</span>không dấu int k = *p; // ok, giá trị của `k` là 2<span class="t-spar">Số lượng bọ ve trừ đi từ</span>chia cho<span class="t-spar">RHS</span>. Nếu như<span class="t-spar">RHS</span>std :: ptrdiff_t toán tử- (t*, t*)</div> <div class="t-li1">, cho mỗi cặp loại số học được thăng chức</div>và cho mọi loại đối tượng<code><a href="../types/numeric_limits/is_iec559" title="cpp/types/numeric limits/is iec559">std::numeric_limits::is_iec559</a></code>):<ul>
+<li>, Chữ ký chức năng sau tham gia vào độ phân giải quá tải:</li>
+<li>Toán tử LR+(L, R)<code><a href="../numeric/fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_DIVBYZERO</a></code>T* Toán tử+(STD :: PTRDIFF_T, T*)</li>
+<li>T* toán tử+(t*, std :: ptrdiff_t)<code><a href="../numeric/fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></code>T* Toán tử+(STD :: PTRDIFF_T, T*)</li>
+</ul> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>T* Toán tử- (T*, STD :: PTRDIFF_T)<span class="t-spar">Số lượng bọ ve trừ đi từ</span>Chuyển tiếp<span class="t-spar">RHS</span>. Nếu như<span class="t-spar">RHS</span>std :: ptrdiff_t toán tử- (t*, t*)</div> <div class="t-li1">Nếu như<code>a / b</code>#include &lt;Istream&gt;<code>(a / b) * b + a % b == a</code>.</div> <div class="t-li1">Nếu như<code>a / b</code> <code>a / b</code>Và<code>a % b</code>int main ()<code><a href="http://en.cppreference.com/w/cpp/types/climits"><span class="kw400">Int_min</span></a> <span class="sy2">{</span> <span class="sy2">-</span><span class="nu0">, nếu như</span></code>    char c = 2;</div> <p>    không dấu int un = 2;<a class="external text" href="https://cplusplus.github.io/CWG/issues/614.html" rel="nofollow">CWG issue 614</a>    int n = -10;<a class="external text" href="https://wg21.link/n2757" rel="nofollow">N2757</a>    std :: cout &lt;&lt; "2 + (-10), trong đó 2 là char =" &lt;&lt; c + n &lt;&lt; "\ n"<code><a href="../numeric/math/div" title="cpp/numeric/math/div">std::div</a></code>                 "2 + (-10), trong đó 2 là không dấu =" &lt;&lt; un + n &lt;&lt; "\ n"</p>
+<p>                 "-10 - 2.12 =" &lt;&lt; n - 2.12 &lt;&lt; '\ n';<code><a href="../numeric/math/remainder" title="cpp/numeric/math/remainder">std::remainder</a></code>Và<code><a href="../numeric/math/fmod" title="cpp/numeric/math/fmod">std::fmod</a></code>.</p>
+<h4 id="Overloads_3">(Constexpr kể từ C ++ 14)</h4> <p>TRONG<a href="overload_resolution#Call_to_an_overloaded_operator" title="cpp/language/overload resolution">overload resolution against user-defined operators</a> <code>LA</code>Và<code>RA</code>    char a [4] = {'a', 'b', 'c', 'd'};<code>LI</code>Và<code>RI</code>), nếu một hoặc cả hai toán tử cho toán tử nhị phân % là âm, thì dấu hiệu của phần còn lại được xác định, vì nó phụ thuộc vào hướng làm tròn của phân chia số nguyên. Chức năng</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    std :: cout &lt;&lt; "Ví dụ bổ sung con trỏ:" &lt;&lt; *p &lt;&lt; *(p + 2)</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">              &lt;&lt; *(2 + p) &lt;&lt; *(p - 1) &lt;&lt; '\ n';</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    char* p2 = &amp; a [4];</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Ở đâu<code>LRx</code>Xác định loại và thuộc tính của đối tượng hệ thống tập tin được xác định bởi<a href="usual_arithmetic_conversions" title="cpp/language/usual arithmetic conversions">usual arithmetic conversions</a>    __ComparisonCommOnTyPewith &lt;t, u&gt; &amp;&amp;<code>Lx</code>Và<code>Rx</code>.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    std :: cout &lt;&lt; "Sự khác biệt về con trỏ:" &lt;&lt; p2 - p &lt;&lt; '\ n';</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">}</pre></div> </div> <h3 id="Bitwise_logic_operators">. Đối với các toán tử logic bitwise tích hợp khác, cả hai toán tử phải có loại bảng liệt kê tích phân hoặc không có</h3> <p> 2 + (-10), trong đó 2 là không dấu = 4294967288</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>~</code> <span class="t-spar">RHS</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>&amp;</code> <span class="t-spar">RHS</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>|</code> <span class="t-spar">RHS</span> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>^</code> <span class="t-spar">RHS</span> </td> <td>(4)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span> -10 -2.12 = -12.12</div> <div class="t-li1">
+<span class="t-li">2)</span>Ví dụ bổ sung con trỏ: BDDA</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Sự khác biệt về con trỏ: 3</div> <div class="t-li1">
+<span class="t-li">là trong</span>Các toán tử nhân</div> <p>Các biểu thức toán tử nhân có biểu mẫu<a href="operator_precedence" title="cpp/language/operator precedence">precedence</a>Phép nhân.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Phân công.</pre></div> <p>Phần còn lại.<code>~</code>Các toán tử nhân có cao hơn<a href="type#type_naming" title="cpp/language/type">type name</a><span class="t-rev-inl t-since-cxx11"><span>hoặc<a href="decltype" title="cpp/language/decltype"><code>decltype</code></a>thời lượng để biểu diễn phần bù từ UTC tương ứng với</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>hơn tất cả các toán tử số học nhị phân khác. Các nhà khai thác này liên kết từ trái sang phải:<a href="destructor" title="cpp/language/destructor">destructor</a>a + b * c;  // tương đương với a + (b * c), không (a + b) * c<code>~</code>d / e - f;  // Tương đương với (d / e) - f, không phải d / (e - f)<code>~</code>g % H &gt;&gt; i; // tương đương với (g % h) &gt;&gt; i, không g % (h &gt;&gt; i)</p>
+<p> <a href="operator_precedence" title="cpp/language/operator precedence">precedence</a>j * k / l % m; // tương đương với (((j * k) / l) % m</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Các toán tử nhân tích hợp</pre></div> <h4 id="Built-in_bitwise_logic_operators">Đối với các toán tử nhân và phân chia tích hợp, cả hai toán hạng phải có loại liệt kê số học hoặc không bị nhiễm trùng. Đối với toán tử còn lại tích hợp, cả hai toán hạng phải có loại liệt kê tích phân hoặc không bị hủy.</h4> <p>được thực hiện trên cả hai toán hạng.<span class="t-spar">RHS</span>Trong mô tả còn lại trong phần này, "(S)",<span class="t-spar">RHS</span>Tham khảo (các) toán hạng đã chuyển đổi.<a href="usual_arithmetic_conversions" title="cpp/language/usual arithmetic conversions">usual arithmetic conversions</a>Kết quả của phép nhân tích hợp là sản phẩm của các toán hạng.</p>
+<p>    std :: cout &lt;&lt; "2 * (-10), trong đó 2 là char =" &lt;&lt; c * n &lt;&lt; "\ n"<span class="t-spar">Số lượng bọ ve trừ đi từ</span>Và<span class="t-spar">RHS</span>                 "2 * (-10), trong đó 2 là không dấu =" &lt;&lt; un * n &lt;&lt; "\ n"</p>
+<span class="t-li">1)</span>Sự nhân của vô cực bằng 0 tạo ra nan và<code>x</code>được nâng lên.<code>r</code>Kết quả của bộ phận tích hợp là<code>x_i</code>không thể đại diện trong loại kết quả, hành vi của cả hai<code>x</code>Nếu cả hai toán hạng có một loại tích phân, kết quả là chỉ số đại số (thực hiện phân chia số nguyên): chỉ số bị cắt ngắn về 0 (phần phân đoạn bị loại bỏ).<code>r_i</code>không thể đại diện trong loại kết quả, hành vi của cả hai<code>r</code>khoảng cách<code>1</code>nếu như<code>x_i</code>khoảng cách<code>​0​</code>, Và<code>​0​</code>Nếu đối số đầu tiên là<ul><li>Nếu một toán hạng là NAN, kết quả là NAN.</li></ul> <div class="t-li1">không được xác định trên các hệ thống bổ sung của hai người).<code>r</code>được nâng lên.<code>x</code>.</div> <div class="t-li1">
+<span class="t-li">    const std :: chrono :: giây* offset;     // Chỉ giải thích</span>Chia 0,0 cho 0,0 cho NAN và<code>x</code>Và<code>y</code>được nâng lên.<code>r</code>Kết quả của phần còn lại tích hợp là phần còn lại của bộ phận số nguyên của<code>x_i</code>Và<code>y_i</code>bằng không, hành vi không được xác định.<code>x</code>Và<code>y</code>có thể thể hiện trong loại kết quả,<code>r_i</code>không thể đại diện trong loại kết quả, hành vi của cả hai<code>r</code>khoảng cách</div> <div class="t-li2">
+<span class="t-li">2)</span> <code>1</code>Mẫu &lt;phạm vi :: input_range r, class Allocator&gt;<code>x_i</code>Và<code>y_i</code>&gt;<code>1</code>, Và<code>​0​</code>Nếu đối số đầu tiên là</div> <div class="t-li2">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <code>1</code>không được xác định (điều đó có nghĩa là<code>x_i</code>Và<code>y_i</code>khoảng cách<code>1</code>, Và<code>​0​</code>Nếu đối số đầu tiên là</div> <div class="t-li2">
+<span class="t-li">là trong</span> <code>1</code>Phần trăm<code>x_i</code>Và<code>y_i</code>khoảng cách<code>1</code>, Và<code>​0​</code>Nếu đối số đầu tiên là</div> <div class="t-li1">không được xác định trên các hệ thống bổ sung của hai người).<code>r</code>Lưu ý: Cho đến khi<code>x</code>Và<code>y</code>.</div> <h4 id="Overloads_4">(Constexpr kể từ C ++ 14)</h4> <p>TRONG<a href="overload_resolution#Call_to_an_overloaded_operator" title="cpp/language/overload resolution">overload resolution against user-defined operators</a>chỉ có thể bắt đầu một định danh phá hủy chỉ ở những nơi tạo thành một toán tử ~ không hợp lệ về mặt cú pháp.<code>L</code>Và<code>R</code>), nếu một hoặc cả hai toán tử cho toán tử nhị phân % là âm, thì dấu hiệu của phần còn lại được xác định, vì nó phụ thuộc vào hướng làm tròn của phân chia số nguyên. Chức năng</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">cung cấp hành vi được xác định rõ trong trường hợp đó.</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Lưu ý: Đối với phần còn lại điểm nổi, hãy xem</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">, cho mỗi cặp loại số học được thăng chức</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">và cho mỗi cặp loại tích phân được quảng bá</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Ở đâu<code>LR</code>Xác định loại và thuộc tính của đối tượng hệ thống tập tin được xác định bởi<a href="usual_arithmetic_conversions" title="cpp/language/usual arithmetic conversions">usual arithmetic conversions</a>    __ComparisonCommOnTyPewith &lt;t, u&gt; &amp;&amp;<code>L</code>Và<code>R</code>.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Chữ ký chức năng sau tham gia vào độ phân giải quá tải:</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Nhà điều hành LRA*(LA, RA)</pre></div> </div> <h3 id="Bitwise_shift_operators">và kết quả của hoạt động bitwise tích hợp không phải là</h3> <p>Nhà điều hành LRI%(LI, RI)</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>&lt;&lt;</code> <span class="t-spar">RHS</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Số lượng bọ ve trừ đi từ</span> <code>&gt;&gt;</code> <span class="t-spar">RHS</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>#include &lt;Istream&gt;</div> <div class="t-li1">
+<span class="t-li">2)</span> </div> <p>int main ()<a href="operator_precedence" title="cpp/language/operator precedence">precedence</a>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    char c = 2;</pre></div> <h4 id="Built-in_bitwise_shift_operators">    không dấu int un = 2;</h4> <p>    int n = -10;</p>
+<p>    std :: cout &lt;&lt; "2 * (-10), trong đó 2 là char =" &lt;&lt; c * n &lt;&lt; "\ n"<code>a</code>Thì<code>b</code>Thì<span class="t-spar">Số lượng bọ ve trừ đi từ</span>Và<span class="t-spar">RHS</span>                 "2 * (-10), trong đó 2 là không dấu =" &lt;&lt; un * n &lt;&lt; "\ n"</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Bitwise và.<code>a</code>, giá trị của<code>a &lt;&lt; b</code>                 "-10 / 21 =" &lt;&lt; N / 21 &lt;&lt; "\ n"<sup class="t-su">Hành vi là không xác định nếu</sup>                 "-10 % 21 =" &lt;&lt; n % 21 &lt;&lt; '\ n';<sup class="t-su">N</sup> </p>
+<p>2 * (-10), trong đó 2 là char = -20<code>a</code>2 * (-10), trong đó 2 là không dấu = 4294967276<sup class="t-su">Hành vi là không xác định nếu</sup>-10 / 2.12 = -4.71698<a href="implicit_conversion#Integral_conversions" title="cpp/language/implicit conversion">converted</a>-10 / 21 = 0<code>a &lt;&lt; b</code>-10 % 21 = -10<code><a href="../types/climits" title="cpp/types/climits">INT_MIN</a></code>(1,3)<code>1 &lt;&lt; 31</code>Các toán tử logic bitwise</p>
+<p>Người vận hành không có bitwise cao hơn<code>a</code>Bit whole không.<code>a &lt;&lt; b</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<p>Bitwise và.<code>a</code>BitWise hoặc.<code>a</code>, giá trị của<code>a &gt;&gt; b</code>BitWise XOR.<sup class="t-su">Hành vi là không xác định nếu</sup>.</p>
+<p>Người vận hành không có bitwise cao hơn<code>a</code>, giá trị của<code>a &gt;&gt; b</code>hơn tất cả các toán tử số học nhị phân. Nó liên kết từ phải sang trái:</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>Giá trị của<code>a &lt;&lt; b</code>~ a - b; // Tương đương với (~ a) - B, không ~ (a - b)<sup class="t-su">Hành vi là không xác định nếu</sup>~ c * d; // Tương đương với (~ c) * d, không ~ (c * d)<sup class="t-su">N</sup> </p>
+<p>Giá trị của<code>a &gt;&gt; b</code>~ -e; // Tương đương với ~ (-e)<sup class="t-su">Hành vi là không xác định nếu</sup>Có một sự mơ hồ trong ngữ pháp khi<code>a</code>được theo sau bởi một</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>: nó có thể là toán tử ~ hoặc bắt đầu<span class="t-spar">Số lượng bọ ve trừ đi từ</span>định danh). Sự mơ hồ được giải quyết bằng cách điều trị<span class="t-spar">RHS</span>với tư cách là người vận hành ~.<span class="t-spar">Số lượng bọ ve trừ đi từ</span>Hoạt động tương đương cho quá tải</p>
+<h4 id="Overloads_5">(Constexpr kể từ C ++ 14)</h4> <p>TRONG<a href="overload_resolution#Call_to_an_overloaded_operator" title="cpp/language/overload resolution">overload resolution against user-defined operators</a>chỉ có thể bắt đầu một định danh phá hủy chỉ ở những nơi tạo thành một toán tử ~ không hợp lệ về mặt cú pháp.<code>L</code>Và<code>R</code>Tất cả các toán tử logic bitwise khác đều có thấp hơn</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">hơn tất cả các toán tử số học nhị phân khác. Bitwise và có ưu tiên cao hơn Bitwise XOR, có ưu tiên cao hơn bitwise hoặc. Họ liên kết từ trái sang phải:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">a &amp; b * c;  // tương đương với a &amp; (b * c), không (a &amp; b) * c</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">d / e ^ f;  // Tương đương với (d ^ e) - f, không phải d ^ (e - f)</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">g &lt;&lt; h | Tôi; // tương đương với (g &lt;&lt; h) | Tôi, không g &lt;&lt; (h | i)</pre></div> </div> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p> </p>
+<h4 id="Unary_arithmetic_operators_2">J &amp; K &amp; L; // tương đương với (j &amp; k) &amp; l</h4> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../chrono/duration/operator_arith" title="cpp/chrono/duration/operator arith"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span></span></a></div> </td> <td>(Hàm thành viên tĩnh công khai)<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::chrono::duration&lt;Rep,Period&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/complex/operator_arith2" title="cpp/numeric/complex/operator arith2"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span></span></a></div> </td> <td>Áp dụng các toán tử Unary cho các số phức tạp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/valarray/operator_arith" title="cpp/numeric/valarray/operator arith"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span><span>Tham khảo (các) toán hạng được chuyển đổi hoặc quảng bá.</span><span>Kiểm tra xem có xảy ra lỗi không</span></span></a></div> </td> <td>Đưa ra toán hạng là<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::valarray&lt;T&gt;</code>)</span> </td>
+</tr> </table> <h4 id="Additive_operators_2">Đối với các toán tử không phải là người vận hành,</h4> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../chrono/time_point/operator_arith2" title="cpp/chrono/time point/operator arith2"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tăng hoặc giảm thời lượng<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../chrono/duration/operator_arith4" title="cpp/chrono/duration/operator arith4"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span><span>toán tử/=</span><span>người vận hành/</span><span>toán tử%=</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>thực hiện gán hợp chất giữa hai thời lượng<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../chrono/year_month_day/operator_arith_2" title="cpp/chrono/year month day/operator arith 2"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>thêm hoặc trừ một<code>year_month_day</code>và một số năm hoặc tháng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/basic_string/operator_plus_" title="cpp/string/basic string/operator+"> <span class="t-lines"><span>toán tử+</span></span></a></div> </td> <td>kết hợp hai chuỗi hoặc một chuỗi và một<span class="kw4">char</span> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../iterator/reverse_iterator/operator_arith" title="cpp/iterator/reverse iterator/operator arith"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span></span></a></div> </td> <td>Truy cập một phần tử theo chỉ mục<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::reverse_iterator&lt;Iter&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../iterator/move_iterator/operator_arith" title="cpp/iterator/move iterator/operator arith"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span></span></a></div> </td> <td>Truy cập một phần tử theo chỉ mục<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::move_iterator&lt;Iter&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/complex/operator_arith3" title="cpp/numeric/complex/operator arith3"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span><span>toán tử/=</span><span>người vận hành/</span></span></a></div> </td> <td>thực hiện số học số phức trên hai giá trị phức tạp hoặc một phức tạp và vô hướng<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/valarray/operator_arith3" title="cpp/numeric/valarray/operator arith3"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span><span>toán tử/=</span><span>người vận hành/</span><span>toán tử%=</span><span>nhà điều hành &amp;</span><span>Nhà điều hành |</span><span>toán tử^</span><span>toán tử &lt;&lt;</span><span>Num</span><span>Nhà điều hành &amp;&amp;</span><span>Nhà điều hành ||</span></span></a></div> </td> <td>Áp dụng toán tử nhị phân cho từng yếu tố của hai valarrays hoặc valarray và giá trị<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <h4 id="Multiplicative_operators_2">phải là một loại prvalue của loại liệt kê tích phân hoặc không có đoạn</h4> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../chrono/duration/operator_arith4" title="cpp/chrono/duration/operator arith4"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span><span>toán tử/=</span><span>người vận hành/</span><span>toán tử%=</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>thực hiện gán hợp chất giữa hai thời lượng<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/complex/operator_arith3" title="cpp/numeric/complex/operator arith3"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span><span>toán tử/=</span><span>người vận hành/</span></span></a></div> </td> <td>thực hiện số học số phức trên hai giá trị phức tạp hoặc một phức tạp và vô hướng<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/valarray/operator_arith3" title="cpp/numeric/valarray/operator arith3"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span><span>toán tử/=</span><span>người vận hành/</span><span>toán tử%=</span><span>nhà điều hành &amp;</span><span>Nhà điều hành |</span><span>toán tử^</span><span>toán tử &lt;&lt;</span><span>Num</span><span>Nhà điều hành &amp;&amp;</span><span>Nhà điều hành ||</span></span></a></div> </td> <td>Áp dụng toán tử nhị phân cho từng yếu tố của hai valarrays hoặc valarray và giá trị<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <h4 id="Bitwise_logic_operators_2">. Đối với các toán tử logic bitwise tích hợp khác, cả hai toán tử phải có loại bảng liệt kê tích phân hoặc không có</h4> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../utility/bitset/operator_logic" title="cpp/utility/bitset/operator logic"> <span class="t-lines"><span>nhà điều hành--</span><span>(int)</span><span>tăng hoặc giảm giá trị nguyên tử của một</span><span>Tham khảo (các) toán hạng được chuyển đổi hoặc quảng bá.</span></span></a></div> </td> <td>Trong mô tả còn lại trong phần này, "(S)",<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::bitset&lt;N&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/bitset/operator_logic2" title="cpp/utility/bitset/operator logic2"> <span class="t-lines"><span>nhà điều hành &amp;</span><span>Nhà điều hành |</span><span>toán tử^</span></span></a></div> </td> <td>Thực hiện các hoạt động logic nhị phân trên Bitsets<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/valarray/operator_arith" title="cpp/numeric/valarray/operator arith"> <span class="t-lines"><span>Tham khảo (các) toán hạng được chuyển đổi hoặc quảng bá.</span></span></a></div> </td> <td>Đưa ra toán hạng là<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::valarray&lt;T&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/valarray/operator_arith3" title="cpp/numeric/valarray/operator arith3"> <span class="t-lines"><span>toán tử^</span><span>nhà điều hành &amp;</span><span>Nhà điều hành |</span></span></a></div> </td> <td>Áp dụng toán tử nhị phân cho từng yếu tố của hai valarrays hoặc valarray và giá trị<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <h4 id="Bitwise_shift_operators_2">và kết quả của hoạt động bitwise tích hợp không phải là</h4> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../numeric/valarray/operator_arith3" title="cpp/numeric/valarray/operator arith3"> <span class="t-lines"><span>toán tử &lt;&lt;</span><span>Num</span></span></a></div> </td> <td>Áp dụng toán tử nhị phân cho từng yếu tố của hai valarrays hoặc valarray và giá trị<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/bitset/operator_ltltgtgt" title="cpp/utility/bitset/operator ltltgtgt"> <span class="t-lines"><span>toán tử &lt;&lt;</span><span>Num</span></span></a></div> </td> <td>. Cho mỗi hệ số<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::bitset&lt;N&gt;</code>)</span> </td>
+</tr> </table> <h4 id="Stream_insertion.2Fextraction_operators">của đại diện cơ sở-2 của</h4> <p>, hệ số tương ứng<a href="http://en.cppreference.com/w/cpp/io/ios_base"><span class="kw1673">Điều đó cho tất cả<span class="me2">iOS_Base</span></span></a><span class="sy3">Không có giá trị</span>của đại diện cơ sở-2 của<i>Nói cách khác, kết quả là một bổ sung của toán hạng (trong đó toán hạng và kết quả được coi là không dấu).</i>Và<i>Loại kết quả</i>Người vận hành:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../io/basic_istream/operator_gtgt" title="cpp/io/basic istream/operator gtgt"> <span class="t-lines"><span>Num</span></span></a></div> </td> <td>Mở một tệp và liên kết nó với luồng<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_istream&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_istream/operator_gtgt2" title="cpp/io/basic istream/operator gtgt2"> <span class="t-lines"><span>Num<span class="t-dsc-small">(STD :: basic_istream)</span></span></span></a></div> </td> <td>Trích xuất ký tự và mảng ký tự<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_ostream/operator_ltlt" title="cpp/io/basic ostream/operator ltlt"> <span class="t-lines"><span>toán tử &lt;&lt;</span></span></a></div> </td> <td>Sentry<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_ostream&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_ostream/operator_ltlt2" title="cpp/io/basic ostream/operator ltlt2"> <span class="t-lines"><span>toán tử &lt;&lt;<span class="t-dsc-small">(STD :: basic_ostream)</span></span></span></a></div> </td> <td>Chèn dữ liệu ký tự hoặc chèn vào luồng rvalue<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/complex/operator_ltltgtgt" title="cpp/numeric/complex/operator ltltgtgt"> <span class="t-lines"><span>toán tử &lt;&lt;</span><span>Num</span></span></a></div> </td> <td>tuần tự hóa và giải phóng một số phức tạp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/bitset/operator_ltltgtgt2" title="cpp/utility/bitset/operator ltltgtgt2"> <span class="t-lines"><span>toán tử &lt;&lt;</span><span>Num</span></span></a></div> </td> <td>Thực hiện đầu vào luồng và đầu ra của Bitsets<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/basic_string/operator_ltltgtgt" title="cpp/string/basic string/operator ltltgtgt"> <span class="t-lines"><span>toán tử &lt;&lt;</span><span>Num</span></span></a></div> </td> <td>Không có điều nào ở trên<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/linear_congruential_engine/operator_ltltgtgt" title="cpp/numeric/random/linear congruential engine/operator ltltgtgt"> <span class="t-lines"><span>toán tử &lt;&lt;</span><span>Num</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>B = Sai<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/uniform_int_distribution/operator_ltltgtgt" title="cpp/numeric/random/uniform int distribution/operator ltltgtgt"> <span class="t-lines"><span>toán tử &lt;&lt;</span><span>Num</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xin chào thế giới<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/614.html" rel="nofollow">CWG 614</a> </td> <td>C ++ 98</td> <td>là loại của toán hạng<br/>Đưa ra các toán hạng là</td> <td>tương ứng và kết quả của các hoạt động logic bitwise nhị phân tích hợp<br/>. Đối với mỗi cặp hệ số<br/>của các đại diện cơ sở-2 của</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1450.html" rel="nofollow">CWG 1450</a> </td> <td>C ++ 98</td> <td>(Nói cách khác, việc thêm một khai báo chức năng mới sau khi định nghĩa mẫu không hiển thị nó, ngoại trừ thông qua ADL).<code>a / b</code>tương ứng, hệ số tương ứng<br/>của đại diện cơ sở-2 của</td> <td>Nếu ít nhất một trong số<code>a / b</code>Và<br/><code>a % b</code>Nếu một trong hai (nhưng không phải cả hai) của</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1457.html" rel="nofollow">CWG 1457</a> </td> <td>C ++ 98</td> <td>Loại kết quả<code>1</code>là loại của các toán hạng<br/>, cho mỗi cặp loại được quảng bá</td> <td>    T2 () {} // "mem" không có trong danh sách khởi tạo</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1504.html" rel="nofollow">CWG 1504</a> </td> <td>C ++ 98</td> <td>Chữ ký chức năng sau tham gia vào độ phân giải quá tải:<br/>Toán tử ~ (r)</td> <td>là giá trị trả về, vẫn có thể giảm được, nhưng bản thân các yếu tố có giá trị không xác định. Một cuộc gọi đến<br/>kích cỡ.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1515.html" rel="nofollow">CWG 1515</a> </td> <td>C ++ 98</td> <td>Nhà điều hành LR &amp; (L, R)<span class="kw4">STD</span> <br/>Nhà điều hành LR^(L, R)<sup class="t-su">Trả về một kết quả, kết quả được bỏ qua. Nếu như</sup> </td> <td>Toán tử LR | (L, R)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1642.html" rel="nofollow">CWG 1642</a> </td> <td>C ++ 98</td> <td>#include &lt;bitset&gt;</td> <td>#include &lt;CstDint&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1865.html" rel="nofollow">CWG 1865</a> </td> <td>C ++ 98</td> <td>Tìm kiếm chuyển tiếp của Const<a class="external text" href="https://cplusplus.github.io/CWG/issues/1504.html" rel="nofollow">CWG issue 1504</a>#include &lt;iomanip&gt;<br/>#include &lt;Istream&gt;<br/> <br/>int main ()</td> <td>    T2 () {} // "mem" không có trong danh sách khởi tạo</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1971.html" rel="nofollow">CWG 1971</a> </td> <td>C ++ 98</td> <td>{<br/>    STD :: Mặt nạ UINT16_T = 0x00F0;<code>~</code>    STD :: UINT32_T x0 = 0x12345678;<code>~X(0)</code> </td> <td>    std :: uint32_t x1 = x0 | mặt nạ;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2419.html" rel="nofollow">CWG 2419</a> </td> <td>C ++ 98</td> <td>    std :: uint32_t x2 = x0 &amp; ~ mặt nạ;<br/>    std :: uint32_t x3 = x0 &amp; mặt nạ;<br/>    std :: uint32_t x4 = x0 ^ mặt nạ;<code>&amp;</code> </td> <td>    std :: uint32_t x5 = ~ x0;<br/>    sử dụng bin16 = std :: bitset &lt;16&gt;;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2626.html" rel="nofollow">CWG 2626</a> </td> <td>C ++ 98</td> <td>    sử dụng bin32 = std :: bitset &lt;32&gt;;<code>operator~</code>    std :: cout &lt;&lt; std :: hex &lt;&lt; std :: showbase<br/>              &lt;&lt; "Mặt nạ:" &lt;&lt; Mặt nạ &lt;&lt; std :: setw (49) &lt;&lt; bin16 (mặt nạ) &lt;&lt; "\ n"</td> <td>                 "Giá trị:" &lt;&lt; x0 &lt;&lt; std :: setw (42) &lt;&lt; bin32 (x0) &lt;&lt; "\ n"<br/>                 "Cài đặt bit:" &lt;&lt; x1 &lt;&lt; std :: setw (35) &lt;&lt; bin32 (x1) &lt;&lt; "\ n"</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2724.html" rel="nofollow">CWG 2724</a> </td> <td>C ++ 20</td> <td>                 "Xóa bit:" &lt;&lt; x2 &lt;&lt; std :: setw (34) &lt;&lt; bin32 (x2) &lt;&lt; "\ n"</td> <td>hơn thứ hai, nếu không</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <p><a href="operator_precedence" title="cpp/language/operator precedence">Operator precedence</a></p>
+<p><a href="operators" title="cpp/language/operators">Operator overloading</a></p>
+<table class="wikitable"> <tr style="text-align:center"> <th colspan="7">Các nhà khai thác chung</th>
+</tr> <tr style="text-align:center"> <td>
+<a href="operator_assignment" title="cpp/language/operator assignment">assignment</a> </td> <td>
+<a href="operator_incdec" title="cpp/language/operator incdec">increment<br/>decrement</a> </td> <td>
+<strong class="selflink">                 "Chọn bit:" &lt;&lt; x3 &lt;&lt; std :: setw (39) &lt;&lt; bin32 (x3) &lt;&lt; "\ n"</strong> </td> <td>
+<a href="operator_logical" title="cpp/language/operator logical">logical</a> </td> <td>
+<a href="operator_comparison" title="cpp/language/operator comparison">comparison</a> </td> <td>
+<a href="operator_member_access" title="cpp/language/operator member access">member<br/>access</a> </td> <td>
+<a href="operator_other" title="cpp/language/operator other">other</a> </td>
+</tr> <tr style="text-align:center"> <td rowspan="6"> <p><code>a = b a += b a -= b a *= b a /= b a %= b a &amp;= b a |= b a ^= b a &lt;&lt;= b a &gt;&gt;= b</code></p>
+</td> <td rowspan="6"> <p><code>++a --a a++ a--</code></p>
+</td> <td rowspan="6"> <p><code>+a -a a + b a - b a * b a / b a % b ~a a &amp; b a | b a ^ b a &lt;&lt; b a &gt;&gt; b</code></p>
+</td> <td rowspan="6"> <p><code>!a a &amp;&amp; b a || b</code></p>
+</td> <td rowspan="6"> <p><code>a == b a != b a &lt; b a &gt; b a &lt;= b a &gt;= b a &lt;=&gt; b</code></p>
+</td> <td rowspan="6"> <p><code>a[...] *a &amp;a a-&gt;b a.b a-&gt;*b a.*b</code></p>
+</td> <td>Gọi chức năng</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a(...)</code> </td>
+</tr> <tr style="text-align:center"> <td>dấu phẩy</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a, b</code> </td>
+</tr> <tr style="text-align:center"> <td>có điều kiện</td>
+</tr> <tr style="text-align:center"> <td>
+<code>a ? b : c</code> </td>
+</tr> <tr> <th colspan="7">Các nhà khai thác đặc biệt</th>
+</tr> <tr> <td colspan="7"> <p><a href="static_cast" title="cpp/language/static cast"><code>static_cast</code></a>Chuyển đổi một loại thành loại liên quan khác<br/> <a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>Chuyển đổi trong hệ thống phân cấp thừa kế<br/> <a href="const_cast" title="cpp/language/const cast"><code>const_cast</code></a>thêm hoặc loại bỏ<a href="cv" title="cpp/language/cv">cv</a>-Qualifiers<br/> <a href="reinterpret_cast" title="cpp/language/reinterpret cast"><code>reinterpret_cast</code></a>Chuyển đổi loại thành loại không liên quan<br/> <a href="explicit_cast" title="cpp/language/explicit cast">C-style cast</a>Chuyển đổi loại này sang loại khác bằng cách kết hợp<code>static_cast</code>Thì<code>const_cast</code>, Và<code>reinterpret_cast</code> <br/> <a href="new" title="cpp/language/new"><code>new</code></a>Tạo các đối tượng có thời lượng lưu trữ động<br/> <a href="delete" title="cpp/language/delete"><code>delete</code></a>Các đối tượng phá hủy được tạo trước đây bởi biểu thức và bản phát hành mới thu được vùng bộ nhớ<br/> <a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>truy vấn kích thước của một loại<br/> <a href="sizeof..." title="cpp/language/sizeof..."><code>sizeof...</code></a>truy vấn kích thước của một<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/> <a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>truy vấn thông tin loại của một loại<br/> <a href="noexcept" title="cpp/language/noexcept"><code>noexcept</code></a>kiểm tra xem một biểu thức có thể ném một ngoại lệ<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/> <a href="alignof" title="cpp/language/alignof"><code>alignof</code></a>// (thường là 4):<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></p>
+</td>
+</tr>
+</table> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic">C documentation</a></span>vì<span class=""><span>                 "Xor-ing bit:" &lt;&lt; x4 &lt;&lt; std :: setw (35) &lt;&lt; bin32 (x4) &lt;&lt; "\ n"</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic">https://en.cppreference.com/w/cpp/language/operator_arithmetic</a>
+</p>
+</div>

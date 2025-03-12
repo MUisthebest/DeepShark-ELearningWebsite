@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ospanstream &lt;biểu đồ, đặc điểm&gt; :: basic_ospanstream</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Rõ ràng cơ bản_ospanstream (STD :: span &lt;Phange&gt; s, std :: ios_base :: openMode mode =</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">                                std :: iOS_Base :: out);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">BASIC_OSPANSTREAM (BASIC_OSPANSTREAM &amp;&amp; rhs);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Xây dựng một mới<code>basic_ospanstream</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>thiết bị. Các gói<code>s</code>Sử dụng lưu trữ được tham chiếu bởi<code>std::basic_spanbuf</code>Sau khi chuyển đổi thành<code>std::basic_spanbuf</code>như bộ đệm cơ bản ban đầu của được bọc<code>basic_spanbuf<span class="sy1">is_trivently_destructible_v</span>Char, Traits<span class="sy1">&lt;</span><span class="br0">.</span>s, mode <span class="sy3">|</span> <a href="http://en.cppreference.com/w/cpp/io/ios_base/openmode"><span class="kw1679">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">. Các số ngẫu nhiên được tạo bằng trình tạo số ngẫu nhiên</span></span></a><span class="br0">)</span></code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>thiết bị. Các gói<code><a href="../basic_ostream" title="cpp/io/basic ostream">std::basic_ostream</a></code>Đối tượng được mở ở chế độ<code>std::basic_spanbuf</code>Di chuyển hàm tạo. Di chuyển xây dựng<code>rhs</code>                const so sánh &amp; so sánh = so sánh ());<code><a href="../basic_ios/set_rdbuf" title="cpp/io/basic ios/set rdbuf">set_rdbuf</a></code>Tiểu mục cơ sở và gói<code>std::basic_spanbuf</code>TRONG<code>*this</code>từ những người</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Sao chép Constructor bị xóa.<code>basic_ospanstream</code>không thể sao chép.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td> <code>std::span</code>với địa chỉ của gói</td>
+</tr> <tr class="t-par"> <td>đang chỉ ra) và là chuỗi ký tự liên quan (nguồn ký tự cho tất cả các hoạt động đầu vào và mục tiêu cho đầu ra).</td> <td>-</td> <td>Di chuyển hàm tạo. Đầu tiên, di chuyển cấu trúc lớp cơ sở từ<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>app</code></a> </td> <td>OpenMode</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>binary</code></a> </td> <td>Phát trực tuyến loại chế độ mở<a href="../c/file#Binary_and_text_modes" title="cpp/io/c/FILE">binary mode</a> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>in</code></a> </td> <td>Các hằng số sau cũng được xác định:</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>out</code></a> </td> <td>tìm kiếm đến cuối luồng trước mỗi lần ghi</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>trunc</code></a> </td> <td>Mở trong</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>ate</code></a> </td> <td>Mở để đọc</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>noreplace</code></a> <span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span> </td> <td>Mở để viết</td>
+</tr> </table> </td>
+</tr> <tr class="t-par"> <td>khác</td> <td>-</td> <td>khác<code>basic_ospanstream</code>Tham khảo bộ nhớ được sử dụng làm bộ đệm cơ bản ban đầu của luồng</td>
+</tr>
+</table> <h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_spanbuf/basic_spanbuf" title="cpp/io/basic spanbuf/basic spanbuf"> <span class="t-lines"><span>chuyên môn)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Nếu a<code>basic_spanbuf</code>sự vật<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_spanbuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ospanstream/basic_ospanstream">https://en.cppreference.com/w/cpp/io/basic_ospanstream/basic_ospanstream</a>
+</p>
+</div>

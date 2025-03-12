@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">Hướng dẫn khấu trừ cho<code>std::reference_wrapper</code>
+</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../../header/functional" title="cpp/header/functional">&lt;functional&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;Typename T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>mảng (t, u ...)<a href="../../../language/class_template_argument_deduction" title="cpp/language/class template argument deduction">deduction guide</a>  -&gt; mảng &lt;t, 1 + sizeof ... (u)&gt;;<code><a href="../reference_wrapper" title="cpp/utility/functional/reference wrapper">std::reference_wrapper</a></code>tham chiếu_WRAPPER (T &amp;) -&gt; Tham chiếu_Wrapper &lt;T&gt;;</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2981" rel="nofollow">LWG 2981</a> </td> <td>C ++ 17</td> <td>Để hỗ trợ khấu trừ tham số mẫu lớp duy nhất.<code>reference_wrapper&lt;T&gt;</code> </td> <td>#include &lt;Istream&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2993" rel="nofollow">LWG 2993</a> </td> <td>C ++ 17</td> <td>Hướng dẫn khấu trừ dự phòng từ</td> <td>độ phân giải khiếm khuyết đã loại bỏ một hàm tạo được sử dụng cho suy luận đối số mẫu lớp</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/functional/reference_wrapper/deduction_guides">https://en.cppreference.com/w/cpp/utility/functional/reference_wrapper/deduction_guides</a>
+</p>
+</div>

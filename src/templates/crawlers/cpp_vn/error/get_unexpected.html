@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: get_unexpected</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/exception" title="cpp/header/exception">&lt;exception&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td> <pre data-language="cpp">std :: bất ngờ_handler get_unexpected () noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(không dùng nữa)</span> <br/><span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span> </td> </tr> </table> <p>Trả về bản cài đặt hiện đang được cài đặt<code><a href="unexpected_handler" title="cpp/error/unexpected handler">std::unexpected_handler</a></code>, có thể là một con trỏ null.</p>
+<p>Hàm này là an toàn cho luồng. Gọi trước cho<code>std::set_unexpected</code> <i>y.store (42, std :: memory_order_relaxed); // d</i>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<code><a href="../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>) Các cuộc gọi tiếp theo đến chức năng này.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Hiện đang được cài đặt<code><a href="unexpected_handler" title="cpp/error/unexpected handler">std::unexpected_handler</a></code>.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="unexpected_handler" title="cpp/error/unexpected handler"> <span class="t-lines"><span>bất ngờ_handler</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span></span></span></div> </td> <td>loại chức năng được gọi bởi<code><a href="unexpected" title="cpp/error/unexpected">std::unexpected</a></code> <br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="set_unexpected" title="cpp/error/set unexpected"> <span class="t-lines"><span>set_unexpected</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span></span></span></div> </td> <td>thay đổi chức năng được gọi bởi<code><a href="unexpected" title="cpp/error/unexpected">std::unexpected</a></code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/get_unexpected">https://en.cppreference.com/w/cpp/error/get_unexpected</a>
+</p>
+</div>

@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: Chunk_by_view &lt;v, PROD&gt; :: Chunk_by_view</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Chunk_by_view ()</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">    Yêu cầu STD :: default_initializable &lt;v&gt; &amp;&amp;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>chunk_by_view</code>.</p>
+<span class="t-li">1)</span>Hàm tạo mặc định.<a href="../../language/value_initialization" title="cpp/language/value initialization">Value-initializes</a>             STD :: Default_initializable &lt;prod&gt;<ul>
+<li>các thành viên dữ liệu cơ bản thông qua các bộ khởi tạo thành viên mặc định tương ứng của họ:<a href="../chunk_by_view#Data_members" title="cpp/ranges/chunk by view"><code><i>Range constexpr :: Xem tự động liền kề &lt;n&gt; (r &amp;&amp; r);</i></code></a>thông qua<code>= V()</code>Thì</li>
+<li>Quan điểm<a href="../chunk_by_view#Data_members" title="cpp/ranges/chunk by view"><code><i>    yêu cầu / * xem bên dưới * /</i></code></a>thông qua<code>= Pred()</code>.</li>
+</ul> <span class="t-li">2)</span>Di chuyển xây dựng các thành viên dữ liệu cơ bản:<ul>
+<li>các thành viên dữ liệu cơ bản thông qua các bộ khởi tạo thành viên mặc định tương ứng của họ:<a href="../chunk_by_view#Data_members" title="cpp/ranges/chunk by view"><code><i>Range constexpr :: Xem tự động liền kề &lt;n&gt; (r &amp;&amp; r);</i></code></a>với<code>std::move(base)</code>Thì</li>
+<li>Quan điểm<a href="../chunk_by_view#Data_members" title="cpp/ranges/chunk by view"><code><i>    yêu cầu / * xem bên dưới * /</i></code></a>với<code>std::move(pred)</code>.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>căn cứ</td> <td>-</td> <td>Các vị ngữ nhị phân</td>
+</tr> <tr class="t-par"> <td>Sao chép các yếu tố, nhưng được thực thi theo</td> <td>-</td> <td>Quan điểm</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/chunk_by_view/chunk_by_view">https://en.cppreference.com/w/cpp/ranges/chunk_by_view/chunk_by_view</a>
+</p>
+</div>

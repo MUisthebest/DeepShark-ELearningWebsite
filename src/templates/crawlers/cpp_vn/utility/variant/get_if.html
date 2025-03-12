@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">std :: get_if (std :: biến thể)</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/variant" title="cpp/header/variant">&lt;variant&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td rowspan="3"><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Mẫu &lt;std :: size_t i, class ... loại&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">ConstExPR std :: add_pulum_t &lt;std :: variant_alternative_t &lt;i, std :: biến thể &lt;type ... &gt;&gt;&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td rowspan="3"><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">    get_if (std :: biến thể &lt;type ...&gt;* pv) noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Mẫu &lt;std :: size_t i, class ... loại&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Constexpr std :: add_pulum_t &lt;const std :: variant_alternative_t &lt;i, std :: biến thể &lt;type ... &gt;&gt;&gt;<code>pv</code>không phải là một con trỏ null và<code>pv-&gt;index() == I</code>    get_if (const std :: biến thể &lt;type ...&gt;* pv) noExcept;<code>pv</code>Mẫu &lt;class t, class ... loại&gt;<code>I</code>Mẫu &lt;class t, class ... loại&gt;</div> <div class="t-li1">
+<span class="t-li">2)</span>Constexpr std :: add_pulum_t &lt;t&gt;<span class="t-v">(1)</span>với<code>I</code>    get_if (std :: biến thể &lt;type ...&gt;* pv) noExcept;<code>T</code>TRONG<code>Types...</code>ConstExpr const t &amp; get (const std :: biến thể &lt;loại ...&gt; &amp; v);<code>T</code>Mẫu &lt;class t, class ... loại&gt;<code>Types...</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>TÔI</td> <td>-</td> <td>ConstExpr const t &amp;&amp; get (const std :: biến thể &lt;type ...&gt; &amp;&amp; v);</td>
+</tr> <tr class="t-par"> <td>Kiểu</td> <td>-</td> <td>Trình truy cập giá trị dựa trên chỉ mục: Nếu</td>
+</tr> <tr class="t-par"> <td>Mẫu &lt;class t, class ... loại&gt;</td> <td>-</td> <td>ConstExpr std :: add_pulum_t &lt;const t&gt;</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>    get_if (const std :: biến thể &lt;type ...&gt;* pv) noExcept;</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Trình truy cập không ném dựa trên chỉ số: Nếu</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">, trả về một con trỏ cho giá trị được lưu trữ trong biến thể được trỏ đến bởi</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="get" title="cpp/utility/variant/get"> <span class="t-lines"><span>Điền vào thùng chứa với giá trị được chỉ định<span class="t-dsc-small">Thuật toán</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Một tham chiếu đến<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/variant/get_if">https://en.cppreference.com/w/cpp/utility/variant/get_if</a>
+</p>
+</div>

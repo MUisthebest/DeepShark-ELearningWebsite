@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: fileSystem :: recursive_directory_iterator :: vô hiệu hóa_recursion_pending</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">void vô hiệu hóa_recursion_pending ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Vô hiệu hóa đệ quy cho thư mục con hiện được giới thiệu, nếu có.</p>
+<p>Cuộc gọi sửa đổi cờ đệ quy đang chờ xử lý trên trình lặp theo cách mà lần tiếp theo<a href="increment" title="cpp/filesystem/recursive directory iterator/increment"><code>increment</code></a>được gọi, trình lặp sẽ tiến lên trong thư mục hiện tại ngay cả khi nó hiện đang đề cập đến một thư mục con chưa được truy cập.</p>
+<p>Trạng thái của cờ đệ quy đang chờ xử lý có thể được truy vấn<a href="recursion_pending" title="cpp/filesystem/recursive directory iterator/recursion pending"><code>recursion_pending()</code></a>, đó là<code>false</code>sau cuộc gọi này. Nó được đặt lại trở lại<code>true</code>Nếu một ngoại lệ được ném bởi bất kỳ hoạt động nào, việc chèn không có hiệu lực.<a href="increment" title="cpp/filesystem/recursive directory iterator/increment"><code>increment</code></a>, và giá trị ban đầu của nó cũng là<code>true</code>.</p>
+<p>đến một phạm vi khác kết thúc tại<code>*this</code>là đầu lặp cuối.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDlib&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;FileSystem&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="recursion_pending" title="cpp/filesystem/recursive directory iterator/recursion pending"> <span class="t-lines"><span>Recursion_pends</span></span></a></div> </td> <td>Kiểm tra xem đệ quy có bị vô hiệu hóa cho thư mục hiện tại không<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="increment" title="cpp/filesystem/recursive directory iterator/increment"> <span class="t-lines"><span>sự gia tăng</span><span>fetch_or</span></span></a></div> </td> <td>tiến tới mục tiếp theo<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/recursive_directory_iterator/disable_recursion_pending">https://en.cppreference.com/w/cpp/filesystem/recursive_directory_iterator/disable_recursion_pending</a>
+</p>
+</div>

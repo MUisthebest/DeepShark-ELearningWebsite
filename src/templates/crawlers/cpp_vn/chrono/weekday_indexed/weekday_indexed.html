@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Chrono :: WeekDay_indexed :: WeekDay_indexed</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">WeekDay_indexed () = Mặc định;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ConstExPR Weekday_indexed (const std :: Chrono :: Days Week &amp; Wd, Chỉ số không dấu) NoExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>weekday_indexed</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định để lại cả hai<code>std::chrono::weekday</code>và giá trị chỉ số không được cung cấp.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>weekday_indexed</code>Lưu trữ ngày trong tuần<code>wd</code>và chỉ mục<code>index</code>. Các giá trị được giữ không xác định nếu<code>!wd.ok() || index &gt; 7</code>.</div> <h3 id="Notes">Ghi chú</h3> <p>và ngày<code>weekday_indexed</code>Một cách thuận tiện hơn để xây dựng một<code>weekday</code>                                   OUTPUTITIT D_FIRST, PRECEPREDATICATE P);<code>operator[]</code>, tức là,<code>wd[index]</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../weekday/operator_at" title="cpp/chrono/weekday/operator at"> <span class="t-lines"><span>nhà điều hành []</span></span></a></div> </td> <td>Cú pháp thuận tiện để xây dựng<a href="../weekday_indexed" title="cpp/chrono/weekday indexed"><code>weekday_indexed</code></a>hoặc<a href="../weekday_last" title="cpp/chrono/weekday last"><code>weekday_last</code></a>từ điều này<code>weekday</code> <br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::chrono::weekday</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/weekday_indexed/weekday_indexed">https://en.cppreference.com/w/cpp/chrono/weekday_indexed/weekday_indexed</a>
+</p>
+</div>

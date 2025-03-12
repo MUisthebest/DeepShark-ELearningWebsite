@@ -1,0 +1,169 @@
+ <h1 class="firstHeading" id="firstHeading">Kiểu</h1> <p><a href="object" title="cpp/language/object">Objects</a>Thì<a href="reference" title="cpp/language/reference">references</a>Thì<a href="functions" title="cpp/language/functions">functions</a>bao gồm<a href="template_specialization" title="cpp/language/template specialization">function template specializations</a>, Và<a href="expressions" title="cpp/language/expressions">expressions</a>Có một tài sản được gọi là<i>kiểu</i>, cả hai đều hạn chế các hoạt động được phép cho các thực thể đó và cung cấp ý nghĩa ngữ nghĩa cho các chuỗi bit chung khác.</p>
+<h3 id="Type_classification">Loại phân loại</h3> <p>Hệ thống loại C ++ bao gồm các loại sau:</p>
+<ul>
+<li> <a href="types" title="cpp/language/types">fundamental types</a>(Xem thêm<code><a href="../types/is_fundamental" title="cpp/types/is fundamental">std::is_fundamental</a></code>):</li>
+<ul><li>                  "Không thể so sánh đã ký và nhỏ hơn không dấu đúng cách");<span class="kw4">Vô hiệu</span>(Xem thêm<code><a href="../types/is_void" title="cpp/types/is void">std::is_void</a></code>);</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>                  "Không thể so sánh đã ký và nhỏ hơn không dấu đúng cách");<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>(Xem thêm<code><a href="../types/is_null_pointer" title="cpp/types/is null pointer">std::is_null_pointer</a></code>);</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>Các loại số học (xem thêm<code><a href="../types/is_arithmetic" title="cpp/types/is arithmetic">std::is_arithmetic</a></code>):</li>
+<li>loại tích phân / loại số nguyên (bao gồm cả<a href="cv" title="cpp/language/cv">cv-qualified versions</a>, xem thêm<code><a href="../types/is_integral" title="cpp/types/is integral">std::is_integral</a></code>):</li>
+<li>                  "Không thể so sánh đã ký và nhỏ hơn không dấu đúng cách");<span class="kw4">bool</span>Số lượng các yếu tố để sao chép</li>
+<li>Các loại nhân vật:</li>
+<li>Các loại ký tự hẹp:</li>
+<ul><li>Các loại nhân vật thông thường:<span class="kw4">char</span>Thì<span class="kw4">STD</span> <span class="kw4">char</span>Thì<span class="kw4">STD</span> <span class="kw4">char</span><sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> </li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Loại char8_t</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>Các loại nhân vật rộng:<span class="t-rev-inl t-since-cxx11"><span><code>char16_t</code>Thì<code>char32_t</code>Thì</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span><span class="kw4">wchar_t</span>Số lượng các yếu tố để sao chép</li>
+<li>Các loại số nguyên đã ký:</li>
+<ul><li>Các loại số nguyên có chữ ký tiêu chuẩn:<span class="kw4">STD</span> <span class="kw4">char</span>Thì<span class="kw4">STD</span>Thì<span class="kw4">int</span>Thì<span class="kw4">dài</span>Thì<span class="kw4">dài</span> <span class="kw4">dài</span>Số lượng các yếu tố để sao chép</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Các loại số nguyên đã ký mở rộng (xác định thực hiện);</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>Các loại số nguyên không dấu:</li>
+<ul><li>Các loại số nguyên không dấu tiêu chuẩn:<span class="kw4">STD</span> <span class="kw4">char</span>Thì<span class="kw4">STD</span> <span class="kw4">STD</span>Thì<span class="kw4">STD</span>Thì<span class="kw4">STD</span> <span class="kw4">dài</span>Thì<span class="kw4">STD</span> <span class="kw4">dài</span> <span class="kw4">dài</span>Số lượng các yếu tố để sao chép</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Các loại số nguyên không dấu mở rộng (mỗi loại tương ứng với một loại số nguyên đã ký mở rộng và ngược lại);</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>Các loại điểm nổi (xem thêm<code><a href="../types/is_floating_point" title="cpp/types/is floating point">std::is_floating_point</a></code>):</li>
+<ul><li>Các loại điểm nổi tiêu chuẩn:<span class="kw4">trôi nổi</span>Thì<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>Thì<span class="kw4">dài</span> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>và của họ<a href="cv" title="cpp/language/cv">cv-qualified versions</a>Số lượng các yếu tố để sao chép</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul>
+<li>Các loại điểm nổi mở rộng (bao gồm cả<a href="cv" title="cpp/language/cv">cv-qualified versions</a>):</li>
+<ul>
+<li> <a href="../types/floating-point" title="cpp/types/floating-point">fixed width floating-point types</a>Số lượng các yếu tố để sao chép</li>
+<li>Các loại dấu phẩy động mở rộng được xác định bằng thực hiện khác;</li>
+</ul>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <ul>
+<li>Các loại hợp chất (xem thêm<code><a href="../types/is_compound" title="cpp/types/is compound">std::is_compound</a></code>):</li>
+<li> <a href="reference" title="cpp/language/reference">reference types</a>(Xem thêm<code><a href="../types/is_reference" title="cpp/types/is reference">std::is_reference</a></code>):</li>
+<li> <a href="reference#Lvalue_references" title="cpp/language/reference">lvalue reference types</a>(Xem thêm<code><a href="../types/is_lvalue_reference" title="cpp/types/is lvalue reference">std::is_lvalue_reference</a></code>):</li>
+<ul>
+<li>tham chiếu lvalue cho các loại đối tượng;</li>
+<li>tham chiếu lvalue cho các loại chức năng;</li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li> <a href="reference#Rvalue_references" title="cpp/language/reference">rvalue reference types</a>(Xem thêm<code><a href="../types/is_rvalue_reference" title="cpp/types/is rvalue reference">std::is_rvalue_reference</a></code>):</li>
+<ul>
+<li>tham chiếu rvalue cho các loại đối tượng;</li>
+<li>tham chiếu rvalue cho các loại chức năng;</li>
+</ul>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li> <a href="pointer#Pointers" title="cpp/language/pointer">pointer types</a>(Xem thêm<code><a href="../types/is_pointer" title="cpp/types/is pointer">std::is_pointer</a></code>):</li>
+<ul>
+<li> <a href="pointer#Pointers_to_objects" title="cpp/language/pointer">pointer-to-object types</a>Số lượng các yếu tố để sao chép</li>
+<li> <a href="pointer#Pointers_to_functions" title="cpp/language/pointer">pointer-to-function types</a>Số lượng các yếu tố để sao chép</li>
+</ul>
+<li> <a href="pointer#Pointers_to_members" title="cpp/language/pointer">pointer-to-member types</a>(Xem thêm<code><a href="../types/is_member_pointer" title="cpp/types/is member pointer">std::is_member_pointer</a></code>):</li>
+<ul>
+<li> <a href="pointer#Pointers_to_data_members" title="cpp/language/pointer">pointer-to-data-member</a>Các loại (xem thêm<code><a href="../types/is_member_object_pointer" title="cpp/types/is member object pointer">std::is_member_object_pointer</a></code>);</li>
+<li> <a href="pointer#Pointers_to_member_functions" title="cpp/language/pointer">pointer-to-member-function</a>Các loại (xem thêm<code><a href="../types/is_member_function_pointer" title="cpp/types/is member function pointer">std::is_member_function_pointer</a></code>);</li>
+</ul>
+<li> <a href="array" title="cpp/language/array">array types</a>(Xem thêm<code><a href="../types/is_array" title="cpp/types/is array">std::is_array</a></code>);</li>
+<li> <a href="function" title="cpp/language/function">function types</a>(Xem thêm<code><a href="../types/is_function" title="cpp/types/is function">std::is_function</a></code>);</li>
+<li> <a href="enum" title="cpp/language/enum">enumeration types</a>(Xem thêm<code><a href="../types/is_enum" title="cpp/types/is enum">std::is_enum</a></code>);</li>
+<ul><li> <a href="enum#Unscoped_enumerations" title="cpp/language/enum">unscoped enumeration types</a>Số lượng các yếu tố để sao chép</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <a href="enum#Scoped_enumerations" title="cpp/language/enum">scoped enumeration types</a>(Xem thêm<a href="../types/is_scoped_enum" title="cpp/types/is scoped enum"><code>std::is_scoped_enum</code></a>);</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li> <a href="class" title="cpp/language/class">class types</a>:</li>
+<ul>
+<li>Các loại không liên minh (xem thêm<code><a href="../types/is_class" title="cpp/types/is class">std::is_class</a></code>);</li>
+<li> <a href="union" title="cpp/language/union">union types</a>(Xem thêm<code><a href="../types/is_union" title="cpp/types/is union">std::is_union</a></code>).</li>
+</ul>
+</ul> <ol class="references"> <li id="cite_note-1"> <span class="reference-text"><code>signed char</code>Và<code>unsigned char</code>là các loại ký tự hẹp, nhưng chúng không phải là loại nhân vật. Nói cách khác, tập hợp các loại ký tự hẹp không phải là một tập hợp con của tập hợp các loại ký tự.</span> </li> </ol> <p>Đối với mọi loại không đủ điều kiện không phải là tham chiếu và chức năng, hệ thống loại hỗ trợ ba<a href="cv" title="cpp/language/cv">cv-qualified versions</a>loại đó (<span class="kw4">hằng số</span>Thì<span class="kw4">bay hơi</span>, Và<span class="kw4">hằng số</span> <span class="kw4">bay hơi</span>).</p>
+<p>Các loại được nhóm lại trong các danh mục khác nhau dựa trên các thuộc tính của chúng:</p>
+<ul>
+<li>Các loại đối tượng là các loại (có thể là CV đủ điều kiện) không phải là loại chức năng, loại tham chiếu hoặc có thể<span class="kw4">Vô hiệu</span>(Xem thêm<code><a href="../types/is_object" title="cpp/types/is object">std::is_object</a></code>);</li>
+<li> <a href="../named_req/scalartype" title="cpp/named req/ScalarType">scalar types</a>là các loại đối tượng (có thể là đủ điều kiện CV) không phải là loại mảng hoặc loại lớp (xem thêm<code><a href="../types/is_scalar" title="cpp/types/is scalar">std::is_scalar</a></code>);</li>
+<li> <a href="../named_req/trivialtype" title="cpp/named req/TrivialType">trivial types</a>(Xem thêm<code><a href="../types/is_trivial" title="cpp/types/is trivial">std::is_trivial</a></code>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.<a href="../named_req/podtype" title="cpp/named req/PODType">POD types</a>(Xem thêm<code><a href="../types/is_pod" title="cpp/types/is pod">std::is_pod</a></code>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.<a href="../named_req/literaltype" title="cpp/named req/LiteralType">literal types</a>(Xem thêm<code><a href="../types/is_literal_type" title="cpp/types/is literal type">std::is_literal_type</a></code>) và các danh mục khác được liệt kê trong<a href="../types" title="cpp/types">type traits library</a>). Giá trị cho gói trống là<a href="../named_req" title="cpp/named req">named type requirements</a>.</li>
+</ul> <p>Xây dựng loại đối tượng hoàn chỉnh sao cho số byte trong biểu diễn đối tượng của nó không thể thể hiện trong loại<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>(tức là loại kết quả của<a href="sizeof" title="cpp/language/sizeof"><code>sizeof</code></a>Nhà điều hành) không được hình thành.</p>
+<h3 id="Type_naming">Loại đặt tên</h3> <p>MỘT<a class="mw-redirect" href="name" title="cpp/language/name">name</a>có thể được khai báo để tham khảo một loại bằng cách:</p>
+<ul>
+<li> <a href="class" title="cpp/language/class">class</a>Vi phạm các ràng buộc được phát hiện tại thời điểm biên dịch, sớm trong quá trình khởi tạo mẫu, dẫn đến các thông báo lỗi dễ theo dõi:</li>
+<li> <a href="union" title="cpp/language/union">union</a>Vi phạm các ràng buộc được phát hiện tại thời điểm biên dịch, sớm trong quá trình khởi tạo mẫu, dẫn đến các thông báo lỗi dễ theo dõi:</li>
+<li> <a href="enum" title="cpp/language/enum">enum</a>Vi phạm các ràng buộc được phát hiện tại thời điểm biên dịch, sớm trong quá trình khởi tạo mẫu, dẫn đến các thông báo lỗi dễ theo dõi:</li>
+<li> <a href="typedef" title="cpp/language/typedef">typedef</a>Vi phạm các ràng buộc được phát hiện tại thời điểm biên dịch, sớm trong quá trình khởi tạo mẫu, dẫn đến các thông báo lỗi dễ theo dõi:</li>
+<li> <a href="type_alias" title="cpp/language/type alias">type alias</a>tuyên ngôn.</li>
+</ul> <p>Các loại không có tên thường cần được đề cập trong các chương trình C ++; Cú pháp cho điều đó được gọi là<span class="t-spar">Loại ID</span>. Cú pháp của Type-ID tên<code>T</code>chính xác là cú pháp của một<a href="declarations" title="cpp/language/declarations">declaration</a>của một biến hoặc chức năng của loại<code>T</code>, với số nhận dạng bị bỏ qua, ngoại trừ<span class="t-spar">DEM-SPECIFIER-SEQ</span>ngữ pháp tuyên bố bị hạn chế<span class="t-spar">Loại Specifier-seq</span>và các loại mới chỉ có thể được xác định nếu loại ID xuất hiện ở phía bên phải của khai báo bí danh loại không phải bảng.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int* p;               // Tuyên bố một con trỏ tới int</pre></div> <p>Các<span class="t-spar">người khai báo</span>static_cast &lt;int*&gt; (p); // type-id là "int*"<span class="t-spar">TÓM TẮT KIẾN TRÚC</span>.</p>
+<p> </p>
+<ul>
+<li>int a [3];   // Tuyên bố một mảng 3 int<a href="expressions#Conversions" title="cpp/language/expressions">cast expressions</a>Số lượng các yếu tố để sao chép</li>
+<li>Int mới [3]; // type-id là "int [3]" (được gọi là loại mới)<a href="sizeof" title="cpp/language/sizeof">sizeof</a>Thì<a href="alignof" title="cpp/language/alignof">alignof</a>Thì<a href="alignas" title="cpp/language/alignas">alignas</a>Thì<a href="new" title="cpp/language/new">new</a>, Và<a href="typeid" title="cpp/language/typeid">typeid</a>Số lượng các yếu tố để sao chép</li>
+<li> <a href="type_alias" title="cpp/language/type alias">type alias</a>Vi phạm các ràng buộc được phát hiện tại thời điểm biên dịch, sớm trong quá trình khởi tạo mẫu, dẫn đến các thông báo lỗi dễ theo dõi:</li>
+<li>int (*(*x [2]) ()) [3];      // Tuyên bố một mảng gồm 2 con trỏ cho các chức năng<a href="function" title="cpp/language/function">function</a>Vi phạm các ràng buộc được phát hiện tại thời điểm biên dịch, sớm trong quá trình khởi tạo mẫu, dẫn đến các thông báo lỗi dễ theo dõi:</li>
+<li>                          // Trả con trỏ về mảng 3 int<a href="template_parameters#Type_template_parameter" title="cpp/language/template parameters">template type parameter</a>Số lượng các yếu tố để sao chép</li>
+<li>Mới (int (*(*[2]) ()) [3]); // type-id là "int (*(*[2]) ()) [3]"<a href="template_parameters#Template_type_arguments" title="cpp/language/template parameters">template type parameter</a>Số lượng các yếu tố để sao chép</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <ul><li>TRONG<a href="except_spec" title="cpp/language/except spec">dynamic exception specification</a>.</li></ul> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> </table> <p> </p>
+<ul>
+<li>void f (int);                    // Tuyên bố về một chức năng lấy int và trả lại void<a href="function#Parameter_list" title="cpp/language/function">function</a>std :: function &lt;void (int)&gt; x = f; // Tham số mẫu loại là một loại "void (int)"<span class="t-spar">DEM-SPECIFIER-SEQ</span>Một số ưu điểm của căn hộ được đặt so với tiêu chuẩn khác<span class="t-spar">Loại Specifier-seq</span>std :: function &lt;auto (int) -&gt; void&gt; y = f; // như nhau</li>
+<li> <a href="cast_operator" title="cpp/language/cast operator">user-defined conversion function</a>STD :: Vector &lt;Int&gt; V;       // Tuyên bố một vectơ của int</li>
+</ul> <h3 id="Elaborated_type_specifier">Công cụ xác định loại xây dựng</h3> <p>Các nhà xác định loại được xây dựng có thể được sử dụng để chỉ tên lớp được công bố trước đó (lớp, struct hoặc liên minh) hoặc tên enum được công bố trước đó ngay cả khi tên<a href="lookup" title="cpp/language/lookup">hidden by a non-type declaration</a>. Chúng cũng có thể được sử dụng để khai báo tên lớp mới.</p>
+<p>(Raco).<a href="elaborated_type_specifier" title="cpp/language/elaborated type specifier">elaborated type specifier</a> </p>
+<h3 id="Static_type">sizeof (std :: vector &lt;but&gt;); // Type-ID là "std :: vector &lt;tint&gt;"</h3> <p> <i>struct {int x; } b;         // Tạo một loại mới và khai báo một đối tượng B thuộc loại đó</i>sizeof (struct {int x;});   // Lỗi: Không thể định nghĩa các loại mới trong biểu thức sizeof</p>
+<h3 id="Dynamic_type">sử dụng t = struct {int x; }; // tạo một loại mới và tuyên bố t là một bí danh thuộc loại đó</h3> <p> <a href="value_category" title="cpp/language/value category">glvalue expression</a>sizeof (int tĩnh); // Lỗi: Bộ xác định lớp lưu trữ không phải là một phần của loại specifier-seq<a href="object" title="cpp/language/object">polymorphic object</a>std :: function &lt;inline void (int)&gt; f; // Lỗi: Không phải là các trình xác định chức năng</p>
+<div class="cpp source-cpp"><pre data-language="cpp">một phần của ngữ pháp tuyên bố với tên được gỡ bỏ được gọi là</pre></div> <p>Type-ID có thể được sử dụng trong các tình huống sau:</p>
+<h3 id="Incomplete_type">Để chỉ định loại mục tiêu trong</h3> <p>như những lý lẽ với<i>về phía bên tay phải của một</i>:</p>
+<ul>
+<li>                  "Không thể so sánh đã ký và nhỏ hơn không dấu đúng cách");<span class="kw4">Vô hiệu</span>là loại trở lại của một<a href="cv" title="cpp/language/cv">cv</a>như đối số mặc định của một</li>
+<li> <i>Là đối số mẫu cho một</i>:<ul>
+<li>ID loại có thể được sử dụng với một số sửa đổi trong các tình huống sau:<a href="class#Forward_declaration" title="cpp/language/class">forward declaration</a>trong danh sách tham số của một</li>
+<li> <a href="array#Arrays_of_unknown_bound" title="cpp/language/array">array of unknown bound</a>Số lượng các yếu tố để sao chép</li>
+<li>(Khi tên tham số bị bỏ qua), Type-ID sử dụng</li>
+<li> <a href="enum" title="cpp/language/enum">enumeration type</a>(Đặc biệt, một số công cụ xác định lớp lưu trữ được cho phép);</li>
+</ul> </li>
+</ul> <p>nhân danh một</p>
+<p>, Trình khai báo trừu tượng không thể bao gồm các toán tử chức năng hoặc mảng.<code>T</code>Loại tĩnh</p>
+<ul>
+<li> <a href="function" title="cpp/language/function">definition</a>Loại biểu thức kết quả từ phân tích thời gian biên dịch của chương trình được gọi là<code>T</code>loại tĩnh<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li> <a href="definition" title="cpp/language/definition">definition</a>int i2 = 42;<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li>Tuyên bố của a<a href="data_members" title="cpp/language/data members">non-static class data member</a>nó đến một đối tượng<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li> <a href="new" title="cpp/language/new">new-expression</a>của biểu thức. Loại tĩnh không thay đổi trong khi chương trình đang thực hiện.<code>T</code>Loại động<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li> <a class="mw-redirect" href="implicit_cast#Lvalue_to_rvalue_conversion" title="cpp/language/implicit cast">lvalue-to-rvalue conversion</a>Nếu một số<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li>chồng chéo với container.<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">implicit</a>hoặc<a href="explicit_cast" title="cpp/language/explicit cast">explicit</a>đề cập đến a<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li>Một<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">standard conversion</a>Thì<a href="dynamic_cast" title="cpp/language/dynamic cast">dynamic_cast</a>, hoặc<a href="static_cast" title="cpp/language/static cast">static_cast</a>, loại đối tượng dẫn xuất nhất của nó được gọi là loại động.<code>T*</code>hoặc<code>T&amp;</code>// được cho<a href="pointer#Null_pointers" title="cpp/language/pointer">null pointer constant</a>};<a href="pointer#Pointers_to_void" title="cpp/language/pointer">pointer to possibly cv-qualified void</a>Số lượng các yếu tố để sao chép</li>
+<li> <a href="operator_member_access" title="cpp/language/operator member access">class member access operator</a>struct b {ảo ~ b () {}}; // loại đa hình<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li> <a href="typeid" title="cpp/language/typeid">typeid</a>Thì<a href="sizeof" title="cpp/language/sizeof">sizeof</a>, hoặc<a href="alignof" title="cpp/language/alignof">alignof</a>Cấu trúc D: B {};               // loại đa hình<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li> <a href="operator_arithmetic" title="cpp/language/operator arithmetic">arithmetic operator</a> <code>T</code>Số lượng các yếu tố để sao chép</li>
+<li>D d; // Đối tượng có nguồn gốc nhất<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li>B* ptr = &amp; d;<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li>Một<a href="try_catch" title="cpp/language/try catch">catch-clause</a> <code>T</code>Thì<code>T&amp;</code>, hoặc<code>T*</code>.</li>
+</ul> <p>// loại tĩnh của (*ptr) là b<code>T</code>// loại động của (*ptr) là d</p>
+<p>Đối với các biểu thức prvalue, loại động luôn giống như loại tĩnh.</p>
+<p>Loại không đầy đủ</p>
+<ul><li>Các loại sau là<span class="kw1">lớp học</span>Các loại không đầy đủ<span class="kw1">lớp học</span>(có thể</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">-đạt tiêu chuẩn);</pre></div> <ul>
+<li>Các loại đối tượng được xác định không đầy đủ</li>
+<li>Loại lớp đã được khai báo (ví dụ: bằng cách<code>T</code>) nhưng không được xác định;<code>N T</code>Mảng các yếu tố thuộc loại không đầy đủ;</li>
+</ul> <p>Từ điểm khai báo cho đến khi loại cơ bản của nó được xác định.<a href="typedef" title="cpp/language/typedef"><code>typedef</code></a>Tất cả các loại khác đã hoàn thành.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Bất kỳ ngữ cảnh nào sau đây đều yêu cầu loại</pre></div> <h3 id="Defect_Reports">&gt; Multiset lớp;</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/328.html" rel="nofollow">CWG 328</a> </td> <td>C ++ 98</td> <td>hoàn thành:<br/>của hoặc gọi đến một chức năng với loại trả về</td> <td>hoặc loại đối số<br/>Đối với một đối tượng của loại</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/977.html" rel="nofollow">CWG 977</a> </td> <td>C ++ 98</td> <td>hoặc một mảng có loại phần tử là<br/>áp dụng cho một glvalue loại</td> <td>chuyển đổi sang loại<br/>để gõ</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1362.html" rel="nofollow">CWG 1362</a> </td> <td>C ++ 98</td> <td>, ngoại trừ khi chuyển đổi từ<code>T*</code>hoặc<code>T&amp;</code>Thực hiện quá tải<code>T</code>áp dụng cho một biểu thức của loại</td> <td>    trả lại (a &lt;b)? B: A;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1464.html" rel="nofollow">CWG 1464</a> </td> <td>C ++ 98</td> <td>Nhà điều hành áp dụng cho loại<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code> </td> <td>áp dụng cho một con trỏ để</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2006.html" rel="nofollow">CWG 2006</a> </td> <td>C ++ 98</td> <td>    trả lại *cái này;<span class="kw4">Vô hiệu</span>Định nghĩa của một lớp có lớp cơ sở</td> <td>gán cho một loại loại</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2448.html" rel="nofollow">CWG 2448</a> </td> <td>C ++ 98</td> <td>cho một ngoại lệ của loại</td> <td>(Nói chung, khi kích thước và bố cục của</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2630.html" rel="nofollow">CWG 2630</a> </td> <td>C ++ 98</td> <td>phải được biết.)<br/>Nếu bất kỳ tình huống nào trong số này xảy ra trong một đơn vị dịch, định nghĩa của loại phải xuất hiện trong cùng một đơn vị dịch. Nếu không, nó là không bắt buộc.</td> <td>Một loại đối tượng được xác định không đầy đủ có thể được hoàn thành:<br/>Một loại lớp (chẳng hạn như<br/>X) có thể được coi là không đầy đủ tại một điểm trong một đơn vị dịch và được coi là hoàn chỉnh sau này; Loại</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2643.html" rel="nofollow">CWG 2643</a> </td> <td>C ++ 98</td> <td>X là cùng loại ở cả hai điểm:<br/>cấu trúc x;            // khai báo x, chưa có định nghĩa nào được cung cấp</td> <td>Extern x* xp;        // XP là một con trỏ tới một loại không hoàn chỉnh:<br/>                     // Định nghĩa của x không thể truy cập được</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/type" title="c/language/type">C documentation</a></span>vì<span class=""><span>Kiểu</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/type">https://en.cppreference.com/w/cpp/language/type</a>
+</p>
+</div>

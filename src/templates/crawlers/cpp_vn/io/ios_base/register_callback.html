@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iOS_Base :: Đăng ký_callback</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void register_callback (chức năng event_callback, int index);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đăng ký một chức năng do người dùng xác định sẽ được gọi bởi<code><a href="imbue" title="cpp/io/ios base/imbue">imbue()</a></code>Thì<code><a href="../basic_ios/copyfmt" title="cpp/io/basic ios/copyfmt">std::basic_ios::copyfmt()</a></code>Và<code>~ios_base()</code>. Mỗi cuộc gọi lại đã đăng ký được gọi mỗi lần: Loại sự kiện (giá trị của loại<code><a href="event" title="cpp/io/ios base/event">event</a></code>) được thông qua như đối số đầu tiên của nó và có thể được sử dụng để phân biệt giữa người gọi.</p>
+<p>Các cuộc gọi lại được gọi theo thứ tự đảo ngược của đăng ký (nói cách khác,<code>register_callback()</code>Đẩy một cặp gọi lại trên ngăn xếp gọi lại). Nếu như<code>register_callback()</code>Được gọi từ trong chức năng gọi lại để thêm một cuộc gọi lại mới, cuộc gọi lại mới chỉ được gọi vào sự kiện tiếp theo.</p>
+<p>Hàm gọi lại do người dùng xác định không được phép ném ngoại lệ.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>chức năng</td> <td>-</td> <td>Hàm sẽ được gọi là sự kiện, được cung cấp dưới dạng con trỏ hàm của loại<a href="event_callback" title="cpp/io/ios base/event callback">event_callback</a> </td>
+</tr> <tr class="t-par"> <td>Chỉ mục</td> <td>-</td> <td>tham số tùy chỉnh sẽ được chuyển đến hàm</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>Sau khi đăng ký, một cuộc gọi lại không thể được hủy đăng ký: nó vẫn là một phần của đối tượng luồng cho phần còn lại của cuộc đời. Nếu hành vi của một cuộc gọi lại cần phải thay đổi, nó có thể được kiểm soát thông qua<code><a href="iword" title="cpp/io/ios base/iword">iword()</a></code>hoặc<code><a href="pword" title="cpp/io/ios base/pword">pword()</a></code>.</p>
+<p>Nếu cùng một hàm được đăng ký nhiều lần, nó được gọi là nhiều lần.</p>
+<p>Giá trị số nguyên được lưu trữ cùng với cuộc gọi lại thường là một chỉ mục thu được từ<code><a href="xalloc" title="cpp/io/ios base/xalloc">xalloc()</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Thể hiện việc sử dụng<code>register_callback</code>Để cập nhật các giá trị được lưu trong bộ nhớ cache phụ thuộc vào locale được sử dụng bởi toán tử đầu ra tùy chỉnh.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;chức năng&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ios_base/register_callback">https://en.cppreference.com/w/cpp/io/ios_base/register_callback</a>
+</p>
+</div>

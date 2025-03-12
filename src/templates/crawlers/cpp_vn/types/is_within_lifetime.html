@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: is_within_lifetime</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx26"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> </tr> </table> <p>Hiến thức bool is_within_lifetime (const t* ptr) noExcept;<code>ptr</code>Xác định xem con trỏ có<a href="../language/lifetime" title="cpp/language/lifetime">lifetime</a>.</p>
+<p>trỏ đến một đối tượng nằm trong nó<code>E</code>Trong quá trình đánh giá một biểu thức<code>std::is_within_lifetime</code>Là một biểu thức hằng số lõi, một cuộc gọi đến<code>ptr</code>là xấu tính trừ khi</p>
+<ul>
+<li>          std :: Indirect_strict_weak_order &lt;<a href="../language/constant_expression#Usable_in_constant_expressions" title="cpp/language/constant expression">usable in constant expressions</a>, hoặc</li>
+<li>chỉ vào một đối tượng<code>E</code>.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>mà cuộc đời hoàn chỉnh của người khác bắt đầu trong</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Con trỏ để phát hiện<code>ptr</code>Nếu con trỏ<code>false</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p><code>std::is_within_lifetime</code>chỉ vào một đối tượng trong vòng đời của nó; nếu không thì</p>
+<div class="cpp source-cpp"><pre data-language="cpp">có thể được sử dụng để kiểm tra xem một thành viên công đoàn có hoạt động không:</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/is_within_lifetime">https://en.cppreference.com/w/cpp/types/is_within_lifetime</a>
+</p>
+</div>

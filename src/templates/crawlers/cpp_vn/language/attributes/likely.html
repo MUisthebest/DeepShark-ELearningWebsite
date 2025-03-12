@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">Thuộc tính C ++: Có khả năng, không thể xảy ra<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>
+</h1> <p>Cho phép trình biên dịch tối ưu hóa cho trường hợp các đường dẫn thực thi bao gồm câu lệnh đó ít nhiều có khả năng hơn bất kỳ đường dẫn thực thi thay thế nào không bao gồm một câu lệnh đó.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span>likely<span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span></code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span>unlikely<span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span></code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Các thuộc tính này có thể được áp dụng cho các nhãn và báo cáo (trừ các statators tuyên bố). Chúng có thể không được áp dụng đồng thời cho cùng một nhãn hoặc tuyên bố.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Áp dụng cho một câu lệnh để cho phép trình biên dịch tối ưu hóa cho trường hợp các đường dẫn thực thi bao gồm câu lệnh đó có nhiều khả năng hơn bất kỳ đường dẫn thực thi thay thế nào không bao gồm một câu lệnh đó.</div> <div class="t-li1">
+<span class="t-li">2)</span>Áp dụng cho một câu lệnh để cho phép trình biên dịch tối ưu hóa cho trường hợp các đường dẫn thực thi bao gồm câu lệnh đó ít có khả năng hơn bất kỳ đường dẫn thực thi thay thế nào không bao gồm một câu lệnh đó.</div> <p>Một đường dẫn thực thi được coi là bao gồm một nhãn khi và chỉ khi nó chứa một bước nhảy vào nhãn đó:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int f (int i)</pre></div> <p><code>i == 2</code>{<code>i</code>    chuyển đổi (i)<code>[[<strong class="selflink">    {</strong>]]</code>        Trường hợp 1: [[Fall trong]];<code>i == 1</code>        [[có thể]] Trường hợp 2: Trả về 1;<code>case 2:</code>nhãn.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    }</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">    trả lại 2;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/attributes/likely">https://en.cppreference.com/w/cpp/language/attributes/likely</a>
+</p>
+</div>

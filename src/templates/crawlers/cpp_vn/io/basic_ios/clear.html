@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ios &lt;biểu đồ, đặc điểm&gt; :: rõ ràng</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void Clear (std :: iOS_Base :: iostate state = std :: ios_base :: goodbit);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đặt các cờ trạng thái lỗi luồng bằng cách gán cho chúng giá trị của<code>state</code>. Theo mặc định, gán<code><a href="../ios_base/iostate" title="cpp/io/ios base/iostate">std::ios_base::goodbit</a></code>trong đó có tác dụng xóa tất cả các cờ trạng thái lỗi.</p>
+<p>Nếu như<code><a href="rdbuf" title="cpp/io/basic ios/rdbuf">rdbuf()</a></code>là một con trỏ null (tức là không có bộ đệm luồng liên quan), sau đó<code>state <span class="sy3">|</span> <a href="http://en.cppreference.com/w/cpp/io/ios_base/iostate"><span class="kw1703">Điều đó cho tất cả<span class="me2">iOS_Base</span><span class="sy4">::</span><span class="me2">Badbit</span></span></a></code>được chỉ định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Loại đại diện cho trạng thái thay đổi</td> <td>-</td> <td>Cài đặt cờ trạng thái lỗi mới. Nó có thể là sự kết hợp của các hằng số sau:<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/iostate" title="cpp/io/ios base/iostate"><code>goodbit</code></a> </td> <td>iostate</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/iostate" title="cpp/io/ios base/iostate"><code>badbit</code></a> </td> <td>trạng thái của loại luồng</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/iostate" title="cpp/io/ios base/iostate"><code>failbit</code></a> </td> <td>Các hằng số sau cũng được xác định:</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/iostate" title="cpp/io/ios base/iostate"><code>eofbit</code></a> </td> <td>Không có lỗi</td>
+</tr> </table> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Nếu trạng thái lỗi mới bao gồm một chút cũng được bao gồm trong<code><a href="exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>mặt nạ, ném một ngoại lệ của loại<code><a href="../ios_base/failure" title="cpp/io/ios base/failure">failure</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p><a href="#top"><code>clear()</code></a>Không có đối số có thể được sử dụng để giải phóng<a href="#Parameters"><code>failbit</code></a>sau khi đầu vào bất ngờ; vì<code><a href="http://en.cppreference.com/w/cpp/io/cin"><span class="kw1760">Điều đó cho tất cả<span class="me2">cin</span></span></a>.<span class="me1">đọc nhân vật tiếp theo mà không trích xuất nó</span><span class="br0">.</span>c<span class="br0">)</span></code>nhìn thấy<a href="../c/ungetc#Notes" title="cpp/io/c/ungetc"><code>ungetc</code></a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;chuỗi&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue412" rel="nofollow">LWG 412</a> </td> <td>C ++ 98</td> <td> <br/>int main ()<code><a href="exceptions" title="cpp/io/basic ios/exceptions">exceptions()</a></code>giải quyết, như thể bằng Posix</td> <td>{<br/>    for (char c: {'\ n', '4', '1', '.', '3', '\ n', 'z', 'y', 'x'})</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="setstate" title="cpp/io/basic ios/setstate"> <span class="t-lines"><span>đối tượng giữ kết quả phân tích cú pháp</span></span></a></div> </td> <td>kiểm tra xem không có lỗi nào xảy ra (đồng nghĩa của<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="rdstate" title="cpp/io/basic ios/rdstate"> <span class="t-lines"><span>Nhà điều hành!</span></span></a></div> </td> <td>kiểm tra xem có xảy ra lỗi không (từ đồng nghĩa của<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ios/clear">https://en.cppreference.com/w/cpp/io/basic_ios/clear</a>
+</p>
+</div>

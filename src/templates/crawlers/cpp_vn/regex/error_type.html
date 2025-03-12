@@ -1,0 +1,34 @@
+ <h1 class="firstHeading" id="firstHeading">std :: regex_constants :: error_type</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/regex" title="cpp/header/regex">&lt;regex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Sử dụng ERROR_TYPE = / * Xác định triển khai * /;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">constexpr error_type error_collate = / * không xác định * /;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">constexpr error_type error_ctype = / * không xác định * /;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Các<code>error_type</code>constexpr error_type error_escape = / * không xác định * /;</div> <h3 id="Constants">Hằng số</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <code>error_collate</code> </td> <td>constexpr error_type error_backref = / * không xác định * /;</td>
+</tr> <tr class="t-dsc"> <td> <code>error_ctype</code> </td> <td>constexpr error_type error_brack = / * không xác định * /;</td>
+</tr> <tr class="t-dsc"> <td> <code>error_escape</code> </td> <td>constexpr error_type error_paren = / * không xác định * /;</td>
+</tr> <tr class="t-dsc"> <td> <code>error_backref</code> </td> <td>constexpr error_type error_brace = / * không xác định * /;</td>
+</tr> <tr class="t-dsc"> <td> <code>error_brack</code> </td> <td>constexpr error_type error_badbrace = / * không xác định * /;<code>'['</code>Và<code>']'</code>)</td>
+</tr> <tr class="t-dsc"> <td> <code>error_paren</code> </td> <td>constexpr error_type error_range = / * không xác định * /;<code>'('</code>Và<code>')'</code>)</td>
+</tr> <tr class="t-dsc"> <td> <code>error_brace</code> </td> <td>constexpr orror_type error_space = / * không xác định * /;<code>'{'</code>Và<code>'}'</code>)</td>
+</tr> <tr class="t-dsc"> <td> <code>error_badbrace</code> </td> <td>constexpr error_type error_badrepeat = / * không xác định * /;<code>{}</code>  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</td>
+</tr> <tr class="t-dsc"> <td> <code>error_range</code> </td> <td>constexpr error_type error_complexity = / * không xác định * /;</td>
+</tr> <tr class="t-dsc"> <td> <code>error_space</code> </td> <td>constexpr error_type error_stack = / * không xác định * /;</td>
+</tr> <tr class="t-dsc"> <td> <code>error_badrepeat</code> </td> <td> <code>'*'</code>Thì<code>'?'</code>Thì<code>'+'</code>hoặc<code>'{'</code>Inline ConstExPR ERROR_TYPE ERROR_COLLLE = / * không xác định * /;</td>
+</tr> <tr class="t-dsc"> <td> <code>error_complexity</code> </td> <td>Constine Constexpr orror_type error_ctype = / * không xác định * /;</td>
+</tr> <tr class="t-dsc"> <td> <code>error_stack</code> </td> <td>Inline ConstExPR ERROR_TYPE ERROR_ESCAPE = / * không xác định * /;</td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Inline ConstExPR ERROR_TYPE ERROR_Backref = / * Unspecified * /;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Inline ConstExPR ERROR_TYPE ERROR_BRACK = / * không xác định * /;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Inline ConstExPR ERROR_TYPE ERROR_PAREN = / * không xác định * /;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2053" rel="nofollow">LWG 2053</a> </td> <td>C ++ 11</td> <td>Inline Consexpr Error_Type Error_Brace = / * Unspecified * /;<span class="kw4">năng động</span> </td> <td>void g2 () {f2 ({"foo", "thanh"}); } // chọn #4<span class="kw4">năng động</span>thời lượng để biểu diễn phần bù từ UTC tương ứng với</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="regex_error" title="cpp/regex/regex error"> <span class="t-lines"><span>regex_error</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Báo cáo lỗi được tạo bởi thư viện biểu thức thông thường<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/error_type">https://en.cppreference.com/w/cpp/regex/error_type</a>
+</p>
+</div>

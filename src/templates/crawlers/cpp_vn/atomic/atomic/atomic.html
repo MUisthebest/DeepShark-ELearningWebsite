@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: ATOMIC &lt;T&gt; :: ATOMIC</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">Atomic () NoExcept = Mặc định;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ConstExpr Atomic () NoExcept (std :: is_nothrow_default_constructible_v &lt;t&gt;);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Consexpr nguyên tử (T mong muốn) Noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">nguyên tử (const nguyên tử &amp;) = xóa;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xây dựng một biến nguyên tử mới.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <span class="t-li">1)</span>Trình xây dựng mặc định là tầm thường: Không có khởi tạo nào diễn ra ngoài<a href="../../language/zero_initialization" title="cpp/language/zero initialization">zero initialization</a>của các đối tượng tĩnh và chủ đề địa phương.<code><a href="../atomic_init" title="cpp/atomic/atomic init">std::atomic_init</a></code>có thể được sử dụng để hoàn thành khởi tạo.</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <span class="t-li">1)</span>Giá trị-khởi tạo đối tượng cơ bản (nghĩa là với<code>T()</code>). Việc khởi tạo không phải là nguyên tử.  Chương trình không được hình thành nếu<code><a href="http://en.cppreference.com/w/cpp/types/is_default_constructible"><span class="kw534">Điều đó cho tất cả<span class="me2">is_default_constructible_v</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>khoảng cách<code>false</code>.</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <div class="t-li1">
+<span class="t-li">2)</span>Khởi tạo đối tượng cơ bản với<code>desired</code>. Việc khởi tạo không phải là nguyên tử.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Các biến nguyên tử không<a href="../../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>bool Atomic_compare_exchange_strong_explict</td> <td>-</td> <td>giá trị để khởi tạo với</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Sự khởi đầu mặc định<a href="http://en.cppreference.com/w/cpp/atomic/atomic"><span class="kw2070">Điều đó cho tất cả<span class="me2">nguyên tử</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span>không chứa một<code>T</code>Đối tượng và các mục đích sử dụng hợp lệ duy nhất của nó là phá hủy và khởi tạo bằng cách<code><a href="../atomic_init" title="cpp/atomic/atomic init">std::atomic_init</a></code>, nhìn thấy<a class="external text" href="https://cplusplus.github.io/LWG/issue2334" rel="nofollow">LWG issue 2334</a>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic/atomic">https://en.cppreference.com/w/cpp/atomic/atomic/atomic</a>
+</p>
+</div>

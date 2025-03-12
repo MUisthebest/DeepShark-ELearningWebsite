@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: DefaultConstructible</h1> <p>Chỉ định rằng một thể hiện của loại có thể được xây dựng mặc định.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>T</code>thỏa mãn DefaultConstructible nếu</p>
+<p>Cho quá tải</p>
+<ul><li> <code>u</code>, một định danh tùy ý.</li></ul> <p>Các biểu thức sau đây phải hợp lệ và có các hiệu ứng được chỉ định của chúng.</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Điều kiện sau</th>
+</tr> <tr> <td>
+<code>T u;</code> </td> <td>Đối tượng<code>u</code>khoảng cách<a href="../language/default_initialization" title="cpp/language/default initialization">default-initialized</a>.</td>
+</tr> <tr> <td>
+<code>T u{};</code> </td> <td>Đối tượng<code>u</code>khoảng cách<a href="../language/value_initialization" title="cpp/language/value initialization">value-initialized</a>hoặc<a href="../language/aggregate_initialization" title="cpp/language/aggregate initialization">aggregate-initialized</a>.</td>
+</tr> <tr> <td>
+<code>T()</code> <p><code>T{}</code></p>
+</td> <td>Một đối tượng tạm thời của loại<code>T</code>khoảng cách<a href="../language/value_initialization" title="cpp/language/value initialization">value-initialized</a>hoặc<a href="../language/aggregate_initialization" title="cpp/language/aggregate initialization">aggregate-initialized</a>.</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Đối với các đối tượng thuộc loại lớp không tổng hợp, công khai<a href="../language/default_constructor" title="cpp/language/default constructor">default constructor</a>Phải được xác định (hoặc được xác định theo người dùng hoặc được xác định ngầm) để đáp ứng DefaultConstructable.</p>
+<p>Các đối tượng không phải là cuộc thi của<a href="../language/type" title="cpp/language/type">non-class object type</a>luôn luôn là mặc định.</p>
+<p>Các loại không phải lớp không phải là DefaultConstructable.</p>
+<p>Các loại tổng hợp const không phải là DefaultConstructable nếu bất kỳ thành viên nào của họ là đối tượng thuộc loại không thuộc lớp.</p>
+<p>Các loại không phải đối tượng (loại chức năng, loại tham chiếu và loại (có thể là CV)<span class="kw4">Vô hiệu</span>) cũng như các loại không phải là cấu trúc không bao giờ là mặc định.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue724" rel="nofollow">LWG 724</a> </td> <td>C ++ 98</td> <td>Các yêu cầu của DefaultConstructable đã bị thiếu</td> <td>Được cho</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_default_constructible" title="cpp/types/is default constructible"> <span class="t-lines"><span>is_default_constructible</span><span>is_trivently_default_constructible</span><span>is_nothrow_default_constructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có hàm tạo mặc định không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../concepts/default_initializable" title="cpp/concepts/default initializable"> <span class="t-lines"><span>Khái niệm ngôn ngữ cốt lõi</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>are_as<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/DefaultConstructible">https://en.cppreference.com/w/cpp/named_req/DefaultConstructible</a>
+</p>
+</div>

@@ -1,0 +1,37 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_filebuf &lt;biểu đồ, đặc điểm&gt; :: SeekPos</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Virtual POS_Type SeekPos (POS_TYPE SP,<code>sp</code>                          std :: iOS_Base :: OpenMode trong đó = std :: ios_base :: in | std :: iOS_Base :: out);<code>is_open() == false</code>                          std :: iOS_Base :: OpenMode trong đó = std :: ios_base :: in | std :: iOS_Base :: out);</p>
+<p>Định vị lại con trỏ tệp, nếu có thể, đến vị trí được chỉ định bởi</p>
+<div class="t-li1">
+<span class="t-li">1)</span>. Nếu tệp được liên kết không mở (<code><a href="../basic_streambuf/overflow" title="cpp/io/basic streambuf/overflow">overflow()</a></code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Tái định vị thực hiện như sau:<code><a href="../c/fsetpos" title="cpp/io/c/fsetpos">std::fsetpos()</a></code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Nếu tệp được mở để viết, hãy viết khu vực đặt và bất kỳ chuỗi không thay đổi nào theo yêu cầu của địa phương hiện đang thấm nhuần, sử dụng</div> <p>Nếu như<code>sp</code>Định vị lại con trỏ tệp, như thể bằng cách gọi<code><a href="../basic_streambuf/pubseekoff" title="cpp/io/basic streambuf/pubseekoff">seekoff()</a></code>hoặc<code>seekpos()</code>Nếu tệp được mở để đọc, cập nhật khu vực GET nếu cần thiết.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không có được bằng cách gọi</td> <td>-</td> <td>Trên cùng một tập tin, hành vi không được xác định.<code><a href="../basic_streambuf/pubseekoff" title="cpp/io/basic streambuf/pubseekoff">seekoff()</a></code>hoặc<code>seekpos()</code>sp</td>
+</tr> <tr class="t-par"> <td>              &lt;&lt; (Thành công? "Thành công \ n": "thất bại \ n");</td> <td>-</td> <td>vị trí tương đối để đặt chỉ báo vị trí thành<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>in</code></a> </td> <td>Dir</td>
+</tr> <tr class="t-dsc"> <td> <a href="../ios_base/openmode" title="cpp/io/ios base/openmode"><code>out</code></a> </td> <td>Xác định vị trí cơ sở để áp dụng bù tương đối. Nó có thể là một trong những hằng số sau:</td>
+</tr> </table> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>sp</code>Vị trí tệp có được bởi<code>pos_type(off_type(-1))</code>, trong trường hợp đó</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>seekpos()</code>ảnh hưởng đến trình tự đầu ra<code><a href="../basic_streambuf/pubseekpos" title="cpp/io/basic streambuf/pubseekpos">std::basic_streambuf::pubseekpos()</a></code>được gọi sớm hơn trên cùng một tệp<code><a href="../basic_istream/seekg" title="cpp/io/basic istream/seekg">std::basic_istream::seekg()</a></code>Và<code><a href="../basic_ostream/seekp" title="cpp/io/basic ostream/seekp">std::basic_ostream::seekp()</a></code>.</p>
+<p>về thành công hoặc<code>seekpos()</code>, được gọi bởi các phiên bản đơn lẻ của<code><a href="../basic_streambuf/underflow" title="cpp/io/basic streambuf/underflow">underflow()</a></code>Nhiều triển khai không cập nhật khu vực GET trong<code><a href="../basic_streambuf/sgetc" title="cpp/io/basic streambuf/sgetc">sgetc()</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>, ủy thác cho<code>seekpos()</code>Điều đó được gọi bởi tiếp theo<code>underflow()</code>Trên một số triển khai, khu vực Get được làm trống bởi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">và thứ hai</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">là cần thiết để quan sát các hiệu ứng.</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue55" rel="nofollow">LWG 55</a> </td> <td>C ++ 98</td> <td>
+<code>seekpos</code>, được gọi bởi<br/>#include &lt;Fstream&gt;</td> <td>
+<code>pos_type(off_type(-1))</code><br/>#include &lt;Istream&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue171" rel="nofollow">LWG 171</a> </td> <td>C ++ 98</td> <td>#include &lt;Fstream&gt;</td> <td>hơn thứ hai, nếu không</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_streambuf/pubseekpos" title="cpp/io/basic streambuf/pubseekpos"> <span class="t-lines"><span>Gọi</span></span></a></div> </td> <td>Sputc<code>seekpos()</code> <br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_streambuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="seekoff" title="cpp/io/basic filebuf/seekoff"> <span class="t-lines"><span>Định vị</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Cung cấp bộ đệm do người dùng cung cấp hoặc bật tệp này không có<br/> <span class="t-mark">(Hàm thành viên được bảo vệ ảo)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../c/fseek" title="cpp/io/c/fseek"> <span class="t-lines"><span>FSEEK</span></span></a></div> </td> <td>di chuyển chỉ báo vị trí tệp đến một vị trí cụ thể trong một tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_filebuf/seekpos">https://en.cppreference.com/w/cpp/io/basic_filebuf/seekpos</a>
+</p>
+</div>

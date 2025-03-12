@@ -1,0 +1,82 @@
+ <h1 class="firstHeading" id="firstHeading">
+<code>return</code>tuyên bố</h1> <p>Chấm dứt hàm hiện tại và trả về giá trị được chỉ định (nếu có) cho người gọi.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>return</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>return</code> <span class="t-spar">{</span> <code>;</code> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>co_return</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>co_return</code> <span class="t-spar">{</span> <code>;</code> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>trình tự của bất kỳ số lượng nào<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>-</td> <td> <a href="expressions" title="cpp/language/expressions">expression</a>, chuyển đổi thành loại trả về chức năng</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">{</span> </td> <td>-</td> <td>Danh sách các bộ khởi tạo và danh sách khởi tạo nẹp khác</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <div class="t-li1">
+<span class="t-li">1)</span>Đánh giá các<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>, chấm dứt hàm hiện tại và trả về kết quả của<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>cho người gọi, sau<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">implicit conversion</a>đến loại trả về chức năng. Các<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>là tùy chọn trong các chức năng có loại trả về (có thể là CV đủ điều kiện)<code>void</code>, và không được phép trong các nhà xây dựng và trong các chất hủy diệt.</div> <div class="t-li1">
+<span class="t-li">2)</span>, trả lại<a href="list_initialization" title="cpp/language/list initialization">copy-list-initialization</a>Để xây dựng giá trị trả về của hàm.</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>Trong một coroutine, từ khóa<code>co_return</code>Hành vi không xác định nếu<code>return</code>Đối với điểm đình chỉ cuối cùng (xem<a href="coroutines" title="cpp/language/coroutines">coroutines</a>để biết chi tiết).</div> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Có a<a href="eval_order#Sequence_point_rules_.28until_C.2B.2B11.29" title="cpp/language/eval order">sequence point</a>giữa việc bắt đầu bản sao kết quả của cuộc gọi chức năng và sự phá hủy của tất cả các tạm thời ở cuối<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>Việc sao chép bản sao kết quả của cuộc gọi chức năng là<a href="eval_order" title="cpp/language/eval order">sequenced-before</a>sự phá hủy của tất cả các tạm thời ở cuối<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>, đến lượt nó, là<i>{</i>Việc phá hủy các biến cục bộ của khối bao quanh câu lệnh trả về.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Nếu kiểm soát đạt đến cuối</p>
+<ul>
+<li>một chức năng với loại trả về (có thể là đủ điều kiện CV)<code>void</code>Thì</li>
+<li>một nhà xây dựng,</li>
+<li>một kẻ phá hủy, hoặc</li>
+<li>Một<a href="function-try-block" title="cpp/language/function-try-block">function-try-block</a>Đối với một chức năng với loại trả về (có thể là đủ điều kiện CV)<code>void</code> </li>
+</ul> <p>mà không gặp phải một tuyên bố trở lại,<code>return;</code>được thực hiện.</p>
+<p>Nếu kiểm soát đạt đến cuối<a href="main_function" title="cpp/language/main function">main function</a>Thì<code>return 0;</code>được thực hiện.</p>
+<p>Chảy ra khỏi sự kết thúc của hàm hoàn trả giá trị, ngoại trừ<code>main</code><span class="t-rev-inl t-since-cxx20"><span>và cụ thể<a href="coroutines" title="cpp/language/coroutines">coroutines</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, không có tuyên bố trả lại là hành vi không xác định.</p>
+<p>Trong một chức năng trở lại (có thể là đủ điều kiện CV)<code>void</code>, tuyên bố trả lại với<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>có thể được sử dụng, nếu loại biểu thức là (có thể là đủ điều kiện CV)<code>void</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <p>Nếu loại trả về của một hàm được chỉ định là<a href="auto" title="cpp/language/auto">placeholder type</a>, nó sẽ là<a href="function#Return_type_deduction" title="cpp/language/function">deduced</a>từ giá trị trả về.</p>
+</td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <p>Trả lại theo giá trị có thể liên quan đến việc xây dựng và sao chép/di chuyển của một đối tượng tạm thời, trừ khi<a href="copy_elision" title="cpp/language/copy elision">copy elision</a>được sử dụng. Cụ thể, các điều kiện để sao chép/di chuyển như sau:</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <h4 id="Automatic_move_from_local_variables_and_parameters">Tự động di chuyển từ các biến và tham số cục bộ</h4> <p>Các<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>khoảng cách<i>đủ điều kiện di chuyển</i>Nếu đó là một (có thể là dấu ngoặc đơn)<a href="identifiers" title="cpp/language/identifiers">id-expression</a>tên là một biến của thời lượng lưu trữ tự động có loại</p>
+<ul><li>một loại đối tượng không bay hơi</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>hoặc tham chiếu rvalue không bay hơi cho loại đối tượng</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>và biến đó được khai báo</p>
+<dl>
+<dd>
+<ul>
+<li>trong cơ thể hoặc</li>
+<li>như một tham số</li>
+</ul> </dd>
+<dd>của hàm kèm theo trong cùng hoặc biểu hiện lambda.</dd>
+</dl> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>đủ điều kiện di chuyển,<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>Để chọn hàm tạo để sử dụng để khởi tạo giá trị được trả về<span class="t-rev-inl t-since-cxx20"><span>Hoặc, cho<code>co_return</code>, để chọn quá tải của<code>promise.return_value()</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>được thực hiện<i>hai lần</i>:</p>
+<ul>
+<li>đầu tiên như thể<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>là một biểu thức rvalue (do đó nó có thể chọn<a href="move_constructor" title="cpp/language/move constructor">move constructor</a>), Và</li>
+<ul><li>Nếu độ phân giải quá tải đầu tiên không thành công hoặc</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <ul><li>nó đã thành công, nhưng không chọn<a href="move_constructor" title="cpp/language/move constructor">move constructor</a>(Chính thức, tham số đầu tiên của hàm tạo được chọn không phải là tham chiếu rvalue cho loại<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>)</li></ul> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> </table> <ul><li>sau đó độ phân giải quá tải được thực hiện như bình thường, với<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>được coi là một lvalue (vì vậy nó có thể chọn<a href="copy_constructor" title="cpp/language/copy constructor">copy constructor</a>).</li></ul> </td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>đủ điều kiện di chuyển, nó được coi là một xvalue (do đó độ phân giải quá tải có thể chọn<a href="move_constructor" title="cpp/language/move constructor">move constructor</a>).</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <h4 id="Guaranteed_copy_elision">Đảm bảo bản sao bản sao</h4> <p>Nếu như<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>là một prvalue, đối tượng kết quả được khởi tạo trực tiếp bằng biểu thức đó. Điều này không liên quan đến một hàm tạo bản sao hoặc di chuyển khi các loại khớp (xem<a href="copy_elision" title="cpp/language/copy elision">copy elision</a>).</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_implicit_move" title="cpp/feature test"><code>__cpp_implicit_move</code></a></td> <td><span class="nu0">202207L</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Đơn giản hơn<a href="#Automatic_move_from_local_variables_and_parameters">implicit move</a> </td>
+</tr>
+</table> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/return" title="cpp/keyword/return"><code>return</code></a>Thì<a href="../keyword/co_return" title="cpp/keyword/co return"><code>co_return</code></a></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;chuỗi&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1541.html" rel="nofollow">CWG 1541</a> </td> <td>C ++ 98</td> <td>
+<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>#include &lt;Tiện ích&gt;<code>void</code> </td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1579.html" rel="nofollow">CWG 1579</a> </td> <td>C ++ 11</td> <td>void fa (int i)</td> <td>{<br/>    if (i == 2)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1885.html" rel="nofollow">CWG 1885</a> </td> <td>C ++ 98</td> <td>        trở lại;</td> <td>a [i] = i ++;       // Hành vi không xác định cho đến khi C ++ 17</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul><li> <a href="copy_elision" title="cpp/language/copy elision">copy elision</a> </li></ul> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/return" title="c/language/return">C documentation</a></span>vì<span class=""><span><code>return</code>tuyên bố</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/return">https://en.cppreference.com/w/cpp/language/return</a>
+</p>
+</div>

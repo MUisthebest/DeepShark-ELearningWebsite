@@ -1,0 +1,41 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: điều kiện_varable_any :: Đợi đã</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class Lock&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void Wait (khóa &amp; khóa);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;LOCK LOCK, CLASE PRESATION&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p><code>wait</code>void Wait (std :: độc đáo_lock &lt;std :: mutex&gt; &amp; lock, presicate stop_waiting);<code>bool(stop_waiting()) == true</code>).</p>
+<div class="t-li1">
+<span class="t-li">1)</span>khiến luồng hiện tại bị chặn cho đến khi biến điều kiện được thông báo hoặc xảy ra đánh thức giả, tùy chọn lặp cho đến khi một số vị ngữ được thỏa mãn (<code>lock</code>Mở khóa nguyên tử<code>*this</code>, chặn luồng thực thi hiện tại và thêm nó vào danh sách các luồng đang chờ<code><a href="notify_all" title="cpp/thread/condition variable any/notify all">notify_all()</a></code>hoặc<code><a href="notify_one" title="cpp/thread/condition variable any/notify one">notify_one()</a></code>. Chủ đề sẽ được bỏ chặn khi<code>lock</code>được thực hiện. Nó cũng có thể được bỏ chặn một cách mạnh mẽ. Khi bỏ chặn, bất kể lý do,<code>wait</code>được phản ứng lại và</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;class inputit1, class inputit2,<div class="cpp source-cpp"><pre data-language="cpp">thoát ra.</pre></div> <p>while (! stop_waiting ()))<code>lock</code>{<code>wait(lock)</code>    Chờ (khóa);<code>lock</code>}<code>stop_waiting()</code>.</p>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>void Wait (Khóa &amp; Khóa, Vị ngữ Stop_Waiting);<code>condition_variable_any</code>Mẫu &lt;LOCK LOCK, CLASE PRESATION&gt;<code>wait()</code>Bool Wait (Lock &amp; Lock, Std :: Stop_Token Stoken, Inplicate Stop_Waiting);<code>stoken</code>Chờ đợi bị gián đoạn: đăng ký<div class="cpp source-cpp"><pre data-language="cpp">trong suốt thời gian</pre></div>, để được thông báo nếu yêu cầu dừng được thực hiện trên<code>stop_waiting</code>Các trạng thái dừng liên kết; sau đó nó tương đương với<code>true</code>while (!</div> <p>Quá tải này có thể được sử dụng để bỏ qua sự thức tỉnh giả trong khi chờ đợi một điều kiện cụ thể trở thành sự thật.  Lưu ý rằng<code>lock</code>Phải có được trước khi vào phương pháp này và nó được làm lại sau<code><a href="../../error/terminate" title="cpp/error/terminate">std::terminate</a></code>thoát ra, có nghĩa là</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khóa</td> <td>-</td> <td>một đối tượng của loại<code>Lock</code>phân tích một số từ luồng đầu vào<a href="../../named_req/basiclockable" title="cpp/named req/BasicLockable">BasicLockable</a>{</td>
+</tr> <tr class="t-par"> <td>    if (stop_waiting ())</td> <td>-</td> <td>Một<code>std::stop_token</code>        trả lại đúng;</td>
+</tr> <tr class="t-par"> <td>Nếu các chức năng này không đáp ứng được các điều kiện hậu (</td> <td>-</td> <td>bị khóa bởi luồng gọi),<code>false</code>được gọi. Ví dụ, điều này có thể xảy ra nếu tái sử dụng Mutex ném một ngoại lệ.<code>bool(stop_waiting()) == false</code>).<br/> <p>Decay_t</p>
+<p><span class="t-cc"><code> bool pred();</code></span>hơn thứ hai và không nếu các đối số là tương đương.</p>
+</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">Đầu vào</span>Gán cho đã cho</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <code>stop_waiting()</code>
+</div> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1)</span>Không ném.</div> <div class="t-li1">
+<span class="t-li">2)</span>                                   Nhị phân p);<span class="t-v">(1)</span>, phải bị khóa bởi luồng hiện tại<code>stop_waiting</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>                                   Nhị phân p);<span class="t-v">(2)</span>.</div> <h3 id="Notes">Ghi chú</h3> <p>Những ảnh hưởng của<code>notify_one()</code>/<code>notify_all()</code>và mỗi trong ba phần nguyên tử của<code>wait()</code>/<code>wait_for()</code>/<code>wait_until()</code>(Mở khóa+Chờ, Wakeup và khóa) diễn ra trong một thứ tự tổng thể có thể được xem là<a href="../../atomic/memory_order#Modification_order" title="cpp/atomic/memory order">modification order</a>của một biến nguyên tử: thứ tự là cụ thể cho biến điều kiện riêng lẻ này. Điều này làm cho nó không thể cho<code>notify_one()</code>Ví dụ, bị trì hoãn và bỏ chặn một chủ đề bắt đầu chờ đợi ngay sau khi cuộc gọi đến<code>notify_one()</code>đã được thực hiện.</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;điều kiện_varable&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2135" rel="nofollow">LWG 2135</a> </td> <td>C ++ 11</td> <td>
+<code>wait</code>stop_waiting</td> <td>cuộc gọi<code><a href="../../error/terminate" title="cpp/error/terminate">std::terminate</a></code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="wait_for" title="cpp/thread/condition variable any/wait for"> <span class="t-lines"><span>Wait_for</span></span></a></div> </td> <td>chặn luồng hiện tại cho đến khi biến điều kiện được đánh thức hoặc sau thời gian chờ được chỉ định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="wait_until" title="cpp/thread/condition variable any/wait until"> <span class="t-lines"><span>Wait_until</span></span></a></div> </td> <td>chặn luồng hiện tại cho đến khi biến điều kiện được đánh thức hoặc cho đến khi đạt được điểm thời gian được chỉ định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/thread/cnd_wait" title="c/thread/cnd wait">C documentation</a></span>vì<code>cnd_wait</code> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr style="vertical-align:top;"> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính</td> <td>
+<a class="external text" href="https://devblogs.microsoft.com/oldnewthing/20180201-00/?p=97946" rel="nofollow">The Old New Thing</a>vị ngữ mà trả về</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/condition_variable_any/wait">https://en.cppreference.com/w/cpp/thread/condition_variable_any/wait</a>
+</p>
+</div>

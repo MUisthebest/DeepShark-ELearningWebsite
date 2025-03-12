@@ -1,0 +1,241 @@
+body {
+    flex-direction: row;
+    overflow-y: hidden;
+
+}
+
+header {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 15px;
+    position: relative; /* Đặt vị trí cố định */
+    display: flex;
+    height: 100vh; /* Chiều cao bằng chiều cao màn hình */
+    top: 0; /* Đặt header ở đầu trang */
+    left: 0; /* Đặt header ở bên trái trang */
+    overflow-y: auto; /* Đảm bảo nội dung bên trong có thể cuộn nếu cần */
+}
+
+header .love_code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 80%;
+    overflow: auto;
+    max-height: 80vh;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+main {
+    padding: 30px;
+    display: flex;
+    overflow-y: auto;
+    flex-grow: 1;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+footer {
+    display: none;
+}
+
+h1 {
+    background: linear-gradient(45deg, #2A3335, #5d6dea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content ul a {
+    margin-left: 4px;
+    color: black;
+    margin-right: 4px;
+}
+
+.t-spar {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+code {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.dev {
+    color: black;
+}
+
+header li {
+    color: black;
+    text-decoration: none;
+}
+
+/* Ẩn danh sách con theo mặc định */
+ul.dev {
+    display: none;
+    list-style-type: none;
+    margin-left: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-left: 10px;
+    border-left: 1px dashed #ccc;
+}
+
+/* Hiển thị danh sách con khi phần tử cha được hover hoặc click */
+.unit.open > .dev {
+    display: block;
+}
+
+span {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+i {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+b {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.Cpp_box {
+    display: flex;
+    flex-direction: column;
+    max-width: calc(20vw);
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+
+.Cpp {
+    display: none;
+    flex-direction: column;
+    max-height: 350px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.Cpp_box.open .Cpp {
+    display: block; /* Hiện danh sách khi có class 'open' */
+}
+
+.Cpp_box .root {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    background: linear-gradient(45deg, #2A3335, #5d6dea);
+}
+
+.Cpp_box .root a {
+    display: flex;
+    font-size: 20px;
+    text-align: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    padding: 10px 25px;
+    width: 80%;
+    color: #fff;
+    font-weight: bold;
+    background: transparent;
+}
+
+
+.Cpp_box .root i {
+    display: flex;
+    width: 20%;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Định dạng mục chính */
+.unit {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    font-weight: bold;
+    position: relative;
+    margin: 5px 0;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: 350px;
+}
+
+.unit li {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+/* Định dạng biểu tượng thư mục */
+.unit li > a::before {
+    content: "📁"; /* Biểu tượng thư mục đóng */
+    margin-right: 8px;
+}
+
+/* Định dạng biểu tượng file */
+.dev li a::before {
+    content: "📄"; /* Biểu tượng file */
+    margin-right: 8px;
+}
+
+/* Khi mở, đổi biểu tượng */
+.unit.open > a::before {
+    content: "📂"; /* Biểu tượng thư mục mở */
+}
+
+
+header > li {
+    display: flex;
+    max-width: 200px;
+    color: black;
+    text-decoration: none;
+}
+
+.co2 {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.unit li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 5px;
+    max-width: 200px;
+}
+
+.unit li a {
+    display: inline-block; /* hoặc block nếu cần thiết */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content ul  {
+    list-style-type: disc;
+    text-align: start;
+    padding: 20px;
+}
+
+.unit li i {
+    display: flex;
+    font-size: 10px;
+    align-self: center;
+    justify-self: center;
+}
+
+
+
+

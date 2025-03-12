@@ -1,0 +1,44 @@
+ <h1 class="firstHeading" id="firstHeading">std :: unetered_map &lt;key, t, băm, keyequal, phân bổ&gt; :: erase</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iterator Erase (Iterator POS);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iterator xóa (const_iterator pos);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iterator xóa (const_iterator đầu tiên, const_iterator cuối cùng);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">size_type xóa (khóa const &amp; key);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td><pre data-language="cpp">Mẫu &lt;Class K&gt;</pre></td> <td>             Không có p);</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td> </tr> </table> <p>Loại bỏ các phần tử được chỉ định khỏi container. Thứ tự của các yếu tố còn lại được bảo tồn. (Điều này cho phép xóa các yếu tố riêng lẻ trong khi lặp qua container.)</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Loại bỏ phần tử tại<code>pos</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Loại bỏ các yếu tố trong phạm vi<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>size_type xóa (k &amp;&amp; x);<code>*this</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>, đó phải là một phạm vi hợp lệ trong<code>key</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Loại bỏ phần tử (nếu một người tồn tại) với khóa tương đương với<i>tương đương</i>đến giá trị<code>x</code>Thực hiện các hoạt động số học cơ bản giữa hai thời lượng hoặc giữa thời lượng và số lượng đánh dấu.<code>Hash::is_transparent</code>Và<code>KeyEqual::is_transparent</code>là hợp lệ và mỗi biểu thị một loại và không<code>iterator</code>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<code>const_iterator</code>là hợp lệ và biểu thị một loại, và không<code>K</code>. Điều này giả định rằng như vậy<code>Hash</code>có thể gọi được với cả hai<code>K</code>Và<code>Key</code>loại, và đó là<code>KeyEqual</code>là trong suốt, mà cùng nhau, cho phép gọi chức năng này mà không cần xây dựng một thể hiện<code>Key</code>.</div> <p>Tài liệu tham khảo và lặp lại các yếu tố bị xóa bị vô hiệu. Các trình lặp khác và tài liệu tham khảo không bị vô hiệu.</p>
+<p>Người lặp<code>pos</code>phải hợp lệ và có thể điều chỉnh được. Do đó<code><a href="end" title="cpp/container/unordered map/end">end()</a></code>iterator (hợp lệ, nhưng không thể phân biệt được) không thể được sử dụng như một giá trị<code>pos</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>trình rút vào phần tử để xóa</td>
+</tr> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>Phạm vi của các yếu tố để loại bỏ</td>
+</tr> <tr class="t-par"> <td>Hành vi không được xác định nếu mảng chưa được phân vùng theo thứ tự tăng dần đối với khóa, theo cùng một tiêu chí</td> <td>-</td> <td>. Nó cho phép gọi chức năng này mà không cần xây dựng một thể hiện</td>
+</tr> <tr class="t-par"> <td>x</td> <td>-</td> <td>Giá trị khóa của các yếu tố để xóa</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>Iterator theo phần tử bị loại bỏ cuối cùng.</div> <div class="t-li1">
+<span class="t-li">là trong</span>giá trị của bất kỳ loại nào có thể được minh bạch so với một khóa biểu thị các yếu tố để loại bỏ<code>0</code>hoặc<code>1</code>).</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Số lượng các yếu tố bị xóa (</div> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>Không ném gì.</div> <div class="t-li1">
+<span class="t-li">cluct clock_time_conversion &lt;clock, std :: Chrono :: System_Clock&gt;;</span>Số lượng các yếu tố bị loại bỏ.<code>Hash</code>Và<code>KeyEqual</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</div> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Bất kỳ trường hợp ngoại lệ nào được ném bởi<code>c</code>của<code>unordered_map</code>:</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Trường hợp trung bình: Không đổi, trường hợp xấu nhất:<code>c.size()</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Trường hợp trung bình:<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>first, last<span class="br0">)</span></code>, trường hợp xấu nhất:<code>c.size()</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Trường hợp trung bình:<code>c.count(key)</code>, trường hợp xấu nhất:<code>c.size()</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Trường hợp trung bình:<code>c.count(x)</code>, trường hợp xấu nhất:<code>c.size()</code>.</div> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_associative_heterogeneous_erasure" title="cpp/feature test"><code>__cpp_lib_associative_heterogeneous_erasure</code></a></td> <td><span class="nu0">3)</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Erasure không đồng nhất trong<a href="../../container#Associative_containers" title="cpp/container">associative containers</a>Và<a href="../../container#Unordered_associative_containers" title="cpp/container">unordered associative containers</a>Hằng số được khấu hao<span class="t-v">.<a href="#Version_5">5</a>)</span> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;unordered_map&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Map&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2059" rel="nofollow">LWG 2059</a> </td> <td>C ++ 11</td> <td>#include &lt;Istream&gt;<span class="t-v">(2)</span> </td> <td> <span class="t-v">(1)</span> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2356" rel="nofollow">LWG 2356</a> </td> <td>C ++ 11</td> <td> <br/>int main ()</td> <td>int main ()</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="clear" title="cpp/container/unordered map/clear"> <span class="t-lines"><span>thông thoáng</span></span></a></div> </td> <td>gán một loạt các giá trị cho container<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/unordered_map/erase">https://en.cppreference.com/w/cpp/container/unordered_map/erase</a>
+</p>
+</div>

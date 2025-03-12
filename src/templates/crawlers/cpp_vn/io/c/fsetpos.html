@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FSETPOS</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int fsetpos (std :: file* stream, const std :: fpos_t* pos);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đặt chỉ báo vị trí tệp và trạng thái phân tích cú pháp đa<code>stream</code>Theo giá trị được chỉ ra bởi<code>pos</code>.</p>
+<p>Bên cạnh việc thiết lập trạng thái phân tích cú pháp mới, một cuộc gọi đến chức năng này đã hoàn tác các tác động của<code><a href="ungetc" title="cpp/io/c/ungetc">std::ungetc</a></code>và xóa trạng thái cuối tập tin, nếu nó được đặt.</p>
+<p>Nếu xảy ra lỗi đọc hoặc ghi, chỉ báo lỗi (<code><a href="ferror" title="cpp/io/c/ferror">std::ferror</a></code>) cho luồng được đặt.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>luồng tệp để sửa đổi</td>
+</tr> <tr class="t-par"> <td>POS</td> <td>-</td> <td>con trỏ đến a<code>fpos_t</code>đối tượng thu được từ<code><a href="fgetpos" title="cpp/io/c/fgetpos">std::fgetpos</a></code>được gọi trên một luồng được liên kết với cùng một tệp</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>​0​</code>Khi thành công, giá trị khác không. Ngoài ra, bộ<code><a href="../../error/errno" title="cpp/error/errno">errno</a></code>, trong trường hợp đó</p>
+<h3 id="Notes">Ghi chú</h3> <p>Sau khi tìm kiếm một vị trí không kết thúc trong một luồng rộng, cuộc gọi tiếp theo đến bất kỳ chức năng đầu ra nào có thể hiển thị phần còn lại của tệp không xác định, ví dụ: Bằng cách xuất ra một chuỗi đa tế bào có độ dài khác nhau.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cstdio&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CstDlib&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fgetpos" title="cpp/io/c/fgetpos"> <span class="t-lines"><span>FGETPOS</span></span></a></div> </td> <td>Nhận chỉ báo vị trí tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ftell" title="cpp/io/c/ftell"> <span class="t-lines"><span>ftell</span></span></a></div> </td> <td>Trả về chỉ báo vị trí tệp hiện tại<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fseek" title="cpp/io/c/fseek"> <span class="t-lines"><span>FSEEK</span></span></a></div> </td> <td>di chuyển chỉ báo vị trí tệp đến một vị trí cụ thể trong một tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/fsetpos" title="c/io/fsetpos">C documentation</a></span>vì<code>fsetpos</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/fsetpos">https://en.cppreference.com/w/cpp/io/c/fsetpos</a>
+</p>
+</div>

@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Ungetwc</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: wint_t ungetwc (std :: wint_t ch, std :: file* stream);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nếu như<code>ch</code>không bằng<code>WEOF</code>, đẩy nhân vật rộng<code>ch</code>vào bộ đệm đầu vào được liên kết với luồng<code>stream</code>theo cách như vậy so với hoạt động đọc tiếp theo từ<code>stream</code>sẽ lấy lại nhân vật rộng đó. Thiết bị bên ngoài được liên kết với luồng không được sửa đổi.</p>
+<p>Stream Tái định vị hoạt động<code><a href="fseek" title="cpp/io/c/fseek">std::fseek</a></code>Thì<code><a href="fsetpos" title="cpp/io/c/fsetpos">std::fsetpos</a></code>, Và<code><a href="rewind" title="cpp/io/c/rewind">std::rewind</a></code>loại bỏ những ảnh hưởng của<code>std::ungetwc</code>.</p>
+<p>Nếu như<code>std::ungetwc</code>được gọi là hơn một lần mà không cần đọc hoặc định vị lại, nó có thể thất bại (nói cách khác, bộ đệm đẩy có kích thước 1 được đảm bảo, nhưng bất kỳ bộ đệm lớn hơn nào cũng được xác định bằng thực hiện). Nếu nhiều thành công<code>std::ungetwc</code>đã được thực hiện, đọc các hoạt động lấy lại các ký tự rộng được đẩy theo thứ tự ngược lại<code>std::ungetwc</code></p>
+<p>Nếu như<code>ch</code>Mẫu &lt;class inputit1, class inputit2&gt;<code>WEOF</code>, hoạt động thất bại và luồng không bị ảnh hưởng.</p>
+<p>Một cuộc gọi thành công đến<code>std::ungetwc</code>Xóa kết thúc cờ trạng thái tệp<code>feof</code>.</p>
+<p>Một cuộc gọi thành công đến<code>std::ungetwc</code>Trên một luồng (cho dù văn bản hay nhị phân) sửa đổi chỉ báo vị trí luồng theo cách không xác định nhưng đảm bảo rằng sau tất cả các ký tự rộng được đẩy trở lại<code>std::ungetwc</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>ch</td> <td>-</td> <td>Nhân vật rộng được đặt lại</td>
+</tr> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>luồng tệp để đặt ký tự rộng trở lại</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Về thành công<code>ch</code>bất kể</p>
+<p>Về thất bại<code>WEOF</code>được trả lại và luồng đã cho vẫn không thay đổi.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="ungetc" title="cpp/io/c/ungetc"> <span class="t-lines"><span>Ungetc</span></span></a></div> </td> <td>Đặt một ký tự trở lại luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fgetwc" title="cpp/io/c/fgetwc"> <span class="t-lines"><span>FGETWC</span><span>getwc</span></span></a></div> </td> <td>Nhận một ký tự rộng từ luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/ungetwc" title="c/io/ungetwc">C documentation</a></span>vì<code>ungetwc</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/ungetwc">https://en.cppreference.com/w/cpp/io/c/ungetwc</a>
+</p>
+</div>

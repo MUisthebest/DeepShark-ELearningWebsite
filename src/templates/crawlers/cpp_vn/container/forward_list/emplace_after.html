@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: forward_list &lt;t, allocator&gt; :: emplace_after</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;class ... args&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>iterator eMplace_After (const_iterator pos, args &amp;&amp; ... args);</p>
+<p>Chèn một phần tử mới vào một vị trí sau vị trí được chỉ định trong container. Phần tử được xây dựng tại chỗ, tức là không có hoạt động sao chép hoặc di chuyển được thực hiện. Chất xây dựng của phần tử được gọi với các đối số chính xác, như được cung cấp cho hàm.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>Không có trình lặp hoặc tài liệu tham khảo bị vô hiệu.</td>
+</tr> <tr class="t-par"> <td>iterator trước đó phần tử mới sẽ được xây dựng</td> <td>-</td> <td>Args</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>iterator sau đó phần tử mới sẽ được xây dựng</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>tham chiếu emplace_front (args &amp;&amp; ... args);<a href="../../language/exceptions#Exception_safety" title="cpp/language/exceptions">strong exception safety guarantee</a>).</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Lặp đi lặp lại cho phần tử mới.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Ví dụ cho thấy sự lấp đầy kinh điển của một danh sách liên kết đơn theo thứ tự tự nhiên (trái ngược với đảo ngược).</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Timoning_list&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="insert_after" title="cpp/container/forward list/insert after"> <span class="t-lines"><span>, nhưng nhiều chức năng thành viên áp đặt các yêu cầu chặt chẽ hơn. Container này (nhưng không phải là thành viên của nó) có thể được khởi tạo với loại phần tử không hoàn chỉnh nếu bộ phân bổ thỏa mãn</span></span></a></div> </td> <td>201505L<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/forward_list/emplace_after">https://en.cppreference.com/w/cpp/container/forward_list/emplace_after</a>
+</p>
+</div>

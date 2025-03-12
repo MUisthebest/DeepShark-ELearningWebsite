@@ -1,0 +1,38 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: GetLine</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/string" title="cpp/header/string">&lt;string&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Trình phân bổ lớp&gt;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">STD :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">getline (std :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp; input,</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">         std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; &amp; str, phân định biểu đồ);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p><code>getline</code>Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Trình phân bổ lớp&gt;</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Hành xử như<a href="../../named_req/unformattedinputfunction" title="cpp/named req/UnformattedInputFunction">UnformattedInputFunction</a>, và sau đó gọi<code>input.gcount()</code>STD :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp;</div> <div class="t-li2">
+<span class="t-li">1)</span>Cuộc gọi<code>str.erase()</code>.</div> <div class="t-li2">
+<span class="t-li">2)</span>, theo các quy tắc sau:<code>input</code>Nếu ký tự đầu tiên được trích xuất không bằng<code>str</code>getline (std :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp;&amp; input,</div> <div class="t-li3">
+<span class="t-li">}</span>         std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; &amp; str, phân định biểu đồ);<code>input</code>Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Trình phân bổ lớp&gt;<code>getline</code>, di chuyển-thiết kế bộ phân bổ từ<a href="../../io/ios_base/iostate" title="cpp/io/ios base/iostate"><code>eofbit</code></a>.</div> <div class="t-li3">
+<span class="t-li">{</span>STD :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp;<code>delim</code>getline (std :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp; input,<code>Traits::eq(c, delim)</code>         std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; &amp; str);<code>input</code>Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Trình phân bổ lớp&gt;<code>str</code>.</div> <div class="t-li3">
+<span class="t-li">}</span> <code>str.max_size()</code>STD :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp;<code>getline</code>, di chuyển-thiết kế bộ phân bổ từ<a href="../../io/ios_base/iostate" title="cpp/io/ios base/iostate"><code>failbit</code></a>Đọc các ký tự từ luồng đầu vào và đặt chúng vào một chuỗi:</div> <div class="t-li2">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>         std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; &amp; str);<code>getline</code>, di chuyển-thiết kế bộ phân bổ từ<a href="../../io/ios_base/iostate" title="cpp/io/ios base/iostate"><code>failbit</code></a>Đọc các ký tự từ luồng đầu vào và đặt chúng vào một chuỗi:</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>                                   Nhị phân p);<code>getline(input, str, input.widen('\n'))</code>không bị ảnh hưởng. Sau khi xây dựng và kiểm tra đối tượng Sentry, thực hiện các mục sau:</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Cho đến khi một trong những điều sau đây xảy ra (được kiểm tra trong đơn đặt hàng được liệt kê)</td> <td>-</td> <td>Điều kiện cuối tập tin trên</td>
+</tr> <tr class="t-par"> <td>STR</td> <td>-</td> <td>, trong trường hợp đó,</td>
+</tr> <tr class="t-par"> <td>DELIM</td> <td>-</td> <td>ký tự đầu vào có sẵn tiếp theo là</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>input</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>, như đã được kiểm tra bởi<code><span class="kw4">int</span> n<span class="sy4">Số lượng các yếu tố để sao chép</span> <a href="http://en.cppreference.com/w/cpp/io/cin"><span class="kw1759">Điều đó cho tất cả<span class="me2">cin</span></span></a> <span class="sy1">2,4)</span> n<span class="sy4">Số lượng các yếu tố để sao chép</span></code>, trong trường hợp đó, ký tự phân cách được trích xuất từ<code>getline</code>, nhưng không được thêm vào</p>
+<ul>
+<li>ký tự đã được lưu trữ, trong trường hợp đó<code>getline</code>.</li>
+<li>và trả lại.<code><a href="http://en.cppreference.com/w/cpp/io/cin"><span class="kw1759">Điều đó cho tất cả<span class="me2">cin</span></span></a> <span class="sy1">2,4)</span> <a href="http://en.cppreference.com/w/cpp/io/manip/ws"><span class="kw1791">Điều đó cho tất cả<span class="me2">WS</span></span></a></code>.</li>
+<li>Nếu không có ký tự nào được trích xuất vì bất kỳ lý do gì (thậm chí không phải là dấu phân cách bị loại bỏ),<code>cin.<span class="me1">phớt lờ</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/io/streamsize"><span class="kw1807">Điều đó cho tất cả<span class="me2">dòng chảy</span></span></a><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Được xác định trong tiêu đề</span><span class="br0">.</span><span class="br0">)</span>, <span class="st0">void print_info (std :: string_view rem, const std :: map &lt;int, char&gt; &amp; v)<span class="es1">với được thêm vào</span>void print_info (std :: string_view rem, const std :: map &lt;int, char&gt; &amp; v)</span><span class="br0">)</span><span class="sy4">Số lượng các yếu tố để sao chép</span></code>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>và trả lại.<code>getline</code>, nghĩa là, dấu phân cách mặc định là ký tự kết thúc.<code>delim</code>là một chuyên ngành có thể</p>
+<div class="cpp source-cpp"><pre data-language="cpp">đầu vào</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">luồng để lấy dữ liệu từ</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue91" rel="nofollow">LWG 91</a> </td> <td>C ++ 98</td> <td>
+<code>getline</code>chuỗi để đặt dữ liệu vào</td> <td>nhân vật phân định</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../io/basic_istream/getline" title="cpp/io/basic istream/getline"> <span class="t-lines"><span>Getline</span></span></a></div> </td> <td>không thể truy cập được một nhân vật<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_istream&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string/getline">https://en.cppreference.com/w/cpp/string/basic_string/getline</a>
+</p>
+</div>

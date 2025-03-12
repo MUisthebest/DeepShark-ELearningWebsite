@@ -1,0 +1,40 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Phạm vi :: Max</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/algorithm" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-h"> <td>Chữ ký cuộc gọi</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class T, class proj = std :: nhận dạng,</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">          std :: Indirect_strict_weak_order &lt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">              std :: dự kiến ​​&lt;const t*, proj &gt;&gt; comp = phạm vi :: Ít hơn&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>constexpr const t &amp;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;class T, class so sánh&gt;<code>a</code>Và<code>b</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>    tối đa (const t &amp; a, const t &amp; b, comp comp = {}, proj proj = {});<code>r</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;std :: có thể sao chép t, class proj = std :: nhận dạng,<code>r</code>.</div> <p>Mẫu &lt;phạm vi :: forward_range r, class proj = std :: nhận dạng,<i>          std :: Indirect_binary_predicate &lt;</i>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj&gt;,</p>
+<ul>
+<li>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; pre = ranges :: arem_to&gt;</li>
+<li>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>.</li>
+<li>    adjacent_find (r &amp;&amp; r, pre pre = {}, proj proj = {});<a href="../../language/unqualified_lookup" title="cpp/language/unqualified lookup">normal unqualified lookup</a>(Sau khi chiếu với phép chiếu<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>như phạm vi nguồn, như thể đang sử dụng</li>
+</ul> <p>Phạm vi ::</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trao đổi các giá trị của các yếu tố mà các trình rút đã cho đang chỉ ra.</td> <td>-</td> <td>Trả về các giá trị lớn nhất trong danh sách khởi tạo</td>
+</tr> <tr class="t-par"> <td>thường được sử dụng.</td> <td>-</td> <td>          std :: Indirect_strict_weak_order &lt;</td>
+</tr> <tr class="t-par"> <td>sau đó</td> <td>-</td> <td>Phạm vi :: mượn_iterator_t &lt;r&gt;</td>
+</tr> <tr class="t-par"> <td>niebloids</td> <td>-</td> <td>, đó là:</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Ilist<code>a</code>Và<code>b</code>              std :: dự kiến ​​&lt;const t*, proj &gt;&gt; comp = phạm vi :: Ít hơn&gt;<code>a</code>.</div> <div class="t-li1">
+<span class="t-li">          std :: Indirect_strict_weak_order &lt;</span>Để sử dụng quá tải (1,3).<code>r</code>    tối đa (std :: initizer_list &lt;t&gt; r, comp comp = {}, proj proj = {});<code><a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3141">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>r<span class="br0">)</span></code>Mẫu &lt;phạm vi :: input_range r, class proj = std :: nhận dạng,</div> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <div class="t-li1">
+<span class="t-li">1)</span>Lớn hơn của</div> <div class="t-li1">
+<span class="t-li">          std :: Indirect_strict_weak_order &lt;</span>không được phép<code><a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3141">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>r<span class="br0">)</span> <span class="sy2">-</span> <span class="nu0">, nếu như</span></code>. Nếu họ tương đương, trả lại</div> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; comp = ranges :: Ít hơn&gt;</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Mẫu &lt;Class T&gt;<code>std::ranges::max</code>Constexpr Const T &amp; Kẹp (Const T &amp; V, Const T &amp; Lo, Const T &amp; Hi)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Yêu cầu STD :: Inone</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">                                           Phạm vi :: Range_Value_T &lt;R&gt;*&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Phạm vi constexpr :: Range_Value_T &lt;R&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="min" title="cpp/algorithm/ranges/min"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="minmax" title="cpp/algorithm/ranges/minmax"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="max_element" title="cpp/algorithm/ranges/max element"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="clamp" title="cpp/algorithm/ranges/clamp"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../max" title="cpp/algorithm/max"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/ranges/max">https://en.cppreference.com/w/cpp/algorithm/ranges/max</a>
+</p>
+</div>

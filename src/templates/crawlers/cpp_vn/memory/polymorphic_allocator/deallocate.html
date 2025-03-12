@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: pmr :: đa hình_allocator &lt;t&gt; :: Deallocate</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">void Deallocate (t* p, std :: size_t n);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Xử lý lưu trữ được chỉ ra bởi<code>p</code>, mà phải được phân bổ từ một<code><a href="../memory_resource" title="cpp/memory/memory resource">std::pmr::memory_resource</a></code> <code>x</code>                 std :: size_t căn chỉnh = alignof (std :: max_align_t));<code>*resource()</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<code>x.allocate(n * sizeof(T), alignof(T))</code>.</p>
+<p>Mẫu &lt;class inputit1, class inputit2,<code>this-&gt;resource()-&gt;deallocate(p, n * sizeof(T), alignof(T));</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>con trỏ đến bộ nhớ để giải quyết</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>số lượng đối tượng ban đầu được phân bổ</td>
+</tr>
+</table> <h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="deallocate_bytes" title="cpp/memory/polymorphic allocator/deallocate bytes"> <span class="t-lines"><span>Phân bổ_bytes</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Phân bổ bộ nhớ căn chỉnh thô khỏi tài nguyên cơ bản<code>allocate_bytes</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="deallocate_object" title="cpp/memory/polymorphic allocator/deallocate object"> <span class="t-lines"><span>phân bổ_object</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Phân bổ bộ nhớ thô phù hợp cho một đối tượng hoặc một mảng<code>allocate_object</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="delete_object" title="cpp/memory/polymorphic allocator/delete object"> <span class="t-lines"><span>new_object</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phân bổ và xây dựng một đối tượng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../allocator_traits/deallocate" title="cpp/memory/allocator traits/deallocate"> <span class="t-lines"><span>/ * container-node-type */</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>, trong đó args bằng không hoặc nhiều hơn<br/> <span class="t-mark">(Chức năng thành viên tĩnh công khai của<code>std::allocator_traits&lt;Alloc&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../memory_resource/deallocate" title="cpp/memory/memory resource/deallocate"> <span class="t-lines"><span>/ * container-node-type */</span></span></a></div> </td> <td>Xử lý bộ nhớ<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::pmr::memory_resource</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/polymorphic_allocator/deallocate">https://en.cppreference.com/w/cpp/memory/polymorphic_allocator/deallocate</a>
+</p>
+</div>

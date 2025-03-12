@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_istream &lt;biểu đồ, đặc điểm&gt; :: gcount</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">STD :: Streamsize Gcount () const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả về số lượng ký tự được trích xuất bởi phần cuối cùng<a href="../../named_req/unformattedinputfunction" title="cpp/named req/UnformattedInputFunction">unformatted input operation</a>, hoặc giá trị đại diện tối đa của<code><a href="../streamsize" title="cpp/io/streamsize">std::streamsize</a></code>Nếu số không thể đại diện.</p>
+<p>Các chức năng thành viên sau của<code>basic_istream</code>Thay đổi giá trị của tiếp theo<code>gcount()</code>Cuộc gọi:</p>
+<ul>
+<li> <a href="basic_istream" title="cpp/io/basic istream/basic istream">move constructor</a> </li>
+<li> <code><a href="../basic_ios/swap" title="cpp/io/basic ios/swap">swap()</a></code> </li>
+<li> <code><a href="get" title="cpp/io/basic istream/get">get()</a></code> </li>
+<li> <code><a href="getline" title="cpp/io/basic istream/getline">getline()</a></code> </li>
+<li> <code><a href="ignore" title="cpp/io/basic istream/ignore">ignore()</a></code> </li>
+<li> <code><a href="read" title="cpp/io/basic istream/read">read()</a></code> </li>
+<li> <code><a href="readsome" title="cpp/io/basic istream/readsome">readsome()</a></code> </li>
+<li> <code><a href="operator_gtgt" title="cpp/io/basic istream/operator gtgt">operator&gt;&gt;(basic_streambuf*)</a></code> </li>
+</ul> <p>Các chức năng sau đây được đặt<code>gcount()</code>đến Zero:</p>
+<ul>
+<li> <a href="basic_istream" title="cpp/io/basic istream/basic istream">constructor</a> </li>
+<li> <code><a href="putback" title="cpp/io/basic istream/putback">putback()</a></code> </li>
+<li> <code><a href="unget" title="cpp/io/basic istream/unget">unget()</a></code> </li>
+<li> <code><a href="peek" title="cpp/io/basic istream/peek">peek()</a></code> </li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Số lượng ký tự được trích xuất bởi hoạt động đầu vào chưa được định dạng cuối cùng hoặc giá trị đại diện tối đa của<code><a href="../streamsize" title="cpp/io/streamsize">std::streamsize</a></code>Nếu số không thể đại diện.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Sstream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3464" rel="nofollow">LWG 3464</a> </td> <td>C ++ 98</td> <td> </td> <td>int main ()</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_istream/gcount">https://en.cppreference.com/w/cpp/io/basic_istream/gcount</a>
+</p>
+</div>

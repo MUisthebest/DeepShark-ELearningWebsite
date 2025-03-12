@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: PMR :: Unsynchronized_pool_resource :: DO_ALLOCATE</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">void ảo* do_allocate (std :: size_t byte, std :: size_t căn chỉnh);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Phân bổ lưu trữ.</p>
+<p>Nếu hồ bơi được chọn cho một khối kích thước<code>bytes</code>không thể đáp ứng yêu cầu từ các cấu trúc dữ liệu nội bộ của nó, các cuộc gọi<code>allocate()</code>Trên tài nguyên bộ nhớ ngược dòng để có được bộ nhớ.</p>
+<p>Nếu kích thước được yêu cầu lớn hơn những gì nhóm lớn nhất có thể xử lý, bộ nhớ được phân bổ bằng cách gọi<code>allocate()</code>Trên tài nguyên bộ nhớ ngược dòng.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một con trỏ để phân bổ lưu trữ ít nhất<code>bytes</code>Byte kích thước, được căn chỉnh theo quy định<code>alignment</code>Nếu sự liên kết đó được hỗ trợ và<code>alignof<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/types/max_align_t"><span class="kw111">Điều đó cho tất cả<span class="me2">MAX_ALIGN_T</span></span></a><span class="br0">)</span></code>Nếu đối số đầu tiên là</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì trừ khi gọi điện<code>allocate()</code>Trên tài nguyên bộ nhớ ngược dòng.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../memory_resource/allocate" title="cpp/memory/memory resource/allocate"> <span class="t-lines"><span>được cung cấp cho Deque để cho phép khấu trừ từ một phạm vi vòng lặp. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu</span></span></a></div> </td> <td>phân bổ bộ nhớ<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::pmr::memory_resource</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../memory_resource/do_allocate" title="cpp/memory/memory resource/do allocate"> <span class="t-lines"><span>do_allococate</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>phân bổ bộ nhớ<br/><span class="t-mark">(Chức năng thành viên riêng ảo của<code>std::pmr::memory_resource</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/unsynchronized_pool_resource/do_allocate">https://en.cppreference.com/w/cpp/memory/unsynchronized_pool_resource/do_allocate</a>
+</p>
+</div>

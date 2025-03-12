@@ -1,0 +1,153 @@
+ <h1 class="firstHeading" id="firstHeading">Coroutines<span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span>
+</h1> <p>Một coroutine là một chức năng có thể đình chỉ thực thi sẽ được nối lại sau. Coroutines không chồng: họ đình chỉ thực thi bằng cách trả lại cho người gọi và dữ liệu được yêu cầu để tiếp tục thực thi được lưu trữ riêng biệt với ngăn xếp. Điều này cho phép mã tuần tự thực thi không đồng bộ (ví dụ: để xử lý I/O không chặn mà không có cuộc gọi lại rõ ràng) và cũng hỗ trợ các thuật toán trên các chuỗi vô hạn được tính toán lười biếng và các cách sử dụng khác.</p>
+<p>Một chức năng là một coroutine nếu định nghĩa của nó chứa bất kỳ điều nào sau đây:</p>
+<ul><li>Biểu thức CO_AWAIT - Tạm biệt việc thực thi cho đến khi được nối lại</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Nhiệm vụ &lt;&gt; tcp_echo_server ()</pre></div> <ul><li>{</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">    Dữ liệu char [1024];</pre></div> <ul><li>    while (đúng)</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">    {</pre></div> <p>        std :: size_t n = co_await socket.async_read_some (bộ đệm (dữ liệu));</p>
+<h3 id="Restrictions">        Co_Await async_write (ổ cắm, bộ đệm (dữ liệu, n));</h3> <p>    }<a href="variadic_arguments" title="cpp/language/variadic arguments">variadic arguments</a>}<a href="return" title="cpp/language/return">return</a>Biểu thức CO_YIELD - Tắt quá trình thực thi trả về một giá trị<a href="function" title="cpp/language/function">placeholder return types</a>.<a href="auto" title="cpp/language/auto"><code>auto</code></a>hoặc<a href="constraints#Concepts" title="cpp/language/constraints">Concept</a>).</p>
+<p><a href="consteval" title="cpp/language/consteval">Consteval functions</a>Thì<a href="constexpr" title="cpp/language/constexpr">constexpr functions</a>Thì<a href="constructor" title="cpp/language/constructor">constructors</a>Thì<a href="destructor" title="cpp/language/destructor">destructors</a>, và<a href="main_function" title="cpp/language/main function">main function</a>Trình tạo &lt;unsign int&gt; iota (unsign int n = 0)</p>
+<h3 id="Execution">{</h3> <p>    while (đúng)</p>
+<ul>
+<li>các<i>        Co_Yield N ++;</i>}</li>
+<li>các<i>Tuyên bố Co_Return - Để hoàn thành thực thi trả về một giá trị</i>Lazy &lt;Int&gt; f ()</li>
+<li>các<i>{</i>    Co_Return 7;</li>
+<ul>
+<li>}</li>
+<li>Mỗi coroutine phải có một loại trả lại đáp ứng một số yêu cầu, được lưu ý dưới đây.</li>
+<li>Hạn chế</li>
+<li>Coroutines không thể sử dụng</li>
+</ul>
+</ul> <p>, đơn giản</p>
+<ul>
+<li> <a href="#Dynamic_allocation">allocates</a>tuyên bố, hoặc<code><a href="../memory/new/operator_new" title="cpp/memory/new/operator new">operator new</a></code>.</li>
+<li>không thể là coroutines.</li>
+<li>Thực thi</li>
+<li>cuộc gọi<code>promise.get_return_object()</code>Mỗi coroutine được liên kết với</li>
+<li>cuộc gọi<code>promise.initial_suspend()</code>Và<code>co_await</code>đối tượng hứa hẹn<code>Promise</code>, thao túng từ bên trong coroutine. Coroutine gửi kết quả hoặc ngoại lệ của nó thông qua đối tượng này.<code><a href="../coroutine/suspend_always" title="cpp/coroutine/suspend always">std::suspend_always</a></code>Coroutine Tay cầm<code><a href="../coroutine/suspend_never" title="cpp/coroutine/suspend never">std::suspend_never</a></code>, thao túng từ bên ngoài Coroutine. Đây là một tay cầm không thuộc sở hữu được sử dụng để tiếp tục thực hiện coroutine hoặc để phá hủy khung coroutine.</li>
+<li>Chuyển đổi danh tính:<code>co_await promise.initial_suspend()</code>Nhà nước Coroutine</li>
+</ul> <p>, đó là lưu trữ nội bộ, được phân bổ động (trừ khi phân bổ được tối ưu hóa), đối tượng chứa</p>
+<div class="cpp source-cpp"><pre data-language="cpp">đối tượng hứa hẹn</pre></div> <p>các tham số (tất cả được sao chép theo giá trị)</p>
+<ul><li>Một số đại diện của điểm đình chỉ hiện tại, để một bản lý lịch biết nơi tiếp tục và một sự phá hủy biết những biến số địa phương nào trong phạm vi</li></ul> <p>Các biến địa phương và tạm thời có suốt đời kéo dài điểm đình chỉ hiện tại.</p>
+<ul>
+<li>cuộc gọi<code>promise.return_void()</code>vì</li>
+<ul>
+<li> <code>co_return;</code> </li>
+<li> <code>co_return expr;</code>Ở đâu<code>expr</code>và kết quả của việc chuyển đổi bằng<span class="kw4">Vô hiệu</span> </li>
+</ul>
+<li>Khi một coroutine bắt đầu thực thi, nó thực hiện như sau:<code>promise.return_value(expr)</code>vì<code>co_return expr;</code>Ở đâu<code>expr</code>đối tượng trạng thái Coroutine sử dụng</li>
+<li>Các bản sao tất cả các tham số chức năng theo trạng thái Coroutine: Các tham số giá trị phụ được di chuyển hoặc sao chép, các tham số tham chiếu phụ vẫn còn lại tham chiếu (do đó, có thể trở nên lơ lửng, nếu coroutine được nối lại sau thời gian kết thúc của đối tượng được giới thiệu-xem bên dưới để biết ví dụ).</li>
+<li>cuộc gọi<code>promise.final_suspend()</code>gọi hàm tạo cho đối tượng hứa hẹn. Nếu loại hứa hẹn có một hàm tạo lấy tất cả các tham số coroutine, thì hàm tạo đó được gọi, với các đối số coroutine sau sao chép. Nếu không thì hàm tạo mặc định được gọi.</li>
+</ul> <p>và giữ kết quả trong một biến cục bộ. Kết quả của cuộc gọi đó sẽ được trả lại cho người gọi khi Coroutine lần đầu tiên đình chỉ. Bất kỳ trường hợp ngoại lệ nào được đưa lên và bao gồm bước này tuyên truyền trở lại người gọi, không được đặt vào lời hứa.<code>co_return;</code>s kết quả của nó. Đặc trưng<code>return_void</code>các loại trả về một<code>Promise</code>, cho các coroutines bắt đầu lười biếng, hoặc<span class="kw4">Vô hiệu</span>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, cho các coroutines háo hức.</pre></div> <p>Sơ yếu lý lịch, bắt đầu thực hiện cơ thể của coroutine.</p>
+<ul>
+<li>Một số ví dụ về một tham số trở nên lủng lẳng:<code>promise.unhandled_exception()</code>#include &lt;Coroutine&gt;</li>
+<li>cuộc gọi<code>promise.final_suspend()</code>#include &lt;Istream&gt;</li>
+</ul> <p> </p>
+<ul>
+<li>Cấu trúc hứa hẹn;</li>
+<li> </li>
+<li>cuộc gọi<code><a href="../memory/new/operator_delete" title="cpp/memory/new/operator delete">operator delete</a></code>Struct Coroutine: STD :: Coroutine_Handle &lt;Promise&gt;</li>
+<li>{</li>
+</ul> <h3 id="Dynamic_allocation">    sử dụng Promise_type = :: Promise;</h3> <p>};<code><a href="../memory/new/operator_new" title="cpp/memory/new/operator new">operator new</a></code>.</p>
+<p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<code>Promise</code> <code><a href="../memory/new/operator_new" title="cpp/memory/new/operator new">operator new</a></code>Cấu trúc hứa hẹn</p>
+<p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<code>Promise</code>{<code><a href="../memory/new/operator_new" title="cpp/memory/new/operator new">operator new</a></code>    Coroutine get_return_Object () {return {coroutine :: from_promise (*this)}; }<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>    std :: selad_always ban đầu_suspend () noExcept {return {}; }<code><a href="../memory/new/operator_new" title="cpp/memory/new/operator new">operator new</a></code>    std :: selad_always final_suspend () noExcept {return {}; }<a href="../memory/uses_allocator#Uses-allocator_construction" title="cpp/memory/uses allocator">leading-allocator-convention</a>    void return_void () {}</p>
+<p>Cuộc gọi đến<code><a href="../memory/new/operator_new" title="cpp/memory/new/operator new">operator new</a></code>    void chưa xử lý_exception () {}</p>
+<ul>
+<li>};</li>
+<li> </li>
+</ul> <p>cấu trúc s</p>
+<p>{<code><a href="../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>    int i;<code>Promise</code>    Coroutine f ()<span class="sy4">::</span><span class="me2">    }</span><span class="br0">.</span><span class="br0">)</span>        std :: cout &lt;&lt; i;<code><a href="../memory/new/operator_new" title="cpp/memory/new/operator new">operator new</a></code>        Co_Return;<span class="sy4">::</span><span class="me2">    }</span><span class="br0">.</span><span class="br0">)</span>};</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h3 id="Promise">void bad1 ()</h3> <p>Các<code>Promise</code>{<code><a href="../coroutine/coroutine_traits" title="cpp/coroutine/coroutine traits">std::coroutine_traits</a></code>.</p>
+<p>    coroutine h = s {0} .f ();<code>R</code>Và<code>Args...</code>    // S {0} bị phá hủy<code>ClassT</code>Và<code><i>    h.resume (); // đã nối lại coroutine thực thi std :: cout &lt;&lt; i, sử dụng S :: i sau khi miễn phí</i></code>    H.Destroy ();<code>Promise</code>}</p>
+<ul>
+<li> <code><a href="http://en.cppreference.com/w/cpp/coroutine/coroutine_traits"><span class="kw3207">Điều đó cho tất cả<span class="me2">Coroutine_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>R, Args...<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">/*giá trị*/</span></code> </li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/coroutine/coroutine_traits"><span class="kw3207">Điều đó cho tất cả<span class="me2">Coroutine_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>R, ClassT <span class="coMULTI">    S s {0};</span><span class="sy3">Không có giá trị</span>, Args...<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">/*giá trị*/</span></code>{</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/coroutine/coroutine_traits"><span class="kw3207">Điều đó cho tất cả<span class="me2">Coroutine_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>R, ClassT <span class="coMULTI">    S s {0};</span><span class="sy3">. Trong các cuộc gọi có hiệu lực</span>, Args...<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">/*giá trị*/</span></code>    trả lại s.f (); // trả về coroutine không thể được nối lại mà không sử dụng sau khi miễn phí</li>
+</ul> <p>}</p>
+<table class="wikitable"> <tr> <th> </th> <th>void bad3 ()<code>Promise</code>{</th>
+</tr> <tr> <td><code>task&lt;void&gt; foo(int x);</code></td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/coroutine/coroutine_traits"><span class="kw3207">Điều đó cho tất cả<span class="me2">Coroutine_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>task<span class="sy1">is_trivently_destructible_v</span><span class="kw4">Vô hiệu</span><span class="sy1">&lt;</span>, <span class="kw4">int</span><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">/*giá trị*/</span></code> </td>
+</tr> <tr> <td><code>task&lt;void&gt; Bar::foo(int x) const;</code></td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/coroutine/coroutine_traits"><span class="kw3207">Điều đó cho tất cả<span class="me2">Coroutine_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>task<span class="sy1">is_trivently_destructible_v</span><span class="kw4">Vô hiệu</span><span class="sy1">&lt;</span>, <span class="kw4">hằng số</span> Bar<span class="sy3">Không có giá trị</span>, <span class="kw4">int</span><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">/*giá trị*/</span></code> </td>
+</tr> <tr> <td><code>task&lt;void&gt; Bar::foo(int x) &amp;&amp;;</code></td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/coroutine/coroutine_traits"><span class="kw3207">Điều đó cho tất cả<span class="me2">Coroutine_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>task<span class="sy1">is_trivently_destructible_v</span><span class="kw4">Vô hiệu</span><span class="sy1">&lt;</span>, Bar<span class="sy3">. Trong các cuộc gọi có hiệu lực</span>, <span class="kw4">int</span><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">/*giá trị*/</span></code> </td>
+</tr>
+</table> <h3 id="co_await">    Coroutine h = [i = 0] () -&gt; Coroutine // một lambda cũng là một coroutine</h3> <p>    {<code>Promise::await_transform</code>.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>co_await</code> <span class="t-spar">struct {int c [3]; } s1, s2 = {3, 4, 5};</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>        std :: cout &lt;&lt; i;<a href="expressions#Potentially-evaluated_expressions" title="cpp/language/expressions">potentially-evaluated</a>        Co_Return;<a href="function#Function_definition" title="cpp/language/function">function body</a>    } (); // ngay lập tức được gọi</p>
+<ul>
+<li>}<a href="try_catch" title="cpp/language/try catch">exception handler</a>Thì</li>
+<li>trong a<a href="declarations" title="cpp/language/declarations">declaration</a>    // Lambda bị phá hủy</li>
+<li>trong<a href="declarations#Simple_declaration" title="cpp/language/declarations">simple declaration</a>    h.resume (); // sử dụng (loại Lambda ẩn danh) :: tôi sau khi miễn phí<span class="t-spar"> </span>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<a href="if" title="cpp/language/if"><code>if</code></a>Thì<a href="switch" title="cpp/language/switch"><code>switch</code></a>Thì<a href="for" title="cpp/language/for"><code>for</code></a>Và<a href="range-for" title="cpp/language/range-for">range-for</a>}<span class="t-spar"> </span>Thì</li>
+<li>trong a<a href="default_arguments" title="cpp/language/default arguments">default argument</a>, hoặc</li>
+<li>void tốt ()<a href="storage_duration" title="cpp/language/storage duration">storage duration</a>.</li>
+</ul> <p>{<span class="t-spar">struct {int c [3]; } s1, s2 = {3, 4, 5};</span>    Coroutine h = [] (int i) -&gt; Coroutine // biến tôi thành tham số Coroutine</p>
+<ul>
+<li>nếu như<span class="t-spar">struct {int c [3]; } s1, s2 = {3, 4, 5};</span>    {<span class="t-spar">struct {int c [3]; } s1, s2 = {3, 4, 5};</span>                // khung như tham số giá trị phụ</li>
+<li>        Co_Return;<code>Promise</code>    } (0);<code>await_transform</code>    // Lambda bị phá hủy<code>promise.await_transform(expr)</code>.</li>
+<li>    h.resume (); // không vấn đề gì, tôi đã được sao chép vào coroutine<span class="t-spar">struct {int c [3]; } s1, s2 = {3, 4, 5};</span>                // khung như tham số giá trị phụ</li>
+</ul> <p>    H.Destroy ();</p>
+<ul>
+<li>}</li>
+<ul>
+<li> <code>awaitable.operator co_await()</code>Khi một coroutine đạt đến điểm treo</li>
+<li> <code>operator co_await(static_cast&lt;Awaitable&amp;&amp;&gt;(awaitable))</code>Đối tượng trả về thu được trước đó được trả lại cho người gọi/sơ yếu lý lịch, sau khi chuyển đổi ẩn sang loại trả về của coroutine, nếu cần thiết.</li>
+</ul>
+<li>Khi một coroutine đạt đến câu lệnh CO_RETURN, nó thực hiện như sau:</li>
+<li>hoặc các cuộc gọi</li>
+</ul> <p>Có loại không thiếu<a href="value_category#prvalue" title="cpp/language/value category">prvalue</a>Phá hủy tất cả các biến với thời lượng lưu trữ tự động theo thứ tự ngược lại chúng đã được tạo.<a href="implicit_conversion#Temporary_materialization" title="cpp/language/implicit conversion">materialized</a>và co_awaits kết quả.<a href="value_category#glvalue" title="cpp/language/value category">glvalue</a>Rơi ra khỏi phần cuối của coroutine tương đương với</p>
+<p>, ngoại trừ việc hành vi không được xác định nếu không có tuyên bố<code>awaiter.await_ready()</code>có thể được tìm thấy trong phạm vi của<span class="kw4">bool</span>khoảng cách<code>false</code>phải ít nhất được đặt hàng một phần đối với</p>
+<dl>
+<dd>. Một chức năng không có từ khóa xác định nào trong cơ thể chức năng của nó không phải là một coroutine, bất kể loại trả lại của nó và giảm kết thúc với hành vi không xác định nếu loại trả về không (có thể là CV đủ điều kiện)</dd>
+<dd> <code>awaiter.await_suspend(handle)</code>// Giả sử rằng nhiệm vụ là một số loại nhiệm vụ coroutine<ul>
+<li>nếu như<code>await_suspend</code>(C ++ 20)<span class="kw4">Vô hiệu</span>Nhiệm vụ &lt;Ovid&gt; f ()</li>
+<li>nếu như<code>await_suspend</code>(C ++ 20)<span class="kw4">bool</span>Thì</li>
+<ul>
+<li>giá trị<code>true</code>{</li>
+<li>giá trị<code>false</code>    // không phải là một hành vi coroutine, không xác định</li>
+</ul>
+<li>nếu như<code>await_suspend</code>}<code>handle.resume()</code> </li>
+<li>nếu như<code>await_suspend</code>Nhiệm vụ &lt;Loid&gt; g ()</li>
+</ul> </dd>
+</dl> <p>{<code>awaiter.await_resume()</code>    Co_Return;  // ĐƯỢC RỒI<code>co_await expr</code>}</p>
+<p> <code>awaiter.await_resume()</code>.</p>
+<p>Nhiệm vụ &lt;Loid&gt; H ()<code>awaiter.await_suspend()</code>{<code>await_suspend()</code>    Co_Await g ();<code>await_suspend()</code>    // OK, Insicit Co_Return;<code>*this</code>}</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Nếu coroutine kết thúc với một ngoại lệ không bị bắt, nó sẽ thực hiện như sau:</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">bắt được ngoại lệ và cuộc gọi</pre></div> </div> <p>Từ bên trong khối bắt</p>
+<p>và co_awaits kết quả (ví dụ: để tiếp tục tiếp tục hoặc xuất bản kết quả). Đó là hành vi không xác định để tiếp tục một coroutine từ thời điểm này.<code><a href="../coroutine/suspend_always" title="cpp/coroutine/suspend always">std::suspend_always</a></code>Và<code><a href="../coroutine/suspend_never" title="cpp/coroutine/suspend never">std::suspend_never</a></code>.</p>
+<div style="margin-left:0px"> <table class="mw-collapsible mw-collapsed"> <tr> <th>Khi trạng thái Coroutine bị phá hủy vì nó bị chấm dứt thông qua Co_return hoặc Uncaught Exception hoặc vì nó đã bị phá hủy thông qua tay cầm, nó sẽ làm như sau:<span class="sy4">::</span><span class="me2">Await_transform</span>gọi kẻ phá hủy đối tượng hứa hẹn.</th>
+</tr> <tr> <td> <h3 id="Example_2">Ví dụ</h3> <div class="cpp source-cpp"><pre data-language="cpp">Gọi các bộ hủy của các bản sao tham số chức năng.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Để giải phóng bộ nhớ được sử dụng bởi Nhà nước Coroutine.</pre></div> </td>
+</tr>
+</table>
+</div> <h3 id="co_yield">Chuyển thực thi lại cho người gọi/sơ yếu lý lịch.</h3> <p><code>co_yield</code>Phân bổ động</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>co_yield</code> <span class="t-spar">struct {int c [3]; } s1, s2 = {3, 4, 5};</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>co_yield</code> <span class="t-spar">{</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Bang Coroutine được phân bổ động thông qua không phải</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Loại xác định thay thế cấp độ lớp, nó sẽ được sử dụng, nếu không thì toàn cầu</pre></div> <p>sẽ được sử dụng.<code>yield_value</code>Loại xác định một dạng vị trí của<code>co_await</code>Điều đó có các tham số bổ sung và chúng khớp với một danh sách đối số trong đó đối số đầu tiên là kích thước được yêu cầu (loại<code><a href="../coroutine/suspend_always" title="cpp/coroutine/suspend always">std::suspend_always</a></code>) và phần còn lại là các đối số chức năng coroutine, những đối số đó sẽ được chuyển cho</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">(Điều này làm cho nó có thể sử dụng</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">cho coroutines).</pre></div> </div> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_impl_coroutine" title="cpp/feature test"><code>__cpp_impl_coroutine</code></a></td> <td><span class="nu0">Chính sách thực thi</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<a href="#top">Coroutines</a>(Hỗ trợ trình biên dịch)</td>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_coroutine" title="cpp/feature test"><code>__cpp_lib_coroutine</code></a></td> <td><span class="nu0">Chính sách thực thi</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<a href="../coroutine" title="cpp/coroutine">Coroutines</a>(Hỗ trợ thư viện)</td>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_generator" title="cpp/feature test"><code>__cpp_lib_generator</code></a></td> <td><span class="nu0">202207L</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<code>std::generator</code>: Máy phát Coroutine đồng bộ cho phạm vi</td>
+</tr>
+</table> <h3 id="Library_support">có thể được tối ưu hóa (ngay cả khi người phân bổ tùy chỉnh được sử dụng) nếu</h3> <p><a href="../coroutine" title="cpp/coroutine">Coroutine support library</a>Cuộc đời của Nhà nước Coroutine hoàn toàn được lồng trong suốt cuộc đời của người gọi và</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2556.html" rel="nofollow">CWG 2556</a> </td> <td>C ++ 20</td> <td>không hợp lệ<code>return_void</code>Kích thước của khung Coroutine được biết đến tại trang web cuộc gọi.<br/>Trong trường hợp đó, trạng thái Coroutine được nhúng trong khung ngăn xếp của người gọi (nếu người gọi là hàm thông thường) hoặc trạng thái Coroutine (nếu người gọi là coroutine).</td> <td>Niềng răng xung quanh danh sách khởi tạo lồng nhau có thể được giải quyết (bỏ qua), trong trường hợp đó, nhiều điều khoản khởi tạo cần thiết được sử dụng để khởi tạo mọi thành viên hoặc phần tử của tập hợp con tương ứng và các điều khoản khởi tạo tiếp theo được sử dụng để khởi tạo các thành viên sau của đối tượng. Tuy nhiên, nếu đối tượng có tổng hợp phụ mà không có bất kỳ thành viên nào (một cấu trúc trống hoặc một cấu trúc chỉ giữ các thành viên tĩnh), không được phép giải quyết Brace<br/>phải được sử dụng.</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../coroutine/generator" title="cpp/coroutine/generator"> <span class="t-lines"><span>máy phát điện</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>MỘT<a href="../ranges/view" title="cpp/ranges/view"><code>view</code></a>đại diện cho sự đồng bộ<strong class="selflink">Nếu phân bổ thất bại, coroutine ném</strong>máy phát điện<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr style="vertical-align:top;"> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính</td> <td>, trừ khi<a class="external text" href="https://www.scs.stanford.edu/~dm/blog/c++-coroutines.html" rel="nofollow">Tutorial on C++20 coroutines.</a> </td>
+</tr> <tr style="vertical-align:top;"> <td># Xác định mất giá (MSG) [[không dùng nữa (MSG)]]]]</td> <td>Loại xác định chức năng thành viên hứa hẹn<a class="external text" href="https://lewissbaker.github.io/" rel="nofollow">Asymmetric Transfer.</a> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/coroutines">https://en.cppreference.com/w/cpp/language/coroutines</a>
+</p>
+</div>

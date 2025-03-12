@@ -1,0 +1,47 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tích lũy</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/numeric" title="cpp/header/numeric">&lt;numeric&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;class inputit, class T&gt;</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">T tích lũy (đầu vào đầu tiên, đầu vào cuối cùng, t init);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;class inputit, class T&gt;</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr t tích lũy (đầu vào đầu tiên, đầu vào cuối cùng, t init);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;class inputit, lớp T, lớp BinaryOperation&gt;<code>init</code>T tích lũy (đầu vào đầu tiên, đầu vào cuối cùng, t init,<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>(loại<code>acc</code>) với giá trị ban đầu<code>T</code>và sau đó sửa đổi nó với<code>init</code>Đối với mỗi lần lặp<span class="t-rev-inl t-until-cxx20"><span><code>acc = acc + *i</code></span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span><code>acc = std::move(acc) + *i</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>trong phạm vi<code>i</code>theo thứ tự.<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>Khởi tạo bộ tích lũy</div> <div class="t-li1">
+<span class="t-li">2)</span>(loại<code>acc</code>) với giá trị ban đầu<code>T</code>và sau đó sửa đổi nó với<code>init</code>Đối với mỗi lần lặp<span class="t-rev-inl t-until-cxx20"><span><code>acc = op(acc, *i)</code></span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span><code>acc = op(std::move(acc), *i)</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>trong phạm vi<code>i</code>theo thứ tự.<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>Khởi tạo bộ tích lũy</div> <div class="t-li1">Nếu như<code>op</code>(loại</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>Đối với mỗi lần lặp</td>
+</tr> <tr class="t-par"> <td>trong phạm vi</td> <td>-</td> <td>theo thứ tự.</td>
+</tr> <tr class="t-par"> <td>Không hợp lệ bất kỳ trình lặp nào (bao gồm cả bộ lặp cuối) hoặc sửa đổi bất kỳ yếu tố nào của phạm vi liên quan, hành vi không được xác định.</td> <td>-</td> <td>Tham số<br/> <p>Đầu tiên, cuối cùng</p>
+<p><span class="t-cc"><code> Ret fun(const Type1 &amp;a, const Type2 &amp;b);</code></span></p>
+<p>phạm vi của các phần tử để tổng<code>const &amp;</code>.<br/>init<code>Ret</code>Giá trị ban đầu của tổng<code>T</code>Op<code>Ret</code>Đối tượng chức năng hoạt động nhị phân sẽ được áp dụng.</p>
+</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>Và<a href="../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>acc</code>có thể được gán một giá trị của loại</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <th>
+<a href="#Version_1">accumulate (1)</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Loại yêu cầu</pre></div> </td>
+</tr> <tr> <th>
+<a href="#Version_2">accumulate (2)</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Phải đáp ứng các yêu cầu của</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p><code>std::accumulate</code>Phải đáp ứng các yêu cầu của<a class="extiw" href="https://en.wikipedia.org/wiki/Fold_(higher-order_function)" title="enwiki:Fold (higher-order function)">fold</a>Giá trị trả lại</p>
+<h4 id="Common_mistakes">Sau tất cả các sửa đổi.</h4> <p>Có thể thực hiện<code>op</code>Mẫu &lt;class inputit, class T&gt;<code>init</code>constexpr // kể từ C ++ 20<code>std::accumulate(v.begin(), v.end(), 0)</code>T tích lũy (đầu vào đầu tiên, đầu vào cuối cùng, t init)<code>v</code>{<a href="http://en.cppreference.com/w/cpp/container/vector"><span class="kw1272">Điều đó cho tất cả<span class="me2">Vector</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span><span class="sy1">&lt;</span>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">        init = std :: di chuyển (init) + *đầu tiên; // std :: di chuyển từ C ++ 20</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue242" rel="nofollow">LWG 242</a> </td> <td>C ++ 98</td> <td>
+<code>op</code>    trả lại init;</td> <td>}</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2055" rel="nofollow">LWG 2055</a><br/>.<a class="external text" href="https://wg21.link/P0616R0" rel="nofollow">P0616R0</a>)</td> <td>C ++ 20</td> <td>
+<code>acc</code>Mẫu &lt;class inputit, lớp T, lớp BinaryOperation&gt;</td> <td>constexpr // kể từ C ++ 20</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="adjacent_difference" title="cpp/algorithm/adjacent difference"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div> </td> <td>liền kề_diferference<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="inner_product" title="cpp/algorithm/inner product"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div> </td> <td>Nội bộ<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="partial_sum" title="cpp/algorithm/partial sum"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div> </td> <td>Partial_sum<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="reduce" title="cpp/algorithm/reduce"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(C ++ 17)<code>std::accumulate</code>Tương tự như<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ranges/fold_left" title="cpp/algorithm/ranges/fold left"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>(C ++ 23)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/accumulate">https://en.cppreference.com/w/cpp/algorithm/accumulate</a>
+</p>
+</div>

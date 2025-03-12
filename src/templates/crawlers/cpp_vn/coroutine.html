@@ -1,0 +1,36 @@
+ <h1 class="firstHeading" id="firstHeading">Hỗ trợ Coroutine<span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span>
+</h1> <p>Thư viện hỗ trợ Coroutine xác định một số loại cung cấp hỗ trợ biên dịch và thời gian chạy cho<a href="language/coroutines" title="cpp/language/coroutines">coroutines</a>.</p>
+<h3 id="Coroutine_traits">Đặc điểm Coroutine</h3> <table class="t-dsc-begin"> <tr class="t-dsc-header"> <th colspan="2">C Thư viện<code><a href="header/coroutine" title="cpp/header/coroutine">&lt;coroutine&gt;</a></code> </th>
+</tr> <tr class="t-dsc"> <td> <div><a href="coroutine/coroutine_traits" title="cpp/coroutine/coroutine traits"> <span class="t-lines"><span>Coroutine_traits</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Loại đặc điểm để khám phá các loại lời hứa coroutine<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <h3 id="Coroutine_handle">Coroutine Tay cầm</h3> <table class="t-dsc-begin"> <tr class="t-dsc-header"> <th colspan="2">C Thư viện<code><a href="header/coroutine" title="cpp/header/coroutine">&lt;coroutine&gt;</a></code> </th>
+</tr> <tr class="t-dsc"> <td> <div><a href="coroutine/coroutine_handle" title="cpp/coroutine/coroutine handle"> <span class="t-lines"><span>Coroutine_Handle</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>được sử dụng để tham khảo một coroutine lơ lửng hoặc thực hiện<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <h3 id="No-op_coroutines">Coroutines No-Op</h3> <table class="t-dsc-begin"> <tr class="t-dsc-header"> <th colspan="2">C Thư viện<code><a href="header/coroutine" title="cpp/header/coroutine">&lt;coroutine&gt;</a></code> </th>
+</tr> <tr class="t-dsc"> <td> <div><a href="coroutine/noop_coroutine" title="cpp/coroutine/noop coroutine"> <span class="t-lines"><span>Noop_coroutine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>tạo ra một tay cầm coroutine không có tác dụng quan sát được khi được tiếp tục hoặc phá hủy<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="coroutine/noop_coroutine_promise" title="cpp/coroutine/noop coroutine promise"> <span class="t-lines"><span>Noop_coroutine_promise</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>được sử dụng cho các coroutines không có hiệu ứng quan sát được<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="coroutine/coroutine_handle" title="cpp/coroutine/coroutine handle"> <span class="t-lines"><span>NOOP_COROUTINE_HANDLE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td> <code><a href="http://en.cppreference.com/w/cpp/coroutine/coroutine_handle"><span class="kw3206">Điều đó cho tất cả<span class="me2">Coroutine_Handle</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/coroutine/noop_coroutine_promise"><span class="kw3248">Điều đó cho tất cả<span class="me2">Noop_coroutine_promise</span></span></a><span class="sy1">&lt;</span></code>, dự định tham khảo một coroutine no-op<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> </table> <h3 id="Trivial_awaitables">Tầm thường đang chờ đợi</h3> <table class="t-dsc-begin"> <tr class="t-dsc-header"> <th colspan="2">C Thư viện<code><a href="header/coroutine" title="cpp/header/coroutine">&lt;coroutine&gt;</a></code> </th>
+</tr> <tr class="t-dsc"> <td> <div><a href="coroutine/suspend_never" title="cpp/coroutine/suspend never"> <span class="t-lines"><span>Tạm biệt_ever</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>chỉ ra rằng một biểu hiện đang chờ đợi không bao giờ nên đình chỉ<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="coroutine/suspend_always" title="cpp/coroutine/suspend always"> <span class="t-lines"><span>Tạm biệt_Always</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>chỉ ra rằng một biểu hiện đang chờ đợi phải luôn luôn đình chỉ<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="feature_test#cpp_impl_coroutine" title="cpp/feature test"><code>__cpp_impl_coroutine</code></a></td> <td><span class="nu0">Chính sách thực thi</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<a href="language/coroutines" title="cpp/language/coroutines">Coroutines</a>(Hỗ trợ trình biên dịch)</td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_coroutine" title="cpp/feature test"><code>__cpp_lib_coroutine</code></a></td> <td><span class="nu0">Chính sách thực thi</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<a href="#top">Coroutines</a>(Hỗ trợ thư viện)</td>
+</tr> <tr> <td><a href="feature_test#cpp_lib_generator" title="cpp/feature test"><code>__cpp_lib_generator</code></a></td> <td><span class="nu0">202207L</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<code>std::generator</code>: Máy phát điện coroutine đồng bộ cho<a href="ranges" title="cpp/ranges">ranges</a> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="coroutine/generator" title="cpp/coroutine/generator"> <span class="t-lines"><span>máy phát điện</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>MỘT<a href="ranges/view" title="cpp/ranges/view"><code>view</code></a>đại diện cho sự đồng bộ<a href="language/coroutines" title="cpp/language/coroutines">coroutine</a>máy phát điện<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/coroutine">https://en.cppreference.com/w/cpp/coroutine</a>
+</p>
+</div>

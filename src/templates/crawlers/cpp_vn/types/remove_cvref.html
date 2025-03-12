@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">std :: remove_cvref</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>struct remove_cvref;<code>T</code>Nếu loại<code>type</code>là loại tham chiếu, cung cấp cho thành viên typedef<code>T</code>loại nào được đề cập bởi<code>type</code>khoảng cách<code>T</code>với các trình điều chỉnh CV hàng đầu của nó bị loại bỏ. Nếu không thì</p>
+<p>bằng nhau<code>std::remove_cvref</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Tên</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td>với các trình điều chỉnh CV hàng đầu của nó bị loại bỏ.<code>T</code>hoặc<code>T</code>loại được giới thiệu bởi</td>
+</tr> </table> <h3 id="Helper_types">Mẫu &lt;phạm vi :: input_range r, std :: meally_incrementable o&gt;</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">chính nó nếu nó không phải là một tài liệu tham khảo, với các trình điều chỉnh CV cấp cao nhất</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_remove_cvref" title="cpp/feature test"><code>__cpp_lib_remove_cvref</code></a></td> <td><span class="nu0">là một biểu hiện mà đánh giá là</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<code>std::remove_cvref</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">sử dụng remove_cvref_t = typename remove_cvref &lt;t&gt; :: type;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="remove_cv" title="cpp/types/remove cv"> <span class="t-lines"><span>remove_cv</span><span>Remove_const</span><span>remove_volatile</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>loại bỏ<span class="kw4">hằng số</span>và/hoặc<span class="kw4">bay hơi</span>Trình xác định từ loại đã cho<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="remove_reference" title="cpp/types/remove reference"> <span class="t-lines"><span>remove_reference</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xóa một tham chiếu khỏi loại đã cho<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="decay" title="cpp/types/decay"> <span class="t-lines"><span>mục nát</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Áp dụng các biến đổi loại như khi chuyển đối số hàm theo giá trị<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/remove_cvref">https://en.cppreference.com/w/cpp/types/remove_cvref</a>
+</p>
+</div>

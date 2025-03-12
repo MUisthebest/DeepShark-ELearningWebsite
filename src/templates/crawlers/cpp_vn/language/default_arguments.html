@@ -1,0 +1,51 @@
+ <h1 class="firstHeading" id="firstHeading">Đối số mặc định</h1> <p>Cho phép một chức năng được gọi mà không cung cấp một hoặc nhiều đối số theo dõi.</p>
+<p>Được biểu thị bằng cách sử dụng cú pháp sau cho tham số trong<span class="t-spar">danh sách tham số</span>xuất hiện trong bối cảnh ngay lập tức của một khởi tạo mẫu.<a href="function" title="cpp/language/function">function declaration</a>.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">DEM-SPECIFIER-SEQ</span> <span class="t-spar">người khai báo</span> <code>=</code> <span class="t-spar">Khởi tạo</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">DEM-SPECIFIER-SEQ</span> <span class="t-spar">TÓM TẮT KIẾN TRÚC</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>=</code> <span class="t-spar">Khởi tạo</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Các đối số mặc định được sử dụng thay cho các đối số theo dõi bị thiếu trong một cuộc gọi chức năng:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">điểm void (int x = 3, int y = 4);</pre></div> <p> </p>
+<ul><li>điểm (1, 2); // điểm gọi (1, 2)</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">điểm (1);    // điểm gọi (1, 4)</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>điểm();     // Điểm gọi (3, 4)</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Trong một khai báo chức năng, sau một tham số có đối số mặc định, tất cả các tham số tiếp theo phải:</pre></div> <ul><li>Có một đối số mặc định được cung cấp trong tuyên bố này hoặc một tuyên bố trước đó từ cùng một phạm vi:</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">int x (int = 1, int); // Lỗi: Chỉ các tham số theo dõi mới có thể có các đối số mặc định</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>                     // (giả sử không có tuyên bố trước đó của x)</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>void f (int n, int k = 1);<a href="function" title="cpp/language/function">function declarations</a><span class="t-rev-inl t-since-cxx11"><span>Và<a href="lambda" title="cpp/language/lambda">lambda-expressions</a>Thì</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>void f (int n = 0, int k); // ok: đối số mặc định của `k` được cung cấp bởi<a href="typedef" title="cpp/language/typedef">typedef</a>                          // Tuyên bố trước đó trong cùng một phạm vi<a href="template_parameters#Default_template_arguments" title="cpp/language/template parameters">default template arguments</a>.</p>
+<p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">void g (int, int = 7);</pre></div> <p> <a href="inline" title="cpp/language/inline">inline</a>khoảng trống h ()</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>{</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Để kiểm soát cách giải quyết thời gian địa phương mơ hồ hoặc không tồn tại. Đi qua<a href="friend" title="cpp/language/friend">friend</a>    void g (int = 1, int); // Lỗi: không phải cùng một phạm vi</p>
+<p>Các<a href="namespace#Using-declarations" title="cpp/language/namespace">using-declarations</a>}</p>
+<div class="cpp source-cpp"><pre data-language="cpp">... Trừ khi tham số được mở rộng từ gói tham số:</pre></div> <p>Mẫu &lt;class ... t&gt;<a href="access" title="cpp/language/access">accessibility</a>struct c {void f (int n = 0, t ...); };</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>C &lt;tint&gt; C;  // ĐƯỢC RỒI; Instantiates Tuyên bố void C :: F (int n = 0, int)<a href="member_functions" title="cpp/language/member functions">member function</a>hoặc là một gói tham số chức năng:<a href="templates#Templated_entity" title="cpp/language/templates">templated</a>Mẫu &lt;class ... t&gt;<span class="t-rev-inl t-since-cxx11"><span>/di chuyển</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>void H (int i = 0, t ... args); // ĐƯỢC RỒI</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Ellipsis không phải là một tham số và do đó có thể tuân theo một tham số với đối số mặc định:</pre></div> <p>int g (int n = 0, ...); // ĐƯỢC RỒI<a href="virtual" title="cpp/language/virtual">virtual</a>Đối số mặc định chỉ được phép trong danh sách tham số của<a class="external text" href="http://www.gotw.ca/publications/mill18.htm" rel="nofollow">non-virtual interface</a>và không được phép trong các tuyên bố của con trỏ cho các chức năng, tham chiếu đến các chức năng hoặc trong</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Tuyên bố. Danh sách tham số mẫu sử dụng cú pháp tương tự cho</pre></div> <p>Đối với các chức năng không phải bảng, các đối số mặc định có thể được thêm vào một hàm đã được khai báo nếu hàm được xác định lại trong cùng một phạm vi. Tại điểm của một cuộc gọi hàm, các đối số mặc định là một kết hợp của các đối số mặc định được cung cấp trong tất cả các khai báo hiển thị cho hàm. Việc tái cấu trúc không thể giới thiệu một đối số mặc định cho một tham số mà đối số mặc định đã được hiển thị (ngay cả khi giá trị giống nhau). Việc khai báo lại trong phạm vi bên trong không có được các đối số mặc định từ phạm vi bên ngoài.<a href="expressions#Potentially-evaluated_expressions" title="cpp/language/expressions">not evaluated</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void f (int, int);     // #1</pre></div> <p>Các<a href="this" title="cpp/language/this">this</a>void f (int, int = 7); // #2 OK: Thêm đối số mặc định</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>khoảng trống h ()</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    f (3); // #1 và #2 nằm trong phạm vi; Gọi cho F (3,7)<a href="expressions#Potentially-evaluated_expressions" title="cpp/language/expressions">not evaluated</a>    void f (int = 1, int); // Lỗi: đối số mặc định của thứ hai<a href="scope" title="cpp/language/scope">scope</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">                          // tham số không được thu được từ phạm vi bên ngoài</pre></div> <p>}</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>void m ()</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{// Phạm vi mới bắt đầu</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <p><a href="member_functions#Explicit_object_parameter" title="cpp/language/member functions">Explicit object parameters</a>    void f (int, int); // Tuyên bố phạm vi bên trong; không có đối số mặc định.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    f (4); // Lỗi: Không đủ đối số để gọi F (int, int)</pre></div> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h3 id="Note">điều đó làm cho phạm vi đó bằng phạm vi</h3> <p>    void f (int, int = 6);</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    f (4); // OK: gọi F (4, 6);</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/217.html" rel="nofollow">CWG 217</a> </td> <td>C ++ 98</td> <td>    void f (int, int = 6); // lỗi: tham số thứ hai đã có một<br/>                          // Đối số mặc định (ngay cả khi các giá trị giống nhau)</td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1344.html" rel="nofollow">CWG 1344</a> </td> <td>C ++ 98</td> <td>}<br/> </td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1716.html" rel="nofollow">CWG 1716</a> </td> <td>C ++ 98</td> <td>void f (int = 1, int); // #3 ok, thêm một đối số mặc định vào #2<br/> </td> <td>khoảng trống n ()<br/>{// Phạm vi mới bắt đầu<br/>    f (); // #1, #2 và #3 nằm trong phạm vi: gọi F (1, 7);</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2082.html" rel="nofollow">CWG 2082</a> </td> <td>C ++ 98</td> <td>}<br/>Nếu một</td> <td>Hàm được khai báo trong các đơn vị dịch khác nhau, các tập hợp các đối số mặc định được tích lũy phải giống nhau ở cuối mỗi đơn vị dịch.<br/>Nếu một hàm không phải đường viền được khai báo trong cùng một phạm vi không gian tên trong các đơn vị dịch khác nhau, các đối số mặc định tương ứng phải giống nhau nếu có (nhưng một số đối số mặc định có thể không có trong một số TU).</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2233.html" rel="nofollow">CWG 2233</a> </td> <td>C ++ 11</td> <td>Tuyên bố chỉ định một đối số mặc định, nó phải là định nghĩa hàm bạn bè và không có tuyên bố nào khác của hàm này được cho phép trong đơn vị dịch.<br/>Mang qua tập hợp các đối số mặc định đã biết và nếu thêm các đối số mặc định được thêm vào sau đó vào không gian tên của hàm, các đối số mặc định đó cũng có thể hiển thị ở bất cứ đâu, việc sử dụng việc khai báo có thể hiển thị:</td> <td>cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2683.html" rel="nofollow">CWG 2683</a> </td> <td>C ++ 98</td> <td>không gian tên n<br/>{</td> <td>bị cấm</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/default_arguments">https://en.cppreference.com/w/cpp/language/default_arguments</a>
+</p>
+</div>

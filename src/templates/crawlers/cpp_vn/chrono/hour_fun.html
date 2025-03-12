@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Chrono :: IS_AM, STD :: Chrono :: IS_PM, std :: Chrono :: Make12, std :: Chrono :: Make24</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/chrono" title="cpp/header/chrono">&lt;chrono&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr bool is_am (const std :: Chrono :: giờ &amp; h) noexcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr bool is_pm (const std :: Chrono :: giờ &amp; h) noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr std :: Chrono :: giờ Make12 (const std :: Chrono :: giờ &amp; h) noexcept;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Constexpr std :: Chrono :: Giờ Make24 (const std :: Chrono :: HOÀN HÀNG &amp; H,</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>                                     bool is_pm) noExcept;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Các chức năng này hỗ trợ dịch từ thời gian định dạng 12 giờ trong ngày và thời gian định dạng 24 giờ trong ngày.<i>Phát hiện liệu thời gian định dạng 24 giờ là A.M. (</i>Ante Meridiem</div> <div class="t-li1">
+<span class="t-li">2)</span>, trước giữa trưa).<i>Phát hiện xem thời gian định dạng 24 giờ là p.m. .</i>Đăng Meridiem</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>, sau giữa trưa).</div> <div class="t-li1">
+<span class="t-li">là trong</span>Trả về 12 giờ tương đương với thời gian định dạng 24 giờ.<code>h</code>là<code>is_pm</code>Trả lại tương đương 24 giờ của thời gian định dạng 12 giờ</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Xác định xem thời gian là P.M.</td> <td>-</td> <td>h</td>
+</tr> <tr class="t-par"> <td>IS_PM</td> <td>-</td> <td>Thời gian định dạng 12 giờ hoặc 24 giờ để phát hiện</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>0h &lt;= h &amp;&amp; h &lt;= 11h</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>12h &lt;= h &amp;&amp; h &lt;= 23h</code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Nếu như<code>h</code>. Nếu không, giá trị trả về không xác định.<code>[</code><code>0h</code><code>, </code><code>23h</code><code>]</code>là trong phạm vi<code>[</code><code>1h</code><code>, </code><code>12h</code><code>]</code>, trả về phạm vi tương đương 12 giờ</div> <div class="t-li1">
+<span class="t-li">là trong</span>Nếu như<code>h</code>. Nếu không, giá trị trả về không xác định.<code>[</code><code>1h</code><code>, </code><code>12h</code><code>]</code>là trong phạm vi<code>[</code><code>0h</code><code>, </code><code>11h</code><code>]</code>nếu như<code>is_pm</code>khoảng cách<code>false</code>, trả về phạm vi tương đương 24 giờ trong phạm vi<code>[</code><code>12h</code><code>, </code><code>23h</code><code>]</code>, hoặc trong phạm vi</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">nếu không thì. Nếu không, giá trị trả về không xác định.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Brono&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/hour_fun">https://en.cppreference.com/w/cpp/chrono/hour_fun</a>
+</p>
+</div>

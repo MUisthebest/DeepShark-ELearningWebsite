@@ -1,0 +1,118 @@
+ <h1 class="firstHeading" id="firstHeading">Lớp học</h1> <p>Một lớp là một loại do người dùng xác định.</p>
+<p>Một loại lớp được xác định bởi trình phân loại lớp, xuất hiện trong<span class="t-spar">DEM-SPECIFIER-SEQ</span>của<a href="declarations" title="cpp/language/declarations">declaration</a>Cú pháp. Nhìn thấy<a href="class" title="cpp/language/class">class declaration</a>Đối với cú pháp của trình xác định lớp.</p>
+<p>Một lớp có thể có các loại thành viên sau:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Thành viên dữ liệu:</div> <div class="t-li2">
+<span class="t-li">}</span> <a href="data_members" title="cpp/language/data members">non-static data members</a>, bao gồm<a href="bit_field" title="cpp/language/bit field">bit-fields</a>.</div> <div class="t-li2">
+<span class="t-li">{</span> <a href="static#Static_data_members" title="cpp/language/static">static data members</a>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Chức năng thành viên:</div> <div class="t-li2">
+<span class="t-li">}</span> <a href="member_functions" title="cpp/language/member functions">non-static member functions</a>
+</div> <div class="t-li2">
+<span class="t-li">{</span> <a href="static#Static_member_functions" title="cpp/language/static">static member functions</a>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Các loại lồng nhau:</div> <div class="t-li2">
+<span class="t-li">}</span> <a class="mw-redirect" href="nested_classes" title="cpp/language/nested classes">nested classes</a>Và<a href="enum" title="cpp/language/enum">enumerations</a>được xác định trong định nghĩa lớp</div> <div class="t-li2">
+<span class="t-li">{</span>Bí danh của các loại hiện có, được xác định với<a href="typedef" title="cpp/language/typedef"><code>typedef</code></a> <span class="t-rev-inl t-since-cxx11"><span>hoặc<a href="type_alias" title="cpp/language/type alias">type alias</a> </span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Tuyên bố</div> <div class="t-li2">
+<span class="t-li">}</span>Tên của lớp trong định nghĩa riêng của nó hoạt động như một bí danh thành viên công cộng của chính nó cho mục đích<a href="unqualified_lookup#Injected_class_name" title="cpp/language/unqualified lookup">lookup</a>(ngoại trừ khi được sử dụng để đặt tên cho một<a href="constructor" title="cpp/language/constructor">constructor</a>): Điều này được gọi là<i><a href="injected-class-name" title="cpp/language/injected-class-name">injected-class-name</a></i>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span> <a href="enum" title="cpp/language/enum">enumerators</a>từ tất cả các bảng điều khiển không được xác định trong lớp<span class="t-rev-inl t-since-cxx20"><span>, hoặc được giới thiệu bởi<a href="using_declaration" title="cpp/language/using declaration">using-declarations</a>hoặc<a href="enum#Using-enum-declaration" title="cpp/language/enum">using-enum-declarations</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <a href="member_template" title="cpp/language/member template">member templates</a>.<span class="t-rev-inl t-since-cxx14"><span>các mẫu thay đổi,</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>Các mẫu lớp hoặc mẫu chức năng) có thể xuất hiện trong phần thân của bất kỳ lớp/cấu trúc/liên minh nào.</div> <p>Tất cả các thành viên được xác định cùng một lúc trong định nghĩa lớp, họ không thể được thêm vào một lớp đã được xác định (không giống như các thành viên của không gian tên)</p>
+<p>Một thành viên của một lớp học<code>T</code>không thể sử dụng<code>T</code>như tên của nó nếu thành viên là</p>
+<ul>
+<li>một thành viên dữ liệu tĩnh,</li>
+<li>một chức năng thành viên,</li>
+<li>một loại thành viên,</li>
+<li>một mẫu thành viên,</li>
+<li>một người liệt kê của một sự liệt kê<span class="t-rev-inl t-since-cxx11"><span>(Trừ khi sự liệt kê được phạm vi)</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>, hoặc</li>
+<li>một thành viên của một thành viên liên minh ẩn danh.</li>
+</ul> <p>Tuy nhiên, một thành viên dữ liệu không tĩnh có thể sử dụng tên<code>T</code>Miễn là không có nhà xây dựng do người dùng giải khai.</p>
+<p>Một lớp có ít nhất một<a href="virtual" title="cpp/language/virtual">virtual</a>Hàm thành viên là<i>đa hình</i>. Đối tượng thuộc loại này là<a href="object#Polymorphic_objects" title="cpp/language/object">polymorphic objects</a>và có thông tin loại thời gian chạy được lưu trữ như một phần của biểu diễn đối tượng, có thể được truy vấn với<a href="dynamic_cast" title="cpp/language/dynamic cast"><code>dynamic_cast</code></a>Và<a href="typeid" title="cpp/language/typeid"><code>typeid</code></a>. Chức năng thành viên ảo tham gia vào ràng buộc động.</p>
+<p>Một lớp có ít nhất một chức năng thành viên ảo thuần túy được khai báo hoặc kế thừa là<a href="abstract_class" title="cpp/language/abstract class">abstract class</a>. Các đối tượng thuộc loại này không thể được tạo ra.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Một lớp học với một<a href="constexpr" title="cpp/language/constexpr">constexpr</a>Constructor là a<a href="../named_req/literaltype" title="cpp/named req/LiteralType">LiteralType</a>: các đối tượng thuộc loại này có thể được thao túng bởi<a href="constexpr" title="cpp/language/constexpr">constexpr</a>Chức năng tại thời điểm biên dịch.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Properties_of_classes">Tính chất của các lớp</h3> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <h4 id="Trivially_copyable_class">Lớp học có thể sao chép tầm thường</h4> <p>MỘT<i>Lớp học có thể sao chép tầm thường</i>là một lớp học</p>
+<ul>
+<li>có ít nhất một<a href="copy_constructor#Eligible_copy_constructor" title="cpp/language/copy constructor">copy constructor</a>Thì<a href="move_constructor#Eligible_move_constructor" title="cpp/language/move constructor">move constructor</a>Thì<a href="copy_assignment#Eligible_copy_assignment_operator" title="cpp/language/copy assignment">copy assignment operator</a>, hoặc<a href="move_assignment#Eligible_move_assignment_operator" title="cpp/language/move assignment">move assignment operator</a>Thì</li>
+<li>Mỗi hàm tạo bản sao đủ điều kiện là<a href="copy_constructor#Trivial_copy_constructor" title="cpp/language/copy constructor">trivial</a> </li>
+<li>Mỗi hàm tạo di chuyển đủ điều kiện là<a href="move_constructor#Trivial_move_constructor" title="cpp/language/move constructor">trivial</a> </li>
+<li>Mỗi toán tử phân công bản sao đủ điều kiện là<a href="copy_assignment#Trivial_copy_assignment_operator" title="cpp/language/copy assignment">trivial</a> </li>
+<li>Mỗi toán tử phân công di chuyển đủ điều kiện là<a href="move_assignment#Trivial_move_assignment_operator" title="cpp/language/move assignment">trivial</a>, Và</li>
+<li>có một không bị xóa<a href="destructor#Trivial_destructor" title="cpp/language/destructor">trivial destructor</a>.</li>
+</ul> <h4 id="Trivial_class">Lớp học tầm thường</h4> <p>MỘT<i>Lớp học tầm thường</i>là một lớp học</p>
+<ul>
+<li>có thể sao chép một cách tầm thường, và</li>
+<li>có một hoặc nhiều<a href="default_constructor#Eligible_default_constructor" title="cpp/language/default constructor">eligible default constructors</a>sao cho mỗi<a href="default_constructor#Trivial_default_constructor" title="cpp/language/default constructor">trivial</a>.</li>
+</ul> <h4 id="Standard-layout_class">Lớp tiêu chuẩn</h4> <p>MỘT<i>Lớp tiêu chuẩn</i>là một lớp học</p>
+<ul>
+<li>T Atomic_fetch_add_explicit (std :: Atomic &lt;t&gt;* obj,<a href="data_members" title="cpp/language/data members">non-static data members</a>loại lớp không chuẩn (hoặc mảng các loại đó) hoặc tham chiếu,</li>
+<li>T Atomic_fetch_add_explicit (std :: Atomic &lt;t&gt;* obj,<a href="virtual" title="cpp/language/virtual">virtual functions</a>Và không<a href="derived_class#Virtual_base_classes" title="cpp/language/derived class">virtual base classes</a>Thì</li>
+<li>có cùng<a href="access" title="cpp/language/access">access control</a>Đối với tất cả các thành viên dữ liệu phi tĩnh,</li>
+<li>không có các lớp cơ sở không chuẩn,</li>
+<li>chỉ một lớp trong hệ thống phân cấp có các thành viên dữ liệu phi tĩnh và</li>
+<li>Không chính thức, không có lớp cơ sở nào có cùng loại với thành viên dữ liệu không tĩnh đầu tiên. Hoặc, chính thức: Cho lớp là S, không có phần tử của tập hợp các loại M (s) làm lớp cơ sở, trong đó m (x) cho loại X được xác định là:</li>
+<ul>
+<li>Nếu X là loại lớp không liên minh không có thành viên dữ liệu không tĩnh (có thể được kế thừa), thì SET M (X) không trống.</li>
+<li>Nếu X là loại loại không liên kết có thành viên dữ liệu không tĩnh đầu tiên có loại X0 (trong đó thành viên nói có thể là một liên minh ẩn danh), thì Set M (x) bao gồm X0 và ​​các yếu tố của M (X0).</li>
+<li>Nếu X là loại liên kết, tập hợp M (x) là kết hợp của tất cả M (UI) và tập hợp chứa tất cả UI, trong đó mỗi UI là loại thành viên dữ liệu không tĩnh của X.</li>
+<li>Nếu X là loại mảng có loại phần tử XE, thì SET m (x) bao gồm XE và các phần tử của M (XE).</li>
+<li>Nếu x là loại không phải lớp, không phải, thì S tập M (x) trống.</li>
+</ul>
+</ul> <p>MỘT<i>Cấu trúc tiêu chuẩn</i>là một lớp tiêu chuẩn được xác định với từ khóa lớp<a href="../keyword/struct" title="cpp/keyword/struct"><code>struct</code></a>hoặc từ khóa lớp<a href="../keyword/class" title="cpp/keyword/class"><code>class</code></a>. MỘT<i>Liên minh tiêu chuẩn</i>là một lớp tiêu chuẩn được xác định với từ khóa lớp<a href="../keyword/union" title="cpp/keyword/union"><code>union</code></a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Implicit-lifetime_class">Lớp học thời gian ẩn</h4> <p>MỘT<i>Lớp học thời gian ẩn</i>là một lớp học</p>
+<ul>
+<li> <a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate</a>người phá hủy không<span class="t-rev-inl t-until-cxx11"><span>Người dùng bị tuyên bố</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span><a href="function#User-provided_functions" title="cpp/language/function">user-provided</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>, hoặc</li>
+<li>có ít nhất một hàm tạo điều kiện đủ điều kiện tầm thường và một chất phá hủy tầm thường, không bị xóa.</li>
+</ul> <p>Ghi chú: Thuộc tính thời gian bán thời gian được làm rõ bằng báo cáo khiếm khuyết<a class="external text" href="https://wg21.link/P0593R6" rel="nofollow">P0593R6</a>.</p>
+<h4 id="POD_class">Lớp pod</h4> <p>MỘT<i>Lớp pod</i>là một lớp học</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <ul>
+<li> <a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate</a>Thì</li>
+<li>Không có toán tử gán bản sao được giải tán người dùng,</li>
+<li>không có kẻ phá hủy do người dùng phát hành và</li>
+<li>Không có thành viên dữ liệu không tĩnh thuộc loại loại POD (hoặc mảng thuộc loại đó) hoặc tham chiếu.</li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>là một lớp học tầm thường,</li>
+<li>là một lớp học tiêu chuẩn, và</li>
+<li>Không có thành viên dữ liệu không tĩnh thuộc loại loại POD (hoặc mảng các loại đó).</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>MỘT<i>Pod Struct</i>là một lớp pod không liên kết. MỘT<i>Pod Union</i>là một liên minh là một lớp pod.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Việc sử dụng thuộc tính POD không được chấp nhận. Mã người dùng nên mong đợi hoặc yêu cầu<a href="#Trivial_class">trivial</a>hoặc<a href="#Standard-layout_class">standard-layout</a>tài sản, hoặc cả hai.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/148.html" rel="nofollow">CWG 148</a> </td> <td>C ++ 98</td> <td>Các lớp Pod không thể chứa con trỏ cho thành viên,<br/>những loại pod (vô hướng) của chúng là</td> <td>Hạn chế bị loại bỏ</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/383.html" rel="nofollow">CWG 383</a> </td> <td>C ++ 98</td> <td>sao chép các toán tử phân công hoặc bộ hủy diệt có thể<br/>Người dùng được tuyên bố trong các lớp Pod nếu chúng không được xác định</td> <td>không được phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1363.html" rel="nofollow">CWG 1363</a> </td> <td>C ++ 11</td> <td>một lớp có cả hai hàm tạo mặc định tầm thường và không tầm thường<br/>Các hàm tạo mặc định cùng một lúc có thể là tầm thường</td> <td>nó là không tầm thường</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1496.html" rel="nofollow">CWG 1496</a> </td> <td>C ++ 11</td> <td>một lớp chỉ có các hàm tạo<br/>Tất cả đều được định nghĩa là bị xóa có thể là tầm thường</td> <td>nó là không tầm thường</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1672.html" rel="nofollow">CWG 1672</a> </td> <td>C ++ 11</td> <td>Một lớp học có thể là một lớp học tiêu chuẩn<br/>Nếu nó có nhiều lớp cơ sở trống</td> <td>Nó không phải là một lớp học tiêu chuẩn</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1734.html" rel="nofollow">CWG 1734</a> </td> <td>C ++ 11</td> <td>một lớp có thể sao chép tầm thường không thể có không tầm thường<br/>Đã xóa Sao chép/Di chuyển Trình điều khiển/Trình vận hành phân công</td> <td>có thể tầm thường nếu bị xóa</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1813.html" rel="nofollow">CWG 1813</a> </td> <td>C ++ 11</td> <td>một lớp không bao giờ là một lớp học tiêu chuẩn nếu nó có<br/>lớp cơ sở kế thừa một thành viên dữ liệu không tĩnh</td> <td>Nó có thể là một lớp học tiêu chuẩn</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1881.html" rel="nofollow">CWG 1881</a> </td> <td>C ++ 11</td> <td>cho một lớp học tiêu chuẩn và các lớp cơ sở của nó,<br/>các trường bit không tên có thể được khai báo trong một<br/>Lớp khác nhau khai báo các thành viên dữ liệu</td> <td>Tất cả các thành viên dữ liệu không tĩnh<br/>và trường bit cần phải là đầu tiên<br/>được tuyên bố trong cùng một lớp</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1909.html" rel="nofollow">CWG 1909</a> </td> <td>C ++ 98</td> <td>Một mẫu thành viên có thể có cùng tên với lớp của nó</td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2120.html" rel="nofollow">CWG 2120</a> </td> <td>C ++ 11</td> <td>định nghĩa của m (x) trong việc xác định một tiêu chuẩn-<br/>lớp bố cục không xem xét trường hợp của<br/>một lớp có thành viên đầu tiên là một mảng</td> <td>đã giải quyết trường hợp này trong<br/>Định nghĩa của M (x)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2605.html" rel="nofollow">CWG 2605</a> </td> <td>C ++ 98</td> <td>Một lớp học thời gian không tin cậy có thể có chất hủy diệt do người dùng cung cấp</td> <td>bị cấm</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/classes">https://en.cppreference.com/w/cpp/language/classes</a>
+</p>
+</div>

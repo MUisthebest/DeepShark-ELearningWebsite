@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Allocator &lt;T&gt; :: max_size</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">size_type max_size () const ném ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">size_type max_size () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(không được dùng trong C ++ 17)</span> <br/><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td> </tr> </table> <p>Trả về giá trị có thể về mặt lý thuyết tối đa của<code>n</code>, mà cuộc gọi<code><a href="allocate" title="cpp/memory/allocator/allocate">allocate</a>(n, 0)</code>có thể thành công.</p>
+<p>Trong hầu hết các triển khai, điều này trở lại<code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>size_type<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Được xác định trong tiêu đề</span><span class="br0">.</span><span class="br0">)</span> <span class="sy2">/</span> sizeof<span class="br0">.</span>value_type<span class="br0">)</span></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Kích thước phân bổ hỗ trợ tối đa.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../allocator_traits/max_size" title="cpp/memory/allocator traits/max size"> <span class="t-lines"><span>trả về một trình lặp ngược lại cho đầu</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>phá hủy một đối tượng được lưu trữ trong bộ nhớ được phân bổ<br/> <span class="t-mark">(Chức năng thành viên tĩnh công khai của<code>std::allocator_traits&lt;Alloc&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/allocator/max_size">https://en.cppreference.com/w/cpp/memory/allocator/max_size</a>
+</p>
+</div>

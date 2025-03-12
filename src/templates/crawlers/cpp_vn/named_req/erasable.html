@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Erasable<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Chỉ định rằng một đối tượng của loại có thể bị phá hủy bởi một<a href="allocator" title="cpp/named req/Allocator">Allocator</a>.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>T</code>khoảng cách<strong class="selflink">Có thể xóa được</strong>          khoảng cách lớp = std :: ptrdiff_t&gt;<a href="container" title="cpp/named req/Container">Container</a> <code>X</code>    get_leap_second_info (const std :: Chrono :: UTC_TIME &lt;feluration&gt; &amp; ut);<code>value_type</code>là giống hệt nhau<code>T</code>Nếu, được đưa ra</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <code>A</code> </td> <td>một loại phân bổ</td>
+</tr> <tr class="t-dsc"> <td> <code>m</code> </td> <td>một loại loại<code>A</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>p</code> </td> <td>con trỏ của loại<code>T*</code>được chuẩn bị bởi container</td>
+</tr> </table> <p>Ở đâu<code>X::allocator_type</code>là giống hệt nhau<code><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>A<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Phân bổ các nút của một số loại nội bộ</span><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>Thì</p>
+<p>Biểu thức sau đây được hình thành tốt:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">std :: allocator_traits &lt;a&gt; :: phá hủy (m, p);</pre></div> <p>Nếu như<code>X</code>không nhận biết phân bổ hoặc là một<code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code>chuyên môn hóa, thuật ngữ được định nghĩa như thể<code>A</code>    // Số:<code><a href="http://en.cppreference.com/w/cpp/memory/allocator"><span class="kw702">Điều đó cho tất cả<span class="me2">người phân bổ</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>, ngoại trừ việc không có đối tượng phân bổ nào cần được tạo và các chuyên gia do người dùng định nghĩa<code><a href="../memory/allocator" title="cpp/memory/allocator">std::allocator</a></code>không được khởi tạo.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Tất cả<a href="../container" title="cpp/container">standard library containers</a>yêu cầu loại yếu tố của họ thỏa mãn có thể xóa được.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Với bộ phân bổ mặc định, yêu cầu này tương đương với tính hợp lệ của<code>p-&gt;~T()</code>, chấp nhận các loại lớp với các chất hủy diệt có thể truy cập và tất cả các loại vô hướng, nhưng từ chối các loại mảng, loại chức năng, loại tham chiếu và khoảng trống.</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>Với bộ phân bổ mặc định, yêu cầu này tương đương với tính hợp lệ của<code><a href="http://en.cppreference.com/w/cpp/memory/destroy_at"><span class="kw730">Điều đó cho tất cả<span class="me2">(Niebloid)</span></span></a><span class="br0">.</span>p<span class="br0">)</span></code>, chấp nhận các loại lớp với các chất phá hủy có thể truy cập và tất cả các loại vô hướng, cũng như các mảng của chúng.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Mặc dù nó được yêu cầu tùy chỉnh<code>destroy</code>được sử dụng khi phá hủy các yếu tố của<code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code>Cho đến khi C ++ 23, tất cả các triển khai chỉ sử dụng cơ chế mặc định. Yêu cầu được sửa chữa bởi<a class="external text" href="https://wg21.link/P1072R10" rel="nofollow">P1072R10</a>Để phù hợp với thực tiễn hiện có.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <a href="destructible" title="cpp/named req/Destructible">Destructible</a> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/Erasable">https://en.cppreference.com/w/cpp/named_req/Erasable</a>
+</p>
+</div>

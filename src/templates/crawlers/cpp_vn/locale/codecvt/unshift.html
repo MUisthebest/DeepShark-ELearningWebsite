@@ -1,0 +1,36 @@
+ <h1 class="firstHeading" id="firstHeading">std :: codecvt &lt;internt, externt, statet&gt; :: unshift, do_unshift</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Kết quả Unshift (Statet &amp; State, Externt* to, Externt* to_end,</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>được bảo vệ:<code>do_unshift</code>Virtual POS_Type Seekoff (Off_Type TẮT, STD :: IOS_BASE :: SeekDir Dir,</div> <div class="t-li1">
+<span class="t-li">2)</span>                Externt*&amp; to_next) const;<code>codecvt</code>được bảo vệ:<code>state</code>Kết quả ảo do_unshift (Statet &amp; State, Externt* to, externt* to_end,<code>to</code>                           Externt*&amp; to_next) const;<code>to_end - to</code>Nếu mã hóa được biểu thị bởi điều này<code>to_next</code>Facet phụ thuộc vào nhà nước và</div> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một giá trị của loại<code><a href="../codecvt_base" title="cpp/locale/codecvt base">std::codecvt_base::result</a></code>                      Internt*&amp; to_next) const;</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <code>ok</code> </td> <td>Đại diện cho trạng thái chuyển đổi không phải là trạng thái thay đổi ban đầu, viết các ký tự cần thiết để trở về trạng thái thay đổi ban đầu. Các ký tự được viết vào một mảng ký tự có phần tử đầu tiên được chỉ ra bởi<code>state</code>. Không hơn gì</td>
+</tr> <tr class="t-dsc"> <td> <code>partial</code> </td> <td>ký tự được viết. Tham số<code>to_next == to_end</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>error</code> </td> <td>được cập nhật để chỉ ra một quá khứ nhân vật cuối cùng được viết.</td>
+</tr> <tr class="t-dsc"> <td> <code>noconv</code> </td> <td>Tất cả các nhân vật cần thiết đã được viết.</td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>bây giờ đại diện cho trạng thái thay đổi ban đầu<code><a href="../../io/basic_filebuf/close" title="cpp/io/basic filebuf/close">std::basic_filebuf::close()</a></code>Không đủ không gian trong bộ đệm đầu ra.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue305" rel="nofollow">LWG 305</a> </td> <td>C ++ 98</td> <td>
+<a href="http://en.cppreference.com/w/cpp/locale/codecvt"><span class="kw1943">Điều đó cho tất cả<span class="me2">CODECVT</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">wchar_t</span>Thì<span class="kw4">char</span>Thì<a href="http://en.cppreference.com/w/cpp/string/multibyte/mbstate_t"><span class="kw1182">Điều đó cho tất cả<span class="me2">mbstate_t</span></span></a><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">, chẳng hạn như khi ghi vào tệp</span><br/>không bắt buộc phải hợp lệ, và</td> <td>    trả lại (a &lt;b)? B: A;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue380" rel="nofollow">LWG 380</a> </td> <td>C ++ 98</td> <td>Mã hóa không phụ thuộc vào trạng thái, không cần thiết<code>partial</code>Hàm này được gọi bởi<br/>và trong các tình huống khác khi hoàn thiện trình tự ký tự đa nhân phụ thuộc trạng thái.</td> <td>được yêu cầu không viết bất kỳ nhân vật nào<br/>Ý nghĩa của việc trở lại</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue381" rel="nofollow">LWG 381</a> </td> <td>C ++ 98</td> <td>
+<code>state</code>là 'nhiều nhân vật cần phải<br/><code>error</code>(một phần sau không cần phải tiếp giáp).<code>state</code>được cung cấp để chấm dứt hoàn toàn ', nhưng không có nhân vật nào được cung cấp</td> <td>
+<code>state</code>sửa chữa để chỉ ra<br/>(loại con trỏ tới loại chức năng):<code>error</code>Không đủ không gian đệm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue664" rel="nofollow">LWG 664</a> </td> <td>C ++ 98</td> <td>
+<a href="http://en.cppreference.com/w/cpp/locale/codecvt"><span class="kw1943">Điều đó cho tất cả<span class="me2">CODECVT</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">char</span>Thì<span class="kw4">char</span>Thì<a href="http://en.cppreference.com/w/cpp/string/multibyte/mbstate_t"><span class="kw1182">Điều đó cho tất cả<span class="me2">mbstate_t</span></span></a><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">, chẳng hạn như khi ghi vào tệp</span><br/>không bắt buộc phải hợp lệ, và</td> <td>    trả lại (a &lt;b)? B: A;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue665" rel="nofollow">LWG 665</a> </td> <td>C ++ 98</td> <td>
+<a href="http://en.cppreference.com/w/cpp/locale/codecvt"><span class="kw1943">Điều đó cho tất cả<span class="me2">CODECVT</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">char</span>Thì<span class="kw4">char</span>Thì<a href="http://en.cppreference.com/w/cpp/string/multibyte/mbstate_t"><span class="kw1182">Điều đó cho tất cả<span class="me2">mbstate_t</span></span></a><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">, chẳng hạn như khi ghi vào tệp</span><br/>Các ký tự được tạo ra, hoặc một lỗi chuyển đổi đã xảy ra.<code>noconv</code> </td> <td>    trả lại (a &lt;b)? B: A;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../string/multibyte/wcrtomb" title="cpp/string/multibyte/wcrtomb"> <span class="t-lines"><span>Wcrtomb</span></span></a></div> </td> <td>Chuyển đổi một ký tự rộng thành đại diện đa dạng của nó, được đưa ra trạng thái<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="out" title="cpp/locale/codecvt/out"> <span class="t-lines"><span>nhận dạng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>DO_OUT<code>InternT</code>ĐẾN<code>ExternT</code>của địa điểm<br/> <span class="t-mark">(Hàm thành viên được bảo vệ ảo)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/codecvt/unshift">https://en.cppreference.com/w/cpp/locale/codecvt/unshift</a>
+</p>
+</div>

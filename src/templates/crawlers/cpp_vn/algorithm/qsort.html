@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">std :: qsort</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/cstdlib" title="cpp/header/cstdlib">&lt;cstdlib&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">void Qsort (void *ptr, std :: size_t đếm,</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">               std :: size_t size, /* c-compare-pred* /* comp);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark t-mark-expos">.<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">    .</span>)</span> </td> </tr> </table> <p>            std :: size_t size, /* c-compare-pred* /* comp);<code>ptr</code>void Qsort (void *ptr, std :: size_t đếm,<code>count</code>bên ngoài "c ++" bằng cách sử dụng /*so sánh-pred* / = int (const void*, const void*);<code>size</code>            std :: size_t size, /* so sánh-pred* /* comp);<code>comp</code>Sắp xếp các mảng đã cho được chỉ ra bởi</p>
+<p>Nếu như<code>comp</code>theo thứ tự tăng dần. Các mảng chứa</p>
+<p>Byte. Chức năng được chỉ ra bởi<span class="t-rev-inl t-until-cxx11"><span><a href="../named_req/podtype" title="cpp/named req/PODType">PODType</a></span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span><a href="../named_req/triviallycopyable" title="cpp/named req/TriviallyCopyable">TriviallyCopyable</a>kiểu</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Hoạt động tương đương cho quá tải</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Nếu mảng chứa một số yếu tố</td> <td>-</td> <td>được sử dụng để so sánh đối tượng.</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Cho biết hai yếu tố tương đương, thứ tự của chúng không được xác định.</td>
+</tr> <tr class="t-par"> <td>kích cỡ</td> <td>-</td> <td>con trỏ đến phần tử để tìm kiếm</td>
+</tr> <tr class="t-par"> <td>sau đó</td> <td>-</td> <td>PTR<i>Một phạm vi phân loại đầy đủ đáp ứng các tiêu chí này.</i>con trỏ đến mảng để kiểm tra<i>Trả một trình lặp lại cho phần tử đầu tiên</i>Số lượng phần tử trong mảng<br/> <p>Hàm so sánh trả về giá trị số nguyên âm nếu đối số đầu tiên là</p>
+<p><span class="t-cc"><code> int cmp(const void *a, const void *b);</code></span></p>
+<p>hơn thứ hai, giá trị số nguyên dương nếu đối số đầu tiên là</p>
+<p>hơn thứ hai và không nếu các đối số là tương đương.</p>
+</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>Nếu loại phần tử của mảng không phải là<a class="extiw" href="https://en.wikipedia.org/wiki/Quicksort" title="enwiki:Quicksort">Quicksort</a>con trỏ đến mảng để sắp xếp</p>
+<p>Hàm không được sửa đổi các đối tượng được truyền cho nó và phải trả về kết quả nhất quán khi được gọi cho cùng một đối tượng, bất kể vị trí của chúng trong mảng.<code>comp</code>​<a href="../language/language_linkage" title="cpp/language/language linkage">language linkage</a>Con trỏ đến phần tử tìm thấy hoặc con trỏ null nếu phần tử chưa được tìm thấy.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Số lượng phần tử trong mảng<code>qsort()</code>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mặc dù tên, các tiêu chuẩn C ++, C và POSIX không yêu cầu chức năng này được thực hiện bằng cách sử dụng</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">hoặc làm cho bất kỳ sự phức tạp hoặc đảm bảo ổn định.</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue405" rel="nofollow">LWG 405</a> </td> <td>C ++ 98</td> <td>Mã sau đây sắp xếp một mảng các số nguyên sử dụng</td> <td>#include &lt;mảng&gt;<a href="../named_req/podtype" title="cpp/named req/PODType">PODType</a> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="bsearch" title="cpp/algorithm/bsearch"> <span class="t-lines"><span>(chức năng)</span></span></a></div> </td> <td>Bsearch<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="sort" title="cpp/algorithm/sort"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/is_trivial" title="cpp/types/is trivial"> <span class="t-lines"><span>is_trivial</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại là tầm thường<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/algorithm/qsort" title="c/algorithm/qsort">C documentation</a></span>vì<code>qsort</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/qsort">https://en.cppreference.com/w/cpp/algorithm/qsort</a>
+</p>
+</div>

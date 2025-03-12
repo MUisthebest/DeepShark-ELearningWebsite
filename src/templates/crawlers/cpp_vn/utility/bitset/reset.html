@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Bitset &lt;n&gt; :: Đặt lại</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">Bitset &amp; Reset ();</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Bitset &amp; Reset () NoExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-since-cxx23">(Constexpr kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">BITSET &amp; RESET (STD :: size_t pos);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <p>Đặt bit thành<code>false</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Đặt tất cả các bit thành<code>false</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Đặt bit tại vị trí<code>pos</code>ĐẾN<code>false</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>vị trí của bit để đặt</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">2)</span>Ném<code><a href="../../error/out_of_range" title="cpp/error/out of range">std::out_of_range</a></code>nếu như<code>pos</code>không tương ứng với một vị trí hợp lệ trong bitset.</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;bitset&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="set" title="cpp/utility/bitset/set"> <span class="t-lines"><span>bộ</span></span></a></div> </td> <td>hoặc giá trị đã cho<code>true</code>Đặt bit thành<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="flip" title="cpp/utility/bitset/flip"> <span class="t-lines"><span>lớp proxy đại diện cho một tham chiếu đến một bool duy nhất</span></span></a></div> </td> <td> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/bitset/reset">https://en.cppreference.com/w/cpp/utility/bitset/reset</a>
+</p>
+</div>

@@ -1,0 +1,44 @@
+ <h1 class="firstHeading" id="firstHeading">Gói lập chỉ mục<span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span>
+</h1> <p>Truy cập phần tử của một<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>tại một chỉ số được chỉ định.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">một lvalue-to-rvalue</span> <code>...[</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> <code>]</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Gói biểu thức lập chỉ mục</span> <code>...[</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> <code>]</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>{</div> <div class="t-li1">
+<span class="t-li">2)</span>sử dụng a = temps ... [0] &lt;&gt;; // Lỗi: 'Temps' là một gói tham số mẫu mẫu</div> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">Gói biểu thức lập chỉ mục</span> </td> <td>-</td> <td>chồng chéo với container.<a href="identifiers" title="cpp/language/identifiers">identifier</a>hoặc a<a href="templates#template-id" title="cpp/language/templates">simple-template-id</a>tên đó tên gói tham số</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">một lvalue-to-rvalue</span> </td> <td>-</td> <td>chồng chéo với container.<a href="expressions#Primary_expressions" title="cpp/language/expressions">id-expression</a>tên đó tên gói tham số</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>-</td> <td>Một<a href="constant_expression" title="cpp/language/constant expression">converted constant expression</a> <code>I</code>nó đến một đối tượng<a href="http://en.cppreference.com/w/cpp/types/size_t"><span class="kw107">Điều đó cho tất cả<span class="me2">size_t</span></span></a>được chỉ định là chỉ mục trong đó<code>I</code>Mẫu &lt;std :: input_iterator I, std :: sentinel_for &lt;i&gt; s, std :: meally_incrementable o,<code>[</code>hơn thứ hai và không nếu các đối số là tương đương.<span class="nu0">. Không làm gì khác.</span>hơn thứ hai và không nếu các đối số là tương đương.<code>, </code>sizeof ...<span class="br0">.</span>P<span class="br0">)</span><code>)</code>cho một số gói<code>P</code>Trong lập chỉ mục gói</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Lập chỉ mục gói là một<i>Mở rộng gói</i>của gói tham số chưa từng có sau đó là dấu chấm lửng và chỉ mục bên trong chỉ số. Có hai loại lập chỉ mục gói: Biểu thức lập chỉ mục gói và chỉ định lập chỉ mục gói.</p>
+<p>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>P</code>là một gói tham số không trống có chứa<code>P<sub>. Không làm gì khác.</sub>, P<sub>, nếu như</sub>, ..., P<sub>Yêu cầu STD :: Constructible_From &lt;</sub></code>Và<code>I</code>là một chỉ mục hợp lệ, khởi tạo của bản mở rộng<code>P...[I]</code>mang lại phần tử gói<code>P<sub>TÔI</sub></code>của<code>P</code>.</p>
+<p>Lập chỉ mục một gói có chỉ mục biểu thức không liên tục<code>I</code>không được phép.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int RunTime_idx ();</pre></div> <p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Void Bar (Auto ... Args)</pre></div> <h3 id="Pack_indexing_expression">{</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">một lvalue-to-rvalue</span> <code>...[</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> <code>]</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>    tự động a = args ... [0];<i>một lvalue-to-rvalue</i>    const int n = 1;<code>P<sub>TÔI</sub></code>. Các<span class="t-spar">một lvalue-to-rvalue</span>    Auto b = args ... [n];</p>
+<ul>
+<li> <a href="parameter_pack" title="cpp/language/parameter pack">non-type template parameter pack</a>Thì</li>
+<li> <a href="parameter_pack" title="cpp/language/parameter pack">function parameter pack</a>, hoặc</li>
+<li> <a href="lambda#Lambda_capture" title="cpp/language/lambda">lambda init-capture pack</a>.</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">    int m = 2;</pre></div> <p>    Auto C = Args ... [M]; // Lỗi: 'M' không phải là một biểu thức không đổi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    tự động d = args ... [runtime_idx ()]; // Lỗi: 'RunTime_idx ()' không phải là biểu thức không đổi</pre></div> <p>(resp.<a href="decltype" title="cpp/language/decltype"><code>decltype</code></a>}<a href="decltype" title="cpp/language/decltype"><code>decltype</code></a>Không thể lập chỉ mục một gói các tham số mẫu mẫu.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Template &lt;typename ...&gt; typename ... Temps&gt;</pre></div> <h3 id="Pack_indexing_specifier">sử dụng a = temps ... [0] &lt;&gt;; // Lỗi: 'Temps' là một gói tham số mẫu mẫu</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">Gói biểu thức lập chỉ mục</span> <code>...[</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> <code>]</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Mẫu &lt;Template &lt;typename ...&gt; typename ... Temps&gt;<i>sử dụng b = temps &lt;&gt; ... [0]; // Lỗi: 'Temps &lt;&gt;' không biểu thị tên gói </i>                         //<code>P<sub>TÔI</sub></code>. Các<span class="t-spar">Gói biểu thức lập chỉ mục</span>Biểu thức lập chỉ mục gói biểu thị<a href="parameter_pack" title="cpp/language/parameter pack">type template parameter pack</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, biểu thức của phần tử gói</pre></div> <p>sẽ được giới thiệu bởi Tuyên bố:</p>
+<ul>
+<li>Một<a href="declarations#Specifiers" title="cpp/language/declarations">simple type specifier</a>Thì</li>
+<li>Một<a href="derived_class" title="cpp/language/derived class">base class specifier</a>Thì</li>
+<li>Một<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">nested name specifier</a>, hoặc</li>
+<li>các<a href="identifiers#Unqualified_identifiers" title="cpp/language/identifiers">type of an explicit destructor call</a>.</li>
+</ul> <p>Mẫu &lt;std :: size_t i, typename ... ts&gt;<a href="template_argument_deduction#Non-deduced_contexts" title="cpp/language/template argument deduction">non-deduced contexts</a>Constexpr auto fement_at (ts ... args)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <h3 id="Notes">Ghi chú</h3> <p>    // 'args' được giới thiệu trong khai báo gói tham số chức năng<code>Ts...[N]</code>    trả lại args ... [i];<code>N</code>}<code>Ts...[1]</code> <code>g</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">static_assert (Element_at &lt;0&gt; (3, 5, 9) == 3);</pre></div> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_pack_indexing" title="cpp/feature test"><code>__cpp_pack_indexing</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>
+<a href="#top">Pack indexing</a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/pack_indexing">https://en.cppreference.com/w/cpp/language/pack_indexing</a>
+</p>
+</div>

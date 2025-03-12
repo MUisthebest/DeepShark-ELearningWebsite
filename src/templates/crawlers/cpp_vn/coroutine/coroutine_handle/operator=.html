@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Coroutine_Handle &lt;Promise&gt; :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">coroutine_handle &amp; toán tử = (std :: nullptr_t) noExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">coroutine_handle &amp; toán tử = (const coroutine_handle &amp; other) = mặc định;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">coroutine_handle &amp; toán tử = (coroutine_handle &amp;&amp; other) = mặc định;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Thay thế địa chỉ cơ bản.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Thay thế địa chỉ cơ bản bằng giá trị con trỏ null. Sau khi chuyển nhượng,<code>*this</code>không đề cập đến một coroutine. Toán tử chuyển nhượng này không được khai báo về chuyên môn<code><a href="http://en.cppreference.com/w/cpp/coroutine/coroutine_handle"><span class="kw3206">Điều đó cho tất cả<span class="me2">Coroutine_Handle</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/coroutine/noop_coroutine_promise"><span class="kw3248">Điều đó cho tất cả<span class="me2">Noop_coroutine_promise</span></span></a><span class="sy1">&lt;</span></code>.</div> <div class="t-li1">
+<span class="t-li">          std :: Indirect_strict_weak_order &lt;</span>Thay thế địa chỉ cơ bản bằng một trong những<code>other</code>. Sao chép và di chuyển các toán tử gán là tương đương với các toán tử được tuyên bố ngầm.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>khác<code>coroutine_handle</code>để gán từ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/coroutine/coroutine_handle/operator%3D">https://en.cppreference.com/w/cpp/coroutine/coroutine_handle/operator%3D</a>
+</p>
+</div>

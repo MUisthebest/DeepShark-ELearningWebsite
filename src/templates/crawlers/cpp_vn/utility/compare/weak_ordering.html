@@ -1,0 +1,84 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: yếu_ordering</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/compare" title="cpp/header/compare">&lt;compare&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">lớp yếu_ordering;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Loại lớp<code>std::weak_ordering</code>là loại kết quả của A<a href="../../language/operator_comparison#Three-way_comparison" title="cpp/language/operator comparison">three-way comparison</a>. Đặc biệt, họ xác định một</p>
+<ul>
+<li>Thừa nhận tất cả sáu nhà khai thác quan hệ (<code>==</code>Thì<code>!=</code>Thì<code>&lt;</code>Thì<code>&lt;=</code>Thì<code>&gt;</code>Thì<code>&gt;=</code>).</li>
+<li>Không ngụ ý thay thế: nếu<code>a</code>Mẫu &lt;class T, class so sánh&gt;<code>b</code>Thì<code>f(a)</code>có thể không tương đương với<code>f(b)</code>là<code>f</code>Biểu thị một hàm chỉ đọc trạng thái so sánh-có thể truy cập được thông qua các thành viên Const của đối số. Nói cách khác, các giá trị tương đương có thể phân biệt được.</li>
+<li> <a class="extiw" href="https://en.wikipedia.org/wiki/Connected_relation" title="enwiki:Connected relation">Does not allow incomparable values</a>: chính xác một trong những<code>a &lt; b</code>Thì<code>a == b</code>, hoặc<code>a &gt; b</code>// thực hiện đầu tiên<code>true</code>.</li>
+</ul> <h3 id="Constants">Hằng số</h3> <p>phạm vi của các yếu tố để tạo<code>std::weak_ordering</code>có ba giá trị hợp lệ, được triển khai dưới dạng các thành viên dữ liệu tĩnh của loại thuộc loại:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Áp dụng cho</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Một phạm vi phân loại đầy đủ đáp ứng các tiêu chí này.<span class="t-mark">(Consexpr nội tuyến)</span></span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>giá trị hợp lệ của loại<code>std::weak_ordering</code>chỉ ra mối quan hệ ít hơn (đặt hàng trước)<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>tương đương<span class="t-mark">(Consexpr nội tuyến)</span></span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>giá trị hợp lệ của loại<code>std::weak_ordering</code>biểu thị sự tương đương (không được đặt hàng trước đó cũng không được đặt hàng sau)<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Trả một trình lặp lại cho phần tử đầu tiên<span class="t-mark">(Consexpr nội tuyến)</span></span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>giá trị hợp lệ của loại<code>std::weak_ordering</code>biểu thị mối quan hệ lớn hơn (được đặt hàng sau)<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <h3 id="Conversions">    có thể thay đổi int* const q; // không hình thành</h3> <p><code>std::weak_ordering</code>là hoàn toàn không thể đảo ngược<code>std::partial_ordering</code>Mẫu &lt;Class T&gt;<code>std::strong_ordering</code>là hoàn toàn không thể đảo ngược<code>weak_ordering</code>.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><strong class="selflink"> <span class="t-lines"><span>Nhà điều hành một phần_ordering</span></span></strong></div> </td> <td>Chuyển đổi ẩn sang<code>std::partial_ordering</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="t-member"> <h2 id="std::weak_ordering::operator_partial_ordering">std :: stress_ordering :: nhà điều hành partial_ordering</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Nhà điều hành Consexpr part_ordering () const NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>std::partial_ordering::less</code>nếu như<code>v</code>khoảng cách<code>less</code>Thì<code>std::partial_ordering::greater</code>nếu như<code>v</code>khoảng cách<code>greater</code>Thì<code>std::partial_ordering::equivalent</code>nếu như<code>v</code>khoảng cách<code>equivalent</code>.</p>
+</div> <h3 id="Comparisons">So sánh</h3> <p>Các toán tử so sánh được xác định giữa các giá trị của loại này và nghĩa đen<code>​0​</code>. Điều này hỗ trợ các biểu thức<code>a &lt;=&gt; b == 0</code>hoặc<code>a &lt;=&gt; b &lt; 0</code>có thể được sử dụng để chuyển đổi kết quả của một nhà điều hành so sánh ba chiều thành mối quan hệ boolean; nhìn thấy<a href="named_comparison_functions" title="cpp/utility/compare/named comparison functions"><code>std::is_eq</code></a>Thì<a href="named_comparison_functions" title="cpp/utility/compare/named comparison functions"><code>std::is_lt</code></a>, vân vân.</p>
+<p>Thu được kết quả so sánh ba chiều của<a href="../../language/unqualified_lookup" title="cpp/language/unqualified lookup">unqualified</a>hoặc<a href="../../language/qualified_lookup" title="cpp/language/qualified lookup">qualified lookup</a>Chức năng này không thể nhìn thấy thông thường<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>Chuyển đổi danh tính:<code>std::weak_ordering</code>Hương hiệu nút</p>
+<p>Hành vi của một chương trình cố gắng so sánh<code>weak_ordering</code>với bất cứ thứ gì khác ngoài số nguyên theo nghĩa đen<code>​0​</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><strong class="selflink"> <span class="t-lines"><span>toán tử ==</span><span>người vận hành*</span><span>toán tử&gt;</span><span>toán tử &lt;=</span><span>toán tử&gt; =</span><span>Nhà điều hành &lt;=&gt;</span></span></strong></div> </td> <td>so sánh với số không hoặc một<code>weak_ordering</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="t-member"> <h2 id="operator.3D.3D">toán tử ==</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Friend Consexpr Bool Toán tử == (yếu_ordering V, /*không xác định* / u) noExcept;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Friend Consexpr Bool Toán tử == (yếu_ordering V, yếu_ordering w) NoExcept = Mặc định;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>    toán tử == (partial_ordering v, partial_ordering w) noExcept = mặc định;</td> <td>-</td> <td> <code>std::weak_ordering</code>v, w</td>
+</tr> <tr class="t-par"> <td>                       std :: chuyển tiếp &lt;declType (args1)&gt; (args1) ...);</td> <td>-</td> <td>Giá trị để kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value_2">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>nếu như<code>v</code>khoảng cách<code>equivalent</code>Thì<code>false</code>nếu như<code>v</code>khoảng cách<code>less</code>hoặc<code>greater</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>true</code>Một tham số không được sử dụng thuộc bất kỳ loại nào chấp nhận đối số không theo nghĩa đen<code>false</code>[tĩnh]</div>
+</div> <div class="t-member"> <h2 id="operator.3C">người vận hành*</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Người bạn của ConstExpr Bool Toán tử &lt;(yếu_ordering v, /*không xác định* / u) noExcept;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">người bạn của constexpr bool toán tử &lt;( /*không xác định* / u, yếu_ordering v) noExcept;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <h3 id="Parameters_2">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu giá trị của</td> <td>-</td> <td>Một<code>std::weak_ordering</code>Người bạn Constexpr partial_ordering toán tử &lt;=&gt; ( /*không xác định* / u, partial_ordering v) noExcept;</td>
+</tr> <tr class="t-par"> <td>                       std :: chuyển tiếp &lt;declType (args1)&gt; (args1) ...);</td> <td>-</td> <td>Giá trị để kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value_3">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>nếu như<code>v</code>khoảng cách<code>less</code>, Và<code>false</code>nếu như<code>v</code>khoảng cách<code>greater</code>hoặc<code>equivalent</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>true</code>nếu như<code>v</code>khoảng cách<code>greater</code>, Và<code>false</code>nếu như<code>v</code>khoảng cách<code>less</code>hoặc<code>equivalent</code> </div>
+</div> <div class="t-member"> <h2 id="operator.3C.3D">toán tử &lt;=</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">người bạn của toán tử bool friend friend &lt;= (stress_ordering v, /*không xác định* / u) noExcept;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">người bạn constexpr bool toán tử &lt;= ( /*không xác định* / u, yếu_ordering v) noExcept;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <h3 id="Parameters_3">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu giá trị của</td> <td>-</td> <td>Một<code>std::weak_ordering</code>Người bạn Constexpr partial_ordering toán tử &lt;=&gt; ( /*không xác định* / u, partial_ordering v) noExcept;</td>
+</tr> <tr class="t-par"> <td>                       std :: chuyển tiếp &lt;declType (args1)&gt; (args1) ...);</td> <td>-</td> <td>Giá trị để kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value_4">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>nếu như<code>v</code>khoảng cách<code>less</code>hoặc<code>equivalent</code>, Và<code>false</code>nếu như<code>v</code>khoảng cách<code>greater</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>true</code>nếu như<code>v</code>khoảng cách<code>greater</code>hoặc<code>equivalent</code>, Và<code>false</code>nếu như<code>v</code>khoảng cách<code>less</code> </div>
+</div> <div class="t-member"> <h2 id="operator.3E">toán tử&gt;</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Người bạn của Toán tử Bool Friend Friend&gt; (yếu_ordering V, /*không xác định* / u) noExcept;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Người bạn của Toán tử Bool Friend Friend&gt; ( /*không xác định* / u, yếu_ordering v) noExcept;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <h3 id="Parameters_4">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu giá trị của</td> <td>-</td> <td>Một<code>std::weak_ordering</code>Người bạn Constexpr partial_ordering toán tử &lt;=&gt; ( /*không xác định* / u, partial_ordering v) noExcept;</td>
+</tr> <tr class="t-par"> <td>                       std :: chuyển tiếp &lt;declType (args1)&gt; (args1) ...);</td> <td>-</td> <td>Giá trị để kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value_5">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>nếu như<code>v</code>khoảng cách<code>greater</code>, Và<code>false</code>nếu như<code>v</code>khoảng cách<code>less</code>hoặc<code>equivalent</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>true</code>nếu như<code>v</code>khoảng cách<code>less</code>, Và<code>false</code>nếu như<code>v</code>khoảng cách<code>greater</code>hoặc<code>equivalent</code> </div>
+</div> <div class="t-member"> <h2 id="operator.3E.3D">toán tử&gt; =</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">người bạn của Toán tử Bool Friend Friend&gt; = (yếu_ordering V, /*không xác định* / u) noExcept;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">người bạn của Toán tử Bool Friend Friend&gt; = ( /*không xác định* / u, yếu_ordering v) noExcept;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <h3 id="Parameters_5">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu giá trị của</td> <td>-</td> <td>Một<code>std::weak_ordering</code>Người bạn Constexpr partial_ordering toán tử &lt;=&gt; ( /*không xác định* / u, partial_ordering v) noExcept;</td>
+</tr> <tr class="t-par"> <td>                       std :: chuyển tiếp &lt;declType (args1)&gt; (args1) ...);</td> <td>-</td> <td>Giá trị để kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value_6">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>nếu như<code>v</code>khoảng cách<code>greater</code>hoặc<code>equivalent</code>, Và<code>false</code>nếu như<code>v</code>khoảng cách<code>less</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>true</code>nếu như<code>v</code>khoảng cách<code>less</code>hoặc<code>equivalent</code>, Và<code>false</code>nếu như<code>v</code>khoảng cách<code>greater</code> </div>
+</div> <div class="t-member"> <h2 id="operator.3C.3D.3E">Nhà điều hành &lt;=&gt;</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Friend Consexpr yếu_ordering Toán tử &lt;=&gt; (yếu_ordering V, /*không xác định* / u) noExcept;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Friend Consexpr yếu_ordering Toán tử &lt;=&gt; ( /*không xác định* / u, yếu_ordering v) noExcept;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <h3 id="Parameters_6">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Hành vi không được xác định nếu giá trị của</td> <td>-</td> <td>Một<code>std::weak_ordering</code>Người bạn Constexpr partial_ordering toán tử &lt;=&gt; ( /*không xác định* / u, partial_ordering v) noExcept;</td>
+</tr> <tr class="t-par"> <td>                       std :: chuyển tiếp &lt;declType (args1)&gt; (args1) ...);</td> <td>-</td> <td>Giá trị để kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value_7">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>v</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>greater</code>nếu như<code>v</code>khoảng cách<code>less</code>Thì<code>less</code>nếu như<code>v</code>khoảng cách<code>greater</code>, nếu không thì<code>v</code>.</div>
+</div> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="strong_ordering" title="cpp/utility/compare/strong ordering"> <span class="t-lines"><span>mạnh mẽ</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>loại kết quả so sánh 3 chiều hỗ trợ tất cả 6 toán tử và có thể thay thế<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="partial_ordering" title="cpp/utility/compare/partial ordering"> <span class="t-lines"><span>Partial_ordering</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Loại kết quả của so sánh 3 chiều hỗ trợ tất cả 6 toán tử, không thể thay thế và cho phép các giá trị không thể so sánh được<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/compare/weak_ordering">https://en.cppreference.com/w/cpp/utility/compare/weak_ordering</a>
+</p>
+</div>

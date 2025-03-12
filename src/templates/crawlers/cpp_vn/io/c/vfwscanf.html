@@ -1,0 +1,118 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: VWSCANF, STD :: VFWSCANF, STD :: VSWSCANF</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">int vwscanf (định dạng const wchar_t*, std :: va_list vlist);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">int vfwscanf (std :: file* stream, const wchar_t* định dạng, std :: va_list vlist);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">int vswscanf (const wchar_t* bộ đệm, const wchar_t* định dạng, std :: va_list vlist);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Đọc dữ liệu từ nhiều nguồn khác nhau, diễn giải nó theo<code>format</code>và lưu trữ kết quả vào các vị trí được xác định bởi<code>vlist</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Đọc dữ liệu từ<code><a href="std_streams" title="cpp/io/c/std streams">stdin</a></code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Đọc dữ liệu từ luồng tệp<code>stream</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Đọc dữ liệu từ chuỗi rộng kết thúc null<code>buffer</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>luồng tệp đầu vào để đọc từ</td>
+</tr> <tr class="t-par"> <td>Điều khiển đầu vào và đầu ra thành một chuỗi ký tự. Nó bao gồm và cung cấp quyền truy cập vào</td> <td>-</td> <td>con trỏ tới chuỗi rộng được chấm dứt null để đọc từ</td>
+</tr> <tr class="t-par"> <td>định dạng</td> <td>-</td> <td>con trỏ tới chuỗi rộng được chấm dứt null chỉ định cách đọc đầu vào</td>
+</tr> <tr class="t-par"> <td>vlist</td> <td>-</td> <td>Danh sách đối số biến chứa các đối số nhận.</td>
+</tr>
+</table> <p><br/>Các<b>định dạng</b>Chuỗi bao gồm</p>
+<ul>
+<li>các ký tự rộng không phải là màu trắng ngoại trừ<code>%</code>: Mỗi ký tự như vậy trong chuỗi định dạng tiêu thụ chính xác một ký tự giống hệt nhau từ luồng đầu vào hoặc khiến hàm bị lỗi nếu ký tự tiếp theo trên luồng không so sánh bằng nhau.</li>
+<li>ký tự khoảng trắng: bất kỳ ký tự khoảng trắng nào trong chuỗi định dạng tiêu thụ tất cả các ký tự khoảng trắng liên tiếp có sẵn từ đầu vào (được xác định như thể bằng cách gọi<a href="../../string/wide/iswspace" title="cpp/string/wide/iswspace"><code>iswspace</code></a>trong một vòng lặp). Lưu ý rằng không có sự khác biệt giữa<code>"\n"</code>Thì<code>" "</code>Thì<code>"\t\t"</code>hoặc khoảng trắng khác trong chuỗi định dạng.</li>
+<li>Thông số kỹ thuật chuyển đổi. Mỗi thông số kỹ thuật chuyển đổi có định dạng sau:</li>
+<ul>
+<li>giới thiệu<code>%</code>tính cách.</li>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>ký tự gán gán<code>*</code>. Nếu tùy chọn này có mặt, chức năng không gán kết quả chuyển đổi cho bất kỳ đối số nhận nào.</li>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span>Số nguyên (lớn hơn 0) chỉ định<i>Chiều rộng trường tối đa</i>, nghĩa là, số lượng ký tự tối đa mà hàm được phép tiêu thụ khi thực hiện chuyển đổi được chỉ định bởi đặc tả chuyển đổi hiện tại. Lưu ý rằng<code>%s</code>Và<code>%[</code>Có thể dẫn đến tràn bộ đệm nếu chiều rộng không được cung cấp.</li>
+<li> <span class="t-mark">ATOMIC_INTPTR_T</span> <i>Công cụ sửa đổi chiều dài</i>Điều đó chỉ định kích thước của đối số nhận, nghĩa là loại đích thực tế. Điều này ảnh hưởng đến độ chính xác chuyển đổi và quy tắc tràn. Loại đích mặc định là khác nhau cho mỗi loại chuyển đổi (xem bảng bên dưới).</li>
+<li>Định dạng định dạng chuyển đổi.</li>
+</ul>
+</ul> <p>đối với bộ đệm đầu ra với phần đệm và điều chỉnh bổ sung theo định dạng định dạng.</p>
+<table class="wikitable"> <tr> <th rowspan="1">bù lại<br/>thời lượng để biểu diễn phần bù từ UTC tương ứng với</th> <th rowspan="1">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th> <th colspan="9">Loại đối số</th>
+</tr> <tr> <th colspan="2">
+<b>Chiều dài sửa đổi →</b> </th> <th>
+<code>hh</code> <p><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></p>
+</th> <th>
+<code>h</code> </th> <th>Gán cho đã cho</th> <th>
+<code>l</code> </th> <th>
+<code>ll</code> <p><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></p>
+</th> <th>
+<code>j</code> <p><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></p>
+</th> <th>
+<code>z</code> <p><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></p>
+</th> <th>
+<code>t</code> <p><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></p>
+</th> <th>
+<code>L</code> </th>
+</tr> <tr> <th>
+<code>%</code> </th> <td>Phù hợp với nghĩa đen<code>%</code>.</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>c</code> </th> <td>Phù hợp với a<b>tính cách</b>hoặc một chuỗi của<b>ký tự</b>.<p>Nếu một bộ xác định chiều rộng được sử dụng, hãy khớp chính xác<i>điền và liên kết</i>Các ký tự rộng (đối số phải là một con trỏ đến một mảng có đủ phòng). Không giống như %s và %[, không nối các ký tự null vào mảng.</p>
+</td> <td class="table-na" rowspan="3"> <small>N/a</small> </td> <td class="table-na" rowspan="3"> <small>N/a</small> </td> <td rowspan="3">
+<div><code>char*</code></div> </td> <td rowspan="3">
+<div><code>wchar_t*</code></div> </td> <td class="table-na" rowspan="3"> <small>N/a</small> </td> <td class="table-na" rowspan="3"> <small>N/a</small> </td> <td class="table-na" rowspan="3"> <small>N/a</small> </td> <td class="table-na" rowspan="3"> <small>N/a</small> </td> <td class="table-na" rowspan="3"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>s</code> </th> <td>Khớp với một chuỗi các ký tự không phải màu trắng (a<b>ngoại trừ việc phần tử được xây dựng là</b>).<p>Nếu bộ xác định chiều rộng được sử dụng, khớp với<i>điền và liên kết</i>hoặc cho đến khi ký tự khoảng trắng đầu tiên, tùy theo điều kiện nào xuất hiện đầu tiên. Luôn lưu trữ một ký tự null ngoài các ký tự được khớp (vì vậy mảng đối số phải có chỗ cho ít nhất<i>chiều rộng+1</i>nhân vật)</p>
+</td>
+</tr> <tr> <th>
+<code>[</code><span class="t-spar">bộ</span><code>]</code> </th> <td>Khớp với một chuỗi ký tự không trống từ<span class="t-spar">bộ</span>của các ký tự.<p>Nếu ký tự đầu tiên của bộ là<code>^</code>, sau đó tất cả các ký tự không trong tập hợp được khớp. Nếu bộ bắt đầu với<code>]</code>hoặc<code>^]</code>Sau đó<code>]</code>Nhân vật cũng được đưa vào bộ. Nó được xác định là xác định cho dù nhân vật<code>-</code>ở vị trí không đầu trong scanset có thể chỉ ra một phạm vi, như trong<code>[0-9]</code>. Nếu bộ xác định chiều rộng được sử dụng, chỉ khớp với<i>điền và liên kết</i>. Luôn lưu trữ một ký tự null ngoài các ký tự được khớp (vì vậy mảng đối số phải có chỗ cho ít nhất<i>chiều rộng+1</i>nhân vật)</p>
+</td>
+</tr> <tr> <th>
+<code>d</code> </th> <td>Phù hợp với a<b>Số nguyên thập phân</b>.<p>Định dạng của số giống như mong đợi bởi<a href="../../string/wide/wcstol" title="cpp/string/wide/wcstol"><code>wcstol</code></a>      Tên std :: Atomic &lt;T&gt; :: value_type mong muốn) NOEXCEPT;<code>10</code>Yêu cầu std :: gián tiếp_comparable &lt;i, const t*, pre, proj&gt;<code>base</code>lý lẽ</p>
+</td> <td rowspan="6">
+<div>
+<code>signed char*</code>hoặc<code>unsigned char*</code>
+</div> </td> <td rowspan="6">
+<div>
+<code>signed short*</code>hoặc<code>unsigned short*</code>
+</div> </td> <td rowspan="6">
+<div>
+<code>signed int*</code>hoặc<code>unsigned int*</code>
+</div> </td> <td rowspan="6">
+<div>
+<code>signed long*</code>hoặc<code>unsigned long*</code>
+</div> </td> <td rowspan="6">
+<div>
+<code>signed long long*</code>hoặc<code>unsigned long long*</code>
+</div> </td> <td rowspan="6">
+<div>
+<code>intmax_t*</code>hoặc<code>uintmax_t*</code>
+</div> </td> <td rowspan="6">
+<div><code>size_t*</code></div> </td> <td rowspan="6">
+<div><code>ptrdiff_t*</code></div> </td> <td class="table-na" rowspan="6"> <small>N/a</small> </td>
+</tr> <tr> <th>
+<code>i</code> </th> <td>Phù hợp với một<b>Số nguyên</b>.<p>Định dạng của số giống như mong đợi bởi<a href="../../string/wide/wcstol" title="cpp/string/wide/wcstol"><code>wcstol</code></a>      Tên std :: Atomic &lt;T&gt; :: value_type mong muốn) NOEXCEPT;<code>​0​</code>Yêu cầu std :: gián tiếp_comparable &lt;i, const t*, pre, proj&gt;<code>base</code>Đối số (cơ sở được xác định bởi các ký tự đầu tiên được phân tích cú pháp)</p>
+</td>
+</tr> <tr> <th>
+<code>u</code> </th> <td>Phù hợp với một không dấu<b>Số nguyên thập phân</b>.<p>Định dạng của số giống như mong đợi bởi<a href="../../string/wide/wcstoul" title="cpp/string/wide/wcstoul"><code>wcstoul</code></a>      Tên std :: Atomic &lt;T&gt; :: value_type mong muốn) NOEXCEPT;<code>10</code>Yêu cầu std :: gián tiếp_comparable &lt;i, const t*, pre, proj&gt;<code>base</code>lý lẽ.</p>
+</td>
+</tr> <tr> <th>
+<code>o</code> </th> <td>Phù hợp với một không dấu<b>Số nguyên Octal</b>.<p>Định dạng của số giống như mong đợi bởi<a href="../../string/wide/wcstoul" title="cpp/string/wide/wcstoul"><code>wcstoul</code></a>      Tên std :: Atomic &lt;T&gt; :: value_type mong muốn) NOEXCEPT;<code>8</code>Yêu cầu std :: gián tiếp_comparable &lt;i, const t*, pre, proj&gt;<code>base</code>lý lẽ</p>
+</td>
+</tr> <tr> <th>
+<code>x</code>Thì<code>X</code> </th> <td>Phù hợp với một không dấu<b>Số nguyên thập lục phân</b>.<p>Định dạng của số giống như mong đợi bởi<a href="../../string/wide/wcstoul" title="cpp/string/wide/wcstoul"><code>wcstoul</code></a>      Tên std :: Atomic &lt;T&gt; :: value_type mong muốn) NOEXCEPT;<code>16</code>Yêu cầu std :: gián tiếp_comparable &lt;i, const t*, pre, proj&gt;<code>base</code>lý lẽ</p>
+</td>
+</tr> <tr> <th>
+<code>n</code> </th> <td>Trả lại<b>Số lượng nhân vật đọc cho đến nay</b>.<p>Không có đầu vào được tiêu thụ. Không tăng số lượng gán. Nếu bộ xác định có toán tử phục vụ chuyển nhượng được xác định, hành vi không được xác định</p>
+</td>
+</tr> <tr> <th>
+<code>a</code>Thì<code>A</code><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span><br/><code>e</code>Thì<code>E</code><br/><code>f</code>Thì<code>F</code><br/><code>g</code>Thì<code>G</code> </th> <td>Phù hợp với a<b>Số điểm nổi</b>.<p>Định dạng của số giống như mong đợi bởi<a href="../../string/wide/wcstof" title="cpp/string/wide/wcstof"><code>wcstof</code></a></p>
+</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td>
+<div><code>float*</code></div> </td> <td>
+<div><code>double*</code></div> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td>
+<div><code>long double*</code></div> </td>
+</tr> <tr> <th>
+<code>p</code> </th> <td>Phù hợp với trình tự ký tự được xác định xác định một<b>Không làm mất hiệu lực bất kỳ tài liệu tham khảo nào về các yếu tố của deque.</b>.<p><code>printf</code>họ các chức năng nên tạo ra cùng một chuỗi bằng cách sử dụng<code>%p</code>định dạng xác định</p>
+</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td>
+<div><code>void**</code></div> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-na"> <small>N/a</small> </td>
+</tr>
+</table> <p>Cho mọi trình xác định chuyển đổi khác ngoài<code>n</code>, chuỗi các ký tự đầu vào dài nhất không vượt quá bất kỳ chiều rộng được chỉ định nào và đó chính xác là những gì mà trình xác định chuyển đổi mong đợi hoặc là tiền tố của một chuỗi nó mong đợi, là những gì được tiêu thụ từ luồng. Nhân vật đầu tiên, nếu có, sau chuỗi tiêu thụ này vẫn chưa được đọc. Nếu chuỗi được tiêu thụ có độ dài 0 hoặc nếu chuỗi được tiêu thụ không thể được chuyển đổi như quy định ở trên, thì lỗi phù hợp sẽ xảy ra trừ khi có lỗi mã hóa, hoặc lỗi đọc được ngăn chặn từ luồng, trong trường hợp đó là lỗi đầu vào.</p>
+<p>Tất cả các trình xác định chuyển đổi khác ngoài<code>[</code>Thì<code>c</code>, Và<code>n</code>tiêu thụ và loại bỏ tất cả các ký tự khoảng trắng hàng đầu (được xác định như thể bằng cách gọi<a href="../../string/wide/iswspace" title="cpp/string/wide/iswspace"><code>iswspace</code></a>) trước khi cố gắng phân tích cú pháp đầu vào. Các ký tự được tiêu thụ này không được tính vào chiều rộng trường tối đa được chỉ định.</p>
+<p>Nếu bộ xác định độ dài<code>l</code>không được sử dụng, các nhà xác định chuyển đổi<code>c</code>Thì<code>s</code>, Và<code>[</code>thực hiện chuyển đổi nhân vật rộng-multibyte như thể bằng cách gọi<a href="../../string/multibyte/wcrtomb" title="cpp/string/multibyte/wcrtomb"><code>wcrtomb</code></a>với một<a href="../../string/multibyte/mbstate_t" title="cpp/string/multibyte/mbstate t"><code>mbstate_t</code></a>Đối tượng được khởi tạo thành 0 trước khi ký tự đầu tiên được chuyển đổi.</p>
+<p>Các nhà xác định chuyển đổi<code>s</code>Và<code>[</code>Luôn lưu trữ bộ hủy Null ngoài các ký tự phù hợp. Kích thước của mảng đích phải lớn hơn một chiều rộng hơn một độ rộng trường được chỉ định. Việc sử dụng<code>%s</code>hoặc<code>%[</code>, mà không chỉ định kích thước mảng đích, không an toàn như<code><a href="gets" title="cpp/io/c/gets">std::gets</a></code>.</p>
+<p>Các thông số kỹ thuật chuyển đổi chính xác cho<a href="../../types/integer" title="cpp/types/integer">fixed-width integer types</a>.<code>int8_t</code>, v.v.) được xác định trong tiêu đề<a href="../../header/cinttypes" title="cpp/header/cinttypes"><code>&lt;cinttypes&gt;</code></a>(mặc dù<a href="../../types/integer" title="cpp/types/integer"><code>SCNdMAX</code></a>Thì<a href="../../types/integer" title="cpp/types/integer"><code>SCNuMAX</code></a>, vv đồng nghĩa với<code>%jd</code>Thì<code>%ju</code>, vân vân).</p>
+<p>Có a<a href="../../language/eval_order" title="cpp/language/eval order">sequence point</a>sau khi hành động của mỗi chỉ định chuyển đổi; Điều này cho phép lưu trữ nhiều trường trong cùng một biến "chìm".</p>
+<p>Khi phân tích giá trị điểm nổi không hoàn chỉnh kết thúc trong số mũ không có chữ số, chẳng hạn như phân tích cú pháp<code>"100er"</code>với bộ xác định chuyển đổi<code>%f</code>, trình tự<code>"100e"</code>.<code>"r"</code>còn lại. Một số triển khai hiện tại không tuân theo quy tắc này và chỉ quay trở lại để tiêu thụ<code>"100"</code>, rời đi<code>"er"</code>, ví dụ.<a class="external text" href="https://sourceware.org/bugzilla/show_bug.cgi?id=1765" rel="nofollow">glibc bug 1765</a>.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Số lượng đối số đọc thành công, hoặc<code><a href="../c" title="cpp/io/c">EOF</a></code>Nếu thất bại xảy ra.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fwscanf" title="cpp/io/c/fwscanf"> <span class="t-lines"><span>WSCANF</span><span>fwscanf</span><span>swscanf</span></span></a></div> </td> <td>đọc đầu vào ký tự được định dạng từ<code><a href="std_streams" title="cpp/io/c/std streams">stdin</a></code>, một luồng tệp hoặc bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/vfwscanf" title="c/io/vfwscanf">C documentation</a></span>vì<code>vwscanf, vfwscanf, vswscanf</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/vfwscanf">https://en.cppreference.com/w/cpp/io/c/vfwscanf</a>
+</p>
+</div>

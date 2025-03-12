@@ -1,0 +1,47 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; :: data</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="4">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">Biểu đồ const* data () const;</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">Biểu đồ const* data () const noexcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ConstExpr Const Biểu đồ* Data () const NoExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td><pre data-language="cpp">Biểu đồ* data () noExcept;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Biểu đồ ConstExPR* Dữ liệu () NoExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Trả về một con trỏ cho mảng bên dưới đóng vai trò lưu trữ ký tự. Con trỏ sao cho phạm vi</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p><code>[</code><code>data()</code><code>, </code><code>data() + size()</code><code>)</code></p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p><code>[</code><code>data()</code><code>, </code><code>data() + size()</code><code>]</code></p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>là hợp lệ và các giá trị trong nó tương ứng với các giá trị được lưu trữ trong chuỗi.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Mảng trả về không bắt buộc phải kết thúc.</p>
+<p>Nếu như<code><a href="empty" title="cpp/string/basic string/empty">empty()</a></code>(C ++ 20)<code>true</code>, con trỏ là một con trỏ không phải null không nên bị hủy bỏ.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>Mảng trả về được chấm dứt null, nghĩa là,<code>data()</code>Và<code><a href="c_str" title="cpp/string/basic string/c str">c_str()</a></code>thực hiện cùng một chức năng.</p>
+<p>Nếu như<code><a href="empty" title="cpp/string/basic string/empty">empty()</a></code>(C ++ 20)<code>true</code>, Con trỏ trỏ đến một ký tự null duy nhất.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Con trỏ thu được từ<code>data()</code>có thể bị vô hiệu bởi:</p>
+<ul>
+<li>Chuyển một tham chiếu không phải lúc vào chuỗi cho bất kỳ chức năng thư viện tiêu chuẩn nào hoặc</li>
+<li>Gọi các hàm thành viên không phải lúc tập hợp trên chuỗi, không bao gồm<a href="operator_at" title="cpp/string/basic string/operator at"><code>operator[]()</code></a>Thì<code><a href="at" title="cpp/string/basic string/at">at()</a></code>Thì<code><a href="front" title="cpp/string/basic string/front">front()</a></code>Thì<code><a href="back" title="cpp/string/basic string/back">back()</a></code>Thì<code><a href="begin" title="cpp/string/basic string/begin">begin()</a></code>Thì<code><a href="end" title="cpp/string/basic string/end">end()</a></code>Thì<code><a href="rbegin" title="cpp/string/basic string/rbegin">rbegin()</a></code>Thì<code><a href="rend" title="cpp/string/basic string/rend">rend()</a></code>.</li>
+</ul> <div class="t-li1">
+<span class="t-li">1)</span>Sửa đổi mảng ký tự được truy cập thông qua quá tải const của<code>data</code>có hành vi không xác định.</div> <div class="t-li1">
+<span class="t-li">2)</span>Sửa đổi các thiết bị kết thúc null trong quá khứ được lưu trữ tại<code>data() + </code><code><a href="size" title="cpp/string/basic string/size">size()</a></code>đến bất kỳ giá trị nào khác ngoài<code>CharT()</code>có hành vi không xác định.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một con trỏ đến lưu trữ ký tự cơ bản.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p><code>data()[i] == operator[](i)</code>constexpr outputit exclusive_scan (đầu vào đầu tiên, đầu vào cuối cùng,<code>i</code>TRONG<code>[</code><code>​0​</code><code>, </code><code>size()</code><code>)</code>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p><code>data<span class="br0">.</span><span class="br0">)</span> <span class="sy2">gọi</span> i <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span>operator<span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">.</span>i<span class="br0">)</span><span class="br0">)</span></code>constexpr outputit exclusive_scan (đầu vào đầu tiên, đầu vào cuối cùng,<code>i</code>TRONG<code>[</code><code>​0​</code><code>, </code><code>size()</code><code>]</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;THERTHERM&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="front" title="cpp/string/basic string/front"> <span class="t-lines"><span>đằng trước</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark">.<span title="not available in libstdc++ C++98 mode">gán các giá trị cho container</span>)</span></span></span></div> </td> <td>(Ngoại trừ tùy chỉnh đó<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="back" title="cpp/string/basic string/back"> <span class="t-lines"><span>Truy cập phần tử</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark">.<span title="not available in libstdc++ C++98 mode">gán các giá trị cho container</span>)</span></span></span></div> </td> <td>không được sử dụng để xây dựng/phá hủy các yếu tố),<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="c_str" title="cpp/string/basic string/c str"> <span class="t-lines"><span>/ * không xác định */ parse (const std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt; &amp; fmt,</span></span></a></div> </td> <td>Loại nhân vật<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_string_view/data" title="cpp/string/basic string view/data"> <span class="t-lines"><span>dữ liệu</span></span></a></div> </td> <td>các loại<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_string_view&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string/data">https://en.cppreference.com/w/cpp/string/basic_string/data</a>
+</p>
+</div>

@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Dưới đây_Type</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Nếu như<code>T</code>cấu trúc bên dưới_type;<code>type</code>là một loại liệt kê hoàn chỉnh (enum), cung cấp một thành viên đánh máy<code>T</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Nếu không, hành vi là không xác định.</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>                        Forwardit2 d_first, pinarypredicate p);<code>T</code>tên là loại cơ bản của<code>type</code>không phải là loại bảng liệt kê, không có thành viên<code>T</code>. Nếu không thì (</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>bằng nhau<code>std::underlying_type</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Tên</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td>như các đối số, và các chương trình khuyến mãi tích hợp được tự động áp dụng sau khi chuyển đổi lvalue sang rvalue, nếu có. Chuyển đổi này luôn bảo tồn giá trị.<code>T</code> </td>
+</tr> </table> <h3 id="Helper_types">Mẫu &lt;phạm vi :: input_range r, std :: meally_incrementable o&gt;</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">là một loại bảng liệt kê không đầy đủ), chương trình không được hình thành.</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Mỗi<a href="../language/enum" title="cpp/language/enum">enumeration type</a>có một<i>loại cơ bản</i>Mẫu &lt;Class T&gt;</p>
+<ol>
+<li>sử dụng bên dưới_type_t = typename bên dưới_type &lt;t&gt; :: type;</li>
+<li>, có thể là<code>int</code>Được chỉ định rõ ràng (cả bảng điều khiển phạm vi và không có chỗ đứng);</li>
+</ol> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Bỏ qua, trong trường hợp đó là</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Đối với các bảng liệt kê có phạm vi hoặc loại tích phân được xác định theo triển khai có khả năng đại diện cho tất cả các giá trị của enum (đối với các bảng điều khiển không được sử dụng).</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2396" rel="nofollow">LWG 2396</a> </td> <td>C ++ 11</td> <td>#include &lt;Istream&gt;</td> <td>#include &lt;type_traits&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_enum" title="cpp/types/is enum"> <span class="t-lines"><span>is_enum</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có phải là loại bảng liệt kê không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_scoped_enum" title="cpp/types/is scoped enum"> <span class="t-lines"><span>is_scoped_enum</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Kiểm tra xem một loại có phải là loại bảng liệt kê phạm vi không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/to_underlying" title="cpp/utility/to underlying"> <span class="t-lines"><span>to_underlying</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Chuyển đổi một bảng liệt kê thành loại cơ bản của nó<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/underlying_type">https://en.cppreference.com/w/cpp/types/underlying_type</a>
+</p>
+</div>

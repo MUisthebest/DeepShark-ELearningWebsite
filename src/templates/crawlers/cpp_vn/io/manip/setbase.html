@@ -1,0 +1,36 @@
+ <h1 class="firstHeading" id="firstHeading">std :: setbase</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/iomanip" title="cpp/header/iomanip">&lt;iomanip&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">/*không xác định*/ setbase (cơ sở int);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đặt cơ sở số của luồng. Khi được sử dụng trong một biểu thức<code>out &lt;&lt; setbase(base)</code>hoặc<code>in &gt;&gt; setbase(base)</code>, thay đổi<code>basefield</code>cờ của luồng<code>out</code>hoặc<code>in</code>, tùy thuộc vào giá trị của<code>base</code>:</p>
+<ul>
+<li>giá trị<code>16</code>, di chuyển-thiết kế bộ phân bổ từ<code>basefield</code>ĐẾN<code><a href="../ios_base/fmtflags" title="cpp/io/ios base/fmtflags">std::ios_base::hex</a></code>.</li>
+<li>giá trị<code>8</code>, di chuyển-thiết kế bộ phân bổ từ<code><a href="../ios_base/fmtflags" title="cpp/io/ios base/fmtflags">std::ios_base::oct</a></code>.</li>
+<li>giá trị<code>10</code>, di chuyển-thiết kế bộ phân bổ từ<code><a href="../ios_base/fmtflags" title="cpp/io/ios base/fmtflags">std::ios_base::dec</a></code>.</li>
+</ul> <p>Giá trị của<code>base</code>Khác với 8, 10 hoặc 16 Đặt lại<code>basefield</code>đến 0, tương ứng với đầu ra thập phân và đầu vào phụ thuộc tiền tố.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>căn cứ</td> <td>-</td> <td>Giá trị mới cho Basefield</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>, mong đợi các ký hiệu tiền tệ tùy chọn khác</p>
+<ul>
+<li>nếu như<code>out</code>Một đối tượng của loại không xác định sao cho<code><a href="http://en.cppreference.com/w/cpp/io/basic_ostream"><span class="kw1719">Điều đó cho tất cả<span class="me2">BASIC_OSTREAM</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span></code>, biểu thức<code>out &lt;&lt; setbase(base)</code> <ul>
+<li>và kết quả của việc chuyển đổi bằng<code><a href="http://en.cppreference.com/w/cpp/io/basic_ostream"><span class="kw1719">Điều đó cho tất cả<span class="me2">BASIC_OSTREAM</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span></code> </li>
+<li>là một đối tượng của loại<code>out</code> </li>
+<li>có giá trị<code>f(out, base)</code> </li>
+</ul> </li>
+<li>nếu như<code>in</code>Một đối tượng của loại không xác định sao cho<code><a href="http://en.cppreference.com/w/cpp/io/basic_istream"><span class="kw1717">Điều đó cho tất cả<span class="me2">basic_istream</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span></code>, biểu thức<code>in &gt;&gt; setbase(base)</code> <ul>
+<li>và kết quả của việc chuyển đổi bằng<code><a href="http://en.cppreference.com/w/cpp/io/basic_istream"><span class="kw1717">Điều đó cho tất cả<span class="me2">basic_istream</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT, Traits<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span></code> </li>
+<li>là một đối tượng của loại<code>in</code> </li>
+<li>có giá trị<code>f(in, base)</code> </li>
+</ul> </li>
+</ul> <p>hành xử như thể nó được gọi<code>f</code>        const std :: remove_reference_t &lt;u&gt; &amp;&gt;;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">void F (STD :: iOS_BASE &amp; STR, INT BASE)</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    // Đặt Basefield</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue183" rel="nofollow">LWG 183</a> </td> <td>C ++ 98</td> <td>
+<code>setbase</code>    str.setf (cơ sở == 8? std :: ios_base :: oct:<br/>nó đến một đối tượng<code><a href="../basic_ostream" title="cpp/io/basic ostream">std::ostream</a></code>hoặc<code><a href="../basic_istream" title="cpp/io/basic istream">std::istream</a></code> </td> <td>#include &lt;iomanip&gt;<br/>#include &lt;Istream&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="hex" title="cpp/io/manip/hex"> <span class="t-lines"><span>Tháng mười hai</span><span>Hex</span><span>OCT</span></span></a></div> </td> <td>thay đổi cơ sở được sử dụng cho số nguyên I/O<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="showbase" title="cpp/io/manip/showbase"> <span class="t-lines"><span>cơ sở giới thiệu</span><span>Noshowbase</span></span></a></div> </td> <td>Kiểm soát liệu tiền tố được sử dụng để chỉ ra cơ sở số<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/manip/setbase">https://en.cppreference.com/w/cpp/io/manip/setbase</a>
+</p>
+</div>

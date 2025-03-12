@@ -1,0 +1,42 @@
+ <h1 class="firstHeading" id="firstHeading">std :: ref, std :: Cref</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/functional" title="cpp/header/functional">&lt;functional&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">std :: tham chiếu_Wrapper &lt;T&gt; ref (t &amp; t) noExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr std :: tham chiếu_Wrapper &lt;T&gt; ref (t &amp; t) noexcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(4)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">STD :: Tham chiếu_WRAPPER &lt;T&gt;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">    ref (std :: tham chiếu_wrapper &lt;t&gt; t) NoExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">             Không có p);</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ConstExPR STD :: Tham chiếu_WRAPPER &lt;T&gt;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">    ref (std :: tham chiếu_wrapper &lt;t&gt; t) NoExcept;</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Mẫu &lt;class F, class ... args&gt;<code>ref</code>Và<code>cref</code>Mẫu &lt;Class T&gt;<code><a href="reference_wrapper" title="cpp/utility/functional/reference wrapper">std::reference_wrapper</a></code>Mẫu &lt;class inputit, lớp đầu ra,<a href="../../language/template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>void ref (const t &amp;&amp;) = xóa;</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p><code>T</code>có thể là một loại không đầy đủ.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Chuyển đổi đối số</td> <td>-</td> <td>Mẫu &lt;Class T&gt;<code><a href="reference_wrapper" title="cpp/utility/functional/reference wrapper">std::reference_wrapper</a></code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code><a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper"><span class="kw1070">Điều đó cho tất cả<span class="me2">Tham chiếu_Wrapper</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="br0">.</span>t<span class="br0">)</span></code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>t</code>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span> <code><a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper"><span class="kw1070">Điều đó cho tất cả<span class="me2">Tham chiếu_Wrapper</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">hằng số</span> T<span class="sy1">&lt;</span><span class="br0">.</span>t<span class="br0">)</span></code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <code>t</code>
+</div> <div class="t-li1">
+<span class="t-li">          lớp unytransformop&gt;</span>std :: tham chiếu_wrapper &lt;const t&gt; cref (const t &amp; t) noExcept;</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Consexpr std :: tham chiếu_wrapper &lt;const t&gt; cref (const t &amp; t) noexcept;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3146" rel="nofollow">LWG 3146</a> </td> <td>C ++ 11</td> <td>Mẫu &lt;Class T&gt;</td> <td>std :: tham chiếu_Wrapper &lt;const t&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="reference_wrapper" title="cpp/utility/functional/reference wrapper"> <span class="t-lines"><span>Tham chiếu_Wrapper</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td> <a href="../../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>Và<a href="../../named_req/copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>Trình bao bọc tham khảo<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/functional/ref">https://en.cppreference.com/w/cpp/utility/functional/ref</a>
+</p>
+</div>

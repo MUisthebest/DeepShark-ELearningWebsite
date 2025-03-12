@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: Transform_view &lt;V, f&gt; ::<i>vòng lặp</i>&lt;str&gt; :: Nhà điều hành*</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Toán tử DeclType (Auto) ConstExPR*() const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Trả về phần tử đã biến đổi.</p>
+<p>Đường dẫn gần (const std :: fileSystem :: path &amp; p,<code><a href="http://en.cppreference.com/w/cpp/utility/functional/invoke"><span class="kw1063">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span><span class="sy2">*</span>parent_<span class="sy2">-</span><span class="sy1">&lt;</span>fun_, <span class="sy2">*</span>current_<span class="br0">)</span></code>là<code>*parent_-&gt;fun_</code>là chức năng chuyển đổi được lưu trữ trong cha mẹ<code>transform_view</code>, Và<code>current_</code>là người lặp cơ bản vào<code>V</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Phần tử biến đổi.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>operator-&gt;</code>không được cung cấp.</p>
+<p>Hành vi không được xác định nếu con trỏ đến cha mẹ<code>transform_view</code>là null (ví dụ: nếu<code>*this</code>được xây dựng mặc định).</p>
+<p>Nếu như<code>*current_</code>là một prvalue, tuổi thọ của nó kết thúc trước khi hàm này trở lại. Nếu chức năng chuyển đổi trả về một tham chiếu hoặc con trỏ cho nó, kết quả sẽ treo lủng lẳng.</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/transform_view/iterator/operator*">https://en.cppreference.com/w/cpp/ranges/transform_view/iterator/operator*</a>
+</p>
+</div>

@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tăng khả năng tăng</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/iterator" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class I&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>    Khái niệm tăng lên =<a href="../concepts#Equality_preservation" title="cpp/concepts">equality-preserving</a>        std :: thường xuyên &lt;i&gt; &amp;&amp;<code><a href="../concepts/equality_comparable" title="cpp/concepts/equality comparable">std::equality_comparable</a></code>.</p>
+<p>và có thể không di động giữa các hệ điều hành.<code><a href="weakly_incrementable" title="cpp/iterator/weakly incrementable">std::weakly_incrementable</a></code>        STD :: yếu_incrementable &lt;i&gt; &amp;&amp;<code>std::incrementable</code>.</p>
+<h3 id="Semantic_requirements">        const std :: remove_reference_t &lt;lhs&gt; &amp;,</h3> <p><code>I</code>Range constexpr :: mượn_subrange_t &lt;r&gt;<code>std::incrementable</code>        Yêu cầu (i i) {<code>a</code>Và<code>b</code>nó đến một đối tượng<code>I</code>:</p>
+<ul>
+<li> <code>bool(a == b)</code>nó là chuyển tiếp:<code>bool(a++ == b)</code>, Và</li>
+<li> <code>bool(a == b)</code>nó là chuyển tiếp:<code>bool(((void)a++, a) == ++b)</code>.</li>
+</ul> <h3 id="Equality_preservation">Bảo tồn bình đẳng</h3> <p>chỉ được mô hình hóa nếu<a href="../language/requires" title="cpp/language/requires">requires expressions</a>(tức là, biểu thức gán mang lại một lvalue đề cập đến toán hạng bên trái);<a href="../concepts#Equality_preservation" title="cpp/concepts">equality-preserving</a>Sau khi đánh giá</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="weakly_incrementable" title="cpp/iterator/weakly incrementable"> <span class="t-lines"><span>yếu_incrementable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Chỉ định toán tử đó<a href="../concepts/semiregular" title="cpp/concepts/semiregular"><code>semiregular</code></a>Loại có thể được tăng lên với các toán tử trước và sau khi tăng<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../concepts/same_as" title="cpp/concepts/same as"> <span class="t-lines"><span>    c == D;           // Biểu thức số 1: Không sửa đổi các toán hạng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>    a = std :: di chuyển (b); // Biểu thức #2: Sửa đổi cả hai toán hạng<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/incrementable">https://en.cppreference.com/w/cpp/iterator/incrementable</a>
+</p>
+</div>

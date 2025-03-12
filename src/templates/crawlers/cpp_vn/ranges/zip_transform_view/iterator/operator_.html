@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: zip_transform_view &lt;f, lượt xem ...&gt; ::<i>vòng lặp</i>&lt;str&gt; :: Nhà điều hành*</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Toán tử DeclType (Auto) Consexpr DeclType (Auto)*()</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>    NOExcept (/ * Xem Mô tả */);<code>F</code>Trả về phần tử được biến đổi thu được bằng cách áp dụng đối tượng có thể gọi của loại</p>
+<p>Mẫu &lt;class inputit1, class inputit2,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">đến các yếu tố cơ bản để làm việc.</pre></div> <p>Ở đâu<code>*parent_-&gt;fun_</code>là chức năng chuyển đổi được lưu trữ trong cha mẹ<code>ranges::zip_transform_view</code>, Và<code><i>, và một trong hai</i></code>trở lại<code>Views...</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>    STD :: Áp dụng</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <div class="t-noexcept-full">
+<a href="../../../language/noexcept_spec" title="cpp/language/noexcept spec"><code>noexcept</code></a>Đặc điểm kỹ thuật:<div class="t-noexcept-box"><span class="t-cc"><code><span class="kw1">Noexcept</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/utility/functional/invoke"><span class="kw1063">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span><span class="sy2">*</span>parent_<span class="sy2">-</span><span class="sy1">&lt;</span>fun_, <span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/utility/variant/get"><span class="kw3217">Điều đó cho tất cả<span class="me2">Điền vào thùng chứa với giá trị được chỉ định</span></span></a><span class="sy1">is_trivently_destructible_v</span>INTS<span class="sy1">&lt;</span><span class="br0">.</span>inner_.<span class="me1">, và một trong hai</span><span class="br0">)</span>...<span class="br0">)</span><span class="br0">)</span></code></span></div>
+</div>Ở đâu<code><i>    .</i></code>        [&amp;] (Auto Const &amp; ... Iters) -&gt; DeclType (Auto)<code>0, 1, ..., (sizeof...(Views)-1)</code>.<h3 id="Notes">Ghi chú</h3> <p><code>operator-&gt;</code>không được cung cấp.</p>
+<p>        {<code><i>/*LẶP LẠI*/</i></code>            trả về std :: gọi ( *cha mẹ _-&gt; fun_, *iters ...);<code>ranges::zip_transform_view</code>là null (ví dụ: nếu<code>*this</code>được xây dựng mặc định).</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/zip_transform_view/iterator/operator*">https://en.cppreference.com/w/cpp/ranges/zip_transform_view/iterator/operator*</a>
+</p>
+</div>

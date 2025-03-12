@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: auto_ptr &lt;t&gt; :: toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx17"> <td> <pre data-language="cpp">auto_ptr &amp; toán tử = (auto_ptr &amp; r) ném ();</pre>
+</td> <td>(1)</td> <td> <span class="t-mark">(không dùng nữa trong C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span> </td> </tr> <tr class="t-dcl t-until-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;Class Y&gt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark">(không dùng nữa trong C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span> </td> </tr> <tr class="t-dcl t-until-cxx17"> <td> <pre data-language="cpp">auto_ptr &amp; toán tử = (auto_ptr &lt;y&gt; &amp; r) ném ();</pre>
+</td> <td>(3)</td> <td> <span class="t-mark">(không dùng nữa trong C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span> </td> </tr> </table> <p>auto_ptr &amp; toán tử = (auto_ptr_ref &lt;t&gt; m) ném ();<code>r</code>hoặc<code>m</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Gọi một cách hiệu quả<code>reset(r.release())</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Gọi một cách hiệu quả<code>reset(r.release())</code>.<code>Y*</code> <code>T*</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Gọi một cách hiệu quả<code>reset(m.release())</code>.<code>auto_ptr_ref</code>nắm giữ để có được quyền sở hữu đối tượng.<code>auto_ptr</code>.<code><a href="../auto_ptr" title="cpp/memory/auto ptr">std::auto_ptr</a></code>là một loại được xác định theo triển khai có một tham chiếu đến<a href="operator_auto_ptr" title="cpp/memory/auto ptr/operator auto ptr">convertible to</a>Và<a href="auto_ptr" title="cpp/memory/auto ptr/auto ptr">from</a>là ngầm</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>thường được sử dụng.</td> <td>-</td> <td>khác<code>auto_ptr</code>một con trỏ tới một đối tượng để quản lý</td>
+</tr> <tr class="t-par"> <td>bắt buộc_span_size</td> <td>-</td> <td>Thay thế đối tượng được quản lý bằng một đối tượng được quản lý bởi<code>auto_ptr</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>một loại được xác định theo thực hiện có tham chiếu đến<code>auto_ptr_ref</code>Trình xây dựng và toán tử gán bản sao từ<code><a href="../auto_ptr" title="cpp/memory/auto ptr">std::auto_ptr</a></code>được cung cấp để cho phép sao chép và gán bản sao và gán<a href="operator_auto_ptr" title="cpp/memory/auto ptr/operator auto ptr">user-defined conversion</a>từ những người tạm thời không tên. Vì hàm tạo bản sao và toán tử gán bản sao lấy đối số làm tài liệu tham khảo không phải lúc, chúng không thể liên kết các đối số rvalue trực tiếp. Tuy nhiên, a<code>auto_ptr</code>có thể được thực thi (phát hành bản gốc<code>auto_ptr_ref</code>), theo sau là một cuộc gọi đến toán tử xây dựng hoặc sao chép sao chép<a href="../../utility/move" title="cpp/utility/move">move semantics</a>.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue127" rel="nofollow">LWG 127</a> </td> <td>C ++ 98</td> <td>
+<code>auto_ptr</code>một đối tượng của loại do thực hiện xác định giữ một tham chiếu đến<code>auto_ptr_ref</code> </td> <td>không được gán từ</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/auto_ptr/operator%3D">https://en.cppreference.com/w/cpp/memory/auto_ptr/operator%3D</a>
+</p>
+</div>

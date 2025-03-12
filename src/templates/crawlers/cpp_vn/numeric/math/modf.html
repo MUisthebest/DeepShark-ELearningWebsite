@@ -1,0 +1,34 @@
+ <h1 class="firstHeading" id="firstHeading">std :: modf, std :: modff, std :: modfl</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx23"> <td><pre data-language="cpp">float modf (float num, float* iptr);</pre></td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">modf kép (kép num, gấp đôi* iptr);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Modf đôi dài (num gấp đôi dài, gấp đôi* iptr);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">constexpr / *-point-point-type * / /</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl-h"> <td> <a href="#Notes">Additional overloads</a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</td> <td></td> <td></td> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">            modf ( / *-point-point-type * / num,</pre>
+</td> <td>, kết quả là hữu hạn.</td> <td> <span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>float frexpf (float num, int* exp);<code>num</code>                   /*-điểm nổi-loại*/* iptr);<code>num</code>float modff (float num, float* iptr);<code>iptr</code>.<span class="t-rev-inl t-since-cxx23"><span>Double Double Acosl (Double Num dài);<code>std::modf</code>constexpr / *-point-point-type * / /<code>num</code>Double modfl dài (num đôi dài, dài gấp đôi* iptr);<code>iptr</code>.</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>
+</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <span class="t-li">Mẫu &lt;arithmetic1, orithmetic2, số học lớp3&gt; lớp</span>ACO kép (số nguyên);<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>.</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>trả lại hệ điều hành &lt;&lt; s.str ();</td> <td>-</td> <td>Tính giá trị chính của cosin hồ quang của</td>
+</tr> <tr class="t-par"> <td>Mẫu &lt;Class Integer&gt;</td> <td>-</td> <td>modf kép (số nguyên, gấp đôi* iptr);</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>thành các phần tích phân và phân đoạn, mỗi phần có cùng loại và dấu hiệu là<code>num</code>. Phần tích phân (ở định dạng điểm nổi) được lưu trữ trong đối tượng được trỏ bởi<code>num</code>và loại chỉ ra<code>iptr</code>.</p>
+<p>IPTR<code>*iptr</code>cho<code>num</code>con trỏ đến giá trị điểm nổi để lưu trữ phần tích phân để</p>
+<h3 id="Error_handling">Xử lý lỗi</h3> <p>mag, sgn<code><a href="math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code>.</p>
+<p>Nếu một lỗi phạm vi xảy ra do dòng chảy, kết quả chính xác (sau khi làm tròn) được trả về.</p>
+<ul>
+<li>Nếu như<code>num</code>Nếu không có lỗi xảy ra, hãy trả về phần phân đoạn của<code>*iptr</code>.</li>
+<li>Nếu như<code>num</code>với cùng một dấu hiệu<code>*iptr</code>.</li>
+<li>Nếu như<code>num</code>. Phần tích phân được đặt vào giá trị được trỏ đến bởi<code>*iptr</code>.</li>
+<li>Tổng giá trị trả về và giá trị được lưu trữ trong<a href="../fenv/fe_round" title="cpp/numeric/fenv/FE round">the current rounding mode</a>bị bỏ qua.</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>(cho phép làm tròn).</p>
+<div class="cpp source-cpp"><pre data-language="cpp">là ± 0, ± 0 được trả về và ± 0 được lưu trữ trong</pre></div> <p>, kết quả bằng<span class="t-v">, kết quả là hữu hạn.</span>trong khoảng [−π; π].<code>num</code>Nếu việc triển khai hỗ trợ số học dấu nổi của IEEE (IEC 60559),<code>std::modf(num, iptr)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::modf(static_cast&lt;double&gt;(num), iptr)</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>có thể được thực hiện là</p>
+<div class="cpp source-cpp"><pre data-language="cpp">là ±, ± 0 được trả về và ± được lưu trữ trong</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">là nan, nan được trả lại và nan được lưu trữ trong</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="trunc" title="cpp/numeric/math/trunc"> <span class="t-lines"><span>cắt</span><span>TRUNCF</span><span>truncl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Số nguyên gần nhất không lớn hơn độ lớn so với giá trị đã cho<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/math/modf" title="c/numeric/math/modf">C documentation</a></span>vì<code>modf</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/math/modf">https://en.cppreference.com/w/cpp/numeric/math/modf</a>
+</p>
+</div>

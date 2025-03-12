@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử ==,! = (std :: istreambuf_iterator &lt;biểu đồ, đặc điểm&gt;)</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/iterator" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;biểu đồ lớp, đặc điểm lớp&gt;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-until-cxx20"> <td> <pre data-language="cpp">Toán tử bool == (const std :: istreambuf_iterator &lt;biểu đồ, đặc điểm&gt; &amp; lhs,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">                 const std :: istreambuf_iterator &lt;biểu đồ, đặc điểm&gt; &amp; rhs);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Kiểm tra xem cả hai<code>lhs</code>Và<code>rhs</code>là hợp lệ, hoặc cả hai đều không hợp lệ, bất kể các đối tượng bộ đệm luồng họ sử dụng.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;class inputit1, class inputit2,<code>lhs.equal(rhs)</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;class inputit1, class inputit2,<code>!lhs.equal(rhs)</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>struct is_execut_policy;<code>lhs</code>Mẫu &lt;biểu đồ lớp, đặc điểm lớp&gt;<code>lhs.equal(istreambuf_iterator{})</code>.<br/>Thực thi hiệu quả<a href="../../language/unqualified_lookup" title="cpp/language/unqualified lookup">unqualified</a>hoặc<a href="../../language/qualified_lookup" title="cpp/language/qualified lookup">qualified lookup</a>Chức năng này không thể nhìn thấy thông thường<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>Chuyển đổi danh tính:<code>std::istreambuf_iterator&lt;CharT,Traits&gt;</code>Hương hiệu nút</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>toán tử bool! = (const std :: istreambuf_iterator &lt;biểu đồ, đặc điểm&gt; &amp; lhs,</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Kết quả của<code>lhs.equal(rhs)</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Kết quả của<code>!lhs.equal(rhs)</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Kết quả của<code>lhs.equal(istreambuf_iterator{})</code>.</div> <h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/istreambuf_iterator/operator_cmp">https://en.cppreference.com/w/cpp/iterator/istreambuf_iterator/operator_cmp</a>
+</p>
+</div>

@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: IS_CONSTANT_EVALATE</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr bool is_constant_evalates () noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Phát hiện liệu cuộc gọi chức năng có xảy ra trong bối cảnh được đánh giá không đổi hay không. Trả lại<code>true</code>Nếu việc đánh giá cuộc gọi xảy ra trong việc đánh giá biểu thức hoặc chuyển đổi<a href="../language/constant_expression#Manifestly_constant-evaluated_expressions" title="cpp/language/constant expression">manifestly constant-evaluated</a>So sánh ít hơn<code>false</code>.</p>
+<p>Để xác định xem các bộ khởi tạo của các biến sau có được đánh giá rõ ràng không, các trình biên dịch trước tiên có thể thực hiện đánh giá hằng số thử nghiệm:</p>
+<ul>
+<li>các biến có loại tham chiếu hoặc loại tích phân hoặc bảng liệt kê đủ điều kiện;</li>
+<li>Biến tĩnh và chỉ các biến cục bộ.</li>
+</ul> <p>Không nên phụ thuộc vào kết quả trong trường hợp này.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int y = 0;</pre></div> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>const int a = std :: is_constant_evalates ()? y: 1;<code>false</code>.</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">// Đánh giá liên tục thử nghiệm thất bại. Việc đánh giá liên tục bị loại bỏ.</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>// Biến A được khởi tạo động với 1<a href="../language/static_assert" title="cpp/language/static assert"><code>static_assert</code></a> <a href="../language/if#constexpr_if" title="cpp/language/if">constexpr if statement</a>Thì<code>std::is_constant_evaluated()</code>ký tự bên ngoài và viết không hơn<code>true</code>.</p>
+<p>container tiêu chuẩn<a href="../language/if#Consteval_if" title="cpp/language/if"><code>if consteval</code></a>const int b = std :: is_constant_evalates ()? 2: y;<code>std::is_constant_evaluated</code>// Đánh giá không đổi với std :: is_constant_evalates () == True thành công.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_is_constant_evaluated" title="cpp/feature test"><code>__cpp_lib_is_constant_evaluated</code></a></td> <td><span class="nu0">201811l</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<a href="#Top"><code>std::is_constant_evaluated</code></a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">// Biến B được khởi tạo tĩnh với 2</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Nếu việc đánh giá cuộc gọi xảy ra trong việc đánh giá một biểu thức hoặc chuyển đổi rõ ràng là không đổi; nếu không thì</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="../language/constexpr" title="cpp/language/constexpr"> <code>constexpr</code> specifier</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>) các biểu thức xảy ra trong một</td>
+</tr> <tr class="t-dsc"> <td> <a href="../language/consteval" title="cpp/language/consteval"> <code>consteval</code> specifier</a><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span> </td> <td> <i>chức năng ngay lập tức</i>// C ++ 14 Chức năng Constexpr có thể sử dụng các biến và vòng lặp cục bộ</td>
+</tr> <tr class="t-dsc"> <td> <a href="../language/constinit" title="cpp/language/constinit"> <code>constinit</code> specifier</a><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span> </td> <td>int r2 = sqr (x);            // Lỗi: cuộc gọi không tạo ra một hằng số<a href="../language/zero_initialization" title="cpp/language/zero initialization">zero initialization</a>Và<a href="../language/constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/is_constant_evaluated">https://en.cppreference.com/w/cpp/types/is_constant_evaluated</a>
+</p>
+</div>

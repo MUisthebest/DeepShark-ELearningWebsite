@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Mức độ &lt;indexType, phạm vi ...&gt; :: static_extent</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Tĩnh abtexpr std :: size_t static_extent (rank_type i) noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Trả về kích thước phạm vi tĩnh của một<a href="../extents" title="cpp/container/mdspan/extents"><code>extents</code></a>ở chỉ số xếp hạng<code>i</code>. Nếu chỉ số xếp hạng<code>i</code>là một mức độ năng động, trả về<code>std::dynamic_extent</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</td> <td>-</td> <td>Chỉ số cấp bậc để có được kích thước phạm vi tĩnh của</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Kích thước phạm vi tĩnh hoặc<code>std::dynamic_extent</code>giá trị.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Mdspan&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="extent" title="cpp/container/mdspan/extents/extent"> <span class="t-lines"><span>phạm vi</span></span></a></div> </td> <td>Trả về kích thước phạm vi tĩnh của một<code>extents</code>ở một chỉ số cấp bậc nhất định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../../types/extent" title="cpp/types/extent"> <span class="t-lines"><span>phạm vi</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được kích thước của một loại mảng dọc theo một kích thước được chỉ định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/mdspan/extents/static_extent">https://en.cppreference.com/w/cpp/container/mdspan/extents/static_extent</a>
+</p>
+</div>

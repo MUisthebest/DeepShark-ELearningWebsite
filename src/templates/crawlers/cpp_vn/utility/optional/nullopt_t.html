@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: NULLOPT_T</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/optional" title="cpp/header/optional">&lt;optional&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">struct nullopt_t;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p><code>std::nullopt_t</code>là một loại lớp trống được sử dụng để chỉ ra<code>optional</code>Loại với trạng thái không chính xác. Đặc biệt,<code><a href="http://en.cppreference.com/w/cpp/utility/optional"><span class="kw1077">Điều đó cho tất cả<span class="me2">không mở-cache</span></span></a></code>có một nhà xây dựng với<code>nullopt_t</code>như một đối số duy nhất, tạo ra một tùy chọn không chứa một giá trị.</p>
+<p><code>std::nullopt_t</code>phải là một tổng hợp<a href="../../named_req/literaltype" title="cpp/named req/LiteralType">LiteralType</a>và không thể có hàm tạo mặc định hoặc hàm tạo danh sách khởi tạo.</p>
+<p>Nó phải có một<code>constexpr</code>hàm tạo có một số loại nghĩa đen được xác định thực hiện.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Các ràng buộc trên<code>nullopt_t</code>Các nhà xây dựng tồn tại để hỗ trợ cả hai<code>op = {};</code>Và<code>op = nullopt;</code>Là cú pháp để giải phóng một đối tượng tùy chọn.</p>
+<p>Một triển khai có thể của lớp này là</p>
+<div class="cpp source-cpp"><pre data-language="cpp">struct nullopt_t {</pre></div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="nullopt" title="cpp/utility/optional/nullopt"> <span class="t-lines"><span>NULLOPT</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>một đối tượng của loại<code>nullopt_t</code> <br/> <span class="t-mark">Các đối tượng chính sách thực thi toàn cầu</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/optional/nullopt_t">https://en.cppreference.com/w/cpp/utility/optional/nullopt_t</a>
+</p>
+</div>

@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: lock_guard &lt;mutex&gt; :: lock_guard</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Rõ ràng Lock_Guard (MUTEX_TYPE &amp; M);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">lock_guard (mutex_type &amp; m, std :: pesserpt_lock_t t);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">lock_guard (const lock_guard &amp;) = xóa;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Có được quyền sở hữu của Mutex đã cho<code>m</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Gọi một cách hiệu quả<code>m.lock()</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Có được quyền sở hữu Mutex<code>m</code>mà không cố gắng khóa nó. Hành vi không được xác định nếu luồng hiện tại không giữ khóa không chia sẻ (nghĩa là khóa có được bởi<code>lock</code>Thì<code>try_lock</code>Thì<code>try_lock_for</code>, hoặc<code>try_lock_until</code>) TRÊN<code>m</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Sao chép Constructor bị xóa.</div> <p>đến một phạm vi khác kết thúc tại<code>m</code>bị phá hủy trước<code>lock_guard</code>đối tượng là.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>bắt buộc_span_size</td> <td>-</td> <td>Mutex để có được quyền sở hữu</td>
+</tr> <tr class="t-par"> <td>Chuyển đổi đối số</td> <td>-</td> <td>tham số thẻ được sử dụng để chọn phiên bản không khóa của hàm tạo</td>
+</tr>
+</table> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1)</span>Ném bất kỳ trường hợp ngoại lệ nào được ném bởi<code>m.lock()</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Không ném gì.</div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/lock_guard/lock_guard">https://en.cppreference.com/w/cpp/thread/lock_guard/lock_guard</a>
+</p>
+</div>

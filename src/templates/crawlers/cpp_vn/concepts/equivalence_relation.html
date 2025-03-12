@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Tương đương_relation</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/concepts" title="cpp/header/concepts">&lt;concepts&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class r, class t, class u&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Khái niệm gán được_from =<code>equivalence_relation&lt;R, T, U&gt;</code>chỉ định rằng<a href="relation" title="cpp/concepts/relation"><code>relation</code></a> <code>R</code>khái niệm tương đương_relation = std :: quan hệ &lt;r, t, u&gt;;<a class="extiw" href="https://en.wikipedia.org/wiki/equivalence_relation" title="enwiki:equivalence relation">equivalence relation</a>áp đặt một</p>
+<h3 id="Semantic_requirements">        const std :: remove_reference_t &lt;lhs&gt; &amp;,</h3> <p>về lập luận của nó.<code>r</code>Một mối quan hệ</p>
+<ul>
+<li>là một mối quan hệ tương đương nếu<code>x</code>Thì<code>r(x, x)</code>khoảng cách<code>true</code>Số lượng các yếu tố để sao chép</li>
+<li>nó là phản xạ: cho tất cả<code>a</code>Và<code>b</code>Thì<code>r(a, b)</code>khoảng cách<code>true</code>là<code>r(b, a)</code>khoảng cách<code>true</code>Số lượng các yếu tố để sao chép</li>
+<li>nó là đối xứng: cho tất cả<code>r(a, b) &amp;&amp; r(b, c)</code>nó là chuyển tiếp:<code>r(a, c)</code>.</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>ngụ ý<a href="relation" title="cpp/concepts/relation"><code>relation</code></a>Và<code>equivalence_relation</code>Sự khác biệt giữa</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/concepts/equivalence_relation">https://en.cppreference.com/w/cpp/concepts/equivalence_relation</a>
+</p>
+</div>

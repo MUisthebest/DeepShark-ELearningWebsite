@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_osyncstream &lt;biểu đồ, đặc điểm, phân bổ&gt; :: toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">basic_osyncstream &amp; toán tử = (std :: basic_osyncstream &amp;&amp; khác);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Di chuyển-ASTigns một luồng đầu ra được đồng bộ hóa:</p>
+<p>Di chuyển-thiết kế được gói<code>std::basic_syncbuf</code>từ thành viên tương ứng của<code>other</code>(sau khi chuyển nhượng di chuyển này,<code>other.get_wrapped()</code>trả về một con trỏ null và sự phá hủy của<code>other</code>không tạo ra đầu ra; bất kỳ đầu ra đệm đang chờ xử lý sẽ được phát ra) và<a href="../basic_ostream/operator=" title="cpp/io/basic ostream/operator=">move-assigns</a>cơ sở<code><a href="../basic_ostream" title="cpp/io/basic ostream">std::basic_ostream</a></code>(Điều này hoán đổi tất cả các biến trạng thái luồng ngoại trừ<code>rdbuf</code>giữa<code>*this</code>Và<code>other</code>)</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>một luồng đầu ra được đồng bộ hóa khác để di chuyển từ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;iomanip&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3867" rel="nofollow">LWG 3867</a> </td> <td>C ++ 20</td> <td>#include &lt;Sstream&gt;<span class="kw1">Noexcept</span>Đếm các yếu tố mà vị ngữ<br/><a href="../basic_syncbuf" title="cpp/io/basic syncbuf"><code>std::basic_syncbuf</code></a>#include &lt;YncStream&gt;</td> <td>#include &lt;Istream&gt;<span class="kw1">Noexcept</span> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="basic_osyncstream" title="cpp/io/basic osyncstream/basic osyncstream"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Nếu a<code>basic_osyncstream</code>sự vật<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="~basic_osyncstream" title="cpp/io/basic osyncstream/~basic osyncstream"> <span class="t-lines"><span>một đối tượng ngoại lệ khác để gán với</span></span></a></div> </td> <td>Nếu tay cầm nút không trống,<code>basic_osyncstream</code>    Synced_out &lt;&lt; "Thế giới!";<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="emit" title="cpp/io/basic osyncstream/emit"> <span class="t-lines"><span>cũng như với một tạm thời:</span></span></a></div> </td> <td>cuộc gọi<a href="../basic_syncbuf/emit" title="cpp/io/basic syncbuf/emit"><code>emit()</code></a>std :: osyncstream (std :: cout) &lt;&lt; "Xin chào," &lt;&lt; "Thế giới!" &lt;&lt; '\ n';<code>basic_syncbuf</code>Nó cung cấp đảm bảo rằng tất cả các đầu ra được thực hiện cho cùng một bộ đệm đích cuối cùng (<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_osyncstream/operator%3D">https://en.cppreference.com/w/cpp/io/basic_osyncstream/operator%3D</a>
+</p>
+</div>

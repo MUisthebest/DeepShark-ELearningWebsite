@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: return_temden_buffer</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark">(không được dùng trong C ++ 17)</span> <br/><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td> </tr> </table> <p>void return_temden_buffer (t* p);<code>p</code>.</p>
+<p>Nếu như<code>p</code>Xử lý lưu trữ được tham chiếu bởi<code><a href="get_temporary_buffer" title="cpp/memory/get temporary buffer">std::get_temporary_buffer</a></code>không phải là một giá trị con trỏ được trả về bởi một cuộc gọi trước đó đến<code>std::return_temporary_buffer</code>, hoặc đã bị vô hiệu hóa bởi một can thiệp</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>Gọi, hành vi là không xác định.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">, thành viên</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">kết quả là một con trỏ null và thành viên</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2072" rel="nofollow">LWG 2072</a> </td> <td>C ++ 98</td> <td>con trỏ đề cập đến bộ nhớ bị hủy bỏ<code><a href="get_temporary_buffer" title="cpp/memory/get temporary buffer">std::get_temporary_buffer</a></code><br/>Bộ lưu trữ được phân bổ bởi</td> <td>là giá trị trả về, vẫn có thể giảm được, nhưng bản thân các yếu tố có giá trị không xác định. Một cuộc gọi đến<br/>kích cỡ.</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="get_temporary_buffer" title="cpp/memory/get temporary buffer"> <span class="t-lines"><span>get_temden_buffer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark">(không được dùng trong C ++ 17)</span></span><span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span></span></span></div> </td> <td>Có được lưu trữ không chính thức<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/return_temporary_buffer">https://en.cppreference.com/w/cpp/memory/return_temporary_buffer</a>
+</p>
+</div>

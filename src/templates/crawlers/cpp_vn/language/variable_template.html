@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading"> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span>
+</h1> <p>Một mẫu biến xác định một họ các biến hoặc thành viên dữ liệu tĩnh.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <span class="t-spar">khai báo thay đổi</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">khai báo thay đổi</span> </td> <td>-</td> <td>Một<a href="declarations" title="cpp/language/declarations">declaration</a>của một biến. Tên biến được khai báo trở thành một tên mẫu.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">danh sách tham số</span> </td> <td>-</td> <td>một danh sách không phân tách dấu phẩy không có trống của<a href="template_parameters" title="cpp/language/template parameters">template parameters</a>, mỗi trong số đó là<a href="template_parameters#Non-type_template_parameter" title="cpp/language/template parameters">non-type parameter</a>có thể đại diện cho các phân số của ve.<a href="template_parameters#Type_template_parameter" title="cpp/language/template parameters">type parameter</a>có thể đại diện cho các phân số của ve.<a href="template_parameters#Template_template_parameter" title="cpp/language/template parameters">template parameter</a>được đặt ở chế độ mở của gói<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>của bất kỳ trong số đó.</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Một biến được khởi tạo từ một mẫu biến được gọi là<i>biến khởi tạo</i>. Một thành viên dữ liệu tĩnh được khởi tạo từ mẫu thành viên dữ liệu tĩnh được gọi là<i>Thành viên dữ liệu tĩnh khởi tạo</i>.</p>
+<p>Một mẫu biến có thể được giới thiệu bởi một khai báo mẫu tại phạm vi không gian tên, trong đó<span class="t-spar">khai báo thay đổi</span>tuyên bố một biến.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> <p>Consexpr t pi = t (3.1415926535897932385L); // Mẫu biến</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Mẫu &lt;Class T&gt;<a href="static" title="cpp/language/static">static members</a>T rircular_area (t r) // mẫu chức năng<a href="member_template" title="cpp/language/member template">data member of a class template</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>    trả về pi &lt;t&gt; * r * r; // pi &lt;t&gt; là một mô hình thay đổi khởi tạo<a href="template_specialization" title="cpp/language/template specialization">explicitly specialized</a>}<a href="definition#ODR-use" title="cpp/language/definition">a variable definition to exist</a>Khi được sử dụng ở phạm vi lớp, mẫu biến sẽ khai báo mẫu thành viên dữ liệu tĩnh.<a href="constant_expression#Functions_and_variables_needed_for_constant_evaluation" title="cpp/language/constant expression">needed for constant evaluation</a>sử dụng không gian tên std :: nghĩa đen;</p>
+<p>Struct Matrix_constants</p>
+<h3 id="Notes">Ghi chú</h3> <p>{</p>
+<p>    Mẫu &lt;Class T&gt;<a href="template_parameters#Template_template_arguments" title="cpp/language/template parameters">template template arguments</a>.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_variable_templates" title="cpp/feature test"><code>__cpp_variable_templates</code></a></td> <td><span class="nu0">Khoảng thời gian thực tế (tính bằng giây) được giữ bởi một đối tượng thời lượng</span></td> <td><span class="t-mark">(C ++ 14)</span></td> <td>{</td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2255.html" rel="nofollow">CWG 2255</a> </td> <td>C ++ 14</td> <td>    sử dụng pauli = hermitian_matrix &lt;t, 2&gt;; // Mẫu bí danh<br/> </td> <td>Một chức năng được sử dụng ODR trong các trường hợp sau:</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/variable_template">https://en.cppreference.com/w/cpp/language/variable_template</a>
+</p>
+</div>

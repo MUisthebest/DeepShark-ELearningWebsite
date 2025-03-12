@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iOS_Base :: Imbue</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: Locale Imbue (const std :: Locale &amp; loc);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đặt vị trí liên quan của luồng thành<code>loc</code>. Trước khi trả lại, mỗi chức năng, được đăng ký bởi<code><a href="register_callback" title="cpp/io/ios base/register callback">register_callback()</a></code>được gọi với<code>imbue_event</code>như một tham số.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, con trỏ tới chuỗi ký tự kết thúc không</td> <td>-</td> <td>địa phương mới để liên kết luồng với</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Đối tượng địa phương được liên kết với luồng trước khi hoạt động.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue47" rel="nofollow">LWG 47</a> </td> <td>C ++ 98</td> <td>#include &lt;iomanip&gt;<code>getloc()</code> </td> <td>#include &lt;CstDint&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue156" rel="nofollow">LWG 156</a> </td> <td>C ++ 98</td> <td>#include &lt;Istream&gt;<code>loc</code> <code>const std::locale</code> </td> <td>, số lượng tăng số lặp là tuyến tính. Đáng chú ý,<code>const std::locale&amp;</code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="getloc" title="cpp/io/ios base/getloc"> <span class="t-lines"><span>Đầu ra</span></span></a></div> </td> <td>quản lý độ chính xác thập phân của các hoạt động điểm nổi<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ios_base/imbue">https://en.cppreference.com/w/cpp/io/ios_base/imbue</a>
+</p>
+</div>

@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">std :: match_results &lt;bidirit, alloc&gt; :: match_results</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">match_results (): match_results (allocator ()) {}</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Match_Results rõ ràng (const Allecator &amp; A);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">match_results (const match_results &amp; rhs);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">match_results (const match_results &amp; rhs, const allocator &amp; a);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">match_results (match_results &amp;&amp; rhs) noExcept;</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">match_results (match_results &amp;&amp; rhs, const allocator &amp; a);</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định. Xây dựng một kết quả trận đấu không có trạng thái kết quả được thiết lập (<code>ready() != true</code>).</div> <div class="t-li1">
+<span class="t-li">2)</span>Xây dựng một kết quả trận đấu không có trạng thái kết quả được thiết lập (<code>ready() != true</code>) sử dụng một bản sao của<code>a</code>Xây dựng container với</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Sao chép hàm tạo. Xây dựng một kết quả phù hợp với một bản sao của<code>rhs</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Xây dựng một kết quả phù hợp với một bản sao của<code>rhs</code>và sử dụng một bản sao của<code>a</code>Xây dựng container với</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Di chuyển hàm tạo. Xây dựng một kết quả phù hợp với nội dung của<code>rhs</code>Sử dụng ngữ nghĩa di chuyển.<code>rhs</code>ở trong trạng thái hợp lệ, nhưng không xác định sau cuộc gọi.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>Xây dựng một kết quả phù hợp với nội dung của<code>rhs</code>sử dụng ngữ nghĩa di chuyển và sử dụng một bản sao của<code>a</code>Xây dựng container với<code>rhs</code>ở trong trạng thái hợp lệ, nhưng không xác định sau cuộc gọi.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Một</td> <td>-</td> <td>Nhà xây dựng di chuyển mở rộng phân bổ. Sử dụng</td>
+</tr> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>khác<code>match_results</code>để sử dụng làm nguồn để khởi tạo<code>match_results</code>với</td>
+</tr>
+</table> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">              Forwardit2 first2,</span>Có thể ném các trường hợp ngoại lệ do thực hiện.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>Không ném gì nếu<code>a == rhs.get_allocator()</code>khoảng cách<code>true</code>.</div> <h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2195" rel="nofollow">LWG 2195</a> </td> <td>C ++ 11</td> <td>các hàm tạo theo yêu cầu của<a href="../../named_req/allocatorawarecontainer" title="cpp/named req/AllocatorAwareContainer">AllocatorAwareContainer</a>. Các cơ chế được sử dụng để đảm bảo tính nguyên tử và thứ tự bộ nhớ phải tương thích.</td> <td>Được cho</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0935R0" rel="nofollow">P0935R0</a> </td> <td>C ++ 11</td> <td>Xây dựng bộ điều hợp với nội dung của</td> <td>3,5,12)</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/match_results/match_results">https://en.cppreference.com/w/cpp/regex/match_results/match_results</a>
+</p>
+</div>

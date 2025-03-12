@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Generator &lt;ref, v, allocator&gt; :: Promise_type :: Final_suspend</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">tự động final_suspend () noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>x</code>là một số<a href="../../generator" title="cpp/coroutine/generator">generator</a>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<p><code>final_suspend</code>Có như sau không:</p>
+<ol>
+<li>Bật tay cầm coroutine từ đầu<code>*<a href="../../generator#Data_members" title="cpp/coroutine/generator">active_</a></code>.</li>
+<li>Nếu như<code>*x.active_</code>không trống, tiếp tục thực hiện coroutine được đề cập bởi<code>x.active_-&gt;top()</code>. Nếu nó trống, luồng điều khiển sẽ trả về người gọi hoặc bộ phát âm coroutine hiện tại.</li>
+</ol> <p>Một tay cầm đề cập đến coroutine có đối tượng hứa hẹn<code>*this</code>Phải đứng đầu<code>*x.active_</code>của<code>x</code>. Chức năng này phải được Coroutine gọi khi đạt đến điểm đình chỉ cuối cùng của nó, nếu không hành vi không được xác định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>MỘT<a href="../../../coroutine#co_await" title="cpp/coroutine">awaitable object</a>thuộc loại không xác định có chức năng thành viên được cấu hình để đình chỉ Coroutine gọi.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/coroutine/generator/promise_type/final_suspend">https://en.cppreference.com/w/cpp/coroutine/generator/promise_type/final_suspend</a>
+</p>
+</div>

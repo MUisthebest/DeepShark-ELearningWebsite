@@ -1,0 +1,54 @@
+ <h1 class="firstHeading" id="firstHeading">
+<code>virtual</code>Chức năng Đặc biệt</h1> <p>Các<code>virtual</code>trình xác định chỉ định rằng không tĩnh<a href="member_functions" title="cpp/language/member functions">member function</a>khoảng cách<i>ảo</i>và hỗ trợ công văn động. Nó chỉ có thể xuất hiện trong<span class="t-spar">DEM-SPECIFIER-SEQ</span>của tuyên bố ban đầu về hàm thành viên không tĩnh (nghĩa là, khi nó được khai báo trong định nghĩa lớp).</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Các chức năng ảo là các hàm thành viên có hành vi có thể được ghi đè trong các lớp dẫn xuất. Trái ngược với các chức năng phi Virtual, hành vi ghi đè được bảo tồn ngay cả khi không có thông tin thời gian biên dịch về loại thực tế của lớp. Điều đó có nghĩa là, nếu một lớp dẫn xuất được xử lý bằng cách sử dụng con trỏ hoặc tham chiếu đến lớp cơ sở, một cuộc gọi đến một hàm ảo được ghi đè sẽ gọi hành vi được xác định trong lớp dẫn xuất. Một cuộc gọi chức năng như vậy được gọi là<i>gọi chức năng ảo</i>hoặc<i>cuộc gọi ảo</i>. Cuộc gọi chức năng ảo bị triệt tiêu nếu chức năng được chọn bằng cách sử dụng<a href="lookup" title="cpp/language/lookup">qualified name lookup</a>(nghĩa là, nếu tên của hàm xuất hiện ở bên phải của toán tử phân giải phạm vi<code>::</code>).</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> </div> <h3 id="In_detail">    void add (int x) // thành viên "Thêm" có quyền truy cập công khai</h3> <p> <code>vf</code>cơ sở cấu trúc<code>virtual</code>{<code>Base</code>    khoảng trống ảo f ()<code>Derived</code>    {<code>Base</code>        std :: cout &lt;&lt; "cơ sở \ n";</p>
+<ul>
+<li>tên</li>
+<li>    }</li>
+<li>};</li>
+<li>Máy đánh giá lại</li>
+</ul> <p> <code>Derived</code>, tức là nó phải đáp ứng tất cả các yêu cầu sau:<i>ảo</i>cấu trúc có nguồn gốc: cơ sở<code>virtual</code>{<i>    void f () ghi đè // 'ghi đè' là tùy chọn</i>    {<code>override</code>        std :: cout &lt;&lt; "xuất phát \ n";</p>
+<p><code>Base::vf</code>    }<code>Base::vf</code>};<code>Base</code> <code>Derived</code>int main ()<code>Base</code>{<code>Base::vf</code>    Cơ sở b;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    Có nguồn gốc d;</pre></div> <p> <i>    // Cuộc gọi chức năng ảo thông qua tham chiếu</i>    Cơ sở &amp; br = b; // loại BR là cơ sở &amp;<code>vf</code>    Cơ sở &amp; dr = d; // loại DR là cơ sở và cũng vậy<code>Base</code>    br.f (); // in "cơ sở"<code>vf</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    dr.f (); // in "xuất phát"</pre></div> <p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">    // Gọi chức năng ảo qua con trỏ</pre></div> <p>    Cơ sở* bp = &amp; b; // loại bp là cơ sở*<i>};</i>    Cơ sở* dp = &amp; d; // loại DP cũng là cơ sở*<a href="lookup" title="cpp/language/lookup">unqualified name lookup</a>    bp-&gt; f (); // in "cơ sở"</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    dp-&gt; f (); // in "xuất phát"</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>    Dr.Base :: f (); // in "cơ sở"<code>override</code>    // Cuộc gọi chức năng không phải là Virtual</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    br.base :: f (); // in "cơ sở"</pre></div> <p>    Dr.Base :: f (); // in "cơ sở"<code>final</code>}</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Nếu một số chức năng thành viên</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>được tuyên bố là</p>
+<p>trong một lớp học<code>virtual</code>và một số lớp học</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>, có nguồn gốc, trực tiếp hoặc gián tiếp, từ</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, có một tuyên bố cho chức năng thành viên với cùng</pre></div> <p>MỘT<a href="consteval" title="cpp/language/consteval"><code>consteval</code></a>danh sách loại tham số (nhưng không phải loại trả về)<code>consteval</code>cv-đủ điều kiện</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p><a href="default_arguments" title="cpp/language/default arguments">Default arguments</a>Sau đó, chức năng này trong lớp</p>
+<h4 id="Covariant_return_types">(có hay không từ khóa</h4> <p>được sử dụng trong tuyên bố của nó) và<code>Derived::f</code>ghi đè<code>Base::f</code>Cơ sở :: VF (có hay không từ<i>được sử dụng trong tuyên bố của nó).</i>không cần phải truy cập hoặc có thể nhìn thấy để được ghi đè. .</p>
+<ul>
+<li>có thể được tuyên bố riêng tư, hoặc</li>
+<li>có thể được thừa hưởng bằng cách sử dụng thừa kế tư nhân. Bất kỳ thành viên nào có cùng tên trong một lớp cơ sở của<code>Base::f()</code>mà kế thừa<code>Derived::f()</code>.</li>
+<li>loại trả lại của<code>Derived::f()</code>không quan trọng để xác định ghi đè, ngay cả khi họ sẽ che giấu<a href="cv" title="cpp/language/cv"> cv-qualified</a>Trong khi tra cứu tên.)<code>Base::f()</code>.</li>
+</ul> <p>lớp b<code>Derived::f</code>{<code>Derived</code>    khoảng trống ảo DO_F (); // Thành viên tư nhân<a class="mw-redirect" href="incomplete_type" title="cpp/language/incomplete type">complete type</a>công cộng:<code>Derived::f</code>.</p>
+<p>    void f () {do_f (); } // Giao diện công cộng<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">implicitly converted</a>};</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h4 id="Virtual_destructor">Struct D: Công khai B</h4> <p>{<code>virtual</code>    void do_f () ghi đè; // ghi đè B :: DO_F</p>
+<div class="cpp source-cpp"><pre data-language="cpp">};</pre></div> <p> <i>hành vi không xác định</i>int main ()<span class="t-rev-inl t-since-cxx20"><span>{<code><a href="../memory/new/operator_delete" title="cpp/memory/new/operator delete">operator delete</a></code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>.</p>
+<p>    D d;<a class="external text" href="https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Rc-dtor-virtual" rel="nofollow">public and virtual or protected and non-virtual</a>    B* bp = &amp; d;<span class="t-rev-inl t-since-cxx11"><span>    bp-&gt; f (); // gọi nội bộ d :: do_f ();<code><a href="../memory/unique_ptr" title="cpp/memory/unique ptr">std::unique_ptr</a></code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<h3 id="During_construction_and_destruction">}</h3> <p>Đối với mọi chức năng ảo, có<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">initializer list</a>Người ghi đè cuối cùng</p>
+<p>, được thực hiện khi một cuộc gọi chức năng ảo được thực hiện. Một chức năng thành viên ảo</p>
+<div class="cpp source-cpp"><pre data-language="cpp">của một lớp cơ sở</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/258.html" rel="nofollow">CWG 258</a> </td> <td>C ++ 98</td> <td>là trình ghi đè cuối cùng trừ khi lớp dẫn xuất khai báo hoặc kế thừa (thông qua nhiều kế thừa) một hàm khác ghi đè<br/>struct a {ảo void f (); };     // a :: f là ảo</td> <td>Struct B: a {void f (); };         // b :: f ghi đè a :: f in b<br/>Cấu trúc C: ảo B {void f (); }; // C :: f ghi đè A :: F trong C</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/477.html" rel="nofollow">CWG 477</a> </td> <td>C ++ 98</td> <td> <code>virtual</code>thời lượng để biểu diễn phần bù từ UTC tương ứng với</td> <td>không được phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1516.html" rel="nofollow">CWG 1516</a> </td> <td>C ++ 98</td> <td>Cấu trúc D: ảo B {}; // D không giới thiệu một trình ghi đè, b :: f là cuối cùng trong d<br/> </td> <td>#include &lt;New&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <a href="derived_class" title="cpp/language/derived class">derived classes and modes of inheritance</a> </td>
+</tr> <tr class="t-dsc"> <td> <a href="override" title="cpp/language/override"> <code>override</code> specifier</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>CUNG CẤP CUỐI CÙNG // OK, Định nghĩa của một cấu trúc có tên `final` từ đó</td>
+</tr> <tr class="t-dsc"> <td> <a href="final" title="cpp/language/final"> <code>final</code> specifier</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>Cấu trúc a</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/virtual">https://en.cppreference.com/w/cpp/language/virtual</a>
+</p>
+</div>

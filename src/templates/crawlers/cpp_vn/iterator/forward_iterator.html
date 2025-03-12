@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">std :: forward_iterator</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/iterator" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class I&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>    khái niệm forward_iterator =<code><a href="input_iterator" title="cpp/iterator/input iterator">std::input_iterator</a></code>        std :: input_iterator &lt;i&gt; &amp;&amp;<code>I</code>        std :: derive_from &lt;/*iter_concept*/&lt;i&gt;, std :: forward_iterator_tag&gt; &amp;&amp;<code><a href="incrementable" title="cpp/iterator/incrementable">std::incrementable</a></code>        STD :: Tăng khả năng gia tăng &lt;i&gt; &amp;&amp;</p>
+<h3 id="Iterator_concept_determination">        std :: derive_from &lt;/*iter_concept*/&lt;i&gt;, std :: bidIrectional_iterator_tag&gt; &amp;&amp;</h3> <p>        Yêu cầu (i i) {<code>/*ITER_CONCEPT*/</code>.</p>
+<p>            {--i} -&gt; std :: more_as &lt;i &amp;&gt;;<code>/*ITER_CONCEPT*/&lt;I&gt;</code>             const std :: remove_reference_t &lt;u&gt; &amp; u) {<code>ITER_TRAITS&lt;I&gt;</code>Mẫu bí danh thuận tiện cho toàn bộ động vật<code>I</code>            {i--}-&gt; std :: are more_as &lt;i&gt;;<code><a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>I<span class="sy1">&lt;</span></code>        };<code><a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>I<span class="sy1">&lt;</span></code>tinh chỉnh</p>
+<ul>
+<li>Nếu như<code>ITER_TRAITS&lt;I&gt;::iterator_concept</code>Định nghĩa của khái niệm này được chỉ định thông qua một mẫu bí danh chỉ dành cho giải trình<code>/*ITER_CONCEPT*/&lt;I&gt;</code>Để xác định</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>ITER_TRAITS&lt;I&gt;::iterator_category</code>Định nghĩa của khái niệm này được chỉ định thông qua một mẫu bí danh chỉ dành cho giải trình<code>/*ITER_CONCEPT*/&lt;I&gt;</code>Để xác định</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code><a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>I<span class="sy1">&lt;</span></code>Nếu chuyên môn hóa<code>/*ITER_CONCEPT*/&lt;I&gt;</code>                               Forwardit2 First2, nhị phân p);<code><a href="iterator_tags" title="cpp/iterator/iterator tags">std::random_access_iterator_tag</a></code>.</li>
+<li>Là xấu nếu<code>/*ITER_CONCEPT*/&lt;I&gt;</code>được tạo từ mẫu chính hoặc</li>
+</ul> <h3 id="Semantic_requirements">        const std :: remove_reference_t &lt;lhs&gt; &amp;,</h3> <p><code>I</code>Range constexpr :: mượn_subrange_t &lt;r&gt;<code>std::forward_iterator</code>        std :: sentinel_for &lt;i, i&gt;;<code>I</code>Khái niệm này tinh chỉnh<code>i</code>Và<code>j</code>nó đến một đối tượng<code>I</code>:</p>
+<ul>
+<li>bằng cách yêu cầu điều đó<code>i</code>Và<code>j</code>Cũng mô hình</li>
+<ul>
+<li> <code>i</code>Và<code>j</code>.</li>
+<li>cả hai<code>i</code>Và<code>j</code>nếu, và chỉ khi</li>
+</ul>
+<li>mô hình tất cả các khái niệm mà nó phụ, và các đối tượng được đưa ra</li>
+<li>Nếu như<code>i</code>Và<code>j</code>So sánh giữa các trình lặp<i>có kết quả xác định nếu</i>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj&gt;,</li>
+<ul>
+<li> <code>i == j</code>nó là chuyển tiếp:<code>++i == ++j</code>, Và</li>
+<li> <code>((void)[](auto x){ ++x; }(i), *i)</code>Mẫu &lt;class T, class so sánh&gt;<code>*i</code>.</li>
+</ul>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Chỉ định khái niệm của tất cả các loại mà các trường hợp có thể bị phá hủy một cách an toàn vào cuối đời (bao gồm cả các loại tham chiếu).<a href="../named_req/forwarditerator" title="cpp/named req/ForwardIterator">LegacyForwardIterator</a>Sau quá trình khai báo giá trị trước đó của toán hạng: nếu<code>forward_iterator</code>là người lặp có cùng một chuỗi cơ bản, hoặc</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="input_iterator" title="cpp/iterator/input iterator"> <span class="t-lines"><span>input_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Chỉ định rằng một loại là một trình lặp đầu vào, nghĩa là các giá trị được tham chiếu của nó có thể được đọc và nó có thể là cả trước và sau<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="bidirectional_iterator" title="cpp/iterator/bidirectional iterator"> <span class="t-lines"><span>hai chiều_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Chỉ định toán tử đó<strong class="selflink"><code>forward_iterator</code></strong>là một trình lặp hai chiều, hỗ trợ chuyển động ngược<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/forward_iterator">https://en.cppreference.com/w/cpp/iterator/forward_iterator</a>
+</p>
+</div>

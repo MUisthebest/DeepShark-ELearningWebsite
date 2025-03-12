@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: WCTYPE</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwctype" title="cpp/header/cwctype">&lt;cwctype&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: wctype_t wctype (const char* str);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Xây dựng một giá trị của loại<code><a href="http://en.cppreference.com/w/cpp/string/wide"><span class="kw3520">Điều đó cho tất cả<span class="me2">WCTYPE_T</span></span></a></code>mà mô tả a<code><a href="../../locale/lc_categories" title="cpp/locale/LC categories">LC_CTYPE</a></code>thể loại phân loại nhân vật rộng. Nó có thể là một trong những loại phân loại tiêu chuẩn hoặc một danh mục cụ thể địa phương, chẳng hạn như<code>"jkanji"</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>C chuỗi giữ tên của danh mục mong muốn</td>
+</tr>
+</table> <p>Các giá trị sau của<code>str</code>được hỗ trợ trong tất cả các địa phương C:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Sau đó chuyển đổi đối số<code>str</code> </th> <th>tác dụng</th>
+</tr> <tr class="t-dsc"> <td> <code>"alnum"</code> </td> <td>xác định danh mục được sử dụng bởi<code><a href="iswalnum" title="cpp/string/wide/iswalnum">std::iswalnum</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>"alpha"</code> </td> <td>xác định danh mục được sử dụng bởi<code><a href="iswalpha" title="cpp/string/wide/iswalpha">std::iswalpha</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>"blank"</code> </td> <td>xác định danh mục được sử dụng bởi<code><a href="iswblank" title="cpp/string/wide/iswblank">std::iswblank</a></code> <span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>"cntrl"</code> </td> <td>xác định danh mục được sử dụng bởi<code><a href="iswcntrl" title="cpp/string/wide/iswcntrl">std::iswcntrl</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>"digit"</code> </td> <td>xác định danh mục được sử dụng bởi<code><a href="iswdigit" title="cpp/string/wide/iswdigit">std::iswdigit</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>"graph"</code> </td> <td>xác định danh mục được sử dụng bởi<code><a href="iswgraph" title="cpp/string/wide/iswgraph">std::iswgraph</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>"lower"</code> </td> <td>xác định danh mục được sử dụng bởi<code><a href="iswlower" title="cpp/string/wide/iswlower">std::iswlower</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>"print"</code> </td> <td>xác định danh mục được sử dụng bởi<code><a href="iswprint" title="cpp/string/wide/iswprint">std::iswprint</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>"space"</code> </td> <td>xác định danh mục được sử dụng bởi<code><a href="iswspace" title="cpp/string/wide/iswspace">std::iswspace</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>"upper"</code> </td> <td>xác định danh mục được sử dụng bởi<code><a href="iswupper" title="cpp/string/wide/iswupper">std::iswupper</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>"xdigit"</code> </td> <td>xác định danh mục được sử dụng bởi<code><a href="iswxdigit" title="cpp/string/wide/iswxdigit">std::iswxdigit</a></code> </td>
+</tr> </table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code><a href="http://en.cppreference.com/w/cpp/string/wide"><span class="kw3520">Điều đó cho tất cả<span class="me2">WCTYPE_T</span></span></a></code>đối tượng phù hợp để sử dụng với<code><a href="iswctype" title="cpp/string/wide/iswctype">std::iswctype</a></code>Để phân loại các ký tự rộng theo danh mục được đặt tên của Locale hiện tại hoặc 0 nếu<code>str</code>Không đặt tên cho một danh mục được hỗ trợ bởi ngôn ngữ C hiện tại.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="iswctype" title="cpp/string/wide/iswctype"> <span class="t-lines"><span>ISWCTYPE</span></span></a></div> </td> <td>phân loại một ký tự rộng theo quy định<a href="../../locale/lc_categories" title="cpp/locale/LC categories"><code>LC_CTYPE</code></a>loại<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/wctype" title="c/string/wide/wctype">C documentation</a></span>vì<code>wctype</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/wctype">https://en.cppreference.com/w/cpp/string/wide/wctype</a>
+</p>
+</div>

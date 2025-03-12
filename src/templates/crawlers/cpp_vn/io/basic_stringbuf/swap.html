@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_stringbuf &lt;biểu đồ, đặc điểm, phân bổ&gt; :: hoán đổi</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">hoán đổi void (basic_stringbuf &amp; rhs);</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void hoán đổi (basic_stringbuf &amp; rhs) noExcept (/ * xem bên dưới */);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Hoán đổi trạng thái và nội dung của<code>*this</code>Và<code>rhs</code>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>đến một phạm vi khác kết thúc tại<code>Allocator</code>không tuyên truyền khi hoán đổi và những người phân bổ<code>*this</code>Và<code>other</code>không bằng nhau.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>khác<code>basic_stringbuf</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11 t-until-cxx20">
+<td> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+</td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <a href="../../language/noexcept_spec" title="cpp/language/noexcept spec"><code>noexcept</code></a>Đặc điểm kỹ thuật:<div class="t-noexcept-box"><span class="t-cc"><code><span class="kw1">Noexcept</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>Allocator<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">và các phân bổ không so sánh bằng nhau.</span><span class="sy4">::</span><span class="me2">được phân vùng liên quan đến</span><br/> <span class="sy3">Mẫu &lt;std :: forward_iterator i1, std :: sentinel_for &lt;i1&gt; s1,</span> <a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>Allocator<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Tuyên truyền_on_container_swap</span><span class="sy4">::</span><span class="me2">được phân vùng liên quan đến</span><span class="br0">)</span></code></span></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Chức năng này được gọi tự động khi hoán đổi<code><a href="../basic_stringstream" title="cpp/io/basic stringstream">std::stringstream</a></code>Đối tượng. Nó hiếm khi cần thiết để gọi nó trực tiếp.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;iomanip&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="basic_stringbuf" title="cpp/io/basic stringbuf/basic stringbuf"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Nếu a<code>basic_stringbuf</code>sự vật<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_stringstream/swap" title="cpp/io/basic stringstream/swap"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Biểu đồ, đặc điểm, phân bổ<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_stringstream&lt;CharT,Traits,Allocator&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_stringbuf/swap">https://en.cppreference.com/w/cpp/io/basic_stringbuf/swap</a>
+</p>
+</div>

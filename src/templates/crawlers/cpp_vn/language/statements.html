@@ -1,0 +1,107 @@
+ <h1 class="firstHeading" id="firstHeading">tuyên bố;</h1> <p>Các câu lệnh là các đoạn của chương trình C ++ được thực thi theo trình tự. Cơ thể của bất kỳ chức năng là một chuỗi các câu lệnh. Ví dụ:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int main ()</pre></div> <p>{</p>
+<div class="t-li1">
+<span class="t-li">1)</span>    int n = 1;                        // Tuyên bố khai báo</div> <div class="t-li1">
+<span class="t-li">2)</span>    n = n + 1;                        // câu lệnh biểu thức</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>    std :: cout &lt;&lt; "n =" &lt;&lt; n &lt;&lt; '\ n'; // câu lệnh biểu thức</div> <div class="t-li1">
+<span class="t-li">là trong</span>    trả lại 0;                         // Trả lời tuyên bố</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>}</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>C ++ bao gồm các loại câu lệnh sau:</div> <div class="t-li1">
+<span class="t-li">6)</span>Báo cáo được dán nhãn;</div> <div class="t-li1">
+<span class="t-li">. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu biểu thức</span>tuyên bố biểu hiện;</div> <div class="t-li1">
+<span class="t-li">được hình thành tốt. Chương trình không được hình thành nếu</span>tuyên bố hỗn hợp;<span class="t-mark-rev t-since-tm-ts t-mark-ts">(TM TS)</span>.</div> <h3 id="Labeled_statements">tuyên bố lựa chọn;</h3> <p>câu lệnh lặp;</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">tuyên bố nhảy;</span> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">nhãn</span> </td> <td>-</td> <td>tuyên bố khai báo;</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tuyên bố</span> </td> <td>-</td> <td>thử các khối;</td>
+</tr>
+</table> <p><br/> <span class="t-spar">nhãn</span>Các khối nguyên tử và đồng bộ hóa</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">định danh</span> <code>:</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>case</code> <span class="t-spar">constexpr</span> <code>:</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>default:</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Báo cáo được dán nhãn<a href="goto" title="cpp/language/goto">goto</a>Số lượng các yếu tố để sao chép</div> <div class="t-li1">
+<span class="t-li">2)</span>Một câu lệnh được dán nhãn một tuyên bố cho mục đích luồng điều khiển.<a href="switch" title="cpp/language/switch">switch</a>; Các biến được khai báo bên trong một khối bị phá hủy khi đóng vai chính theo thứ tự ngược lại:</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Nhãn áp dụng cho câu lệnh (được xác định bên dưới)<a href="switch" title="cpp/language/switch">switch</a>    {// Bắt đầu khối bên trong</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>MỘT<a href="attributes" title="cpp/language/attributes">attribute</a>hàm thành viên, xóa các giá trị không xác định và giảm<span class="t-spar">attr</span>được định nghĩa là</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>mục tiêu cho</p>
+<p>nhãn trường hợp trong một</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <p>tuyên bố;<a href="#Compound_statements">compound statements</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>nhãn mặc định trong một<a href="unqualified_lookup" title="cpp/language/unqualified lookup">unqualified lookup</a>tuyên bố.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Có thể xuất hiện ngay từ đầu của nhãn (trong trường hợp đó nó áp dụng cho nhãn) hoặc ngay trước bất kỳ câu lệnh nào, trong trường hợp đó nó áp dụng cho toàn bộ câu lệnh.</pre></div> <h3 id="Expression_statements">Một nhãn có định danh được khai báo bên trong một hàm khớp với tất cả các câu lệnh GOTO với cùng một định danh trong hàm đó, trong tất cả các khối lồng nhau, trước và sau khi khai báo riêng.</h3> <p>Hai nhãn trong một hàm không được có cùng một định danh.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>Trình tự tùy chọn của bất kỳ số lượng nào<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>-</td> <td>chồng chéo với container.<a href="expressions" title="cpp/language/expressions">expression</a> </td>
+</tr>
+</table> <p>Bên cạnh việc được thêm vào một tuyên bố, các nhãn cũng có thể được sử dụng ở bất cứ đâu trong</p>
+<p>Nhãn không được tìm thấy bởi<i>Tuyên bố NULL</i>: Một nhãn có thể có cùng tên với bất kỳ thực thể nào khác trong chương trình.<a href="for" title="cpp/language/for">for</a>hoặc<a href="while" title="cpp/language/while">while</a>    int n = 1;      // Tuyên bố khai báo<span class="t-rev-inl t-until-cxx23"><span>{</span><span><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></span></span></p>
+<h3 id="Compound_statements">    {</h3> <p>        Nhãn Goto; // Nhãn trong phạm vi mặc dù được tuyên bố sau<i>khối</i>        Nhãn: // Nhãn có thể xuất hiện ở cuối khối độc lập vì C ++ 23</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>{</code> <span class="t-spar">    }</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">    Nhãn Goto; // Nhãn bỏ qua phạm vi khối</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> <code>}</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>}<a href="if" title="cpp/language/if">if</a> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">void g ()</pre></div> <p>{<a href="scope" title="cpp/language/scope">scope</a>    Nhãn Goto; // Lỗi: nhãn không nằm trong phạm vi trong g ()</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <p>MỘT<a href="#Labeled_statements">label</a>Câu lệnh biểu hiện</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h3 id="Selection_statements">Một tuyên bố biểu thức là một biểu thức theo sau là dấu chấm phẩy.</h3> <p>Hầu hết các câu lệnh trong một chương trình C ++ điển hình là các câu lệnh biểu thức, chẳng hạn như các bài tập hoặc các cuộc gọi chức năng.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if constexpr</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>(</code> <span class="t-spar"> </span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tình trạng</span> <code>)</code> <span class="t-spar">tuyên bố</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if constexpr</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>(</code> <span class="t-spar"> </span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tình trạng</span> <code>)</code> <span class="t-spar">tuyên bố</span> <code>else</code> <span class="t-spar">tuyên bố</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>switch (</code> <span class="t-spar"> </span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tình trạng</span> <code>)</code> <span class="t-spar">tuyên bố</span> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if !</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>consteval</code> <span class="t-spar">Tệp hỗn hợp</span> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if !</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>consteval</code> <span class="t-spar">Tệp hỗn hợp</span> <code>else</code> <span class="t-spar">tuyên bố</span> </td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span> <a href="if" title="cpp/language/if">if</a>; Các biến được khai báo bên trong một khối bị phá hủy khi đóng vai chính theo thứ tự ngược lại:</div> <div class="t-li1">
+<span class="t-li">2)</span> <a href="if" title="cpp/language/if">if</a>. Nó thường được sử dụng để cung cấp một cơ thể trống rỗng cho một</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <a href="switch" title="cpp/language/switch">switch</a>; Các biến được khai báo bên trong một khối bị phá hủy khi đóng vai chính theo thứ tự ngược lại:</div> <div class="t-li1">
+<span class="t-li">là trong</span> <a href="if#Consteval_if" title="cpp/language/if">consteval if</a>; Các biến được khai báo bên trong một khối bị phá hủy khi đóng vai chính theo thứ tự ngược lại:</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <a href="if#Consteval_if" title="cpp/language/if">consteval if</a>Báo cáo ghép</div> <h3 id="Iteration_statements">Một tuyên bố ghép hoặc</h3> <p>Nhóm một chuỗi các câu lệnh thành một tuyên bố duy nhất.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>while (</code> <span class="t-spar">tình trạng</span> <code>)</code> <span class="t-spar">tuyên bố</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>do</code> <span class="t-spar">tuyên bố</span> <code>while (</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> <code>)</code> <code>;</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>for (</code> <span class="t-spar">tuyên bố...</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>)</code> <span class="t-spar">tuyên bố</span> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>for (</code> <span class="t-spar"> </span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> <span class="t-spar">nhãn...</span> <code>:</code> <span class="t-spar">Khi một tuyên bố được mong đợi, nhưng nhiều câu cần phải được thực thi theo trình tự (ví dụ: trong một</span> <code>)</code> <span class="t-spar">tuyên bố</span> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span> <a href="while" title="cpp/language/while">while</a>{// Bắt đầu khối</div> <div class="t-li1">
+<span class="t-li">2)</span> <a href="do" title="cpp/language/do">do-while</a>{// Bắt đầu khối</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <a href="for" title="cpp/language/for">for</a>{// Bắt đầu khối</div> <div class="t-li1">
+<span class="t-li">là trong</span> <a href="range-for" title="cpp/language/range-for">range for</a>    int n = 1;      // Tuyên bố khai báo</div> <h3 id="Jump_statements">    std :: cout &lt;&lt; n; // câu lệnh biểu thức</h3> <p>} // kết thúc khối, kết thúc câu lệnh if</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>break;</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>continue;</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>return</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>return</code> <span class="t-spar">{</span> <code>;</code> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>goto</code> <span class="t-spar">định danh</span> <code>;</code> </td> <td>             Không có p);</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span> <a href="break" title="cpp/language/break">break</a>; Các biến được khai báo bên trong một khối bị phá hủy khi đóng vai chính theo thứ tự ngược lại:</div> <div class="t-li1">
+<span class="t-li">2)</span> <a href="continue" title="cpp/language/continue">continue</a>; Các biến được khai báo bên trong một khối bị phá hủy khi đóng vai chính theo thứ tự ngược lại:</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <a href="return" title="cpp/language/return">return</a>int main ()</div> <div class="t-li1">
+<span class="t-li">là trong</span> <a href="return" title="cpp/language/return">return</a>{// Bắt đầu khối bên ngoài<a href="list_initialization" title="cpp/language/list initialization">list initialization</a>Số lượng các yếu tố để sao chép</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <a href="goto" title="cpp/language/goto">goto</a>    {// Bắt đầu khối bên trong</div> <p>        std :: Ofstream f ("test.txt"); // Tuyên bố khai báo</p>
+<h3 id="Declaration_statements">        f &lt;&lt; "ABC \ n";                // câu lệnh biểu thức</h3> <p>    } // Kết thúc khối bên trong, F được xóa và đóng</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">giải khai khối</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>nhìn thấy<a href="declarations" title="cpp/language/declarations">Declarations</a>Và<a href="initialization" title="cpp/language/initialization">Initialization</a> </div> <h3 id="Try_blocks">    std :: ifstream f ("test.txt"); // Tuyên bố khai báo</h3> <p>    std :: chuỗi str;             // Tuyên bố khai báo</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>try</code> <span class="t-spar">    f &gt;&gt; str;                    // câu lệnh biểu thức</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>nhìn thấy<a href="try_catch" title="cpp/language/try catch">try/catch</a> </div> <table class="t-rev-begin"> <tr class="t-rev t-since-tm_ts">
+<td> <h3 id="Atomic_and_synchronized_blocks">} // Kết thúc khối bên ngoài, str bị phá hủy, f được đóng</h3> <p>Vào cuối một tuyên bố ghép được đối xử như thể nó được theo sau bởi một tuyên bố null.<a href="transactional_memory" title="cpp/language/transactional memory">transactional memory</a>.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>synchronized</code> <span class="t-spar">Tệp hỗn hợp</span> </td> <td>(1)</td> <td> <span class="t-mark-rev t-since-tm-ts t-mark-ts">(TM TS)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>atomic_noexcept</code> <span class="t-spar">Tệp hỗn hợp</span> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-tm-ts t-mark-ts">(TM TS)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>atomic_cancel</code> <span class="t-spar">Tệp hỗn hợp</span> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-tm-ts t-mark-ts">(TM TS)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>atomic_commit</code> <span class="t-spar">Tệp hỗn hợp</span> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-tm-ts t-mark-ts">(TM TS)</span> </td>
+</tr>
+</table> <span class="t-li">1)</span> <a href="transactional_memory#Synchronized_blocks" title="cpp/language/transactional memory">synchronized block</a>Tuyên bố lựa chọn<span class="t-li">2)</span> <a href="transactional_memory#Atomic_blocks" title="cpp/language/transactional memory">atomic block</a>Một câu lệnh lựa chọn chọn giữa một trong một số luồng điều khiển.<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <a href="transactional_memory#Atomic_blocks" title="cpp/language/transactional memory">atomic block</a>tuyên bố;<span class="t-li">là trong</span> <a href="transactional_memory#Atomic_blocks" title="cpp/language/transactional memory">atomic block</a>tuyên bố với một điều khoản khác;</td> <td><span class="t-mark-rev t-since-tm-ts t-mark-ts">(TM TS)</span></td>
+</tr> </table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/statements" title="c/language/statements">C documentation</a></span>vì<span class=""><span>tuyên bố;</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/statements">https://en.cppreference.com/w/cpp/language/statements</a>
+</p>
+</div>

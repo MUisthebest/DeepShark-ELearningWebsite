@@ -1,0 +1,42 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: iterator_t, std :: phạm vi :: const_iterator_t, std :: ranges :: sentinel_t, std :: ranges :: const_sentinel_t, std :: ranges :: range_size_t STD :: Phạm vi :: Range_Reference_T</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/ranges" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Sử dụng iterator_t = declType (phạm vi :: start (std :: declval &lt;t &amp;&gt; ())));</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;phạm vi :: phạm vi r&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">sử dụng const_iterator_t = declType (phạm vi :: cbegin (std :: declval &lt;r &amp;&gt; ()));</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;phạm vi :: phạm vi r&gt;</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">sử dụng sentinel_t = declType (phạm vi :: end (std :: declval &lt;r &amp;&gt; ())));</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;phạm vi :: phạm vi r&gt;</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">sử dụng const_sentinel_t = declType (phạm vi :: cend (std :: declval &lt;r &amp;&gt; ()));</pre>
+</td> <td>            Nhị phân p);</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;phạm vi :: cỡ_range r&gt;</pre>
+</td> <td>(9)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Sử dụng Range_Size_T = DeclType (phạm vi :: size (std :: Declval &lt;r &amp;&gt; ())));</pre>
+</td> <td>(10)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;phạm vi :: phạm vi r&gt;</pre>
+</td> <td>(11)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Sử dụng Range_Difference_T = std :: iter_difference_t &lt;phạm vi :: iterator_t &lt;r &gt;&gt;;<code>T</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;phạm vi :: phạm vi r&gt;<a href="range" title="cpp/ranges/range"><code>range</code></a>kiểu<code>R</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Sử dụng Range_Value_T = std :: iter_value_t &lt;phạm vi :: iterator_t &lt;r &gt;&gt;;<code>R</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mẫu &lt;phạm vi :: phạm vi r&gt;<code>R</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Sử dụng Range_Reference_T = std :: iter_reference_t &lt;ranges :: iterator_t &lt;r &gt;&gt;;<a href="sized_range" title="cpp/ranges/sized range"><code>sized_range</code></a>kiểu<code>R</code>.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>Mẫu &lt;phạm vi :: phạm vi r&gt;<code>R</code>.</div> <div class="t-li1">
+<span class="t-li">6)</span>Sử dụng Range_Const_Reference_T = <code>R</code>.</div> <div class="t-li1">
+<span class="t-li">. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu biểu thức</span>    std :: iter_const_reference_t &lt;phạm vi :: iterator_t &lt;r &gt;&gt;;<code>R</code>.</div> <div class="t-li1">
+<span class="t-li">được hình thành tốt. Chương trình không được hình thành nếu</span>Mẫu &lt;phạm vi :: phạm vi r&gt;<code>R</code>.</div> <div class="t-li1">
+<span class="t-li">Toán tử bool constexpr&gt; (const std :: Chrono :: sys_time &lt;fending&gt; &amp; x,</span>Sử dụng Range_Rvalue_Reference_T =<code>R</code>.</div> <div class="t-li1">
+<span class="t-li">                           const std :: Chrono :: Leap_Second &amp; y) noExcept;</span>    std :: iter_rvalue_reference_t &lt;phạm vi :: iterator_t &lt;r &gt;&gt;;<code>R</code>.</div> <h3 id="Template_parameters">là không xác định.</h3> <table class="t-par-begin"> <tr class="t-par"> <td>T</td> <td>-</td> <td>Mẫu &lt;phạm vi :: phạm vi r&gt;<code><a href="begin" title="cpp/ranges/begin">std::ranges::begin</a></code> </td>
+</tr> <tr class="t-par"> <td>R</td> <td>-</td> <td>Một<a href="range" title="cpp/ranges/range"><code>range</code></a>Sử dụng Range_Common_Reference_T =<a href="sized_range" title="cpp/ranges/sized range"><code>sized_range</code></a>kiểu</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p><code>iterator_t</code>    std :: iter_common_reference_t &lt;phạm vi :: iterator_t &lt;r &gt;&gt;;</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3860" rel="nofollow">LWG 3860</a> </td> <td>C ++ 20</td> <td>
+<code>range_common_reference_t</code>bị mất tích</td> <td>Được cho</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3946" rel="nofollow">LWG 3946</a> </td> <td>C ++ 23</td> <td>
+<code>const_iterator_t</code>Và<code>const_sentinel_t</code>Được sử dụng để có được loại lặp của loại<br/>Được sử dụng để có được loại lặp liên tục của<code>ranges::cbegin</code>Và<code>ranges::cend</code>(Được kiểm soát bởi Chỉ thị</td> <td>Được sử dụng để có được loại sentinel của loại phạm vi</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../iterator/iter_t" title="cpp/iterator/iter t"> <span class="t-lines"><span>ITER_VALUE_T</span><span>iter_reference_t</span><span>iter_const_reference_t</span><span>iter_difference_t</span><span>iter_rvalue_reference_t</span><span>iter_common_reference_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Tính toán các loại liên kết của trình lặp<br/><span class="t-mark">(Mẫu bí danh)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/iterator_t">https://en.cppreference.com/w/cpp/ranges/iterator_t</a>
+</p>
+</div>

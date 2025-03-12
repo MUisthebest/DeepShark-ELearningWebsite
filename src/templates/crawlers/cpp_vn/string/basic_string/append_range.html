@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; :: append_range</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Consexpr std :: basic_string &amp; append_range (r &amp;&amp; rg);<code>rg</code>.</p>
+<p>Mẫu &lt;class inputit1, class inputit2,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Cộng đồng tất cả các ký tự từ phạm vi</pre></div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>được hủy bỏ chính xác một lần.</td> <td>-</td> <td>Một<a href="../../ranges/to#container_compatible_range" title="cpp/ranges/to">container compatible range</a> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>các yếu tố có thể chuyển đổi thành<code>rg</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>, Subview được thêm vào là<code><a href="size" title="cpp/string/basic string/size">size</a>() &gt; <a href="max_size" title="cpp/string/basic string/max size">max_size</a>()</code>sử dụng tài nguyên bộ nhớ cơ bản.<code><a href="../../error/length_error" title="cpp/error/length error">std::length_error</a></code>.</p>
+<p>tham chiếu emplace_front (args &amp;&amp; ... args);<a href="../../language/exceptions#Exception_safety" title="cpp/language/exceptions">strong exception safety guarantee</a>).</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_containers_ranges" title="cpp/feature test"><code>__cpp_lib_containers_ranges</code></a></td> <td><span class="nu0">và không trả lại gì.</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Trả về append (std :: basic_string (std :: from_range, std :: forward &lt;r&gt; (rg), get_allocator ()));<a href="../../ranges/to#container_compatible_range" title="cpp/ranges/to">container compatible range</a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">các chức năng thành viên chấp nhận</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="append" title="cpp/string/basic string/append"> <span class="t-lines"><span>nối lại</span></span></a></div> </td> <td>Trả về số lượng ký tự<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string/append_range">https://en.cppreference.com/w/cpp/string/basic_string/append_range</a>
+</p>
+</div>

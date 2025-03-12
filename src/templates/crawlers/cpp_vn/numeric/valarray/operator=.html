@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Valarray &lt;T&gt; :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">valarray &lt;t&gt; &amp; toán tử = (const valarray &lt;t&gt; &amp; other);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">valarray &lt;t&gt; &amp; toán tử = (valarray &lt;t&gt; &amp;&amp; khác) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">valarray &lt;t&gt; &amp; toán tử = (const t &amp; val);</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">valarray &lt;t&gt; &amp; toán tử = (const std :: slice_array &lt;t&gt; &amp; other);</pre>
+</td> <td>(4)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">valarray &lt;t&gt; &amp; toán tử = (const std :: gslice_array &lt;t&gt; &amp; other);</pre>
+</td> <td>             Không có p);</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">valarray &lt;t&gt; &amp; toán tử = (const std :: mask_array &lt;t&gt; &amp; other);</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">valarray &lt;t&gt; &amp; toán tử = (const std :: indirect_array &lt;t&gt; &amp; other);</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">valarray &lt;t&gt; &amp; toán tử = (std :: initizer_list &lt;t&gt; il);</pre>
+</td> <td>            Nhị phân p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Thay thế nội dung của mảng số.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Sao chép toán tử gán. Nếu như<code>size() != other.size()</code>, lần đầu tiên thay đổi kích thước<code>*this</code>Mẫu &lt;Class T&gt;<code>resize(other.size())</code>. Mỗi yếu tố của<code>*this</code>được gán giá trị của phần tử tương ứng của<code>other</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Di chuyển toán tử chuyển nhượng. Thay thế nội dung của<code>*this</code>với những người<code>other</code>1) Xây dựng<code>other</code>không được xác định sau hoạt động này. Sự phức tạp của hoạt động này có thể là tuyến tính nếu T có chất phá hủy không tầm thường, nhưng thường không đổi.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Thay thế từng giá trị trong<code>*this</code>với một bản sao của<code>val</code>.</div> <div class="t-li1">
+<span class="t-li">    STD :: FileSystem :: Thư mục_options Tùy chọn,</span>, được để lại ở trạng thái hợp lệ, nhưng không xác định. Tương đương với<code>*this</code>với kết quả của một hoạt động đăng ký tổng quát. Hành vi không xác định nếu<a href="size" title="cpp/numeric/valarray/size"><code>size()</code></a>không bằng chiều dài của<code>other</code>hoặc nếu bất kỳ giá trị nào ở bên trái phụ thuộc vào giá trị bên phải (ví dụ:<code>v = v[v &gt; 2]</code>).</div> <div class="t-li1">
+<span class="t-li">. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu biểu thức</span>Gán nội dung của danh sách khởi tạo<code>il</code>là các yếu tố của phạm vi.<code>*this = valarray(il)</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>một mảng số khác (hoặc mặt nạ) để gán</td>
+</tr> <tr class="t-par"> <td>đánh giá</td> <td>-</td> <td>giá trị để khởi tạo từng phần tử với</td>
+</tr> <tr class="t-par"> <td>Dữ liệu của constexpr t* (t (&amp; mảng) [n]) noexcept;</td> <td>-</td> <td>Danh sách khởi tạo để gán</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1,3-8)</span>Có thể ném các trường hợp ngoại lệ do thực hiện.</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;iomanip&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue624" rel="nofollow">LWG 624</a> </td> <td>C ++ 98</td> <td>#include &lt;ValArray&gt;<span class="t-v"> </span>    // Số:<br/>void in (const char* rem, const std :: valarray &lt;int&gt; &amp; v)<code>other</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="size" title="cpp/numeric/valarray/size"><code>size()</code></a> </td> <td>{<br/>kích cỡ.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue630" rel="nofollow">LWG 630</a> </td> <td>C ++ 98</td> <td>    std :: cout &lt;&lt; std :: trái &lt;&lt; std :: setw (36) &lt;&lt; rem &lt;&lt; std :: right;<br/>    for (int n: v)<code>size() != other.size()</code> </td> <td>        std :: cout &lt;&lt; std :: setw (3) &lt;&lt; n;<code>*this</code><br/>    std :: cout &lt;&lt; '\ n';</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2071" rel="nofollow">LWG 2071</a> </td> <td>C ++ 11</td> <td>}<br/><code>*this</code>nếu như<code>size() != other.size()</code> </td> <td> <br/>int main ()</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/valarray/operator%3D">https://en.cppreference.com/w/cpp/numeric/valarray/operator%3D</a>
+</p>
+</div>

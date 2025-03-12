@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ios &lt;biểu đồ, đặc điểm&gt; :: rdbuf</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* rdbuf () const;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* rdbuf (std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* sb);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Quản lý bộ đệm luồng liên quan.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Trả về bộ đệm luồng liên quan. Nếu không có bộ đệm luồng liên quan, hãy trả về một con trỏ null.</div> <div class="t-li1">
+<span class="t-li">2)</span>void init (std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* sb);<code>sb</code>. Trạng thái lỗi được xóa bằng cách gọi<code><a href="clear" title="cpp/io/basic ios/clear">clear()</a></code>. Trả về bộ đệm luồng liên kết trước khi hoạt động. Nếu không có bộ đệm luồng liên quan, hãy trả về một con trỏ null.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ở cấp độ thấp, lớp học về cơ bản kết thúc việc triển khai thiết bị thô của</td> <td>-</td> <td>Chất xây dựng bản sao là</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Bộ đệm luồng liên quan hoặc một con trỏ null nếu không có bộ đệm luồng liên quan.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Sstream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="set_rdbuf" title="cpp/io/basic ios/set rdbuf"> <span class="t-lines"><span>di chuyển từ người khác</span></span></a></div> </td> <td>Thay thế<code>rdbuf</code>ngoại trừ<br/> <span class="t-mark">(chức năng thành viên được bảo vệ)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ios/rdbuf">https://en.cppreference.com/w/cpp/io/basic_ios/rdbuf</a>
+</p>
+</div>

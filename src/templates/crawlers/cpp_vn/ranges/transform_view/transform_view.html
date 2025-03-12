@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: Transform_view &lt;V, f&gt; :: Transform_view</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Transform_View () yêu cầu std :: default_initializable &lt;v&gt; &amp;&amp;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">                          std :: default_initializable &lt;f&gt; = default;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>transform_view</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định.<a href="../../language/value_initialization" title="cpp/language/value initialization">Value-initializes</a>ConstExPR Transform_View (V Base, F Fun);</div> <div class="t-li1">
+<span class="t-li">2)</span>Quan điểm cơ bản và vị ngữ.<code>base</code>Chế độ xem cơ bản và chức năng chuyển đổi.<code>fun</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>căn cứ</td> <td>-</td> <td>xem</td>
+</tr> <tr class="t-par"> <td>vui vẻ</td> <td>-</td> <td>và chức năng chuyển đổi từ</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>chức năng chuyển đổi<br/> <code>atan(1) = π/4 ~ 1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + ...</code></p>
+<div class="cpp source-cpp"><pre data-language="cpp">Thể hiện xấp xỉ π bằng cách sử dụng mở rộng nối tiếp của tiếp tuyến hồ quang là 1:</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;iomanip&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3714" rel="nofollow">LWG 3714</a><br/>.<a class="external text" href="https://wg21.link/P2711R1" rel="nofollow">P2711R1</a>)</td> <td>C ++ 20</td> <td>    return /*iterator* /{*this, range :: find_if (base_, std :: ref (*pred_))};</td> <td>đã làm rõ</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2325R3" rel="nofollow">P2325R3</a> </td> <td>C ++ 20</td> <td>nếu như<code>F</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="../../concepts/default_initializable" title="cpp/concepts/default initializable"><code>default_initializable</code></a>truy cập giá trị chứa<br/>Nếu a<code>transform_view</code>#include &lt;mảng&gt;<code>F</code> </td> <td>các<code>transform_view</code>, tức là nó phải đáp ứng tất cả các yêu cầu sau:<br/>không<a href="../../concepts/default_initializable" title="cpp/concepts/default initializable"><code>default_initializable</code></a> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/transform_view/transform_view">https://en.cppreference.com/w/cpp/ranges/transform_view/transform_view</a>
+</p>
+</div>

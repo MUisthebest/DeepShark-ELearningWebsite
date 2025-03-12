@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Moneypunc &lt;Biểu đồ, Quốc tế&gt; :: tích cực_sign, DO_POSITITE_SIGN, NEMECT_SIGN, DO_NEGITE</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">String_Type tích cực_sign () const;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">String_Type negal_sign () const;</pre>
+</td> <td>(4)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>được bảo vệ:<code>do_positive_sign</code>Virtual POS_Type Seekoff (Off_Type TẮT, STD :: IOS_BASE :: SeekDir Dir,</div> <div class="t-li1">
+<span class="t-li">2)</span>được bảo vệ:<code>do_negative_sign</code>Virtual POS_Type Seekoff (Off_Type TẮT, STD :: IOS_BASE :: SeekDir Dir,</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>được bảo vệ:</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>chuỗi ảo_type do_positive_sign () const;</div> <p>được bảo vệ:<code><a href="pos_format" title="cpp/locale/moneypunct/pos format">pos_format()</a></code>/<code><a href="pos_format" title="cpp/locale/moneypunct/pos format">neg_format()</a></code>chuỗi ảo_type do_negative_sign () const;<code>sign</code>Trả về chuỗi được sử dụng để định dạng các giá trị tiền tệ dương.<i>Nếu một ngoại lệ được ném bởi bất kỳ hoạt động nào, việc chèn không có hiệu lực.</i>Trả về chuỗi được sử dụng để định dạng các giá trị tiền tệ âm.</p>
+<p>Chỉ ký tự đầu tiên của chuỗi được trả về là ký tự xuất hiện trong<code>"-"</code>Vị trí được chỉ định bởi giá trị<code>"-1.23 €"</code>. Phần còn lại của các ký tự xuất hiện<code>"()"</code>Phần còn lại của chuỗi tiền tệ.<code>"(1.23 €)"</code>.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Đặc biệt, đối với tiêu cực_sign của<code>string_type</code>, định dạng có thể xuất hiện dưới dạng</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">, trong khi đối với tiêu cực_sign của</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">nó sẽ xuất hiện dưới dạng</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="pos_format" title="cpp/locale/moneypunct/pos format"> <span class="t-lines"><span>Cung cấp số chữ số để hiển thị sau điểm thập phân</span><span>DO_POS_FORMAT</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>DO_NEG_FORMAT<br/> <span class="t-mark">(Hàm thành viên được bảo vệ ảo)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/moneypunct/positive_sign">https://en.cppreference.com/w/cpp/locale/moneypunct/positive_sign</a>
+</p>
+</div>

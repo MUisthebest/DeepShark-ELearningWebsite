@@ -1,0 +1,66 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Partial_sum</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/numeric" title="cpp/header/numeric">&lt;numeric&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;class inputit, class outputit&gt;</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Outputit partial_sum (đầu vào đầu tiên, đầu vào cuối cùng, đầu ra d_first);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;class inputit, class outputit&gt;</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr outputit partial_sum (đầu vào đầu tiên, đầu vào cuối cùng,</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Nếu như<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>                                Đầu ra d_first);<code>d_first</code><span class="t-rev-inl t-since-cxx11"><span>Mẫu &lt;class inputit, class outputit, lớp BinaryOperation&gt;<a href="../utility/move" title="cpp/utility/move"><code>std::move</code></a>Outputit partial_sum (đầu vào đầu tiên, đầu vào cuối cùng,</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<p>                      Outputit D_First, BinaryOperation op);<code>acc</code>Mẫu &lt;class inputit, class outputit, lớp BinaryOperation&gt;<a href="../iterator#Types_and_writability" title="cpp/iterator">value type</a>của<code>InputIt</code>constexpr outputit partial_sum (đầu vào đầu tiên, đầu vào cuối cùng,</p>
+<div class="t-li1">
+<span class="t-li">1)</span>, trả lại<code>operator+</code>                                Outputit D_First, BinaryOperation op);<div class="cpp source-cpp"><pre data-language="cpp">không trống, tính toán tổng một phần của các phần tử trong các subranges của nó và ghi các khoản tiền vào phạm vi bắt đầu tại</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>, cả hai áp dụng<code>op</code>đến các hoạt động của họ ở phía bên trái<div class="cpp source-cpp"><pre data-language="cpp">Trong nội bộ, một biến</pre></div>
+</div> <div class="t-li1">Nếu như<code>op</code>(loại</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>Đối với mỗi lần lặp</td>
+</tr> <tr class="t-par"> <td>không trống, sử dụng bộ tích lũy</td> <td>-</td> <td>Phần tử đầu vào không được bao gồm trong I<code>first</code> </td>
+</tr> <tr class="t-par"> <td>Không hợp lệ bất kỳ trình lặp nào (bao gồm cả bộ lặp cuối) hoặc sửa đổi bất kỳ yếu tố nào của phạm vi liên quan, hành vi không được xác định.</td> <td>-</td> <td>Tham số<br/> <p>Đầu tiên, cuối cùng</p>
+<p><span class="t-cc"><code> Ret fun(const Type1 &amp;a, const Type2 &amp;b);</code></span></p>
+<p>phạm vi của các phần tử để tổng<code>const &amp;</code>.<br/>, loại của ai là<a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>*(d_first + 1) = val1 - std :: di chuyển (acc);<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)</span>, được sử dụng làm tích lũy cho kết quả trung gian.<code>Ret</code>Giá trị ban đầu của tổng<code>InputIt</code> <code>Ret</code>Đối tượng chức năng hoạt động nhị phân sẽ được áp dụng.</p>
+</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>. Của nó<a href="../iterator#Types_and_writability" title="cpp/iterator">value type</a> <code>*first</code>.</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>OutputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/outputiterator" title="cpp/named req/OutputIterator">LegacyOutputIterator</a>.<code>acc</code>để tổng hợp các yếu tố. Tương đương với:<a href="../iterator#Types_and_writability" title="cpp/iterator">writable</a>ĐẾN<code>d_first</code>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>*(d_first + 3) = *(đầu tiên + 3) - *(đầu tiên + 2);<code>d_first</code>nếu như<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>...</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Cho quá tải<code>N</code>(1,3)<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>first, last<span class="br0">)</span> <span class="sy2">-</span> <span class="nu0">, nếu như</span></code>:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Phạm vi của các yếu tố<code>N</code>Ứng dụng của<code>operator+</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Phạm vi của các yếu tố<code>N</code>d_first<code>op</code>
+</div> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <th>
+<a href="#Version_1">partial_sum (1)</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">std :: iterator_traits &lt;buputit&gt; :: value_type acc = *first;</pre></div> </td>
+</tr> <tr> <th>
+<a href="#Version_2">partial_sum (2)</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">*d_first = acc;</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p><code>acc</code>(1,3)<a class="external text" href="https://cplusplus.github.io/LWG/issue539" rel="nofollow">LWG issue 539</a>, của nó<code>acc</code> <code>*(d_first + 2) = (*first + *(first + 1)) + *(first + 2);</code>acc = std :: di chuyển (acc) + *(đầu tiên + 1);</p>
+<ul>
+<li>(xác định ở trên) và kết quả của<code>InputIt</code> </li>
+<li>(vì<code>OutputIt</code> </li>
+<li>) hoặc<span class="sy2">gọi</span>hoặc<code>op</code> </li>
+<li>(vì<span class="sy2">gọi</span>hoặc<code>op</code> </li>
+</ul> <p><code>acc</code>*(d_first + 1) = acc;</p>
+<ul>
+<li>) hoặc<code>InputIt</code> </li>
+<li> <code>d_first</code> </li>
+<li>và kết quả của<span class="sy2">gọi</span>hoặc<code>op</code> </li>
+<li>acc = std :: di chuyển (acc) + *(đầu tiên + 2);<span class="sy2">gọi</span>hoặc<code>op</code> </li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">*(d_first + 2) = acc;</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">acc = std :: di chuyển (acc) + *(đầu tiên + 3);</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue242" rel="nofollow">LWG 242</a> </td> <td>C ++ 98</td> <td>
+<code>op</code>    trả lại init;</td> <td>}</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue539" rel="nofollow">LWG 539</a> </td> <td>C ++ 98</td> <td>trống rỗng.<br/>Sự phức tạp</td> <td>Được cho</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2055" rel="nofollow">LWG 2055</a><br/>.<a class="external text" href="https://wg21.link/P0616R0" rel="nofollow">P0616R0</a>)</td> <td>C ++ 11</td> <td>
+<code>acc</code>Mẫu &lt;class inputit, lớp T, lớp BinaryOperation&gt;</td> <td>constexpr // kể từ C ++ 20</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="adjacent_difference" title="cpp/algorithm/adjacent difference"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div> </td> <td>liền kề_diferference<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="accumulate" title="cpp/algorithm/accumulate"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>tích lũy<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="inclusive_scan" title="cpp/algorithm/inclusive scan"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(C ++ 17)<code>std::partial_sum</code>Tương tự như<sup>phần tử đầu vào trong I</sup>th<sup>phần tử đầu vào trong I</sup>th<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="exclusive_scan" title="cpp/algorithm/exclusive scan"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(C ++ 17)<code>std::partial_sum</code>Tương tự như<sup>phần tử đầu vào trong I</sup>th<sup>phần tử đầu vào trong I</sup>th<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/partial_sum">https://en.cppreference.com/w/cpp/algorithm/partial_sum</a>
+</p>
+</div>

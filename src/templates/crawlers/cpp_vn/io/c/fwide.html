@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FLID</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int fwide (std :: file* stream, int mode);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nếu như<code>mode &gt; 0</code>, cố gắng thực hiện<code>stream</code>định hướng rộng. Nếu như<code>mode &lt; 0</code>, cố gắng thực hiện<code>stream</code>định hướng byte. Nếu như<code>mode == 0</code>, chỉ truy vấn định hướng hiện tại của luồng.</p>
+<p>Nếu định hướng của luồng đã được quyết định (bằng cách thực hiện đầu ra hoặc bằng một cuộc gọi trước đó đến FWIDE), chức năng này không làm gì cả.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>con trỏ đến luồng I/O C để sửa đổi hoặc truy vấn</td>
+</tr> <tr class="t-par"> <td>đang chỉ ra) và là chuỗi ký tự liên quan (nguồn ký tự cho tất cả các hoạt động đầu vào và mục tiêu cho đầu ra).</td> <td>-</td> <td>Giá trị số nguyên lớn hơn 0 để đặt luồng rộng, nhỏ hơn 0 để đặt luồng hẹp hoặc không chỉ để truy vấn</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một số nguyên lớn hơn 0 nếu luồng được định hướng rộng sau cuộc gọi này, nhỏ hơn 0 nếu luồng được định hướng byte sau cuộc gọi này và không nếu luồng không có định hướng.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Mã sau đây đặt và đặt lại định hướng luồng.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cstdio&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CstDlib&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fopen" title="cpp/io/c/fopen"> <span class="t-lines"><span>Fopen</span></span></a></div> </td> <td>Mở một tập tin<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/fwide" title="c/io/fwide">C documentation</a></span>vì<code>fwide</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/fwide">https://en.cppreference.com/w/cpp/io/c/fwide</a>
+</p>
+</div>

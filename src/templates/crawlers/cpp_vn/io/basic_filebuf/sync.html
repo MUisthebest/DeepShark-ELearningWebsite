@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_filebuf &lt;biểu đồ, đặc điểm&gt; :: đồng bộ hóa</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Virtual Int Sync ()<code><a href="../basic_streambuf/overflow" title="cpp/io/basic streambuf/overflow">overflow()</a></code>Nếu một khu vực đặt tồn tại (ví dụ: tệp đã được mở để viết), các cuộc gọi<code><a href="../c/fflush" title="cpp/io/c/fflush">std::fflush</a></code>.</p>
+<p>Để viết tất cả đầu ra đang chờ xử lý vào tệp, sau đó xóa tệp như thể bằng cách gọi</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>​0​</code>Nếu một khu vực GET tồn tại (ví dụ: tệp được mở để đọc), hiệu ứng được xác định là được xác định. Việc triển khai điển hình có thể làm trống khu vực GET và di chuyển vị trí tệp hiện tại bằng số byte tương ứng.<code>-1</code>Trong trường hợp thành công,</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>sync()</code>Trong trường hợp thất bại.<a href="close" title="cpp/io/basic filebuf/close"><code>close()</code></a>Thì<a href="seekoff" title="cpp/io/basic filebuf/seekoff"><code>seekoff()</code></a>, Và<a href="seekpos" title="cpp/io/basic filebuf/seekpos"><code>seekpos()</code></a>hoặc tương đương của nó được gọi ngầm cho các luồng đầu ra bởi<code><a href="../basic_streambuf/pubsync" title="cpp/io/basic streambuf/pubsync">std::basic_streambuf::pubsync()</a></code></p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_streambuf/pubsync" title="cpp/io/basic streambuf/pubsync"> <span class="t-lines"><span>Gọi</span></span></a></div> </td> <td>Sputc<code>sync()</code> <br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_streambuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../c/fflush" title="cpp/io/c/fflush"> <span class="t-lines"><span>fflush</span></span></a></div> </td> <td>Đồng bộ hóa một luồng đầu ra với tệp thực tế<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_filebuf/sync">https://en.cppreference.com/w/cpp/io/basic_filebuf/sync</a>
+</p>
+</div>

@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Đổi tên</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int đổi tên (const char* old_filename, const char* new_filename);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Thay đổi tên tệp của một tập tin. Tệp được xác định bởi chuỗi ký tự được trỏ bởi<code>old_filename</code>. Tên tệp mới được xác định bởi chuỗi ký tự được trỏ bởi<code>new_filename</code>.</p>
+<p>Nếu như<code>new_filename</code>tồn tại, hành vi được thực hiện theo định nghĩa.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>old_filename</td> <td>-</td> <td>Con trỏ đến chuỗi kết thúc không có chứa đường dẫn xác định tệp để đổi tên</td>
+</tr> <tr class="t-par"> <td>new_filename</td> <td>-</td> <td>con trỏ đến chuỗi kết thúc không có chứa đường dẫn mới của tệp</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>​0​</code>khi thành công hoặc giá trị không phải là lỗi.</p>
+<h3 id="Notes">Ghi chú</h3> <p><a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/rename.html" rel="nofollow">POSIX</a>Chỉ định nhiều chi tiết bổ sung về ngữ nghĩa của hàm này, được sao chép trong C ++ bởi<code><a href="../../filesystem/rename" title="cpp/filesystem/rename">std::filesystem::rename</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cstdio&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Một</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../filesystem/rename" title="cpp/filesystem/rename"> <span class="t-lines"><span>Đổi tên</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>di chuyển hoặc đổi tên một tệp hoặc thư mục<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="remove" title="cpp/io/c/remove"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>#include &lt;Istream&gt;<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/rename" title="c/io/rename">C documentation</a></span>vì<code>rename</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/rename">https://en.cppreference.com/w/cpp/io/c/rename</a>
+</p>
+</div>

@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: strict_weak_order</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/concepts" title="cpp/header/concepts">&lt;concepts&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class r, class t, class u&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Khái niệm gán được_from =<code>strict_weak_order&lt;R, T, U&gt;</code>chỉ định rằng<a href="relation" title="cpp/concepts/relation"><code>relation</code></a> <code>R</code>khái niệm strict_weak_order = std :: quan hệ &lt;r, t, u&gt;;</p>
+<h3 id="Semantic_requirements">        const std :: remove_reference_t &lt;lhs&gt; &amp;,</h3> <p>về lập luận của nó.<code>r</code>áp đặt một trật tự yếu nghiêm ngặt đối với các lập luận của nó.</p>
+<ul>
+<li>là một thứ tự yếu nghiêm ngặt nếu<code>x</code>Thì<code>r(x, x)</code>khoảng cách<code>false</code>Số lượng các yếu tố để sao chép</li>
+<li>nó không phù hợp: cho tất cả<code>a</code>Thì<code>b</code>Và<code>c</code>Sử dụng chức năng nhị phân đã cho<code>r(a, b)</code>Và<code>r(b, c)</code>, và sau đó thêm 1.<code>true</code>phải ít nhất được đặt hàng một phần đối với<code>r(a, c)</code>khoảng cách<code>true</code>Số lượng các yếu tố để sao chép</li>
+<li>nó là chuyển tiếp: cho tất cả<code>e(a, b)</code>{<code>!r(a, b) &amp;&amp; !r(b, a)</code>, sau đó<code>e</code>cho phép<code>e(a, b) &amp;&amp; e(b, c)</code>nó là chuyển tiếp:<code>e(a, c)</code>.</li>
+</ul> <p>là chuyển tiếp:<code>e</code>Trong những điều kiện này, có thể chỉ ra rằng<code>r</code>là một mối quan hệ tương đương, và<code>e</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>ngụ ý<a href="relation" title="cpp/concepts/relation"><code>relation</code></a>Và<code>strict_weak_order</code>Sự khác biệt giữa</p>
+<h3 id="See_also">(chức năng)</h3> <ul><li> <a href="../named_req/lessthancomparable" title="cpp/named req/LessThanComparable">LessThanComparable</a> </li></ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/concepts/strict_weak_order">https://en.cppreference.com/w/cpp/concepts/strict_weak_order</a>
+</p>
+</div>

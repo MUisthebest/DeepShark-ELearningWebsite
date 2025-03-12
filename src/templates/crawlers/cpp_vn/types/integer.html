@@ -1,0 +1,134 @@
+ <h1 class="firstHeading" id="firstHeading">}<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <h3 id="Types">Loại</h3> <table class="t-dsc-begin"> <tr class="t-dsc-header"> <th colspan="2">C Thư viện<code><a href="../header/cstdint" title="cpp/header/cstdint">&lt;cstdint&gt;</a></code> </th>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>ATOMIC_WCHAR_T</span><span>STD</span><span>STD</span><span>STD</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark">ATOMIC_INTPTR_T</span></span></span></div> </td> <td>Loại số nguyên đã ký với chiều rộng tương ứng là chính xác 8, 16, 32 và 64 bit<br/>Không có bit đệm và sử dụng bổ sung 2 cho các giá trị âm<br/>(Được cung cấp nếu và chỉ khi việc triển khai trực tiếp hỗ trợ loại)<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Atomic_uint_least64_t</span><span>ATOMIC_UINT_FAST8_T</span><span>ATOMIC_UINT_FAST16_T</span><span>ATOMIC_UINT_FAST32_T</span></span></div> </td> <td>Loại số nguyên có chữ ký nhanh nhất với chiều rộng tương ứng là ít nhất 8, 16, 32 và 64 bit<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>(không bắt buộc)</span><span>Atomic_uint_least8_t</span><span>ATOMIC_UINT_LEAST16_T</span><span>ATOMIC_UINT_LEAST32_T</span></span></div> </td> <td>Loại số nguyên có chữ ký nhỏ nhất với chiều rộng tương ứng là ít nhất 8, 16, 32 và 64 bit<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>STD</span></span></div> </td> <td>Loại số nguyên có chữ in tối đa<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>STD</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark">ATOMIC_INTPTR_T</span></span></span></div> </td> <td>Loại số nguyên đã ký có khả năng giữ một con trỏ để<span class="kw4">Vô hiệu</span> <br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>STD</span><span>STD</span><span>STD</span><span>STD</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark">ATOMIC_INTPTR_T</span></span></span></div> </td> <td>Loại số nguyên không dấu với chiều rộng tương ứng là chính xác 8, 16, 32 và 64 bit<br/>(Được cung cấp nếu và chỉ khi việc triển khai trực tiếp hỗ trợ loại)<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>ATOMIC_INT_FAST8_T</span><span>ATOMIC_INT_FAST16_T</span><span>ATOMIC_INT_FAST32_T</span><span>ATOMIC_INT_FAST64_T</span></span></div> </td> <td>Loại số nguyên không dấu nhanh nhất với chiều rộng tương ứng là ít nhất 8, 16, 32 và 64 bit<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Atomic_int_least8_t</span><span>ATOMIC_INT_LEAST16_T</span><span>Atomic_int_least32_t</span><span>ATOMIC_INT_LEAST64_T</span></span></div> </td> <td>Loại số nguyên không dấu nhỏ nhất với chiều rộng tương ứng là ít nhất 8, 16, 32 và 64 bit<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>ATOMIC_INTMAX_T</span></span></div> </td> <td>Loại số nguyên không dấu có chiều rộng tối đa<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>STD</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark">ATOMIC_INTPTR_T</span></span></span></div> </td> <td>Loại số nguyên không dấu có khả năng giữ một con trỏ để<span class="kw4">Vô hiệu</span> <br/> <span class="t-mark">(typedef)</span> </td>
+</tr> </table> <p>Việc triển khai có thể xác định tên typedef<code>int<i>N</i>_t</code>Thì<code>int_fast<i>N</i>_t</code>Thì<code>int_least<i>N</i>_t</code>Thì<code>uint<i>N</i>_t</code>Thì<code>uint_fast<i>N</i>_t</code>, Và<code>uint_least<i>N</i>_t</code>Chuyển đổi danh tính:<i>N</i>không phải là 8, 16, 32 hoặc 64. Tên typedef của biểu mẫu<code>int<i>N</i>_t</code>chỉ có thể được xác định nếu việc triển khai hỗ trợ một loại số nguyên có độ rộng đó không có phần đệm. Như vậy,<code>std::uint24_t</code>Biểu thị một loại số nguyên không dấu với chiều rộng chính xác là 24 bit.</p>
+<p>Mỗi macro được liệt kê ở bên dưới được xác định nếu và chỉ khi việc triển khai xác định tên typedef tương ứng. Các macro<code>INT<i>N</i>_C</code>Và<code>UINT<i>N</i>_C</code>tương ứng với tên typedef<code>int_least<i>N</i>_t</code>Và<code>uint_least<i>N</i>_t</code>Yêu cầu STD :: Inone</p>
+<h3 id="Macro_constants">Hằng số vĩ mô</h3> <table class="t-dsc-begin"> <tr class="t-dsc-header"> <th colspan="2">C Thư viện<code><a href="../header/cstdint" title="cpp/header/cstdint">&lt;cstdint&gt;</a></code> </th>
+</tr> <tr> <td colspan="2"> <h5 id="Signed_integers_:_minimum_value">Số nguyên đã ký: Giá trị tối thiểu</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Int8_min</span><span>Int16_Min</span><span>Int32_Min</span><span>Int64_min</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark">ATOMIC_INTPTR_T</span></span></span></div> </td> <td>giá trị tối thiểu của<code>std::int8_t</code>Thì<code>std::int16_t</code>Thì<code>std::int32_t</code>Và<code>std::int64_t</code>(Được kiểm soát bởi Chỉ thị<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>INT_FAST8_MIN</span><span>INT_FAST16_MIN</span><span>INT_FAST32_MIN</span><span>INT_FAST64_MIN</span></span></div> </td> <td>giá trị tối thiểu của<code>std::int_fast8_t</code>Thì<code>std::int_fast16_t</code>Thì<code>std::int_fast32_t</code>Và<code>std::int_fast64_t</code>(Được kiểm soát bởi Chỉ thị<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>INT_LEAST8_MIN</span><span>INT_LEAST16_MIN</span><span>INT_LEAST32_MIN</span><span>INT_LEAST64_MIN</span></span></div> </td> <td>giá trị tối thiểu của<code>std::int_least8_t</code>Thì<code>std::int_least16_t</code>Thì<code>std::int_least32_t</code>Và<code>std::int_least64_t</code>(Được kiểm soát bởi Chỉ thị<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>INTPTR_MIN</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark">ATOMIC_INTPTR_T</span></span></span></div> </td> <td>giá trị tối thiểu của<code>std::intptr_t</code> <br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Intmax_min</span></span></div> </td> <td>giá trị tối thiểu của<code>std::intmax_t</code> <br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Signed_integers_:_maximum_value">Số nguyên đã ký: Giá trị tối đa</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>INT8_MAX</span><span>INT16_MAX</span><span>INT32_MAX</span><span>INT64_MAX</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark">ATOMIC_INTPTR_T</span></span></span></div> </td> <td>giá trị tối đa của<code>std::int8_t</code>Thì<code>std::int16_t</code>Thì<code>std::int32_t</code>Và<code>std::int64_t</code>(Được kiểm soát bởi Chỉ thị<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>INT_FAST8_MAX</span><span>INT_FAST16_MAX</span><span>INT_FAST32_MAX</span><span>INT_FAST64_MAX</span></span></div> </td> <td>giá trị tối đa của<code>std::int_fast8_t</code>Thì<code>std::int_fast16_t</code>Thì<code>std::int_fast32_t</code>Và<code>std::int_fast64_t</code>(Được kiểm soát bởi Chỉ thị<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>INT_LEAST8_MAX</span><span>INT_LEAST16_MAX</span><span>INT_LEAST32_MAX</span><span>INT_LEAST64_MAX</span></span></div> </td> <td>giá trị tối đa của<code>std::int_least8_t</code>Thì<code>std::int_least16_t</code>Thì<code>std::int_least32_t</code>Và<code>std::int_least64_t</code>(Được kiểm soát bởi Chỉ thị<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>INTPTR_MAX</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark">ATOMIC_INTPTR_T</span></span></span></div> </td> <td>giá trị tối đa của<code>std::intptr_t</code> <br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Intmax_max</span></span></div> </td> <td>giá trị tối đa của<code>std::intmax_t</code> <br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Unsigned_integers_:_maximum_value">Số nguyên không dấu: Giá trị tối đa</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Uint8_max</span><span>UINT16_MAX</span><span>UINT32_MAX</span><span>UINT64_MAX</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark">ATOMIC_INTPTR_T</span></span></span></div> </td> <td>giá trị tối đa của<code>std::uint8_t</code>Thì<code>std::uint16_t</code>Thì<code>std::uint32_t</code>Và<code>std::uint64_t</code>(Được kiểm soát bởi Chỉ thị<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Uint_fast8_max</span><span>UINT_FAST16_MAX</span><span>UINT_FAST32_MAX</span><span>UINT_FAST64_MAX</span></span></div> </td> <td>giá trị tối đa của<code>std::uint_fast8_t</code>Thì<code>std::uint_fast16_t</code>Thì<code>std::uint_fast32_t</code>Và<code>std::uint_fast64_t</code>(Được kiểm soát bởi Chỉ thị<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>UINT_LEAST8_MAX</span><span>UINT_LEAST16_MAX</span><span>UINT_LEAST32_MAX</span><span>UINT_LEAST64_MAX</span></span></div> </td> <td>giá trị tối đa của<code>std::uint_least8_t</code>Thì<code>std::uint_least16_t</code>Thì<code>std::uint_least32_t</code>Và<code>std::uint_least64_t</code>(Được kiểm soát bởi Chỉ thị<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>UINTPTR_MAX</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark">ATOMIC_INTPTR_T</span></span></span></div> </td> <td>giá trị tối đa của<code>std::uintptr_t</code> <br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Uintmax_max</span></span></div> </td> <td>giá trị tối đa của<code>std::uintmax_t</code> <br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> </table> <h3 id="Function_macros_for_minimum-width_integer_constants">Chức năng macro cho các hằng số nguyên chiều rộng tối thiểu</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>INT8_C</span><span>INT16_C</span><span>INT32_C</span><span>Int64_c</span></span></div> </td> <td>Mở rộng sang biểu thức không đổi số nguyên có giá trị được chỉ định bởi đối số của nó và loại có<a href="../language/implicit_conversion#Integral_promotion" title="cpp/language/implicit conversion">promoted</a>không đủ điều kiện.<code>std::int_least8_t</code>Thì<code>std::int_least16_t</code>Thì<code>std::int_least32_t</code>Và<code>std::int_least64_t</code>(Được kiểm soát bởi Chỉ thị<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Intmax_c</span></span></div> </td> <td>Mở rộng sang biểu thức không đổi số nguyên có giá trị được chỉ định bởi đối số của nó và loại<code>std::intmax_t</code> <br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>UINT8_C</span><span>UINT16_C</span><span>UINT32_C</span><span>UINT64_C</span></span></div> </td> <td>Mở rộng sang biểu thức không đổi số nguyên có giá trị được chỉ định bởi đối số của nó và loại có<a href="../language/implicit_conversion#Integral_promotion" title="cpp/language/implicit conversion">promoted</a>không đủ điều kiện.<code>std::uint_least8_t</code>Thì<code>std::uint_least16_t</code>Thì<code>std::uint_least32_t</code>Và<code>std::uint_least64_t</code>(Được kiểm soát bởi Chỉ thị<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>UINTMAX_C</span></span></div> </td> <td>Mở rộng sang biểu thức không đổi số nguyên có giá trị được chỉ định bởi đối số của nó và loại<code>std::uintmax_t</code> <br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> </table> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDint&gt;</pre></div> <h3 id="Format_macro_constants">UINT64_C (0x123) // Mở rộng sang một loại chữ UINT_LEAST64_T và giá trị 0x123</h3> <table class="t-dsc-begin"> <tr class="t-dsc-header"> <th colspan="2">C Thư viện<code><a href="../header/cinttypes" title="cpp/header/cinttypes">&lt;cinttypes&gt;</a></code> </th>
+</tr> </table> <h4 id="Format_constants_for_the_std::fprintf_family_of_functions">Hằng số định dạng cho<code><a href="../io/c/fprintf" title="cpp/io/c/fprintf">std::fprintf</a></code>gia đình của các chức năng</h4> <p>Prixfast<code>PRI</code>Mỗi</p>
+<table class="wikitable"> <tr> <th rowspan="2">Công cụ sửa đổi chiều dài cho loại.<br/>vì<span class="kw4">int</span>hoặc<br/><span class="kw4">STD</span> <span class="kw4">int</span> </th> <th rowspan="2">Sự miêu tả</th> <th colspan="5">Tương đương</th>
+</tr> <tr> <td>
+<br/><br/><br/><br/><div>
+<code>std::int</code><b>x</b><code>_t</code>
+</div>
+<br/><br/><br/><br/> </td> <td>
+<div>
+<code>std::int_least</code><b>x</b><code>_t</code>
+</div> </td> <td>
+<div>
+<code>std::int_fast</code><b>x</b><code>_t</code>
+</div> </td> <td>
+<div><code>std::intmax_t</code></div> </td> <td>
+<div><code>std::intptr_t</code></div> </td>
+</tr> <tr> <th> <code>d</code> </th> <td rowspan="2">Macro cho các loại dữ liệu</td> <td>đầu ra của giá trị số nguyên thập phân có chữ ký<b>x</b> </td> <td>Prid<b>x</b> </td> <td>Pridleast<b>x</b> </td> <td>Pridmax</td> <td>Pridptr</td>
+</tr> <tr> <th> <code>i</code> </th> <td>Mượt mà<b>x</b> </td> <td>Prii<b>x</b> </td> <td>Priileast<b>x</b> </td> <td>Priimax</td> <td>Priiptr</td>
+</tr> <tr> <th> <code>u</code> </th> <td>Priifast</td> <td>đầu ra của một giá trị số nguyên thập phân không dấu<b>x</b> </td> <td>Priu<b>x</b> </td> <td>Priuleast<b>x</b> </td> <td>Priumax</td> <td>Priuptr</td>
+</tr> <tr> <th> <code>o</code> </th> <td>PriUfast</td> <td>đầu ra của một giá trị số nguyên bát phân không dấu<b>x</b> </td> <td>PRO<b>x</b> </td> <td>Priolast<b>x</b> </td> <td>Priomax</td> <td>PRIOPTR</td>
+</tr> <tr> <th> <code>x</code> </th> <td>Priofast</td> <td>đầu ra của một giá trị số nguyên thập lục phân chữ thường không dấu<b>x</b> </td> <td>Prix<b>x</b> </td> <td>Prixleast<b>x</b> </td> <td>Prixmax</td> <td>Prixptr</td>
+</tr> <tr> <th> <code>X</code> </th> <td>Prixfast</td> <td>đầu ra của một giá trị số nguyên lục giác không dấu<b>x</b> </td> <td>Prix<b>x</b> </td> <td>Prixleast<b>x</b> </td> <td>Prixmax</td> <td>Prixptr</td>
+</tr>
+</table> <h4 id="Format_constants_for_the_std::fscanf_family_of_functions">Hằng số định dạng cho<code><a href="../io/c/fscanf" title="cpp/io/c/fscanf">std::fscanf</a></code>gia đình của các chức năng</h4> <p>Prixfast<code>SCN</code>Mỗi<code><a href="../io/c/fscanf" title="cpp/io/c/fscanf">std::fscanf</a></code>macro được liệt kê ở đây được xác định nếu và chỉ khi việc triển khai xác định tên typedef tương ứng và có một</p>
+<table class="wikitable"> <tr> <th rowspan="2">Công cụ sửa đổi chiều dài cho loại.<br/>vì<span class="kw4">int</span>hoặc<br/><span class="kw4">STD</span> <span class="kw4">int</span> </th> <th rowspan="2">Sự miêu tả</th> <th colspan="5">Tương đương</th>
+</tr> <tr> <td>
+<br/><br/><br/><br/><div>
+<code>std::int</code><b>x</b><code>_t</code>
+</div>
+<br/><br/><br/><br/> </td> <td>
+<div>
+<code>std::int_least</code><b>x</b><code>_t</code>
+</div> </td> <td>
+<div>
+<code>std::int_fast</code><b>x</b><code>_t</code>
+</div> </td> <td>
+<div><code>std::intmax_t</code></div> </td> <td>
+<div><code>std::intptr_t</code></div> </td>
+</tr> <tr> <th> <code>d</code> </th> <td>Macro cho các loại dữ liệu</td> <td>Đầu vào của một giá trị số nguyên thập phân có chữ ký<b>x</b> </td> <td>SCND<b>x</b> </td> <td>Scndleast<b>x</b> </td> <td>SCNDMAX</td> <td>SCNDPTR</td>
+</tr> <tr> <th> <code>i</code> </th> <td>SCNDFAST</td> <td>Đầu vào của một giá trị số nguyên đã ký<b>x</b> </td> <td>Scni<b>x</b> </td> <td>Scnileast<b>x</b> </td> <td>Scnimax</td> <td>SCNIPTR</td>
+</tr> <tr> <th> <code>u</code> </th> <td>Scnifast</td> <td>Đầu vào của một giá trị số nguyên thập phân không dấu<b>x</b> </td> <td>SCNU<b>x</b> </td> <td>Scnuleast<b>x</b> </td> <td>Scnumax</td> <td>SCNuptr</td>
+</tr> <tr> <th> <code>o</code> </th> <td>Scnufast</td> <td>Đầu vào của một giá trị số nguyên octal không dấu<b>x</b> </td> <td>Scno<b>x</b> </td> <td>Scnoleast<b>x</b> </td> <td>Scnomax</td> <td>SCNOPTR</td>
+</tr> <tr> <th> <code>x</code> </th> <td>Scnofast</td> <td>Đầu vào của một giá trị số nguyên thập lục phân không dấu<b>x</b> </td> <td>SCNX<b>x</b> </td> <td>Scnxleast<b>x</b> </td> <td>Scnxmax</td> <td>SCNXPTR</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Scnxfast<a href="../language/user_literal" title="cpp/language/user literal">user-defined string literal</a>Bởi vì C ++ diễn giải một ký tự ngay lập tức theo nghĩa đen của chuỗi dưới dạng<code>printf("%"PRId64"\n",n);</code>, Mã C như<code>PRId64</code>.</p>
+<p>là C ++ không hợp lệ và yêu cầu một khoảng trống trước<code>__STDC_LIMIT_MACROS</code>Thì<code>__STDC_CONSTANT_MACROS</code>hoặc<code>__STDC_FORMAT_MACROS</code>Tiêu chuẩn C99 cho thấy rằng việc triển khai C ++ không nên xác định giới hạn, không đổi hoặc macro định dạng trên trừ khi các macro<code>stdint.h</code>hoặc<code>inttypes.h</code>(tương ứng) được xác định trước khi bao gồm tiêu đề C có liên quan (<code>__STDC</code>). Khuyến nghị này không được áp dụng bởi bất kỳ tiêu chuẩn C ++ nào và đã bị xóa trong C11. Tuy nhiên, một số triển khai (như glibc 2.17) cố gắng áp dụng quy tắc này và có thể cần phải xác định</p>
+<p><code>std::int8_t</code>Trong đặc điểm kỹ thuật ngoại lệ, tìm thấy mẫu chức năng này ngoài bất cứ thứ gì được tìm thấy bởi các quy tắc tra cứu thông thường, làm cho đặc điểm kỹ thuật ngoại lệ tương đương với C ++ 17<span class="kw4">STD</span> <span class="kw4">char</span>Và<code>std::uint8_t</code>Trong đặc điểm kỹ thuật ngoại lệ, tìm thấy mẫu chức năng này ngoài bất cứ thứ gì được tìm thấy bởi các quy tắc tra cứu thông thường, làm cho đặc điểm kỹ thuật ngoại lệ tương đương với C ++ 17<span class="kw4">STD</span> <span class="kw4">char</span>macro; Trình biên dịch C ++ có thể cố gắng làm việc xung quanh việc này bằng cách tự động xác định chúng trong một số trường hợp.<span class="kw4">char</span>, nhưng không thể<span class="kw4">char</span>bất kể sự ký tên của nó (bởi vì</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>không được coi là "loại số nguyên có chữ ký" hoặc "loại số nguyên không dấu").<a href="../language/user_literal#Notes" title="cpp/language/user literal">note</a>Xem thêm a<a href="#Format_macro_constants">format macros</a>liên quan đến không gian trước</p>
+<div class="cpp source-cpp"><pre data-language="cpp">được sử dụng trong ví dụ này.</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cinttypes&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2820" rel="nofollow">LWG 2820</a> </td> <td>C ++ 11</td> <td>#include &lt;Cstdio&gt;</td> <td>};</td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul>
+<li>{</li>
+<li>int main ()</li>
+</ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul>
+<li>{</li>
+<li>    std :: printf ("%zu \ n", sizeof (std :: int64_t));</li>
+</ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul>
+<li>    std :: printf ("%s \ n", prid64);</li>
+<li>    std :: printf ("%+" prid64 "\ n", int64_min);</li>
+</ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul>
+<li>    std :: int64_t n = 7;</li>
+<li>    std :: printf ("%+" prid64 "\ n", n);</li>
+</ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul>
+<li>    std :: int64_t n = 7;</li>
+<li>    std :: printf ("%+" prid64 "\ n", n);</li>
+</ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <ul><li> <a href="../language/types" title="cpp/language/types">Fundamental types</a> </li></ul> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/types/integer" title="c/types/integer">C documentation</a></span>vì<span class=""><span>}</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/integer">https://en.cppreference.com/w/cpp/types/integer</a>
+</p>
+</div>

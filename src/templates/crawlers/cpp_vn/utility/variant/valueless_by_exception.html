@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: biến thể &lt;loại ...&gt; :: Valuless_by_exception</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">constexpr bool Valuless_by_exception () const NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Mẫu &lt;Class execPolicy,<code>false</code>nếu và chỉ khi biến thể giữ một giá trị.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Một biến thể có thể trở thành vô giá trị trong các tình huống sau:</p>
+<ul>
+<li>(Đảm bảo) Một ngoại lệ được ném trong quá trình khởi tạo giá trị chứa trong khi<a href="operator=" title="cpp/utility/variant/operator=">move assignment</a> </li>
+<li>(Tùy chọn) Một ngoại lệ được ném trong quá trình khởi tạo giá trị chứa trong khi<a href="operator=" title="cpp/utility/variant/operator=">copy assignment</a> </li>
+<li>(Tùy chọn) Một ngoại lệ được ném khi khởi tạo giá trị chứa trong quá trình thay đổi loại<a href="operator=" title="cpp/utility/variant/operator=">assignment</a> </li>
+<li>(Tùy chọn) Một ngoại lệ được ném khi khởi tạo giá trị chứa trong quá trình thay đổi loại<a href="emplace" title="cpp/utility/variant/emplace"><code>emplace</code></a> </li>
+</ul> <p>Vì biến thể không bao giờ được phép phân bổ bộ nhớ động, giá trị trước đó không thể được giữ lại trong các tình huống này. Các tình huống được đánh dấu "tùy chọn" có thể được làm việc xung quanh bằng cách triển khai trước tiên xây dựng giá trị mới trên ngăn xếp và sau đó di chuyển nó vào biến thể (cung cấp di chuyển không ném).</p>
+<p>Điều này áp dụng ngay cả cho các biến thể của các loại không thuộc lớp:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">struct s {</pre></div> <p>    toán tử int () {ném 42; }<a href="index" title="cpp/utility/variant/index"><code>index</code></a>(C ++ 20)<a href="variant_npos" title="cpp/utility/variant/variant npos"><code>variant_npos</code></a>Thì<a href="get" title="cpp/utility/variant/get"><code>get</code></a>Và<a href="visit" title="cpp/utility/variant/visit"><code>visit</code></a>    std :: ifstream f ("không tồn tại");<a href="bad_variant_access" title="cpp/utility/variant/bad variant access"><code>bad_variant_access</code></a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">};</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">std :: biến thể &lt;float, int&gt; v {12.f}; // ĐƯỢC RỒI</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="get" title="cpp/utility/variant/get"> <span class="t-lines"><span>Điền vào thùng chứa với giá trị được chỉ định<span class="t-dsc-small">Thuật toán</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Một tham chiếu đến<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="index" title="cpp/utility/variant/index"> <span class="t-lines"><span>Chỉ mục</span></span></a></div> </td> <td>gán một biến thể<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="bad_variant_access" title="cpp/utility/variant/bad variant access"> <span class="t-lines"><span>bad_variant_access</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Ngoại lệ được ném vào các quyền truy cập không hợp lệ vào giá trị của một biến thể<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/variant/valueless_by_exception">https://en.cppreference.com/w/cpp/utility/variant/valueless_by_exception</a>
+</p>
+</div>

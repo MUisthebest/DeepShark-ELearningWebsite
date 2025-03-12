@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: _ Thoát</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdlib" title="cpp/header/cstdlib">&lt;cstdlib&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">[[Noreturn]] void _Exit (int exit_code) noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Nguyên nhân chấm dứt chương trình bình thường xảy ra mà không làm sạch hoàn toàn các tài nguyên.</p>
+<p>Các bộ hủy của các biến có thời lượng lưu trữ tự động, luồng cục bộ và tĩnh không được gọi. Chức năng được thông qua<code><a href="at_quick_exit" title="cpp/utility/program/at quick exit">std::at_quick_exit()</a></code>hoặc<code><a href="atexit" title="cpp/utility/program/atexit">std::atexit()</a></code>không được gọi. Liệu các tài nguyên mở như các tệp được đóng có được thực hiện được xác định hay không.</p>
+<p>Nếu như<code>exit_code</code>khoảng cách<code>0</code>hoặc<code><a href="exit_status" title="cpp/utility/program/EXIT status">EXIT_SUCCESS</a></code>, một trạng thái được xác định theo triển khai cho thấy việc chấm dứt thành công được đưa trở lại môi trường máy chủ. Nếu như<code>exit_code</code>khoảng cách<code><a href="exit_status" title="cpp/utility/program/EXIT status">EXIT_FAILURE</a></code>, một trạng thái được xác định theo thực hiện, chỉ ra<i>không thành công</i>Chấm dứt, được trả lại. Trong các trường hợp khác, giá trị trạng thái do thực hiện được xác định được trả về.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>EXIT_CODE</td> <td>-</td> <td>Trạng thái thoát của chương trình</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Bài kiểm tra</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="abort" title="cpp/utility/program/abort"> <span class="t-lines"><span>khẳng định ((2 + 2 == 5) &amp;&amp; "Có năm đèn");</span></span></a></div> </td> <td>Việc thực hiện<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="exit" title="cpp/utility/program/exit"> <span class="t-lines"><span>ra</span></span></a></div> </td> <td>gây ra sự chấm dứt chương trình bình thường với việc dọn dẹp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/program/_Exit" title="c/program/ Exit">C documentation</a></span>vì<code>_Exit</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/program/_Exit">https://en.cppreference.com/w/cpp/utility/program/_Exit</a>
+</p>
+</div>

@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Ctype<span class="t-dsc-small">&lt;par&gt;</span>:: Ctype</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Ctype rõ ràng (mặt nạ const* tbl = 0, bool del = false, std :: size_t refs = 0);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Mẫu &lt;class T, std :: size_t n&gt;<code><a href="http://en.cppreference.com/w/cpp/locale/ctype"><span class="kw1942">Điều đó cho tất cả<span class="me2">Ctype</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">char</span><span class="sy1">&lt;</span></code>Mặt và chuyển tiếp số tham chiếu bắt đầu<code>refs</code>cho hàm tạo cơ sở,<a href="../locale/facet/facet" title="cpp/locale/locale/facet/facet"><code>locale::facet::facet()</code></a>.</p>
+<p>Nếu như<code>tbl</code>là null,<code>classic_table()</code>được sử dụng bởi tất cả các chức năng thành viên phân loại. Nếu không thì,<code>tbl</code>phải là một con trỏ tới phần tử đầu tiên của một mảng mặt nạ, ít nhất là<code><a href="http://en.cppreference.com/w/cpp/locale/ctype"><span class="kw1942">Điều đó cho tất cả<span class="me2">Ctype</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">char</span><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">được kế thừa</span></code>về kích thước, và mảng đó được sử dụng bởi tất cả các chức năng thành viên phân loại của Facet này.</p>
+<p>Nếu như<code>del</code>khoảng cách<code>true</code>, người ta cho rằng mảng được phân bổ<code>new[]</code>và kẻ phá hủy khía cạnh này sẽ gọi<code>delete[] tbl</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>TBL</td> <td>-</td> <td>Bảng phân loại để sử dụng hoặc con trỏ null</td>
+</tr> <tr class="t-par"> <td>Del</td> <td>-</td> <td>chỉ báo liệu bảng có cần bị xóa không</td>
+</tr> <tr class="t-par"> <td>Tên của địa điểm</td> <td>-</td> <td>Bắt đầu số lượng tham chiếu</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/ctype_char/ctype">https://en.cppreference.com/w/cpp/locale/ctype_char/ctype</a>
+</p>
+</div>

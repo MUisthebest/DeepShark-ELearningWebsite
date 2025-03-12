@@ -1,0 +1,11 @@
+ <h1 class="firstHeading" id="firstHeading">std :: mong đợi &lt;t, e&gt; :: ~ mong đợi</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">constexpr ~ mong đợi ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Phá hủy giá trị hiện có. Đó là, nếu<a href="operator_bool" title="cpp/utility/expected/operator bool"><code>has_value()</code></a>là sai, phá hủy giá trị bất ngờ; Nếu không, nếu<code>T</code>ConstExpr Auto và_Then (F &amp;&amp; F) Const &amp;&amp;;<code>void</code>, phá hủy giá trị dự kiến.</p>
+<p>Chất hủy diệt này là tầm thường nếu</p>
+<ul>
+<li>nhiều nhất là một chuyển đổi đủ điều kiện, và<code>T</code>Chuyển đổi tiêu chuẩn được áp dụng để chuyển đổi biểu thức thành prvalue.<code>void</code>, hoặc<code><a href="http://en.cppreference.com/w/cpp/types/is_destructible"><span class="kw572">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>là sai), sau đó</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/types/is_destructible"><span class="kw572">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="sy1">is_trivently_destructible_v</span>E<span class="sy1">&lt;</span></code>Mặc định xây dựng a</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/expected/%7Eexpected">https://en.cppreference.com/w/cpp/utility/expected/%7Eexpected</a>
+</p>
+</div>

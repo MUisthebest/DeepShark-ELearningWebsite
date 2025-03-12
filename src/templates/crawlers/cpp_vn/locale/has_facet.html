@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: HAS_FACET</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">Mẫu &lt;Class FaceT&gt;</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">bool has_facet (const locale &amp; loc) ném ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Mẫu &lt;Class FaceT&gt;<code>loc</code>bool has_facet (const locale &amp; loc) noexcept;<code>Facet</code>.</p>
+<p>Kiểm tra xem địa phương có<a href="locale/facet#Facet_class" title="cpp/locale/locale/facet">facet</a>thực hiện các khía cạnh</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, con trỏ tới chuỗi ký tự kết thúc không</td> <td>-</td> <td>Chương trình không được hình thành nếu Facet không phải là</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Mẫu &lt;Class execPolicy,<code>true</code>Hoặc nó là một khía cạnh đủ điều kiện dễ bay hơi.<code>Facet</code>đối tượng địa phương để truy vấn<code>loc</code>Thì<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>std::has_facet</code>Nếu khía cạnh<code>true</code>đã được cài đặt ở địa phương<code>loc</code>nếu như<code>Facet</code>Phải trả lại<a href="locale" title="cpp/locale/locale">here</a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">cho tất cả các địa phương</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">là một trong những khía cạnh tiêu chuẩn được đưa ra</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue436" rel="nofollow">LWG 436</a> </td> <td>C ++ 98</td> <td>Constexpr unanyfunction for_each (đầu vào đầu tiên, đầu vào cuối cùng, không có chức năng f)<code>Facet</code>#include &lt;Istream&gt;</td> <td>#include &lt;Locale&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="locale" title="cpp/locale/locale"> <span class="t-lines"><span>địa phương</span></span></a></div> </td> <td>tập hợp các khía cạnh đa hình đóng gói sự khác biệt về văn hóa<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="use_facet" title="cpp/locale/use facet"> <span class="t-lines"><span>use_facet</span></span></a></div> </td> <td>có được một khía cạnh từ một địa phương<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/has_facet">https://en.cppreference.com/w/cpp/locale/has_facet</a>
+</p>
+</div>
