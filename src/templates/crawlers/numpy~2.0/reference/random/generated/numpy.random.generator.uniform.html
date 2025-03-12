@@ -1,0 +1,43 @@
+<section id="numpy-random-generator-uniform"> <h1>numpy.random.Generator.uniform</h1> <p>method</p> <dl class="py method"> <dt class="sig sig-object py" id="numpy.random.Generator.uniform"> <span class="sig-prename descclassname">random.Generator.</span><span class="sig-name descname">uniform</span><span class="sig-paren">(</span><em class="sig-param"><span class="n">low</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">high</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span>
+</dt> <dd>
+<p>Draw samples from a uniform distribution.</p> <p>Samples are uniformly distributed over the half-open interval <code>[low, high)</code> (includes low, but excludes high). In other words, any value within the given interval is equally likely to be drawn by <a class="reference internal" href="#numpy.random.Generator.uniform" title="numpy.random.Generator.uniform"><code>uniform</code></a>.</p> <dl class="field-list simple"> <dt class="field-odd">Parameters<span class="colon">:</span>
+</dt> <dd class="field-odd">
+<dl class="simple"> <dt>
+<strong>low</strong><span class="classifier">float or array_like of floats, optional</span>
+</dt>
+<dd>
+<p>Lower boundary of the output interval. All values generated will be greater than or equal to low. The default value is 0.</p> </dd> <dt>
+<strong>high</strong><span class="classifier">float or array_like of floats</span>
+</dt>
+<dd>
+<p>Upper boundary of the output interval. All values generated will be less than high. The high limit may be included in the returned array of floats due to floating-point rounding in the equation <code>low + (high-low) * random_sample()</code>. high - low must be non-negative. The default value is 1.0.</p> </dd> <dt>
+<strong>size</strong><span class="classifier">int or tuple of ints, optional</span>
+</dt>
+<dd>
+<p>Output shape. If the given shape is, e.g., <code>(m, n, k)</code>, then <code>m * n * k</code> samples are drawn. If size is <code>None</code> (default), a single value is returned if <code>low</code> and <code>high</code> are both scalars. Otherwise, <code>np.broadcast(low, high).size</code> samples are drawn.</p> </dd> </dl> </dd> <dt class="field-even">Returns<span class="colon">:</span>
+</dt> <dd class="field-even">
+<dl class="simple"> <dt>
+<strong>out</strong><span class="classifier">ndarray or scalar</span>
+</dt>
+<dd>
+<p>Drawn samples from the parameterized uniform distribution.</p> </dd> </dl> </dd> </dl> <div class="admonition seealso"> <p class="admonition-title">See also</p> <dl class="simple"> <dt><a class="reference internal" href="numpy.random.generator.integers#numpy.random.Generator.integers" title="numpy.random.Generator.integers"><code>integers</code></a></dt>
+<dd>
+<p>Discrete uniform distribution, yielding integers.</p> </dd> <dt><a class="reference internal" href="../index#module-numpy.random" title="numpy.random"><code>random</code></a></dt>
+<dd>
+<p>Floats uniformly distributed over <code>[0, 1)</code>.</p> </dd> </dl> </div> <h4 class="rubric">Notes</h4> <p>The probability density function of the uniform distribution is</p> <div class="math notranslate nohighlight"> \[p(x) = \frac{1}{b - a}\]</div> <p>anywhere within the interval <code>[a, b)</code>, and zero elsewhere.</p> <p>When <code>high</code> == <code>low</code>, values of <code>low</code> will be returned.</p> <h4 class="rubric">Examples</h4> <p>Draw samples from the distribution:</p> <pre data-language="python">&gt;&gt;&gt; rng = np.random.default_rng()
+&gt;&gt;&gt; s = rng.uniform(-1,0,1000)
+</pre> <p>All values are within the given interval:</p> <pre data-language="python">&gt;&gt;&gt; np.all(s &gt;= -1)
+True
+&gt;&gt;&gt; np.all(s &lt; 0)
+True
+</pre> <p>Display the histogram of the samples, along with the probability density function:</p> <pre data-language="python">&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; count, bins, _ = plt.hist(s, 15, density=True)
+&gt;&gt;&gt; plt.plot(bins, np.ones_like(bins), linewidth=2, color='r')
+&gt;&gt;&gt; plt.show()
+</pre> <figure class="align-default"> <img alt="../../../_images/numpy-random-Generator-uniform-1.png" class="plot-directive" src="data:image/png;base64,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"> </figure> </dd>
+</dl> </section><div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2024 NumPy Developers<br>Licensed under the 3-clause BSD License.<br>
+    <a href="https://numpy.org/doc/2.0/reference/random/generated/numpy.random.Generator.uniform.html" class="_attribution-link">https://numpy.org/doc/2.0/reference/random/generated/numpy.random.Generator.uniform.html</a>
+  </p>
+</div>

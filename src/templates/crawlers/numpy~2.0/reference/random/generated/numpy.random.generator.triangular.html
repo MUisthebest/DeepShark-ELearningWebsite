@@ -1,0 +1,38 @@
+<section id="numpy-random-generator-triangular"> <h1>numpy.random.Generator.triangular</h1> <p>method</p> <dl class="py method"> <dt class="sig sig-object py" id="numpy.random.Generator.triangular"> <span class="sig-prename descclassname">random.Generator.</span><span class="sig-name descname">triangular</span><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">mode</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span>
+</dt> <dd>
+<p>Draw samples from the triangular distribution over the interval <code>[left, right]</code>.</p> <p>The triangular distribution is a continuous probability distribution with lower limit left, peak at mode, and upper limit right. Unlike the other distributions, these parameters directly define the shape of the pdf.</p> <dl class="field-list simple"> <dt class="field-odd">Parameters<span class="colon">:</span>
+</dt> <dd class="field-odd">
+<dl class="simple"> <dt>
+<strong>left</strong><span class="classifier">float or array_like of floats</span>
+</dt>
+<dd>
+<p>Lower limit.</p> </dd> <dt>
+<strong>mode</strong><span class="classifier">float or array_like of floats</span>
+</dt>
+<dd>
+<p>The value where the peak of the distribution occurs. The value must fulfill the condition <code>left &lt;= mode &lt;= right</code>.</p> </dd> <dt>
+<strong>right</strong><span class="classifier">float or array_like of floats</span>
+</dt>
+<dd>
+<p>Upper limit, must be larger than <code>left</code>.</p> </dd> <dt>
+<strong>size</strong><span class="classifier">int or tuple of ints, optional</span>
+</dt>
+<dd>
+<p>Output shape. If the given shape is, e.g., <code>(m, n, k)</code>, then <code>m * n * k</code> samples are drawn. If size is <code>None</code> (default), a single value is returned if <code>left</code>, <code>mode</code>, and <code>right</code> are all scalars. Otherwise, <code>np.broadcast(left, mode, right).size</code> samples are drawn.</p> </dd> </dl> </dd> <dt class="field-even">Returns<span class="colon">:</span>
+</dt> <dd class="field-even">
+<dl class="simple"> <dt>
+<strong>out</strong><span class="classifier">ndarray or scalar</span>
+</dt>
+<dd>
+<p>Drawn samples from the parameterized triangular distribution.</p> </dd> </dl> </dd> </dl> <h4 class="rubric">Notes</h4> <p>The probability density function for the triangular distribution is</p> <div class="math notranslate nohighlight"> \[\begin{split}P(x;l, m, r) = \begin{cases} \frac{2(x-l)}{(r-l)(m-l)}&amp; \text{for $l \leq x \leq m$},\\ \frac{2(r-x)}{(r-l)(r-m)}&amp; \text{for $m \leq x \leq r$},\\ 0&amp; \text{otherwise}. \end{cases}\end{split}\]</div> <p>The triangular distribution is often used in ill-defined problems where the underlying distribution is not known, but some knowledge of the limits and mode exists. Often it is used in simulations.</p> <h4 class="rubric">References</h4> <div role="list" class="citation-list"> <div class="citation" id="r102e81b560ea-1" role="doc-biblioentry"> <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span> <p>Wikipedia, “Triangular distribution” <a class="reference external" href="https://en.wikipedia.org/wiki/Triangular_distribution">https://en.wikipedia.org/wiki/Triangular_distribution</a></p> </div> </div> <h4 class="rubric">Examples</h4> <p>Draw values from the distribution and plot the histogram:</p> <pre data-language="python">&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; rng = np.random.default_rng()
+&gt;&gt;&gt; h = plt.hist(rng.triangular(-3, 0, 8, 100000), bins=200,
+...              density=True)
+&gt;&gt;&gt; plt.show()
+</pre> <figure class="align-default"> <img alt="../../../_images/numpy-random-Generator-triangular-1.png" class="plot-directive" src="data:image/png;base64,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"> </figure> </dd>
+</dl> </section><div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2024 NumPy Developers<br>Licensed under the 3-clause BSD License.<br>
+    <a href="https://numpy.org/doc/2.0/reference/random/generated/numpy.random.Generator.triangular.html" class="_attribution-link">https://numpy.org/doc/2.0/reference/random/generated/numpy.random.Generator.triangular.html</a>
+  </p>
+</div>
