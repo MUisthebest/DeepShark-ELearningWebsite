@@ -51,9 +51,25 @@ def signin():
 def signup():
     return render_template("index.html", name="sign-up.html")
 
+class LLMS(db.Model):
+    __tablename__ = "llms"
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String, nullable=False)
+    url = db.Column(db.String, nullable=False)
+    icon = db.Column(db.String, nullable=False)
+    group = db.Column(db.Integer, nullable=False)
+
 @app.route("/llms", methods=["GET"])
 def llms():
-    return render_template("index.html", name="llms.html")
+    llms_data = LLMS.query.order_by(LLMS.group).all()
+    grouped_data = {}
+    for row in llms_data:
+        if row.group not in grouped_data:
+            grouped_data[row.group] = []
+        grouped_data[row.group].append(row)
+    group_label = ["Academic Courses", "Open Source Models", "Research Papers", "Video Tutorials", "Data Processing Tools", "Datasets", "Free Resources", "GitHub Repositories", "LLM Communities", "LLM Deployment", "LLM Leaderboards", "Open Source Apps / Projects"]
+
+    return render_template("index.html", name="llms.html", grouped_data=grouped_data, group_label = group_label)
 
 
 @app.route("/question", methods=["GET"])
