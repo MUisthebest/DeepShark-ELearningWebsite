@@ -408,7 +408,7 @@ main {
 .search-bar input {
     width: 100%;
     padding: 10px 40px 10px 20px; 
-    border-radius: 10px;
+    border-radius: 20px;
     border: 1px solid #ddd;
 }
 .search-bar i {
@@ -567,7 +567,7 @@ main {
     align-items: center;
     margin-top: 10px;
     border: 1px solid #eee;
-    border-radius: 10px;
+    border-radius: 20px;
     height: 250px;
     overflow-y: auto;
     scrollbar-width: none;
@@ -626,13 +626,91 @@ main {
 }
 
 .panel-content {
-    background: white;
-    padding: 20px;
-    width: 80%;
-    max-height: 80%;
+    background: #ffffff;
+    padding: 25px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
     overflow-y: auto;
-    border-radius: 10px;
+    border-radius: 12px;
     position: relative;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-30px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.panel.show .panel-content {
+    transform: translateY(0);
+}
+
+/* ---- Close Button ---- */
+.close-panel {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.close-panel:hover {
+    color: #ff4d4d;
+}
+
+/* ---- Panel Header ---- */
+#panel-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* ---- Course List ---- */
+#panel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ---- Individual Course Item ---- */
+#panel-list a.course {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.2s ease-in-out;
+}
+
+#panel-list a.course:hover {
+    background: #e6f7ff;
+}
+
+#panel-list a.course img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+#panel-list a.course span {
+    font-weight: bold;
+    margin-right: 8px;
+    color: #007bff;
+}
+
+.panel-content::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.panel-content::-webkit-scrollbar {
+    display: none;
 }
 
 .close-panel {
