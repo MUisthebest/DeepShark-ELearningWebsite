@@ -129,7 +129,10 @@ async def tutorial(subpath=None):
 
     json_files = {
         "cpp": os.path.join(current_dir, "templates/crawlers/cpp/index.json"),
-        "python": os.path.join(current_dir, "templates/crawlers/python/index.json")
+        "python": os.path.join(current_dir, "templates/crawlers/python/index.json"),
+        "django": os.path.join(current_dir, "templates/crawlers/django~5.2/index.json"),
+        "flask": os.path.join(current_dir, "templates/crawlers/flask/index.json"),
+        "numpy": os.path.join(current_dir, "templates/crawlers/numpy~2.0/index.json")
     }
 
     def read_json(file_path):
@@ -162,13 +165,16 @@ async def tutorial(subpath=None):
 
     cpp_data = read_json(json_files["cpp"])
     python_data = read_json(json_files["python"])
+    django_data = read_json(json_files["django"])
+    flask_data = read_json(json_files["flask"])
+    numpy_data = read_json(json_files["numpy"])
+
 
     translated_content = "Nội dung không tìm thấy."
 
-    # Nếu subpath trùng với type, hiển thị danh sách name của type đó
     if subpath:
         if subpath in cpp_data:
-            translated_content = "<h2>Danh sách bài học trong C++ - Tiêu mục:  {}</h2>".format(subpath)
+            translated_content = "<h2>Danh sách bài học trong C++ - {}</h2>".format(subpath)
             translated_content += "<ul>"
             for item in cpp_data[subpath]:
                 translated_content += f'<li><a href="/tutorial/cpp/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
@@ -179,6 +185,27 @@ async def tutorial(subpath=None):
             translated_content += "<ul>"
             for item in python_data[subpath]:
                 translated_content += f'<li><a href="/tutorial/python/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
+            translated_content += "</ul>"
+
+        elif subpath in django_data:
+            translated_content = "<h2>Danh sách bài học trong Django - {}</h2>".format(subpath)
+            translated_content += "<ul>"
+            for item in django_data[subpath]:
+                translated_content += f'<li><a href="/tutorial/django/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
+            translated_content += "</ul>"
+
+        elif subpath in flask_data:
+            translated_content = "<h2>Danh sách bài học trong Flask - {}</h2>".format(subpath)
+            translated_content += "<ul>"
+            for item in flask_data[subpath]:
+                translated_content += f'<li><a href="/tutorial/flask/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
+            translated_content += "</ul>"
+
+        elif subpath in numpy_data:
+            translated_content = "<h2>Danh sách bài học trong NumPy - {}</h2>".format(subpath)
+            translated_content += "<ul>"
+            for item in numpy_data[subpath]:
+                translated_content += f'<li><a href="/tutorial/numpy/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
             translated_content += "</ul>"
 
         else:
@@ -194,14 +221,23 @@ async def tutorial(subpath=None):
         name="tutorial.html",
         cpp=cpp_data,
         python=python_data,
+        django=django_data,
+        flask=flask_data,
+        numpy=numpy_data,
         content=translated_content
     ))
+
 
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "0"
 
     return response
+
+@app.route("/review", methods=["GET"])
+def review():
+    return render_template("index.html", name="review.html")
+
 
 
 

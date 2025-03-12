@@ -84,6 +84,69 @@
                     {% endfor %}
                     </div>
                 </div>
+                <div class="Cpp_box">
+                    <div class="root">
+                        <a class="Cpp_title" data-no-ajax href="/tutorial/cpp/index">Numpy</a>
+                        <i class='bx bxs-down-arrow toggle-tree'></i>
+                    </div>
+                    <div class="Cpp">
+                        {% for type, files  in numpy.items() %}
+                        <div class="unit">
+                            <li>
+                                <a href="/tutorial/{{ type }}" data-no-ajax>{{ type }}</a>
+                                <i class='bx bxs-down-arrow toggle-btn'></i>  
+                            </li>
+                            <ul class="dev" style="display: none;">  
+                                {% for item in files %}
+                                    <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="Cpp_box">
+                    <div class="root">
+                        <a class="Cpp_title" data-no-ajax href="/tutorial/cpp/index">Flask</a>
+                        <i class='bx bxs-down-arrow toggle-tree'></i>
+                    </div>
+                    <div class="Cpp">
+                        {% for type, files  in flask.items() %}
+                        <div class="unit">
+                            <li>
+                                <a href="/tutorial/{{ type }}" data-no-ajax>{{ type }}</a>
+                                <i class='bx bxs-down-arrow toggle-btn'></i>  
+                            </li>
+                            <ul class="dev" style="display: none;">  
+                                {% for item in files %}
+                                    <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="Cpp_box">
+                    <div class="root">
+                        <a class="Cpp_title" data-no-ajax href="/tutorial/cpp/index">Django</a>
+                        <i class='bx bxs-down-arrow toggle-tree'></i>
+                    </div>
+                    <div class="Cpp">
+                        {% for type, files  in cpp.items() %}
+                        <div class="unit">
+                            <li>
+                                <a href="/tutorial/{{ type }}" data-no-ajax>{{ type }}</a>
+                                <i class='bx bxs-down-arrow toggle-btn'></i>  
+                            </li>
+                            <ul class="dev" style="display: none;">  
+                                {% for item in files %}
+                                    <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
             </div>
             <script>
             

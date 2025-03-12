@@ -172,6 +172,12 @@ b {
     max-height: 350px;
 }
 
+.unit li {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 /* Định dạng biểu tượng thư mục */
 .unit li > a::before {
     content: "📁"; /* Biểu tượng thư mục đóng */
@@ -205,8 +211,16 @@ header > li {
 .unit li {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 5px;
+    max-width: 200px;
+}
+
+.unit li a {
+    display: inline-block; /* hoặc block nếu cần thiết */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .content ul  {
