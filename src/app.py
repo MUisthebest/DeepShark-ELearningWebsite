@@ -280,15 +280,13 @@ async def tutorial(subpath=None):
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "0"
-
     return response
+
+
 
 @app.route("/review", methods=["GET"])
 def review():
     return render_template("index.html", name="review.html")
-
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify, render_template, redirect, url_for, session
-from api.ai_models.ai_model import predict , summarize_text
+from api.ai_models.ai_model import predict , summarize_text, review_code
 from api.models.user import ChatHistory, ChatMessage 
 from api.settings import db
 import markdown
@@ -79,3 +79,43 @@ def new_chat():
     db.session.commit()
 
     return redirect(url_for('chat', chat_history_id=chat_history_id))
+
+
+
+
+@api_bp.route("/review-code", methods=["POST"])
+def review_code_route():
+    code = request.form.get("code", "")
+    if not code:
+        return render_template("index.html", name="review.html", review_result="Vui lòng nhập code để review.", code_input=code, language="unknown")
+
+    language = "unknown"
+    file_input = request.files.get("fileInput")
+    if file_input and file_input.filename:
+        filename = file_input.filename.lower()
+        if filename.endswith(".py"):
+            language = "Python"
+        elif filename.endswith(".js"):
+            language = "JavaScript"
+        elif filename.endswith(".java"):
+            language = "Java"
+        elif filename.endswith(".css"):
+            language = "CSS"
+        elif filename.endswith(".html"):
+            language = "HTML"
+    else:
+        code_lower = code.lower()
+        if "def " in code_lower or "import " in code_lower:
+            language = "Python"
+        elif "function " in code_lower or "const " in code_lower:
+            language = "JavaScript"
+        elif "public class " in code_lower:
+            language = "Java"
+        elif "{" in code_lower and "}" in code_lower and "style" in code_lower:
+            language = "CSS"
+        elif "<html" in code_lower or "<div" in code_lower:
+            language = "HTML"
+
+    review_result = review_code(code, language=language)
+    print(review_result)
+    return render_template("index.html", name="review.html", review_result=review_result, code_input=code, language=language)
