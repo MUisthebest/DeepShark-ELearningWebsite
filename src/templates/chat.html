@@ -1,25 +1,35 @@
 <link rel="stylesheet" href="../static/css/chat.css">
-<div class="chat-container">
-    <div class="chat-header"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="logo"><span class="name">Chatbot</span><i class='bx bx-right-arrow-alt' ></i></div>
-    <div class="chat-messages">
-        <div class="chat-message bot-message">Hello! How can I assist you today?</div>
-        <div class="chat-message user-message">I need help with my project.</div>
-        <div class="chat-message bot-message">Hello! How can I assist you today?</div>
-        <div class="chat-message user-message">I need help with my project.</div>
-        <div class="chat-message bot-message">Hello! How can I assist you today?</div>
-        <div class="chat-message user-message">I need help with my project.</div>
-        <div class="chat-message bot-message">Hello! How can I assist you today?</div>
-        <div class="chat-message user-message">I need help with my project.</div>
-        <div class="chat-message bot-message">Hello! How can I assist you today?</div>
-        <div class="chat-message user-message">I need help with my project.</div>
+<div class="chat-container">    
+    <div class="chat-header">
+        <img src="../static/image/shark.png" class="logo">
+        <span class="name">Shark 2.0-Flash</span>
+        <i class='bx bx-right-arrow-alt'></i>
     </div>
+    <div class="chat-messages">
+        {% for message in chat_messages %}
+            <div class="chat-message user-message">
+                {% if message.user_message %}
+                    {{ message.user_message }}
+                {% endif %}
+            </div>
+            <div class="chat-message bot-message">
+                {% if message.bot_response %}
+                    {{ message.bot_response }}
+                {% endif %}
+            </div>  
+
+
+
+        {% endfor %}
+    
+    </div>
+
+    <input type="hidden" id="message_id" value="{{ message_id }}">
+
     <div class="chat-input">
         <input type="text" placeholder="Type a message..." />
         <button>Send</button>
     </div>
+
 </div>
-<script>
-    document.querySelector('.chat-header i').addEventListener('click', function() {
-        document.querySelector('header').classList.toggle('hidden');
-    });
-</script>
+<script src="../static/js/chat.js"></script>  
