@@ -14,6 +14,9 @@ body {
     min-height: 100vh;
 }
 
+
+
+
 header {
     display: flex;
     justify-content: space-between;
@@ -378,28 +381,10 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+
 .new-chat-btn {
     display: none;
 }
-
-.new-chat-btn:hover {
-    background-color: #297cd4;
-}
-
-.new-chat-btn-position-afterToggle {
-    padding: 10px 20px;
-    background-color: #297cd4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-
-
-    position: absolute;  /* Đặt vị trí tuyệt đối */
-    top: 15%;            /* Đặt nút cách 10% từ trên xuống */
-    left: 50%;           /* Đặt nút ở giữa theo chiều ngang */
-    transform: translateX(-50%);
-}
-
 
 .btn-primary:hover, .btn-secondary:hover {
     opacity: 0.9;
@@ -613,6 +598,9 @@ main {
     flex-direction: column;
     width: calc(50vw - 30px);
     margin-right: 15px;
+    height: 500px; /* Cùng chiều cao với .code-space */
+    flex-shrink: 0; /* Không co lại */
+    flex-grow: 0; /* Không mở rộng */
 }
 
 .container-llm .content .output h3 {
@@ -621,8 +609,17 @@ main {
 
 .container-llm .content .output pre {
     background-color: #ffffff;
-    height: 100%;
     width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-family: "Roboto Condensed", monospace;
+    font-size: 14px;
+    padding: 10px;
+    margin: 0; /* Đảm bảo không có margin thừa */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .container-llm button {
@@ -639,6 +636,90 @@ main {
     background: transparent;
     border: 1px solid gold;
 }
+
+
+.container-llm .content .output #reviewOutput {
+    background-color: #2b2929; /* Nền tối giống pre code.hljs */
+    color: #e4e4d6; /* Màu chữ sáng giống pre code.hljs */
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    font-family: "Roboto Condensed", monospace;
+    font-size: 14px;
+    padding: 15px; /* Padding giống pre code.hljs */
+    border: 1px solid #ddd;
+    border-radius: 15px; /* Border-radius giống pre code.hljs */
+    box-sizing: border-box;
+    text-align: left;
+    white-space: pre-wrap; /* Giữ định dạng xuống dòng */
+}
+
+.container-llm .content .output #reviewOutput strong {
+    color: #fdd663; /* Màu vàng giống .hljs-title */
+    font-weight: 700; /* In đậm giống .hljs */
+}
+
+/* Style cho danh sách trong ô output (như * Về cơ bản...) */
+.container-llm .content .output #reviewOutput ul {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.container-llm .content .output #reviewOutput ul li {
+    color: #e4e4d6; /* Màu chữ sáng giống pre code.hljs */
+    margin-bottom: 5px;
+}
+
+.container-llm .content .output #reviewOutput ul li ul {
+    list-style-type: circle;
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.container-llm .content .output #reviewOutput ul li ul li {
+    font-size: 14px;
+    color: #81c995; /* Màu xanh lá giống .hljs-comment */
+}
+
+/* Style cho code block bên trong ô output */
+.container-llm .content .output #reviewOutput pre {
+    margin: 10px 0;
+    padding: 0;
+}
+
+.container-llm .content .output #reviewOutput pre code.hljs {
+    background-color: #2b2929; /* Giữ nguyên nền tối */
+    color: #e4e4d6; /* Giữ nguyên màu chữ */
+    padding: 15px;
+    border-radius: 15px;
+    font-family: "Courier New", monospace; /* Phông chữ giống Highlight.js */
+    overflow: auto;
+}
+
+
+
+.review-button {
+    display: block;
+    margin: 20px auto; /* Căn giữa nút */
+    padding: 10px 20px;
+    background-color: gold;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    border: 1px solid #ddd;
+}
+
+.review-button:hover {
+    color: gold;
+    background: transparent;
+    border: 1px solid gold;
+}
+
 
 
 .code-space {

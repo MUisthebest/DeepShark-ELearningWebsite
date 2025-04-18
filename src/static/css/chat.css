@@ -9,6 +9,114 @@ header {
     /* transition: 0.5s linear; */
 }
 
+
+code {
+    background-color: #2d2b2b;  /* Nền tối cho đoạn mã */
+    color: #e3e0e1;  /* Chữ sáng */
+    border-radius: 3px;           
+    font-family: "Courier New", monospace;  /* Phông chữ monospace */
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-size: 14px;
+}
+
+pre code.hljs {
+    background-color: #2b2929;         
+    color: #e4e4d6;                  
+    padding: 15px;                  
+    border-radius: 15px;           
+    font-family: "Courier New", monospace;  
+    overflow: auto;                  
+}
+.hljs-title {
+    color: #fdd663; 
+    
+}
+
+.hljs-title.function {
+    color: #e5e7eb; 
+    
+}
+
+
+.hljs-comment {
+    color: #81c995;  
+}
+
+.hljs-built_in{
+    color: #f8f8f2;  
+}
+
+
+.hljs-keyword{
+    color: #c58af9;  
+
+}
+
+.hljs-number{
+    color: #fa903e;  
+}
+
+.hljs {
+    font-weight: 700; 
+}
+
+.hljs-string{
+    color: #81c995;  
+}
+
+.hljs-variable.language_{
+    color: #8ab4f8
+}
+
+.hljs-type{
+    color: #c58af9;  
+
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;  /* Gộp viền */
+    margin: 20px 0;
+    padding: 10px;
+
+}
+
+th, td {
+    border: 2px solid #000000;  /* Đặt viền cho các ô */
+    text-align: justify;
+    padding: 5px;
+}
+
+
+table, th, td {
+    border: 1px solid #000000;  /* Đảm bảo bảng và các ô có viền */
+
+}
+
+
+ul {
+    list-style-type: disc;  /* Đặt dấu đầu dòng là chấm tròn đen */
+    margin: 0;               /* Loại bỏ margin mặc định */
+}
+
+ul li {
+    position: relative;
+}
+
+ul li ul {
+    list-style-type: circle; 
+    margin-top: 5px;
+}
+
+ul li ul li {
+    font-size: 14px;  
+}
+
+
+
+
 .header-logo {
     display: flex;
     flex-direction: row;
@@ -131,8 +239,40 @@ footer {
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 10px;
-    max-width: 80%;
+    max-width: 50%;
+
 }
+
+.chat-message.bot-message {
+    background-color: #e2e2e2;
+    align-self: flex-start;
+    width: 66vw; /* Cố định chiều rộng */
+    max-width: 100%; /* Đảm bảo phần tử không vượt quá kích thước của container */
+    overflow-wrap: break-word; /* Ngắt từ khi gặp từ quá dài */
+    word-wrap: break-word; /* Ngắt từ dài và không vừa với chiều rộng */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+}
+
+.chat-message.bot-message h1,
+.chat-message.bot-message h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.chat-message.bot-message ul {
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.chat-message.bot-message li {
+    margin-bottom: 5px;
+}
+
+.chat-message.bot-message strong {
+    font-weight: bold;
+}
+
+
 .user-message {
     background-color: #007bff;
     color: white;
@@ -141,6 +281,9 @@ footer {
 .bot-message {
     background-color: #e2e2e2;
     align-self: flex-start;
+    /* white-space: pre-line; */
+
+
 }
 .chat-input {
     display: flex;
@@ -189,6 +332,10 @@ footer {
 
 .hidden {
     display: none;
+}
+
+.new-chat-btn:hover {
+    background-color: #297cd4;
 }
 
 

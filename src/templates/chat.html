@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../static/css/chat.css">
+
 <div class="chat-container">    
     <div class="chat-header">
         <img src="../static/image/shark.png" class="logo">
@@ -9,12 +10,12 @@
         {% for message in chat_messages %}
             <div class="chat-message user-message">
                 {% if message.user_message %}
-                    {{ message.user_message }}
+                    {{ message.user_message |safe }}
                 {% endif %}
             </div>
             <div class="chat-message bot-message">
                 {% if message.bot_response %}
-                    {{ message.bot_response }}
+                    <div class="bot-response">{{ message.bot_response | safe }}</div>
                 {% endif %}
             </div>  
 

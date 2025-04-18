@@ -24,12 +24,14 @@ class ChatHistory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     name_conversation = db.Column(db.String(), nullable=False, default="Cuộc hội thoại mới")
+    is_first_message = db.Column(db.Boolean, default=True) 
     chat_messages = db.relationship('ChatMessage', backref='chat_history', lazy=True)
-    
+    created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
+
 
     def __init__(self, user_id):
         self.user_id = user_id
-
+        self.is_first_message = True
 
 class ChatMessage(db.Model):
     __tablename__ = 'chat_message' 
