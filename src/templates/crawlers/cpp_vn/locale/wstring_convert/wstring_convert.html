@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: wString_convert &lt;codecvt, elem, wide_alloc, byte_alloc&gt; :: wstring_convert</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">wString_convert (): wString_convert (mới codecvt) {}</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">rõ ràng wString_convert (codecvt* pcvt);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">wString_convert (codecvt* pcvt, state_type state);</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">rõ ràng WSTRING_CONVERT (const byte_string &amp; byte_err,</pre>
+</td> <td>(4)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">                          const wide_string &amp; wide_err = wide_string ());</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định.</div> <div class="t-li1">
+<span class="t-li">2)</span>được bảo vệ:<code>wstring_convert</code>wString_convert (const std :: wstring_convert &amp;) = xóa;</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>được bảo vệ:<code>wstring_convert</code>Đối tượng có khía cạnh chuyển đổi được chỉ định, sử dụng các giá trị được xây dựng mặc định cho trạng thái dịch chuyển và chuỗi lỗi.</div> <div class="t-li1">
+<span class="t-li">là trong</span>được bảo vệ:<code>wstring_convert</code>Đối tượng có khía cạnh chuyển đổi được chỉ định và trạng thái dịch chuyển được chỉ định, sử dụng các giá trị được xây dựng mặc định cho các chuỗi lỗi.<code>new Codecvt</code>đối tượng có chuỗi lỗi được chỉ định, sử dụng<code>state_type</code>là khía cạnh chuyển đổi và được xây dựng mặc định</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>như trạng thái thay đổi.<a href="../../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>bytebuf</td> <td>-</td> <td>Trình xây dựng bản sao bị xóa, wString_convert không<code>Codecvt</code>con trỏ tới khía cạnh chuyển đổi của loại</td>
+</tr> <tr class="t-par"> <td>Loại đại diện cho trạng thái thay đổi</td> <td>-</td> <td>(Hành vi không xác định nếu con trỏ này là NULL)</td>
+</tr> <tr class="t-par"> <td>Giá trị ban đầu của trạng thái chuyển đổi chuyển đổi</td> <td>-</td> <td>byte_err</td>
+</tr> <tr class="t-par"> <td>Chuỗi hẹp để hiển thị trên lỗi</td> <td>-</td> <td>Wide_err</td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0935R0" rel="nofollow">P0935R0</a> </td> <td>C ++ 11</td> <td>Xây dựng bộ điều hợp với nội dung của</td> <td>3,5,12)</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Chuỗi rộng để hiển thị trên lỗi</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/wstring_convert/wstring_convert">https://en.cppreference.com/w/cpp/locale/wstring_convert/wstring_convert</a>
+</p>
+</div>

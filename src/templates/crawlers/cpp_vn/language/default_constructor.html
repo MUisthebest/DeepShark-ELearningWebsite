@@ -1,0 +1,107 @@
+ <h1 class="firstHeading" id="firstHeading">Các hàm tạo mặc định</h1> <p>Một hàm tạo mặc định là một<a href="constructor" title="cpp/language/constructor">constructor</a>mà có thể được gọi không có lập luận.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">tên lớp</span>﻿<code>(</code><span class="t-spar">danh sách tham số</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span><code>);</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">tên lớp</span>﻿<code>(</code><span class="t-spar">danh sách tham số</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span><code>)</code> <span class="t-spar">cơ thể chức năng</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">tên lớp</span>﻿<code>() = default;</code> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">tên lớp</span>﻿<code>(</code><span class="t-spar">danh sách tham số</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span><code>) = delete;</code> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">tên lớp</span>﻿<code>::</code><span class="t-spar">tên lớp</span>﻿<code>(</code><span class="t-spar">danh sách tham số</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span><code>)</code> <span class="t-spar">cơ thể chức năng</span> </td> <td>             Không có p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">tên lớp</span>﻿<code>::</code><span class="t-spar">tên lớp</span>﻿<code>() = default;</code> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">tên lớp</span> </td> <td>-</td> <td>lớp có hàm tạo mặc định đang được khai báo</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">danh sách tham số</span> </td> <td>-</td> <td>Một<a href="function#Parameter_list" title="cpp/language/function">parameter list</a>nơi tất cả các tham số<span class="t-rev-inl t-since-cxx11"><span>(ngoại trừ<a href="parameter_pack" title="cpp/language/parameter pack">parameter packs</a>)</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>có<a href="default_arguments" title="cpp/language/default arguments">default arguments</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">cơ thể chức năng</span> </td> <td>-</td> <td>các<a href="constructor" title="cpp/language/constructor">function body</a>của hàm tạo mặc định</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <div class="t-li1">
+<span class="t-li">1)</span>Tuyên bố của một hàm tạo mặc định bên trong định nghĩa lớp.</div> <div class="t-li1">
+<span class="t-li">    const std :: chrono :: giây* offset;     // Chỉ giải thích</span>Định nghĩa của một hàm tạo mặc định bên trong định nghĩa lớp.</div> <div class="t-li2">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Trình xây dựng mặc định được mặc định rõ ràng.</div> <div class="t-li2">
+<span class="t-li">là trong</span>Trình xây dựng mặc định bị xóa.</div> <div class="t-li1">
+<span class="t-li">    trả về std :: find_if_not (đầu tiên, cuối cùng, p) == cuối cùng;</span>Định nghĩa của hàm tạo mặc định bên ngoài định nghĩa lớp (lớp phải chứa khai báo<span class="t-v">(1)</span>).</div> <div class="t-li2">
+<span class="t-li">từ_sys</span>Trình xây dựng mặc định được mặc định rõ ràng.</div> <p>Các hàm tạo mặc định được gọi trong<a href="default_initialization" title="cpp/language/default initialization">default initializations</a>Và<a href="value_initialization" title="cpp/language/value initialization">value initializations</a>.</p>
+<h3 id="Implicitly-declared_default_constructor">Trình xây dựng mặc định được tuyên bố ngầm</h3> <p>Nếu không có bộ xây dựng nào do người dùng phát hành dưới bất kỳ hình thức nào được cung cấp cho loại lớp, trình biên dịch sẽ luôn khai báo hàm tạo mặc định là<span class="kw1">};</span> <span class="kw1"> </span>thành viên của lớp học của nó.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Nếu có một số hàm tạo do người dùng phát hành có mặt, người dùng vẫn có thể buộc tự động tạo hàm tạo mặc định bởi trình biên dịch sẽ được tuyên bố ngầm bằng từ khóa<span class="kw1">#include &lt;Istream&gt;</span>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Trình xây dựng mặc định được khai báo ngầm (hoặc mặc định trên khai báo đầu tiên) có một đặc tả ngoại lệ như được mô tả trong<span class="t-rev-inl t-until-cxx17"><span><a href="except_spec" title="cpp/language/except spec">dynamic exception specification</a></span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span> <span class="t-rev-inl t-since-cxx17"><span><a href="noexcept_spec" title="cpp/language/noexcept spec">noexcept specification</a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>.</p>
+<h3 id="Implicitly-defined_default_constructor">Constructor mặc định được xác định ngầm</h3> <p>Nếu như<span class="t-rev-inl t-until-cxx11"><span>người xây dựng được tuyên bố ngầm</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>Trình xây dựng mặc định được tuyên bố ngầm hoặc được xác định rõ ràng không được định nghĩa là bị xóa</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>, nó được xác định (nghĩa là một cơ thể chức năng được tạo và biên dịch) bởi trình biên dịch nếu<a href="definition#ODR-use" title="cpp/language/definition">odr-used</a><span class="t-rev-inl t-since-cxx11"><span>hoặc<a href="constant_expression#Functions_and_variables_needed_for_constant_evaluation" title="cpp/language/constant expression">needed for constant evaluation</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>và nó có tác dụng tương tự như một hàm tạo do người dùng định nghĩa với thân trống và danh sách khởi tạo trống. Đó là, nó gọi các hàm tạo mặc định của các cơ sở và của các thành viên không tĩnh của lớp này. Các loại lớp với hàm tạo do người dùng không cung cấp có thể được đối xử khác với các loại có hàm tạo mặc định được xác định ngầm<a href="value_initialization" title="cpp/language/value initialization">value initialization</a>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>thuộc loại lớp hoặc mảng loại lớp có hàm tạo bản sao có tham số thuộc loại<span class="t-rev-inl t-until-cxx23"><span><a href="constexpr#constexpr_constructor" title="cpp/language/constexpr">constexpr constructor</a></span><span><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></span></span><span class="t-rev-inl t-since-cxx23"><span><a href="constexpr#constexpr_funtcion" title="cpp/language/constexpr">constexpr function</a></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>, hàm tạo được tạo là<span class="kw4">constexpr</span>.</p>
+<p>Nếu một số hàm tạo do người dùng xác định có mặt, người dùng vẫn có thể buộc tự động tạo hàm tạo mặc định bởi trình biên dịch<span class="kw1">#include &lt;Istream&gt;</span>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Deleted_default_constructor">Đã xóa trình xây dựng mặc định</h3> <p>Trình xây dựng bản sao được khai báo ngầm (hoặc mặc định trên khai báo đầu tiên) có một đặc tả ngoại lệ như được mô tả trong<span class="t-rev-inl t-since-cxx11"><span>Bởi vì toán tử gán bản sao luôn được khai báo cho bất kỳ lớp nào, toán tử gán lớp cơ sở luôn được ẩn. Nếu a</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>hàm tạo mặc định cho lớp<code>T</code>khoảng cách<span class="t-rev-inl t-until-cxx11"><span>void print_container (const std :: deque &lt;int&gt; &amp; c) </span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>Toán tử gán bản sao được xác định ngầm</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Nếu toán tử gán bản sao được tuyên bố ngầm không bị xóa cũng không tầm thường, thì nó được xác định (nghĩa là cơ thể chức năng được tạo và biên dịch) bởi trình biên dịch nếu</p>
+<ul>
+<li> <code>T</code>Điều đó như vậy<a href="union" title="cpp/language/union">union</a>Và tất cả của nó<a href="union#Union-like_classes" title="cpp/language/union">variant members</a>là loại đủ điều kiện (hoặc có thể là mảng đa chiều của chúng).</li>
+<li> <code>T</code>là một lớp không liên minh và tất cả các thành viên của bất kỳ<a href="union#Anonymous_unions" title="cpp/language/union">anonymous union</a>Thành viên thuộc loại đủ điều kiện (hoặc có thể là mảng đa chiều của chúng).</li>
+<li> <code>T</code>có một thành viên dữ liệu không tĩnh thuộc loại tham chiếu<span class="t-rev-inl t-since-cxx11"><span>không có trình khởi tạo mặc định</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</li>
+<li> <code>T</code>không có phương sai không tĩnh<a href="default_initialization#Default_initialization_of_a_const_object" title="cpp/language/default initialization">const-default-constructible</a>Thành viên dữ liệu thuộc loại đủ điều kiện const (hoặc có thể là mảng đa chiều của chúng)<span class="t-rev-inl t-since-cxx11"><span>không có trình khởi tạo thành viên mặc định</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</li>
+<li> <code>T</code>Toán tử gán bản sao được xác định ngầm cho một lớp<a href="object#Potentially_constructed_subobject" title="cpp/language/object">potentially constructed subobject</a>Toán tử gán được chọn để sao chép từng tiểu đơn lớp cơ sở trực tiếp là hàm constexpr và<code>M</code>. Đối với các loại liên minh, hàm tạo bản sao được xác định ngầm sẽ sao chép biểu diễn đối tượng (như bởi</li>
+<ul>
+<li> <code>M</code>). Đối với các loại lớp không liên kết, hàm tạo thực hiện bản sao toàn thành viên của các cơ sở của đối tượng và các thành viên không tĩnh, theo thứ tự khởi tạo của họ, sử dụng khởi tạo trực tiếp.<span class="t-rev-inl t-since-cxx11"><span>Nếu điều này đáp ứng các yêu cầu của một</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>không thể truy cập được từ hàm tạo mặc định hoặc</li>
+<li>Tất cả các điều kiện sau đây được thỏa mãn:</li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>SubObject không phải là thành viên dữ liệu không tĩnh với trình khởi tạo mặc định.</li>
+<li>SubObject không phải là thành viên biến thể của một liên minh trong đó một thành viên dữ liệu không tĩnh khác có trình khởi tạo mặc định.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>Độ phân giải quá tải như được áp dụng để tìm<code>M</code>hàm tạo mặc định</li>
+<ul>
+<li>Toán tử gán bản sao được xác định ngầm cho một lớp</li>
+<li>Trong trường hợp tiểu mục là một thành viên biến thể, chọn một hàm không tầm thường.</li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Nếu không có bộ xây dựng do người dùng xác định có mặt và hàm tạo mặc định được khai báo ngầm không phải là tầm thường, người dùng vẫn có thể ức chế việc tạo tự động của một hàm tạo mặc định được xác định ngầm bởi trình biên dịch với xóa từ khóa.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Trivial_default_constructor">Hàm tạo mặc định tầm thường</h3> <p>Hàm tạo mặc định cho lớp<code>T</code>là tầm thường (nghĩa là không thực hiện hành động) nếu tất cả những điều sau đây là đúng:</p>
+<ul>
+<li>Trình xây dựng không do người dùng cung cấp (nghĩa là, được xác định ngầm hoặc mặc định trong khai báo đầu tiên của nó).</li>
+<li> <code>T</code>không có chức năng thành viên ảo.</li>
+<li> <code>T</code>không có lớp cơ sở ảo.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <code>T</code>không có thành viên không tĩnh với<a href="data_members#Member_initialization" title="cpp/language/data members">default initializers</a>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>Mọi cơ sở trực tiếp của<code>T</code>Có một hàm tạo mặc định tầm thường.</li>
+<li>Mỗi thành viên không tĩnh của loại lớp (hoặc mảng của chúng) đều có hàm tạo mặc định tầm thường.</li>
+</ul> <p>Một hàm tạo mặc định tầm thường là một hàm tạo không thực hiện hành động. Tất cả các loại dữ liệu tương thích với ngôn ngữ C (loại POD) đều có thể cấu trúc mặc định tầm thường.</p>
+<h3 id="Eligible_default_constructor">Trình xây dựng mặc định đủ điều kiện</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Trình xây dựng mặc định đủ điều kiện nếu nó được tuyên bố bởi người dùng hoặc cả được tuyên bố ngầm và có thể xác định được.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11 t-until-cxx20">
+<td> <p>Một hàm tạo mặc định đủ điều kiện nếu nó không bị xóa.</p>
+</td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>Một hàm tạo mặc định đủ điều kiện nếu</p>
+<ul>
+<li>Toán tử gán bản sao cho lớp</li>
+<li>Để cho một số đối tượng máy phát<a href="constraints" title="cpp/language/constraints">associated constraints</a>là tầm thường nếu tất cả những điều sau đây là đúng:</li>
+<li>Không có hàm tạo mặc định là<a href="constraints#Partial_ordering_of_constraints" title="cpp/language/constraints">more constrained</a>không có chức năng thành viên ảo;</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Tầm thường của các hàm tạo mặc định đủ điều kiện xác định xem lớp có phải là một<a href="lifetime#Implicit-lifetime_types" title="cpp/language/lifetime">implicit-lifetime type</a>Trình xây dựng bản sao được chọn cho mọi loại thành viên loại (hoặc mảng thuộc loại lớp) của<a href="../named_req/trivialtype" title="cpp/named req/TrivialType">trivial type</a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc a</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1353.html" rel="nofollow">CWG 1353</a> </td> <td>C ++ 98</td> <td>{<br/>, nếu có, được thỏa mãn, và</td> <td>Không có toán tử gán bản sao với cùng loại tham số đầu tiên và cùng một cv/ref-aperifers (nếu có)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2084.html" rel="nofollow">CWG 2084</a> </td> <td>C ++ 11</td> <td>    int x;<br/>    A (int x = 1): x (x) {} // hàm tạo mặc định do người dùng xác định</td> <td>};<br/> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="constructor" title="cpp/language/constructor">constructor</a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> <ul>
+<li> <a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a> </li>
+<li> <a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </li>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a> </li>
+<li> <a href="default_initialization" title="cpp/language/default initialization">default initialization</a> </li>
+<li> <a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a> </li>
+<li> <a href="list_initialization" title="cpp/language/list initialization">list initialization</a> </li>
+<li> <a href="reference_initialization" title="cpp/language/reference initialization">reference initialization</a> </li>
+<li> <a href="value_initialization" title="cpp/language/value initialization">value initialization</a> </li>
+<li> <a href="zero_initialization" title="cpp/language/zero initialization">zero initialization</a> </li>
+</ul> </li>
+<li> <a href="new" title="cpp/language/new"><code>new</code></a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/default_constructor">https://en.cppreference.com/w/cpp/language/default_constructor</a>
+</p>
+</div>

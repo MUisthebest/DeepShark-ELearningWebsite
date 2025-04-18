@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: zip_view &lt;lượt xem ...&gt; ::<i>vòng lặp</i>&lt;Const&gt; :: Toán tử ++,-,+=,-=</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">:: Nhà điều hành ++</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">constexpr /*iterator* /&amp; toán tử ++ ();</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Consexpr /*iterator* / toán tử ++ (int)</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">  yêu cầu /*tất cả chuyển tiếp* /&lt;const, chế độ xem ...&gt;;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Consexpr /*iterator* /&amp; Toán tử-()</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">  yêu cầu /*toàn hai chiều* /&lt;const, chế độ xem ...&gt;;</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Consexpr /*iterator* / toán tử-(int)</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>  yêu cầu /*toàn hai chiều* /&lt;const, chế độ xem ...&gt;;<code><i>Consexpr /*iterator* /&amp; Toán tử+= (argen_type n)</i></code>  yêu cầu /*tất cả ngẫu nhiên truy cập* /&lt;const, chế độ xem ...&gt;;<a href="../iterator#Data_members" title="cpp/ranges/zip view/iterator"><code><i>, và một trong hai</i></code></a>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;class inputit1, class inputit2,<code>/*tuple-for-each*/([](auto&amp; i) { ++i; }, current_); return *this;</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;class inputit1, class inputit2,<code>++*this;</code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;class inputit1, class inputit2,<code>auto tmp = *this; ++*this; return tmp;</code>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mẫu &lt;class inputit1, class inputit2,<code>/*tuple-for-each*/([](auto&amp; i) { --i; }, current_); return *this;</code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Mẫu &lt;class inputit1, class inputit2,<code>auto tmp = *this; --*this; return tmp;</code>
+</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>Mẫu &lt;class inputit1, class inputit2,<code>/*tuple-for-each*/([&amp;]&lt;class I&gt;(I&amp; i) { i += iter_difference_t&lt;I&gt;(x); }, current_); return *this;</code>
+</div> <div class="t-li1">
+<span class="t-li">6)</span>Mẫu &lt;class inputit1, class inputit2,<code>/*tuple-for-each*/([&amp;]&lt;class I&gt;(I&amp; i) { i -= iter_difference_t&lt;I&gt;(x); }, current_); return *this;</code>
+</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>Trả về một tham chiếu đến phần tử tại vị trí tương đối được chỉ định.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">Tăng hoặc giảm trình lặp, bằng cách áp dụng hoạt động tương ứng trên trình lặp bên dưới.</span> <code>*this</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Gán cho đã cho</div> <div class="t-li1">
+<span class="t-li">Gia tăng theo một.</span>Sự gia tăng hoặc giảm<code>*this</code>Giảm một.</div> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/zip_view/iterator/operator_arith">https://en.cppreference.com/w/cpp/ranges/zip_view/iterator/operator_arith</a>
+</p>
+</div>

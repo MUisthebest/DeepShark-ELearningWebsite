@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: pmr :: null_memory_resource</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/memory_resource" title="cpp/header/memory resource">&lt;memory_resource&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">std :: pmr :: memory_resource* null_memory_resource () noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Trả lại một con trỏ cho một<code>memory_resource</code>Điều đó không thực hiện bất kỳ phân bổ nào.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Trả về một con trỏ<code>p</code>đến một đối tượng thời lượng lưu trữ tĩnh của một loại có nguồn gốc từ<code><a href="memory_resource" title="cpp/memory/memory resource">std::pmr::memory_resource</a></code>, với các thuộc tính sau:</p>
+<ul>
+<li>Để cho một số đối tượng máy phát<code>allocate()</code>chức năng luôn ném<code><a href="new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>Số lượng các yếu tố để sao chép</li>
+<li>Để cho một số đối tượng máy phát<code>deallocate()</code>chức năng không có tác dụng;</li>
+<li>cho bất kỳ<code>memory_resource</code> <code>r</code>Thì<code>p-&gt;is_equal(r)</code>(C ++ 20)<code>&amp;r == p</code>.</li>
+</ul> <p>Giá trị tương tự được trả về mỗi khi hàm này được gọi.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Chương trình giới thiệu cách sử dụng chính của<code>null_memory_resource</code>: Đảm bảo rằng nhóm bộ nhớ yêu cầu bộ nhớ được phân bổ trên ngăn xếp sẽ không phân bổ bộ nhớ trên đống nếu cần thêm bộ nhớ.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;mảng&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CstDdef&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/null_memory_resource">https://en.cppreference.com/w/cpp/memory/null_memory_resource</a>
+</p>
+</div>

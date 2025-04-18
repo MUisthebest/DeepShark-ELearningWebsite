@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: WS</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/istream" title="cpp/header/istream">&lt;istream&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Mẫu &lt;biểu đồ lớp, đặc điểm lớp&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>std :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp; ws (std :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp; is);</p>
+<p>                 std :: basic_string &lt;biểu đồ, đặc điểm, alloc&gt;* abbrev = nullptr,<a href="../../named_req/unformattedinputfunction" title="cpp/named req/UnformattedInputFunction">UnformattedInputFunction</a>, và sau đó gọi<code>is.gcount()</code>Loại bỏ khoảng trắng hàng đầu khỏi một luồng đầu vào.</p>
+<ul>
+<li>không được sửa đổi. Sau khi xây dựng và kiểm tra đối tượng Sentry, trích xuất các ký tự khỏi luồng và loại bỏ chúng cho đến khi có một trong các điều kiện sau đây xảy ra:<code>setstate(eofbit)</code>kết thúc điều kiện tệp xảy ra trong chuỗi đầu vào (trong trường hợp đó chức năng gọi<code>failbit</code>nhưng không đặt<code>eofbit</code>; điều này không áp dụng nếu<code>is</code>đã được đặt trên<code>ws</code>Trước khi gọi đến<code>failbit</code>).</li>
+<li>nhân vật có sẵn tiếp theo<code>c</code>, trong trường hợp đó, việc xây dựng đối tượng Sentry sẽ được thiết lập<code><a href="http://en.cppreference.com/w/cpp/string/byte/isspace"><span class="kw3514">Điều đó cho tất cả<span class="me2">không gian ISSP</span></span></a><span class="br0">.</span>c, is.<span class="me1">Đầu ra</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span></code>Trong trình tự đầu vào không phải là khoảng trắng được xác định bởi</li>
+</ul> <p>. Các ký tự không phải là màu không được trích xuất.<code>in &gt;&gt; std::ws</code>cho bất kỳ<code>in</code>nó đến một đối tượng<code><a href="../basic_istream" title="cpp/io/basic istream">std::basic_istream</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khoảng cách</td> <td>-</td> <td>Đây là một thao tác I/O chỉ đầu vào, nó có thể được gọi với một biểu thức như</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>is</code>Tham chiếu đến luồng đầu vào</p>
+<h3 id="Notes">Ghi chú</h3> <p>Nếu như<code>eofbit</code>(tham chiếu đến luồng sau khi trích xuất khoảng trắng liên tiếp).<code>failbit</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">được đặt trên luồng trước cuộc gọi, việc xây dựng đối tượng Sentry sẽ được đặt</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;iomanip&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue415" rel="nofollow">LWG 415</a> </td> <td>C ++ 98</td> <td>nhân vật (<code>std::ws</code>#include &lt;Istream&gt;<br/>#include &lt;istream&gt;</td> <td>#include &lt;Sstream&gt;<br/>#include &lt;chuỗi&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_istream/ignore" title="cpp/io/basic istream/ignore"> <span class="t-lines"><span>phớt lờ</span></span></a></div> </td> <td>Putback<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_istream&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/manip/ws">https://en.cppreference.com/w/cpp/io/manip/ws</a>
+</p>
+</div>

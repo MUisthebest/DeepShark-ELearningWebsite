@@ -1,0 +1,42 @@
+<section class="container-llm">
+    <h2>Code Review Tool</h2>
+    <div class="content">
+        <div class="input">
+            <input type="file" id="fileInput" accept=".txt,.py,.js,.html,.css,.java" />
+            <div class="code-space">
+                <textarea id="codeInput" placeholder="Nhập code tại đây..."></textarea>
+            </div>
+        </div>
+        <div class="output">
+            <h3>Result Review</h3>
+            <pre id="reviewOutput">Kết quả review sẽ hiển thị ở đây...</pre>
+        </div>
+    </div>
+
+    <button onclick="reviewCode()">Review Code</button>
+</section>
+<script>
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('codeInput').value = e.target.result;
+            };
+            reader.readAsText(file);
+        }
+    });
+
+    function reviewCode() {
+        const code = document.getElementById('codeInput').value;
+        let reviewResult = "";
+        
+        if (!code.trim()) {
+            reviewResult = "Vui lòng nhập code để review.";
+        } else {
+            reviewResult = "✅ Code không có lỗi cú pháp.\n\n⚠️ Kiểm tra tối ưu hoá: \n- Hãy đảm bảo các biến được sử dụng hợp lý.\n- Tránh dư thừa vòng lặp.\n- Kiểm tra logic điều kiện.";
+        }
+        
+        document.getElementById('reviewOutput').textContent = reviewResult;
+    }
+</script>

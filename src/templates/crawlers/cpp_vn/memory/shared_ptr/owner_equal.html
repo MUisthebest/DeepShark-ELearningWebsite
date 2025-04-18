@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_ptr &lt;t&gt; :: chủ sở hữu_equal</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx26"> <td> <pre data-language="cpp">Mẫu &lt;Class Y&gt; </pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> </tr> <tr class="t-dcl t-since-cxx26"> <td> <pre data-language="cpp">bool chủ sở hữu_equal (const std :: shared_ptr &lt;y&gt; &amp; other) const NoExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> </tr> </table> <p>Mẫu &lt;Class Y&gt;<code>shared_ptr</code>Và<code>other</code>Mẫu &lt;Class Y&gt;<code>get()</code>là khác nhau (ví dụ: vì chúng chỉ vào các tiểu mục khác nhau trong cùng một đối tượng).</p>
+<p>bool chủ sở hữu_equal (const std :: weak_ptr &lt;y&gt; &amp; other) const noexcept;<code>owner_equal</code>Sở hữu chia sẻ hoặc cả hai đều trống. Sự so sánh là hai con trỏ thông minh chỉ so sánh tương đương khi cả hai đều trống hoặc nếu cả hai đều sở hữu cùng một đối tượng, ngay cả khi các giá trị của con trỏ thu được bởi<code>!owner_before(other) &amp;&amp; !other.owner_before(*this)</code>khoảng cách<code>true</code>là<code>owner_equal(other)</code>khoảng cách<code>true</code>.</p>
+<p>Chức năng thành viên<code>std::owner_equal</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>các<code><a href="../shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>hoặc<code><a href="../weak_ptr" title="cpp/memory/weak ptr">std::weak_ptr</a></code>Trong việc triển khai được xác định xác định đơn hàng dựa trên chủ sở hữu (trái ngược với giá trị dựa trên giá trị). Thứ tự là hai con trỏ thông minh chỉ so sánh tương đương khi cả hai đều trống hoặc nếu cả hai đều sở hữu cùng một đối tượng, ngay cả khi các giá trị của con trỏ thu được bởi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>nếu như<code>*this</code>Và<code>other</code>là một mối quan hệ tương đương sao cho<code>false</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_smart_ptr_owner_equality" title="cpp/feature test"><code>__cpp_lib_smart_ptr_owner_equality</code></a></td> <td><span class="nu0">202306L</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>Cho phép sử dụng<code>std::shared_ptr</code>như chìa khóa trong<a href="../../container#Unordered_associative_containers" title="cpp/container">unordered associative containers</a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../owner_equal" title="cpp/memory/owner equal"> <span class="t-lines"><span>Chủ sở hữu_equal</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C ++ 26)</span></span></span></div> </td> <td>Cung cấp các so sánh bằng nhau dựa trên kiểu chủ sở hữu hỗn hợp của các con trỏ chia sẻ và yếu<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/shared_ptr/owner_equal">https://en.cppreference.com/w/cpp/memory/shared_ptr/owner_equal</a>
+</p>
+</div>

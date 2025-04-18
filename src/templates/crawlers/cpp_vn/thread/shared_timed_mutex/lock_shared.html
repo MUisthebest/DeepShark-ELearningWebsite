@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Shared_Timed_Mutex :: Lock_Shared</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">void lock_shared ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>Mua lại quyền sở hữu chung của Mutex. Nếu một chủ đề khác đang giữ Mutex trong quyền sở hữu độc quyền, một cuộc gọi đến<code>lock_shared</code>sẽ chặn thực thi cho đến khi quyền sở hữu được chia sẻ có thể được mua lại.</p>
+<p>Nếu như<code>lock_shared</code>được gọi bởi một chủ đề đã sở hữu<code>mutex</code>Trong bất kỳ chế độ nào (độc quyền hoặc chia sẻ), hành vi không được xác định.</p>
+<p>Nếu nhiều hơn số lượng chủ sở hữu được chia sẻ được xác định bởi triển khai đã bị khóa trong chế độ chia sẻ,<code>lock_shared</code>Khối thực thi cho đến khi số lượng chủ sở hữu được chia sẻ bị giảm. Số lượng chủ sở hữu tối đa được đảm bảo là ít nhất 10000.</p>
+<p>Trước<code><a href="unlock" title="cpp/thread/shared timed mutex/unlock">unlock()</a></code>Hoạt động trên cùng một mutex<i>y.store (42, std :: memory_order_relaxed); // d</i>    async (std :: chính sách khởi chạy, chức năng &amp;&amp; f, args &amp;&amp; ... args);<code><a href="../../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>) Hoạt động này.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Ném<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>Khi xảy ra lỗi, bao gồm các lỗi từ hệ điều hành cơ bản sẽ ngăn chặn<code>lock</code>từ đáp ứng các thông số kỹ thuật của nó. Mutex không bị khóa trong trường hợp bất kỳ ngoại lệ nào bị ném.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>lock_shared()</code>thường không được gọi là trực tiếp:<code><a href="../shared_lock" title="cpp/thread/shared lock">std::shared_lock</a></code>được sử dụng để quản lý khóa chia sẻ.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lock" title="cpp/thread/shared timed mutex/lock"> <span class="t-lines"><span>khóa</span></span></a></div> </td> <td>Khóa mutex, khối nếu không có sẵn Mutex<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_lock_shared" title="cpp/thread/shared timed mutex/try lock shared"> <span class="t-lines"><span>Try_lock_shared</span></span></a></div> </td> <td>Cố gắng khóa Mutex cho quyền sở hữu được chia sẻ, trả lại nếu Mutex không có sẵn<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="unlock_shared" title="cpp/thread/shared timed mutex/unlock shared"> <span class="t-lines"><span>Unlock_shared</span></span></a></div> </td> <td>Mở khóa Mutex (quyền sở hữu chung)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/shared_timed_mutex/lock_shared">https://en.cppreference.com/w/cpp/thread/shared_timed_mutex/lock_shared</a>
+</p>
+</div>

@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Tương lai &lt;t&gt; :: ~ Tương lai</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">~ Tương lai ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Phát hành bất kỳ trạng thái chia sẻ. Điều này có nghĩa là</p>
+<ul>
+<li>Nếu đối tượng hiện tại giữ tham chiếu cuối cùng về trạng thái chung của nó, trạng thái chia sẻ sẽ bị phá hủy;</li>
+<li>Đối tượng hiện tại từ bỏ tài liệu tham khảo của nó đến trạng thái chia sẻ của nó;</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <ul><li>Những hành động này sẽ không chặn để trạng thái được chia sẻ sẵn sàng, ngoại trừ việc chúng có thể chặn nếu tất cả những điều sau đây là đúng:</li></ul> <ol>
+<li>Trạng thái chia sẻ được tạo ra bởi một cuộc gọi đến<code><a href="../async" title="cpp/thread/async">std::async</a></code>Thì</li>
+<li>Trạng thái chia sẻ vẫn chưa sẵn sàng, và</li>
+<li>Đối tượng hiện tại là tài liệu tham khảo cuối cùng cho trạng thái chia sẻ.</li>
+</ol> </td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <p>Trong thực tế, những hành động này sẽ chỉ chặn nếu chính sách khởi động của nhiệm vụ là<code><a href="../launch" title="cpp/thread/launch">std::launch::async</a></code>(Xem mục "Hiệu quả hiện đại C ++"<code><a href="../async" title="cpp/thread/async">std::async</a></code>.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/future/%7Efuture">https://en.cppreference.com/w/cpp/thread/future/%7Efuture</a>
+</p>
+</div>

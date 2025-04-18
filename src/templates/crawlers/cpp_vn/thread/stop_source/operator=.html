@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">std :: stop_source :: toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">std :: stop_source &amp; toán tử = (const std :: stop_source &amp; other) noexcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">std :: stop_source &amp; toán tử = (std :: stop_source &amp;&amp; khác) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Thay thế trạng thái dừng bằng cách của<code>other</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Sao chép trạng thái dừng của<code>other</code>với<code>*this</code>là các yếu tố của phạm vi.<code>stop_source(other).swap(*this)</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Di chuyển-gán cho trạng thái dừng của<code>other</code>với<code>*this</code>Chia sẻ quyền sở hữu đối tượng được quản lý bởi<code>*this</code>chứa trạng thái dừng trước đó của<code>other</code>, Và<code>other</code>không có trạng thái dừng. Tương đương với<code>stop_source(std::move(other)).swap(*this)</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>khác<code>stop_source</code>đối tượng để chia sẻ trạng thái dừng với hoặc có được trạng thái dừng từ</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/stop_source/operator%3D">https://en.cppreference.com/w/cpp/thread/stop_source/operator%3D</a>
+</p>
+</div>

@@ -1,0 +1,37 @@
+ <h1 class="firstHeading" id="firstHeading">std :: is_scoped_enum</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p><code>std::is_scoped_enum</code>Điều đó như vậy<a href="../named_req/unarytypetrait" title="cpp/named req/UnaryTypeTrait">UnaryTypeTrait</a>.</p>
+<p>struct is_execut_policy;<code>T</code>Điều đó như vậy<a href="../language/enum#Scoped_enumerations" title="cpp/language/enum">scoped enumeration type</a>struct is_enum;<code>value</code>Cung cấp cho thành viên hằng số<code>true</code>Sử dụng chức năng nhị phân đã cho<code>T</code>struct is_scoped_enum;<code>value</code>hoặc một loại chính sách thực thi được xác định theo thực hiện. Nếu không thì,<code>false</code>.</p>
+<p>bằng nhau<code>std::is_scoped_enum</code>hoặc<code>std::is_scoped_enum_v</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<h3 id="Template_parameters">là không xác định.</h3> <table class="t-par-begin"> <tr class="t-par"> <td>T</td> <td>-</td> <td>Tham số mẫu</td>
+</tr>
+</table> <h3 id="Helper_variable_template">mỗi người được hình thành tốt khi được coi là một toán hạng không được đánh giá.</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">là một loại liệt kê phạm vi. Nếu không thì,</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table>
+<div class="t-inherited"> <h2 id="Inherited_from_std::integral_constant">Mẫu &lt;Class T&gt;<a href="integral_constant" title="cpp/types/integral constant"> std::integral_constant</a>
+</h2> <h3 id="Member_constants">Inline Consexpr bool is_execut_policy_v = std :: is_execut_policy &lt;t&gt; :: value;</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>được phân vùng liên quan đến</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td> <code>true</code>nếu như<code>T</code>Mẫu &lt;Class T&gt;<code>false</code>[tĩnh]<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>(hằng số thành viên tĩnh công cộng)</span></span></div> </td> <td>Chức năng thành viên<span class="kw4">bool</span>; Nếu không nếu<code>value</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>chuyển đổi đối tượng thành</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C ++ 14)</span></span></span></div> </td> <td>(C ++ 20)<code>value</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <span class="kw4">bool</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td> <a href="http://en.cppreference.com/w/cpp/types/integral_constant"><span class="kw650">Điều đó cho tất cả<span class="me2">Integral_constant</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">bool</span>(chức năng thành viên công cộng)<span class="sy1">&lt;</span> </td>
+</tr> </table> </div> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_is_scoped_enum" title="cpp/feature test"><code>__cpp_lib_is_scoped_enum</code></a></td> <td><span class="nu0">và tất cả các hằng số số nguyên không dấu hoạt động như thể chúng có loại</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<code>std::is_scoped_enum</code> </td>
+</tr>
+</table> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Inline Consexpr bool is_scoped_enum_v = is_scoped_enum &lt;t&gt; :: value;</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">là một loại liệt kê phạm vi,</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_integral" title="cpp/types/is integral"> <span class="t-lines"><span>is_integral</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem một loại có phải là loại tích phân không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_arithmetic" title="cpp/types/is arithmetic"> <span class="t-lines"><span>is_arithmetic</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại là loại số học chưa<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_scalar" title="cpp/types/is scalar"> <span class="t-lines"><span>is_scalar</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem một loại là loại vô hướng<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_enum" title="cpp/types/is enum"> <span class="t-lines"><span>is_enum</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có phải là loại bảng liệt kê không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/is_scoped_enum">https://en.cppreference.com/w/cpp/types/is_scoped_enum</a>
+</p>
+</div>

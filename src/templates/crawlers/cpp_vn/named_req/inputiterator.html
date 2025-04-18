@@ -1,0 +1,50 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: LegacyInputIterator</h1> <p>MỘT<strong class="selflink">LegacyInputIterator</strong>Điều đó như vậy<a href="iterator" title="cpp/named req/Iterator">LegacyIterator</a>có thể đọc từ phần tử nhọn. LegacyInputIterators chỉ đảm bảo tính hợp lệ cho các thuật toán vượt qua đơn lẻ: một khi LegacyInputIterator<code>i</code>đã được tăng lên, tất cả các bản sao của giá trị trước đó có thể bị vô hiệu.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>It</code>thỏa mãn LegacyInputIterator nếu</p>
+<ul>
+<li>phạm vi của các yếu tố để tạo<code>It</code>Phần cuối của phạm vi ban đầu<a href="iterator" title="cpp/named req/Iterator">LegacyIterator</a> </li>
+<li>phạm vi của các yếu tố để tạo<code>It</code>Phần cuối của phạm vi ban đầu<a href="equalitycomparable" title="cpp/named req/EqualityComparable">EqualityComparable</a> </li>
+</ul> <p>Và, đã cho</p>
+<ul>
+<li> <code>i</code>Và<code>j</code>, giá trị của loại<code>It</code>hoặc<code>const It</code> </li>
+<li> <code>r</code>TRÊN<code>It</code> </li>
+<li> <code>reference</code>, loại được biểu thị bằng<code><a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>It<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">và không có thành viên khả thi</span></code> </li>
+<li> <code>value_type</code>, loại được biểu thị bằng<code><a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>It<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)</span></code> </li>
+</ul> <p>Các biểu thức sau phải hợp lệ và có các hiệu ứng được chỉ định của chúng</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Biểu thức tương đương</th> <th>Ghi chú</th>
+</tr> <tr> <td><code>i != j</code></td> <td>theo ngữ cảnh chuyển đổi thành<code>bool</code>
+</td> <td><code>!(i == j)</code></td> <td>
+<b>                                  Chuyển tiếp 2 First2);</b>:<code>(i, j)</code>nằm trong miền của<code>==</code>.</td>
+</tr> <tr> <td><code>*i</code></td> <td>
+<code>reference</code>, chuyển đổi thành<code>value_type</code>
+</td> <td>Nếu như<code>i == j</code>Và<code>(i, j)</code>nằm trong miền của<code>==</code>thì điều này tương đương với<code>*j</code>.</td> <td> <p><b>                                  Chuyển tiếp 2 First2);</b>:<code>i</code>có thể phân tích được.</p>
+<p>              Không có p);<code>(void)*i, *i</code>Mẫu &lt;class T, class so sánh&gt;<code>*i</code>.</p>
+</td>
+</tr> <tr> <td><code>i-&gt;m</code></td> <td> </td> <td><code>(*i).m</code></td> <td>
+<b>                                  Chuyển tiếp 2 First2);</b>:<code>i</code>có thể phân tích được.</td>
+</tr> <tr> <td><code>++r</code></td> <td><code>It&amp;</code></td> <td> </td> <td> <p><b>                                  Chuyển tiếp 2 First2);</b>:<code>r</code>có thể phân tích được.</p>
+<p><b>Postcondition</b>:<code>r</code>có thể phân tích được hoặc<code>r</code>là quá khứ.</p>
+<p><b>Postcondition</b>: Bất kỳ bản sao nào của giá trị trước đó của<code>r</code>không còn bắt buộc phải có thể phân tách được hoặc ở trong miền của<code>==</code>.</p>
+</td>
+</tr> <tr> <td><code>(void)r++</code></td> <td> </td> <td><code>(void)++r</code></td> <td> </td>
+</tr> <tr> <td><code>*r++</code></td> <td>chuyển đổi thành<code>value_type</code> </td> <td>
+<code>value_type x = *r; ++r;  return x;</code> </td> <td> </td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>"Trong miền của<code>==</code>"Có nghĩa là so sánh bình đẳng được xác định giữa hai giá trị lặp. Đối với các trình lặp đầu vào, so sánh bình đẳng không cần phải được xác định cho tất cả các giá trị và tập hợp các giá trị trong miền của miền của<code>==</code>có thể thay đổi theo thời gian.</p>
+<p>Các<code>reference</code>gõ cho một trình lặp đầu vào không phải là một<a href="forwarditerator" title="cpp/named req/ForwardIterator">LegacyForwardIterator</a>Không phải là loại tham chiếu: Dereferenceing trình lặp đầu vào có thể trả về một đối tượng proxy hoặc<code>value_type</code>chính nó theo giá trị (như trong trường hợp của<a href="../iterator/istreambuf_iterator" title="cpp/iterator/istreambuf iterator"><code>std::istreambuf_iterator</code></a>).</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <h3 id="Concept">  lớp yếu_ordering;</h3> <p>Đối với định nghĩa của<code><a href="../iterator/iterator_traits" title="cpp/iterator/iterator traits">std::iterator_traits</a></code>, các khái niệm chỉ dành cho giải thích sau đây được xác định.</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Mẫu &lt;Class I&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Khái niệm __legacybidirectionaliterator =<code>__LegacyIterator</code>        std :: input_or_output_iterator &lt;i&gt; &amp;&amp;<a href="iterator#Concept" title="cpp/named req/Iterator">LegacyIterator#Concept</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue98" rel="nofollow">LWG 98</a> </td> <td>C ++ 98</td> <td>loại trả lại của<code>*i++</code> <code>value_type</code> </td> <td>Khái niệm __legacyInputIterator =<code>value_type</code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../iterator/input_iterator" title="cpp/iterator/input iterator"> <span class="t-lines"><span>input_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Chỉ định rằng một loại là một trình lặp đầu vào, nghĩa là các giá trị được tham chiếu của nó có thể được đọc và nó có thể là cả trước và sau<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../iterator" title="cpp/iterator"><b>Thư viện Iterator</b></a> </td> <td>thay vào đó được yêu cầu phải có độ phân biệt rõ ràng</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/InputIterator">https://en.cppreference.com/w/cpp/named_req/InputIterator</a>
+</p>
+</div>

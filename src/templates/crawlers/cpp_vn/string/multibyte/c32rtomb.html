@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: C32rtomb</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cuchar" title="cpp/header/cuchar">&lt;cuchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">std :: size_t c32rtomb (char* s, char32_t c32, std :: mbstate_t* ps);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Chuyển đổi một ký tự UTF-32 thành biểu diễn multibyte hẹp của nó.</p>
+<p>Nếu như<code>s</code>không phải là một con trỏ null, hàm xác định số lượng byte cần thiết để lưu trữ biểu diễn ký tự multibyte của<code>c32</code>(bao gồm bất kỳ chuỗi thay đổi nào và có tính đến trạng thái chuyển đổi đa cấp hiện tại<code>*ps</code>) và lưu trữ biểu diễn ký tự đa nhân trong mảng ký tự có phần tử đầu tiên được chỉ ra bởi<code>s</code>, cập nhật<code>*ps</code>khi cần thiết. Nhiều nhất<code>MB_CUR_MAX</code>Byte có thể được viết bởi chức năng này.</p>
+<p>Nếu như<code>s</code>là một con trỏ null, cuộc gọi tương đương với<code>std::c32rtomb(buf, U'\0', ps)</code>Đối với một số bộ đệm nội bộ<code>buf</code>.</p>
+<p>Nếu như<code>c32</code>là nhân vật rộng null<code>U'\0'</code>, một byte null được lưu trữ, trước bất kỳ chuỗi dịch chuyển nào cần thiết để khôi phục trạng thái dịch chuyển ban đầu và tham số trạng thái chuyển đổi<code>*ps</code>được cập nhật để đại diện cho trạng thái thay đổi ban đầu.</p>
+<p>Mã hóa đa dạng được sử dụng bởi chức năng này được chỉ định bởi locle C hiện đang hoạt động.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>Con trỏ đến mảng ký tự hẹp trong đó ký tự đa năng sẽ được lưu trữ</td>
+</tr> <tr class="t-par"> <td>C32</td> <td>-</td> <td>ký tự 32 bit để chuyển đổi</td>
+</tr> <tr class="t-par"> <td>PS</td> <td>-</td> <td>con trỏ đến đối tượng trạng thái chuyển đổi được sử dụng khi diễn giải chuỗi đa</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Khi thành công, trả về số lượng byte (bao gồm bất kỳ chuỗi thay đổi nào) được ghi vào mảng ký tự có phần tử đầu tiên được chỉ ra bởi<code>s</code>. Giá trị này có thể là<code>​0​</code>, ví dụ. Khi xử lý đầu tiên<code>char32_t</code>trong đa<code>char32_t</code>Trình tự -Character (không xảy ra trong UTF-32).</p>
+<p>Về thất bại (nếu<code>c32</code>không phải là một ký tự 32 bit hợp lệ), trả về<code>-1</code>, cửa hàng<code><a href="../../error/errno_macros" title="cpp/error/errno macros">EILSEQ</a></code>TRONG<code><a href="../../error/errno" title="cpp/error/errno">errno</a></code>, và lá<code>*ps</code>Ở trạng thái không xác định.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Climits&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;clocale&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="mbrtoc32" title="cpp/string/multibyte/mbrtoc32"> <span class="t-lines"><span>MBRTOC32</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Chuyển đổi một ký tự multibyte hẹp thành mã hóa UTF-32<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../locale/codecvt/out" title="cpp/locale/codecvt/out"> <span class="t-lines"><span>nhận dạng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>DO_OUT<code>InternT</code>ĐẾN<code>ExternT</code>của địa điểm<br/> <span class="t-mark">Putback<code>std::codecvt&lt;InternT,ExternT,StateT&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/multibyte/c32rtomb" title="c/string/multibyte/c32rtomb">C documentation</a></span>vì<code>c32rtomb</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/multibyte/c32rtomb">https://en.cppreference.com/w/cpp/string/multibyte/c32rtomb</a>
+</p>
+</div>

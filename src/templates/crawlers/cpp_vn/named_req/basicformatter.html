@@ -1,0 +1,46 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: BasicFormatter<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>
+</h1> <p><strong class="selflink">BasicFormatter</strong>là một loại tóm tắt các hoạt động định dạng cho một loại đối số định dạng và loại ký tự. Chuyên môn của<code><a href="../utility/format/formatter" title="cpp/utility/format/formatter">std::formatter</a></code>được yêu cầu để đáp ứng các yêu cầu của BasicFormatter.</p>
+<p>A BasicFormatter là một<a href="formatter" title="cpp/named req/Formatter">Formatter</a>Nếu nó có thể định dạng cả đối số const và không phải const.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Một loại thỏa mãn cơ sởFormatter nếu nó là bán nguyệt, có nghĩa là nó thỏa mãn:</p>
+<ul>
+<li> <a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a> </li>
+<li> <a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a> </li>
+<li> <a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a> </li>
+<li> <a href="destructible" title="cpp/named req/Destructible">Destructible</a> </li>
+<li> <a href="swappable" title="cpp/named req/Swappable">Swappable</a> </li>
+</ul> <p>Và, đã cho</p>
+<ul>
+<li> <code>Arg</code>, một loại đối số định dạng</li>
+<li> <code>CharT</code>, một loại nhân vật</li>
+<li> <code>BasicFormatter</code>, một loại cơ bản cho các loại<code>Arg</code>Và<code>CharT</code> </li>
+<li> <code>OutputIt</code>có thể đại diện cho các phân số của ve.<a href="outputiterator" title="cpp/named req/OutputIterator">LegacyOutputIterator</a>kiểu</li>
+<li> <code>f</code>, một giá trị của loại (có thể là const)<code>BasicFormatter</code> </li>
+<li> <code>g</code>, một giá trị của loại<code>BasicFormatter</code> </li>
+<li> <code>arg</code>TRÊN<code>Arg</code> </li>
+<li> <code>ParseContext</code>, một bí danh của<code><a href="http://en.cppreference.com/w/cpp/utility/format/basic_format_parse_context"><span class="kw3155">Điều đó cho tất cả<span class="me2">basic_format_parse_context</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT<span class="sy1">&lt;</span></code> </li>
+<li> <code>FormatContext</code>, một bí danh của<code><a href="http://en.cppreference.com/w/cpp/utility/format/basic_format_context"><span class="kw3158">Điều đó cho tất cả<span class="me2">basic_format_context</span></span></a><span class="sy1">is_trivently_destructible_v</span>OutputIt, CharT<span class="sy1">&lt;</span></code> </li>
+<li> <code>parse_ctx</code>TRÊN<code>ParseContext</code> </li>
+<li> <code>format_ctx</code>TRÊN<code>FormatContext</code> </li>
+</ul> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Ngữ nghĩa</th>
+</tr> <tr> <td>
+<code>g.parse(parse_ctx)</code> </td> <td> <code>ParseContext::iterator</code> </td> <td> <ul>
+<li>Phân tích cú pháp<span class="t-spar">có giá trị được sử dụng để định dạng; Nếu nó bị bỏ qua, các đối số được sử dụng theo thứ tự.</span> <code>[parse_ctx.begin(), parse_ctx.end())</code>cho loại<code>Arg</code>cho đến khi nhân vật chưa từng có đầu tiên.</li>
+<li>Ném<code><a href="../utility/format/format_error" title="cpp/utility/format/format error">std::format_error</a></code>trừ khi toàn bộ phạm vi được phân tích cú pháp hoặc ký tự chưa từng có<code>}</code>.<sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[note 1]</a></sup> </li>
+<li>Lưu trữ các định dạng định dạng phân tích phân tích cú pháp trong<code>g</code>và trả về một trình lặp cuối của phạm vi phân tích cú pháp.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>f.format(arg, format_ctx)</code> </td> <td> <code>FormatContext::iterator</code> </td> <td> <ul>
+<li>void in (std :: Ostream &amp; os, std :: format_string &lt;args ...&gt; fmt, args &amp;&amp; ... args);<code>arg</code>Theo các nhà xác định được lưu trữ trong<code>f</code>, viết đầu ra cho<code>format_ctx.out()</code>và trả về một trình lặp cuối của phạm vi đầu ra.</li>
+<li>Đầu ra chỉ phụ thuộc vào<ul>
+<li> <code>arg</code>Thì</li>
+<li> <code>format_ctx.locale()</code>Thì</li>
+<li>; nếu như<code>[parse_ctx.begin(), parse_ctx.end())</code>từ cuộc gọi cuối cùng đến<code>f.parse(parse_ctx)</code>, Và</li>
+<li> <code>format_ctx.arg(n)</code>cho bất kỳ giá trị<code>n</code>nó đến một đối tượng<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>.</li>
+</ul> </li>
+</ul> </td>
+</tr>
+</table> <ol class="references"> <li id="cite_note-1"> <span class="reference-text">Điều này cho phép định dạng phát ra các thông báo lỗi có ý nghĩa.</span> </li> </ol> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/BasicFormatter">https://en.cppreference.com/w/cpp/named_req/BasicFormatter</a>
+</p>
+</div>

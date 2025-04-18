@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">std :: regex_iterator &lt;bidirit, biểu đồ, đặc điểm&gt; :: regex_iterator</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">regex_iterator ();</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Regex_Iterator (Bidirit A, Bidirit B,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                const regex_type &amp; re,</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                std :: regex_constants :: match_flag_type m =</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xây dựng một mới<code>regex_iterator</code>:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>                    std :: regex_constants :: match_default);</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>regex_iterator</code>regex_iterator (const regex_iterator &amp;);<code>[</code><code>a</code><code>, </code><code>b</code><code>)</code>regex_iterator (bidirit, bidirit,<code>re</code>                const regex_type &amp;&amp;,<code>m</code>                std :: regex_constants :: match_flag_type =<code><a href="../regex_search" title="cpp/regex/regex search">std::regex_search</a></code>                    std :: regex_constants :: match_default) = xóa;<code>false</code>Thì<code>*this</code>Hàm tạo mặc định. Xây dựng một trình lặp cuối chuỗi cuối.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Từ chuỗi các ký tự<code>regex_iterator</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Hàm tạo bản sao của<span class="t-v">(2)</span>, biểu thức chính quy</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Một</td> <td>-</td> <td> <a href="../../named_req/bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a>, và một lá cờ</td>
+</tr> <tr class="t-par"> <td>Hành vi là không xác định nếu</td> <td>-</td> <td> <a href="../../named_req/bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a>Điều đó chi phối hành vi phù hợp. Trình xây dựng này thực hiện một cuộc gọi ban đầu đến</td>
+</tr> <tr class="t-par"> <td>và phần tưởng tượng</td> <td>-</td> <td>với dữ liệu này. Nếu kết quả của cuộc gọi ban đầu này là</td>
+</tr> <tr class="t-par"> <td>bắt buộc_span_size</td> <td>-</td> <td>được đặt thành một trình lặp cuối chuỗi cuối.<code>re</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Bản sao a</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2332" rel="nofollow">LWG 2332</a> </td> <td>C ++ 11</td> <td>Một<code>regex_iterator</code>không được phép gọi với một regex tạm thời, vì trình lặp được trả về sẽ bị vô hiệu hóa ngay lập tức.<br/><code>basic_regex</code>Để bắt đầu chuỗi ký tự mục tiêu</td> <td>đến cuối chuỗi ký tự mục tiêu</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/regex_iterator/regex_iterator">https://en.cppreference.com/w/cpp/regex/regex_iterator/regex_iterator</a>
+</p>
+</div>

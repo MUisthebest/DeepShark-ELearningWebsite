@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; :: insert_range</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Chèn chuỗi ký tự kết thúc null được trỏ bởi<code>rg</code>. Phạm vi có thể chứa các ký tự null.<code>pos</code>.</p>
+<p>Mẫu &lt;class inputit1, class inputit2,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">ConstExpr iterator chèn_range (const_iterator pos, r &amp;&amp; rg);</pre></div> <p>Nếu như<code>pos</code>tại vị trí<code>*this</code>Hoạt động tương đương cho quá tải</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>Trước khi nhân vật được chỉ ra bởi</td>
+</tr> <tr class="t-par"> <td>được hủy bỏ chính xác một lần.</td> <td>-</td> <td>Một<a href="../../ranges/to#container_compatible_range" title="cpp/ranges/to">container compatible range</a> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>trả lại chèn (pos - started (),<code>pos</code>    STD :: basic_string (<code>rg</code>        std :: from_range,</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>các yếu tố có thể chuyển đổi thành<code>rg</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Nếu như<a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>Người phân bổ<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">được cung cấp cho Deque để cho phép khấu trừ từ một phạm vi vòng lặp. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu</span>S_index</p>
+<p>, Subview được thêm vào là<code><a href="size" title="cpp/string/basic string/size">size</a>() &gt; <a href="max_size" title="cpp/string/basic string/max size">max_size</a>()</code>sử dụng tài nguyên bộ nhớ cơ bản.<code><a href="../../error/length_error" title="cpp/error/length error">std::length_error</a></code>.</p>
+<p>tham chiếu emplace_front (args &amp;&amp; ... args);<a href="../../language/exceptions#Exception_safety" title="cpp/language/exceptions">strong exception safety guarantee</a>).</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_containers_ranges" title="cpp/feature test"><code>__cpp_lib_containers_ranges</code></a></td> <td><span class="nu0">và không trả lại gì.</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Trả về append (std :: basic_string (std :: from_range, std :: forward &lt;r&gt; (rg), get_allocator ()));<a href="../../ranges/to#container_compatible_range" title="cpp/ranges/to">container compatible range</a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">        STD :: Chuyển tiếp &lt;R&gt; (RG),</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="insert" title="cpp/string/basic string/insert"> <span class="t-lines"><span>get_allocator</span></span></a></div> </td> <td>gán các giá trị cho chuỗi<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string/insert_range">https://en.cppreference.com/w/cpp/string/basic_string/insert_range</a>
+</p>
+</div>

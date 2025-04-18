@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Có thể khóa<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Các<strong class="selflink">Có thể khóa</strong>Yêu cầu mở rộng<a href="basiclockable" title="cpp/named req/BasicLockable">BasicLockable</a>Yêu cầu bao gồm khóa đã cố gắng.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <ul><li> <a href="basiclockable" title="cpp/named req/BasicLockable">BasicLockable</a> </li></ul> <p>Cho loại<code>L</code>Để bị khóa, nó phải đáp ứng điều kiện trên cũng như sau:</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Các hiệu ứng</th> <th>phải sao cho một đối tượng thuộc loại</th>
+</tr> <tr> <td>
+<code>m.try_lock()</code> </td> <td>Cố gắng để có được khóa cho tác nhân thực thi hiện tại (luồng, quy trình, nhiệm vụ) mà không chặn. Nếu một ngoại lệ được ném, không có được khóa.</td> <td>
+<code>true</code>Nếu khóa được mua,<code>false</code>[tĩnh]</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Các<code>try_lock</code>Các chức năng thành viên có được khóa không chia sẻ<code>m</code>Trên Succcess.</p>
+<h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="../thread" title="cpp/thread">Thread support library</a> </li>
+<li> <a href="mutex" title="cpp/named req/Mutex">Mutex</a> </li>
+<li> <a href="basiclockable" title="cpp/named req/BasicLockable">BasicLockable</a> </li>
+<li> <a href="timedlockable" title="cpp/named req/TimedLockable">TimedLockable</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/Lockable">https://en.cppreference.com/w/cpp/named_req/Lockable</a>
+</p>
+</div>

@@ -1,0 +1,44 @@
+ <h1 class="firstHeading" id="firstHeading">    Đại diện lớp,</h1> <p>Một mẫu lớp xác định một gia đình của các lớp học.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <span class="t-spar">Giải khai lớp</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>export</code> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <span class="t-spar">Giải khai lớp</span> </td> <td>(2)</td> <td> <span class="t-mark-rev t-until-cxx11">(Đã xóa trong C ++ 11)</span> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">Giải khai lớp</span> </td> <td>-</td> <td>Một<a href="class" title="cpp/language/class">class declaration</a>. Tên lớp được tuyên bố trở thành một tên mẫu.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">danh sách tham số</span> </td> <td>-</td> <td>một danh sách không phân tách dấu phẩy không có trống của<a href="template_parameters" title="cpp/language/template parameters">template parameters</a>, mỗi trong số đó là một<a href="template_parameters#Non-type_template_parameter" title="cpp/language/template parameters">non-type parameter</a>có thể đại diện cho các phân số của ve.<a href="template_parameters#Type_template_parameter" title="cpp/language/template parameters">type parameter</a>có thể đại diện cho các phân số của ve.<a href="template_parameters#Template_template_parameter" title="cpp/language/template parameters">template parameter</a>được đặt ở chế độ mở của gói<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>của bất kỳ trong số đó.</td>
+</tr>
+</table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td>
+<code>export</code>là một công cụ sửa đổi tùy chọn đã khai báo mẫu là<i>xuất khẩu</i>(Khi được sử dụng với một mẫu lớp, nó cũng đã khai báo tất cả các thành viên của mình). Các tệp mà các mẫu xuất khởi tạo không cần phải bao gồm các định nghĩa của chúng: Tuyên bố là đủ. Triển khai của<code>export</code>rất hiếm và không đồng ý với nhau về chi tiết.</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> </table> <h3 id="Class_template_instantiation">Lớp mẫu khởi tạo</h3> <p>Một mẫu lớp tự nó không phải là một loại, hoặc một đối tượng hoặc bất kỳ thực thể nào khác. Không có mã nào được tạo từ một tệp nguồn chỉ chứa các định nghĩa mẫu. Để bất kỳ mã nào xuất hiện, một mẫu phải được khởi tạo: các đối số mẫu phải được cung cấp để trình biên dịch có thể tạo một lớp thực tế (hoặc hàm, từ một mẫu chức năng).</p>
+<h4 id="Explicit_instantiation">Khởi tạo rõ ràng</h4> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>template</code> <span class="t-spar">Lớp học</span> <span class="t-spar">tên mẫu</span> <code>&lt;</code> <span class="t-spar">Danh sách lập luận</span> <code>&gt;</code> <code>;</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>extern</code> <code>template</code> <span class="t-spar">Lớp học</span> <span class="t-spar">tên mẫu</span> <code>&lt;</code> <span class="t-spar">Danh sách lập luận</span> <code>&gt;</code> <code>;</code> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">Lớp học</span> </td> <td>-</td> <td> <code>class</code>Thì<code>struct</code>hoặc<code>union</code> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Định nghĩa khởi tạo rõ ràng</div> <div class="t-li1">
+<span class="t-li">2)</span>Tuyên bố khởi tạo rõ ràng</div> <p>Một định nghĩa khởi tạo rõ ràng buộc phải khởi tạo lớp, cấu trúc hoặc liên minh mà họ đề cập đến. Nó có thể xuất hiện trong chương trình ở bất cứ đâu sau định nghĩa mẫu và cho một<span class="t-spar">Danh sách lập luận</span>, chỉ được phép xuất hiện một lần trong toàn bộ chương trình, không cần chẩn đoán.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Một khai báo khởi tạo rõ ràng (một mẫu bên ngoài) bỏ qua bước khởi tạo ngầm: mã sẽ gây ra một khởi tạo ngầm thay vào đó sử dụng định nghĩa khởi tạo rõ ràng được cung cấp ở nơi khác (dẫn đến các lỗi liên kết nếu không có sự khởi tạo như vậy). Điều này có thể được sử dụng để giảm thời gian biên dịch bằng cách khai báo rõ ràng một khởi tạo mẫu trong tất cả trừ một trong các tệp nguồn sử dụng nó và xác định rõ ràng nó trong tệp còn lại.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Lớp học, chức năng<span class="t-rev-inl t-since-cxx14"><span>, biến</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>và các chuyên ngành mẫu thành viên có thể được khởi tạo rõ ràng từ các mẫu của họ. Các chức năng thành viên, các lớp thành viên và các thành viên dữ liệu tĩnh của các mẫu lớp có thể được khởi tạo rõ ràng từ các định nghĩa thành viên của họ.</p>
+<p>Việc khởi tạo rõ ràng chỉ có thể xuất hiện trong không gian tên kèm theo của mẫu, trừ khi nó sử dụng ID đủ điều kiện: ID:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">không gian tên n</pre></div> <p>{<a href="template_specialization" title="cpp/language/template specialization">explicit specialization</a>    Mẫu &lt;Class T&gt;</p>
+<p>    Lớp Y // Định nghĩa mẫu<span class="t-rev-inl t-since-cxx14"><span>    {</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>        void mf () {}</p>
+<p>    };<span class="t-rev-inl t-since-cxx14"><span>}</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span> </p>
+<p>// lớp mẫu y &lt;int&gt;; // Lỗi: Mẫu lớp Y không hiển thị trong không gian tên toàn cầu</p>
+<p>sử dụng n :: y;</p>
+<h4 id="Implicit_instantiation">// lớp mẫu y &lt;int&gt;; // Lỗi: khởi tạo rõ ràng bên ngoài</h4> <p>                          // của không gian tên của mẫu</p>
+<p>lớp mẫu n :: y &lt;char*&gt;;       // ok: sự khởi tạo rõ ràng</p>
+<div class="cpp source-cpp"><pre data-language="cpp">mẫu void n :: y &lt;double&gt; :: mf (); // ok: sự khởi tạo rõ ràng</pre></div> <p>Khởi tạo rõ ràng không có tác dụng nếu một</p>
+<div class="cpp source-cpp"><pre data-language="cpp">xuất hiện trước đây cho cùng một tập hợp các đối số mẫu.</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <a href="class#Local_classes" title="cpp/language/class">Local classes</a>Chỉ cần hiển thị khai báo khi được hiển thị rõ ràng một mẫu chức năng</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="template_parameters" title="cpp/language/template parameters">template parameters and arguments</a>, một mẫu biến</li>
+<li> <a href="function_template" title="cpp/language/function template">function template declaration</a>, hàm thành viên hoặc thành viên dữ liệu tĩnh của mẫu lớp hoặc mẫu chức năng thành viên. Định nghĩa hoàn chỉnh phải xuất hiện trước khi khởi tạo rõ ràng của mẫu lớp, lớp thành viên của mẫu lớp hoặc mẫu lớp thành viên, trừ khi một chuyên môn rõ ràng với cùng một đối số mẫu xuất hiện trước đó.</li>
+<li> <a href="template_specialization" title="cpp/language/template specialization">template specialization</a>Nếu một mẫu chức năng</li>
+<li> <a href="parameter_pack" title="cpp/language/parameter pack">parameter packs</a>, Mẫu biến<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/class_template">https://en.cppreference.com/w/cpp/language/class_template</a>
+</p>
+</div>

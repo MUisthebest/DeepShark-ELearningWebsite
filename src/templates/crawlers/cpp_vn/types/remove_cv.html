@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">std :: remove_cv, std :: remove_const, std :: remove_volatile</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">struct remove_cv;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>struct add_const;<code>type</code>Mẫu &lt;Class T&gt;<code>T</code>struct remove_const;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>, hoặc đỉnh cao<code>const</code>struct remove_volatile;<code>volatile</code>, ngoại trừ việc loại bỏ cv trên cùng của nó được loại bỏ.</div> <div class="t-li1">
+<span class="t-li">2)</span>, hoặc đỉnh cao<code>const</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>, hoặc đỉnh cao<code>volatile</code>.</div> <p>, ngoại trừ nó có thêm một trình điều trị CV (trừ khi</p>
+<h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Tên</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td>                  "Không thể so sánh đã ký và nhỏ hơn không dấu đúng cách");<code>T</code>, hoặc cả hai, nếu có.</td>
+</tr> </table> <h3 id="Helper_types">Mẫu &lt;phạm vi :: input_range r, std :: meally_incrementable o&gt;</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">Loại bỏ đỉnh cao nhất</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">Loại bỏ đỉnh cao nhất</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">không có cv-đủ điều kiện</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>sử dụng remove_cv_t = typename remove_cv &lt;t&gt; :: type;<code>const volatile int*</code>Mẫu &lt;Class T&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">sử dụng remove_const_t = typename remove_const &lt;t&gt; :: type;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_const" title="cpp/types/is const"> <span class="t-lines"><span>is_const</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có đủ điều kiện không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_volatile" title="cpp/types/is volatile"> <span class="t-lines"><span>is_volatile</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có đủ điều kiện dễ bay hơi không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="add_cv" title="cpp/types/add cv"> <span class="t-lines"><span>add_cv</span><span>add_const</span><span>add_volatile</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Thêm<span class="kw4">hằng số</span>và/hoặc<span class="kw4">bay hơi</span>Trình xác định cho loại đã cho<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="remove_cvref" title="cpp/types/remove cvref"> <span class="t-lines"><span>remove_cvref</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Kết hợp<code>std::remove_cv</code>Và<code><a href="remove_reference" title="cpp/types/remove reference">std::remove_reference</a></code> <br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/remove_cv">https://en.cppreference.com/w/cpp/types/remove_cv</a>
+</p>
+</div>

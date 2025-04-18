@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">std :: numeric_limits &lt;t&gt; :: tối đa</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/limits" title="cpp/header/limits">&lt;limits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">T tĩnh t max () ném ();</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Constexpr t max () noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Trả về giá trị hữu hạn tối đa có thể thể hiện bằng loại số<code>T</code>. Có ý nghĩa cho tất cả các loại giới hạn.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th> <code>T</code> </th> <th> <code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Được xác định trong tiêu đề</span><span class="br0">.</span><span class="br0">)</span></code> </th>
+</tr> <tr class="t-dsc"> <td> <span class="coMULTI">/ * không chuyên hóa */</span> </td> <td> <code>T()</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">bool</span> </td> <td> <code>true</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">CHAR_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">SCHAR_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">UCHAR_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">wchar_t</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">WCHAR_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td>char8_t<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">UCHAR_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char16_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code><a href="../integer" title="cpp/types/integer">UINT_LEAST16_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char32_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code><a href="../integer" title="cpp/types/integer">UINT_LEAST32_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">SHRT_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">STD</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">USHRT_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">int</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">INT_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">int</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">UINT_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">LONG_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">ULONG_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">dài</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">LLONG_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> <span class="kw4">dài</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">ULLONG_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">trôi nổi</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">FLT_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">DBL_MAX</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">LDBL_MAX</a></code> </td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Thể hiện việc sử dụng<code>max()</code>Với một số loại cơ bản và một số typedef của thư viện tiêu chuẩn (đầu ra là cụ thể của hệ thống):</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDdef&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lowest" title="cpp/types/numeric limits/lowest"> <span class="t-lines"><span>thấp nhất</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span> <span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Trả về giá trị hữu hạn thấp nhất của loại đã cho<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="min" title="cpp/types/numeric limits/min"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>#include &lt;Climits&gt;<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/numeric_limits/max">https://en.cppreference.com/w/cpp/types/numeric_limits/max</a>
+</p>
+</div>

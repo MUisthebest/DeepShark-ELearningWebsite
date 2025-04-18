@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: insert_iterator &lt;container&gt; :: insert_iterator</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">insert_iterator (container &amp; c, container tên typename :: iterator i);</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr insert_itorator (container &amp; c, phạm vi :: iterator_t &lt;container&gt; i);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Khởi tạo con trỏ cơ bản vào container để<code><a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span>c<span class="br0">)</span></code>và trình lặp cơ bản để<code>i</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ánh xạ_Type</td> <td>-</td> <td>container để khởi tạo bộ chèn với</td>
+</tr> <tr class="t-par"> <td>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</td> <td>-</td> <td>Trình lặp để khởi tạo phần chèn với</td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue561" rel="nofollow">LWG 561</a> </td> <td>C ++ 98</td> <td>#include &lt;Istream&gt;<code>i</code>tại vị trí được chỉ định bởi<code>Container</code> </td> <td>Mẫu &lt;hộp đựng lớp&gt;<code>Container</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2325R3" rel="nofollow">P2325R3</a> </td> <td>C ++ 20</td> <td>hàm tạo mặc định được cung cấp dưới dạng C ++ 20<br/>Trình lặp phải được<a href="../../concepts/default_initializable" title="cpp/concepts/default initializable"><code>default_initializable</code></a> </td> <td>bị xóa cùng với yêu cầu</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/insert_iterator/insert_iterator">https://en.cppreference.com/w/cpp/iterator/insert_iterator/insert_iterator</a>
+</p>
+</div>

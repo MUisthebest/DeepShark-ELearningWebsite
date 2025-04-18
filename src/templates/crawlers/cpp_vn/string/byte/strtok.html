@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Strtok</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstring" title="cpp/header/cstring">&lt;cstring&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">char* strtok (char* str, const char* delim);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Tìm mã thông báo tiếp theo trong chuỗi byte kết thúc không<code>str</code>. Các ký tự phân tách được xác định bởi chuỗi byte kết thúc null được trỏ bởi<code>delim</code>.</p>
+<p>Hàm này được thiết kế để được gọi là nhiều lần để có được các mã thông báo liên tiếp từ cùng một chuỗi.</p>
+<ul>
+<li>Nếu như<code>str</code>không phải là một con trỏ null, cuộc gọi được coi là cuộc gọi đầu tiên<code>strtok</code>cho chuỗi cụ thể này. Chức năng tìm kiếm nhân vật đầu tiên là<i>không</i>chứa trong<code>delim</code>.</li>
+<li>Nếu không có nhân vật nào được tìm thấy, không có mã thông báo nào<code>str</code>Tất cả, và chức năng trả về một con trỏ null.</li>
+<li>Nếu nhân vật như vậy được tìm thấy, đó là<i>bắt đầu của mã thông báo</i>. Chức năng sau đó tìm kiếm từ điểm đó cho nhân vật đầu tiên<i>khoảng cách</i>chứa trong<code>delim</code>.</li>
+<ul>
+<li>Nếu không có nhân vật nào được tìm thấy,<code>str</code>chỉ có một mã thông báo và các cuộc gọi tương lai đến<code>strtok</code>Sẽ trả lại một con trỏ null.</li>
+<li>Nếu nhân vật như vậy được tìm thấy, đó là<i>thay thế</i>bởi nhân vật null<code>'\0'</code>và con trỏ đến ký tự sau được lưu trữ ở một vị trí tĩnh cho các yêu cầu tiếp theo.</li>
+</ul>
+<li>Hàm sau đó trả lại con trỏ về đầu mã thông báo.</li>
+<li>Nếu như<code>str</code>là một con trỏ null, cuộc gọi được coi là một cuộc gọi tiếp theo đến<code>strtok</code>: Hàm tiếp tục từ nơi nó để lại trong lời cầu khẩn trước. Hành vi giống như nếu con trỏ được lưu trữ trước đó được thông qua<code>str</code>.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc null để tokenize</td>
+</tr> <tr class="t-par"> <td>DELIM</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc null xác định các dấu phân cách</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ đến đầu mã thông báo tiếp theo hoặc<code>nullptr</code>Nếu không có mã thông báo nữa.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Chức năng này là phá hoại: nó viết<code>'\0'</code>các ký tự trong các phần tử của chuỗi<code>str</code>. Đặc biệt, a<a href="../../language/string_literal" title="cpp/language/string literal">string literal</a>không thể được sử dụng như là đối số đầu tiên của<code>std::strtok</code>.</p>
+<p>Mỗi cuộc gọi đến chức năng này sửa đổi một biến tĩnh: không an toàn cho luồng.</p>
+<p>Không giống như hầu hết các tokenizer khác, các phân định trong<code>std::strtok</code>Có thể khác nhau cho mỗi mã thông báo tiếp theo và thậm chí có thể phụ thuộc vào nội dung của các mã thông báo trước đó.</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">char* strtok (char* str, const char* delim)</pre></div> </td>
+</tr>
+</table> <p>{<a class="external text" href="https://github.com/bminor/musl/blob/master/src/string/strtok.c" rel="nofollow">MUSL libc</a>    Bộ đệm static char*;<a class="external text" href="https://github.com/bminor/glibc/blob/master/string/strtok.c" rel="nofollow">GNU libc</a>).</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    if (str! = nullptr)</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="strpbrk" title="cpp/string/byte/strpbrk"> <span class="t-lines"><span>strpbrk</span></span></a></div> </td> <td>Tìm vị trí đầu tiên của bất kỳ ký tự nào từ một bộ phân cách<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strcspn" title="cpp/string/byte/strcspn"> <span class="t-lines"><span>STRCSPN</span></span></a></div> </td> <td>Trả về độ dài của phân đoạn ban đầu tối đa bao gồm<br/>chỉ các ký tự không được tìm thấy trong chuỗi byte khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strspn" title="cpp/string/byte/strspn"> <span class="t-lines"><span>STRSPN</span></span></a></div> </td> <td>Trả về độ dài của phân đoạn ban đầu tối đa bao gồm<br/>chỉ các ký tự được tìm thấy trong chuỗi byte khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../ranges/split_view" title="cpp/ranges/split view"> <span class="t-lines"><span>bao gồm trình tự thu được từ việc làm phẳng a</span><span>(Đối tượng bộ điều hợp phạm vi)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Một<a href="../../ranges/view" title="cpp/ranges/view"><code>view</code></a>Phạm vi :: Lazy_Split_View<a href="../../ranges/view" title="cpp/ranges/view"><code>view</code></a>Quan điểm :: Lazy_Split<br/><span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> <span class="t-mark">bao gồm các yếu tố của người khác</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/strtok" title="c/string/byte/strtok">C documentation</a></span>vì<code>strtok</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/strtok">https://en.cppreference.com/w/cpp/string/byte/strtok</a>
+</p>
+</div>

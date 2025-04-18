@@ -1,0 +1,37 @@
+ <h1 class="firstHeading" id="firstHeading">Nhà điều hành Alignof<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Truy vấn yêu cầu căn chỉnh của một loại.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>alignof(</code> <span class="t-spar">Loại ID</span> <code>)</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Trả về một giá trị của loại<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Mẫu &lt;Class execPolicy,<a href="object#Alignment" title="cpp/language/object">the alignment</a>, trong byte, cần thiết cho bất kỳ trường hợp nào của loại được chỉ định bởi<a href="type#Type_naming" title="cpp/language/type">type-id</a>, đó là<a href="type#Incomplete_type" title="cpp/language/type">complete</a>Loại đối tượng, loại mảng có loại phần tử hoàn thành hoặc loại tham chiếu cho một trong các loại đó.</p>
+<p>Nếu loại là loại tham chiếu, toán tử sẽ trả về căn chỉnh của loại được tham chiếu; Nếu loại là loại mảng, yêu cầu căn chỉnh của loại phần tử được trả về.</p>
+<h3 id="Notes">Ghi chú</h3> <p>(Raco).<a href="object#Alignment" title="cpp/language/object">alignment</a>cho ý nghĩa và thuộc tính của giá trị được trả về bởi<code>alignof</code>.</p>
+<h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/alignof" title="cpp/keyword/alignof"><code>alignof</code></a></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>Cấu trúc foo</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>{</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>    int i;</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>    char c;</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>    char c;</li></ul>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1305.html" rel="nofollow">CWG 1305</a> </td> <td>C ++ 11</td> <td>
+<span class="t-spar">Loại ID</span>};<br/> </td> <td>cho phép</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="object#Alignment" title="cpp/language/object">alignment requirement</a> </td> <td>// Lưu ý: `Alignas (Alignof (Double dài))` Dưới đây có thể được đơn giản hóa thành đơn giản </td>
+</tr> <tr class="t-dsc"> <td> <a href="alignas" title="cpp/language/alignas"> <code>alignas</code> specifier</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>// `alignas (gấp đôi dài)` Nếu muốn.</td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/alignment_of" title="cpp/types/alignment of"> <span class="t-lines"><span>Căn chỉnh_of</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được các yêu cầu căn chỉnh của loại<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/_Alignof" title="c/language/ Alignof">C documentation</a></span>vì<code>_Alignof</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/alignof">https://en.cppreference.com/w/cpp/language/alignof</a>
+</p>
+</div>

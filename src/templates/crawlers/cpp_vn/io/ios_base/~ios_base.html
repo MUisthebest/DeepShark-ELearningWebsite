@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iOS_Base :: ~ iOS_Base</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">ảo ~ ios_base ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Phá hủy<code>ios_base</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<p>Trước khi bất kỳ chức năng thành viên nào mang lại kết quả không xác định, các cuộc gọi lại, được đăng ký bởi<a href="register_callback" title="cpp/io/ios base/register callback"><code>register_callback()</code></a>đi qua<a href="event" title="cpp/io/ios base/event"><code>erase_event</code></a>như tham số. Sau đó, giải quyết bất kỳ bộ nhớ thu được.</p>
+<p>Không có hoạt động trên<code>rdbuf</code>được thực hiện, nó không bị phá hủy.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3434" rel="nofollow">LWG 3434</a> </td> <td>C ++ 98</td> <td>chất phá hủy không bắt buộc phải lấy lại bộ nhớ cho<code>iarray</code>Và<code>parray</code> </td> <td>Thực hiện quá tải</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ios_base/%7Eios_base">https://en.cppreference.com/w/cpp/io/ios_base/%7Eios_base</a>
+</p>
+</div>

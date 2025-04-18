@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">std :: mask_array &lt;t&gt; :: toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">toán tử void = (const t &amp; value) const;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">toán tử void = (const std :: valarray &lt;t&gt; &amp; val_arr) const;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">const mask_array &amp; toán tử = (const mask_array &amp; other_arr) const;</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Gán các giá trị cho tất cả các yếu tố được giới thiệu.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Chỉ định<code>value</code>cho tất cả các yếu tố.</div> <div class="t-li1">
+<span class="t-li">2)</span>Gán các yếu tố của<code>val_arr</code>để được đề cập đến các yếu tố của<code>*this</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Gán các phần tử đã chọn từ<code>other_arr</code>để được đề cập đến các yếu tố của<code>*this</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>được phân vùng liên quan đến</td> <td>-</td> <td>một giá trị để gán cho tất cả các phần tử được giới thiệu</td>
+</tr> <tr class="t-par"> <td>val_arr</td> <td>-</td> <td> <code><a href="../../valarray" title="cpp/numeric/valarray">std::valarray</a></code>Số lượng các yếu tố để sửa đổi</td>
+</tr> <tr class="t-par"> <td>khác_arr</td> <td>-</td> <td> <code><a href="../mask_array" title="cpp/numeric/valarray/mask array">std::mask_array</a></code>Số lượng các yếu tố để sửa đổi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">Đầu vào</span>Gán cho đã cho</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <code>*this</code>
+</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;iomanip&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue123" rel="nofollow">LWG 123</a> </td> <td>C ++ 98</td> <td>quá tải (2) không phải là cuộc</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue253" rel="nofollow">LWG 253</a> </td> <td>C ++ 98</td> <td>Nhà điều hành phân công bản sao là riêng tư</td> <td>Hàm tạo mặc định là</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue621" rel="nofollow">LWG 621</a> </td> <td>C ++ 98</td> <td>Toán tử gán bản sao không phải là cuộc</td> <td> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/valarray/mask_array/operator%3D">https://en.cppreference.com/w/cpp/numeric/valarray/mask_array/operator%3D</a>
+</p>
+</div>

@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: RangeadapTorCluencesObject<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>
+</h1> <p><i>Nhìn thấy</i>&gt;<a href="functionobject" title="cpp/named req/FunctionObject">FunctionObjects</a>có thể gọi được thông qua toán tử ống: nếu<code>C</code>là một đối tượng đóng bộ điều hợp phạm vi và<code>R</code>Điều đó như vậy<a href="../ranges/range" title="cpp/ranges/range"><code>range</code></a>, hai biểu thức này là<a href="../language/expressions#Expression-equivalence" title="cpp/language/expressions">equivalent</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">C (r)</pre></div> <p>R | C<code>operator|</code>Hai đối tượng đóng bộ điều hợp phạm vi có thể được xích bằng cách<code>C</code>Và<code>D</code>để tạo một đối tượng đóng cửa bộ điều hợp phạm vi khác: nếu<code>C | D</code>là các đối tượng đóng bộ điều hợp phạm vi, sau đó<code>E</code>với các thuộc tính sau:</p>
+<ul>
+<li> <code>E</code>tạo ra một đối tượng đóng bộ điều hợp phạm vi<code>C</code>Và<code>D</code>lưu trữ một bản sao của<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>decltype<span class="br0">.</span><span class="br0">.</span>C<span class="br0">)</span><span class="br0">)</span><span class="sy1">&lt;</span><span class="br0">.</span>C<span class="br0">)</span></code>Và<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>decltype<span class="br0">.</span><span class="br0">.</span>D<span class="br0">)</span><span class="br0">)</span><span class="sy1">&lt;</span><span class="br0">.</span>D<span class="br0">)</span></code>, trực tiếp-không có danh sách khởi xướng từ<code>C | D</code>tương ứng. Nếu khởi tạo đó không hợp lệ,</li>
+<li>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>c</code>Và<code>d</code>cũng không hợp lệ.<code>E</code>), Và<code>R</code>là a<a href="../ranges/range" title="cpp/ranges/range"><code>range</code></a>là các bản sao được lưu trữ (với cùng một danh mục giá trị và giá trị như<a href="../language/expressions#Expression-equivalence" title="cpp/language/expressions">equivalent</a>:</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Đối tượng, các biểu thức sau là</pre></div> <p>Ghi chú:<code>operator()</code>d (c (r))</p>
+<p>R | C | d</p>
+<ul><li>E (r)</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul><li>R | E // R | (C | D)<a href="../ranges/range_adaptor_closure" title="cpp/ranges/range adaptor closure">the requirements of implementing a range adaptor closure object</a>Thì</li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <ul>
+<li>không được hỗ trợ cho phiên bản đủ điều kiện dễ bay hơi hoặc phản ứng phản ứng của các loại đóng các loại đối tượng bộ điều hợp phạm vi.</li>
+<li>Các đối tượng có loại giống như một trong các đối tượng sau (bỏ qua trình độ điều kiện CV) là các đối tượng đóng bộ điều hợp phạm vi:<code>operator|</code>.</li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/RangeAdaptorClosureObject">https://en.cppreference.com/w/cpp/named_req/RangeAdaptorClosureObject</a>
+</p>
+</div>

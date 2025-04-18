@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: độc đáo_lock &lt;drex&gt; :: try_lock</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">bool try_lock ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Cố gắng khóa (tức là, quyền sở hữu) Mutex liên quan mà không chặn. Gọi một cách hiệu quả<code>mutex()-&gt;try_lock()</code>.</p>
+<p><code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>bị ném nếu không có mutex liên quan hoặc nếu mutex đã bị khóa bởi cái này<code><a href="../unique_lock" title="cpp/thread/unique lock">std::unique_lock</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu quyền sở hữu của Mutex đã được mua lại thành công,<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <ul>
+<li>Bất kỳ trường hợp ngoại lệ nào được ném bởi<code>mutex()-&gt;try_lock()</code>.<a href="../../named_req/mutex" title="cpp/named req/Mutex">Mutex</a>Các loại không ném vào<code>try_lock</code>, nhưng một phong tục<a href="../../named_req/lockable" title="cpp/named req/Lockable">Lockable</a>có thể).</li>
+<li>Nếu không có mutex liên quan,<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>với mã lỗi của<code><a href="../../error/errc" title="cpp/error/errc">std::errc::operation_not_permitted</a></code>.</li>
+<li>Nếu mutex đã bị khóa bởi điều này<code>std::unique_lock</code>Thì<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>với mã lỗi của<code><a href="../../error/errc" title="cpp/error/errc">std::errc::resource_deadlock_would_occur</a></code>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Các ví dụ sau đây cố gắng để có được một mutex đã bị khóa và mở khóa.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lock" title="cpp/thread/unique lock/lock"> <span class="t-lines"><span>khóa</span></span></a></div> </td> <td>Mở khóa (tức là phát hành quyền sở hữu) Mutex, nếu được sở hữu và có được quyền sở hữu của người khác<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_lock_for" title="cpp/thread/unique lock/try lock for"> <span class="t-lines"><span>Try_lock_for</span></span></a></div> </td> <td>cố gắng khóa (tức là, quyền sở hữu) Mutex liên quan mà không chặn<a href="../../named_req/timedlockable" title="cpp/named req/TimedLockable">TimedLockable</a>Nỗ lực khóa (tức là, quyền sở hữu)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_lock_until" title="cpp/thread/unique lock/try lock until"> <span class="t-lines"><span>Try_lock_until</span></span></a></div> </td> <td>Mutex, trả về nếu Mutex không có sẵn trong khoảng thời gian quy định<a href="../../named_req/timedlockable" title="cpp/named req/TimedLockable">TimedLockable</a>cố gắng khóa (tức là, quyền sở hữu)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="unlock" title="cpp/thread/unique lock/unlock"> <span class="t-lines"><span>Mở khóa</span></span></a></div> </td> <td>Mutex, trả về nếu Mutex không có sẵn cho đến khi đạt được điểm thời gian được chỉ định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/unique_lock/try_lock">https://en.cppreference.com/w/cpp/thread/unique_lock/try_lock</a>
+</p>
+</div>

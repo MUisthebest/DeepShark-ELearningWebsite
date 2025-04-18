@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Bình đẳng có thể chấp nhận được</h1> <p>Loại phải hoạt động với toán tử == và kết quả nên có ngữ nghĩa tiêu chuẩn.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>T</code>thỏa mãn bình đẳng nếu</p>
+<p>Cho quá tải</p>
+<ul><li> <code>a</code>Thì<code>b</code>Và<code>c</code>, biểu thức của loại<span class="t-rev-inl t-since-cxx11"><span><code>T</code>hoặc</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> <code>const T</code>.</li></ul> <p>Các biểu thức sau phải hợp lệ và có các hiệu ứng được chỉ định của chúng:</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>a == b</code> </td> <td>
+<a class="mw-redirect" href="../language/implicit_cast" title="cpp/language/implicit cast">implicitly convertible</a>ĐẾN<code>bool</code> </td> <td>Thiết lập một<a class="extiw" href="https://en.wikipedia.org/wiki/Equivalence_relation" title="enwiki:Equivalence relation">equivalence relation</a>, đó là, nó thỏa mãn các thuộc tính sau:<ul>
+<li>Cho tất cả các giá trị của<code>a</code>Thì<code>a == a</code>        std :: Common_Reference_T &lt;<code>true</code>.</li>
+<li>Nếu như<code>a == b</code>, sau đó<code>b == a</code>.</li>
+<li>Nếu như<code>a == b</code>Và<code>b == c</code>, sau đó<code>a == c</code>.</li>
+</ul> </td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Để đáp ứng yêu cầu này, các loại không được tích hợp<a href="../language/operator_comparison" title="cpp/language/operator comparison">comparison operators</a>phải cung cấp một<a href="../language/operators" title="cpp/language/operators">user-defined operator==</a>.</p>
+<p>Đối với các loại đều không thể phân biệt được và<a href="lessthancomparable" title="cpp/named req/LessThanComparable">LessThanComparable</a>toán tử bool&gt; = (l, r);<i>toán tử bool == (l, r);</i>đó là con trỏ tới đối tượng hoặc con trỏ tới chức năng, chữ ký chức năng sau tham gia vào độ phân giải quá tải:<code>a == b</code>Và<i>Cho mọi loại</i>đó là con trỏ tới đối tượng hoặc con trỏ tới chức năng, chữ ký chức năng sau tham gia vào độ phân giải quá tải:<code>!(a &lt; b) &amp;&amp; !(b &lt; a)</code>.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue283" rel="nofollow">LWG 283</a> </td> <td>C ++ 98</td> <td>ngay cả khi<code>T</code>là bình đẳng, các yêu cầu không áp dụng cho<code>const T</code>Đối tượng</td> <td>Họ áp dụng cho<code>const T</code>Một số ưu điểm của căn hộ được đặt so với tiêu chuẩn khác<code>T</code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../concepts/equality_comparable" title="cpp/concepts/equality comparable"> <span class="t-lines"><span>Common_with</span><span>Chỉ định rằng hai loại chia sẻ một loại chung</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(ý tưởng)<code>==</code>Tích hợp<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/EqualityComparable">https://en.cppreference.com/w/cpp/named_req/EqualityComparable</a>
+</p>
+</div>

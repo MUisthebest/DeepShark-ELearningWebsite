@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">Flt_eval_method</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cfloat" title="cpp/header/cfloat">&lt;cfloat&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define flt_eval_method / * Xác định triển khai * / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Chỉ định độ chính xác trong đó tất cả các hoạt động số học dấu phẩy động khác ngoài việc chuyển nhượng và diễn viên được thực hiện.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>vĩ mô</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td>giá trị âm ngoại trừ<code>-1</code> </td> <td>Hành vi xác định thực hiện</td>
+</tr> <tr class="t-dsc"> <td> <code>-1</code> </td> <td>Độ chính xác mặc định không được biết đến</td>
+</tr> <tr class="t-dsc"> <td> <code>0</code> </td> <td>Tất cả các hoạt động và hằng số đánh giá trong phạm vi và độ chính xác của loại được sử dụng. Ngoài ra,<code>float_t</code>Và<code>double_t</code>tương đương với<code>float</code>Và<code>double</code>(Được kiểm soát bởi Chỉ thị</td>
+</tr> <tr class="t-dsc"> <td> <code>1</code> </td> <td>Tất cả các hoạt động và hằng số đánh giá trong phạm vi và độ chính xác của<code>double</code>. Ngoài ra, cả hai<code>float_t</code>Và<code>double_t</code>tương đương với<code>double</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>2</code> </td> <td>Tất cả các hoạt động và hằng số đánh giá trong phạm vi và độ chính xác của<code>long double</code>. Ngoài ra, cả hai<code>float_t</code>Và<code>double_t</code>tương đương với<code>long double</code> </td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Bất kể giá trị của<code>FLT_EVAL_METHOD</code>, bất kỳ biểu thức điểm nổi nào cũng có thể<i>ký hợp đồng</i>, nghĩa là, được tính toán như thể tất cả các kết quả trung gian đều có phạm vi và độ chính xác vô hạn (trừ khi<a href="../../preprocessor/impl" title="cpp/preprocessor/impl">#pragma</a> <code>STDC FP_CONTRACT</code>bị tắt)</p>
+<p>Dải phân bổ và phân công loại bỏ bất kỳ phạm vi và độ chính xác ngoại lai nào: Điều này mô hình hành động lưu trữ giá trị từ một thanh ghi FPU có chính xác mở rộng vào một vị trí bộ nhớ có kích thước tiêu chuẩn.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/types/limits/FLT_EVAL_METHOD" title="c/types/limits/FLT EVAL METHOD">C documentation</a></span>vì<code>FLT_EVAL_METHOD</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/climits/FLT_EVAL_METHOD">https://en.cppreference.com/w/cpp/types/climits/FLT_EVAL_METHOD</a>
+</p>
+</div>

@@ -8,6 +8,7 @@ body {
     max-width: 100vw;
     display: flex;
     overflow-x: hidden;
+    position: relative;
     height: auto;
     flex-direction: column;
     min-height: 100vh;
@@ -100,6 +101,13 @@ header nav ul li a.active {
     font-weight: bold;
 }
 
+.auth-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .auth-buttons a {
     color: #2A3335;
     text-decoration: none;
@@ -166,6 +174,12 @@ main {
 
 }
 
+@media (max-width: 768px) {
+    .hero .buttons a {
+        width: 100%;
+    }
+}
+
 .hero .buttons a > * {
     font-size: 20px;
     color: #000;
@@ -225,7 +239,7 @@ main {
 }
 
 .btn-secondary {
-    background-color: #A1D6CB;
+    background-color: gold;
     color: black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -428,8 +442,93 @@ main {
     flex: 1;
 }
 
+.container-llm { 
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    width: 100%;
+    background-image: url("../image/layout-background.svg");
+    background-size: cover;
+    overflow: hidden;
+    flex: 1;
+}
 
-.container h2 {
+.container-llm input {
+    background-color: #333;
+    color: #ffffff;
+    padding: 10px;
+    width: 50%;
+}
+
+.container-llm .content .input {
+    display: flex;
+    width: calc(50vw - 30px);
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.container-llm .content .output {
+    display: flex;
+    flex-direction: column;
+    width: calc(50vw - 30px);
+    margin-right: 15px;
+}
+
+.container-llm .content .output h3 {
+    margin-bottom: 5px;
+}
+
+.container-llm .content .output pre {
+    background-color: #ffffff;
+    height: 100%;
+    width: 100%;
+}
+
+.container-llm button {
+    background-color: gold;
+    padding: 10px;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: .04s linear;
+    border: 1px solid #ddd;
+}
+
+.container-llm button:hover {
+    color: gold;
+    background: transparent;
+    border: 1px solid gold;
+}
+
+
+.code-space {
+    display: flex;
+    height: 500px;
+    width: 100%;
+}
+
+.code-space textarea {
+    height: 100%;
+    width: 100%;
+}
+
+.container-llm .content {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+
+
+.container-llm h2 {
     font-size: calc(3vw + 7px);
     font-weight: bold;
     text-align: center;

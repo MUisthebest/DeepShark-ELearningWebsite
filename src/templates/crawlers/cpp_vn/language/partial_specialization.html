@@ -1,0 +1,59 @@
+ <h1 class="firstHeading" id="firstHeading">Chuyên ngành một phần</h1> <p>Cho phép tùy chỉnh lớp<span class="t-rev-inl t-since-cxx14"><span>và biến</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>Mẫu cho một danh mục nhất định của các đối số mẫu.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <span class="t-spar">Lớp học</span> <span class="t-spar">tên lớp học</span> <code>&lt;</code> <span class="t-spar">Danh sách lập luận</span> <code>&gt;</code> <span class="t-spar">tuyên ngôn</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>template</code> <code>&lt;</code> <span class="t-spar">danh sách tham số</span> <code>&gt;</code> <span class="t-spar">DEM-SPECIFIER-SEQ</span> <span class="t-spar">người khai báo</span> <code>&lt;</code> <span class="t-spar">Danh sách lập luận</span> <code>&gt;</code> <span class="t-spar">Khởi tạo</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td>
+</tr>
+</table> <p>Ở đâu<span class="t-spar">tên lớp học</span>Xác định tên của một tuyên bố trước đó<a href="class_template" title="cpp/language/class template">class template</a><span class="t-rev-inl t-since-cxx14"><span>Và<span class="t-spar">người khai báo</span>Xác định tên của một tuyên bố trước đó<a href="variable_template" title="cpp/language/variable template">variable template</a></span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>.</p>
+<p>Chuyên môn hóa một phần có thể được khai báo trong bất kỳ phạm vi nào trong đó mẫu chính của nó có thể được xác định (có thể khác với phạm vi mà mẫu chính được xác định<a href="member_template" title="cpp/language/member template">member template</a>). Chuyên môn một phần phải xuất hiện sau khi khai báo mẫu không chuyên hóa.</p>
+<p>Ví dụ,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Lớp T1, Lớp T2, Int I&gt;</pre></div> <p>lớp A {};             // Mẫu chính<code><a href="../memory/unique_ptr" title="cpp/memory/unique ptr">std::unique_ptr</a></code> </p>
+<h3 id="The_argument_list">Mẫu &lt;class T, int i&gt;</h3> <p>lớp A &lt;t, t*, i&gt; {};   // #1: Chuyên ngành một phần trong đó T2 là con trỏ tới T1<span class="t-spar">Danh sách lập luận</span> </p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class T, Class T2, Int I&gt;<div class="cpp source-cpp"><pre data-language="cpp">lớp A &lt;t*, t2, i&gt; {};  // #2: Chuyên môn một phần trong đó T1 là con trỏ</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>lớp A &lt;int, t*, 5&gt; {}; // #3: Chuyên ngành một phần trong đó</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>                        // t1 là int, tôi là 5 và t2 là một con trỏ</div> <div class="t-li1">
+<span class="t-li">là trong</span> <a href="template_argument_deduction#Non-deduced_contexts" title="cpp/language/template argument deduction">non-deduced context</a>Mẫu &lt;Lớp X, Lớp T, Int I&gt;<div class="cpp source-cpp"><pre data-language="cpp">lớp A &lt;x, t*, i&gt; {};   // #4: Chuyên môn một phần trong đó T2 là con trỏ</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Ví dụ về các chuyên ngành một phần trong thư viện tiêu chuẩn bao gồm<div class="cpp source-cpp"><pre data-language="cpp">, trong đó có một chuyên môn một phần cho các loại mảng.</pre></div>
+</div> <h3 id="Name_lookup">Tra cứu tên</h3> <p>Danh sách đối số</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Các hạn chế sau đây áp dụng cho</pre></div> <h3 id="Partial_ordering">, Điều này cũng sẽ cho phép kiểm tra bất bình đẳng:</h3> <p>của một chuyên môn mẫu một phần:<span class="t-rev-inl t-since-cxx14"><span>địa chỉ biểu thức không đổi</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>Danh sách đối số không thể giống với danh sách đối số không chuyên hóa (nó phải chuyên về một cái gì đó):</p>
+<div class="t-li1">
+<span class="t-li">1)</span>mẫu &lt;class T1, lớp T2, int i&gt; class B {};        // Mẫu chính</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;Lớp X, Lớp Y, Int N&gt; Lớp B &lt;X, Y, N&gt; {}; // lỗi</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Hơn nữa, chuyên môn hóa phải chuyên môn hơn mẫu chính<div class="cpp source-cpp"><pre data-language="cpp">mẫu &lt;int n, typename t1, typename ... ts&gt; struct b;</pre></div>
+</div> <p>mẫu &lt;typename ... ts&gt; struct b &lt;0, ts ...&gt; {}; // Lỗi: không chuyên hơn</p>
+<p>Đối số mặc định không thể xuất hiện trong danh sách đối số</p>
+<ul>
+<li>Nếu bất kỳ đối số nào là mở rộng gói, nó phải là đối số cuối cùng trong danh sách</li>
+<li>Biểu thức đối số không loại có thể sử dụng tham số mẫu miễn là tham số xuất hiện ít nhất một lần bên ngoài</li>
+</ul> <p>(Lưu ý rằng chỉ có Clang hỗ trợ tính năng này hiện tại):<a href="function_template#Function_template_overloading" title="cpp/language/function template">function template overloading</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">mẫu &lt;int i, int j&gt; struct a {};</pre></div> <h3 id="Members_of_partial_specializations">mẫu &lt;int i&gt; struct a &lt;i + 5, i * 2&gt; {}; // lỗi, tôi không suy luận</h3> <p> </p>
+<p>mẫu &lt;int i, int j, int k&gt; struct b {};</p>
+<p>mẫu &lt;int i&gt; struct b &lt;i, i * 2, 2&gt; {};  // OK: Tham số đầu tiên được suy luận</p>
+<p>Đối số mẫu không phải kiểu không thể chuyên về tham số mẫu có loại phụ thuộc vào tham số của chuyên môn hóa:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">mẫu &lt;class t, t t&gt; struct c {}; // Mẫu chính</pre></div> <p>mẫu &lt;class t&gt; struct c &lt;t, 1&gt;;   // Lỗi: loại đối số 1 là T,</p>
+<p>                                    // phụ thuộc vào tham số t</p>
+<p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">mẫu &lt;int x, int (*mảng_ptr) [x]&gt; class b {}; // Mẫu chính</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/727.html" rel="nofollow">CWG 727</a> </td> <td>C ++ 98</td> <td>mảng int [5];<br/>mẫu &lt;int x&gt; class B &lt;x, &amp; mảng&gt; {}; // Lỗi: loại đối số &amp; mảng là</td> <td>                                       // int (*) [x], phụ thuộc vào tham số x</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1315.html" rel="nofollow">CWG 1315</a> </td> <td>C ++ 98</td> <td>Chuyên môn mẫu một phần không được tìm thấy bằng cách tra cứu tên. Chỉ khi mẫu chính được tìm thấy bằng cách tra cứu tên, các chuyên ngành một phần của nó được xem xét. Cụ thể, việc sử dụng tuyên bố làm cho một mẫu chính có thể nhìn thấy, cũng có thể nhìn thấy các chuyên ngành một phần:<br/>không gian tên n</td> <td>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1495.html" rel="nofollow">CWG 1495</a> </td> <td>C ++ 11</td> <td>    mẫu &lt;class t1, class t2&gt; class z {}; // Mẫu chính</td> <td>}</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1711.html" rel="nofollow">CWG 1711</a> </td> <td>C ++ 14</td> <td>sử dụng n :: z; // đề cập đến mẫu chính</td> <td>}</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1819.html" rel="nofollow">CWG 1819</a> </td> <td>C ++ 98</td> <td>không gian tên n</td> <td>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2330.html" rel="nofollow">CWG 2330</a> </td> <td>C ++ 14</td> <td>    mẫu &lt;class t&gt; class z &lt;t, t*&gt; {};     // Chuyên môn một phần</td> <td>}</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/partial_specialization">https://en.cppreference.com/w/cpp/language/partial_specialization</a>
+</p>
+</div>

@@ -1,0 +1,151 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Chaltraits</h1> <p><strong class="selflink">Chartraits</strong>là một lớp đặc điểm tóm tắt các hoạt động ký tự và chuỗi cơ bản cho một loại ký tự nhất định. Hầu hết các lớp thư viện tiêu chuẩn và các lớp đầu vào/đầu ra yêu cầu tham số loại mẫu Chartraits cùng với tham số loại mẫu ký tự tương ứng.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Không có hoạt động nào được liệt kê dưới đây trên Chartraits có thể ném một ngoại lệ.</p>
+<p>Cho quá tải</p>
+<ul>
+<li> <code>CharT</code>, một loại nhân vật</li>
+<li> <code>X</code>, một loại Chartraits cho loại<code>CharT</code> </li>
+<li> <code>c</code>Thì<code>d</code>, giá trị của loại<code>CharT</code> </li>
+<li> <code>p</code>Thì<code>q</code>, giá trị của loại<span class="kw4">hằng số</span> <span class="sy2">*</span> </li>
+<li> <code>s</code>, một giá trị của loại<code>CharT*</code> </li>
+<li> <code>n</code>Thì<code>i</code>Thì<code>j</code>, giá trị của loại<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code> </li>
+<li> <code>e</code>Thì<code>f</code>, giá trị của loại<code>X::int_type</code> </li>
+<li> <code>pos</code>, một giá trị của loại<code>X::pos_type</code> </li>
+<li> <code>state</code>, một giá trị của loại<code>X::state_type</code> </li>
+<li> <code>r</code>TRÊN<code>CharT</code> </li>
+</ul> <h3 id="Types">Loại</h3> <table class="wikitable"> <tr> <th>Kiểu</th> <th>Ngữ nghĩa</th>
+</tr> <tr> <td>
+<code>X::char_type</code> </td> <td> <code>CharT</code> </td>
+</tr> <tr> <td>
+<code>X::int_type</code> </td> <td>Một loại có thể chứa tất cả các giá trị hợp lệ của<code>X::char_type</code>                           Forwardit1 đầu tiên, forwardit1 cuối cùng,<code>X::eof()</code> </td>
+</tr> <tr> <td>
+<code>X::off_type</code> </td> <td>Gọi hành vi được xác định thực hiện nếu không<code><a href="../io/streamoff" title="cpp/io/streamoff">std::streamoff</a></code>Chuyển đổi danh tính:<code>X</code>được sử dụng làm tham số mẫu đặc điểm trong các lớp đầu vào/đầu ra.</td>
+</tr> <tr> <td>
+<code>X::pos_type</code> </td> <td> <ul>
+<li>Các chức năng trong các lớp đầu vào/đầu ra Trả về loại này Sử dụng<code>X::pos_type(X::off_type(-1))</code>Là một giá trị không hợp lệ để báo hiệu một lỗi</li>
+<li>Sử dụng giá trị không hợp lệ này như một đối số cho bất kỳ<code><a href="../io/basic_istream" title="cpp/io/basic istream">std::istream</a></code>Thì<code><a href="../io/basic_ostream" title="cpp/io/basic ostream">std::ostream</a></code>hoặc<code><a href="../io/basic_streambuf" title="cpp/io/basic streambuf">std::streambuf</a></code>Thành viên lấy giá trị của loại này là hành vi không xác định</li>
+<li>Gọi hành vi được xác định theo thực hiện nếu loại này không<code><a href="../io/fpos" title="cpp/io/fpos">std::streampos</a></code>Chuyển đổi danh tính:<code>X</code>được sử dụng làm tham số mẫu đặc điểm trong các lớp đầu vào/đầu ra</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>X::state_type</code> </td> <td> <a href="destructible" title="cpp/named req/Destructible">Destructible</a>Thì<a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>Thì<a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>Thì<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a> </td>
+</tr>
+</table> <h3 id="Expressions">Chuyển đổi lvalue-sang rvalue không được áp dụng</h3> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Ngữ nghĩa</th> <th>Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</th>
+</tr> <tr> <td>
+<code>X::eq(c, d)</code> </td> <td> <span class="kw4">bool</span> </td> <td>Trả lại: Cho dù<code>c</code>được coi là bằng<code>d</code> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>X::lt(c, d)</code> </td> <td> <span class="kw4">bool</span> </td> <td>Trả lại: Cho dù<code>c</code>được coi là ít hơn<code>d</code> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>X::compare(p, q, n)</code> </td> <td> <span class="kw4">int</span> </td> <td>Consexpr Prev_Permuting_Result &lt;i&gt;<ul>
+<li> <code>​0​</code>Nếu cho mỗi<code>i</code>TRONG<code>[</code><code>​0​</code><code>, </code><code>n</code><code>)</code>Thì<code>X::eq(p[i], q[i])</code>khoảng cách<code>true</code> </li>
+<li>Khác, một giá trị âm nếu<ul>
+<li>Cho một số<code>j</code>TRONG<code>[</code><code>​0​</code><code>, </code><code>n</code><code>)</code>Thì<code>X::lt(p[j], q[j])</code>khoảng cách<code>true</code>Và</li>
+<li>Cho mỗi<code>i</code>TRONG<code>[</code><code>​0​</code><code>, </code><code>j</code><code>)</code>Thì<code>X::eq(p[i], q[i])</code>khoảng cách<code>true</code> </li>
+</ul> </li>
+<li>Khác là một giá trị dương</li>
+</ul> </td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td>
+<code>X::length(p)</code> </td> <td> <code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code> </td> <td>Trả lại: nhỏ nhất<code>i</code>chỉ vào trình tự và mọi số nguyên không âm<code>X::eq(p[i], CharT())</code>khoảng cách<code>true</code> </td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td>
+<code>X::find(p, n, c)</code> </td> <td> <span class="kw4">hằng số</span>X<span class="sy4">::</span><span class="me2">char_type</span><span class="sy2">*</span> </td> <td>Consexpr Prev_Permuting_Result &lt;i&gt;<ul>
+<li>Nhỏ nhất<code>q</code>TRONG<code>[</code><code>p</code><code>, </code><code>p + n</code><code>)</code>chỉ vào trình tự và mọi số nguyên không âm<code>X::eq(*q, c)</code>khoảng cách<code>true</code> </li>
+<li> <code>​0​</code>[tĩnh]</li>
+</ul> </td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td>
+<code>X::move(s, p, n)</code> </td> <td> <code>X::char_type*</code> </td> <td> <ul>
+<li>Cho mỗi<code>i</code>TRONG<code>[</code><code>​0​</code><code>, </code><code>n</code><code>)</code>Bản sao chính xác<code>X::assign(s[i], p[i])</code> </li>
+<li>Bản sao chính xác ngay cả khi phạm vi<code>[</code><code>p</code><code>, </code><code>p + n</code><code>)</code>Và<code>[</code><code>s</code><code>, </code><code>s + n</code><code>)</code>chồng chéo</li>
+<li>Consexpr Prev_Permuting_Result &lt;i&gt;<code>s</code> </li>
+</ul> </td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td>
+<code>X::copy(s, p, n)</code> </td> <td> <code>X::char_type*</code> </td> <td> <ul>
+<li>Yêu cầu:<code>[</code><code>p</code><code>, </code><code>p + n</code><code>)</code>Và<code>[</code><code>s</code><code>, </code><code>s + n</code><code>)</code>Không chồng chéo</li>
+<li>Consexpr Prev_Permuting_Result &lt;i&gt;<code>s</code> </li>
+<li>Cho mỗi<code>i</code>TRONG<code>[</code><code>​0​</code><code>, </code><code>n</code><code>)</code>Bản sao chính xác<code>X::assign(s[i], p[i])</code> </li>
+</ul> </td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td>
+<code>X::assign(r, d)</code> </td> <td>(Không được sử dụng)</td> <td>Chỉ định<code>r = d</code> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>X::assign(s, n, c)</code> </td> <td> <code>X::char_type*</code> </td> <td> <ul>
+<li>Cho mỗi<code>i</code>TRONG<code>[</code><code>​0​</code><code>, </code><code>n</code><code>)</code>Bản sao chính xác<code>X::assign(s[i], c)</code>.</li>
+<li>Consexpr Prev_Permuting_Result &lt;i&gt;<code>s</code> </li>
+</ul> </td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td>
+<code>X::not_eof(e)</code> </td> <td> <code>X::int_type</code> </td> <td>Consexpr Prev_Permuting_Result &lt;i&gt;<ul>
+<li> <code>e</code>nếu như<code>X::eq_int_type(e, X::eof())</code>khoảng cách<code>false</code> </li>
+<li>Nếu không thì một giá trị<code>f</code>chỉ vào trình tự và mọi số nguyên không âm<code>X::eq_int_type(f, X::eof())</code>khoảng cách<code>false</code> </li>
+</ul> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>X::to_char_type(e)</code> </td> <td> <code>X::char_type</code> </td> <td>Consexpr Prev_Permuting_Result &lt;i&gt;<ul>
+<li>Nếu đối với một số<code>c</code>Thì<code>X::eq_int_type(e, X::to_int_type(c))</code>khoảng cách<code>true</code>Thì<code>c</code> </li>
+<li>Khác một số giá trị không xác định</li>
+</ul> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>X::to_int_type(c)</code> </td> <td> <code>X::int_type</code> </td> <td>Trả về: Một số giá trị<code>e</code>, bị hạn chế bởi các định nghĩa của<code>X::to_char_type</code>Và<code>X::eq_int_type</code> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>X::eq_int_type(e, f)</code> </td> <td> <span class="kw4">bool</span> </td> <td> <ul>
+<li>Cho tất cả<code>c</code>Và<code>d</code>Thì<code>X::eq(c, d)</code>hoặc một loại chính sách thực thi được xác định theo thực hiện. Nếu không thì,<code>X::eq_int_type(X::to_int_type(c), X::to_int_type(d))</code> </li>
+<li>Consexpr Prev_Permuting_Result &lt;i&gt;<ul>
+<li>Năng suất<code>X::eq(c, d)</code>Nếu đối với một số<code>c</code>Và<code>d</code>Thì<code>e == X::to_int_type(c)</code>Và<code>f == X::to_int_type(d)</code> </li>
+<li>Nếu không, sản lượng<code>true</code>nếu như<code>e</code>Và<code>f</code>Cả hai là bản sao của<code>X::eof()</code> </li>
+<li>Nếu không, sản lượng<code>false</code>Nếu một trong số<code>e</code>Và<code>f</code>là một bản sao của<code>X::eof()</code>Và cái khác không phải là</li>
+<li>Nếu không, giá trị không được xác định</li>
+</ul> </li>
+</ul> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>X::eof()</code> </td> <td> <code>X::int_type</code> </td> <td>Trả về: Một giá trị<code>e</code>chỉ vào trình tự và mọi số nguyên không âm<code>X::eq_int_type(e, X::to_int_type(c))</code>khoảng cách<code>false</code>cho tất cả các giá trị<code>c</code> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr>
+</table> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>Chaltraits được yêu cầu bởi các mẫu lớp thư viện tiêu chuẩn sau đây làm tham số loại mẫu:</p>
+<table class="t-dsc-begin"> <tr> <td colspan="2"> <h5 id="Strings">Chuỗi</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/basic_string" title="cpp/string/basic string"> <span class="t-lines"><span>BASIC_STRING</span></span></a></div> </td> <td>Lưu trữ và thao túng chuỗi các ký tự<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../string/basic_string_view" title="cpp/string/basic string view"> <span class="t-lines"><span>BASIC_STRING_VIEW</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Chế độ xem chuỗi chỉ đọc<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Streams">Suối</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_ios" title="cpp/io/basic ios"> <span class="t-lines"><span>BASIC_IOS</span></span></a></div> </td> <td>quản lý bộ đệm luồng tùy ý<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_istream" title="cpp/io/basic istream"> <span class="t-lines"><span>basic_istream</span></span></a></div> </td> <td>Kết thúc một thiết bị trừu tượng nhất định (<code><a href="../io/basic_streambuf" title="cpp/io/basic streambuf">std::basic_streambuf</a></code>)<br/>và cung cấp giao diện đầu vào cấp cao<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_ifstream" title="cpp/io/basic ifstream"> <span class="t-lines"><span>basic_ifstream</span></span></a></div> </td> <td>thực hiện các hoạt động đầu vào dòng tệp cấp cao<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_istringstream" title="cpp/io/basic istringstream"> <span class="t-lines"><span>BASIC_ISTRINGTREAM</span></span></a></div> </td> <td>thực hiện các hoạt động đầu vào chuỗi chuỗi cấp cao<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_ispanstream" title="cpp/io/basic ispanstream"> <span class="t-lines"><span>BASIC_ISPANSTREAM</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>thực hiện các hoạt động đầu vào bộ đệm ký tự cố định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_ostream" title="cpp/io/basic ostream"> <span class="t-lines"><span>BASIC_OSTREAM</span></span></a></div> </td> <td>Kết thúc một thiết bị trừu tượng nhất định (<code><a href="../io/basic_streambuf" title="cpp/io/basic streambuf">std::basic_streambuf</a></code>)<br/>và cung cấp giao diện đầu ra cấp cao<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_ofstream" title="cpp/io/basic ofstream"> <span class="t-lines"><span>basic_ofstream</span></span></a></div> </td> <td>thực hiện các hoạt động đầu ra luồng tệp cấp cao<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_ostringstream" title="cpp/io/basic ostringstream"> <span class="t-lines"><span>BASIC_OSTRINGTREAM</span></span></a></div> </td> <td>thực hiện các hoạt động đầu ra luồng chuỗi cấp cao<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_osyncstream" title="cpp/io/basic osyncstream"> <span class="t-lines"><span>basic_osyncstream</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>trình bao bọc dòng đầu ra đồng bộ<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_ospanstream" title="cpp/io/basic ospanstream"> <span class="t-lines"><span>BASIC_OSPANSTREAM</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>thực hiện các hoạt động đầu ra bộ đệm ký tự cố định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_iostream" title="cpp/io/basic iostream"> <span class="t-lines"><span>basic_iostream</span></span></a></div> </td> <td>Kết thúc một thiết bị trừu tượng nhất định (<code><a href="../io/basic_streambuf" title="cpp/io/basic streambuf">std::basic_streambuf</a></code>)<br/>và cung cấp giao diện đầu vào/đầu ra cấp cao<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_fstream" title="cpp/io/basic fstream"> <span class="t-lines"><span>basic_fstream</span></span></a></div> </td> <td>thực hiện các hoạt động đầu vào/đầu ra của luồng tệp cấp cao<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_stringstream" title="cpp/io/basic stringstream"> <span class="t-lines"><span>BASIC_STRINGSTREAM</span></span></a></div> </td> <td>thực hiện các hoạt động đầu vào/đầu ra chuỗi cấp cao<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_spanstream" title="cpp/io/basic spanstream"> <span class="t-lines"><span>BASIC_SPANSTREAM</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>thực hiện các hoạt động đầu vào/đầu ra của bộ đệm ký tự cố định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Stream_iterators">Phát trực tuyến</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../iterator/istream_iterator" title="cpp/iterator/istream iterator"> <span class="t-lines"><span>istream_iterator</span></span></a></div> </td> <td>Đầu vào đầu vào đọc từ<code><a href="../io/basic_istream" title="cpp/io/basic istream">std::basic_istream</a></code> <br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../iterator/ostream_iterator" title="cpp/iterator/ostream iterator"> <span class="t-lines"><span>Ostream_Iterator</span></span></a></div> </td> <td>đầu ra lặp đi lặp lại<code><a href="../io/basic_ostream" title="cpp/io/basic ostream">std::basic_ostream</a></code> <br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Stream_buffers">Bộ đệm phát trực tuyến</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_streambuf" title="cpp/io/basic streambuf"> <span class="t-lines"><span>basic_streambuf</span></span></a></div> </td> <td>Tóm tắt một thiết bị thô<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_filebuf" title="cpp/io/basic filebuf"> <span class="t-lines"><span>BASIC_FILEBUF</span></span></a></div> </td> <td>thực hiện thiết bị tệp thô<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_stringbuf" title="cpp/io/basic stringbuf"> <span class="t-lines"><span>BASIC_STRINGBUF</span></span></a></div> </td> <td>thực hiện thiết bị chuỗi thô<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_syncbuf" title="cpp/io/basic syncbuf"> <span class="t-lines"><span>basic_syncbuf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>bao bọc thiết bị đầu ra đồng bộ<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/basic_spanbuf" title="cpp/io/basic spanbuf"> <span class="t-lines"><span>BASIC_SPANBUF</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>thực hiện thiết bị đệm ký tự cố định thô<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Stream_buffer_iterators">Trình lặp bộ đệm phát trực tuyến</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../iterator/istreambuf_iterator" title="cpp/iterator/istreambuf iterator"> <span class="t-lines"><span>istreambuf_iterator</span></span></a></div> </td> <td>Đầu vào đầu vào đọc từ<code><a href="../io/basic_streambuf" title="cpp/io/basic streambuf">std::basic_streambuf</a></code> <br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../iterator/ostreambuf_iterator" title="cpp/iterator/ostreambuf iterator"> <span class="t-lines"><span>Ostreambuf_iterator</span></span></a></div> </td> <td>đầu ra lặp đi lặp lại<code><a href="../io/basic_streambuf" title="cpp/io/basic streambuf">std::basic_streambuf</a></code> <br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <p><br/>Chaltraits được thỏa mãn bởi các chuyên ngành thư viện tiêu chuẩn sau đây của<code><a href="../string/char_traits" title="cpp/string/char traits">std::char_traits</a></code>:</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">mẫu &lt;&gt; class char_traits &lt;par&gt;;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <br/><br/><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue335" rel="nofollow">LWG 335</a> </td> <td>C ++ 98</td> <td>mẫu &lt;&gt; class char_traits &lt;wchar_t&gt;;<br/><code>assign</code>mẫu &lt;&gt; class char_traits &lt;par8_t&gt;;</td> <td>Mẫu &lt;&gt; lớp char_traits &lt;par16_t&gt;;<br/>mẫu &lt;&gt; class char_traits &lt;par32_t&gt;;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue352" rel="nofollow">LWG 352</a> </td> <td>C ++ 98</td> <td>
+<code>X::state_type</code>các yêu cầu về quá tải nhị phân của<br/>không ngăn chặn các bài tập cho rvalues<a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a> </td> <td>Lập luận đầu tiên của nó<br/><a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>Và<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3085" rel="nofollow">LWG 3085</a> </td> <td>C ++ 98</td> <td>
+<code>X::copy(s, p, n)</code>                                    Outputit D_First,<code>p</code>không<br/>TRONG<code>[</code><code>s</code><code>, </code><code>s + n</code><code>)</code>chỉ có thể là một lvalue<sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> </td> <td>Trả về kết quả của hội nghị derefering<code>[</code><code>p</code><code>, </code><code>p + n</code><code>)</code>Và<br/><code>[</code><code>s</code><code>, </code><code>s + n</code><code>)</code>chỉ là</td>
+</tr>
+</table> <ol class="references"> <li id="cite_note-1"> <span class="reference-text"><code>[</code><code>p</code><code>, </code><code>p + n</code><code>)</code>Và<code>[</code><code>s</code><code>, </code><code>s + n</code><code>)</code>bắt buộc phải được<code><a href="../string/byte/memcpy" title="cpp/string/byte/memcpy">std::memcpy</a></code>để thực hiện<code>X::copy</code>Nó cũng được yêu cầu</span> </li> </ol> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/CharTraits">https://en.cppreference.com/w/cpp/named_req/CharTraits</a>
+</p>
+</div>

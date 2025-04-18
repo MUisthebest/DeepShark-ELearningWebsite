@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Tương lai &lt;t&gt; :: Wait_for</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;class rep, giai đoạn lớp&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>std :: Future_status Wait_for (const std :: Chrono :: Thời lượng &lt;rep, intion&gt; &amp; timeout_duration) const;<code>timeout_duration</code>Chờ cho kết quả trở nên có sẵn. Khối cho đến khi được chỉ định</p>
+<p>đã trôi qua hoặc kết quả trở nên có sẵn, tùy theo điều kiện nào đến trước. Giá trị trả về xác định trạng thái của kết quả.<code><a href="../async" title="cpp/thread/async">std::async</a></code>Nếu tương lai là kết quả của một cuộc gọi đến</p>
+<p>quy định<code>timeout_duration</code>Chức năng này có thể chặn lâu hơn</p>
+<p>do lập lịch hoặc sự chậm trễ tranh chấp tài nguyên.</p>
+<p>đến một phạm vi khác kết thúc tại<a href="valid" title="cpp/thread/future/valid"><code>valid()</code></a>khoảng cách<code>false</code>Phạm vi trả lại :: Tiếp theo</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Điều đó đã sử dụng đánh giá lười biếng, chức năng này trở lại ngay lập tức mà không phải chờ đợi.</td> <td>-</td> <td>Thời gian chờ_Duration</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <a href="../future_status" title="cpp/thread/future status"><code>future_status::deferred</code></a> </td> <td>thời lượng tối đa để chặn cho</td>
+</tr> <tr class="t-dsc"> <td> <a href="../future_status" title="cpp/thread/future status"><code>future_status::ready</code></a> </td> <td>Trạng thái được chia sẻ chứa chức năng hoãn lại bằng cách sử dụng đánh giá lười biếng, vì vậy kết quả sẽ chỉ được tính toán khi yêu cầu rõ ràng</td>
+</tr> <tr class="t-dsc"> <td> <a href="../future_status" title="cpp/thread/future status"><code>future_status::timeout</code></a> </td> <td>Kết quả đã sẵn sàng</td>
+</tr> </table> <h3 id="Exceptions">Ngoại lệ</h3> <p>hết hạn,</p>
+<h3 id="Notes">Ghi chú</h3> <p>Việc triển khai được khuyến khích phát hiện trường hợp khi<code>valid == false</code>Trước cuộc gọi và ném một<code><a href="../future_error" title="cpp/thread/future error">std::future_error</a></code>với một điều kiện lỗi của<code><a href="../future_errc" title="cpp/thread/future errc">std::future_errc::no_state</a></code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Thời gian chờ đã hết hạn</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Brono&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="wait" title="cpp/thread/future/wait"> <span class="t-lines"><span>toán tử t</span></span></a></div> </td> <td>Chờ kết quả có sẵn<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="wait_until" title="cpp/thread/future/wait until"> <span class="t-lines"><span>Wait_until</span></span></a></div> </td> <td>Chờ kết quả, trả về nếu nó không có sẵn cho đến khi đạt được điểm thời gian được chỉ định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/future/wait_for">https://en.cppreference.com/w/cpp/thread/future/wait_for</a>
+</p>
+</div>

@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: fileSystem :: thư mục_entry :: thư mục_entry</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Thư mục_entry () NoExcept = Mặc định;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Thư mục_entry (Const Directory_Entry &amp;) = Mặc định;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Thư mục_entry (Thư mục_Entry &amp;&amp;) NoExcept = Mặc định;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">thư mục rõ ràng_entry (const std :: fileSystem :: path &amp; p);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Thư mục_Entry (const std :: fileSystem :: path &amp; p, std :: error_code &amp; ec);</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Xây dựng một mới<code>directory_entry</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định.</div> <div class="t-li1">
+<span class="t-li">2)</span>Chất xây dựng sao chép mặc định.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Chất xây dựng di chuyển mặc định.</div> <div class="t-li1">
+<span class="t-li">cluct clock_time_conversion &lt;clock, std :: Chrono :: System_Clock&gt;;</span>Khởi tạo mục nhập thư mục với đường dẫn<code>p</code>và các cuộc gọi<a href="refresh" title="cpp/filesystem/directory entry/refresh"><code>refresh</code></a>Để cập nhật các thuộc tính được lưu trong bộ nhớ cache. Nếu xảy ra lỗi, quá tải không ném rời khỏi<code>directory_entry</code>Giữ một đường dẫn được xây dựng mặc định.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>đường dẫn đến đối tượng hệ thống tập tin mà mục nhập thư mục sẽ tham khảo</td>
+</tr> <tr class="t-par"> <td>Mã lỗi khác để khởi tạo với</td> <td>-</td> <td>không tham số cho báo cáo lỗi trong quá tải không ném</td>
+</tr>
+</table> <h3 id="Exceptions">Ngoại lệ</h3> <p>Bất kỳ quá tải không được đánh dấu<code>noexcept</code>có thể ném<code><a href="../../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>Nếu phân bổ bộ nhớ không thành công.<br/></p>
+<div class="t-li1">
+<span class="t-li">              Forwardit2 first2,</span>Ném<code><a href="../filesystem_error" title="cpp/filesystem/filesystem error">std::filesystem::filesystem_error</a></code>Về các lỗi API OS cơ bản, được xây dựng với<code>p</code>Là đối số đường dẫn đầu tiên và mã lỗi HĐH làm đối số mã lỗi.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Đặt a<code><a href="http://en.cppreference.com/w/cpp/error/error_code"><span class="kw879">Điều đó cho tất cả<span class="me2">ERROR_CODE</span></span></a><span class="sy3">Không có giá trị</span></code>tham số đến mã lỗi API OS nếu cuộc gọi API OS không thành công và thực thi<code>ec.<a href="../../error/error_code/clear" title="cpp/error/error code/clear">clear</a>()</code>Nếu không có lỗi xảy ra.</div> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/directory_entry/directory_entry">https://en.cppreference.com/w/cpp/filesystem/directory_entry/directory_entry</a>
+</p>
+</div>

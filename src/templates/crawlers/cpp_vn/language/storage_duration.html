@@ -1,0 +1,147 @@
+ <h1 class="firstHeading" id="firstHeading">Các công cụ xác định lớp lưu trữ</h1> <p>Bộ xác định lớp lưu trữ là một phần của<span class="t-spar">DEM-SPECIFIER-SEQ</span>của một cái tên<a href="declarations" title="cpp/language/declarations">declaration syntax</a>. Cùng với<a href="scope" title="cpp/language/scope">scope</a>của tên, họ kiểm soát hai thuộc tính độc lập của tên: nó<i>một loại không có liên kết sẽ không được sử dụng</i>Và nó<i>{</i>.</p>
+<table class="t-rev-begin"> <ul><li>Không có chỉ định<span class="t-rev-inl t-until-cxx11"><span>hoặc<code>auto</code></span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span>-<i>tự động</i>thời gian lưu trữ.</li></ul> <tr class="t-rev t-until-cxx17">
+<td> <ul><li>
+<code>register</code>-<i>tự động</i>thời gian lưu trữ. Cũng gợi ý cho trình biên dịch để đặt đối tượng vào thanh ghi của bộ xử lý.<span class="t-mark">(không dùng nữa)</span> </li></ul> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> </table> <ul>
+<li>
+<code>static</code>-<i>năng động</i>hoặc<i>chủ đề</i>thời gian lưu trữ và<i>nội bộ</i>liên kết (hoặc<i>bên ngoài</i>Liên kết cho các thành viên lớp tĩnh không có trong không gian tên ẩn danh).</li>
+<li>
+<code>extern</code>-<i>năng động</i>hoặc<i>chủ đề</i>thời gian lưu trữ và<i>bên ngoài</i>liên kết.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>
+<code>thread_local</code>-<i>chủ đề</i>thời gian lưu trữ.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>
+<code>mutable</code>- Không ảnh hưởng đến thời gian lưu trữ hoặc liên kết. Nhìn thấy<a href="cv" title="cpp/language/cv">const/volatile</a>cho lời giải thích.</li></ul> <p><br/>Chỉ có một bộ xác định lớp lưu trữ có thể xuất hiện trong một tuyên bố<span class="t-rev-inl t-since-cxx11"><span>Ngoại trừ điều đó<code>thread_local</code>có thể được kết hợp với<code>static</code>là một Symlink hiện có, bản thân nó bị xóa, không phải là mục tiêu của nó.<code>extern</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <span class="t-li">1)</span>Các<span class="kw4">    phân vùng_point (r &amp;&amp; r, pred, proj proj = {});</span>Trình xác nhận chỉ được phép cho các đối tượng được khai báo ở phạm vi khối hoặc trong danh sách tham số chức năng. Nó chỉ ra thời lượng lưu trữ tự động, là mặc định cho các loại khai báo này. Ý nghĩa của từ khóa này đã được thay đổi trong C ++ 11.</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-until-cxx17">
+<td> <span class="t-li">2)</span>Các<span class="kw4">    tự động ảo f () {return 2; } // lỗi</span>Trình xác nhận chỉ được phép cho các đối tượng được khai báo ở phạm vi khối và trong danh sách tham số chức năng. Nó chỉ ra thời lượng lưu trữ tự động, là mặc định cho các loại khai báo này. Ngoài ra, sự hiện diện của từ khóa này có thể được sử dụng làm gợi ý cho trình tối ưu hóa để lưu trữ giá trị của biến này trong thanh ghi CPU. Từ khóa này không được chấp nhận.</td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> </table> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Các<code>static</code>Trình xác nhận chỉ được phép trong các khai báo của các đối tượng (ngoại trừ trong danh sách tham số chức năng), khai báo các hàm (ngoại trừ ở phạm vi khối) và khai báo của các công đoàn ẩn danh. Khi được sử dụng trong một tuyên bố của một thành viên lớp, nó tuyên bố một<a href="static" title="cpp/language/static">static member</a>. Khi được sử dụng trong khai báo một đối tượng, nó chỉ định thời lượng lưu trữ tĩnh (trừ khi đi kèm với<code>thread_local</code>). Khi được sử dụng trong một tuyên bố tại phạm vi không gian tên, nó chỉ định liên kết nội bộ.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Các<code>extern</code>Trình xác định chỉ được phép trong các khai báo của các biến và hàm (ngoại trừ các thành viên lớp hoặc tham số chức năng). Nó chỉ định liên kết bên ngoài và không ảnh hưởng đến kỹ thuật thời lượng lưu trữ, nhưng nó không thể được sử dụng trong định nghĩa của một đối tượng thời lượng lưu trữ tự động, vì vậy tất cả<code>extern</code>Các đối tượng có thời lượng tĩnh hoặc luồng. Ngoài ra, một tuyên bố biến sử dụng<code>extern</code>và không có bộ khởi tạo không phải là một<a href="definition" title="cpp/language/definition">definition</a>.</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Từ khóa Thread_Local chỉ được phép cho các đối tượng được khai báo tại phạm vi không gian tên, các đối tượng được khai báo ở phạm vi khối và các thành viên dữ liệu tĩnh. Nó chỉ ra rằng đối tượng có thời lượng lưu trữ chủ đề. Nếu Thread_Local là bộ xác định lớp lưu trữ duy nhất được áp dụng cho biến phạm vi khối,<span class="kw4">năng động</span>cũng được ngụ ý. Nó có thể được kết hợp với<span class="kw4">năng động</span>hoặc<span class="kw4">Extern</span>Để chỉ định liên kết bên trong hoặc bên ngoài (ngoại trừ các thành viên dữ liệu tĩnh luôn có liên kết bên ngoài) tương ứng.</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Storage_duration">Thời gian lưu trữ</h4> <p>Tất cả<a href="object" title="cpp/language/object">objects</a>Trong một chương trình có một trong các thời lượng lưu trữ sau:</p>
+<ul>
+<li>
+<i><b>tự động</b></i>thời gian lưu trữ. Lưu trữ cho đối tượng được phân bổ ở đầu khối mã kèm theo và được giải quyết ở cuối. Tất cả các đối tượng cục bộ có thời lượng lưu trữ này, ngoại trừ các đối tượng được khai báo<span class="kw4">năng động</span>Thì<span class="kw4">Extern</span>hoặc thread_local.</li>
+<ul><li>
+<i><b>năng động</b></i>thời gian lưu trữ. Lưu trữ cho đối tượng được phân bổ khi chương trình bắt đầu và giải quyết khi chương trình kết thúc. Chỉ có một trường hợp của đối tượng tồn tại. Tất cả các đối tượng được khai báo ở phạm vi không gian tên (bao gồm cả không gian tên toàn cầu) đều có thời lượng lưu trữ này, cộng với các phạm vi được khai báo với<span class="kw4">năng động</span>hoặc<span class="kw4">Extern</span>, bao gồm 0 hoặc một<a href="initialization#Non-local_variables" title="cpp/language/initialization">Non-local variables</a>Và<a href="#Static_local_variables">Static local variables</a>Để biết chi tiết về việc khởi tạo các đối tượng với thời lượng lưu trữ này.</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>
+<i><b>chủ đề</b></i>thời gian lưu trữ. Lưu trữ cho đối tượng được phân bổ khi luồng bắt đầu và giải quyết khi luồng kết thúc. Mỗi chủ đề có ví dụ riêng của đối tượng. Chỉ các đối tượng được khai báo thread_local có thời lượng lưu trữ này. Thread_local có thể xuất hiện cùng với<span class="kw4">năng động</span>hoặc<span class="kw4">Extern</span>Để điều chỉnh liên kết. Nhìn thấy<a href="initialization#Non-local_variables" title="cpp/language/initialization">Non-local variables</a>Và<a href="#Static_local_variables">Static local variables</a>Để biết chi tiết về việc khởi tạo các đối tượng với thời lượng lưu trữ này.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>
+<i><b>năng động</b></i>thời gian lưu trữ. Bộ lưu trữ cho đối tượng được phân bổ và giải quyết theo yêu cầu bằng cách sử dụng<a href="../memory" title="cpp/memory">dynamic memory allocation</a>chức năng. Nhìn thấy<a href="new" title="cpp/language/new">new-expression</a>Để biết chi tiết về việc khởi tạo các đối tượng với thời lượng lưu trữ này.</li></ul> <p>Thời lượng lưu trữ của<a href="object#Subobjects" title="cpp/language/object">subobjects</a>và các thành viên tham khảo là đối tượng hoàn chỉnh của họ.</p>
+<h4 id="Linkage">Liên kết</h4> <p>Một tên biểu thị đối tượng, tham chiếu, chức năng, loại, mẫu, không gian tên hoặc giá trị, có thể có<i>{</i>. Nếu một tên có liên kết, nó đề cập đến cùng một thực thể với cùng tên được giới thiệu bởi một tuyên bố trong phạm vi khác. Nếu một biến, hàm hoặc một thực thể khác có cùng tên được khai báo trong một số phạm vi, nhưng không có đủ liên kết, thì một số trường hợp của thực thể được tạo ra.</p>
+<p>Các liên kết sau được nhận ra:</p>
+<h5 id="No_linkage">Không liên kết</h5> <p>Tên chỉ có thể được gọi từ phạm vi của nó.</p>
+<p>Bất kỳ tên nào sau đây được khai báo ở phạm vi khối không có liên kết:</p>
+<ul>
+<li>các biến không được khai báo rõ ràng<span class="kw4">Extern</span>(bất kể<span class="kw4">năng động</span>công cụ sửa đổi);</li>
+<li> <a href="class#Local_classes" title="cpp/language/class">local classes</a>và các chức năng thành viên của họ;</li>
+<li>Các tên khác được khai báo ở phạm vi khối như typedefs, bảng liệt kê và điều tra viên.</li>
+</ul> <p>Tên không được chỉ định với bên ngoài<span class="t-rev-inl t-since-cxx20"><span>, mô -đun,</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>hoặc liên kết nội bộ cũng không có liên kết, bất kể phạm vi nào chúng được khai báo.</p>
+<h5 id="Internal_linkage">Liên kết nội bộ</h5> <p>Tên có thể được gọi từ tất cả các phạm vi trong đơn vị dịch hiện tại.</p>
+<p>Bất kỳ tên nào sau đây được khai báo tại phạm vi không gian tên đều có liên kết nội bộ:</p>
+<ul>
+<li>Biến<span class="t-rev-inl t-since-cxx14"><span>, các mẫu biến</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>, các chức năng hoặc các mẫu chức năng được khai báo<span class="kw4">năng động</span>Số lượng các yếu tố để sao chép</li>
+<li> <span class="t-rev-inl t-since-cxx14"><span>Không phải bàn</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>các biến của loại đủ điều kiện không thể bay được, trừ khi</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>Họ là nội tuyến,</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Họ được tuyên bố trong một<a href="modules#Module_declarations" title="cpp/language/modules">module interface unit</a>(Bên ngoài<a href="modules#Private_module_fragment" title="cpp/language/modules">private module fragment</a>, nếu có) hoặc<a href="modules#Module_partitions" title="cpp/language/modules">module partition</a>Thì</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>Họ được tuyên bố rõ ràng<span class="kw4">Extern</span>, hoặc</li>
+<li>Họ đã được tuyên bố trước đây và tuyên bố trước không có liên kết nội bộ;</li>
+<li>Thành viên dữ liệu của<a href="union" title="cpp/language/union">anonymous unions</a>.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Ngoài ra, tất cả các tên được khai báo trong<a href="namespace" title="cpp/language/namespace">unnamed namespace</a>hoặc một không gian tên trong một không gian tên không tên, ngay cả những cái được tuyên bố rõ ràng<span class="kw4">Extern</span>, có liên kết nội bộ.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h5 id="External_linkage">Liên kết bên ngoài</h5> <p>Tên có thể được đề cập từ các phạm vi trong các đơn vị dịch khác. Các biến và chức năng với liên kết bên ngoài cũng có<a href="language_linkage" title="cpp/language/language linkage">language linkage</a>, giúp liên kết các đơn vị dịch thuật được viết bằng các ngôn ngữ lập trình khác nhau.</p>
+<p>Bất kỳ tên nào sau đây được khai báo tại phạm vi không gian tên đều có liên kết bên ngoài, trừ khi chúng được khai báo trong một không gian tên không tên<span class="t-rev-inl t-since-cxx20"><span>hoặc khai báo của họ được gắn vào một mô -đun được đặt tên và không được xuất</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>:</p>
+<ul>
+<li>các biến và chức năng không được liệt kê ở trên (nghĩa là các chức năng không được khai báo<span class="kw4">năng động</span>, các biến không xảy ra không được khai báo<span class="kw4">năng động</span>và bất kỳ biến nào được tuyên bố<span class="kw4">Extern</span>);</li>
+<li>liệt kê;</li>
+<li>Tên của các lớp, chức năng thành viên của họ, các thành viên dữ liệu tĩnh (const hay không), các lớp lồng nhau và bảng liệt kê và các chức năng được giới thiệu đầu tiên với<a href="friend" title="cpp/language/friend">friend</a>Tuyên bố bên trong cơ thể lớp;</li>
+<li>Tên của tất cả các mẫu không được liệt kê ở trên (nghĩa là không phải là các mẫu chức năng được khai báo<span class="kw4">năng động</span>).</li>
+</ul> <p>Bất kỳ tên nào sau đây được khai báo đầu tiên ở phạm vi khối đều có liên kết bên ngoài:</p>
+<ul>
+<li>Tên của các biến được khai báo<span class="kw4">Extern</span>Số lượng các yếu tố để sao chép</li>
+<li>Tên của các chức năng.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <h5 id="Module_linkage">Liên kết mô -đun</h5> <p>Tên chỉ có thể được gọi từ các phạm vi trong cùng một đơn vị mô -đun hoặc trong các đơn vị dịch khác của cùng một mô -đun có tên.</p>
+<p>Tên được khai báo tại phạm vi không gian tên có liên kết mô -đun nếu khai báo của chúng được đính kèm với một mô -đun có tên và không được xuất và không có liên kết nội bộ.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Static_local_variables">kép d1 = fd (); // có thể được khởi tạo tĩnh hoặc động đến 1.0</h3> <p>Các biến được khai báo ở phạm vi khối với trình xác định<span class="kw4">năng động</span> <span class="t-rev-inl t-since-cxx11"><span>hoặc<code>thread_local</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>có tĩnh<span class="t-rev-inl t-since-cxx11"><span>hoặc chủ đề</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Thời lượng lưu trữ nhưng được khởi tạo lần đầu tiên điều khiển đi qua khai báo của họ (trừ khi khởi tạo của chúng là<a href="zero_initialization" title="cpp/language/zero initialization">zero-</a>hoặc<a href="constant_initialization" title="cpp/language/constant initialization">constant-initialization</a>, có thể được thực hiện trước khi khối được nhập lần đầu tiên). Trên tất cả các cuộc gọi tiếp theo, tuyên bố được bỏ qua.</p>
+<p> <a href="throw" title="cpp/language/throw">throws an exception</a>, biến không được coi là khởi tạo và khởi tạo sẽ được thử lại vào thời gian kiểm soát tiếp theo đi qua khai báo.</p>
+<p>Nếu việc khởi tạo đệ quy vào khối trong đó biến đang được khởi tạo, hành vi không được xác định.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Nếu nhiều luồng cố gắng khởi tạo cùng một biến cục bộ tĩnh đồng thời, việc khởi tạo xảy ra chính xác một lần (có thể thu được hành vi tương tự cho các chức năng tùy ý với<code><a href="../thread/call_once" title="cpp/thread/call once">std::call_once</a></code>).</p>
+<p>Lưu ý: Việc triển khai thông thường của tính năng này sử dụng các biến thể của mẫu khóa được kiểm tra kép, giúp giảm chi phí thời gian chạy cho các thống kê cục bộ đã được khởi tạo để so sánh boolean không nguyên tử.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Chất phá hủy cho biến tĩnh phạm vi khối<a href="../utility/program/exit" title="cpp/utility/program/exit">is called at program exit</a>, nhưng chỉ khi việc khởi tạo diễn ra thành công.</p>
+<p>Các đối tượng tĩnh chức năng-local trong tất cả các định nghĩa của cùng một<a href="inline" title="cpp/language/inline">inline function</a>(có thể được nội tuyến ngầm) Tất cả đề cập đến cùng một đối tượng được xác định trong một đơn vị dịch, miễn là hàm có liên kết bên ngoài.</p>
+<h3 id="Translation-unit-local_entities">Các thực thể đơn vị-đơn vị</h3> <p>Khái niệm về các thực thể đơn vị dịch thuật được tiêu chuẩn hóa trong C ++ 20, xem<a href="tu_local" title="cpp/language/tu local">this page</a>Để biết thêm chi tiết.</p>
+<p>Một thực thể là<i>Bản dịch-đơn vị địa phương</i>ForwardItIT2 exclusive_scan (execPolicy &amp;&amp; chính sách,<i>Tu-local</i>Nói ngắn gọn) nếu</p>
+<ul>
+<li>nó có một tên với liên kết nội bộ, hoặc</li>
+<li>nó không có tên với liên kết và được giới thiệu trong định nghĩa của một thực thể TU-Local, hoặc</li>
+<li>Nó là một chuyên môn mẫu hoặc mẫu có đối số mẫu hoặc khai báo mẫu sử dụng một thực thể TU-local.</li>
+</ul> <p>Những điều tồi tệ (thường vi phạm<a href="definition" title="cpp/language/definition">ODR</a>) có thể xảy ra nếu loại của một thực thể không phải là tu<span class="t-rev-inl t-since-cxx17"><span>được đặt ở chế độ mở của gói<a class="mw-redirect" href="ctad" title="cpp/language/ctad">deduction guide</a>vì,</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>một thực thể phi địa phương đặt tên cho một thực thể TU-Local bên ngoài nó</p>
+<ul>
+<li>Chức năng-Body cho một chức năng hoặc mẫu chức năng không ngoại tuyến</li>
+<li>Khởi tạo cho một mẫu biến hoặc mẫu biến</li>
+<li>Tuyên bố của bạn trong một định nghĩa lớp học</li>
+<li>sử dụng giá trị của một biến, nếu biến là<a href="constant_expression#Usable_in_constant_expressions" title="cpp/language/constant expression">usable in constant expressions</a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Việc sử dụng như vậy không được phép trong một<a href="modules" title="cpp/language/modules">module interface unit</a>(Bên ngoài mô hình riêng của nó, nếu có) hoặc phân vùng mô-đun và không được chấp nhận trong bất kỳ bối cảnh nào khác.</p>
+<p>Một tuyên bố xuất hiện trong một đơn vị dịch không thể đặt tên cho một thực thể TU-Local được tuyên bố trong một đơn vị dịch khác không phải là đơn vị tiêu đề. Một tuyên bố được khởi tạo cho một<a href="templates" title="cpp/language/templates">template</a>xuất hiện tại điểm khởi tạo của chuyên ngành.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Tên ở phạm vi không gian tên cấp cao nhất (phạm vi tệp trong c)<span class="kw4">hằng số</span>Và không<span class="kw4">Extern</span>Có liên kết bên ngoài trong C, nhưng liên kết nội bộ trong C ++.</p>
+<p>được ký hiệu là<span class="kw4">    phân vùng_point (r &amp;&amp; r, pred, proj proj = {});</span>không còn là một nhà xác định lớp lưu trữ; Nó được sử dụng để chỉ ra suy luận loại.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <p>Trong c, địa chỉ của a<span class="kw4">    tự động ảo f () {return 2; } // lỗi</span>không thể thực hiện biến, nhưng trong C ++, một biến được khai báo<span class="kw4">    tự động ảo f () {return 2; } // lỗi</span>không thể phân biệt được về mặt ngữ nghĩa với một biến được khai báo mà không có bất kỳ trình xác định lớp lưu trữ nào.</p>
+</td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <p>Trong C ++, không giống như C, các biến không thể được khai báo<span class="kw4">    tự động ảo f () {return 2; } // lỗi</span>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>Tên của các biến Thread_Local với liên kết bên trong hoặc bên ngoài được đề cập từ các phạm vi khác nhau có thể đề cập đến cùng hoặc các trường hợp khác nhau tùy thuộc vào việc mã có thực thi trong cùng hoặc trong các luồng khác nhau hay không.</p>
+<p>Các<span class="kw4">Extern</span>Từ khóa cũng có thể được sử dụng để chỉ định<a href="language_linkage" title="cpp/language/language linkage">language linkage</a>Và<a href="class_template" title="cpp/language/class template">explicit template instantiation declarations</a>, nhưng đó không phải là một bộ xác định lớp lưu trữ trong các trường hợp đó (trừ khi khai báo được chứa trực tiếp trong một đặc tả liên kết ngôn ngữ, trong trường hợp đó, tuyên bố được xử lý như thể nó chứa<span class="kw4">Extern</span>chỉ định).</p>
+<p><a href="cv" title="cpp/language/cv">The keyword mutable</a>là một trình xác định lớp lưu trữ trong ngữ pháp ngôn ngữ C ++, mặc dù nó không ảnh hưởng đến thời lượng hoặc liên kết lưu trữ.</p>
+<p>Các nhà xác định lớp lưu trữ, ngoại trừ Thread_local, không được phép vào<a href="template_specialization" title="cpp/language/template specialization">explicit specializations</a>Và<a href="class_template#Explicit_instantiation" title="cpp/language/class template">explicit instantiations</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_threadsafe_static_init" title="cpp/feature test"><code>__cpp_threadsafe_static_init</code></a></td> <td><span class="nu0">}</span></td> <td><span class="t-mark">unininitialized_copy_n</span></td> <td>
+<a href="#Static_local_variables">Dynamic initialization and destruction with concurrency</a> </td>
+</tr>
+</table> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/auto" title="cpp/keyword/auto"><code>auto</code></a>Thì<a href="../keyword/register" title="cpp/keyword/register"><code>register</code></a>Thì<a href="../keyword/static" title="cpp/keyword/static"><code>static</code></a>Thì<a href="../keyword/extern" title="cpp/keyword/extern"><code>extern</code></a>Thì<a href="../keyword/thread_local" title="cpp/keyword/thread local"><code>thread_local</code></a>Thì<a href="../keyword/mutable" title="cpp/keyword/mutable"><code>mutable</code></a></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">cấu trúc s</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">{</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/216.html" rel="nofollow">CWG 216</a> </td> <td>C ++ 98</td> <td>    Thread_Local static int tlm;<br/>};</td> <td> <br/>Mẫu &lt;&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/389.html" rel="nofollow">CWG 389</a> </td> <td>C ++ 98</td> <td>Thread_local int s &lt;float&gt; :: tlm = 0; // "tĩnh" không xuất hiện ở đây<br/>#include &lt;Istream&gt;</td> <td>#include &lt;Prutex&gt;<br/>#include &lt;chuỗi&gt;<br/>#include &lt;Chủ đề&gt;<br/> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/426.html" rel="nofollow">CWG 426</a> </td> <td>C ++ 98</td> <td>Thread_Local Unsign Int Rage = 1; <br/>std :: Mutex cout_mutex;</td> <td>(Nhưng các loại tham số, nếu có, vẫn còn</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/527.html" rel="nofollow">CWG 527</a> </td> <td>C ++ 98</td> <td> <br/>void tăng_rage (const std :: String &amp; thread_name)<br/>{</td> <td>    ++ RAGE; // Sửa đổi bên ngoài khóa là được; Đây là một biến địa lý<br/>    std :: lock_guard &lt;std :: mutex&gt; khóa (cout_mutex);<br/>    std :: cout &lt;&lt; "Bộ đếm RAGE cho" &lt;&lt; Thread_name &lt;&lt; ":" &lt;&lt; Rage &lt;&lt; '\ n';<br/>}</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/809.html" rel="nofollow">CWG 809</a> </td> <td>C ++ 98</td> <td>
+<span class="kw4">    tự động ảo f () {return 2; } // lỗi</span> </td> <td>int main ()</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1648.html" rel="nofollow">CWG 1648</a> </td> <td>C ++ 11</td> <td>
+<span class="kw4">năng động</span>{<br/>    std :: Chủ đề A (tăng_rage, "a"), b (tăng_rage, "b");<span class="kw4">Extern</span> </td> <td> <br/>    {</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1686.html" rel="nofollow">CWG 1686</a> </td> <td>C ++ 98<br/>C ++ 11</td> <td>        std :: lock_guard &lt;std :: mutex&gt; khóa (cout_mutex);<br/>        std :: cout &lt;&lt; "Bộ đếm RAGE cho chính:" &lt;&lt; RAGE &lt;&lt; '\ n';<br/>int main ()<span class="kw4">hằng số</span>    }<span class="kw4">constexpr</span>unininitialized_copy_n</td> <td> <br/>    A.Join ();</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2019.html" rel="nofollow">CWG 2019</a> </td> <td>C ++ 98</td> <td>    B.Join ();<br/>}</td> <td>Cơn thịnh nộ cho A: 2</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2387.html" rel="nofollow">CWG 2387</a> </td> <td>C ++ 14</td> <td>Couner Rage cho Main: 1<br/>Couner Rage cho B: 2</td> <td>lớp không tên và liệt kê trong phạm vi lớp học có<br/>Liên kết khác nhau từ những người trong phạm vi không gian tên<br/>Tất cả đều có bên ngoài</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2788R0" rel="nofollow">P2788R0</a> </td> <td>C ++ 20</td> <td>Liên kết trong các phạm vi này<br/>một cái tên không có liên kết không nên</td> <td>được sử dụng để khai báo một thực thể có liên kết</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/storage_duration" title="c/language/storage duration">C documentation</a></span>vì<span class=""><span>một loại không có liên kết sẽ không được sử dụng</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/storage_duration">https://en.cppreference.com/w/cpp/language/storage_duration</a>
+</p>
+</div>

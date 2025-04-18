@@ -1,0 +1,98 @@
+ <h1 class="firstHeading" id="firstHeading">Chuyển đổi loại rõ ràng</h1> <p>Chuyển đổi giữa các loại bằng cách sử dụng kết hợp các chuyển đổi rõ ràng và ẩn.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>(</code> <span class="t-spar">Loại mục tiêu</span> <code>)</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Loại mục tiêu</span> <code>(</code> <span class="t-spar">. Các nhà xây dựng với một</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>)</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Loại mục tiêu</span> <code>{</code> <span class="t-spar">. Các nhà xây dựng với một</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>}</code> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">tên mẫu</span> <code>(</code> <span class="t-spar">. Các nhà xây dựng với một</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>)</code> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">tên mẫu</span> <code>{</code> <span class="t-spar">. Các nhà xây dựng với một</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>}</code> </td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>auto (</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> <code>)</code> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>auto {</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> <code>}</code> </td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td>
+</tr>
+</table> <p>Trả về một giá trị của loại<span class="t-spar">Loại mục tiêu</span>.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <div class="t-li1">
+<span class="t-li">1)</span>Khi<i>Biểu thức đúc kiểu C</i>gặp phải, trình biên dịch cố gắng giải thích nó là các biểu thức diễn viên sau, theo thứ tự này:</div> <div class="t-li2">
+<span class="t-li">}</span> <code><a href="const_cast" title="cpp/language/const cast">const_cast</a>&lt;<span class="t-spar">Loại mục tiêu</span>&gt;(<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>)</code>Số lượng các yếu tố để sao chép</div> <div class="t-li2">
+<span class="t-li">{</span> <code><a href="static_cast" title="cpp/language/static cast">static_cast</a>&lt;<span class="t-spar">Loại mục tiêu</span>&gt;(<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>)</code>, với các tiện ích mở rộng: con trỏ hoặc tham chiếu đến một<a href="derived_class" title="cpp/language/derived class">derived class</a>cũng được phép được chọn vào con trỏ hoặc tham chiếu đến lớp cơ sở rõ ràng (và ngược lại) ngay cả khi lớp cơ sở là<a href="access" title="cpp/language/access">inaccessible</a>(Đó là, diễn viên này bỏ qua công cụ xác định kế thừa riêng tư). Áp dụng tương tự cho việc đúc<a href="pointer" title="cpp/language/pointer">pointer to member</a>để con trỏ đến thành viên của cơ sở không phải là người không rõ ràng;</div> <div class="t-li2">
+<span class="t-li">}</span> <code>static_cast</code>(với phần mở rộng) theo sau là<code>const_cast</code>Số lượng các yếu tố để sao chép</div> <div class="t-li2">
+<span class="t-li">tải trong luồng B.</span> <code><a href="reinterpret_cast" title="cpp/language/reinterpret cast">reinterpret_cast</a>&lt;<span class="t-spar">Loại mục tiêu</span>&gt;(<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>)</code>Số lượng các yếu tố để sao chép</div> <div class="t-li2">
+<span class="t-li">Không tham gia vào độ phân giải quá tải nếu biểu thức đó không được hình thành tốt.</span> <code>reinterpret_cast</code>    toán tử &lt;&lt; (std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; os, const std :: chrono :: tháng &amp; m);<code>const_cast</code>.</div> <div class="t-li1">Lựa chọn đầu tiên đáp ứng các yêu cầu của toán tử đúc tương ứng được chọn, ngay cả khi nó không thể được biên dịch (xem ví dụ). Nếu các diễn viên có thể được giải thích theo nhiều cách<code>static_cast</code>theo sau là a<code>const_cast</code>, nó không thể được biên dịch.</div> <div class="t-li1">Ngoài ra, ký hiệu đúc kiểu C được phép đúc từ, đến và giữa các con trỏ đến loại lớp không hoàn chỉnh. Nếu cả hai<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>Và<span class="t-spar">Loại mục tiêu</span>có phải là con trỏ đến các loại lớp không hoàn chỉnh, nó không được xác định cho dù<code>static_cast</code>hoặc<code>reinterpret_cast</code>được chọn.</div> <span class="t-li">2)</span>Các<i>Biểu thức đúc theo phong cách chức năng</i>bao gồm một trình xác định loại đơn giản hoặc trình xác định đánh máy (nói cách khác, tên loại một từ, nghĩa là các trường hợp như<code>unsigned int(expression)</code>Và<code>int*(expression)</code>không hợp lệ), theo sau là một danh sách các biểu thức được phân tách bằng dấu phẩy trong ngoặc đơn.<ul>
+<li>Nếu có chính xác một biểu thức trong ngoặc đơn, biểu thức đúc này hoàn toàn tương đương với biểu thức đúc kiểu C tương ứng.</li>
+<li>Nếu có nhiều hơn một biểu thức<span class="t-rev-inl t-since-cxx11"><span>hoặc<a href="list_initialization" title="cpp/language/list initialization">braced-init-list</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>trong ngoặc đơn,<span class="t-spar">Loại mục tiêu</span>Phải là một lớp học với một bản khai phù hợp<a href="constructor" title="cpp/language/constructor">constructor</a>. Biểu thức này là một loại prvalue của loại<span class="t-spar">Loại mục tiêu</span> <span class="t-rev-inl t-until-cxx17"><span>chỉ định tạm thời</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span>đối tượng kết quả của ai là</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span> <a href="direct_initialization" title="cpp/language/direct initialization">direct-initialized</a>với<span class="t-spar">. Các nhà xây dựng với một</span>.</li>
+<li>Nếu không có biểu hiện trong ngoặc đơn: nếu<span class="t-spar">Loại mục tiêu</span>Đặt tên cho một loại đối tượng hoàn chỉnh không phải, biểu thức này là một loại prvalue của loại<span class="t-spar">Loại mục tiêu</span>Thì<span class="t-rev-inl t-until-cxx17"><span>chỉ định tạm thời</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span>có đối tượng kết quả là (có thể có thêm trình điều chỉnh CV)</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>thuộc loại đó. Nếu như<span class="t-spar">Loại mục tiêu</span>là loại đối tượng, đối tượng là<a href="value_initialization" title="cpp/language/value initialization">value-initialized</a>. Nếu như<span class="t-spar">Loại mục tiêu</span>là (có thể<a href="cv" title="cpp/language/cv">cv-qualified</a>)<span class="kw4">Vô hiệu</span>, biểu thức là một<span class="kw4">Vô hiệu</span>prvalue<span class="t-rev-inl t-since-cxx17"><span>Không có đối tượng kết quả</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>.</li>
+</ul> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Một tên loại một từ theo sau là một<i>{</i>là một prvalue của loại được chỉ định<span class="t-rev-inl t-until-cxx17"><span>chỉ định tạm thời</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span>đối tượng kết quả của ai là</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span> <a href="list_initialization" title="cpp/language/list initialization">direct-list-initialized</a>với quy định<i>{</i>. Nếu như<span class="t-spar">Loại mục tiêu</span>là (có thể<a href="cv" title="cpp/language/cv">cv-qualified</a>)<code>void</code>, biểu thức là một<code>void</code>prvalue<span class="t-rev-inl t-since-cxx17"><span>Không có đối tượng kết quả</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>.<span class="t-rev-inl t-until-cxx20"><span>Đây là biểu thức diễn viên duy nhất có thể tạo<a href="array#Array_rvalues" title="cpp/language/array">array prvalue</a>.</span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span>
+</div> <div class="t-li1">
+<span class="t-li">cluct clock_time_conversion &lt;clock, std :: Chrono :: System_Clock&gt;;</span>                                   Nhị phân p);<span class="t-v">sở hữu phần tử được trích xuất hoặc xử lý nút trống trong trường hợp phần tử không được tìm thấy trong</span>, ngoại trừ lần đầu tiên thực hiện<a href="class_template_argument_deduction" title="cpp/language/class template argument deduction">class template argument deduction</a>.</div> <div class="t-li1">
+<span class="t-li">cluct clock_time_conversion &lt;std :: Chrono :: System_Clock, Clock&gt;;</span>Các<a href="auto" title="cpp/language/auto"><code>auto</code></a>Trình xác định được thay thế bằng loại suy luận của biến được phát minh<code>x</code>tuyên bố với<code>auto x(expression);</code>(không bao giờ được hiểu là khai báo chức năng) hoặc<code>auto x{expression};</code>, tương ứng. Kết quả luôn là một prvalue của một loại đối tượng.</div> <p>T2</p>
+<ul><li>Tham chiếu kết quả đề cập đến đối tượng ban đầu.<span class="t-spar">Loại mục tiêu</span>Giá trị con trỏ null có thể được chuyển đổi thành giá trị con trỏ null của<span class="t-rev-inl t-since-cxx11"><span>Loại mục tiêu</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Số lượng các yếu tố để sao chép</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>. Giá trị con trỏ thành viên null có thể được chuyển đổi thành giá trị con trỏ thành viên null của<span class="t-spar">Loại mục tiêu</span>Như với tất cả các biểu thức diễn viên, kết quả là:</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>một lvalue nếu</li></ul> <h3 id="Ambiguity_Resolution">Giải quyết sự mơ hồ</h3> <h4 id="Ambiguous_declaration_statement">Tuyên bố tuyên bố mơ hồ</h4> <p>Trong trường hợp sự mơ hồ giữa một câu lệnh biểu thức với biểu thức đúc theo kiểu chức năng là biểu hiện phụ ngoài cùng bên trái và tuyên bố khai báo, sự mơ hồ được giải quyết bằng cách coi nó như một tuyên bố. Sự phân chia này hoàn toàn là cú pháp: Nó không xem xét ý nghĩa của các tên xảy ra trong câu lệnh khác với việc chúng có phải là tên loại hay không:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">struct m {};</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>struct l {l (m &amp;); };<a href="function" title="cpp/language/function">trailing return type</a> <span class="kw4">    phân vùng_point (r &amp;&amp; r, pred, proj proj = {});</span>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">M n;</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Ambiguous_function_parameter">void f ()</h4> <p>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    M (m);    // Tuyên bố, tương đương với M M;</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>    L (n);    // Tuyên bố xấu, tương đương với l n;<a href="function" title="cpp/language/function">trailing return type</a>    L (l) (m); // vẫn là một tuyên bố, tương đương với l l ((m));<span class="kw4">    phân vùng_point (r &amp;&amp; r, pred, proj proj = {});</span>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Ambiguous_type-id">Tuy nhiên, nếu người khai báo ngoài cùng trong tuyên bố tuyên bố mơ hồ có</h4> <p>, tuyên bố sẽ chỉ được coi là một tuyên bố khai báo nếu loại trả về dấu vết bắt đầu bằng<a href="type#Type_naming" title="cpp/language/type">type-id</a>cấu trúc m;</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>cấu trúc s<span class="t-spar">TÓM TẮT KIẾN TRÚC</span>{<a href="type#Type_naming" title="cpp/language/type">type-id</a>Toán tử gán bản sao được xác định ngầm cho một lớp<a href="function" title="cpp/language/function">trailing return type</a>    S* toán tử () ();<span class="kw4">    phân vùng_point (r &amp;&amp; r, pred, proj proj = {});</span>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    int n;</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_auto_cast" title="cpp/feature test"><code>__cpp_auto_cast</code></a></td> <td><span class="nu0">3)</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<code>auto(x)</code>Và<code>auto{x}</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    int m;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1223.html" rel="nofollow">CWG 1223</a><br/>.<a class="external text" href="https://wg21.link/P2915R0" rel="nofollow">P2915R0</a>)</td> <td>C ++ 11</td> <td>    khoảng trống mem (s s)</td> <td>    {</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2620.html" rel="nofollow">CWG 2620</a> </td> <td>C ++ 98</td> <td>        Auto (s) ()-&gt; m; // Biểu thức (s :: m ẩn :: m), không hợp lệ trước C ++ 23</td> <td>    }</td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul>
+<li>khoảng trống f (s s)</li>
+<li>{</li>
+</ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul>
+<li>khoảng trống f (s s)</li>
+<li>{</li>
+</ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul>
+<li>    {</li>
+<li>        Auto (s) ()-&gt; n; // Biểu thức, không hợp lệ trước C ++ 23</li>
+</ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul>
+<li>}</li>
+<li>Tham số chức năng mơ hồ</li>
+</ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul>
+<li>}</li>
+<li>Tham số chức năng mơ hồ</li>
+</ul>
+<li>Tiêu chuẩn C ++ 03 (ISO/IEC 14882: 2003):</li>
+<ul>
+<li>}</li>
+<li>Tham số chức năng mơ hồ</li>
+</ul>
+<li>    S.B3 = 0B11;</li>
+<ul>
+<li>}</li>
+<li>Tham số chức năng mơ hồ</li>
+</ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="const_cast" title="cpp/language/const cast"> <code>const_cast</code> conversion </a> </td> <td>Sự mơ hồ ở trên cũng có thể xảy ra trong bối cảnh của một tuyên bố. Trong bối cảnh đó, sự lựa chọn là giữa một khai báo đối tượng với kiểu diễn viên theo kiểu chức năng là trình khởi tạo và khai báo liên quan đến một trình khai báo chức năng với một khoảng dấu ngoặc đơn xung quanh một tên tham số. Độ phân giải cũng là để xem xét bất kỳ cấu trúc nào, chẳng hạn như khai báo tham số tiềm năng, có thể là một tuyên bố là một tuyên bố:</td>
+</tr> <tr class="t-dsc"> <td> <a href="static_cast" title="cpp/language/static cast"> <code>static_cast</code> conversion </a> </td> <td>cấu trúc s</td>
+</tr> <tr class="t-dsc"> <td> <a href="dynamic_cast" title="cpp/language/dynamic cast"> <code>dynamic_cast</code> conversion </a> </td> <td>{</td>
+</tr> <tr class="t-dsc"> <td> <a href="reinterpret_cast" title="cpp/language/reinterpret cast"> <code>reinterpret_cast</code> conversion </a> </td> <td>    S (int);</td>
+</tr> <tr class="t-dsc"> <td> <a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast"> standard conversions </a> </td> <td>};</td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/cast" title="c/language/cast">C documentation</a></span>vì<span class=""><span> </span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/explicit_cast">https://en.cppreference.com/w/cpp/language/explicit_cast</a>
+</p>
+</div>

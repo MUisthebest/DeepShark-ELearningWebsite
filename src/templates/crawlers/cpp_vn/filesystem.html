@@ -1,0 +1,130 @@
+ <h1 class="firstHeading" id="firstHeading">Thư viện hệ thống tập tin<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>
+</h1> <p>Thư viện FileSystem cung cấp các cơ sở để thực hiện các hoạt động trên các hệ thống tệp và các thành phần của chúng, chẳng hạn như đường dẫn, tệp thông thường và thư mục.</p>
+<p>Thư viện hệ thống tập tin ban đầu được phát triển dưới dạng<a class="external text" href="https://www.boost.org/doc/libs/release/libs/filesystem/doc/index.htm" rel="nofollow">boost.filesystem</a>, đã được xuất bản dưới dạng<a href="https://en.cppreference.com/w/cpp/experimental/fs" title="cpp/experimental/fs">the technical specification ISO/IEC TS 18822:2015</a>và cuối cùng đã hợp nhất với ISO C ++ kể từ C ++ 17. Việc triển khai Boost hiện có sẵn trên nhiều trình biên dịch và nền tảng hơn thư viện C ++ 17.</p>
+<p>Các cơ sở thư viện FileSystem có thể không khả dụng nếu hệ thống tệp phân cấp không thể truy cập được để triển khai hoặc nếu nó không cung cấp các khả năng cần thiết. Một số tính năng có thể không khả dụng nếu chúng không được hệ thống tệp cơ bản hỗ trợ (ví dụ: hệ thống tập tin chất béo thiếu các liên kết tượng trưng và cấm nhiều liên kết cứng). Trong những trường hợp đó, lỗi phải được báo cáo.</p>
+<p>Hành vi là<a href="language/ub" title="cpp/language/ub">undefined</a>Nếu các cuộc gọi đến các chức năng trong thư viện này, hãy giới thiệu một<i>Cuộc đua hệ thống tập tin</i>, nghĩa là, khi nhiều luồng, quy trình hoặc máy tính xen kẽ truy cập và sửa đổi vào cùng một đối tượng trong một hệ thống tệp.</p>
+<h4 id="Library-wide_definitions">Định nghĩa toàn thư viện</h4> <ul>
+<li> <i>tài liệu</i>: Một đối tượng hệ thống tệp chứa dữ liệu, có thể được ghi, đọc từ hoặc cả hai. Tệp có tên, thuộc tính, một trong số đó là loại tệp:</li>
+<ul>
+<li> <i>Thư mục</i>: Một tệp hoạt động như một thùng chứa các mục nhập thư mục, xác định các tệp khác (một số trong đó có thể là các thư mục khác, lồng nhau). Khi thảo luận về một tệp cụ thể, thư mục trong đó nó xuất hiện dưới dạng mục nhập là<i>Thư mục phụ huynh</i>. Thư mục chính có thể được biểu diễn bằng tên đường dẫn tương đối<code>".."</code>.</li>
+<li> <i>Tệp thông thường</i>: một mục nhập thư mục liên kết tên với một tệp hiện có (nghĩa là a<i>liên kết khó</i>). Nếu nhiều liên kết cứng được hỗ trợ, tệp sẽ bị xóa sau khi liên kết cứng cuối cùng được xóa.</li>
+<li> <i>liên kết tượng trưng</i>: Một mục nhập thư mục liên kết một tên với một đường dẫn, có thể hoặc không tồn tại.</li>
+<li>Các loại tệp đặc biệt khác:<i>khối</i>Thì<i>tính cách</i>Thì<i>FIFO</i>Thì<i>ổ cắm</i>.</li>
+</ul>
+<li> <i>Tên tập tin</i>: Một chuỗi các ký tự đặt tên cho một tệp. Các ký tự cho phép, độ nhạy của trường hợp, độ dài tối đa và các tên không được phép được xác định là thực hiện. Tên<code>"."</code>(chấm) và<code>".."</code>(DOT-DOT) có ý nghĩa đặc biệt ở cấp thư viện.</li>
+<li> <i>con đường</i>: Trình tự các phần tử xác định một tệp. Nó bắt đầu với một tùy chọn<span class="t-spar">tên gốc</span>(ví dụ.<code>"C:"</code>hoặc<code>"//server"</code>trên Windows), theo sau là một tùy chọn<span class="t-spar">root-định hướng</span>(ví dụ.<code>"/"</code>Trên Unix), tiếp theo là một chuỗi các tên tệp bằng không hoặc nhiều hơn (tất cả nhưng cuối cùng phải là thư mục hoặc liên kết đến các thư mục). Định dạng gốc (ví dụ: ký tự nào được sử dụng làm dấu phân cách) và mã hóa ký tự của biểu diễn chuỗi của đường dẫn (<i>Tên đường dẫn</i>) là được xác định bằng triển khai, thư viện này cung cấp biểu diễn di động của các đường dẫn.</li>
+<ul>
+<li> <i>con đường tuyệt đối</i>: Một đường dẫn xác định rõ ràng vị trí của một tệp.</li>
+<li> <i>con đường kinh điển</i>: một con đường tuyệt đối không bao gồm các liên kết symlink,<code>"."</code>hoặc<code>".."</code>các yếu tố.</li>
+<li> <i>đường dẫn tương đối</i>: Một đường dẫn xác định vị trí của một tệp so với một số vị trí trên hệ thống tệp. Tên đường dẫn đặc biệt<code>"."</code>(dot, "thư mục hiện tại") và<code>".."</code>(DOT-DOT, "Thư mục cha") là các đường dẫn tương đối.</li>
+</ul>
+</ul> <table class="t-dsc-begin"> <tr> <td colspan="2"> <h3 id="Classes">Lớp học</h3> </td>
+</tr> <tr class="t-dsc-header"> <th colspan="2">C Thư viện<code><a href="header/filesystem" title="cpp/header/filesystem">&lt;filesystem&gt;</a></code> </th>
+</tr> <tr class="t-dsc-header"> <th colspan="2">(không thay đổi)<code>std::filesystem</code> </th>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/path" title="cpp/filesystem/path"> <span class="t-lines"><span>con đường</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>đại diện cho một con đường<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/filesystem_error" title="cpp/filesystem/filesystem error"> <span class="t-lines"><span>FileSystem_error</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Một ngoại lệ được ném vào các lỗi hệ thống tệp<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/directory_entry" title="cpp/filesystem/directory entry"> <span class="t-lines"><span>Thư mục_Entry</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>một mục nhập thư mục<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/directory_iterator" title="cpp/filesystem/directory iterator"> <span class="t-lines"><span>Thư mục_Iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>một người lặp lại nội dung của thư mục<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/recursive_directory_iterator" title="cpp/filesystem/recursive directory iterator"> <span class="t-lines"><span>Recursive_Directory_Iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>một người lặp lại nội dung của một thư mục và các thư mục con của nó<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/file_status" title="cpp/filesystem/file status"> <span class="t-lines"><span>File_Status</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>đại diện cho loại tệp và quyền<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/space_info" title="cpp/filesystem/space info"> <span class="t-lines"><span>Space_info</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Thông tin về không gian miễn phí và có sẵn trên hệ thống tập tin<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/file_type" title="cpp/filesystem/file type"> <span class="t-lines"><span>FILE_TYPE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>loại tệp<br/> <span class="t-mark">(enum)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/perms" title="cpp/filesystem/perms"> <span class="t-lines"><span>perms</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Xác định quyền hệ thống tệp<br/> <span class="t-mark">(enum)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/perm_options" title="cpp/filesystem/perm options"> <span class="t-lines"><span>perm_options</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Chỉ định ngữ nghĩa của hoạt động quyền<br/> <span class="t-mark">(enum)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/copy_options" title="cpp/filesystem/copy options"> <span class="t-lines"><span>Copy_options</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Chỉ định ngữ nghĩa của các hoạt động sao chép<br/> <span class="t-mark">(enum)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/directory_options" title="cpp/filesystem/directory options"> <span class="t-lines"><span>Thư mục_Options</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Tùy chọn để lặp lại nội dung thư mục<br/> <span class="t-mark">(enum)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/file_time_type" title="cpp/filesystem/file time type"> <span class="t-lines"><span>file_time_type</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>đại diện cho các giá trị thời gian tệp<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr> <td colspan="2"> <h3 id="Non-member_functions">Các chức năng không phải thành viên</h3> </td>
+</tr> <tr class="t-dsc-header"> <th colspan="2">C Thư viện<code><a href="header/filesystem" title="cpp/header/filesystem">&lt;filesystem&gt;</a></code> </th>
+</tr> <tr class="t-dsc-header"> <th colspan="2">(không thay đổi)<code>std::filesystem</code> </th>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/absolute" title="cpp/filesystem/absolute"> <span class="t-lines"><span>Tuyệt đối</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Sáng tạo một con đường tuyệt đối<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/canonical" title="cpp/filesystem/canonical"> <span class="t-lines"><span>kinh điển</span><span>yếu_canonical</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>sáng tác một con đường kinh điển<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/relative" title="cpp/filesystem/relative"> <span class="t-lines"><span>liên quan đến</span><span>gần</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Kết hợp một con đường tương đối<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/copy" title="cpp/filesystem/copy"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Bản sao tệp hoặc thư mục<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/copy_file" title="cpp/filesystem/copy file"> <span class="t-lines"><span>COPY_FILE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Bản sao nội dung tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/copy_symlink" title="cpp/filesystem/copy symlink"> <span class="t-lines"><span>COPY_SYMLINK</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>sao chép một liên kết tượng trưng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/create_directory" title="cpp/filesystem/create directory"> <span class="t-lines"><span>created_directory</span><span>created_directories</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Tạo thư mục mới<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/create_hard_link" title="cpp/filesystem/create hard link"> <span class="t-lines"><span>created_hard_link</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Tạo một liên kết cứng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/create_symlink" title="cpp/filesystem/create symlink"> <span class="t-lines"><span>created_symlink</span><span>created_directory_symlink</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Tạo một liên kết tượng trưng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/current_path" title="cpp/filesystem/current path"> <span class="t-lines"><span>current_path</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>trả về hoặc đặt thư mục làm việc hiện tại<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/exists" title="cpp/filesystem/exists"> <span class="t-lines"><span>tồn tại</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đường dẫn có đề cập đến đối tượng hệ thống tệp hiện có không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/equivalent" title="cpp/filesystem/equivalent"> <span class="t-lines"><span>tương đương</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem hai đường dẫn có tham chiếu đến cùng một đối tượng hệ thống tệp không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/file_size" title="cpp/filesystem/file size"> <span class="t-lines"><span>FILE_SIZE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Trả về kích thước của một tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/hard_link_count" title="cpp/filesystem/hard link count"> <span class="t-lines"><span>Hard_link_Count</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Trả về số lượng liên kết cứng đề cập đến tệp cụ thể<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/last_write_time" title="cpp/filesystem/last write time"> <span class="t-lines"><span>last_write_time</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Nhận hoặc đặt thời gian sửa đổi dữ liệu cuối cùng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/permissions" title="cpp/filesystem/permissions"> <span class="t-lines"><span>quyền</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>sửa đổi quyền truy cập tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/read_symlink" title="cpp/filesystem/read symlink"> <span class="t-lines"><span>read_symlink</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>có được mục tiêu của một liên kết tượng trưng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/remove" title="cpp/filesystem/remove"> <span class="t-lines"><span>Được xác định trong tiêu đề</span><span>Remove_all</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Xóa một tệp hoặc thư mục trống<br/>xóa một tệp hoặc thư mục và tất cả các nội dung của nó, đệ quy<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/rename" title="cpp/filesystem/rename"> <span class="t-lines"><span>Đổi tên</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>di chuyển hoặc đổi tên một tệp hoặc thư mục<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/resize_file" title="cpp/filesystem/resize file"> <span class="t-lines"><span>Resize_file</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Thay đổi kích thước của một tệp thông thường bằng cách cắt hoặc không điền<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/space" title="cpp/filesystem/space"> <span class="t-lines"><span>không gian</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Xác định không gian trống có sẵn trên hệ thống tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/status" title="cpp/filesystem/status"> <span class="t-lines"><span>trạng thái</span><span>Symlink_Status</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Xác định các thuộc tính tệp<br/>Xác định các thuộc tính tệp, kiểm tra mục tiêu symlink<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/temp_directory_path" title="cpp/filesystem/temp directory path"> <span class="t-lines"><span>TEMP_DIRECTORY_PATH</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Trả về một thư mục phù hợp cho các tệp tạm thời<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="File_types">Loại tập tin</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/is_block_file" title="cpp/filesystem/is block file"> <span class="t-lines"><span>is_block_file</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đường dẫn đã cho có tham chiếu đến thiết bị chặn không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/is_character_file" title="cpp/filesystem/is character file"> <span class="t-lines"><span>is_character_file</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đường dẫn đã cho có đề cập đến thiết bị ký tự không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/is_directory" title="cpp/filesystem/is directory"> <span class="t-lines"><span>is_directory</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đường dẫn đã cho có đề cập đến một thư mục<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/is_empty" title="cpp/filesystem/is empty"> <span class="t-lines"><span>is_empty</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Kiểm tra xem đường dẫn đã cho có đề cập đến một tệp hoặc thư mục trống không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/is_fifo" title="cpp/filesystem/is fifo"> <span class="t-lines"><span>is_fifo</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Kiểm tra xem đường dẫn đã cho có đề cập đến một đường ống được đặt tên không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/is_other" title="cpp/filesystem/is other"> <span class="t-lines"><span>is_other</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đối số có đề cập đến<i>khác</i>tài liệu<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/is_regular_file" title="cpp/filesystem/is regular file"> <span class="t-lines"><span>is_regular_file</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đối số có đề cập đến một tệp thông thường không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/is_socket" title="cpp/filesystem/is socket"> <span class="t-lines"><span>is_socket</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Kiểm tra xem đối số có đề cập đến ổ cắm IPC có tên không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/is_symlink" title="cpp/filesystem/is symlink"> <span class="t-lines"><span>is_symlink</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đối số có đề cập đến một liên kết tượng trưng không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="filesystem/status_known" title="cpp/filesystem/status known"> <span class="t-lines"><span>trạng thái_know</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem trạng thái tệp có được biết không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Sử dụng thư viện này có thể yêu cầu các tùy chọn trình biên dịch/trình liên kết bổ sung. Thực hiện GNU trước 9.1 yêu cầu liên kết với<code>-lstdc++fs</code>và triển khai LLVM trước LLVM 9.0 yêu cầu liên kết với<code>-lc++fs</code>.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="feature_test#cpp_lib_filesystem" title="cpp/feature test"><code>__cpp_lib_filesystem</code></a></td> <td><span class="nu0">201703L</span></td> <td><span class="t-mark">Dest_at</span></td> <td>Thư viện hệ thống tập tin</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/cpp/experimental/fs" title="cpp/experimental/fs">C++ documentation</a></span>vì<span class=""><span>Hệ thống tệp ts</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem">https://en.cppreference.com/w/cpp/filesystem</a>
+</p>
+</div>

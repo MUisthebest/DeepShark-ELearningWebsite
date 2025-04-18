@@ -1,0 +1,129 @@
+ <h1 class="firstHeading" id="firstHeading">Chất xây dựng và danh sách khởi tạo thành viên</h1> <p>Constructor là một người không tĩnh đặc biệt<a href="member_functions" title="cpp/language/member functions">member function</a>của một lớp được sử dụng để khởi tạo các đối tượng thuộc loại lớp của nó.</p>
+<p>Theo định nghĩa của một hàm tạo của một lớp,<i>Danh sách khởi tạo thành viên</i>Chỉ định các bộ khởi tạo cho các cơ sở trực tiếp và ảo và các thành viên dữ liệu phi tĩnh. (Không bị nhầm lẫn với<code><a href="../utility/initializer_list" title="cpp/utility/initializer list">std::initializer_list</a></code>    Yêu cầu std :: are thừng_as &lt;typename std :: Generator &lt;T2, V2, ALLOC2&gt; :: Măng sản, mang lại&gt;</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Một hàm tạo không thể là một<a href="coroutines" title="cpp/language/coroutines">coroutine</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <p>Một hàm tạo không thể có<a href="member_functions#Explicit_object_parameter" title="cpp/language/member functions">explicit object parameter</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h3 id="Syntax">Cú pháp</h3> <p>Các hàm tạo được khai báo bằng thành viên<a href="function" title="cpp/language/function">function declarators</a>của hình thức sau:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">tên lớp</span> <code>(</code> <span class="t-spar">danh sách tham số</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>)</code> <span class="t-spar">ngoại trừ-spec</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Ở đâu<span class="t-spar">tên lớp</span>Phải đặt tên cho lớp hiện tại (hoặc khởi tạo hiện tại của một mẫu lớp) hoặc, khi được khai báo tại phạm vi không gian tên hoặc trong một tuyên bố bạn bè, nó phải là một tên lớp đủ điều kiện.</p>
+<p>Các nhà xác định duy nhất được phép trong<span class="t-spar">DEM-SPECIFIER-SEQ</span>của một tuyên bố xây dựng là<a href="friend" title="cpp/language/friend"><code>friend</code></a>Thì<a href="inline" title="cpp/language/inline"><code>inline</code></a><span class="t-rev-inl t-since-cxx11"><span>Thì<a href="constexpr" title="cpp/language/constexpr"><code>constexpr</code></a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx20"><span>Thì<a href="consteval" title="cpp/language/consteval"><code>consteval</code></a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>, Và<a href="explicit" title="cpp/language/explicit"><code>explicit</code></a>(Đặc biệt, không cho phép loại trả lại). Lưu ý rằng<a href="member_functions" title="cpp/language/member functions">cv- and ref-qualifiers</a>Không được phép: Const và ngữ nghĩa dễ bay hơi của một đối tượng đang được xây dựng không khởi động cho đến khi hàm tạo có nguồn gốc nhiều nhất hoàn thành.</p>
+<p>Cơ thể của một<a href="function" title="cpp/language/function">function definition</a>của bất kỳ hàm tạo nào, trước khi mở nẹp của câu lệnh ghép, có thể bao gồm<i>Danh sách khởi tạo thành viên</i>, có cú pháp là ký tự đại tràng<code>:</code>, tiếp theo là danh sách được phân tách bằng dấu phẩy của một hoặc nhiều<span class="t-spar">thành viên-khởi tạo</span>, mỗi trong số đó có cú pháp sau:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">danh sách biểu hiện</span> <code>(</code> <span class="t-spar">. Các nhà xây dựng với một</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>)</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">danh sách biểu hiện</span> <span class="t-spar">{</span> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">tham số-gói</span> <code>...</code> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Khởi tạo cơ sở hoặc thành viên được đặt tên bởi<span class="t-spar">danh sách biểu hiện</span>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<a href="direct_initialization" title="cpp/language/direct initialization">direct-initialization</a>Hoặc, nếu<span class="t-spar">. Các nhà xây dựng với một</span>                   Forwardit2 s_first, forwardit2 s_last,<a href="value_initialization" title="cpp/language/value initialization">value-initialization</a>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Khởi tạo cơ sở hoặc thành viên được đặt tên bởi<span class="t-spar">danh sách biểu hiện</span>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<a href="list_initialization" title="cpp/language/list initialization">list-initialization</a>(mà trở thành<a href="value_initialization" title="cpp/language/value initialization">value-initialization</a>Nếu danh sách trống và<a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate-initialization</a>Khi khởi tạo một tổng hợp)</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Khởi tạo nhiều cơ sở bằng cách sử dụng một<a href="parameter_pack#Base_specifiers_and_member_initializer_lists" title="cpp/language/parameter pack">pack expansion</a>
+</div> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">danh sách biểu hiện</span> </td> <td>-</td> <td>Bất kỳ định danh nào tên một thành viên dữ liệu không tĩnh hoặc bất kỳ tên loại nào tên là bản thân lớp (để ủy thác các nhà xây dựng) hoặc cơ sở trực tiếp hoặc ảo.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">. Các nhà xây dựng với một</span> </td> <td>-</td> <td>Có thể trống, danh sách các đối số được phân tách bằng dấu phẩy để chuyển cho hàm tạo của cơ sở hoặc thành viên</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">{</span> </td> <td>-</td> <td>Danh sách các bộ khởi tạo được bao bọc bằng dấu phẩy và danh sách sáng chế được lồng nhau</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tham số-gói</span> </td> <td>-</td> <td>Tên của một mẫu variadic<a href="parameter_pack#Base_specifiers_and_member_initializer_lists" title="cpp/language/parameter pack">parameter pack</a> </td>
+</tr>
+</table> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">cấu trúc s</pre></div> </div> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>{<a href="initialization" title="cpp/language/initialization">initialization</a>    int n;<code>explicit</code> <a href="converting_constructor" title="cpp/language/converting constructor">converting constructors</a>    S (int);       // Tuyên bố xây dựng<code>constexpr</code> <a href="../named_req/literaltype" title="cpp/named req/LiteralType">LiteralType</a>    S (): n (7) {} // Định nghĩa trình xây dựng:<a href="default_constructor" title="cpp/language/default constructor">default constructors</a>                  // ": n (7)" là danh sách khởi tạo<a href="copy_constructor" title="cpp/language/copy constructor">copy constructors</a>Và<a href="move_constructor" title="cpp/language/move constructor">move constructors</a>.</p>
+<p>                  // ": n (7) {}" là cơ thể chức năng<span class="t-rev-inl t-since-cxx11"><span>};<a href="data_members#Member_initialization" title="cpp/language/data members">default member initializer</a> </span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>S :: S (int x): n {x} {} // Định nghĩa cấu trúc: ": n {x}" là danh sách khởi tạo<span class="t-rev-inl t-since-cxx11"><span> </span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>int main ()<a href="union#Anonymous_unions" title="cpp/language/union">anonymous unions</a>hoặc<a href="union#Union-like_class" title="cpp/language/union">variant members</a>{<span class="t-rev-inl t-since-cxx11"><span>    S s;      // gọi S :: S ()</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<p>    S S2 (10); // gọi S :: S (int)<span class="t-spar">danh sách biểu hiện</span>Các nhà xây dựng không có tên và không thể được gọi trực tiếp. Họ được viện dẫn khi<a href="derived_class" title="cpp/language/derived class">virtual base class</a>diễn ra, và chúng được chọn theo các quy tắc khởi tạo. Các nhà xây dựng mà không có</p>
+<p>chỉ định là<span class="t-spar">. Các nhà xây dựng với một</span>hoặc<span class="t-spar">trình xác định làm cho loại A của họ</span>. Các hàm tạo có thể được gọi mà không có bất kỳ đối số nào</p>
+<div class="cpp source-cpp"><pre data-language="cpp">. Các hàm tạo lấy một đối tượng khác cùng loại với đối số</pre></div> <p>Trước khi tuyên bố ghép hình thành cơ thể chức năng của hàm tạo bắt đầu thực thi, việc khởi tạo tất cả các cơ sở trực tiếp, cơ sở ảo và các thành viên dữ liệu phi tĩnh đã hoàn thành. Danh sách khởi tạo thành viên là nơi khởi tạo không mặc định của các tiểu mục này có thể được chỉ định. Đối với các cơ sở không thể được xác định mặc định và đối với các thành viên dữ liệu không tĩnh không thể được khởi tạo bằng cách khởi tạo mặc định<a href="function-try-block" title="cpp/language/function-try-block">function-try-block</a></p>
+<p>hoặc bởi họ</p>
+<p>, nếu có<code>*this</code>, chẳng hạn như các thành viên của các loại tham chiếu và các loại đủ điều kiện, các bộ khởi tạo thành viên phải được chỉ định.<a href="abstract_class" title="cpp/language/abstract class">pure virtual</a>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Không có khởi tạo nào được thực hiện cho<a href="data_members#Member_initialization" title="cpp/language/data members">default member initializer</a>không có trình khởi tạo thành viên</p>
+<div class="cpp source-cpp"><pre data-language="cpp">hoặc Bộ khởi tạo thành viên mặc định</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Các bộ khởi tạo ở đâu</p>
+<div class="cpp source-cpp"><pre data-language="cpp">lớp học hoặc nhận dạng</pre></div> <p>Tên a<a href="data_members#Member_initialization" title="cpp/language/data members">default member initializer</a>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <h4 id="Delegating_constructor">bị bỏ qua trong quá trình xây dựng bất kỳ lớp nào không phải là lớp có nguồn gốc nhất của đối tượng đang được xây dựng.</h4> <p>Những cái tên xuất hiện trong<span class="t-spar">danh sách biểu hiện</span>Danh sách ban đầu<i>được đánh giá trong phạm vi của hàm tạo:</i>Lớp X.<i>{</i>.</p>
+<p>    int a, b, i, j;</p>
+<p>công cộng:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    const int &amp; r;</pre></div> <h4 id="Inheriting_constructors">    X (int i)</h4> <p>(Raco).<a href="using_declaration#Inheriting_constructors" title="cpp/language/using declaration">using declaration</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Initialization_order">      : r (a) // khởi tạo x :: r để tham khảo x :: a</h4> <p>      , b {i} // Khởi tạo X :: B theo giá trị của tham số i</p>
+<div class="t-li1">
+<span class="t-li">1)</span>      , i (i) // Khởi tạo x :: i với giá trị của tham số i</div> <div class="t-li1">
+<span class="t-li">2)</span>      , j (this-&gt; i) // Khởi tạo x :: j theo giá trị của x :: i</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>    {}</div> <div class="t-li1">
+<span class="t-li">là trong</span>};</div> <p>Các ngoại lệ được ném từ các bộ khởi tạo thành viên có thể được xử lý bởi<a href="destructor" title="cpp/language/destructor">destructor</a>Các chức năng thành viên (bao gồm các hàm thành viên ảo) có thể được gọi từ các bộ khởi tạo thành viên, nhưng hành vi không được xác định nếu không phải tất cả các cơ sở trực tiếp đều được khởi tạo tại thời điểm đó.</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_delegating_constructors" title="cpp/feature test"><code>__cpp_delegating_constructors</code></a></td> <td><span class="nu0">Đối với các cuộc gọi ảo (nếu các cơ sở trực tiếp được khởi tạo tại điểm đó), các quy tắc tương tự được áp dụng như các quy tắc cho các cuộc gọi ảo từ các hàm tạo và các hàm hủy: các chức năng thành viên ảo hoạt động như thể loại động của loại động</span></td> <td><span class="t-mark">unininitialized_copy_n</span></td> <td>
+<a href="#Delegating_constructor">Delegating constructors</a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">là loại tĩnh của lớp đang được xây dựng (công văn động không tuyên truyền phân cấp kế thừa) và các cuộc gọi ảo (nhưng không phải là các cuộc gọi tĩnh) đến</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/194.html" rel="nofollow">CWG 194</a> </td> <td>C ++ 98</td> <td>Chức năng thành viên là hành vi không xác định.<br/>Nếu một thành viên dữ liệu không tĩnh có<br/>và cũng xuất hiện trong danh sách khởi tạo thành viên, sau đó trình khởi tạo thành viên được sử dụng và trình khởi tạo thành viên mặc định bị bỏ qua:<code>inline explicit</code>)</td> <td>cấu trúc s<br/>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/257.html" rel="nofollow">CWG 257</a> </td> <td>C ++ 98</td> <td>    int n = 42;   // Trình khởi tạo thành viên mặc định<br/>    S (): n (7) {} // sẽ đặt n thành 7, không phải 42</td> <td>};<br/>Thành viên tham chiếu không thể bị ràng buộc với các tạm thời trong danh sách khởi tạo thành viên:<br/>Cấu trúc a</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/263.html" rel="nofollow">CWG 263</a> </td> <td>C ++ 98</td> <td>{<br/>    A (): v (42) {} // lỗi</td> <td>    const int &amp; v;<br/>};</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1345.html" rel="nofollow">CWG 1345</a> </td> <td>C ++ 98</td> <td>Lưu ý: áp dụng tương tự cho<br/>Ủy quyền xây dựng</td> <td>Nếu tên của lớp học xuất hiện dưới dạng</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1435.html" rel="nofollow">CWG 1435</a> </td> <td>C ++ 98</td> <td>lớp học hoặc nhận dạng<br/>Trong danh sách khởi tạo thành viên, thì danh sách phải chỉ bao gồm một trình khởi tạo thành viên đó; Một hàm tạo như vậy được gọi là</td> <td>ủy quyền xây dựng<br/>và hàm tạo được chọn bởi thành viên duy nhất của danh sách khởi tạo là</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1696.html" rel="nofollow">CWG 1696</a> </td> <td>C ++ 98</td> <td>hàm tạo mục tiêu<br/>Trong trường hợp này, hàm tạo mục tiêu được chọn bằng độ phân giải quá tải và được thực thi trước, sau đó điều khiển trả về Trình xây dựng ủy thác và cơ thể của nó được thực thi.</td> <td>Các nhà xây dựng ủy thác không thể đệ quy.<br/>lớp foo</td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul>
+<li>{</li>
+<li>công cộng: </li>
+</ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul>
+<li>    Foo (char x, int y) {}</li>
+<li>    Foo (int y): foo ('a', y) {} // foo (int) đại biểu cho foo (char, int)</li>
+</ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul>
+<li>};</li>
+<li>Kế thừa các nhà xây dựng</li>
+</ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul>
+<li>Sau đó, thành viên dữ liệu không tĩnh được khởi tạo theo thứ tự khai báo trong định nghĩa lớp.</li>
+<li>Cuối cùng, cơ thể của hàm tạo được thực hiện.</li>
+</ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul>
+<li>Sau đó, thành viên dữ liệu không tĩnh được khởi tạo theo thứ tự khai báo trong định nghĩa lớp.</li>
+<li>Cuối cùng, cơ thể của hàm tạo được thực hiện.</li>
+</ul>
+<li>    S.B3 = 0B11;</li>
+<ul>
+<li>Sau đó, thành viên dữ liệu không tĩnh được khởi tạo theo thứ tự khai báo trong định nghĩa lớp.</li>
+<li>Cuối cùng, cơ thể của hàm tạo được thực hiện.</li>
+</ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="copy_elision" title="cpp/language/copy elision">copy elision</a> </li>
+<li> <a href="converting_constructor" title="cpp/language/converting constructor">converting constructor</a> </li>
+<li> <a href="copy_assignment" title="cpp/language/copy assignment">copy assignment</a> </li>
+<li> <a href="copy_constructor" title="cpp/language/copy constructor">copy constructor</a> </li>
+<li> <a href="default_constructor" title="cpp/language/default constructor">default constructor</a> </li>
+<li> <a href="destructor" title="cpp/language/destructor">destructor</a> </li>
+<li> <a href="explicit" title="cpp/language/explicit"><code>explicit</code></a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> <ul>
+<li> <a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a> </li>
+<li> <a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </li>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a> </li>
+<li> <a href="default_initialization" title="cpp/language/default initialization">default initialization</a> </li>
+<li> <a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a> </li>
+<li> <a href="list_initialization" title="cpp/language/list initialization">list initialization</a> </li>
+<li> <a href="reference_initialization" title="cpp/language/reference initialization">reference initialization</a> </li>
+<li> <a href="value_initialization" title="cpp/language/value initialization">value initialization</a> </li>
+<li> <a href="zero_initialization" title="cpp/language/zero initialization">zero initialization</a> </li>
+</ul> </li>
+<li> <a href="move_assignment" title="cpp/language/move assignment">move assignment</a> </li>
+<li> <a href="move_constructor" title="cpp/language/move constructor">move constructor</a> </li>
+<li> <a href="new" title="cpp/language/new"><code>new</code></a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/constructor">https://en.cppreference.com/w/cpp/language/constructor</a>
+</p>
+</div>

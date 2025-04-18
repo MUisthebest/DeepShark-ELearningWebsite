@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Coroutine_Handle &lt;Promise&gt; :: Phá hủy</h1> <table class="t-dcl-begin"> <tr class="t-dcl-h"> <td>Thành viên của các chuyên ngành khác</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void phá hủy () const;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-h"> <td>Thành viên chuyên môn<code>std::coroutine_handle&lt;std::noop_coroutine_promise&gt;</code>
+</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr void phá hủy () const noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Phá hủy trạng thái coroutine của coroutine<code>*this</code>Đề cập đến, hoặc không làm gì nếu coroutine là một coroutine không có op.</div> <div class="t-li1">
+<span class="t-li">2)</span>Không làm gì cả.</div> <p>Hành vi không được xác định nếu cần phá hủy và<code>*this</code>không đề cập đến một coroutine treo.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="resume" title="cpp/coroutine/coroutine handle/resume"> <span class="t-lines"><span>chuyển đổi đối tượng thành</span><span>xong</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>kiểm tra xem coroutine đã hoàn thành<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/coroutine/coroutine_handle/destroy">https://en.cppreference.com/w/cpp/coroutine/coroutine_handle/destroy</a>
+</p>
+</div>

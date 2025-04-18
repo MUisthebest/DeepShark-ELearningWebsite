@@ -1,0 +1,41 @@
+ <h1 class="firstHeading" id="firstHeading">std :: sin, std :: sinf, std :: sinl</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx23"> <td><pre data-language="cpp">phao tội lỗi (float num);</pre></td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Double sin (kép num);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> <br/><span class="t-mark">Void inplace_merge (execPolicy &amp;&amp; chính sách,</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Tội lỗi gấp đôi (num đôi dài);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">Void inplace_merge (execPolicy &amp;&amp; chính sách,</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">/ *-điểm nổi kiểu *//</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">Void inplace_merge (execPolicy &amp;&amp; chính sách,</span> </td> </tr> <tr class="t-dcl-h"> <td> <a href="#Notes">Additional overloads</a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</td> <td></td> <td></td> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">            tội lỗi ( / * loại dấu phẩy động * / num);</pre>
+</td> <td>, kết quả là hữu hạn.</td> <td> <span class="t-mark">Void inplace_merge (execPolicy &amp;&amp; chính sách,</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>float sinf (float num);<code>num</code>Double cosl dài (num gấp đôi dài);<span class="t-rev-inl t-since-cxx23"><span>Double Double Acosl (Double Num dài);<code>std::sin</code>Mẫu &lt;Class Integer&gt;</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>
+</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <span class="t-li">Mẫu &lt;arithmetic1, orithmetic2, số học lớp3&gt; lớp</span>ACO kép (số nguyên);<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>.</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>trả lại hệ điều hành &lt;&lt; s.str ();</td> <td>-</td> <td>Mẫu &lt;Class Integer&gt;</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Double sinl dài (num đôi dài);<code>num</code>Mẫu &lt;Class Integer&gt;<code>[</code><code>-1</code><code>, </code><code>+1</code><code>]</code>, \ (\ nhỏ e^z \) e</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>(đo bằng radian).<code>num</code>. Sự đánh đổi là:</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> </table> <p>Quá tải bổ sung được cung cấp cho tất cả các loại số nguyên, được coi là</p>
+<p>giá trị nổi hoặc số nguyên</p>
+<h3 id="Error_handling">Xử lý lỗi</h3> <p>Nếu không có lỗi xảy ra, cosin hồ quang của<code><a href="math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code>.</p>
+<p>Nếu một lỗi phạm vi xảy ra do dòng chảy, kết quả chính xác (sau khi làm tròn) được trả về.</p>
+<ul>
+<li>được trả lại (với dấu hiệu chính xác).</li>
+<li>Nếu không có lỗi xảy ra, cosin của<code><a href="../fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></code>T* Toán tử+(STD :: PTRDIFF_T, T*)</li>
+<li>nằm ngoài phạm vi</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Double sin (số nguyên num);<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/sin.html" rel="nofollow">domain error in POSIX</a>.</p>
+<p>Tính toán sin của<code>num</code>Nếu đối số là +, +π/2 được trả về.<code><a href="../../types/climits" title="cpp/types/climits">DBL_MIN</a></code>Thì<code><a href="../../types/climits" title="cpp/types/climits">FLT_MIN</a></code>, Và<code><a href="../../types/climits" title="cpp/types/climits">LDBL_MIN</a></code>bất kể</p>
+<p>, kết quả bằng<span class="t-v">, kết quả là hữu hạn.</span>trong khoảng [−π; π].<code>num</code>Nếu việc triển khai hỗ trợ số học dấu nổi của IEEE (IEC 60559),<code>std::sin(num)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::sin(static_cast&lt;double&gt;(num))</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Nếu không có lỗi xảy ra, sin của</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">(sin (num)) trong phạm vi</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="cos" title="cpp/numeric/math/cos"> <span class="t-lines"><span>cos</span><span>cosf</span><span>COSL</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tính toán cosine (\ ({\ small \ cos {x}} \) cos (x))<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="tan" title="cpp/numeric/math/tan"> <span class="t-lines"><span>làn da rám nắng</span><span>tanf</span><span>Tanl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tính toán Tangent (\ ({\ Small \ tan {x}} \) tan (x))<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="asin" title="cpp/numeric/math/asin"> <span class="t-lines"><span>Asin</span><span>asinf</span><span>asinl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tính toán sine arc (\ ({\ small \ arcsin {x}} \) arcsin (x))<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../complex/sin" title="cpp/numeric/complex/sin"> <span class="t-lines"><span>tội lỗi<span class="t-dsc-small">(STD :: phức tạp)</span></span></span></a></div> </td> <td>Tính sin của một số phức (\ ({\ small \ sin {z}} \) sin (z))<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../valarray/sin" title="cpp/numeric/valarray/sin"> <span class="t-lines"><span>tội lỗi<span class="t-dsc-small">Thuật toán</span></span></span></a></div> </td> <td>áp dụng chức năng<code>std::sin</code>cho từng yếu tố của Valarray<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/math/sin" title="c/numeric/math/sin">C documentation</a></span>vì<code>sin</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/math/sin">https://en.cppreference.com/w/cpp/numeric/math/sin</a>
+</p>
+</div>

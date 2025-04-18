@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Exception_ptr</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/exception" title="cpp/header/exception">&lt;exception&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">typedef /*không xác định* / ngoại lệ_ptr;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p><code>std::exception_ptr</code>là một loại giống như con trỏ có thể quản lý được một đối tượng ngoại lệ đã bị ném và bắt giữ<code><a href="current_exception" title="cpp/error/current exception">std::current_exception</a></code>. Một ví dụ của<code>std::exception_ptr</code>Có thể được chuyển cho một chức năng khác, có thể trên một chủ đề khác, trong đó ngoại lệ có thể được tái sinh và xử lý với một mệnh đề bắt.</p>
+<p>Một mặc định được xây dựng<code>std::exception_ptr</code>là một con trỏ null; Nó không chỉ vào một đối tượng ngoại lệ.</p>
+<p>Hai trường hợp của<code>std::exception_ptr</code>chỉ so sánh bằng nhau nếu cả hai đều null hoặc cả hai điểm ở cùng một đối tượng ngoại lệ.</p>
+<p><code>std::exception_ptr</code>không thể chuyển đổi hoàn toàn với bất kỳ loại số học, liệt kê hoặc loại con trỏ nào. Nó được chuyển đổi theo ngữ cảnh để<code>bool</code>và sẽ đánh giá sai nếu nó là null, đúng nếu không.</p>
+<p>Đối tượng ngoại lệ được tham chiếu bởi một<code>std::exception_ptr</code>vẫn còn hiệu lực miễn là vẫn còn ít nhất một<code>std::exception_ptr</code>đó là tham chiếu nó:<code>std::exception_ptr</code>là một con trỏ thông minh sở hữu chung (lưu ý: đây là ngoài thông thường<a href="../language/throw#The_exception_object" title="cpp/language/throw">exception object lifetime rules</a>).</p>
+<p><code>std::exception_ptr</code>. Tuy nhiên, hoạt động hiệu quả hơn nếu<a href="../named_req/nullablepointer" title="cpp/named req/NullablePointer">NullablePointer</a>.</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">int main ()</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="make_exception_ptr" title="cpp/error/make exception ptr"> <span class="t-lines"><span>make_exception_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tạo ra một<code>std::exception_ptr</code>từ một đối tượng ngoại lệ<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="current_exception" title="cpp/error/current exception"> <span class="t-lines"><span>current_exception</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>nắm bắt được ngoại lệ hiện tại trong một<code>std::exception_ptr</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="rethrow_exception" title="cpp/error/rethrow exception"> <span class="t-lines"><span>rethrow_exception</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>ném ngoại lệ từ một<code>std::exception_ptr</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/exception_ptr">https://en.cppreference.com/w/cpp/error/exception_ptr</a>
+</p>
+</div>

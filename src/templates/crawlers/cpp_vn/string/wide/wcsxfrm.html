@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: WCSXFRM</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: size_t wcsxfrm (wchar_t* dest, const wchar_t* src, std :: size_t đếm);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Biến đổi chuỗi rộng được chấm dứt null được trỏ đến bởi<code>src</code>thành hình thức được xác định theo thực hiện để so sánh hai chuỗi biến đổi với<code><a href="wcscmp" title="cpp/string/wide/wcscmp">std::wcscmp</a></code>cho kết quả tương tự như so sánh các chuỗi ban đầu với<code><a href="wcscoll" title="cpp/string/wide/wcscoll">std::wcscoll</a></code>, trong địa phương c hiện tại.</p>
+<p> <code>count</code>Các ký tự của chuỗi được chuyển đổi được ghi vào đích, bao gồm ký tự null chấm dứt và độ dài của chuỗi biến đổi đầy đủ được trả về, không bao gồm ký tự null chấm dứt.</p>
+<p>Nếu như<code>count</code>khoảng cách<code>​0​</code>, sau đó<code>dest</code>được phép là một con trỏ null.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Độ dài chính xác của bộ đệm có thể nhận toàn bộ chuỗi được chuyển đổi là<code>1 + std::wcsxfrm(nullptr, src, 0)</code>.</p>
+<p>Chức năng này được sử dụng khi thực hiện nhiều so sánh phụ thuộc vào địa phương bằng cách sử dụng cùng một chuỗi rộng hoặc tập hợp các chuỗi rộng, bởi vì nó hiệu quả hơn để sử dụng<code>std::wcsxfrm</code>Để biến đổi tất cả các chuỗi chỉ một lần và sau đó so sánh các chuỗi rộng được biến đổi với<code><a href="wcscmp" title="cpp/string/wide/wcscmp">std::wcscmp</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>con trỏ đến phần tử đầu tiên của chuỗi kết thúc null rộng để viết chuỗi được chuyển đổi thành</td>
+</tr> <tr class="t-par"> <td>SRC</td> <td>-</td> <td>Con trỏ tới chuỗi ký tự rộng được chấm dứt null để biến đổi</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng ký tự tối đa để đầu ra</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Chiều dài của chuỗi rộng được biến đổi, không bao gồm cả ký tự null chấm dứt.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CWchar&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../byte/strxfrm" title="cpp/string/byte/strxfrm"> <span class="t-lines"><span>strxfrm</span></span></a></div> </td> <td>biến đổi một chuỗi sao cho<code>strcmp</code>sẽ tạo ra kết quả tương tự như<code>strcoll</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../locale/collate/transform" title="cpp/locale/collate/transform"> <span class="t-lines"><span>so sánh hai chuỗi bằng cách sử dụng các quy tắc đối chiếu của khía cạnh này</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>do_transform<br/> <span class="t-mark">Putback<code>std::collate&lt;CharT&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="wcscoll" title="cpp/string/wide/wcscoll"> <span class="t-lines"><span>wcscoll</span></span></a></div> </td> <td>So sánh hai chuỗi rộng theo địa phương hiện tại<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/wcsxfrm" title="c/string/wide/wcsxfrm">C documentation</a></span>vì<code>wcsxfrm</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/wcsxfrm">https://en.cppreference.com/w/cpp/string/wide/wcsxfrm</a>
+</p>
+</div>

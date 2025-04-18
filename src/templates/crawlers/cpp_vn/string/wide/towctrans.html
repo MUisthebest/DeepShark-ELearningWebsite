@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Towctrans</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwctype" title="cpp/header/cwctype">&lt;cwctype&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: wint_t Towctrans (std :: wint_t ch, std :: wctrans_t desc);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Bản đồ nhân vật rộng<code>ch</code>Sử dụng địa phương C hiện tại<code><a href="../../locale/lc_categories" title="cpp/locale/LC categories">LC_CTYPE</a></code>danh mục ánh xạ được xác định bởi<code>desc</code>.</p>
+<p>Nếu giá trị của<code>ch</code>không thể đại diện như một<code>wchar_t</code>cũng không bằng giá trị của macro<code>WEOF</code>Hoạt động tương đương cho quá tải</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>ch</td> <td>-</td> <td>nhân vật rộng để ánh xạ</td>
+</tr> <tr class="t-par"> <td>desc</td> <td>-</td> <td>các<code><a href="../../locale/lc_categories" title="cpp/locale/LC categories">LC_CTYPE</a></code>ánh xạ, thu được từ một cuộc gọi đến<code><a href="wctrans" title="cpp/string/wide/wctrans">std::wctrans</a></code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Giá trị được ánh xạ của<code>ch</code>sử dụng ánh xạ được xác định bởi<code>desc</code>TRONG<code><a href="../../locale/lc_categories" title="cpp/locale/LC categories">LC_CTYPE</a></code>Mặt của địa phương c hiện tại.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Ví dụ sau đây cho thấy Katakana cho bản đồ nhân vật Hiragana.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;THERTHERM&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;clocale&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="wctrans" title="cpp/string/wide/wctrans"> <span class="t-lines"><span>WCTRANS</span></span></a></div> </td> <td>Nhìn lên một danh mục ánh xạ ký tự trong ngôn ngữ C hiện tại<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/towctrans" title="c/string/wide/towctrans">C documentation</a></span>vì<code>towctrans</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/towctrans">https://en.cppreference.com/w/cpp/string/wide/towctrans</a>
+</p>
+</div>

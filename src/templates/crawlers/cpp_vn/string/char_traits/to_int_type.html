@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: char_traits &lt;par&gt; :: to_int_type, std :: char_traits &lt;wchar_t&gt; :: to_int_type, std :: char_traits std :: char_traits &lt;par32_t&gt; :: to_int_type</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">static int_type to_int_type (char_type c);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">const constexpr int_type to_int_type (char_type c) noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Yêu cầu STD :: Convertible_to &lt;Const I &amp;, I2&gt;<code>c</code>ĐẾN<code>int_type</code>.</p>
+<p>(Raco).<a href="../../named_req/chartraits" title="cpp/named req/CharTraits">CharTraits</a>các ký tự trong chuỗi ký tự được trỏ bởi<code>X::to_int_type</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ánh xạ_Type</td> <td>-</td> <td>giá trị để chuyển đổi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một giá trị tương đương với<code>c</code>.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="Notes">Ghi chú</h3> <p>Đối với mọi giá trị hợp lệ của<code>char_type</code>, phải có một giá trị duy nhất của<code>int_type</code>khác biệt với<code><a href="eof" title="cpp/string/char traits/eof">eof()</a></code>.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/char_traits/to_int_type">https://en.cppreference.com/w/cpp/string/char_traits/to_int_type</a>
+</p>
+</div>

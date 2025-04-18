@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: strstreambuf :: đóng băng</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void Freeze (bool freezefl = true);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nếu bộ đệm sử dụng phân bổ động, hãy đặt trạng thái đông lạnh của luồng thành<code>freezefl</code>.</p>
+<p>Trong khi luồng bị đóng băng,<code><a href="overflow" title="cpp/io/strstreambuf/overflow">overflow()</a></code>sẽ không phân bổ lại bộ đệm và<code>destructor</code>sẽ không phân loại bộ đệm (do đó gây rò rỉ bộ nhớ).</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>đóng băng</td> <td>-</td> <td>Giá trị mới để đặt trạng thái đóng băng thành</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>Mọi cuộc gọi đến<code><a href="str" title="cpp/io/strstreambuf/str">str()</a></code>Đóng băng luồng để bảo tồn tính hợp lệ của con trỏ mà nó trả về. Để cho phép chất phá hủy xử lý bộ đệm,<code>freeze(false)</code>cần được gọi là rõ ràng.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Trong ví dụ này, phân bổ ban đầu của mảng cơ bản là cho 16 byte.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Trstream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../strstream/freeze" title="cpp/io/strstream/freeze"> <span class="t-lines"><span>đông cứng</span></span></a></div> </td> <td>vô hiệu hóa/cho phép phân bổ lại tự động<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::strstream</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../ostrstream/freeze" title="cpp/io/ostrstream/freeze"> <span class="t-lines"><span>đông cứng</span></span></a></div> </td> <td>vô hiệu hóa/cho phép phân bổ lại tự động<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::ostrstream</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="~strstreambuf" title="cpp/io/strstreambuf/~strstreambuf"> <span class="t-lines"><span>một đối tượng ngoại lệ khác để gán với</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Hằng số thành viên<code>strstreambuf</code>đối tượng, tùy chọn giải quyết mảng ký tự<br/> <span class="t-mark">(chức năng thành viên công cộng ảo)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="overflow" title="cpp/io/strstreambuf/overflow"> <span class="t-lines"><span>Xsputn</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Lối nối một ký tự vào trình tự đầu ra, có thể phân bổ lại hoặc phân bổ ban đầu bộ đệm nếu động và không bị đóng băng<br/> <span class="t-mark">(Hàm thành viên được bảo vệ ảo)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/strstreambuf/freeze">https://en.cppreference.com/w/cpp/io/strstreambuf/freeze</a>
+</p>
+</div>

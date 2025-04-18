@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_ptr &lt;t&gt; :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Shared_ptr &amp; Toán tử = (const shared_ptr &amp; r) noExcept;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;Class Y&gt; </pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Shared_ptr &amp; Toán tử = (const shared_ptr &lt;y&gt; &amp; r) noExcept;</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Shared_ptr &amp; Toán tử = (Shared_Ptr &amp;&amp; r) NoExcept;</pre>
+</td> <td>(4)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-until-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;Class Y&gt; </pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark">(không dùng nữa trong C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">(Đã xóa trong C ++ 17)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Shared_ptr &amp; Toán tử = (Shared_Ptr &lt;Y&gt; &amp;&amp; r) NoExcept;</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>auto_ptr &amp; toán tử = (auto_ptr_ref &lt;t&gt; m) ném ();<code>r</code>.</p>
+<p>Nếu như<code>*this</code>Mẫu &lt;Class Y&gt; <code>shared_ptr</code>Shared_ptr &amp; Toán tử = (std :: auto_ptr &lt;y&gt; &amp;&amp; r);<code>r</code>Loại yếu tố.<code>*this</code>Mẫu &lt;class Y, class Deleter&gt; </p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Shared_ptr &amp; Toán tử = (std :: độc đáo_ptr &lt;y, deleter&gt; &amp;&amp; r);<code>r</code>. Nếu như<code>r</code>. Sau khi chuyển nhượng,<code>*this</code>sở hữu nó, và<code>shared_ptr&lt;T&gt;(r).swap(*this)</code>.</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>, đối tượng bị phá hủy thông qua Deleter sở hữu.<code>shared_ptr</code>từ<code>r</code>Chia sẻ quyền sở hữu đối tượng được quản lý bởi<code>*this</code>quản lý không có đối tượng,<code>r</code>, Và<code>r</code>quản lý không có đối tượng,<code>shared_ptr&lt;T&gt;(std::move(r)).swap(*this)</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Quản lý không có đối tượng quá. Sau khi chuyển nhượng,<code>r</code>ĐẾN<code>*this</code>. Nếu như<code>r</code>. Sau khi chuyển nhượng,<code>*this</code>chứa một bản sao của trạng thái trước đó của<code>*this</code>trống rỗng. Tương đương với<code>r</code>, Và<code>use_count() == 1</code>Chuyển quyền sở hữu đối tượng được quản lý bởi<code>r</code>quản lý không có đối tượng,<code>shared_ptr&lt;T&gt;(r).swap(*this)</code>.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>Quản lý không có đối tượng quá. Sau khi chuyển nhượng,<code>r</code>ĐẾN<code>*this</code>chứa con trỏ trước đây được giữ bởi<code>r</code>; Mà còn<code>r</code>trống rỗng. Tương đương với<code>shared_ptr&lt;T&gt;(std::move(r)).swap(*this)</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>thường được sử dụng.</td> <td>-</td> <td>Chuyển quyền sở hữu đối tượng được quản lý bởi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>. Người xóa liên quan đến<code>shared_ptr</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">    trả về std :: find_if_not (đầu tiên, cuối cùng, p) == cuối cùng;</span>Có thể ném các trường hợp ngoại lệ do thực hiện.</div> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="reset" title="cpp/memory/shared ptr/reset"> <span class="t-lines"><span>cài lại</span></span></a></div> </td> <td>Thay thế đối tượng được quản lý<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/shared_ptr/operator%3D">https://en.cppreference.com/w/cpp/memory/shared_ptr/operator%3D</a>
+</p>
+</div>

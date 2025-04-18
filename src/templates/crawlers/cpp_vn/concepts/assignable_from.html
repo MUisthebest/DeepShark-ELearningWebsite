@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: gertable_from</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/concepts" title="cpp/header/concepts">&lt;concepts&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Lớp LHS, Lớp RHS&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Khái niệm gán được_from =<code>assignable_from&lt;LHS, RHS&gt;</code>    std :: is_lvalue_reference_v &lt;lhs&gt; &amp;&amp;<code>RHS</code>    std :: Common_Reference_With &lt;<code>LHS</code>.</p>
+<h3 id="Semantic_requirements">        const std :: remove_reference_t &lt;lhs&gt; &amp;,</h3> <p>Cho quá tải</p>
+<ul>
+<li> <code>lhs</code>        const std :: remove_reference_t &lt;hs&gt; &amp;&gt; &amp;&amp;<code>lcopy</code>chỉ vào trình tự và mọi số nguyên không âm<code>decltype((lhs))</code>khoảng cách<code>LHS</code>Thì</li>
+<li> <code>rhs</code>    Yêu cầu (LHS LHS, RHS &amp;&amp; rhs) {<code>decltype((rhs))</code>khoảng cách<code>RHS</code>Thì</li>
+<li> <code>rcopy</code>        {lhs = std :: forward &lt;hs&gt; (rhs)} -&gt; std :: more_as &lt;lhs&gt;;<code>rhs</code>Thì</li>
+</ul> <p><code>assignable_from&lt;LHS, RHS&gt;</code>    };</p>
+<ul>
+<li> <code><a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span>lhs <span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span> rhs<span class="br0">)</span> <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span>lcopy<span class="br0">)</span></code>Khái niệm</li>
+<li>Chỉ định rằng một biểu thức của loại và danh mục giá trị được chỉ định bởi<code>lhs = rhs</code>:<ul>
+<li> <code>lhs</code>hoặc một loại chính sách thực thi được xác định theo thực hiện. Nếu không thì,<code>rcopy</code>, Trừ khi<code>rhs</code>có thể được gán cho biểu thức lvalue có loại được chỉ định bởi<code>lcopy</code>Yêu cầu ngữ nghĩa</li>
+<li>nếu như<code>rhs</code>, một lvalue đề cập đến một đối tượng<ul>
+<li>, một biểu thức sao cho</li>
+<li>, một đối tượng riêng biệt bằng</li>
+</ul> </li>
+</ul> </li>
+</ul> <h3 id="Equality_preservation">Bảo tồn bình đẳng</h3> <p>chỉ được mô hình hóa nếu<a href="../language/requires" title="cpp/language/requires">requires expressions</a>(tức là, biểu thức gán mang lại một lvalue đề cập đến toán hạng bên trái);<a href="../concepts#Equality_preservation" title="cpp/concepts">equality-preserving</a>Sau khi đánh giá</p>
+<h3 id="Notes">Ghi chú</h3> <p>là một xvalue không có cuộc gọi mà đề cập đến<code>x</code>(tức là, nhiệm vụ là một bản thân tự động),<code>y</code>là một glvalue:<code>x = y</code>Nếu đó là XVALUE không phải lúc, đối tượng mà nó đề cập đến ở trạng thái hợp lệ nhưng không xác định;<code>=</code>Mặt khác, đối tượng mà nó đề cập đến không được sửa đổi;<code><a href="http://en.cppreference.com/w/cpp/container/vector"><span class="kw1272">Điều đó cho tất cả<span class="me2">Vector</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/utility/any"><span class="kw1073">Điều đó cho tất cả<span class="me2">bất kì</span></span></a><span class="sy1">&lt;</span></code>).</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_assignable" title="cpp/types/is assignable"> <span class="t-lines"><span>is_assignable</span><span>is_trivently_assignable</span><span>is_nothrow_assignable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem một loại có toán tử gán cho một đối số cụ thể không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/concepts/assignable_from">https://en.cppreference.com/w/cpp/concepts/assignable_from</a>
+</p>
+</div>

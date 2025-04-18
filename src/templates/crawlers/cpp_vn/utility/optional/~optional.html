@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tùy chọn &lt;t&gt; :: ~ Tùy chọn</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td><pre data-language="cpp">~ tùy chọn ();</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr ~ tùy chọn ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Nếu đối tượng chứa một giá trị và loại<code>T</code>không bị phá hủy một cách tầm thường (xem<code><a href="../../types/is_destructible" title="cpp/types/is destructible">std::is_trivially_destructible</a></code>), phá hủy giá trị được chứa bằng cách gọi chất phá hủy của nó, như thể bằng cách<code>value().T::~T()</code>.</p>
+<p>Nếu không, không làm gì cả.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Nếu như<code>T</code>không thể phá hủy một cách tầm thường, sau đó kẻ hủy diệt này cũng tầm thường, vì vậy<code><a href="http://en.cppreference.com/w/cpp/utility/optional"><span class="kw1077">Điều đó cho tất cả<span class="me2">không mở-cache</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>cũng là phá hủy tầm thường.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2231R1" rel="nofollow">P2231R1</a> </td> <td>C ++ 20</td> <td>Chất phá hủy không phải là Consexpr trong khi các chất phá hủy không tầm thường có thể là Consexpr trong C ++ 20</td> <td>xây dựng giá trị chứa tại chỗ</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/optional/%7Eoptional">https://en.cppreference.com/w/cpp/utility/optional/%7Eoptional</a>
+</p>
+</div>

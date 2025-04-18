@@ -1,0 +1,62 @@
+ <h1 class="firstHeading" id="firstHeading">
+<code>final</code>thời lượng để biểu diễn phần bù từ UTC tương ứng với<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Chỉ định rằng a<a href="virtual" title="cpp/language/virtual">virtual function</a>không thể bị ghi đè trong một lớp có nguồn gốc hoặc một lớp không thể<a href="derived_class" title="cpp/language/derived class">derived from</a>.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Khi được áp dụng cho hàm thành viên, định danh<code>final</code>xuất hiện ngay sau khi<a href="function" title="cpp/language/function">declarator</a>Trong cú pháp của khai báo hàm thành viên hoặc định nghĩa hàm thành viên bên trong định nghĩa lớp.</p>
+<p>Khi được áp dụng cho một lớp, định danh<code>final</code>xuất hiện ở đầu định nghĩa lớp, ngay sau tên của lớp.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">người khai báo</span> <span class="t-spar">Virt-Specifier-seq</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">};</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">người khai báo</span> <span class="t-spar">Virt-Specifier-seq</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">cơ thể chức năng</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Lớp học</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tên lớp học</span> <span class="t-spar">Lớp-Virt-Specifier</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Điều khoản cơ sở</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Trong một tuyên bố chức năng thành viên,<code>final</code>có thể xuất hiện trong<span class="t-spar">Virt-Specifier-seq</span>ngay sau khi tuyên bố, và trước<a href="abstract_class" title="cpp/language/abstract class"><span class="t-spar">};</span></a>, nếu được sử dụng.</div> <div class="t-li1">
+<span class="t-li">2)</span>Trong định nghĩa hàm thành viên bên trong định nghĩa lớp,<code>final</code>có thể xuất hiện trong<span class="t-spar">Virt-Specifier-seq</span>ngay sau khi tuyên bố và ngay trước<span class="t-spar">cơ thể chức năng</span>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Trong một định nghĩa lớp học,<code>final</code>có thể xuất hiện như<span class="t-spar">Lớp-Virt-Specifier</span>ngay sau tên của lớp, ngay trước khi đại tràng bắt đầu<span class="t-spar">Điều khoản cơ sở</span>, nếu được sử dụng.</div> <p>Trong các trường hợp<span class="t-v">Outputit adjacent_difference (đầu vào đầu tiên, đầu vào cuối cùng, </span>Thì<span class="t-spar">Virt-Specifier-seq</span>, nếu được sử dụng, là<a href="override" title="cpp/language/override"><code>override</code></a>hoặc<code>final</code>, hoặc<code>final override</code>hoặc<code>override final</code>. Trong trường hợp<span class="t-v">(3)</span>, giá trị duy nhất cho phép của<span class="t-spar">Lớp-Virt-Specifier</span>, nếu được sử dụng, là<code>final</code>.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Khi được sử dụng trong một tuyên bố hoặc định nghĩa chức năng ảo,<code>final</code>Trình chỉ định đảm bảo rằng hàm là ảo và chỉ định rằng nó có thể không bị ghi đè bởi các lớp dẫn xuất. Chương trình không được hình thành (một lỗi thời gian biên dịch được tạo ra) nếu không.</p>
+<p>Khi được sử dụng trong một định nghĩa lớp,<code>final</code>chỉ định rằng lớp này có thể không xuất hiện trong<span class="t-spar">Danh sách cơ sở-cơ sở</span>của một định nghĩa lớp khác (nói cách khác, không thể bắt nguồn từ). Chương trình không được hình thành khác (một lỗi thời gian biên dịch được tạo ra).<code>final</code>cũng có thể được sử dụng với một<a href="union" title="cpp/language/union">union</a>định nghĩa, trong trường hợp đó nó không có hiệu lực<span class="t-rev-inl t-since-cxx14"><span>(Khác với kết quả của<code><a href="../types/is_final" title="cpp/types/is final">std::is_final</a></code>)</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>, vì các công đoàn không thể bắt nguồn từ.</p>
+<p><code>final</code>là một định danh có nghĩa đặc biệt khi được sử dụng trong khai báo chức năng thành viên hoặc đầu lớp. Trong các bối cảnh khác, nó không được bảo lưu và có thể được sử dụng để đặt tên cho các đối tượng và chức năng.</p>
+<h3 id="Note">điều đó làm cho phạm vi đó bằng phạm vi</h3> <p>Trong một chuỗi các mã thông báo sau:</p>
+<ul>
+<li>Một trong số<code>class</code>Thì<code>struct</code>Và<code>union</code>Số lượng các yếu tố để sao chép</li>
+<li>một có thể đủ điều kiện<a href="identifiers" title="cpp/language/identifiers">identifier</a>Số lượng các yếu tố để sao chép</li>
+<li> <code>final</code>Số lượng các yếu tố để sao chép</li>
+<li>Một trong số<code>:</code>Và<code>{</code>Thì</li>
+</ul> <p>Mã thông báo thứ ba<code>final</code>Trong chuỗi luôn được coi là một nhà xác định thay vì một định danh:</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">cấu trúc a;</pre></div> </div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc một {} cuối cùng; // ok, định nghĩa của struct a,</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">                   // không bắt buộc giá trị của biến cuối cùng</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul>
+<li>};</li>
+<li> </li>
+</ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul>
+<li>};</li>
+<li>Cấu trúc x</li>
+</ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul>
+<li>    Cơ sở c; // cơ sở, chiếm 1 byte, tiếp theo là đệm cho tôi</li>
+<li>{</li>
+</ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul>
+<li>Struct Desured3: cơ sở</li>
+<li>    Cấu trúc B chung kết: C {}; // ok, định nghĩa của lớp B lồng nhau,</li>
+</ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul>
+<li>Struct Desured3: cơ sở</li>
+<li>    Cấu trúc B chung kết: C {}; // ok, định nghĩa của lớp B lồng nhau,</li>
+</ul>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1318.html" rel="nofollow">CWG 1318</a> </td> <td>C ++ 11</td> <td>                          // không khai báo về trận chung kết thành viên trường bit<code>final</code>};<br/> <code>final</code>// Sử dụng cuối cùng bất thường.</td> <td>
+<code>final</code>luôn luôn là a<br/> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="override" title="cpp/language/override"> <code>override</code> specifier</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>CUNG CẤP CUỐI CÙNG // OK, Định nghĩa của một cấu trúc có tên `final` từ đó</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/final">https://en.cppreference.com/w/cpp/language/final</a>
+</p>
+</div>

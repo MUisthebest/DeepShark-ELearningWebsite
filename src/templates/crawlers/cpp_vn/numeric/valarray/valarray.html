@@ -1,0 +1,36 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Valarray &lt;T&gt; :: Valarray</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">valarray ();</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Valarray rõ ràng (STD :: size_t đếm);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">valarray (const t &amp; val, std :: size_t đếm);</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">valarray (const t* vals, std :: size_t đếm);</pre>
+</td> <td>(4)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Valarray (Const Valarray &amp; Khác);</pre>
+</td> <td>             Không có p);</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Valarray (Valarray &amp;&amp; khác) NoExcept;</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Valarray (const std :: slice_array &lt;t&gt; &amp; sa);</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Valarray (const std :: gslice_array &lt;t&gt; &amp; gsa);</pre>
+</td> <td>            Nhị phân p);</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Valarray (const std :: mask_array &lt;t&gt; &amp; ma);</pre>
+</td> <td>(9)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Valarray (const std :: indirect_array &lt;t&gt; &amp; ia);</pre>
+</td> <td>(10)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Valarray (std :: initizer_list &lt;t&gt; il);</pre>
+</td> <td>(11)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xây dựng mảng số mới từ các nguồn khác nhau.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định. Xây dựng một mảng số trống.</div> <div class="t-li1">
+<span class="t-li">2)</span>Xây dựng một mảng số với<code>count</code>Đã xóa quá tải cho nhân vật/mảng/mảng UTF BASIC_OSTREAM và UTF<a href="../../language/value_initialization" title="cpp/language/value initialization">value-initialized</a>các yếu tố.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Xây dựng một mảng số với<code>count</code>Đã xóa quá tải cho nhân vật/mảng/mảng UTF BASIC_OSTREAM và UTF<code>val</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Xây dựng một mảng số với các bản sao của<code>count</code>các giá trị từ một mảng được trỏ đến bởi<code>vals</code>. Nếu mảng này chứa ít hơn<code>count</code>Giá trị, hành vi không được xác định.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Sao chép hàm tạo. Xây dựng mảng số với bản sao của nội dung<code>other</code>.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>Hàm tạo này có tác dụng tương tự như<code>other</code>Sử dụng ngữ nghĩa di chuyển.</div> <div class="t-li1">
+<span class="t-li">          lớp alloc = std :: allocator &lt;t&gt;&gt;</span> <a href="../../language/converting_constructor" title="cpp/language/converting constructor">Converting constructor</a>. Chuyển đổi cấu trúc dữ liệu tương ứng thành một<code>valarray</code>.</div> <div class="t-li1">
+<span class="t-li">                           const std :: Chrono :: Leap_Second &amp; y) noExcept;</span>Xây dựng mảng số với nội dung của danh sách khởi tạo<code>il</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Đối tượng của loại</td>
+</tr> <tr class="t-par"> <td>đánh giá</td> <td>-</td> <td>giá trị để khởi tạo các yếu tố với</td>
+</tr> <tr class="t-par"> <td>vals</td> <td>-</td> <td>Con trỏ tới mảng C để sử dụng làm nguồn để khởi tạo nội dung</td>
+</tr> <tr class="t-par"> <td>khác</td> <td>-</td> <td>Một mảng số khác để sử dụng làm nguồn để khởi tạo nội dung</td>
+</tr> <tr class="t-par"> <td>SA</td> <td>-</td> <td>Mảng cắt để khởi tạo các yếu tố với</td>
+</tr> <tr class="t-par"> <td>GSA</td> <td>-</td> <td>Mảng lát chung chung để khởi tạo các yếu tố với</td>
+</tr> <tr class="t-par"> <td>MA</td> <td>-</td> <td>mảng mặt nạ để khởi tạo các yếu tố với</td>
+</tr> <tr class="t-par"> <td>ia</td> <td>-</td> <td>Mảng gián tiếp để khởi tạo các yếu tố với</td>
+</tr> <tr class="t-par"> <td>Dữ liệu của constexpr t* (t (&amp; mảng) [n]) noexcept;</td> <td>-</td> <td>Danh sách khởi tạo để khởi tạo các yếu tố với</td>
+</tr>
+</table> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1-5, 7-11)</span>Có thể ném các trường hợp ngoại lệ do thực hiện.</div> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/valarray/valarray">https://en.cppreference.com/w/cpp/numeric/valarray/valarray</a>
+</p>
+</div>

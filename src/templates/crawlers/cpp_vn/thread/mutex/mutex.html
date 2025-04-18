@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Mutex :: Mutex</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Consexpr Mutex () Noexcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">mutex (const Mutex &amp;) = xóa;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Xây dựng mutex. Mutex ở trạng thái mở khóa sau khi hàm tạo hoàn thành.</div> <div class="t-li1">
+<span class="t-li">2)</span>Sao chép Constructor bị xóa.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>với con trỏ được trả lại bởi<code>constexpr</code>, mutexes tĩnh được khởi tạo như một phần của<a href="../../language/initialization#Non-local_variables" title="cpp/language/initialization">static non-local initialization</a>, trước khi bất kỳ khởi tạo phi địa phương nào bắt đầu. Điều này làm cho an toàn để khóa một mutex trong một hàm tạo của bất kỳ đối tượng tĩnh nào.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/thread/mtx_init" title="c/thread/mtx init">C documentation</a></span>vì<code>mtx_init</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/mutex/mutex">https://en.cppreference.com/w/cpp/thread/mutex/mutex</a>
+</p>
+</div>

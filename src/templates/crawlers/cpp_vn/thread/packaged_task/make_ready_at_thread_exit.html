@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: packaged_task &lt;r (args ...)&gt; :: make_ready_at_thread_exit</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void make_ready_at_thread_exit (argtypes ... args);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Gọi nhiệm vụ được lưu trữ như thể<code><a href="../../utility/functional" title="cpp/utility/functional">INVOKE&lt;R&gt;</a>(f, args...)</code>là<code>f</code>là nhiệm vụ được lưu trữ. Giá trị trả về của nhiệm vụ hoặc bất kỳ ngoại lệ nào được ném bởi nó được lưu trữ trong trạng thái chia sẻ của<code>*this</code>.</p>
+<p>Trạng thái được chia sẻ chỉ được thực hiện sẵn sàng sau khi luồng hiện tại thoát ra và tất cả các đối tượng của thời lượng lưu trữ địa lý được phá hủy.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>iterator trước đó phần tử mới sẽ được xây dựng</td> <td>-</td> <td>các tham số để truyền khi gọi nhiệm vụ được lưu trữ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../future_error" title="cpp/thread/future error">std::future_error</a></code>về các điều kiện lỗi sau:</p>
+<ul>
+<li>Nhiệm vụ được lưu trữ đã được viện dẫn. Danh mục lỗi được đặt thành<code>promise_already_satisfied</code>.</li>
+<li> <code>*this</code>không có trạng thái chung. Danh mục lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>no_state</code></a>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;chức năng&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator()" title="cpp/thread/packaged task/operator()"> <span class="t-lines"><span>chuyển đổi đối tượng thành</span></span></a></div> </td> <td>), hoặc chỉ có một người có thể được hình thành nhưng đó là trình tự chuyển đổi mơ hồ, chương trình là xấu.<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/packaged_task/make_ready_at_thread_exit">https://en.cppreference.com/w/cpp/thread/packaged_task/make_ready_at_thread_exit</a>
+</p>
+</div>

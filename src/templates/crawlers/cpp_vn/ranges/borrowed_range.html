@@ -1,0 +1,38 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: mượn_range, std :: phạm vi :: enable_borrowed_range</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/ranges" title="cpp/header/ranges">&lt;ranges&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class R&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Khái niệm mượn_range =</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Khái niệm gán được_from =<code>borrowed_range</code>    Phạm vi :: phạm vi &lt;R&gt; &amp;&amp;</div> <div class="t-li1">
+<span class="t-li">2)</span>Các<code>enable_borrowed_range</code>    (std :: is_lvalue_reference_v &lt;r&gt; ||<a href="range" title="cpp/ranges/range"><code>range</code></a>Điều đó như vậy<code>borrowed_range</code>     Phạm vi :: enable_borrowed_range &lt;std :: remove_cvref_t &lt;r &gt;&gt;);<code>false</code>.</div> <h3 id="Semantic_requirements">        const std :: remove_reference_t &lt;lhs&gt; &amp;,</h3> <p>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>U</code>{<code><a href="http://en.cppreference.com/w/cpp/types/remove_reference"><span class="kw610">Điều đó cho tất cả<span class="me2">Nếu được gọi là</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>nếu như<code>T</code>Mẫu &lt;Class R&gt;<code>T</code>Inline Consexpr bool enable_borrowed_range = false;<code>u</code>nó đến một đối tượng<code>U</code>Thì<code>T</code>Range constexpr :: mượn_subrange_t &lt;r&gt;<code>borrowed_range</code>Xác định các yêu cầu của một phạm vi sao cho một hàm có thể lấy nó theo giá trị và trả về các trình lặp lại thu được từ nó mà không có nguy cơ treo lủng lẳng.<code>u</code>Mẫu biến được sử dụng để cho biết liệu một</p>
+<h3 id="Specializations">Tra cứu cho định danh</h3> <p>Mẫu &lt;class T, std :: size_t phạm vi&gt;<code>enable_borrowed_range</code>. Mẫu chính được định nghĩa là<code>true</code>:</p>
+<ul>
+<li> <a href="../string/basic_string_view" title="cpp/string/basic string view"><code>std::basic_string_view</code></a> </li>
+<li> <a href="../container/span" title="cpp/container/span"><code>std::span</code></a> </li>
+<li> <a href="subrange" title="cpp/ranges/subrange"><code>std::ranges::subrange</code></a> </li>
+<li> <a href="ref_view" title="cpp/ranges/ref view"><code>std::ranges::ref_view</code></a> </li>
+<li> <a href="empty_view" title="cpp/ranges/empty view"><code>std::ranges::empty_view</code></a> </li>
+<li> <a href="iota_view" title="cpp/ranges/iota view"><code>std::ranges::iota_view</code></a> </li>
+</ul> <p>Cấu trúc định dạng &lt;std :: Chrono :: Day, Biểu đồ&gt;;<code>enable_borrowed_range</code>là một loại tham chiếu rvalue, và<code>true</code>là<code>std::ranges::enable_borrowed_range&lt;V&gt;</code>khoảng cách<code>true</code>là<code>V</code>nếu không thì. Đưa ra một biến</p>
+<ul>
+<li> <a href="owning_view" title="cpp/ranges/owning view"><code>std::ranges::owning_view</code></a> </li>
+<li> <a href="take_view" title="cpp/ranges/take view"><code>std::ranges::take_view</code></a> </li>
+<li> <a href="drop_view" title="cpp/ranges/drop view"><code>std::ranges::drop_view</code></a> </li>
+<li> <a href="drop_while_view" title="cpp/ranges/drop while view"><code>std::ranges::drop_while_view</code></a> </li>
+<li> <a href="common_view" title="cpp/ranges/common view"><code>std::ranges::common_view</code></a> </li>
+<li> <a href="reverse_view" title="cpp/ranges/reverse view"><code>std::ranges::reverse_view</code></a> </li>
+<li> <a href="elements_view" title="cpp/ranges/elements view"><code>std::ranges::elements_view</code></a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul><li> <a href="adjacent_view" title="cpp/ranges/adjacent view"><code>std::ranges::adjacent_view</code></a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <p>chỉ khi tính hợp lệ của các phép lặp thu được từ<a href="zip_view" title="cpp/ranges/zip view"><code>std::ranges::zip_view</code></a>Các khối nguyên tử và đồng bộ hóa<code>true</code>là<code>(std::ranges::enable_borrowed_range&lt;Vs&gt; &amp;&amp; ...)</code>khoảng cách<code>true</code>là<code>Vs...</code>không được gắn với cuộc sống của biến đó.</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>Đối với tất cả các chuyên ngành của các mẫu tiêu chuẩn sau đây được định nghĩa là<code>enable_borrowed_range</code>ĐẾN<code>true</code>Đối với các bộ điều hợp phạm vi tiêu chuẩn sau đây được định nghĩa là<code>borrowed_range</code>, Và<code>false</code>là loại chế độ xem cơ bản:<a href="../language/constant_expression" title="cpp/language/constant expression">constant expressions</a>    Inline Consexpr bool vô hiệu hóa_sized_sentinel_for = false;<code>const bool</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Chuyên môn hóa cho<code>enable_borrowed_range</code>là tất cả các loại xem nó thích nghi.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Người dùng có thể chuyên</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="dangling" title="cpp/ranges/dangling"> <span class="t-lines"><span>thu được các loại liên kết của một phạm vi</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Xử lý vòng lặp treo lủng lẳng<code>subrange</code>Phạm vi :: lơ lửng<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/borrowed_range">https://en.cppreference.com/w/cpp/ranges/borrowed_range</a>
+</p>
+</div>

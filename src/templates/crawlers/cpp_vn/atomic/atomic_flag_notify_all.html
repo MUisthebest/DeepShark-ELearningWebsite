@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Atomic_flag_notify_all</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/atomic" title="cpp/header/atomic">&lt;atomic&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void Atomic_flag_notify_all (std :: Atomic_flag* đối tượng) NoExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void Atomic_flag_notify_all (std :: Atomic_flag* đối tượng) NoExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Thực hiện các hoạt động thông báo nguyên tử.</p>
+<p>Hút tất cả các luồng bị chặn trong các hoạt động chờ nguyên tử (tức là.<code><a href="atomic_flag_wait" title="cpp/atomic/atomic flag wait">std::atomic_flag_wait()</a></code>Thì<code><a href="atomic_flag_wait" title="cpp/atomic/atomic flag wait">std::atomic_flag_wait_explicit()</a></code>, hoặc<a href="atomic_flag/wait" title="cpp/atomic/atomic flag/wait"><code>std::atomic_flag::wait()</code></a>) TRÊN<code>*object</code>, nếu có bất kỳ; nếu không thì không có gì.</p>
+<p>Mẫu &lt;class inputit1, class inputit2,<code>object-&gt;notify_all()</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>sự vật</td> <td>-</td> <td>Con trỏ tới<code>atomic_flag</code>đối tượng để thông báo</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>Hình thức phát hiện thay đổi này thường hiệu quả hơn so với bỏ phiếu đơn giản hoặc spinlocks tinh khiết.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="atomic_flag/notify_one" title="cpp/atomic/atomic flag/notify one"> <span class="t-lines"><span>tải một giá trị từ một đối tượng nguyên tử</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>thay thế nguyên tử giá trị của đối tượng nguyên tử và thu được giá trị được giữ trước đó<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::atomic_flag</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="atomic_flag/notify_all" title="cpp/atomic/atomic flag/notify all"> <span class="t-lines"><span>compare_exchange_weak</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>compare_exchange_strong<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::atomic_flag</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="atomic_flag_wait" title="cpp/atomic/atomic flag wait"> <span class="t-lines"><span>ATOMIC_FLAG_WAIT</span><span>Atomic_flag_wait_explict</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>chặn luồng cho đến khi thông báo và cờ thay đổi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="atomic_flag_notify_one" title="cpp/atomic/atomic flag notify one"> <span class="t-lines"><span>Atomic_flag_notify_one</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Thông báo một luồng bị chặn trong Atomic_flag_wait<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_flag_notify_all">https://en.cppreference.com/w/cpp/atomic/atomic_flag_notify_all</a>
+</p>
+</div>

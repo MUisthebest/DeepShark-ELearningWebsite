@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: ShareedLockable<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span>
+</h1> <p>Các<strong class="selflink">Có thể chia sẻ</strong>Các yêu cầu mô tả các đặc điểm tối thiểu của các loại cung cấp ngữ nghĩa chặn chung cho các tác nhân thực thi (nghĩa là các luồng).</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Cho loại<code>L</code>Để được chia sẻ, các điều kiện sau phải được thỏa mãn cho một đối tượng<code>m</code>nó đến một đối tượng<code>L</code>:</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Điều kiện tiên quyết</th> <th>Các hiệu ứng</th> <th>phải sao cho một đối tượng thuộc loại</th>
+</tr> <tr> <td>
+<code>m.lock_shared()</code> </td> <td> </td> <td>Các khối cho đến khi có thể thu được khóa cho tác nhân thực thi hiện tại (luồng, quy trình, nhiệm vụ). Nếu một ngoại lệ được ném, không có được khóa.</td> <td> </td>
+</tr> <tr> <td>
+<code>m.try_lock_shared()</code> </td> <td> </td> <td>Cố gắng để có được một khóa cho tác nhân thực thi hiện tại (luồng, quy trình, nhiệm vụ) mà không chặn. Nếu một ngoại lệ được ném, không có được khóa.</td> <td>
+<code>true</code>Nếu khóa được lấy,<code>false</code>[tĩnh]</td>
+</tr> <tr> <td>
+<code>m.unlock_shared()</code> </td> <td>Tác nhân thực thi hiện tại giữ khóa được chia sẻ<code>m</code>.</td> <td>Phát hành khóa được chia sẻ bởi tác nhân thực thi.<p>Ném không có ngoại lệ.</p>
+</td> <td> </td>
+</tr>
+</table> <h4 id="Shared_locks">Khóa được chia sẻ</h4> <p>Một khóa trên một đối tượng được cho là<i>Khóa được chia sẻ</i>Nếu nó được mua bằng một cuộc gọi đến<code>lock_shared</code>Thì<code>try_lock_shared</code>Thì<code>try_lock_shared_for</code>, hoặc<code>try_lock_shared_until</code>Nó là an toàn, và trên thực tế, thích hợp hơn trong mã chung, để sử dụng khấu trừ để chuyển tiếp tham chiếu,</p>
+<h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="../thread" title="cpp/thread">Thread support library</a> </li>
+<li> <a href="sharedtimedlockable" title="cpp/named req/SharedTimedLockable">SharedTimedLockable</a> </li>
+<li> <a href="sharedmutex" title="cpp/named req/SharedMutex">SharedMutex</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/SharedLockable">https://en.cppreference.com/w/cpp/named_req/SharedLockable</a>
+</p>
+</div>

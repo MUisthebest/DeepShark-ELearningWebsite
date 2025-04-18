@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: basic_format_args</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/format" title="cpp/header/format">&lt;format&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class Bối cảnh&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">lớp basic_format_args;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">sử dụng format_args = basic_format_args &lt;std :: format_context&gt;;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>sử dụng wformat_args = basic_format_args &lt;std :: wformat_context&gt;;</p>
+<h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>chuyên môn)</span></span></div> </td> <td>Nếu a<code>basic_format_args</code>sự vật<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Điền vào thùng chứa với giá trị được chỉ định</span></span></div> </td> <td>Cung cấp quyền truy cập vào các đối số định dạng.<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="t-member"> <h2 id="std::basic_format_args::basic_format_args">Trả về đối số định dạng tại chỉ mục đã cho</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">std :: basic_format_args :: basic_format_args</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">basic_format_args () NoExcept;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>basic_format_args</code>Mẫu &lt;class ... args&gt;</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>basic_format_args</code>basic_format_args (const /*format-arg-store* /&lt;bối cảnh, args ...&gt; &amp; lưu trữ) noExcept;<code><a href="make_format_args" title="cpp/utility/format/make format args">std::make_format_args</a></code>hoặc<code><a href="make_format_args" title="cpp/utility/format/make format args">std::make_wformat_args</a></code>.<p><code>std::basic_format_args</code>đối tượng không giữ bất kỳ đối số định dạng.<code>*this</code>đối tượng từ kết quả của một cuộc gọi đến<code>store</code>Có ngữ nghĩa tham khảo. Trách nhiệm của lập trình viên là đảm bảo rằng<code><a href="make_format_args" title="cpp/utility/format/make format args">std::make_format_args</a></code>hoặc<code><a href="make_format_args" title="cpp/utility/format/make format args">std::make_wformat_args</a></code>).</p>
+</div>
+</div> <div class="t-member"> <h2 id="std::basic_format_args::get">không tồn tại lâu hơn</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">(which, in turn, should not outlive the arguments to</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>    Tìm kiếm (I1 First1, S1 Last1, I2 First2, S2 Last2, Pred = {},<code><a href="basic_format_arg" title="cpp/utility/format/basic format arg">std::basic_format_arg</a></code>std::basic_format_args::get<code>i</code>std::basic_format_arg&lt;Context&gt; get( std::size_t i ) const noexcept;<code>args</code>là<code>args</code>giữ<code><a href="make_format_args" title="cpp/utility/format/make format args">std::make_format_args</a></code>hoặc<code><a href="make_format_args" title="cpp/utility/format/make format args">std::make_wformat_args</a></code>.</p>
+<p>-THER Đối số trong<code>*this</code>gói tham số được truyền cho<code>i</code>Nếu không có đối số định dạng như vậy (tức là<code><a href="basic_format_arg" title="cpp/utility/format/basic format arg">std::basic_format_arg</a></code>đã được xây dựng mặc định hoặc<code><a href="../variant/monostate" title="cpp/utility/variant/monostate">std::monostate</a></code>Thông tin hệ thống tập tin (một</p>
+</div> <h3 id="Deduction_guides">Quan điểm ::</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">không nhỏ hơn số lượng đối số định dạng), trả về một bản dựng mặc định</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2216R3" rel="nofollow">P2216R3</a> </td> <td>C ++ 20</td> <td>
+<code>format_args_t</code>(giữ a<code>vformat_to</code> </td> <td>#include &lt;Istream&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3810" rel="nofollow">LWG3810</a> </td> <td>C ++ 20</td> <td>
+<code>basic_format_args</code>Mẫu &lt;bối cảnh lớp, lớp ... args&gt;</td> <td>Được cho</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="basic_format_arg" title="cpp/utility/format/basic format arg"> <span class="t-lines"><span>basic_format_arg</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Mẫu lớp cung cấp quyền truy cập vào một đối số định dạng cho các định dạng do người dùng xác định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/format/basic_format_args">https://en.cppreference.com/w/cpp/utility/format/basic_format_args</a>
+</p>
+</div>

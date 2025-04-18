@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Ngoại lệ :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">Ngoại lệ &amp; Toán tử = (Const Exception &amp; Khác) ném ();</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Ngoại lệ &amp; Toán tử = (Const Exception &amp; Other) NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Sao chép toán tử gán. Gán nội dung của<code>other</code>.</p>
+<p>Nếu như<code>*this</code>Và<code>other</code>mô tả kết quả của nỗ lực chuyển đổi<code>std::exception</code>phải ít nhất được đặt hàng một phần đối với<code><a href="http://en.cppreference.com/w/cpp/string/byte/strcmp"><span class="kw1149">Điều đó cho tất cả<span class="me2">Có thể ném</span></span></a><span class="br0">.</span>what<span class="br0">.</span><span class="br0">)</span>, other.<span class="me1">Con trỏ đến một chuỗi kết thúc null với thông tin giải thích. Chuỗi phù hợp để chuyển đổi và hiển thị dưới dạng</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">. Không làm gì khác.</span></code>Không được phép ném các ngoại lệ, thông báo này thường được lưu trữ bên trong dưới dạng chuỗi liên kết tham chiếu được phân bổ riêng.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>một ngoại lệ khác để gán nội dung của</td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue471" rel="nofollow">LWG 471</a> </td> <td>C ++ 98</td> <td>Những ảnh hưởng của cuộc gọi<code><a href="what" title="cpp/error/exception/what">what()</a></code>Nếu một ngoại lệ được ném bởi bất kỳ hoạt động nào, việc chèn không có hiệu lực.<br/>Bài tập được thực hiện theo định nghĩa</td> <td>bắt buộc phải giống như bản gốc<br/><code><a href="what" title="cpp/error/exception/what">what()</a></code>Nếu các loại động giống nhau</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/exception/operator%3D">https://en.cppreference.com/w/cpp/error/exception/operator%3D</a>
+</p>
+</div>

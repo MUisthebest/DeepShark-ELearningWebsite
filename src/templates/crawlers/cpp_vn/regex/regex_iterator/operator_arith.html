@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">std :: regex_iterator &lt;bidirit, biểu đồ, đặc điểm&gt; :: toán tử ++, toán tử ++ (int)</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Regex_Iterator &amp; Toán tử ++ ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Toán tử regex_iterator ++ (int);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Tiến lên người lặp trong trận đấu tiếp theo.</p>
+<p>Lúc đầu, một biến cục bộ loại<code>BidirIt</code>được xây dựng với giá trị của<code>match[0].second</code>.</p>
+<p>Nếu người lặp giữ một trận đấu có độ dài bằng không và<code>start == end</code>Thì<code>*this</code>được đặt thành trình lặp cuối theo trình tự và chức năng trả về.</p>
+<p>Mặt khác, nếu trình lặp giữ một độ dài không có độ dài, người vận hành sẽ gọi những điều sau:</p>
+<p><span class="t-cc"><code>regex_search(start, end, match, *pregex,  flags | regex_constants::match_not_null |  regex_constants::match_continuous);</code></span></p>
+<p>Nếu cuộc gọi trả về<code>true</code>, chức năng trả về.</p>
+<p>Nếu không thì người vận hành tăng lên<code>start</code>và tiếp tục như thể trận đấu gần đây nhất không phải là trận đấu có độ dài bằng không.</p>
+<p>Nếu trận đấu gần đây nhất không phải là trận đấu có độ dài bằng không, thì người vận hành sẽ đặt<code>flags</code>ĐẾN<code>flags | regex_constants::match_prev_avail</code>và gọi những điều sau đây:</p>
+<p><span class="t-cc"><code>regex_search(start, end, match, *pregex, flags);</code></span></p>
+<p>Nếu cuộc gọi trả về<code>false</code>, bộ lặp<code>*this</code>Đối với trình lặp cuối chuỗi, chức năng trả về.</p>
+<p>Trong mọi trường hợp trong đó cuộc gọi đến<code>regex_search</code>(C ++ 20)<code>true</code>Thì<code>match.prefix().first</code>sẽ bằng với giá trị trước đó của<code>match[0].second</code>và cho mỗi chỉ mục, tôi trong phạm vi<code>[</code><code>​0​</code><code>, </code><code>match.size()</code><code>)</code>          lớp proj = std :: danh tính,<code>match[i].matched</code>khoảng cách<code>true</code>Thì<code>match[i].position()</code>cho cùng một đối tượng hệ thống tệp. Do đó<code>distance(begin, match[i].first)</code>.</p>
+<p>Điều này có nghĩa là như vậy<code>match[i].position()</code>Cung cấp phần bù từ đầu chuỗi đích, thường không giống như phần bù từ chuỗi được truyền trong cuộc gọi đến<code>regex_search</code>.</p>
+<p>Nó không xác định làm thế nào việc thực hiện thực hiện các điều chỉnh này. Điều này có nghĩa là một trình biên dịch có thể gọi một chức năng tìm kiếm dành riêng cho triển khai, trong trường hợp đó là một chuyên gia do người dùng xác định<code>regex_search</code>sẽ không được gọi.</p>
+<p>Hành vi không được xác định nếu trình lặp là trình lặp cuối theo trình tự.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>*this</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Giá trị trước của iterator.</div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/regex_iterator/operator_arith">https://en.cppreference.com/w/cpp/regex/regex_iterator/operator_arith</a>
+</p>
+</div>

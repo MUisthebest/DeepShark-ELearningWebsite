@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_ptr &lt;t&gt; :: chủ sở hữu_before</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Mẫu &lt;Class Y&gt; </pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">bool chủ sở hữu_before (const shared_ptr &lt;y&gt; &amp; other) const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Mẫu &lt;Class Y&gt;<code>shared_ptr</code>    void H (int) &amp;&amp;;   // OK, một quá tải khác<code>other</code>bool chủ sở hữu_before (const std :: weak_ptr &lt;y&gt; &amp; other) const noexcept;<code><a href="get" title="cpp/memory/shared ptr/get">get()</a></code>là khác nhau (ví dụ: vì chúng chỉ vào các tiểu mục khác nhau trong cùng một đối tượng).</p>
+<p>Kiểm tra xem điều này<code><a href="../owner_less" title="cpp/memory/owner less">std::owner_less</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>các<code><a href="../shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>hoặc<code><a href="../weak_ptr" title="cpp/memory/weak ptr">std::weak_ptr</a></code>Trong việc triển khai được xác định xác định đơn hàng dựa trên chủ sở hữu (trái ngược với giá trị dựa trên giá trị). Thứ tự là hai con trỏ thông minh chỉ so sánh tương đương khi cả hai đều trống hoặc nếu cả hai đều sở hữu cùng một đối tượng, ngay cả khi các giá trị của con trỏ thu được bởi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>nếu như<code>*this</code>    void H (int) &amp;&amp;;   // OK, một quá tải khác<code>other</code>Thì<code>false</code>Đặt hàng này được sử dụng để làm cho các con trỏ chia sẻ và yếu có thể sử dụng làm khóa trong các container kết hợp, thường là thông qua</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">được so sánh</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">nếu không thì. Việc triển khai phổ biến so sánh các địa chỉ của các khối điều khiển.</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2873" rel="nofollow">LWG 2873</a> </td> <td>C ++ 11</td> <td>
+<code>owner_before</code> <span class="kw1">Noexcept</span> </td> <td>int main ()<span class="kw1">Noexcept</span> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../owner_less" title="cpp/memory/owner less"> <span class="t-lines"><span>Chủ sở hữu_less</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Cung cấp đơn đặt hàng dựa trên chủ sở hữu loại hỗn hợp của các con trỏ chia sẻ và yếu<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/shared_ptr/owner_before">https://en.cppreference.com/w/cpp/memory/shared_ptr/owner_before</a>
+</p>
+</div>

@@ -1,0 +1,45 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Danh sách &lt;T, Allecator&gt; :: Splice</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">void splice (const_iterator pos, danh sách &amp; khác);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void Splice (const_iterator pos, danh sách &amp;&amp; khác);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">void splice (const_iterator pos, list &amp; other, const_iterator it);</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void splice (const_iterator pos, list &amp;&amp; other, const_iterator it);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">void splice (const_iterator pos, danh sách &amp; khác, </pre>
+</td> <td>             Không có p);</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">             const_iterator đầu tiên, const_iterator cuối cùng);</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>void splice (const_iterator pos, list &amp;&amp; other, </p>
+<p>             const_iterator đầu tiên, const_iterator cuối cùng);<code>*this</code>                   const_iterator đầu tiên, const_iterator cuối cùng);<code>other</code>.</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Chuyển các yếu tố từ danh sách này sang danh sách khác.<code>other</code>Mẫu &lt;Class T&gt;<code>*this</code>. Phần tử được chèn trước khi phần tử được trỏ bởi<code>pos</code>. Các phần tử được chèn sau khi phần tử được trỏ bởi<code>other</code>Không có yếu tố nào được sao chép. Không có trình lặp hoặc tài liệu tham khảo trở nên vô hiệu. Các lần lặp đến các yếu tố di chuyển bây giờ được đề cập đến</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>Chuyển tất cả các yếu tố từ<code>it</code>từ<code>other</code>Mẫu &lt;Class T&gt;<code>*this</code>. Các phần tử được chèn trước khi phần tử được trỏ bởi<code>pos</code>.</div> <div class="t-li1">
+<span class="t-li">    trả về std :: find_if_not (đầu tiên, cuối cùng, p) == cuối cùng;</span>Chuyển phần tử được trỏ đến bởi<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>từ<code>other</code>Mẫu &lt;Class T&gt;<code>*this</code>. Phần tử được chèn trước khi phần tử được trỏ bởi<code>pos</code>.</div> <p>đến một phạm vi khác kết thúc tại</p>
+<ul>
+<li> <code>get_allocator() != other.get_allocator()</code>Thì</li>
+<li>BẰNG<span class="t-v">Outputit adjacent_difference (đầu vào đầu tiên, đầu vào cuối cùng, </span>Thì<code>*this</code>Và<code>other</code>. Phần tử được trỏ đến bởi</li>
+<li>BẰNG<span class="t-v">ConstExpr Outputit Adjacent_Difference (Inputit First, Inputit Last, </span>Thì<code>it</code>Cụ thể,<a href="../../iterator#Dereferenceability_and_validity" title="cpp/iterator">dereferenceable iterator</a>Mẫu &lt;Class T&gt;<code>other</code>, hoặc</li>
+<li>BẰNG<span class="t-v">Mẫu &lt;Class execPolicy, class forwardit1, class forwardit2,</span>Thì</li>
+<ul>
+<li> <code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>Cụ thể,<a href="../../iterator#Ranges" title="cpp/iterator">valid range</a>TRONG<code>other</code>, hoặc</li>
+<li> <code>pos</code>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>.</li>
+</ul>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>Chuyển các yếu tố trong phạm vi</td>
+</tr> <tr class="t-par"> <td>khác</td> <td>-</td> <td>. Các phần tử được chèn trước khi phần tử được trỏ bởi</td>
+</tr> <tr class="t-par"> <td>Một số vòng lặp trong</td> <td>-</td> <td>phần tử trước đó nội dung sẽ được chèn<code>other</code>ĐẾN<code>*this</code> </td>
+</tr> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>một thùng chứa khác để chuyển nội dung từ<code>other</code>ĐẾN<code>*this</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <div class="t-li1">
+<span class="t-li">              Forwardit2 first2,</span>trình rút vào các yếu tố để hoán đổi</div> <div class="t-li1">
+<span class="t-li">    trả về std :: find_if_not (đầu tiên, cuối cùng, p) == cuối cùng;</span>Toán tử bool &lt;(const std :: deque &lt;t, alloc&gt; &amp; lhs,<code>other</code>có thể được hủy bỏ và sau đó được chuyển đổi hoàn toàn thành cả hai. ​<code>*this</code>yếu tố chuyển từ<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>first, last<span class="br0">)</span></code>.</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">phạm vi của các yếu tố để chuyển từ</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">, nếu không thì tuyến tính trong</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue250" rel="nofollow">LWG 250</a> </td> <td>C ++ 98</td> <td>#include &lt;Istream&gt;<br/>#include &lt;Danh sách&gt;</td> <td> <br/>STD :: Ostream &amp; Toán tử &lt;&lt; (STD :: Ostream &amp; Ostr, Const Std :: Danh sách &lt;Int&gt; &amp; List)<code>*this</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/N2525" rel="nofollow">N2525</a> </td> <td>C ++ 98</td> <td>Nó<br/><code>get_allocator() != other.get_allocator()</code> </td> <td>là giá trị trả về, vẫn có thể giảm được, nhưng bản thân các yếu tố có giá trị không xác định. Một cuộc gọi đến<br/>kích cỡ.</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="merge" title="cpp/container/list/merge"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>Chèn_after<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="remove" title="cpp/container/list/remove"> <span class="t-lines"><span>Được xác định trong tiêu đề</span><span>di dời</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/list/splice">https://en.cppreference.com/w/cpp/container/list/splice</a>
+</p>
+</div>

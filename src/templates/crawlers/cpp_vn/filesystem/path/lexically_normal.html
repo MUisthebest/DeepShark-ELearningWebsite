@@ -1,0 +1,40 @@
+ <h1 class="firstHeading" id="firstHeading">std :: fileSystem :: path :: lexical_normal, std :: fileSystem :: path :: từ vựng_relative, std :: fileSystem :: path :: lexical_proximate</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">đường dẫn từ vựng_normal () const;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">đường dẫn từ vựng_relative (đường dẫn const &amp; cơ sở) const;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">đường dẫn từ vựng_proximate (đường dẫn const &amp; cơ sở) const;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class execPolicy,<code>*this</code>chuyển đổi thành<a href="../path" title="cpp/filesystem/path">normal form</a>trong định dạng chung của nó.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;Class execPolicy,<code>*this</code>               std :: error_code &amp; ec);<code>base</code>.<ul>
+<li>Đầu tiên, nếu<code>root_name() != base.root_name()</code>khoảng cách<code>true</code>hoặc<code>is_absolute() != base.is_absolute()</code>khoảng cách<code>true</code>hoặc<code>(!has_root_directory() &amp;&amp; base.has_root_directory())</code>khoảng cách<code>true</code>hoặc bất kỳ tên tệp nào trong<code>relative_path()</code>hoặc<code>base.relative_path()</code>có thể được hiểu là một<span class="t-spar">tên gốc</span>, trả về một đường dẫn được xây dựng mặc định.</li>
+<li>Nếu không, lần đầu tiên xác định yếu tố không khớp đầu tiên của<code>*this</code>Và<code>base</code>Mẫu &lt;Class T&gt;<code>auto [a, b] = mismatch(begin(), end(), base.begin(), base.end())</code>, sau đó</li>
+<li>nếu như<code>a == end()</code>Và<code>b == base.end()</code>; Nếu không nếu<code>path(".")</code>Thì</li>
+<li>nếu không, hãy xác định n là số lượng các phần tử tệp không trống mà không<span class="t-spar">chấm</span>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<span class="t-spar">chấm chấm</span>TRONG<code>[b, base.end())</code>, trừ số lượng<span class="t-spar">chấm chấm</span>Các phần tử tên tệp, nếu n &lt;0, trả về đường dẫn được xây dựng mặc định,</li>
+<li>nếu không, nếu n = 0 và<code>a == end() || a-&gt;empty()</code>; Nếu không nếu<code>path(".")</code>Thì</li>
+<li>nếu không, trả về một đối tượng được sáng tác từ</li>
+<ul>
+<li>một mặc định được xây dựng<code>path()</code>    toán tử &lt;&lt; (std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; os, const std :: chrono :: tháng &amp; m);</li>
+<li>N ứng dụng của<code>operator/=(path(".."))</code>, tiếp theo là</li>
+<li>Một ứng dụng của<code>operator/=</code>Đối với mỗi phần tử trong phạm vi nửa mở<code>[</code><code>a</code><code>, </code><code>end()</code><code>)</code>.</li>
+</ul>
+</ul> </div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Nếu giá trị của<code>lexically_relative(base)</code>không phải là một con đường trống, trả lại nó. Nếu không thì trở lại<code>*this</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Hình thức bình thường của đường dẫn.</div> <div class="t-li1">
+<span class="t-li">2)</span>Hình thức tương đối của con đường.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Hình thức gần của đường dẫn.</div> <h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Những chuyển đổi này hoàn toàn là từ vựng. Họ không kiểm tra xem các đường dẫn có tồn tại không, không tuân theo các liên kết của Symlink và hoàn toàn không truy cập vào hệ thống tệp. Cho các đối tác theo dõi symlink của<code>lexically_relative</code>Và<code>lexically_proximate</code>, nhìn thấy<a href="../relative" title="cpp/filesystem/relative"><code>relative</code></a>Và<a href="../relative" title="cpp/filesystem/relative"><code>proximate</code></a>.</p>
+<p>Trên Windows, được trả lại<code>path</code>có dấu gạch chéo ngược (các dấu phân cách ưa thích).</p>
+<p>Trên Posix, không có tên tệp nào trong một con đường tương đối được chấp nhận như một<span class="t-spar">tên gốc</span>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cassert&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3070" rel="nofollow">LWG 3070</a> </td> <td>C ++ 17</td> <td>#include &lt;FileSystem&gt;</td> <td>#include &lt;Istream&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3096" rel="nofollow">LWG 3096</a> </td> <td>C ++ 17</td> <td>không gian tên fs = std :: fileSystem;</td> <td>#include &lt;CstDint&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../relative" title="cpp/filesystem/relative"> <span class="t-lines"><span>liên quan đến</span><span>gần</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Kết hợp một con đường tương đối<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/path/lexically_normal">https://en.cppreference.com/w/cpp/filesystem/path/lexically_normal</a>
+</p>
+</div>

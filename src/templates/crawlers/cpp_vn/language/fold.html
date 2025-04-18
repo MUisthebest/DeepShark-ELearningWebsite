@@ -1,0 +1,54 @@
+ <h1 class="firstHeading" id="firstHeading">Gấp biểu thức<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>
+</h1> <p>Giảm (<a class="extiw" href="https://en.wikipedia.org/wiki/Fold_(higher-order_function)" title="enwiki:Fold (higher-order function)">folds</a>) Một<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>trên một nhà điều hành nhị phân.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>(</code> <span class="t-spar">Gói op</span> <code>... )</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>( ...</code> <span class="t-spar">gói OP</span> <code>)</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>(</code> <span class="t-spar">Gói op</span> <code>...</code> <span class="t-spar">OP init</span> <code>)</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>(</code> <span class="t-spar">init op</span> <code>...</code> <span class="t-spar">gói OP</span> <code>)</code> </td> <td>(4)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>UNARY ĐÚNG ĐÚNG.</div> <div class="t-li1">
+<span class="t-li">2)</span>UNARY FORP FERE.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Nhị phân bên phải nếp gấp.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Nhị phân bên trái nếp gấp.</div> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">Không hợp lệ bất kỳ trình lặp nào (bao gồm cả bộ lặp cuối) hoặc sửa đổi bất kỳ yếu tố nào của phạm vi liên quan, hành vi không được xác định.</span> </td> <td>-</td> <td>Bất kỳ trong số 32 sau đây<i>giá trị của tổng số không chung chung của</i>Người vận hành:<code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code> <code>^</code> <code>&amp;</code> <code>|</code> <code>=</code> <code>&lt;</code> <code>&gt;</code> <code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code>^=</code> <code>&amp;=</code> <code>|=</code> <code>&lt;&lt;=</code> <code>&gt;&gt;=</code> <code>==</code> <code>!=</code> <code>&lt;=</code> <code>&gt;=</code> <code>&amp;&amp;</code> <code>||</code> <code>,</code> <code>.*</code> <code>-&gt;*</code>. Trong một nếp gấp nhị phân, cả hai<span class="t-spar">Không hợp lệ bất kỳ trình lặp nào (bao gồm cả bộ lặp cuối) hoặc sửa đổi bất kỳ yếu tố nào của phạm vi liên quan, hành vi không được xác định.</span>S phải giống nhau.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">đóng gói</span> </td> <td>-</td> <td>một biểu thức chứa một<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>và không chứa một toán tử với<a href="operator_precedence" title="cpp/language/operator precedence">precedence</a>thấp hơn đúc ở cấp cao nhất (chính thức,<span class="t-spar">biểu hiện diễn viên</span>)</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">trong phạm vi</span> </td> <td>-</td> <td>một biểu thức không chứa một<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>và không chứa một toán tử với<a href="operator_precedence" title="cpp/language/operator precedence">precedence</a>thấp hơn đúc ở cấp cao nhất (chính thức,<span class="t-spar">biểu hiện diễn viên</span>)</td>
+</tr>
+</table> <p>Lưu ý rằng dấu ngoặc đơn mở và đóng là một phần cần thiết của biểu thức gấp.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Sự khởi tạo của một<i>Gấp biểu thức</i>mở rộng biểu thức<code>e</code>                  std :: error_code &amp; ec);</p>
+<div class="t-li1">
+<span class="t-li">1)</span>UNARY ĐÚNG ĐÚNG<code>(E op ...)</code>trở thành<code>(E1 op (... op (EN-1 op EN)))</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>UNARY FORP FERE<code>(... op E)</code>trở thành<code>(((E1 op E2) op ...) op EN)</code>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Nhị phân bên phải nếp gấp<code>(E op ... op I)</code>trở thành<code>(E1 op (... op (EN−1 op (EN op I))))</code>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span>Nhị phân bên trái nếp gấp<code>(I op ... op E)</code>trở thành<code>((((I op E1) op E2) op ...) op EN)</code>
+</div> <p>(Ở đâu<code>N</code>là số lượng các phần tử trong mở rộng gói)</p>
+<p>Ví dụ,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;typename ... args&gt;</pre></div> <p>bool tất cả (args ... args) {return (... &amp;&amp; args); }</p>
+<div class="t-li1">
+<span class="t-li">1)</span> <code>&amp;&amp;</code>Khi một nếp gấp chưa được sử dụng với việc mở rộng gói bằng 0, chỉ cho phép các toán tử sau đây được cho phép:<code>true</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>// trong tất cả (), nếp gấp bên trái chưa mở rộng như<code>||</code>Khi một nếp gấp chưa được sử dụng với việc mở rộng gói bằng 0, chỉ cho phép các toán tử sau đây được cho phép:<code>false</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>// B là sai<code>,</code>Khi một nếp gấp chưa được sử dụng với việc mở rộng gói bằng 0, chỉ cho phép các toán tử sau đây được cho phép:<code>void()</code>.</div> <h3 id="Notes">Ghi chú</h3> <p>Hợp lý và (<span class="t-spar">trong phạm vi</span>). Giá trị cho gói trống là<span class="t-spar">đóng gói</span>Hợp lý hoặc (<a href="operator_precedence" title="cpp/language/operator precedence">precedence</a>). Giá trị cho gói trống là</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Nhà điều hành dấu phẩy (</pre></div> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_fold_expressions" title="cpp/feature test"><code>__cpp_fold_expressions</code></a></td> <td><span class="nu0">Thuật toán song song</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<a href="#top">Fold expressions</a> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">). Giá trị cho gói trống là</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Nếu biểu thức được sử dụng như</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>có một nhà điều hành với</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>có một nhà điều hành với</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>Dưới đây đúc ở cấp cao nhất, nó phải được đặt dấu ngoặc đơn:</li></ul>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2611.html" rel="nofollow">CWG 2611</a> </td> <td>C ++ 17</td> <td>Mẫu &lt;typename ... args&gt;</td> <td>int sum (args &amp;&amp; ... args)</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/fold">https://en.cppreference.com/w/cpp/language/fold</a>
+</p>
+</div>

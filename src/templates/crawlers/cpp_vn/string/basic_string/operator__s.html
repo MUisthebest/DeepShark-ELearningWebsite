@@ -1,0 +1,42 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: LIÊN QUAN :: String_literals :: Toán tử "" s</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/string" title="cpp/header/string">&lt;string&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx14 t-until-cxx20"> <td><pre data-language="cpp">std :: Toán tử chuỗi "" s (const char* str, std :: size_t len);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr std :: Toán tử chuỗi "" S (const char* str, std :: size_t len);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr std :: Toán tử U8String "" S (const char8_t* str, std :: size_t len);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(3)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx14 t-until-cxx20"> <td><pre data-language="cpp">std :: Toán tử U16String "" S (const char16_t* str, std :: size_t len);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr std :: Toán tử U16String "" S (const char16_t* str, std :: size_t len);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(4)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx14 t-until-cxx20"> <td><pre data-language="cpp">std :: toán tử U32String "" s (const char32_t* str, std :: size_t len);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr std :: Toán tử U32String "" S (const char32_t* str, std :: size_t len);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">             Không có p);</td> <td></td> </tr> <tr class="t-dcl t-since-cxx14 t-until-cxx20"> <td><pre data-language="cpp">std :: toán tử wString "" s (const wchar_t* str, std :: size_t len);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr std :: Toán tử wString "" s (const wchar_t* str, std :: size_t len);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Tạo thành một chuỗi chữ của loại mong muốn.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Mẫu &lt;Class execPolicy,<code><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1233">Điều đó cho tất cả<span class="me2">ngoại trừ việc phần tử được xây dựng là</span></span></a><span class="br0">danh tính</span>str, len<span class="br0">{</span></code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;Class execPolicy,<code><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw3263">Điều đó cho tất cả<span class="me2">U8String</span></span></a><span class="br0">danh tính</span>str, len<span class="br0">{</span></code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;Class execPolicy,<code><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1237">Điều đó cho tất cả<span class="me2">U16String</span></span></a><span class="br0">danh tính</span>str, len<span class="br0">{</span></code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mẫu &lt;Class execPolicy,<code><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1239">Điều đó cho tất cả<span class="me2">U32String</span></span></a><span class="br0">danh tính</span>str, len<span class="br0">{</span></code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Mẫu &lt;Class execPolicy,<code><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1235">Điều đó cho tất cả<span class="me2">wstring</span></span></a><span class="br0">danh tính</span>str, len<span class="br0">{</span></code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>con trỏ đến đầu của mảng ký tự thô theo nghĩa đen</td>
+</tr> <tr class="t-par"> <td>Len</td> <td>-</td> <td>chiều dài của mảng ký tự thô theo nghĩa đen</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Chuỗi theo nghĩa đen.</p>
+<h3 id="Notes">Ghi chú</h3> <p>với phần thực tế và phần tưởng tượng<code>std::literals::string_literals</code>    trả lại std :: chrono :: day (d);<code>literals</code>Và<code>string_literals</code>là không gian tên nội tuyến. Truy cập vào các nhà khai thác này có thể đạt được<br/></p>
+<ul>
+<li> <code>using namespace std::literals</code>, hoặc</li>
+<li> <code>using namespace std::string_literals</code>, hoặc</li>
+<li> <code>using namespace std::literals::string_literals</code>.</li>
+</ul> <p><code><a href="../../chrono/duration" title="cpp/chrono/duration">std::chrono::duration</a></code>cũng xác định<code>operator""s</code>, để đại diện cho những giây theo nghĩa đen, nhưng nó là một số học theo nghĩa đen:<code>10.0s</code>Và<code>10s</code>là mười giây, nhưng<code>"10"s</code>là một chuỗi.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_string_udls" title="cpp/feature test"><code>__cpp_lib_string_udls</code></a></td> <td><span class="nu0">Khoảng thời gian thực tế (tính bằng giây) được giữ bởi một đối tượng thời lượng</span></td> <td><span class="t-mark">(C ++ 14)</span></td> <td>Nghĩa đen do người dùng định nghĩa cho các loại chuỗi</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;chuỗi&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="basic_string" title="cpp/string/basic string/basic string"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Nếu a<code>basic_string</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href='../basic_string_view/operator""sv' title='cpp/string/basic string view/operator""sv'> <span class="t-lines"><span>toán tử "" sv</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>tạo một chế độ xem chuỗi của một mảng ký tự theo nghĩa đen<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string/operator%22%22s">https://en.cppreference.com/w/cpp/string/basic_string/operator%22%22s</a>
+</p>
+</div>

@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: stride_view &lt;v&gt; ::<i>vòng lặp</i>&lt;str&gt; ::<i>vòng lặp</i>
+</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">/*iterator*/()</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">constexpr /*iterator* /( /*iterator* /&lt;! const&gt; i)</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">    yêu cầu const và</pre>
+</td> <td>(3)</td> <td> <span class="t-mark t-mark-expos">.<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">    .</span>)</span> </td> </tr> </table> <p>Xây dựng một<a href="../iterator" title="cpp/ranges/stride view/iterator">iterator</a>.</p>
+<span class="t-li">1)</span>Hàm tạo mặc định.<a href="../../../language/value_initialization" title="cpp/language/value initialization">Value-initializes</a>:<ul>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>, và một trong hai</i></code></a>với<code><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/iterator_t"><span class="kw2890">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">    khoảng cách (r &amp;&amp; r);</span></span></a><span class="sy1">is_trivently_destructible_v</span>Base<span class="sy1">&lt;</span><span class="br0">.</span><span class="br0">)</span></code>Thì</li>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>kết thúc_</i></code></a>với<code><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/iterator_t"><span class="kw2891">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">Range constexpr :: Range_Difference_T &lt;R&gt;</span></span></a><span class="sy1">is_trivently_destructible_v</span>Base<span class="sy1">&lt;</span><span class="br0">.</span><span class="br0">)</span></code>Thì</li>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>(n * i)</i></code></a>với<code>​0​</code>Thì</li>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>mất tích_</i></code></a>với<code>​0​</code>.</li>
+</ul> <span class="t-li">2)</span>Xây dựng một tererator.<code>/*iterator*/&lt;false&gt;</code>ĐẾN<code>/*iterator*/&lt;true&gt;</code>        STD :: mui trần_to &lt;phạm vi :: iterator_t &lt;v&gt;, phạm vi :: iterator_t &lt;cơ sở &gt;&gt; và<ul>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>, và một trong hai</i></code></a>với<code>std::move(i.current_)</code>Thì</li>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>kết thúc_</i></code></a>với<code>std::move(i.end_)</code>Thì</li>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>(n * i)</i></code></a>với<code>i.stride_</code>Thì</li>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>mất tích_</i></code></a>với<code>i.missing_</code>.</li>
+</ul> <span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>        &amp;&amp; ... &amp;&amp;<code>stride_view::begin</code>Và<code>stride_view::end</code>. Khởi tạo con trỏ cơ bản<ul>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>, và một trong hai</i></code></a>với<code>std::move(current)</code>Thì</li>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>kết thúc_</i></code></a>với<code><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/end"><span class="kw2884">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">kết thúc</span></span></a><span class="br0">.</span>parent<span class="sy2">-</span><span class="sy1">&lt;</span>base_<span class="br0">)</span></code>Thì</li>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>(n * i)</i></code></a>với<code>parent-&gt;stride_</code>Thì</li>
+<li> <a href="../iterator#Data_members" title="cpp/ranges/stride view/iterator"><code><i>mất tích_</i></code></a>với<code>missing</code>.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</td> <td>-</td> <td>chồng chéo với container.<code>/*iterator*/&lt;false&gt;</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/stride_view/iterator/iterator">https://en.cppreference.com/w/cpp/ranges/stride_view/iterator/iterator</a>
+</p>
+</div>

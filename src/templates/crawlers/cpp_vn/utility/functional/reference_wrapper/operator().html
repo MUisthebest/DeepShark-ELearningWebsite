@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">std :: tham chiếu_WRAPPER &lt;T&gt; :: Toán tử ()</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">Mẫu &lt;class ... argtypes&gt;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td> <pre data-language="cpp">Tên std :: result_of &lt;t &amp; (argtypes &amp;&amp; ...)&gt; :: gõ</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">    toán tử () (argtypes &amp;&amp; ... args) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>ngay lập tức. Để xác định các chuỗi định dạng, chức năng này thu hẹp ký tự tiếp theo<a href="../../../named_req/callable" title="cpp/named req/Callable">Callable</a>Mẫu &lt;class ... argtypes&gt;<code><a href="../../functional" title="cpp/utility/functional">INVOKE</a>(<a href="get" title="cpp/utility/functional/reference wrapper/get">get()</a>, <a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>ArgTypes<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...<span class="br0">)</span></code>std :: indoke_result_t &lt;t &amp;, argtypes ...&gt;<a href="../../../named_req/callable" title="cpp/named req/Callable">Callable</a>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<p><code>T</code>    toán tử () (argtypes &amp;&amp; ... args) const noexcept (/ * xem bên dưới */);</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>iterator trước đó phần tử mới sẽ được xây dựng</td> <td>-</td> <td>Mẫu &lt;class ... argtypes&gt;</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Consexpr std :: indoke_result_t &lt;t &amp;, argtypes ...&gt;</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11 t-until-cxx17">
+<td> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+</td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <a href="../../../language/noexcept_spec" title="cpp/language/noexcept spec"><code>noexcept</code></a>Đặc điểm kỹ thuật:<div class="t-noexcept-box"><span class="t-cc"><code><span class="kw1">Noexcept</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/types/is_invocable"><span class="kw3230">Điều đó cho tất cả<span class="me2">loại đối tượng chức năng</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy3">Không có giá trị</span>, ArgTypes...<span class="sy1">&lt;</span><span class="br0">)</span></code></span></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    toán tử () (argtypes &amp;&amp; ... args) const noexcept (/ * xem bên dưới */);</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">đối tượng, tham chiếu đến được lưu trữ, như thể</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3764" rel="nofollow">LWG 3764</a> </td> <td>C ++ 17</td> <td>nhà điều hành<span class="br0">.</span><span class="br0">)</span># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<span class="kw1">Noexcept</span> </td> <td>. Hàm này chỉ khả dụng nếu các điểm tham chiếu được lưu trữ đến<span class="kw1">Noexcept</span> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="get" title="cpp/utility/functional/reference wrapper/get"> <span class="t-lines"><span>Điền vào thùng chứa với giá trị được chỉ định</span><span>rebinds a</span></span></a></div> </td> <td>nhà điều hành T &amp;<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/functional/reference_wrapper/operator()">https://en.cppreference.com/w/cpp/utility/functional/reference_wrapper/operator()</a>
+</p>
+</div>

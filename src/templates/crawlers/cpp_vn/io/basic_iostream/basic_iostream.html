@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_iostream &lt;biểu đồ, đặc điểm&gt; :: basic_iostream</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">rõ ràng cơ bản_iostream (std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* sb);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">basic_iostream (const basic_iostream &amp; other) = xóa;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>basic_iostream (basic_iostream &amp;&amp; khác);</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Xây dựng đối tượng luồng mới.<code>sb</code>Khởi tạo với Streambuf<code>basic_istream&lt;CharT,Traits&gt;(sb)</code>Và<code>basic_ostream&lt;CharT,Traits&gt;(sb)</code>. Các lớp cơ sở được khởi tạo là<code>rdbuf() == sb</code>Và<code>gcount() == 0</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>. Sau cuộc gọi</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Sao chép xây dựng không được phép.<code>basic_istream</code>(1,3)<code>basic_istream&lt;CharT,Traits&gt;(std::move(rhs));</code>Di chuyển Constructor: Di chuyển xây dựng lớp cơ sở đầu tiên<code><a href="../basic_ios" title="cpp/io/basic ios">std::basic_ios</a></code>, từ đó chuyển đổi di chuyển và khởi tạo cơ sở ảo<code>basic_ostream</code>. Sự khởi tạo của cơ sở khác,<code><a href="../basic_ostream" title="cpp/io/basic ostream">std::basic_ostream</a></code>, được xác định là do triển khai (ví dụ: một hàm tạo mặc định được bảo vệ có thể được thêm vào<code>rhs</code>, không có gì) vì việc xây dựng di chuyển không thể sử dụng<code><a href="../basic_fstream" title="cpp/io/basic fstream">std::basic_fstream</a></code>Và<code><a href="../basic_stringstream" title="cpp/io/basic stringstream">std::basic_stringstream</a></code>hai lần. Trình xây dựng di chuyển này được bảo vệ: nó được gọi bởi các hàm tạo di chuyển của các lớp luồng dẫn xuất</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ở cấp độ thấp, lớp học về cơ bản kết thúc việc triển khai thiết bị thô của</td> <td>-</td> <td>trước khi họ di chuyển xây dựng và liên kết bộ đệm luồng.</td>
+</tr> <tr class="t-par"> <td>khác</td> <td>-</td> <td>streambuf để khởi tạo với</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator=" title="cpp/io/basic iostream/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>      public Basic_istream &lt;Biểu đồ, Đặc điểm&gt;,<code>basic_iostream</code> <br/> <span class="t-mark">(chức năng thành viên được bảo vệ)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_iostream/basic_iostream">https://en.cppreference.com/w/cpp/io/basic_iostream/basic_iostream</a>
+</p>
+</div>

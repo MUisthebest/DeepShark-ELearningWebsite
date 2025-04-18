@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">std :: comp_ellint_2, std :: comp_ellint_2f, std :: comp_ellint_2l</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx23"> <td><pre data-language="cpp">float comp_ellint_2 (float k);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">gấp đôi comp_ellint_2 (kép k);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Double comp_ellint_2 (Double K dài k);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">/ * điểm nổi-loại */ comp_ellint_2 (/ *-điểm nổi kiểu */ k);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl-h"> <td> <a href="#Notes">Additional overloads</a>
+</td> <td></td> <td></td> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">float comp_ellint_2f (float k);</pre>
+</td> <td>, kết quả là hữu hạn.</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>loại tham chiếu<a class="extiw" href="https://en.wikipedia.org/wiki/Elliptic_integral#Complete_elliptic_integral_of_the_second_kind" title="enwiki:Elliptic integral">complete elliptic integral of the second kind</a>của<code>k</code>.<span class="t-rev-inl t-since-cxx23"><span>Double Double Acosl (Double Num dài);<code>std::comp_ellint_2</code>constexpr / *-point-point-type * / /<code>k</code>.</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;arithmetic1, orithmetic2, số học lớp3&gt; lớp</span>ACO kép (số nguyên);<code>double</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>một trình lặp hợp lệ vào thùng chứa này</td> <td>-</td> <td>Double comp_ellint_1l (Double k);</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Double comp_ellint_2l (Double k);<code>k</code>        : keep_ (std :: di chuyển (x)) {}<code>std::ellint_2(k, π/2)</code>, \ (\ nhỏ e^z \) e</p>
+<h3 id="Error_handling">Xử lý lỗi</h3> <p>n+m<code><a href="../math/math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code>.</p>
+<ul>
+<li>gấp đôi comp_ellint_1 (số nguyên k);</li>
+<li>Mô đun hình elip hoặc độ lệch tâm (giá trị dấu phẩy động hoặc số nguyên)</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Lỗi có thể được báo cáo theo quy định trong<a class="mw-redirect" href="https://en.cppreference.com/w/cpp/experimental/special_math" title="cpp/experimental/special math">ISO 29124:2010</a>Nếu đối số là NAN, NAN được trả lại và không được báo cáo về tên miền<code>__STDCPP_MATH_SPEC_FUNCS__</code>là âm, có thể xảy ra lỗi miền miền<code>__STDCPP_WANT_MATH_SPEC_FUNCS__</code>lớn hơn hoặc bằng 128, hành vi được xác định là thực hiện</p>
+<p>Các triển khai không hỗ trợ C ++ 17, nhưng hỗ trợ<code>tr1/cmath</code>, cung cấp chức năng này nếu<code>std::tr1</code>.</p>
+<p>được xác định bởi việc triển khai thành một giá trị ít nhất là 201003L và nếu người dùng xác định<a class="external text" href="https://www.boost.org/doc/libs/release/libs/math/doc/html/math_toolkit/ellint/ellint_2.html" rel="nofollow">available in boost.math</a>.</p>
+<p>Mẫu &lt;Class Integer&gt;<code>k</code>gấp đôi comp_ellint_2 (số nguyên k);<code>std::comp_ellint_2</code>Nếu không có lỗi xảy ra, giá trị của tích phân elip hoàn chỉnh của loại thứ hai</p>
+<p>, kết quả bằng<span class="t-v">, kết quả là hữu hạn.</span>trong khoảng [−π; π].<code>num</code>Nếu việc triển khai hỗ trợ số học dấu nổi của IEEE (IEC 60559),<code>std::comp_ellint_2(num)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::comp_ellint_2(static_cast&lt;double&gt;(num))</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Chu vi của hình elip với độ lệch tâm</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">và trục semimajor a bằng 4ae (k), nơi e là</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="ellint_2" title="cpp/numeric/special functions/ellint 2"> <span class="t-lines"><span>ellint_2</span><span>ellint_2f</span><span>ellint_2l</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(không đầy đủ) Tích hợp elip của loại thứ hai<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr> <td>
+<a class="external text" href="https://mathworld.wolfram.com/CompleteEllipticIntegraloftheSecondKind.html" rel="nofollow">Weisstein, Eric W. "Complete Elliptic Integral of the Second Kind."</a>Nếu đối số là +, +được trả về.</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/special_functions/comp_ellint_2">https://en.cppreference.com/w/cpp/numeric/special_functions/comp_ellint_2</a>
+</p>
+</div>

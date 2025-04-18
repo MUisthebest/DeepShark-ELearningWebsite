@@ -1,0 +1,37 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FileSystem :: File_Type</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/filesystem" title="cpp/header/filesystem">&lt;filesystem&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">enum class file_type {</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p><code>file_type</code>    none = / * không xác định * /,</p>
+<h3 id="Constants">Hằng số</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>    skip_symlinks = / * không xác định * /,</th>
+</tr> <tr class="t-dsc"> <td> <code>none</code> </td> <td>    not_found = / * không xác định * /,</td>
+</tr> <tr class="t-dsc"> <td> <code>not_found</code> </td> <td>    thông thường = / * không xác định * /,</td>
+</tr> <tr class="t-dsc"> <td> <code>regular</code> </td> <td>    thư mục = / * không xác định * /,</td>
+</tr> <tr class="t-dsc"> <td> <code>directory</code> </td> <td>    symlink = / * không xác định * /,</td>
+</tr> <tr class="t-dsc"> <td> <code>symlink</code> </td> <td>    block = / * không xác định * /,</td>
+</tr> <tr class="t-dsc"> <td> <code>block</code> </td> <td>    ký tự = / * không xác định * /,</td>
+</tr> <tr class="t-dsc"> <td> <code>character</code> </td> <td>    FIFO = / * không xác định * /,</td>
+</tr> <tr class="t-dsc"> <td> <code>fifo</code> </td> <td>    Ổ cắm = / * không xác định * /,</td>
+</tr> <tr class="t-dsc"> <td> <code>socket</code> </td> <td>    không xác định = / * không xác định * /,</td>
+</tr> <tr class="t-dsc"> <td>thực hiện xác định</td> <td>    / * Xác định triển khai */<code>junction</code>vì<a class="external text" href="https://docs.microsoft.com/en-us/sysinternals/downloads/junction" rel="nofollow">NTFS junctions</a>)</td>
+</tr> <tr class="t-dsc"> <td> <code>unknown</code> </td> <td>};</td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Xác định các hằng số chỉ ra một loại tệp hoặc thư mục một đường dẫn đề cập đến. Giá trị của các điều tra viên là khác biệt.</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">chỉ ra rằng trạng thái tệp chưa được đánh giá hoặc xảy ra lỗi khi đánh giá nó</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="file_status" title="cpp/filesystem/file status"> <span class="t-lines"><span>File_Status</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>đại diện cho loại tệp và quyền<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_block_file" title="cpp/filesystem/is block file"> <span class="t-lines"><span>is_block_file</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đường dẫn đã cho có tham chiếu đến thiết bị chặn không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_character_file" title="cpp/filesystem/is character file"> <span class="t-lines"><span>is_character_file</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đường dẫn đã cho có đề cập đến thiết bị ký tự không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_directory" title="cpp/filesystem/is directory"> <span class="t-lines"><span>is_directory</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đường dẫn đã cho có đề cập đến một thư mục<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_fifo" title="cpp/filesystem/is fifo"> <span class="t-lines"><span>is_fifo</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Kiểm tra xem đường dẫn đã cho có đề cập đến một đường ống được đặt tên không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_other" title="cpp/filesystem/is other"> <span class="t-lines"><span>is_other</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đối số có đề cập đến<i>khác</i>tài liệu<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_socket" title="cpp/filesystem/is socket"> <span class="t-lines"><span>is_socket</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Kiểm tra xem đối số có đề cập đến ổ cắm IPC có tên không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_symlink" title="cpp/filesystem/is symlink"> <span class="t-lines"><span>is_symlink</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem đối số có đề cập đến một liên kết tượng trưng không<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="directory_entry/is_regular_file" title="cpp/filesystem/directory entry/is regular file"> <span class="t-lines"><span>is_regular_file</span></span></a></div> </td> <td>Kiểm tra xem mục nhập thư mục có đề cập đến một tệp thông thường không<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::filesystem::directory_entry</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/file_type">https://en.cppreference.com/w/cpp/filesystem/file_type</a>
+</p>
+</div>

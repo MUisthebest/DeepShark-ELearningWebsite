@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: RangeadapTorObject<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>
+</h1> <p><i>Máy phát điện phạm vi</i>là các đối tượng điểm tùy chỉnh chấp nhận<a href="../ranges/viewable_range" title="cpp/ranges/viewable range"><code>viewable_range</code></a>như những cuộc tranh luận đầu tiên của họ và trả lại một<a href="../ranges/view" title="cpp/ranges/view"><code>view</code></a>. Một số đối tượng bộ điều hợp phạm vi là đơn giản, tức là họ lấy một<a href="../ranges/viewable_range" title="cpp/ranges/viewable range"><code>viewable_range</code></a>như lập luận duy nhất của họ. Các đối tượng bộ điều hợp phạm vi khác lấy một<a href="../ranges/viewable_range" title="cpp/ranges/viewable range"><code>viewable_range</code></a>và các cuộc tranh luận theo dõi khác.</p>
+<p>Nếu một đối tượng bộ điều hợp phạm vi chỉ lấy một đối số, thì đó cũng là một<a href="rangeadaptorclosureobject" title="cpp/named req/RangeAdaptorClosureObject">RangeAdaptorClosureObject</a>.</p>
+<p>Nếu một đối tượng bộ điều hợp phạm vi lấy nhiều hơn một đối số, nó cũng hỗ trợ ứng dụng một phần: hãy để</p>
+<ul>
+<li> <code>a</code>là một đối tượng bộ điều hợp phạm vi như vậy và</li>
+<li> <code>args...</code>là đối số (thường phù hợp cho các đối số theo dõi),</li>
+</ul> <p>  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }<code>a(args...)</code>Có các thuộc tính sau:</p>
+<ul>
+<li>nó là hợp lệ nếu và chỉ khi cho mọi đối số<code>e</code>TRONG<code>args...</code>chỉ vào trình tự và mọi số nguyên không âm<code>E</code>khoảng cách<code>decltype((e))</code>Thì<code><a href="http://en.cppreference.com/w/cpp/types/is_constructible"><span class="kw528">Điều đó cho tất cả<span class="me2">, sao chép-khởi tạo phần tử tương ứng của kết quả với</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/types/decay"><span class="kw632">Điều đó cho tất cả<span class="me2">Tìm kiếm phạm vi</span></span></a><span class="sy1">is_trivently_destructible_v</span>E<span class="sy1">&lt;</span>, E<span class="sy1">&lt;</span></code>khoảng cách<code>true</code>Thì</li>
+<li>Khi cuộc gọi hợp lệ, đối tượng kết quả của nó lưu trữ một tiểu mục thuộc loại<code><a href="http://en.cppreference.com/w/cpp/types/decay"><span class="kw632">Điều đó cho tất cả<span class="me2">Tìm kiếm phạm vi</span></span></a><span class="sy1">is_trivently_destructible_v</span>E<span class="sy1">&lt;</span></code>trực tiếp không có danh sách sáng chế với<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>E<span class="sy1">&lt;</span><span class="br0">.</span>e<span class="br0">)</span></code>, cho mọi đối số<code>e</code>TRONG<code>args...</code>(Nói cách khác, các đối tượng bộ điều hợp phạm vi liên kết các đối số theo giá trị),</li>
+<li>đối tượng kết quả là một<a href="rangeadaptorclosureobject" title="cpp/named req/RangeAdaptorClosureObject">RangeAdaptorClosureObject</a>Thì</li>
+<li>gọi<a href="rangeadaptorclosureobject" title="cpp/named req/RangeAdaptorClosureObject">RangeAdaptorClosureObject</a>Chuyển tiếp các đối số bị ràng buộc (nếu có) đến đối tượng bộ điều hợp phạm vi liên kết. Các đối số ràng buộc (nếu có) được coi là có danh mục giá trị và đủ điều kiện CV của<a href="rangeadaptorclosureobject" title="cpp/named req/RangeAdaptorClosureObject">RangeAdaptorClosureObject</a>.<span class="t-rev-inl t-since-cxx23"><span>Nói cách khác,<code>a(args...)(r)</code>Mẫu &lt;class T, class so sánh&gt;<code><a href="http://en.cppreference.com/w/cpp/utility/functional/bind_front"><span class="kw3544">Điều đó cho tất cả<span class="me2">BIND_BACK</span></span></a><span class="br0">.</span>a, args...<span class="br0">)</span><span class="br0">.</span>r<span class="br0">)</span></code>(Nhưng trước đây cũng hỗ trợ cú pháp ống).</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span> </li>
+</ul> <p>Giống như các đối tượng điểm tùy chỉnh khác, hãy để</p>
+<ul>
+<li> <code>a</code>là một đối tượng của phiên bản CV-UNTQUEDED của loại đối tượng bộ điều hợp phạm vi,</li>
+<li> <code>args...</code>là bất kỳ nhóm đối số nào thỏa mãn các ràng buộc của<code>operator()</code>của loại<code>a</code>Thì</li>
+</ul> <p>các thùng chứa không có thứ tự để so sánh</p>
+<ul>
+<li> <code>a(args...)</code>Thì</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/utility/as_const"><span class="kw1124">Điều đó cho tất cả<span class="me2">as_const</span></span></a><span class="br0">.</span>a<span class="br0">)</span><span class="br0">.</span>args...<span class="br0">)</span></code>Thì</li>
+<li> <code>std::move(a)(args...)</code>, Và</li>
+<li> <code>std<span class="sy4">::</span><span class="me2">(Niebloid)</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/utility/as_const"><span class="kw1124">Điều đó cho tất cả<span class="me2">as_const</span></span></a><span class="br0">.</span>a<span class="br0">)</span><span class="br0">)</span><span class="br0">.</span>args...<span class="br0">)</span></code> </li>
+</ul> <p>đều tương đương.</p>
+<p>Đối tượng kết quả của từng biểu thức này là một<a href="../ranges/view" title="cpp/ranges/view"><code>view</code></a>đối tượng hoặc a<a href="rangeadaptorclosureobject" title="cpp/named req/RangeAdaptorClosureObject">RangeAdaptorClosureObject</a>.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>operator()</code>không được hỗ trợ cho phiên bản đủ điều kiện dễ bay hơi hoặc điều kiện phản động của các loại đối tượng bộ điều hợp phạm vi. Mảng và chức năng được chuyển đổi thành con trỏ trong khi ràng buộc.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/RangeAdaptorObject">https://en.cppreference.com/w/cpp/named_req/RangeAdaptorObject</a>
+</p>
+</div>

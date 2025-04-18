@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_ptr &lt;t&gt; :: use_count</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Long use_count () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả về số lượng khác nhau<code>shared_ptr</code>ví dụ (<code>this</code>bao gồm) quản lý đối tượng hiện tại. Nếu không có đối tượng được quản lý,<code>​0​</code>bất kể</p>
+<p>Trong môi trường đa luồng, giá trị được trả lại bởi<code>use_count</code>là gần đúng (việc triển khai điển hình sử dụng<a href="../../atomic/memory_order" title="cpp/atomic/memory order">memory_order_relaxed</a>trọng tải).</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>    auto auto static static /*Dynamic-index* /(rank_type i) noexcept;<code><a href="../shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>các thể hiện quản lý đối tượng hiện tại hoặc<code>​0​</code>Nếu không có đối tượng được quản lý.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Các trường hợp sử dụng phổ biến bao gồm</p>
+<ul>
+<li>So sánh với<code>​0​</code>. Nếu như<code>use_count</code>Trả về Zero, con trỏ được chia sẻ là<i>trống</i>và quản lý không có đối tượng (cho dù con trỏ được lưu trữ của nó là<a href="../../language/nullptr" title="cpp/language/nullptr"><code>nullptr</code></a>).</li>
+<li>So sánh với<code>1</code>. Nếu như<code>use_count</code>Trả lại 1, không có chủ sở hữu nào khác.<span class="t-rev-inl t-until-cxx20"><span>Các<span class="t-rev-inl t-since-cxx17"><span>int main ()</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>, điều này trở lại<code><a href="unique" title="cpp/memory/shared ptr/unique">unique()</a></code>được cung cấp cho trường hợp sử dụng này.</span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span>Trong môi trường đa luồng, điều này không ngụ ý rằng đối tượng an toàn để sửa đổi vì quyền truy cập vào đối tượng được quản lý bởi các chủ sở hữu được chia sẻ cũ có thể chưa hoàn thành và vì chủ sở hữu được chia sẻ mới có thể được giới thiệu đồng thời, chẳng hạn như bởi<code><a href="../weak_ptr/lock" title="cpp/memory/weak ptr/lock">std::weak_ptr::lock</a></code>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;nhớ&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="unique" title="cpp/memory/shared ptr/unique"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span></div> </td> <td>kiểm tra xem đối tượng được quản lý chỉ được quản lý bởi hiện tại<code>shared_ptr</code>giữa<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/shared_ptr/use_count">https://en.cppreference.com/w/cpp/memory/shared_ptr/use_count</a>
+</p>
+</div>

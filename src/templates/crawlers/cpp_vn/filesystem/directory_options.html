@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FileSystem :: Thư mục_options</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/filesystem" title="cpp/header/filesystem">&lt;filesystem&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">enum class thư mục_options {</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>    none = / * không xác định * /,<a href="directory_iterator" title="cpp/filesystem/directory iterator"><code>directory_iterator</code></a>Và<a href="recursive_directory_iterator" title="cpp/filesystem/recursive directory iterator"><code>recursive_directory_iterator</code></a>.</p>
+<p><code>directory_options</code>Cấu trúc kết hợp hiệu suất và khả năng truy cập của một mảng kiểu C với các lợi ích của một thùng chứa tiêu chuẩn, chẳng hạn như biết kích thước của chính nó, sự phân công hỗ trợ, trình lặp truy cập ngẫu nhiên, v.v.<a href="../named_req/bitmasktype" title="cpp/named req/BitmaskType">BitmaskType</a>    overwrite_existing = / * không xác định * /,<code>operator&amp;</code>Thì<code>operator|</code>Thì<code>operator^</code>Thì<code>operator~</code>Thì<code>operator&amp;=</code>Thì<code>operator|=</code>, Và<code>operator^=</code>    update_existing = / * không xác định * /,<code>none</code>    đệ quy = / * không xác định * /,</p>
+<h3 id="Member_constants">Inline Consexpr bool is_execut_policy_v = std :: is_execut_policy &lt;t&gt; :: value;</h3> <table class="wikitable"> <tr> <th>Áp dụng cho</th> <th>    skip_symlinks = / * không xác định * /,</th>
+</tr> <tr> <td>
+<code>none</code> </td> <td>    none = / * không xác định * /,</td>
+</tr> <tr> <td>
+<code>follow_directory_symlink</code> </td> <td>    Theo dõi_Directory_SymLink = / * không xác định * /,</td>
+</tr> <tr> <td>
+<code>skip_permission_denied</code> </td> <td>    skip_permission_denied = / * không xác định * / /</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="directory_iterator/directory_iterator" title="cpp/filesystem/directory iterator/directory iterator"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>xây dựng một trình lặp thư mục<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::filesystem::directory_iterator</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="recursive_directory_iterator/recursive_directory_iterator" title="cpp/filesystem/recursive directory iterator/recursive directory iterator"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>};<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::filesystem::recursive_directory_iterator</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/directory_options">https://en.cppreference.com/w/cpp/filesystem/directory_options</a>
+</p>
+</div>

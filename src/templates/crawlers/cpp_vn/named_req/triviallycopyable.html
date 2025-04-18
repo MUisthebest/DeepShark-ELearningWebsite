@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Trivingcopyable<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Lưu ý: Tiêu chuẩn không xác định yêu cầu được đặt tên với tên này. Đây là một loại loại được xác định bởi ngôn ngữ cốt lõi. Nó được bao gồm ở đây như một yêu cầu được đặt tên chỉ cho tính nhất quán.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Các loại sau được gọi chung<i>Các loại có thể sao chép tầm thường</i>:</p>
+<ul>
+<li> <a href="scalartype" title="cpp/named req/ScalarType">scalar types</a> </li>
+<li> <a href="../language/classes#Trivially_copyable_class" title="cpp/language/classes">trivially copyable class types</a> </li>
+<li>Mảng các loại như vậy</li>
+<li>Phiên bản đủ điều kiện CV của các loại này</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Nói chung, đối với bất kỳ loại có thể sao chép tầm thường nào<code>T</code>Điều đó, đối với một đối tượng<code>obj1</code>của<code>T</code>, các byte cơ bản của<code>obj1</code>có thể được sao chép vào một mảng<code>char</code>, hoặc<code>unsigned char</code><span class="t-rev-inl t-since-cxx17"><span>, hoặc<a href="../types/byte" title="cpp/types/byte"><code>std::byte</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>hoặc vào<code>obj2</code>, một đối tượng khác biệt của<code>T</code>. Không<code>obj1</code>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<code>obj2</code>Có thể là một tiểu mục có khả năng vượt qua.</p>
+<p>Nếu các byte cơ bản của<code>obj1</code>được sao chép vào một mảng như vậy, và sau đó nội dung kết quả được sao chép lại vào<code>obj1</code>Thì<code>obj1</code>sẽ giữ giá trị ban đầu của nó. Nếu các byte cơ bản của<code>obj1</code>được sao chép vào<code>obj2</code>Thì<code>obj2</code>sẽ giữ<code>obj1</code>giá trị của.</p>
+<p>Các byte cơ bản có thể được sao chép bởi<code><a href="../string/byte/memcpy" title="cpp/string/byte/memcpy">std::memcpy</a></code>hoặc<code><a href="../string/byte/memmove" title="cpp/string/byte/memmove">std::memmove</a></code>, miễn là không có vật thể dễ bay hơi nào được truy cập.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1734.html" rel="nofollow">CWG 1734</a> </td> <td>C ++ 11</td> <td>C ++ 03 pod với bài tập không tầm thường bị xóa không phải là tầm thường</td> <td>đã xóa CTOR/toán tử cho phép</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2094.html" rel="nofollow">CWG 2094</a> </td> <td>C ++ 11</td> <td>Các loại vô hướng dễ bay hơi không thể sao chép một cách tầm thường (<a class="external text" href="https://cplusplus.github.io/CWG/issues/1746.html" rel="nofollow">CWG 1746</a>)</td> <td>thực hiện có thể sao chép tầm thường</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_trivially_copyable" title="cpp/types/is trivially copyable"> <span class="t-lines"><span>is_Trivent_copyable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có thể bản sao không một cách tầm thường chưa<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/TriviallyCopyable">https://en.cppreference.com/w/cpp/named_req/TriviallyCopyable</a>
+</p>
+</div>

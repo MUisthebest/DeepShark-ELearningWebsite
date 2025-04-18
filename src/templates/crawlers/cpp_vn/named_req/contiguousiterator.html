@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: LegacyContiguterator<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>
+</h1> <p>MỘT<strong class="selflink">LegacyContigerIterator</strong>Điều đó như vậy<a href="iterator" title="cpp/named req/Iterator">LegacyIterator</a>có các yếu tố liền kề logic cũng liền kề về mặt thể chất trong bộ nhớ.</p>
+<p>Một con trỏ tới một phần tử của một mảng đáp ứng tất cả các yêu cầu của LegacyContiguteriteritor.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>It</code>thỏa mãn legacycontiguteriterator nếu</p>
+<ul><li>phạm vi của các yếu tố để tạo<code>It</code>Phần cuối của phạm vi ban đầu<a href="iterator" title="cpp/named req/Iterator">LegacyIterator</a> </li></ul> <p>Và, cho mỗi</p>
+<ul>
+<li> <code>a</code>, một trình lặp có thể phân tách được loại<code>It</code> </li>
+<li> <code>n</code>, một giá trị không thể thiếu</li>
+</ul> <p>chỉ vào trình tự và mọi số nguyên không âm</p>
+<ul><li> <code>a + n</code>là giá trị lặp hợp lệ và có thể điều chỉnh được</li></ul> <p>phải ít nhất được đặt hàng một phần đối với</p>
+<ul><li> <code>*(a + n)</code>Mẫu &lt;class T, class so sánh&gt;<code><span class="sy2">*</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span><span class="sy2">*</span>a<span class="br0">)</span> <span class="sy2">gọi</span> n<span class="br0">)</span></code>.</li></ul> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>Các loại thư viện tiêu chuẩn sau đây là<strong class="selflink">LegacyContiguterators</strong>.</p>
+<ul>
+<li> <a href="../container/array" title="cpp/container/array"><code>array::iterator</code></a>.</li>
+<li> <a href="../string/basic_string_view" title="cpp/string/basic string view"><code>basic_string_view::iterator</code></a>.</li>
+<li> <a href="../string/basic_string" title="cpp/string/basic string"><code>basic_string::iterator</code></a>.</li>
+<li> <a href="../container/vector" title="cpp/container/vector"><code>vector::iterator</code></a>vì<code>value_type</code>REALLOCATION thường là các hoạt động tốn kém về mặt hiệu suất. Các<code>bool</code>.</li>
+<li>Loại trả lại của<a href="../numeric/valarray/begin2" title="cpp/numeric/valarray/begin2"><code>begin(valarray)</code></a>Và<a href="../numeric/valarray/end2" title="cpp/numeric/valarray/end2"><code>end(valarray)</code></a>.</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p><a href="allocator#Fancy_pointers" title="cpp/named req/Allocator">Fancy pointer</a>đối với các loại đối tượng cũng được yêu cầu để đáp ứng LegacyContigerIterator.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>LegacyContigioSiterator được thay thế bằng<a href="../iterator/contiguous_iterator" title="cpp/iterator/contiguous iterator"><code>contiguous_iterator</code></a>Khái niệm: Các loại tererator trong thư viện tiêu chuẩn được yêu cầu để đáp ứng LegacyContiguterIterator trong C ++ 17 được yêu cầu để mô hình hóa<code>contiguous_iterator</code>              std :: more_as &lt;std :: add_pulum_t &lt;std :: iter_reference_t &lt;i &gt;&gt;&gt;;</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../iterator/contiguous_iterator" title="cpp/iterator/contiguous iterator"> <span class="t-lines"><span>tiếp giáp_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Chỉ định toán tử đó<a href="../iterator/random_access_iterator" title="cpp/iterator/random access iterator"><code>random_access_iterator</code></a>là một trình lặp tiếp giáp, đề cập đến các yếu tố tiếp giáp với bộ nhớ<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../iterator" title="cpp/iterator"><b>Thư viện Iterator</b></a> </td> <td>thay vào đó được yêu cầu phải có độ phân biệt rõ ràng</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/ContiguousIterator">https://en.cppreference.com/w/cpp/named_req/ContiguousIterator</a>
+</p>
+</div>

@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Hash<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>MỘT<strong class="selflink">Băm</strong>là một đối tượng chức năng mà đầu ra chỉ phụ thuộc vào đầu vào và có xác suất rất thấp mang lại cùng một đầu ra được đưa ra các giá trị đầu vào khác nhau.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>T</code>thỏa mãn băm nếu</p>
+<ul><li>phạm vi của các yếu tố để tạo<code>T</code>Phần cuối của phạm vi ban đầu<a href="functionobject" title="cpp/named req/FunctionObject">FunctionObject</a>Thì<a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>Thì<a href="destructible" title="cpp/named req/Destructible">Destructible</a>, Và</li></ul> <p>Cho quá tải</p>
+<ul>
+<li> <code>h</code>, một giá trị của loại<code>T</code>hoặc<code>const T</code>, loại đối số của ai là<code>Key</code>Thì</li>
+<li> <code>k</code>, một giá trị của loại chuyển đổi thành<code>Key</code>hoặc<code>const Key</code>Thì</li>
+<li> <code>u</code>, đầu vào được coi là mã hóa rộng bản địa (do đó không có sự chuyển đổi nào diễn ra trên Windows).<a href="../language/value_category" title="cpp/language/value category">lvalue</a>Biểu hiện của loại<code>Key</code>.</li>
+</ul> <p>Các biểu thức sau đây phải hợp lệ và có các hiệu ứng được chỉ định của chúng.</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>h(k)</code> </td> <td>
+<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code> </td> <td>Giá trị trả về chỉ phụ thuộc vào giá trị của<code>k</code>Trong suốt thời gian của chương trình.<p>Tất cả các đánh giá của<code>h(k)</code>được thực thi trong một lần thực hiện một chương trình nhất định mang lại kết quả tương tự cho cùng một giá trị của<code>k</code>.</p>
+<p>Xác suất của<code>h(a) == h(b)</code>vì<code>a != b</code>nên tiếp cận<code><span class="nu16">1.0</span> <span class="sy2">/</span> <a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/types/size_t"><span class="kw107">Điều đó cho tất cả<span class="me2">size_t</span></span></a><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Được xác định trong tiêu đề</span><span class="br0">.</span><span class="br0">)</span></code>.</p>
+</td>
+</tr> <tr> <td>
+<code>h(u)</code> </td> <td>
+<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code> </td> <td>
+<code>u</code>, ngoại trừ việc nó có hiệu ứng không xác định đối với</td>
+</tr>
+</table> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../utility/hash" title="cpp/utility/hash"> <span class="t-lines"><span>băm</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Đối tượng hàm băm<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2291" rel="nofollow">LWG 2291</a> </td> <td>C ++ 11</td> <td>Kết quả tương tự cho cùng một đối số được yêu cầu trong mọi trường hợp</td> <td>chỉ được yêu cầu trong một lần thực hiện</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/Hash">https://en.cppreference.com/w/cpp/named_req/Hash</a>
+</p>
+</div>

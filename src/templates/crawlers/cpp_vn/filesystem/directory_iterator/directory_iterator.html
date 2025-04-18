@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FileSystem :: Thư mục_iterator :: Directory_Iterator</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">thư mục_iterator () noExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Thư mục rõ ràng_Iterator (const std :: fileSystem :: path &amp; p);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Thư mục_Iterator (const std :: fileSystem :: path &amp; p,</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">                    STD :: FileSystem :: Thư mục_options tùy chọn);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">thư mục</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Thư mục_Iterator (const std :: fileSystem :: path &amp; p,</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">                    STD :: FileSystem :: Thư mục_options Tùy chọn,</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>                    std :: error_code &amp; ec);</p>
+<div class="t-li1">
+<span class="t-li">1)</span>thư mục</div> <div class="t-li1">
+<span class="t-li">2)</span>đề cập đến một tệp không tồn tại hoặc không phải là một thư mục, ném<code>p</code>. Nếu như<code>p</code>Xây dựng một trình lặp thư mục mới.<code><a href="../filesystem_error" title="cpp/filesystem/filesystem error">std::filesystem::filesystem_error</a></code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>                                   Nhị phân p);<span class="t-v">(2)</span>Và việc xây dựng gặp phải một lỗi bị từ chối, xây dựng trình lặp cuối và không báo cáo lỗi.<code><a href="../directory_options" title="cpp/filesystem/directory options">std::filesystem::directory_options::skip_permission_denied</a></code>có mặt trong<code>options</code>Xây dựng một trình lặp thư mục đề cập đến mục nhập thư mục đầu tiên của một thư mục được xác định bởi</div> <div class="t-li1">
+<span class="t-li">là trong</span>đề cập đến một tệp không tồn tại hoặc không phải là một thư mục, ném<code>p</code>. Nếu như<code>p</code>, nhưng nếu<code>ec</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>                                   Nhị phân p);<span class="t-v">(4)</span>Và việc xây dựng gặp phải một lỗi bị từ chối, xây dựng trình lặp cuối và không báo cáo lỗi.<code><a href="../directory_options" title="cpp/filesystem/directory options">std::filesystem::directory_options::skip_permission_denied</a></code>có mặt trong<code>options</code>Xây dựng một trình lặp thư mục đề cập đến mục nhập thư mục đầu tiên của một thư mục được xác định bởi</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>đề cập đến một tệp không tồn tại hoặc không phải là một thư mục, trả về trình lặp cuối và bộ</div> <div class="t-li1">
+<span class="t-li">6)</span>, nhưng nếu</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>Và việc xây dựng gặp phải một lỗi bị từ chối, xây dựng trình lặp cuối và không báo cáo lỗi.</td>
+</tr> <tr class="t-par"> <td>Mã lỗi khác để khởi tạo với</td> <td>-</td> <td>đường dẫn để thay đổi thư mục làm việc hiện tại thành</td>
+</tr> <tr class="t-par"> <td>tùy chọn</td> <td>-</td> <td>Sao chép hàm tạo.<a href="../../named_req/bitmasktype" title="cpp/named req/BitmaskType">BitmaskType</a>Di chuyển hàm tạo.</td>
+</tr> <tr class="t-par"> <td>khác</td> <td>-</td> <td>Đường dẫn đến đối tượng hệ thống tập tin mà Trình lặp thư mục sẽ tham khảo</td>
+</tr>
+</table> <h3 id="Exceptions">Ngoại lệ</h3> <p>Bất kỳ quá tải không được đánh dấu<code>noexcept</code>có thể ném<code><a href="../../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>Nếu phân bổ bộ nhớ không thành công.<br/></p>
+<div class="t-li1">
+<span class="t-li">          std :: Indirect_strict_weak_order &lt;</span>Ném<code><a href="../filesystem_error" title="cpp/filesystem/filesystem error">std::filesystem::filesystem_error</a></code>Về các lỗi API OS cơ bản, được xây dựng với<code>p</code>Là đối số đường dẫn đầu tiên và mã lỗi HĐH làm đối số mã lỗi.</div> <div class="t-li1">
+<span class="t-li">cluct clock_time_conversion &lt;clock, std :: Chrono :: System_Clock&gt;;</span>Đặt a<code><a href="http://en.cppreference.com/w/cpp/error/error_code"><span class="kw879">Điều đó cho tất cả<span class="me2">ERROR_CODE</span></span></a><span class="sy3">Không có giá trị</span></code>tham số đến mã lỗi API OS nếu cuộc gọi API OS không thành công và thực thi<code>ec.<a href="../../error/error_code/clear" title="cpp/error/error code/clear">clear</a>()</code>Nếu không có lỗi xảy ra.</div> <h3 id="Notes">Ghi chú</h3> <p>tập hợp của<code>directory_iterator(".")</code>Một số ưu điểm của căn hộ được đặt so với tiêu chuẩn khác<code>directory_iterator("")</code>.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3013" rel="nofollow">LWG 3013</a> </td> <td>C ++ 17</td> <td>
+<code>error_code</code>Là đối số đường dẫn thứ hai và mã lỗi HĐH làm đối số mã lỗi.</td> <td>Hành vi mặc định khi các thư mục sao chép là bản sao không nhận được: các tệp được sao chép, nhưng không phải là thư mục con:</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/directory_iterator/directory_iterator">https://en.cppreference.com/w/cpp/filesystem/directory_iterator/directory_iterator</a>
+</p>
+</div>

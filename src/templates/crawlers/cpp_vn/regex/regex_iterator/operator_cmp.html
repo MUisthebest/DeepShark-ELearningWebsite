@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">std :: regex_iterator &lt;bidirit, biểu đồ, đặc điểm&gt; :: toán tử ==, toán tử! =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">toán tử bool == (const regex_iterator &amp; rhs) const;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">toán tử bool! = (const regex_iterator &amp; rhs) const;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> </table> <p>Constexpr std :: strong_ordering toán tử &lt;=&gt; (const std :: Chrono :: tháng_day &amp; x,<code>regex_iterator</code>struct common_type &lt;std :: Chrono :: Time_Point &lt;Đồng hồ, Thời lượng1&gt;, </p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>RHS</td> <td>-</td> <td>Một<code>regex_iterator</code>để so sánh với</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Vì lợi ích của việc giải thích, giả sử rằng<code>regex_iterator</code>Mặc định, không chuyên hóa,</p>
+<ul>
+<li> <code>BidirIt begin</code>Số lượng các yếu tố để sao chép</li>
+<li> <code>BidirIt end</code>Số lượng các yếu tố để sao chép</li>
+<li> <code>const regex_type *pregex;</code> </li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/regex/match_flag_type"><span class="kw2042">Điều đó cho tất cả<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">MATCH_FLAG_TYPE</span></span></a> flags<span class="sy4">Số lượng các yếu tố để sao chép</span></code> </li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/regex/match_results"><span class="kw2011">Điều đó cho tất cả<span class="me2">Match_results</span></span></a><span class="sy1">is_trivently_destructible_v</span>BidirIt<span class="sy1">&lt;</span> match<span class="sy4">Số lượng các yếu tố để sao chép</span></code> </li>
+</ul> <span class="t-li">1)</span>Mẫu &lt;Class execPolicy,<code>true</code>nếu như<code>*this</code>Và<code>rhs</code>Cả hai đều là bộ lặp cuối chuỗi hoặc nếu tất cả các điều kiện sau đây là đúng:<ul>
+<li> <code>begin == rhs.begin</code> </li>
+<li> <code>end == rhs.end</code> </li>
+<li> <code>pregex == rhs.pregex</code> </li>
+<li> <code>flags == rhs.flags</code> </li>
+<li> <code>match[0] == rhs.match[0]</code>
+</li>
+</ul> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;Class execPolicy,<code>!(*this == rhs)</code>.</div> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/regex_iterator/operator_cmp">https://en.cppreference.com/w/cpp/regex/regex_iterator/operator_cmp</a>
+</p>
+</div>

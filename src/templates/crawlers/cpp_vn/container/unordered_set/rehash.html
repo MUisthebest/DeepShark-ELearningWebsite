@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: unetered_set &lt;key, băm, keyequal, allocator&gt; :: rehash</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void rehash (số lượng size_type);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Thay đổi số lượng thùng thành giá trị<code>n</code>Điều đó không ít hơn<code>count</code>và thỏa mãn<code>n &gt;= size() / max_load_factor()</code>, sau đó phục hồi container, tức là đặt các yếu tố vào các thùng thích hợp khi xem xét tổng số thùng đã thay đổi.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Giới hạn thấp hơn cho số thùng mới</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Trường hợp trung bình tuyến tính trong kích thước của container, trường hợp xấu nhất bậc hai.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>rehash(0)</code>có thể được sử dụng để buộc một cuộc phục hồi vô điều kiện, chẳng hạn như sau khi đình chỉ tự động làm lại bằng cách tăng tạm thời<code>max_load_factor()</code>.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="reserve" title="cpp/container/unordered set/reserve"> <span class="t-lines"><span>xô_Count</span></span></a></div> </td> <td>Trả về số lượng thùng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/unordered_set/rehash">https://en.cppreference.com/w/cpp/container/unordered_set/rehash</a>
+</p>
+</div>

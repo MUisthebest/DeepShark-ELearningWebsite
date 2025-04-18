@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Valarray &lt;T&gt; :: Áp dụng</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Valarray &lt;T&gt; Áp dụng (t func (t)) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Valarray &lt;T&gt; Áp dụng (t func (const t &amp;)) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả về một valarray mới có cùng kích thước với các giá trị được thu thập bằng cách áp dụng chức năng<code>func</code>đến các giá trị trước của các yếu tố.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>func</td> <td>-</td> <td>chức năng áp dụng cho các giá trị</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Valarray kết quả với các giá trị có được bằng cách áp dụng chức năng<code>func</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>được sử dụng do<code><a href="../valarray" title="cpp/numeric/valarray">std::valarray</a></code>Chức năng có thể được thực hiện với loại trả về khác với</p>
+<ul>
+<li>Tất cả<span class="kw4">hằng số</span>Tại điểm trong mã<code><a href="../valarray" title="cpp/numeric/valarray">std::valarray</a></code>. Trong trường hợp này, loại thay thế có các thuộc tính sau:</li>
+<li> <code><a href="../valarray" title="cpp/numeric/valarray">std::valarray</a></code>Thì<code><a href="slice_array" title="cpp/numeric/valarray/slice array">std::slice_array</a></code>Thì<code><a href="gslice_array" title="cpp/numeric/valarray/gslice array">std::gslice_array</a></code>Thì<code><a href="mask_array" title="cpp/numeric/valarray/mask array">std::mask_array</a></code>Và<code><a href="indirect_array" title="cpp/numeric/valarray/indirect array">std::indirect_array</a></code>được cung cấp.</li>
+<li>có thể được xây dựng từ loại thay thế.<span class="kw4">hằng số</span> <a href="http://en.cppreference.com/w/cpp/numeric/valarray"><span class="kw1476">Điều đó cho tất cả<span class="me2">Valarray</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span> <span class="t-rev-inl t-since-cxx11"><span>                             STD :: Memory_order Order) NoExcept;<a href="begin2" title="cpp/numeric/valarray/begin2"><code>begin()</code></a>Và<a href="end2" title="cpp/numeric/valarray/end2"><code>end()</code></a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Cho mọi chức năng lấy một</li>
+<li>, các chức năng giống hệt nhau lấy các loại thay thế sẽ được thêm vào;<span class="kw4">hằng số</span> <a href="http://en.cppreference.com/w/cpp/numeric/valarray"><span class="kw1476">Điều đó cho tất cả<span class="me2">Valarray</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span>Cho mọi chức năng lấy hai chức năng<span class="kw4">hằng số</span> <a href="http://en.cppreference.com/w/cpp/numeric/valarray"><span class="kw1476">Điều đó cho tất cả<span class="me2">Valarray</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span>đối số, các chức năng giống hệt nhau lấy mọi kết hợp của</li>
+<li>và các loại thay thế sẽ được thêm vào.</li>
+</ul> <h3 id="Possible_implementation">. ​</h3> <p>Sau khi triển khai đơn giản có thể được thay thế bằng các mẫu biểu thức cho hiệu quả cao hơn.</p>
+<table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Valarray &lt;T&gt; Valarray &lt;T&gt; :: Áp dụng (T func (t)) const</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    valarray &lt;t&gt; khác = *cái này;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../algorithm/for_each" title="cpp/algorithm/for each"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../algorithm/ranges/for_each" title="cpp/algorithm/ranges/for each"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/valarray/apply">https://en.cppreference.com/w/cpp/numeric/valarray/apply</a>
+</p>
+</div>

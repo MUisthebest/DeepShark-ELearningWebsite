@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">std :: riemann_zeta, std :: riemann_zetaf, std :: riemann_zetal</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx23"> <td><pre data-language="cpp">float riemann_zeta (float num);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Double riemann_zeta (Double Num);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Double Riemann_zeta (Double Num dài);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">/ *-điểm nổi-loại */ riemann_zeta (/ *-điểm nổi kiểu */ num);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl-h"> <td> <a href="#Notes">Additional overloads</a>
+</td> <td></td> <td></td> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">float riemann_zetaf (float num);</pre>
+</td> <td>, kết quả là hữu hạn.</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>loại tham chiếu<a class="extiw" href="https://en.wikipedia.org/wiki/Riemann_zeta_function" title="enwiki:Riemann zeta function">Riemann zeta function</a>của<code>num</code>.<span class="t-rev-inl t-since-cxx23"><span>Double Double Acosl (Double Num dài);<code>std::riemann_zeta</code>constexpr / *-point-point-type * / /<code>num</code>.</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;arithmetic1, orithmetic2, số học lớp3&gt; lớp</span>ACO kép (số nguyên);<code>double</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>trả lại hệ điều hành &lt;&lt; s.str ();</td> <td>-</td> <td>Double Riemann_zetal (Double Num dài);</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Mẫu &lt;Class Integer&gt;<code>num</code>Double riemann_zeta (số nguyên);</p>
+<ul>
+<li>điểm nổi hoặc giá trị<sub class="t-su t-su-b">Cho 0≤num≤1,</sub>Trả về một kết quả, kết quả được bỏ qua. Nếu như<sup class="t-su">Σ</sup> </li>
+<li>Cho num&gt; 1,<span><span>, nếu như</span><span>/</span><span>∞n = 1</span></span>-Num<sub class="t-su t-su-b">Cho 0≤num≤1,</sub>21-Num-1<sup class="t-su">Trả về một kết quả, kết quả được bỏ qua. Nếu như</sup>Trả về một kết quả, kết quả được bỏ qua. Nếu như<sup class="t-su">Σ</sup> </li>
+<li>∞n = 1<sup class="t-su">trả lại hệ điều hành &lt;&lt; s.str ();</sup>π<sup class="t-su">Nếu không có lỗi xảy ra, giá trị của logarit của hàm gamma của</sup>(-1)<span><span>-Num</span><span>/</span><span>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</span></span>Cho num &lt;0, 2</li>
+</ul> <h3 id="Error_handling">Xử lý lỗi</h3> <p>n+m<code><a href="../math/math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code>.</p>
+<ul><li>(x), được trả về (trong đó \ (\ mathsf {l} _ {n+m} (x) \) l</li></ul> <h3 id="Notes">Ghi chú</h3> <p>Lỗi có thể được báo cáo theo quy định trong<a class="mw-redirect" href="https://en.cppreference.com/w/cpp/experimental/special_math" title="cpp/experimental/special math">ISO 29124:2010</a>Nếu đối số là NAN, NAN được trả lại và không được báo cáo về tên miền<code>__STDCPP_MATH_SPEC_FUNCS__</code>là âm, có thể xảy ra lỗi miền miền<code>__STDCPP_WANT_MATH_SPEC_FUNCS__</code>lớn hơn hoặc bằng 128, hành vi được xác định là thực hiện</p>
+<p>Các triển khai không hỗ trợ C ++ 17, nhưng hỗ trợ<code>tr1/cmath</code>, cung cấp chức năng này nếu<code>std::tr1</code>.</p>
+<p>được xác định bởi việc triển khai thành một giá trị ít nhất là 201003L và nếu người dùng xác định<a class="external text" href="https://www.boost.org/doc/libs/release/libs/math/doc/html/math_toolkit/zetas/zeta.html" rel="nofollow">available in boost.math</a>.</p>
+<p>, kết quả bằng<span class="t-v">, kết quả là hữu hạn.</span>trong khoảng [−π; π].<code>num</code>Nếu việc triển khai hỗ trợ số học dấu nổi của IEEE (IEC 60559),<code>std::riemann_zeta(num)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::riemann_zeta(static_cast&lt;double&gt;(num))</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">tội lỗi</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">πnum</pre></div> </div> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr> <td>
+<a class="external text" href="https://mathworld.wolfram.com/RiemannZetaFunction.html" rel="nofollow">Weisstein, Eric W. "Riemann Zeta Function."</a>Nếu đối số là +, +được trả về.</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/special_functions/riemann_zeta">https://en.cppreference.com/w/cpp/numeric/special_functions/riemann_zeta</a>
+</p>
+</div>

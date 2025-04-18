@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Reversion_Iterator &lt;Iter&gt; :: cơ sở</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx17"> <td> <pre data-language="cpp">iterator_type base () const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx17">xáo trộn</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">ConstExpr iterator_type base () const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Trả về trình lặp cơ sở cơ bản. Đó là<code><a href="http://en.cppreference.com/w/cpp/iterator/reverse_iterator"><span class="kw661">Điều đó cho tất cả<span class="me2">Reverse_Iterator</span></span></a><span class="br0">.</span>it<span class="br0">)</span>.<span class="me1">căn cứ</span><span class="br0">.</span><span class="br0">)</span> <span class="sy1">==</span> it</code>.</p>
+<p>Trình lặp cơ sở đề cập đến phần tử tiếp theo (từ<code>std::reverse_iterator::iterator_type</code>quan điểm) cho yếu tố<code>reverse_iterator</code>hiện đang chỉ ra. Đó là<code>&amp;*(rit.base() - 1) == &amp;*rit</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Các iterator cơ bản.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;iterator&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator*" title="cpp/iterator/reverse iterator/operator*"> <span class="t-lines"><span>toán tử/=</span><span>toán tử-&gt;</span></span></a></div> </td> <td>Truy cập trình lặp cơ bản<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/reverse_iterator/base">https://en.cppreference.com/w/cpp/iterator/reverse_iterator/base</a>
+</p>
+</div>

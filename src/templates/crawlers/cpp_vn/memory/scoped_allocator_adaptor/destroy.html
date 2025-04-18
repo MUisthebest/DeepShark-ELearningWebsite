@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: scoped_allocator_adaptor &lt;outeralloc, inneralloc ...&gt; :: phá hủy</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/scoped_allocator" title="cpp/header/scoped allocator">&lt;scoped_allocator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>void phá hủy (t* p);<code>p</code>là một giá trị số nguyên không xác định không nhỏ hơn</p>
+<p><code><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>OUTERMOST<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">(Niebloid)</span><span class="br0">.</span>OUTERMOST<span class="br0">.</span><span class="sy2">*</span>this<span class="br0">)</span>, p<span class="br0">)</span></code></p>
+<p>Sử dụng bộ phân bổ bên ngoài để gọi bộ hủy của đối tượng được chỉ ra bởi<code>this-&gt;outer_allocator()</code>Ngoài cùng<code>outer_allocator()</code>nơi ngoài cùng là loại sẽ được trả lại bằng cách gọi</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>Gọi bộ hủy diệt của đối tượng được chỉ ra bởi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../allocator_traits/destroy" title="cpp/memory/allocator traits/destroy"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>xây dựng một đối tượng trong bộ nhớ được phân bổ<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../allocator/destroy" title="cpp/memory/allocator/destroy"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span></div> </td> <td>xây dựng<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::allocator&lt;T&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/scoped_allocator_adaptor/destroy">https://en.cppreference.com/w/cpp/memory/scoped_allocator_adaptor/destroy</a>
+</p>
+</div>

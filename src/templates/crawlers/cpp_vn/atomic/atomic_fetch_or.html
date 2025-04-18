@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Atomic_fetch_or, std :: Atomic_fetch_or_explict</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/atomic" title="cpp/header/atomic">&lt;atomic&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">T ATOMIC_FETCH_OR (STD :: ATOMIC &lt;T&gt;* OBJ,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                   Tên std :: Atomic &lt;t&gt; :: value_type arg) noExcept;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>T Atomic_fetch_and (STD dễ bay hơi :: Atomic &lt;T&gt;* obj,<code>obj</code>T Atomic_fetch_or (STD dễ bay hơi :: Atomic &lt;T&gt;* obj,<code>obj</code>Và<code>arg</code>Mẫu &lt;Class T&gt;<code>obj</code>T Atomic_fetch_and_explicit (std :: Atomic &lt;t&gt;* obj,</p>
+<p>                             Typename std :: Atomic &lt;T&gt; :: value_type arg, </p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span> <code>obj-&gt;fetch_or(arg)</code>
+</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span> <code>obj-&gt;fetch_or(arg, order)</code>
+</div> <p>Nếu như<code>std::atomic&lt;T&gt;</code>T Atomic_fetch_add_explicit (std :: Atomic &lt;t&gt;* obj,<code>fetch_or</code>                             Typename std :: Atomic &lt;T&gt; :: argen_type arg,<a href="atomic#Specializations_for_integral_types" title="cpp/atomic/atomic">integral types</a>                             STD :: Memory_order Order) NoExcept;<span class="kw4">bool</span>Mẫu &lt;Class T&gt;</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>      Typename std :: Atomic &lt;T&gt; :: value_type mong muốn,</td> <td>-</td> <td>                            Typename std :: Atomic &lt;t&gt; :: value_type mong muốn, </td>
+</tr> <tr class="t-par"> <td>T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</td> <td>-</td> <td>                   Tên std :: Atomic &lt;t&gt; :: value_type arg) noExcept;</td>
+</tr> <tr class="t-par"> <td>Thay thế nguyên tử giá trị được trỏ đến bởi</td> <td>-</td> <td>với giá trị của</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>                             STD :: Memory_order Order) NoExcept;<a href="memory_order#Modification_order" title="cpp/atomic/memory order">modification order</a>của<code>*obj</code>.</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">T ATOMIC_FETCH_AND_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">                             Typename std :: Atomic &lt;T&gt; :: value_type arg,</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0558R1" rel="nofollow">P0558R1</a> </td> <td>C ++ 11</td> <td>Đọc - Điều chỉnh hoạt động của Write<br/><code>T</code>tải hoạt động</td> <td>
+<code>T</code>bộ nhớ_order_seq_cst<br/>từ<code>obj</code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="atomic/fetch_or" title="cpp/atomic/atomic/fetch or"> <span class="t-lines"><span>thêm về mặt nguyên tử cho đối số vào giá trị được lưu trữ trong đối tượng nguyên tử và có được giá trị được giữ trước đó</span></span></a></div> </td> <td>fetch_sub<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::atomic&lt;T&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="atomic_fetch_and" title="cpp/atomic/atomic fetch and"> <span class="t-lines"><span>Atomic_fetch_and</span><span>Atomic_fetch_and_explict</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Thay thế đối tượng nguyên tử bằng kết quả của bitwise và với một đối số không nguyên tử và có được giá trị trước đó của nguyên tử<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="atomic_fetch_xor" title="cpp/atomic/atomic fetch xor"> <span class="t-lines"><span>ATOMIC_FETCH_XOR</span><span>Atomic_fetch_xor_explict</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Thay thế đối tượng nguyên tử bằng kết quả của BitWise XOR bằng đối số không nguyên tử và thu được giá trị trước đó của nguyên tử<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/atomic/atomic_fetch_or" title="c/atomic/atomic fetch or">C documentation</a></span>vì<code>atomic_fetch_or, atomic_fetch_or_explicit</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/atomic_fetch_or">https://en.cppreference.com/w/cpp/atomic/atomic_fetch_or</a>
+</p>
+</div>

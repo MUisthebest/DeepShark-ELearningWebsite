@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_lock &lt;mutex&gt; :: phát hành</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">MUTEX_TYPE* ​​REOLLED () NOEXCEPT;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>Phá vỡ sự liên kết của mutex liên quan, nếu có, và<code>*this</code>.</p>
+<p>Không có khóa được mở khóa. Nếu<code>*this</code>Được nắm giữ quyền sở hữu của Mutex liên quan trước cuộc gọi, người gọi hiện chịu trách nhiệm mở khóa Mutex.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ đến mutex liên quan hoặc con trỏ null nếu không có mutex liên quan.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="unlock" title="cpp/thread/shared lock/unlock"> <span class="t-lines"><span>Mở khóa</span></span></a></div> </td> <td>cố gắng khóa mutex liên quan, cho đến khi một thời điểm xác định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../unique_lock/release" title="cpp/thread/unique lock/release"> <span class="t-lines"><span>giải phóng</span></span></a></div> </td> <td>hoán đổi trạng thái với người khác<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::unique_lock&lt;Mutex&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/shared_lock/release">https://en.cppreference.com/w/cpp/thread/shared_lock/release</a>
+</p>
+</div>

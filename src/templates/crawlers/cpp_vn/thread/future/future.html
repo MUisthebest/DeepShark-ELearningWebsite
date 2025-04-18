@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tương lai &lt;T&gt; :: Tương lai</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Tương lai () Noexcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Tương lai (Tương lai &amp;&amp; Khác) Noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Tương lai (Const Tương lai &amp; Khác) = Xóa;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>std::future</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định. Xây dựng a<code>std::future</code>không có trạng thái chung. Sau khi xây dựng,<a href="valid" title="cpp/thread/future/valid"><code>valid()</code></a> <code>== false</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Di chuyển hàm tạo. Xây dựng a<code>std::future</code>với trạng thái chia sẻ của<code>other</code>Sử dụng ngữ nghĩa di chuyển. Sau khi xây dựng,<code>other.valid() == false</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <code>std::future</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="../../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>khác<code>std::future</code>để có được trạng thái chia sẻ từ</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/future/future">https://en.cppreference.com/w/cpp/thread/future/future</a>
+</p>
+</div>

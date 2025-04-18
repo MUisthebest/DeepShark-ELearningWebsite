@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Rào cản &lt;FallionInfunction&gt; :: Rào cản</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Rào cản rõ ràng của Consexpr (STD :: PTRDIFF_T mong đợi,</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">                            Hoàn thành f = hoàn thành ());</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>hàng rào (Constrid &amp;) = xóa;<code>expected</code>Đặt cả hai số dự kiến ​​ban đầu cho từng pha và số lượng dự kiến ​​hiện tại cho giai đoạn đầu tiên<code>std::move(f)</code>, khởi tạo đối tượng chức năng hoàn thành với<code>expected</code>, và sau đó bắt đầu giai đoạn đầu tiên. Hành vi không xác định nếu<a href="max" title="cpp/thread/barrier/max"><code>max()</code></a>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Sao chép Constructor bị xóa.<code>barrier</code>Mỗi lần khởi tạo và chuyên môn đầy đủ của</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>hy vọng</td> <td>-</td> <td>là âm hoặc lớn hơn</td>
+</tr> <tr class="t-par"> <td>có thể sửa đổi các phần tử của phạm vi thông qua trình lặp được thu hút. Nếu như</td> <td>-</td> <td>Giá trị ban đầu của số lượng dự kiến</td>
+</tr>
+</table> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1)</span>Bất kỳ ngoại lệ nào được ném bởi<code>CompletionFunction</code>hoàn thành đối tượng chức năng được gọi trên bước hoàn thành pha</div> <h3 id="Notes">Ghi chú</h3> <p><code>expected</code>Trình xây dựng di chuyển.<code>barrier</code>được phép bằng không. Tuy nhiên, gọi bất kỳ chức năng thành viên không tĩnh nào khác ngoài bộ hủy diệt như vậy<code>barrier</code>kết quả trong hành vi không xác định. Nói cách khác, như vậy</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/barrier/barrier">https://en.cppreference.com/w/cpp/thread/barrier/barrier</a>
+</p>
+</div>

@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Chrono :: get_tzdb_list, std :: Chrono :: get_tzdb, std :: Chrono :: remote_version, std :: Chrono :: reload_tzdb</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">std :: chrono :: tzdb_list &amp; get_tzdb_list ();</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">const std :: chrono :: tzdb &amp; get_tzdb ();</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">std :: chuỗi remote_version ();</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">const std :: chrono :: tzdb &amp; reload_tzdb ();</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Các chức năng này cung cấp quyền truy cập vào cơ sở dữ liệu múi giờ toàn chương trình.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Trả về một tài liệu tham khảo cho toàn cầu<code>std::chrono::tzdb_list</code>singleton. Nếu đây là quyền truy cập đầu tiên vào cơ sở dữ liệu, hãy khởi tạo cơ sở dữ liệu. Sau khi khởi tạo, cơ sở dữ liệu sẽ giữ một khởi tạo duy nhất<code>std::chrono::tzdb</code>sự vật. Hàm này là an toàn cho luồng: các cuộc gọi đồng thời đến chức năng này từ nhiều luồng không giới thiệu một cuộc đua dữ liệu.</div> <div class="t-li1">
+<span class="t-li">2)</span>Trả về một tham chiếu đến lần đầu tiên<code>std::chrono::tzdb</code>đối tượng được giữ bởi<code>tzdb_list</code>singleton. Tương đương với<code>std::chrono::get_tzdb_list().front()</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Trả về một chuỗi chứa phiên bản cơ sở dữ liệu từ xa mới nhất.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Nếu như<code>remote_version() != get_tzdb().version</code>, đẩy một cái mới<code>tzdb</code>đối tượng đại diện cho cơ sở dữ liệu từ xa ở phía trước của<code>tzdb_list</code>Singleton được tham chiếu bởi<code>get_tzdb_list()</code>. Nếu không thì không có hiệu ứng. Không có tài liệu tham khảo, con trỏ hoặc iterators bị vô hiệu. Gọi chức năng này đồng thời với<code>get_tzdb_list().front()</code>hoặc<code>get_tzdb_list().erase_after()</code>không giới thiệu một cuộc đua dữ liệu.</div> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code><a href="../error/runtime_error" title="cpp/error/runtime error">std::runtime_error</a></code>Nếu vì bất kỳ lý do nào một tham chiếu đến một<code>tzdb_list</code>chứa một hoặc nhiều hợp lệ<code>tzdb</code>không thể được trả lại.</div> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Một tham chiếu đến toàn cầu<code>std::chrono::tzdb_list</code>singleton.</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>std::chrono::get_tzdb_list().front()</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Một chuỗi chứa phiên bản cơ sở dữ liệu từ xa mới nhất.</div> <div class="t-li1">
+<span class="t-li">là trong</span> <code>std::chrono::get_tzdb_list().front()</code>(sau bất kỳ bản cập nhật nào được thực hiện bởi chức năng này).</div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/tzdb_functions">https://en.cppreference.com/w/cpp/chrono/tzdb_functions</a>
+</p>
+</div>

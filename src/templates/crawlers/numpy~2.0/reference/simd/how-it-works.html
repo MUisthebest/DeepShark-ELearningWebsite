@@ -1,0 +1,186 @@
+<section id="how-does-the-cpu-dispatcher-work"> <h1>How does the CPU dispatcher work?</h1> <p>NumPy dispatcher is based on multi-source compiling, which means taking a certain source and compiling it multiple times with different compiler flags and also with different <strong>C</strong> definitions that affect the code paths. This enables certain instruction-sets for each compiled object depending on the required optimizations and ends with linking the returned objects together.</p> <figure class="align-default"> <img alt="../../_images/opt-infra.png" src="data:image/png;base64,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"> </figure> <p>This mechanism should support all compilers and it doesn’t require any compiler-specific extension, but at the same time it adds a few steps to normal compilation that are explained as follows.</p> <section id="configuration"> <h2>1- Configuration</h2> <p>Configuring the required optimization by the user before starting to build the source files via the two command arguments as explained above:</p> <ul class="simple"> <li>
+<code>--cpu-baseline</code>: minimal set of required optimizations.</li> <li>
+<code>--cpu-dispatch</code>: dispatched set of additional optimizations.</li> </ul> </section> <section id="discovering-the-environment"> <h2>2- Discovering the environment</h2> <p>In this part, we check the compiler and platform architecture and cache some of the intermediary results to speed up rebuilding.</p> </section> <section id="validating-the-requested-optimizations"> <h2>3- Validating the requested optimizations</h2> <p>By testing them against the compiler, and seeing what the compiler can support according to the requested optimizations.</p> </section> <section id="generating-the-main-configuration-header"> <h2>4- Generating the main configuration header</h2> <p>The generated header <code>_cpu_dispatch.h</code> contains all the definitions and headers of instruction-sets for the required optimizations that have been validated during the previous step.</p> <p>It also contains extra C definitions that are used for defining NumPy’s Python-level module attributes <code>__cpu_baseline__</code> and <code>__cpu_dispatch__</code>.</p> <p><strong>What is in this header?</strong></p> <p>The example header was dynamically generated by gcc on an X86 machine. The compiler supports <code>--cpu-baseline="sse sse2 sse3"</code> and <code>--cpu-dispatch="ssse3 sse41"</code>, and the result is below.</p> <pre data-language="c">// The header should be located at numpy/numpy/_core/src/common/_cpu_dispatch.h
+/**NOTE
+ ** C definitions prefixed with "NPY_HAVE_" represent
+ ** the required optimizations.
+ **
+ ** C definitions prefixed with 'NPY__CPU_TARGET_' are protected and
+ ** shouldn't be used by any NumPy C sources.
+ */
+/******* baseline features *******/
+/** SSE **/
+#define NPY_HAVE_SSE 1
+#include &lt;xmmintrin.h&gt;
+/** SSE2 **/
+#define NPY_HAVE_SSE2 1
+#include &lt;emmintrin.h&gt;
+/** SSE3 **/
+#define NPY_HAVE_SSE3 1
+#include &lt;pmmintrin.h&gt;
+
+/******* dispatch-able features *******/
+#ifdef NPY__CPU_TARGET_SSSE3
+  /** SSSE3 **/
+  #define NPY_HAVE_SSSE3 1
+  #include &lt;tmmintrin.h&gt;
+#endif
+#ifdef NPY__CPU_TARGET_SSE41
+  /** SSE41 **/
+  #define NPY_HAVE_SSE41 1
+  #include &lt;smmintrin.h&gt;
+#endif
+</pre> <p><strong>Baseline features</strong> are the minimal set of required optimizations configured via <code>--cpu-baseline</code>. They have no preprocessor guards and they’re always on, which means they can be used in any source.</p> <p>Does this mean NumPy’s infrastructure passes the compiler’s flags of baseline features to all sources?</p> <p>Definitely, yes. But the <a class="reference internal" href="#dispatchable-sources"><span class="std std-ref">dispatch-able sources</span></a> are treated differently.</p> <p>What if the user specifies certain <strong>baseline features</strong> during the build but at runtime the machine doesn’t support even these features? Will the compiled code be called via one of these definitions, or maybe the compiler itself auto-generated/vectorized certain piece of code based on the provided command line compiler flags?</p> <p>During the loading of the NumPy module, there’s a validation step which detects this behavior. It will raise a Python runtime error to inform the user. This is to prevent the CPU reaching an illegal instruction error causing a segfault.</p> <p><strong>Dispatch-able features</strong> are our dispatched set of additional optimizations that were configured via <code>--cpu-dispatch</code>. They are not activated by default and are always guarded by other C definitions prefixed with <code>NPY__CPU_TARGET_</code>. C definitions <code>NPY__CPU_TARGET_</code> are only enabled within <strong>dispatch-able sources</strong>.</p> </section> <section id="dispatch-able-sources-and-configuration-statements"> <h2 id="dispatchable-sources">5- Dispatch-able sources and configuration statements</h2> <p>Dispatch-able sources are special <strong>C</strong> files that can be compiled multiple times with different compiler flags and also with different <strong>C</strong> definitions. These affect code paths to enable certain instruction-sets for each compiled object according to “<strong>the configuration statements</strong>” that must be declared between a <strong>C</strong> comment<code>(/**/)</code> and start with a special mark <strong>@targets</strong> at the top of each dispatch-able source. At the same time, dispatch-able sources will be treated as normal <strong>C</strong> sources if the optimization was disabled by the command argument <code>--disable-optimization</code> .</p> <p><strong>What are configuration statements?</strong></p> <p>Configuration statements are sort of keywords combined together to determine the required optimization for the dispatch-able source.</p> <p>Example:</p> <pre data-language="c">/*@targets avx2 avx512f vsx2 vsx3 asimd asimdhp */
+// C code
+</pre> <p>The keywords mainly represent the additional optimizations configured through <code>--cpu-dispatch</code>, but it can also represent other options such as:</p> <ul class="simple"> <li>Target groups: pre-configured configuration statements used for managing the required optimizations from outside the dispatch-able source.</li> <li>Policies: collections of options used for changing the default behaviors or forcing the compilers to perform certain things.</li> <li>“baseline”: a unique keyword represents the minimal optimizations that configured through <code>--cpu-baseline</code>
+</li> </ul> <p><strong>Numpy’s infrastructure handles dispatch-able sources in four steps</strong>:</p> <ul> <li>
+<strong>(A) Recognition</strong>: Just like source templates and F2PY, the dispatch-able sources requires a special extension <code>*.dispatch.c</code> to mark C dispatch-able source files, and for C++ <code>*.dispatch.cpp</code> or <code>*.dispatch.cxx</code> <strong>NOTE</strong>: C++ not supported yet.</li> <li>
+<strong>(B) Parsing and validating</strong>: In this step, the dispatch-able sources that had been filtered by the previous step are parsed and validated by the configuration statements for each one of them one by one in order to determine the required optimizations.</li> <li>
+<p><strong>(C) Wrapping</strong>: This is the approach taken by NumPy’s infrastructure, which has proved to be sufficiently flexible in order to compile a single source multiple times with different <strong>C</strong> definitions and flags that affect the code paths. The process is achieved by creating a temporary <strong>C</strong> source for each required optimization that related to the additional optimization, which contains the declarations of the <strong>C</strong> definitions and includes the involved source via the <strong>C</strong> directive <strong>#include</strong>. For more clarification take a look at the following code for AVX512F :</p> <pre data-language="c">/*
+ * this definition is used by NumPy utilities as suffixes for the
+ * exported symbols
+ */
+#define NPY__CPU_TARGET_CURRENT AVX512F
+/*
+ * The following definitions enable
+ * definitions of the dispatch-able features that are defined within the main
+ * configuration header. These are definitions for the implied features.
+ */
+#define NPY__CPU_TARGET_SSE
+#define NPY__CPU_TARGET_SSE2
+#define NPY__CPU_TARGET_SSE3
+#define NPY__CPU_TARGET_SSSE3
+#define NPY__CPU_TARGET_SSE41
+#define NPY__CPU_TARGET_POPCNT
+#define NPY__CPU_TARGET_SSE42
+#define NPY__CPU_TARGET_AVX
+#define NPY__CPU_TARGET_F16C
+#define NPY__CPU_TARGET_FMA3
+#define NPY__CPU_TARGET_AVX2
+#define NPY__CPU_TARGET_AVX512F
+// our dispatch-able source
+#include "/the/absuolate/path/of/hello.dispatch.c"
+</pre> </li> <li>
+<p><strong>(D) Dispatch-able configuration header</strong>: The infrastructure generates a config header for each dispatch-able source, this header mainly contains two abstract <strong>C</strong> macros used for identifying the generated objects, so they can be used for runtime dispatching certain symbols from the generated objects by any <strong>C</strong> source. It is also used for forward declarations.</p> <p>The generated header takes the name of the dispatch-able source after excluding the extension and replace it with <code>.h</code>, for example assume we have a dispatch-able source called <code>hello.dispatch.c</code> and contains the following:</p> <pre data-language="c">// hello.dispatch.c
+/*@targets baseline sse42 avx512f */
+#include &lt;stdio.h&gt;
+#include "numpy/utils.h" // NPY_CAT, NPY_TOSTR
+
+#ifndef NPY__CPU_TARGET_CURRENT
+  // wrapping the dispatch-able source only happens to the additional optimizations
+  // but if the keyword 'baseline' provided within the configuration statements,
+  // the infrastructure will add extra compiling for the dispatch-able source by
+  // passing it as-is to the compiler without any changes.
+  #define CURRENT_TARGET(X) X
+  #define NPY__CPU_TARGET_CURRENT baseline // for printing only
+#else
+  // since we reach to this point, that's mean we're dealing with
+    // the additional optimizations, so it could be SSE42 or AVX512F
+  #define CURRENT_TARGET(X) NPY_CAT(NPY_CAT(X, _), NPY__CPU_TARGET_CURRENT)
+#endif
+// Macro 'CURRENT_TARGET' adding the current target as suffux to the exported symbols,
+// to avoid linking duplications, NumPy already has a macro called
+// 'NPY_CPU_DISPATCH_CURFX' similar to it, located at
+// numpy/numpy/_core/src/common/npy_cpu_dispatch.h
+// NOTE: we tend to not adding suffixes to the baseline exported symbols
+void CURRENT_TARGET(simd_whoami)(const char *extra_info)
+{
+    printf("I'm " NPY_TOSTR(NPY__CPU_TARGET_CURRENT) ", %s\n", extra_info);
+}
+</pre> <p>Now assume you attached <strong>hello.dispatch.c</strong> to the source tree, then the infrastructure should generate a temporary config header called <strong>hello.dispatch.h</strong> that can be reached by any source in the source tree, and it should contain the following code :</p> <pre data-language="c">#ifndef NPY__CPU_DISPATCH_EXPAND_
+  // To expand the macro calls in this header
+    #define NPY__CPU_DISPATCH_EXPAND_(X) X
+#endif
+// Undefining the following macros, due to the possibility of including config headers
+// multiple times within the same source and since each config header represents
+// different required optimizations according to the specified configuration
+// statements in the dispatch-able source that derived from it.
+#undef NPY__CPU_DISPATCH_BASELINE_CALL
+#undef NPY__CPU_DISPATCH_CALL
+// nothing strange here, just a normal preprocessor callback
+// enabled only if 'baseline' specified within the configuration statements
+#define NPY__CPU_DISPATCH_BASELINE_CALL(CB, ...) \
+  NPY__CPU_DISPATCH_EXPAND_(CB(__VA_ARGS__))
+// 'NPY__CPU_DISPATCH_CALL' is an abstract macro is used for dispatching
+// the required optimizations that specified within the configuration statements.
+//
+// @param CHK, Expected a macro that can be used to detect CPU features
+// in runtime, which takes a CPU feature name without string quotes and
+// returns the testing result in a shape of boolean value.
+// NumPy already has macro called "NPY_CPU_HAVE", which fits this requirement.
+//
+// @param CB, a callback macro that expected to be called multiple times depending
+// on the required optimizations, the callback should receive the following arguments:
+//  1- The pending calls of @param CHK filled up with the required CPU features,
+//     that need to be tested first in runtime before executing call belong to
+//     the compiled object.
+//  2- The required optimization name, same as in 'NPY__CPU_TARGET_CURRENT'
+//  3- Extra arguments in the macro itself
+//
+// By default the callback calls are sorted depending on the highest interest
+// unless the policy "$keep_sort" was in place within the configuration statements
+// see "Dive into the CPU dispatcher" for more clarification.
+#define NPY__CPU_DISPATCH_CALL(CHK, CB, ...) \
+  NPY__CPU_DISPATCH_EXPAND_(CB((CHK(AVX512F)), AVX512F, __VA_ARGS__)) \
+  NPY__CPU_DISPATCH_EXPAND_(CB((CHK(SSE)&amp;&amp;CHK(SSE2)&amp;&amp;CHK(SSE3)&amp;&amp;CHK(SSSE3)&amp;&amp;CHK(SSE41)), SSE41, __VA_ARGS__))
+</pre> <p>An example of using the config header in light of the above:</p> <pre data-language="c">// NOTE: The following macros are only defined for demonstration purposes only.
+// NumPy already has a collections of macros located at
+// numpy/numpy/_core/src/common/npy_cpu_dispatch.h, that covers all dispatching
+// and declarations scenarios.
+
+#include "numpy/npy_cpu_features.h" // NPY_CPU_HAVE
+#include "numpy/utils.h" // NPY_CAT, NPY_EXPAND
+
+// An example for setting a macro that calls all the exported symbols at once
+// after checking if they're supported by the running machine.
+#define DISPATCH_CALL_ALL(FN, ARGS) \
+    NPY__CPU_DISPATCH_CALL(NPY_CPU_HAVE, DISPATCH_CALL_ALL_CB, FN, ARGS) \
+    NPY__CPU_DISPATCH_BASELINE_CALL(DISPATCH_CALL_BASELINE_ALL_CB, FN, ARGS)
+// The preprocessor callbacks.
+// The same suffixes as we define it in the dispatch-able source.
+#define DISPATCH_CALL_ALL_CB(CHECK, TARGET_NAME, FN, ARGS) \
+  if (CHECK) { NPY_CAT(NPY_CAT(FN, _), TARGET_NAME) ARGS; }
+#define DISPATCH_CALL_BASELINE_ALL_CB(FN, ARGS) \
+  FN NPY_EXPAND(ARGS);
+
+// An example for setting a macro that calls the exported symbols of highest
+// interest optimization, after checking if they're supported by the running machine.
+#define DISPATCH_CALL_HIGH(FN, ARGS) \
+  if (0) {} \
+    NPY__CPU_DISPATCH_CALL(NPY_CPU_HAVE, DISPATCH_CALL_HIGH_CB, FN, ARGS) \
+    NPY__CPU_DISPATCH_BASELINE_CALL(DISPATCH_CALL_BASELINE_HIGH_CB, FN, ARGS)
+// The preprocessor callbacks
+// The same suffixes as we define it in the dispatch-able source.
+#define DISPATCH_CALL_HIGH_CB(CHECK, TARGET_NAME, FN, ARGS) \
+  else if (CHECK) { NPY_CAT(NPY_CAT(FN, _), TARGET_NAME) ARGS; }
+#define DISPATCH_CALL_BASELINE_HIGH_CB(FN, ARGS) \
+  else { FN NPY_EXPAND(ARGS); }
+
+// NumPy has a macro called 'NPY_CPU_DISPATCH_DECLARE' can be used
+// for forward declarations any kind of prototypes based on
+// 'NPY__CPU_DISPATCH_CALL' and 'NPY__CPU_DISPATCH_BASELINE_CALL'.
+// However in this example, we just handle it manually.
+void simd_whoami(const char *extra_info);
+void simd_whoami_AVX512F(const char *extra_info);
+void simd_whoami_SSE41(const char *extra_info);
+
+void trigger_me(void)
+{
+    // bring the auto-generated config header
+    // which contains config macros 'NPY__CPU_DISPATCH_CALL' and
+    // 'NPY__CPU_DISPATCH_BASELINE_CALL'.
+    // it is highly recommended to include the config header before executing
+  // the dispatching macros in case if there's another header in the scope.
+    #include "hello.dispatch.h"
+    DISPATCH_CALL_ALL(simd_whoami, ("all"))
+    DISPATCH_CALL_HIGH(simd_whoami, ("the highest interest"))
+    // An example of including multiple config headers in the same source
+    // #include "hello2.dispatch.h"
+    // DISPATCH_CALL_HIGH(another_function, ("the highest interest"))
+}
+</pre> </li> </ul> </section> </section><div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2024 NumPy Developers<br>Licensed under the 3-clause BSD License.<br>
+    <a href="https://numpy.org/doc/2.0/reference/simd/how-it-works.html" class="_attribution-link">https://numpy.org/doc/2.0/reference/simd/how-it-works.html</a>
+  </p>
+</div>

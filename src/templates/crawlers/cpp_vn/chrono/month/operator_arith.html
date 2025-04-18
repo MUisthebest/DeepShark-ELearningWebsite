@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Chrono :: tháng :: Toán tử+=, std :: Chrono :: tháng :: Toán tử- =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr std :: Chrono :: tháng &amp; nhà điều hành+= (const std :: chrono :: tháng &amp; m) noexcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr std :: Chrono :: tháng &amp; nhà điều hành-= (const std :: chrono :: tháng &amp; m) noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Thêm hoặc trừ<code>m.count()</code>Từ giá trị tháng, giảm kết quả modulo 12 xuống một số nguyên trong phạm vi<code>[</code><code>1</code><code>, </code><code>12</code><code>]</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Thực hiện<code>*this = *this + m;</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Thực hiện<code>*this = *this - m;</code>.</div> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một tài liệu tham khảo về điều này<code>month</code>Sau khi sửa đổi.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Sau khi gọi đến một trong những chức năng này,<a href="ok" title="cpp/chrono/month/ok"><code>ok()</code></a>luôn luôn<code>true</code>Nếu không có tràn xảy ra trong quá trình hoạt động.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_inc_dec" title="cpp/chrono/month/operator inc dec"> <span class="t-lines"><span>fetch_or</span><span>fetch_or<span class="t-dsc-small">toán tử ++</span></span><span>thực hiện nguyên tử Bitwise XOR giữa đối số và giá trị của đối tượng nguyên tử và có được giá trị được giữ trước đó</span><span>thực hiện nguyên tử Bitwise XOR giữa đối số và giá trị của đối tượng nguyên tử và có được giá trị được giữ trước đó<span class="t-dsc-small">toán tử ++</span></span></span></a></div> </td> <td>tăng hoặc giảm trong tháng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="operator_arith_2" title="cpp/chrono/month/operator arith 2"> <span class="t-lines"><span>toán tử+</span><span>người vận hành-</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Thực hiện số học trên<code>month</code>S<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/month/operator_arith">https://en.cppreference.com/w/cpp/chrono/month/operator_arith</a>
+</p>
+</div>

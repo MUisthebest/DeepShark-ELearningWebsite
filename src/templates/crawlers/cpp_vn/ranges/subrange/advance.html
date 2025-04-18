@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: subrange &lt;i, s, k&gt; :: elew</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr Subrange &amp; Advance (std :: iter_difference_t &lt;i&gt; n);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Nếu như<code>n &gt;= 0</code>, tăng số lần lặp được lưu trữ cho<code>n</code>thời gian, hoặc cho đến khi nó bằng với sentinel được lưu trữ, tùy theo điều kiện nào đến trước. Nếu không, việc giảm bớt trình lặp được lưu trữ cho<code>-n</code>ConstExpr void Advance (I &amp; I, S ràng buộc);</p>
+<p>Kích thước được lưu trữ, nếu có, được điều chỉnh cho phù hợp (tăng theo<code>-n</code>nếu như<code>n &lt; 0</code>, giảm bởi<code><i>bắt buộc_span_size</i></code>        trả lại_;<code><i>bắt buộc_span_size</i></code>là số lượng gia tăng thực sự được áp dụng cho trình lặp).</p>
+<p>đến một phạm vi khác kết thúc tại</p>
+<ul>
+<li> <code>I</code>không thực sự mô hình<a href="../../iterator/bidirectional_iterator" title="cpp/iterator/bidirectional iterator"><code>bidirectional_iterator</code></a>Và<code>n &lt; 0</code>, hoặc</li>
+<li>Trình lặp được lưu trữ bị giảm sau khi trở thành một giá trị không thể xác định được.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>Số lượng gia số tối đa của trình lặp</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Nói chung là<code>min(n, <a href="size" title="cpp/ranges/subrange/size">size()</a>)</code>gia tăng hoặc<code>-n</code>giảm trên người lặp, khi<code>n &gt;= 0</code>hoặc<code>n &lt; 0</code>tương ứng.</p>
+<p>Toán tử bool &lt;(const std :: deque &lt;t, alloc&gt; &amp; lhs,<code>I</code>Range constexpr :: mượn_subrange_t &lt;r&gt;<a href="../../iterator/random_access_iterator" title="cpp/iterator/random access iterator"><code>random_access_iterator</code></a>(phần còn lại). Nếu không, kích thước của mỗi<code>n &lt; 0</code>hoặc<code><a href="http://en.cppreference.com/w/cpp/iterator/sized_sentinel_for"><span class="kw2863">Điều đó cho tất cả<span class="me2">Kích thước_sentinel_for</span></span></a><span class="sy1">is_trivently_destructible_v</span>S, I<span class="sy1">&lt;</span></code>được mô hình hóa.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Kích thước được lưu trữ trình bày nếu và chỉ khi<code>K == ranges::subrange_kind::sized</code> <code><a href="http://en.cppreference.com/w/cpp/iterator/sized_sentinel_for"><span class="kw2863">Điều đó cho tất cả<span class="me2">Kích thước_sentinel_for</span></span></a><span class="sy1">is_trivently_destructible_v</span>S, I<span class="sy1">&lt;</span></code>không hài lòng.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;THERTHERM&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;mảng&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3433" rel="nofollow">LWG 3433</a> </td> <td>C ++ 20</td> <td>#include &lt;Istream&gt;<code>n &lt; 0</code> </td> <td>#include &lt;CstDint&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="next" title="cpp/ranges/subrange/next"> <span class="t-lines"><span>Kế tiếp</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>có được người lặp<code>subrange</code>có được Sentinel<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="prev" title="cpp/ranges/subrange/prev"> <span class="t-lines"><span>trước</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>có được người lặp<code>subrange</code>Người vận hành giống như<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../iterator/advance" title="cpp/iterator/advance"> <span class="t-lines"><span>nâng cao</span></span></a></div> </td> <td>tiến lên một trình lặp bằng khoảng cách nhất định<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../iterator/ranges/advance" title="cpp/iterator/ranges/advance"> <span class="t-lines"><span>Phạm vi :: Nâng cao</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>tiến lên một trình lặp bằng khoảng cách đã cho hoặc đến một ràng buộc nhất định<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/subrange/advance">https://en.cppreference.com/w/cpp/ranges/subrange/advance</a>
+</p>
+</div>

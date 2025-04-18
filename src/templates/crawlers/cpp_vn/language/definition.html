@@ -1,0 +1,130 @@
+ <h1 class="firstHeading" id="firstHeading">Định nghĩa và ODR (một quy tắc định nghĩa)</h1> <p><i>Định nghĩa</i>&gt;<a href="declarations" title="cpp/language/declarations">declarations</a>Điều đó xác định đầy đủ các thực thể được giới thiệu bởi Tuyên bố. Mỗi tuyên bố là một định nghĩa, ngoại trừ những điều sau:</p>
+<ul><li>Một tuyên bố chức năng mà không có cơ thể chức năng:</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">int f (int); // tuyên bố, nhưng không xác định f</pre></div> <ul><li>Bất kỳ tuyên bố nào với một<code>extern</code> <a href="storage_duration" title="cpp/language/storage duration">storage class specifier</a>hoặc với a<a href="language_linkage" title="cpp/language/language linkage">language linkage</a>chỉ định (chẳng hạn như<code>extern "C"</code>) không có bộ khởi tạo:</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">extern const int a;     // tuyên bố, nhưng không xác định</pre></div> <ul><li>Tuyên bố của một tên lớp (bởi<span class="t-rev-inl t-since-cxx17"><span>Tuyên bố của a</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span> <a href="static" title="cpp/language/static">static data member</a>không phải là dòng</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Bên trong một định nghĩa lớp học:</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li> <span class="t-mark">(không dùng nữa)</span>cấu trúc s<code><a href="constexpr" title="cpp/language/constexpr">constexpr</a></code>    std :: iOS_Base :: iostate err = std :: iOS_Base :: Goodbit;</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul><li>    int n;               // Xác định s :: n<a href="class#Forward_declaration" title="cpp/language/class">forward declaration</a>    tĩnh Int i;        // tuyên bố, nhưng không định nghĩa S :: i</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">    nội tuyến tĩnh in x; // Xác định s :: x</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>MỘT<a href="enum" title="cpp/language/enum">opaque declaration</a>};                       // Xác định s</li></ul> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>Tuyên bố của một tên lớp (bởi<a href="template_parameters" title="cpp/language/template parameters">template parameter</a>:</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Tuyên bố phạm vi không gian tên của một thành viên dữ liệu tĩnh được xác định trong lớp với</pre></div> <ul><li>cấu trúc s</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <ul><li>MỘT<a href="typedef" title="cpp/language/typedef">typedef</a>    Constexpr tĩnh Int x = 42; // ngầm nội tuyến, định nghĩa S :: x</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">};</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>MỘT<a href="type_alias" title="cpp/language/type alias">alias-declaration</a>:</li></ul> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>MỘT<a href="using_declaration" title="cpp/language/using declaration">using-declaration</a>:</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Constexpr int s :: x; // tuyên bố s :: x, không phải là định nghĩa lại</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>Tuyên bố của một tên lớp (bởi<a href="class_template_argument_deduction#Explicit_deduction_guides" title="cpp/language/class template argument deduction">deduction guide</a>của một bảng liệt kê:</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>MỘT<a href="static_assert" title="cpp/language/static assert">static_assert</a>cấu trúc s;             // tuyên bố, nhưng không xác định S</li>
+<li>MỘT<a href="declarations" title="cpp/language/declarations">attribute declaration</a>của một bảng liệt kê:</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>MỘT<a href="declarations" title="cpp/language/declarations">empty declaration</a>của một bảng liệt kê:</li>
+<li>MỘT<a href="namespace#Using-directives" title="cpp/language/namespace">using-directive</a>của một bảng liệt kê:</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>MỘT<a href="class_template#Class_template_instantiation" title="cpp/language/class template">explicit instantiation declaration</a>màu enum: int; // tuyên bố, nhưng không xác định màu</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Tuyên bố của a</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>MỘT<a href="template_specialization" title="cpp/language/template specialization">explicit specialization</a>mẫu &lt;typename t&gt; // khai báo, nhưng không xác định t</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Tuyên bố tham số trong khai báo chức năng không phải là một định nghĩa:</pre></div> <p>MỘT<a href="asm" title="cpp/language/asm">asm declaration</a>int f (int x); // khai báo, nhưng không xác định F và x</p>
+<p> <a href="default_constructor" title="cpp/language/default constructor">default constructor</a>Thì<a href="copy_constructor" title="cpp/language/copy constructor">copy constructor</a>Thì<a href="move_constructor" title="cpp/language/move constructor">move constructor</a>Thì<a class="mw-redirect" href="as_operator" title="cpp/language/as operator">copy assignment operator</a>Thì<a class="mw-redirect" href="move_operator" title="cpp/language/move operator">move assignment operator</a>, và<a href="destructor" title="cpp/language/destructor">destructor</a>.</p>
+<p>int f (int x) // định nghĩa f và x<a class="mw-redirect" href="incomplete_type" title="cpp/language/incomplete type">incomplete type</a>hoặc<a href="abstract_class" title="cpp/language/abstract class">abstract class type</a>, chương trình là xấu.</p>
+<h3 id="One_Definition_Rule">{</h3> <p>    trả lại x + a;<span class="t-rev-inl t-since-cxx20"><span><a href="constraints" title="cpp/language/constraints">concept</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>}</p>
+<p>tuyên ngôn:<a href="inline" title="cpp/language/inline">inline</a>typedef s s2; // khai báo, nhưng không xác định S2 (s có thể không đầy đủ)<i>(không định nghĩa bất kỳ thực thể nào)</i>Sử dụng N :: D; // tuyên bố, nhưng không xác định D</p>
+<p>Tuyên bố của a<span class="t-rev-inl t-since-cxx17"><span>(không định nghĩa bất kỳ thực thể nào)</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Tuyên bố (không xác định bất kỳ thực thể nào)<i>(không định nghĩa bất kỳ thực thể nào)</i>.</p>
+<p>(không định nghĩa bất kỳ thực thể nào)<a class="mw-redirect" href="incomplete_type" title="cpp/language/incomplete type">complete</a>.</p>
+<p>(không định nghĩa bất kỳ thực thể nào)<span class="t-rev-inl t-since-cxx17"><span>(một "mẫu bên ngoài"):</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Thì<a href="templates#Templated_entity" title="cpp/language/templates">templated entity</a>Mẫu bên ngoài<a href="template_specialization" title="cpp/language/template specialization">template specialization</a>f &lt;int, char&gt;; // khai báo, nhưng không xác định f &lt;int, char&gt;</p>
+<ul><li>Tuyên bố của ai không phải là một định nghĩa:</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Mẫu &lt;&gt;<a href="modules" title="cpp/language/modules">attached to a named module</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>Cấu trúc A &lt;Int&gt;; // khai báo, nhưng không xác định &lt;int&gt;</li>
+<li>không định nghĩa bất kỳ thực thể nào, nhưng nó được phân loại là một định nghĩa.</li>
+<ul><li>Khi cần thiết, trình biên dịch có thể xác định ngầm</li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Nếu định nghĩa của bất kỳ đối tượng nào dẫn đến một đối tượng của<span class="t-rev-inl t-since-cxx20"><span>Một quy tắc định nghĩa</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Chỉ một định nghĩa của bất kỳ biến, chức năng, loại lớp, loại liệt kê,</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>hoặc mẫu được cho phép trong bất kỳ một đơn vị dịch nào (một số trong số này có thể có nhiều khai báo, nhưng chỉ cho phép một định nghĩa).</li>
+<li>Một và duy nhất một định nghĩa của mọi người không</li>
+<li>Tất cả bộ nhớ đều ghi (nguyên tử không phải là nguyên tử và thư giãn)<code>const</code>chức năng hoặc biến là<a href="constant_initialization" title="cpp/language/constant initialization">constant-initialized</a>ODR-được sử dụng</li>
+<li>. Trình biên dịch không bắt buộc phải chẩn đoán vi phạm này, nhưng hành vi của chương trình vi phạm nó là không xác định.</li>
+<li>Đối với một chức năng nội tuyến</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>hoặc biến nội tuyến<a href="default_comparisons" title="cpp/language/default comparisons">three-way comparison</a>, một định nghĩa được yêu cầu trong mọi đơn vị dịch</li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul><li>ODR-được sử dụng</li></ul> <p>Đối với một lớp, một định nghĩa được yêu cầu bất cứ nơi nào lớp được sử dụng theo cách yêu cầu nó</p>
+<p>Có thể có nhiều hơn một định nghĩa trong một chương trình của mỗi điều sau đây: loại lớp, loại liệt kê, hàm nội tuyến<a href="https://en.cppreference.com/w/c/language/type#Compatible_types" title="c/language/type">as long as they are compatible</a>, Biến nội tuyến<code>struct S { int x; };</code>(Mẫu hoặc thành viên của mẫu, nhưng không đầy đủ<code>struct S { int y; };</code>), miễn là tất cả những điều sau đây là đúng:<a href="namespace" title="cpp/language/namespace">unnamed namespaces</a>.</p>
+<h4 id="ODR-use">Mỗi định nghĩa xuất hiện trong một đơn vị dịch khác nhau</h4> <p>Khái niệm __Indirectly_binary_left_foldable = / * Xem Mô tả * /;</p>
+<ul>
+<li>Các định nghĩa không</li>
+<li>Mỗi định nghĩa bao gồm cùng một chuỗi mã thông báo (thông thường, xuất hiện trong cùng một tệp tiêu đề)</li>
+<li>Tra cứu tên từ trong mỗi định nghĩa tìm thấy cùng một thực thể (sau khi phân giải quá tải), ngoại trừ điều đó</li>
+</ul> <p>Các hằng số có nội bộ hoặc không liên kết có thể đề cập đến các đối tượng khác nhau miễn là chúng không được sử dụng ODR và ​​có cùng một giá trị trong mọi định nghĩa</p>
+<div class="cpp source-cpp"><pre data-language="cpp">biểu hiện lambda không có trong đối số mặc định</pre></div> <p>std :: Atomic &lt;Int&gt; flag = {0};</p>
+<span class="t-li">1)</span>hoặc đối số mẫu mặc định<code>x</code>trong a<a href="expressions#Potentially-evaluated_expressions" title="cpp/language/expressions">potentially-evaluated expression</a> <code>ex</code>được xác định duy nhất bởi chuỗi mã thông báo được sử dụng để xác định chúng<ul>
+<li>Các toán tử bị quá tải, bao gồm các hàm chuyển đổi, phân bổ và phân giải đề cập đến cùng một hàm từ mỗi định nghĩa (trừ khi đề cập đến một định nghĩa được xác định trong định nghĩa)<code>x</code>Các thực thể tương ứng có cùng một liên kết ngôn ngữ trong mỗi định nghĩa (ví dụ: tệp bao gồm không bên trong khối "C" bên ngoài)</li>
+<li>nhiều nhất là một chuyển đổi đủ điều kiện, và<code>x</code>đối tượng là<code>x</code>Trong bất kỳ định nghĩa nào, nó được cung cấp không đổi trong từng định nghĩa<code>x</code>Các quy tắc trên áp dụng cho mỗi đối số mặc định được sử dụng trong mỗi định nghĩa<i>Một đối tượng được sử dụng ODR nếu giá trị của nó được đọc (trừ khi nó là hằng số thời gian biên dịch) hoặc được viết, địa chỉ của nó được lấy hoặc tham chiếu bị ràng buộc với nó,</i>Nếu định nghĩa dành cho một lớp có mặc định<code>e</code>, mọi đơn vị dịch mà nó được sử dụng ODR phải gọi cùng một toán tử so sánh cho cơ sở và các thành viên<a href="expressions#Discarded-value_expressions" title="cpp/language/expressions">discarded-value expression</a>Nếu định nghĩa dành cho một mẫu, thì tất cả các yêu cầu này áp dụng cho cả hai tên tại điểm định nghĩa và tên phụ thuộc tại điểm khởi tạo</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Nếu tất cả các yêu cầu này được thỏa mãn, chương trình hoạt động như thể chỉ có một định nghĩa trong toàn bộ chương trình. Mặt khác, chương trình không được hình thành, không cần chẩn đoán.</pre></div> <div class="t-li1">
+<span class="t-li">2)</span> <code>*this</code>Lưu ý: Trong C, không có ODR toàn chương trình cho các loại và thậm chí các khai báo bên ngoài của cùng một biến trong các đơn vị dịch khác nhau có thể có các loại khác nhau<code>this</code>. Trong C ++, mã thông báo mã nguồn được sử dụng trong các khai báo cùng loại phải giống như được mô tả ở trên: nếu một tệp .cpp<code>this</code>và tệp .cpp khác xác định</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>MỘT<a href="structured_binding" title="cpp/language/structured binding">structured binding</a>, hành vi của chương trình liên kết chúng với nhau là không xác định. Điều này thường được giải quyết với</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>ODR-use<i>Một đối tượng được sử dụng ODR nếu giá trị của nó được đọc (trừ khi nó là hằng số thời gian biên dịch) hoặc được viết, địa chỉ của nó được lấy hoặc tham chiếu bị ràng buộc với nó,</i>một glvalue<code>E</code>Một tài liệu tham khảo được sử dụng ODR nếu nó được sử dụng và người giới thiệu của nó không được biết đến tại thời điểm biên dịch,<code>E</code>Một chức năng được sử dụng ODR nếu một cuộc gọi chức năng đến nó được thực hiện hoặc địa chỉ của nó được thực hiện.</p>
+<ul>
+<li>Nếu như<code>E</code> <a href="expressions#Primary_expressions" title="cpp/language/expressions">id-expression</a>, biểu thức<code>E</code>Nếu một đối tượng, một tham chiếu hoặc một hàm được sử dụng ODR, định nghĩa của nó phải tồn tại ở đâu đó trong chương trình; Vi phạm điều đó thường là một lỗi thời gian liên kết.</li>
+<li>Nếu như<code>E</code>cấu trúc s<code>E1[E2]</code>{</li>
+<li>Nếu như<code>E</code>    static const int x = 0; // Thành viên dữ liệu tĩnh<code>E1.E2</code>hoặc<code>E1.template E2</code>    // một định nghĩa bên ngoài lớp là bắt buộc nếu nó được sử dụng ODR<code>E1</code>};</li>
+<li>Nếu như<code>E</code> </li>
+<li>Nếu như<code>E</code>const int &amp; f (const int &amp; r);<code>E1.*E2</code>hoặc<code>E1.*template E2</code> <code>E1</code>được sử dụng ODR trừ khi cả hai điều sau đây đều đúng:</li>
+<li>Nếu như<code>E</code>          : f (s :: x);  // S :: x là ODR-được sử dụng ở đây: một định nghĩa là bắt buộc<code>(E1)</code>là một đối tượng, nó là một trong những<code>E1</code>được sử dụng ODR trừ khi cả hai điều sau đây đều đúng:</li>
+<li>Nếu như<code>E</code>Áp dụng chuyển đổi lvalue sang rvalue cho<code>E1 ? E2 : E3</code>là<code>E2</code>Và<code>E3</code>mang lại một biểu thức không đổi không gọi các chức năng không tầm thường<code>E2</code>Và<code>E3</code>không phải là một đối tượng (nghĩa là,</li>
+<li>Nếu như<code>E</code>là một tài liệu tham khảo) hoặc, nếu<code>E1, E2</code>là một đối tượng, nó là một trong những<code>E2</code>Kết quả tiềm năng</li>
+<li>của một biểu thức lớn hơn</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">, trong đó biểu thức lớn hơn đó là một</pre></div> <span class="t-li">là trong</span>hoặc có chuyển đổi lvalue sang rvalue được áp dụng cho nó<ul>
+<li>struct s {static const int x = 1; }; // Áp dụng chuyển đổi lvalue-rvalue</li>
+<li>MỘT<a href="virtual" title="cpp/language/virtual">virtual member function</a>                                      // đến s :: x mang lại biểu thức không đổi</li>
+<li> </li>
+<li>int f ()</li>
+<li>{ <code>T</code>    S :: x;        // Biểu thức vứt bỏ-giá trị không sử dụng odr-s :: x<code>U</code> <code>U</code>.</li>
+<li>    trả lại S :: x; // Biểu thức trong đó chuyển đổi lvalue sang rvalue<a href="initialization" title="cpp/language/initialization">initialization</a>                 // Áp dụng không sử dụng odr-use s :: x</li>
+<li>}</li>
+</ul> <h4 id="Naming_a_function">được sử dụng ODR nếu</h4> <p>xuất hiện như một biểu thức có khả năng được đánh giá (bao gồm cả sự ngầm</p>
+<ul>
+<li>trong biểu thức cuộc gọi chức năng thành viên không tĩnh)<a href="cast_operator" title="cpp/language/cast operator">user-defined conversion</a>được sử dụng ODR nếu nó xuất hiện như một biểu thức có khả năng được đánh giá.<a href="../memory/new/operator_new" title="cpp/memory/new/operator new"><code>operator new</code></a>Một bộ của</li>
+<li>MỘT<a href="../memory/new/operator_new" title="cpp/memory/new/operator new">allocation</a>hoặc<a href="../memory/new/operator_delete" title="cpp/memory/new/operator delete">deallocation</a>Kết quả tiềm năng<a href="new" title="cpp/language/new">new expression</a>là kết quả tiềm năng duy nhất của nó.</li>
+<li>, kết hợp như sau:<a href="delete" title="cpp/language/delete">delete expression</a>là kết quả tiềm năng duy nhất của nó.</li>
+<li>là một biểu thức đăng ký (<a href="copy_elision" title="cpp/language/copy elision">copy elision</a>) trong đó một trong các toán hạng là một mảng, kết quả tiềm năng của toán hạng đó được bao gồm trong tập hợp.<span class="t-rev-inl t-since-cxx17"><span>là biểu thức truy cập thành viên lớp của biểu mẫu<a href="copy_elision#Mandatory_elision_of_copy.2Fmove_operations" title="cpp/language/copy elision">mandatory elision</a>.</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span> </li>
+</ul> <p>Đặt tên cho một thành viên dữ liệu không tĩnh, kết quả tiềm năng của</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>được bao gồm trong tập hợp.<a href="constant_expression#Functions_and_variables_needed_for_constant_evaluation" title="cpp/language/constant expression">needed for constant evaluation</a>Là một biểu thức truy cập thành viên lớp đặt tên cho một thành viên dữ liệu tĩnh, biểu thức ID chỉ định thành viên dữ liệu được bao gồm trong tập hợp.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/261.html" rel="nofollow">CWG 261</a> </td> <td>C ++ 98</td> <td>là biểu thức truy cập con trỏ đến thành viên của biểu mẫu<br/>có toán hạng thứ hai là một biểu thức không đổi, kết quả tiềm năng của<br/>được bao gồm trong tập hợp.</td> <td>là một biểu thức trong ngoặc đơn (<br/>), kết quả tiềm năng của<br/>được bao gồm trong tập hợp.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/678.html" rel="nofollow">CWG 678</a> </td> <td>C ++ 98</td> <td>là một biểu thức có điều kiện glvalue (<br/>là glvalues), sự kết hợp của các kết quả tiềm năng của</td> <td>là giá trị trả về, vẫn có thể giảm được, nhưng bản thân các yếu tố có giá trị không xác định. Một cuộc gọi đến<br/>kích cỡ.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1472.html" rel="nofollow">CWG 1472</a> </td> <td>C ++ 98</td> <td>đều được bao gồm trong bộ.<br/>là một biểu thức dấu phẩy (<br/>), kết quả tiềm năng của</td> <td>    static const int b = 2;<br/>                     Forwardit2 s_first, forwardit2 s_last,</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1614.html" rel="nofollow">CWG 1614</a> </td> <td>C ++ 98</td> <td>Nếu không, bộ trống.</td> <td>cấu trúc s</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1741.html" rel="nofollow">CWG 1741</a> </td> <td>C ++ 98</td> <td>{<br/>    static const int a = 1;</td> <td>    static const int b = 2;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1926.html" rel="nofollow">CWG 1926</a> </td> <td>C ++ 98</td> <td>};</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2242.html" rel="nofollow">CWG 2242</a> </td> <td>C ++ 98</td> <td>int f (bool x)<code>const</code>{<br/>    Trả lại x? S :: A: S :: B;</td> <td>    // x là một phần của biểu hiện phụ "x" (bên trái của?),<br/>    // áp dụng chuyển đổi lvalue sang rvalue, nhưng áp dụng chuyển đổi đó cho x</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2300.html" rel="nofollow">CWG 2300</a> </td> <td>C ++ 11</td> <td>    // không mang lại biểu thức không đổi, vì vậy x được sử dụng ODR<br/>    // S :: A và S :: B là lvalues ​​và mang theo "kết quả tiềm năng"</td> <td>    // đến kết quả của điều kiện glvalue<br/>    // kết quả đó sau đó phải tuân theo yêu cầu chuyển đổi lvalue-to-rvalue được yêu cầu</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2353.html" rel="nofollow">CWG 2353</a> </td> <td>C ++ 98</td> <td>    // để sao chép-khởi tạo giá trị trả lại, do đó S :: A và S :: B không được sử dụng ODR<br/>}</td> <td>Một chức năng được sử dụng ODR trong các trường hợp sau:</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2433.html" rel="nofollow">CWG 2433</a> </td> <td>C ++ 14</td> <td>Một hàm được sử dụng ODR nếu nó được đặt tên bởi (xem bên dưới) một biểu thức hoặc chuyển đổi có khả năng được đánh giá.</td> <td>}</td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>Một chức năng phân bổ hoặc phân bổ không định vị cho một lớp được sử dụng bởi định nghĩa của một hàm tạo của lớp đó.</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>Một chức năng phân bổ hoặc phân bổ không định vị cho một lớp được sử dụng bởi định nghĩa của một hàm tạo của lớp đó.</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>Một chức năng giải quyết không định vị cho một lớp được sử dụng bởi định nghĩa về chất phá hủy của lớp đó hoặc bằng cách được chọn bởi việc tra cứu tại điểm định nghĩa của một chất phá hủy ảo.</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>Một hàm tạo (bao gồm các hàm tạo mặc định) cho một lớp được sử dụng bởi</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>Một hàm tạo (bao gồm các hàm tạo mặc định) cho một lớp được sử dụng bởi</li></ul>
+<li>Tiêu chuẩn C ++ 03 (ISO/IEC 14882: 2003):</li>
+<ul><li>Một hàm tạo (bao gồm các hàm tạo mặc định) cho một lớp được sử dụng bởi</li></ul>
+<li>    S.B3 = 0B11;</li>
+<ul><li>Một hàm tạo (bao gồm các hàm tạo mặc định) cho một lớp được sử dụng bởi</li></ul>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/definition">https://en.cppreference.com/w/cpp/language/definition</a>
+</p>
+</div>

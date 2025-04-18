@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Nhà phân bổ &lt;T&gt; :: Phá hủy</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">void phá hủy (con trỏ P);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class u&gt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(không được dùng trong C ++ 17)</span> <br/><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td> </tr> </table> <p>void phá hủy (u* p);<code>p</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Cuộc gọi<code>p-&gt;~T()</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Cuộc gọi<code>p-&gt;~U()</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>Gọi bộ hủy diệt của đối tượng được chỉ ra bởi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue400" rel="nofollow">LWG 400</a> </td> <td>C ++ 98</td> <td>
+<code>p</code>con trỏ đến đối tượng sẽ bị phá hủy<code>T*</code>đã được chọn đến<code>p</code> </td> <td>, đó là loại của</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../allocator_traits/destroy" title="cpp/memory/allocator traits/destroy"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>xây dựng một đối tượng trong bộ nhớ được phân bổ<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/allocator/destroy">https://en.cppreference.com/w/cpp/memory/allocator/destroy</a>
+</p>
+</div>

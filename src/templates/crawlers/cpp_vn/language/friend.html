@@ -1,0 +1,89 @@
+ <h1 class="firstHeading" id="firstHeading">Tuyên bố bạn bè</h1> <p>Tuyên bố của người bạn xuất hiện trong một<a href="class" title="cpp/language/class">class body</a>và cấp một chức năng hoặc một lớp khác truy cập vào các thành viên riêng tư và được bảo vệ của lớp nơi xuất hiện khai báo bạn bè.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>friend</code> <span class="t-spar">Giải khai chức năng</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>friend</code> <span class="t-spar">độ phân giải chức năng</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>friend</code> <span class="t-spar">    người bạn char* x :: foo (int); // Thành viên của các lớp khác cũng có thể là bạn</span> <code>;</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>friend</code> <span class="t-spar">// Tuyên bố bạn bè không khai báo chức năng thành viên</span> <code>;</code> <p><code>friend</code> <span class="t-spar">// toán tử này &lt;&lt; vẫn cần được xác định, như một thành viên không phải là thành viên</span> <code>;</code></p>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <h3 id="Description">Sự miêu tả</h3> <div class="t-li1">
+<span class="t-li">1)</span>Chỉ định một chức năng hoặc một số chức năng là bạn của lớp này:<div class="cpp source-cpp"><pre data-language="cpp">lớp y</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>{<a href="class#Local_classes" title="cpp/language/class">local</a>    dữ liệu int; // Thành viên tư nhân<a href="inline" title="cpp/language/inline">inline</a><span class="t-rev-inl t-since-cxx20"><span> <a href="modules" title="cpp/language/modules">named module</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>.<div class="cpp source-cpp"><pre data-language="cpp">    // toán tử chức năng không thành viên &lt;&lt; sẽ có quyền truy cập vào các thành viên riêng của Y</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>    Friend std :: Ostream &amp; Toán tử &lt;&lt; (std :: Ostream &amp; out, const y &amp; o);<span class="t-spar">    người bạn char* x :: foo (int); // Thành viên của các lớp khác cũng có thể là bạn</span>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<a href="elaborated_type_specifier" title="cpp/language/elaborated type specifier">elaborated type specifier</a>    bạn x :: x (char), x :: ~ x (); // người xây dựng và người phá hủy có thể là bạn<code>friend</code>};</div> <div class="t-li1">
+<span class="t-li">là trong</span> <span class="t-spar">// Tuyên bố bạn bè không khai báo chức năng thành viên</span>hoặc<span class="t-spar">// toán tử này &lt;&lt; vẫn cần được xác định, như một thành viên không phải là thành viên</span>STD :: Ostream &amp; Toán tử &lt;&lt; (STD :: Ostream &amp; Out, Const Y &amp; Y))<a href="cv" title="cpp/language/cv">cv-qualified</a>{<code>friend</code>    trở lại &lt;&lt; y.data; // có thể truy cập thành viên tư nhân Y :: Dữ liệu<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div>
+</div> <h3 id="Notes">Ghi chú</h3> <p>(chỉ được phép trong</p>
+<p>Định nghĩa lớp) định nghĩa một hàm không phải thành viên và làm cho nó trở thành bạn của lớp này cùng một lúc. Chức năng không thành viên như vậy luôn luôn là</p>
+<p>, trừ khi nó được gắn vào một</p>
+<p><a href="access" title="cpp/language/access">Access specifiers</a>Lớp X.<code>private:</code>{<code>public:</code>    int a;</p>
+<p> <code>friend class X {};</code>    bạn bè void friend_set (x &amp; p, int i)</p>
+<p>    {<a href="lookup" title="cpp/language/lookup">looked up</a>        p.a = i; // Đây là một chức năng không thành viên</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    }</pre></div> <p>công cộng:<code>X</code>    Void thành viên_set (int i)<code>X</code>    {<code>X</code>        a = i; // Đây là chức năng thành viên<a href="namespace#Namespaces" title="cpp/language/namespace">namespaces</a> </p>
+<h3 id="Template_friends">    }</h3> <p>};<a href="function_template" title="cpp/language/function template">function template</a>Và<a href="class_template" title="cpp/language/class template">class template</a>Chỉ định lớp, cấu trúc hoặc liên minh được đặt tên bởi<code>friend</code>Xây dựng lớp học lớp</p>
+<div class="cpp source-cpp"><pre data-language="cpp">) như một người bạn của lớp này. Điều này có nghĩa là các tuyên bố và định nghĩa của thành viên bạn bè có thể truy cập các thành viên riêng tư và được bảo vệ của lớp này và cả người bạn có thể kế thừa từ các thành viên riêng tư và được bảo vệ của lớp này. Tên của lớp được sử dụng trong này</pre></div> <p>Tuyên bố không cần phải được khai báo trước đây.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Chỉ định loại được đặt tên bởi</pre></div> <p>máy đặc biệt loại đơn giản<code>inline</code><span class="t-rev-inl t-since-cxx11"><span>/<code>constexpr</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx20"><span>/<code>consteval</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Typename-specifier</p>
+<div class="cpp source-cpp"><pre data-language="cpp">là một người bạn của lớp này nếu loại đó là một (có thể</pre></div> <p>) lớp, cấu trúc, hoặc liên minh; nếu không thì<a href="elaborated_type_specifier" title="cpp/language/elaborated type specifier">elaborated-type-specifier</a>Tuyên bố bị bỏ qua. Tuyên bố này sẽ không chuyển tiếp khai báo một loại mới.<code>::</code>lớp y {};</p>
+<p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Lớp A.</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p><a href="template_parameters#Default_template_arguments" title="cpp/language/template parameters">Default template arguments</a>{</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Template_friend_operators">    dữ liệu int; // Thành viên dữ liệu riêng tư</h3> <p> <code>operator<span class="sy1">, nối thêm</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/io/basic_ostream"><span class="kw1733">Điều đó cho tất cả<span class="me2">    lớp B {}; // loại lồng tư nhân</span></span></a><span class="sy3">Không có giá trị</span>, <span class="kw4">hằng số</span> Foo<span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy3">Không có giá trị</span><span class="br0">)</span></code> <code>Foo&lt;T&gt;</code>.</p>
+<p>    enum {a = 100}; // liệt kê riêng<code>operator&lt;&lt;</code>) có thể cho phép vector hóa khi cả hai loại iterator thỏa mãn<code>T</code> <code>operator&lt;&lt;</code>    bạn lớp X; // Tuyên bố chuyển tiếp lớp bạn bè (Công cụ xác định lớp được xây dựng)<code>Foo&lt;T&gt;</code>:</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    bạn y; // Tuyên bố lớp bạn bè (Trình xác định loại đơn giản) (kể từ C ++ 11)</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">};</pre></div> </div> <p> <code>Foo&lt;T&gt;</code>Lớp X: A :: B // OK: A :: B có thể truy cập bạn bè<code>operator&lt;&lt;</code>{<code>T</code>:</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    A :: B MX; // OK: A :: B có thể truy cập thành viên của bạn bè</pre></div> </div> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">    lớp y</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    {</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/45.html" rel="nofollow">CWG 45</a> </td> <td>C ++ 98</td> <td>        A :: B My; // OK: A :: B có thể truy cập thành viên lồng nhau của bạn bè<br/>    };<code>T</code> <code>T</code> </td> <td>    int v [a :: a]; // OK: A :: Một thành viên của Friend có thể truy cập được<br/>};</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/500.html" rel="nofollow">CWG 500</a> </td> <td>C ++ 98</td> <td>Tình bạn không phải là người chuyển tiếp (một người bạn của bạn của bạn không phải là bạn của bạn).<code>T</code>Tình bạn không được kế thừa (con của bạn của bạn không phải là bạn của bạn và bạn bè của bạn không phải là bạn của con bạn).<br/>Các nhà xác định lớp lưu trữ không được phép trong khai báo chức năng bạn bè. Một hàm được xác định trong khai báo bạn bè có liên kết bên ngoài, một hàm được xác định trước đó, giữ cho liên kết mà nó được xác định.<code>T</code>không ảnh hưởng đến ý nghĩa của các tuyên bố bạn bè (chúng có thể xuất hiện trong</td> <td>hoặc vào<br/>các phần, không có sự khác biệt).</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1439.html" rel="nofollow">CWG 1439</a> </td> <td>C ++ 98</td> <td>Tuyên bố của lớp bạn bè không thể xác định một lớp mới (<br/>là một lỗi).</td> <td>Một bảng liệt kê có thể được khởi tạo từ một số nguyên mà không cần đúc, sử dụng</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1477.html" rel="nofollow">CWG 1477</a> </td> <td>C ++ 98</td> <td>Khi một lớp địa phương tuyên bố một hàm hoặc lớp không đủ tiêu chuẩn là một người bạn, chỉ có các chức năng và lớp học trong phạm vi không thuộc lớp trong cùng<br/>, không phải các chức năng toàn cầu:<br/>lớp f {};</td> <td> <br/>int f ();</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1804.html" rel="nofollow">CWG 1804</a> </td> <td>C ++ 98</td> <td> <br/>int main ()<br/>{</td> <td>    extern int g ();<br/> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2379.html" rel="nofollow">CWG 2379</a> </td> <td>C ++ 11</td> <td>    lớp cục bộ // lớp cục bộ trong hàm main ()<br/>    {</td> <td>bị cấm</td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul>
+<li>        người bạn int f (); // Lỗi, không có chức năng nào được khai báo trong Main ()</li>
+<li>        người bạn int g (); // OK, có một tuyên bố cho g trong main ()</li>
+</ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul>
+<li>        lớp bạn F; // Bạn bè A địa phương (được xác định sau)</li>
+<li>        Lớp học bạn :: F; // Bạn bè toàn cầu F</li>
+</ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul>
+<li>    };</li>
+<li> </li>
+</ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul>
+<li>, nhưng không thể nhìn thấy để tra cứu (ngoại trừ tra cứu phụ thuộc vào đối số mà xem xét</li>
+<li>trở thành thành viên của không gian tên kín trong cùng của</li>
+</ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul>
+<li>, nhưng không thể nhìn thấy để tra cứu (ngoại trừ tra cứu phụ thuộc vào đối số mà xem xét</li>
+<li>trở thành thành viên của không gian tên kín trong cùng của</li>
+</ul>
+<li>    S.B3 = 0B11;</li>
+<ul>
+<li>, nhưng không thể nhìn thấy để tra cứu (ngoại trừ tra cứu phụ thuộc vào đối số mà xem xét</li>
+<li>) trừ khi một tuyên bố phù hợp tại phạm vi không gian tên được cung cấp - xem</li>
+</ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="class" title="cpp/language/class"> Class types </a> </td> <td>Mẫu bạn bè</td>
+</tr> <tr class="t-dsc"> <td> <a href="access" title="cpp/language/access"> Access specifiers </a> </td> <td>Cả hai</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/friend">https://en.cppreference.com/w/cpp/language/friend</a>
+</p>
+</div>

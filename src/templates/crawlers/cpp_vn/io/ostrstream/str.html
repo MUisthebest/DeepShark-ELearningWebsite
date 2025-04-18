@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Oststream :: Str</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">char* str ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Trả lại con trỏ về phần đầu của bộ đệm, sau khi đóng băng nó. Gọi một cách hiệu quả<code>rdbuf()-&gt;str()</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ đến đầu bộ đệm trong liên kết<code>std::strsteambuf</code>hoặc một con trỏ null nếu không có bộ đệm.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Trước khi một cuộc gọi đến<code>str()</code>Điều đó sử dụng kết quả như một chuỗi C, bộ đệm luồng phải được chấm dứt. Đầu ra thường xuyên như với<code>stream &lt;&lt; 1.2</code>Không lưu trữ một bộ hủy NULL, nó phải được thêm vào một cách rõ ràng, thường là với Trình điều khiển<code><a href="../manip/ends" title="cpp/io/manip/ends">std::ends</a></code>.</p>
+<p>Sau khi gọi đến<code>str()</code>, các luồng động trở nên đông lạnh. Một cuộc gọi đến<code>freeze(false)</code>được yêu cầu trước khi thoát khỏi phạm vi trong đó<code>ostrstream</code>Đối tượng đã được tạo ra. Nếu không, bộ hủy sẽ rò rỉ bộ nhớ. Ngoài ra, đầu ra bổ sung cho luồng đông lạnh có thể bị cắt ngắn khi nó đi đến cuối của bộ đệm được phân bổ, có thể khiến bộ đệm không bị kết thúc.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Trstream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../strstreambuf/str" title="cpp/io/strstreambuf/str"> <span class="t-lines"><span>STR</span></span></a></div> </td> <td>Đánh dấu bộ đệm đóng băng và trả về con trỏ đầu của chuỗi đầu vào<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::strstreambuf</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ostrstream/str">https://en.cppreference.com/w/cpp/io/ostrstream/str</a>
+</p>
+</div>

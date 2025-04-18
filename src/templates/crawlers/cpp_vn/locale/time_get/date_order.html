@@ -1,0 +1,24 @@
+ <h1 class="firstHeading" id="firstHeading">std :: time_get &lt;biểu đồ, inputit&gt; :: date_order, std :: time_get &lt;biểu đồ, inputit&gt; :: do_date_order</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">DateOrder date_order () const;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>             Biểu đồ const* Low2, Biểu đồ const* High2) const;<code>do_date_order</code>Virtual POS_Type Seekoff (Off_Type TẮT, STD :: IOS_BASE :: SeekDir Dir,</div> <div class="t-li1">
+<span class="t-li">2)</span>Trả về một giá trị của loại<code><a href="../time_base" title="cpp/locale/time base">std::time_base::dateorder</a></code>được bảo vệ:<code><a href="get_date" title="cpp/locale/time get/get date">get_date()</a></code>ngày ảo DO_DATE_ORDER () const;<code><a href="../../chrono/c/strftime" title="cpp/chrono/c/strftime">std::strftime()</a></code>, trong đó mô tả định dạng ngày mặc định được sử dụng bởi địa phương này (được mong đợi bởi<code>'%x'</code>).</div> <p>và được sản xuất bởi<code><a href="../time_base" title="cpp/locale/time base">std::time_base</a></code>với định dạng xác định</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <code>no_order</code> </td> <td>Các giá trị hợp lệ (được kế thừa từ</td>
+</tr> <tr class="t-dsc"> <td> <code>dmy</code> </td> <td>) là:</td>
+</tr> <tr class="t-dsc"> <td> <code>mdy</code> </td> <td>Định dạng chứa các mục thay đổi (Ngày tuần, Ngày Julian, v.v.) hoặc chức năng này không được triển khai</td>
+</tr> <tr class="t-dsc"> <td> <code>ymd</code> </td> <td>ngày, tháng, năm (địa phương châu Âu)</td>
+</tr> <tr class="t-dsc"> <td> <code>ydm</code> </td> <td>Tháng, ngày, năm (địa phương Mỹ)</td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một giá trị của loại<code>dateorder</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>năm, tháng, ngày (địa phương châu Á)<code>no_order</code>năm, ngày, tháng (hiếm)</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Chức năng này là tùy chọn, nó có thể trở lại</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Trong mọi trường hợp.</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Đầu ra dưới đây đã thu được bằng CLANG (LIBC ++).</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="get_date" title="cpp/locale/time get/get date"> <span class="t-lines"><span>DO_GET_DATE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Trích xuất Tháng, ngày và năm từ luồng đầu vào<br/> <span class="t-mark">(Hàm thành viên được bảo vệ ảo)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../time_base" title="cpp/locale/time base"> <span class="t-lines"><span>thời gian_base</span></span></a></div> </td> <td>Xác định các hằng số định dạng ngày<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/time_get/date_order">https://en.cppreference.com/w/cpp/locale/time_get/date_order</a>
+</p>
+</div>

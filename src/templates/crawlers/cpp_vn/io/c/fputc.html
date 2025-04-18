@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FPUTC, STD :: PUTC</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int fputc (int ch, std :: file* stream);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>int putc (int ch, std :: file* stream);<code>ch</code>Viết một nhân vật<code>stream</code>.</p>
+<p>đến luồng đầu ra đã cho<code>unsigned char</code>Trong nội bộ, nhân vật được chuyển đổi thành</p>
+<p>ngay trước khi được viết.<a class="mw-redirect" href="https://en.cppreference.com/w/c/io/putc" title="c/io/putc"><code>putc()</code></a>Trong c,<code>std::fputc()</code>Và<code>std::putc()</code>Có thể được thực hiện dưới dạng macro, không được phép trong C ++. Do đó, các cuộc gọi đến</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>ch</td> <td>-</td> <td>Luôn luôn có tác dụng tương tự.</td>
+</tr> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>    toán tử &lt;&lt; (std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; os,</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>nhân vật được viết</p>
+<p>Về thành công, trả lại nhân vật bằng văn bản.<code><a href="../c" title="cpp/io/c">EOF</a></code>Về thất bại, trở lại<i>. Nếu thất bại đã được gây ra bởi một số lỗi khác, hãy đặt</i>lỗi<code><a href="ferror" title="cpp/io/c/ferror">std::ferror()</a></code>) TRÊN<code>stream</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">và thiết lập</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cstdio&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="putchar" title="cpp/io/c/putchar"> <span class="t-lines"><span>putchar</span></span></a></div> </td> <td>viết một nhân vật để<code><a href="std_streams" title="cpp/io/c/std streams">stdout</a></code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/fputc" title="c/io/fputc">C documentation</a></span>vì<code>fputc, putc</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/fputc">https://en.cppreference.com/w/cpp/io/c/fputc</a>
+</p>
+</div>

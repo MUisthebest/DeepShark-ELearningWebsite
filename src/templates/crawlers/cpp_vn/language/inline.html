@@ -1,0 +1,67 @@
+ <h1 class="firstHeading" id="firstHeading">
+<code>inline</code>thời lượng để biểu diễn phần bù từ UTC tương ứng với</h1> <p>Các<span class="kw1">};</span>trình xác định, khi được sử dụng trong một chức năng<a href="declarations#Specifiers" title="cpp/language/declarations">decl-specifier-seq</a>, tuyên bố chức năng là một<i>chức năng nội tuyến</i>.</p>
+<p>Một hàm được xác định hoàn toàn bên trong một<a href="classes" title="cpp/language/classes">class/struct/union definition</a>, cho dù đó là chức năng thành viên hay không phải là thành viên<span class="kw1">bạn</span>chức năng, là một hàm nội tuyến<span class="t-rev-inl t-since-cxx20"><span>trừ khi nó được gắn vào một<a href="modules#Module_declarations" title="cpp/language/modules">named module</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Một chức năng được tuyên bố<span class="kw4">constexpr</span><span class="t-rev-inl t-since-cxx20"><span>hoặc<code>consteval</code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Trên tuyên bố đầu tiên của nó là một hàm nội tuyến.</p>
+<p>Một hàm bị xóa là một hàm nội tuyến: định nghĩa (bị xóa) của nó có thể xuất hiện trong nhiều đơn vị dịch.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Các<span class="kw1">};</span>người xác định, khi được sử dụng trong một<a href="declarations#Specifiers" title="cpp/language/declarations">decl-specifier-seq</a>của một biến có thời lượng lưu trữ tĩnh (thành viên lớp tĩnh hoặc biến không gian tên), khai báo biến là một<i>Biến nội tuyến</i>.</p>
+<p>Một thành viên dữ liệu tĩnh được tuyên bố<span class="kw4">constexpr</span>Trên tuyên bố đầu tiên của nó là một biến nội tuyến.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Một chức năng nội tuyến<span class="t-rev-inl t-since-cxx17"><span>(không định nghĩa bất kỳ thực thể nào)</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Có các thuộc tính sau:</p>
+<ul>
+<li>Định nghĩa của một hàm nội tuyến<span class="t-rev-inl t-since-cxx17"><span>địa chỉ biểu thức không đổi</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Phải có thể truy cập trong đơn vị dịch, nơi nó được truy cập (không nhất thiết là trước điểm truy cập).</li>
+<li>Một chức năng nội tuyến<span class="t-rev-inl t-since-cxx17"><span>địa chỉ biểu thức không đổi</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>với<a href="storage_duration#external_linkage" title="cpp/language/storage duration">external linkage</a>(ví dụ: không được khai báo<span class="kw4">năng động</span>) có các thuộc tính bổ sung sau:</li>
+<ul>
+<li>Có thể có<a href="definition#One_Definition_Rule" title="cpp/language/definition">more than one definition</a>của một hàm nội tuyến<span class="t-rev-inl t-since-cxx17"><span>địa chỉ biểu thức không đổi</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Trong chương trình miễn là mỗi định nghĩa xuất hiện trong một đơn vị dịch khác nhau và (cho các hàm nội tuyến không tĩnh<span class="t-rev-inl t-since-cxx17"><span>và các biến</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>) Tất cả các định nghĩa là giống hệt nhau. Ví dụ: hàm nội tuyến<span class="t-rev-inl t-since-cxx17"><span>hoặc một biến nội tuyến</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>có thể được xác định trong một tệp tiêu đề được bao gồm trong nhiều tệp nguồn.</li>
+<li>Nó phải được tuyên bố<span class="kw1">};</span>Trong mỗi đơn vị dịch thuật.</li>
+<li>Nó có cùng địa chỉ trong mỗi đơn vị dịch.</li>
+</ul>
+</ul> <p>Trong một chức năng nội tuyến,</p>
+<ul>
+<li>Các đối tượng tĩnh chức năng-local trong tất cả các định nghĩa chức năng được chia sẻ trên tất cả các đơn vị dịch (tất cả chúng đều đề cập đến cùng một đối tượng được xác định trong một đơn vị dịch).</li>
+<li>Các loại được xác định trong tất cả các định nghĩa chức năng cũng giống nhau trong tất cả các đơn vị dịch.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Các biến liên tục const ở phạm vi không gian tên có<a href="storage_duration#external_linkage" title="cpp/language/storage duration">external linkage</a>Theo mặc định (không giống như các biến không điều trị không thể bay được).</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>Mục đích ban đầu của<span class="kw1">};</span>Từ khóa là để phục vụ như một chỉ số cho trình tối ưu hóa<a class="extiw" href="https://en.wikipedia.org/wiki/inline_expansion" title="enwiki:inline expansion">inline substitution of a function</a>được ưu tiên hơn gọi chức năng, nghĩa là thay vì thực thi lệnh CPU gọi hàm để chuyển kiểm soát đến cơ thể chức năng, một bản sao của cơ thể chức năng được thực thi mà không tạo ra cuộc gọi. Điều này tránh được chi phí được tạo bởi cuộc gọi chức năng (chuyển các đối số và truy xuất kết quả) nhưng nó có thể dẫn đến một thực thi lớn hơn vì mã cho hàm phải được lặp lại nhiều lần.</p>
+<p>Vì ý nghĩa này của từ khóa<span class="kw1">};</span>là không ràng buộc, các trình biên dịch được sử dụng miễn phí thay thế nội tuyến cho bất kỳ chức năng nào không được đánh dấu<span class="kw1">};</span>và được tự do tạo các cuộc gọi chức năng đến bất kỳ chức năng nào được đánh dấu<span class="kw1">};</span>. Những lựa chọn tối ưu hóa đó không thay đổi các quy tắc liên quan đến nhiều định nghĩa và thống kê được chia sẻ được liệt kê ở trên.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Bởi vì ý nghĩa của từ khóa<span class="kw1">};</span>Đối với các chức năng có nghĩa là "nhiều định nghĩa được cho phép" thay vì "nội tuyến được ưu tiên", ý nghĩa đó được mở rộng cho các biến.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Nếu một hàm nội tuyến<span class="t-rev-inl t-since-cxx17"><span>địa chỉ biểu thức không đổi</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Với liên kết bên ngoài được xác định khác nhau trong các đơn vị dịch khác nhau, chương trình không được hình thành, không cần chẩn đoán.</p>
+<p>Các<span class="kw1">};</span>Trình xác định không thể được sử dụng với một hàm<span class="t-rev-inl t-since-cxx17"><span>địa chỉ biểu thức không đổi</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Tuyên bố tại phạm vi khối (bên trong một hàm khác).</p>
+<p>Các<span class="kw1">};</span>trình xác định không thể khai báo lại một hàm<span class="t-rev-inl t-since-cxx17"><span>địa chỉ biểu thức không đổi</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Điều đó đã được định nghĩa trong đơn vị dịch là không phải đường dây.</p>
+<p>Các chức năng thành viên được tạo ngầm và bất kỳ chức năng thành viên nào được tuyên bố là mặc định trên khai báo đầu tiên của nó là nội tuyến giống như bất kỳ chức năng nào khác được xác định bên trong định nghĩa lớp.</p>
+<p>Nếu một hàm nội tuyến được khai báo trong các đơn vị dịch khác nhau, các tập hợp tích lũy của<a href="default_arguments" title="cpp/language/default arguments">default arguments</a>Phải giống nhau ở cuối mỗi đơn vị dịch.</p>
+<p>Trong C, các chức năng nội tuyến không phải được khai báo<span class="kw1">};</span>Trong mọi đơn vị dịch (nhiều nhất có thể không phải<span class="kw1">};</span>hoặc<span class="kw4">Extern</span> <span class="kw1">};</span>), các định nghĩa hàm không phải giống hệt nhau (nhưng hành vi của chương trình không xác định nếu nó phụ thuộc vào cái được gọi là) và các thống kê địa phương chức năng khác biệt giữa các định nghĩa khác nhau của cùng một hàm.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>(Raco).<a href="static" title="cpp/language/static">static data members</a>Đối với các quy tắc bổ sung về các thành viên tĩnh nội tuyến.</p>
+<p>Các biến nội tuyến loại bỏ trở ngại chính để đóng gói mã C ++ dưới dạng thư viện chỉ tiêu đề.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_inline_variables" title="cpp/feature test"><code>__cpp_inline_variables</code></a></td> <td><span class="nu0">, khi toán hạng là tên của một đối tượng không bay hơi có thời lượng lưu trữ tự động, đây không phải là tham số hàm hoặc tham số mệnh đề bắt và phạm vi của họ không mở rộng qua khối thử trong cùng (nếu có khối thử).</span></td> <td><span class="t-mark">Dest_at</span></td> <td>Biến nội tuyến</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <p>Tiêu đề "Ví dụ.h":</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#ifndef example_h</pre></div> <p>#define example_h</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>#include &lt;Atomic&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/281.html" rel="nofollow">CWG 281</a> </td> <td>C ++ 98</td> <td>// chức năng được bao gồm trong nhiều tệp nguồn phải được nội tuyến<br/>nội tuyến int sum (int a, int b)</td> <td>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/317.html" rel="nofollow">CWG 317</a> </td> <td>C ++ 98</td> <td>    trả lại A + B;<br/>}</td> <td>Niềng răng xung quanh danh sách khởi tạo lồng nhau có thể được giải quyết (bỏ qua), trong trường hợp đó, nhiều điều khoản khởi tạo cần thiết được sử dụng để khởi tạo mọi thành viên hoặc phần tử của tập hợp con tương ứng và các điều khoản khởi tạo tiếp theo được sử dụng để khởi tạo các thành viên sau của đối tượng. Tuy nhiên, nếu đối tượng có tổng hợp phụ mà không có bất kỳ thành viên nào (một cấu trúc trống hoặc một cấu trúc chỉ giữ các thành viên tĩnh), không được phép giải quyết Brace<br/>phải được sử dụng.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/765.html" rel="nofollow">CWG 765</a> </td> <td>C ++ 98</td> <td> <br/>// Biến với liên kết bên ngoài có trong nhiều tệp nguồn phải được nội tuyến</td> <td>Inline std :: Atomic &lt;Int&gt; Counter (0);<br/> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1823.html" rel="nofollow">CWG 1823</a> </td> <td>C ++ 98</td> <td>#endif<br/>Tệp nguồn #1:</td> <td>#include "Ví dụ.h"<br/> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2531.html" rel="nofollow">CWG 2531</a> </td> <td>C ++ 17</td> <td>int a ()<br/>{<span class="kw4">constexpr</span>    ++ bộ đếm;</td> <td>    trả về tổng (1, 2);<br/>}</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/inline" title="c/language/inline">C documentation</a></span>vì<code>inline</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/inline">https://en.cppreference.com/w/cpp/language/inline</a>
+</p>
+</div>

@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Shared_Timed_Mutex :: Try_lock_shared_for</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">Mẫu &lt;class rep, giai đoạn lớp&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>bool try_lock_shared_for (const std :: chrono :: thời lượng &lt;rep, intion&gt; &amp; timeout_duration);<code>timeout_duration</code>Cố gắng khóa mutex trong chế độ chia sẻ. Khối cho đến khi được chỉ định<code>true</code>ở trong trạng thái không hợp lệ, tức là<code>false</code>.</p>
+<p>Nếu như<code>timeout_duration</code>ít hơn hoặc bằng<code>timeout_duration.zero()</code>đã trôi qua (thời gian chờ) hoặc khóa được mua (sở hữu mutex), tùy theo điều kiện nào đến trước. Về lợi nhuận thu nhận khóa thành công<code><a href="try_lock_shared" title="cpp/thread/shared timed mutex/try lock shared">try_lock_shared()</a></code>.</p>
+<p>quy định<code>timeout_duration</code>Chức năng này có thể chặn lâu hơn</p>
+<p>do lập lịch hoặc sự chậm trễ tranh chấp tài nguyên.</p>
+<p>Như với<code><a href="try_lock_shared" title="cpp/thread/shared timed mutex/try lock shared">try_lock_shared()</a></code>Thay vào đó, thời gian chờ cũng có thể nhạy cảm với điều chỉnh đồng hồ.<code>false</code>, chức năng này được phép thất bại một cách mạnh mẽ và trở lại<code>timeout_duration</code>.</p>
+<p>Trước<code><a href="unlock" title="cpp/thread/shared timed mutex/unlock">unlock()</a></code>Hoạt động trên cùng một mutex<i>y.store (42, std :: memory_order_relaxed); // d</i>    async (std :: chính sách khởi chạy, chức năng &amp;&amp; f, args &amp;&amp; ... args);<code><a href="../../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>) Hoạt động này nếu nó trở lại<code>true</code>.</p>
+<p>Nếu như<code>try_lock_shared_for</code>được gọi bởi một chủ đề đã sở hữu<code>mutex</code>Trong bất kỳ chế độ nào (chia sẻ hoặc độc quyền), hành vi không được xác định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Điều đó đã sử dụng đánh giá lười biếng, chức năng này trở lại ngay lập tức mà không phải chờ đợi.</td> <td>-</td> <td>Thời gian chờ_Duration</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu khóa được mua thành công, nếu không<code>false</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>hết hạn,</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="try_lock_shared" title="cpp/thread/shared timed mutex/try lock shared"> <span class="t-lines"><span>Try_lock_shared</span></span></a></div> </td> <td>Cố gắng khóa Mutex cho quyền sở hữu được chia sẻ, trả lại nếu Mutex không có sẵn<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_lock_shared_until" title="cpp/thread/shared timed mutex/try lock shared until"> <span class="t-lines"><span>Try_lock_shared_until</span></span></a></div> </td> <td>cố gắng khóa Mutex cho quyền sở hữu chung, trả lại nếu Mutex đã được<br/>Không có sẵn cho đến khi đạt được điểm thời gian được chỉ định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="try_lock_for" title="cpp/thread/shared timed mutex/try lock for"> <span class="t-lines"><span>Try_lock_for</span></span></a></div> </td> <td>cố gắng khóa mutex, trả về nếu catex đã được<br/>Không có sẵn trong thời gian chờ quy định<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/shared_timed_mutex/try_lock_shared_for">https://en.cppreference.com/w/cpp/thread/shared_timed_mutex/try_lock_shared_for</a>
+</p>
+</div>

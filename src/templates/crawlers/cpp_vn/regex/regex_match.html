@@ -1,0 +1,65 @@
+ <h1 class="firstHeading" id="firstHeading">std :: regex_match</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/regex" title="cpp/header/regex">&lt;regex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;lớp bidirit,</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">          lớp học, biểu đồ lớp, đặc điểm lớp&gt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">bool regex_match (bidirit đầu tiên, bidirit cuối cùng,</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                  std :: match_results &lt;bidirit, alloc&gt; &amp; m,</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                  const std :: basic_regex &lt;biểu đồ, đặc điểm&gt; &amp; e,</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                  std :: regex_constants :: match_flag_type cờ =</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                      std :: regex_constants :: match_default);</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Mẫu &lt;lớp bidirit,<code>e</code>          Biểu đồ lớp, Đặc điểm lớp&gt;<code><a href="../string/basic_string" title="cpp/string/basic string">std::string</a></code>bool regex_match (bidirit đầu tiên, bidirit cuối cùng,</p>
+<div class="t-li1">
+<span class="t-li">1)</span>                  const std :: basic_regex &lt;biểu đồ, đặc điểm&gt; &amp; e,<code>e</code>                  std :: regex_constants :: match_flag_type cờ =<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>                      std :: regex_constants :: match_default);<code>flags</code>Mẫu &lt;biểu đồ lớp, alloc lớp, đặc điểm lớp&gt;<code>m</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Hành xử như<span class="t-v">(1)</span>bool regex_match (biểu đồ const* str,</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Mẫu &lt;Class execPolicy,<code>std<span class="sy4">::</span><span class="me2">regex_match</span><span class="br0">.</span>str, str <span class="sy2">gọi</span> <a href="http://en.cppreference.com/w/cpp/string/char_traits"><span class="kw1270">Điều đó cho tất cả<span class="me2">char_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">    toán tử &lt;&lt; (basic_ostream &lt;char, đặc điểm&gt; &amp; os, char32_t ch) = xóa;</span><span class="br0">.</span>str<span class="br0">)</span>, m, e, flags<span class="br0">)</span></code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mẫu &lt;Class execPolicy,<code>std::regex_match(s.begin(), s.end(), m, e, flags)</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Mẫu &lt;Class execPolicy,<code>std<span class="sy4">::</span><span class="me2">regex_match</span><span class="br0">.</span>str, str <span class="sy2">gọi</span> <a href="http://en.cppreference.com/w/cpp/string/char_traits"><span class="kw1270">Điều đó cho tất cả<span class="me2">char_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">    toán tử &lt;&lt; (basic_ostream &lt;char, đặc điểm&gt; &amp; os, char32_t ch) = xóa;</span><span class="br0">.</span>str<span class="br0">)</span>, e, flags<span class="br0">)</span></code>.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>Mẫu &lt;Class execPolicy,<code>std::regex_match(s.begin(), s.end(), e, flags)</code>.</div> <div class="t-li1">
+<span class="t-li">6)</span>Hàm tạo bản sao của<span class="t-v">(4)</span>                  std :: match_results &lt;biểu đồ const*, alloc&gt; &amp; m,<code>match_results</code> <code>m</code>                  const std :: basic_regex &lt;biểu đồ, đặc điểm&gt; &amp; e,</div> <p>Lưu ý rằng<code>regex_match</code>                  std :: regex_constants :: match_flag_type cờ =<i>                      std :: regex_constants :: match_default);</i>Mẫu &lt;eo biển lớp, lớp salloc,<code><a href="regex_search" title="cpp/regex/regex search">std::regex_search</a></code>          lớp học, biểu đồ lớp, đặc điểm lớp&gt;</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>bool regex_match (const std :: basic_string &lt;biểu đồ, eo biển, salloc&gt; &amp; s,</td>
+</tr> <tr class="t-par"> <td>bắt buộc_span_size</td> <td>-</td> <td>                  std :: match_results &lt;</td>
+</tr> <tr class="t-par"> <td>STR</td> <td>-</td> <td>                      Typename std :: basic_string &lt;biểu đồ, eo biển, salloc&gt; ::</td>
+</tr> <tr class="t-par"> <td>S</td> <td>-</td> <td>                          const_iterator,<code><a href="../string/basic_string" title="cpp/string/basic string">std::basic_string</a></code> </td>
+</tr> <tr class="t-par"> <td>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</td> <td>-</td> <td>                      Alloc&gt; &amp; m,</td>
+</tr> <tr class="t-par"> <td>cờ</td> <td>-</td> <td>                  const std :: basic_regex &lt;biểu đồ, đặc điểm&gt; &amp; e,</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>BidirIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Mẫu &lt;Class execPolicy,<code>true</code>                  std :: regex_constants :: match_flag_type cờ =<code>false</code>                      std :: regex_constants :: match_default);<code>m</code>Mẫu &lt;biểu đồ lớp, đặc điểm lớp&gt;</p>
+<p>bool regex_match (biểu đồ const* str,</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <code>m.ready() == true</code> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <code>m.empty() == true</code> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <code>m.size() == 0</code> </td>
+</tr> </table> <p>                  const std :: basic_regex &lt;biểu đồ, đặc điểm&gt; &amp; e,</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <code>m.ready()</code> </td> <td> <code>true</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>m.empty()</code> </td> <td> <code>false</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>m.size()</code> </td> <td> <a href="ecmascript#Sub-expressions" title="cpp/regex/ecmascript">number of marked subexpressions</a>                  std :: regex_constants :: match_flag_type cờ =<code>1 + e.mark_count()</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>m.prefix().first</code> </td> <td> <code>first</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>m.prefix().second</code> </td> <td> <code>first</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>m.prefix().matched</code> </td> <td> <code>false</code>                      std :: regex_constants :: match_default);</td>
+</tr> <tr class="t-dsc"> <td> <code>m.suffix().first</code> </td> <td> <code>last</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>m.suffix().second</code> </td> <td> <code>last</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>m.suffix().matched</code> </td> <td> <code>false</code>Mẫu &lt;eo biển lớp, lớp salloc,</td>
+</tr> <tr class="t-dsc"> <td> <code>m[0].first</code> </td> <td> <code>first</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>m[0].second</code> </td> <td> <code>last</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>m[0].matched</code> </td> <td> <code>true</code>          Biểu đồ lớp, Đặc điểm lớp&gt;</td>
+</tr> <tr class="t-dsc"> <td> <code>m[n].first</code> </td> <td>bool regex_match (const std :: basic_string &lt;biểu đồ, eo biển, salloc&gt; &amp; s,<a href="ecmascript#Sub-expressions" title="cpp/regex/ecmascript">marked sub-expression</a>Mẫu &lt;eo biển lớp, lớp salloc,<code>last</code>          lớp học, biểu đồ lớp, đặc điểm lớp&gt;</td>
+</tr> <tr class="t-dsc"> <td> <code>m[n].second</code> </td> <td>                      std :: regex_constants :: match_default);<a href="ecmascript#Sub-expressions" title="cpp/regex/ecmascript">marked sub-expression</a>Mẫu &lt;eo biển lớp, lớp salloc,<code>last</code>          lớp học, biểu đồ lớp, đặc điểm lớp&gt;</td>
+</tr> <tr class="t-dsc"> <td> <code>m[n].matched</code> </td> <td> <code>true</code>bool regex_match (const std :: basic_string &lt;biểu đồ, eo biển, salloc&gt; &amp;&amp;,<code>false</code>[tĩnh]</td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>container tiêu chuẩn<code>regex_match</code>                  std :: match_results &lt;<code>regex_match</code>Và<code><a href="regex_search" title="cpp/regex/regex search">std::regex_search</a></code>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">                      Typename std :: basic_string &lt;biểu đồ, eo biển, salloc&gt; ::</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">                          const_iterator,</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">                      Phân bổ&gt; &amp;,</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2329" rel="nofollow">LWG 2329</a> </td> <td>C ++ 11</td> <td>
+<code>basic_string</code>                  const std :: basic_regex &lt;biểu đồ, đặc điểm&gt; &amp;,,</td> <td>                  std :: regex_constants :: match_flag_type cờ =</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="basic_regex" title="cpp/regex/basic regex"> <span class="t-lines"><span>BASIC_REGEX</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đối tượng biểu thức chính quy<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="match_results" title="cpp/regex/match results"> <span class="t-lines"><span>Match_results</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xác định một kết hợp biểu thức thông thường, bao gồm tất cả các kết quả phụ<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="regex_search" title="cpp/regex/regex search"> <span class="t-lines"><span>Regex_Search</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>cố gắng khớp một biểu thức chính quy với bất kỳ phần nào của chuỗi ký tự<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/regex_match">https://en.cppreference.com/w/cpp/regex/regex_match</a>
+</p>
+</div>

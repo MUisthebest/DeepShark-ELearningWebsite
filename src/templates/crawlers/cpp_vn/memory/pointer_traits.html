@@ -1,0 +1,54 @@
+ <h1 class="firstHeading" id="firstHeading">std :: con trỏ_traits</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class Ptr&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Cấu trúc con trỏ_traits;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Các<code>pointer_traits</code>Mẫu &lt;Class T&gt;<a href="../named_req/allocator#Fancy_pointers" title="cpp/named req/Allocator">fancy pointers</a>, chẳng hạn như<a class="external text" href="https://www.boost.org/doc/libs/release/doc/html/interprocess/offset_ptr.html" rel="nofollow"><code>boost::interprocess::offset_ptr</code></a>Cấu trúc con trỏ_traits &lt;t*&gt;;<code><a href="allocator_traits" title="cpp/memory/allocator traits">std::allocator_traits</a></code>Trình xây dựng di chuyển được chọn cho mọi loại thành viên loại (hoặc mảng thuộc loại lớp) của<code>pointer_traits</code>Mẫu lớp cung cấp cách tiêu chuẩn hóa để truy cập một số thuộc tính nhất định của các loại giống như con trỏ (<a href="../named_req/allocator" title="cpp/named req/Allocator">Allocator</a>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Không chuyên hóa<code>pointer_traits</code>). Các mẫu tiêu chuẩn<p>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>/*element-type-of*/&lt;Ptr&gt;</code>{</p>
+<ul>
+<li> <code>Ptr::element_type</code>Để xác định các mặc định cho các typedef khác nhau theo yêu cầu của</li>
+<li>    toán tử &gt;&gt; (basic_istream &lt;char, đặc điểm&gt; &amp; st, không dấu char* s);<code>T</code>nếu như<code>Ptr</code>Tuyên bố có điều kiện tuyên bố các thành viên sau:<code>Template&lt;T, Args...&gt;</code>là<code>Args...</code>Nếu có mặt;</li>
+<li>là một chuyên ngành mẫu lớp</li>
+</ul> <p>Nếu như<code>/*element-type-of*/&lt;Ptr&gt;</code>là không hoặc nhiều đối số loại;</p>
+<h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>pointer</code> </td> <td> <code>Ptr</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>element_type</code> </td> <td> <code>/*element-type-of*/&lt;Ptr&gt;</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>difference_type</code> </td> <td> <code>Ptr::difference_type</code>Mẫu bí danh thành viên<code><a href="../types/ptrdiff_t" title="cpp/types/ptrdiff t">std::ptrdiff_t</a></code> </td>
+</tr> </table> <h3 id="Member_alias_templates">Phân bổ</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Một chuyên ngành được cung cấp cho các loại con trỏ,</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>template&lt; class U &gt; using rebind</code> </td> <td> <code>Ptr::rebind&lt;U&gt;</code>không được xác định, mẫu chính không có thành viên được chỉ định trong trang này.<code>Template&lt;U, Args...&gt;</code>nếu như<code>Ptr</code>Bản mẫu<code>Template&lt;T, Args...&gt;</code> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="pointer_traits/pointer_to" title="cpp/memory/pointer traits/pointer to"> <span class="t-lines"><span>{</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>    trả về reinterpret_cast &lt;t*&gt; (<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> </table> </div> <div class="t-li1">
+<span class="t-li">2)</span>Nếu tồn tại, nếu không<code>T*</code>là một chuyên môn hóa mẫu<div class="t-member"> <h3 id="Member_types_2">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>pointer</code> </td> <td> <code>T*</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>element_type</code> </td> <td> <code>T</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>difference_type</code> </td> <td> <code><a href="../types/ptrdiff_t" title="cpp/types/ptrdiff t">std::ptrdiff_t</a></code> </td>
+</tr> </table> <h3 id="Member_alias_templates_2">Phân bổ</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Một chuyên ngành được cung cấp cho các loại con trỏ,</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>template&lt; class U &gt; using rebind</code> </td> <td> <code>U*</code> </td>
+</tr> </table> <h3 id="Member_functions_2">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="pointer_traits/pointer_to" title="cpp/memory/pointer traits/pointer to"> <span class="t-lines"><span>{</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>    trả về reinterpret_cast &lt;t*&gt; (<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> </table> </div>
+</div> <h3 id="Optional_member_functions_of_program-defined_specializations">, trong đó tuyên bố các thành viên sau:</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="pointer_traits/to_address" title="cpp/memory/pointer traits/to address"> <span class="t-lines"><span>to_address</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span> <span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span><span class="t-mark">ATOMIC_INTPTR_T</span></span></span></div> </td> <td>Bản mẫu<code>pointer_to</code>)<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Các chức năng thành viên tùy chọn của các chuyên ngành được xác định theo chương trình<code>T</code>có được một con trỏ thô từ một con trỏ ưa thích (nghịch đảo của<code>U</code>. Ví dụ,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Bí danh mẫu thành viên Rebind làm cho nó có thể, được đưa ra một loại giống như con trỏ chỉ ra</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>, để có được cùng loại giống như con trỏ chỉ vào<code>to_address</code>sử dụng một người khác_pulum = std :: con trỏ_traits &lt;std :: shared_ptr &lt;int &gt;&gt; :: rebind &lt;double&gt;;<code>std::to_address</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_constexpr_memory" title="cpp/feature test"><code>__cpp_lib_constexpr_memory</code></a></td> <td><span class="nu0">201811l</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<span class="kw4">constexpr</span>TRONG<code>std::pointer_traits</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">static_assert (std :: is_same &lt;other_pulum, std :: shared_ptr &lt;double &gt;&gt; :: value);</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Một chuyên ngành cho các loại con trỏ ưa thích do người dùng xác định có thể cung cấp chức năng thành viên tĩnh bổ sung</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3545" rel="nofollow">LWG 3545</a> </td> <td>C ++ 11</td> <td>Để tùy chỉnh hành vi của<code>element_type</code>được cung cấp để chấm dứt hoàn toàn ', nhưng không có nhân vật nào được cung cấp</td> <td>#include &lt;Istream&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="allocator_traits" title="cpp/memory/allocator traits"> <span class="t-lines"><span>ALLOCATOR_TRAITS</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Cung cấp thông tin về các loại phân bổ<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="addressof" title="cpp/memory/addressof"> <span class="t-lines"><span>địa chỉ</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được địa chỉ thực tế của một đối tượng, ngay cả khi<code>&amp;</code>toán tử bị quá tải<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/pointer_traits">https://en.cppreference.com/w/cpp/memory/pointer_traits</a>
+</p>
+</div>

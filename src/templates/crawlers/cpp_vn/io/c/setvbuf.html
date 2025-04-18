@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: setvbuf</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int setvbuf (std :: file* stream, char* bua, chế độ int, std :: size_t size);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Thay đổi chế độ đệm của luồng tệp đã cho<code>stream</code>như được chỉ ra bởi đối số<code>mode</code>đã tồn tại trong container, không làm gì cả. Nếu không, hành xử như</p>
+<ul>
+<li>Nếu như<code>buffer</code>là một con trỏ null, thay đổi kích thước bộ đệm bên trong thành<code>size</code>.</li>
+<li>Nếu như<code>buffer</code>không phải là một con trỏ null, hướng dẫn luồng sử dụng bộ đệm do người dùng cung cấp có kích thước<code>size</code>bắt đầu tại<code>buffer</code>. Luồng phải được đóng lại (với<code><a href="fclose" title="cpp/io/c/fclose">std::fclose</a></code>) trước<a href="../../language/lifetime" title="cpp/language/lifetime">lifetime</a>của mảng được trỏ bởi<code>buffer</code>kết thúc. Nội dung của mảng sau một cuộc gọi thành công đến<code>std::setvbuf</code>không xác định và bất kỳ nỗ lực sử dụng nó là hành vi không xác định.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>luồng tệp để đặt bộ đệm thành</td>
+</tr> <tr class="t-par"> <td>Điều khiển đầu vào và đầu ra thành một chuỗi ký tự. Nó bao gồm và cung cấp quyền truy cập vào</td> <td>-</td> <td>Con trỏ tới bộ đệm để luồng sử dụng hoặc null con trỏ để chỉ thay đổi kích thước và chế độ</td>
+</tr> <tr class="t-par"> <td>đang chỉ ra) và là chuỗi ký tự liên quan (nguồn ký tự cho tất cả các hoạt động đầu vào và mục tiêu cho đầu ra).</td> <td>-</td> <td>Chế độ đệm để sử dụng. Nó có thể là một trong những giá trị sau:<table class="wikitable"> <tr> <td> <a href="http://en.cppreference.com/w/cpp/io/c"><span class="kw1889">_Iofbf</span></a> </td> <td>bộ đệm đầy đủ</td>
+</tr> <tr> <td> <a href="http://en.cppreference.com/w/cpp/io/c"><span class="kw1890">_Iolbf</span></a> </td> <td>bộ đệm dòng</td>
+</tr> <tr> <td> <a href="http://en.cppreference.com/w/cpp/io/c"><span class="kw1891">_IONBF</span></a> </td> <td>Không có bộ đệm</td>
+</tr>
+</table> </td>
+</tr> <tr class="t-par"> <td>kích cỡ</td> <td>-</td> <td>Kích thước của bộ đệm</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>​0​</code>về thành công hoặc khác nhau về thất bại.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Chức năng này chỉ có thể được sử dụng sau<code>stream</code>đã được liên kết với một tệp mở, nhưng trước bất kỳ hoạt động nào khác (trừ một cuộc gọi không thành công<code><a href="setbuf" title="cpp/io/c/setbuf">std::setbuf</a></code>/<code>std::setvbuf</code>).</p>
+<p>Không phải tất cả<code>size</code>Byte nhất thiết sẽ được sử dụng để đệm: Kích thước bộ đệm thực tế thường được làm tròn xuống bội số 2, bội số của kích thước trang, v.v.</p>
+<p>Trên nhiều triển khai, bộ đệm dòng chỉ có sẵn cho các luồng đầu vào thiết bị đầu cuối.</p>
+<p>Một lỗi phổ biến là đặt bộ đệm của<code>stdin</code>hoặc<code>stdout</code>đến một mảng có trọn đời kết thúc trước khi chương trình chấm dứt:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">int main ()</pre></div> <p>Kích thước bộ đệm mặc định<code><a href="../c" title="cpp/io/c">BUFSIZ</a></code>dự kiến ​​sẽ là kích thước bộ đệm hiệu quả nhất cho tệp I/O khi thực hiện, nhưng POSIX<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/fstat.html" rel="nofollow"><code>fstat</code></a>Thường cung cấp một ước tính tốt hơn.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Một trường hợp sử dụng để thay đổi kích thước bộ đệm là khi đã biết kích thước tốt hơn.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cstdio&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CstDlib&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="setbuf" title="cpp/io/c/setbuf"> <span class="t-lines"><span>setbuf</span></span></a></div> </td> <td>Đặt bộ đệm cho luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_filebuf/setbuf" title="cpp/io/basic filebuf/setbuf"> <span class="t-lines"><span>setbuf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>tràn<br/> <span class="t-mark">Putback<code>std::basic_filebuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/setvbuf" title="c/io/setvbuf">C documentation</a></span>vì<code>setvbuf</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/setvbuf">https://en.cppreference.com/w/cpp/io/c/setvbuf</a>
+</p>
+</div>

@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: feof</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int feof (std :: file* stream);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Kiểm tra xem kết thúc của luồng tệp đã cho đã đạt được.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>luồng tệp để kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Giá trị khác không nếu kết thúc của luồng đã đạt được, nếu không<code>​0​</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Hàm này chỉ báo cáo trạng thái luồng theo báo cáo của hoạt động I/O gần đây nhất, nó không kiểm tra nguồn dữ liệu liên quan. Ví dụ: nếu I/O gần đây nhất là<code><a href="fgetc" title="cpp/io/c/fgetc">std::fgetc</a></code>, đã trả lại byte cuối cùng của một tệp,<code>std::feof</code>trả về 0. Tiếp theo<code><a href="fgetc" title="cpp/io/c/fgetc">std::fgetc</a></code>thất bại và thay đổi trạng thái luồng thành<i>Kết thúc tập tin</i>. Chỉ sau đó<code>std::feof</code>trả về không phải.</p>
+<p>Trong cách sử dụng điển hình, xử lý luồng đầu vào dừng bất kỳ lỗi nào;<code>feof</code>Và<code><a href="ferror" title="cpp/io/c/ferror">std::ferror</a></code>sau đó được sử dụng để phân biệt giữa các điều kiện lỗi khác nhau.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cstdio&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CstDlib&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_ios/eof" title="cpp/io/basic ios/eof"> <span class="t-lines"><span>Chức năng nhà nước</span></span></a></div> </td> <td>Tốt<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_ios&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="clearerr" title="cpp/io/c/clearerr"> <span class="t-lines"><span>rõ ràng</span></span></a></div> </td> <td>xóa lỗi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="perror" title="cpp/io/c/perror"> <span class="t-lines"><span>int main ()</span></span></a></div> </td> <td>{<code><a href="std_streams" title="cpp/io/c/std streams">stderr</a></code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ferror" title="cpp/io/c/ferror"> <span class="t-lines"><span>Ferror</span></span></a></div> </td> <td>Kiểm tra lỗi tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/feof" title="c/io/feof">C documentation</a></span>vì<code>feof</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/feof">https://en.cppreference.com/w/cpp/io/c/feof</a>
+</p>
+</div>

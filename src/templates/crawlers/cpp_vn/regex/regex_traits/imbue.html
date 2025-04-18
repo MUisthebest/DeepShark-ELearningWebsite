@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: regex_traits &lt;Phange&gt; :: Imbue</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">locale_type imbue (locale_type loc);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Thay thế địa phương hiện tại bằng một bản sao của<code>loc</code>. Nếu như<code>loc</code>khác với ngôn ngữ hiện tại, sau đó tất cả dữ liệu được lưu trong bộ nhớ cache bị vô hiệu.</p>
+<p>Sau cuộc gọi<code>getloc() == loc</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, con trỏ tới chuỗi ký tự kết thúc không</td> <td>-</td> <td>địa phương để thấm nhuần</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Vị trí hiện tại của đối tượng Đặc điểm.</p>
+<p>Nếu như<code>imbue()</code>chưa bao giờ được gọi cho đối tượng này, sau đó địa phương toàn cầu tại thời điểm cuộc gọi được trả lại. Nếu không, địa điểm được chuyển đến cuộc gọi cuối cùng đến<code>imbue()</code>bất kể</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="getloc" title="cpp/regex/regex traits/getloc"> <span class="t-lines"><span>Đầu ra</span></span></a></div> </td> <td>dịch ký tự đại diện cho một chữ số thành một giá trị tích phân<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/regex_traits/imbue">https://en.cppreference.com/w/cpp/regex/regex_traits/imbue</a>
+</p>
+</div>

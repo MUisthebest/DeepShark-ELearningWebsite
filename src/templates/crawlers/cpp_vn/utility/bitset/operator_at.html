@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: BITSET &lt;N&gt; :: Nhà điều hành []</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">toán tử bool [] (std :: size_t pos) const;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(Constexpr kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">toán tử tham chiếu [] (std :: size_t pos);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <p>Truy cập bit tại vị trí<code>pos</code>. Phiên bản đầu tiên trả về giá trị của bit, phiên bản thứ hai trả về một đối tượng thuộc loại<code><a href="reference" title="cpp/utility/bitset/reference">std::bitset::reference</a></code>cho phép sửa đổi giá trị.</p>
+<p>Không gian tên std :: Phạm vi<code><a href="test" title="cpp/utility/bitset/test">test()</a></code>, không ném ngoại lệ: hành vi không được xác định nếu<code>pos</code>là ngoài giới hạn.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>vị trí của bit để trở về</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Giá trị của bit được yêu cầu.</div> <div class="t-li1">
+<span class="t-li">2)</span>  std :: di chuyển &lt;u&gt; &amp;&amp;<code><a href="reference" title="cpp/utility/bitset/reference">std::bitset::reference</a></code>, cho phép viết vào bit được yêu cầu.</div> <h3 id="Exceptions">Ngoại lệ</h3> <p>Gán cho đã cho</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;bitset&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CstDdef&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue11" rel="nofollow">LWG 11</a> </td> <td>C ++ 98</td> <td>#include &lt;Istream&gt;<br/> </td> <td>int main ()<br/>{</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue907" rel="nofollow">LWG 907</a> </td> <td>C ++ 98</td> <td>    STD :: BITSET &lt;8&gt; B1 {0B0010101010}; // theo nghĩa đen nhị phân cho 42<code>pos</code> <br/>với<a href="test" title="cpp/utility/bitset/test"><code>test(pos)</code></a>Đếm các yếu tố mà vị ngữ<code>test()</code>    for (std :: size_t i = 0; i &lt;b1.size (); ++ i)</td> <td>        std :: cout &lt;&lt; "b1 [" &lt;&lt; i &lt;&lt; "]:" &lt;&lt; b1 [i] &lt;&lt; '\ n';<code>test()</code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="test" title="cpp/utility/bitset/test"> <span class="t-lines"><span>Bài kiểm tra</span></span></a></div> </td> <td>#include &lt;Cassert&gt;<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/bitset/operator_at">https://en.cppreference.com/w/cpp/utility/bitset/operator_at</a>
+</p>
+</div>

@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: BTOWC</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: wint_t btowc (int c);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Mở rộng một ký tự một byte<code>c</code>đến nhân vật rộng của nó tương đương.</p>
+<p>Hầu hết các mã hóa ký tự multibyte đều sử dụng mã byte đơn để thể hiện các ký tự từ bộ ký tự ASCII. Chức năng này có thể được sử dụng để chuyển đổi các ký tự như vậy thành<code>wchar_t</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ánh xạ_Type</td> <td>-</td> <td>nhân vật byte đơn để mở rộng</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>WEOF</code>nếu như<code>c</code>khoảng cách<code><a href="../../io/c" title="cpp/io/c">EOF</a></code>.</p>
+<p>Đại diện nhân vật rộng của<code>c</code>nếu như<code>(unsigned char)c</code>là một ký tự một byte hợp lệ ở trạng thái thay đổi ban đầu,<code>WEOF</code>Nếu đối số đầu tiên là</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;clocale&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CWchar&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="wctob" title="cpp/string/multibyte/wctob"> <span class="t-lines"><span>WCTOB</span></span></a></div> </td> <td>thu hẹp một ký tự rộng cho một nhân vật hẹp một byte, nếu có thể<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../locale/ctype/widen" title="cpp/locale/ctype/widen"> <span class="t-lines"><span>DO_WIDEN</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Chuyển đổi một ký tự hoặc nhân vật từ<span class="kw4">char</span>ĐẾN<code>CharT</code> <br/> <span class="t-mark">Putback<code>std::ctype&lt;CharT&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/multibyte/btowc" title="c/string/multibyte/btowc">C documentation</a></span>vì<code>btowc</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/multibyte/btowc">https://en.cppreference.com/w/cpp/string/multibyte/btowc</a>
+</p>
+</div>

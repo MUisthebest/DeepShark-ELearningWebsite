@@ -1,0 +1,43 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FREXP, STD :: FREXPF, STD :: FREXPL</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx23"> <td><pre data-language="cpp">float frexp (float num, int* exp);</pre></td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Double frexp (kép num, int* exp);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Double frexp (num gấp đôi dài, int* exp);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">constexpr / *-point-point-type * / /</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl-h"> <td> <a href="#Notes">Additional overloads</a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</td> <td></td> <td></td> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">            frexp ( /* kiểu nổi kiểu* / num, int* exp);</pre>
+</td> <td>, kết quả là hữu hạn.</td> <td> <span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>float frexpf (float num, int* exp);<code>num</code>FRExpl dài đôi (num gấp đôi dài, int* exp);<span class="t-rev-inl t-since-cxx23"><span>Double Double Acosl (Double Num dài);<code>std::frexp</code>constexpr / *-point-point-type * / /<code>num</code>.</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>
+</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <span class="t-li">Mẫu &lt;arithmetic1, orithmetic2, số học lớp3&gt; lớp</span>ACO kép (số nguyên);<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>.</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>trả lại hệ điều hành &lt;&lt; s.str ();</td> <td>-</td> <td>Tính giá trị chính của cosin hồ quang của</td>
+</tr> <tr class="t-par"> <td>Exp</td> <td>-</td> <td>Mẫu &lt;Class Integer&gt;</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Nếu như<code>num</code>Double frexp (số nguyên, int* exp);<code>*exp</code>.</p>
+<p>Nếu không (nếu<code>num</code>Phân tách giá trị điểm nổi đã cho<code>x</code>theo thứ tự.<code>(-1, -0.5], [0.5, 1)</code>thành một phần chuẩn hóa và sức mạnh tích hợp của hai.<code>*exp</code>con trỏ tới giá trị số nguyên để lưu trữ số mũ tới<sup class="t-su">bằng không, trả về 0 và lưu trữ số không</sup>không phải là không), nếu không có lỗi xảy ra, hãy trả về giá trị</p>
+<p>và lưu trữ một giá trị số nguyên trong<code>*exp</code>sao cho x × 2<span class="kw4">int</span>(*exp)</p>
+<h3 id="Error_handling">Xử lý lỗi</h3> <p>mag, sgn<code><a href="math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code>.</p>
+<p>Nếu một lỗi phạm vi xảy ra do dòng chảy, kết quả chính xác (sau khi làm tròn) được trả về.</p>
+<ul>
+<li>Nếu như<code>num</code>== Num.<code>​0​</code>được lưu trữ trong<code>*exp</code>.</li>
+<li>Nếu như<code>num</code>Nếu giá trị được lưu trữ trong<code>*exp</code>.</li>
+<li>Nếu như<code>num</code>nằm ngoài phạm vi của<code>*exp</code>.</li>
+<li>, hành vi là không xác định.</li>
+<li>Nếu như<code><a href="../../types/climits" title="cpp/types/climits">FLT_RADIX</a></code>là ± 0, nó được trả lại, không biến đổi và<a href="../fenv/fe_round" title="cpp/numeric/fenv/FE round">the current rounding mode</a>bị bỏ qua.</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>là ±, nó được trả lại và giá trị không xác định được lưu trữ trong<code><a href="../../types/climits" title="cpp/types/climits">FLT_RADIX</a></code>khoảng cách<code>2</code>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.<code>std::frexp</code>là nan, nan được trả lại và một giá trị không xác định được lưu trữ trong</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Không có ngoại lệ điểm nổi được nâng lên.</pre></div> <p>Chức năng<code>std::frexp</code>là 2 (hoặc công suất 2), giá trị trả về là chính xác,<code><a href="ldexp" title="cpp/numeric/math/ldexp">std::ldexp</a></code>Trên một hệ thống nhị phân (nơi</p>
+<p>, kết quả bằng<span class="t-v">, kết quả là hữu hạn.</span>trong khoảng [−π; π].<code>num</code>Nếu việc triển khai hỗ trợ số học dấu nổi của IEEE (IEC 60559),<code>std::frexp(num, exp)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::frexp(static_cast&lt;double&gt;(num), exp)</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>có thể được thực hiện là</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">    *exp = (value == 0)? 0: (int) (1 + std :: logb (value));</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="ldexp" title="cpp/numeric/math/ldexp"> <span class="t-lines"><span>LDEXP</span><span>ldexpf</span><span>LDEXPL</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>nhân một số bởi<code>2</code>được nâng lên một sức mạnh<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="logb" title="cpp/numeric/math/logb"> <span class="t-lines"><span>logb</span><span>logbf</span><span>logbl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Trích xuất số mũ của số<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ilogb" title="cpp/numeric/math/ilogb"> <span class="t-lines"><span>ILOGB</span><span>ILOGBF</span><span>ILOGBL</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Trích xuất số mũ của số<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="modf" title="cpp/numeric/math/modf"> <span class="t-lines"><span>modf</span><span>Modff</span><span>Modfl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>phân tách một số thành các phần số nguyên và phân số<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/math/frexp" title="c/numeric/math/frexp">C documentation</a></span>vì<code>frexp</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/math/frexp">https://en.cppreference.com/w/cpp/numeric/math/frexp</a>
+</p>
+</div>

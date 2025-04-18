@@ -1,0 +1,49 @@
+ <h1 class="firstHeading" id="firstHeading">(như được định nghĩa ở trên) trong thời gian hữu hạn, miễn là nó chưa chấm dứt, bất kể các chủ đề khác (nếu có) đang tiến bộ.</h1> <p>Xác định ngữ nghĩa của lưu trữ bộ nhớ máy tính cho mục đích của máy trừu tượng C ++.</p>
+<p>Bộ nhớ có sẵn cho chương trình C ++ là một hoặc nhiều chuỗi tiếp giáp<i>Byte</i>. Mỗi byte trong bộ nhớ có một<i>Truy cập lời hứa của một coroutine</i>.</p>
+<h3 id="Byte">Byte</h3> <p>MỘT<i>Byte</i>là đơn vị bộ nhớ nhỏ nhất có thể. Nó được định nghĩa là một chuỗi các bit tiếp giáp, đủ lớn để giữ</p>
+<ul><li>giá trị của bất kỳ<code>UTF-8</code>Đơn vị mã (256 giá trị riêng biệt) và của</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx23">
+<td> <ul><li>Bất kỳ thành viên nào của<a href="charset#Basic_execution_character_set" title="cpp/language/charset">basic execution character set</a>.</li></ul> </td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <ul><li>mã hóa theo nghĩa đen thông thường của bất kỳ yếu tố nào của<a href="charset#Basic_literal_character_set" title="cpp/language/charset">basic literal character set</a>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <p>Tương tự như C, C ++ hỗ trợ các byte có kích thước 8 bit và lớn hơn.</p>
+<p>Các<a href="types" title="cpp/language/types">types</a> <code>char</code>Thì<code>unsigned char</code>, Và<code>signed char</code>sử dụng một byte cho cả lưu trữ và<a href="object" title="cpp/language/object">value representation</a>. Số lượng bit trong một byte có thể truy cập được<code><a href="../types/climits" title="cpp/types/climits">CHAR_BIT</a></code>hoặc<code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">STD</span> <span class="kw4">char</span><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">chữ số</span></code>.</p>
+<h3 id="Memory_location">Vị trí bộ nhớ</h3> <p>MỘT<i>Vị trí bộ nhớ</i>khoảng cách</p>
+<ul>
+<li>một đối tượng của<a href="type" title="cpp/language/type">scalar type</a>(loại số học, loại con trỏ, loại liệt kê hoặc<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>                       const t &amp; value, so sánh comp);</li>
+<li>Trình tự tiếp giáp lớn nhất của<a href="bit_field" title="cpp/language/bit field">bit-fields</a>chiều dài không khác nhau.</li>
+</ul> <p>Lưu ý: các tính năng khác nhau của ngôn ngữ, chẳng hạn như<a href="reference" title="cpp/language/reference">references</a>Và<a href="virtual" title="cpp/language/virtual">virtual functions</a>, có thể liên quan đến các vị trí bộ nhớ bổ sung không thể truy cập được vào các chương trình nhưng được quản lý bởi việc triển khai.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">cấu trúc s</pre></div> <h3 id="Threads_and_data_races">{</h3> <p>    char a;     // Vị trí bộ nhớ #1<code><a href="../thread/thread/thread" title="cpp/thread/thread/thread">std::thread::thread</a></code>Thì<code><a href="../thread/async" title="cpp/thread/async">std::async</a></code>    int B: 5;  // Vị trí bộ nhớ #2</p>
+<p>    int C: 11, // Vị trí bộ nhớ #2 (tiếp theo)<a href="storage_duration" title="cpp/language/storage duration">storage duration</a>          : 0,</p>
+<p>        D: 8;  // Vị trí bộ nhớ #3<i>    cấu trúc</i>    {</p>
+<p>        int ee: 8; // Vị trí bộ nhớ #4<a href="eval_order" title="cpp/language/eval order">evaluation</a>    } e;<i>} obj; // đối tượng 'obj' bao gồm 4 vị trí bộ nhớ riêng biệt</i>Chủ đề và cuộc đua dữ liệu<i>Một luồng thực thi là một luồng kiểm soát trong một chương trình bắt đầu bằng việc gọi hàm cấp cao nhất bằng cách</i>các biểu thức là các hoạt động của</p>
+<ul>
+<li>, hoặc các phương tiện khác.<a href="../utility/program/signal#Signal_handler" title="cpp/utility/program/signal">signal handler</a>, hoặc</li>
+<li>Bất kỳ luồng nào có khả năng truy cập bất kỳ đối tượng nào trong chương trình (các đối tượng có tự động và địa lý địa lý<code><a href="../atomic/atomic" title="cpp/atomic/atomic">std::atomic</a></code>                       const t &amp; value, so sánh comp);</li>
+<li>vẫn có thể được truy cập bởi một chủ đề khác thông qua một con trỏ hoặc theo tham chiếu).<i>Nhà sản xuất void ()</i>Các luồng thực thi khác nhau luôn được phép truy cập (đọc và sửa đổi) khác nhau<code><a href="../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>).</li>
+</ul> <p>vị trí bộ nhớ</p>
+<p>Đồng thời, không có sự can thiệp và không có yêu cầu đồng bộ hóa.<code><a href="../thread/mutex" title="cpp/thread/mutex">std::mutex</a></code>khoảng cách<i>Khi một</i>của một biểu thức sửa đổi vị trí bộ nhớ và một đánh giá khác đọc hoặc sửa đổi cùng một vị trí bộ nhớ, các biểu thức được cho là<i>Nhà sản xuất void ()</i>xung đột</p>
+<div class="cpp source-cpp"><pre data-language="cpp">. Một chương trình có hai đánh giá mâu thuẫn có</pre></div> <div class="cpp source-cpp"><pre data-language="cpp">cuộc đua dữ liệu</pre></div> <h3 id="Memory_order">cả hai đánh giá thực thi trên cùng một luồng hoặc cùng một</h3> <p>Cả hai đánh giá mâu thuẫn là hoạt động nguyên tử (xem<code><a href="../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>một trong những đánh giá mâu thuẫn</p>
+<h3 id="Forward_progress">khác (xem</h3> <h4 id="Obstruction_freedom">Nếu một cuộc đua dữ liệu xảy ra, hành vi của chương trình không được xác định.</h4> <p>(Đặc biệt, phát hành một<a href="../thread#Atomic_operations" title="cpp/thread">atomic function</a>Đồng bộ hóa với<a class="extiw" href="https://en.wikipedia.org/wiki/Non-blocking_algorithm#Obstruction-freedom" title="enwiki:Non-blocking algorithm">obstruction-free</a>).</p>
+<h4 id="Lock_freedom">, và do đó,</h4> <p>Việc mua lại cùng một mutex bằng một chủ đề khác, điều này có thể sử dụng các khóa mutex để bảo vệ chống lại các cuộc đua dữ liệu.)<a class="extiw" href="https://en.wikipedia.org/wiki/Non-blocking_algorithm#Lock-freedom" title="enwiki:Non-blocking algorithm">lock-free</a>int cnt = 0;</p>
+<h4 id="Progress_guarantee">tự động f = [&amp;] {cnt ++; };</h4> <p>std :: Thread t1 {f}, t2 {f}, t3 {f}; // Hành vi không xác định</p>
+<ul>
+<li>std :: Atomic &lt;Int&gt; cnt {0};</li>
+<li>tự động f = [&amp;] {cnt ++; };</li>
+<li>std :: Thread t1 {f}, t2 {f}, t3 {f}; // ĐƯỢC RỒI<a href="cv" title="cpp/language/cv">volatile</a>Thứ tự bộ nhớ</li>
+<li>Khi một luồng đọc một giá trị từ một vị trí bộ nhớ, nó có thể thấy giá trị ban đầu, giá trị được viết trong cùng một luồng hoặc giá trị được viết trong một luồng khác. Nhìn thấy</li>
+</ul> <p>Để biết chi tiết về thứ tự ghi được làm từ các chủ đề trở nên hiển thị với các chủ đề khác.</p>
+<p>Tiến trình chuyển tiếp<i>Đảm bảo tiến độ</i>Khi chỉ có một luồng không bị chặn trong hàm thư viện tiêu chuẩn thực hiện</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <h4 id="Concurrent_forward_progress">không có khóa, thực thi đó được đảm bảo hoàn thành (tất cả các hoạt động không khóa thư viện tiêu chuẩn là</h4> <p>Tiến bộ chuyển tiếp đồng thời<i>Khi một hoặc nhiều hàm nguyên tử không khóa chạy đồng thời, ít nhất một trong số chúng được đảm bảo hoàn thành (tất cả các hoạt động không khóa thư viện tiêu chuẩn là</i>-Đó là công việc của việc triển khai để đảm bảo chúng không thể bị khóa trực tiếp vô thời hạn bởi các chủ đề khác, chẳng hạn như liên tục đánh cắp dòng bộ đệm).<i>Đảm bảo tiến độ</i>Trong chương trình C ++ hợp lệ, mỗi luồng cuối cùng thực hiện một trong những điều sau đây:</p>
+<p>chấm dứt;<code><a href="../thread/thread" title="cpp/thread/thread">std::thread</a></code>thực hiện cuộc gọi đến chức năng thư viện I/O;</p>
+<h4 id="Parallel_forward_progress">thực hiện quyền truy cập thông qua một</h4> <p>Tiến bộ chuyển tiếp đồng thời<i>Thực hiện hoạt động nguyên tử hoặc hoạt động đồng bộ hóa.</i>Điều này cho phép các trình biên dịch loại bỏ tất cả các vòng không có hành vi quan sát được, mà không phải chứng minh rằng cuối cùng chúng sẽ chấm dứt vì nó có thể cho rằng không có luồng thực thi nào có thể thực thi mãi mãi mà không thực hiện bất kỳ hành vi quan sát nào này.<i>Một chủ đề được cho là</i>tiến bộ</p>
+<h4 id="Weakly_parallel_forward_progress">Nếu nó thực hiện một trong các bước thực thi ở trên (I/O, dễ bay hơi, nguyên tử hoặc đồng bộ hóa), các khối trong hàm thư viện tiêu chuẩn hoặc gọi hàm không khóa nguyên tử không hoàn thành do luồng đồng thời không bị chặn.</h4> <p>Tiến bộ chuyển tiếp đồng thời<i>Nếu một chủ đề cung cấp</i>Đảm bảo tiến độ chuyển tiếp đồng thời</p>
+<p>, nó sẽ</p>
+<p>Các<a href="../algorithm" title="cpp/algorithm">parallel algorithms</a>tiến bộ</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/memory_model" title="c/language/memory model">C documentation</a></span>vì<span class=""><span>(như được định nghĩa ở trên) trong thời gian hữu hạn, miễn là nó chưa chấm dứt, bất kể các chủ đề khác (nếu có) đang tiến bộ.</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/memory_model">https://en.cppreference.com/w/cpp/language/memory_model</a>
+</p>
+</div>

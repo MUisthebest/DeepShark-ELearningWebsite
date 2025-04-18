@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: FileSystem :: file_time_type</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/filesystem" title="cpp/header/filesystem">&lt;filesystem&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17 t-until-cxx20"> <td><pre data-language="cpp">sử dụng file_time_type = std :: Chrono :: time_point &lt;/*tầm thường-đồng hồ*/&gt;;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">sử dụng file_time_type = std :: Chrono :: time_point &lt;std :: Chrono :: file_clock&gt;;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Đại diện cho thời gian tập tin.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p><code>trivial-clock</code>là một loại được xác định thực hiện, thỏa mãn<a href="../named_req/trivialclock" title="cpp/named req/TrivialClock">TrivialClock</a>và đủ để thể hiện độ phân giải và phạm vi của các giá trị thời gian tệp được cung cấp bởi hệ thống tập tin.</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;FileSystem&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="last_write_time" title="cpp/filesystem/last write time"> <span class="t-lines"><span>last_write_time</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Nhận hoặc đặt thời gian sửa đổi dữ liệu cuối cùng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/file_time_type">https://en.cppreference.com/w/cpp/filesystem/file_time_type</a>
+</p>
+</div>

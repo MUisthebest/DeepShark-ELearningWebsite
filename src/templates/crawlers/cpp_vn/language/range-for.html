@@ -1,0 +1,136 @@
+ <h1 class="firstHeading" id="firstHeading">Dựa trên phạm vi cho vòng lặp<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Thực hiện một vòng lặp trong một phạm vi.</p>
+<p>Được sử dụng như một tương đương dễ đọc hơn với truyền thống<a href="for" title="cpp/language/for">for loop</a>Hoạt động trên một loạt các giá trị, chẳng hạn như tất cả các phần tử trong một container.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>for (</code> <span class="t-spar"> </span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">{</span> <code>:</code> <span class="t-spar">Giải khai phạm vi</span> <code>)</code> <p><span class="t-spar">    for (auto e: f2 (g ())) {} // ub: tuổi thọ của tham số giá trị của f2 kết thúc sớm</span></p>
+</td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td>bất kỳ số lượng của<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar"> </span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>nhiều nhất là một chuyển đổi đủ điều kiện, và<ul>
+<li>chồng chéo với container.<a href="statements" title="cpp/language/statements">expression statement</a>(có thể là một<i>Tuyên bố NULL</i>(có nghĩa là mỗi đầu ra kết thúc bằng một dòng mới) và in kết quả vào một luồng.<code>;</code>")</li>
+<li>Một<a href="declarations" title="cpp/language/declarations">simple declaration</a>, thông thường là một tuyên bố của một biến với trình khởi tạo, nhưng nó có thể khai báo một cách tùy ý nhiều biến hoặc là một<a href="structured_binding" title="cpp/language/structured binding">structured binding declaration</a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul><li>chồng chéo với container.<a href="type_alias" title="cpp/language/type alias">alias declaration</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table>Lưu ý rằng bất kỳ<span class="t-spar"> </span>Phải kết thúc bằng một dấu chấm phẩy<code>;</code>, đó là lý do tại sao nó thường được mô tả một cách không chính thức như một biểu thức hoặc một tuyên bố theo sau là một dấu chấm phẩy.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">{</span> </td> <td>-</td> <td>Một<a href="declarations" title="cpp/language/declarations">declaration</a>của một biến được đặt tên, có loại là loại phần tử của chuỗi được biểu thị bằng cách<span class="t-spar">Giải khai phạm vi</span>hoặc một tham chiếu đến loại đó. Thường sử dụng<a href="auto" title="cpp/language/auto">auto specifier</a>để khấu trừ loại tự động</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Giải khai phạm vi</span> </td> <td>-</td> <td>bất kì<a href="expressions" title="cpp/language/expressions">expression</a>biểu thị một chuỗi phù hợp (một mảng hoặc một đối tượng<code>begin</code>Và<code>end</code>các chức năng thành viên hoặc các chức năng miễn phí được xác định, xem bên dưới) hoặc một<a href="list_initialization" title="cpp/language/list initialization">braced-init-list</a>.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">    for (auto e: f2 (g ())) {} // ub: tuổi thọ của tham số giá trị của f2 kết thúc sớm</span> </td> <td>-</td> <td>bất kì<a href="statements" title="cpp/language/statements">statement</a>, điển hình là một tuyên bố ghép, là phần thân của vòng lặp</td>
+</tr>
+</table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p><span class="t-spar">{</span>có thể là a<a href="structured_binding" title="cpp/language/structured binding">structured binding declaration</a>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">for (auto &amp;&amp; [thứ nhất, thứ hai]: mymap)</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>{<span class="t-rev-inl t-since-cxx23"><span>    // Sử dụng thứ nhất và thứ hai<span class="t-spar">Giải khai phạm vi</span>    std :: chuỗi* p = new std :: chuỗi ("xin chào");<a href="#Temporary_range_expression">below</a>)</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>Cú pháp trên tạo ra mã tương đương với<b><code>__range</code></b>Thì<b><code>__begin</code></b>Và<b><code>__end</code></b>ngoại trừ việc mở rộng trọn đời của những người tạm thời</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <p><code>{</code><br/></p>
+<dl>
+<dd>
+<code>auto &amp;&amp; __range =</code> <span class="t-spar">Giải khai phạm vi</span> <code>;</code><br/> </dd>
+<dd>
+<code>for (auto __begin =</code> <i>Giải khai phạm vi</i><code>,</code> <code>__end =</code> <i>Loop-Statement</i><code>;</code> <code>__begin != __end; ++__begin)</code><br/> </dd>
+<dd>
+<code>{</code> <dl>
+<dd>
+<span class="t-spar">{</span> <code>= *__begin;</code><br/> </dd>
+<dd>
+<span class="t-spar">    for (auto e: f2 (g ())) {} // ub: tuổi thọ của tham số giá trị của f2 kết thúc sớm</span><br/> </dd>
+</dl> </dd>
+<dd>
+<code>}</code><br/> </dd>
+</dl> <p><code>}</code><br/></p>
+</td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17 t-until-cxx20">
+<td> <p><code>{</code><br/></p>
+<dl>
+<dd>
+<code>auto &amp;&amp; __range =</code> <span class="t-spar">Giải khai phạm vi</span> <code>;</code><br/> </dd>
+<dd>
+<code>auto __begin =</code> <i>Giải khai phạm vi</i> <code>;</code><br/> </dd>
+<dd>
+<code>auto __end =</code> <i>Loop-Statement</i> <code>;</code><br/> </dd>
+<dd>
+<code>for ( ; __begin != __end; ++__begin)</code><br/> </dd>
+<dd>
+<code>{</code> <dl>
+<dd>
+<span class="t-spar">{</span> <code>= *__begin;</code><br/> </dd>
+<dd>
+<span class="t-spar">    for (auto e: f2 (g ())) {} // ub: tuổi thọ của tham số giá trị của f2 kết thúc sớm</span><br/> </dd>
+</dl> </dd>
+<dd>
+<code>}</code><br/> </dd>
+</dl> <p><code>}</code><br/></p>
+</td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span><br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p><code>{</code><br/></p>
+<dl>
+<dd>
+<span class="t-spar"> </span><br/> </dd>
+<dd>
+<code>auto &amp;&amp; __range =</code> <span class="t-spar">Giải khai phạm vi</span> <code>;</code><br/> </dd>
+<dd>
+<code>auto __begin =</code> <i>Giải khai phạm vi</i> <code>;</code><br/> </dd>
+<dd>
+<code>auto __end =</code> <i>Loop-Statement</i> <code>;</code><br/> </dd>
+<dd>
+<code>for ( ; __begin != __end; ++__begin)</code><br/> </dd>
+<dd>
+<code>{</code> <dl>
+<dd>
+<span class="t-spar">{</span> <code>= *__begin;</code><br/> </dd>
+<dd>
+<span class="t-spar">    for (auto e: f2 (g ())) {} // ub: tuổi thọ của tham số giá trị của f2 kết thúc sớm</span><br/> </dd>
+</dl> </dd>
+<dd>
+<code>}</code><br/> </dd>
+</dl> <p><code>}</code><br/></p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p><span class="t-spar">Giải khai phạm vi</span>Giải khai phạm vi<span class="t-spar">{</span>.</p>
+<p><i><code>begin-expr</code></i>Và<i><code>end-expr</code></i>biểu hiện phạm vi</p>
+<ul>
+<li>Nếu như<span class="t-spar">Giải khai phạm vi</span>Giải khai phạm vi<i><code>begin-expr</code></i>khoảng cách<code>__range</code>Và<i><code>end-expr</code></i>khoảng cách<code>(__range + __bound)</code>là<code>__bound</code>được định nghĩa như sau:</li>
+<li>Nếu như<span class="t-spar">Giải khai phạm vi</span>là một biểu thức của loại mảng, sau đó<code>C</code>là số lượng các phần tử trong mảng (nếu mảng có kích thước không xác định hoặc thuộc loại không hoàn chỉnh, chương trình sẽ không được hình thành);<code>begin</code>const t &amp; f2 (t t) {return t; } // luôn trả về một tài liệu tham khảo lơ lửng<code>end</code>là một biểu thức của một loại lớp<i><code>begin-expr</code></i>khoảng cách<code>__range.begin()</code>Và<i><code>end-expr</code></i>khoảng cách<code>__range.end()</code>Số lượng các yếu tố để sao chép</li>
+<li>Là xấu nếu<i><code>begin-expr</code></i>khoảng cách<code>begin(__range)</code>Và<i><code>end-expr</code></i>khoảng cách<code>end(__range)</code>có cả hai thành viên có tên<a href="adl" title="cpp/language/adl">argument-dependent lookup</a>và một thành viên tên</li>
+</ul> <p>(bất kể loại hoặc khả năng tiếp cận của thành viên đó), sau đó<a href="break" title="cpp/language/break">break statement</a>, được tìm thấy thông qua<a href="continue" title="cpp/language/continue">continue statement</a>(Tra cứu không ADL không được thực hiện).</p>
+<p>Giống như với một vòng lặp truyền thống, một<span class="t-spar"> </span>có thể được sử dụng để thoát khỏi vòng lặp sớm và một<span class="t-spar">    for (auto e: f2 (g ())) {} // ub: tuổi thọ của tham số giá trị của f2 kết thúc sớm</span>Nếu một tên được giới thiệu trong</p>
+<div class="cpp source-cpp"><pre data-language="cpp">có được xác định lại trong khối ngoài cùng của</pre></div> <h3 id="Temporary_range_expression">Loop-Statement</h3> <p>Nếu như<span class="t-spar">Giải khai phạm vi</span>for (int i: {1, 2, 3})<b><code>__range</code></b>    int i = 1; // Lỗi: Tái giải quyết<span class="t-spar">Giải khai phạm vi</span>&gt;<span class="t-rev-inl t-until-cxx23"><span><i>không</i></span><span><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></span></span>biểu hiện phạm vi<span class="t-rev-inl t-since-cxx23"><span>Trả về tạm thời, tuổi thọ của nó được mở rộng cho đến khi kết thúc vòng lặp, như được chỉ ra bằng cách liên kết với tham chiếu chuyển tiếp<span class="t-spar">Giải khai phạm vi</span></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">biểu hiện phạm vi</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>mở rộng<span class="t-spar"> </span>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Nếu chúng sẽ bị phá hủy vào cuối</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <p>biểu hiện phạm vi</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// Nếu foo () trả về theo giá trị</pre></div> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>for (auto &amp; x: foo (). items ()) { / * .. * /} // cho đến khi C ++ 23 hành vi không xác định<span class="t-spar">Giải khai phạm vi</span>for (T điều = foo (); auto &amp; x: Thing.items ()) { / * ... * /} // OK<b><code>__range</code></b>Lưu ý rằng ngay cả trong các tham số không tham chiếu C ++ 23 của các cuộc gọi hàm trung gian cũng không nhận được phần mở rộng trọn đời (vì trong một số ABI, chúng bị phá hủy trong callee, không phải trong người gọi), nhưng đó chỉ là một vấn đề đối với các chức năng là lỗi.<code><a href="http://en.cppreference.com/w/cpp/utility/initializer_list"><span class="kw962">Điều đó cho tất cả<span class="me2">Khởi tạo_list</span></span></a><span class="sy1">&lt;&gt;</span><span class="sy3">. Trong các cuộc gọi có hiệu lực</span></code>.</p>
+<p>sử dụng t = std :: list &lt;In&gt;;<code>for (auto&amp;&amp; var : sequence)</code>.</p>
+<p>const t &amp; f1 (const t &amp; t) {return t; }<code>begin</code>const t &amp; f2 (t t) {return t; } // luôn trả về một tài liệu tham khảo lơ lửng<code>end</code>T g ();<code>class meow { enum { begin = 1, end = 2 }; /* rest of class */ };</code> </p>
+<p>void foo ()<span class="t-spar">{</span>    for (auto e: f1 (g ())) {} // ok: tuổi thọ của giá trị trả về của g () mở rộng<span class="t-spar">    for (auto e: f2 (g ())) {} // ub: tuổi thọ của tham số giá trị của f2 kết thúc sớm</span>}</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Nếu bộ khởi tạo (<i><code>begin-expr</code></i>Đối tượng lưu trữ<i><code>end-expr</code></i>biểu hiện phạm vi<i><code>end-expr</code></i>) là một danh sách sáng chế,</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <p>được suy luận để được<code>begin()</code>Nó là an toàn, và trên thực tế, thích hợp hơn trong mã chung, để sử dụng khấu trừ để chuyển tiếp tham chiếu,</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Giải thích thành viên được sử dụng nếu loại phạm vi có tên là thành viên<code><a href="../utility/as_const" title="cpp/utility/as const">std::as_const</a></code>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">và một thành viên tên</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td rowspan="3"><a href="../feature_test#cpp_range_based_for" title="cpp/feature test"><code>__cpp_range_based_for</code></a></td> <td><span class="nu0">Bất kỳ bắt giữ nào chỉ có thể xuất hiện một lần và tên của nó phải khác với bất kỳ tên tham số nào:</span></td> <td><span class="t-mark">unininitialized_copy_n</span></td> <td>
+<a href="#top">Range-based <code>for</code> loop</a> </td>
+</tr> <tr> <td><span class="nu0">Thuật toán song song</span></td> <td><span class="t-mark">Dest_at</span></td> <td>. Điều này được thực hiện bất kể thành viên là loại, thành viên dữ liệu, chức năng hoặc người liệt kê và bất kể khả năng tiếp cận của nó. Do đó, một lớp học như<code>for</code>Không thể được sử dụng với phạm vi dựa trên vòng lặp ngay cả khi có các hàm bắt đầu/kết thúc không gian tên.<a href="#Explanation">different <code>begin</code>/<code>end</code></a>loại</td>
+</tr> <tr> <td><span class="nu0">  trả về static_cast &lt;t &amp;&gt; (t);</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Trong khi biến được khai báo trong<span class="t-spar">Giải khai phạm vi</span> </td>
+</tr>
+</table> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/for" title="cpp/keyword/for"><code>for</code></a></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">thường được sử dụng trong</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Loop-Statement</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1442.html" rel="nofollow">CWG 1442</a> </td> <td>C ++ 11</td> <td>, làm như vậy là không cần thiết.<br/><code>begin</code>Và<code>end</code>Kể từ C ++ 17, các loại của</td> <td>không phải là như nhau, và trên thực tế là loại của</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2220.html" rel="nofollow">CWG 2220</a> </td> <td>C ++ 11</td> <td>Không phải là một người lặp: nó chỉ cần có thể được so sánh với sự bất bình đẳng với một. Điều này cho phép phân định một phạm vi bằng một vị ngữ (ví dụ: "các điểm lặp ở một ký tự null").<span class="t-spar"> </span>Khi được sử dụng với một đối tượng (không xảy ra) có ngữ nghĩa sao chép, dựa trên phạm vi cho vòng lặp có thể kích hoạt một bản sao sâu</td> <td>(Nhưng các loại tham số, nếu có, vẫn còn</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0962R1" rel="nofollow">P0962R1</a> </td> <td>C ++ 11</td> <td>hàm thành viên.<br/>Nếu đó là không mong muốn (ví dụ vì vòng lặp không thực sự sửa đổi đối tượng), thì có thể tránh được bằng cách sử dụng<code>begin</code>Và<code>end</code>struct Cow_String { / * ... * /}; // một chuỗi sao chép-trên-viết</td> <td>Cow_String str = / * ... * /;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../algorithm/for_each" title="cpp/algorithm/for each"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/range-for">https://en.cppreference.com/w/cpp/language/range-for</a>
+</p>
+</div>

@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử ==,! =<small>Thuật toán</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;khóa lớp, băm lớp, lớp keyequal, alloc&gt; class&gt;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-until-cxx20"> <td> <pre data-language="cpp">Toán tử bool == (const std :: unetered_set &lt;key, băm, keyequal, alloc&gt; &amp; lhs,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> </table> <p>                 const std :: unetered_map &lt;key, t, băm, keyequal, alloc&gt; &amp; rhs);</p>
+<p>Mẫu &lt;khóa lớp, lớp T, lớp băm, lớp keyequal, alloc class&gt;<code>lhs</code>Và<code>rhs</code>Toán tử bool! = (const std :: unetered_map &lt;key, t, băm, keyequal, alloc&gt; &amp; lhs,</p>
+<ul>
+<li> <code>lhs.size() == rhs.size()</code>.</li>
+<li>                 const std :: unetered_map &lt;key, t, băm, keyequal, alloc&gt; &amp; rhs);<code>[</code><code>lhs_eq1</code><code>, </code><code>lhs_eq2</code><code>)</code>bằng nhau nếu các điều kiện sau giữ:<code>lhs.equal_range(lhs_eq1)</code>Nội dung của hai container không có thứ tự<code>[</code><code>rhs_eq1</code><code>, </code><code>rhs_eq2</code><code>)</code>bằng nhau nếu các điều kiện sau giữ:<code>rhs.equal_range(rhs_eq1)</code>khu vực</li>
+<ul>
+<li> <code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>lhs_eq1, lhs_eq2<span class="br0">)</span> <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>rhs_eq1, rhs_eq2<span class="br0">)</span></code>.</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/algorithm/is_permutation"><span class="kw1652">Điều đó cho tất cả<span class="me2">(Niebloid)</span></span></a><span class="br0">.</span>lhs_eq1, lhs_eq2, rhs_eq1<span class="br0">)</span> <span class="sy1">==</span> <span class="kw2">ĐÚNG VẬY</span></code>.</li>
+</ul>
+</ul> <p>đến một phạm vi khác kết thúc tại<code>Key</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="../../named_req/equalitycomparable" title="cpp/named req/EqualityComparable">EqualityComparable</a>.</p>
+<p>mỗi nhóm các yếu tố tương đương<span class="t-rev-inl t-until-cxx20"><span><code>hash_function()</code>Và<code>key_eq()</code>thu được từ</span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span><code>key_eq()</code>làm</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>có một nhóm các phần tử tương đương tương ứng trong thùng chứa khác<code>lhs</code>Và<code>rhs</code>(Cho đến C ++ 14)<code>operator==</code>vì<code>Key</code>thu được từ<code>key_eq()</code>Hành vi cũng không xác định được nếu<code>operator==</code>LÀM</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Các<code>!=</code>Mẫu &lt;Lớp thời lượng&gt;<a href="../../language/default_comparisons#Other_defaulted_comparison_operators" title="cpp/language/default comparisons">synthesized</a>từ<code>operator==</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>không có cùng một hành vi trên</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>không phải là sự tinh chỉnh của phân vùng thành các nhóm khóa tương đương được giới thiệu bởi<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>true</code>(nghĩa là, nếu hai yếu tố so sánh bằng cách sử dụng<code>false</code>Nếu đối số đầu tiên là</div> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>rơi vào các phân vùng khác nhau).<i>N</i>các thùng chứa không có thứ tự để so sánh<code>operator==</code>    __ComparisonCommOnTyPewith &lt;t, u&gt; &amp;&amp;<code>value_type</code>Nếu nội dung của các thùng chứa bằng nhau,<a href="key_eq" title="cpp/container/unordered set/key eq"><code>key_eq</code></a>Nếu nội dung của các thùng chứa không bằng nhau,<a href="hash_function" title="cpp/container/unordered set/hash function"><code>hash_function</code></a>Tỷ lệ với<i>N<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup></i>cuộc gọi đến<i>N</i>, các cuộc gọi đến vị ngữ được trả về bởi</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/unordered_set/operator_cmp">https://en.cppreference.com/w/cpp/container/unordered_set/operator_cmp</a>
+</p>
+</div>

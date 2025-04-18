@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_ptr &lt;t&gt; :: Toán tử []</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Element_Type &amp; Toán tử [] (std :: ptrdiff_t idx) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Chỉ mục vào mảng được trỏ bởi con trỏ được lưu trữ.</p>
+<p>Hành vi không được xác định nếu con trỏ được lưu trữ là null hoặc nếu<code>idx</code>và cơ bản</p>
+<p>Nếu như<code>T</code>(tham số mẫu của<code>shared_ptr</code>) là một loại mảng<code>U[N]</code>Thì<code>idx</code>phải ít hơn<code>N</code>Gia số được lặp lại</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>IDX</td> <td>-</td> <td>Chỉ số mảng</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Mẫu &lt;std :: size_t i, class t, std :: size_t n&gt;<code>idx</code>-phần tử của mảng, tức là,<code>get()[idx]</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="Remarks">Nhận xét</h3> <p>      std :: memory_order order = std :: memory_order_seq_cst) noexcept dễ bay hơi;<code>T</code>không phải là một loại mảng, nó không xác định liệu chức năng này có được khai báo hay không. Nếu hàm được khai báo, nó không xác định loại trả về của nó là gì, ngoại trừ việc tuyên bố (mặc dù không nhất thiết là định nghĩa) của hàm được đảm bảo là hợp pháp.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDdef&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">đến container.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="get" title="cpp/memory/shared ptr/get"> <span class="t-lines"><span>Điền vào thùng chứa với giá trị được chỉ định</span></span></a></div> </td> <td>Trả về con trỏ được lưu trữ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/shared_ptr/operator_at">https://en.cppreference.com/w/cpp/memory/shared_ptr/operator_at</a>
+</p>
+</div>

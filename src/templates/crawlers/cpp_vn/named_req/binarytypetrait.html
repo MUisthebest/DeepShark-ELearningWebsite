@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: BinaryTyPetrait<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>MỘT<strong class="selflink">BinaryTyPetrait</strong>là một mẫu lớp mô tả mối quan hệ giữa hai tham số loại mẫu của nó với một<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::integral_constant</a></code>(tiêu biểu<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::bool_constant</a></code>) chuyên môn hóa.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <ul>
+<li> <a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>Và<a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>.</li>
+<li>Mất hai tham số loại mẫu (tham số mẫu bổ sung là tùy chọn và cho phép).</li>
+<li>Công khai và rõ ràng bắt nguồn từ một chuyên ngành<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::integral_constant</a></code>, được gọi là nó<i>Đặc tính cơ bản</i>.</li>
+<li>Tên thành viên của<i>Đặc tính cơ bản</i>không được ẩn giấu và có sẵn một cách rõ ràng.</li>
+</ul> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>Các mẫu lớp thư viện tiêu chuẩn sau đây thỏa mãn<strong class="selflink">BinaryTyPetrait</strong>:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_same" title="cpp/types/is same"> <span class="t-lines"><span>is_same</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem hai loại có giống nhau không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/is_base_of" title="cpp/types/is base of"> <span class="t-lines"><span>is_base_of</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có bắt nguồn từ loại khác không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/is_convertible" title="cpp/types/is convertible"> <span class="t-lines"><span>is_convertible</span><span>is_nothrow_convertible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Kiểm tra xem một loại có thể được chuyển đổi thành loại khác không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/is_layout_compatible" title="cpp/types/is layout compatible"> <span class="t-lines"><span>is_layout_compatitial</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>kiểm tra xem hai loại là<a href="../language/data_members#Standard_layout" title="cpp/language/data members"><i>tương thích bố cục</i></a> <br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/is_pointer_interconvertible_base_of" title="cpp/types/is pointer interconvertible base of"> <span class="t-lines"><span>is_pulum_interconvertible_base_of</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>kiểm tra xem một loại là<i>Con trỏ-interConvertible</i>(ban đầu) cơ sở của loại khác<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/is_invocable" title="cpp/types/is invocable"> <span class="t-lines"><span>is_invocable</span><span>is_invocable_r</span><span>is_nothrow_invocable</span><span>is_nothrow_invocable_r</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>kiểm tra xem một loại có thể được gọi không (như thể bằng cách<code><a href="../utility/functional/invoke" title="cpp/utility/functional/invoke">std::invoke</a></code>) với các loại đối số đã cho<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../memory/uses_allocator" title="cpp/memory/uses allocator"> <span class="t-lines"><span>sử dụng_allocator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem loại được chỉ định có hỗ trợ sử dụng xây dựng người khác không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/BinaryTypeTrait">https://en.cppreference.com/w/cpp/named_req/BinaryTypeTrait</a>
+</p>
+</div>

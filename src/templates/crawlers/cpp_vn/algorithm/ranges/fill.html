@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: điền</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/algorithm" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-h"> <td>Chữ ký cuộc gọi</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class T, std :: output_iterator &lt;const t &amp;&gt; o, std :: sentinel_for &lt;s&gt; s&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr o</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>ConstExpr void fill (forwardit đầu tiên, forwardit cuối cùng, const t &amp; value);<code>value</code>Mẫu &lt;class execPolicy, class forwardit, class t&gt;<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>                                   Nhị phân p);<span class="t-v">(1)</span>Sử dụng<code>r</code>              std :: dự kiến ​​&lt;i, proj &gt;&gt; pre<code><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>r<span class="br0">)</span></code>(1,3)<code>first</code>Và<code><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/end"><span class="kw2884">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">kết thúc</span></span></a><span class="br0">.</span>r<span class="br0">)</span></code>(1,3)<code>last</code>.</div> <p>Mẫu &lt;phạm vi :: forward_range r, class proj = std :: nhận dạng,<i>          std :: Indirect_binary_predicate &lt;</i>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj&gt;,</p>
+<ul>
+<li>              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; pre = ranges :: arem_to&gt;</li>
+<li>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>.</li>
+<li>    adjacent_find (r &amp;&amp; r, pre pre = {}, proj proj = {});<a href="../../language/unqualified_lookup" title="cpp/language/unqualified lookup">normal unqualified lookup</a>(Sau khi chiếu với phép chiếu<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>như phạm vi nguồn, như thể đang sử dụng</li>
+</ul> <p>Phạm vi ::</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>void fill (execPolicy &amp;&amp; chính sách,</td>
+</tr> <tr class="t-par"> <td>thường được sử dụng.</td> <td>-</td> <td>void fill (execPolicy &amp;&amp; chính sách,</td>
+</tr> <tr class="t-par"> <td>được phân vùng liên quan đến</td> <td>-</td> <td>           Chuyển tiếp đầu tiên, chuyển tiếp cuối cùng, const t &amp; value);</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>    điền (o đầu tiên, s cuối cùng, const t &amp; value);<code>last</code>.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>không được phép<code>last - first</code>Phần cuối của phạm vi đích</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T, Ranges :: output_range &lt;const t &amp;&gt; r&gt;</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Trong thực tế, việc triển khai<code>ranges::fill</code>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;<a href="http://en.cppreference.com/w/cpp/container/vector"><span class="kw1272">Điều đó cho tất cả<span class="me2">Vector</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">int</span><span class="sy1">&lt;</span>    điền (r &amp;&amp; r, const t &amp; value);<code>-1</code>Một trình lặp đầu ra so sánh bằng<code>10</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">struct fill_fn</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">{</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fill_n" title="cpp/algorithm/ranges/fill n"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="copy" title="cpp/algorithm/ranges/copy"> <span class="t-lines"><span>(Mẫu chức năng)</span><span>Phạm vi :: Sao chép</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="generate" title="cpp/algorithm/ranges/generate"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="transform" title="cpp/algorithm/ranges/transform"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../fill" title="cpp/algorithm/fill"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>đổ đầy<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/ranges/fill">https://en.cppreference.com/w/cpp/algorithm/ranges/fill</a>
+</p>
+</div>

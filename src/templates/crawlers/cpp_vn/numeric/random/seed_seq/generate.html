@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Seed_Seq :: Tạo</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Lass Randomit&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>void iota (forwardit đầu tiên, forwardit cuối cùng, giá trị t);<code>[</code><code>begin</code><code>, </code><code>end</code><code>)</code>void tạo (bắt đầu ngẫu nhiên, kết thúc ngẫu nhiên);<code>i</code>, 0 ≤ i &lt;2<sup class="t-su">32</sup>với các giá trị số nguyên không dấu<code>seed_seq</code>, dựa trên dữ liệu ban đầu được cung cấp trong hàm tạo này</p>
+<p>. Các giá trị được sản xuất được phân phối trên toàn bộ phạm vi 32 bit ngay cả khi các giá trị ban đầu bị sai lệch mạnh.<a class="external text" href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html" rel="nofollow">Makoto Matsumoto and Takuji Nishimura</a>Thuật toán sau được sử dụng (điều chỉnh từ trình tự khởi tạo của trình tạo Twister Mersenne bằng cách<a class="external text" href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/SFMT/M062821.pdf" rel="nofollow">Mutsuo Saito in 2007</a>)</p>
+<ul>
+<li>Nếu như<code>begin == end</code>, kết hợp các cải tiến được thực hiện bởi</li>
+<li>, không làm gì cả. Nếu không thì,<code>0x8b8b8b8b</code>.</li>
+<li>Đầu tiên, đặt từng phần tử của phạm vi đầu ra thành giá trị</li>
+</ul> <p>Bool Binary_Search (Forwardit First, Forwardit Last,<code>k = 0,..., m - 1</code><br/></p>
+<p>Ở đâu<code>m = max(s + 1, n)</code><br/>Và<code>n = end - begin</code><br/>Và<code>s = v.size()</code><br/>Và<code>v</code>Chuyển đổi các yếu tố của phạm vi đầu ra theo thuật toán sau:<code>seed_seq</code>sự vật,</p>
+<ol>
+<li> <code>begin[k + p] += r1</code> </li>
+<li> <code>begin[k + q] += r2</code> </li>
+<li> <code>begin[k] = r2</code>Thì</li>
+</ol> <p>Ở đâu<code>p = (n - t) / 2</code><br/>Và<code>q = p + t</code><br/>Và<code>t = (n &gt;= 623) ? 11 : (n &gt;= 68) ? 7 : (n &gt;= 39) ? 5 : (n &gt;= 7) ? 3 : (n - 1) / 2</code><br/>Và<code>r1 = 1664525 * T(begin[k] ^ begin[k + p] ^ begin[k − 1])</code><br/>Và<code>T(x) = x ^ (x &gt;&gt; 27)</code><br/>Và<code>r2 = r1 + s</code>nếu như<code>k == 0</code>Thì<code>r2 = r1 + k % n + v[k - 1]</code>nếu như<code>0 &lt; k &lt;=s</code>Thì<code>r2 = r1 + k % n</code>nếu như<code>k &gt; s</code>.</p>
+<p>Bool Binary_Search (Forwardit First, Forwardit Last,<code>k = m,..., m + n - 1</code>Thì</p>
+<ol>
+<li> <code>begin[k + p] ^= r3</code> </li>
+<li> <code>begin[k + q] ^= r4</code> </li>
+<li> <code>begin[k] = r4</code> </li>
+</ol> <p>Ở đâu<code>r3 = 1566083941 * T(begin[k] + begin[k + p] + begin[k - 1])</code><br/>Và<code>r4 = r3 - k % n</code></p>
+<p>là container riêng giữ các giá trị ban đầu được cung cấp bởi hàm tạo này<sup class="t-su">32</sup>Trường hợp tất cả các tính toán được thực hiện modulo 2<code>begin[x]</code>và trong đó việc lập chỉ mục của phạm vi đầu ra (</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>) được lấy modulo n.</td> <td>-</td> <td>Bắt đầu, kết thúc<code><a href="http://en.cppreference.com/w/cpp/iterator/iterator_traits"><span class="kw654">Điều đó cho tất cả<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;&gt;</span><span class="sy4">::</span><span class="me2">// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)</span></code>Máy lặp truy cập ngẫu nhiên có thể thay đổi có</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>RandomIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../../named_req/randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>là một loại số nguyên không dấu phù hợp để lưu trữ các giá trị 32 bit<code>[</code><code>begin</code><code>, </code><code>end</code><code>)</code>phạm vi.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không, kết quả được viết cho<code>begin</code>Và<code>end</code>là nhiều nhất là một chuyển đổi đủ điều kiện.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Chỉ ném nếu các hoạt động trên</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/random/seed_seq/generate">https://en.cppreference.com/w/cpp/numeric/random/seed_seq/generate</a>
+</p>
+</div>

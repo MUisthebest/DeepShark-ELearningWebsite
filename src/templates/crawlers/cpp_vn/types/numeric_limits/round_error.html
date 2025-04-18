@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading">std :: numeric_limits &lt;t&gt; :: round_error</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">tĩnh t vòng_error () ném ();</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">ConstExpr tĩnh t round_error () NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Trả về lỗi làm tròn lớn nhất có thể có trong ULP (đơn vị ở vị trí cuối cùng) theo định nghĩa của ISO 10967, có thể thay đổi từ<code>0.5</code>(làm tròn đến chữ số gần nhất)<code>1.0</code>(Làm tròn đến 0 hoặc vô cùng). Nó chỉ có ý nghĩa nếu<code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Mẫu &lt;Class T&gt;</span> <span class="sy1">==</span> <span class="kw2">SAI</span></code>.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th> <code>T</code> </th> <th> <code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Round_error</span><span class="br0">.</span><span class="br0">)</span></code> </th>
+</tr> <tr class="t-dsc"> <td> <span class="coMULTI">/ * không chuyên hóa */</span> </td> <td> <code>T()</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">bool</span> </td> <td> <code>false</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">wchar_t</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td>char8_t<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char16_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char32_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">STD</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">int</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">int</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">dài</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> <span class="kw4">dài</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">trôi nổi</span> </td> <td> <code>0.5F</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td> <code>0.5</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td> <code>0.5L</code> </td>
+</tr> </table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="round_style" title="cpp/types/numeric limits/round style"> <span class="t-lines"><span>Round_style</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>Xác định kiểu làm tròn được sử dụng bởi loại<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/numeric_limits/round_error">https://en.cppreference.com/w/cpp/types/numeric_limits/round_error</a>
+</p>
+</div>

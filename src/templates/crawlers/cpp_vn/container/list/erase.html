@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Danh sách &lt;T, Allocator&gt; :: Erase</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">iterator Erase (Iterator POS);</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iterator xóa (const_iterator pos);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">iterator xóa (tererator đầu tiên, iterator cuối cùng);</pre></td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iterator xóa (const_iterator đầu tiên, const_iterator cuối cùng);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xóa các yếu tố được chỉ định khỏi container.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Loại bỏ phần tử tại<code>pos</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Loại bỏ các yếu tố trong phạm vi<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>.</div> <p>Tài liệu tham khảo và lặp lại các yếu tố bị xóa bị vô hiệu. Các tài liệu tham khảo và lặp khác không bị ảnh hưởng.</p>
+<p>Người lặp<code>pos</code>phải hợp lệ và có thể điều chỉnh được. Do đó<code><a href="end" title="cpp/container/list/end">end()</a></code>iterator (hợp lệ, nhưng không thể phân biệt được) không thể được sử dụng như một giá trị<code>pos</code>.</p>
+<p>Người lặp<code>first</code>không cần phải có khả năng điều trị<code>first == last</code>: Xóa một phạm vi trống là không có op.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>POS</td> <td>-</td> <td>trình rút vào phần tử để xóa</td>
+</tr> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>Phạm vi của các yếu tố để loại bỏ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Iterator theo phần tử bị loại bỏ cuối cùng.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Nếu như<code>pos</code>đề cập đến yếu tố cuối cùng, sau đó<code><a href="end" title="cpp/container/list/end">end()</a></code>Iterator được trả lại.</div> <div class="t-li1">
+<span class="t-li">2)</span>Nếu như<code>last == end()</code>trước khi loại bỏ, sau đó được cập nhật<code><a href="end" title="cpp/container/list/end">end()</a></code>Iterator được trả lại.</div> <div class="t-li1">Nếu như<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>là một phạm vi trống, sau đó<code>last</code>bất kể</div> <h3 id="Exceptions">Ngoại lệ</h3> <p>Gán cho đã cho</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <div class="t-li1">
+<span class="t-li">1)</span>trình rút vào các yếu tố để hoán đổi</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;class execPolicy, class forwardit, class so sánh&gt;<code>first</code>Và<code>last</code>.</div> <h3 id="Notes">Ghi chú</h3> <p>Khi các phần tử container cần được xóa dựa trên vị ngữ, thay vì lặp lại container và gọi là unary<code>erase</code>, quá tải phạm vi lặp thường được sử dụng với<a href="../../algorithm/remove" title="cpp/algorithm/remove"><code>std::remove()/std::remove_if()</code></a>Để giảm thiểu số lượng di chuyển của các yếu tố còn lại (không được loại bỏ), đây là thành ngữ xóa xóa xóa.<span class="t-rev-inl t-since-cxx20"><span><a href="erase2" title="cpp/container/list/erase2"><code>std::erase_if()</code></a>Thay thế thành ngữ xóa xóa.</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Danh sách&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue151" rel="nofollow">LWG 151</a> </td> <td>C ++ 98</td> <td>
+<code>first</code> <br/> <code>list</code>void print_container (const std :: deque &lt;int&gt; &amp; c) </td> <td>{<br/><code>first == last</code> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="erase2" title="cpp/container/list/erase2"> <span class="t-lines"><span>Prepend_range<span class="t-dsc-small">Thuật toán</span></span><span>thêm một loạt các yếu tố vào đầu<span class="t-dsc-small">Thuật toán</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>pop_front<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="clear" title="cpp/container/list/clear"> <span class="t-lines"><span>thông thoáng</span></span></a></div> </td> <td>gán một loạt các giá trị cho container<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/list/erase">https://en.cppreference.com/w/cpp/container/list/erase</a>
+</p>
+</div>

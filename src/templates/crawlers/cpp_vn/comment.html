@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">Nhận xét</h1> <p>Nhận xét phục vụ như một loại tài liệu trong mã. Khi được chèn vào một chương trình, họ bị trình biên dịch bỏ qua một cách hiệu quả; Chúng chỉ được sử dụng làm ghi chú bởi những người đọc mã nguồn. Mặc dù tài liệu cụ thể không phải là một phần của tiêu chuẩn C ++, một số tiện ích tồn tại phân tích các nhận xét phân tích với các định dạng tài liệu khác nhau.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>/*</code> <span class="t-spar">    std :: cout &lt;&lt; "Điều này sẽ không được thực thi \ n";</span> <code>*/</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>//</code> <span class="t-spar">    std :: cout &lt;&lt; "Điều này sẽ không được thực thi \ n";</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Thường được gọi là nhận xét "kiểu C" hoặc "đa dòng".</div> <div class="t-li1">
+<span class="t-li">2)</span>Thường được gọi là nhận xét "C ++-kiểu" hoặc "dòng đơn".</div> <p>Tất cả các nhận xét được xóa khỏi chương trình tại<a href="language/translation_phases" title="cpp/language/translation phases">translation phase 3</a>bằng cách thay thế mỗi bình luận bằng một ký tự khoảng trắng duy nhất.</p>
+<h3 id="C-style">Kiểu c</h3> <p>Nhận xét kiểu C thường được sử dụng để nhận xét các khối văn bản lớn, tuy nhiên, chúng có thể được sử dụng để nhận xét các dòng đơn. Để chèn một nhận xét kiểu C, chỉ cần văn bản xung quanh với<code>/*</code>Và<code>*/</code>; Điều này sẽ khiến nội dung của bình luận bị bỏ qua bởi trình biên dịch. Mặc dù nó không phải là một phần của tiêu chuẩn C ++, nhưng<code>/**</code>Và<code>*/</code>thường được sử dụng để chỉ ra các khối tài liệu; Điều này là hợp pháp bởi vì dấu hoa thị thứ hai được coi là một phần của nhận xét. Nhận xét kiểu C không thể được lồng.</p>
+<h3 id="C.2B.2B-style">C ++-Phong cách</h3> <p>C ++-Nhận xét kiểu thường được sử dụng để nhận xét các dòng đơn, tuy nhiên, nhiều bình luận về kiểu C ++ có thể được đặt cùng nhau để hình thành các bình luận đa dòng. C ++-Nhận xét về kiểu cho trình biên dịch bỏ qua tất cả nội dung giữa<code>//</code>và một dòng mới.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Vì bình luận<a href="language/translation_phases" title="cpp/language/translation phases">are removed</a>Trước giai đoạn tiền xử lý, một macro không thể được sử dụng để hình thành nhận xét và nhận xét kiểu C chưa kết thúc không tràn ra từ tệp #bao gồm.</p>
+<p>Bên cạnh việc bình luận, các cơ chế khác được sử dụng để loại trừ mã nguồn là</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#if 0</pre></div> <p>Và</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    std :: cout &lt;&lt; "Điều này sẽ không được thực thi hoặc thậm chí được biên dịch \ n";</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#endif</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">{</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/comment" title="c/comment">C documentation</a></span>vì<span class=""><span>    std :: cout &lt;&lt; "Điều này sẽ không được thực thi \ n";</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/comment">https://en.cppreference.com/w/cpp/comment</a>
+</p>
+</div>

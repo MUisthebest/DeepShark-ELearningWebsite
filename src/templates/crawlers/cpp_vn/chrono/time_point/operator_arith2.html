@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử+, toán tử-<span class="t-dsc-small">Chuyển đổi thời gian_point thành người khác, làm tròn xuống</span>
+</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/chrono" title="cpp/header/chrono">&lt;chrono&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx14"> <td> <pre data-language="cpp">Mẫu &lt;Lớp C, Lớp D1, Lớp R2, Lớp P2&gt;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span> </td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">Time_Point &lt;c, typename std :: Common_Type &lt;d1, thời lượng &lt;r2, p2 &gt;&gt; :: gõ&gt; gõ&gt;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx14"> <td> <pre data-language="cpp">    toán tử+(const time_point &lt;c, d1&gt; &amp; pt, </pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span> </td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">               thời lượng const &lt;r2, p2&gt; &amp; d);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(3)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx14"> <td> <pre data-language="cpp">Mẫu &lt;Lớp C, Lớp D1, Lớp R2, Lớp P2&gt;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span> </td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">Consexpr Time_Point &lt;C, STD :: Common_Type_T &lt;D1, Thời lượng &lt;R2, P2 &gt;&gt;&gt;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="4">(4)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx14"> <td> <pre data-language="cpp">    toán tử+(const time_point &lt;c, d1&gt; &amp; pt, </pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span> </td> </tr> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">               thời lượng const &lt;r2, p2&gt; &amp; d);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>Mẫu &lt;Lớp R1, Lớp P1, Lớp C, Lớp D2&gt;<code>time_point</code>.</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Áp dụng bù<code>d</code>ĐẾN<code>pt</code>Time_Point &lt;c, typename std :: Common_Type &lt;Thời gian &lt;R1, P1&gt;, D2&gt; :: Type&gt;<code>CT(pt.time_since_epoch() + d)</code>là<code>CT</code>Mẫu &lt;Lớp R1, Lớp P1, Lớp C, Lớp D2&gt;</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Áp dụng bù<code>d</code>ĐẾN<code>pt</code>               const time_point &lt;c, d2&gt; &amp; pt);<code>CT(pt.time_since_epoch() - d)</code>là<code>CT</code>Mẫu &lt;Lớp R1, Lớp P1, Lớp C, Lớp D2&gt;</div> <div class="t-li1">
+<span class="t-li">là trong</span>ConstExpr Time_Point &lt;c, std :: Common_type_t &lt;Thời lượng &lt;R1, P1&gt;, D2 &gt;&gt;<code>pt_lhs</code>Và<code>pt_rhs</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>    toán tử+(thời lượng const &lt;r1, p1&gt; &amp; d, </td> <td>-</td> <td>               const time_point &lt;c, d2&gt; &amp; pt);</td>
+</tr> <tr class="t-par"> <td>d</td> <td>-</td> <td>Mẫu &lt;Lớp C, Lớp D1, Lớp R2, Lớp P2&gt;</td>
+</tr> <tr class="t-par"> <td>Time_Point &lt;c, typename std :: Common_Type &lt;d1, thời lượng &lt;r2, p2 &gt;&gt; :: gõ&gt; gõ&gt;</td> <td>-</td> <td>    Toán tử- (Const Time_Point &lt;C, D1&gt; &amp; PT, </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>               thời lượng const &lt;r2, p2&gt; &amp; d);<code>d</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Mẫu &lt;Lớp C, Lớp D1, Lớp R2, Lớp P2&gt;</div> <h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2739" rel="nofollow">LWG 2739</a> </td> <td>C ++ 11</td> <td>
+<code>pt - d</code>Consexpr Time_Point &lt;C, STD :: Common_Type_T &lt;D1, Thời lượng &lt;R2, P2 &gt;&gt;&gt;<code>duration</code>S</td> <td>    Toán tử- (Const Time_Point &lt;C, D1&gt; &amp; PT, </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator_arith" title="cpp/chrono/time point/operator arith"> <span class="t-lines"><span>(int)</span><span>nhà điều hành--</span></span></a></div> </td> <td>xây dựng một thời điểm mới<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/time_point/operator_arith2">https://en.cppreference.com/w/cpp/chrono/time_point/operator_arith2</a>
+</p>
+</div>

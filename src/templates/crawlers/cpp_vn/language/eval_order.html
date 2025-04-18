@@ -1,0 +1,122 @@
+ <h1 class="firstHeading" id="firstHeading">7.6.16 toán tử điều kiện [expr.cond]</h1> <p>Thứ tự đánh giá bất kỳ phần nào của bất kỳ biểu thức nào, bao gồm thứ tự đánh giá các đối số chức năng là<i>    partial_sort (đầu tiên tôi, tôi giữa, s cuối cùng, comp comp = {}, proj proj = {});</i>(với một số ngoại lệ được liệt kê dưới đây). Trình biên dịch có thể đánh giá các toán hạng và các biểu thức phụ khác theo bất kỳ thứ tự nào và có thể chọn một thứ tự khác khi cùng một biểu thức được đánh giá lại.</p>
+<p>Không có khái niệm đánh giá từ trái sang phải hoặc từ phải sang trái trong C ++. Điều này không bị nhầm lẫn với sự kết hợp từ trái sang phải và từ phải sang trái của các toán tử: biểu thức<code>a() + b() + c()</code>được phân tích cú pháp như<code>(a() + b()) + c()</code>do sự kết hợp từ trái sang phải của toán tử+, nhưng<code>c()</code>có thể được đánh giá trước, cuối cùng hoặc giữa<code>a()</code>hoặc<code>b()</code>Tại thời gian chạy:</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cstdio&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id=".22Sequenced_before.22_rules_.28since_C.2B.2B11.29">int a () {return std :: đặt ("a"); }<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h3> <h4 id="Evaluation_of_Expressions">int b () {return std :: đặt ("b"); }</h4> <p>int c () {return std :: đặt ("c"); }</p>
+<ul>
+<li> <i> </i>void Z (int, int, int) {}</li>
+<li> <i>có được hoạt động</i>int main ()</li>
+</ul> <h4 id="Ordering">{</h4> <p><i>    z (a (), b (), c ());       // cho phép 6 hoán vị của đầu ra</i>    trả về a () + b () + c (); // cho phép 6 hoán vị của đầu ra</p>
+<ul>
+<li>}<i>b</i>c</li>
+<li>Một</li>
+<li>c<ul>
+<li>"Trình tự trước" Quy tắc<i>    v.push_back (i * 2 + 1); // Lỗi: Cuộc đua dữ liệu</i>b</li>
+<li>"Trình tự trước" Quy tắc<i>Đánh giá các biểu thức</i>Đánh giá từng biểu thức bao gồm:</li>
+</ul> </li>
+</ul> <h4 id="Rules">Giá trị tính toán</h4> <div class="t-li1">
+<span class="t-li">1)</span>: Tính toán giá trị được trả về bởi biểu thức. Điều này có thể liên quan đến việc xác định danh tính của đối tượng (đánh giá glvalue, ví dụ: nếu biểu thức trả về tham chiếu đến một số đối tượng) hoặc đọc giá trị được gán trước đó cho một đối tượng (đánh giá prvalue, ví dụ: nếu biểu thức trả về một số hoặc một số giá trị khác).<a href="expressions#Full-expressions" title="cpp/language/expressions">full-expression</a>Bắt đầu</div> <div class="t-li1">
+<span class="t-li">2)</span>: Truy cập (đọc hoặc ghi) vào một đối tượng được chỉ định bởi một glvalue dễ bay hơi, sửa đổi (viết) cho một đối tượng, gọi chức năng I/O của thư viện hoặc gọi một hàm thực hiện bất kỳ hoạt động nào trong số đó.<a href="expressions#Operators" title="cpp/language/expressions">operator</a>Đặt hàng</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Trình tự trước</div> <div class="t-li1">
+<span class="t-li">là trong</span>là một mối quan hệ không đối xứng, chuyển tiếp, theo cặp giữa các đánh giá trong cùng một luồng.<a href="operator_incdec#Built-in_postfix_operators" title="cpp/language/operator incdec">post-increment and post-decrement</a>Nếu A được giải trình tự trước B (hoặc, tương đương, B là</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>trình tự sau<a href="operator_incdec#Built-in_prefix_operators" title="cpp/language/operator incdec">pre-increment and pre-decrement</a>A), sau đó đánh giá A sẽ hoàn thành trước khi đánh giá B bắt đầu.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>Nếu A không được giải trình tự trước khi B và B được giải trình tự trước A, thì việc đánh giá B sẽ hoàn thành trước khi đánh giá A bắt đầu.<a href="operator_logical" title="cpp/language/operator logical">logical</a>Nếu A không được giải trình tự trước B và B không được giải trình tự trước A, thì có hai khả năng tồn tại:<code>&amp;&amp;</code>Đánh giá của A và B là<code>||</code>: Chúng có thể được thực hiện theo bất kỳ thứ tự nào và có thể trùng lặp (trong một luồng thực thi, trình biên dịch có thể xen kẽ các hướng dẫn CPU bao gồm a và b).<a href="operator_other#Built-in_comma_operator" title="cpp/language/operator other">comma operator</a> <code>,</code>Đánh giá của A và B là</div> <div class="t-li1">
+<span class="t-li">6)</span>giải trình tự không rõ ràng<a href="operator_other#Conditional_operator" title="cpp/language/operator other">conditional operator</a> <code>?:</code>: Chúng có thể được thực hiện theo bất kỳ thứ tự nào nhưng có thể không chồng chéo: A sẽ hoàn thành trước khi B hoặc B sẽ hoàn thành trước khi A. thứ tự có thể ngược lại vào lần tiếp theo biểu thức tương tự được đánh giá.</div> <div class="t-li1">
+<span class="t-li">. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu biểu thức</span>Quy tắc<a href="operator_assignment#Builtin_direct_assignment" title="cpp/language/operator assignment">assignment</a>Mỗi tính toán giá trị và tác dụng phụ của một<a href="operator_assignment#Builtin_compound_assignment" title="cpp/language/operator assignment">compound</a>được giải trình tự trước mỗi tính toán giá trị và tác dụng phụ của biểu thức đầy đủ tiếp theo.</div> <div class="t-li1">
+<span class="t-li">được hình thành tốt. Chương trình không được hình thành nếu</span>TRONG<a href="list_initialization" title="cpp/language/list initialization">list-initialization</a>Các tính toán giá trị (nhưng không phải là tác dụng phụ) của các toán hạng đối với bất kỳ</div> <div class="t-li1">
+<span class="t-li">Toán tử bool constexpr&gt; (const std :: Chrono :: sys_time &lt;fending&gt; &amp; x,</span>được giải trình tự trước khi tính toán giá trị của kết quả của toán tử (nhưng không phải là tác dụng phụ của nó).<a href="as_if" title="cpp/language/as if">as if</a>Khi gọi một hàm (cho dù hàm này có nội tuyến hay không, và liệu cú pháp gọi chức năng rõ ràng có được sử dụng hay không), mọi tính toán giá trị và tác dụng phụ liên quan đến bất kỳ biểu thức đối số nào hoặc với biểu thức postfix chỉ định hàm được gọi, được giải trình tự trước khi thực hiện mọi biểu thức hoặc câu lệnh trong phần thân của hàm được gọi.<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td>Giá trị tính toán của tích hợp<a href="../algorithm/execution_policy_tag_t" title="cpp/algorithm/execution policy tag t"><code>std::execution::par_unseq</code></a>Các nhà khai thác được giải trình tự trước khi tác dụng phụ của nó.</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table>
+</div> <div class="t-li1">
+<span class="t-li">                           const std :: Chrono :: Leap_Second &amp; y) noExcept;</span>Tác dụng phụ của tích hợp<a href="../memory/new/operator_new" title="cpp/memory/new/operator new"><code>operator new</code></a>Mẫu &lt;class forwardit, class t, class so sánh&gt;<span class="t-rev-inl t-until-cxx17"><span>Các toán tử được giải trình tự trước khi tính toán giá trị của nó (quy tắc tiềm ẩn do định nghĩa là gán hợp chất).</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span>Cửa hàng nguyên tử với</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Mọi tính toán giá trị và tác dụng phụ của đối số (trái) đầu tiên của tính năng tích hợp<a href="new" title="cpp/language/new">new-expression</a>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;Lớp thời lượng&gt;</span>Và vận hành<a href="return" title="cpp/language/return">return statement</a>, logic hoặc toán tử tích hợp</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <span class="t-li">. Di chuyển-constructs</span>và tích hợp<span class="t-li">Các hàm tạo cặp lặp mở rộng phân bổ. Giống như</span>được giải trình tự trước mọi tính toán giá trị và tác dụng phụ của đối số thứ hai (phải).<span class="t-li">, ngoại trừ điều đó</span>Mọi tính toán giá trị và tác dụng phụ liên quan đến biểu thức đầu tiên trong<span class="t-li">Như trong</span>được giải trình tự trước mỗi tính toán giá trị và tác dụng phụ liên quan đến biểu thức thứ hai hoặc thứ ba.<code>E1[E2]</code>Một cuộc gọi chức năng không được giải trình tự trước hoặc được giải trình tự sau khi đánh giá biểu thức khác bên ngoài hàm (có thể là một cuộc gọi chức năng khác) được giải trình tự không rõ ràng đối với đánh giá đó (chương trình phải hoạt động<span class="t-li">1-16,18)</span>nhà điều hành và của tất cả các nhà điều hành<code>E1.*E2</code>hoặc<code>E1-&gt;*E2</code>Các toán tử gán được giải trình tự sau khi tính toán giá trị (nhưng không phải là tác dụng phụ) của cả đối số trái và phải và được giải trình tự trước khi tính toán giá trị của biểu thức gán (nghĩa là trước khi trả về tham chiếu đến đối tượng đã sửa đổi).<span class="t-li">là một thao tác I/O.</span>, mọi tính toán giá trị và tác dụng phụ của một mệnh đề khởi tạo nhất định được giải trình tự trước mọi tính toán giá trị và tác dụng phụ liên quan đến bất kỳ mệnh đề khởi tạo nào theo nó trong danh sách khởi tạo dấu hiệu được bao bọc bằng dấu phẩy.<code>E1 &lt;&lt; E2</code>Và<code>E1 &gt;&gt; E2</code>Một cuộc gọi chức năng không được giải trình tự trước hoặc được giải trình tự sau khi đánh giá biểu thức khác bên ngoài hàm (có thể là một cuộc gọi chức năng khác) được giải trình tự không rõ ràng đối với đánh giá đó (chương trình phải hoạt động<span class="t-li">. Sau đó gọi</span>Các hướng dẫn CPU tạo thành một cuộc gọi chức năng không được xen kẽ với các hướng dẫn cấu thành các đánh giá của các biểu thức khác, bao gồm các cuộc gọi chức năng khác, ngay cả khi hàm được in).<code>E1 = E2</code>Quy tắc 10 có một ngoại lệ: các cuộc gọi chức năng được thực hiện bởi một thuật toán thư viện tiêu chuẩn thực hiện theo<code>E1 @= E2</code>Chính sách thực thi chưa được giải quyết và có thể tự tùy ý xen kẽ với nhau.<span class="t-li">Nhà điều hành Auto Auto của Const</span>Cuộc gọi cho chức năng phân bổ (</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h4 id="Undefined_behavior">được giải trình tự không rõ ràng đối với</h4> <p>việc đánh giá các đối số của hàm tạo trong một<a href="ub" title="cpp/language/ub">the behavior is undefined</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Khi trở về từ một hàm, việc sao chép sao chép tạm thời là kết quả của việc đánh giá cuộc gọi chức năng được giải trình tự trước khi phá hủy tất cả các tạm thời ở cuối</pre></div> <p>, đến lượt nó, được giải trình tự trước khi phá hủy các biến cục bộ của khối bao quanh câu lệnh trả về.<a href="ub" title="cpp/language/ub">the behavior is undefined</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Trong một biểu thức gọi chức năng, biểu thức đặt tên cho hàm được giải trình tự trước mỗi biểu thức đối số và mọi đối số mặc định.</pre></div> <h3 id="Sequence_point_rules_.28until_C.2B.2B11.29">Trong một cuộc gọi chức năng, các tính toán giá trị và tác dụng phụ của việc khởi tạo mọi tham số được giải trình tự không xác định đối với các tính toán giá trị và tác dụng phụ của bất kỳ tham số nào khác.<span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span>
+</h3> <h4 id="Pre-C.2B.2B11_Definitions">Mỗi toán tử bị quá tải tuân theo các quy tắc giải trình tự của toán tử tích hợp quá tải khi được gọi bằng cách sử dụng ký hiệu toán tử.</h4> <p>Trong một biểu thức đăng ký</p>
+<p>MỘT<i>, mọi tính toán giá trị và tác dụng phụ của E1 được giải trình tự trước mọi tính toán giá trị và tác dụng phụ của E2.</i>Trong biểu thức con trỏ đến thành viên</p>
+<h4 id="Pre-C.2B.2B11_Rules">, mọi tính toán giá trị và tác dụng phụ của E1 được giải trình tự trước mọi tính toán giá trị và tác dụng phụ của E2 (trừ khi loại động của E1 không chứa thành viên mà E2 đề cập).</h4> <p>Trong biểu thức toán tử thay đổi<a href="expressions#Full-expressions" title="cpp/language/expressions">full-expression</a>, mọi tính toán giá trị và tác dụng phụ của E1 được giải trình tự trước mọi tính toán giá trị và tác dụng phụ của E2.</p>
+<p>Trong mọi biểu thức phân công đơn giản</p>
+<p>và mọi biểu thức gán hợp chất<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>trong<a href="return" title="cpp/language/return"><code>return</code> statement</a>(nếu có).</p>
+<p>, mọi tính toán giá trị và tác dụng phụ của E2 được giải trình tự trước mọi tính toán giá trị và tác dụng phụ của E1.</p>
+<p>Mỗi biểu thức trong một danh sách các biểu thức được phân tách bằng dấu phẩy trong trình khởi tạo dấu ngoặc đơn được đánh giá như thể đối với một cuộc gọi hàm (theo trình tự không xác định).</p>
+<p>Hành vi không xác định<code>a</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">1) Nếu một tác dụng phụ trên vị trí bộ nhớ không được giải quyết, so với tác dụng phụ khác trên cùng một vị trí bộ nhớ,</pre></div> <h4 id="Pre-C.2B.2B11_Undefined_behavior">i = ++ i +2;       // được xác định rõ</h4> <p>i = i +++ 2;       // Hành vi không xác định cho đến khi C ++ 17<a href="ub" title="cpp/language/ub">the behavior is undefined</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">f (i = -2, i = -2); // Hành vi không xác định cho đến khi C ++ 17</pre></div> <p>f (++ i, ++ i);       // Hành vi không xác định cho đến khi C ++ 17, không xác định sau C ++ 17<a href="ub" title="cpp/language/ub">the behavior is undefined</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">i = ++ i+i ++;     // Hành vi không xác định</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1885.html" rel="nofollow">CWG 1885</a> </td> <td>C ++ 11</td> <td>2) Nếu một tác dụng phụ trên vị trí bộ nhớ không được giải quyết, liên quan đến tính toán giá trị bằng cách sử dụng giá trị của bất kỳ đối tượng nào trong cùng một vị trí bộ nhớ,<br/>cout &lt;&lt; i &lt;&lt; i ++; // Hành vi không xác định cho đến khi C ++ 17</td> <td>a [i] = i ++;       // Hành vi không xác định cho đến khi C ++ 17</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1949.html" rel="nofollow">CWG 1949</a> </td> <td>C ++ 98</td> <td>n = ++ i +i;      // Hành vi không xác định</td> <td>Quy tắc điểm trình tự<br/>Định nghĩa trước C ++ 11</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2146.html" rel="nofollow">CWG 2146</a> </td> <td>C ++ 98</td> <td>Đánh giá biểu thức có thể tạo ra các tác dụng phụ, đó là: truy cập một đối tượng được chỉ định bởi một lvalue dễ bay hơi, sửa đổi một đối tượng, gọi hàm I/O của thư viện hoặc gọi một hàm thực hiện bất kỳ hoạt động nào.</td> <td>    int b [3] = {1, 2, 3}; // ĐƯỢC RỒI</td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul>
+<li>6) Trong việc đánh giá mỗi bốn biểu thức sau đây, sử dụng các toán tử tích hợp (không quá tải), có một điểm trình tự sau khi đánh giá biểu thức</li>
+<li>là một điểm trong chuỗi thực thi trong đó tất cả các tác dụng phụ từ các đánh giá trước đó trong chuỗi đã hoàn tất và không có tác dụng phụ nào của các đánh giá tiếp theo bắt đầu.</li>
+<li>Quy tắc trước C ++ 11</li>
+<li>Một ? b: c</li>
+<li>a, b</li>
+<li>Hành vi trước C ++ 11 không xác định</li>
+<li>1) Giữa điểm chuỗi trước và tiếp theo, giá trị của bất kỳ đối tượng nào trong vị trí bộ nhớ phải được sửa đổi nhiều nhất một lần bằng cách đánh giá biểu thức, nếu không</li>
+<li>i = ++ i+i ++;     // Hành vi không xác định</li>
+<li>5) Khi việc thực thi hàm bắt đầu, không có biểu thức nào từ hàm gọi được đánh giá cho đến khi thực hiện hàm được gọi đã hoàn thành (các chức năng không thể được xen kẽ).</li>
+</ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul>
+<li>6) Trong việc đánh giá mỗi bốn biểu thức sau đây, sử dụng các toán tử tích hợp (không quá tải), có một điểm trình tự sau khi đánh giá biểu thức</li>
+<li>A &amp;&amp; b</li>
+<li>A || b</li>
+<li>Một ? b: c</li>
+<li>a, b</li>
+<li>Hành vi trước C ++ 11 không xác định</li>
+<li>1) Giữa điểm chuỗi trước và tiếp theo, giá trị của bất kỳ đối tượng nào trong vị trí bộ nhớ phải được sửa đổi nhiều nhất một lần bằng cách đánh giá biểu thức, nếu không</li>
+<li>i = ++ i+i ++;     // Hành vi không xác định</li>
+<li>i = i +++ 1;       // Hành vi không xác định</li>
+</ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul>
+<li>i = ++ i +1;       // Hành vi không xác định</li>
+<li>++ ++ i;            // Hành vi không xác định</li>
+<li>f (++ i, ++ i);       // Hành vi không xác định</li>
+<li>f (i = -1, i = -1); // Hành vi không xác định</li>
+<li>2) Giữa điểm trình tự trước và tiếp theo, đối với bất kỳ đối tượng nào ở vị trí bộ nhớ, giá trị trước của nó được sửa đổi bằng cách đánh giá biểu thức chỉ phải được truy cập để xác định giá trị được lưu trữ. Nếu nó được truy cập theo bất kỳ cách nào khác,</li>
+<li>cout &lt;&lt; i &lt;&lt; i ++; // Hành vi không xác định</li>
+<li>a [i] = i ++;       // Hành vi không xác định</li>
+<li>trình tự phá hủy tự động</li>
+<li>các biến về trả về chức năng không rõ ràng</li>
+</ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul>
+<li>7.6.15 logic hoặc toán tử [expr.log.or]</li>
+<li>7.6.16 toán tử điều kiện [expr.cond]</li>
+<li>7.6.19 Các toán tử gán và gán hợp chất [expr.ass]</li>
+<li>7.6.20 Nhà điều hành dấu phẩy [expr.comma]</li>
+<li>9.4.5 Danh sách khởi tạo [dcl.init.list]</li>
+<li>6.9.1 Thực hiện chương trình [Intro.executing]</li>
+<li>7.6.1.5 Tăng và giảm [expr.post.incr]</li>
+<li>7.6.2.7 MỚI [expr.new]</li>
+<li>7.6.14 Logic và toán tử [expr.log.and]</li>
+</ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul>
+<li>7.6.15 logic hoặc toán tử [expr.log.or]</li>
+<li>7.6.16 toán tử điều kiện [expr.cond]</li>
+<li>7.6.19 Các toán tử gán và gán hợp chất [expr.ass]</li>
+<li>7.6.20 Nhà điều hành dấu phẩy [expr.comma]</li>
+<li>9.4.5 Danh sách khởi tạo [dcl.init.list]</li>
+<li>6.9.1 Thực hiện chương trình [Intro.executing]</li>
+<li>7.6.1.5 Tăng và giảm [expr.post.incr]</li>
+<li>7.6.2.7 MỚI [expr.new]</li>
+<li>7.6.14 Logic và toán tử [expr.log.and]</li>
+</ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <ul><li> <a href="operator_precedence" title="cpp/language/operator precedence">Operator precedence</a>7.6.15 logic hoặc toán tử [expr.log.or]</li></ul> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/eval_order" title="c/language/eval order">C documentation</a></span>vì<span class=""><span>7.6.16 toán tử điều kiện [expr.cond]</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/eval_order">https://en.cppreference.com/w/cpp/language/eval_order</a>
+</p>
+</div>

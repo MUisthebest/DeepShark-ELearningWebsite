@@ -1,0 +1,243 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Phân bổ</h1> <p>Đóng gói các chiến lược để truy cập/giải quyết, phân bổ/giải quyết và xây dựng/phá hủy các đối tượng.</p>
+<p>Mọi thành phần thư viện tiêu chuẩn có thể cần phân bổ hoặc phát hành lưu trữ, từ<code><a href="../string/basic_string" title="cpp/string/basic string">std::string</a></code>Thì<code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code>và mọi container ngoại trừ<code><a href="../container/array" title="cpp/container/array">std::array</a></code>, ĐẾN<code><a href="../memory/shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code><span class="t-rev-inl t-until-cxx17"><span>Và<code><a href="../utility/functional/function" title="cpp/utility/functional/function">std::function</a></code></span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span>, làm như vậy thông qua một<strong class="selflink">Người phân bổ</strong>: Một đối tượng của một loại lớp đáp ứng các yêu cầu sau.</p>
+<p>Việc thực hiện nhiều yêu cầu phân bổ là tùy chọn vì tất cả các lớp nhận thức phân bổ, bao gồm các thùng chứa thư viện tiêu chuẩn, truy cập các trình phân bổ gián tiếp thông qua<code><a href="../memory/allocator_traits" title="cpp/memory/allocator traits">std::allocator_traits</a></code>, Và<code><a href="../memory/allocator_traits" title="cpp/memory/allocator traits">std::allocator_traits</a></code>Cung cấp việc thực hiện mặc định của các yêu cầu đó.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Cho quá tải</p>
+<ul>
+<li> <code>T</code>có thể đại diện cho các phân số của ve.<span class="t-rev-inl t-until-cxx11"><span>loại không phải là công ty, không tham chiếu</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11 t-until-cxx17"><span>Loại đối tượng không phải là cuộc</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span>Loại đối tượng CV-UNQUALIDE</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Thì</li>
+<li> <code>A</code>, một loại phân bổ cho loại<code>T</code>Thì</li>
+<li> <code>a</code>, một đối tượng của loại<code>A</code>Thì</li>
+<li> <code>B</code>, Loại phân bổ tương ứng cho một số loại đối tượng không đủ điều kiện CV<code>U</code>(Như đã có được bằng cách tái phát<code>A</code>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.</li>
+<li> <code>b</code>, một đối tượng của loại<code>B</code>Thì</li>
+<li> <code>p</code>, một giá trị của loại<a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>MỘT<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Không làm mất hiệu lực bất kỳ tài liệu tham khảo nào về các yếu tố của deque.</span>, có được bằng cách gọi<code><a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>A<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">được cung cấp cho Deque để cho phép khấu trừ từ một phạm vi vòng lặp. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu</span><span class="br0">.</span><span class="br0">)</span></code>Thì</li>
+<li> <code>cp</code>, một giá trị của loại<a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>MỘT<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Khi xóa ở hai đầu của deque, các tham chiếu đến các phần tử không bị bệnh không bị vô hiệu hóa bởi</span>, thu được bằng cách chuyển đổi từ<code>p</code>Thì</li>
+<li> <code>vp</code>, một giá trị của loại<a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>MỘT<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">tuyên truyền đến các thùng chứa lồng sau</span>, thu được bằng cách chuyển đổi từ<code>p</code>Thì</li>
+<li> <code>cvp</code>, một giá trị của loại<a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>MỘT<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">và không cần (và không làm việc với)</span>, thu được bằng cách chuyển đổi từ<code>cp</code>hoặc từ<code>vp</code>Thì</li>
+<li> <code>xp</code>, một con trỏ có thể phân hủy đến một số loại đối tượng không đủ điều kiện CV<code>X</code>Thì</li>
+<li> <code>r</code>TRÊN<code>T</code>thu được bằng biểu thức<code>*p</code>Thì</li>
+<li> <code>n</code>, một giá trị của loại<a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>MỘT<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Một multiset phẳng hỗ trợ nhiều nhất</span>.</li>
+</ul> <table class="wikitable"> <caption>Các loại bên trong</caption> <tr> <th>Loại ID</th> <th>Loại bí danh</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>A::pointer</code> <span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>
+<i>(không xác định)</i><sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> </td> <td> <ul><li>Thỏa mãn<a href="nullablepointer" title="cpp/named req/NullablePointer">NullablePointer</a>Thì<a href="randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>, Và<a href="contiguousiterator" title="cpp/named req/ContiguousIterator">LegacyContiguousIterator</a>.</li></ul> </td>
+</tr> <tr> <td>
+<code>A::const_pointer</code> <span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>
+<i>(không xác định)</i> </td> <td> <ul>
+<li>Thỏa mãn<a href="nullablepointer" title="cpp/named req/NullablePointer">NullablePointer</a>Thì<a href="randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>, Và<a href="contiguousiterator" title="cpp/named req/ContiguousIterator">LegacyContiguousIterator</a>.</li>
+<li> <code>A::pointer</code>Chuyển đổi hai thời lượng thành loại chung của chúng và tạo ra một thời lượng mà số lượng đánh dấu là tổng số lượng đánh dấu sau khi chuyển đổi.<code>A::const_pointer</code>.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>A::void_pointer</code> <span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>
+<i>(không xác định)</i> </td> <td> <ul>
+<li>Thỏa mãn<a href="nullablepointer" title="cpp/named req/NullablePointer">NullablePointer</a>.</li>
+<li> <code>A::pointer</code>Chuyển đổi hai thời lượng thành loại chung của chúng và tạo ra một thời lượng mà số lượng đánh dấu là tổng số lượng đánh dấu sau khi chuyển đổi.<code>A::void_pointer</code>.</li>
+<li> <code>B::void_pointer</code>Và<code>A::void_pointer</code>là cùng một loại.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>A::const_void_pointer</code> <span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>
+<i>(không xác định)</i> </td> <td> <ul>
+<li>Thỏa mãn<a href="nullablepointer" title="cpp/named req/NullablePointer">NullablePointer</a>.</li>
+<li> <code>A::pointer</code>Thì<code>A::const_pointer</code>, Và<code>A::void_pointer</code>có thể chuyển đổi thành<code>A::const_void_pointer</code>.</li>
+<li> <code>B::const_void_pointer</code>Và<code>A::const_void_pointer</code>là cùng một loại.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>A::value_type</code> </td> <td>
+<code>T</code> </td> <td> </td>
+</tr> <tr> <td>
+<code>A::size_type</code> <span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>
+<i>(không xác định)</i> </td> <td> <ul>
+<li>Một loại số nguyên không dấu.</li>
+<li>Có thể biểu diễn kích thước của đối tượng lớn nhất<code>A</code>có thể phân bổ.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>A::difference_type</code> <span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>
+<i>(không xác định)</i> </td> <td> <ul>
+<li>Một loại số nguyên đã ký.</li>
+<li>Có thể thể hiện sự khác biệt của bất kỳ hai con trỏ nào đối với các đối tượng được phân bổ bởi<code>A</code>.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>A::template rebind&lt;U&gt;::other</code><br/><span class="t-mark">ATOMIC_INTPTR_T</span><sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup> </td> <td>
+<code>B</code> </td> <td> <ul><li>Người xây dựng<code>U</code>Thì<code>B::template rebind&lt;T&gt;::other</code>khoảng cách<code>A</code>.</li></ul> </td>
+</tr>
+</table> <table class="wikitable"> <caption>Hoạt động trên con trỏ</caption> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>*p</code> </td> <td>
+<code>T&amp;</code> </td> <td> </td>
+</tr> <tr> <td>
+<code>*cp</code> </td> <td>
+<span class="kw4">hằng số</span>T<span class="sy3">Không có giá trị</span> </td> <td>
+<code>*cp</code>Và<code>*p</code>xác định cùng một đối tượng.</td>
+</tr> <tr> <td>
+<code>p-&gt;m</code> </td> <td>
+<abbr title="The type of T::m."><i>(như là)</i></abbr> </td> <td>                                   Nhị phân p);<code>(*p).m</code>Sử dụng chức năng nhị phân đã cho<code>(*p).m</code>được mô tả trong</td>
+</tr> <tr> <td>
+<code>cp-&gt;m</code> </td> <td>
+<abbr title="The type of T::m."><i>(như là)</i></abbr> </td> <td>                                   Nhị phân p);<code>(*cp).m</code>Sử dụng chức năng nhị phân đã cho<code>(*cp).m</code>được mô tả trong</td>
+</tr> <tr> <td>
+<code>static_cast&lt;A::pointer&gt;(vp)</code> </td> <td>
+<abbr title="A::pointer"><i>(như là)</i></abbr> </td> <td>
+<code>static_cast&lt;A::pointer&gt;(vp) == p</code> </td>
+</tr> <tr> <td>
+<code>static_cast&lt;A::const_pointer&gt;(cvp)</code> </td> <td>
+<abbr title="A::const_pointer"><i>(như là)</i></abbr> </td> <td>
+<code>static_cast&lt;A::const_pointer&gt;(cvp) == cp</code> </td>
+</tr> <tr> <td>
+<code><a href="http://en.cppreference.com/w/cpp/memory/pointer_traits"><span class="kw758">Điều đó cho tất cả<span class="me2">con trỏ_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>A<span class="sy4">::</span><span class="me2">Không làm mất hiệu lực bất kỳ tài liệu tham khảo nào về các yếu tố của deque.</span><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">{</span><span class="br0">.</span>r<span class="br0">)</span></code> </td> <td>
+<abbr title="A::pointer"><i>(như là)</i></abbr> </td> <td> </td>
+</tr>
+</table> <table class="wikitable"> <caption>Hoạt động lưu trữ và trọn đời</caption> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>a.allocate(n)</code> </td> <td rowspan="2">
+<code>A::pointer</code> </td> <td>Phân bổ lưu trữ phù hợp cho một đối tượng mảng thuộc loại<code>T[n]</code>và tạo ra mảng, nhưng không xây dựng các phần tử mảng. Có thể ném ngoại lệ. Nếu như<code>n == 0</code>, giá trị trả về không được xác định.</td>
+</tr> <tr> <td>
+<code>a.allocate(n, cvp)</code> <span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>                                   Nhị phân p);<code>a.allocate(n)</code>, nhưng có thể sử dụng<code>cvp</code>.<code>nullptr</code>hoặc một con trỏ thu được từ<code>a.allocate()</code>) theo cách không xác định để hỗ trợ địa phương.</td>
+</tr> <tr> <td>
+<code>a.allocate_at_least(n)</code> <span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>
+<a href="http://en.cppreference.com/w/cpp/memory/allocation_result"><span class="kw3373">Điều đó cho tất cả<span class="me2">Allecation_Result</span></span></a><br/> <p><span class="sy1">is_trivently_destructible_v</span>MỘT<span class="sy4">::</span><span class="me2">Không làm mất hiệu lực bất kỳ tài liệu tham khảo nào về các yếu tố của deque.</span><span class="sy1">&lt;</span></p> </td> <td>Phân bổ lưu trữ phù hợp cho một đối tượng mảng thuộc loại<code>T[cnt]</code>và tạo ra mảng, nhưng không xây dựng các phần tử mảng, sau đó trả về<code>{p, cnt}</code>là<code>p</code>chỉ vào lưu trữ và<code>cnt</code>không ít hơn<code>n</code>. Có thể ném ngoại lệ.</td>
+</tr> <tr> <td>
+<code>a.deallocate(p, n)</code> </td> <td>
+<i>(không được sử dụng)</i> </td> <td>Thử nghiệm lưu trữ chỉ vào<code>p</code>, phải là một giá trị được trả về bởi một cuộc gọi trước<code>allocate</code> <span class="t-rev-inl t-since-cxx23"><span>hoặc<code>allocate_at_least</code></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>điều đó chưa bị vô hiệu hóa bởi một cuộc gọi can thiệp đến<code>deallocate</code>.<code>n</code>Phải khớp với giá trị được truyền trước đó cho<code>allocate</code><span class="t-rev-inl t-since-cxx23"><span>hoặc nằm giữa yêu cầu và số lượng các yếu tố được trả lại thông qua<code>allocate_at_least</code>(có thể bằng một trong hai bị ràng buộc)</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>. Không ném ngoại lệ.</td>
+</tr> <tr> <td>
+<code>a.max_size()</code> <span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>
+<code>A::size_type</code> </td> <td>Giá trị lớn nhất có thể được chuyển cho<code>A::allocate()</code>.</td>
+</tr> <tr> <td>
+<code>a.construct(xp, args)</code> <span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>
+<i>(không được sử dụng)</i> </td> <td>void cấu trúc (u* p, args &amp;&amp; ... args);<code>X</code>trong lưu trữ được phân bổ trước đó tại địa chỉ được chỉ ra bởi<code>xp</code>Mẫu &lt;class inputit, lớp đầu ra,<code>args</code>như các đối số xây dựng.</td>
+</tr> <tr> <td>
+<code>a.destroy(xp)</code> <span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>
+<i>(không được sử dụng)</i> </td> <td>Phá hủy một đối tượng của loại<code>X</code>                                 STD :: Memory_order Order) NoExcept;<code>xp</code>, nhưng không giải quyết bất kỳ lưu trữ.</td>
+</tr>
+</table> <table class="wikitable"> <caption>Mối quan hệ giữa các trường hợp</caption> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>a1 == a2</code> </td> <td rowspan="2">
+<span class="kw4">bool</span> </td> <td> <ul>
+<li> <code>true</code>chỉ khi bộ lưu trữ được phân bổ bởi bộ phân bổ<code>a1</code>có thể được giải quyết thông qua<code>a2</code>.</li>
+<li>Thiết lập mối quan hệ phản xạ, đối xứng và bắc cầu.</li>
+<li>Không ném ngoại lệ.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>a1 != a2</code> </td> <td> <ul><li>                                   Nhị phân p);<code>!(a1 == a2)</code>.</li></ul> </td>
+</tr> <tr> <th>Tuyên ngôn</th> <th>Tác dụng</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>A a1(a)</code> </td> <td rowspan="2">                container const &amp; cont, const alloc &amp; alloc);<code>a1</code>chỉ vào trình tự và mọi số nguyên không âm<code>a1 == a</code>.<br/>(Lưu ý: Mọi người phân bổ cũng thỏa mãn<a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>    Yêu cầu std :: are thừng_as &lt;typename std :: Generator &lt;T2, V2, ALLOC2&gt; :: Măng sản, mang lại&gt;</td> <td rowspan="2"> <ul><li>Không ném ngoại lệ.</li></ul> </td>
+</tr> <tr> <td>
+<code>A a1 = a</code> </td>
+</tr> <tr> <td>
+<code>A a(b)</code> </td> <td>Mẫu &lt;class inputit, class alloc&gt;<code>a</code>chỉ vào trình tự và mọi số nguyên không âm<code>B(a) == b</code>Và<code>A(b) == a</code>.<br/>(Lưu ý: Điều này ngụ ý rằng tất cả các phân bổ liên quan đến<code>rebind</code>Duy trì tài nguyên của nhau, chẳng hạn như nhóm bộ nhớ.)</td> <td> <ul><li>Không ném ngoại lệ.</li></ul> </td>
+</tr> <tr> <td>
+<code>A a1(std::move(a))</code> </td> <td rowspan="2">Mẫu &lt;class inputit, class alloc&gt;<code>a1</code>sao cho nó bằng giá trị trước của<code>a</code>.</td> <td rowspan="2"> <ul>
+<li>Không ném ngoại lệ.</li>
+<li>Giá trị của<code>a</code>không thay đổi và<code>a1 == a</code>.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>A a1 = std::move(a)</code> </td>
+</tr> <tr> <td>
+<code>A a(std::move(b))</code> </td> <td>Mẫu &lt;class inputit, class alloc&gt;<code>a</code>sao cho nó bằng giá trị trước của<code>A(b)</code>.</td> <td> <ul><li>Không ném ngoại lệ.</li></ul> </td>
+</tr> <tr> <th>Loại ID</th> <th>Loại bí danh</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>A::is_always_equal</code><br/><span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>
+<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::true_type</a></code>hoặc<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::false_type</a></code>hoặc bắt nguồn từ như vậy.</td> <td> <ul>
+<li> <code>true</code>Nếu bất kỳ hai loại phân bổ loại<code>A</code>Luôn so sánh bằng nhau.</li>
+<li>(Nếu không được cung cấp,<code><a href="../memory/allocator_traits" title="cpp/memory/allocator traits">std::allocator_traits</a></code>Mặc định điều này là<a href="http://en.cppreference.com/w/cpp/types/is_empty"><span class="kw515">Điều đó cho tất cả<span class="me2">is_empty</span></span></a><span class="sy1">is_trivently_destructible_v</span>MỘT<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">kiểu</span>    Yêu cầu std :: are thừng_as &lt;typename std :: Generator &lt;T2, V2, ALLOC2&gt; :: Măng sản, mang lại&gt;</li>
+</ul> </td>
+</tr>
+</table> <table class="wikitable"> <caption>Ảnh hưởng đến hoạt động của container</caption> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Sự miêu tả</th>
+</tr> <tr> <td>
+<code>a.select_on_container_copy_construction()</code><br/><span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>
+<code>A</code> </td> <td> <ul>
+<li>Cung cấp một ví dụ của<code>A</code>được sử dụng bởi các thùng chứa được sao chép từ cái sử dụng<code>a</code>Hiện nay.</li>
+<li>(Thường trả lại một bản sao của<code>a</code>hoặc được xây dựng mặc định<code>A</code>    Yêu cầu std :: are thừng_as &lt;typename std :: Generator &lt;T2, V2, ALLOC2&gt; :: Măng sản, mang lại&gt;</li>
+</ul> </td>
+</tr> <tr> <th>Loại ID</th> <th>Loại bí danh</th> <th>Sự miêu tả</th>
+</tr> <tr> <td>
+<code>A::propagate_on_container_copy_assignment</code><br/><span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td rowspan="3">
+<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::true_type</a></code>hoặc<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::false_type</a></code>hoặc bắt nguồn từ như vậy.</td> <td> <ul>
+<li> <code><a href="../types/integral_constant" title="cpp/types/integral constant">std::true_type</a></code>hoặc bắt nguồn từ nó nếu người phân bổ loại<code>A</code>Cần được sao chép khi container sử dụng nó được gán bản sao.</li>
+<li>Nếu thành viên này là<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::true_type</a></code>hoặc bắt nguồn từ nó, sau đó<code>A</code>phải thỏa mãn<a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>và hoạt động sao chép không được ném ngoại lệ.</li>
+<li>Lưu ý rằng nếu các bộ phân bổ của nguồn và các thùng chứa mục tiêu không so sánh bằng nhau, việc gán bản sao phải giải quyết bộ nhớ của mục tiêu bằng bộ phân bổ cũ và sau đó phân bổ nó bằng cách sử dụng bộ phân bổ mới trước khi sao chép các phần tử (và bộ phân bổ).</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>A::propagate_on_container_move_assignment</code><br/><span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td> <ul>
+<li> <code><a href="../types/integral_constant" title="cpp/types/integral constant">std::true_type</a></code>hoặc bắt nguồn từ nó nếu người phân bổ loại<code>A</code>Cần phải di chuyển khi container sử dụng nó được chỉ định di chuyển.</li>
+<li>Nếu thành viên này là<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::true_type</a></code>hoặc bắt nguồn từ nó, sau đó<code>A</code>phải thỏa mãn<a href="moveassignable" title="cpp/named req/MoveAssignable">MoveAssignable</a>và hoạt động di chuyển không được ném ngoại lệ.</li>
+<li>Nếu thành viên này không được cung cấp hoặc bắt nguồn từ<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::false_type</a></code>Và các bộ phân bổ của nguồn và các thùng chứa mục tiêu không so sánh bằng nhau, việc chuyển nhượng di chuyển không thể sở hữu bộ nhớ nguồn và phải di chuyển hoặc xây dựng các yếu tố riêng lẻ, thay đổi kích thước bộ nhớ của chính nó khi cần thiết.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>A::propagate_on_container_swap</code><br/><span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td> <ul>
+<li> <code><a href="../types/integral_constant" title="cpp/types/integral constant">std::true_type</a></code>hoặc bắt nguồn từ nó nếu các phân bổ loại<code>A</code>Cần phải hoán đổi khi hai container sử dụng chúng được hoán đổi.</li>
+<li>Nếu thành viên này là<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::true_type</a></code>hoặc bắt nguồn từ nó, lvalues ​​của<code>A</code>// thực hiện đầu tiên<a href="swappable" title="cpp/named req/Swappable">Swappable</a>và hoạt động hoán đổi không được ném ngoại lệ.</li>
+<li>Nếu thành viên này không được cung cấp hoặc bắt nguồn từ<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::false_type</a></code>Và các bộ phân bổ của hai container không so sánh bằng nhau, hành vi của hoán đổi container không được xác định.</li>
+</ul> </td>
+</tr>
+</table> <p>Ghi chú:</p>
+<ol class="references"> <li id="cite_note-1"> <span class="reference-text">(chức năng)<a href="#Fancy_pointers">fancy pointers</a>cho tất cả các yếu tố trong phạm vi,</span> </li> <li id="cite_note-2"> <span class="reference-text"><code>rebind</code>chỉ là tùy chọn (được cung cấp bởi<code><a href="../memory/allocator_traits" title="cpp/memory/allocator traits">std::allocator_traits</a></code>) nếu bộ phân bổ này là một mẫu của biểu mẫu<code>SomeAllocator&lt;T, Args&gt;</code>là<code>Args</code>là không hoặc nhiều tham số loại mẫu bổ sung.</span> </li> </ol> <p>Cho quá tải</p>
+<ul><li> <code>x1</code>Và<code>x2</code>, đối tượng của các loại (có thể khác nhau)<code>X::void_pointer</code>Thì<code>X::const_void_pointer</code>Thì<code>X::pointer</code>, hoặc<code>X::const_pointer</code> </li></ul>, ngoại trừ việc hành vi không được xác định nếu không có tuyên bố<code>x1</code>Và<code>x2</code>&gt;<i>Có giá trị tương đương</i>giá trị con trỏ, nếu và chỉ khi cả hai<code>x1</code>Và<code>x2</code>có thể được chuyển đổi rõ ràng thành hai đối tượng tương ứng<code>px1</code>Và<code>px2</code>nó đến một đối tượng<code>X::const_pointer</code>, sử dụng một chuỗi<span class="kw1">Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;</span>s chỉ sử dụng bốn loại này và biểu thức<code>px1 == px2</code>thành một phạm vi được sắp xếp<code>true</code>.<p>Cho quá tải</p>
+<ul><li> <code>w1</code>Và<code>w2</code>, đối tượng loại<code>X::void_pointer</code> </li></ul>Sau đó, đối với biểu thức<code>w1 == w2</code>Và<code>w1 != w2</code>Hoặc hoặc cả hai đối tượng có thể được thay thế bằng một<i>Có giá trị tương đương</i>đối tượng của loại<code>X::const_void_pointer</code>không có thay đổi trong ngữ nghĩa.<p>Cho quá tải</p>
+<ul><li> <code>p1</code>Và<code>p2</code>, đối tượng loại<code>X::pointer</code> </li></ul>Sau đó, đối với các biểu thức<code>p1 == p2</code>Thì<code>p1 != p2</code>Thì<code>p1 &lt; p2</code>Thì<code>p1 &lt;= p2</code>Thì<code>p1 &gt;= p2</code>Thì<code>p1 &gt; p2</code>Thì<code>p1 - p2</code>Hoặc hoặc cả hai đối tượng có thể được thay thế bằng một<i>Có giá trị tương đương</i>đối tượng của loại<code>X::const_pointer</code>không có thay đổi trong ngữ nghĩa.<p>Các yêu cầu trên cho phép so sánh<a href="container" title="cpp/named req/Container">Container</a>                                   OUTPUTITIT D_FIRST, PRECEPREDATICATE P);<code>iterator</code>cát<code>const_iterator</code>struct common_type &lt;std :: Chrono :: Time_Point &lt;Đồng hồ, Thời lượng1&gt;, </p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <h4 id="Allocator_completeness_requirements">Yêu cầu hoàn chỉnh của phân bổ</h4> <p>Một loại phân bổ<code>X</code>cho loại<code>T</code>Ngoài ra cũng thỏa mãn<i>Yêu cầu hoàn chỉnh của phân bổ</i>Nếu cả hai điều sau đây đều đúng bất kể<code>T</code>là một loại hoàn chỉnh:</p>
+<ul>
+<li> <code>X</code>là một loại hoàn chỉnh.</li>
+<li>Ngoại trừ<code>value_type</code>, tất cả các loại thành viên của<a href="http://en.cppreference.com/w/cpp/memory/allocator_traits"><span class="kw703">Điều đó cho tất cả<span class="me2">ALLOCATOR_TRAITS</span></span></a><span class="sy1">is_trivently_destructible_v</span>X<span class="sy1">&lt;</span>là các loại hoàn chỉnh.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Stateful_and_stateless_allocators">Những người phân bổ trạng thái và không quốc tịch</h3> <p>Mọi loại phân bổ đều là<i>trạng thái</i>hoặc<i>không quốc tịch</i>. Nói chung, một loại phân bổ trạng thái có thể có các giá trị không đồng đều biểu thị tài nguyên bộ nhớ riêng biệt, trong khi loại phân bổ không trạng thái biểu thị một tài nguyên bộ nhớ duy nhất.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Mặc dù các phân bổ tùy chỉnh không bắt buộc phải không được bảo vệ, cho dù và sử dụng các phân bổ trạng thái trong thư viện tiêu chuẩn được xác định như thế nào. Việc sử dụng các giá trị phân bổ không đồng đều có thể dẫn đến các lỗi thời gian chạy được xác định bởi triển khai hoặc hành vi không xác định nếu việc thực hiện không hỗ trợ việc sử dụng đó.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>Phân bổ tùy chỉnh có thể chứa trạng thái. Mỗi container hoặc đối tượng nhận biết phân bổ khác lưu trữ một thể hiện của bộ phân bổ được cung cấp và kiểm soát sự thay thế phân bổ thông qua<code><a href="../memory/allocator_traits" title="cpp/memory/allocator traits">std::allocator_traits</a></code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>Các thể hiện của một loại phân bổ không trạng thái luôn so sánh bằng nhau. Các loại phân bổ không trạng thái thường được triển khai dưới dạng các lớp trống và phù hợp cho<a href="../language/ebo" title="cpp/language/ebo">empty base class optimization</a>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>mang lại nhân vật được lưu trữ.<code>is_always_equal</code>của<code><a href="../memory/allocator_traits" title="cpp/memory/allocator traits">std::allocator_traits</a></code>được dự định sử dụng để xác định xem một loại phân bổ có phải là không trạng thái hay không.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Fancy_pointers">Con trỏ lạ mắt</h3> <p>Khi loại thành viên<code>pointer</code>không phải là loại con trỏ thô, nó thường được gọi là<a class="external text" href="https://wg21.link/P0773R0" rel="nofollow">"fancy pointer"</a>. Những gợi ý như vậy đã được giới thiệu để hỗ trợ các kiến ​​trúc bộ nhớ được phân đoạn và ngày nay được sử dụng để truy cập các đối tượng được phân bổ trong các không gian địa chỉ khác với không gian địa chỉ ảo đồng nhất được truy cập bởi các con trỏ thô. Một ví dụ về con trỏ ưa thích là con trỏ độc lập với địa chỉ ánh xạ<a class="external text" href="https://www.boost.org/doc/libs/release/doc/html/interprocess/offset_ptr.html" rel="nofollow"><code>boost::interprocess::offset_ptr</code></a>, giúp phân bổ các cấu trúc dữ liệu dựa trên nút như<code><a href="../container/set" title="cpp/container/set">std::set</a></code>Trong bộ nhớ được chia sẻ và các tệp được ánh xạ bộ nhớ được ánh xạ trong các địa chỉ khác nhau trong mọi quy trình. Con trỏ lạ mắt có thể được sử dụng độc lập với bộ phân bổ cung cấp chúng<span class="t-rev-inl t-since-cxx11"><span>, thông qua mẫu lớp<code><a href="../memory/pointer_traits" title="cpp/memory/pointer traits">std::pointer_traits</a></code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.<span class="t-rev-inl t-since-cxx20"><span>Chức năng<code>std::to_address</code>Có thể được sử dụng để có được một con trỏ thô từ một con trỏ ưa thích.</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span></p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Việc sử dụng các gợi ý lạ mắt và kích thước tùy chỉnh/loại khác nhau trong tiêu chuẩn libary được hỗ trợ một cách có điều kiện. Việc triển khai có thể yêu cầu loại thành viên đó<code>pointer</code>Thì<code>const_pointer</code>Thì<code>size_type</code>, Và<code>difference_type</code>&gt;<code>value_type*</code>Thì<span class="kw4">hằng số</span>// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)<span class="sy2">*</span>Thì<code><a href="../types/size_t" title="cpp/types/size t">std::size_t</a></code>, Và<code><a href="../types/ptrdiff_t" title="cpp/types/ptrdiff t">std::ptrdiff_t</a></code>Yêu cầu STD :: Inone</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> </table> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>Các thành phần thư viện tiêu chuẩn sau đây đáp ứng các yêu cầu phân bổ:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../memory/allocator" title="cpp/memory/allocator"> <span class="t-lines"><span>người phân bổ</span></span></a></div> </td> <td>Bộ phân bổ mặc định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../memory/scoped_allocator_adaptor" title="cpp/memory/scoped allocator adaptor"> <span class="t-lines"><span>scoped_allocator_adaptor</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>thực hiện bộ phân bổ đa cấp cho các thùng chứa đa cấp<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../memory/polymorphic_allocator" title="cpp/memory/polymorphic allocator"> <span class="t-lines"><span>đa hình_allocator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>một người phân bổ hỗ trợ đa hình thời gian chạy dựa trên<code><a href="../memory/memory_resource" title="cpp/memory/memory resource">std::pmr::memory_resource</a></code>nó được xây dựng với<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <h3 id="Examples">, không còn là một phần của cây phụ thuộc.</h3> <div class="t-example">
+<p>Thể hiện bộ phân bổ C ++ 11, ngoại trừ<code>[[<a href="../language/attributes/nodiscard" title="cpp/language/attributes/nodiscard">nodiscard</a>]]</code>thêm vào để khớp với kiểu C ++ 20.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDlib&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue179" rel="nofollow">LWG 179</a> </td> <td>C ++ 98</td> <td>
+<code>pointer</code>Và<code>const_pointer</code>#include &lt;Limits&gt;<br/>#include &lt;New&gt;</td> <td>Thực hiện quá tải</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue199" rel="nofollow">LWG 199</a> </td> <td>C ++ 98</td> <td>phù hợp khi sao chép bên trái (đầu của phạm vi đích nằm ngoài phạm vi nguồn) trong khi<code>a.allocate(0)</code>, nhưng không có việc thực hiện như vậy được tạo ra và API đã bị phản đối và loại bỏ.</td> <td>    {</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue258" rel="nofollow">LWG 258</a><br/>.<a class="external text" href="https://wg21.link/N2436" rel="nofollow">N2436</a>)</td> <td>C ++ 98</td> <td>#include &lt;Vector&gt;<br/> </td> <td>Mẫu &lt;Class T&gt;<br/>Struct Mallocator</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue274" rel="nofollow">LWG 274</a> </td> <td>C ++ 98</td> <td>
+<code>T</code>{<br/>Tìm kiếm sự xuất hiện đầu tiên của chuỗi các yếu tố<code><a href="../memory/allocator" title="cpp/memory/allocator">std::allocator</a></code>    typedef t value_type;<sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[1]</a></sup> </td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2016" rel="nofollow">LWG 2016</a> </td> <td>C ++ 11</td> <td>    Mallocator () = mặc định;<br/> </td> <td>    Mẫu &lt;class u&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2081" rel="nofollow">LWG 2081</a> </td> <td>C ++ 98<br/>C ++ 11</td> <td>    Consexpr mallocator (const mallocator &lt;u&gt; &amp;) NoExcept {}<br/> </td> <td>Thực hiện quá tải</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2108" rel="nofollow">LWG 2108</a> </td> <td>C ++ 11</td> <td>lấy được bộ phân bổ để sử dụng sau khi sao chép một thùng chứa tiêu chuẩn</td> <td>
+<code>is_always_equal</code>#include &lt;New&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2263" rel="nofollow">LWG 2263</a> </td> <td>C ++ 11</td> <td>Tìm kiếm chuyển tiếp của Const<a class="external text" href="https://cplusplus.github.io/LWG/issue179" rel="nofollow">LWG issue 179</a>    [[Nodiscard]] t* Phân bổ (std :: size_t n)<br/>    {<code>void_pointer</code>Và<code>const_void_pointer</code> </td> <td>        if (n&gt; std :: numeric_limits &lt;std :: size_t&gt; :: max () / sizeof (t))</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2447" rel="nofollow">LWG 2447</a> </td> <td>C ++ 11</td> <td>
+<code>T</code>            ném std :: bad_array_new_length ();</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2593" rel="nofollow">LWG 2593</a> </td> <td>C ++ 11</td> <td>        if (auto p = static_cast &lt;t *&gt; (std :: malloc (n * sizeof (t)))))</td> <td>        {</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0593R6" rel="nofollow">P0593R6</a> </td> <td>C ++ 98</td> <td>
+<code>allocate</code>            Báo cáo (p, n);<br/>            trả lại p;</td> <td>Thực hiện quá tải</td>
+</tr>
+</table> <ol class="references"> <li id="cite_note-3"> <span class="reference-text">&lt;std :: Flat_map&gt;<code>reference</code>Và<code>const_reference</code>của<code><a href="../memory/allocator" title="cpp/memory/allocator">std::allocator</a></code>        }<code>T&amp;</code>Và<code>const T&amp;</code>tương ứng.<ul>
+<li>Nếu như<code>T</code>std :: mảng &lt;int, 10&gt; a;<code>reference</code>Và<code>const_reference</code> <a href="../language/reference#Reference_collapsing" title="cpp/language/reference">reference collapsing</a>        ném std :: bad_alloc ();</li>
+<li>Nếu như<code>T</code>    }<code>reference</code>Và<code>const_reference</code> <a href="../memory/allocator/address" title="cpp/memory/allocator/address"><code>address()</code></a>, chương trình chuyên về</li>
+</ul></span> </li> </ol> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/Allocator">https://en.cppreference.com/w/cpp/named_req/Allocator</a>
+</p>
+</div>

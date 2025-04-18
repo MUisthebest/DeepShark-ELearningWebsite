@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Coroutine_handle &lt;Promise&gt; :: Toán tử (), std :: Coroutine_Handle &lt;Promise&gt; :: Tiếp tục</h1> <table class="t-dcl-begin"> <tr class="t-dcl-h"> <td>Thành viên của các chuyên ngành khác</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">toán tử void () () const;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-h"> <td>Thành viên chuyên môn<code>std::coroutine_handle&lt;std::noop_coroutine_promise&gt;</code>
+</td> <td></td> <td></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">khoảng trống tiếp tục () const;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Consexpr void Toán tử () () const NoExcept;<code>*this</code>Đề cập đến, hoặc không làm gì nếu coroutine là một coroutine không có op.</div> <div class="t-li1">
+<span class="t-li">2)</span>Không làm gì cả.</div> <p>đến một phạm vi khác kết thúc tại<code>*this</code>Consexpr void tiếp tục () const noexcept;</p>
+<p>Tiếp tục thực hiện coroutine mà<code><a href="../../thread/thread" title="cpp/thread/thread">std::thread</a></code>hoặc<code><a href="../../thread/jthread" title="cpp/thread/jthread">std::jthread</a></code>Không đề cập đến coroutine bị đình chỉ, hoặc coroutine không phải là một coroutine không có và bị đình chỉ tại điểm đình chỉ cuối cùng của nó. Việc nối lại đồng thời của coroutine có thể dẫn đến một cuộc đua dữ liệu.<code>main</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Việc nối lại một coroutine trên một tác nhân thực thi khác với cái mà nó bị đình chỉ có hành vi được xác định thực hiện trừ khi mỗi tác nhân thực thi là một luồng được biểu thị bởi<code>unhandled_exception</code>, hoặc là thực thi chủ đề<code>unhandled_exception</code>Nếu một ngoại lệ được ném từ việc thực hiện coroutine, thì ngoại lệ sẽ bị bắt và</p>
+<h3 id="Notes">Ghi chú</h3> <p>được gọi trên đối tượng hứa hẹn của Coroutine. Nếu cuộc gọi đến</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="destroy" title="cpp/coroutine/coroutine handle/destroy"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>kiểm tra xem tay cầm có đại diện cho một coroutine không<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/coroutine/coroutine_handle/resume">https://en.cppreference.com/w/cpp/coroutine/coroutine_handle/resume</a>
+</p>
+</div>

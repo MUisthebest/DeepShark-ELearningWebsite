@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iOS_Base :: chiều rộng</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">dòng chiều rộng () const;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Chiều rộng của luồng (luồng new_width);</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Quản lý số lượng ký tự tối thiểu để tạo trên các hoạt động đầu ra nhất định và số lượng ký tự tối đa để tạo trên các hoạt động đầu vào nhất định.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Trả về chiều rộng trường hiện tại.</div> <div class="t-li1">
+<span class="t-li">2)</span>Đặt chiều rộng trường thành cái đã cho. Trả về chiều rộng trường trước đó.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>new_width</td> <td>-</td> <td>Cài đặt chiều rộng trường mới</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Chiều rộng trường trước cuộc gọi đến hàm.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Một số chức năng I/O gọi<code>width(0)</code>Trước khi trở về, xem<code><a href="../manip/setw" title="cpp/io/manip/setw">std::setw</a></code>(Điều này dẫn đến trường này chỉ có hiệu lực đối với hàm I/O tiếp theo và không phải trên bất kỳ I/O nào sau đó).</p>
+<p>Các hiệu ứng chính xác của công cụ sửa đổi này đối với đầu vào và đầu ra khác nhau giữa các hàm I/O riêng lẻ và được mô tả tại mỗi hàm<code>operator&lt;&lt;</code>Và<code>operator&gt;&gt;</code>quá tải trang riêng lẻ.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;THERTHERM&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;mảng&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="precision" title="cpp/io/ios base/precision"> <span class="t-lines"><span>có cùng ý nghĩa như trong</span></span></a></div> </td> <td>Đặt cờ định dạng cụ thể<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../manip/setw" title="cpp/io/manip/setw"> <span class="t-lines"><span>setw</span></span></a></div> </td> <td>Thay đổi chiều rộng của trường đầu vào/đầu ra tiếp theo<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ios_base/width">https://en.cppreference.com/w/cpp/io/ios_base/width</a>
+</p>
+</div>

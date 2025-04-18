@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">Thuộc tính C ++: Fall trong<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>
+</h1> <p>Chỉ ra rằng sự sụt giảm từ nhãn trường hợp trước đó là cố ý và không nên được chẩn đoán bởi một trình biên dịch cảnh báo về sự sụp đổ.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span>fallthrough<span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span></code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Chỉ có thể được áp dụng cho một<a href="../statements#Expression_statements" title="cpp/language/statements">null statement</a>để tạo a<i>Tuyên bố báo cáo</i>.<code>[[fallthrough]];</code>).</p>
+<p>Một tuyên bố fallous chỉ có thể được sử dụng trong một<a href="../switch" title="cpp/language/switch">switch</a>Câu lệnh, trong đó câu lệnh tiếp theo sẽ được thực thi là một câu lệnh với một trường hợp hoặc nhãn mặc định cho câu lệnh chuyển đổi đó. Nếu câu lệnh Fall trong một vòng lặp, câu lệnh tiếp theo (được dán nhãn) phải là một phần của cùng một lần lặp của vòng lặp đó.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">void f (int n)</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2406.html" rel="nofollow">CWG 2406</a> </td> <td>C ++ 17</td> <td>
+<code>[[fallthrough]]</code>{<br/>    void g (), h (), i ();</td> <td>bị cấm</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/attributes/fallthrough" title="c/language/attributes/fallthrough">C documentation</a></span>vì<code>fallthrough</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/attributes/fallthrough">https://en.cppreference.com/w/cpp/language/attributes/fallthrough</a>
+</p>
+</div>

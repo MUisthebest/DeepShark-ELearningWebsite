@@ -1,0 +1,47 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Chrono :: Toán tử &lt;&lt; (std :: Chrono :: Thời lượng)</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/chrono" title="cpp/header/chrono">&lt;chrono&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">mẫu &lt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>    biểu đồ lớp,<code>d</code>Mẫu &lt;Class T&gt;<code>os</code>.</p>
+<p>    Đặc điểm của lớp,</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    Đại diện lớp,</pre></div> <p>    thời gian học</p>
+<p>Các<code>units_suffix</code>&gt; std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp;<code>Period::type</code>    toán tử &lt;&lt; (std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; os,</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th> <code>Period::type</code> </th> <th>                const std :: Chrono :: Thời lượng &lt;rep, giai đoạn&gt; &amp; d);</th>
+</tr> <tr class="t-dsc"> <td> <code>std::atto</code> </td> <td> <code>as</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::femto</a></code> </td> <td> <code>fs</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::pico</a></code> </td> <td> <code>ps</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::nano</a></code> </td> <td> <code>ns</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::micro</a></code> </td> <td> <code>µs</code> <span class="t-mark">Chèn một biểu diễn văn bản của</span>hoặc<code>us</code>Hành xử như thể nó được thực hiện như</td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::milli</a></code> </td> <td> <code>ms</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::centi</a></code> </td> <td> <code>cs</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::deci</a></code> </td> <td> <code>ds</code> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio"><code>std::ratio&lt;1&gt;</code></a> </td> <td> <code>s</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::deca</a></code> </td> <td> <code>das</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::hecto</a></code> </td> <td> <code>hs</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::kilo</a></code> </td> <td> <code>ks</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::mega</a></code> </td> <td> <code>Ms</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::giga</a></code> </td> <td> <code>Gs</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::tera</a></code> </td> <td> <code>Ts</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::peta</a></code> </td> <td> <code>Ps</code> </td>
+</tr> <tr class="t-dsc"> <td> <code><a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio">std::exa</a></code> </td> <td> <code>Es</code> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio"><code>std::ratio&lt;60&gt;</code></a> </td> <td> <code>min</code> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio"><code>std::ratio&lt;3600&gt;</code></a> </td> <td> <code>h</code> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../../numeric/ratio/ratio" title="cpp/numeric/ratio/ratio"><code>std::ratio&lt;86400&gt;</code></a> </td> <td> <code>d</code> </td>
+</tr> <tr class="t-dsc"> <td>std :: basic_ostringsstream &lt;biểu đồ, đặc điểm&gt; s;<code>Period::type::den == 1</code> </td> <td> <code>[<i>trả lại hệ điều hành &lt;&lt; s.str ();</i>]s</code> </td>
+</tr> <tr class="t-dsc"> <td>s.imbue (os.getloc ());</td> <td> <code>[<i>trả lại hệ điều hành &lt;&lt; s.str ();</i>/<i>hoặc cả hai:</i>]s</code> </td>
+</tr> </table> <p>S &lt;&lt; D.Count () &lt;&lt; units_suffix; // Xem bên dưới<code><i>trả lại hệ điều hành &lt;&lt; s.str ();</i></code>Và<code><i>hoặc cả hai:</i></code>Nói cách khác, các cờ luồng, địa phương và độ chính xác được xác định bởi luồng, nhưng bất kỳ phần đệm nào được xác định bằng toàn bộ chuỗi đầu ra.<code>Period::type::num</code>Và<code>Period::type::den</code>được xác định dựa trên</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Theo bảng sau.<code>os</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Hậu tố<code>std::chrono::operator&lt;&lt;</code>(U+00b5)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, nó được xác định là xác định cái nào được sử dụng</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Không có điều nào ở trên, và</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../utility/format/format" title="cpp/utility/format/format"> <span class="t-lines"><span>định dạng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Cửa hàng được định dạng biểu diễn của các đối số trong một chuỗi mới<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="formatter" title="cpp/chrono/duration/formatter"> <span class="t-lines"><span>std :: định dạng<span class="t-dsc-small">Thời lượng_Values</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Định dạng hỗ trợ cho<code>duration</code> <br/> <span class="t-mark">(Chuyên ngành mẫu lớp)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../string/basic_string/operator_ltltgtgt" title="cpp/string/basic string/operator ltltgtgt"> <span class="t-lines"><span>toán tử &lt;&lt;</span><span>Num</span></span></a></div> </td> <td>Không có điều nào ở trên<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../string/basic_string/to_string" title="cpp/string/basic string/to string"> <span class="t-lines"><span>Num</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>trong hậu tố là<code>string</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../string/basic_string/to_wstring" title="cpp/string/basic string/to wstring"> <span class="t-lines"><span>Num</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>trong hậu tố là<code>wstring</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/duration/operator_ltlt">https://en.cppreference.com/w/cpp/chrono/duration/operator_ltlt</a>
+</p>
+</div>

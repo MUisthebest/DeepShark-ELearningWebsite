@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">std :: yếu_incrementable</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/iterator" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class I&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Ở đâu<code>/*is-signed-integer-like*/&lt;I&gt;</code>khoảng cách<code>true</code>là<code>I</code>    khái niệm yếu_incrementable =</p>
+<p>        std :: di chuyển &lt;i&gt; &amp;&amp;<a href="../concepts#Equality_preservation" title="cpp/concepts">equality-preserving</a>        Yêu cầu (i i) {<code><a href="../concepts/equality_comparable" title="cpp/concepts/equality comparable">std::equality_comparable</a></code>.</p>
+<p>Bool Binary_Search (Forwardit First, Forwardit Last,<code>std::weakly_incrementable</code>            Tên std :: iter_difference_t &lt;i&gt;;<code>a == b</code>            Yêu cầu /*được ký tên là giống như* /&lt;std :: iter_difference_t &lt;i &gt;&gt;;<code>++a == ++b</code>            {++ i} -&gt; std :: are more_as &lt;i &amp;&gt;; // Không bắt buộc phải được bảo tồn bình đẳng<code><a href="istream_iterator" title="cpp/iterator/istream iterator">std::istream_iterator</a></code>.</p>
+<h3 id="Semantic_requirements">        const std :: remove_reference_t &lt;lhs&gt; &amp;,</h3> <p><code>I</code>Range constexpr :: mượn_subrange_t &lt;r&gt;<code>std::weakly_incrementable</code>            i ++;                         // Không bắt buộc phải được bảo tồn bình đẳng<code>i</code>nó đến một đối tượng<code>I</code>:</p>
+<ul>
+<li>đều hợp lệ và mỗi biểu thị một loại;<code>++i</code>Và<code>i++</code>        };</li>
+<li>Nếu như<code>i</code>là một loại giống như ký tên (xem bên dưới).<code>++i</code>Và<code>i++</code>nâng cao<code>i</code>, Và</li>
+<li>Nếu như<code>i</code>Khái niệm này chỉ định các yêu cầu về các loại có thể được tăng lên với các toán tử trước và sau khi<code><a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span><span class="sy2">++</span>i<span class="br0">)</span> <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span>i<span class="br0">)</span></code>.</li>
+</ul> <h3 id="Integer-like_types">và bản thân loại không bắt buộc phải</h3> <p>các loại,<i>không ngụ ý rằng</i> <code>bool</code>. Các thuật toán về các loại có thể tăng yếu phải là các thuật toán đơn. Các thuật toán này có thể được sử dụng với các iStreams làm nguồn gốc của dữ liệu đầu vào thông qua<code><a href="../types/numeric_limits" title="cpp/types/numeric limits">std::numeric_limits</a></code>Chỉ khi, đối với một đối tượng</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3467" rel="nofollow">LWG 3467</a> </td> <td>C ++ 20</td> <td>
+<code>bool</code>có cùng một miền,</td> <td>có thể tăng lên, sau đó cả hai</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P2325R3" rel="nofollow">P2325R3</a> </td> <td>C ++ 20</td> <td>
+<a href="../concepts/default_initializable" title="cpp/concepts/default initializable"><code>default_initializable</code></a>, số lần tăng số lặp là tuyến tính.</td> <td>    trả lại (a &lt;b)? B: A;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="incrementable" title="cpp/iterator/incrementable"> <span class="t-lines"><span>tăng thêm</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>chỉ định rằng hoạt động gia tăng trên<strong class="selflink"><code>weakly_incrementable</code></strong>Loại là<a href="../concepts#Equality_preservation" title="cpp/concepts">equality-preserving</a>và loại đó là<a href="../concepts/equality_comparable" title="cpp/concepts/equality comparable"><code>equality_comparable</code></a> <br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/weakly_incrementable">https://en.cppreference.com/w/cpp/iterator/weakly_incrementable</a>
+</p>
+</div>

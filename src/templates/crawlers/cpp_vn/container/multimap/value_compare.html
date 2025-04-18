@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">std :: multimap &lt;key, t, so sánh, phân bổ&gt; :: value_compare</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx98"> <td class="t-dcl-nopad"> <pre data-language="cpp">lớp value_compare;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p><code>std::multimap::value_compare</code>là một đối tượng hàm so sánh các đối tượng thuộc loại<code>std::multimap::value_type</code>(Các cặp giá trị khóa) bằng cách so sánh các thành phần đầu tiên của các cặp.</p>
+<h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>result_type</code> <span class="t-mark-rev t-deprecated-cxx17">(không được dùng trong C ++ 17)</span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td> <td> <span class="kw4">bool</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>first_argument_type</code> <span class="t-mark-rev t-deprecated-cxx17">(không được dùng trong C ++ 17)</span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td> <td> <code>value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>second_argument_type</code> <span class="t-mark-rev t-deprecated-cxx17">(không được dùng trong C ++ 17)</span><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td> <td> <code>value_type</code> </td>
+</tr> </table>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>Các loại thành viên này được lấy thông qua kế thừa công khai<a href="http://en.cppreference.com/w/cpp/utility/functional/binary_function"><span class="kw1129">Điều đó cho tất cả<span class="me2">Binary_Function</span></span></a><span class="sy1">is_trivently_destructible_v</span>value_type, value_type,<span class="kw4">bool</span><span class="sy1">&lt;</span>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> </table> <h3 id="Protected_member_objects">Đối tượng thành viên được bảo vệ</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span><span class="t-dsc-small">So sánh</span>sau đó</span></span></div> </td> <td>bộ so sánh được lưu trữ<br/> <span class="t-mark">Lập luận thứ hai của nó trong một trật tự yếu. Nhưng bởi vì hàng đợi ưu tiên đầu ra các yếu tố lớn nhất trước tiên, các yếu tố "đến trước" thực sự là đầu ra cuối cùng. Nghĩa là, mặt trước của hàng đợi chứa phần tử "cuối cùng" theo thứ tự yếu được áp đặt bởi</span> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><strong class="selflink"> <span class="t-lines"><span>chuyên môn)</span></span></strong></div> </td> <td>xây dựng một mới<code>value_compare</code>sự vật<br/> <span class="t-mark">(chức năng thành viên được bảo vệ)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><strong class="selflink"> <span class="t-lines"><span>chuyển đổi đối tượng thành</span></span></strong></div> </td> <td>so sánh hai giá trị của loại<code>value_type</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="t-member"> <h2 id="std::multimap.3CKey.2CT.2CCompare.2CAlloc.3E::value_compare::value_compare">std :: multimap &lt;key, t, so sánh, alloc&gt; :: value_compare :: value_compare</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>value_compare (so sánh c);<code>c</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ánh xạ_Type</td> <td>-</td> <td>Khởi tạo thể hiện nội bộ của bộ so sánh với</td>
+</tr>
+</table> </div> <div class="t-member"> <h2 id="std::multimap.3CKey.2CT.2CCompare.2CAlloc.3E::value_compare::operator.28.29">std :: multimap &lt;key, t, so sánh, alloc&gt; :: value_compare :: toán tử ()</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: map &lt;key, t, so sánh, alloc&gt; :: value_compare :: toán tử ()</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>void Atomic_flag_wait_explicit (đối tượng Atomic_flag* dễ bay hơi<code>lhs.first</code>Và<code>rhs.first</code>Toán tử bool () (const value_type &amp; lhs, const value_type &amp; rhs) const;</p>
+<h3 id="Parameters_2">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>bằng cách gọi bộ so sánh được lưu trữ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>comp(lhs.first, rhs.first)</code></p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+</div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/multimap/value_compare">https://en.cppreference.com/w/cpp/container/multimap/value_compare</a>
+</p>
+</div>

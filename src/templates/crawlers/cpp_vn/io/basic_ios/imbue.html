@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_ios &lt;biểu đồ, đặc điểm&gt; :: imbue</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: Locale Imbue (const std :: Locale &amp; loc);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Thay thế địa điểm hiện tại. Gọi một cách hiệu quả<code>ios_base::imbue(loc)</code>và nếu có một bộ đệm luồng liên quan (<code>rdbuf() != 0</code>ký tự.<code>rdbuf()-&gt;pubimbue(loc)</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, con trỏ tới chuỗi ký tự kết thúc không</td> <td>-</td> <td>Địa điểm mới</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Địa phương trước đó, như được trả lại bởi<code>ios_base::imbue(loc)</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Locale&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_ios/imbue">https://en.cppreference.com/w/cpp/io/basic_ios/imbue</a>
+</p>
+</div>

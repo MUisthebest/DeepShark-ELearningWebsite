@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Promise &lt;R&gt; :: get_future</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">std :: Tương lai &lt;r&gt; get_future ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Trả về một đối tượng trong tương lai được liên kết với trạng thái chia sẻ giống như<code>*this</code>.</p>
+<p>Một ngoại lệ được ném nếu<code>*this</code>không có trạng thái chia sẻ hoặc<code>get_future</code>đã được gọi. Để có được nhiều kết thúc "pop" của kênh truyền thông trong tương lai hứa hẹn, hãy sử dụng<code><a href="../future/share" title="cpp/thread/future/share">std::future::share</a></code>.</p>
+<p>Các cuộc gọi đến chức năng này không giới thiệu các cuộc đua dữ liệu với các cuộc gọi đến<code><a href="set_value" title="cpp/thread/promise/set value">set_value</a></code>Thì<code><a href="set_exception" title="cpp/thread/promise/set exception">set_exception</a></code>Thì<code><a href="set_value_at_thread_exit" title="cpp/thread/promise/set value at thread exit">set_value_at_thread_exit</a></code>, hoặc<code><a href="set_exception_at_thread_exit" title="cpp/thread/promise/set exception at thread exit">set_exception_at_thread_exit</a></code>(Nhưng họ không cần phải đồng bộ hóa với nhau).</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một tương lai đề cập đến tình trạng chung của<code>*this</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../future_error" title="cpp/thread/future error">std::future_error</a></code>về các điều kiện sau:</p>
+<ul>
+<li> <code>*this</code>không có trạng thái chung. Mã lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>no_state</code></a>.</li>
+<li> <code>get_future()</code>đã được kêu gọi một lời hứa với trạng thái chia sẻ giống như<code>*this</code>. Mã lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>future_already_retrieved</code></a>.</li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/promise/get_future">https://en.cppreference.com/w/cpp/thread/promise/get_future</a>
+</p>
+</div>

@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_Future &lt;T&gt; :: Shared_Future</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Shared_Future () NoExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">Shared_Future (const shared_future &amp; other);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Shared_Future (const shared_future &amp; other) NoExcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Shared_Future (std :: Tương lai &lt;t&gt; &amp;&amp; khác) NoExcept;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Shared_Future (Shared_Future &amp;&amp; Khác) NoExcept;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xây dựng một mới<code>shared_future</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định. Xây dựng một tương lai chia sẻ trống rỗng, không đề cập đến một trạng thái chia sẻ, đó là<code>valid() == false</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Xây dựng một tương lai được chia sẻ đề cập đến cùng một trạng thái chia sẻ, nếu có, như<code>other</code>.</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>Chuyển trạng thái chung được tổ chức bởi<code>other</code>ĐẾN<code>*this</code>là người cuối cùng của nhóm đi ra khỏi phạm vi, nó sẽ gọi là người được lưu trữ cho đối tượng ban đầu được quản lý bởi<code>other.valid() == false</code>, Và<code>this-&gt;valid()</code>Trả về giá trị giống như<code>other.valid()</code>sẽ trở lại trước khi xây dựng.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>một đối tượng trong tương lai khác để khởi tạo với</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/shared_future/shared_future">https://en.cppreference.com/w/cpp/thread/shared_future/shared_future</a>
+</p>
+</div>

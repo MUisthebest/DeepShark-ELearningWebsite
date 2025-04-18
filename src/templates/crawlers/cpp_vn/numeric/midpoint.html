@@ -1,0 +1,29 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Điểm giữa</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/numeric" title="cpp/header/numeric">&lt;numeric&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Constexpr t điểm giữa (t a, t b) noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Class T&gt;<code>a</code>Và<code>b</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>                const std :: chrono :: sys_time &lt;thời gian&gt; &amp; tp);<code>T</code>Constexpr t* điểm giữa (t* a, t* b);<code>bool</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>                const std :: chrono :: sys_time &lt;thời gian&gt; &amp; tp);<code>T</code>Tính điểm giữa của số nguyên, điểm nổi hoặc con trỏ<code>T</code> <a href="../language/type#Incomplete_type" title="cpp/language/type">incomplete type</a>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Trao đổi các giá trị của các yếu tố mà các trình rút đã cho đang chỉ ra.</td> <td>-</td> <td>là một loại số học khác</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>là một loại đối tượng. Việc sử dụng quá tải này là xấu nếu<code>a</code>Và<code>b</code>số nguyên, điểm nổi hoặc giá trị con trỏ<code>a</code>Và<code>b</code>Một nửa tổng của<code>a</code>. Nếu như<code>a</code>Và<code>b</code>. Không có tràn xảy ra. Nếu như</div> <div class="t-li1">
+<span class="t-li">2)</span>Nếu như<code>a</code>Và<code>b</code>có loại số nguyên và tổng là số lẻ, kết quả được làm tròn theo hướng<code>x[i]</code>Và<code>x[j]</code>Có loại điểm nổi, nhiều nhất là một hoạt động không chính xác xảy ra.<code>x</code>chỉ vào, tương ứng,<a href="../language/operator_arithmetic#Additive_operators" title="cpp/language/operator arithmetic">pointer arithmetic</a>của cùng một đối tượng mảng<code>x[i + (j - i) / 2]</code>(với mục đích của<code>x[std::midpoint(i, j)]</code>), trả về một con trỏ để<code>a</code>Và<code>b</code>(Hoặc, tương đương</div> <h3 id="Exceptions">Ngoại lệ</h3> <p>Ném không có ngoại lệ.</p>
+<h3 id="Notes">Ghi chú</h3> <p>        // Một biến thể của C ++ 11 std :: Uniform_int_distribution thực hiện.<span class="t-v">(2)</span>) trong đó bộ phận làm tròn về phía bằng không. Nếu như<code>return a + (b - a) / 2;</code>Không trỏ đến các phần tử của cùng một đối tượng mảng, hành vi không được xác định.<code><a href="../types/climits" title="cpp/types/climits">PTRDIFF_MAX</a></code>có thể được thực hiện đơn giản là<code>b - a</code>Trên các nền tảng chung. Tuy nhiên, việc triển khai như vậy không được đảm bảo là di động, bởi vì có thể có một số nền tảng trong đó tạo ra một mảng có số lượng các yếu tố lớn hơn<code>b</code>Và<code>a</code>là có thể, và</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_interpolate" title="cpp/feature test"><code>__cpp_lib_interpolate</code></a></td> <td><span class="nu0">Chính sách thực thi</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<code><a href="lerp" title="cpp/numeric/lerp">std::lerp</a></code>Thì<code>std::midpoint</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">có thể dẫn đến hành vi không xác định ngay cả khi cả hai</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">chỉ vào các phần tử trong cùng một mảng.</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>#include &lt;CstDint&gt;</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>#include &lt;Istream&gt;</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lerp" title="cpp/numeric/lerp"> <span class="t-lines"><span>Lerp</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Chức năng nội suy tuyến tính<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/midpoint">https://en.cppreference.com/w/cpp/numeric/midpoint</a>
+</p>
+</div>

@@ -1,0 +1,72 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Regextraits<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p><strong class="selflink">Regextraits</strong>là một lớp đặc điểm mà tóm tắt các hoạt động cần thiết cho một loại ký tự nhất định khi là tham số loại mẫu cho<code><a href="http://en.cppreference.com/w/cpp/regex/basic_regex"><span class="kw2003">Điều đó cho tất cả<span class="me2">BASIC_REGEX</span></span></a></code>.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Cho quá tải</p>
+<ul>
+<li> <code>CharT</code>, một loại nhân vật</li>
+<li> <code>X</code>, một loại regextraits cho loại<code>CharT</code> </li>
+<li> <code>u</code>, một đối tượng của loại<code>X</code> </li>
+<li> <code>v</code>, một đối tượng của loại<code>const X</code> </li>
+<li> <code>p</code>, một giá trị của loại<code>const CharT*</code> </li>
+<li> <code>I1, I2</code>, đầu vào vòng lặp</li>
+<li> <code>F1, F2</code>, chuyển tiếp Iterators</li>
+<li> <code>c</code>, một giá trị của loại<code>const CharT</code> </li>
+<li> <code>s</code>, một đối tượng của loại<code>X::string_type</code> </li>
+<li> <code>cs</code>, một đối tượng của loại<code>const X::string_type</code> </li>
+<li> <code>b</code>, một giá trị của loại<code>bool</code> </li>
+<li> <code>I</code>, một giá trị của loại<code>int</code> </li>
+<li> <code>cl</code>, một đối tượng của loại<code>X::char_class_type</code> </li>
+<li> <code>loc</code>, một đối tượng của loại<code>X::locale_type</code> </li>
+</ul> <table class="wikitable"> <tr> <th>  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</th> <th>Loại trả lại</th> <th>ngữ nghĩa</th>
+</tr> <tr> <td>
+<code>X::char_type</code> </td> <td> <code>CharT</code> </td> <td>Được sử dụng để tham khảo loại ký tự.</td>
+</tr> <tr> <td>
+<code>X::string_type</code> </td> <td> <code><a href="http://en.cppreference.com/w/cpp/string/basic_string"><span class="kw1231">Điều đó cho tất cả<span class="me2">BASIC_STRING</span></span></a><span class="sy1">is_trivently_destructible_v</span>CharT<span class="sy1">&lt;</span></code> </td> <td> </td>
+</tr> <tr> <td>
+<code>X::locale_type</code> </td> <td> </td> <td>MỘT<a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>Loại đại diện cho địa điểm được sử dụng bởi lớp đặc điểm.</td>
+</tr> <tr> <td>
+<code>X::char_class_type</code> </td> <td> </td> <td>MỘT<a href="bitmasktype" title="cpp/named req/BitmaskType">BitmaskType</a>Loại đại diện cho một phân loại nhân vật cụ thể.</td>
+</tr> <tr> <td>
+<code>X::length(p)</code> </td> <td> <code><a href="http://en.cppreference.com/w/cpp/types/size_t"><span class="kw107">Điều đó cho tất cả<span class="me2">size_t</span></span></a></code> </td> <td>Trả lại: nhỏ nhất<code>i</code>chỉ vào trình tự và mọi số nguyên không âm<code>p[i] == 0</code>. Sự phức tạp là tuyến tính trong<code>i</code>.</td>
+</tr> <tr> <td>
+<code>v.translate(c)</code> </td> <td> <code>X::char_type</code> </td> <td>Trả về: Một ký tự sao cho bất kỳ nhân vật nào<code>d</code>được coi là tương đương với<code>c</code>, sau đó<code>v.translate(c) == v.translate(d)</code>.</td>
+</tr> <tr> <td>
+<code>v.translate_nocase(c)</code> </td> <td> <code>X::char_type</code> </td> <td>Trả về: Một ký tự sao cho bất kỳ nhân vật nào<code>C</code>được coi là tương đương với<code>c</code>Không có liên quan đến trường hợp, sau đó<code>v.translate_nocase(c) == v.translate_nocase(C)</code>.</td>
+</tr> <tr> <td>
+<code>v.transform(F1, F2)</code> </td> <td> <code>X::string_type</code> </td> <td>Trả về: Một phím sắp xếp cho chuỗi ký tự được chỉ định bởi phạm vi iterator<code>[F1, F2)</code>như vậy nếu chuỗi nhân vật<code>[G1, G2)</code>sắp xếp trước chuỗi ký tự<code>[H1, H2)</code>, sau đó<code>v.transform(G1, G2) &lt; v.transform(H1, H2)</code>.</td>
+</tr> <tr> <td>
+<code>v.transform_primary(F1, F2)</code> </td> <td> <code>X::string_type</code> </td> <td>Trả về: Một phím sắp xếp cho chuỗi ký tự được chỉ định bởi phạm vi iterator<code>[F1, F2)</code>như vậy nếu chuỗi nhân vật<code>[G1, G2)</code>sắp xếp trước chuỗi ký tự<code>[H1, H2)</code>Không có liên quan đến trường hợp, sau đó<code>v.transform_primary(G1, G2) &lt; v.transform_primary(H1, H2)</code>.</td>
+</tr> <tr> <td>
+<code>v.lookup_collatename(F1, F2)</code> </td> <td> <code>X::string_type</code> </td> <td>Consexpr Prev_Permuting_Result &lt;i&gt;<ul>
+<li>Một chuỗi trống nếu chuỗi ký tự không phải là phần tử đối chiếu hợp lệ</li>
+<li>Một chuỗi các ký tự đại diện cho phần tử đối chiếu bao gồm chuỗi ký tự được chỉ định bởi phạm vi lặp lại<code>[F1, F2)</code>[tĩnh]</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>v.lookup_classname(F1, F2, b)</code> </td> <td> <code>X::char_class_type</code> </td> <td> <ul>
+<li>Chuyển đổi trình tự ký tự được chỉ định bởi phạm vi lặp<code>[F1, F2)</code>thành một giá trị của một<a href="bitmasktype" title="cpp/named req/BitmaskType">BitmaskType</a>điều đó sau đó có thể được chuyển cho<code>isctype</code> </li>
+<li>Giá trị được trả về từ<code>lookup_classname</code>có thể được bitwise hoặc cùng nhau; Giá trị kết quả đại diện cho tư cách thành viên trong một trong các lớp ký tự tương ứng</li>
+<li>Nếu như<code>b</code>là sự thật, Bitmask được trả lại phù hợp cho các nhân vật phù hợp mà không liên quan đến trường hợp của họ.</li>
+<li>Mẫu &lt;Class execPolicy,<code>​0​</code>Nếu chuỗi ký tự không phải là tên của một lớp ký tự được nhận ra bởi<code>X</code>.</li>
+<li>Giá trị được trả về sẽ độc lập với trường hợp của các ký tự trong chuỗi.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>v.isctype(c, cl)</code> </td> <td> <code>bool</code> </td> <td>Trả lại: Cho dù<code>c</code>là thành viên của một trong các lớp nhân vật được chỉ định bởi<code>cl</code>hoặc không.</td>
+</tr> <tr> <td>
+<code>v.value(c, I)</code> </td> <td> <code>int</code> </td> <td>Consexpr Prev_Permuting_Result &lt;i&gt;<ul>
+<li>Giá trị được biểu thị bằng chữ số<code>c</code>trong cơ sở<code>I</code>để chỉ ra thất bại,<code>c</code>là một chữ số hợp lệ trong cơ sở<code>I</code> </li>
+<li> <code>-1</code>[tĩnh]</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>u.imbue(loc)</code> </td> <td> <code>X::locale_type</code> </td> <td> <ul>
+<li>Imbues<code>u</code>với địa điểm<code>loc</code> </li>
+<li>Trả về: Locale trước được sử dụng bởi<code>u</code>Nếu có</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>v.getloc()</code> </td> <td> <code>X::locale_type</code> </td> <td>Trả về: Locale trước được sử dụng bởi<code>v</code>Nếu có.</td>
+</tr>
+</table> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>RegExtraits được thỏa mãn bởi các lớp thư viện tiêu chuẩn sau:</p>
+<table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;&gt; lớp regex_traits &lt;par&gt;;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/RegexTraits">https://en.cppreference.com/w/cpp/named_req/RegexTraits</a>
+</p>
+</div>

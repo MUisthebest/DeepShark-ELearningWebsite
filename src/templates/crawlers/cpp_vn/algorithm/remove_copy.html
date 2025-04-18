@@ -1,0 +1,69 @@
+ <h1 class="firstHeading" id="firstHeading">std :: remove_copy, std :: remove_copy_if</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/algorithm" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;class inputit, class outputit, class T&gt;</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Outputit remove_copy (đầu vào đầu tiên, đầu vào cuối cùng,</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">                      Outputit d_First, const t &amp; value);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(3)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;class inputit, class outputit, class T&gt;</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr outputit remove_copy (đầu vào đầu tiên, đầu vào cuối cùng,</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">                                Outputit d_First, const t &amp; value);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Mẫu &lt;class execPolicy, class forwardit1, class forwardit2, class t&gt;<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>Outputit copy_if (đầu vào đầu tiên, đầu vào cuối cùng, đầu ra d_first,<code>d_first</code>ForwardItIt2 remove_copy (execPolicy &amp;&amp; chính sách,</p>
+<div class="t-li1">
+<span class="t-li">1)</span>                        Forwardit1 đầu tiên, forwardit1 cuối cùng,<code>value</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>                        Forwardit2 d_first, const t &amp; value);<code>p</code>(C ++ 20)<code>true</code>.</div> <div class="t-li1">
+<span class="t-li">Một động thái tương đương với một bản sao</span>                                   Nhị phân p);<span class="t-v">*(d_first + 2) = val2 - std :: di chuyển (acc);</span>Mẫu &lt;class execPolicy, class forwardit, lớp nhị phân&gt;<code>policy</code>ForwardIt adjacent_find (execPolicy &amp;&amp; chính sách,<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p><code><a href="http://en.cppreference.com/w/cpp/algorithm/is_execution_policy"><span class="kw1568">Điều đó cho tất cả<span class="me2">Các yếu tố được so sánh bằng cách sử dụng</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/types/decay"><span class="kw632">Điều đó cho tất cả<span class="me2">Tìm kiếm phạm vi</span></span></a><span class="sy1">is_trivently_destructible_v</span>ExecutionPolicy<span class="sy1">2,4)</span></code>khoảng cách<code>true</code>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p><code><a href="http://en.cppreference.com/w/cpp/algorithm/is_execution_policy"><span class="kw1568">Điều đó cho tất cả<span class="me2">Các yếu tố được so sánh bằng cách sử dụng</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/types/remove_cvref"><span class="kw2642">Điều đó cho tất cả<span class="me2">Các yếu tố được so sánh bằng cách sử dụng vị ngữ nhị phân đã cho</span></span></a><span class="sy1">is_trivently_destructible_v</span>ExecutionPolicy<span class="sy1">2,4)</span></code>khoảng cách<code>true</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table>
+</div> <p>Mẫu &lt;class inputit, class outputit, lớp unyredicate&gt;</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>có thể được sử dụng thay thế.</td>
+</tr> <tr class="t-par"> <td>không trống, sử dụng bộ tích lũy</td> <td>-</td> <td>Để lưu trữ giá trị bị trừ:</td>
+</tr> <tr class="t-par"> <td>được phân vùng liên quan đến</td> <td>-</td> <td>Outputit remove_copy_if (đầu vào đầu tiên, đầu vào cuối cùng,</td>
+</tr> <tr class="t-par"> <td>std :: iterator_traits &lt;buputit&gt; :: value_type acc = *first;</td> <td>-</td> <td>*d_first = acc;<a href="execution_policy_tag_t" title="cpp/algorithm/execution policy tag t">execution policy</a> </td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>OutputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/outputiterator" title="cpp/named req/OutputIterator">LegacyOutputIterator</a>.</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>ForwardIt1, ForwardIt2</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/forwarditerator" title="cpp/named req/ForwardIterator">LegacyForwardIterator</a>.</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>UnaryPredicate</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/predicate" title="cpp/named req/Predicate">Predicate</a>.</td>
+</tr>
+</table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>              Không có p);<code>*d_first = *first</code>                         OUTPUTITIT D_FIRST, PRECEPREDATICATE P);</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p><code>*first</code>// thực hiện đầu tiên<a href="../iterator#Types_and_writability" title="cpp/iterator">writable</a>ĐẾN<code>d_first</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Mẫu &lt;class inputit, class outputit, lớp unyredicate&gt;</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Cho quá tải<code>N</code>(1,3)<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>first, last<span class="br0">)</span></code>:</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Phạm vi của các yếu tố<code>N</code>ConstExpr typename iterator_traits &lt;buputit&gt; :: arget_type<code>value</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<code>operator==</code>.</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>Phạm vi của các yếu tố<code>N</code>Mẫu &lt;class execPolicy, class forwardit, lớp unyredicate&gt;<code>p</code>.</div> <p>Constexpr Outputit Remove_Copy_IF (đầu vào đầu tiên, đầu vào cuối cùng,<code>ForwardIt1</code>                                   OUTPUTITIT D_FIRST, PRECEPREDATICATE P);<code>value_type</code># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="../named_req/moveconstructible" title="cpp/named req/MoveConstructible">MoveConstructible</a>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Sự khởi đầu của phạm vi đích<code>ExecutionPolicy</code>chính sách</p>
+<ul>
+<li>Chính sách thực thi để sử dụng. Nhìn thấy<code>ExecutionPolicy</code>Để biết chi tiết.<a href="execution_policy_tag_t" title="cpp/algorithm/execution policy tag t">standard policies</a>Thì<code><a href="../error/terminate" title="cpp/error/terminate">std::terminate</a></code>Loại loại 1 và type2 phải sao cho một đối tượng của loại iterator_traits<code>ExecutionPolicy</code>Đầu vào</li>
+<li>value_type<code><a href="../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>có thể được chuyển đổi hoàn toàn thành cả hai. Loại</li>
+</ul> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <th>
+<a href="#Version_1">remove_copy</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class execPolicy, class forwardit1,</pre></div> </td>
+</tr> <tr> <th>
+<a href="#Version_3">remove_copy_if</a> </th>
+</tr> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">          Lớp chuyển tiếpTIT2, lớp không có ý nghĩa&gt;</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>ForwardItIt2 remove_copy_if (execPolicy &amp;&amp; chính sách,<span class="st0">                           Forwardit1 đầu tiên, forwardit1 cuối cùng,</span>                           Forwardit2 d_first, preanedicate p);</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Bản sao các yếu tố từ phạm vi</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">, bỏ qua các yếu tố đáp ứng các tiêu chí cụ thể.</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue779" rel="nofollow">LWG 779</a> </td> <td>C ++ 98</td> <td>
+<code>T</code>(Sử dụng<a href="../named_req/equalitycomparable" title="cpp/named req/EqualityComparable">EqualityComparable</a>Đếm các yếu tố mà vị ngữ<br/>(xác định ở trên) và kết quả của<code>ForwardIt</code>giá trị để tìm kiếm<code>T</code> </td> <td>Thực hiện quá tải<code>*d_first = *first</code><br/>Bỏ qua tất cả các yếu tố bằng</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="remove" title="cpp/algorithm/remove"> <span class="t-lines"><span>Được xác định trong tiêu đề</span><span>di dời</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="copy" title="cpp/algorithm/copy"> <span class="t-lines"><span>Được xác định trong tiêu đề</span><span>sao chép</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="partition_copy" title="cpp/algorithm/partition copy"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ranges/remove_copy" title="cpp/algorithm/ranges/remove copy"> <span class="t-lines"><span>(Mẫu chức năng)</span><span>Phạm vi :: remove_copy</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/remove_copy">https://en.cppreference.com/w/cpp/algorithm/remove_copy</a>
+</p>
+</div>

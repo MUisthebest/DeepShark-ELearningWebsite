@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Chrono :: Days trong tuần :: C_ENCODING, STD :: Chrono :: Daysway :: Iso_encoding</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ConsExPR không dấu c_encoding () const NoExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">constexpr unsign iso_encoding () const noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Trả về giá trị ngày trong tuần được lưu trữ trong<code>*this</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Trả về giá trị ngày trong tuần được lưu trữ trong<code>*this</code>, ngoại trừ Chủ nhật đó (được lưu trữ dưới dạng<code>​0​</code>) được hiểu là<code>7</code>Theo ISO 8601.</div> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span>Giá trị ngày trong tuần được lưu trữ trong<code>*this</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>c_encoding() == 0u ? 7u : c_encoding()</code>
+</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/weekday/encoding">https://en.cppreference.com/w/cpp/chrono/weekday/encoding</a>
+</p>
+</div>

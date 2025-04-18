@@ -1,0 +1,98 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FileSystem :: Perms</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/filesystem" title="cpp/header/filesystem">&lt;filesystem&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">enum perms;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Loại này đại diện cho quyền truy cập tệp.</p>
+<p><code>perms</code>Cấu trúc kết hợp hiệu suất và khả năng truy cập của một mảng kiểu C với các lợi ích của một thùng chứa tiêu chuẩn, chẳng hạn như biết kích thước của chính nó, sự phân công hỗ trợ, trình lặp truy cập ngẫu nhiên, v.v.<a href="../named_req/bitmasktype" title="cpp/named req/BitmaskType">BitmaskType</a>    overwrite_existing = / * không xác định * /,<code>operator&amp;</code>Thì<code>operator|</code>Thì<code>operator^</code>Thì<code>operator~</code>Thì<code>operator&amp;=</code>Thì<code>operator|=</code>, Và<code>operator^=</code>    update_existing = / * không xác định * /,<code>none</code>    đệ quy = / * không xác định * /,</p>
+<p>Mô hình quyền truy cập<a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/sys_stat.h.html" rel="nofollow">POSIX permission bits</a>và bất kỳ quyền tệp riêng lẻ nào (theo báo cáo của<code><a href="status" title="cpp/filesystem/status">filesystem::status</a></code>) là sự kết hợp của một số bit sau:</p>
+<h3 id="Member_constants">Inline Consexpr bool is_execut_policy_v = std :: is_execut_policy &lt;t&gt; :: value;</h3> <table class="wikitable"> <tr> <th>Áp dụng cho</th> <th>Giá trị (Octal)</th> <th>Tương đương Posix</th> <th>    skip_symlinks = / * không xác định * /,</th>
+</tr> <tr> <td>
+<code>none</code> </td> <td>
+<code>​0​</code> </td> <td> </td> <td>Không có bit quyền được đặt</td>
+</tr> <tr> <td>
+<code>owner_read</code> </td> <td>
+<code>0400</code> </td> <td>
+<code>S_IRUSR</code> </td> <td>Chủ sở hữu tập tin có quyền đọc</td>
+</tr> <tr> <td>
+<code>owner_write</code> </td> <td>
+<code>0200</code> </td> <td>
+<code>S_IWUSR</code> </td> <td>Chủ sở hữu tập tin có quyền ghi</td>
+</tr> <tr> <td>
+<code>owner_exec</code> </td> <td>
+<code>0100</code> </td> <td>
+<code>S_IXUSR</code> </td> <td>Chủ sở hữu tệp có quyền thực thi/tìm kiếm</td>
+</tr> <tr> <td>
+<code>owner_all</code> </td> <td>
+<code>0700</code> </td> <td>
+<code>S_IRWXU</code> </td> <td>Chủ sở hữu tệp đã đọc, ghi và thực thi/tìm kiếm quyền<p>Mẫu &lt;class inputit1, class inputit2,<code>owner_read | owner_write | owner_exec</code></p>
+</td>
+</tr> <tr> <td>
+<code>group_read</code> </td> <td>
+<code>040</code> </td> <td>
+<code>S_IRGRP</code> </td> <td>Nhóm người dùng của tệp có quyền đọc</td>
+</tr> <tr> <td>
+<code>group_write</code> </td> <td>
+<code>020</code> </td> <td>
+<code>S_IWGRP</code> </td> <td>Nhóm người dùng của tệp có quyền ghi</td>
+</tr> <tr> <td>
+<code>group_exec</code> </td> <td>
+<code>010</code> </td> <td>
+<code>S_IXGRP</code> </td> <td>Nhóm người dùng của tệp có quyền thực thi/tìm kiếm</td>
+</tr> <tr> <td>
+<code>group_all</code> </td> <td>
+<code>070</code> </td> <td>
+<code>S_IRWXG</code> </td> <td>Nhóm người dùng của tệp có quyền đọc, ghi và thực thi/tìm kiếm<p>Mẫu &lt;class inputit1, class inputit2,<code>group_read | group_write | group_exec</code></p>
+</td>
+</tr> <tr> <td>
+<code>others_read</code> </td> <td>
+<code>04</code> </td> <td>
+<code>S_IROTH</code> </td> <td>Những người dùng khác đã đọc quyền</td>
+</tr> <tr> <td>
+<code>others_write</code> </td> <td>
+<code>02</code> </td> <td>
+<code>S_IWOTH</code> </td> <td>Người dùng khác có quyền viết</td>
+</tr> <tr> <td>
+<code>others_exec</code> </td> <td>
+<code>01</code> </td> <td>
+<code>S_IXOTH</code> </td> <td>Người dùng khác có quyền thực thi/tìm kiếm</td>
+</tr> <tr> <td>
+<code>others_all</code> </td> <td>
+<code>07</code> </td> <td>
+<code>S_IRWXO</code> </td> <td>Những người dùng khác đã đọc, viết và thực thi/tìm kiếm quyền<p>Mẫu &lt;class inputit1, class inputit2,<code>others_read | others_write | others_exec</code></p>
+</td>
+</tr> <tr> <td>
+<code>all</code> </td> <td>
+<code>0777</code> </td> <td> </td> <td>Tất cả người dùng đã đọc, viết và thực thi/tìm kiếm quyền<p>Mẫu &lt;class inputit1, class inputit2,<code>owner_all | group_all | others_all</code></p>
+</td>
+</tr> <tr> <td>
+<code>set_uid</code> </td> <td>
+<code>04000</code> </td> <td>
+<code>S_ISUID</code> </td> <td>Đặt ID người dùng thành ID người dùng chủ sở hữu tệp khi thực thi</td>
+</tr> <tr> <td>
+<code>set_gid</code> </td> <td>
+<code>02000</code> </td> <td>
+<code>S_ISGID</code> </td> <td>Đặt ID nhóm thành ID nhóm người dùng của tệp khi thực hiện</td>
+</tr> <tr> <td>
+<code>sticky_bit</code> </td> <td>
+<code>01000</code> </td> <td>
+<code>S_ISVTX</code> </td> <td>Ý nghĩa được xác định theo triển khai, nhưng Posix XSI chỉ định rằng khi được đặt trên thư mục, chỉ chủ sở hữu tệp mới có thể xóa các tệp ngay cả khi thư mục có thể ghi cho các thư mục khác (được sử dụng với<code>/tmp</code>)</td>
+</tr> <tr> <td>
+<code>mask</code> </td> <td>
+<code>07777</code> </td> <td> </td> <td>Tất cả các bit quyền hợp lệ.<p>Mẫu &lt;class inputit1, class inputit2,<code>all | set_uid | set_gid | sticky_bit</code></p>
+</td>
+</tr>
+</table> <p>Ngoài ra, các hằng số sau của loại này được xác định, không đại diện cho các quyền:</p>
+<table class="wikitable"> <tr> <th>Áp dụng cho</th> <th>Giá trị (hex)</th> <th>    skip_symlinks = / * không xác định * /,</th>
+</tr> <tr> <td>
+<code>unknown</code> </td> <td>
+<code>0xFFFF</code> </td> <td>Các quyền không xác định (ví dụ: khi<code><a href="file_status" title="cpp/filesystem/file status">filesystem::file_status</a></code>được tạo mà không có quyền)</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>được yêu cầu chỉ có một trong số</p>
+<p>được đặt.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Quá tải không ném không có hành động đặc biệt về lỗi.</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">PRMS</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="status" title="cpp/filesystem/status"> <span class="t-lines"><span>trạng thái</span><span>Symlink_Status</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Xác định các thuộc tính tệp<br/>Xác định các thuộc tính tệp, kiểm tra mục tiêu symlink<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="permissions" title="cpp/filesystem/permissions"> <span class="t-lines"><span>quyền</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>sửa đổi quyền truy cập tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/perms">https://en.cppreference.com/w/cpp/filesystem/perms</a>
+</p>
+</div>

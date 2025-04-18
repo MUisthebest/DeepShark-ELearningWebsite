@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">15.7 Điều khiển dòng [CPP.LINE]</h1> <p>Thay đổi số dòng của mã nguồn và, tùy chọn, tên tệp hiện tại, trong bộ tiền xử lý.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>#line</code> <span class="t-spar">vải lanh</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>#line</code> <span class="t-spar">vải lanh</span> <code>"</code><span class="t-spar">Tên tệp</span><code>"</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>1) Thay đổi số dòng tiền xử lý hiện tại thành<span class="t-spar">vải lanh</span>. Mở rộng macro<code>__LINE__</code>Ngoài thời điểm này sẽ mở rộng sang<span class="t-spar">vải lanh</span>cộng với số lượng các dòng mã nguồn thực tế gặp phải kể từ đó.</p>
+<p>2) Cũng thay đổi tên tệp tiền xử lý hiện tại thành<span class="t-spar">Tên tệp</span>. Mở rộng macro<code>__FILE__</code>Từ thời điểm này sẽ tạo ra<span class="t-spar">Tên tệp</span>.</p>
+<p>Bất kỳ mã thông báo tiền xử lý nào (hằng số hoặc biểu thức macro) đều được phép là đối số<code>#line</code>Miễn là chúng mở rộng sang một số nguyên thập phân hợp lệ tùy ý theo một chuỗi ký tự hợp lệ.</p>
+<p><span class="t-spar">vải lanh</span>phải là một chuỗi ít nhất một chữ số thập phân (chương trình không được hình thành, nếu không) và luôn được hiểu là thập phân (ngay cả khi nó bắt đầu với<code>0</code>).</p>
+<p>Nếu như<span class="t-spar">vải lanh</span>khoảng cách<code>0</code>hoặc lớn hơn<span class="t-rev-inl t-until-cxx11"><span><code>32767</code></span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span><code>2147483647</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Hoạt động tương đương cho quá tải</p>
+<h3 id="Notes">Ghi chú</h3> <p>Chỉ thị này được sử dụng bởi một số công cụ tạo mã tự động tạo các tệp nguồn C ++ từ một tệp được viết bằng ngôn ngữ khác. Trong trường hợp đó,<code>#line</code>Các chỉ thị có thể được chèn vào các số dòng tham chiếu tệp C ++ được tạo và tên tệp của tệp nguồn gốc (người chỉnh sửa).</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cassert&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#Define fname "test.cc"</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>{</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>{</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>#line 777 fname</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>Kiểm tra: test.cc:777: int main (): khẳng định `2+2 == 5 'không thành công.</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>Kiểm tra: test.cc:777: int main (): khẳng định `2+2 == 5 'không thành công.</li></ul>
+<li>    S.B3 = 0B11;</li>
+<ul><li>Kiểm tra: test.cc:777: int main (): khẳng định `2+2 == 5 'không thành công.</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../utility/source_location" title="cpp/utility/source location"> <span class="t-lines"><span>Nguồn_Location</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Một lớp đại diện cho thông tin về mã nguồn, chẳng hạn như tên tệp, số dòng và tên hàm<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/preprocessor/line" title="c/preprocessor/line">C documentation</a></span>vì<span class=""><span>15.7 Điều khiển dòng [CPP.LINE]</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/preprocessor/line">https://en.cppreference.com/w/cpp/preprocessor/line</a>
+</p>
+</div>

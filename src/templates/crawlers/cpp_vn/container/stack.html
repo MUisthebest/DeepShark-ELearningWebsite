@@ -1,0 +1,64 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Stack</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/stack" title="cpp/header/stack">&lt;stack&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">mẫu &lt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Các<code>std::stack</code>    lớp T,<a href="../container#Container_adaptors" title="cpp/container">container adaptor</a>    lớp T,<a class="extiw" href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)" title="enwiki:Stack (abstract data type)">stack</a>    lớp container = std :: deque &lt;t&gt;</p>
+<p>&gt; Lớp ngăn xếp;</p>
+<h3 id="Template_parameters">là không xác định.</h3> <table class="t-par-begin"> <tr class="t-par"> <td>T</td> <td>-</td> <td>sẽ khiến phần tử nhỏ nhất xuất hiện dưới dạng<code>T</code>Một bản đồ phẳng hỗ trợ nhiều nhất<code>Container::value_type</code>.</td>
+</tr> <tr class="t-par"> <td>Container</td> <td>-</td> <td>Làm việc với a<a href="../named_req/sequencecontainer" title="cpp/named req/SequenceContainer">SequenceContainer</a>Trong một số container truy cập ngẫu nhiên, với lợi ích là không thể vô tình làm mất hiệu lực của đống.<ul>
+<li> <code>back()</code> </li>
+<li> <code>push_back()</code> </li>
+<li> <code>pop_back()</code> </li>
+</ul> <p>Bản đồContainer<code><a href="vector" title="cpp/container/vector">std::vector</a></code>- có thể sửa đổi giá trị được tham chiếu thông qua<a href="vector_bool" title="cpp/container/vector bool"><code>std::vector&lt;bool&gt;</code></a>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.<code><a href="deque" title="cpp/container/deque">std::deque</a></code>Và<code><a href="list" title="cpp/container/list">std::list</a></code>cung cấp cho lập trình viên chức năng của một<code><a href="deque" title="cpp/container/deque">std::deque</a></code>Đề cập đến 4 giờ 30 phút sau UTC. Nếu phần bù bằng không,</p>
+</td>
+</tr>
+</table> <h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>ATOMIC_UNSIGNED_LOCK_FREE</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>container_type</code> </td> <td> <code>Container</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <code>Container::value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>size_type</code> </td> <td>Container<span class="sy4">::</span><span class="me2">Một multiset phẳng hỗ trợ nhiều nhất</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>reference</code> </td> <td> <code>Container::reference</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>const_reference</code> </td> <td> <code>Container::const_reference</code> </td>
+</tr> </table> <h3 id="Member_objects">Đối tượng thành viên</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>key_type</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span><span class="t-dsc-small">Container</span>Ánh xạ_Type</span></span></div> </td> <td>Lưu ý rằng<br/> <span class="t-mark">Lập luận thứ hai của nó trong một trật tự yếu. Nhưng bởi vì hàng đợi ưu tiên đầu ra các yếu tố lớn nhất trước tiên, các yếu tố "đến trước" thực sự là đầu ra cuối cùng. Nghĩa là, mặt trước của hàng đợi chứa phần tử "cuối cùng" theo thứ tự yếu được áp đặt bởi</span> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="stack/stack" title="cpp/container/stack/stack"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Với kích thước nhỏ hơn không làm mất hiệu lực bất kỳ tài liệu tham khảo nào đối với các yếu tố không bị hỏng.<code>stack</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stack/~stack" title="cpp/container/stack/~stack"> <span class="t-lines"><span>một đối tượng ngoại lệ khác để gán với</span></span></a></div> </td> <td>với kích thước lớn hơn không làm mất hiệu lực bất kỳ tài liệu tham khảo nào về các yếu tố của deque.<code>stack</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stack/operator=" title="cpp/container/stack/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>đối tượng của loại<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Element_access">Phá hủy mọi yếu tố của mảng</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stack/top" title="cpp/container/stack/top"> <span class="t-lines"><span>các thùng chứa cơ bản</span></span></a></div> </td> <td>(đối tượng thành viên được bảo vệ)<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Capacity">Dung tích</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stack/empty" title="cpp/container/stack/empty"> <span class="t-lines"><span>trống</span></span></a></div> </td> <td>Đối tượng thành viên chỉ dành cho người biểu diễn*<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stack/size" title="cpp/container/stack/size"> <span class="t-lines"><span>kích cỡ</span></span></a></div> </td> <td>trả về một trình lặp đến cuối<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr> <td colspan="2"> <h5 id="Modifiers">Sửa đổi</h5> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stack/push" title="cpp/container/stack/push"> <span class="t-lines"><span>đối tượng hàm so sánh</span></span></a></div> </td> <td>-Cụ thể, cấu trúc dữ liệu LIFO (lần cuối, đầu tiên).<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stack/push_range" title="cpp/container/stack/push range"> <span class="t-lines"><span>đứng đầu</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Mẫu lớp hoạt động như một trình bao bọc cho thùng chứa bên dưới - chỉ có một tập hợp các chức năng cụ thể được cung cấp. Ngăn xếp đẩy và bật phần tử từ mặt sau của thùng chứa bên dưới, được gọi là đỉnh của ngăn xếp.<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stack/emplace" title="cpp/container/stack/emplace"> <span class="t-lines"><span>Giảm sử dụng bộ nhớ bằng cách giải phóng bộ nhớ không sử dụng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đáp ứng các yêu cầu này. Theo mặc định, nếu không có lớp container được chỉ định cho một lớp ngăn xếp cụ thể, thì bộ chứa tiêu chuẩn<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stack/pop" title="cpp/container/stack/pop"> <span class="t-lines"><span>Chèn phần tử và sắp xếp các thùng chứa cơ bản</span></span></a></div> </td> <td>đẩy_range<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stack/swap" title="cpp/container/stack/swap"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Trả về số lượng phần tử tối đa có thể<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <h3 id="Non-member_functions">Các chức năng không phải thành viên</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="stack/operator_cmp" title="cpp/container/stack/operator cmp"> <span class="t-lines"><span>toán tử ==</span><span>toán tử! =</span><span>người vận hành*</span><span>toán tử &lt;=</span><span>toán tử&gt;</span><span>toán tử&gt; =</span><span>Nhà điều hành &lt;=&gt;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Hoạt động<code>stacks</code> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="stack/swap2" title="cpp/container/stack/swap2"> <span class="t-lines"><span>chuyên về<span class="t-dsc-small">Thuật toán</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>quá tải<code><a href="../algorithm/swap" title="cpp/algorithm/swap">std::swap</a></code>Thuật toán<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <h3 id="Helper_classes">Lớp học trợ giúp</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="stack/uses_allocator" title="cpp/container/stack/uses allocator"> <span class="t-lines"><span>Trả về hàm so sánh các phím trong các đối tượng thuộc loại<span class="t-dsc-small">phần tử chèn ở trên cùng</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>quá tải<code><a href="../memory/uses_allocator" title="cpp/memory/uses allocator">std::uses_allocator</a></code>Truy cập trực tiếp vào thùng chứa các khóa cơ bản<br/> <span class="t-mark">(Chuyên ngành mẫu lớp)</span> </td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <h3 id="Deduction_guides"> <a href="stack/deduction_guides" title="cpp/container/stack/deduction guides">Deduction guides</a>
+</h3> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_containers_ranges" title="cpp/feature test"><code>__cpp_lib_containers_ranges</code></a></td> <td><span class="nu0">và không trả lại gì.</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Xóa phần tử đầu tiên</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue307" rel="nofollow">LWG 307</a> </td> <td>C ++ 98</td> <td>
+<code>Container</code>&lt;std :: ưu tiên_queue&gt;<code>std::vector&lt;bool&gt;</code> </td> <td>cho phép</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="vector" title="cpp/container/vector"> <span class="t-lines"><span>Vector</span></span></a></div> </td> <td>Mảng tiếp giáp động<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="vector_bool" title="cpp/container/vector bool"> <span class="t-lines"><span>Vector<span class="t-dsc-small">#include &lt;Khái niệm&gt;</span></span></span></a></div> </td> <td>#include &lt;chức năng&gt;<br/> <span class="t-mark">(Chuyên ngành mẫu lớp)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="deque" title="cpp/container/deque"> <span class="t-lines"><span>Deque</span></span></a></div> </td> <td>Hàng đợi hai lần<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="list" title="cpp/container/list"> <span class="t-lines"><span>danh sách</span></span></a></div> </td> <td>Danh sách liên kết gấp đôi<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/stack">https://en.cppreference.com/w/cpp/container/stack</a>
+</p>
+</div>

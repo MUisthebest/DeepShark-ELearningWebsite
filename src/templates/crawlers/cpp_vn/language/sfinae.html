@@ -1,0 +1,90 @@
+ <h1 class="firstHeading" id="firstHeading">Sfinae</h1> <p>"Thất bại thay thế không phải là một lỗi"</p>
+<p><br/>Quy tắc này được áp dụng trong quá trình phân giải quá tải các mẫu chức năng: khi<a href="function_template#Template_argument_substitution" title="cpp/language/function template">substituting</a>được chỉ định rõ ràng hoặc<a href="template_argument_deduction" title="cpp/language/template argument deduction">deduced type</a>Đối với tham số mẫu không thành công, chuyên môn hóa bị loại khỏi<a href="overload_resolution" title="cpp/language/overload resolution">overload set</a>Thay vì gây ra lỗi biên dịch.</p>
+<p>Tính năng này được sử dụng trong metaproming mẫu.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Các tham số mẫu chức năng được thay thế (thay thế bằng các đối số mẫu) hai lần:</p>
+<ul>
+<li>Đối số mẫu được chỉ định rõ ràng được thay thế trước khi suy luận đối số mẫu</li>
+<li>suy luận các đối số và các đối số thu được từ các mặc định được thay thế sau khi suy luận đối số mẫu</li>
+</ul> <p>Thay thế xảy ra trong</p>
+<ul>
+<li>Tất cả các loại được sử dụng trong loại chức năng (bao gồm loại trả về và các loại của tất cả các tham số)</li>
+<li>Tất cả các loại được sử dụng trong khai báo tham số mẫu</li>
+<li>Tất cả các loại được sử dụng trong danh sách đối số mẫu của chuyên môn một phần</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>Tất cả các biểu thức được sử dụng trong loại chức năng</li>
+<li>Tất cả các biểu thức được sử dụng trong khai báo tham số mẫu</li>
+<li>Tất cả các biểu thức được sử dụng trong danh sách đối số mẫu của chuyên môn một phần</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Tất cả các biểu thức được sử dụng trong<a href="explicit" title="cpp/language/explicit">explicit specifier</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>MỘT<i>thất bại thay thế</i>là bất kỳ tình huống nào khi loại hoặc biểu thức ở trên sẽ không được hình thành (với chẩn đoán cần thiết), nếu được viết bằng cách sử dụng các đối số thay thế.</p>
+<p>Chỉ những thất bại trong các loại và biểu thức trong<i>bối cảnh ngay lập tức</i>thuộc loại chức năng hoặc loại tham số mẫu của nó<span class="t-rev-inl t-since-cxx20"><span>hoặc nó<a href="explicit" title="cpp/language/explicit">explicit specifier</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>là lỗi sfinae. Nếu việc đánh giá một loại/biểu thức thay thế gây ra tác dụng phụ như khởi tạo một số chuyên môn hóa, việc tạo ra một chức năng thành viên được xác định ngầm, v.v., các lỗi trong các tác dụng phụ đó được coi là lỗi khó.<span class="t-rev-inl t-since-cxx20"><span>MỘT<a href="lambda" title="cpp/language/lambda">lambda expression</a>không được coi là một phần của bối cảnh ngay lập tức.</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span></p>
+<p>Thay thế tiến hành theo thứ tự từ vựng và dừng lại khi gặp phải thất bại.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Nếu có nhiều khai báo với các đơn đặt hàng từ vựng khác nhau (ví dụ: một mẫu chức năng được khai báo bằng loại trả về theo dõi, sẽ được thay thế sau một tham số và được xác định lại bằng loại trả về thông thường sẽ được thay thế trước tham số) và điều đó sẽ gây ra sự khởi tạo của mẫu xảy ra theo một thứ tự khác nhau hoặc không phải là chương trình; Không cần chẩn đoán.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Typename a&gt;</pre></div> <h4 id="Type_SFINAE">struct b {sử dụng type = typename a :: type; };</h4> <p> </p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>mẫu &lt;</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>    lớp T,</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">    lớp u = typename t :: type, // sfinae thất bại nếu t không có loại thành viên</pre></div> <ul><li>    Lớp V = Typename B &lt;t&gt; :: Type&gt; // Lỗi khó khăn nếu B không có loại thành viên<code>::</code>                                   // (đảm bảo không xảy ra qua CWG 1227 vì</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">                                   // Thay thế vào đối số mẫu mặc định</pre></div> <ul>
+<li>                                   // của bạn sẽ thất bại trước)</li>
+<ul>
+<li>void foo (int);</li>
+<li> </li>
+<li>Mẫu &lt;Class T&gt;</li>
+<li>Typename t :: loại H (typename b &lt;t&gt; :: type);</li>
+</ul>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <ul>
+<li>Mẫu &lt;Class T&gt;</li>
+<li>Auto H (Tên kiểu B &lt;t&gt; :: Type) -&gt; Typename t :: type; // Redclaration</li>
+<li> </li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> <ul><li>void h (...) {}</li></ul> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <ul>
+<li>sử dụng r = declType (h &lt;int&gt; (0));     // không được hình thành, không cần chẩn đoán</li>
+<ul>
+<li>Loại Sfinae</li>
+<li>Các lỗi loại sau là lỗi SFINAE:</li>
+</ul>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">cố gắng khởi tạo một bản mở rộng gói chứa nhiều gói có độ dài khác nhau</pre></div> <ul>
+<li>Cố gắng tạo một loạt khoảng trống, mảng tham chiếu, mảng chức năng, mảng có kích thước âm, mảng có kích thước không phân tích hoặc mảng có kích thước bằng không:</li>
+<li>Mẫu &lt;int i&gt;</li>
+</ul> <h4 id="Expression_SFINAE">void Div (char (*) [i % 2 == 0] = nullptr)</h4> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>{</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>    // Quá tải này được chọn khi tôi thậm chí</p>
+<ul>
+<li>}</li>
+<li> </li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;int i&gt;</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="SFINAE_in_partial_specializations">void Div (char (*) [i % 2 == 1] = nullptr)</h4> <p>{<span class="t-rev-inl t-since-cxx14"><span>địa chỉ biểu thức không đổi</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>    // Quá tải này được chọn khi tôi kỳ lạ<a href="partial_specialization" title="cpp/language/partial specialization">partial specialization</a>}</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Cố gắng sử dụng một loại ở bên trái của toán tử phân giải phạm vi</pre></div> <h3 id="Library_support">có thể được tối ưu hóa (ngay cả khi người phân bổ tùy chỉnh được sử dụng) nếu</h3> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Mẫu &lt;Class T&gt;<code><a href="../types/enable_if" title="cpp/types/enable if">std::enable_if</a></code>Mẫu &lt;Class T&gt;</p>
+<p>int f (typename t :: b*);<a href="../meta#Type_traits" title="cpp/meta">type traits</a> </p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>Mẫu &lt;Class T&gt;<code><a href="../types/void_t" title="cpp/types/void t">std::void_t</a></code>int f (t);</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Alternatives"> </h3> <p>int i = f &lt;int&gt; (0); // sử dụng quá tải thứ hai<a href="../iterator/iterator_tags#Example" title="cpp/iterator/iterator tags">tag dispatch</a><span class="t-rev-inl t-since-cxx17"><span>Thì<a href="if#Constexpr_if" title="cpp/language/if"><code>if constexpr</code></a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span><span class="t-rev-inl t-since-cxx20"><span>, Và<a href="constraints" title="cpp/language/constraints">concepts</a> </span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>cố gắng sử dụng một thành viên của một loại, trong đó</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p><a href="static_assert" title="cpp/language/static assert"><code>static_assert</code></a>Loại không chứa thành viên được chỉ định</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Examples">, không còn là một phần của cây phụ thuộc.</h3> <div class="t-example">
+<p>Thành viên được chỉ định không phải là một loại mà một loại được yêu cầu</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Thành viên được chỉ định không phải là một mẫu mà yêu cầu một mẫu</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Thành viên được chỉ định không phải là một loại không phải là không cần loại</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/295.html" rel="nofollow">CWG 295</a> </td> <td>C ++ 98</td> <td>Mẫu &lt;int i&gt;<br/>struct x {};</td> <td> <br/>Mẫu &lt;Template &lt;Class T&gt; Class&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1227.html" rel="nofollow">CWG 1227</a> </td> <td>C ++ 98</td> <td>struct z {};</td> <td> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2054.html" rel="nofollow">CWG 2054</a> </td> <td>C ++ 98</td> <td>Mẫu &lt;Class T&gt;</td> <td>Mẫu &lt;class inputit, class outputit&gt;</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2322.html" rel="nofollow">CWG 2322</a> </td> <td>C ++ 11</td> <td>void f (typename t :: y*) {}<br/> </td> <td>Mẫu &lt;Class T&gt;<br/>void g (x &lt;t :: n&gt;*) {}</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/sfinae">https://en.cppreference.com/w/cpp/language/sfinae</a>
+</p>
+</div>

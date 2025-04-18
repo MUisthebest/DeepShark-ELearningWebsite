@@ -1,0 +1,16 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: WCTRANS</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwctype" title="cpp/header/cwctype">&lt;cwctype&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: wctrans_t wctrans (const char* str);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Xây dựng một giá trị của loại<code><a href="http://en.cppreference.com/w/cpp/string/wide"><span class="kw3519">Điều đó cho tất cả<span class="me2">WCTRANS_T</span></span></a></code>mà mô tả a<code><a href="../../locale/lc_categories" title="cpp/locale/LC categories">LC_CTYPE</a></code>thể loại ánh xạ ký tự rộng. Nó có thể là một trong những ánh xạ tiêu chuẩn hoặc ánh xạ cụ thể địa phương, chẳng hạn như<code>"tojhira"</code>hoặc<code>"tojkata"</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>C chuỗi giữ tên của ánh xạ mong muốn.<p>Các giá trị sau của<code>str</code>được hỗ trợ trong tất cả các địa phương C:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Giá trị của<code>str</code> </th> <th>Tác dụng</th>
+</tr> <tr class="t-dsc"> <td> <code>"toupper"</code> </td> <td>xác định ánh xạ được sử dụng bởi<code>towupper</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>"tolower"</code> </td> <td>xác định ánh xạ được sử dụng bởi<code>towlower</code> </td>
+</tr> </table> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code><a href="http://en.cppreference.com/w/cpp/string/wide"><span class="kw3519">Điều đó cho tất cả<span class="me2">WCTRANS_T</span></span></a></code>đối tượng phù hợp để sử dụng với<code><a href="towctrans" title="cpp/string/wide/towctrans">std::towctrans</a></code>để ánh xạ các ký tự rộng theo ánh xạ được đặt tên của địa phương C hiện tại hoặc không nếu<code>str</code>Không đặt tên cho một ánh xạ được hỗ trợ bởi ngôn ngữ C hiện tại.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="towctrans" title="cpp/string/wide/towctrans"> <span class="t-lines"><span>Towctrans</span></span></a></div> </td> <td>thực hiện ánh xạ ký tự theo quy định<a href="../../locale/lc_categories" title="cpp/locale/LC categories"><code>LC_CTYPE</code></a>thể loại lập bản đồ<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/wctrans" title="c/string/wide/wctrans">C documentation</a></span>vì<code>wctrans</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/wctrans">https://en.cppreference.com/w/cpp/string/wide/wctrans</a>
+</p>
+</div>

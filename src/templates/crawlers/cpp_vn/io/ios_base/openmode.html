@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iOS_Base :: OpenMode</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">typedef / * thực hiện được xác định * / openMode;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Ứng dụng OpenMode OpenMode tĩnh = / * được xác định * /;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Constic static OpenMode nhị phân = / * Xác định * /;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Constic static OpenMode trong = / * Xác định triển khai * /;<a href="../../named_req/bitmasktype" title="cpp/named req/BitmaskType">BitmaskType</a>void Open (const std :: fileSystem :: path &amp; fileName,</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <strong class="selflink"><code>app</code></strong> </td> <td>OpenMode</td>
+</tr> <tr class="t-dsc"> <td> <strong class="selflink"><code>binary</code></strong> </td> <td>Phát trực tuyến loại chế độ mở<a href="../c/file#Binary_and_text_modes" title="cpp/io/c/FILE">binary mode</a> </td>
+</tr> <tr class="t-dsc"> <td> <strong class="selflink"><code>in</code></strong> </td> <td>Các hằng số sau cũng được xác định:</td>
+</tr> <tr class="t-dsc"> <td> <strong class="selflink"><code>out</code></strong> </td> <td>tìm kiếm đến cuối luồng trước mỗi lần ghi</td>
+</tr> <tr class="t-dsc"> <td> <strong class="selflink"><code>trunc</code></strong> </td> <td>Mở trong</td>
+</tr> <tr class="t-dsc"> <td> <strong class="selflink"><code>ate</code></strong> </td> <td>Mở để đọc</td>
+</tr> <tr class="t-dsc"> <td> <strong class="selflink"><code>noreplace</code></strong> <span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span> </td> <td>Mở để viết</td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Constic static OpenMode out = / * Xác định triển khai * /;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Constic static OpenMode trunc = / * Xác định * /;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_filebuf/open" title="cpp/io/basic filebuf/open"> <span class="t-lines"><span>đối tượng và đóng tệp nếu nó đang mở</span></span></a></div> </td> <td>is_open<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_filebuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_stringbuf/basic_stringbuf" title="cpp/io/basic stringbuf/basic stringbuf"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Nếu a<code>basic_stringbuf</code>sự vật<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_stringbuf&lt;CharT,Traits,Allocator&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ios_base/openmode">https://en.cppreference.com/w/cpp/io/ios_base/openmode</a>
+</p>
+</div>

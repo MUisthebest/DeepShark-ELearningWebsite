@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">std :: forward_list &lt;t, allocator&gt; :: gán</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void gán (số lượng size_type, const t &amp; value);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class Inputit&gt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">chỉ định gán (đầu vào đầu tiên, đầu vào cuối cùng);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>void gán (std :: initizer_list &lt;t&gt; ilist);</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Thay thế nội dung của container.<code>count</code>Thay thế nội dung bằng<code>value</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>bản sao của giá trị<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>Thay thế nội dung bằng các bản sao của các bản trong phạm vi<code>*this</code>.<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>. Hành vi không được xác định nếu một trong hai đối số là một trình lặp lại<span class="t-v">(1)</span>nếu như<code>InputIt</code>khái niệm tích phân = std :: is_integral_v &lt;t&gt;;</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p>                const std :: chrono :: sys_time &lt;thời gian&gt; &amp; tp);<code>InputIt</code>Phần cuối của phạm vi ban đầu<a href="../../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Quá tải này có tác dụng tương tự như quá tải<code>ilist</code>.</div> <p>Tất cả các trình lặp, con trỏ và tham chiếu đến các yếu tố của container đều bị vô hiệu.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Tất cả các trình lặp, con trỏ và tham chiếu đến các yếu tố của container đều bị vô hiệu. Công cụ lặp quá khứ cũng bị vô hiệu.</td>
+</tr> <tr class="t-par"> <td>được phân vùng liên quan đến</td> <td>-</td> <td>Kích thước mới của container</td>
+</tr> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>giá trị để khởi tạo các phần tử của container với</td>
+</tr> <tr class="t-par"> <td>Quá tải</td> <td>-</td> <td>phạm vi để sao chép các yếu tố từ</td>
+</tr>
+</table> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <div class="t-li1">
+<span class="t-li">1)</span>bool is_heap (execPolicy &amp;&amp; chính sách,<code>count</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Danh sách khởi tạo để sao chép các giá trị từ<code>first</code>Và<code>last</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>bool is_heap (execPolicy &amp;&amp; chính sách,<code>ilist.size()</code>.</div> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Trong thực tế, việc triển khai<code>assign</code>Tuyến tính trong khoảng cách giữa<a href="http://en.cppreference.com/w/cpp/container/forward_list"><span class="kw1276">Điều đó cho tất cả<span class="me2">forward_list</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">char</span><span class="sy1">&lt;</span>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Timoning_list&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Deque&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="forward_list" title="cpp/container/forward list/forward list"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Với kích thước nhỏ hơn không làm mất hiệu lực bất kỳ tài liệu tham khảo nào đối với các yếu tố không bị hỏng.<code>forward_list</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/forward_list/assign">https://en.cppreference.com/w/cpp/container/forward_list/assign</a>
+</p>
+</div>

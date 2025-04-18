@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Common_Iterator &lt;i, s&gt; :: Common_Iterator</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ConstExPr Common_Iterator () yêu cầu std :: default_initializable &lt;i&gt; = default;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr Common_Iterator (I I);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr Common_Iterator (S S);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Lớp I2, Lớp S2&gt;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Yêu cầu STD :: Convertible_to &lt;Const i2 &amp;, i&gt; &amp;&amp; <code><a href="http://en.cppreference.com/w/cpp/utility/variant"><span class="kw1088">Điều đó cho tất cả<span class="me2">khác nhau</span></span></a><span class="sy1">is_trivently_destructible_v</span>I, S<span class="sy1">&lt;</span></code>         std :: mui trần_to &lt;const s2 &amp;, s&gt;<code><i>Trình tự giống như.</i></code>Consexpr Common_Iterator (const common_iterator &lt;i2, s2&gt; &amp; x);<code>I</code>Xây dựng một bộ điều hợp vòng lặp mới, khởi tạo hiệu quả các cơ bản<code>S</code>Đối tượng thành viên</p>
+<div class="t-li1">
+<span class="t-li">1)</span>để giữ một<code><i>Trình tự giống như.</i></code>. Sau khi xây dựng,<code><i>Trình tự giống như.</i></code>(tererator) hoặc<code>I</code>(Sentinel) Đối tượng.<code>I</code>Hàm tạo mặc định. Mặc định-khởi đầu</div> <div class="t-li1">
+<span class="t-li">2)</span>Sau khi xây dựng,<code><i>Trình tự giống như.</i></code>giữ một<code>I</code>đối tượng di chuyển được xây dựng từ<code>i</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Sau khi xây dựng,<code><i>Trình tự giống như.</i></code>giữ một<code>S</code>đối tượng di chuyển được xây dựng từ<code>s</code>.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Sau khi xây dựng,<code><i>Trình tự giống như.</i></code>giữ một<code>I</code>hoặc<code>S</code>đối tượng di chuyển được xây dựng từ<code>I2</code>hoặc<code>S2</code>Sau khi xây dựng,<code>x.var</code>Sử dụng chức năng nhị phân đã cho<code>x.var</code>giữ một<code>x</code>đối tượng được khởi tạo từ<code>x.var.valueless_by_exception()</code>hoặc một loại chính sách thực thi được xác định theo thực hiện. Nếu không thì,<code>true</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</td> <td>-</td> <td>Trình lặp cơ bản được khởi tạo với</td>
+</tr> <tr class="t-par"> <td>S</td> <td>-</td> <td>tổ chức bởi</td>
+</tr> <tr class="t-par"> <td>x</td> <td>-</td> <td>Trình lặp cơ bản được khởi tạo với</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">giữ sự thay thế đó, tương ứng. Hành vi không xác định nếu</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">ở trong trạng thái không hợp lệ, nghĩa là,</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator=" title="cpp/iterator/common iterator/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>xây dựng một bộ chuyển đổi vòng lặp mới<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/common_iterator/common_iterator">https://en.cppreference.com/w/cpp/iterator/common_iterator/common_iterator</a>
+</p>
+</div>

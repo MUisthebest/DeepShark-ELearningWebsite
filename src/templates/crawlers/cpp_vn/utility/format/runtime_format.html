@@ -1,0 +1,56 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: RunTime_format</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/format" title="cpp/header/format">&lt;format&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx26"> <td> <pre data-language="cpp">/*RunTime-Format-String*/&lt;par&gt; RunTime_format (std :: String_view fmt) NoExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> </tr> <tr class="t-dcl t-since-cxx26"> <td> <pre data-language="cpp">/*RunTime-Format-String*/&lt;wchar_t&gt; RunTime_format (std :: wstring_view fmt) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> </tr> </table> <p>Trả về một đối tượng lưu trữ chuỗi định dạng thời gian chạy có thể sử dụng trực tiếp trong các chức năng định dạng hướng người dùng và có thể được chuyển đổi hoàn toàn thành<code>std::basic_format_string</code>.</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Mẫu &lt;class inputit1, class inputit2,<code>return fmt;</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;</td> <td>-</td> <td>(theo yêu cầu của<ul>
+<li>suối<code>{</code>Và<code>}</code>luồng tệp đầu ra để ghi vào</li>
+<li>một đối tượng đại diện cho chuỗi định dạng. Chuỗi định dạng bao gồm<code>{{</code>Và<code>}}</code>ký tự thông thường (ngoại trừ<code>{</code>Và<code>}</code>), được sao chép không thay đổi với đầu ra,</li>
+<li>Trình tự thoát</li>
+</ul> <p>, được thay thế bằng</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>{</code> <span class="t-spar">arg-id</span> <span class="t-mark">ATOMIC_INTPTR_T</span> <code>}</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>{</code> <span class="t-spar">arg-id</span> <span class="t-mark">ATOMIC_INTPTR_T</span> <code>:</code> <span class="t-spar">có giá trị được sử dụng để định dạng; Nếu nó bị bỏ qua, các đối số được sử dụng theo thứ tự.</span> <code>}</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <span class="t-li">1)</span>arg-id<span class="t-li">2)</span>arg-id<table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">arg-id</span> </td> <td>-</td> <td>trường thay thế mà không có đặc tả định dạng<code>args</code>trường thay thế với một đặc tả định dạng<p>Các<span class="t-spar">arg-id</span>Chỉ định chỉ mục của đối số trong</p>
+</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">có giá trị được sử dụng để định dạng; Nếu nó bị bỏ qua, các đối số được sử dụng theo thứ tự.</span> </td> <td>-</td> <td>arg-id<code><a href="formatter" title="cpp/utility/format/formatter">std::formatter</a></code>s Trong một chuỗi định dạng đều phải có mặt hoặc tất cả được bỏ qua. Trộn thủ công và lập chỉ mục tự động là một lỗi.</td>
+</tr>
+</table> <ul>
+<li>Định dạng-spec<a href="formatter#Standard_format_specification" title="cpp/utility/format/formatter">standard format specification</a>.</li>
+<li>đặc tả định dạng được xác định bởi<a href="../../chrono/system_clock/formatter#Format_specification" title="cpp/chrono/system clock/formatter">chrono format specification</a>.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul>
+<li>chuyên môn hóa cho đối số tương ứng.<a href="range_formatter#Range_format_specification" title="cpp/utility/format/range formatter">range format specification</a>.</li>
+<li>Bool Binary_Search (Forwardit First, Forwardit Last,<code><a href="../pair" title="cpp/utility/pair">std::pair</a></code>Và<code><a href="../tuple" title="cpp/utility/tuple">std::tuple</a></code>Đối với các loại cơ bản và các loại chuỗi tiêu chuẩn, đặc tả định dạng được hiểu là<a href="tuple_formatter#Format_specification" title="cpp/utility/format/tuple formatter">tuple format specification</a>.</li>
+<li>Bool Binary_Search (Forwardit First, Forwardit Last,<code><a href="../../thread/thread/id" title="cpp/thread/thread/id">std::thread::id</a></code>Và<a href="../stacktrace_entry" title="cpp/utility/stacktrace entry"><code>std::stacktrace_entry</code></a>, nhìn thấy<a href="../../thread/thread/id/formatter#Format_specification" title="cpp/thread/thread/id/formatter">thread id format specification</a>Và<a href="../stacktrace_entry/formatter#Format_specification" title="cpp/utility/stacktrace entry/formatter">stacktrace entry format specification</a>.</li>
+<li>Bool Binary_Search (Forwardit First, Forwardit Last,<a href="../basic_stacktrace" title="cpp/utility/basic stacktrace"><code>std::basic_stacktrace</code></a>Đối với các loại Chrono, đặc tả định dạng được hiểu là</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <ul><li>Đối với các loại phạm vi, đặc tả định dạng được hiểu là<code>formatter</code>, đặc tả định dạng được hiểu là</li></ul> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một đối tượng giữ chuỗi định dạng thời gian chạy của loại chỉ dành cho giải thích:</p>
+<div class="t-member"> <h2 id="Class_template_runtime-format-string_.3CCharT.3E"> <small><b>    Đại diện lớp,</b></small> <code><i>chuỗi thời gian chạy</i></code> <code>&lt;CharT&gt;</code>
+</h2> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;biểu đồ lớp&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark t-mark-expos">.<span title="This definition is for illustration purposes only. An implementation does not need to define an entity in this manner. The name of this entity is unspecified.">    .</span>)</span> </td> </tr> </table> <h4 id="Member_objects">Đối tượng thành viên</h4> <p>struct /*chuỗi thời gian chạy chuỗi* /;<code><i>STR</i></code>nó đến một đối tượng<code>std::basic_string_view&lt;CharT&gt;</code>.</p>
+<h4 id="Constructors_and_assignments">Đối tượng được trả về chứa một thành viên dữ liệu không tĩnh chỉ dành cho giải trình</h4> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Người xây dựng và bài tập</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">/*RunTime-Format-String*/(STD :: basic_string_view &lt;Phange&gt; s) noExcept;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">/*chuỗi thời gian chạy-chuỗi*/(const/*RunTime-Format-String*/&amp;) = Delete;</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Khởi tạo<code><i>STR</i></code>với<code>s</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>/*chạy bộ định dạng thời gian chạy*/&amp; Toán tử = (const/*RunTime-Format-String*/&amp;) = Delete;</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Sao chép Constructor bị xóa rõ ràng. Loại không thể sao chép cũng như không thể di chuyển.</div>
+</div> <h3 id="Notes">Ghi chú</h3> <p>Việc chuyển nhượng bị xóa rõ ràng.<code>runtime_format</code>Kể từ loại trả lại của<code>runtime_fmt</code>không thể sao chép cũng không thể di chuyển, một nỗ lực vượt qua<code>std::basic_format_string</code>vì glvalue ức chế việc xây dựng<code>std::basic_format_string</code>với<code>runtime_format</code>kết quả là chương trình không được hình thành. Để xây dựng<code>runtime_format</code>, giá trị trả lại của<code>std::basic_format_string</code>được truyền trực tiếp trên</p>
+<div class="cpp source-cpp"><pre data-language="cpp">như prvalue nơi giải quyết bản sao được đảm bảo.</pre></div> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_format" title="cpp/feature test"><code>__cpp_lib_format</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>Chuỗi định dạng thời gian chạy</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">auto runtime_fmt = std :: runtime_format ("{}");</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">STD :: String F (STD :: String_View RunTime_Format_String)</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="format" title="cpp/utility/format/format"> <span class="t-lines"><span>định dạng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Cửa hàng được định dạng biểu diễn của các đối số trong một chuỗi mới<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="vformat" title="cpp/utility/format/vformat"> <span class="t-lines"><span>VFormat</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Biến thể không phải bảng của<code><a href="format" title="cpp/utility/format/format">std::format</a></code>Sử dụng biểu diễn đối số thuộc loại<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="basic_format_string" title="cpp/utility/format/basic format string"> <span class="t-lines"><span>BASIC_FORMAT_STRING</span><span>Định dạng_String</span><span>Wformat_String</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Mẫu lớp thực hiện kiểm tra chuỗi định dạng thời gian biên dịch tại thời điểm xây dựng<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/format/runtime_format">https://en.cppreference.com/w/cpp/utility/format/runtime_format</a>
+</p>
+</div>

@@ -1,0 +1,10 @@
+ <h1 class="firstHeading" id="firstHeading">std :: chốt :: try_wait</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">bool try_wait () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Class execPolicy,<code>true</code>Chỉ khi bộ đếm nội bộ đã đạt đến 0. Chức năng này có thể quay trở lại một cách mạnh mẽ<code>false</code>với xác suất rất thấp ngay cả khi bộ đếm bên trong đã đạt đến 0.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Với xác suất rất thấp<code>false</code>, nếu không thì<code>cnt == 0</code>là<code>cnt</code>là giá trị của bộ đếm nội bộ.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Lý do tại sao một kết quả giả được phép là cho phép triển khai sử dụng thứ tự bộ nhớ thoải mái hơn<code><a href="../../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order_seq_cst</a></code>.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/latch/try_wait">https://en.cppreference.com/w/cpp/thread/latch/try_wait</a>
+</p>
+</div>

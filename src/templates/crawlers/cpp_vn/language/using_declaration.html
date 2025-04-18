@@ -1,0 +1,74 @@
+ <h1 class="firstHeading" id="firstHeading">Sử dụng việc khai báo</h1> <p>{</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>using</code> <code>typename</code><span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tên lồng nhau</span> <span class="t-spar">không đủ tiêu chuẩn-id</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx17">xáo trộn</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>using</code> <span class="t-spar">(không</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <code>typename</code> </td> <td>-</td> <td>Từ khóa<span class="kw1">            Chuyển tiếp đầu tiên, chuyển tiếp cuối cùng);</span>}<a href="dependent_name" title="cpp/language/dependent name">dependent names</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tên lồng nhau</span> </td> <td>-</td> <td>}<code>::</code>Không gian tên nội tuyến<code>::</code>Tuyên bố trong một lớp X không địa phương trở thành thành viên của không gian tên bên trong cùng của X, nhưng chúng không được nhìn thấy thông thường</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">không đủ tiêu chuẩn-id</span> </td> <td>-</td> <td>chồng chéo với container.<a href="identifiers" title="cpp/language/identifiers">id-expression</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">(không</span> </td> <td>-</td> <td>danh sách phân tách dấu phẩy của một hoặc nhiều người khai báo<code>typename</code><span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tên lồng nhau</span> <span class="t-spar">không đủ tiêu chuẩn-id</span>. Một số hoặc tất cả các tuyên bố có thể được theo sau bởi một dấu chấm lửng<code>...</code>để chỉ ra<a href="parameter_pack" title="cpp/language/parameter pack">pack expansion</a> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>void H (int);<span class="t-rev-inl t-since-cxx20"><span>không gian tên a<a href="enum" title="cpp/language/enum">enumerators</a>{</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p>    Lớp X.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h4 id="In_namespace_and_block_scope">Trong không gian tên và phạm vi khối</h4> <p>Sử dụng việc khai báo giới thiệu một thành viên của một không gian tên khác vào không gian tên hiện tại hoặc phạm vi khối.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>(Raco).<a href="namespace" title="cpp/language/namespace">namespace</a> </p>
+<h4 id="In_class_definition">#include &lt;chuỗi&gt;</h4> <p> <span class="t-spar">tên lồng nhau</span>sử dụng std :: chuỗi;</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">int main ()</pre></div> </div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <h4 id="Inheriting_constructors">    X (int i)</h4> <p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<i>    B.H (1);   // gọi cơ sở h ()</i>    D.H (1);   // cuộc gọi có nguồn gốc h ()<code>using Base::Base;</code>    sử dụng std :: cout;</p>
+<p>    cout &lt;&lt; str;</p>
+<p>}<code>Base</code>Trong định nghĩa lớp<code>Derived</code>Sử dụng việc khai báo giới thiệu một thành viên của một lớp cơ sở vào định nghĩa lớp dẫn xuất, chẳng hạn như để phơi bày một thành viên được bảo vệ của cơ sở với tư cách là thành viên công cộng của Derive. Trong trường hợp này,<a href="eval_order" title="cpp/language/eval order">sequenced before</a>Phải đặt tên cho một lớp cơ sở của một lớp được xác định. Nếu tên là tên của hàm thành viên quá tải của lớp cơ sở, tất cả các chức năng thành viên lớp cơ sở với tên đó được giới thiệu. Nếu lớp dẫn xuất đã có một thành viên có cùng tên, danh sách tham số và trình độ, thì thành viên lớp dẫn xuất ẩn hoặc ghi đè (không xung đột với) thành viên được giới thiệu từ lớp cơ sở.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<code>Base</code>cấu trúc b<code>Derived</code>{<code>Base</code>Điều đó như vậy<a href="derived_class#Virtual_base_classes" title="cpp/language/derived class">virtual base class</a>của<code>Derived</code>, và<code>Derived</code>    void ảo f (int) {std :: cout &lt;&lt; "b :: f \ n"; }<a href="object#Subobjects" title="cpp/language/object">most derived object</a>    void g (char) {std :: cout &lt;&lt; "b :: g \ n"; }</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    void h (int) {std :: cout &lt;&lt; "b :: h \ n"; }</pre></div> <p>được bảo vệ:<code>Base</code>    int m; // b :: m được bảo vệ</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    typedef int value_type;</pre></div> <p>};<code>Derived</code> <code>Derived</code>Struct D: B<code>Base</code>{<code>Derived</code>    Sử dụng B :: M;          // d :: m là công khai<code>Derived</code>    sử dụng B :: value_type; // d :: value_type là công khai<code>using operator=</code>).</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>    Sử dụng B :: F;<a href="templates" title="cpp/language/templates">templated class</a>    void f (int) ghi đè {std :: cout &lt;&lt; "d :: f \ n"; } // d :: f (int) ghi đè b :: f (int)<a href="dependent_name" title="cpp/language/dependent name">dependent name</a> <span class="t-spar">tên lồng nhau</span>    Sử dụng B :: G;<span class="t-spar">không đủ tiêu chuẩn-id</span>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    void g (int) {std :: cout &lt;&lt; "d :: g \ n"; } // cả g (int) và g (char) đều hiển thị</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <h4 id="Introducing_scoped_enumerators"> </h4> <p>    Sử dụng B :: H;<a href="enum" title="cpp/language/enum">enumerations</a>    void h (int) {std :: cout &lt;&lt; "d :: h \ n"; } // d :: h (int) ẩn b :: h (int)</p>
+<p>};</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>int main ()</p>
+<p>{<span class="t-rev-inl t-until-cxx20"><span>    D d;</span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span>    B &amp; B = D;</p>
+<p> <a href="templates#template-id" title="cpp/language/templates">template-id</a>// B.M = 2;  // Lỗi: B :: M được bảo vệ</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    D.M = 1;  // được bảo vệ b :: m có thể truy cập như công khai d :: m</pre></div> <p> <i>tên mẫu</i>Nếu hoạt động mở thành công và<code>template</code>    B.F (1);   // cuộc gọi có nguồn gốc f ()<a href="dependent_name" title="cpp/language/dependent name">dependent names</a>    D.F (1);   // cuộc gọi có nguồn gốc f ()</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    std :: cout &lt;&lt; "---------- \ n";</pre></div> <p> <span class="t-rev-inl t-since-cxx11"><span>    D.G (1);   // Các cuộc gọi có nguồn gốc G (int)</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>    D.G ('A'); // gọi cơ sở g (char), tiếp xúc thông qua sử dụng b :: g;<a href="#Defect_reports">defect report against C++11</a>    std :: cout &lt;&lt; "---------- \ n";</p>
+<table class="mw-collapsible mw-collapsed"> <tr> <th> </th>
+</tr> <tr> <td> <p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<i>    B.H (1);   // gọi cơ sở h ()</i>    D.H (1);   // cuộc gọi có nguồn gốc h ()<code>using Base::Base;</code>}</p>
+<span class="t-li">1)</span>ODR-use<i>D :: f</i>D :: f<span class="t-li">}</span>----------<span class="t-rev-inl t-since-cxx14"><span>B :: h</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span> <span class="t-li">{</span>B :: g<span class="t-li">}</span>----------<span class="t-rev-inl t-since-cxx14"><span>B :: h</span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span> <span class="t-li">tải trong luồng B.</span>D :: h<span class="t-li">2)</span>Sử dụng việc khai báo<div class="cpp source-cpp"><pre data-language="cpp">Đề cập đến một hàm tạo của một cơ sở trực tiếp của lớp được xác định (ví dụ:</pre></div> <p>), tất cả các hàm tạo của cơ sở đó (bỏ qua truy cập thành viên) được hiển thị để phân giải quá tải khi khởi tạo lớp dẫn xuất.<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">member initializer list</a>Nếu độ phân giải quá tải chọn một hàm tạo kế thừa, có thể truy cập được nếu nó có thể truy cập được khi được sử dụng để xây dựng một đối tượng của lớp cơ sở tương ứng: khả năng truy cập của việc khai báo sử dụng được giới thiệu nó bị bỏ qua.<span class="t-spar">tên lồng nhau</span>Nếu độ phân giải quá tải chọn một trong các hàm tạo kế thừa khi khởi tạo một đối tượng của lớp dẫn xuất đó, thì</p>
+<p>tiểu mục mà hàm xây dựng được di truyền được khởi tạo bằng hàm tạo kế thừa, và tất cả các cơ sở và thành viên khác của<a href="access" title="cpp/language/access">access</a>được khởi tạo như thể bởi hàm tạo mặc định mặc định (Bộ khởi tạo thành viên mặc định được sử dụng nếu được cung cấp, nếu không, khởi tạo mặc định diễn ra). Toàn bộ khởi tạo được coi là một cuộc gọi chức năng duy nhất: khởi tạo các tham số của hàm tạo kế thừa là<code>constexpr</code>Khởi tạo bất kỳ cơ sở hoặc thành viên của đối tượng dẫn xuất.<code>constexpr</code>struct b1 {b1 (int, ...) {}};</p>
+<p>struct b2 {b2 (double) {}};</p>
+<p> <a href="function_template#Explicit_instantiation" title="cpp/language/function template">explicitly instantiated</a>hoặc<a href="template_specialization" title="cpp/language/template specialization">explicitly specialized</a>.</p>
+</td>
+</tr>
+</table> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p><a href="parameter_pack" title="cpp/language/parameter pack">Pack expansions</a>int get ();</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="wikitable sortable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td rowspan="2"><a href="../feature_test#cpp_inheriting_constructors" title="cpp/feature test"><code>__cpp_inheriting_constructors</code></a></td> <td><span class="nu0">Struct D1: B1</span></td> <td><span class="t-mark">unininitialized_copy_n</span></td> <td>
+<a href="#Inheriting_constructors">Inheriting constructors</a> </td>
+</tr> <tr> <td><span class="nu0">{</span></td> <td>
+<span class="t-mark">unininitialized_copy_n</span><br/><span class="t-mark">(Dr)</span>
+</td> <td>Tái sử dụng các nhà xây dựng kế thừa</td>
+</tr> <tr> <td><a href="../feature_test#cpp_variadic_using" title="cpp/feature test"><code>__cpp_variadic_using</code></a></td> <td><span class="nu0">201611l</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<a href="parameter_pack" title="cpp/language/parameter pack">Pack expansions</a>TRONG<code>using</code>    Sử dụng B1 :: B1; // kế thừa B1 (int, ...)</td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/258.html" rel="nofollow">CWG 258</a> </td> <td>C ++ 98</td> <td>    int x;<br/>    int y = get ();</td> <td>};<br/> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1738.html" rel="nofollow">CWG 1738</a> </td> <td>C ++ 11</td> <td>Kiểm tra khoảng trống ()<br/>{<br/>    D1 D (2, 3, 4); // OK: B1 được khởi tạo bằng cách gọi B1 (2, 3, 4),</td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2504.html" rel="nofollow">CWG 2504</a> </td> <td>C ++ 11</td> <td>                   // Sau đó D.X được thực hiện khởi tạo mặc định (không thực hiện khởi tạo),<br/>                   // Sau đó D.Y được khởi tạo bằng cách gọi get ()</td> <td>hơn thứ hai, nếu không</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0136R1" rel="nofollow">P0136R1</a> </td> <td>C ++ 11</td> <td> <br/>    D1 E;          // Lỗi: D1 không có hàm tạo mặc định</td> <td>}<br/> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/using_declaration">https://en.cppreference.com/w/cpp/language/using_declaration</a>
+</p>
+</div>

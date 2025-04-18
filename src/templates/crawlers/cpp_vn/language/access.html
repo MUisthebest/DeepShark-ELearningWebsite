@@ -1,0 +1,53 @@
+ <h1 class="firstHeading" id="firstHeading">Truy cập các nhà xác định</h1> <p>Trong a<span class="t-spar">Đặc điểm cụ thể thành viên</span>xuất hiện trong bối cảnh ngay lập tức của một khởi tạo mẫu.<a href="class" title="cpp/language/class">class/struct</a>hoặc<a href="union" title="cpp/language/union">union</a>, xác định khả năng tiếp cận của các thành viên tiếp theo.</p>
+<p>Trong a<span class="t-spar">người nhận cơ sở</span>xuất hiện trong bối cảnh ngay lập tức của một khởi tạo mẫu.<a href="derived_class" title="cpp/language/derived class">derived class</a>Tuyên bố, xác định khả năng tiếp cận của các thành viên được kế thừa của lớp cơ sở tiếp theo.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>public</code> <code>:</code> <span class="t-spar">Thẩm phán thành viên</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>protected</code> <code>:</code> <span class="t-spar">Thẩm phán thành viên</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>private</code> <code>:</code> <span class="t-spar">Thẩm phán thành viên</span> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>public</code> <span class="t-spar">lớp cơ sở</span> </td> <td>(4)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>protected</code> <span class="t-spar">lớp cơ sở</span> </td> <td>             Không có p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>private</code> <span class="t-spar">lớp cơ sở</span> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Các thành viên được tuyên bố sau khi trình xác nhận truy cập có quyền truy cập thành viên công cộng.</div> <div class="t-li1">
+<span class="t-li">2)</span>Các thành viên đã tuyên bố sau khi Trình xác nhận truy cập có quyền truy cập thành viên được bảo vệ.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Các thành viên đã tuyên bố sau khi Trình xác nhận truy cập có quyền truy cập thành viên riêng.</div> <div class="t-li1">
+<span class="t-li">là trong</span> <a href="derived_class#Public_inheritance" title="cpp/language/derived class">Public inheritance</a>: công chúng và các thành viên được bảo vệ của<a href="derived_class" title="cpp/language/derived class">base class</a>Được liệt kê sau khi trình định thức truy cập giữ cho thành viên của họ truy cập trong lớp dẫn xuất.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <a href="derived_class#Protected_inheritance" title="cpp/language/derived class">Protected inheritance</a>: công chúng và các thành viên được bảo vệ của<a href="derived_class" title="cpp/language/derived class">base class</a>Được liệt kê sau khi trình định thức truy cập là thành viên được bảo vệ của lớp dẫn xuất.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span> <a href="derived_class#Private_inheritance" title="cpp/language/derived class">Private inheritance</a>: công chúng và các thành viên được bảo vệ của<a href="derived_class" title="cpp/language/derived class">base class</a>Được liệt kê sau khi trình định thức truy cập là thành viên riêng của lớp dẫn xuất.</div> <p>Các thành viên tư nhân của lớp cơ sở luôn không thể tiếp cận được với lớp có nguồn gốc bất kể công khai, được bảo vệ hoặc thừa kế tư nhân.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Tên của mỗi<a href="class" title="cpp/language/class">class</a>Thành viên (tĩnh, không tĩnh, chức năng, loại, v.v.) có "truy cập thành viên" được liên kết. Khi tên của thành viên được sử dụng ở bất cứ đâu một chương trình, quyền truy cập của nó sẽ được kiểm tra và nếu nó không thỏa mãn các quy tắc truy cập, chương trình sẽ không biên dịch:</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> </div> <p> <i>Lớp học ví dụ</i>{<i>công khai: // tất cả các tuyên bố sau thời điểm này là công khai</i>).</p>
+<h3 id="In_detail">    void add (int x) // thành viên "Thêm" có quyền truy cập công khai</h3> <p>    {<a href="member_functions" title="cpp/language/member functions">member functions</a>        n += x;     // OK: Ví dụ riêng tư :: n có thể được truy cập từ ví dụ :: Thêm<a href="nested_types" title="cpp/language/nested types">nested class definitions</a>    }</p>
+<p>Riêng tư: // Tất cả các khai báo sau thời điểm này là riêng tư<code>class</code>    int n = 0;      // Thành viên "N" có quyền truy cập riêng tư<code>struct</code>};<a href="union" title="cpp/language/union">union</a> </p>
+<p>int main ()<a href="friend" title="cpp/language/friend">friendship declaration</a>có thể được sử dụng.</p>
+<p>{<a href="typedef" title="cpp/language/typedef">typedef</a>hoặc<a href="using_declaration" title="cpp/language/using declaration">using declarations</a>    Ví dụ e;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    E.Add (1); // OK: Ví dụ công khai :: Thêm có thể được truy cập từ chính</pre></div> <p>// E.N = 7;  // Lỗi: Ví dụ riêng tư :: N không thể được truy cập từ chính<code>private</code>với<code>public</code>}</p>
+<p>Truy cập các nhà xác định cung cấp cho tác giả của lớp khả năng quyết định thành viên lớp nào có thể truy cập được cho người dùng của lớp (nghĩa là<a href="default_arguments" title="cpp/language/default arguments">default function arguments</a>giao diện<a href="template_parameters#Default_template_arguments" title="cpp/language/template parameters">template parameters</a>) và những thành viên nào để sử dụng nội bộ của lớp (</p>
+<p>thực hiện<a href="virtual" title="cpp/language/virtual">virtual functions</a>Chi tiết</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Tất cả các thành viên của một lớp (các cơ quan của</pre></div> <p>, khởi tạo các đối tượng thành viên và toàn bộ<a href="lookup" title="cpp/language/lookup">name lookup</a>) có quyền truy cập vào tất cả các tên mà lớp có thể truy cập. Một lớp cục bộ trong hàm thành viên có quyền truy cập vào tất cả các tên mà chức năng thành viên có thể truy cập.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Một lớp được xác định với từ khóa</pre></div> <p>có quyền truy cập riêng cho các thành viên và các lớp cơ sở của nó theo mặc định. Một lớp được xác định với từ khóa</p>
+<div class="cpp source-cpp"><pre data-language="cpp">có quyền truy cập công khai cho các thành viên và các lớp cơ sở của nó theo mặc định. MỘT</pre></div> <p>có quyền truy cập công khai cho các thành viên của mình theo mặc định.<a href="data_members#Layout" title="cpp/language/data members">data members</a>Để cấp quyền truy cập vào các chức năng hoặc lớp học bổ sung cho các thành viên được bảo vệ hoặc riêng tư,<span class="t-rev-inl t-until-cxx11"><span>Khả năng truy cập áp dụng cho tất cả các tên không liên quan đến nguồn gốc của chúng, vì vậy một tên được giới thiệu bởi một</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>(ngoại trừ kế thừa các hàm tạo) được kiểm tra, không phải tên mà nó đề cập đến:</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Bool Binary_Search (Forwardit First, Forwardit Last,<a href="../named_req/standardlayouttype" title="cpp/named req/StandardLayoutType">standard-layout types</a>Lớp A: X</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    lớp B {};   // B là riêng tư trong một</pre></div> <h3 id="Public_member_access">công cộng:</h3> <p>    typedef b bb; // BB là công khai<a href="adl" title="cpp/language/adl">ADL</a>).</p>
+<p>};</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h3 id="Protected_member_access">void f ()</h3> <p>{</p>
+<p>    A :: B y;  // Lỗi: A :: B là riêng tư</p>
+<div class="t-li1">
+<span class="t-li">1)</span>    A :: BB X; // ok: a :: bb là công khai</div> <div class="t-li1">
+<span class="t-li">2)</span>}</div> <div class="cpp source-cpp"><pre data-language="cpp">Truy cập thành viên không ảnh hưởng đến khả năng hiển thị: Tên của các thành viên tư nhân và tư nhân có thể nhìn thấy và được xem xét bằng độ phân giải quá tải, chuyển đổi tiềm ẩn sang các lớp cơ sở không thể truy cập vẫn được xem xét, v.v. Kiểm tra truy cập thành viên là bước cuối cùng sau khi bất kỳ cấu trúc ngôn ngữ nào được giải thích. Mục đích của quy tắc này là thay thế bất kỳ</pre></div> <p>Không bao giờ thay đổi hành vi của chương trình.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Truy cập kiểm tra các tên được sử dụng trong</pre></div> <h3 id="Private_member_access">cũng như trong mặc định</h3> <p>được thực hiện tại điểm khai báo, không phải tại điểm sử dụng.</p>
+<p>Quy tắc truy cập cho tên của</p>
+<div class="cpp source-cpp"><pre data-language="cpp">được kiểm tra tại điểm cuộc gọi bằng cách sử dụng loại biểu thức được sử dụng để biểu thị đối tượng mà hàm thành viên được gọi. Việc truy cập của trình ghi đè cuối cùng bị bỏ qua:</pre></div> <p>Các<a href="explicit_cast" title="cpp/language/explicit cast">explicit cast</a>cấu trúc b</p>
+<h3 id="Inheritance">{</h3> <p>(Raco).<a href="derived_class" title="cpp/language/derived class">derived classes</a>    ảo int f (); // f là công khai trong b</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1873.html" rel="nofollow">CWG 1873</a> </td> <td>C ++ 98</td> <td>};</td> <td> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/access">https://en.cppreference.com/w/cpp/language/access</a>
+</p>
+</div>

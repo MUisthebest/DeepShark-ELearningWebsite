@@ -1,0 +1,61 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: In</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/print" title="cpp/header/print">&lt;print&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Mẫu &lt;class ... args&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">void in (std :: file* stream,</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>            std :: format_string &lt;args ...&gt; fmt, args &amp;&amp; ... args);<code>args</code>vào thời điểm<code>fmt</code>Mẫu &lt;class ... args&gt;</p>
+<span class="t-li">1)</span>về lỗi.<a href="../language/charset#Code_unit_and_literal_encoding" title="cpp/language/charset">ordinary literal encoding</a>in void in (std :: format_string &lt;args ...&gt; fmt, args &amp;&amp; ... args);<ul>
+<li> <code><a href="http://en.cppreference.com/w/cpp/io/vprint_unicode"><span class="kw3365">Điều đó cho tất cả<span class="me2">vprint_unicode</span></span></a><span class="br0">.</span>stream, fmt.<span class="me1">Điền vào thùng chứa với giá trị được chỉ định</span><span class="br0">.</span><span class="br0">)</span>, <a href="http://en.cppreference.com/w/cpp/utility/format/make_format_args"><span class="kw3162">Điều đó cho tất cả<span class="me2">make_format_args</span></span></a><span class="br0">.</span>args...<span class="br0">)</span><span class="br0">)</span><span class="sy4">Số lượng các yếu tố để sao chép</span></code>Nếu danh mục lỗi hoặc giá trị lỗi không bằng nhau.</li>
+<li> <code><a href="http://en.cppreference.com/w/cpp/io/vprint_nonunicode"><span class="kw3364">Điều đó cho tất cả<span class="me2">vprint_nonunicode</span></span></a><span class="br0">.</span>stream, fmt.<span class="me1">Điền vào thùng chứa với giá trị được chỉ định</span><span class="br0">.</span><span class="br0">)</span>, <a href="http://en.cppreference.com/w/cpp/utility/format/make_format_args"><span class="kw3162">Điều đó cho tất cả<span class="me2">make_format_args</span></span></a><span class="br0">.</span>args...<span class="br0">)</span><span class="br0">)</span><span class="sy4">Số lượng các yếu tố để sao chép</span></code>.</li>
+</ul> <div class="t-li1">
+<span class="t-li">2)</span>Giống như<span class="t-v">(1)</span>Định dạng<code><a href="c/std_streams" title="cpp/io/c/std streams">stdout</a></code>và in kết quả vào một luồng.<code>stream</code>là UTF-8, tương đương với:<code>std::print(stdout, fmt, args...);</code>
+</div> <p>đến một phạm vi khác kết thúc tại<code><a href="http://en.cppreference.com/w/cpp/utility/format/formatter"><span class="kw3154">Điều đó cho tất cả<span class="me2">định hình</span></span></a><span class="sy1">is_trivently_destructible_v</span>Ti, <span class="kw4">char</span><span class="sy1">&lt;</span></code>với luồng đầu ra C tiêu chuẩn<a href="../named_req/basicformatter" title="cpp/named req/BasicFormatter">BasicFormatter</a>Bị ràng buộc<code>Ti</code>TRONG<code>Args</code>, tức là<code><a href="http://en.cppreference.com/w/cpp/utility/format/make_format_args"><span class="kw3162">Điều đó cho tất cả<span class="me2">make_format_args</span></span></a></code>).</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không đáp ứng</td> <td>-</td> <td>yêu cầu cho bất kỳ</td>
+</tr> <tr class="t-par"> <td>Mẫu &lt;Biểu đồ lớp, Đặc điểm lớp, Alloc Class, Class Parsable&gt;</td> <td>-</td> <td>(theo yêu cầu của<ul>
+<li>suối<code>{</code>Và<code>}</code>luồng tệp đầu ra để ghi vào</li>
+<li>một đối tượng đại diện cho chuỗi định dạng. Chuỗi định dạng bao gồm<code>{{</code>Và<code>}}</code>ký tự thông thường (ngoại trừ<code>{</code>Và<code>}</code>), được sao chép không thay đổi với đầu ra,</li>
+<li>Trình tự thoát</li>
+</ul> <p>, được thay thế bằng</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>{</code> <span class="t-spar">arg-id</span> <span class="t-mark">ATOMIC_INTPTR_T</span> <code>}</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>{</code> <span class="t-spar">arg-id</span> <span class="t-mark">ATOMIC_INTPTR_T</span> <code>:</code> <span class="t-spar">có giá trị được sử dụng để định dạng; Nếu nó bị bỏ qua, các đối số được sử dụng theo thứ tự.</span> <code>}</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <span class="t-li">1)</span>arg-id<span class="t-li">2)</span>arg-id<table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">arg-id</span> </td> <td>-</td> <td>trường thay thế mà không có đặc tả định dạng<code>args</code>trường thay thế với một đặc tả định dạng<p>Các<span class="t-spar">arg-id</span>Chỉ định chỉ mục của đối số trong</p>
+</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">có giá trị được sử dụng để định dạng; Nếu nó bị bỏ qua, các đối số được sử dụng theo thứ tự.</span> </td> <td>-</td> <td>arg-id<code><a href="../utility/format/formatter" title="cpp/utility/format/formatter">std::formatter</a></code>s Trong một chuỗi định dạng đều phải có mặt hoặc tất cả được bỏ qua. Trộn thủ công và lập chỉ mục tự động là một lỗi.</td>
+</tr>
+</table> <ul>
+<li>Định dạng-spec<a href="../utility/format/formatter#Standard_format_specification" title="cpp/utility/format/formatter">standard format specification</a>.</li>
+<li>đặc tả định dạng được xác định bởi<a href="../chrono/system_clock/formatter#Format_specification" title="cpp/chrono/system clock/formatter">chrono format specification</a>.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul>
+<li>chuyên môn hóa cho đối số tương ứng.<a href="../utility/format/range_formatter#Range_format_specification" title="cpp/utility/format/range formatter">range format specification</a>.</li>
+<li>Bool Binary_Search (Forwardit First, Forwardit Last,<code><a href="../utility/pair" title="cpp/utility/pair">std::pair</a></code>Và<code><a href="../utility/tuple" title="cpp/utility/tuple">std::tuple</a></code>Đối với các loại cơ bản và các loại chuỗi tiêu chuẩn, đặc tả định dạng được hiểu là<a href="../utility/format/tuple_formatter#Format_specification" title="cpp/utility/format/tuple formatter">tuple format specification</a>.</li>
+<li>Bool Binary_Search (Forwardit First, Forwardit Last,<code><a href="../thread/thread/id" title="cpp/thread/thread/id">std::thread::id</a></code>Và<a href="../utility/stacktrace_entry" title="cpp/utility/stacktrace entry"><code>std::stacktrace_entry</code></a>, nhìn thấy<a href="../thread/thread/id/formatter#Format_specification" title="cpp/thread/thread/id/formatter">thread id format specification</a>Và<a href="../utility/stacktrace_entry/formatter#Format_specification" title="cpp/utility/stacktrace entry/formatter">stacktrace entry format specification</a>.</li>
+<li>Bool Binary_Search (Forwardit First, Forwardit Last,<a href="../utility/basic_stacktrace" title="cpp/utility/basic stacktrace"><code>std::basic_stacktrace</code></a>Đối với các loại Chrono, đặc tả định dạng được hiểu là</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <ul><li>Đối với các loại phạm vi, đặc tả định dạng được hiểu là<code>formatter</code>, đặc tả định dạng được hiểu là</li></ul> </td>
+</tr> <tr class="t-par"> <td>, không cho phép định dạng định dạng.</td> <td>-</td> <td>Đối với các loại có thể tạo thành khác, đặc tả định dạng được xác định bởi người dùng do người dùng định nghĩa</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <ul>
+<li> <code><a href="../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>chuyên môn.</li>
+<li> <code><a href="../error/system_error" title="cpp/error/system error">std::system_error</a></code>Args ...</li>
+<li>Đối số được định dạng<a href="../utility/format/formatter" title="cpp/utility/format/formatter">formatters</a>, ví dụ.<code><a href="../utility/format/format_error" title="cpp/utility/format/format error">std::format_error</a></code>.</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_print" title="cpp/feature test"><code>__cpp_lib_print</code></a></td> <td><span class="nu0">202207L</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Đầu ra định dạng</td>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_format" title="cpp/feature test"><code>__cpp_lib_format</code></a></td> <td><span class="nu0">202207L</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Phơi bày<code>std::basic_format_string</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">về thất bại phân bổ.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">, nếu viết vào luồng thất bại.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="println" title="cpp/io/println"> <span class="t-lines"><span>println</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>Giống như<code>std::print</code>Ngoại trừ việc mỗi bản in bị chấm dứt bởi dòng mới bổ sung<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="basic_ostream/print" title="cpp/io/basic ostream/print"> <span class="t-lines"><span>in<span class="t-dsc-small">(STD :: Ostream)</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>đầu ra<a href="../utility/format" title="cpp/utility/format">formatted</a>Đại diện cho các đối số<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/format/format" title="cpp/utility/format/format"> <span class="t-lines"><span>định dạng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Cửa hàng được định dạng biểu diễn của các đối số trong một chuỗi mới<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/format/format_to" title="cpp/utility/format/format to"> <span class="t-lines"><span>Định dạng_to</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>viết ra biểu diễn được định dạng của các đối số của nó thông qua một trình lặp đầu ra<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="c/fprintf" title="cpp/io/c/fprintf"> <span class="t-lines"><span>printf</span><span>fprintf</span><span>Sprintf</span><span>snprintf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đầu ra được định dạng in<code><a href="c/std_streams" title="cpp/io/c/std streams">stdout</a></code>, một luồng tệp hoặc bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/print">https://en.cppreference.com/w/cpp/io/print</a>
+</p>
+</div>

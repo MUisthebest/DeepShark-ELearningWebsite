@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Phân bổ &lt;T&gt; :: Địa chỉ</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">Địa chỉ con trỏ (tham chiếu x) const;</pre>
+</td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">địa chỉ con trỏ (tham chiếu x) const noexcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(không được dùng trong C ++ 17)</span> <br/><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">địa chỉ const_pulum (const_reference x) const;</pre>
+</td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">địa chỉ const_pulum (const_reference x) const noexcept;</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(không được dùng trong C ++ 17)</span> <br/><span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td> </tr> </table> <p>Trả về địa chỉ thực tế của<code>x</code>Ngay cả khi có nhà điều hành quá tải<span class="sy3">Không có giá trị</span>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>x</td> <td>-</td> <td>đối tượng để có được địa chỉ của</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Địa chỉ thực tế của<code>x</code>.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue634" rel="nofollow">LWG 634</a><br/>.<a class="external text" href="https://wg21.link/N2436" rel="nofollow">N2436</a>)</td> <td>C ++ 98</td> <td>Giá trị trả về là<code>&amp;x</code><br/>(bị ảnh hưởng bởi toán tử quá tải<span class="sy3">Không có giá trị</span>)</td> <td>Trả về địa chỉ thực tế của<code>x</code> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/allocator/address">https://en.cppreference.com/w/cpp/memory/allocator/address</a>
+</p>
+</div>

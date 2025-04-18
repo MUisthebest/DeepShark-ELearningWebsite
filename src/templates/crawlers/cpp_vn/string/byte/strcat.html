@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Strcat</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstring" title="cpp/header/cstring">&lt;cstring&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">char* strcat (char* dest, const char* src);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Nối thêm một bản sao của chuỗi ký tự được trỏ bởi<code>src</code>đến cuối chuỗi ký tự được trỏ bởi<code>dest</code>. Nhân vật<code>src[0]</code>thay thế bộ định tuyến null ở cuối<code>dest</code>. Chuỗi byte kết quả được chấm dứt null.</p>
+<p>Hành vi không được xác định nếu mảng đích không đủ lớn cho nội dung của cả hai<code>src</code>Và<code>dest</code>và nhân vật null chấm dứt.</p>
+<p>Hành vi không được xác định nếu các chuỗi trùng nhau.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc không</td>
+</tr> <tr class="t-par"> <td>SRC</td> <td>-</td> <td>con trỏ đến chuỗi byte kết thúc null để sao chép từ</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>dest</code></p>
+<h3 id="Notes">Ghi chú</h3> <p>container tiêu chuẩn<code>strcat</code>cần tìm đến cuối<code>dest</code>Trên mỗi cuộc gọi, việc ghép nhiều chuỗi thành một chuỗi là không hiệu quả<code>strcat</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cstdio&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;cstring&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="strncat" title="cpp/string/byte/strncat"> <span class="t-lines"><span>Strncat</span></span></a></div> </td> <td>kết hợp một số lượng ký tự nhất định của hai chuỗi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strcpy" title="cpp/string/byte/strcpy"> <span class="t-lines"><span>strcpy</span></span></a></div> </td> <td>sao chép một chuỗi sang một chuỗi khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/strcat" title="c/string/byte/strcat">C documentation</a></span>vì<code>strcat</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/strcat">https://en.cppreference.com/w/cpp/string/byte/strcat</a>
+</p>
+</div>

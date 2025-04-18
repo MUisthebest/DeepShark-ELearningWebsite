@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: default_initializable</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/concepts" title="cpp/header/concepts">&lt;concepts&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Các<code>default_initializable</code>Khái niệm Default_initializable = std :: Constructible_From &lt;T&gt; &amp;&amp; yêu cầu {t {}; } &amp;&amp; <code>T</code>                                /* T t; được hình thành tốt, xem bên dưới */;</p>
+<ul>
+<li> <a href="../language/value_initialization" title="cpp/language/value initialization">value-initialized</a>.<code>T()</code>Khái niệm kiểm tra xem các biến của loại</li>
+<li> <a href="../language/list_initialization" title="cpp/language/list initialization">direct-list-initialized</a>có thể được<code>T{}</code>được hình thành tốt);</li>
+<li> <a href="../language/default_initialization" title="cpp/language/default initialization">default-initialized</a>.<code>T t;</code>từ một danh sách khởi tạo trống (</li>
+</ul> <p>được hình thành tốt); Và</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">được hình thành tốt).</pre></div> </td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="constructible_from" title="cpp/concepts/constructible from"> <span class="t-lines"><span>    toán tử bool == (t &amp;) = xóa;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>};<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/is_default_constructible" title="cpp/types/is default constructible"> <span class="t-lines"><span>is_default_constructible</span><span>is_trivently_default_constructible</span><span>is_nothrow_default_constructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có hàm tạo mặc định không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/concepts/default_initializable">https://en.cppreference.com/w/cpp/concepts/default_initializable</a>
+</p>
+</div>

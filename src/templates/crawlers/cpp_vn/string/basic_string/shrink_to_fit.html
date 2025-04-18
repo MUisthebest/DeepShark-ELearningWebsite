@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; :: shrink_to_fit</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">void Shrink_to_fit ();</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">ConstExpr void shrink_to_fit ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Yêu cầu loại bỏ công suất không sử dụng.</p>
+<p>Đó là một yêu cầu không ràng buộc để giảm<code><a href="capacity" title="cpp/string/basic string/capacity">capacity()</a></code>ĐẾN<code><a href="size" title="cpp/string/basic string/size">size()</a></code>. Nó phụ thuộc vào việc thực hiện nếu yêu cầu được đáp ứng.</p>
+<p>Nếu (và chỉ khi) việc phân bổ lại diễn ra, tất cả các con trỏ, tài liệu tham khảo và trình lặp đều bị vô hiệu.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <p>(không xác định)</p>
+</td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <p>Tuyến tính trong kích thước của chuỗi.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Chức năng thành viên của<code>shrink_to_fit()</code>khoảng cách<a class="external text" href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/strings.html#strings.string.shrink" rel="nofollow">not available</a>: có thể tạo và sử dụng</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;chuỗi&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue755" rel="nofollow">LWG 755</a> </td> <td>C ++ 98</td> <td>
+<code>std::string</code>#include &lt;Istream&gt;</td> <td>#include &lt;New&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="size" title="cpp/string/basic string/size"> <span class="t-lines"><span>kích cỡ</span><span>    toán tử &lt;&lt; (basic_ostream &lt;char, đặc điểm&gt; &amp; os, char32_t ch) = xóa;</span></span></a></div> </td> <td>lớp đặc điểm chỉ định các hoạt động trên loại ký tự<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="capacity" title="cpp/string/basic string/capacity"> <span class="t-lines"><span>Nếu vector thay đổi năng lực, tất cả chúng.</span></span></a></div> </td> <td>phá hủy chuỗi, xử lý lưu trữ nội bộ nếu được sử dụng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="resize" title="cpp/string/basic string/resize"> <span class="t-lines"><span>Emplace_Front</span></span></a></div> </td> <td>Thay đổi số lượng ký tự được lưu trữ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string/shrink_to_fit">https://en.cppreference.com/w/cpp/string/basic_string/shrink_to_fit</a>
+</p>
+</div>

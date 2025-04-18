@@ -1,0 +1,117 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: Container</h1> <p>MỘT<strong class="selflink">Container</strong>là một đối tượng được sử dụng để lưu trữ các đối tượng khác và chăm sóc việc quản lý bộ nhớ được sử dụng bởi các đối tượng mà nó chứa.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <ul>
+<li> <code>T</code>, một loại phần tử;</li>
+<li> <code>C</code>, một loại container chứa các yếu tố<code>T</code>Số lượng các yếu tố để sao chép</li>
+<li> <code>a</code>Và<code>b</code>, đối tượng loại<code>C</code>Số lượng các yếu tố để sao chép</li>
+<li> <code>rv</code>, một biểu thức prvalue của loại<code>C</code>.</li>
+</ul> <h4 id="Types">Loại</h4> <table class="wikitable"> <tr> <th>Tên</th> <th>Kiểu</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td><code>value_type</code></td> <td><code>T</code></td> <td>
+<span class="t-rev-inl t-until-cxx11"><span><a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a></span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span><a href="erasable" title="cpp/named req/Erasable">Erasable</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> </td>
+</tr> <tr> <td><code>reference</code></td> <td><code>T&amp;</code></td> <td> </td>
+</tr> <tr> <td><code>const_reference</code></td> <td>
+<span class="kw4">hằng số</span>T<span class="sy3">Không có giá trị</span>
+</td> <td> </td>
+</tr> <tr> <td><code>iterator</code></td> <td>Người lặp lại có<a href="../iterator#Types_and_writability" title="cpp/iterator">value type</a>khoảng cách<code>T</code>
+</td> <td>
+<a href="forwarditerator" title="cpp/named req/ForwardIterator">LegacyForwardIterator</a><br/>chuyển đổi thành<code>const_iterator</code> </td>
+</tr> <tr> <td><code>const_iterator</code></td> <td>Người lặp liên tục mà có<a href="../iterator#Types_and_writability" title="cpp/iterator">value type</a>khoảng cách<code>T</code>
+</td> <td>
+<a href="forwarditerator" title="cpp/named req/ForwardIterator">LegacyForwardIterator</a> </td>
+</tr> <tr> <td><code>difference_type</code></td> <td>Đã ký Số nguyên</td> <td>Phải giống như<code><a href="../iterator/iterator_traits" title="cpp/iterator/iterator traits">iterator_traits</a>::difference_type</code>vì<code>iterator</code>Và<code>const_iterator</code> </td>
+</tr> <tr> <td><code>size_type</code></td> <td>Số nguyên không dấu</td> <td>Đủ lớn để thể hiện tất cả các giá trị tích cực của<code>difference_type</code> </td>
+</tr>
+</table> <h4 id="Member_functions_and_operators">Chức năng và toán tử thành viên</h4> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Ngữ nghĩa</th> <th>Điều kiện</th> <th>Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</th>
+</tr> <tr> <td><code>C()</code></td> <td><code>C</code></td> <td>Tạo một thùng chứa trống</td> <td>Bưu kiện:<code>C().empty()</code><br/><code>== true</code>
+</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>C(a)</code></td> <td><code>C</code></td> <td>Tạo một bản sao của<code>a</code>
+</td> <td>Trước: T phải là<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a><br/>Bưu kiện:<code>a == C(a)</code>
+</td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td>
+<code>C(rv)</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</td> <td><code>C</code></td> <td>    unininitialized_move_n (đầu vào đầu tiên, số lượng kích thước,<code>rv</code>
+</td> <td>Bài đăng: bằng với giá trị<code>rv</code>đã có trước khi xây dựng này</td> <td>Đặc điểm kỹ thuật:<sup class="reference" id="cite_ref-array_1-0"><a href="#cite_note-array-1">[1]</a></sup> </td>
+</tr> <tr> <td><code>a = b</code></td> <td><code>C&amp;</code></td> <td>Phá hủy hoặc sao chép tất cả các yếu tố của<code>a</code>từ các yếu tố của<code>b</code>
+</td> <td>Bưu kiện:<code>a == b</code>
+</td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td>
+<code>a = rv</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</td> <td><code>C&amp;</code></td> <td>Phá hủy hoặc di chuyển-phân loại tất cả các yếu tố của<code>a</code>từ các yếu tố của<code>rv</code>
+</td> <td>Bài viết: Nếu<code>a</code>Và<code>rv</code>Không tham khảo cùng một đối tượng,<code>a</code>bằng với giá trị<code>rv</code>đã có trước nhiệm vụ này</td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td><code>a.~C()</code></td> <td><span class="kw4">Vô hiệu</span></td> <td>Phá hủy tất cả các yếu tố của<code>a</code>và giải phóng tất cả bộ nhớ</td> <td></td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td><code>a.begin()</code></td> <td><code>(const_)iterator</code></td> <td>Trình rút vào phần tử đầu tiên của<code>a</code>
+</td> <td></td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>a.end()</code></td> <td><code>(const_)iterator</code></td> <td>Người lặp đi lặp lại một quá khứ là yếu tố cuối cùng của<code>a</code>
+</td> <td></td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>a.cbegin()</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</td> <td><code>const_iterator</code></td> <td><code>const_cast&lt;const C&amp;&gt;(a).begin()</code></td> <td></td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>a.cend()</code><br/><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</td> <td><code>const_iterator</code></td> <td><code>const_cast&lt;const C&amp;&gt;(a).end()</code></td> <td></td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>a == b</code></td> <td>Chuyển đổi thành<span class="kw4">bool</span>
+</td> <td>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx14">
+<td><code>a.<span class="me1">kích cỡ</span><span class="br0">.</span><span class="br0">)</span> <span class="sy1">==</span> b.<span class="me1">kích cỡ</span><span class="br0">.</span><span class="br0">)</span> <span class="sy3">. Trong các cuộc gọi có hiệu lực</span><br/> <p><a href="http://en.cppreference.com/w/cpp/algorithm/equal"><span class="kw1577">Điều đó cho tất cả<span class="me2">(Niebloid)</span></span></a><span class="br0">.</span>Một.<span class="me1">bắt đầu</span><span class="br0">.</span><span class="br0">)</span>Thì<br/>Một.</p>
+<span class="me1">kết thúc</span><span class="br0">.</span><span class="br0">)</span>, b.<span class="me1">bắt đầu</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span></code></td> <td><span class="t-mark-rev t-until-cxx14">Constexpr std :: cặp &lt;const t &amp;, const t &amp;&gt; minmax (const t &amp; a, const t &amp; b,</span></td>
+</tr> <tr class="t-rev t-since-cxx14">
+<td><code><a href="http://en.cppreference.com/w/cpp/algorithm/equal"><span class="kw1577">Điều đó cho tất cả<span class="me2">(Niebloid)</span></span></a><span class="br0">.</span>a.<span class="me1">bắt đầu</span><span class="br0">.</span><span class="br0">)</span>, a.<span class="me1">kết thúc</span><span class="br0">.</span><span class="br0">)</span>,<br/> b.<span class="me1">bắt đầu</span><span class="br0">.</span><span class="br0">)</span>, b.<span class="me1">kết thúc</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span></code></td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> </td> <td>Trước:<code>T</code>// thực hiện đầu tiên<a href="equalitycomparable" title="cpp/named req/EqualityComparable">EqualityComparable</a>
+</td> <td>Đặc điểm kỹ thuật:<sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>nếu như<code>a.size() !=</code><br/><code>b.size()</code>, tuyến tính khác</td>
+</tr> <tr> <td><code>a != b</code></td> <td>chuyển đổi thành<span class="kw4">bool</span>
+</td> <td><code>!(a == b)</code></td> <td></td> <td>phạm vi của các yếu tố để xoay</td>
+</tr> <tr> <td><code>a.swap(b)</code></td> <td><span class="kw4">Vô hiệu</span></td> <td>Trao đổi các giá trị của<code>a</code>Và<code>b</code>
+</td> <td> </td> <td>Đặc điểm kỹ thuật:<sup class="reference" id="cite_ref-array_1-1"><a href="#cite_note-array-1">[1]</a></sup><sup class="reference" id="cite_ref-should_3-0"><a href="#cite_note-should-3">[3]</a></sup> </td>
+</tr> <tr> <td><code>swap(a, b)</code></td> <td><span class="kw4">Vô hiệu</span></td> <td><code>a.swap(b)</code></td> <td></td> <td>Đặc điểm kỹ thuật:<sup class="reference" id="cite_ref-array_1-2"><a href="#cite_note-array-1">[1]</a></sup> </td>
+</tr> <tr> <td><code>a.size()</code></td> <td><code>size_type</code></td> <td><code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>a.<span class="me1">bắt đầu</span><span class="br0">.</span><span class="br0">)</span>, a.<span class="me1">kết thúc</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span></code></td> <td></td> <td>Đặc điểm kỹ thuật:<sup class="reference" id="cite_ref-should_3-1"><a href="#cite_note-should-3">[3]</a></sup> </td>
+</tr> <tr> <td><code>a.max_size()</code></td> <td><code>size_type</code></td> <td>
+<code>b.size()</code>Ở đâu<code>b</code>là container lớn nhất có thể</td> <td></td> <td>Đặc điểm kỹ thuật:<sup class="reference" id="cite_ref-should_3-2"><a href="#cite_note-should-3">[3]</a></sup> </td>
+</tr> <tr> <td><code>a.empty()</code></td> <td>Chuyển đổi thành<span class="kw4">bool</span>
+</td> <td><code>a.begin() == a.end()</code></td> <td></td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <th colspan="6">Ghi chú</th>
+</tr> <tr> <td colspan="6">
+<ol class="references"> <li id="cite_note-array-1"> <span class="reference-text"><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>Tuyến tính cho<code><a href="../container/array" title="cpp/container/array">std::array</a></code></span> </li> <li id="cite_note-2"> <span class="reference-text">Luôn luôn tuyến tính cho<code><a href="../container/forward_list" title="cpp/container/forward list">std::forward_list</a></code></span> </li> <li id="cite_note-should-3"> <span class="reference-text"><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span>Không hoàn toàn không đổi</span> </li> </ol> </td>
+</tr>
+</table> <p>Cho quá tải</p>
+<ul><li> <code>i</code>Và<code>j</code>, đối tượng của một container<code>iterator</code>kiểu,</li></ul> <p>trong các biểu thức<code>i == j</code>Thì<code>i != j</code>Thì<code>i &lt; j</code>Thì<code>i &lt;= j</code>Thì<code>i &gt;= j</code>Thì<code>i &gt; j</code>Thì<code>i - j</code>, một hoặc cả hai có thể được thay thế bằng một đối tượng của container<code>const_iterator</code>Loại đề cập đến cùng một yếu tố mà không có thay đổi trong ngữ nghĩa.</p>
+<h3 id="Container_data_races">Các cuộc đua dữ liệu container</h3> <p>nhìn thấy<a href="../container#Thread_safety" title="cpp/container">container thread safety</a></p>
+<h3 id="Other_requirements">Các yêu cầu khác</h3> <p><code>C</code>(Container)</p>
+<ul>
+<li> <a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a> </li>
+<li> <a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a> </li>
+<li> <a href="equalitycomparable" title="cpp/named req/EqualityComparable">EqualityComparable</a> </li>
+<li> <a href="swappable" title="cpp/named req/Swappable">Swappable</a> </li>
+</ul> <p><code>T</code>(Kiểu)</p>
+<ul>
+<li> <a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a> </li>
+<li> <a href="equalitycomparable" title="cpp/named req/EqualityComparable">EqualityComparable</a> </li>
+<li> <a href="destructible" title="cpp/named req/Destructible">Destructible</a> </li>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue179" rel="nofollow">LWG 179</a> </td> <td>C ++ 98</td> <td>
+<code>iterator</code>Và<code>const_iterator</code>Các loại có thể không thể so sánh được</td> <td>bắt buộc phải so sánh</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue276" rel="nofollow">LWG 276</a> </td> <td>C ++ 98</td> <td>
+<code>T</code>(Sử dụng<a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a> </td> <td>
+<code>T</code>được yêu cầu<br/><a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue322" rel="nofollow">LWG 322</a> </td> <td>C ++ 98</td> <td>các loại giá trị của<code>iterator</code>Và<code>const_iterator</code>không được chỉ định</td> <td> <code>T</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue774" rel="nofollow">LWG 774</a> </td> <td>C ++ 98</td> <td>Không có yêu cầu về<code>swap(a, b)</code> </td> <td>Được cho</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue883" rel="nofollow">LWG 883</a> </td> <td>C ++ 98</td> <td>
+<code>a.swap(b)</code>được định nghĩa là<code>swap(a, b)</code>Thì<br/>dẫn đến định nghĩa tròn</td> <td>được định nghĩa là trao đổi<br/>các giá trị của<code>a</code>Và<code>b</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1319" rel="nofollow">LWG 1319</a> </td> <td>C ++ 98</td> <td>
+<code>iterator</code>Và<code>const_iterator</code><br/>có thể không có bảo đảm đa</td> <td>Họ được yêu cầu để thỏa mãn<br/>các yêu cầu của<br/><a href="forwarditerator" title="cpp/named req/ForwardIterator">LegacyForwardIterator</a> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2263" rel="nofollow">LWG 2263</a> </td> <td>C ++ 11</td> <td>Tìm kiếm chuyển tiếp của Const<a class="external text" href="https://cplusplus.github.io/LWG/issue179" rel="nofollow">LWG issue 179</a>đã vô tình bị loại bỏ trong C ++ 11</td> <td>    hệ điều hành &lt;&lt; '!';</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2839" rel="nofollow">LWG 2839</a> </td> <td>C ++ 11</td> <td>Không được phép tự di chuyển các thùng chứa tiêu chuẩn</td> <td>cho phép nhưng<br/>Kết quả là không xác định</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="../container" title="cpp/container">C++ documentation</a></span>vì<code>Containers library</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/Container">https://en.cppreference.com/w/cpp/named_req/Container</a>
+</p>
+</div>

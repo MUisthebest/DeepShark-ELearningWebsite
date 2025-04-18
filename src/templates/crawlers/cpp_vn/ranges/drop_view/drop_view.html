@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: drop_view &lt;v&gt; :: drop_view</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">drop_view () yêu cầu std :: default_initializable &lt;v&gt; = default;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr Drop_view (V Base, phạm vi :: Range_Difference_T &lt;v&gt; Count);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>drop_view</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định.<a href="../../language/value_initialization" title="cpp/language/value initialization">Value-initializes</a>chế độ xem cơ bản và khởi tạo số lượng vào<code>​0​</code>. Sau khi xây dựng,<a href="base" title="cpp/ranges/drop view/base"><code>base()</code></a>Trả về một bản sao của<code>V()</code>Và<a href="size" title="cpp/ranges/drop view/size"><code>size()</code></a>bằng với kích thước của chế độ xem cơ bản.</div> <div class="t-li1">
+<span class="t-li">2)</span>Khởi tạo chế độ xem cơ bản với<code>std::move(base)</code>và số lượng với<code>count</code>. Sau khi xây dựng,<a href="base" title="cpp/ranges/drop view/base"><code>base()</code></a>Trả về một bản sao của<code>base</code>Và<a href="size" title="cpp/ranges/drop view/size"><code>size()</code></a>(C ++ 20)<code><a href="http://en.cppreference.com/w/cpp/ranges/size"><span class="kw3100">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">kích cỡ</span></span></a><span class="br0">.</span>base<span class="br0">)</span> <span class="sy2">-</span> count</code>Nếu kích thước của<code>base</code>không ít hơn<code>count</code>, hoặc<code>​0​</code>Nếu đối số đầu tiên là</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>căn cứ</td> <td>-</td> <td>quan điểm cơ bản</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng các yếu tố để bỏ qua</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;THERTHERM&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;mảng&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3714" rel="nofollow">LWG 3714</a><br/>.<a class="external text" href="https://wg21.link/P2711R1" rel="nofollow">P2711R1</a>)</td> <td>C ++ 20</td> <td>    return /*iterator* /{*this, range :: find_if (base_, std :: ref (*pred_))};</td> <td>đã làm rõ</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/drop_view/drop_view">https://en.cppreference.com/w/cpp/ranges/drop_view/drop_view</a>
+</p>
+</div>

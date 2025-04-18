@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">std :: istreambuf_iterator &lt;biểu đồ, đặc điểm&gt; :: bằng nhau</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">bool bằng (const istreambuf_iterator &amp; it) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Kiểm tra xem cả hai<code>*this</code>Và<code>it</code>là hợp lệ, hoặc cả hai đều không hợp lệ, bất kể các đối tượng bộ đệm luồng họ sử dụng.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Một số vòng lặp trong</td> <td>-</td> <td>một trình lặp lại bộ đệm luồng khác để so sánh với</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Mẫu &lt;phạm vi :: input_range r, class Allocator&gt;<code>*this</code>Và<code>it</code>là hợp lệ, hoặc cả hai đều không hợp lệ,<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Có thể ném các trường hợp ngoại lệ do thực hiện.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue110" rel="nofollow">LWG 110</a> </td> <td>C ++ 98</td> <td>Chữ ký là<code>bool equal(istreambuf_iterator&amp; it)</code> </td> <td>
+<span class="kw4">hằng số</span>S được thêm vào</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1126" rel="nofollow">LWG 1126</a> </td> <td>C ++ 98</td> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue110" rel="nofollow">LWG issue 110</a>không được giải quyết đúng cách, để lại<br/>loại tham số là<code>istreambuf_iterator&amp;</code> </td> <td>
+<span class="kw4">hằng số</span>Được cho</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/istreambuf_iterator/equal">https://en.cppreference.com/w/cpp/iterator/istreambuf_iterator/equal</a>
+</p>
+</div>

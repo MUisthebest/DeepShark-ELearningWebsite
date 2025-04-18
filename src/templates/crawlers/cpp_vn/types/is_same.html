@@ -1,0 +1,26 @@
+ <h1 class="firstHeading" id="firstHeading">std :: is_same</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;class t, class u&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Nếu như<code>T</code>Và<code>U</code>struct is_same;<code>value</code>, một đối tượng riêng biệt của loại<code>true</code>. Nếu không thì<code>value</code>khoảng cách<code>false</code>.</p>
+<p>Đặt tên cho cùng một loại (tính đến trình độ điều trị const/dễ bay hơi), cung cấp hằng số thành viên<code>T</code>Và<code>U</code>Thì<code>is_same&lt;T, U&gt;::value == true</code>là<code>is_same&lt;U, T&gt;::value == true</code>.</p>
+<p>bằng nhau<code>std::is_same</code> <span class="t-rev-inl t-since-cxx17"><span>hoặc<code>std::is_same_v</code></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<h3 id="Helper_variable_template">mỗi người được hình thành tốt khi được coi là một toán hạng không được đánh giá.</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Sự giao dịch được thỏa mãn, tức là đối với bất kỳ hai loại</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table>
+<div class="t-inherited"> <h2 id="Inherited_from_std::integral_constant">Mẫu &lt;Class T&gt;<a href="integral_constant" title="cpp/types/integral constant"> std::integral_constant</a>
+</h2> <h3 id="Member_constants">Inline Consexpr bool is_execut_policy_v = std :: is_execut_policy &lt;t&gt; :: value;</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>được phân vùng liên quan đến</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td> <code>true</code>nếu như<code>T</code>Và<code>U</code>là cùng loại,<code>false</code>[tĩnh]<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>(hằng số thành viên tĩnh công cộng)</span></span></div> </td> <td>Chức năng thành viên<span class="kw4">bool</span>; Nếu không nếu<code>value</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>chuyển đổi đối tượng thành</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C ++ 14)</span></span></span></div> </td> <td>(C ++ 20)<code>value</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <span class="kw4">bool</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td> <a href="http://en.cppreference.com/w/cpp/types/integral_constant"><span class="kw648">Điều đó cho tất cả<span class="me2">Integral_constant</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">bool</span>(chức năng thành viên công cộng)<span class="sy1">&lt;</span> </td>
+</tr> </table> </div> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;class t, class u&gt;</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Inline Consexpr bool is_same_v = is_same &lt;t, u&gt; :: value;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">                                    Pred, Proj1, Proj2&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../concepts/same_as" title="cpp/concepts/same as"> <span class="t-lines"><span>    c == D;           // Biểu thức số 1: Không sửa đổi các toán hạng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>    a = std :: di chuyển (b); // Biểu thức #2: Sửa đổi cả hai toán hạng<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../language/decltype" title="cpp/language/decltype"> <code>decltype</code> specifier</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>Mẫu &lt;class t, class u&gt;</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/is_same">https://en.cppreference.com/w/cpp/types/is_same</a>
+</p>
+</div>

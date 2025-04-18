@@ -1,0 +1,37 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: IS_STANDARD_LAYOUT</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p><code>std::is_standard_layout</code>Điều đó như vậy<a href="../named_req/unarytypetrait" title="cpp/named req/UnaryTypeTrait">UnaryTypeTrait</a>.</p>
+<p>Nếu như<code>T</code>Điều đó như vậy<a href="../named_req/standardlayouttype" title="cpp/named req/StandardLayoutType">standard-layout type</a>lớn hơn tỷ lệ<code>value</code>, một đối tượng riêng biệt của loại<code>true</code>yêu cầu, cung cấp hằng số thành viên<code>value</code>khoảng cách<code>false</code>.</p>
+<p>Nếu như<a href="http://en.cppreference.com/w/cpp/types/remove_all_extents"><span class="kw624">Điều đó cho tất cả<span class="me2">Tạo một mảng có kích thước</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span>như cung cấp giá trị không đáng kể cho mã chung.)<span class="kw4">Vô hiệu</span>Hoạt động tương đương cho quá tải</p>
+<p>bằng nhau<code>std::is_standard_layout</code>hoặc<code>std::is_standard_layout_v</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<h3 id="Template_parameters">là không xác định.</h3> <table class="t-par-begin"> <tr class="t-par"> <td>T</td> <td>-</td> <td>Tham số mẫu</td>
+</tr>
+</table> <h3 id="Helper_variable_template">mỗi người được hình thành tốt khi được coi là một toán hạng không được đánh giá.</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">struct is_standard_layout;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table>
+<div class="t-inherited"> <h2 id="Inherited_from_std::integral_constant">Mẫu &lt;Class T&gt;<a href="integral_constant" title="cpp/types/integral constant"> std::integral_constant</a>
+</h2> <h3 id="Member_constants">Inline Consexpr bool is_execut_policy_v = std :: is_execut_policy &lt;t&gt; :: value;</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>được phân vùng liên quan đến</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td> <code>true</code>nếu như<code>T</code>Mẫu &lt;Class T&gt;<code>false</code>[tĩnh]<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>(hằng số thành viên tĩnh công cộng)</span></span></div> </td> <td>Chức năng thành viên<span class="kw4">bool</span>; Nếu không nếu<code>value</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>chuyển đổi đối tượng thành</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C ++ 14)</span></span></span></div> </td> <td>(C ++ 20)<code>value</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <span class="kw4">bool</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td> <a href="http://en.cppreference.com/w/cpp/types/integral_constant"><span class="kw648">Điều đó cho tất cả<span class="me2">Integral_constant</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">bool</span>(chức năng thành viên công cộng)<span class="sy1">&lt;</span> </td>
+</tr> </table> </div> <h3 id="Notes">Ghi chú</h3> <p>Inline Consexpr bool is_standard_layout_v = is_standard_layout &lt;t&gt; :: value;<span class="kw1">is_const_v</span>là một loại tiêu chuẩn,</p>
+<p>Có thể chuyển đổi một con trỏ tới một lớp tiêu chuẩn (với</p>
+<p>Vĩ mô<code><a href="offsetof" title="cpp/types/offsetof">offsetof</a></code>) tới một con trỏ tới thành viên dữ liệu không tĩnh đầu tiên của nó và ngược lại.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Nếu một liên minh tiêu chuẩn nắm giữ hai hoặc nhiều cấu trúc đặt tiêu chuẩn, nó được phép kiểm tra phần ban đầu chung của chúng.</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2015" rel="nofollow">LWG 2015</a> </td> <td>C ++ 11</td> <td>
+<code>T</code>. Chỉ các lớp theo nghĩa đen có thể có chức năng thành viên Consexpr.<br/>#include &lt;type_traits&gt;</td> <td>là giá trị trả về, vẫn có thể giảm được, nhưng bản thân các yếu tố có giá trị không xác định. Một cuộc gọi đến<br/>kích cỡ.</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_trivially_copyable" title="cpp/types/is trivially copyable"> <span class="t-lines"><span>is_Trivent_copyable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại có thể bản sao không một cách tầm thường chưa<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_pod" title="cpp/types/is pod"> <span class="t-lines"><span>is_pod</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span><span class="t-mark">(Không dùng nữa trong C ++ 20)</span></span></span></div> </td> <td>Kiểm tra xem một loại là loại dữ liệu cũ (POD)<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="offsetof" title="cpp/types/offsetof"> <span class="t-lines"><span>offsetof</span></span></a></div> </td> <td>Byte bù từ đầu của một<a href="../named_req/standardlayouttype" title="cpp/named req/StandardLayoutType">standard-layout</a>Nhập thành viên được chỉ định<br/> <span class="t-mark">(Chức năng Macro)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/is_standard_layout">https://en.cppreference.com/w/cpp/types/is_standard_layout</a>
+</p>
+</div>

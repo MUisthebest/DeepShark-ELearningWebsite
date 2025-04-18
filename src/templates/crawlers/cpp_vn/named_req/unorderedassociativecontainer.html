@@ -1,0 +1,317 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: UnderedAssociativeContainer<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Các container liên kết không có thứ tự là<a href="container" title="cpp/named req/Container">Containers</a>cung cấp tra cứu nhanh các đối tượng dựa trên các khóa. Độ phức tạp trường hợp xấu nhất là tuyến tính nhưng trung bình nhanh hơn nhiều đối với hầu hết các hoạt động.</p>
+<p>Các container liên kết không theo thứ tự được tham số hóa bởi<code>Key</code>Số lượng các yếu tố để sao chép<code>Hash</code>có thể đại diện cho các phân số của ve.<a href="hash" title="cpp/named req/Hash">Hash</a>đối tượng chức năng hoạt động như hàm băm trên<code>Key</code>Chỉ khi, được đưa ra<code>Pred</code>có thể đại diện cho các phân số của ve.<a href="binarypredicate" title="cpp/named req/BinaryPredicate">BinaryPredicate</a>đánh giá sự tương đương giữa<code>Key</code>struct common_type &lt;std :: Chrono :: Time_Point &lt;Đồng hồ, Thời lượng1&gt;, <code><a href="http://en.cppreference.com/w/cpp/container/unordered_map"><span class="kw1296">Điều đó cho tất cả<span class="me2">unetered_map</span></span></a></code>Và<code><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap"><span class="kw1298">Điều đó cho tất cả<span class="me2">Unorered_multimap</span></span></a></code>cũng có một loại được ánh xạ<code>T</code>liên kết với<code>Key</code>.</p>
+<p>Nếu hai<code>Key</code>s bằng nhau theo<code>Pred</code>Thì<code>Hash</code>Phải trả về cùng một giá trị cho cả hai khóa.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Nếu chỉ khi mọi yếu tố trong phạm vi<code>Hash::is_transparent</code>Và<code>Pred::is_transparent</code>tồn tại và mỗi tên một loại, chức năng thành viên<code>find</code>Thì<code>contains</code>Thì<code>count</code>, Và<code>equal_range</code>chấp nhận các đối số của các loại khác ngoài<code>Key</code>và mong đợi điều đó<code>Hash</code>có thể gọi được với các giá trị của các loại đó và<code>Pred</code>là một hàm so sánh trong suốt như<code>std::equal_to&lt;&gt;</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p><code><a href="http://en.cppreference.com/w/cpp/container/unordered_map"><span class="kw1296">Điều đó cho tất cả<span class="me2">unetered_map</span></span></a></code>Và<code><a href="http://en.cppreference.com/w/cpp/container/unordered_set"><span class="kw1292">Điều đó cho tất cả<span class="me2">unetered_set</span></span></a></code>có thể chứa tối đa một phần tử có khóa đã cho,<code><a href="http://en.cppreference.com/w/cpp/container/unordered_multiset"><span class="kw1294">Điều đó cho tất cả<span class="me2">Unorered_multiset</span></span></a></code>Và<code><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap"><span class="kw1298">Điều đó cho tất cả<span class="me2">Unorered_multimap</span></span></a></code>Thay vào đó có thể có nhiều phần tử có cùng một khóa (phải luôn liền kề với các lần lặp).</p>
+<p>Bool Binary_Search (Forwardit First, Forwardit Last,<code><a href="http://en.cppreference.com/w/cpp/container/unordered_set"><span class="kw1292">Điều đó cho tất cả<span class="me2">unetered_set</span></span></a></code>Và<code><a href="http://en.cppreference.com/w/cpp/container/unordered_multiset"><span class="kw1294">Điều đó cho tất cả<span class="me2">Unorered_multiset</span></span></a></code>loại giá trị giống như loại khóa và cả hai<code>iterator</code>Và<code>const_iterator</code>là người lặp liên tục. Vì<code><a href="http://en.cppreference.com/w/cpp/container/unordered_map"><span class="kw1296">Điều đó cho tất cả<span class="me2">unetered_map</span></span></a></code>Và<code><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap"><span class="kw1298">Điều đó cho tất cả<span class="me2">Unorered_multimap</span></span></a></code>Loại giá trị là<code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">hằng số</span> Key, T<span class="sy1">&lt;</span></code>.</p>
+<p>Các yếu tố trong một thùng chứa liên kết không có thứ tự được tổ chức thành các thùng, các phím có cùng băm sẽ kết thúc trong cùng một thùng. Số lượng thùng được tăng lên khi kích thước của container tăng để giữ số lượng phần tử trung bình trong mỗi thùng dưới một giá trị nhất định.</p>
+<p>Việc thử lại vô hiệu hóa Iterator và có thể khiến các yếu tố được sắp xếp lại trong các nhóm khác nhau nhưng nó không làm mất hiệu lực các tài liệu tham khảo cho các yếu tố.</p>
+<p>Các container liên kết không có thứ tự đáp ứng các yêu cầu của<a href="allocatorawarecontainer" title="cpp/named req/AllocatorAwareContainer">AllocatorAwareContainer</a>Mẫu &lt;class T, class alloc, class u, class v&gt;<code><a href="http://en.cppreference.com/w/cpp/container/unordered_map"><span class="kw1296">Điều đó cho tất cả<span class="me2">unetered_map</span></span></a></code>Và<code><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap"><span class="kw1298">Điều đó cho tất cả<span class="me2">Unorered_multimap</span></span></a></code>các yêu cầu của<code>value_type</code>TRONG<a href="allocatorawarecontainer" title="cpp/named req/AllocatorAwareContainer">AllocatorAwareContainer</a>Áp dụng cho<code>key_type</code>Và<code>mapped_type</code>(Không phải<code>value_type</code>).</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <table class="t-dsc-begin"> <tr> <td colspan="2"> <h5 id="Legend">Huyền thoại</h5> </td>
+</tr> <tr class="t-dsc"> <td> <code>X</code> </td> <td>Một lớp container liên kết không có thứ tự</td>
+</tr> <tr class="t-dsc"> <td> <code>a</code> </td> <td>Một giá trị của loại<code>X</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>a2</code> </td> <td>Giá trị của một loại với<a href="../container/node_handle" title="cpp/container/node handle">nodes compatible with type</a> <code>X</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>b</code> </td> <td>Một giá trị của loại<code>X</code>hoặc<code>const X</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>a_uniq</code> </td> <td>Một giá trị của loại<code>X</code>Chuyển đổi danh tính:<code>X</code>Hỗ trợ các khóa độc đáo</td>
+</tr> <tr class="t-dsc"> <td> <code>a_eq</code> </td> <td>Một giá trị của loại<code>X</code>Chuyển đổi danh tính:<code>X</code>Hỗ trợ các khóa tương đương</td>
+</tr> <tr class="t-dsc"> <td> <code>a_tran</code> </td> <td>Một giá trị của loại<code>X</code>hoặc<code>const X</code>Khi một địa chỉ của một hàm được thực hiện<span class="t-spar">Trừ khi nó đáp ứng tất cả các điều kiện sau:</span>S<code>X::key_equal::is_transparent</code>Và<code>X::hasher::is_transparent</code>cả hai đều hợp lệ và biểu thị<a href="../language/template_argument_deduction" title="cpp/language/template argument deduction">types</a> </td>
+</tr> <tr class="t-dsc"> <td> <code>i</code>Thì<code>j</code> </td> <td>Đầu vào các trình lặp lại đề cập đến<code>value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>[</code><code>i</code><code>, </code><code>j</code><code>)</code> </td> <td>Một phạm vi hợp lệ</td>
+</tr> <tr class="t-dsc"> <td> <code>rg</code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>Giá trị của một loại<code>R</code>mô hình đó<code><a href="../ranges/to#container_compatible_range" title="cpp/ranges/to">container-compatible-range</a>&lt;value_type&gt;</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>p</code>Thì<code>q2</code> </td> <td>Trình lặp liên tục hợp lệ để<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>q</code>Thì<code>q1</code> </td> <td>Các trình rút liên tục có thể điều chỉnh hợp lệ<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>r</code> </td> <td>Một trình lặp lại có thể điều chỉnh hợp lệ<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>[</code><code>q1</code><code>, </code><code>q2</code><code>)</code> </td> <td>Một phạm vi hợp lệ trong<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>il</code> </td> <td>Một giá trị của loại<code><a href="http://en.cppreference.com/w/cpp/utility/initializer_list"><span class="kw962">Điều đó cho tất cả<span class="me2">Khởi tạo_list</span></span></a><span class="sy1">is_trivently_destructible_v</span>value_type<span class="sy1">&lt;</span></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>t</code> </td> <td>Một giá trị của loại<code>X::value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>k</code> </td> <td>Một giá trị của loại<code>key_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>hf</code> </td> <td>Một giá trị của loại<code>hasher</code>hoặc<code>const hasher</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>eq</code> </td> <td>Một giá trị của loại<code>key_equal</code>hoặc<code>const key_equal</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>ke</code> </td> <td>Một giá trị sao cho<ul>
+<li> <code>eq(r1, ke) == eq(ke, r1)</code>Thì</li>
+<li> <code>hf(r1) == hf(ke)</code>nếu như<code>eq(r1, ke)</code>khoảng cách<code>true</code>, Và</li>
+<li>Nếu bất kỳ hai trong số<code>eq(r1, ke)</code>Thì<code>eq(r2, ke)</code>, Và<code>eq(r1, r2)</code>&gt;<code>true</code>, sau đó cả ba đều là<code>true</code>Thì</li>
+</ul> <p>Ở đâu<code>r1</code>Và<code>r2</code>là chìa khóa của các yếu tố trong<code>a_tran</code></p>
+</td>
+</tr> <tr class="t-dsc"> <td> <code>kx</code> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>Một giá trị sao cho<ul>
+<li> <code>eq(r1, kx) == eq(kx, r1)</code>Thì</li>
+<li> <code>hf(r1) == hf(kx)</code>nếu như<code>eq(r1, kx)</code>khoảng cách<code>true</code>Thì</li>
+<li>Nếu bất kỳ hai trong số<code>eq(r1, kx)</code>Thì<code>eq(r2, kx)</code>, Và<code>eq(r1, r2)</code>&gt;<code>true</code>, sau đó cả ba đều là<code>true</code>, Và</li>
+<li> <code>kx</code>không thể chuyển đổi thành một trong hai<code>iterator</code>hoặc<code>const_iterator</code>Thì</li>
+</ul> <p>Ở đâu<code>r1</code>Và<code>r2</code>là chìa khóa của các yếu tố trong<code>a_tran</code></p>
+</td>
+</tr> <tr class="t-dsc"> <td> <code>n</code> </td> <td>Một giá trị của loại<code>size_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>z</code> </td> <td>Một giá trị của loại<code>float</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>nh</code> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> <td>Một loại loại<code>X::node_type</code> </td>
+</tr> </table> <h4 id="Types">Loại</h4> <table class="wikitable"> <tr> <th>Tên</th> <th>Kiểu</th> <th>Sắp xếp và các hoạt động liên quan</th> <th>Ghi chú</th>
+</tr> <tr> <td>
+<code>X::key_type</code> </td> <td>
+<code>Key</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>X::mapped_type</code> </td> <td>
+<code>T</code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/container/unordered_map"><span class="kw1296">Điều đó cho tất cả<span class="me2">unetered_map</span></span></a></code>Và<code><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap"><span class="kw1298">Điều đó cho tất cả<span class="me2">Unorered_multimap</span></span></a></code>Mã lỗi enum để xây dựng với</td> <td> </td>
+</tr> <tr> <td rowspan="2">
+<code>X::value_type</code> </td> <td>
+<code>Key</code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/container/unordered_set"><span class="kw1292">Điều đó cho tất cả<span class="me2">unetered_set</span></span></a></code>Và<code><a href="http://en.cppreference.com/w/cpp/container/unordered_multiset"><span class="kw1294">Điều đó cho tất cả<span class="me2">Unorered_multiset</span></span></a></code>chỉ một.<a href="erasable" title="cpp/named req/Erasable">Erasable</a>TRONG<code>X</code> </td> <td> </td>
+</tr> <tr> <td>
+<code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">hằng số</span> Key, T<span class="sy1">&lt;</span></code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/container/unordered_map"><span class="kw1296">Điều đó cho tất cả<span class="me2">unetered_map</span></span></a></code>Và<code><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap"><span class="kw1298">Điều đó cho tất cả<span class="me2">Unorered_multimap</span></span></a></code>chỉ một.<a href="erasable" title="cpp/named req/Erasable">Erasable</a>TRONG<code>X</code> </td> <td> </td>
+</tr> <tr> <td>
+<code>X::hasher</code> </td> <td>
+<code>Hash</code> </td> <td>
+<a href="hash" title="cpp/named req/Hash">Hash</a> </td> <td> </td>
+</tr> <tr> <td>
+<code>X::key_equal</code> </td> <td>
+<code>Pred</code> </td> <td>
+<a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>Số lượng các yếu tố để sao chép<a href="binarypredicate" title="cpp/named req/BinaryPredicate">BinaryPredicate</a>Điều đó có hai đối số thuộc loại<code>Key</code>và thể hiện mối quan hệ tương đương</td> <td> </td>
+</tr> <tr> <td>
+<code>X::local_iterator</code> </td> <td>
+<a href="iterator" title="cpp/named req/Iterator">LegacyIterator</a> </td> <td>Danh mục và loại giống như<code>X::iterator</code> </td> <td rowspan="2">Có thể được sử dụng để lặp lại thông qua một thùng, nhưng không phải trên các thùng</td>
+</tr> <tr> <td>
+<code>X::const_local_iterator</code> </td> <td>
+<a href="iterator" title="cpp/named req/Iterator">LegacyIterator</a> </td> <td>Danh mục và loại giống như<code>X::const_iterator</code> </td>
+</tr> <tr> <td>
+<code>X::node_type</code> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> <td>là một quan điểm thành một chuỗi các đối tượng tiếp giáp giải thích lại nó như một mảng đa chiều.<a href="../container/node_handle" title="cpp/container/node handle">node-handle</a>mẫu lớp</td> <td>Các loại lồng nhau công khai giống như các loại tương ứng trong<code>X</code> </td> <td> </td>
+</tr>
+</table> <h4 id="Member_functions_and_operators">Chức năng và toán tử thành viên</h4> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Kết quả</th> <th>Điều kiện tiên quyết</th> <th>Các hiệu ứng</th> <th>Mẫu &lt;Class execPolicy,</th> <th>Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</th>
+</tr> <tr> <td>
+<code>X(n, hf, eq)</code> </td> <td> </td> <td> </td> <td>Xây dựng một thùng chứa trống với ít nhất<code>n</code>Xô, sử dụng<code>hf</code>như hàm băm và<code>eq</code>Như vị từ bình đẳng chính</td> <td> </td> <td>O (<code>n</code>)</td>
+</tr> <tr> <td>
+<code>X(n, hf)</code> </td> <td> </td> <td>
+<code>key_equal</code>khoảng cách<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a> </td> <td>Xây dựng một thùng chứa trống với ít nhất<code>n</code>Xô, sử dụng<code>hf</code>như hàm băm và<code>key_equal()</code>Như vị từ bình đẳng chính</td> <td> </td> <td>O (<code>n</code>)</td>
+</tr> <tr> <td>
+<code>X(n)</code> </td> <td> </td> <td>
+<code>hasher</code>Và<code>key_equal</code>&gt;<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a> </td> <td>Xây dựng một thùng chứa trống với ít nhất<code>n</code>Xô, sử dụng<code>hasher()</code>như hàm băm và<code>key_equal()</code>Như vị từ bình đẳng chính</td> <td> </td> <td>O (<code>n</code>)</td>
+</tr> <tr> <td>
+<code>X a = X();</code><br/><code>X a;</code> </td> <td> </td> <td>
+<code>hasher</code>Và<code>key_equal</code>&gt;<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a> </td> <td>Xây dựng một thùng chứa trống với số lượng thùng không xác định, sử dụng<code>hasher()</code>như hàm băm và<code>key_equal()</code>Như vị từ bình đẳng chính</td> <td> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>X(i, j, n, hf, eq)</code> </td> <td> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>*i</code> </td> <td>Xây dựng một thùng chứa trống với ít nhất<code>n</code>Xô, sử dụng<code>hf</code>như hàm băm và<code>eq</code>là vị từ bình đẳng chính và chèn các phần tử từ<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>vào nó</td> <td> </td> <td>    : unetered_map (init, bucket_count,<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>i, j<span class="br0">)</span></code>                    Hash (), key_equal (), alloc) {}<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>X(i, j, n, hf)</code> </td> <td> </td> <td>
+<code>key_equal</code>) và các ký tự chữ số theo sau (như được phân loại bởi<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>.<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>*i</code> </td> <td>Xây dựng một thùng chứa trống với ít nhất<code>n</code>Xô, sử dụng<code>hf</code>như hàm băm và<code>key_equal()</code>là vị từ bình đẳng chính và chèn các phần tử từ<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>vào nó</td> <td> </td> <td>    : unetered_map (init, bucket_count,<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>i, j<span class="br0">)</span></code>                    Hash (), key_equal (), alloc) {}<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>X(i, j, n)</code> </td> <td> </td> <td>
+<code>hasher</code>Và<code>key_equal</code>&gt;<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>.<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>*i</code> </td> <td>Xây dựng một thùng chứa trống với ít nhất<code>n</code>Xô, sử dụng<code>hasher()</code>như hàm băm và<code>key_equal()</code>là vị từ bình đẳng chính và chèn các phần tử từ<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>vào nó</td> <td> </td> <td>    : unetered_map (init, bucket_count,<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>i, j<span class="br0">)</span></code>                    Hash (), key_equal (), alloc) {}<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>X(i, j)</code> </td> <td> </td> <td>
+<code>hasher</code>Và<code>key_equal</code>&gt;<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>.<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>*i</code> </td> <td>Xây dựng một thùng chứa trống với số lượng thùng không xác định, sử dụng<code>hasher()</code>như hàm băm và<code>key_equal()</code>là vị từ bình đẳng chính và chèn các phần tử từ<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>vào nó</td> <td> </td> <td>    : unetered_map (init, bucket_count,<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>i, j<span class="br0">)</span></code>                    Hash (), key_equal (), alloc) {}<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>X<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/ranges/from_range"><span class="kw3504">Điều đó cho tất cả<span class="me2">từ_range</span></span></a>,<br/> rg, n, hf, eq)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code> </td> <td>Xây dựng một thùng chứa trống với ít nhất<code>n</code>Xô, sử dụng<code>hf</code>như hàm băm và<code>eq</code>là vị từ bình đẳng chính và chèn các phần tử từ<code>rg</code>vào nó</td> <td> </td> <td>    : unetered_map (init, bucket_count,<code><a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3142">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>                    Hash (), key_equal (), alloc) {}<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>X<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/ranges/from_range"><span class="kw3504">Điều đó cho tất cả<span class="me2">từ_range</span></span></a>,<br/> rg, n, hf)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td> </td> <td>
+<code>key_equal</code>khoảng cách<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>.<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code> </td> <td>Xây dựng một thùng chứa trống với ít nhất<code>n</code>Xô, sử dụng<code>hf</code>như hàm băm và<code>key_equal()</code>là vị từ bình đẳng chính và chèn các phần tử từ<code>rg</code>vào nó</td> <td> </td> <td>    : unetered_map (init, bucket_count,<code><a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3142">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>                    Hash (), key_equal (), alloc) {}<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>X<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/ranges/from_range"><span class="kw3504">Điều đó cho tất cả<span class="me2">từ_range</span></span></a>,<br/> rg, n)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td> </td> <td>
+<code>hasher</code>Và<code>key_equal</code>&gt;<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>.<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code> </td> <td>Xây dựng một thùng chứa trống với ít nhất<code>n</code>Xô, sử dụng<code>hasher()</code>như hàm băm và<code>key_equal()</code>là vị từ bình đẳng chính và chèn các phần tử từ<code>rg</code>vào nó</td> <td> </td> <td>    : unetered_map (init, bucket_count,<code><a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3142">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>                    Hash (), key_equal (), alloc) {}<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>X<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/ranges/from_range"><span class="kw3504">Điều đó cho tất cả<span class="me2">từ_range</span></span></a>,<br/> rg)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td> </td> <td>
+<code>hasher</code>Và<code>key_equal</code>&gt;<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>.<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code> </td> <td>Xây dựng một thùng chứa trống với số lượng thùng không xác định, sử dụng<code>hasher()</code>như hàm băm và<code>key_equal()</code>là vị từ bình đẳng chính và chèn các phần tử từ<code>rg</code>vào nó</td> <td> </td> <td>    : unetered_map (init, bucket_count,<code><a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3142">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>                    Hash (), key_equal (), alloc) {}<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>X(il)</code> </td> <td> </td> <td> </td> <td>
+<code>X(il.begin(), il.end())</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>X(il, n)</code> </td> <td> </td> <td> </td> <td>
+<code>X(il.begin(), il.end(), n)</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>X(il, n, hf)</code> </td> <td> </td> <td> </td> <td>
+<code>X(il.begin(), il.end(), n, hf)</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>X(il, n, hf, eq)</code> </td> <td> </td> <td> </td> <td>
+<code>X(il.begin(), il.end(), n, hf, eq)</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>X(b)</code> </td> <td> </td> <td> </td> <td>
+<a href="container" title="cpp/named req/Container">Container</a>; Bản sao hàm băm, vị ngữ và hệ số tải tối đa</td> <td> </td> <td>Trường hợp trung bình tuyến tính trong<code>b.size()</code>, trường hợp xấu nhất o (n<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>a = b</code> </td> <td>
+<code>X&amp;</code> </td> <td> </td> <td>
+<a href="container" title="cpp/named req/Container">Container</a>; Bản sao hàm băm, vị ngữ và hệ số tải tối đa</td> <td> </td> <td>Trường hợp trung bình tuyến tính trong<code>b.size()</code>, trường hợp xấu nhất o (n<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>a = il</code> </td> <td>
+<code>X&amp;</code> </td> <td>
+<code>value_type</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>Và<a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a> </td> <td>Gán phạm vi<code>[</code><code>il.begin()</code><code>, </code><code>il.end()</code><code>)</code>Mẫu &lt;Class T&gt;<code>a</code>. Tất cả các yếu tố hiện có của<code>a</code>hoặc được giao cho hoặc bị phá hủy</td> <td> </td> <td>Trường hợp trung bình tuyến tính trong<code>il.size()</code>, trường hợp xấu nhất o (n<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>b.hash_function()</code> </td> <td>
+<code>hasher</code> </td> <td> </td> <td> </td> <td>
+<code>b</code>Hàm băm</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>b.key_eq()</code> </td> <td>
+<code>key_equal</code> </td> <td> </td> <td> </td> <td>
+<code>b</code>Vị ngữ bình đẳng khóa bình đẳng</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>a_uniq.emplace(args)</code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> iterator,<br/> bool&gt;</code> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>args</code> </td> <td>Chèn a<code>value_type</code>sự vật<code>t</code>xây dựng với<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...</code>Nếu và chỉ khi không có phần tử trong thùng chứa có khóa tương đương với khóa của<code>t</code> </td> <td>Các<code>bool</code>thành phần của cặp được trả về là<code>true</code>Nếu và chỉ khi việc chèn diễn ra và thành phần iterator của cặp chỉ vào phần tử có khóa tương đương với phím của<code>t</code> </td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a_uniq.size()</code>)</td>
+</tr> <tr> <td>
+<code>a_eq.emplace(args)</code> </td> <td>
+<code>iterator</code> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>args</code> </td> <td>Chèn a<code>value_type</code>sự vật<code>t</code>xây dựng với<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...</code> </td> <td>Một trình lặp chỉ vào phần tử mới được chèn</td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a_eq.size()</code>)</td>
+</tr> <tr> <td>
+<code>a.emplace_hint(p, args)</code> </td> <td>
+<code>iterator</code> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>args</code> </td> <td>
+<code>a.emplace(<br/> <a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...<span class="br0">)</span></code> </td> <td>Một trình lặp chỉ vào phần tử với khóa tương đương với phần tử mới được chèn. Các<code>const_iterator</code> <code>p</code>là một gợi ý chỉ ra nơi tìm kiếm nên bắt đầu. Việc triển khai được phép bỏ qua gợi ý</td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a.size()</code>)</td>
+</tr> <tr> <td>
+<code>a_uniq.insert(t)</code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> iterator,<br/> bool&gt;</code> </td> <td>Nếu như<code>t</code>là một rvalue không tập hợp,<code>value_type</code>khoảng cách<a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>; nếu không thì,<code>value_type</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code> </td> <td>Chèn<code>t</code>Nếu và chỉ khi không có phần tử trong thùng chứa có khóa tương đương với khóa của<code>t</code> </td> <td>Các<code>bool</code>thành phần của cặp được trả về cho biết liệu việc chèn có diễn ra hay không và<code>iterator</code>Thành phần trỏ đến phần tử có khóa tương đương với khóa của<code>t</code> </td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a_uniq.size()</code>)</td>
+</tr> <tr> <td>
+<code>a_eq.insert(t)</code> </td> <td>
+<code>iterator</code> </td> <td>Nếu như<code>t</code>là một rvalue không tập hợp,<code>value_type</code>khoảng cách<a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>; nếu không thì,<code>value_type</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code> </td> <td>Chèn<code>t</code> </td> <td>Một trình lặp chỉ vào phần tử mới được chèn</td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a_eq.size()</code>)</td>
+</tr> <tr> <td>
+<code>a.insert(p, t)</code> </td> <td>
+<code>iterator</code> </td> <td>Nếu như<code>t</code>là một rvalue không tập hợp,<code>value_type</code>khoảng cách<a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>; nếu không thì,<code>value_type</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code> </td> <td>
+<code>a.insert(t)</code>. Người lặp<code>p</code>là một gợi ý chỉ ra nơi tìm kiếm nên bắt đầu. Việc triển khai được phép bỏ qua gợi ý</td> <td>Một trình lặp chỉ vào phần tử với khóa tương đương với<code>t</code> </td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a.size()</code>)</td>
+</tr> <tr> <td>
+<code>a.insert(i, j)</code> </td> <td>
+<code>void</code> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>*i</code>. Không<code>i</code>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<code>j</code>đủ điều kiện là<code>a</code> </td> <td>
+<code>a.insert(t)</code>Đối với mỗi yếu tố trong<br/><code>[</code><code>i</code><code>, </code><code>j</code><code>)</code> </td> <td> </td> <td>Trường hợp trung bình o (n), nơi n là<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>i, j<span class="br0">)</span></code>, trường hợp xấu nhất O (<code>N·(a.size() + 1)</code>)</td>
+</tr> <tr> <td>
+<code>a.insert_range(rg)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>
+<code>void</code> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>.<code>rg</code>Và<code>a</code>Không chồng chéo</td> <td>
+<code>a.insert(t)</code>cho mỗi yếu tố<code>t</code>TRONG<code>rg</code> </td> <td> </td> <td>Trường hợp trung bình o (n), nơi n là<code><a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3142">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>, trường hợp xấu nhất O (<code>N·(a.size() + 1)</code>)</td>
+</tr> <tr> <td>
+<code>a.insert(il)</code> </td> <td> </td> <td> </td> <td>
+<code>a.insert(il.begin(), il.end())</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>a_uniq.insert(nh)</code><br/><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> <td>
+<code>insert_return_type</code> </td> <td>
+<code>nh</code>trống hoặc<p><code>a_uniq.get_allocator()==nh.get_allocator()</code>khoảng cách<code>true</code></p>
+</td> <td>Nếu như<code>nh</code>là trống rỗng, không có tác dụng. Nếu không, chèn phần tử thuộc sở hữu của<code>nh</code>Nếu và chỉ khi không có phần tử trong thùng chứa có khóa tương đương với<code>nh.key()</code>. Đảm bảo: Nếu<code>nh</code>                   Forwardit2 s_first, forwardit2 s_last,<code>inserted</code>khoảng cách<code>false</code>Thì<code>position</code>khoảng cách<code>end()</code>, Và<code>node</code>trống rỗng. Nếu không nếu việc chèn đã diễn ra,<code>inserted</code>khoảng cách<code>true</code>Thì<code>position</code>Trả lại một<code>node</code>là trống rỗng; Nếu việc chèn không thành công,<code>inserted</code>khoảng cách<code>false</code>Thì<code>node</code>Nếu không nếu việc chèn đã diễn ra,<code>nh</code>, Và<code>position</code>chỉ vào phần tử được chèn, và<code>nh.key()</code> </td> <td> </td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a_uniq.size()</code>)</td>
+</tr> <tr> <td>
+<code>a_eq.insert(nh)</code><br/><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> <td>
+<code>iterator</code> </td> <td>
+<code>nh</code>trống hoặc<p><code>a_eq.get_allocator()==nh.get_allocator()</code>khoảng cách<code>true</code></p>
+</td> <td>Nếu như<code>nh</code>trống rỗng, không có hiệu lực và lợi nhuận<code>a_eq.end()</code>. Nếu không, chèn phần tử thuộc sở hữu của<code>nh</code>và trả về một trình lặp chỉ vào phần tử mới được chèn. Đảm bảo:<code>nh</code>                     Forwardit1 đầu tiên, forwardit1 cuối cùng,</td> <td> </td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a_eq.size()</code>)</td>
+</tr> <tr> <td>
+<code>a.insert(q, nh)</code><br/><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> <td>
+<code>iterator</code> </td> <td>
+<code>nh</code>trống hoặc<p><code>a.get_allocator()==nh.get_allocator()</code>khoảng cách<code>true</code></p>
+</td> <td>Nếu như<code>nh</code>trống rỗng, không có hiệu lực và lợi nhuận<code>a.end()</code>. Nếu không, chèn phần tử thuộc sở hữu của<code>nh</code>Nếu và chỉ khi không có phần tử nào có khóa tương đương với<code>nh.key()</code>trong các thùng chứa có khóa độc đáo; Luôn chèn phần tử thuộc sở hữu của<code>nh</code>trong các thùng chứa có khóa tương đương. Người lặp<code>q</code>là một gợi ý chỉ ra nơi tìm kiếm nên bắt đầu. Việc triển khai được phép bỏ qua gợi ý. Đảm bảo:<code>nh</code>trống nếu chèn thành công, không thay đổi nếu chèn không thành công</td> <td>Một trình lặp chỉ vào phần tử với khóa tương đương với<code>nh.key()</code> </td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a.size()</code>)</td>
+</tr> <tr> <td>
+<code>a.extract(k)</code><br/><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> <td>
+<code>node_type</code> </td> <td> </td> <td>Loại bỏ một phần tử trong thùng chứa với khóa tương đương với<code>k</code> </td> <td>MỘT<code>node_type</code>sở hữu phần tử nếu được tìm thấy, nếu không thì trống<code>node_type</code> </td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a.size()</code>)</td>
+</tr> <tr> <td>
+<code>a_tran.extract(kx)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>
+<code>node_type</code> </td> <td> </td> <td>Loại bỏ một phần tử trong thùng chứa với khóa tương đương với<code>kx</code> </td> <td>MỘT<code>node_type</code>sở hữu phần tử nếu được tìm thấy, nếu không thì trống<code>node_type</code> </td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a_tran.size()</code>)</td>
+</tr> <tr> <td>
+<code>a.extract(q)</code><br/><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> <td>
+<code>node_type</code> </td> <td> </td> <td>Loại bỏ phần tử được trỏ bởi<code>q</code> </td> <td>MỘT<code>node_type</code>sở hữu yếu tố đó</td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a.size()</code>)</td>
+</tr> <tr> <td>
+<code>a.merge(a2)</code><br/><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> <td>
+<code>void</code> </td> <td>
+<code>a.get_allocator()==a2.get_allocator()</code> </td> <td>Nỗ lực trích xuất từng yếu tố trong<code>a2</code>void Merge (std :: multimap &lt;key, t, c2, allocator&gt; &amp; source);<code>a</code>Mẫu &lt;Class H2, Class P2&gt;<code>a</code>. Trong các thùng chứa có các khóa duy nhất, nếu có một yếu tố trong<code>a</code>Cố gắng trích xuất ("splice") mỗi phần tử trong<code>a2</code>và chèn nó vào<code>a2</code>. Đảm bảo: Con trỏ và tài liệu tham khảo về các yếu tố được chuyển giao của<code>a2</code>đề cập đến những yếu tố tương tự nhưng là thành viên của<code>a</code>void Merge (std :: unordered_multimap &lt;key, t, h2, p2, allocator&gt; &amp; source);<code>a</code>sẽ bị vô hiệu, nhưng các yếu tố lặp lại cho các yếu tố còn lại trong<code>a2</code>sẽ vẫn còn hiệu lực</td> <td> </td> <td>Trường hợp trung bình o (n), nơi n là<code>a2.size()</code>, trường hợp xấu nhất O (<code>N·(a.size() + 1)</code>)</td>
+</tr> <tr> <td>
+<code>a.erase(k)</code> </td> <td>
+<code>size_type</code> </td> <td> </td> <td>Xóa tất cả các yếu tố với khóa tương đương với<code>k</code> </td> <td>Số lượng các yếu tố bị xóa</td> <td>Trường hợp trung bình o (<code>a.count(k)</code>), trường hợp xấu nhất O (<code>a.size()</code>)</td>
+</tr> <tr> <td>
+<code>a_tran.erase(kx)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>
+<code>size_type</code> </td> <td> </td> <td>Xóa tất cả các yếu tố với khóa tương đương với<code>kx</code> </td> <td>Số lượng các yếu tố bị xóa</td> <td>Trường hợp trung bình o (<code>a_tran.count(kx)</code>), trường hợp xấu nhất O (<code>a_tran.size()</code>)</td>
+</tr> <tr> <td>
+<code>a.erase(q)</code> </td> <td>
+<code>iterator</code> </td> <td> </td> <td>Xóa bỏ yếu tố được chỉ ra bởi<code>q</code> </td> <td>Người lặp ngay lập tức theo sau<code>q</code>Trước khi xóa</td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a.size()</code>)</td>
+</tr> <tr> <td>
+<code>a.erase(r)</code><br/><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> <td>
+<code>iterator</code> </td> <td> </td> <td>Xóa bỏ yếu tố được chỉ ra bởi<code>r</code> </td> <td>Người lặp ngay lập tức theo sau<code>r</code>Trước khi xóa</td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a.size()</code>)</td>
+</tr> <tr> <td>
+<code>a.erase(q1, q2)</code> </td> <td>
+<code>iterator</code> </td> <td> </td> <td>Xóa tất cả các yếu tố trong phạm vi<br/><code>[</code><code>q1</code><code>, </code><code>q2</code><code>)</code> </td> <td>Người lặp ngay lập tức theo các phần tử bị xóa trước khi xóa</td> <td>Trường hợp trung bình tuyến tính trong<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>q1, q2<span class="br0">)</span></code>, trường hợp xấu nhất O (<code>a.size()</code>)</td>
+</tr> <tr> <td>
+<code>a.clear()</code> </td> <td>
+<code>void</code> </td> <td> </td> <td>Xóa tất cả các yếu tố trong container. Đảm bảo:<code>a.empty()</code>khoảng cách<code>true</code> </td> <td> </td> <td>bool is_heap (execPolicy &amp;&amp; chính sách,<code>a.size()</code> </td>
+</tr> <tr> <td>
+<code>b.find(k)</code> </td> <td>
+<code>iterator</code>Số lượng các yếu tố để sao chép<code>const_iterator</code>cho không đổi<code>b</code> </td> <td> </td> <td> </td> <td>Một trình lặp chỉ vào một phần tử có khóa tương đương với<code>k</code>, hoặc<code>b.end()</code>Nếu không có yếu tố như vậy tồn tại</td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>b.size()</code>)</td>
+</tr> <tr> <td>
+<code>a_tran.find(ke)</code><br/><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>?</td> <td>
+<code>iterator</code>Số lượng các yếu tố để sao chép<code>const_iterator</code>cho không đổi<code>a_tran</code> </td> <td> </td> <td> </td> <td>Một trình lặp chỉ vào một phần tử có khóa tương đương với<code>ke</code>, hoặc<code>a_tran.end()</code>Nếu không có yếu tố như vậy tồn tại</td> <td>Trường hợp trung bình O (1), trường hợp xấu nhất O (<code>a_tran.size()</code>)</td>
+</tr> <tr> <td>
+<code>b.count(k)</code> </td> <td>
+<code>size_type</code> </td> <td> </td> <td> </td> <td>Số lượng các yếu tố có khóa tương đương với<code>k</code> </td> <td>Trường hợp trung bình o (<code>b.count(k)</code>), trường hợp xấu nhất O (<code>b.size()</code>)</td>
+</tr> <tr> <td>
+<code>a_tran.count(ke)</code><br/><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>?</td> <td>
+<code>size_type</code> </td> <td> </td> <td> </td> <td>Số lượng các yếu tố có khóa tương đương với<code>ke</code> </td> <td>Trường hợp trung bình o (<code>a_tran.count(ke)</code>), trường hợp xấu nhất O (<code>a_tran.size()</code>)</td>
+</tr> <tr> <td>
+<code>b.contains(k)</code><br/><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>?</td> <td> </td> <td> </td> <td>
+<code>b.find(k) != b.end()</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>a_tran.contains(ke)</code><br/><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>?</td> <td> </td> <td> </td> <td>
+<code>a_tran.find(ke) != a_tran.end()</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>b.equal_range(k)</code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> iterator,<br/> iterator&gt;</code>Số lượng các yếu tố để sao chép<p><code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> const_iterator,<br/> const_iterator&gt;</code>cho không đổi<code>b</code></p>
+</td> <td> </td> <td> </td> <td>Một phạm vi chứa tất cả các yếu tố có khóa tương đương với<code>k</code>Consexpr bool next_permuting (bidirit đầu tiên, bidirit cuối cùng, so sánh comp);<p><code><a href="http://en.cppreference.com/w/cpp/utility/pair/make_pair"><span class="kw1100">Điều đó cho tất cả<span class="me2">Mẫu &lt;class forwardit, class so sánh&gt;</span></span></a><span class="br0">.</span><br/> b.end(), b.end())</code>Nếu không có yếu tố như vậy tồn tại</p>
+</td> <td>Trường hợp trung bình o (<code>b.count(k)</code>), trường hợp xấu nhất O (<code>b.size()</code>)</td>
+</tr> <tr> <td>
+<code>a_tran.equal_range(ke)</code><br/><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span>?</td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> iterator,<br/> iterator&gt;</code>Số lượng các yếu tố để sao chép<p><code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> const_iterator,<br/> const_iterator&gt;</code>cho không đổi<code>a_tran</code></p>
+</td> <td> </td> <td> </td> <td>Một phạm vi chứa tất cả các yếu tố có khóa tương đương với<code>ke</code>Consexpr bool next_permuting (bidirit đầu tiên, bidirit cuối cùng, so sánh comp);<p><code><a href="http://en.cppreference.com/w/cpp/utility/pair/make_pair"><span class="kw1100">Điều đó cho tất cả<span class="me2">Mẫu &lt;class forwardit, class so sánh&gt;</span></span></a><span class="br0">.</span><br/> a_tran.end(),<br/> a_tran.end())</code>Nếu không có yếu tố như vậy tồn tại</p>
+</td> <td>Trường hợp trung bình o (<code>a_tran.count(ke)</code>), trường hợp xấu nhất O (<code>a_tran.size()</code>)</td>
+</tr> <tr> <td>
+<code>b.bucket_count()</code> </td> <td>
+<code>size_type</code> </td> <td> </td> <td> </td> <td>Số lượng thùng<code>b</code>                           Forwardit2 first2, forwardit2 last2,</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>b.max_bucket_count()</code> </td> <td>
+<code>size_type</code> </td> <td> </td> <td> </td> <td>Một giới hạn trên trên số lượng thùng<code>b</code>có thể chứa</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>b.bucket(k)</code> </td> <td>
+<code>size_type</code> </td> <td>
+<code>b.bucket_count() &gt; 0</code> </td> <td> </td> <td>Chỉ số của xô trong đó các phần tử có các phím tương đương với<code>k</code>sẽ được tìm thấy, nếu bất kỳ yếu tố như vậy tồn tại. Giá trị trả về ở<code>[</code><code>​0​</code><code>, </code><code>b.bucket_count()</code><code>)</code> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>b.bucket_size(n)</code> </td> <td>
+<code>size_type</code> </td> <td>
+<code>n</code>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>[</code><code>​0​</code><code>, </code><code>b.bucket_count()</code><code>)</code> </td> <td> </td> <td>Số lượng các yếu tố trong<code>n</code><sup>phần tử đầu vào trong I</sup>. Người lặp này</td> <td>O (<code>b.bucket_size(n)</code>)</td>
+</tr> <tr> <td>
+<code>b.begin(n)</code> </td> <td>
+<code>local_iterator</code>Số lượng các yếu tố để sao chép<code>const_local_iterator</code>cho không đổi<code>b</code> </td> <td>
+<code>n</code>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>[</code><code>​0​</code><code>, </code><code>b.bucket_count()</code><code>)</code> </td> <td> </td> <td>Một trình lặp lại đề cập đến phần tử đầu tiên trong xô. Nếu thùng trống, thì<code>b.begin(n) == b.end(n)</code> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>b.end(n)</code> </td> <td>
+<code>local_iterator</code>Số lượng các yếu tố để sao chép<code>const_local_iterator</code>cho không đổi<code>b</code> </td> <td>
+<code>n</code>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>[</code><code>​0​</code><code>, </code><code>b.bucket_count()</code><code>)</code> </td> <td> </td> <td>Một người lặp là giá trị quá khứ cho thùng</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>b.cbegin(n)</code> </td> <td>
+<code>const_local_iterator</code> </td> <td>
+<code>n</code>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>[</code><code>​0​</code><code>, </code><code>b.bucket_count()</code><code>)</code> </td> <td> </td> <td>Một trình lặp lại đề cập đến phần tử đầu tiên trong xô. Nếu thùng trống, thì<code>b.cbegin(n) == b.cend(n)</code> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>b.cend(n)</code> </td> <td>
+<code>const_local_iterator</code> </td> <td>
+<code>n</code>ForwardItIt2 copy_if (execPolicy &amp;&amp; chính sách,<code>[</code><code>​0​</code><code>, </code><code>b.bucket_count()</code><code>)</code> </td> <td> </td> <td>Một người lặp là giá trị quá khứ cho thùng</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>b.load_factor()</code> </td> <td>
+<code>float</code> </td> <td> </td> <td> </td> <td>Số lượng phần tử trung bình trên mỗi thùng</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>b.max_load_factor()</code> </td> <td>
+<code>float</code> </td> <td> </td> <td> </td> <td>Một số dương mà container cố gắng giữ cho hệ số tải nhỏ hơn hoặc bằng. Thùng chứa tự động tăng số lượng thùng khi cần thiết để giữ hệ số tải bên dưới số này</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>a.max_load_factor(z)</code> </td> <td>
+<code>void</code> </td> <td>
+<code>z</code>là tích cực. Có thể thay đổi hệ số tải tối đa của container, sử dụng<code>z</code>Như một gợi ý</td> <td> </td> <td> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>a.rehash(n)</code> </td> <td>
+<code>void</code> </td> <td> </td> <td>Đảm bảo:<p><code>a.bucket_count() &gt;= a.size() / a.max_load_factor()</code>Và<code>a.bucket_count() &gt;= n</code></p>
+</td> <td> </td> <td>Trường hợp trung bình tuyến tính trong<code>a.size()</code>, trường hợp xấu nhất o (n<sup>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sup>)</td>
+</tr> <tr> <td>
+<code>a.reserve(n)</code> </td> <td> </td> <td> </td> <td>
+<code>a.<span class="me1">(size_type)</span><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/numeric/math/ceil"><span class="kw1353">Điều đó cho tất cả<span class="me2">sàn nhà</span></span></a><span class="br0">.</span><br/> n / a.max_load_factor()))</code> </td> <td> </td> <td> </td>
+</tr> </table> <h3 id="Unordered_associative_containers_in_the_standard_library">Các container liên kết không có thứ tự trong thư viện tiêu chuẩn</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../container/unordered_set" title="cpp/container/unordered set"> <span class="t-lines"><span>unetered_set</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Bộ sưu tập các phím độc đáo, được băm bởi các phím<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/unordered_multiset" title="cpp/container/unordered multiset"> <span class="t-lines"><span>Unorered_multiset</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Bộ sưu tập các phím, được băm bởi các phím<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/unordered_map" title="cpp/container/unordered map"> <span class="t-lines"><span>unetered_map</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Bộ sưu tập các cặp giá trị khóa, được băm bởi các phím, phím là duy nhất<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/unordered_multimap" title="cpp/container/unordered multimap"> <span class="t-lines"><span>Unorered_multimap</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Bộ sưu tập các cặp giá trị khóa, được băm bởi các phím<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/UnorderedAssociativeContainer">https://en.cppreference.com/w/cpp/named_req/UnorderedAssociativeContainer</a>
+</p>
+</div>

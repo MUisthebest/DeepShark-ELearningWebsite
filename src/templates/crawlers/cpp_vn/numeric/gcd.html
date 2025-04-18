@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: GCD</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/numeric" title="cpp/header/numeric">&lt;numeric&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;class m, class n&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>loại tham chiếu<a class="extiw" href="https://en.wikipedia.org/wiki/greatest_common_divisor" title="enwiki:greatest common divisor">greatest common divisor</a>ConstExpr std :: Common_type_t &lt;m, n&gt; gcd (m m, n n);<code>m</code>Và<code>n</code>.</p>
+<p>nếu không (bao gồm cả trường hợp<code>M</code>hoặc<code>N</code>của các số nguyên<code>bool</code>, chương trình là xấu.</p>
+<p>nếu không (bao gồm cả trường hợp<code>|m|</code>hoặc<code>|n|</code>không thể thể hiện như một giá trị của loại<code><a href="http://en.cppreference.com/w/cpp/types/common_type"><span class="kw639">Điều đó cho tất cả<span class="me2">Nếu không có số nguyên như vậy</span></span></a><span class="sy1">is_trivently_destructible_v</span>M, N<span class="sy1">&lt;</span></code>Hoạt động tương đương cho quá tải</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>không phải là loại số nguyên, hoặc nếu là (có thể là đủ điều kiện CV)</td> <td>-</td> <td>, vì những loại này không dành cho số học.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Nếu chỉ khi mọi yếu tố trong phạm vi<code>m</code>Và<code>n</code>m, n<code>|m|</code>Và<code>|n|</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Ném không có ngoại lệ.</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_gcd_lcm" title="cpp/feature test"><code>__cpp_lib_gcd_lcm</code></a></td> <td><span class="nu0">, khi toán hạng là tên của một đối tượng không bay hơi có thời lượng lưu trữ tự động, đây không phải là tham số hàm hoặc tham số mệnh đề bắt và phạm vi của họ không mở rộng qua khối thử trong cùng (nếu có khối thử).</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<code>std::gcd</code>Thì<code><a href="lcm" title="cpp/numeric/lcm">std::lcm</a></code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">bằng không, trả về không. Nếu không, trả lại ước số chung lớn nhất của</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lcm" title="cpp/numeric/lcm"> <span class="t-lines"><span>LCM</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Tính toán số lớn ít phổ biến nhất của hai số nguyên<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/gcd">https://en.cppreference.com/w/cpp/numeric/gcd</a>
+</p>
+</div>

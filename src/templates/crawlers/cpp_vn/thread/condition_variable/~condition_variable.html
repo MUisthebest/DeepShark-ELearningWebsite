@@ -1,0 +1,10 @@
+ <h1 class="firstHeading" id="firstHeading">std :: điều kiện_varable :: ~ điều kiện_varable</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">~ điều kiện_varable ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>void Delete_Object (u* p);<code><a href="../condition_variable" title="cpp/thread/condition variable">std::condition_variable</a></code>.</p>
+<p>Chỉ an toàn để gọi bộ hủy diệt nếu tất cả các chủ đề đã được thông báo. Không bắt buộc phải thoát khỏi các chức năng chờ đợi tương ứng của mình: một số chủ đề vẫn có thể đang chờ để làm lại khóa liên quan hoặc có thể đang chờ để được lên kế hoạch để chạy sau khi phản ứng lại.</p>
+<p>Lập trình viên phải đảm bảo rằng không có chủ đề nào cố gắng chờ đợi<code>*this</code>Khi bộ hủy đã được bắt đầu, đặc biệt là khi các luồng chờ đang gọi các hàm chờ trong một vòng lặp hoặc đang sử dụng quá tải các chức năng chờ có vị từ.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/thread/cnd_destroy" title="c/thread/cnd destroy">C documentation</a></span>vì<code>cnd_destroy</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/condition_variable/%7Econdition_variable">https://en.cppreference.com/w/cpp/thread/condition_variable/%7Econdition_variable</a>
+</p>
+</div>

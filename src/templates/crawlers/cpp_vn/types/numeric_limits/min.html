@@ -1,0 +1,39 @@
+ <h1 class="firstHeading" id="firstHeading">std :: numeric_limits &lt;t&gt; :: min</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/limits" title="cpp/header/limits">&lt;limits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">T tĩnh t min () ném ();</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Consexpr tĩnh t min () Noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Trả về giá trị hữu hạn tối thiểu có thể đại diện cho loại số<code>T</code>.</p>
+<p>Đối với các loại nổi với sự biến đổi hóa,<code>min()</code>Trả về giá trị chuẩn hóa dương tối thiểu.<i>Lưu ý rằng hành vi này có thể là bất ngờ</i>, đặc biệt là khi so sánh với hành vi của<code>min()</code>cho các loại tích phân.<span class="t-rev-inl t-since-cxx11"><span>Để tìm giá trị không có giá trị nào ít hơn nó, hãy sử dụng<a href="lowest" title="cpp/types/numeric limits/lowest"><code>lowest()</code></a>.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span></p>
+<p><code>min()</code>chỉ có ý nghĩa đối với các loại bị ràng buộc và đối với các loại không có tài sản không bị ràng buộc, nghĩa là các loại đại diện cho một tập hợp vô hạn của các giá trị âm không có tối thiểu có ý nghĩa.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th> <code>T</code> </th> <th> <code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">(Niebloid)</span><span class="br0">.</span><span class="br0">)</span></code> </th>
+</tr> <tr class="t-dsc"> <td> <span class="coMULTI">/ * không chuyên hóa */</span> </td> <td> <code>T()</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">bool</span> </td> <td> <code>false</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">CHAR_MIN</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">SCHAR_MIN</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">char</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">wchar_t</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">WCHAR_MIN</a></code> </td>
+</tr> <tr class="t-dsc"> <td>char8_t<span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char16_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">char32_t</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">SHRT_MIN</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">STD</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">int</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">INT_MIN</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">int</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">LONG_MIN</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">dài</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">LLONG_MIN</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">STD</span> <span class="kw4">dài</span> <span class="kw4">dài</span> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> <td> <code>​0​</code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">trôi nổi</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">FLT_MIN</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">DBL_MIN</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <span class="kw4">dài</span> <span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span> </td> <td> <code><a href="../climits" title="cpp/types/climits">LDBL_MIN</a></code> </td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Thể hiện việc sử dụng với các loại typedef và sự khác biệt về dấu hiệu của kết quả giữa các loại số nguyên và dấu phẩy động:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;CstDdef&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;iomanip&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lowest" title="cpp/types/numeric limits/lowest"> <span class="t-lines"><span>thấp nhất</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span> <span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Trả về giá trị hữu hạn thấp nhất của loại đã cho<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="denorm_min" title="cpp/types/numeric limits/denorm min"> <span class="t-lines"><span>denorm_min</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>Trả về giá trị dưới bình thường nhỏ nhất của loại dấu nổi đã cho<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="max" title="cpp/types/numeric limits/max"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>#include &lt;Limits&gt;<br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/numeric_limits/min">https://en.cppreference.com/w/cpp/types/numeric_limits/min</a>
+</p>
+</div>

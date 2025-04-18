@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tutorial.css') }}">
 <div class="container">
     <h2 class="title-course">Courses</h2>
     <div class="search-bar">
@@ -12,6 +13,7 @@
             <a href="#">Free</a>
         </div>
         <div class="course-cards">
+            <a href="tutorial/language/alignas" class="card"></a>
             {% for course in courses %}
                 <a href="{{ course[1] }}" class="card">
                     <img src="{{ course[2] }}" alt="{{ course[0] }}" />
@@ -21,3 +23,4 @@
         </div>
     </section>
 </div>
+

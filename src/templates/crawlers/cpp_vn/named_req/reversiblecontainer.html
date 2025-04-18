@@ -1,0 +1,38 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: ReversibleContainer</h1> <p>MỘT<strong class="selflink">ReversibleContainer</strong>Điều đó như vậy<a href="container" title="cpp/named req/Container">Container</a>có những người lặp có các yêu cầu của một trong hai<a href="bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a>hoặc<a href="randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>. Các trình lặp như vậy cho phép một ReversibleContainer được lặp lại ngược lại.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <code>X</code> </td> <td>Loại container</td>
+</tr> <tr class="t-dsc"> <td> <code>T</code> </td> <td>Loại phần tử</td>
+</tr> <tr class="t-dsc"> <td> <code>a</code> </td> <td>Đối tượng của loại<code>X</code> </td>
+</tr> </table> <h4 id="Types">Loại</h4> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Điều kiện</th>
+</tr> <tr> <td><code>X::reverse_iterator</code></td> <td>Loại lặp có loại giá trị<code>T</code>
+</td> <td>
+<code>reverse_iterator&lt;iterator&gt;</code> </td>
+</tr> <tr> <td><code>X::const_reverse_iterator</code></td> <td>Loại lặp liên tục có loại giá trị<code>T</code>
+</td> <td>
+<code>reverse_iterator&lt;const_iterator&gt;</code> </td>
+</tr> </table> <h4 id="Member_functions">nếu không thì</h4> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>    std :: decay_t &lt;std :: indoke_result_t &lt;f &amp;, t, std :: iter_reference_t &lt;i &gt;&gt;&gt;&gt; &amp;&amp;&amp;&amp;</th> <th>Điều kiện</th> <th>Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</th>
+</tr> <tr> <td><code>a.rbegin()</code></td> <td>
+<code>reverse_iterator</code>Số lượng các yếu tố để sao chép<code>const_reverse_iterator</code>cho không đổi<code>a</code>
+</td> <td><code>reverse_iterator(end())</code></td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>a.rend()</code></td> <td>
+<code>reverse_iterator</code>Số lượng các yếu tố để sao chép<code>const_reverse_iterator</code>cho không đổi<code>a</code>
+</td> <td><code>reverse_iterator(begin())</code></td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>a.crbegin()</code></td> <td><code>const_reverse_iterator</code></td> <td><code>const_cast&lt;X const&amp;&gt;(a).rbegin()</code></td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td><code>a.crend()</code></td> <td><code>const_reverse_iterator</code></td> <td><code>const_cast&lt;X const&amp;&gt;(a).rend()</code></td> <td>Đặc điểm kỹ thuật:</td>
+</tr>
+</table> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <ul>
+<li> <code><a href="../container/array" title="cpp/container/array">std::array</a></code> </li>
+<li> <code><a href="../container/deque" title="cpp/container/deque">std::deque</a></code> </li>
+<li> <code><a href="../container/list" title="cpp/container/list">std::list</a></code> </li>
+<li> <code><a href="../container/vector" title="cpp/container/vector">std::vector</a></code> </li>
+<li> <code><a href="../container/map" title="cpp/container/map">std::map</a></code> </li>
+<li> <code><a href="../container/multimap" title="cpp/container/multimap">std::multimap</a></code> </li>
+<li> <code><a href="../container/set" title="cpp/container/set">std::set</a></code> </li>
+<li> <code><a href="../container/multiset" title="cpp/container/multiset">std::multiset</a></code> </li>
+</ul> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Ví dụ sau đây lặp lại trên một<code><a href="../container/vector" title="cpp/container/vector">vector</a></code>không phải là một loại mảng. Chức năng tương đương với:<a href="../container/vector#Member_types" title="cpp/container/vector">random-access iterators</a>) ngược lại.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Vector&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/ReversibleContainer">https://en.cppreference.com/w/cpp/named_req/ReversibleContainer</a>
+</p>
+</div>

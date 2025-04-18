@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: phạm vi :: Common_view &lt;v&gt; :: Common_view</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Common_view () = Mặc định;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Consexpr rõ ràng phổ biến_view (v r);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>common_view</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định.<a href="../../language/value_initialization" title="cpp/language/value initialization">Value-initializes</a>quan điểm cơ bản. Sau khi xây dựng,<a href="base" title="cpp/ranges/common view/base"><code>base()</code></a>Trả về một bản sao của<code>V()</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Khởi tạo chế độ xem cơ bản với<code>std::move(r)</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>thường được sử dụng.</td> <td>-</td> <td>quan điểm cơ bản được điều chỉnh thành một phạm vi chung</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3405" rel="nofollow">LWG 3405</a> </td> <td>C ++ 20</td> <td>Hàm tạo chuyển đổi dự phòng có thể gây ra đệ quy ràng buộc</td> <td>#include &lt;Istream&gt;</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/ranges/common_view/common_view">https://en.cppreference.com/w/cpp/ranges/common_view/common_view</a>
+</p>
+</div>

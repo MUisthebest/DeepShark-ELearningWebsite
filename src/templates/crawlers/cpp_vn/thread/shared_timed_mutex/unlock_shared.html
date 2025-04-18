@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_Timed_Mutex :: Unlock_shared</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">void Unlock_shared ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>Phát hành Mutex từ quyền sở hữu được chia sẻ bởi chủ đề gọi.</p>
+<p>Mutex phải được khóa bởi luồng thực thi hiện tại ở chế độ chia sẻ, nếu không, hành vi không được xác định.</p>
+<p>Hoạt động này<i>y.store (42, std :: memory_order_relaxed); // d</i>    async (std :: chính sách khởi chạy, chức năng &amp;&amp; f, args &amp;&amp; ... args);<code><a href="../../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>) bất kỳ tiếp theo<code><a href="lock" title="cpp/thread/shared timed mutex/lock">lock()</a></code>Hoạt động có được quyền sở hữu của cùng một mutex.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Không ném gì.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code>unlock_shared()</code>thường không được gọi là trực tiếp:<code><a href="../shared_lock" title="cpp/thread/shared lock">std::shared_lock</a></code>được sử dụng để quản lý khóa chia sẻ.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lock_shared" title="cpp/thread/shared timed mutex/lock shared"> <span class="t-lines"><span>lock_shared</span></span></a></div> </td> <td>Khóa Mutex cho quyền sở hữu được chia sẻ, các khối nếu không có sẵn Mutex<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="unlock" title="cpp/thread/shared timed mutex/unlock"> <span class="t-lines"><span>Mở khóa</span></span></a></div> </td> <td>Mở khóa mutex<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/shared_timed_mutex/unlock_shared">https://en.cppreference.com/w/cpp/thread/shared_timed_mutex/unlock_shared</a>
+</p>
+</div>

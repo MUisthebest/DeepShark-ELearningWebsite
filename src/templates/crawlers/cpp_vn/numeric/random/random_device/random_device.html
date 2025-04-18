@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Random_device :: Random_Device</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Random_device (): Random_device ( /*Triển khai đã xác định* /) {}</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Rõ ràng ngẫu nhiên_device (const std :: chuỗi &amp; mã thông báo);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Random_Device (const Random_Device &amp;) = Xóa;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Mặc định xây dựng một mới<code><a href="../random_device" title="cpp/numeric/random/random device">std::random_device</a></code>đối tượng với một<code>token</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Xây dựng một mới<code><a href="../random_device" title="cpp/numeric/random/random device">std::random_device</a></code>đối tượng, sử dụng đối số<code>token</code>trong một cách xác định thực hiện.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Trình xây dựng bản sao bị xóa:<code>std::random_device</code>không thể sao chép cũng như không thể di chuyển.</div> <h3 id="Exceptions">Ngoại lệ</h3> <p>Ném một ngoại lệ do thực hiện xác định xuất phát từ<code><a href="../../../error/exception" title="cpp/error/exception">std::exception</a></code>, trong trường hợp đó</p>
+<h3 id="Notes">Ghi chú</h3> <p>Việc thực hiện trong<a class="external text" href="https://github.com/gcc-mirror/gcc/blob/master/libstdc%2B%2B-v3/src/c%2B%2B11/random.cc#L319" rel="nofollow">libstdc++</a>mong đợi<code>token</code>để đặt tên cho nguồn của các byte ngẫu nhiên. Giá trị mã thông báo có thể bao gồm<code>"default"</code>Thì<code>"hw"</code>Thì<code>"rand_s"</code>Thì<code>"rdseed"</code>Thì<code>"rdrand"</code>Thì<code>"rdrnd"</code>Thì<code>"/dev/urandom"</code>Thì<code>"/dev/random"</code>Thì<code>"mt19937"</code>và chuỗi số nguyên Chỉ định hạt giống của động cơ MT19937. (Giá trị mã thông báo khác với<code>"default"</code>chỉ hợp lệ cho các mục tiêu nhất định.)</p>
+<p>Việc thực hiện trong<a class="external text" href="https://github.com/llvm/llvm-project/blob/main/libcxx/src/random.cpp#L124" rel="nofollow">libc++</a>, khi được cấu hình để sử dụng thiết bị ký tự làm nguồn, mong đợi<code>token</code>là tên của một thiết bị ký tự tạo ra các số ngẫu nhiên khi đọc từ; nếu không thì nó mong đợi<code>token</code>được<code>"/dev/urandom"</code>.</p>
+<p>Cả LibstDC ++ và LibC ++ đều ném một ngoại lệ nếu được cung cấp mã thông báo không được hỗ trợ.<a class="external text" href="https://github.com/microsoft/STL/blob/c10ae01b4d9508eed9d5f059a120ee7223b6ac12/stl/inc/random#L5026" rel="nofollow">Microsoft's stdlib</a>Bỏ qua hoàn toàn mã thông báo.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Thể hiện các loại thường có sẵn của<code>std::random_device</code>Trên Linux.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;ngẫu nhiên&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0935R0" rel="nofollow">P0935R0</a> </td> <td>C ++ 11</td> <td>Xây dựng bộ điều hợp với nội dung của</td> <td>3,5,12)</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/random/random_device/random_device">https://en.cppreference.com/w/cpp/numeric/random/random_device/random_device</a>
+</p>
+</div>

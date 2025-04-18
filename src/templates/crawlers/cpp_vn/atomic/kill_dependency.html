@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Kill_dependency</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/atomic" title="cpp/header/atomic">&lt;atomic&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>T kill_dependency (t y) noExcept;<code><a href="memory_order" title="cpp/atomic/memory order">std::memory_order_consume</a></code>Thông báo cho trình biên dịch rằng cây phụ thuộc bắt đầu bởi một<code>std::kill_dependency</code>Hoạt động tải nguyên tử không mở rộng qua giá trị trả về của</p>
+<p>; Đó là, đối số không mang sự phụ thuộc vào giá trị trả về.<code><a href="memory_order" title="cpp/atomic/memory order">std::memory_order_acquire</a></code>Điều này có thể được sử dụng để tránh không cần thiết<code>[[<a href="../language/attributes/carries_dependency" title="cpp/language/attributes/carries dependency">carries_dependency</a>]]</code>hàng rào khi chuỗi phụ thuộc rời khỏi phạm vi hàm (và hàm không có</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>thuộc tính).</td> <td>-</td> <td>y</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Mẫu &lt;Class execPolicy,<code>y</code>biểu thức có giá trị trả về sẽ bị xóa khỏi cây phụ thuộc</p>
+<h3 id="Examples">, không còn là một phần của cây phụ thuộc.</h3> <h5 id="file1.cpp:">Ví dụ</h5> <div class="cpp source-cpp"><pre data-language="cpp">file1.cpp:</pre></div> <h5 id="file2.cpp:">Cấu trúc foo</h5> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="memory_order" title="cpp/atomic/memory order"> <span class="t-lines"><span>memory_order</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xác định các ràng buộc thứ tự bộ nhớ cho hoạt động nguyên tử đã cho<br/> <span class="t-mark">(enum)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/atomic/kill_dependency" title="c/atomic/kill dependency">C documentation</a></span>vì<code>kill_dependency</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/atomic/kill_dependency">https://en.cppreference.com/w/cpp/atomic/kill_dependency</a>
+</p>
+</div>

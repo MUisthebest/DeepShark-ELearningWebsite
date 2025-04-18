@@ -1,0 +1,63 @@
+ <h1 class="firstHeading" id="firstHeading">std :: for_each</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/algorithm" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;class inputit, class asanyfunction&gt;</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Không có chức năng for_each (đầu vào đầu tiên, đầu vào cuối cùng, không có chức năng f);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Mẫu &lt;class inputit, class asanyfunction&gt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>void for_each (execPolicy &amp;&amp; chính sách,<code>f</code>               Chuyển tiếp đầu tiên, chuyển tiếp cuối cùng, không có chức năng2 f);<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>Mẫu &lt;class execPolicy, class forwardit, lớp unanyfunction2&gt;</div> <div class="t-li1">
+<span class="t-li">2)</span>void for_each (execPolicy &amp;&amp; chính sách,<code>f</code>               Chuyển tiếp đầu tiên, chuyển tiếp cuối cùng, không có chức năng2 f);<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>Áp dụng đối tượng chức năng đã cho<code>policy</code>, hành vi là không xác định. Trong trường hợp này,<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p><code><a href="http://en.cppreference.com/w/cpp/algorithm/is_execution_policy"><span class="kw1568">Điều đó cho tất cả<span class="me2">Các yếu tố được so sánh bằng cách sử dụng</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/types/decay"><span class="kw632">Điều đó cho tất cả<span class="me2">Tìm kiếm phạm vi</span></span></a><span class="sy1">is_trivently_destructible_v</span>ExecutionPolicy<span class="sy1">2,4)</span></code>khoảng cách<code>true</code>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p><code><a href="http://en.cppreference.com/w/cpp/algorithm/is_execution_policy"><span class="kw1568">Điều đó cho tất cả<span class="me2">Các yếu tố được so sánh bằng cách sử dụng</span></span></a><span class="sy1">is_trivently_destructible_v</span><a href="http://en.cppreference.com/w/cpp/types/remove_cvref"><span class="kw2643">Điều đó cho tất cả<span class="me2">Các yếu tố được so sánh bằng cách sử dụng vị ngữ nhị phân đã cho</span></span></a><span class="sy1">is_trivently_destructible_v</span>ExecutionPolicy<span class="sy1">2,4)</span></code>khoảng cách<code>true</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table>
+</div> <p>kết quả của việc phá hủy mọi trình lặp trong phạm vi<code>InputIt</code>/<code>ForwardIt</code>, theo thứ tự.<code>f</code>Áp dụng đối tượng chức năng đã cho<code>f</code>kết quả của việc phá hủy mọi trình lặp trong phạm vi</p>
+<p>(không nhất thiết phải theo thứ tự). Thuật toán được thực thi theo<code>for_each</code>Đối với cả quá tải, nếu loại Iterator (<a href="../named_req/triviallycopyable" title="cpp/named req/TriviallyCopyable">TriviallyCopyable</a>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>) là có thể thay đổi,</td>
+</tr> <tr class="t-par"> <td>std :: iterator_traits &lt;buputit&gt; :: value_type acc = *first;</td> <td>-</td> <td>*d_first = acc;<a href="execution_policy_tag_t" title="cpp/algorithm/execution policy tag t">execution policy</a> </td>
+</tr> <tr class="t-par"> <td>có thể sửa đổi các phần tử của phạm vi thông qua trình lặp được thu hút. Nếu như</td> <td>-</td> <td>Trả về một kết quả, kết quả được bỏ qua.<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code><br/> <p>Đầu tiên, cuối cùng</p>
+<p><span class="t-cc"><code> void fun(const Type &amp;a);</code></span></p>
+<p>phạm vi của các phần tử để tổng<code>const &amp;</code>.<br/>Không giống như phần còn lại của các thuật toán song song,</p>
+<p>hơn thứ hai và không nếu các đối số là tương đương.</p>
+</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>ForwardIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/forwarditerator" title="cpp/named req/ForwardIterator">LegacyForwardIterator</a>.</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>UnaryFunction</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/moveconstructible" title="cpp/named req/MoveConstructible">MoveConstructible</a>không được phép tạo các bản sao của các yếu tố trong chuỗi ngay cả khi chúng là<a href="../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>.</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>UnaryFunction2</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p><code>f</code></p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p><code>std::move(f)</code></p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> </div> <div class="t-li1">
+<span class="t-li">2)</span>Gán cho đã cho</div> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>không được phép<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>first, last<span class="br0">)</span></code>Ứng dụng của<code>f</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Trình lặp trong phạm vi đích, chỉ qua phần tử cuối cùng được sao chép nếu<code>ExecutionPolicy</code>Bài tập bằng không nếu</p>
+<ul>
+<li>Chính sách thực thi để sử dụng. Nhìn thấy<code>ExecutionPolicy</code>Để biết chi tiết.<a href="execution_policy_tag_t" title="cpp/algorithm/execution policy tag t">standard policies</a>Thì<code><a href="../error/terminate" title="cpp/error/terminate">std::terminate</a></code>Loại loại 1 và type2 phải sao cho một đối tượng của loại iterator_traits<code>ExecutionPolicy</code>Đầu vào</li>
+<li>value_type<code><a href="../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>có thể được chuyển đổi hoàn toàn thành cả hai. Loại</li>
+</ul> <h3 id="Possible_implementation">. ​</h3> <p>được tìm thấy,<a class="external text" href="https://github.com/gcc-mirror/gcc/blob/d9375e490072d1aae73a93949aa158fcd2a27018/libstdc%2B%2B-v3/include/bits/stl_algo.h#L3858" rel="nofollow">libstdc++</a>Thì<a class="external text" href="https://github.com/llvm-mirror/libcxx/blob/a12cb9d211019d99b5875b6d8034617cbc24c2cc/include/algorithm#L880" rel="nofollow">libc++</a>Và<a class="external text" href="https://github.com/microsoft/STL/blob/ff83542af4b683fb2f2dea1423fd6c50fe3e13b0/stl/inc/algorithm#L229" rel="nofollow">MSVC stdlib</a>.</p>
+<table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">phạm vi để áp dụng chức năng cho</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>f<a href="../language/lambda" title="cpp/language/lambda">lambda-expression</a>đối tượng chức năng, được áp dụng cho kết quả của việc phá hủy mọi trình lặp trong phạm vi<code>operator()</code>Loại loại phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành loại.<code><a href="accumulate" title="cpp/algorithm/accumulate">std::accumulate</a></code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">. Không cần phải</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Mẫu &lt;class inputit, class asanyfunction&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue475" rel="nofollow">LWG 475</a> </td> <td>C ++ 98</td> <td>Constexpr unanyfunction for_each (đầu vào đầu tiên, đầu vào cuối cùng, không có chức năng f)<code>f</code>{<br/>    for (; đầu tiên! = cuối cùng; ++ đầu tiên)<code>for_each</code>        f (*đầu tiên);</td> <td> <br/>    trả lại f; // di chuyển ngầm kể từ C ++ 11</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="transform" title="cpp/algorithm/transform"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div> </td> <td>biến đổi<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="for_each_n" title="cpp/algorithm/for each n"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ranges/for_each" title="cpp/algorithm/ranges/for each"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ranges/for_each_n" title="cpp/algorithm/ranges/for each n"> <span class="t-lines"><span>(Mẫu chức năng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>(C ++ 20)<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../language/range-for" title="cpp/language/range-for"> range-<code>for</code> loop</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>}</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/algorithm/for_each">https://en.cppreference.com/w/cpp/algorithm/for_each</a>
+</p>
+</div>

@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: pmr :: new_delete_resource</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/memory_resource" title="cpp/header/memory resource">&lt;memory_resource&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">std :: pmr :: memory_resource* new_delete_resource () noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Trả lại một con trỏ cho một<code>memory_resource</code>sử dụng toàn cầu<code><a href="new/operator_new" title="cpp/memory/new/operator new">operator new</a></code>Và<code><a href="new/operator_delete" title="cpp/memory/new/operator delete">operator delete</a></code>để phân bổ bộ nhớ.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Trả về một con trỏ<code>p</code>đến một đối tượng thời lượng lưu trữ tĩnh của một loại có nguồn gốc từ<code><a href="memory_resource" title="cpp/memory/memory resource">std::pmr::memory_resource</a></code>, với các thuộc tính sau:</p>
+<ul>
+<li>Để cho một số đối tượng máy phát<code>allocate()</code>chức năng sử dụng<code><span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/memory/new/operator_new"><span class="kw690">nhà điều hành mới</span></a></code>để phân bổ bộ nhớ;</li>
+<li>Để cho một số đối tượng máy phát<code>deallocate()</code>chức năng sử dụng<code><span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/memory/new/operator_delete"><span class="kw692">Xóa toán tử</span></a></code>để giải quyết bộ nhớ;</li>
+<li>cho bất kỳ<code>memory_resource</code> <code>r</code>Thì<code>p-&gt;is_equal(r)</code>(C ++ 20)<code>&amp;r == p</code>.</li>
+</ul> <p>Giá trị tương tự được trả về mỗi khi hàm này được gọi.</p>
+<div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/new_delete_resource">https://en.cppreference.com/w/cpp/memory/new_delete_resource</a>
+</p>
+</div>

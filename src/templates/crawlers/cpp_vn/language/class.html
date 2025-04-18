@@ -1,0 +1,73 @@
+ <h1 class="firstHeading" id="firstHeading">Tuyên bố lớp học</h1> <p>Các lớp là các loại do người dùng xác định, được xác định bởi bộ chỉ định lớp, xuất hiện trong<span class="t-spar">DEM-SPECIFIER-SEQ</span>của<a href="declarations" title="cpp/language/declarations">declaration</a>Cú pháp.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Trình xác định lớp có cú pháp sau:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">Lớp học</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tên lớp học</span> <code>final</code><span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Điều khoản cơ sở</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>{</code> <span class="t-spar">Đặc điểm cụ thể thành viên</span> <code>}</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Lớp học</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Điều khoản cơ sở</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>{</code> <span class="t-spar">Đặc điểm cụ thể thành viên</span> <code>}</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Định nghĩa lớp được đặt tên</div> <div class="t-li1">
+<span class="t-li">2)</span>Định nghĩa lớp không tên</div> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">Lớp học</span> </td> <td>-</td> <td>Một trong số<a href="../keyword/class" title="cpp/keyword/class"><code>class</code></a>Thì<a href="../keyword/struct" title="cpp/keyword/struct"><code>struct</code></a>Và<a href="../keyword/union" title="cpp/keyword/union"><code>union</code></a>. Các từ khóa<code>class</code>Và<code>struct</code>giống hệt nhau ngoại trừ mặc định<a href="access" title="cpp/language/access">member access</a>và mặc định<a href="derived_class" title="cpp/language/derived class">base class access</a>. Nếu nó là<code>union</code>, Tuyên bố giới thiệu một<a href="union" title="cpp/language/union">union type</a>.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>bất kỳ số lượng của<a href="attributes" title="cpp/language/attributes">attributes</a>, có thể bao gồm<a href="alignas" title="cpp/language/alignas"><code>alignas</code></a>thời lượng để biểu diễn phần bù từ UTC tương ứng với</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tên lớp học</span> </td> <td>-</td> <td>tên của lớp đang được xác định, tùy chọn<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified</a> </td>
+</tr> <tr class="t-par"> <td> <code>final</code> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>Nếu có, lớp học<a href="final" title="cpp/language/final">cannot be derived</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Điều khoản cơ sở</span> </td> <td>-</td> <td>Danh sách một hoặc nhiều lớp cơ sở và mô hình thừa kế được sử dụng cho mỗi lớp (xem<a href="derived_class" title="cpp/language/derived class">derived class</a>)</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Đặc điểm cụ thể thành viên</span> </td> <td>-</td> <td>Danh sách các nhà xác định truy cập, các khai báo và định nghĩa chức năng thành viên thành viên và các định nghĩa (<a href="#Member_specification">see below</a>)</td>
+</tr>
+</table> <h3 id="Forward_declaration">Tuyên bố chuyển tiếp</h3> <p>Một tuyên bố về biểu mẫu sau</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">Lớp học</span> <span class="t-spar">attr</span> <span class="t-spar">định danh</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>Tuyên bố một loại lớp sẽ được xác định sau trong phạm vi này. Cho đến khi định nghĩa xuất hiện, tên lớp này có<a class="mw-redirect" href="incomplete_type" title="cpp/language/incomplete type">incomplete type</a>. Điều này cho phép các lớp đề cập đến nhau:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Vector lớp; // Tuyên bố chuyển tiếp</pre></div> <p> <span class="co2">Ma trận lớp</span>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    // ...</pre></div> <p>    Toán tử vector bạn bè*(ma trận const &amp;, const vector &amp;);<i>};</i> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Vector lớp</pre></div> <p>{<a href="elaborated_type_specifier" title="cpp/language/elaborated type specifier">elaborated type specifier</a>    // ...<a href="lookup" title="cpp/language/lookup">name lookup</a>    Toán tử vector bạn bè*(ma trận const &amp;, const vector &amp;);</p>
+<div class="cpp source-cpp"><pre data-language="cpp">};</pre></div> <h3 id="Member_specification">Và nếu một tệp nguồn cụ thể chỉ sử dụng các con trỏ và tài liệu tham khảo cho lớp, điều này có thể giảm</h3> <p>#bao gồm<i>Sự phụ thuộc:</i>// trong mystruct.h</p>
+<div class="t-li1">
+<span class="t-li">1)</span>#include &lt;IOSFWD&gt; // chứa tuyên bố chuyển tiếp của STD :: Ostream<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">DEM-SPECIFIER-SEQ</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Thành viên-Danh sách Danh sách Xác sĩ Thành viên</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>bất kỳ số lượng của<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">DEM-SPECIFIER-SEQ</span> </td> <td>-</td> <td>Constexpr Phạm vi :: Subrange &lt;i&gt;<a href="declarations#Specifiers" title="cpp/language/declarations">specifiers</a>cấu trúc mystruct<a href="cast_operator" title="cpp/language/cast operator">conversion functions</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Thành viên-Danh sách Danh sách Xác sĩ Thành viên</span> </td> <td>-</td> <td>    giá trị int;<a href="declarations" title="cpp/language/declarations">init-declarator-list</a>    Friend std :: Ostream &amp; Toán tử &lt;&lt; (std :: Ostream &amp; OS, const S &amp; S);<a href="bit_field" title="cpp/language/bit field">bit-field declaration</a>Thì<a href="abstract_class" title="cpp/language/abstract class">pure-specifier</a><span class="t-rev-inl t-since-cxx11"><span>    // Định nghĩa được cung cấp trong tệp mystruct.cpp sử dụng #include &lt;Stream&gt;<code><a href="override" title="cpp/language/override">override</a></code>hoặc<code><a href="final" title="cpp/language/final">final</a></code>)</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>};<a href="direct_initialization" title="cpp/language/direct initialization">direct-non-list-initialization syntax</a>.</td>
+</tr>
+</table> <p>Nếu tuyên bố chuyển tiếp xuất hiện trong phạm vi địa phương, nó<a href="static" title="cpp/language/static">static</a>che giấu<a href="data_members" title="cpp/language/data members">data members</a>Và<a href="member_functions" title="cpp/language/member functions">member functions</a>là hợp lệ và biểu thị một loại:<a href="typedef" title="cpp/language/typedef">typedefs</a>là hợp lệ và biểu thị một loại:<a href="enum" title="cpp/language/enum">enumerations</a>, Và<a class="mw-redirect" href="nested_classes" title="cpp/language/nested classes">nested classes</a>lớp được khai báo trước đây, biến, chức năng và tất cả các khai báo khác cùng tên có thể xuất hiện trong phạm vi kèm theo:<a href="friend" title="cpp/language/friend">friend declaration</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">struct s {int a; };</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>cấu trúc s; // Không có gì (s đã được xác định trong phạm vi này)<a href="member_functions" title="cpp/language/member functions">member functions</a>hoặc<a href="friend" title="cpp/language/friend">friend functions</a> <a href="inline" title="cpp/language/inline">inline</a><span class="t-rev-inl t-since-cxx20"><span>void g ()<a href="modules" title="cpp/language/modules">named module</a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>.<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <a href="access" title="cpp/language/access">Access specifiers</a> <code>public:</code>Thì<code>protected:</code>, Và<code>private:</code> <div class="cpp source-cpp"><pre data-language="cpp">    cấu trúc s; // Tuyên bố chuyển tiếp của một nhà cấu trúc mới, địa phương "S"</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">là trong</span> <a href="using_declaration" title="cpp/language/using declaration">Using-declarations</a>:<div class="cpp source-cpp"><pre data-language="cpp">              // Điều này che giấu cấu trúc toàn cầu cho đến khi kết thúc khối này</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <a href="static_assert" title="cpp/language/static assert"><code>static_assert</code></a> <div class="cpp source-cpp"><pre data-language="cpp">    s* p; // con trỏ đến cấu trúc cục bộ S</pre></div>
+</div> <div class="t-li1">
+<span class="t-li">từ_sys</span> <a href="member_template" title="cpp/language/member template">member template declarations</a>:<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div>
+</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <span class="t-li">6)</span> <a href="type_alias" title="cpp/language/type alias">alias declarations</a>:<div class="cpp source-cpp"><pre data-language="cpp">    struct s {char* p; }; // Định nghĩa về cấu trúc cục bộ S</pre></div> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <span class="t-li">. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu biểu thức</span> <a class="mw-redirect" href="deduction_guide" title="cpp/language/deduction guide">deduction guides</a>}<div class="cpp source-cpp"><pre data-language="cpp">Lưu ý rằng một tên lớp mới cũng có thể được giới thiệu bởi một</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <span class="t-li">được hình thành tốt. Chương trình không được hình thành nếu</span> <a href="enum#Using-enum-declaration" title="cpp/language/enum">Using-enum-declarations</a>:<div class="cpp source-cpp"><pre data-language="cpp">xuất hiện như một phần của tuyên bố khác, nhưng chỉ khi</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Local_classes">    lớp u f (); // u đề cập đến :: u</h3> <p>lớp u;<i> </i>Không gian tên NS</p>
+<ul>
+<li>{</li>
+<li>    lớp y f (lớp t p); // tuyên bố chức năng ns :: f và tuyên bố ns :: t và ns :: y</li>
+<li> </li>
+<li>    lớp u f (); // u đề cập đến :: u<span class="t-rev-inl t-since-cxx14"><span>REALLOCATION thường là các hoạt động tốn kém về mặt hiệu suất. Các<a href="lambda" title="cpp/language/lambda">closure types</a></span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span> </li>
+<li>    // có thể sử dụng con trỏ và tài liệu tham khảo cho T và Y<a href="friend#Template_friends" title="cpp/language/friend">friend templates</a>.</li>
+<li>    Y* p;<a href="friend" title="cpp/language/friend">friend functions</a>    T* q;</li>
+<li>}</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <ul><li>Đặc điểm kỹ thuật thành viên</li></ul> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> </table> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Đặc tả thành viên hoặc</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">thân hình</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1693.html" rel="nofollow">CWG 1693</a> </td> <td>C ++ 98</td> <td>của một định nghĩa lớp, là một chuỗi được bao bọc của bất kỳ số lượng nào sau đây:</td> <td>Khai báo thành viên của biểu mẫu</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1930.html" rel="nofollow">CWG 1930</a> </td> <td>C ++ 98</td> <td>
+<span class="t-spar">Thành viên-Danh sách Danh sách Xác sĩ Thành viên</span>. Nó chỉ là tùy chọn trong các khai báo của các hàm tạo, hàm hủy và loại do người dùng xác định<span class="t-spar">DEM-SPECIFIER-SEQ</span><br/>Thành viên-Danh sách Danh sách Xác sĩ Thành viên</td> <td>Tương tự như một</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/struct" title="c/language/struct">C documentation</a></span>vì<code>Struct declaration</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/class">https://en.cppreference.com/w/cpp/language/class</a>
+</p>
+</div>

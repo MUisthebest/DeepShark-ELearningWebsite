@@ -1,0 +1,44 @@
+ <h1 class="firstHeading" id="firstHeading">Tuyên bố ASM</h1> <p><i>asm eclation</i>Cung cấp khả năng nhúng mã nguồn ngôn ngữ lắp ráp trong chương trình C ++. Tuyên bố này được hỗ trợ và thực hiện có điều kiện được xác định, có nghĩa là nó có thể không có mặt và, ngay cả khi được cung cấp bởi việc thực hiện, nó không có ý nghĩa cố định.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>asm (</code> <span class="t-spar">cân bằng-token-seq</span> <code>)</code> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>bất kỳ số lượng của<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">cân bằng-token-seq</span> </td> <td>-</td> <td>Một chuỗi các mã thông báo trong đó dấu ngoặc đơn, dấu ngoặc và niềng răng được cân bằng; Bất kỳ hạn chế nào đối với<span class="t-spar">cân bằng-token-seq</span>và ý nghĩa của nó là được xác định theo xác định</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Các<span class="t-spar">cân bằng-token-seq</span>thường là một chuỗi chữ đại diện cho một chương trình ngắn được viết bằng ngôn ngữ lắp ráp, được thực hiện bất cứ khi nào tuyên bố này được thực thi. Các trình biên dịch C ++ khác nhau có các quy tắc khác nhau cực kỳ khác nhau đối với việc khai báo ASM và các quy ước khác nhau cho sự tương tác với mã C ++ xung quanh.</p>
+<p>Như người khác<a href="declarations" title="cpp/language/declarations">block declarations</a>, Tuyên bố này có thể xuất hiện bên trong một khối (một cơ thể chức năng hoặc một tuyên bố hợp chất khác), và, như tất cả các tuyên bố khác, tuyên bố này cũng có thể xuất hiện bên ngoài một khối.</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_constexpr" title="cpp/feature test"><code>__cpp_constexpr</code></a></td> <td><span class="nu0">201907L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>Tầm thường<a href="default_initialization" title="cpp/language/default initialization">default initialization</a>Và<a href="#Top">asm-declaration</a>TRONG<code>constexpr</code>chức năng</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Thể hiện hai loại cú pháp lắp ráp nội tuyến được cung cấp bởi các trình biên dịch GCC/Clang. Chương trình này chỉ hoạt động chính xác trên nền tảng x86_64 trong Linux.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/195.html" rel="nofollow">CWG 195</a> </td> <td>C ++ 98</td> <td>bên ngoài "c" int func (int x);</td> <td>Hành vi sử dụng các chỉ thị không được xác định không theo tiêu chuẩn không rõ ràng</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2262.html" rel="nofollow">CWG 2262</a> </td> <td>C ++ 11</td> <td>// Định nghĩa của func được viết bằng ngôn ngữ lắp ráp</td> <td>cho phép</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul><li> <a href="../links#C.2B.2B_ABIs" title="cpp/links">C++ ABIs</a> </li></ul> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/asm" title="c/language/asm">C documentation</a></span>vì<span class=""><span>// Chuỗi thô có thể rất hữu ích</span></span> </td>
+</tr> </table> <h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr style="vertical-align:top;"> <td># Nếu __HAS_CPP_ATTRIBUTE (không dùng nữa) // Kiểm tra thuộc tính</td> <td>
+<a class="external text" href="https://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html" rel="nofollow">GCC Inline Assembly HOWTO</a> </td>
+</tr> <tr style="vertical-align:top;"> <td># Xác định mất giá (MSG) [[không dùng nữa (MSG)]]]]</td> <td>
+<a class="external text" href="http://locklessinc.com/articles/gcc_asm/" rel="nofollow">GCC Inline ASM</a>asm (r "(</td>
+</tr> <tr style="vertical-align:top;"> <td>đơn đặt hàng tổng số sửa đổi</td> <td>
+<a class="external text" href="https://www.ibm.com/docs/en/xl-c-and-cpp-aix/16.1?topic=compatibility-inline-assembly-statements" rel="nofollow">IBM XL C/C++ Inline Assembly</a> </td>
+</tr> <tr style="vertical-align:top;"> <td>Chính thức,</td> <td>
+<a class="external text" href="https://www.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference/top/compiler-reference/intrinsics/data-align-mem-alloc-intrins-and-inline-asmbly/inline-assembly.html" rel="nofollow">Intel C++ Inline Assembly</a> </td>
+</tr> <tr style="vertical-align:top;"> <td>Hoạt động B tải từ biến nguyên tử M, quan sát một trong những điều sau đây:</td> <td>
+<a class="external text" href="https://learn.microsoft.com/en-us/cpp/assembler/inline/inline-assembler" rel="nofollow">Visual Studio Inline Assembler</a> </td>
+</tr> <tr style="vertical-align:top;"> <td>.globl func</td> <td>
+<a class="external text" href="https://web.archive.org/web/20160528215011/https://blogs.oracle.com/x86be/entry/gcc_style_asm_inlining_support" rel="nofollow">Sun Studio 12 Asm Statements</a> </td>
+</tr> <tr style="vertical-align:top;"> <td>    .Type func, @Function</td> <td>
+<a class="external text" href="https://web.archive.org/web/20151009200102/https://h21007.www2.hp.com/portal/site/dspp/menuitem.863c3e4cbcdc3f3515b49c108973a801?ciid=4308e2f5bde02110e2f5bde02110275d6e10RCRD" rel="nofollow">Inline assembly for Itanium-based HP-UX</a> </td>
+</tr> <tr style="vertical-align:top;"> <td>    func:</td> <td>
+<a class="extiw" href="https://en.wikipedia.org/wiki/X86_calling_conventions" title="enwiki:X86 calling conventions">X86 calling conventions</a>    .cfi_startproc</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/asm">https://en.cppreference.com/w/cpp/language/asm</a>
+</p>
+</div>

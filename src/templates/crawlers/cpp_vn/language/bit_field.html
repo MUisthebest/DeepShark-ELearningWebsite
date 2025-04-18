@@ -1,0 +1,72 @@
+ <h1 class="firstHeading" id="firstHeading">Trường bit</h1> <p>Tuyên bố một thành viên dữ liệu lớp với kích thước rõ ràng, tính theo bit. Các thành viên trường bit liền kề có thể (hoặc không) được đóng gói để chia sẻ và xếp các byte cá nhân.</p>
+<p>Một tuyên bố trường bit là một<a href="data_members" title="cpp/language/data members">class data member declaration</a>sử dụng trình khai báo sau:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">định danh</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>:</code> <span class="t-spar">kích cỡ</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">định danh</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>:</code> <span class="t-spar">kích cỡ</span> <span class="t-spar">Niềng-hoặc không bình đẳng</span> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr>
+</table> <p>Các<i>kiểu</i>của trường bit được giới thiệu bởi<span class="t-spar">DEM-SPECIFIER-SEQ</span>của<a href="declarations" title="cpp/language/declarations">declaration syntax</a>.</p>
+<table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>trình tự của bất kỳ số lượng nào<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">định danh</span> </td> <td>-</td> <td>Tên của trường bit đang được khai báo. Tên là tùy chọn: Các trường bit không tên giới thiệu số lượng được chỉ định của<a href="object#Object_representation_and_value_representation" title="cpp/language/object">padding bits</a>.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">kích cỡ</span> </td> <td>-</td> <td>chồng chéo với container.<a href="constant_expression#Integral_constant_expression" title="cpp/language/constant expression">integral constant expression</a>với giá trị lớn hơn hoặc bằng 0. Khi lớn hơn 0, đây là số lượng bit mà trường bit này sẽ chiếm. Giá trị 0 chỉ được phép cho các trường bit không tên và có<a href="#zero_size">special meaning</a>.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Niềng-hoặc không bình đẳng</span> </td> <td>-</td> <td> <a href="data_members#Member_initialization" title="cpp/language/data members">default member initializer</a>được sử dụng với trường bit này</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Loại trường bit chỉ có thể là loại liệt kê hoặc (có thể (có thể đủ điều kiện CV), một trường bit không tên không thể được khai báo với loại đủ điều kiện CV.</p>
+<p>Một trường bit không thể là một<a href="static" title="cpp/language/static">static data member</a>.</p>
+<p>Không có trường bit<a href="value_category" title="cpp/language/value category">prvalues</a>: Chuyển đổi từ lvalue thành rvalue luôn tạo ra một đối tượng thuộc loại cơ bản của trường bit.</p>
+<p>Số lượng bit trong trường bit đặt giới hạn cho phạm vi giá trị mà nó có thể giữ:</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <p>cấu trúc s</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">    // trường ba bit không dấu, giá trị được phép là 0 ... 7</pre></div> </div> <p>    không dấu int B: 3;</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">};</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</pre></div> </div> <p> <code><a href="http://en.cppreference.com/w/cpp/types/integer"><span class="kw127">Điều đó cho tất cả<span class="me2">STD</span></span></a> b <span class="sy4">:</span> <span class="nu0">1000</span><span class="sy4">Số lượng các yếu tố để sao chép</span></code>int main ()<a href="object#Object_representation_and_value_representation" title="cpp/language/object">padding bits</a>.</p>
+<p>{<a href="reference_initialization" title="cpp/language/reference initialization">initializing a const reference</a>    S s = {6};</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p> <a href="data_members#Member_initialization" title="cpp/language/data members">default member initializers</a>    ++ s.b; // Lưu trữ giá trị 7 trong trường bit<code>int b : 1 = 0;</code>Và<code>int b : 1 {0}</code>Sự sắp xếp khác không không hợp lệ, chẳng hạn như</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>    std :: cout &lt;&lt; s.b &lt;&lt; '\ n';</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>    ++ s.b; // Giá trị 8 không phù hợp với trường bit này<i>thực hiện xác định</i>:</p>
+<ul>
+<li>    std :: cout &lt;&lt; s.b &lt;&lt; '\ n'; // Chính thức thực hiện được xác định, thường là 0</li>
+<li>}</li>
+<ul>
+<li>7</li>
+<li>0</li>
+</ul>
+</ul> <p>Nhiều trường bit liền kề thường được đóng gói cùng nhau (mặc dù hành vi này được xác định là thực hiện):<code>int</code>#include &lt;tim&gt;<code>signed</code>hoặc<code>unsigned</code>#include &lt;CstDint&gt;<code>int b:3;</code>#include &lt;Istream&gt;<code>0..7</code>hoặc<code>-4..3</code> </p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/324.html" rel="nofollow">CWG 324</a> </td> <td>C ++ 98</td> <td>cấu trúc s<br/>{</td> <td>    // thường sẽ chiếm 2 byte:<br/>    Char không dấu B1: 3; // 3 bit đầu tiên (trong byte 1) là b1</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/739.html" rel="nofollow">CWG 739</a> </td> <td>C ++ 98</td> <td>    Char không dấu: 2; // 2 bit tiếp theo (ở byte 1st 1) bị chặn là không được sử dụng<br/><code>signed</code>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<code>unsigned</code>    Char không dấu B2: 6; // 6 bit cho B2 - không phù hợp với byte đầu tiên =&gt; bắt đầu lần thứ 2</td> <td>    Char không dấu B3: 2; // 2 bit cho B3 - BIT tiếp theo (và cuối cùng) trong byte thứ 2</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2229.html" rel="nofollow">CWG 2229</a> </td> <td>C ++ 98</td> <td>};</td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2511.html" rel="nofollow">CWG 2511</a> </td> <td>C ++ 98</td> <td> </td> <td>int main ()<br/>{</td>
+</tr>
+</table> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>    std :: cout &lt;&lt; sizeof (s) &lt;&lt; '\ n'; // thường in 2</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li> </li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>    S s;</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li> </li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li> </li></ul>
+<li>Tiêu chuẩn C ++ 03 (ISO/IEC 14882: 2003):</li>
+<ul><li> </li></ul>
+<li>    S.B3 = 0B11;</li>
+<ul><li> </li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../utility/bitset" title="cpp/utility/bitset"> <span class="t-lines"><span>Bitset</span></span></a></div> </td> <td>thực hiện mảng bit chiều dài không đổi<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/vector_bool" title="cpp/container/vector bool"> <span class="t-lines"><span>Vector<span class="t-dsc-small">#include &lt;Khái niệm&gt;</span></span></span></a></div> </td> <td>#include &lt;chức năng&gt;<br/> <span class="t-mark">(Chuyên ngành mẫu lớp)</span> </td>
+</tr> <tr class="t-dsc"> <td> <a href="../numeric#Bit_manipulation_.28since_C.2B.2B20.29" title="cpp/numeric"><b>Thao túng bit</b></a> <span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span> </td> <td>    // hiển thị bố cục các trường trong s</td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/bit_field" title="c/language/bit field">C documentation</a></span>vì<span class=""><span>    Auto I = std :: bit_cast &lt;std :: uint16_t&gt; (s);</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/bit_field">https://en.cppreference.com/w/cpp/language/bit_field</a>
+</p>
+</div>

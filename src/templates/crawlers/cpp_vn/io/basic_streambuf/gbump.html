@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: gbump</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>void gbump (số lượng);<code>count</code>Bỏ qua<code>count</code>đến<i>ký tự trong khu vực Get. Điều này được thực hiện bằng cách thêm</i>Nhận con trỏ</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>. Không có séc được thực hiện cho dòng chảy.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>Số lượng ký tự để bỏ qua<code>int</code>Bởi vì chức năng này có một<code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">int</span><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Được xác định trong tiêu đề</span><span class="br0">.</span><span class="br0">)</span></code>, nó không thể điều khiển bộ đệm lớn hơn<a class="external text" href="https://cplusplus.github.io/LWG/issue255" rel="nofollow">LWG issue 255</a>).</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue59" rel="nofollow">LWG 59</a> </td> <td>C ++ 98</td> <td>Constexpr unanyfunction for_each (đầu vào đầu tiên, đầu vào cuối cùng, không có chức năng f)<code>gbump</code>con trỏ đến<br/>nhân vật (<a href="sbumpc" title="cpp/io/basic streambuf/sbumpc"><code>sbumpc</code></a> <code>count</code>gọi</td> <td>thời gian (có thể kiểm tra dòng chảy)<code>count</code><br/>Chỉ thêm</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="pbump" title="cpp/io/basic streambuf/pbump"> <span class="t-lines"><span>PPTR</span></span></a></div> </td> <td>Epptr<br/> <span class="t-mark">(chức năng thành viên được bảo vệ)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_streambuf/gbump">https://en.cppreference.com/w/cpp/io/basic_streambuf/gbump</a>
+</p>
+</div>

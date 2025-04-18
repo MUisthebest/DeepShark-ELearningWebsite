@@ -1,0 +1,45 @@
+ <h1 class="firstHeading" id="firstHeading">Thư viện biểu thức thường xuyên<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Thư viện biểu thức chính quy cung cấp một lớp đại diện<a class="extiw" href="https://en.wikipedia.org/wiki/Regular_expression" title="enwiki:Regular expression">regular expressions</a>, là một loại ngôn ngữ nhỏ được sử dụng để thực hiện khớp mẫu trong các chuỗi. Hầu như tất cả các hoạt động với regexes có thể được đặc trưng bằng cách vận hành trên một số đối tượng sau:</p>
+<ul>
+<li> <b>Trình tự mục tiêu</b>. Trình tự ký tự được tìm kiếm cho một mẫu. Đây có thể là một phạm vi được chỉ định bởi hai trình lặp, một chuỗi ký tự kết thúc không<code><a href="string/basic_string" title="cpp/string/basic string">std::string</a></code>.</li>
+<li> <b>Mẫu</b>. Đây là biểu thức chính quy. Nó xác định những gì cấu thành một trận đấu. Nó là một đối tượng của loại<code><a href="regex/basic_regex" title="cpp/regex/basic regex">std::basic_regex</a></code>, được xây dựng từ một chuỗi có cú pháp đặc biệt. Nhìn thấy<code><a href="regex/syntax_option_type" title="cpp/regex/syntax option type">regex_constants::syntax_option_type</a></code>Đối với mô tả các biến thể cú pháp được hỗ trợ.</li>
+<li> <b>Mảng phù hợp</b>. Thông tin về các trận đấu có thể được truy xuất như một đối tượng của loại<code><a href="regex/match_results" title="cpp/regex/match results">std::match_results</a></code>.</li>
+<li> <b>Chuỗi thay thế</b>. Đây là một chuỗi xác định cách thay thế các trận đấu, xem<code><a href="regex/match_flag_type" title="cpp/regex/match flag type">regex_constants::match_flag_type</a></code>Đối với mô tả các biến thể cú pháp được hỗ trợ.</li>
+</ul> <h3 id="Main_classes">Lớp học chính</h3> <p>Các lớp này gói gọn một biểu thức chính quy và kết quả phù hợp với biểu thức chính quy trong chuỗi mục tiêu của các ký tự.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="regex/basic_regex" title="cpp/regex/basic regex"> <span class="t-lines"><span>BASIC_REGEX</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đối tượng biểu thức chính quy<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="regex/sub_match" title="cpp/regex/sub match"> <span class="t-lines"><span>sub_match</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xác định chuỗi các ký tự được khớp bởi biểu thức phụ<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="regex/match_results" title="cpp/regex/match results"> <span class="t-lines"><span>Match_results</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xác định một kết hợp biểu thức thông thường, bao gồm tất cả các kết quả phụ<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <h3 id="Algorithms">Thuật toán</h3> <p>Các chức năng này được sử dụng để áp dụng biểu thức chính quy được gói gọn trong một regex cho chuỗi mục tiêu của các ký tự.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="regex/regex_match" title="cpp/regex/regex match"> <span class="t-lines"><span>regex_match</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>cố gắng khớp một biểu thức chính quy với toàn bộ chuỗi nhân vật<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="regex/regex_search" title="cpp/regex/regex search"> <span class="t-lines"><span>Regex_Search</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>cố gắng khớp một biểu thức chính quy với bất kỳ phần nào của chuỗi ký tự<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="regex/regex_replace" title="cpp/regex/regex replace"> <span class="t-lines"><span>regex_replace</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Thay thế sự xuất hiện của một biểu thức chính quy bằng văn bản thay thế được định dạng<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <h3 id="Iterators">Trình lặp</h3> <p>Các bộ lặp regex được sử dụng để đi qua toàn bộ tập hợp các biểu thức chính quy được tìm thấy trong một chuỗi.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="regex/regex_iterator" title="cpp/regex/regex iterator"> <span class="t-lines"><span>Regex_Iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>lặp lại qua tất cả các trận đấu regex trong một chuỗi ký tự<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="regex/regex_token_iterator" title="cpp/regex/regex token iterator"> <span class="t-lines"><span>regex_token_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Lặp lại thông qua các biểu hiện phụ được chỉ định trong tất cả các kết quả phù hợp trong một chuỗi nhất định hoặc thông qua các chuỗi con chưa từng có<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <h3 id="Exceptions">Ngoại lệ</h3> <p>Lớp này xác định loại đối tượng được ném là ngoại lệ để báo cáo lỗi từ thư viện biểu thức thông thường.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="regex/regex_error" title="cpp/regex/regex error"> <span class="t-lines"><span>regex_error</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Báo cáo lỗi được tạo bởi thư viện biểu thức thông thường<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <h3 id="Traits">Đặc điểm</h3> <p>Lớp đặc điểm Regex được sử dụng để gói gọn các khía cạnh có thể bản địa hóa của Regex.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="regex/regex_traits" title="cpp/regex/regex traits"> <span class="t-lines"><span>regex_traits</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>cung cấp thông tin về một loại ký tự, được yêu cầu bởi thư viện regex<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <h3 id="Constants">Hằng số</h3> <table class="t-dsc-begin"> <tr class="t-dsc-header"> <th colspan="2">(không thay đổi)<code>std::regex_constants</code> </th>
+</tr> <tr class="t-dsc"> <td> <div><a href="regex/syntax_option_type" title="cpp/regex/syntax option type"> <span class="t-lines"><span>Cú pháp_option_type</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tùy chọn chung kiểm soát hành vi Regex<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="regex/match_flag_type" title="cpp/regex/match flag type"> <span class="t-lines"><span>MATCH_FLAG_TYPE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Tùy chọn cụ thể để phù hợp<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="regex/error_type" title="cpp/regex/error type"> <span class="t-lines"><span>ERROR_TYPE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>mô tả các loại lỗi phù hợp khác nhau<br/> <span class="t-mark">(typedef)</span> </td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;iterator&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex">https://en.cppreference.com/w/cpp/regex</a>
+</p>
+</div>

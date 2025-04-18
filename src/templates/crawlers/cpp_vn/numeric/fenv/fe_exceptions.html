@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading"><small>Fe_divbyzero, Fe_inexact, Fe_invalid, Fe_Overflow, Fe_underflow, Fe_all_except</small></h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cfenv" title="cpp/header/cfenv">&lt;cfenv&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define Fe_Divbyzero /*Triển khai công suất xác định của 2* / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define Fe_inexact /*Triển khai Sức mạnh được xác định của 2* / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define Fe_invalid /*Sức mạnh được xác định của 2* /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define Fe_Overflow /*Triển khai công suất xác định của 2* / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define Fe_underflow /*Triển khai Sức mạnh được xác định của 2* / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#define Fe_all_except Fe_Divbyzero | Fe_inexact | \</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>                       Fe_invalid | Fe_Overflow |  \<code>FE_ALL_EXCEPT</code>                       Fe_underflow</p>
+<p>Hằng số macro<code>FE_ALL_EXCEPT</code>Tất cả các hằng số vĩ mô này (trừ<code>FE_*</code>) Mở rộng sang các biểu thức hằng số nguyên là sức mạnh riêng biệt của 2, xác định duy nhất tất cả các ngoại lệ dấu phẩy được hỗ trợ. Mỗi macro chỉ được xác định nếu nó được hỗ trợ.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <code>FE_DIVBYZERO</code> </td> <td>, mà mở rộng đến bitwise hoặc của tất cả các</td>
+</tr> <tr class="t-dsc"> <td> <code>FE_INEXACT</code> </td> <td>, luôn được xác định và bằng không nếu các ngoại lệ dấu phẩy động không được hỗ trợ bởi việc thực hiện.</td>
+</tr> <tr class="t-dsc"> <td> <code>FE_INVALID</code> </td> <td>Lỗi cực xảy ra trong một hoạt động nổi trước đó</td>
+</tr> <tr class="t-dsc"> <td> <code>FE_OVERFLOW</code> </td> <td>Kết quả không chính xác: Làm tròn là cần thiết để lưu trữ kết quả của một hoạt động nổi trước đó</td>
+</tr> <tr class="t-dsc"> <td> <code>FE_UNDERFLOW</code> </td> <td>Lỗi miền xảy ra trong một hoạt động nổi trước đó</td>
+</tr> <tr class="t-dsc"> <td> <code>FE_ALL_EXCEPT</code> </td> <td>Kết quả của hoạt động điểm nổi trước đó là quá lớn để có thể thể hiện</td>
+</tr> </table> <p>Kết quả của hoạt động nổi trước đó là không bình thường với việc mất độ chính xác<a href="../../header/cfenv" title="cpp/header/cfenv"><code>&lt;cfenv&gt;</code></a>Bit Wasebally hoặc của tất cả các trường hợp ngoại lệ nổi được hỗ trợ<code>FE_</code>Việc thực hiện có thể xác định các hằng số macro bổ sung trong</p>
+<p>(Raco).<code><a href="../math/math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code>, không gian tên kèm theo của nó cũng được thêm vào tập hợp.</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cfenv&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cmath&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../math/math_errhandling" title="cpp/numeric/math/math errhandling"> <span class="t-lines"><span>Math_errHandling</span><span>MATH_ERRNO</span><span>Math_errexcept</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xác định cơ chế xử lý lỗi được sử dụng bởi các chức năng toán học thông thường<br/> <span class="t-mark">(Hằng số vĩ mô)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/fenv/FE_exceptions" title="c/numeric/fenv/FE exceptions">C documentation</a></span>vì<span class=""><span>Để xác định các ngoại lệ dấu phẩy động bổ sung. Tất cả các hằng số như vậy bắt đầu bằng</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/fenv/FE_exceptions">https://en.cppreference.com/w/cpp/numeric/fenv/FE_exceptions</a>
+</p>
+</div>

@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_fstream &lt;biểu đồ, đặc điểm&gt; :: toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">basic_fstream &amp; toán tử = (basic_fstream &amp;&amp; khác);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Di chuyển gán luồng tệp<code>other</code>ĐẾN<code>*this</code>, di chuyển một cách hiệu quả-phân công cả hai<code><a href="../basic_iostream" title="cpp/io/basic iostream">std::basic_iostream</a></code>lớp cơ sở và các liên kết<code><a href="../basic_filebuf" title="cpp/io/basic filebuf">std::basic_filebuf</a></code>.</p>
+<p><code>other</code>được để lại không có tệp liên quan. Lưu ý rằng phân công di chuyển lớp cơ sở hoán đổi tất cả các biến trạng thái luồng (ngoại trừ<code>rdbuf</code>) giữa<code>*this</code>Và<code>other</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>luồng tập tin để di chuyển</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="swap" title="cpp/io/basic fstream/swap"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>xây dựng luồng tệp<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_filebuf/operator=" title="cpp/io/basic filebuf/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>cũng vậy.<code>basic_filebuf</code>sự vật<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_filebuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_iostream/operator=" title="cpp/io/basic iostream/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>      public Basic_istream &lt;Biểu đồ, Đặc điểm&gt;,<code>basic_iostream</code> <br/> <span class="t-mark">(chức năng thành viên được bảo vệ)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_fstream/operator%3D">https://en.cppreference.com/w/cpp/io/basic_fstream/operator%3D</a>
+</p>
+</div>

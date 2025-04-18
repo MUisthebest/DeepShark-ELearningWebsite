@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Hàng đợi &lt;T, Container&gt; :: Toán tử =</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">Hàng đợi &amp; Toán tử = (Hàng đợi &amp; Khác);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Hàng đợi &amp; Toán tử = (Hàng đợi &amp;&amp; Khác);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Thay thế nội dung của bộ điều hợp container bằng các nội dung của<code>other</code>.</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Sao chép toán tử gán. Thay thế nội dung bằng một bản sao nội dung của<code>other</code>. Gọi một cách hiệu quả<code>c = other.c;</code>.<span class="t-mark">(Lưu ý rằng khởi tạo mặc định có thể dẫn đến các giá trị không xác định cho lớp không</span>
+</div> <div class="t-li1">
+<span class="t-li">2)</span>Di chuyển toán tử chuyển nhượng. Thay thế nội dung bằng các nội dung của<code>other</code>Sử dụng ngữ nghĩa di chuyển. Gọi một cách hiệu quả<code>c = std::move(other.c);</code>.<span class="t-mark">(Lưu ý rằng khởi tạo mặc định có thể dẫn đến các giá trị không xác định cho lớp không</span>
+</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>Một bộ điều hợp container khác được sử dụng làm nguồn</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Tương đương với<code>operator=</code>của các thùng chứa cơ bản.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="queue" title="cpp/container/queue/queue"> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>Với kích thước nhỏ hơn không làm mất hiệu lực bất kỳ tài liệu tham khảo nào đối với các yếu tố không bị hỏng.<code>queue</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/queue/operator%3D">https://en.cppreference.com/w/cpp/container/queue/operator%3D</a>
+</p>
+</div>

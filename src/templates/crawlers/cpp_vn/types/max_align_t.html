@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: MAX_ALIGN_T</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/cstddef" title="cpp/header/cstddef">&lt;cstddef&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">typedef /*thực hiện xác định* / max_align_t;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p><code>std::max_align_t</code>Điều đó như vậy<a href="../named_req/trivialtype" title="cpp/named req/TrivialType">trivial</a> <a href="../named_req/standardlayouttype" title="cpp/named req/StandardLayoutType">standard-layout</a>gõ ai<a href="../language/object#Alignment" title="cpp/language/object">alignment requirement</a>Ít nhất là nghiêm ngặt (lớn) như của mọi loại vô hướng.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Con trỏ được trả lại bởi các chức năng phân bổ như<code><a href="../memory/c/malloc" title="cpp/memory/c/malloc">std::malloc</a></code>được căn chỉnh phù hợp cho bất kỳ đối tượng nào, điều đó có nghĩa là chúng được căn chỉnh ít nhất là<code>std::max_align_t</code>.</p>
+<p><code>std::max_align_t</code>thường đồng nghĩa với loại vô hướng lớn nhất, đó là<code>long double</code>Trên hầu hết các nền tảng và yêu cầu căn chỉnh của nó là 8 hoặc 16.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">16</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li>#include &lt;CstDdef&gt;</li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li>int main ()</li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>{</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>    std :: cout &lt;&lt; alignof (std :: max_align_t) &lt;&lt; '\ n';</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>}</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="../language/alignof" title="cpp/language/alignof"> <code>alignof</code> operator</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>// (thường là 4):</td>
+</tr> <tr class="t-dsc"> <td> <div><a href="alignment_of" title="cpp/types/alignment of"> <span class="t-lines"><span>Căn chỉnh_of</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được các yêu cầu căn chỉnh của loại<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="is_scalar" title="cpp/types/is scalar"> <span class="t-lines"><span>is_scalar</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem một loại là loại vô hướng<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/types/max_align_t" title="c/types/max align t">C documentation</a></span>vì<code>max_align_t</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/max_align_t">https://en.cppreference.com/w/cpp/types/max_align_t</a>
+</p>
+</div>

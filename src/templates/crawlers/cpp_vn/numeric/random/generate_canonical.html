@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Generate_Canonical</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/random" title="cpp/header/random">&lt;random&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;class RealType, std :: size_t bit, trình tạo lớp&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>RealType Generate_Canonical (Trình tạo &amp; G);<code>[</code><code>​0​</code><code>, </code><code>1</code><code>)</code>.</p>
+<p>Tạo số điểm nổi ngẫu nhiên trong phạm vi<code>generate_canonical()</code>    std :: Ofstream OS ("test.txt");<code>g()</code>Để tạo đủ entropy,<sub class="t-su t-su-b">    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sub>chính xác \ (\ small k \) k lần, trong đó \ (\ small k = \ max (1, \ lceil \ frac {b} {\ log_2 r} \ rceil) \) k = max (1, ⌈ b / log</p>
+<ul>
+<li> <code>b <span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span> <a href="http://en.cppreference.com/w/cpp/algorithm/min"><span class="kw1645">Điều đó cho tất cả<span class="me2">(Niebloid)</span></span></a><span class="br0">.</span>Bits, <a href="http://en.cppreference.com/w/cpp/types/size_t"><span class="kw107">Điều đó cho tất cả<span class="me2">size_t</span></span></a> <span class="br0">danh tính</span><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>RealType<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">chữ số</span><span class="br0">{</span><span class="br0">)</span></code>Thì</li>
+<li> <code>R = g.max() - g.min() + 1</code>.</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>               Chuyển tiếp đầu tiên, chuyển tiếp cuối cùng, máy phát g);</td> <td>-</td> <td>R ⌉) và</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>máy phát điện sử dụng để có được entropy<code>[</code><code>​0​</code><code>, </code><code>1</code><code>)</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Giá trị điểm nổi trong phạm vi<code>g</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Không có gì ngoại trừ từ những người bị ném bởi<code>1.0</code>nếu như<code>RealType</code>khoảng cách<code>float</code> <a class="external text" href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=63176" rel="nofollow">GCC #63176</a> <a class="external text" href="https://bugs.llvm.org/show_bug.cgi?id=18767" rel="nofollow">LLVM #18767</a> <a class="external text" href="https://github.com/microsoft/STL/issues/1074" rel="nofollow">MSVC STL #1074</a>. Đây là<a class="external text" href="https://cplusplus.github.io/LWG/issue2524" rel="nofollow">LWG issue 2524</a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Một số triển khai hiện có có lỗi trong đó đôi khi họ có thể quay lại</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Sản xuất các số ngẫu nhiên với 10 bit ngẫu nhiên: Điều này chỉ có thể tạo ra các giá trị riêng biệt của K * r.</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="uniform_real_distribution" title="cpp/numeric/random/uniform real distribution"> <span class="t-lines"><span>Đồng ý_Real_Distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tạo ra các giá trị thực được phân phối đồng đều trên một phạm vi<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/random/generate_canonical">https://en.cppreference.com/w/cpp/numeric/random/generate_canonical</a>
+</p>
+</div>

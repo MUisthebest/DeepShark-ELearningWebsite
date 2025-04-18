@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: điều kiện_varable :: notify_all</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void notify_all () noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Bỏ chặn tất cả các chủ đề hiện đang chờ đợi<code>*this</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Notes">Ghi chú</h3> <p>Những ảnh hưởng của<code>notify_one()</code>/<code>notify_all()</code>và mỗi trong ba phần nguyên tử của<code>wait()</code>/<code>wait_for()</code>/<code>wait_until()</code>(Mở khóa+Chờ, Wakeup và khóa) diễn ra trong một thứ tự tổng thể có thể được xem là<a href="../../atomic/memory_order#Modification_order" title="cpp/atomic/memory order">modification order</a>của một biến nguyên tử: thứ tự là cụ thể cho biến điều kiện riêng lẻ này. Điều này làm cho nó không thể cho<code>notify_one()</code>Ví dụ, bị trì hoãn và bỏ chặn một chủ đề bắt đầu chờ đợi ngay sau khi cuộc gọi đến<code>notify_one()</code>đã được thực hiện.</p>
+<p>Chủ đề thông báo không cần phải giữ khóa trên cùng một mutex như tệp được giữ bởi (các) luồng chờ. Làm như vậy có thể là một sự bi quan, vì chủ đề được thông báo sẽ ngay lập tức chặn lại, chờ luồng thông báo để giải phóng khóa, mặc dù một số triển khai nhận ra mẫu và không cố gắng đánh thức các luồng được thông báo theo khóa.</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;điều kiện_varable&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="notify_one" title="cpp/thread/condition variable/notify one"> <span class="t-lines"><span>tải một giá trị từ một đối tượng nguyên tử</span></span></a></div> </td> <td>Thông báo cho một chủ đề chờ đợi<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/thread/cnd_broadcast" title="c/thread/cnd broadcast">C documentation</a></span>vì<code>cnd_broadcast</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/condition_variable/notify_all">https://en.cppreference.com/w/cpp/thread/condition_variable/notify_all</a>
+</p>
+</div>

@@ -1,0 +1,17 @@
+ <h1 class="firstHeading" id="firstHeading">std :: mảng &lt;t, n&gt; :: front</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">tham chiếu trước ();</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-since-cxx17">(Constexpr kể từ C ++ 17)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">const_reference front () const;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-since-cxx14">T tối đa (std :: initizer_list &lt;t&gt; ilist);</span> </td> </tr> </table> <p>Trả về một tham chiếu đến phần tử đầu tiên trong container.</p>
+<p>Gọi<code>front</code>Trên một thùng chứa trống gây ra hành vi không xác định.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Tham chiếu đến phần tử đầu tiên.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="Notes">Ghi chú</h3> <p>Cho một container<code>c</code>, biểu thức<code>c.front()</code>Mẫu &lt;class T, class so sánh&gt;<code>*c.begin()</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Trong thực tế, việc triển khai<code>front</code>Để hiển thị phần tử đầu tiên của một<code><a href="http://en.cppreference.com/w/cpp/container/array"><span class="kw1271">Điều đó cho tất cả<span class="me2">Mảng</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">char</span>, <span class="nu0">6</span><span class="sy1">&lt;</span></code>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;mảng&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="back" title="cpp/container/array/back"> <span class="t-lines"><span>Truy cập phần tử</span></span></a></div> </td> <td>Truy cập phần tử được chỉ định với giới hạn kiểm tra<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/array/front">https://en.cppreference.com/w/cpp/container/array/front</a>
+</p>
+</div>

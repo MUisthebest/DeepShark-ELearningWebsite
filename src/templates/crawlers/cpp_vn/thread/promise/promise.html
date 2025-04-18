@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Promise &lt;R&gt; :: Hứa</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">hứa();</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Class Alloc&gt;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">hứa (std :: allocator_arg_t, const alloc &amp; alloc);</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">lời hứa (hứa &amp;&amp; khác) noExcept;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Mẫu &lt;Class Randomit, Class So sánh&gt;<code>promise</code>Giống như các tài liệu tham khảo ngôn ngữ, sự ổn định là nông cạn đối với</p>
+<div class="t-li1">
+<span class="t-li">1)</span>lời hứa (const hứa hẹn &amp; khác) = xóa;</div> <div class="t-li1">
+<span class="t-li">2)</span>Hàm tạo mặc định. Xây dựng lời hứa với một trạng thái chia sẻ trống rỗng.<code>alloc</code>.<code>Alloc</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/allocator" title="cpp/named req/Allocator">Allocator</a>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Xây dựng lời hứa với một trạng thái chia sẻ trống rỗng. Trạng thái chia sẻ được phân bổ bằng cách sử dụng<code>other</code>Sử dụng ngữ nghĩa di chuyển. Sau khi xây dựng,<code>other</code>Di chuyển hàm tạo. Xây dựng lời hứa với trạng thái chung của</div> <div class="t-li1">
+<span class="t-li">là trong</span> <code>promise</code>không thể sao chép.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Sử dụng ngữ nghĩa di chuyển. Người phân bổ có được bằng cách xây dựng di chuyển từ bộ phân bổ thuộc</td> <td>-</td> <td>không có trạng thái chung.</td>
+</tr> <tr class="t-par"> <td>khác</td> <td>-</td> <td>khác<code>promise</code>để có được trạng thái từ</td>
+</tr>
+</table> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">Đầu vào</span>Có thể ném các trường hợp ngoại lệ do thực hiện.</div> <h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/promise/promise">https://en.cppreference.com/w/cpp/thread/promise/promise</a>
+</p>
+</div>

@@ -1,0 +1,35 @@
+ <h1 class="firstHeading" id="firstHeading">std :: forward_list &lt;t, allocator&gt; :: Xóa, xóa_if</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">void Remove (const t &amp; value);</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">size_type loại bỏ (const t &amp; value);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;Class Unanypredicate&gt;</pre></td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void remove_if (pspredicate p);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Class Unanypredicate&gt;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Chuyển tiếp emove_if (forwardIt đầu tiên, forwardit cuối cùng, p không có tính p);<code>value</code>           Chuyển tiếp đầu tiên, chuyển tiếp cuối cùng, const t &amp; value);<code>operator==</code>).</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;class forwardit, lớp unyrepreicate&gt;<code>p</code>(C ++ 20)<code>true</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>được phân vùng liên quan đến</td> <td>-</td> <td>size_type remove_if (pspredicate p);</td>
+</tr> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>. Quá tải này không tham gia vào độ phân giải quá tải trừ khi<code>true</code>Kích thước của container không thay đổi. Trình lặp chỉ vào một yếu tố giữa cái mới<br/> <p>              Không có p);<code>p(v)</code>(6)<code>bool</code>Kiểm tra xem vị ngữ không<code>v</code>Đối với tất cả các yếu tố trong phạm vi<code>T</code>Đối với ít nhất một yếu tố trong phạm vi<a href="../../language/value_category" title="cpp/language/value category">value category</a>5)<code>v</code>Kiểm tra xem vị ngữ không<code>T&amp;</code>phạm vi của các yếu tố để kiểm tra<span class="t-rev-inl t-since-cxx11"><span>P<code>T</code>vị từ nhị phân trả về<code>T</code>Nếu các yếu tố nên được coi là bằng nhau.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Đối tượng chức năng hoạt động nhị phân sẽ được áp dụng.</p>
+</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>UnaryPredicate</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/predicate" title="cpp/named req/Predicate">Predicate</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Gán cho đã cho</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>Loại bỏ tất cả các yếu tố thỏa mãn các tiêu chí cụ thể. Chỉ vô hiệu hóa các trình lặp và tham chiếu đến các phần tử bị loại bỏ.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>. Thuật toán bản sao này ổn định: Thứ tự tương đối của các yếu tố được sao chép được bảo tồn.<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>begin<span class="br0">.</span><span class="br0">)</span>, end<span class="br0">.</span><span class="br0">)</span><span class="br0">)</span></code>:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>giá trị của các yếu tố để loại bỏ<code>operator==</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>4)<code>p</code>.</div> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_list_remove_return_type" title="cpp/feature test"><code>__cpp_lib_list_remove_return_type</code></a></td> <td><span class="nu0">201806L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>Số lượng các yếu tố bị loại bỏ.</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Chính xác \ (\ scriptsize n \) n so sánh bằng cách sử dụng</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Thay đổi loại trả về</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../algorithm/remove" title="cpp/algorithm/remove"> <span class="t-lines"><span>Được xác định trong tiêu đề</span><span>di dời</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/forward_list/remove">https://en.cppreference.com/w/cpp/container/forward_list/remove</a>
+</p>
+</div>

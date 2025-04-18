@@ -1,0 +1,979 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ 17</h1> <p>Các tính năng sau được hợp nhất thành C ++ 17:</p>
+<ul>
+<li>Từ<a href="https://en.cppreference.com/w/cpp/experimental/fs" title="cpp/experimental/fs">File System TS</a>: The<a href="filesystem" title="cpp/filesystem">filesystem library</a>.</li>
+<li>Từ<a href="https://en.cppreference.com/w/cpp/experimental/lib_extensions" title="cpp/experimental/lib extensions">Library fundamentals v1 TS</a>: Các tính năng, bao gồm<code><a href="utility/any" title="cpp/utility/any">std::any</a></code>Thì<code><a href="utility/optional" title="cpp/utility/optional">std::optional</a></code>Thì<code><a href="string/basic_string_view" title="cpp/string/basic string view">std::string_view</a></code>Thì<code><a href="utility/apply" title="cpp/utility/apply">std::apply</a></code>Thì<a href="memory#Allocators" title="cpp/memory">polymorphic allocators</a>Thì<a href="utility/functional#Searchers" title="cpp/utility/functional">searchers</a>.</li>
+<li>Từ<a href="https://en.cppreference.com/w/cpp/experimental/lib_extensions_2" title="cpp/experimental/lib extensions 2">Library fundamentals v2 TS</a>:<code><a href="types/void_t" title="cpp/types/void t">std::void_t</a></code>Thì<code><a href="types/conjunction" title="cpp/types/conjunction">std::conjunction</a></code>Thì<code><a href="types/disjunction" title="cpp/types/disjunction">std::disjunction</a></code>Thì<code><a href="types/negation" title="cpp/types/negation">std::negation</a></code>Thì<code><a href="utility/functional/not_fn" title="cpp/utility/functional/not fn">std::not_fn</a></code>Thì<code><a href="numeric/gcd" title="cpp/numeric/gcd">std::gcd</a></code>Thì<code><a href="numeric/lcm" title="cpp/numeric/lcm">std::lcm</a></code>.</li>
+<li>Từ<a href="https://en.cppreference.com/w/cpp/experimental/parallelism" title="cpp/experimental/parallelism">Parallelism v1 TS</a>: Các tính năng, bao gồm<a href="algorithm/execution_policy_tag_t" title="cpp/algorithm/execution policy tag t">execution policies</a>Thì<code><a href="algorithm/reduce" title="cpp/algorithm/reduce">std::reduce</a></code>Thì<code><a href="algorithm/inclusive_scan" title="cpp/algorithm/inclusive scan">std::inclusive_scan</a></code>Thì<code><a href="algorithm/exclusive_scan" title="cpp/algorithm/exclusive scan">std::exclusive_scan</a></code>, nhưng loại bỏ<code>exception_list</code>.</li>
+<li>Từ<a href="https://en.cppreference.com/w/cpp/experimental/special_functions" title="cpp/experimental/special functions">Mathematical special functions IS</a>:<a href="numeric/special_functions" title="cpp/numeric/special functions">mathematical special functions</a>.</li>
+<li>Từ C11:<code><a href="memory/c/aligned_alloc" title="cpp/memory/c/aligned alloc">std::aligned_alloc</a></code>Thì<code><a href="chrono/c/timespec_get" title="cpp/chrono/c/timespec get">std::timespec_get</a></code>.</li>
+</ul> <h2 id="Obsolete">Lỗi thời</h2> <h5 id="Removed:">LOẠI BỎ:</h5> <ul>
+<li> <code><a href="memory/auto_ptr" title="cpp/memory/auto ptr">std::auto_ptr</a></code>Thì</li>
+<li> <a href="utility/functional#Old_binders_and_adaptors" title="cpp/utility/functional">deprecated function objects</a>Thì</li>
+<li> <code><a href="algorithm/random_shuffle" title="cpp/algorithm/random shuffle">std::random_shuffle</a></code>Thì</li>
+<li> <code><a href="error/unexpected" title="cpp/error/unexpected">std::unexpected</a></code>Thì</li>
+<li>các<a href="io/ios_base#Deprecated_member_types" title="cpp/io/ios base">obsolete <code>iostream</code>s aliases</a>Thì</li>
+<li> <a href="language/operator_alternative#Trigraphs_.28removed_in_C.2B.2B17.29" title="cpp/language/operator alternative">trigraphs</a>Thì</li>
+<li>các<a href="keyword/register" title="cpp/keyword/register"><code>register</code></a>từ khóa,</li>
+<li> <a href="language/operator_incdec" title="cpp/language/operator incdec"><code>bool</code> increment</a>Thì</li>
+<li> <a href="language/except_spec" title="cpp/language/except spec">dynamic exception specification</a> </li>
+</ul> <h5 id="Deprecated:">Khấu hao:</h5> <ul>
+<li> <code><a href="iterator/iterator" title="cpp/iterator/iterator">std::iterator</a></code>Thì</li>
+<li> <code><a href="memory/raw_storage_iterator" title="cpp/memory/raw storage iterator">std::raw_storage_iterator</a></code>Thì</li>
+<li> <code><a href="memory/get_temporary_buffer" title="cpp/memory/get temporary buffer">std::get_temporary_buffer</a></code>Thì</li>
+<li> <code><a href="types/is_literal_type" title="cpp/types/is literal type">std::is_literal_type</a></code>Thì</li>
+<li> <code><a href="types/result_of" title="cpp/types/result of">std::result_of</a></code>Thì</li>
+<li>Tất cả<a href="header/codecvt" title="cpp/header/codecvt"><code>&lt;codecvt&gt;</code></a> </li>
+</ul> <h2 id="New_language_features">Các tính năng ngôn ngữ mới</h2> <ul>
+<li> <a href="language/character_literal" title="cpp/language/character literal"><code>u8</code> character literal</a> </li>
+<li>làm ra<a href="language/noexcept_spec" title="cpp/language/noexcept spec"><code>noexcept</code></a>một phần của hệ thống loại</li>
+<li>mới<a href="language/eval_order" title="cpp/language/eval order">order of evaluation</a>quy tắc</li>
+<li> <a href="language/lambda#Lambda_capture" title="cpp/language/lambda">lambda capture of <code>*this</code></a> </li>
+<li> <b><a href="keyword/constexpr" title="cpp/keyword/constexpr"><code>constexpr</code></a></b> <dl>
+<dd>biên dịch thời gian<a href="language/if" title="cpp/language/if"><code>if constexpr</code></a> </dd>
+<dd> <a href="language/lambda" title="cpp/language/lambda">constexpr lambda</a> </dd>
+</dl> </li>
+<li> <b>Biến</b> <dl>
+<dd> <a href="language/inline" title="cpp/language/inline">inline variables</a> </dd>
+<dd> <a href="language/structured_binding" title="cpp/language/structured binding">structured bindings</a> </dd>
+<dd>Khởi tạo cho<a href="language/if" title="cpp/language/if"><code>if</code></a>Và<a href="language/switch" title="cpp/language/switch"><code>switch</code></a> </dd>
+<dd>Đảm bảo<a href="language/copy_elision" title="cpp/language/copy elision">copy elision</a> </dd>
+<dd> <a href="language/implicit_conversion#Temporary_materialization" title="cpp/language/implicit conversion">temporary materialization</a> </dd>
+</dl> </li>
+<li> <b>Mẫu</b> <dl>
+<dd> <a href="language/fold" title="cpp/language/fold">fold-expressions</a> <code>( ... )</code> </dd>
+<dd> <a href="language/class_template_argument_deduction" title="cpp/language/class template argument deduction">class template argument deduction</a> <code>tuple t(4, 3, 2.5)</code> </dd>
+<dd>không thuộc loại<a href="language/template_parameters" title="cpp/language/template parameters">template parameters</a>tuyên bố với<code>auto</code> </dd>
+</dl> </li>
+<li> <b><a href="language/namespace" title="cpp/language/namespace">Namespaces</a></b> <dl>
+<dd>không gian tên lồng đơn giản</dd>
+<dd> <code>using</code>-Các khai báo nhiều tên</dd>
+<dd> <a href="language/attributes" title="cpp/language/attributes">attribute namespaces</a>không cần phải lặp lại</dd>
+</dl> </li>
+<li> <b>mới<a href="language/attributes" title="cpp/language/attributes">attributes</a></b>:<ul>
+<li> <code>[[<a href="language/attributes/fallthrough" title="cpp/language/attributes/fallthrough">fallthrough</a>]]</code> </li>
+<li> <code>[[<a href="language/attributes/maybe_unused" title="cpp/language/attributes/maybe unused">maybe_unused</a>]]</code> </li>
+<li> <code>[[<a href="language/attributes/nodiscard" title="cpp/language/attributes/nodiscard">nodiscard</a>]]</code> </li>
+</ul> </li>
+<li> <a href="preprocessor/include" title="cpp/preprocessor/include"><code>__has_include</code></a> </li>
+</ul> <h2 id="New_headers">Tiêu đề mới</h2> <ul>
+<li> <a href="header/any" title="cpp/header/any"><code>&lt;any&gt;</code></a> </li>
+<li> <a href="header/charconv" title="cpp/header/charconv"><code>&lt;charconv&gt;</code></a> </li>
+<li> <a href="header/execution" title="cpp/header/execution"><code>&lt;execution&gt;</code></a> </li>
+<li> <a href="header/filesystem" title="cpp/header/filesystem"><code>&lt;filesystem&gt;</code></a> </li>
+<li> <a href="header/memory_resource" title="cpp/header/memory resource"><code>&lt;memory_resource&gt;</code></a> </li>
+<li> <a href="header/optional" title="cpp/header/optional"><code>&lt;optional&gt;</code></a> </li>
+<li> <a href="header/string_view" title="cpp/header/string view"><code>&lt;string_view&gt;</code></a> </li>
+<li> <a href="header/variant" title="cpp/header/variant"><code>&lt;variant&gt;</code></a> </li>
+</ul> <h2 id="New_library_features">Các tính năng thư viện mới</h2> <h3 id="Utility_types">Các loại tiện ích</h3> <ul>
+<li> <code><a href="utility/tuple" title="cpp/utility/tuple">std::tuple</a></code>:<ul>
+<li> <code><a href="utility/apply" title="cpp/utility/apply">std::apply</a></code> </li>
+<li> <code><a href="utility/make_from_tuple" title="cpp/utility/make from tuple">std::make_from_tuple</a></code> </li>
+<li> <a href="utility/tuple/deduction_guides" title="cpp/utility/tuple/deduction guides">deduction guides</a> </li>
+</ul> </li>
+<li> <code><a href="utility/any" title="cpp/utility/any">std::any</a></code> </li>
+<li> <code><a href="utility/optional" title="cpp/utility/optional">std::optional</a></code> </li>
+<li> <code><a href="utility/variant" title="cpp/utility/variant">std::variant</a></code> </li>
+<li> <a href="utility/functional#Searchers" title="cpp/utility/functional">searchers</a> </li>
+<li> <code><a href="utility/as_const" title="cpp/utility/as const">std::as_const</a></code> </li>
+<li> <code><a href="utility/functional/not_fn" title="cpp/utility/functional/not fn">std::not_fn</a></code> </li>
+</ul> <h3 id="Memory_management">Quản lý bộ nhớ</h3> <ul>
+<li>Thuật toán bộ nhớ không được chỉ định<ul>
+<li> <code><a href="memory/destroy_at" title="cpp/memory/destroy at">std::destroy_at</a></code> </li>
+<li> <code><a href="memory/destroy" title="cpp/memory/destroy">std::destroy</a></code> </li>
+<li> <code><a href="memory/destroy_n" title="cpp/memory/destroy n">std::destroy_n</a></code> </li>
+<li> <code><a href="memory/uninitialized_move" title="cpp/memory/uninitialized move">std::uninitialized_move</a></code> </li>
+<li> <code><a href="memory/uninitialized_value_construct" title="cpp/memory/uninitialized value construct">std::uninitialized_value_construct</a></code> </li>
+</ul> </li>
+<li> <a href="memory/enable_shared_from_this/weak_from_this" title="cpp/memory/enable shared from this/weak from this"><code>weak_from_this</code></a> </li>
+<li> <code><a href="memory/memory_resource" title="cpp/memory/memory resource">std::pmr::memory_resource</a></code>Và<code><a href="memory/polymorphic_allocator" title="cpp/memory/polymorphic allocator">std::polymorphic_allocator</a></code> </li>
+<li> <code><a href="memory/c/aligned_alloc" title="cpp/memory/c/aligned alloc">std::aligned_alloc</a></code> </li>
+<li>minh bạch<code><a href="memory/owner_less" title="cpp/memory/owner less">std::owner_less</a></code> </li>
+<li>Hỗ trợ mảng cho<code><a href="memory/shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code> </li>
+<li> <a href="memory/new/operator_new" title="cpp/memory/new/operator new">allocation functions</a>với sự liên kết rõ ràng</li>
+</ul> <h3 id="Compile-time_programming">Biên dịch lập trình thời gian</h3> <ul>
+<li> <a href="types/byte" title="cpp/types/byte"><code>std::byte</code></a> </li>
+<li> <code><a href="types/conjunction" title="cpp/types/conjunction">std::conjunction</a></code>/<code><a href="types/disjunction" title="cpp/types/disjunction">std::disjunction</a></code>/<code><a href="types/negation" title="cpp/types/negation">std::negation</a></code> </li>
+<li> <a href="types" title="cpp/types">type trait</a>mẫu biến đổi (<code><i>xxx</i>_+v</code>)</li>
+<li> <code><a href="types/is_swappable" title="cpp/types/is swappable">std::is_swappable</a></code> </li>
+<li> <a href="types/is_invocable" title="cpp/types/is invocable"><code>is_invocable</code></a> </li>
+<li> <a href="types/is_aggregate" title="cpp/types/is aggregate"><code>is_aggregate</code></a> </li>
+<li> <code><a href="types/has_unique_object_representations" title="cpp/types/has unique object representations">std::has_unique_object_representations</a></code> </li>
+</ul> <h3 id="Algorithms">Thuật toán</h3> <ul>
+<li> <code><a href="algorithm/clamp" title="cpp/algorithm/clamp">std::clamp</a></code> </li>
+<li>Thuật toán song song và<a href="algorithm/execution_policy_tag_t" title="cpp/algorithm/execution policy tag t">execution policies</a> </li>
+<li> <code><a href="algorithm/inclusive_scan" title="cpp/algorithm/inclusive scan">std::inclusive_scan</a></code> </li>
+<li> <code><a href="algorithm/exclusive_scan" title="cpp/algorithm/exclusive scan">std::exclusive_scan</a></code> </li>
+<li> <code><a href="numeric/gcd" title="cpp/numeric/gcd">std::gcd</a></code> </li>
+<li> <code><a href="numeric/lcm" title="cpp/numeric/lcm">std::lcm</a></code> </li>
+<li> <code><a href="algorithm/reduce" title="cpp/algorithm/reduce">std::reduce</a></code> </li>
+</ul> <h3 id="Iterators_and_containers">Trình lặp và thùng chứa</h3> <ul>
+<li>Bản đồ/Đặt<a href="container/map/extract" title="cpp/container/map/extract"><code>extract</code></a>và bản đồ/thiết lập<a href="container/map/merge" title="cpp/container/map/merge"><code>merge</code></a> </li>
+<li>Bản đồ/Unordered_map<a href="container/map/try_emplace" title="cpp/container/map/try emplace"><code>try_emplace</code></a>Và<a href="container/map/insert_or_assign" title="cpp/container/map/insert or assign"><code>insert_or_assign</code></a> </li>
+<li>Trình lặp tiếp giáp (<a href="named_req/contiguousiterator" title="cpp/named req/ContiguousIterator">LegacyContiguousIterator</a>)</li>
+<li>không phải là thành viên<code><a href="iterator/size" title="cpp/iterator/size">std::size</a></code>/<code><a href="iterator/empty" title="cpp/iterator/empty">std::empty</a></code>/<code><a href="iterator/data" title="cpp/iterator/data">std::data</a></code> </li>
+</ul> <h3 id="Numerics">Số</h3> <ul>
+<li> <a href="numeric/special_functions" title="cpp/numeric/special functions">mathematical special functions</a> </li>
+<li>3D<code><a href="numeric/math/hypot" title="cpp/numeric/math/hypot">std::hypot</a></code> </li>
+</ul> <h3 id="Others">Người khác</h3> <ul>
+<li> <a href="thread/hardware_destructive_interference_size" title="cpp/thread/hardware destructive interference size">cache line interface</a> </li>
+<li> <code><a href="utility/launder" title="cpp/utility/launder">std::launder</a></code> </li>
+<li> <code><a href="error/uncaught_exception" title="cpp/error/uncaught exception">std::uncaught_exceptions</a></code> </li>
+<li> <a href="utility/to_chars" title="cpp/utility/to chars"><code>std::to_chars</code></a>/<a href="utility/from_chars" title="cpp/utility/from chars"><code>std::from_chars</code></a> </li>
+<li> <a href="atomic/atomic/is_always_lock_free" title="cpp/atomic/atomic/is always lock free"><code>std::atomic&lt;T&gt;::is_always_lock_free</code></a> </li>
+<li> <a href="thread/scoped_lock" title="cpp/thread/scoped lock"><code>std::scoped_lock</code></a> </li>
+<li> <code><a href="chrono/c/timespec_get" title="cpp/chrono/c/timespec get">std::timespec_get</a></code> </li>
+<li>Chức năng làm tròn cho<code><a href="chrono/duration" title="cpp/chrono/duration">std::chrono::duration</a></code>Và<code><a href="chrono/time_point" title="cpp/chrono/time point">std::chrono::time_point</a></code> </li>
+</ul> <h2 id="Defect_reports">Báo cáo khiếm khuyết</h2> <div style="margin-left:0px"> <table class="mw-collapsible mw-collapsed"> <tr> <th>Báo cáo lỗi được cố định trong C ++ 17 (290 Core, thư viện 363)</th>
+</tr> <tr> <td> <ul>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue92" rel="nofollow">CWG#92</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue150" rel="nofollow">CWG#150</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue212" rel="nofollow">CWG#212</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue238" rel="nofollow">CWG#238</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue242" rel="nofollow">CWG#242</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue253" rel="nofollow">CWG#253</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue314" rel="nofollow">CWG#314</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue330" rel="nofollow">CWG#330</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue343" rel="nofollow">CWG#343</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue393" rel="nofollow">CWG#393</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue426" rel="nofollow">CWG#426</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue591" rel="nofollow">CWG#591</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue609" rel="nofollow">CWG#609</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue636" rel="nofollow">CWG#636</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue727" rel="nofollow">CWG#727</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue987" rel="nofollow">CWG#987</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1021" rel="nofollow">CWG#1021</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1116" rel="nofollow">CWG#1116</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1247" rel="nofollow">CWG#1247</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1274" rel="nofollow">CWG#1274</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1284" rel="nofollow">CWG#1284</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1292" rel="nofollow">CWG#1292</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1309" rel="nofollow">CWG#1309</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1315" rel="nofollow">CWG#1315</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1338" rel="nofollow">CWG#1338</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1343" rel="nofollow">CWG#1343</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1351" rel="nofollow">CWG#1351</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1356" rel="nofollow">CWG#1356</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1391" rel="nofollow">CWG#1391</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1395" rel="nofollow">CWG#1395</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1397" rel="nofollow">CWG#1397</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1446" rel="nofollow">CWG#1446</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1465" rel="nofollow">CWG#1465</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1467" rel="nofollow">CWG#1467</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1484" rel="nofollow">CWG#1484</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1490" rel="nofollow">CWG#1490</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1492" rel="nofollow">CWG#1492</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1496" rel="nofollow">CWG#1496</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1518" rel="nofollow">CWG#1518</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1552" rel="nofollow">CWG#1552</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1558" rel="nofollow">CWG#1558</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1561" rel="nofollow">CWG#1561</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1571" rel="nofollow">CWG#1571</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1572" rel="nofollow">CWG#1572</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1573" rel="nofollow">CWG#1573</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1589" rel="nofollow">CWG#1589</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1591" rel="nofollow">CWG#1591</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1596" rel="nofollow">CWG#1596</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1600" rel="nofollow">CWG#1600</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1603" rel="nofollow">CWG#1603</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1614" rel="nofollow">CWG#1614</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1615" rel="nofollow">CWG#1615</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1622" rel="nofollow">CWG#1622</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1630" rel="nofollow">CWG#1630</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1631" rel="nofollow">CWG#1631</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1633" rel="nofollow">CWG#1633</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1638" rel="nofollow">CWG#1638</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1639" rel="nofollow">CWG#1639</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1645" rel="nofollow">CWG#1645</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1652" rel="nofollow">CWG#1652</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1653" rel="nofollow">CWG#1653</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1657" rel="nofollow">CWG#1657</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1672" rel="nofollow">CWG#1672</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1677" rel="nofollow">CWG#1677</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1683" rel="nofollow">CWG#1683</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1686" rel="nofollow">CWG#1686</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1694" rel="nofollow">CWG#1694</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1696" rel="nofollow">CWG#1696</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1705" rel="nofollow">CWG#1705</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1708" rel="nofollow">CWG#1708</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1710" rel="nofollow">CWG#1710</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1712" rel="nofollow">CWG#1712</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1715" rel="nofollow">CWG#1715</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1719" rel="nofollow">CWG#1719</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1722" rel="nofollow">CWG#1722</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1734" rel="nofollow">CWG#1734</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1736" rel="nofollow">CWG#1736</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1744" rel="nofollow">CWG#1744</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1748" rel="nofollow">CWG#1748</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1750" rel="nofollow">CWG#1750</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1751" rel="nofollow">CWG#1751</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1752" rel="nofollow">CWG#1752</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1753" rel="nofollow">CWG#1753</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1756" rel="nofollow">CWG#1756</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1757" rel="nofollow">CWG#1757</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1758" rel="nofollow">CWG#1758</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1766" rel="nofollow">CWG#1766</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1774" rel="nofollow">CWG#1774</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1776" rel="nofollow">CWG#1776</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1777" rel="nofollow">CWG#1777</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1779" rel="nofollow">CWG#1779</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1780" rel="nofollow">CWG#1780</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1782" rel="nofollow">CWG#1782</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1784" rel="nofollow">CWG#1784</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1788" rel="nofollow">CWG#1788</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1791" rel="nofollow">CWG#1791</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1793" rel="nofollow">CWG#1793</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1794" rel="nofollow">CWG#1794</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1795" rel="nofollow">CWG#1795</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1796" rel="nofollow">CWG#1796</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1797" rel="nofollow">CWG#1797</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1799" rel="nofollow">CWG#1799</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1800" rel="nofollow">CWG#1800</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1802" rel="nofollow">CWG#1802</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1804" rel="nofollow">CWG#1804</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1805" rel="nofollow">CWG#1805</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1806" rel="nofollow">CWG#1806</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1807" rel="nofollow">CWG#1807</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1809" rel="nofollow">CWG#1809</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1810" rel="nofollow">CWG#1810</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1811" rel="nofollow">CWG#1811</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1812" rel="nofollow">CWG#1812</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1813" rel="nofollow">CWG#1813</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1814" rel="nofollow">CWG#1814</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1815" rel="nofollow">CWG#1815</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1816" rel="nofollow">CWG#1816</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1819" rel="nofollow">CWG#1819</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1823" rel="nofollow">CWG#1823</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1824" rel="nofollow">CWG#1824</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1825" rel="nofollow">CWG#1825</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1830" rel="nofollow">CWG#1830</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1832" rel="nofollow">CWG#1832</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1834" rel="nofollow">CWG#1834</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1838" rel="nofollow">CWG#1838</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1843" rel="nofollow">CWG#1843</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1846" rel="nofollow">CWG#1846</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1847" rel="nofollow">CWG#1847</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1848" rel="nofollow">CWG#1848</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1850" rel="nofollow">CWG#1850</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1851" rel="nofollow">CWG#1851</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1852" rel="nofollow">CWG#1852</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1858" rel="nofollow">CWG#1858</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1860" rel="nofollow">CWG#1860</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1861" rel="nofollow">CWG#1861</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1863" rel="nofollow">CWG#1863</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1865" rel="nofollow">CWG#1865</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1866" rel="nofollow">CWG#1866</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1870" rel="nofollow">CWG#1870</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1872" rel="nofollow">CWG#1872</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1873" rel="nofollow">CWG#1873</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1874" rel="nofollow">CWG#1874</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1875" rel="nofollow">CWG#1875</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1877" rel="nofollow">CWG#1877</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1878" rel="nofollow">CWG#1878</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1881" rel="nofollow">CWG#1881</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1882" rel="nofollow">CWG#1882</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1885" rel="nofollow">CWG#1885</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1886" rel="nofollow">CWG#1886</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1887" rel="nofollow">CWG#1887</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1888" rel="nofollow">CWG#1888</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1891" rel="nofollow">CWG#1891</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1892" rel="nofollow">CWG#1892</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1895" rel="nofollow">CWG#1895</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1899" rel="nofollow">CWG#1899</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1902" rel="nofollow">CWG#1902</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1903" rel="nofollow">CWG#1903</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1909" rel="nofollow">CWG#1909</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1911" rel="nofollow">CWG#1911</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1916" rel="nofollow">CWG#1916</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1920" rel="nofollow">CWG#1920</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1922" rel="nofollow">CWG#1922</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1925" rel="nofollow">CWG#1925</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1926" rel="nofollow">CWG#1926</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1929" rel="nofollow">CWG#1929</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1930" rel="nofollow">CWG#1930</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1932" rel="nofollow">CWG#1932</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1940" rel="nofollow">CWG#1940</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1941" rel="nofollow">CWG#1941</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1942" rel="nofollow">CWG#1942</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1946" rel="nofollow">CWG#1946</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1949" rel="nofollow">CWG#1949</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1951" rel="nofollow">CWG#1951</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1952" rel="nofollow">CWG#1952</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1955" rel="nofollow">CWG#1955</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1956" rel="nofollow">CWG#1956</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1958" rel="nofollow">CWG#1958</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1959" rel="nofollow">CWG#1959</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1961" rel="nofollow">CWG#1961</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1963" rel="nofollow">CWG#1963</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1966" rel="nofollow">CWG#1966</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1967" rel="nofollow">CWG#1967</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1971" rel="nofollow">CWG#1971</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1975" rel="nofollow">CWG#1975</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1978" rel="nofollow">CWG#1978</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1981" rel="nofollow">CWG#1981</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1988" rel="nofollow">CWG#1988</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1990" rel="nofollow">CWG#1990</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1991" rel="nofollow">CWG#1991</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1992" rel="nofollow">CWG#1992</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1995" rel="nofollow">CWG#1995</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue1999" rel="nofollow">CWG#1999</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2000" rel="nofollow">CWG#2000</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2001" rel="nofollow">CWG#2001</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2004" rel="nofollow">CWG#2004</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2006" rel="nofollow">CWG#2006</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2008" rel="nofollow">CWG#2008</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2010" rel="nofollow">CWG#2010</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2011" rel="nofollow">CWG#2011</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2012" rel="nofollow">CWG#2012</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2015" rel="nofollow">CWG#2015</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2016" rel="nofollow">CWG#2016</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2017" rel="nofollow">CWG#2017</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2019" rel="nofollow">CWG#2019</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2022" rel="nofollow">CWG#2022</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2024" rel="nofollow">CWG#2024</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2026" rel="nofollow">CWG#2026</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2027" rel="nofollow">CWG#2027</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2031" rel="nofollow">CWG#2031</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2032" rel="nofollow">CWG#2032</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2033" rel="nofollow">CWG#2033</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2038" rel="nofollow">CWG#2038</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2039" rel="nofollow">CWG#2039</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2040" rel="nofollow">CWG#2040</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2041" rel="nofollow">CWG#2041</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2044" rel="nofollow">CWG#2044</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2046" rel="nofollow">CWG#2046</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2047" rel="nofollow">CWG#2047</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2052" rel="nofollow">CWG#2052</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2061" rel="nofollow">CWG#2061</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2063" rel="nofollow">CWG#2063</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2064" rel="nofollow">CWG#2064</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2066" rel="nofollow">CWG#2066</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2068" rel="nofollow">CWG#2068</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2069" rel="nofollow">CWG#2069</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2071" rel="nofollow">CWG#2071</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2075" rel="nofollow">CWG#2075</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2076" rel="nofollow">CWG#2076</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2079" rel="nofollow">CWG#2079</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2082" rel="nofollow">CWG#2082</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2084" rel="nofollow">CWG#2084</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2085" rel="nofollow">CWG#2085</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2091" rel="nofollow">CWG#2091</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2093" rel="nofollow">CWG#2093</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2094" rel="nofollow">CWG#2094</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2095" rel="nofollow">CWG#2095</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2096" rel="nofollow">CWG#2096</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2098" rel="nofollow">CWG#2098</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2099" rel="nofollow">CWG#2099</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2100" rel="nofollow">CWG#2100</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2101" rel="nofollow">CWG#2101</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2104" rel="nofollow">CWG#2104</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2106" rel="nofollow">CWG#2106</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2107" rel="nofollow">CWG#2107</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2109" rel="nofollow">CWG#2109</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2113" rel="nofollow">CWG#2113</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2120" rel="nofollow">CWG#2120</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2122" rel="nofollow">CWG#2122</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2124" rel="nofollow">CWG#2124</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2129" rel="nofollow">CWG#2129</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2130" rel="nofollow">CWG#2130</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2137" rel="nofollow">CWG#2137</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2140" rel="nofollow">CWG#2140</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2141" rel="nofollow">CWG#2141</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2143" rel="nofollow">CWG#2143</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2145" rel="nofollow">CWG#2145</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2146" rel="nofollow">CWG#2146</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2147" rel="nofollow">CWG#2147</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2153" rel="nofollow">CWG#2153</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2154" rel="nofollow">CWG#2154</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2155" rel="nofollow">CWG#2155</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2156" rel="nofollow">CWG#2156</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2157" rel="nofollow">CWG#2157</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2163" rel="nofollow">CWG#2163</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2167" rel="nofollow">CWG#2167</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2171" rel="nofollow">CWG#2171</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2174" rel="nofollow">CWG#2174</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2175" rel="nofollow">CWG#2175</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2176" rel="nofollow">CWG#2176</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2180" rel="nofollow">CWG#2180</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2184" rel="nofollow">CWG#2184</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2191" rel="nofollow">CWG#2191</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2196" rel="nofollow">CWG#2196</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2198" rel="nofollow">CWG#2198</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2201" rel="nofollow">CWG#2201</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2205" rel="nofollow">CWG#2205</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2206" rel="nofollow">CWG#2206</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2211" rel="nofollow">CWG#2211</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2214" rel="nofollow">CWG#2214</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2218" rel="nofollow">CWG#2218</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2220" rel="nofollow">CWG#2220</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2224" rel="nofollow">CWG#2224</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2247" rel="nofollow">CWG#2247</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2248" rel="nofollow">CWG#2248</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2251" rel="nofollow">CWG#2251</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2259" rel="nofollow">CWG#2259</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2262" rel="nofollow">CWG#2262</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2268" rel="nofollow">CWG#2268</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2271" rel="nofollow">CWG#2271</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2272" rel="nofollow">CWG#2272</a> </li>
+<li> <a class="external text" href="https://wg21.cmeerw.net/cwg/issue2276" rel="nofollow">CWG#2276</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg839" rel="nofollow">#LWG839</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg1041" rel="nofollow">#LWG1041</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg1150" rel="nofollow">#LWG1150</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg1169" rel="nofollow">#LWG1169</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg1201" rel="nofollow">#LWG1201</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg1526" rel="nofollow">#LWG1526</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2016" rel="nofollow">#LWG2016</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2051" rel="nofollow">#LWG2051</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2059" rel="nofollow">#LWG2059</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2062" rel="nofollow">#LWG2062</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2063" rel="nofollow">#LWG2063</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2072" rel="nofollow">#LWG2072</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2076" rel="nofollow">#LWG2076</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2101" rel="nofollow">#LWG2101</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2106" rel="nofollow">#LWG2106</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2108" rel="nofollow">#LWG2108</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2111" rel="nofollow">#LWG2111</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2118" rel="nofollow">#LWG2118</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2119" rel="nofollow">#LWG2119</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2127" rel="nofollow">#LWG2127</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2129" rel="nofollow">#LWG2129</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2133" rel="nofollow">#LWG2133</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2156" rel="nofollow">#LWG2156</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2160" rel="nofollow">#LWG2160</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2166" rel="nofollow">#LWG2166</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2168" rel="nofollow">#LWG2168</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2170" rel="nofollow">#LWG2170</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2179" rel="nofollow">#LWG2179</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2181" rel="nofollow">#LWG2181</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2192" rel="nofollow">#LWG2192</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2208" rel="nofollow">#LWG2208</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2212" rel="nofollow">#LWG2212</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2217" rel="nofollow">#LWG2217</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2218" rel="nofollow">#LWG2218</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2219" rel="nofollow">#LWG2219</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2221" rel="nofollow">#LWG2221</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2223" rel="nofollow">#LWG2223</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2224" rel="nofollow">#LWG2224</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2228" rel="nofollow">#LWG2228</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2230" rel="nofollow">#LWG2230</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2232" rel="nofollow">#LWG2232</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2233" rel="nofollow">#LWG2233</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2234" rel="nofollow">#LWG2234</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2239" rel="nofollow">#LWG2239</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2241" rel="nofollow">#LWG2241</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2244" rel="nofollow">#LWG2244</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2245" rel="nofollow">#LWG2245</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2250" rel="nofollow">#LWG2250</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2259" rel="nofollow">#LWG2259</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2260" rel="nofollow">#LWG2260</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2261" rel="nofollow">#LWG2261</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2266" rel="nofollow">#LWG2266</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2273" rel="nofollow">#LWG2273</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2274" rel="nofollow">#LWG2274</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2276" rel="nofollow">#LWG2276</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2294" rel="nofollow">#LWG2294</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2296" rel="nofollow">#LWG2296</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2309" rel="nofollow">#LWG2309</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2310" rel="nofollow">#LWG2310</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2312" rel="nofollow">#LWG2312</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2325" rel="nofollow">#LWG2325</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2328" rel="nofollow">#LWG2328</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2336" rel="nofollow">#LWG2336</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2340" rel="nofollow">#LWG2340</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2343" rel="nofollow">#LWG2343</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2353" rel="nofollow">#LWG2353</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2354" rel="nofollow">#LWG2354</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2361" rel="nofollow">#LWG2361</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2364" rel="nofollow">#LWG2364</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2365" rel="nofollow">#LWG2365</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2367" rel="nofollow">#LWG2367</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2368" rel="nofollow">#LWG2368</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2369" rel="nofollow">#LWG2369</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2370" rel="nofollow">#LWG2370</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2376" rel="nofollow">#LWG2376</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2377" rel="nofollow">#LWG2377</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2378" rel="nofollow">#LWG2378</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2380" rel="nofollow">#LWG2380</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2384" rel="nofollow">#LWG2384</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2385" rel="nofollow">#LWG2385</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2387" rel="nofollow">#LWG2387</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2391" rel="nofollow">#LWG2391</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2393" rel="nofollow">#LWG2393</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2394" rel="nofollow">#LWG2394</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2396" rel="nofollow">#LWG2396</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2397" rel="nofollow">#LWG2397</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2399" rel="nofollow">#LWG2399</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2400" rel="nofollow">#LWG2400</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2401" rel="nofollow">#LWG2401</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2403" rel="nofollow">#LWG2403</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2404" rel="nofollow">#LWG2404</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2406" rel="nofollow">#LWG2406</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2407" rel="nofollow">#LWG2407</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2408" rel="nofollow">#LWG2408</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2411" rel="nofollow">#LWG2411</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2415" rel="nofollow">#LWG2415</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2419" rel="nofollow">#LWG2419</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2420" rel="nofollow">#LWG2420</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2422" rel="nofollow">#LWG2422</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2424" rel="nofollow">#LWG2424</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2425" rel="nofollow">#LWG2425</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2426" rel="nofollow">#LWG2426</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2427" rel="nofollow">#LWG2427</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2428" rel="nofollow">#LWG2428</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2433" rel="nofollow">#LWG2433</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2434" rel="nofollow">#LWG2434</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2435" rel="nofollow">#LWG2435</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2436" rel="nofollow">#LWG2436</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2437" rel="nofollow">#LWG2437</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2438" rel="nofollow">#LWG2438</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2439" rel="nofollow">#LWG2439</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2440" rel="nofollow">#LWG2440</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2441" rel="nofollow">#LWG2441</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2442" rel="nofollow">#LWG2442</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2443" rel="nofollow">#LWG2443</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2445" rel="nofollow">#LWG2445</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2447" rel="nofollow">#LWG2447</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2448" rel="nofollow">#LWG2448</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2450" rel="nofollow">#LWG2450</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2454" rel="nofollow">#LWG2454</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2455" rel="nofollow">#LWG2455</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2456" rel="nofollow">#LWG2456</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2458" rel="nofollow">#LWG2458</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2459" rel="nofollow">#LWG2459</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2460" rel="nofollow">#LWG2460</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2462" rel="nofollow">#LWG2462</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2464" rel="nofollow">#LWG2464</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2465" rel="nofollow">#LWG2465</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2466" rel="nofollow">#LWG2466</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2467" rel="nofollow">#LWG2467</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2468" rel="nofollow">#LWG2468</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2469" rel="nofollow">#LWG2469</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2470" rel="nofollow">#LWG2470</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2473" rel="nofollow">#LWG2473</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2475" rel="nofollow">#LWG2475</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2476" rel="nofollow">#LWG2476</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2477" rel="nofollow">#LWG2477</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2482" rel="nofollow">#LWG2482</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2483" rel="nofollow">#LWG2483</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2484" rel="nofollow">#LWG2484</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2485" rel="nofollow">#LWG2485</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2486" rel="nofollow">#LWG2486</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2487" rel="nofollow">#LWG2487</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2488" rel="nofollow">#LWG2488</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2489" rel="nofollow">#LWG2489</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2492" rel="nofollow">#LWG2492</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2495" rel="nofollow">#LWG2495</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2501" rel="nofollow">#LWG2501</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2502" rel="nofollow">#LWG2502</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2503" rel="nofollow">#LWG2503</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2505" rel="nofollow">#LWG2505</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2510" rel="nofollow">#LWG2510</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2514" rel="nofollow">#LWG2514</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2519" rel="nofollow">#LWG2519</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2520" rel="nofollow">#LWG2520</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2523" rel="nofollow">#LWG2523</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2529" rel="nofollow">#LWG2529</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2531" rel="nofollow">#LWG2531</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2534" rel="nofollow">#LWG2534</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2536" rel="nofollow">#LWG2536</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2537" rel="nofollow">#LWG2537</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2540" rel="nofollow">#LWG2540</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2542" rel="nofollow">#LWG2542</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2543" rel="nofollow">#LWG2543</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2544" rel="nofollow">#LWG2544</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2545" rel="nofollow">#LWG2545</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2548" rel="nofollow">#LWG2548</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2549" rel="nofollow">#LWG2549</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2550" rel="nofollow">#LWG2550</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2554" rel="nofollow">#LWG2554</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2556" rel="nofollow">#LWG2556</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2557" rel="nofollow">#LWG2557</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2559" rel="nofollow">#LWG2559</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2560" rel="nofollow">#LWG2560</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2562" rel="nofollow">#LWG2562</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2565" rel="nofollow">#LWG2565</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2566" rel="nofollow">#LWG2566</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2567" rel="nofollow">#LWG2567</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2569" rel="nofollow">#LWG2569</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2571" rel="nofollow">#LWG2571</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2572" rel="nofollow">#LWG2572</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2576" rel="nofollow">#LWG2576</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2577" rel="nofollow">#LWG2577</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2578" rel="nofollow">#LWG2578</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2579" rel="nofollow">#LWG2579</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2581" rel="nofollow">#LWG2581</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2582" rel="nofollow">#LWG2582</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2583" rel="nofollow">#LWG2583</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2584" rel="nofollow">#LWG2584</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2585" rel="nofollow">#LWG2585</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2586" rel="nofollow">#LWG2586</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2587" rel="nofollow">#LWG2587</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2589" rel="nofollow">#LWG2589</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2590" rel="nofollow">#LWG2590</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2591" rel="nofollow">#LWG2591</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2596" rel="nofollow">#LWG2596</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2598" rel="nofollow">#LWG2598</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2663" rel="nofollow">#LWG2663</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2664" rel="nofollow">#LWG2664</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2665" rel="nofollow">#LWG2665</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2667" rel="nofollow">#LWG2667</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2669" rel="nofollow">#LWG2669</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2670" rel="nofollow">#LWG2670</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2671" rel="nofollow">#LWG2671</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2672" rel="nofollow">#LWG2672</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2673" rel="nofollow">#LWG2673</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2674" rel="nofollow">#LWG2674</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2676" rel="nofollow">#LWG2676</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2677" rel="nofollow">#LWG2677</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2678" rel="nofollow">#LWG2678</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2679" rel="nofollow">#LWG2679</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2680" rel="nofollow">#LWG2680</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2681" rel="nofollow">#LWG2681</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2683" rel="nofollow">#LWG2683</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2684" rel="nofollow">#LWG2684</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2685" rel="nofollow">#LWG2685</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2686" rel="nofollow">#LWG2686</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2687" rel="nofollow">#LWG2687</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2688" rel="nofollow">#LWG2688</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2689" rel="nofollow">#LWG2689</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2694" rel="nofollow">#LWG2694</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2696" rel="nofollow">#LWG2696</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2698" rel="nofollow">#LWG2698</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2699" rel="nofollow">#LWG2699</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2704" rel="nofollow">#LWG2704</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2706" rel="nofollow">#LWG2706</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2707" rel="nofollow">#LWG2707</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2709" rel="nofollow">#LWG2709</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2710" rel="nofollow">#LWG2710</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2711" rel="nofollow">#LWG2711</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2712" rel="nofollow">#LWG2712</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2715" rel="nofollow">#LWG2715</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2716" rel="nofollow">#LWG2716</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2718" rel="nofollow">#LWG2718</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2719" rel="nofollow">#LWG2719</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2720" rel="nofollow">#LWG2720</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2721" rel="nofollow">#LWG2721</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2722" rel="nofollow">#LWG2722</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2723" rel="nofollow">#LWG2723</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2724" rel="nofollow">#LWG2724</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2725" rel="nofollow">#LWG2725</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2726" rel="nofollow">#LWG2726</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2727" rel="nofollow">#LWG2727</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2728" rel="nofollow">#LWG2728</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2729" rel="nofollow">#LWG2729</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2732" rel="nofollow">#LWG2732</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2734" rel="nofollow">#LWG2734</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2735" rel="nofollow">#LWG2735</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2736" rel="nofollow">#LWG2736</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2738" rel="nofollow">#LWG2738</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2739" rel="nofollow">#LWG2739</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2740" rel="nofollow">#LWG2740</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2742" rel="nofollow">#LWG2742</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2744" rel="nofollow">#LWG2744</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2747" rel="nofollow">#LWG2747</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2748" rel="nofollow">#LWG2748</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2749" rel="nofollow">#LWG2749</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2752" rel="nofollow">#LWG2752</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2753" rel="nofollow">#LWG2753</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2754" rel="nofollow">#LWG2754</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2755" rel="nofollow">#LWG2755</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2756" rel="nofollow">#LWG2756</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2757" rel="nofollow">#LWG2757</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2758" rel="nofollow">#LWG2758</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2759" rel="nofollow">#LWG2759</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2760" rel="nofollow">#LWG2760</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2763" rel="nofollow">#LWG2763</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2765" rel="nofollow">#LWG2765</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2767" rel="nofollow">#LWG2767</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2768" rel="nofollow">#LWG2768</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2769" rel="nofollow">#LWG2769</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2770" rel="nofollow">#LWG2770</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2771" rel="nofollow">#LWG2771</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2773" rel="nofollow">#LWG2773</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2776" rel="nofollow">#LWG2776</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2777" rel="nofollow">#LWG2777</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2778" rel="nofollow">#LWG2778</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2781" rel="nofollow">#LWG2781</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2782" rel="nofollow">#LWG2782</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2784" rel="nofollow">#LWG2784</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2785" rel="nofollow">#LWG2785</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2786" rel="nofollow">#LWG2786</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2787" rel="nofollow">#LWG2787</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2788" rel="nofollow">#LWG2788</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2789" rel="nofollow">#LWG2789</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2790" rel="nofollow">#LWG2790</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2791" rel="nofollow">#LWG2791</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2793" rel="nofollow">#LWG2793</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2794" rel="nofollow">#LWG2794</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2795" rel="nofollow">#LWG2795</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2796" rel="nofollow">#LWG2796</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2798" rel="nofollow">#LWG2798</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2799" rel="nofollow">#LWG2799</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2801" rel="nofollow">#LWG2801</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2802" rel="nofollow">#LWG2802</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2803" rel="nofollow">#LWG2803</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2804" rel="nofollow">#LWG2804</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2805" rel="nofollow">#LWG2805</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2806" rel="nofollow">#LWG2806</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2807" rel="nofollow">#LWG2807</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2809" rel="nofollow">#LWG2809</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2810" rel="nofollow">#LWG2810</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2812" rel="nofollow">#LWG2812</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2817" rel="nofollow">#LWG2817</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2824" rel="nofollow">#LWG2824</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2825" rel="nofollow">#LWG2825</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2826" rel="nofollow">#LWG2826</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2830" rel="nofollow">#LWG2830</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2834" rel="nofollow">#LWG2834</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2835" rel="nofollow">#LWG2835</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2837" rel="nofollow">#LWG2837</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2838" rel="nofollow">#LWG2838</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2842" rel="nofollow">#LWG2842</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2850" rel="nofollow">#LWG2850</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2853" rel="nofollow">#LWG2853</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2855" rel="nofollow">#LWG2855</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2857" rel="nofollow">#LWG2857</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2861" rel="nofollow">#LWG2861</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2862" rel="nofollow">#LWG2862</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2863" rel="nofollow">#LWG2863</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2864" rel="nofollow">#LWG2864</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2866" rel="nofollow">#LWG2866</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2867" rel="nofollow">#LWG2867</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2868" rel="nofollow">#LWG2868</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2869" rel="nofollow">#LWG2869</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2872" rel="nofollow">#LWG2872</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2873" rel="nofollow">#LWG2873</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2874" rel="nofollow">#LWG2874</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2875" rel="nofollow">#LWG2875</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2876" rel="nofollow">#LWG2876</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2877" rel="nofollow">#LWG2877</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2878" rel="nofollow">#LWG2878</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2879" rel="nofollow">#LWG2879</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2880" rel="nofollow">#LWG2880</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2882" rel="nofollow">#LWG2882</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2887" rel="nofollow">#LWG2887</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2888" rel="nofollow">#LWG2888</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2889" rel="nofollow">#LWG2889</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2890" rel="nofollow">#LWG2890</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2895" rel="nofollow">#LWG2895</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2900" rel="nofollow">#LWG2900</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2901" rel="nofollow">#LWG2901</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2903" rel="nofollow">#LWG2903</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2904" rel="nofollow">#LWG2904</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2905" rel="nofollow">#LWG2905</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2908" rel="nofollow">#LWG2908</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2911" rel="nofollow">#LWG2911</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2912" rel="nofollow">#LWG2912</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2913" rel="nofollow">#LWG2913</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2914" rel="nofollow">#LWG2914</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2915" rel="nofollow">#LWG2915</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2917" rel="nofollow">#LWG2917</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2918" rel="nofollow">#LWG2918</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2919" rel="nofollow">#LWG2919</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2920" rel="nofollow">#LWG2920</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2921" rel="nofollow">#LWG2921</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2924" rel="nofollow">#LWG2924</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2925" rel="nofollow">#LWG2925</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2926" rel="nofollow">#LWG2926</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2927" rel="nofollow">#LWG2927</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2928" rel="nofollow">#LWG2928</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2934" rel="nofollow">#LWG2934</a> </li>
+<li> <a class="external text" href="http://wg21.link/lwg2956" rel="nofollow">#LWG2956</a> </li>
+</ul> </td>
+</tr>
+</table>
+</div> <h2 id="Compiler_support">Hỗ trợ trình biên dịch</h2> <p>Bài viết chính:<a href="compiler_support#C.2B.2B17_features" title="cpp/compiler support">C++17 compiler support</a></p>
+<h3 id="C.2B.2B17_core_language_features">C ++ 17 Tính năng ngôn ngữ cốt lõi</h3> <table class="wikitable tbody-scroll mw-collapsible t-compiler-support-top"> <tr style="height:15em"> <th>Tính năng C ++ 17<br/><br/> </th> <th>(Các) giấy<br/><br/> </th> <th> <div>GCC</div> </th> <th> <div>Kêu vang</div> </th> <th> <div>MSVC</div> </th> <th> <div>Apple kêu gọi</div> </th> <th> <div>EDG ECCP</div> </th> <th> <div>Intel C ++</div> </th> <th> <div>IBM XL C ++</div> </th> <th> <div>IBM mở XL C ++ cho Aix</div> </th> <th> <div>IBM mở XL C ++ cho z/OS</div> </th> <th> <div>Mặt trời/Oracle C ++</div> </th> <th> <div>Builder Embarcadero C ++</div> </th> <th> <div>Cray</div> </th> <th> <div><span title="ex Portland Group/PGI">NVIDIA HPC C ++ (Ex PGI)*</span></div> </th> <th> <div>NVIDIA NVCC</div> </th> <th> </th>
+</tr> <tr> <td>DR11: Mới<code>auto</code>Các quy tắc cho danh sách trực tiếp</td> <td> <a class="external text" href="https://wg21.link/N3922" rel="nofollow">N3922</a> </td> <td class="table-yes">5</td> <td class="table-yes">3.8</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.10.1</td> <td class="table-yes">17.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/static_assert" title="cpp/language/static assert"><code>static_assert</code></a>Không có tin nhắn</td> <td> <a class="external text" href="https://wg21.link/N3928" rel="nofollow">N3928</a> </td> <td class="table-yes">6</td> <td class="table-yes">2.5</td> <td class="table-yes">
+<span title="VS 2017 15.0">19.10*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.12</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <code>typename</code>Trong một tham số mẫu mẫu</td> <td> <a class="external text" href="https://wg21.link/N4051" rel="nofollow">N4051</a> </td> <td class="table-yes">5</td> <td class="table-yes">3.5</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.10.1</td> <td class="table-yes">17.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">
+<span title="Since at least 9.2; earliest version undocumented">Đúng*</span> </td>
+</tr> <tr> <td>Loại bỏ<a href="language/operator_alternative#Trigraphs_.28removed_in_C.2B.2B17.29" title="cpp/language/operator alternative">trigraphs</a> </td> <td> <a class="external text" href="https://wg21.link/N4086" rel="nofollow">N4086</a> </td> <td class="table-yes">5</td> <td class="table-yes">3.5</td> <td class="table-yes">
+<span title="VS 2010">16.0*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/namespace#Syntax" title="cpp/language/namespace">Nested namespace</a>sự định nghĩa</td> <td> <a class="external text" href="https://wg21.link/N4230" rel="nofollow">N4230</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.6</td> <td class="table-yes">
+<span title="VS 2015 Update 3">19.0 (Cập nhật 3)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.12</td> <td class="table-yes">17.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/attributes" title="cpp/language/attributes">Attributes</a>Đối với không gian tên và điều tra viên</td> <td> <a class="external text" href="https://wg21.link/N4266" rel="nofollow">N4266</a> </td> <td class="table-yes">
+<span title="namespace only">4.9 (một phần)*</span><br/>6</td> <td class="table-yes">3.6</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.11</td> <td class="table-yes">17.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/character_literal" title="cpp/language/character literal"><code>u8</code> character literals</a> </td> <td> <a class="external text" href="https://wg21.link/N4267" rel="nofollow">N4267</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.6</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.11</td> <td class="table-yes">17.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Cho phép đánh giá liên tục cho tất cả các đối số mẫu không thuộc loại</td> <td> <a class="external text" href="https://wg21.link/N4268" rel="nofollow">N4268</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.6</td> <td class="table-yes">
+<span title="VS 2017 15.5">19.12*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-yes">19.0.1</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/fold" title="cpp/language/fold">Fold Expressions</a> </td> <td> <a class="external text" href="https://wg21.link/N4295" rel="nofollow">N4295</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.6</td> <td class="table-yes">
+<span title="VS 2017 15.5">19.12*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.14</td> <td class="table-yes">19.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">18.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/fold#Explanation" title="cpp/language/fold">Unary fold expressions</a>và các gói tham số trống</td> <td> <a class="external text" href="https://wg21.link/P0036R0" rel="nofollow">P0036R0</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.5">19.12*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.14</td> <td class="table-yes">19.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Loại bỏ việc sử dụng không dùng nữa của<a href="keyword/register" title="cpp/keyword/register"><code>register</code></a>Từ khóa</td> <td> <a class="external text" href="https://wg21.link/P0001R1" rel="nofollow">P0001R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.8</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.13</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Loại bỏ không dùng nữa<code>operator++(bool)</code> </td> <td> <a class="external text" href="https://wg21.link/P0002R1" rel="nofollow">P0002R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.8</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.13</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Tạo các thông số kỹ thuật ngoại lệ một phần của hệ thống loại</td> <td> <a class="external text" href="https://wg21.link/P0012R1" rel="nofollow">P0012R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.5">19.12*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.14</td> <td class="table-yes">19.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/aggregate_initialization" title="cpp/language/aggregate initialization">Aggregate classes</a>với các lớp cơ sở</td> <td> <a class="external text" href="https://wg21.link/P0017R1" rel="nofollow">P0017R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-yes">19.0.1</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="preprocessor/include" title="cpp/preprocessor/include"><code>__has_include</code></a>Trong điều kiện tiền xử lý</td> <td> <a class="external text" href="https://wg21.link/P0061R1" rel="nofollow">P0061R1</a> </td> <td class="table-yes">5</td> <td class="table-yes">Đúng</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.13</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>DR11: Thông số kỹ thuật mới cho<a href="language/using_declaration#Inheriting_constructors" title="cpp/language/using declaration">inheriting constructors</a>(DR1941 et al)</td> <td> <a class="external text" href="https://wg21.link/P0136R1" rel="nofollow">P0136R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">6.1</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Lambda bắt giữ<code>*this</code> </td> <td> <a class="external text" href="https://wg21.link/P0018R3" rel="nofollow">P0018R3</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.14</td> <td class="table-yes">19.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">18.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Danh sách trực tiếp của việc liệt kê các liệt kê</td> <td> <a class="external text" href="https://wg21.link/P0138R2" rel="nofollow">P0138R2</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.14</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/lambda" title="cpp/language/lambda">constexpr lambda expressions</a> </td> <td> <a class="external text" href="https://wg21.link/P0170R1" rel="nofollow">P0170R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">5</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.14</td> <td class="table-yes">19.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">18.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Các loại bắt đầu và kết thúc khác nhau trong<a href="language/range-for" title="cpp/language/range-for">range-based for</a> </td> <td> <a class="external text" href="https://wg21.link/P0184R0" rel="nofollow">P0184R0</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.0">19.10*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.12</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <code>[[<a href="language/attributes/fallthrough" title="cpp/language/attributes/fallthrough">fallthrough</a>]]</code> <a href="language/attributes" title="cpp/language/attributes">attribute</a> </td> <td> <a class="external text" href="https://wg21.link/P0188R1" rel="nofollow">P0188R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.0">19.10*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.13</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <code>[[<a href="language/attributes/nodiscard" title="cpp/language/attributes/nodiscard">nodiscard</a>]]</code> <a href="language/attributes" title="cpp/language/attributes">attribute</a> </td> <td> <a class="external text" href="https://wg21.link/P0189R1" rel="nofollow">P0189R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.13</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <code>[[<a href="language/attributes/maybe_unused" title="cpp/language/attributes/maybe unused">maybe_unused</a>]]</code> <a href="language/attributes" title="cpp/language/attributes">attribute</a> </td> <td> <a class="external text" href="https://wg21.link/P0212R1" rel="nofollow">P0212R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.13</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Thập lục phân<a href="language/floating_literal" title="cpp/language/floating literal">floating-point literals</a> </td> <td> <a class="external text" href="https://wg21.link/P0245R1" rel="nofollow">P0245R1</a> </td> <td class="table-yes">3.0</td> <td class="table-yes">Đúng</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.13</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Sử dụng không gian tên thuộc tính mà không có sự lặp lại</td> <td> <a class="external text" href="https://wg21.link/P0028R4" rel="nofollow">P0028R4</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.13</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/new" title="cpp/language/new">Dynamic memory allocation</a>Đối với dữ liệu được liên kết quá mức</td> <td> <a class="external text" href="https://wg21.link/P0035R4" rel="nofollow">P0035R4</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.5">19.12*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">4.14</td> <td class="table-yes">19.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/class_template_argument_deduction" title="cpp/language/class template argument deduction">Class template argument deduction</a> </td> <td> <a class="external text" href="https://wg21.link/P0091R3" rel="nofollow">P0091R3</a> </td> <td class="table-yes">7</td> <td class="table-yes">5</td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-yes">19.0.1</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Tham số mẫu không thuộc<code>auto</code>kiểu</td> <td> <a class="external text" href="https://wg21.link/P0127R2" rel="nofollow">P0127R2</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-yes">19.0.1</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Đảm bảo<a href="language/copy_elision" title="cpp/language/copy elision">copy elision</a> </td> <td> <a class="external text" href="https://wg21.link/P0135R1" rel="nofollow">P0135R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.6">19,13*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-yes">19.0.1</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Thay thế các đối tượng lớp có chứa các thành viên tham chiếu</td> <td> <a class="external text" href="https://wg21.link/P0137R1" rel="nofollow">P0137R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">6</td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Nghiêm khắc hơn<a href="language/eval_order" title="cpp/language/eval order">expression evaluation order</a> </td> <td> <a class="external text" href="https://wg21.link/P0145R3" rel="nofollow">P0145R3</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-yes">19.0.1</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/structured_binding" title="cpp/language/structured binding">Structured Bindings</a> </td> <td> <a class="external text" href="https://wg21.link/P0217R3" rel="nofollow">P0217R3</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.14</td> <td class="table-yes">19.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">18.1</td> <td class="table-yes">
+<span title="cannot be declared with a variable memory space specifier.">11.0*</span> </td>
+</tr> <tr> <td>Bỏ qua không xác định<a href="language/attributes" title="cpp/language/attributes">attributes</a> </td> <td> <a class="external text" href="https://wg21.link/P0283R2" rel="nofollow">P0283R2</a> </td> <td class="table-yes">Đúng</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.13</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">17.7</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/if" title="cpp/language/if">constexpr if</a>tuyên bố</td> <td> <a class="external text" href="https://wg21.link/P0292R2" rel="nofollow">P0292R2</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.14</td> <td class="table-yes">19.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">18.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Init-Statements cho<a href="language/if" title="cpp/language/if">if</a>Và<a href="language/switch" title="cpp/language/switch">switch</a> </td> <td> <a class="external text" href="https://wg21.link/P0305R1" rel="nofollow">P0305R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.14</td> <td class="table-yes">18.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">18.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td> <a href="language/inline" title="cpp/language/inline">Inline variables</a> </td> <td> <a class="external text" href="https://wg21.link/P0386R2" rel="nofollow">P0386R2</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.5">19.12*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.14</td> <td class="table-yes">19.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">18.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Loại bỏ<a href="language/except_spec" title="cpp/language/except spec">dynamic exception specifications</a> </td> <td> <a class="external text" href="https://wg21.link/P0003R5" rel="nofollow">P0003R5</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.0">19.10*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">4.14</td> <td class="table-yes">19.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>Đóng gói mở rộng trong việc sử dụng khai báo</td> <td> <a class="external text" href="https://wg21.link/P0195R2" rel="nofollow">P0195R2</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-yes">19.0</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr> <td>DR98: Phù hợp với mẫu Mẫu-argument không bao gồm các mẫu tương thích</td> <td> <a class="external text" href="https://wg21.link/P0522R0" rel="nofollow">P0522R0</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.5">19.12*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">5.0</td> <td class="table-yes">19.0.1</td> <td class="table-no"> </td> <td class="table-yes">17.1.0</td> <td class="table-yes">1.1.0</td> <td class="table-no"> </td> <td class="table-yes">10.3</td> <td class="table-yes">11.0</td> <td class="table-yes">19.1</td> <td class="table-yes">11.0</td>
+</tr> <tr style="height:15em"> <th> <br/><br/>Tính năng C ++ 17</th> <th> <br/><br/>(Các) giấy</th> <th> <div>GCC</div> </th> <th> <div>Kêu vang</div> </th> <th> <div>MSVC</div> </th> <th> <div>Apple kêu gọi</div> </th> <th> <div>EDG ECCP</div> </th> <th> <div>Intel C ++</div> </th> <th> <div>IBM XL C ++</div> </th> <th> <div>IBM mở XL C ++ cho Aix</div> </th> <th> <div>IBM mở XL C ++ cho z/OS</div> </th> <th> <div>Mặt trời/Oracle C ++</div> </th> <th> <div>Builder Embarcadero C ++</div> </th> <th> <div>Cray</div> </th> <th> <div><span title="ex Portland Group/PGI">NVIDIA HPC C ++ (Ex PGI)*</span></div> </th> <th> <div>NVIDIA NVCC</div> </th>
+</tr>
+</table> <h3 id="C.2B.2B17_library_features">C ++ 17 Tính năng thư viện</h3> <table class="wikitable tbody-scroll mw-collapsible t-standard-library-support-top"> <tr style="height:15em"> <th>Tính năng C ++ 17<br/><br/> </th> <th>(Các) giấy<br/><br/> </th> <th>
+<div>GCC libstdc ++</div> </th> <th>
+<div>Clang Libc ++</div> </th> <th>
+<div>MSVC STL</div> </th> <th>
+<div><span title="C++ Standard Library">Apple Clang*</span></div> </th> <th>
+<div><span title="C/C++ Standard Library">IBM mở XL C/C ++ cho Aix*</span></div> </th> <th> <div>STL song song Intel</div> </th> <th>
+<div><span title="C++ Standard Library">Sun/Oracle C ++*</span></div> </th> <th>
+<div><span title="C++ Standard Library">Embarcadero C ++ Builder*</span></div> </th> <th> </th>
+</tr> <tr> <td> <code><a href="types/void_t" title="cpp/types/void t">std::void_t</a></code> </td> <td> <a class="external text" href="https://wg21.link/N3911" rel="nofollow">N3911</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.6</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="error/uncaught_exception" title="cpp/error/uncaught exception"><code>std::uncaught_exceptions()</code></a> </td> <td> <a class="external text" href="https://wg21.link/N4259" rel="nofollow">N4259</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.7</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <code><a href="iterator/size" title="cpp/iterator/size">std::size()</a></code>Thì<code><a href="iterator/empty" title="cpp/iterator/empty">std::empty()</a></code>Và<code><a href="iterator/data" title="cpp/iterator/data">std::data()</a></code> </td> <td> <a class="external text" href="https://wg21.link/N4280" rel="nofollow">N4280</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.6</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td>Cải thiện<code><a href="utility/pair" title="cpp/utility/pair">std::pair</a></code>Và<code><a href="utility/tuple" title="cpp/utility/tuple">std::tuple</a></code> </td> <td> <a class="external text" href="https://wg21.link/N4387" rel="nofollow">N4387</a> </td> <td class="table-yes">6</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2015 Update 2">19.0 (Cập nhật 2)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <code><a href="types/integral_constant" title="cpp/types/integral constant">std::bool_constant</a></code> </td> <td> <a class="external text" href="https://wg21.link/N4389" rel="nofollow">N4389</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.7</td> <td class="table-yes">
+<span title="VS 2015">19.0 (2015)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <code><a href="thread/shared_mutex" title="cpp/thread/shared mutex">std::shared_mutex</a></code>(Untimed)</td> <td> <a class="external text" href="https://wg21.link/N4508" rel="nofollow">N4508</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.7</td> <td class="table-yes">
+<span title="VS 2015 Update 2 &amp; Windows 7">19.0 (Cập nhật 2)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="meta" title="cpp/meta">Type traits</a>Mẫu biến</td> <td> <a class="external text" href="https://wg21.link/P0006R0" rel="nofollow">P0006R0</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.8</td> <td class="table-yes">
+<span title="VS 2015 Update 2">19.0 (Cập nhật 2)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="meta#Operations_on_traits" title="cpp/meta">Logical operator type traits</a> </td> <td> <a class="external text" href="https://wg21.link/P0013R1" rel="nofollow">P0013R1</a> </td> <td class="table-yes">6</td> <td class="table-yes">3.8</td> <td class="table-yes">
+<span title="VS 2015 Update 2">19.0 (Cập nhật 2)*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td>Thuật toán song song và chính sách thực thi</td> <td> <a class="external text" href="https://wg21.link/P0024R2" rel="nofollow">P0024R2</a> </td> <td class="table-yes">
+<span title="requires linking with -ltbb">9*</span> </td> <td class="table-maybe">
+<span title="Experimental support (requires -fexperimental-library compiler flag), see https://libcxx.llvm.org/Status/PSTL.html">17<br/>(một phần)*</span> </td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-yes">
+<span title="requires non-standard headers">18.0*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code><a href="algorithm/clamp" title="cpp/algorithm/clamp">std::clamp()</a></code> </td> <td> <a class="external text" href="https://wg21.link/P0025R1" rel="nofollow">P0025R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2015 Update 3">19.0 (Cập nhật 3)*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="thread/hardware_destructive_interference_size" title="cpp/thread/hardware destructive interference size">Hardware interference size</a> </td> <td> <a class="external text" href="https://wg21.link/P0154R1" rel="nofollow">P0154R1</a> </td> <td class="table-yes">12</td> <td class="table-maybe">
+<span title="GCC-only">15 (một phần)*</span> </td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="types/is_swappable" title="cpp/types/is swappable">(nothrow-)swappable traits</a> </td> <td> <a class="external text" href="https://wg21.link/P0185R1" rel="nofollow">P0185R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2015 Update 3">19.0 (Cập nhật 3)*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="filesystem" title="cpp/filesystem">File system library</a> </td> <td> <a class="external text" href="https://wg21.link/P0218R1" rel="nofollow">P0218R1</a> </td> <td class="table-yes">8</td> <td class="table-yes">7</td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-yes"> <p><span title="Xcode 11.0 beta (11M336w), 11.0 (11A420a), 11.1 (11A1027), 11.2 (11B52), 11.2.1 (11B500), 11.3 (11C29), 11.3.1 (11C504)">11.0.0*</span></p>
+</td> <td class="table-yes">17.1.1</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <code><a href="string/basic_string_view" title="cpp/string/basic string view">std::string_view</a></code> </td> <td> <a class="external text" href="https://wg21.link/N3921" rel="nofollow">N3921</a><br/><a class="external text" href="https://wg21.link/P0220R1" rel="nofollow">P0220R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.0">19.10*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <code><a href="utility/any" title="cpp/utility/any">std::any</a></code> </td> <td> <a class="external text" href="https://wg21.link/P0220R1" rel="nofollow">P0220R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.0">19.10*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <code><a href="utility/optional" title="cpp/utility/optional">std::optional</a></code> </td> <td> <a class="external text" href="https://wg21.link/P0220R1" rel="nofollow">P0220R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.0">19.10*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="header/memory_resource" title="cpp/header/memory resource">Polymorphic memory resources</a> </td> <td> <a class="external text" href="https://wg21.link/P0220R1" rel="nofollow">P0220R1</a> </td> <td class="table-yes">9</td> <td class="table-yes">16</td> <td class="table-yes">
+<span title="VS 2017 15.6">19,13*</span> </td> <td class="table-yes"> <p><span title="Xcode 15.0 (15A240d), 15.0.1 (15A507), 15.1 (15C65)">15.0.0*</span></p>
+</td> <td class="table-no"> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="numeric/special_functions" title="cpp/numeric/special functions">Mathematical special functions</a> </td> <td> <a class="external text" href="https://wg21.link/P0226R1" rel="nofollow">P0226R1</a> </td> <td class="table-yes">7</td> <td class="table-no"> </td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td>Phần chính của thư viện tiêu chuẩn C11</td> <td> <a class="external text" href="https://wg21.link/P0063R3" rel="nofollow">P0063R3</a> </td> <td class="table-yes">9</td> <td class="table-yes">7</td> <td class="table-maybe">
+<span title="VS 2015">19.0 (2015)*</span><br/><span title="missing aligned_alloc() mainly">(một phần)*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">17.1.1</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Ghép nối<a href="container/map/merge" title="cpp/container/map/merge"><code>Maps</code></a>Và<a href="container/set/merge" title="cpp/container/set/merge"><code>Sets</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0083R3" rel="nofollow">P0083R3</a> </td> <td class="table-yes">7</td> <td class="table-yes">8</td> <td class="table-yes">
+<span title="VS 2017 15.5">19.12*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">17.1.1</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td>Trả lại loại của<a href="container#Function_table" title="cpp/container"><code>emplace</code></a>* Chức năng của một số<a href="container" title="cpp/container">containers</a>đã thay đổi từ<code>void</code>ĐẾN<code>reference</code> </td> <td> <a class="external text" href="https://wg21.link/P0084R2" rel="nofollow">P0084R2</a> </td> <td class="table-yes">7.1</td> <td class="table-yes">4.0</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr> <td> <code><a href="utility/variant" title="cpp/utility/variant">std::variant</a></code> </td> <td> <a class="external text" href="https://wg21.link/P0088R3" rel="nofollow">P0088R3</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.0">19.10*</span> </td> <td class="table-yes"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span></p>
+</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <code><a href="utility/make_from_tuple" title="cpp/utility/make from tuple">std::make_from_tuple()</a></code> </td> <td> <a class="external text" href="https://wg21.link/P0209R2" rel="nofollow">P0209R2</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.0">19.10*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <code><a href="types/has_unique_object_representations" title="cpp/types/has unique object representations">std::has_unique_object_representations</a></code> </td> <td> <a class="external text" href="https://wg21.link/P0258R2" rel="nofollow">P0258R2</a> </td> <td class="table-yes">7</td> <td class="table-yes">6</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.1</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <code><a href="numeric/gcd" title="cpp/numeric/gcd">std::gcd()</a></code>Và<code><a href="numeric/lcm" title="cpp/numeric/lcm">std::lcm()</a></code> </td> <td> <a class="external text" href="https://wg21.link/P0295R0" rel="nofollow">P0295R0</a> </td> <td class="table-yes">7</td> <td class="table-yes">4</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <code><a href="utility/functional/not_fn" title="cpp/utility/functional/not fn">std::not_fn</a></code> </td> <td> <a class="external text" href="https://wg21.link/P0005R4" rel="nofollow">P0005R4</a><br/><a class="external text" href="https://wg21.link/P0358R1" rel="nofollow">P0358R1</a> </td> <td class="table-yes">7</td> <td class="table-yes">3.9</td> <td class="table-yes">
+<span title="VS 2017 15.5">19.12*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.0</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="utility#Elementary_string_conversions" title="cpp/utility">Elementary string conversions</a><span title="including status of floating-point (FP) values support">*</span> </td> <td> <a class="external text" href="https://wg21.link/P0067R5" rel="nofollow">P0067R5</a> </td> <td class="table-yes">8 (Không FP)<br/>11</td> <td class="table-maybe">7 (Không FP)<br/>14 (không FP từ_chars)</td> <td class="table-yes">
+<span title="VS 2017 15.7">19,14*</span>(Không FP)<span>*</span><br/><span title="VS 2019 16.4">19,24*</span> </td> <td class="table-maybe"> <p><span title="Xcode 10.0 beta (10L176w), 10.0 (10A255), 10.1 (10B61)">10.0.0*</span>(Không FP)</p>
+</td> <td class="table-maybe">17.1.1 (không có fp từ_chars)</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-maybe">10.3 (không có fp từ_chars)</td>
+</tr> <tr> <td> <code><a href="memory/shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>Và<code><a href="memory/weak_ptr" title="cpp/memory/weak ptr">std::weak_ptr</a></code>với hỗ trợ mảng</td> <td> <a class="external text" href="https://wg21.link/P0414R2" rel="nofollow">P0414R2</a> </td> <td class="table-yes">7</td> <td class="table-yes">11</td> <td class="table-yes">
+<span title="VS 2017 15.5">19.12*</span> </td> <td class="table-yes"> <p><span title="Xcode 12.0 (12A7209), 12.0.1 (12A7300), 12.1 (12A7403), 12.2 (12B45b), 12.3 (12C33), 12.4 (12D4e)">12.0.0*</span></p>
+</td> <td class="table-yes">17.1.1</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="thread/scoped_lock" title="cpp/thread/scoped lock"><code>std::scoped_lock</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0156R2" rel="nofollow">P0156R2</a> </td> <td class="table-yes">7</td> <td class="table-yes">5</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.1</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="types/byte" title="cpp/types/byte"><code>std::byte</code></a> </td> <td> <a class="external text" href="https://wg21.link/P0298R3" rel="nofollow">P0298R3</a> </td> <td class="table-yes">7</td> <td class="table-yes">5</td> <td class="table-yes">
+<span title="VS 2017 15.3">19.11*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.1</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td> <a href="types/is_aggregate" title="cpp/types/is aggregate"><code>std::is_aggregate</code></a> </td> <td> <a class="external text" href="https://cplusplus.github.io/LWG/issue2911" rel="nofollow">LWG2911</a> </td> <td class="table-yes">7</td> <td class="table-yes">5</td> <td class="table-yes">
+<span title="VS 2017 15.8">19,15*</span> </td> <td class="table-yes">Đúng</td> <td class="table-yes">17.1.1</td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-yes">10.3</td>
+</tr> <tr> <td>DR17:<a href="filesystem/path/hash" title="cpp/filesystem/path/hash"><code>std::hash&lt;std::filesystem::path&gt;</code></a> </td> <td> <a class="external text" href="https://cplusplus.github.io/LWG/issue3657" rel="nofollow">LWG3657</a> </td> <td class="table-yes">11.4</td> <td class="table-yes">17</td> <td class="table-yes">
+<span title="VS 2022 17.2">19.32*</span> </td> <td class="table-no"> </td> <td class="table-no"> </td> <td class="table-na"> <small>N/a</small> </td> <td class="table-no"> </td> <td class="table-no"> </td>
+</tr> <tr style="height:15em"> <th> <br/><br/>Tính năng C ++ 17</th> <th> <br/><br/>(Các) giấy</th> <th>
+<div>GCC libstdc ++</div> </th> <th>
+<div>Clang Libc ++</div> </th> <th>
+<div>MSVC STL</div> </th> <th>
+<div><span title="C++ Standard Library">Apple Clang*</span></div> </th> <th>
+<div><span title="C/C++ Standard Library">IBM mở XL C/C ++ cho Aix*</span></div> </th> <th>
+<div>STL song song Intel</div> </th> <th>
+<div><span title="C++ Standard Library">Sun/Oracle C ++*</span></div> </th> <th>
+<div><span title="C++ Standard Library">Embarcadero C ++ Builder*</span></div> </th>
+</tr>
+</table> <h5 id="Notes">Ghi chú</h5> <ul>
+<li>Tính đến năm 2020-11-20, phát hành mới nhất của Oracle Developer Studio<a class="external text" href="https://www.oracle.com/application-development/technologies/developerstudio-component-matrix.html" rel="nofollow">is 12.6</a>. Của nó<a class="external text" href="https://docs.oracle.com/cd/E77782_01/html/E77789/bkaje.html" rel="nofollow">documentation</a>Không đề cập đến C ++ 17.</li>
+<li>Trình biên dịch Cray có thể có hỗ trợ cho một số tính năng sớm hơn 11.0. Phiên bản đó là khi nó trở thành một dẫn xuất của tiếng kêu, đạt được tất cả các hỗ trợ tính năng ngôn ngữ tiếp viên của trình biên dịch cơ sở. Nhìn thấy<a class="external text" href="https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&amp;docId=a00123566en_us" rel="nofollow">Cray/HPE document S-2179</a>.</li>
+</ul> <p><span title="pop-up tooltip example: implemented in Circle ver. 3.14 and above">*</span>- Di chuột qua một ô được đánh dấu bằng ngôi sao<span title="another tooltip example">*</span>Để xem các ghi chú bật lên bổ sung.<br/>Dr<i>nn</i>- Số<i>nn</i>Sau khi "DR" biểu thị sửa đổi C ++, báo cáo khiếm khuyết được áp dụng cho, ví dụ: DR20 → C ++ 20.</p>
+<h3 id="External_links">Liên kết bên ngoài</h3> <table> <tr style="vertical-align:top;"> <td> </td> <td>
+<a class="external text" href="https://github.com/makelinux/examples/blob/HEAD/cpp/17.cpp" rel="nofollow">Working C++17 examples</a> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/17">https://en.cppreference.com/w/cpp/17</a>
+</p>
+</div>

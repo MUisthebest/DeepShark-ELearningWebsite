@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Towlower</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwctype" title="cpp/header/cwctype">&lt;cwctype&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">std :: wint_t Towlower (std :: wint_t ch);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Chuyển đổi ký tự rộng đã cho thành chữ thường, nếu có thể.</p>
+<p>Nếu giá trị của<code>ch</code>không thể đại diện như một<code>wchar_t</code>cũng không bằng giá trị của macro<code>WEOF</code>Hoạt động tương đương cho quá tải</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>ch</td> <td>-</td> <td>nhân vật rộng được chuyển đổi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Phiên bản viết thường của<code>ch</code>hoặc không sửa đổi<code>ch</code>Nếu không có phiên bản viết thường được liệt kê trong ngôn ngữ C hiện tại.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Chỉ có thể thực hiện ánh xạ ký tự 1: 1 bằng hàm này, ví dụ: chữ in hoa Hy Lạp<span class="st0">''</span>Có hai hình thức viết thường, tùy thuộc vào vị trí trong một từ:<span class="st0">''</span>Và<span class="st0">'' '</span>. Một cuộc gọi đến<code>std::towlower</code>Chỉ có thể thực hiện ánh xạ ký tự 1: 1 bằng hàm này, ví dụ: Chữ hoa Hy Lạp '' 'có hai dạng viết thường, tùy thuộc vào vị trí trong một từ:' '' và '' '. Một cuộc gọi đến</p>
+<p><a class="external text" href="https://www.open-std.org/JTC1/SC35/WG5/docs/30112d10.pdf" rel="nofollow">ISO 30112</a>Chỉ định các cặp ký tự unicode được bao gồm trong ánh xạ này.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;clocale&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CWCType&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="towupper" title="cpp/string/wide/towupper"> <span class="t-lines"><span>Towupper</span></span></a></div> </td> <td>Chuyển đổi một ký tự rộng thành chữ hoa<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../locale/tolower" title="cpp/locale/tolower"> <span class="t-lines"><span>dung nạp<span class="t-dsc-small">(STD :: Locale)</span></span></span></a></div> </td> <td>Chuyển đổi một ký tự thành chữ thường bằng cách sử dụng<code>ctype</code>khía cạnh của một địa điểm<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../byte/tolower" title="cpp/string/byte/tolower"> <span class="t-lines"><span>dung nạp</span></span></a></div> </td> <td>Chuyển đổi một ký tự thành chữ thường<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/towlower" title="c/string/wide/towlower">C documentation</a></span>vì<code>towlower</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/towlower">https://en.cppreference.com/w/cpp/string/wide/towlower</a>
+</p>
+</div>

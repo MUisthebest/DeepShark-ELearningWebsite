@@ -1,0 +1,48 @@
+ <h1 class="firstHeading" id="firstHeading">Khởi tạo liên tục</h1> <p>Đặt các giá trị ban đầu của<a href="storage_duration" title="cpp/language/storage duration">static</a>Biến thành hằng số thời gian biên dịch.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Nếu một tĩnh<span class="t-rev-inl t-since-cxx11"><span>hoặc chủ đề địa phương</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Biến được khởi tạo không đổi (xem bên dưới), khởi tạo không đổi được thực hiện thay vì khởi tạo bằng 0 trước khi tất cả các khởi tạo khác.</p>
+<p>Một đối tượng biến hoặc tạm thời<code>obj</code>khoảng cách<i>liên tục khởi xướng</i>nếu như</p>
+<ul>
+<li>Hoặc nó có một<a href="initialization" title="cpp/language/initialization">initializer</a>hoặc nó<a href="default_initialization" title="cpp/language/default initialization">default-initialization</a>dẫn đến một số khởi tạo đang được thực hiện và</li>
+<li>khởi tạo của nó<a href="expressions#Full-expressions" title="cpp/language/expressions">full-expression</a>Điều đó như vậy<a href="constant_expression" title="cpp/language/constant expression">constant expression</a><span class="t-rev-inl t-since-cxx11"><span>Hành xử như<code>obj</code>là một đối tượng, biểu hiện đầy đủ đó cũng có thể được gọi<a href="constexpr" title="cpp/language/constexpr">constexpr</a>người xây dựng cho<code>obj</code>Và nó<a href="object#Subobjects" title="cpp/language/object">subobjects</a>ngay cả khi những đối tượng đó không phải là<a href="../named_req/literaltype" title="cpp/named req/LiteralType">literal</a>loại lớp</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</li>
+</ul> <p>Các tác động của việc khởi tạo không đổi giống như các tác động của khởi tạo tương ứng, ngoại trừ việc đảm bảo rằng nó đã hoàn thành trước khi bất kỳ khởi tạo nào khác<span class="t-rev-inl t-since-cxx11"><span>hoặc chủ đề địa phương</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Đối tượng bắt đầu, và nó có thể được thực hiện tại thời điểm biên dịch.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Trình biên dịch được phép khởi tạo tĩnh khác<span class="t-rev-inl t-since-cxx11"><span>và chủ đề địa phương</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Các đối tượng sử dụng khởi tạo không đổi, nếu nó có thể đảm bảo rằng giá trị sẽ giống như khi thứ tự khởi tạo tiêu chuẩn được tuân thủ.</p>
+<p>Trong thực tế, khởi tạo không đổi được thực hiện tại thời điểm biên dịch và các biểu diễn đối tượng được tính toán trước được lưu trữ như một phần của hình ảnh chương trình (ví dụ: trong<code>.data</code>phần). Nếu một biến là cả<code>const</code>và khởi tạo không đổi, biểu diễn đối tượng của nó có thể được lưu trữ trong phần chỉ đọc của hình ảnh chương trình (ví dụ:<code>.rodata</code>phần)</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;mảng&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/441.html" rel="nofollow">CWG 441</a> </td> <td>C ++ 98</td> <td> </td> <td>cấu trúc s</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1489.html" rel="nofollow">CWG 1489</a> </td> <td>C ++ 98</td> <td>{<br/>    static const int c;</td> <td>}</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1747.html" rel="nofollow">CWG 1747</a> </td> <td>C ++ 98</td> <td> </td> <td>}</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1834.html" rel="nofollow">CWG 1834</a> </td> <td>C ++ 11</td> <td>                         // Khởi tạo, khởi tạo này xảy ra sau const</td> <td>}</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2026.html" rel="nofollow">CWG 2026</a> </td> <td>C ++ 98</td> <td> <br/>int main ()</td> <td>{<br/>    std :: cout &lt;&lt; "d =" &lt;&lt; d &lt;&lt; '\ n';</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2366.html" rel="nofollow">CWG 2366</a> </td> <td>C ++ 98</td> <td>    std :: mảng &lt;int, s :: c&gt; a1; // ok: s :: c là một biểu thức không đổi<br/>// std :: mảng &lt;int, d&gt; a2;    // Lỗi: D không phải là một biểu thức không đổi</td> <td>}</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="constexpr" title="cpp/language/constexpr"><code>constexpr</code></a> </li>
+<li> <a href="constructor" title="cpp/language/constructor">constructor</a> </li>
+<li> <a href="converting_constructor" title="cpp/language/converting constructor">converting constructor</a> </li>
+<li> <a href="copy_constructor" title="cpp/language/copy constructor">copy constructor</a> </li>
+<li> <a href="default_constructor" title="cpp/language/default constructor">default constructor</a> </li>
+<li> <a href="explicit" title="cpp/language/explicit"><code>explicit</code></a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> <ul>
+<li> <a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a> </li>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a> </li>
+<li> <a href="default_initialization" title="cpp/language/default initialization">default initialization</a> </li>
+<li> <a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a> </li>
+<li> <a href="list_initialization" title="cpp/language/list initialization">list initialization</a> </li>
+<li> <a href="reference_initialization" title="cpp/language/reference initialization">reference initialization</a> </li>
+<li> <a href="value_initialization" title="cpp/language/value initialization">value initialization</a> </li>
+<li> <a href="zero_initialization" title="cpp/language/zero initialization">zero initialization</a> </li>
+</ul> </li>
+<li> <a href="move_constructor" title="cpp/language/move constructor">move constructor</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/constant_initialization">https://en.cppreference.com/w/cpp/language/constant_initialization</a>
+</p>
+</div>

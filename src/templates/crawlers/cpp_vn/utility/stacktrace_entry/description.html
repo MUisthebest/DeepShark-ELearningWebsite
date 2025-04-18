@@ -1,0 +1,11 @@
+ <h1 class="firstHeading" id="firstHeading">std :: stacktrace_entry :: mô tả</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">std :: chuỗi mô tả () const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>Trả về một mô tả về đánh giá được đại diện bởi<code>*this</code>Về thành công, hoặc một chuỗi trống về thất bại khác với thất bại phân bổ, ví dụ: khi<code>*this</code>...</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một mô tả về đánh giá được đại diện về thành công, một chuỗi trống về thất bại khác với thất bại phân bổ.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Ném<code><a href="../../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>Nếu bộ nhớ cho các cấu trúc dữ liệu nội bộ hoặc chuỗi kết quả không thể được phân bổ.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Hỗ trợ phân bổ tùy chỉnh cho chức năng này không được cung cấp, bởi vì việc triển khai thường yêu cầu phân bổ cụ thể của nền tảng, các cuộc gọi hệ thống và rất nhiều công việc chuyên sâu CPU, trong khi một người phân bổ tùy chỉnh không mang lại lợi ích cho chức năng này vì các hoạt động cụ thể của nền tảng có nhiều thứ tự lớn hơn so với phân bổ.</p>
+<h3 id="Example">Ví dụ</h3> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/utility/stacktrace_entry/description">https://en.cppreference.com/w/cpp/utility/stacktrace_entry/description</a>
+</p>
+</div>

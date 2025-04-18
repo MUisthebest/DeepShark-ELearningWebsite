@@ -1,0 +1,60 @@
+ <h1 class="firstHeading" id="firstHeading">Công cụ xác định loại xây dựng</h1> <p>Các nhà xác định loại được xây dựng có thể được sử dụng để chỉ tên lớp được công bố trước đó (lớp, struct hoặc liên minh) hoặc tên enum được công bố trước đó ngay cả khi tên<a href="lookup" title="cpp/language/lookup">hidden by a non-type declaration</a>. Chúng cũng có thể được sử dụng để khai báo tên lớp mới.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">Lớp học</span> <span class="t-spar">tên lớp</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>enum</code> <span class="t-spar">enum name</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Lớp học</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">định danh</span> <code>;</code> </td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">Lớp học</span> </td> <td>-</td> <td>Một trong số<a href="../keyword/class" title="cpp/keyword/class">class</a>Thì<a href="../keyword/struct" title="cpp/keyword/struct">struct</a>Thì<a href="../keyword/union" title="cpp/keyword/union">union</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tên lớp</span> </td> <td>-</td> <td>tên của loại lớp được khai báo trước đó, tùy chọn<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified</a>, hoặc một định danh không được khai báo trước đây là tên loại</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">enum name</span> </td> <td>-</td> <td>Tên của một loại liệt kê được khai báo trước đó, tùy chọn<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>bất kỳ số lượng của<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Kiểu xác định loại được xây dựng cho một loại lớp.</div> <div class="t-li1">
+<span class="t-li">2)</span>Kiểu định thức loại được xây dựng cho một loại liệt kê.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Một tuyên bố chỉ bao gồm một trình xác định loại được xây dựng luôn khai báo một loại loại có tên<span class="t-spar">định danh</span>trong<a href="scope" title="cpp/language/scope">scope</a>chứa các tuyên bố.</div> <p><a href="enum" title="cpp/language/enum">Opaque enum declaration</a>giống như hình thức<span class="t-v">(3)</span>, nhưng loại enum là một loại hoàn chỉnh sau khi khai báo enum mờ đục.</p>
+<h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Hình thức<span class="t-v">(3)</span>là một trường hợp đặc biệt của trình xác định loại được xây dựng, thường được gọi là<i>Tuyên bố chuyển tiếp</i>của các lớp học, để mô tả biểu mẫu<span class="t-v">(3)</span>, nhìn thấy<a href="class#Forward_declaration" title="cpp/language/class">Forward declaration</a>. Sau đây chỉ áp dụng cho biểu mẫu<span class="t-v">(1)</span>Và<span class="t-v">(2)</span>.</p>
+<p>Các<span class="t-spar">tên lớp</span>hoặc<span class="t-spar">enum name</span>Trong trình xác định loại được xây dựng có thể là một định danh đơn giản hoặc là một<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified-id</a>. Tên được tra cứu bằng cách sử dụng<a href="unqualified_lookup" title="cpp/language/unqualified lookup">unqualified name lookup</a>hoặc<a href="qualified_lookup" title="cpp/language/qualified lookup">qualified name lookup</a>, tùy thuộc vào ngoại hình của họ. Nhưng trong cả hai trường hợp, tên không phải kiểu không được xem xét.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">lớp T.</pre></div> <p>{<code>class</code>Thì<code>struct</code>, hoặc<code>union</code>công cộng:<code>enum</code>), Và<span class="t-spar">tên lớp</span>    lớp u;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">riêng tư:</pre></div> <p>    int u;<a href="typedef" title="cpp/language/typedef">typedef name</a>có thể đại diện cho các phân số của ve.<a href="type_alias" title="cpp/language/type alias">type alias</a>có thể đại diện cho các phân số của ve.<a href="template_parameters#Type_template_parameter" title="cpp/language/template parameters">template type parameter</a>};<a href="type_alias" title="cpp/language/type alias">alias template specialization</a> <a href="declarations#Specifiers" title="cpp/language/declarations">simple type specifier</a>int main ()</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <p>Các<span class="t-spar">Lớp học</span>hoặc<code>enum</code>    int t;</p>
+<ul>
+<li>các<code>enum</code>    T t; // Lỗi: biến cục bộ t được tìm thấy<a href="enum" title="cpp/language/enum">enumeration type</a>    lớp t t; // OK: tìm thấy :: T, biến cục bộ T bị bỏ qua</li>
+<li>các<code>union</code> <span class="t-spar">Lớp học</span>    T :: u* u; // Lỗi: Tra cứu T :: U tìm thấy thành viên dữ liệu riêng tư<a href="union" title="cpp/language/union">union</a> </li>
+<li>    Lớp T :: u* u; // OK: Thành viên dữ liệu bị bỏ qua<code>class</code>hoặc<code>struct</code> <span class="t-spar">Lớp học</span>}<code>class</code>Và<code>struct</code>Nếu việc tra cứu tên không tìm thấy tên loại được khai báo trước đó, thì bộ chỉ định loại được xây dựng được giới thiệu bởi</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">(tức là không phải bởi</pre></div> <p>là một định danh không đủ tiêu chuẩn, sau đó trình ghi nhận loại được xây dựng là một tuyên bố lớp của tên lớp.<a href="template_parameters#Template_arguments" title="cpp/language/template parameters">template argument</a>Thì<code>class T</code>Mẫu &lt;Typename T&gt;<code>T</code>Nút cấu trúc<code>T</code>{</p>
+<h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul>
+<li>    Nút cấu trúc* Tiếp theo; // OK: Tra cứu nút tìm thấy tên lớp được tiêm</li>
+<li>    dữ liệu cấu trúc* dữ liệu; // OK: Khai báo dữ liệu loại ở phạm vi toàn cầu</li>
+</ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul>
+<li>                       // và cũng tuyên bố dữ liệu thành viên dữ liệu</li>
+<li>    Lớp học bạn :: Danh sách; // Lỗi: Không thể giới thiệu một tên đủ điều kiện</li>
+</ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul>
+<li>    enum loại* loại; // Lỗi: không thể giới thiệu một enum</li>
+<li>};</li>
+</ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul>
+<li>, chương trình không được hình thành, nếu không thì nhà xác định loại được xây dựng sẽ giới thiệu tên vào tuyên bố giống như cách</li>
+<li>, hoặc một</li>
+</ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul>
+<li>, chương trình không được hình thành, nếu không thì nhà xác định loại được xây dựng sẽ giới thiệu tên vào tuyên bố giống như cách</li>
+<li>, hoặc một</li>
+</ul>
+<li>    S.B3 = 0B11;</li>
+<ul>
+<li>, chương trình không được hình thành, nếu không thì nhà xác định loại được xây dựng sẽ giới thiệu tên vào tuyên bố giống như cách</li>
+<li>Giới thiệu tên loại của nó.</li>
+</ul>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/elaborated_type_specifier">https://en.cppreference.com/w/cpp/language/elaborated_type_specifier</a>
+</p>
+</div>

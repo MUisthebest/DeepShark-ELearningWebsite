@@ -1,0 +1,126 @@
+ <h1 class="firstHeading" id="firstHeading">Sao chép toán tử gán</h1> <p>Toán tử gán bản sao là một bảng không<a href="member_functions" title="cpp/language/member functions">non-static member function</a>với toán tử tên<span class="sy1">Đầu của phạm vi được sắp xếp đầu tiên</span>có thể được gọi với một đối số của cùng loại lớp và sao chép nội dung của đối số mà không thay đổi đối số.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Đối với cú pháp toán tử phân công bản sao chính thức, xem<a href="function" title="cpp/language/function">function declaration</a>. Danh sách cú pháp bên dưới chỉ thể hiện một tập hợp con của tất cả các cú pháp toán tử phân công hợp lệ.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <code>operator=(</code><span class="t-spar">danh sách tham số</span>﻿<code>);</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <code>operator=(</code><span class="t-spar">danh sách tham số</span>﻿<code>)</code> <span class="t-spar">cơ thể chức năng</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <code>operator=(</code><span class="t-spar">tham số-list-no-default</span>﻿<code>) = default;</code> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <code>operator=(</code><span class="t-spar">danh sách tham số</span>﻿<code>) = delete;</code> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <span class="t-spar">tên lớp</span>﻿<code>::</code><code>operator=(</code><span class="t-spar">danh sách tham số</span>﻿<code>)</code> <span class="t-spar">cơ thể chức năng</span> </td> <td>             Không có p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">kiểu trả lại</span> <span class="t-spar">tên lớp</span>﻿<code>::</code><code>operator=(</code><span class="t-spar">tham số-list-no-default</span>﻿<code>) = default;</code> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">tên lớp</span> </td> <td>-</td> <td>lớp có toán tử phân công bản sao đang được khai báo, loại lớp được đưa ra là<code>T</code>Trong các mô tả dưới đây</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">danh sách tham số</span> </td> <td>-</td> <td>Một<a href="function#Parameter_list" title="cpp/language/function">parameter list</a>chỉ trong một tham số, thuộc loại<code>T</code>Thì<code>T&amp;</code>Thì<span class="kw4">hằng số</span>T<span class="sy3">Không có giá trị</span>Thì<span class="kw4">bay hơi</span>T<span class="sy3">Không có giá trị</span>hoặc<span class="kw4">hằng số</span> <span class="kw4">bay hơi</span>T<span class="sy3">Không có giá trị</span> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tham số-list-no-default</span> </td> <td>-</td> <td>Một<a href="function#Parameter_list" title="cpp/language/function">parameter list</a>chỉ trong một tham số, thuộc loại<code>T</code>Thì<code>T&amp;</code>Thì<span class="kw4">hằng số</span>T<span class="sy3">Không có giá trị</span>Thì<span class="kw4">bay hơi</span>T<span class="sy3">Không có giá trị</span>hoặc<span class="kw4">hằng số</span> <span class="kw4">bay hơi</span>T<span class="sy3">Không có giá trị</span>và không có đối số mặc định</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">cơ thể chức năng</span> </td> <td>-</td> <td>các<a href="constructor" title="cpp/language/constructor">function body</a>của toán tử gán bản sao</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">kiểu trả lại</span> </td> <td>-</td> <td>Bất kỳ loại, nhưng<code>T&amp;</code>được ưa chuộng để cho phép xác nhận chuỗi</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <div class="t-li1">
+<span class="t-li">1)</span>Tuyên bố của một toán tử gán bản sao bên trong định nghĩa lớp.</div> <div class="t-li1">
+<span class="t-li">    const std :: chrono :: giây* offset;     // Chỉ giải thích</span>Định nghĩa của một toán tử gán bản sao bên trong định nghĩa lớp.</div> <div class="t-li2">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Toán tử gán bản sao được mặc định rõ ràng.</div> <div class="t-li2">
+<span class="t-li">là trong</span>Toán tử gán bản sao bị xóa.</div> <div class="t-li1">
+<span class="t-li">    trả về std :: find_if_not (đầu tiên, cuối cùng, p) == cuối cùng;</span>Định nghĩa của một toán tử gán bản sao bên ngoài định nghĩa lớp (lớp phải chứa khai báo<span class="t-v">(1)</span>).</div> <div class="t-li2">
+<span class="t-li">từ_sys</span>Toán tử gán bản sao được mặc định rõ ràng.</div> <div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc x</pre></div> <p>{<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>    X &amp; toán tử = (X &amp; Khác);     // Nhà điều hành phân công sao chép</p>
+<h3 id="Implicitly-declared_copy_assignment_operator">    Toán tử x = (x Khác);       // được phép vượt qua by-giá trị</h3> <p>// X toán tử = (const x khác); // Lỗi: Loại tham số không chính xác<span class="kw1">};</span> <span class="kw1"> </span>Liên minh y<code>T&amp; T::operator=(const T&amp;)</code>Nếu tất cả những điều sau đây là đúng:</p>
+<ul>
+<li>{<code>B</code>của<code>T</code>    // Sao chép các toán tử gán có thể có cú pháp không được liệt kê ở trên,<code>B</code>hoặc<span class="kw4">hằng số</span>B<span class="sy3">Không có giá trị</span>hoặc<span class="kw4">hằng số</span> <span class="kw4">bay hơi</span>B<span class="sy3">Không có giá trị</span>Số lượng các yếu tố để sao chép</li>
+<li>    // Miễn là họ tuân theo cú pháp khai báo chức năng chung<code>M</code>của<code>T</code>    // và không viloate các hạn chế được liệt kê ở trên<code>M</code>hoặc<span class="kw4">hằng số</span>M<span class="sy3">Không có giá trị</span>hoặc<span class="kw4">hằng số</span> <span class="kw4">bay hơi</span>M<span class="sy3">Không có giá trị</span>.</li>
+</ul> <p>    Toán tử tự động = (y &amp; khác) -&gt; y &amp;;       // OK: Loại trả về theo dõi<code>T&amp; T::operator=(T&amp;)</code>.</p>
+<p>    Y &amp; toán tử = (y &amp; self, y &amp; other này); // OK: Tham số đối tượng rõ ràng<span class="kw4">bay hơi</span>// y &amp; toán tử = (y &amp;, int num = 1);        // Lỗi: có các tham số không đối tượng khác</p>
+<p>};<code>T&amp; T::operator=(T&amp;)</code>Và<code>T&amp; T::operator=(T)</code>.<span class="t-rev-inl t-since-cxx11"><span>Toán tử gán bản sao được gọi bất cứ khi nào được chọn bởi<code>default</code>.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span></p>
+<p>, ví dụ. Khi một đối tượng xuất hiện ở phía bên trái của biểu thức gán.<span class="t-rev-inl t-until-cxx17"><span><a href="except_spec" title="cpp/language/except spec">dynamic exception specification</a></span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span><a href="noexcept_spec" title="cpp/language/noexcept spec">noexcept specification</a></span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span></p>
+<p>Toán tử gán bản sao được khai báo ngầm<a href="using_declaration#In_class_definition" title="cpp/language/using declaration">using-declaration</a>Nếu không có toán tử gán bản sao do người dùng xác định nào được cung cấp cho loại lớp, trình biên dịch sẽ luôn khai báo một</p>
+<h3 id="Implicitly-defined_copy_assignment_operator">nội tuyến</h3> <p>công cộng<a href="definition#ODR-use" title="cpp/language/definition">odr-used</a><span class="t-rev-inl t-since-cxx14"><span>hoặc<a href="constant_expression#Functions_and_variables_needed_for_constant_evaluation" title="cpp/language/constant expression">needed for constant evaluation</a></span><span><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></span></span>Thành viên của lớp. Toán tử gán bản sao được khai báo ngầm này có biểu mẫu<code><a href="../string/byte/memmove" title="cpp/string/byte/memmove">std::memmove</a></code>mỗi cơ sở trực tiếp</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx14 t-until-cxx23">
+<td> <p>Do các quy tắc này, toán tử gán bản sao được khai báo ngầm không thể liên kết với một<code>T</code>khoảng cách<a href="constexpr" title="cpp/language/constexpr"><code>constexpr</code></a>nếu như</p>
+<ul>
+<li> <code>T</code>Điều đó như vậy<a href="../named_req/literaltype" title="cpp/named req/LiteralType">literal type</a>, Và</li>
+<li>mỗi thành viên dữ liệu không tĩnh</li>
+<li>thuộc loại lớp hoặc mảng loại lớp có toán tử gán bản sao có tham số<code>T</code>Nếu không thì toán tử gán bản sao được tuyên bố ngầm được khai báo là</li>
+</ul> </td> <td>
+<span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span><br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx23">
+<td> <p>Do các quy tắc này, toán tử gán bản sao được khai báo ngầm không thể liên kết với một<code>T</code>khoảng cách<a href="constexpr" title="cpp/language/constexpr"><code>constexpr</code></a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Đối số Lvalue.<code>T</code>Một lớp có thể có nhiều toán tử gán bản sao, ví dụ: cả hai</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Deleted_copy_assignment_operator">Nếu có một số toán tử gán bản sao do người dùng xác định</h3> <p>Trình điều khiển gán bản sao được khai báo ngầm (hoặc mặc định trên Tuyên bố đầu tiên) có một đặc tả ngoại lệ như được mô tả trong<span class="t-rev-inl t-since-cxx11"><span>Bởi vì toán tử gán bản sao luôn được khai báo cho bất kỳ lớp nào, toán tử gán lớp cơ sở luôn được ẩn. Nếu a</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Được sử dụng để đưa toán tử gán từ lớp cơ sở và loại đối số của nó có thể giống như loại đối số của toán tử gán ngầm của lớp dẫn xuất, việc khai thác sử dụng cũng bị ẩn bởi tuyên bố ngầm.<code>T</code>khoảng cách<span class="t-rev-inl t-until-cxx11"><span>void print_container (const std :: deque &lt;int&gt; &amp; c) </span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>Toán tử gán bản sao được xác định ngầm</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Nếu toán tử gán bản sao được tuyên bố ngầm không bị xóa cũng không tầm thường, thì nó được xác định (nghĩa là cơ thể chức năng được tạo và biên dịch) bởi trình biên dịch nếu</p>
+<ul>
+<li> <code>T</code>. Đối với các loại liên minh, bài tập bản sao được xác định ngầm sẽ sao chép biểu diễn đối tượng (như bởi</li>
+<li> <code>T</code>). Đối với các loại lớp không liên kết, toán tử thực hiện gán bản sao thành viên của các cơ sở của đối tượng và các thành viên không tĩnh, theo thứ tự khởi tạo của họ, sử dụng gán tích hợp cho người vận hành vô hướng và sao chép cho các loại lớp.</li>
+<li> <code>T</code>Toán tử gán bản sao được xác định ngầm cho một lớp<a href="object#Potentially_constructed_subobject" title="cpp/language/object">potentially constructed subobject</a>Toán tử gán được chọn để sao chép từng tiểu đơn lớp cơ sở trực tiếp là hàm constexpr và<code>M</code>cho mỗi thành viên dữ liệu không tĩnh của<code>M</code>Đó là loại loại (hoặc mảng của chúng), toán tử gán được chọn để sao chép thành viên đó là hàm ConsexPR.</li>
+<ul>
+<li>Toán tử gán bản sao được xác định ngầm cho một lớp</li>
+<li>Việc tạo ra toán tử gán bản sao được xác định ngầm được xác định<a href="union#Union-like_classes" title="cpp/language/union">variant member</a>có một hàm tạo phân hủy người dùng hoặc trình xây dựng bản sao phát hành của người dùng.</li>
+</ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Đã xóa toán tử phân công bản sao<code>T</code>(c)<code>T</code>tuyên bố a<a href="move_constructor" title="cpp/language/move constructor">move constructor</a>hoặc<a href="move_assignment" title="cpp/language/move assignment">move assignment operator</a>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Trivial_copy_assignment_operator">Một tuyên bố ngầm</h3> <p>hoặc bị lỗi rõ ràng<code>T</code>Sao chép toán tử gán cho lớp</p>
+<ul>
+<li>được định nghĩa là xóa</li>
+<li> <code>T</code>Nếu bất kỳ điều kiện nào sau đây được thỏa mãn:</li>
+<li> <code>T</code>có một thành viên dữ liệu không tĩnh thuộc loại không có đủ điều kiện const (hoặc có thể là mảng đa chiều của chúng).</li>
+<li>có một thành viên dữ liệu không tĩnh của một loại tham chiếu.<code>T</code>có a</li>
+<li>thuộc loại lớp<code>T</code>(hoặc có thể là mảng đa chiều của chúng) sao cho độ phân giải quá tải được áp dụng để tìm</li>
+</ul> <p>Nhà điều hành gán bản sao<code><a href="../string/byte/memmove" title="cpp/string/byte/memmove">std::memmove</a></code>không dẫn đến một ứng cử viên có thể sử dụng, hoặc</p>
+<h3 id="Eligible_copy_assignment_operator">Trong trường hợp của tiểu mục là một</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p>, chọn một chức năng không tầm thường.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11 t-until-cxx20">
+<td> <p>Toán tử gán bản sao được khai báo ngầm cho lớp</p>
+</td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span><br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>Toán tử phân công bản sao tầm thường</p>
+<ul>
+<li>Toán tử gán bản sao cho lớp</li>
+<li>Để cho một số đối tượng máy phát<a href="constraints" title="cpp/language/constraints">associated constraints</a>là tầm thường nếu tất cả những điều sau đây là đúng:</li>
+<li>Nó không được cung cấp người dùng (có nghĩa là, nó được xác định ngầm hoặc mặc định);<a href="constraints#Partial_ordering_of_constraints" title="cpp/language/constraints">more constrained</a>không có chức năng thành viên ảo;</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>không có lớp cơ sở ảo;<a href="../named_req/triviallycopyable" title="cpp/named req/TriviallyCopyable">trivially copyable type</a>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>toán tử gán bản sao được chọn cho mọi cơ sở trực tiếp của<a href="value_category" title="cpp/language/value category">rvalue</a>là tầm thường;<a href="value_category" title="cpp/language/value category">prvalue</a>Toán tử gán bản sao được chọn cho mọi thành viên loại (hoặc mảng thuộc loại lớp)<a href="value_category" title="cpp/language/value category">xvalue</a>là tầm thường.<code>std::move</code>Một toán tử gán bản sao tầm thường tạo một bản sao của biểu diễn đối tượng như thể bằng cách<a href="value_category" title="cpp/language/value category">lvalue</a>. Tất cả các loại dữ liệu tương thích với ngôn ngữ C (loại POD) đều có thể sao chép một cách tầm thường.</p>
+<p>Nhà điều hành phân công bản sao đủ điều kiện<a href="move_assignment" title="cpp/language/move assignment">move assignment</a>).</p>
+<p>(Raco).<a href="operators#Assignment_operator" title="cpp/language/operators">assignment operator overloading</a>Một toán tử gán bản sao đủ điều kiện nếu nó được tuyên bố bởi người dùng hoặc cả hai người được tuyên bố ngầm và có thể xác định được.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Một toán tử gán bản sao đủ điều kiện nếu nó không bị xóa.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Một toán tử gán bản sao đủ điều kiện nếu</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1353.html" rel="nofollow">CWG 1353</a> </td> <td>C ++ 98</td> <td>nó không bị xóa, và<br/>, nếu có, được thỏa mãn, và</td> <td>Không có toán tử gán bản sao với cùng loại tham số đầu tiên và cùng một cv/ref-aperifers (nếu có)</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2094.html" rel="nofollow">CWG 2094</a> </td> <td>C ++ 11</td> <td>hơn nó.<br/>Tầm thường của các toán tử phân công bản sao đủ điều kiện xác định xem lớp có phải là một<a class="external text" href="https://cplusplus.github.io/CWG/issues/496.html" rel="nofollow">CWG issue 496</a>)</td> <td>Nếu cả hai toán tử gán bản sao và di chuyển được cung cấp, độ phân giải quá tải sẽ chọn gán di chuyển nếu đối số là một</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2171.html" rel="nofollow">CWG 2171</a> </td> <td>C ++ 11</td> <td>
+<code>operator=(X&amp;) = default</code>(Hoặc là a</td> <td>chẳng hạn như tạm thời không tên hoặc một</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2180.html" rel="nofollow">CWG 2180</a> </td> <td>C ++ 11</td> <td>chẳng hạn như kết quả của<code>T</code>) và chọn gán bản sao nếu đối số là<br/>nếu như<code>T</code>(đối tượng được đặt tên hoặc một hàm/toán tử trả về tham chiếu Lvalue). Nếu chỉ được cung cấp bài tập bản sao, tất cả các loại đối số chọn nó (miễn là nó lấy đối số của nó theo giá trị hoặc làm tham chiếu đến const, vì các rvalues ​​có thể liên kết với các tài liệu tham khảo của const), điều này làm cho việc gán bản sao trở thành dự phòng để chuyển nhượng, khi di chuyển không khả dụng.</td> <td>Không xác định liệu các tiểu học lớp cơ sở ảo có thể truy cập được thông qua nhiều đường dẫn trong mạng di truyền hay không, được gán nhiều lần bởi toán tử gán bản sao được xác định ngầm (cùng áp dụng cho<br/>Để biết thêm chi tiết về hành vi dự kiến ​​của toán tử phân bổ bản sao do người dùng xác định.</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="converting_constructor" title="cpp/language/converting constructor">converting constructor</a> </li>
+<li> <a href="copy_constructor" title="cpp/language/copy constructor">copy constructor</a> </li>
+<li> <a href="copy_elision" title="cpp/language/copy elision">copy elision</a> </li>
+<li> <a href="default_constructor" title="cpp/language/default constructor">default constructor</a> </li>
+<li> <a href="destructor" title="cpp/language/destructor">destructor</a> </li>
+<li> <a href="explicit" title="cpp/language/explicit"><code>explicit</code></a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> <ul>
+<li> <a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a> </li>
+<li> <a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </li>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a> </li>
+<li> <a href="default_initialization" title="cpp/language/default initialization">default initialization</a> </li>
+<li> <a href="direct_initialization" title="cpp/language/direct initialization">direct initialization</a> </li>
+<li> <a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">initializer list</a> </li>
+<li> <a href="list_initialization" title="cpp/language/list initialization">list initialization</a> </li>
+<li> <a href="reference_initialization" title="cpp/language/reference initialization">reference initialization</a> </li>
+<li> <a href="value_initialization" title="cpp/language/value initialization">value initialization</a> </li>
+<li> <a href="zero_initialization" title="cpp/language/zero initialization">zero initialization</a> </li>
+</ul> </li>
+<li> <a href="move_assignment" title="cpp/language/move assignment">move assignment</a> </li>
+<li> <a href="move_constructor" title="cpp/language/move constructor">move constructor</a> </li>
+<li> <a href="new" title="cpp/language/new"><code>new</code></a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/as_operator">https://en.cppreference.com/w/cpp/language/as_operator</a>
+</p>
+</div>

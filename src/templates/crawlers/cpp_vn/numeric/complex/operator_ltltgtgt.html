@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử &lt;&lt;, &gt;&gt;<small>(STD :: phức tạp)</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/complex" title="cpp/header/complex">&lt;complex&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Mẫu &lt;Class T, Biểu đồ lớp, Đặc điểm lớp&gt;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">STD :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Viết để<code>os</code>    toán tử &lt;&lt; (std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; os, const std :: phức tạp &lt;t&gt; &amp; x);<code>(real, imaginary)</code>.</div> <span class="t-li">2)</span>Mẫu &lt;Class T, Biểu đồ lớp, Đặc điểm lớp&gt;<code>is</code>STD :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp;<ul>
+<li>
+<code>real</code> </li>
+<li>
+<code>(real)</code> </li>
+<li>
+<code>(real, imaginary)</code> </li>
+</ul> <p>    toán tử &gt;&gt; (std :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp; is, std :: phức tạp &lt;t&gt; &amp; x);<code>real</code>Và<code>imaginary</code>(6)<code>T</code>số phức trong biểu mẫu<code>is.setstate(ios_base::failbit)</code>.</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Sao chép hàm tạo. Nếu như<code><a href="../../io/ios_base/failure" title="cpp/io/ios base/failure">std::ios_base::failure</a></code>Đọc một số phức từ</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>    toán tử &lt;&lt; (std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; os,</td> <td>-</td> <td>. Các định dạng được hỗ trợ là</td>
+</tr> <tr class="t-par"> <td>khoảng cách</td> <td>-</td> <td>nơi đầu vào cho</td>
+</tr> <tr class="t-par"> <td>x</td> <td>-</td> <td>.  Nếu một lỗi xảy ra, cuộc gọi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>os</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>is</code>
+</div> <h3 id="Notes">Ghi chú</h3> <div class="t-li1">
+<span class="t-li">1)</span>về lỗi luồng.<code><a href="../../io/manip/showpoint" title="cpp/io/manip/showpoint">std::showpoint</a></code>Một luồng đầu ra ký tự</div> <div class="t-li1">
+<span class="t-li">2)</span>luồng đầu vào ký tự</div> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">số phức được chèn hoặc trích xuất</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Vì dấu phẩy có thể được sử dụng trong địa phương hiện tại làm dấu phân cách thập phân, đầu ra có thể mơ hồ. Điều này có thể được giải quyết với</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">trong đó buộc các phân tách thập phân phải được nhìn thấy.</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/complex/operator_ltltgtgt">https://en.cppreference.com/w/cpp/numeric/complex/operator_ltltgtgt</a>
+</p>
+</div>

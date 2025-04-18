@@ -1,0 +1,22 @@
+ <h1 class="firstHeading" id="firstHeading">std :: wmemmove</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cwchar" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">wchar_t* wmemmove (wchar_t* dest, const wchar_t* src, std :: size_t đếm);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Constexpr outputit copy_n (đầu vào đầu tiên, số lượng kích thước, kết quả đầu ra);<code>count</code>các ký tự rộng liên tiếp từ mảng ký tự rộng được chỉ ra bởi<code>src</code>đến mảng ký tự rộng được chỉ ra bởi<code>dest</code>.</p>
+<p>Nếu như<code>count</code>bằng không, chức năng không làm gì cả.</p>
+<p>Các mảng có thể trùng lặp: Sao chép diễn ra như thể các ký tự rộng được sao chép vào một mảng ký tự rộng tạm thời và sau đó được sao chép từ mảng tạm thời sang<code>dest</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Đầu ra chuỗi hạt giống ban đầu được lưu trữ trong</td> <td>-</td> <td>con trỏ đến mảng ký tự rộng để sao chép vào</td>
+</tr> <tr class="t-par"> <td>SRC</td> <td>-</td> <td>con trỏ đến mảng ký tự rộng để sao chép từ</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>Số lượng ký tự rộng để sao chép</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>không gặp nhau<code>dest</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Hàm này không nhạy cảm với địa phương và không chú ý đến các giá trị của<code>wchar_t</code>Đối tượng nó sao chép: NULLS cũng như các ký tự không hợp lệ cũng được sao chép.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;clocale&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CWchar&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="wmemcpy" title="cpp/string/wide/wmemcpy"> <span class="t-lines"><span>WMEMCPY</span></span></a></div> </td> <td>sao chép một số lượng một số ký tự rộng nhất định giữa hai mảng không chồng chéo<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../byte/memmove" title="cpp/string/byte/memmove"> <span class="t-lines"><span>Memmove</span></span></a></div> </td> <td>chuyển một bộ đệm sang một bộ đệm khác<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../algorithm/copy" title="cpp/algorithm/copy"> <span class="t-lines"><span>Được xác định trong tiêu đề</span><span>sao chép</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../algorithm/copy_backward" title="cpp/algorithm/copy backward"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/wide/wmemmove" title="c/string/wide/wmemmove">C documentation</a></span>vì<code>wmemmove</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/wide/wmemmove">https://en.cppreference.com/w/cpp/string/wide/wmemmove</a>
+</p>
+</div>

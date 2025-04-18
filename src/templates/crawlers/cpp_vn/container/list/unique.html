@@ -1,0 +1,39 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Danh sách &lt;T, Alolocator&gt; :: Độc đáo</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx98 t-until-cxx20"> <td><pre data-language="cpp">void độc đáo ();</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">size_type độc ​​đáo ();</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(2)</td> <td></td> </tr> <tr class="t-dcl t-since-cxx98 t-until-cxx20"> <td><pre data-language="cpp">Mẫu &lt;Class BinaryPredicate&gt;</pre></td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void độc đáo (pinarypredicate p);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Mẫu &lt;Class BinaryPredicate&gt;<i>size_type duy nhất (pinarypredicate p);</i>Loại bỏ tất cả</p>
+<div class="t-li1">
+<span class="t-li">1)</span>, trả lại<code>operator==</code>các yếu tố trùng lặp từ container. Chỉ còn lại phần tử đầu tiên trong mỗi nhóm các phần tử bằng nhau. Chỉ vô hiệu hóa các trình lặp và tham chiếu đến các phần tử bị loại bỏ.</div> <div class="t-li1">
+<span class="t-li">2)</span>, trả lại<code>p</code>các yếu tố trùng lặp từ container. Chỉ còn lại phần tử đầu tiên trong mỗi nhóm các phần tử bằng nhau. Chỉ vô hiệu hóa các trình lặp và tham chiếu đến các phần tử bị loại bỏ.</div> <p>Để so sánh các yếu tố.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>. Những quá tải này không tham gia vào độ phân giải quá tải trừ khi<code>true</code>is_execut_policy_v<br/> <p>Decay_t</p>
+<p><span class="t-cc"><code> bool pred(const Type1 &amp;a, const Type2 &amp;b);</code></span></p>
+<p>&gt;&gt;<code>const &amp;</code>is_execut_policy_v<code>Type1</code>Và<code>Type2</code>Remove_cvref_t<a href="../../language/value_category" title="cpp/language/value category">value category</a>&gt;&gt;<code>Type1 &amp;</code>phạm vi của các yếu tố để kiểm tra<span class="t-rev-inl t-since-cxx11"><span>P<code>Type1</code>vị từ nhị phân trả về<code>Type1</code>Nếu các yếu tố nên được coi là bằng nhau.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>).<br/>Mẫu &lt;class so sánh&gt; <span class="sy1">is_trivently_destructible_v</span>Nếu một ngoại lệ được ném, thứ tự của các yếu tố trong<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">const_iterator</span>T,</p>
+</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>BinaryPredicate</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/binarypredicate" title="cpp/named req/BinaryPredicate">BinaryPredicate</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Gán cho đã cho</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>Loại bỏ tất cả các yếu tố thỏa mãn các tiêu chí cụ thể. Chỉ vô hiệu hóa các trình lặp và tham chiếu đến các phần tử bị loại bỏ.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>Nếu như<code><a href="empty" title="cpp/container/list/empty">empty()</a></code>khoảng cách<code>true</code>Để so sánh các yếu tố.</p>
+<p>đề cập đến cùng một đối tượng như<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>begin<span class="br0">.</span><span class="br0">)</span>, end<span class="br0">.</span><span class="br0">)</span><span class="br0">)</span></code>:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Hành vi không được xác định nếu bộ so sánh tương ứng không thiết lập mối quan hệ tương đương.<code>operator==</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>, không có so sánh được thực hiện.<code>p</code>.</div> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_list_remove_return_type" title="cpp/feature test"><code>__cpp_lib_list_remove_return_type</code></a></td> <td><span class="nu0">201806L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>Số lượng các yếu tố bị loại bỏ.</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Chính xác \ (\ scriptsize n-1 \) n-1 Ứng dụng của vị ngữ</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1207" rel="nofollow">LWG 1207</a> </td> <td>C ++ 98</td> <td>#include &lt;Istream&gt;<br/> </td> <td>int main ()<br/>{</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../../algorithm/unique" title="cpp/algorithm/unique"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/list/unique">https://en.cppreference.com/w/cpp/container/list/unique</a>
+</p>
+</div>

@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; :: c_str</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-until-cxx11"> <td><pre data-language="cpp">Biểu đồ const* c_str () const;</pre></td> <td class="t-dcl-nopad"> </td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td> <pre data-language="cpp">Biểu đồ const* c_str () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span> </td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Biểu đồ const const const* c_str () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Trả về một con trỏ cho một mảng ký tự kết thúc null với dữ liệu tương đương với các con được lưu trữ trong chuỗi.</p>
+<p>Con trỏ sao cho phạm vi<code>[</code><code>c_str()</code><code>, </code><code>c_str() + size()</code><code>]</code>là hợp lệ và các giá trị trong nó tương ứng với các giá trị được lưu trữ trong chuỗi với một ký tự null bổ sung sau vị trí cuối cùng.</p>
+<p>Con trỏ thu được từ<code>c_str()</code>có thể bị vô hiệu bởi:</p>
+<ul>
+<li>Chuyển một tham chiếu không phải lúc vào chuỗi cho bất kỳ chức năng thư viện tiêu chuẩn nào hoặc</li>
+<li>Gọi các hàm thành viên không phải cuộc họp trên chuỗi<span class="t-rev-inl t-since-cxx11"><span>ConstExPR STD :: ITER_VALUE_T &lt;X&gt;<code><a href="operator_at" title="cpp/string/basic string/operator at">operator[]</a></code>Thì<code><a href="at" title="cpp/string/basic string/at">at()</a></code>Thì<code><a href="front" title="cpp/string/basic string/front">front()</a></code>Thì<code><a href="back" title="cpp/string/basic string/back">back()</a></code>Thì<code><a href="begin" title="cpp/string/basic string/begin">begin()</a></code>Thì<code><a href="rbegin" title="cpp/string/basic string/rbegin">rbegin()</a></code>Thì<code><a href="end" title="cpp/string/basic string/end">end()</a></code>Và<code><a href="rend" title="cpp/string/basic string/rend">rend()</a></code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</li>
+</ul> <p>Viết vào mảng ký tự được truy cập thông qua<code>c_str()</code>là hành vi không xác định.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p><code>c_str()</code>Và<code><a href="data" title="cpp/string/basic string/data">data()</a></code>thực hiện cùng một chức năng.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Con trỏ đến lưu trữ ký tự cơ bản.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx11">
+<td> <p><code>c_str()[i] == operator[](i)</code>constexpr outputit exclusive_scan (đầu vào đầu tiên, đầu vào cuối cùng,<code>i</code>TRONG<code>[</code><code>​0​</code><code>, </code><code>size()</code><code>)</code>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></td>
+</tr> <tr class="t-rev t-since-cxx11">
+<td> <p><code>c_str<span class="br0">.</span><span class="br0">)</span> <span class="sy2">gọi</span> i <span class="sy1">==</span> <a href="http://en.cppreference.com/w/cpp/memory/addressof"><span class="kw759">Điều đó cho tất cả<span class="me2">địa chỉ</span></span></a><span class="br0">.</span>operator<span class="br0">              STD :: Dự kiến ​​&lt;phạm vi :: iterator_t &lt;r&gt;, proj &gt;&gt; Pred&gt;</span><span class="br0">Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</span><span class="br0">.</span>i<span class="br0">)</span><span class="br0">)</span></code>constexpr outputit exclusive_scan (đầu vào đầu tiên, đầu vào cuối cùng,<code>i</code>TRONG<code>[</code><code>​0​</code><code>, </code><code>size()</code><code>]</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="Notes">Ghi chú</h3> <p>Con trỏ thu được từ<code>c_str()</code>chỉ có thể được coi là một con trỏ tới chuỗi ký tự kết thúc null nếu đối tượng chuỗi không chứa các ký tự null khác.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;THERTHERM&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Cassert&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="front" title="cpp/string/basic string/front"> <span class="t-lines"><span>đằng trước</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark">.<span title="not available in libstdc++ C++98 mode">gán các giá trị cho container</span>)</span></span></span></div> </td> <td>(Ngoại trừ tùy chỉnh đó<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="back" title="cpp/string/basic string/back"> <span class="t-lines"><span>Truy cập phần tử</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark">.<span title="not available in libstdc++ C++98 mode">gán các giá trị cho container</span>)</span></span></span></div> </td> <td>không được sử dụng để xây dựng/phá hủy các yếu tố),<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="data" title="cpp/string/basic string/data"> <span class="t-lines"><span>dữ liệu</span></span></a></div> </td> <td>Nếu bất kỳ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string/c_str">https://en.cppreference.com/w/cpp/string/basic_string/c_str</a>
+</p>
+</div>

@@ -1,0 +1,41 @@
+ <h1 class="firstHeading" id="firstHeading">Tra cứu tên đủ điều kiện</h1> <p>MỘT<i>đạt tiêu chuẩn</i>Tên là một tên xuất hiện ở phía bên phải của toán tử phân giải phạm vi<code>::</code>(Xem thêm<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified identifiers</a>). Một tên đủ điều kiện có thể đề cập đến một</p>
+<ul>
+<li>Thành viên lớp (bao gồm các chức năng tĩnh và không tĩnh, các loại, mẫu, v.v.),</li>
+<li>Thành viên không gian tên (bao gồm một không gian tên khác),</li>
+<li>Tận dụng.</li>
+</ul> <p>Nếu không có gì ở phía bên trái của<code>::</code>, Việc tra cứu chỉ xem xét các tuyên bố được thực hiện trong phạm vi không gian tên toàn cầu (hoặc được đưa vào không gian tên toàn cầu bởi một<a href="namespace" title="cpp/language/namespace">using declaration</a>). Điều này làm cho nó có thể đề cập đến những cái tên như vậy ngay cả khi chúng bị ẩn bởi một tuyên bố địa phương:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p> <code>::</code>int main ()<a href="decltype" title="cpp/language/decltype">decltype</a>{<code>::</code>    struct std {};</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>    std :: cout &lt;&lt; "Fail \ n"; // Lỗi: Tra cứu không đủ tiêu chuẩn cho 'STD' Tìm cấu trúc<a href="declarations" title="cpp/language/declarations">declarator</a>, sau đó<a href="unqualified_lookup" title="cpp/language/unqualified lookup">unqualified lookup</a>    :: std :: cout &lt;&lt; "ok \ n"; // ok: :: std tìm thấy không gian tên std</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <p>Nếu như<code>::</code>Trước khi tra cứu tên có thể được thực hiện cho tên ở phía bên phải của<code>~</code>, tra cứu phải được hoàn thành cho tên ở phía bên tay trái của nó (trừ khi<code>::</code></p>
+<div class="cpp source-cpp"><pre data-language="cpp">Biểu thức được sử dụng, hoặc không có gì ở bên trái). Tra cứu này, có thể đủ điều kiện hoặc không đủ tiêu chuẩn, tùy thuộc vào việc có người khác</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <h4 id="Enumerators">Ở bên trái của tên đó, chỉ xem xét các không gian tên, loại lớp, bảng liệt kê và mẫu có các chuyên ngành là loại. Nếu tên được tìm thấy ở bên trái không chỉ định không gian tên hoặc lớp, liệt kê hoặc loại phụ thuộc, chương trình sẽ không được hình thành:</h4> <p>Cấu trúc a<a href="enum" title="cpp/language/enum">enumeration</a>{</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h4 id="Class_members">được hoãn lại xảy ra sau tuyên bố đầu tiên của hàm chính/luồng, nó xảy ra trước khi đầu tiên</h4> <p>    tĩnh in n;<code>::</code>};</p>
+<ul>
+<li> </li>
+<li>int main ()<a href="cast_operator" title="cpp/language/cast operator">user-defined conversion</a>{</li>
+<li>    int a;</li>
+<li>    A :: n = 42; // OK: Tra cứu không đủ tiêu chuẩn của A bên trái :: Bỏ qua biến<a href="namespace" title="cpp/language/namespace">using-declarations</a>    A b;       // Lỗi: Tra cứu không đủ tiêu chuẩn của một biến A</li>
+</ul> <p>}<code>::</code> <a href="constructor" title="cpp/language/constructor">constructor</a>Mẫu &lt;Int&gt;<a href="using_declaration" title="cpp/language/using declaration">using-declaration</a>Cấu trúc B: A {};<a href="using_declaration#Inheriting_constructors" title="cpp/language/using declaration">inheriting constructor</a> <code>::</code>không gian tên n<a href="elaborated_type_specifier" title="cpp/language/elaborated type specifier">elaborated type specifier</a>, hoặc<a href="derived_class" title="cpp/language/derived class">base specifier</a>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    Mẫu &lt;Int&gt;</pre></div> <p>    void B ();</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <h4 id="Namespace_members">    int f ()</h4> <p>    {<code>::</code>        Trả lại B &lt;0&gt; :: N; // Lỗi: n :: b &lt;0&gt; không phải là loại<code>::</code>    }<code>::</code>}</p>
+<ul><li>Khi một tên đủ điều kiện được sử dụng như một</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Trong số các tên được sử dụng trong cùng một người khai báo theo tên đủ điều kiện đó, nhưng không phải là tên trước nó, được thực hiện trong phạm vi của lớp thành viên hoặc không gian tên:</pre></div> <p>lớp x {};<a href="namespace" title="cpp/language/namespace">namespace</a> <code>N</code> <code>N</code>constexpr int số = 100;<a href="namespace#Inline_namespaces" title="cpp/language/namespace">inline namespace members</a>của<code>N</code> <a href="namespace#Using-directives" title="cpp/language/namespace">using-directives</a>Cấu trúc c<code>N</code>{<code>N</code>    lớp x {};</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    const static int số = 50;</pre></div> <p>    tĩnh x mảng [số];</p>
+<div class="cpp source-cpp"><pre data-language="cpp">};</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/215.html" rel="nofollow">CWG 215</a> </td> <td>C ++ 98</td> <td> <code>::</code>X C :: mảng [số], brr [số];    // Lỗi: tìm kiếm x tìm thấy :: x, không phải c :: x<br/>C :: x c :: mảng [số], brr [số]; // OK: Kích thước của ARR là 50, Kích thước của BRR là 100</td> <td>được theo sau bởi nhân vật<br/>lần lượt theo sau là một định danh (nghĩa là nó chỉ định một bộ hủy diệt hoặc giả giả), định danh đó được tra cứu trong cùng phạm vi với tên ở phía bên trái của</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/318.html" rel="nofollow">CWG 318</a> </td> <td>C ++ 98</td> <td>struct c {typedef int i; };<code>::</code> <br/>typedef int i1, i2;<br/> </td> <td>extern int *p, *q;<br/> <br/>Cấu trúc a {~ a (); };</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="unqualified_lookup" title="cpp/language/unqualified lookup">Unqualified name lookup</a> </li>
+<li> <a href="scope" title="cpp/language/scope">Scope</a> </li>
+<li> <a href="adl" title="cpp/language/adl">Argument-dependent lookup</a> </li>
+<li> <a href="function_template" title="cpp/language/function template">Template argument deduction</a> </li>
+<li> <a href="overload_resolution" title="cpp/language/overload resolution">Overload resolution</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/qualified_lookup">https://en.cppreference.com/w/cpp/language/qualified_lookup</a>
+</p>
+</div>

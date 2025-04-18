@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Chrono :: System_Clock :: from_time_t</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">static std :: Chrono :: System_Clock :: Time_Point from_time_t (std :: time_t t) noExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Yêu cầu STD :: Convertible_to &lt;Const I &amp;, I2&gt;<code>t</code>đến loại điểm thời gian, sử dụng độ chính xác thô của hai loại.</p>
+<p>Nếu như<code>time_point</code>Có độ chính xác thấp hơn, nó được thực hiện được xác định cho dù giá trị được làm tròn hay cắt ngắn.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Chuyển đổi đối số</td> <td>-</td> <td> <code><a href="../c/time_t" title="cpp/chrono/c/time t">std::time_t</a></code>giá trị để chuyển đổi</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Một giá trị của loại<a href="../system_clock#Member_types" title="cpp/chrono/system clock"><code>std::chrono::system_clock::time_point</code></a>đại diện<code>t</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Brono&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;CTIME&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="to_time_t" title="cpp/chrono/system clock/to time t"> <span class="t-lines"><span>&lt;std :: Chrono :: sys_time&gt;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>to_time_t<code><a href="../c/time_t" title="cpp/chrono/c/time t">std::time_t</a></code> <br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/system_clock/from_time_t">https://en.cppreference.com/w/cpp/chrono/system_clock/from_time_t</a>
+</p>
+</div>

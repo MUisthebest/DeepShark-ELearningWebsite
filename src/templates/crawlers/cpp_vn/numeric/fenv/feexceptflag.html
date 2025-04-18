@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: fegetexceptflag, std :: fesetexceptflag</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cfenv" title="cpp/header/cfenv">&lt;cfenv&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">int fegetexceptflag (std :: fexcept_t* flagp, int ngoại trừ);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">int fesetexceptflag (const std :: fexcept_t* flagp, int ngoại trừ);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>1) Cố gắng có được nội dung đầy đủ của các cờ ngoại lệ dấu phẩy động được liệt kê trong đối số Bitmask<code>excepts</code>, đó là một chút hoặc của<a href="fe_exceptions" title="cpp/numeric/fenv/FE exceptions">floating point exception macros</a>.</p>
+<p>2) Cố gắng sao chép các nội dung đầy đủ của các cờ ngoại lệ điểm nổi được liệt kê trong<code>excepts</code>từ<code>flagp</code>vào môi trường nổi. Không nâng bất kỳ ngoại lệ nào, chỉ sửa đổi các cờ.</p>
+<p>Nội dung đầy đủ của cờ ngoại lệ điểm nổi không nhất thiết là giá trị boolean cho biết ngoại lệ được nâng lên hay xóa. Ví dụ, nó có thể là một cấu trúc bao gồm trạng thái boolean và địa chỉ của mã kích hoạt ngoại lệ. Các chức năng này có được tất cả nội dung như vậy và có được/lưu trữ nó trong<code>flagp</code>Trong định dạng được xác định thực hiện.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>L công</td> <td>-</td> <td>con trỏ đến một<code><a href="http://en.cppreference.com/w/cpp/numeric/fenv"><span class="kw3380">Điều đó cho tất cả<span class="me2">fexcept_t</span></span></a></code>đối tượng nơi các cờ sẽ được lưu trữ hoặc đọc từ</td>
+</tr> <tr class="t-par"> <td>ngoại trừ</td> <td>-</td> <td>Bitmask liệt kê các cờ ngoại lệ để nhận/đặt</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>​0​</code>Về thành công, khác không.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/fenv/feexceptflag" title="c/numeric/fenv/feexceptflag">C documentation</a></span>vì<code>fegetexceptflag, fesetexceptflag</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/fenv/feexceptflag">https://en.cppreference.com/w/cpp/numeric/fenv/feexceptflag</a>
+</p>
+</div>

@@ -1,0 +1,53 @@
+<section id="numpy-random-randomstate-uniform"> <h1>numpy.random.RandomState.uniform</h1> <p>method</p> <dl class="py method"> <dt class="sig sig-object py" id="numpy.random.RandomState.uniform"> <span class="sig-prename descclassname">random.RandomState.</span><span class="sig-name descname">uniform</span><span class="sig-paren">(</span><em class="sig-param"><span class="n">low</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">high</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span>
+</dt> <dd>
+<p>Draw samples from a uniform distribution.</p> <p>Samples are uniformly distributed over the half-open interval <code>[low, high)</code> (includes low, but excludes high). In other words, any value within the given interval is equally likely to be drawn by <a class="reference internal" href="#numpy.random.RandomState.uniform" title="numpy.random.RandomState.uniform"><code>uniform</code></a>.</p> <div class="admonition note"> <p class="admonition-title">Note</p> <p>New code should use the <a class="reference internal" href="numpy.random.generator.uniform#numpy.random.Generator.uniform" title="numpy.random.Generator.uniform"><code>uniform</code></a> method of a <a class="reference internal" href="../generator#numpy.random.Generator" title="numpy.random.Generator"><code>Generator</code></a> instance instead; please see the <a class="reference internal" href="../index#random-quick-start"><span class="std std-ref">Quick start</span></a>.</p> </div> <dl class="field-list simple"> <dt class="field-odd">Parameters<span class="colon">:</span>
+</dt> <dd class="field-odd">
+<dl class="simple"> <dt>
+<strong>low</strong><span class="classifier">float or array_like of floats, optional</span>
+</dt>
+<dd>
+<p>Lower boundary of the output interval. All values generated will be greater than or equal to low. The default value is 0.</p> </dd> <dt>
+<strong>high</strong><span class="classifier">float or array_like of floats</span>
+</dt>
+<dd>
+<p>Upper boundary of the output interval. All values generated will be less than or equal to high. The high limit may be included in the returned array of floats due to floating-point rounding in the equation <code>low + (high-low) * random_sample()</code>. The default value is 1.0.</p> </dd> <dt>
+<strong>size</strong><span class="classifier">int or tuple of ints, optional</span>
+</dt>
+<dd>
+<p>Output shape. If the given shape is, e.g., <code>(m, n, k)</code>, then <code>m * n * k</code> samples are drawn. If size is <code>None</code> (default), a single value is returned if <code>low</code> and <code>high</code> are both scalars. Otherwise, <code>np.broadcast(low, high).size</code> samples are drawn.</p> </dd> </dl> </dd> <dt class="field-even">Returns<span class="colon">:</span>
+</dt> <dd class="field-even">
+<dl class="simple"> <dt>
+<strong>out</strong><span class="classifier">ndarray or scalar</span>
+</dt>
+<dd>
+<p>Drawn samples from the parameterized uniform distribution.</p> </dd> </dl> </dd> </dl> <div class="admonition seealso"> <p class="admonition-title">See also</p> <dl class="simple"> <dt><a class="reference internal" href="numpy.random.randomstate.randint#numpy.random.RandomState.randint" title="numpy.random.RandomState.randint"><code>randint</code></a></dt>
+<dd>
+<p>Discrete uniform distribution, yielding integers.</p> </dd> <dt><a class="reference internal" href="numpy.random.randomstate.random_integers#numpy.random.RandomState.random_integers" title="numpy.random.RandomState.random_integers"><code>random_integers</code></a></dt>
+<dd>
+<p>Discrete uniform distribution over the closed interval <code>[low, high]</code>.</p> </dd> <dt><a class="reference internal" href="numpy.random.randomstate.random_sample#numpy.random.RandomState.random_sample" title="numpy.random.RandomState.random_sample"><code>random_sample</code></a></dt>
+<dd>
+<p>Floats uniformly distributed over <code>[0, 1)</code>.</p> </dd> <dt><a class="reference internal" href="../index#module-numpy.random" title="numpy.random"><code>random</code></a></dt>
+<dd>
+<p>Alias for <a class="reference internal" href="numpy.random.randomstate.random_sample#numpy.random.RandomState.random_sample" title="numpy.random.RandomState.random_sample"><code>random_sample</code></a>.</p> </dd> <dt><a class="reference internal" href="numpy.random.randomstate.rand#numpy.random.RandomState.rand" title="numpy.random.RandomState.rand"><code>rand</code></a></dt>
+<dd>
+<p>Convenience function that accepts dimensions as input, e.g., <code>rand(2,2)</code> would generate a 2-by-2 array of floats, uniformly distributed over <code>[0, 1)</code>.</p> </dd> <dt><a class="reference internal" href="numpy.random.generator.uniform#numpy.random.Generator.uniform" title="numpy.random.Generator.uniform"><code>random.Generator.uniform</code></a></dt>
+<dd>
+<p>which should be used for new code.</p> </dd> </dl> </div> <h4 class="rubric">Notes</h4> <p>The probability density function of the uniform distribution is</p> <div class="math notranslate nohighlight"> \[p(x) = \frac{1}{b - a}\]</div> <p>anywhere within the interval <code>[a, b)</code>, and zero elsewhere.</p> <p>When <code>high</code> == <code>low</code>, values of <code>low</code> will be returned. If <code>high</code> &lt; <code>low</code>, the results are officially undefined and may eventually raise an error, i.e. do not rely on this function to behave when passed arguments satisfying that inequality condition. The <code>high</code> limit may be included in the returned array of floats due to floating-point rounding in the equation <code>low + (high-low) * random_sample()</code>. For example:</p> <pre data-language="python">&gt;&gt;&gt; x = np.float32(5*0.99999999)
+&gt;&gt;&gt; x
+5.0
+</pre> <h4 class="rubric">Examples</h4> <p>Draw samples from the distribution:</p> <pre data-language="python">&gt;&gt;&gt; s = np.random.uniform(-1,0,1000)
+</pre> <p>All values are within the given interval:</p> <pre data-language="python">&gt;&gt;&gt; np.all(s &gt;= -1)
+True
+&gt;&gt;&gt; np.all(s &lt; 0)
+True
+</pre> <p>Display the histogram of the samples, along with the probability density function:</p> <pre data-language="python">&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; count, bins, ignored = plt.hist(s, 15, density=True)
+&gt;&gt;&gt; plt.plot(bins, np.ones_like(bins), linewidth=2, color='r')
+&gt;&gt;&gt; plt.show()
+</pre> <figure class="align-default"> <img alt="../../../_images/numpy-random-RandomState-uniform-1.png" class="plot-directive" src="data:image/png;base64,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"> </figure> </dd>
+</dl> </section><div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2024 NumPy Developers<br>Licensed under the 3-clause BSD License.<br>
+    <a href="https://numpy.org/doc/2.0/reference/random/generated/numpy.random.RandomState.uniform.html" class="_attribution-link">https://numpy.org/doc/2.0/reference/random/generated/numpy.random.RandomState.uniform.html</a>
+  </p>
+</div>

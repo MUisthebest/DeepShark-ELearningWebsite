@@ -1,0 +1,169 @@
+ <h1 class="firstHeading" id="firstHeading">Tuyên bố</h1> <p><i>Tuyên bố</i>là cách các tên được giới thiệu (hoặc giới thiệu lại) vào chương trình C ++. Không phải tất cả các tuyên bố thực sự tuyên bố bất cứ điều gì, và mỗi loại thực thể được tuyên bố khác nhau.<a href="definition" title="cpp/language/definition">Definitions</a>là các tuyên bố đủ để sử dụng thực thể được xác định bởi tên.</p>
+<p>Một tuyên bố là một trong những điều sau đây:</p>
+<ul>
+<li> <a href="function#Function_definition" title="cpp/language/function">Function definition</a> </li>
+<li> <a href="templates" title="cpp/language/templates">Template declaration</a>- có thể sửa đổi giá trị được tham chiếu thông qua<a href="partial_specialization" title="cpp/language/partial specialization">Partial template specialization</a>)</li>
+<li> <a href="class_template#Explicit_instantiation" title="cpp/language/class template">Explicit template instantiation</a> </li>
+<li> <a href="template_specialization" title="cpp/language/template specialization">Explicit template specialization</a> </li>
+<li> <a href="namespace" title="cpp/language/namespace">Namespace definition</a> </li>
+<li> <a href="language_linkage" title="cpp/language/language linkage">Linkage specification</a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>Tuyên bố thuộc tính (<span class="t-spar"><a href="attributes" title="cpp/language/attributes">attr</a></span> <code>;</code>)</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>Tuyên bố trống (<code>;</code>)</li>
+<li>Một tuyên bố chức năng mà không có<span class="t-spar">DEM-SPECIFIER-SEQ</span>:</li>
+</ul> <table class="t-sdsc-begin"> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">người khai báo</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>trình tự của bất kỳ số lượng nào<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">người khai báo</span> </td> <td>-</td> <td>một bộ khai báo chức năng</td>
+</tr>
+</table>Tuyên bố này phải khai báo một hàm tạo, hàm hủy hoặc loại do người dùng xác định<a href="cast_operator" title="cpp/language/cast operator">conversion function</a>. Nó chỉ có thể được sử dụng như một phần của<a href="templates" title="cpp/language/templates">template declaration</a>Thì<a href="template_specialization" title="cpp/language/template specialization">explicit specialization</a>hoặc khởi tạo rõ ràng.<ul>
+<li> <span class="t-spar">giải khai khối</span>(Một tuyên bố có thể xuất hiện bên trong một<a href="statements#Compound_statement" title="cpp/language/statements">block</a>), đến lượt nó, có thể là một trong những điều sau đây:</li>
+<ul><li>
+<a href="asm" title="cpp/language/asm">asm declaration</a> </li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>
+<a href="type_alias" title="cpp/language/type alias">type alias declaration</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul>
+<li>
+<a href="namespace_alias" title="cpp/language/namespace alias">namespace alias definition</a> </li>
+<li>
+<a href="using_declaration" title="cpp/language/using declaration">using-declaration</a> </li>
+<li>
+<a href="namespace#Using-directives" title="cpp/language/namespace">using directive</a> </li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>
+<a href="enum#Using-enum-declaration" title="cpp/language/enum">using-enum-declaration</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>
+<a href="static_assert" title="cpp/language/static assert"><code>static_assert</code></a>tuyên ngôn</li>
+<li>
+<a href="enum" title="cpp/language/enum">opaque enum declaration</a> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <ul><li>Tuyên bố đơn giản</li></ul> <h3 id="Simple_declaration">Tuyên bố đơn giản</h3> <p>Một tuyên bố đơn giản là một tuyên bố giới thiệu, tạo và tùy chọn khởi tạo một hoặc một số định danh, thường là các biến.</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">DEM-SPECIFIER-SEQ</span> <span class="t-spar">Danh sách khởi xướng</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>;</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span> <span class="t-spar">DEM-SPECIFIER-SEQ</span> <span class="t-spar">Danh sách khởi xướng</span><code>;</code> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>trình tự của bất kỳ số lượng nào<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">DEM-SPECIFIER-SEQ</span> </td> <td>-</td> <td>Constexpr Phạm vi :: Subrange &lt;i&gt;<i>người xác định</i>(Xem bên dưới)</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Danh sách khởi xướng</span> </td> <td>-</td> <td>Danh sách phân tách dấu phẩy của<i>người khai báo</i>với tùy chọn<i>Khởi tạo</i>.<span class="t-spar">Danh sách khởi xướng</span>là tùy chọn khi khai báo một lớp/struct/liên minh được đặt tên hoặc một liệt kê được đặt tên</td>
+</tr>
+</table> <p><span class="t-rev-inl t-since-cxx17"><span>MỘT<a href="structured_binding" title="cpp/language/structured binding">structured binding declaration</a>cũng là một tuyên bố đơn giản.</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span></p>
+<h3 id="Specifiers">Người xác định</h3> <p><b>Thông báo khai báo</b>.<span class="t-spar">DEM-SPECIFIER-SEQ</span>) là một chuỗi của các nhà xác định phân tách khoảng trắng sau đây, theo bất kỳ thứ tự nào:</p>
+<ul>
+<li>các<a href="typedef" title="cpp/language/typedef"><code>typedef</code></a>người xác định. Nếu có mặt, toàn bộ tuyên bố là một<a href="typedef" title="cpp/language/typedef">typedef declaration</a>và mỗi người khai báo giới thiệu một tên loại mới, không phải là một đối tượng hoặc một hàm.</li>
+<li>Trình xác định chức năng (<a href="inline" title="cpp/language/inline"><code>inline</code></a>Thì<a href="virtual" title="cpp/language/virtual"><code>virtual</code></a>Thì<a href="explicit" title="cpp/language/explicit"><code>explicit</code></a>), chỉ được phép trong<a href="function" title="cpp/language/function">function declarations</a>.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>các<a href="inline" title="cpp/language/inline"><code>inline</code></a>Công cụ cụ thể cũng được phép trên các khai báo biến.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul><li>các<a href="friend" title="cpp/language/friend"><code>friend</code></a>Đặc biệt, được phép trong các khai báo lớp và chức năng.</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li>các<a href="constexpr" title="cpp/language/constexpr"><code>constexpr</code></a>Trình xác định, chỉ được phép trong các định nghĩa thay đổi, khai báo mẫu chức năng và chức năng và khai báo các thành viên dữ liệu tĩnh thuộc loại nghĩa đen.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul>
+<li>các<a href="consteval" title="cpp/language/consteval"><code>consteval</code></a>Đặc biệt, chỉ được phép trong khai báo mẫu chức năng và chức năng.</li>
+<li>các<a href="constinit" title="cpp/language/constinit"><code>constinit</code></a>Nhà xác định, chỉ được phép trong khai báo một biến có thời lượng lưu trữ tĩnh hoặc luồng. Nhiều nhất là một trong những<code>constexpr</code>Thì<code>consteval</code>, Và<code>constinit</code>các nhà xác định được phép xuất hiện trong một<span class="t-spar">DEM-SPECIFIER-SEQ</span>.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li> <a href="storage_duration" title="cpp/language/storage duration">storage class specifier</a>.<span class="t-rev-inl t-until-cxx17"><span><a href="../keyword/register" title="cpp/keyword/register"><code>register</code></a>Thì</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span> <a href="../keyword/static" title="cpp/keyword/static"><code>static</code></a>Thì<span class="t-rev-inl t-since-cxx11"><span><a href="../keyword/thread_local" title="cpp/keyword/thread local"><code>thread_local</code></a>Thì</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> <a href="../keyword/extern" title="cpp/keyword/extern"><code>extern</code></a>Thì<a href="../keyword/mutable" title="cpp/keyword/mutable"><code>mutable</code></a>). Chỉ cho phép một bộ xác định lớp lưu trữ được cho phép<span class="t-rev-inl t-since-cxx11"><span>, và sau đó gọi<code>thread_local</code>có thể xuất hiện cùng với<code>extern</code>hoặc<code>static</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</li>
+<li> <b>Loại Đặc biệt</b>.<span class="t-spar">Loại Specifier-seq</span>), một chuỗi các nhà xác định tên một loại. Loại của mọi thực thể được giới thiệu bởi Tuyên bố là loại này, tùy chọn được sửa đổi bởi người khai báo (xem bên dưới). Trình tự các nhà xác định này cũng được sử dụng bởi<a href="type#Type_naming" title="cpp/language/type">type-id</a>. Chỉ các nhà xác định sau là một phần của<span class="t-spar">Loại Specifier-seq</span>, theo bất kỳ thứ tự nào:</li>
+<li> <a href="class" title="cpp/language/class">class specifier</a> </li>
+<li> <a href="enum" title="cpp/language/enum">enum specifier</a> </li>
+<li>Kiểu xác định loại đơn giản</li>
+<ul><li>
+<a href="../keyword/char" title="cpp/keyword/char"><code>char</code></a>Thì<span class="t-rev-inl t-since-cxx20"><span><a href="../keyword/char8_t" title="cpp/keyword/char8 t"><code>char8_t</code></a>Thì</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span> <span class="t-rev-inl t-since-cxx11"><span><a href="../keyword/char16_t" title="cpp/keyword/char16 t"><code>char16_t</code></a>Thì<a href="../keyword/char32_t" title="cpp/keyword/char32 t"><code>char32_t</code></a>Thì</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span> <a href="../keyword/wchar_t" title="cpp/keyword/wchar t"><code>wchar_t</code></a>Thì<a href="../keyword/bool" title="cpp/keyword/bool"><code>bool</code></a>Thì<a href="../keyword/short" title="cpp/keyword/short"><code>short</code></a>Thì<a href="../keyword/int" title="cpp/keyword/int"><code>int</code></a>Thì<a href="../keyword/long" title="cpp/keyword/long"><code>long</code></a>Thì<a href="../keyword/signed" title="cpp/keyword/signed"><code>signed</code></a>Thì<a href="../keyword/unsigned" title="cpp/keyword/unsigned"><code>unsigned</code></a>Thì<a href="../keyword/float" title="cpp/keyword/float"><code>float</code></a>Thì<a href="../keyword/double" title="cpp/keyword/double"><code>double</code></a>Thì<a href="../keyword/void" title="cpp/keyword/void"><code>void</code></a> </li></ul>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>
+<a href="auto" title="cpp/language/auto"><code>auto</code></a> </li>
+<li>
+<a href="decltype" title="cpp/language/decltype">decltype specifier</a> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx26">
+<td> <ul><li>
+<a href="pack_indexing" title="cpp/language/pack indexing">pack indexing specifier</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span></td>
+</tr> </table> <ul>
+<li>Tên lớp được khai báo trước đó (tùy chọn<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified</a>)</li>
+<li>Tên enum được khai báo trước đó (tùy chọn<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified</a>)</li>
+<li>đã tuyên bố trước đây<a href="typedef" title="cpp/language/typedef">typedef-name</a><span class="t-rev-inl t-since-cxx11"><span>hoặc<a href="type_alias" title="cpp/language/type alias">type alias</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>(Tùy chọn<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified</a>)</li>
+<li>Tên mẫu với đối số mẫu (tùy chọn<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified</a>, tùy chọn sử dụng<a href="dependent_name" title="cpp/language/dependent name">template disambiguator</a>)</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>Tên mẫu không có đối số mẫu (tùy chọn<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified</a>): nhìn thấy<a href="class_template_argument_deduction" title="cpp/language/class template argument deduction">class template argument deduction</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr>
+</table> <dl>
+<dd>
+<ul>
+<li> <a href="elaborated_type_specifier" title="cpp/language/elaborated type specifier">elaborated type specifier</a> </li>
+<ul>
+<li>Từ khóa<a href="../keyword/class" title="cpp/keyword/class"><code>class</code></a>Thì<a href="../keyword/struct" title="cpp/keyword/struct"><code>struct</code></a>, hoặc<a href="../keyword/union" title="cpp/keyword/union"><code>union</code></a>, tiếp theo là định danh (tùy chọn<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified</a>), trước đây được định nghĩa là tên của một lớp, struct hoặc liên minh.</li>
+<li>Từ khóa<a href="../keyword/class" title="cpp/keyword/class"><code>class</code></a>Thì<a href="../keyword/struct" title="cpp/keyword/struct"><code>struct</code></a>, hoặc<a href="../keyword/union" title="cpp/keyword/union"><code>union</code></a>, tiếp theo là tên mẫu với các đối số mẫu (tùy chọn<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified</a>, tùy chọn sử dụng<a href="dependent_name" title="cpp/language/dependent name">template disambiguator</a>), trước đây được định nghĩa là tên của một mẫu lớp.</li>
+<li>Từ khóa<a href="../keyword/enum" title="cpp/keyword/enum"><code>enum</code></a>theo sau là định danh (tùy chọn<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified</a>), trước đây được tuyên bố là tên của một bảng liệt kê.</li>
+</ul>
+<li> <a href="dependent_name" title="cpp/language/dependent name">typename specifier</a> </li>
+<li> <a href="cv" title="cpp/language/cv">cv qualifier</a> </li>
+</ul> </dd>
+<dd>Chỉ được phép một loại xác định loại trong DEM-Specifier-Seq, với các ngoại lệ sau:<ul>
+<li> <code>const</code>có thể được kết hợp với bất kỳ loại xác định loại nào ngoại trừ chính nó.</li>
+<li> <code>volatile</code>có thể được kết hợp với bất kỳ loại xác định loại nào ngoại trừ chính nó.</li>
+<li> <code>signed</code>hoặc<code>unsigned</code>có thể được kết hợp với<code>char</code>Thì<code>long</code>Thì<code>short</code>, hoặc<code>int</code>.</li>
+<li> <code>short</code>hoặc<code>long</code>có thể được kết hợp với<code>int</code>.</li>
+<li> <code>long</code>có thể được kết hợp với<code>double</code>.</li>
+</ul> </dd>
+</dl> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul><li> <code>long</code>có thể được kết hợp với<code>long</code>.</li></ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p><a href="attributes" title="cpp/language/attributes">Attributes</a>có thể xuất hiện trong<span class="t-spar">DEM-SPECIFIER-SEQ</span>, trong trường hợp đó chúng áp dụng cho loại được xác định bởi các nhà xác định trước.</p>
+<p>Sự lặp lại của bất kỳ nhà xác định nào trong một<span class="t-spar">DEM-SPECIFIER-SEQ</span>, chẳng hạn như<code>const static const</code>, hoặc<code>virtual inline virtual</code>là lỗi<span class="t-rev-inl t-since-cxx11"><span>, và sau đó gọi<code>long</code>được phép xuất hiện hai lần</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</p>
+<h3 id="Declarators">Người khai báo</h3> <p><span class="t-spar">Danh sách khởi xướng</span>là một chuỗi được phân tách bằng dấu phẩy của một hoặc nhiều<span class="t-spar">Người khởi xướng Declarators</span>, có cú pháp sau:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">người khai báo</span> <span class="t-spar">Khởi tạo</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">người khai báo</span> <span class="t-spar">tuyên ngôn;</span> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">người khai báo</span> </td> <td>-</td> <td>người khai báo</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Khởi tạo</span> </td> <td>-</td> <td>Bộ khởi tạo tùy chọn (trừ khi cần thiết, chẳng hạn như khi khởi tạo các tài liệu tham khảo hoặc đối tượng const). Nhìn thấy<a href="initialization" title="cpp/language/initialization">Initialization</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tuyên ngôn;</span> </td> <td>-</td> <td> <a href="constraints#Requires_clauses" title="cpp/language/constraints">a requires-clause</a>, trong đó thêm một<a href="constraints" title="cpp/language/constraints">constraint</a>Mẫu &lt;class forwardit, class t&gt;<a href="function" title="cpp/language/function">function declaration</a> </td>
+</tr>
+</table> <p>Mỗi<span class="t-spar">Tổ chức khởi xướng</span>Trong một chuỗi công khai khởi xướng<code>S D1, D2, D3;</code>được xử lý như thể nó là một tuyên bố độc lập với cùng một nhà xác định:<code>S D1; S D2; S D3;</code>.</p>
+<p>Mỗi trình khai báo giới thiệu chính xác một đối tượng, tham chiếu, chức năng hoặc (cho Typedef khai báo) Bí danh, có loại được cung cấp bởi<span class="t-spar">DEM-SPECIFIER-SEQ</span>và tùy chọn sửa đổi bởi các nhà khai thác như<code>&amp;</code>(tham chiếu đến) hoặc<code>[]</code>(mảng của) hoặc<code>()</code>(trở lại chức năng) trong bộ khai báo. Các nhà khai thác này có thể được áp dụng đệ quy, như hình dưới đây.</p>
+<p>MỘT<span class="t-spar">người khai báo</span>là một trong những điều sau đây:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">không đủ tiêu chuẩn-id</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Trừ khi nó đáp ứng tất cả các điều kiện sau:</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>...</code> <span class="t-spar">định danh</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <code>*</code> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">không ngụ ý rằng</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">người khai báo</span> </td> <td>(4)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">tên lồng nhau</span> <code>*</code> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">không ngụ ý rằng</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">người khai báo</span> </td> <td>             Không có p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>&amp;</code> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">người khai báo</span> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>&amp;&amp;</code> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">người khai báo</span> </td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Noptr-Declarator</span> <code>[</code> <span class="t-spar">constexpr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>]</code> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>            Nhị phân p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Noptr-Declarator</span> <code>(</code> <span class="t-spar">danh sách tham số</span> <code>)</code> <span class="t-spar">không ngụ ý rằng</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">Tham khảo</span>﻿ ﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">                             STD :: Memory_order Order) NoExcept;</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> </td> <td>(9)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span>Các<a class="mw-redirect" href="name" title="cpp/language/name">name</a>đó là tuyên bố.</div> <div class="t-li1">
+<span class="t-li">2)</span>Một người khai báo sử dụng<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">qualified identifier</a>.<span class="t-spar">Trừ khi nó đáp ứng tất cả các điều kiện sau:</span>) định nghĩa hoặc tái cấu trúc trước đây<a href="namespace#Namespaces" title="cpp/language/namespace">namespace member</a>hoặc<a href="classes" title="cpp/language/classes">class member</a>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <a href="parameter_pack" title="cpp/language/parameter pack">Parameter pack</a>, chỉ xuất hiện trong<a href="function#Parameter_list" title="cpp/language/function">parameter declarations</a>.</div> <div class="t-li1">
+<span class="t-li">là trong</span> <a href="pointer" title="cpp/language/pointer">Pointer declarator</a>: Tuyên bố<code>S * D;</code>tuyên bố<code>D</code>như một con trỏ đến loại được xác định bởi<span class="t-spar">DEM-SPECIFIER-SEQ</span> <code>S</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span> <a href="pointer" title="cpp/language/pointer">Pointer to member declaration</a>: Tuyên bố<code>S C::* D;</code>tuyên bố<code>D</code>Là một con trỏ đến thành viên của<code>C</code>loại được xác định bởi<span class="t-spar">DEM-SPECIFIER-SEQ</span> <code>S</code>.<span class="t-spar">tên lồng nhau</span>Điều đó như vậy<a href="identifiers#Qualified_identifiers" title="cpp/language/identifiers">sequence of names and scope resolution operators <code>::</code></a>
+</div> <div class="t-li1">
+<span class="t-li">từ_sys</span> <a href="reference" title="cpp/language/reference">Lvalue reference declarator</a>: Tuyên bố<code>S &amp; D;</code>tuyên bố<code>D</code>như một tham chiếu lvalue cho loại được xác định bởi<span class="t-spar">DEM-SPECIFIER-SEQ</span> <code>S</code>.</div> <div class="t-li1">
+<span class="t-li">6)</span> <a href="reference" title="cpp/language/reference">Rvalue reference declarator</a>: Tuyên bố<code>S &amp;&amp; D;</code>tuyên bố<code>D</code>như một tham chiếu rvalue cho loại được xác định bởi<span class="t-spar">DEM-SPECIFIER-SEQ</span> <code>S</code>.</div> <div class="t-li1">
+<span class="t-li">. Quá tải này chỉ tham gia vào độ phân giải quá tải nếu biểu thức</span> <a href="array" title="cpp/language/array">Array declarator</a>.<span class="t-spar">Noptr-Declarator</span>Bất kỳ người khai báo hợp lệ nào, nhưng nếu nó bắt đầu bằng *, &amp;, hoặc &amp;&amp;, nó phải được bao quanh bởi dấu ngoặc đơn.</div> <div class="t-li1">
+<span class="t-li">được hình thành tốt. Chương trình không được hình thành nếu</span> <a href="function" title="cpp/language/function">Function declarator</a>.<span class="t-spar">Noptr-Declarator</span>Bất kỳ người khai báo hợp lệ nào, nhưng nếu nó bắt đầu bằng *, &amp;, hoặc &amp;&amp;, nó phải được bao quanh bởi dấu ngoặc đơn.<span class="t-rev-inl t-since-cxx11"><span>Nó có thể kết thúc với loại trả về theo dõi tùy chọn.</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>
+</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <p>Trong mọi trường hợp,<span class="t-spar">attr</span>là một chuỗi tùy chọn của<a href="attributes" title="cpp/language/attributes">attributes</a>. Khi xuất hiện ngay sau khi định danh, nó áp dụng cho đối tượng được khai báo.</p>
+</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <p><span class="t-spar">không ngụ ý rằng</span>là một chuỗi của<a href="cv" title="cpp/language/cv">const and volatile</a>Vòng loại, trong đó một trong hai vòng loại có thể xuất hiện nhiều nhất một lần trong chuỗi.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Khi a<span class="t-spar">giải khai khối</span>xuất hiện<a href="statements#Compound_statements" title="cpp/language/statements">inside a block</a>và một định danh được giới thiệu bởi một tuyên bố trước đây đã được khai báo ở một khối bên ngoài,<a href="scope" title="cpp/language/scope">outer declaration is hidden</a>cho phần còn lại của khối.</p>
+<p>Nếu một tuyên bố giới thiệu một biến có thời lượng lưu trữ tự động, nó sẽ được khởi tạo khi tuyên bố khai báo của nó được thực thi. Tất cả các biến tự động được khai báo trong một khối đều bị phá hủy khi thoát khỏi khối (bất kể khối nào được thoát: Via<a href="exceptions" title="cpp/language/exceptions">exception</a>Thì<a href="goto" title="cpp/language/goto">goto</a>, hoặc bằng cách đạt đến kết thúc của nó), theo thứ tự đối diện với thứ tự khởi tạo của họ.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Lưu ý: Ví dụ này cho thấy cách một số tuyên bố phức tạp được phân tích cú pháp về ngữ pháp ngôn ngữ. Các bản mnemonics phổ biến khác là:<a class="external text" href="https://c-faq.com/decl/spiral.anderson.html" rel="nofollow">the spiral rule</a>, đọc<a class="external text" href="https://stackoverflow.com/a/34560439/273767" rel="nofollow">inside-out</a>, Và<a class="external text" href="https://stackoverflow.com/a/34552915/273767" rel="nofollow">declaration mirrors use</a>. Ngoài ra còn có một trình phân tích cú pháp tự động tại<a class="external free" href="https://cdecl.org" rel="nofollow">https://cdecl.org</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;type_traits&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/482.html" rel="nofollow">CWG 482</a> </td> <td>C ++ 98</td> <td> </td> <td>cấu trúc s</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/569.html" rel="nofollow">CWG 569</a> </td> <td>C ++ 98</td> <td>{</td> <td>    Thành viên INT;<br/>    // Decl-Specifier-seq là "int"</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1830.html" rel="nofollow">CWG 1830</a> </td> <td>C ++ 98</td> <td>    // Tuyên bố là "thành viên"<span class="t-spar">DEM-SPECIFIER-SEQ</span>} obj, *pobj (&amp; obj);</td> <td>// Decl-specifier-seq là "struct s {int thành viên;}"</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/declarations" title="c/language/declarations">C documentation</a></span>vì<span class=""><span>Tuyên bố</span></span> </td>
+</tr> </table> <tr><td></td></tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/declarations">https://en.cppreference.com/w/cpp/language/declarations</a>
+</p>
+</div>

@@ -1,0 +1,261 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: AssociativeContainer</h1> <p>MỘT<strong class="selflink">AssociativeContainer</strong>được đặt hàng<a href="container" title="cpp/named req/Container">Container</a>Điều đó cung cấp tra cứu nhanh các đối tượng dựa trên các khóa.</p>
+<p>Một container kết hợp hỗ trợ<i>chìa khóa độc đáo</i>Nếu nó có thể chứa tối đa một phần tử cho mỗi khóa. Nếu không, nó hỗ trợ<i>Khóa tương đương</i>.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <table class="t-dsc-begin"> <tr> <td colspan="2"> <h5 id="Legend">Huyền thoại</h5> </td>
+</tr> <tr class="t-dsc"> <td> <code>X</code> </td> <td>Một lớp container kết hợp</td>
+</tr> <tr class="t-dsc"> <td> <code>T</code> </td> <td>Loại phần tử của<code>X</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>A</code> </td> <td>Loại phân bổ của<code>X</code>:<code>X::allocator_type</code>Nếu nó tồn tại, nếu không<a href="http://en.cppreference.com/w/cpp/memory/allocator"><span class="kw702">Điều đó cho tất cả<span class="me2">người phân bổ</span></span></a><span class="sy1">is_trivently_destructible_v</span>X<span class="sy4">::</span><span class="me2">// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)</span><span class="sy1">&lt;</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>a</code> </td> <td>Một giá trị của loại<code>X</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>a2</code> </td> <td>Giá trị của một loại<code>Y</code>    get_leap_second_info (const std :: Chrono :: UTC_TIME &lt;feluration&gt; &amp; ut);<a href="../container/node_handle" title="cpp/container/node handle">node handles</a>tương thích với<code>X</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>b</code> </td> <td>Một giá trị của loại<code>X</code>hoặc<span class="kw4">hằng số</span>X</td>
+</tr> <tr class="t-dsc"> <td> <code>u</code> </td> <td>Tên của một biến được khai báo</td>
+</tr> <tr class="t-dsc"> <td> <code>a_uniq</code> </td> <td>Một giá trị của loại<code>X</code>Chuyển đổi danh tính:<code>X</code>Hỗ trợ các khóa độc đáo</td>
+</tr> <tr class="t-dsc"> <td> <code>a_eq</code> </td> <td>Một giá trị của loại<code>X</code>Chuyển đổi danh tính:<code>X</code>Hỗ trợ các khóa tương đương</td>
+</tr> <tr class="t-dsc"> <td> <code>a_tran</code> </td> <td>Một giá trị của loại<code>X</code>hoặc<span class="kw4">hằng số</span>X Khi loại<code>X::key_compare::is_transparent</code>tồn tại</td>
+</tr> <tr class="t-dsc"> <td> <code>i</code>Thì<code>j</code> </td> <td>Các<a href="inputiterator" title="cpp/named req/InputIterator">LegacyInputIterators</a>đề cập đến các yếu tố hoàn toàn có thể chuyển đổi thành<code>X::value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>[</code><code>i</code><code>, </code><code>j</code><code>)</code> </td> <td>Một phạm vi hợp lệ</td>
+</tr> <tr class="t-dsc"> <td> <code>rg</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>Giá trị của một loại<code>R</code>mô hình đó<a href="../ranges/to#container_compatible_range" title="cpp/ranges/to"><code>container-compatible-range</code></a><code>&lt;value_type&gt;</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>p</code> </td> <td>Một trình lặp hằng số hợp lệ để<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>q</code> </td> <td>Một trình lặp hằng số hợp lệ hợp lệ để<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>r</code> </td> <td>Một trình lặp lại có thể điều chỉnh hợp lệ<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>q1</code>Thì<code>q2</code> </td> <td>Một phạm vi hợp lệ của các trình lặp const trong<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>il</code> </td> <td>  std :: di chuyển &lt;u&gt; &amp;&amp;<a href="http://en.cppreference.com/w/cpp/utility/initializer_list"><span class="kw962">Điều đó cho tất cả<span class="me2">Khởi tạo_list</span></span></a><span class="sy1">is_trivently_destructible_v</span>X<span class="sy4">::</span><span class="me2">// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)</span><span class="sy1">&lt;</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>t</code> </td> <td>Một giá trị của loại<code>X::value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>k</code> </td> <td>Một giá trị của loại<code>X::key_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>c</code> </td> <td>Một giá trị của loại<code>X::key_compare</code>hoặc<span class="kw4">hằng số</span>X<span class="sy4">::</span><span class="me2">key_compare</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>kl</code> </td> <td>Một giá trị sao cho<code>a</code>được phân vùng liên quan đến<code>c(x, kl)</code>    mẫu &lt;<code>x</code>giá trị chính của<code>e</code>Và<code>e</code>TRONG<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>ku</code> </td> <td>Một giá trị sao cho<code>a</code>được phân vùng liên quan đến<code>!c(ku, x)</code>    mẫu &lt;<code>x</code>giá trị chính của<code>e</code>Và<code>e</code>TRONG<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>ke</code> </td> <td>Một giá trị sao cho<code>a</code>được phân vùng liên quan đến<code>c(x, ke)</code>Và<code>!c(ke, x)</code>    mẫu &lt;<code>c(x, ke)</code>ngụ ý<code>!c(ke, x)</code>Và với<code>x</code>giá trị chính của<code>e</code>Và<code>e</code>TRONG<code>a</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>kx</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>Một giá trị sao cho:<ul>
+<li> <code>a</code>được phân vùng liên quan đến<code>c(x, kx)</code>Và<code>!c(kx, x)</code>    mẫu &lt;<code>c(x, kx)</code>ngụ ý<code>!c(kx, x)</code>Và với<code>x</code>giá trị chính của<code>e</code>Và<code>e</code>TRONG<code>a</code>, Và</li>
+<li> <code>kx</code>không thể chuyển đổi thành một trong hai<code>X::iterator</code>hoặc<code>X::const_iterator</code> </li>
+</ul> </td>
+</tr> <tr class="t-dsc"> <td> <code>m</code> </td> <td>Một bộ phân bổ của một loại chuyển đổi để<code>A</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>nh</code> </td> <td>Một loại không phải là tập đoàn<code>X::node_type</code> </td>
+</tr> </table> <p>phạm vi của các yếu tố để tạo<code>X</code>thỏa mãn AssociativeContainer nếu</p>
+<ul>
+<li>phạm vi của các yếu tố để tạo<code>X</code>Phần cuối của phạm vi ban đầu<span class="t-rev-inl t-until-cxx11"><span><a href="container" title="cpp/named req/Container">Container</a></span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span><a href="allocatorawarecontainer" title="cpp/named req/AllocatorAwareContainer">AllocatorAwareContainer</a></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Thì</li>
+<li>Được tham số hóa trên<code>Key</code>và một mối quan hệ đặt hàng<code>Compare</code>Điều đó gây ra a<a href="compare" title="cpp/named req/Compare">strict weak ordering</a>về các yếu tố của<code>Key</code>, Và<ul>
+<li>Ngoài ra,<code><a href="../container/map" title="cpp/container/map">std::map</a></code>Và<code><a href="../container/multimap" title="cpp/container/multimap">std::multimap</a></code>liên kết một tùy ý<i>Loại ánh xạ</i> <code>T</code>với<code>Key</code>.</li>
+<li>, Định danh thường là một chuỗi bốn ký tự giữ ba ký tự<code>Compare</code>được gọi là<i>đối tượng so sánh</i>của một thùng chứa loại<code>X</code>.</li>
+</ul> </li>
+<li>Các biểu thức sau đây phải hợp lệ và có các hiệu ứng được chỉ định của chúng cho tất cả các thùng chứa kết hợp:</li>
+</ul> <h4 id="Types">Loại</h4> <table class="wikitable"> <tr> <th>Tên</th> <th>Kiểu</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>key_type</code> </td> <td>
+<code>Key</code> </td> <td> </td>
+</tr> <tr> <td>
+<code>mapped_type</code> </td> <td>
+<code>T</code>// hoặc *(d_first + 1) = op ( *(đầu tiên + 1), *(đầu tiên)); cho quá tải (4)<code><a href="../container/map" title="cpp/container/map">std::map</a></code>Và<code><a href="../container/multimap" title="cpp/container/multimap">std::multimap</a></code>chỉ một)</td> <td> </td>
+</tr> <tr> <td>
+<code>value_type</code> </td> <td> <ul>
+<li>
+<code>Key</code>// hoặc *(d_first + 1) = op ( *(đầu tiên + 1), *(đầu tiên)); cho quá tải (4)<code><a href="../container/set" title="cpp/container/set">std::set</a></code>Và<code><a href="../container/multiset" title="cpp/container/multiset">std::multiset</a></code>chỉ một)</li>
+<li> <a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">hằng số</span>    &gt; Sử dụng map = std :: map &lt;key, t, so sánh,<span class="sy1">&lt;</span>// hoặc *(d_first + 1) = op ( *(đầu tiên + 1), *(đầu tiên)); cho quá tải (4)<code><a href="../container/map" title="cpp/container/map">std::map</a></code>Và<code><a href="../container/multimap" title="cpp/container/multimap">std::multimap</a></code>chỉ một)</li>
+</ul> </td> <td>
+<a href="erasable" title="cpp/named req/Erasable">Erasable</a>từ<code>X</code> </td>
+</tr> <tr> <td>
+<code>key_compare</code> </td> <td>
+<code>Compare</code> </td> <td>
+<a href="copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a> </td>
+</tr> <tr> <td>
+<code>value_compare</code> </td> <td> <ul>
+<li>Giống như<code>key_compare</code>// hoặc *(d_first + 1) = op ( *(đầu tiên + 1), *(đầu tiên)); cho quá tải (4)<code><a href="../container/set" title="cpp/container/set">std::set</a></code>Và<code><a href="../container/multiset" title="cpp/container/multiset">std::multiset</a></code>)</li>
+<li>Một mối quan hệ đặt hàng trên các cặp gây ra bởi thành phần đầu tiên (nghĩa là<code>Key</code>) (vì<code><a href="../container/map" title="cpp/container/map">std::map</a></code>Và<code><a href="../container/multimap" title="cpp/container/multimap">std::multimap</a></code>)</li>
+</ul> </td> <td>
+<a href="binarypredicate" title="cpp/named req/BinaryPredicate">BinaryPredicate</a> </td>
+</tr> <tr> <td>
+<code>node_type</code> </td> <td>Một chuyên ngành của<a href="../container/node_handle" title="cpp/container/node handle">node-handle class template</a>, sao cho các loại lồng nhau công khai là các loại giống như các loại tương ứng trong<code>X</code>.</td> <td> </td>
+</tr>
+</table> <h4 id="Member_functions_and_operators">Chức năng và toán tử thành viên</h4> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Kết quả</th> <th>Điều kiện tiên quyết</th> <th>Các hiệu ứng</th> <th>Mẫu &lt;Class execPolicy,</th> <th>Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</th>
+</tr> <tr> <td>
+<code>X(c)</code> </td> <td> </td> <td> </td> <td>Xây dựng một thùng chứa trống. Sử dụng một bản sao của<code>c</code>Như một đối tượng so sánh</td> <td> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>X u = X();</code><br/><code>X u;</code> </td> <td> </td> <td>
+<code>key_compare</code>vị trí.<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>yêu cầu</td> <td>Xây dựng một thùng chứa trống. Sử dụng<code>Compare()</code>Như một đối tượng so sánh</td> <td> </td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>X(i, j, c)</code> </td> <td> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>*i</code> </td> <td>Xây dựng một thùng chứa trống và chèn các phần tử từ phạm vi<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>vào nó; Sử dụng<code>c</code>Như một đối tượng so sánh</td> <td> </td> <td rowspan="2">
+<code>N·log(N)</code>Nói chung, ở đâu<code>N</code>được hủy bỏ chính xác một lần. Hành vi không xác định nếu<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>i, j<span class="br0">)</span></code>; tuyến tính nếu<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>được sắp xếp theo<code>value_comp()</code> </td>
+</tr> <tr> <td>
+<code>X(i, j)</code> </td> <td> </td> <td>
+<code>key_compare</code>vị trí.<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>yêu cầu.<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>*i</code> </td> <td>Xây dựng một thùng chứa trống và chèn các phần tử từ phạm vi<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>vào nó; Sử dụng<code>Compare()</code>Như một đối tượng so sánh</td> <td> </td>
+</tr> <tr> <td>
+<code>X(from_range, rg, c)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code> </td> <td>Xây dựng một thùng chứa trống và chèn từng phần tử từ<code>rg</code>vào nó. Sử dụng<code>c</code>Là đối tượng so sánh</td> <td> </td> <td rowspan="2">
+<code>N·log(N)</code>Nói chung, ở đâu<code>N</code>được hủy bỏ chính xác một lần. Hành vi không xác định nếu<code><a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3142">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>; tuyến tính nếu<code>rg</code>được sắp xếp theo<code>value_comp()</code> </td>
+</tr> <tr> <td>
+<code>X(from_range, rg)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td> </td> <td>
+<code>key_compare</code>vị trí.<a href="defaultconstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>yêu cầu.<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code> </td> <td>Xây dựng một thùng chứa trống và chèn từng phần tử từ<code>rg</code>vào nó. Sử dụng<code>Compare()</code>Là đối tượng so sánh</td> <td> </td>
+</tr> <tr> <td>
+<code>X(il, c)</code> </td> <td> </td> <td> </td> <td>
+<code>X(il.begin(), il.end(), c)</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>X(il)</code> </td> <td> </td> <td> </td> <td>
+<code>X(il.begin(), il.end())</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>a = il</code> </td> <td>
+<code>X&amp;</code> </td> <td>
+<code>value_type</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>Và<a href="copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a> </td> <td>Gán phạm vi<code>[</code><code>il.begin()</code><code>, </code><code>il.end()</code><code>)</code>Mẫu &lt;Class T&gt;<code>a</code>. Tất cả các yếu tố hiện có của<code>a</code>hoặc được giao cho hoặc bị phá hủy</td> <td> </td> <td>
+<code>N·log(N)</code>Nói chung, ở đâu<code>N</code>được hủy bỏ chính xác một lần. Hành vi không xác định nếu<code>il.size() + a.size()</code>; tuyến tính nếu<code>[</code><code>il.begin()</code><code>, </code><code>il.end()</code><code>)</code>được sắp xếp theo<code>value_comp()</code> </td>
+</tr> <tr> <td>
+<code>b.key_comp()</code> </td> <td>
+<code>X::key_compare</code> </td> <td> </td> <td> </td> <td>Đối tượng so sánh trong số đó<code>b</code>đã được xây dựng</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>b.value_comp()</code> </td> <td>
+<code>X::value_compare</code> </td> <td> </td> <td> </td> <td>Một đối tượng của<code>value_compare</code>được xây dựng từ đối tượng so sánh</td> <td>Đặc điểm kỹ thuật:</td>
+</tr> <tr> <td>
+<code>a_uniq.emplace(args)</code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> iterator,<br/> bool&gt;</code> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>args</code> </td> <td>Chèn a<code>value_type</code>sự vật<code>t</code>xây dựng với<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...</code>Nếu và chỉ khi không có phần tử trong thùng chứa có khóa tương đương với khóa của<code>t</code> </td> <td>Các<code>bool</code>thành phần của cặp được trả về là<code>true</code>Nếu và chỉ khi việc chèn diễn ra và thành phần iterator của cặp chỉ vào phần tử có khóa tương đương với phím của<code>t</code> </td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>a_eq.emplace(args)</code> </td> <td>
+<code>iterator</code> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>args</code> </td> <td>Chèn a<code>value_type</code>sự vật<code>t</code>xây dựng với<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...</code>. Nếu một phạm vi chứa các yếu tố tương đương<code>t</code>tồn tại trong<code>a_eq</code>Thì<code>t</code>được chèn vào cuối phạm vi đó</td> <td>Một trình lặp chỉ vào phần tử mới được chèn</td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>a.emplace_hint(p, args)</code> </td> <td>
+<code>iterator</code> </td> <td> </td> <td>Mẫu &lt;class inputit1, class inputit2,<p><code>a.emplace(<br/> <a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...<span class="br0">)</span></code>, ngoại trừ phần tử được chèn càng gần càng tốt với vị trí ngay trước<code>p</code></p>
+</td> <td>Một trình lặp chỉ vào phần tử với khóa tương đương với phần tử mới được chèn</td> <td>Logarit nói chung, nhưng không đổi được khấu hao nếu phần tử được chèn ngay trước<code>p</code> </td>
+</tr> <tr> <td>
+<code>a_uniq.insert(t)</code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> iterator,<br/> bool&gt;</code> </td> <td>Nếu như<code>t</code>là một rvalue không tập hợp,<code>value_type</code>khoảng cách<a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>; nếu không thì,<code>value_type</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code> </td> <td>Chèn<code>t</code>Nếu và chỉ khi không có phần tử trong thùng chứa có khóa tương đương với khóa của<code>t</code> </td> <td>Các<code>bool</code>thành phần của cặp được trả về là<code>true</code>nếu và chỉ khi việc chèn diễn ra, và<code>iterator</code>thành phần của cặp chỉ vào phần tử với khóa tương đương với phím của<code>t</code> </td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>a_eq.insert(t)</code> </td> <td>
+<code>iterator</code> </td> <td>Nếu như<code>t</code>là một rvalue không tập hợp,<code>value_type</code>khoảng cách<a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>; nếu không thì,<code>value_type</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code> </td> <td>Chèn<code>t</code>và trả về trình lặp chỉ vào phần tử mới được chèn. Nếu một phạm vi chứa các yếu tố tương đương<code>t</code>tồn tại trong<code>a_eq</code>Thì<code>t</code>được chèn vào cuối phạm vi đó</td> <td> </td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>a.insert(p, t)</code> </td> <td>
+<code>iterator</code> </td> <td>Nếu như<code>t</code>là một rvalue không tập hợp,<code>value_type</code>khoảng cách<a href="moveinsertable" title="cpp/named req/MoveInsertable">MoveInsertable</a>Mẫu &lt;Class T&gt;<code>X</code>; nếu không thì,<code>value_type</code>khoảng cách<a href="copyinsertable" title="cpp/named req/CopyInsertable">CopyInsertable</a>Mẫu &lt;Class T&gt;<code>X</code> </td> <td>Chèn<code>t</code>nếu và chỉ khi không có phần tử nào có khóa tương đương với khóa của<code>t</code>trong các thùng chứa có khóa độc đáo; luôn luôn chèn<code>t</code>trong các thùng chứa có khóa tương đương.<code>t</code>được chèn càng gần càng tốt với vị trí ngay trước<code>p</code> </td> <td>Một trình lặp chỉ vào phần tử với khóa tương đương với khóa của<code>t</code> </td> <td>Logarit nói chung, nhưng không đổi được khấu hao nếu<code>t</code>được chèn ngay trước<code>p</code> </td>
+</tr> <tr> <td>
+<code>a.insert(i, j)</code> </td> <td>
+<code>void</code> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code>*i</code>. Không<code>i</code>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<code>j</code>đủ điều kiện là<code>a</code> </td> <td>Chèn từng phần tử từ phạm vi<code>[</code><code>i</code><code>, </code><code>j</code><code>)</code>nếu và chỉ khi không có phần tử có khóa tương đương với khóa của phần tử đó trong các thùng chứa có các khóa duy nhất; Luôn chèn phần tử đó trong các thùng chứa có các phím tương đương</td> <td> </td> <td>
+<code>N·log(a.size() + N)</code>là<code>N</code>được hủy bỏ chính xác một lần. Hành vi không xác định nếu<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>i, j<span class="br0">)</span></code> </td>
+</tr> <tr> <td>
+<code>a.insert_range(rg)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>
+<code>void</code> </td> <td>
+<code>value_type</code>khoảng cách<a href="emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>Mẫu &lt;Class T&gt;<code>X</code>từ<code><span class="sy2">*</span><a href="http://en.cppreference.com/w/cpp/ranges-ranges-placeholder/begin"><span class="kw2882">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">bắt đầu</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code>.<code>rg</code>Và<code>a</code>Không chồng chéo</td> <td>Chèn từng phần tử từ<code>rg</code>nếu và chỉ khi không có phần tử có khóa tương đương với khóa của phần tử đó trong các thùng chứa có các khóa duy nhất; Luôn chèn phần tử đó trong các thùng chứa có các phím tương đương</td> <td> </td> <td>
+<code>N·log(a.size() + N)</code>là<code>N</code>được hủy bỏ chính xác một lần. Hành vi không xác định nếu<code><a href="http://en.cppreference.com/w/cpp/iterator/ranges/distance"><span class="kw3142">    adjacent_find (tôi đầu tiên, s cuối cùng, pred = {}, proj proj = {});<span class="me2">STD ::</span></span></a><span class="br0">.</span>rg<span class="br0">)</span></code> </td>
+</tr> <tr> <td>
+<code>a.insert(il)</code> </td> <td> </td> <td> </td> <td>
+<code>a.insert(il.begin(), il.end())</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>a_uniq.insert(nh)</code> </td> <td>
+<code>insert_return_type</code> </td> <td>
+<code>nh</code>trống hoặc<p><code>a_uniq.get_allocator()==nh.get_allocator()</code>khoảng cách<code>true</code></p>
+</td> <td>Nếu như<code>nh</code>là trống rỗng, không có tác dụng. Nếu không, chèn phần tử thuộc sở hữu của<code>nh</code>Nếu và chỉ khi không có phần tử trong thùng chứa có khóa tương đương với<code>nh.key()</code> </td> <td>Nếu như<code>nh</code>                   Forwardit2 s_first, forwardit2 s_last,<code>inserted</code>khoảng cách<code>false</code>Thì<code>position</code>khoảng cách<code>end()</code>, Và<code>node</code>trống rỗng. Nếu không nếu việc chèn đã diễn ra,<code>inserted</code>khoảng cách<code>true</code>Thì<code>position</code>Trả lại một<code>node</code>là trống rỗng; Nếu việc chèn không thành công,<code>inserted</code>khoảng cách<code>false</code>Thì<code>node</code>Nếu không nếu việc chèn đã diễn ra,<code>nh</code>, Và<code>position</code>chỉ vào phần tử được chèn, và<code>nh.key()</code> </td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>a_eq.insert(nh)</code> </td> <td>
+<code>iterator</code> </td> <td>
+<code>nh</code>trống hoặc<p><code>a_eq.get_allocator()==nh.get_allocator()</code>khoảng cách<code>true</code></p>
+</td> <td>Nếu như<code>nh</code>trống rỗng, không có hiệu lực và lợi nhuận<code>a_eq.end()</code>. Nếu không, chèn phần tử thuộc sở hữu của<code>nh</code>và trả về một trình lặp chỉ vào phần tử mới được chèn. Nếu một phạm vi chứa các yếu tố có các khóa tương đương<code>nh.key()</code>tồn tại trong<code>a_eq</code>, phần tử được chèn vào cuối phạm vi đó. Đảm bảo:<code>nh</code>                     Forwardit1 đầu tiên, forwardit1 cuối cùng,</td> <td> </td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>a.insert(p, nh)</code> </td> <td>
+<code>iterator</code> </td> <td>
+<code>nh</code>trống hoặc<p><code>a.get_allocator()==nh.get_allocator()</code>khoảng cách<code>true</code></p>
+</td> <td>Nếu như<code>nh</code>trống rỗng, không có hiệu lực và lợi nhuận<code>a.end()</code>. Nếu không, chèn phần tử thuộc sở hữu của<code>nh</code>Nếu và chỉ khi không có phần tử nào có khóa tương đương với<code>nh.key()</code>trong các thùng chứa có khóa độc đáo; Luôn chèn phần tử thuộc sở hữu của<code>nh</code>trong các thùng chứa có khóa tương đương. Phần tử được chèn càng gần càng tốt với vị trí ngay trước khi<code>p</code>. Đảm bảo:<code>nh</code>trống nếu chèn thành công, không thay đổi nếu chèn không thành công</td> <td>Một trình lặp chỉ vào phần tử với khóa tương đương với<code>nh.key()</code> </td> <td>Logarit nói chung, nhưng không đổi được khấu hao nếu phần tử được chèn ngay trước<code>p</code> </td>
+</tr> <tr> <td>
+<code>a.extract(k)</code> </td> <td>
+<code>node_type</code> </td> <td> </td> <td>Xóa phần tử đầu tiên trong thùng chứa với khóa tương đương với<code>k</code> </td> <td>MỘT<code>node_type</code>sở hữu phần tử nếu được tìm thấy, nếu không thì trống<code>node_type</code> </td> <td>
+<code>log(a.size())</code> </td>
+</tr> <tr> <td>
+<code>a_tran.extract(kx)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>
+<code>node_type</code> </td> <td> </td> <td>Xóa phần tử đầu tiên trong thùng chứa bằng khóa<code>r</code>chỉ vào trình tự và mọi số nguyên không âm<code>!c(r, kx) &amp;&amp; !c(kx, r)</code>khoảng cách<code>true</code> </td> <td>MỘT<code>node_type</code>sở hữu phần tử nếu được tìm thấy, nếu không thì trống<code>node_type</code> </td> <td>
+<code>log(a_tran.size())</code> </td>
+</tr> <tr> <td>
+<code>a.extract(q)</code> </td> <td>
+<code>node_type</code> </td> <td> </td> <td>Loại bỏ phần tử được trỏ bởi<code>q</code> </td> <td>MỘT<code>node_type</code>sở hữu yếu tố đó</td> <td>Đưa ra một ví dụ</td>
+</tr> <tr> <td>
+<code>a.merge(a2)</code> </td> <td>
+<code>void</code> </td> <td>
+<code>a.get_allocator()==a2.get_allocator()</code> </td> <td>Nỗ lực trích xuất từng yếu tố trong<code>a2</code>void Merge (std :: multimap &lt;key, t, c2, allocator&gt; &amp; source);<code>a</code>Mẫu &lt;Class C2&gt;<code>a</code>. Trong các thùng chứa có các khóa duy nhất, nếu có một yếu tố trong<code>a</code>Cố gắng trích xuất ("splice") mỗi phần tử trong<code>a2</code>và chèn nó vào<code>a2</code>. Đảm bảo: Con trỏ và tài liệu tham khảo về các yếu tố được chuyển giao của<code>a2</code>đề cập đến những yếu tố tương tự nhưng là thành viên của<code>a</code>. Các trình lặp lại đề cập đến các yếu tố được chuyển sẽ tiếp tục đề cập đến các yếu tố của chúng, nhưng giờ họ hoạt động khi lặp đi lặp lại<code>a</code>                   const_iterator đầu tiên, const_iterator cuối cùng);<code>a2</code>. Ném: Không có gì trừ khi đối tượng so sánh ném</td> <td> </td> <td>
+<code>N·log(a.size() + N)</code>là<code>N</code>được hủy bỏ chính xác một lần. Hành vi không xác định nếu<code>a2.size()</code> </td>
+</tr> <tr> <td>
+<code>a.erase(k)</code> </td> <td>
+<code>size_type</code> </td> <td> </td> <td>Xóa tất cả các yếu tố trong thùng chứa với khóa tương đương với<code>k</code> </td> <td>Số lượng các yếu tố bị xóa</td> <td>
+<code>log(a.size())+ a.count(k)</code> </td>
+</tr> <tr> <td>
+<code>a_tran.erase(kx)</code><br/><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> <td>
+<code>size_type</code> </td> <td> </td> <td>Xóa tất cả các yếu tố trong thùng chứa có chìa khóa<code>r</code>chỉ vào trình tự và mọi số nguyên không âm<code>!c(r, kx) &amp;&amp; !c(kx, r)</code>khoảng cách<code>true</code> </td> <td>Số lượng các yếu tố bị xóa</td> <td>
+<code>log(a_tran.size())+ a_tran.count(kx)</code> </td>
+</tr> <tr> <td>
+<code>a.erase(q)</code> </td> <td>
+<code>iterator</code> </td> <td> </td> <td>Xóa bỏ yếu tố được chỉ ra bởi<code>q</code> </td> <td>Một trình lặp chỉ vào phần tử ngay sau đó<code>q</code>trước khi yếu tố bị xóa. Nếu không có yếu tố như vậy tồn tại, trả về<code>a.end()</code> </td> <td>Đưa ra một ví dụ</td>
+</tr> <tr> <td>
+<code>a.erase(r)</code> </td> <td>
+<code>iterator</code> </td> <td> </td> <td>Xóa bỏ yếu tố được chỉ ra bởi<code>r</code> </td> <td>Một trình lặp chỉ vào phần tử ngay sau đó<code>r</code>trước khi yếu tố bị xóa. Nếu không có yếu tố như vậy tồn tại, trả về<code>a.end()</code> </td> <td>Đưa ra một ví dụ</td>
+</tr> <tr> <td>
+<code>a.erase(q1, q2)</code> </td> <td>
+<code>iterator</code> </td> <td> </td> <td>Xóa tất cả các yếu tố trong phạm vi<br/><code>[</code><code>q1</code><code>, </code><code>q2</code><code>)</code> </td> <td>Một trình lặp chỉ vào phần tử được trỏ đến bởi<code>q2</code>trước bất kỳ yếu tố nào bị xóa. Nếu không có yếu tố như vậy tồn tại,<code>a.end()</code>được trả lại</td> <td>
+<code>log(a.size()) + N</code>là<code>N</code>được hủy bỏ chính xác một lần. Hành vi không xác định nếu<code><a href="http://en.cppreference.com/w/cpp/iterator/distance"><span class="kw676">Điều đó cho tất cả<span class="me2">STD ::</span></span></a><span class="br0">.</span>q1, q2<span class="br0">)</span></code> </td>
+</tr> <tr> <td>
+<code>a.clear()</code> </td> <td> </td> <td> </td> <td>
+<code>a.erase(a.begin(), a.end())</code>. Đảm bảo:<code>a.empty()</code>khoảng cách<code>true</code> </td> <td> </td> <td>bool is_heap (execPolicy &amp;&amp; chính sách,<code>a.size()</code> </td>
+</tr> <tr> <td>
+<code>b.find(k)</code> </td> <td>
+<code>iterator</code>Số lượng các yếu tố để sao chép<code>const_iterator</code>cho không đổi<code>b</code> </td> <td> </td> <td> </td> <td>Một trình lặp chỉ vào một phần tử với khóa tương đương với<code>k</code>, hoặc<code>b.end()</code>Nếu một yếu tố như vậy không được tìm thấy</td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>a_tran.find(ke)</code> </td> <td>
+<code>iterator</code>Số lượng các yếu tố để sao chép<code>const_iterator</code>cho không đổi<code>a_tran</code> </td> <td> </td> <td> </td> <td>Một trình lặp chỉ vào một phần tử với khóa<code>r</code>chỉ vào trình tự và mọi số nguyên không âm<p><code>!c(r, ke) &amp;&amp;!c(ke, r)</code>khoảng cách<code>true</code>, hoặc<code>a_tran.end()</code>Nếu một yếu tố như vậy không được tìm thấy</p>
+</td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>b.count(k)</code> </td> <td>
+<code>size_type</code> </td> <td> </td> <td> </td> <td>Số lượng các yếu tố có khóa tương đương với<code>k</code> </td> <td>
+<code>log(b.size())+ b.count(k)</code> </td>
+</tr> <tr> <td>
+<code>a_tran.count(ke)</code> </td> <td>
+<code>size_type</code> </td> <td> </td> <td> </td> <td>Số lượng các phần tử có khóa<code>r</code>chỉ vào trình tự và mọi số nguyên không âm<p><code>!c(r, ke) &amp;&amp;!c(ke, r)</code></p>
+</td> <td>
+<code>log(a_tran.size())+ a_tran.count(ke)</code> </td>
+</tr> <tr> <td>
+<code>b.contains(k)</code> </td> <td>
+<code>bool</code> </td> <td> </td> <td>
+<code>return b.find(k) != b.end();</code> </td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>a_tran.contains(ke)</code> </td> <td>
+<code>bool</code> </td> <td> </td> <td> <p><code>return a_tran.find(ke) != a_tran.end();</code></p>
+</td> <td> </td> <td> </td>
+</tr> <tr> <td>
+<code>b.lower_bound(k)</code> </td> <td>
+<code>iterator</code>Số lượng các yếu tố để sao chép<code>const_iterator</code>cho không đổi<code>b</code> </td> <td> </td> <td> </td> <td>Một trình lặp chỉ vào phần tử đầu tiên với khóa không ít hơn<code>k</code>, hoặc<code>b.end()</code>Nếu một yếu tố như vậy không được tìm thấy</td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>a_tran.lower_bound(kl)</code> </td> <td>
+<code>iterator</code>Số lượng các yếu tố để sao chép<code>const_iterator</code>cho không đổi<code>a_tran</code> </td> <td> </td> <td> </td> <td>Một trình lặp chỉ vào phần tử đầu tiên với khóa<code>r</code>chỉ vào trình tự và mọi số nguyên không âm<code>!c(r, kl)</code>, hoặc<code>a_tran.end()</code>Nếu một yếu tố như vậy không được tìm thấy</td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>b.upper_bound(k)</code> </td> <td>
+<code>iterator</code>Số lượng các yếu tố để sao chép<code>const_iterator</code>cho không đổi<code>b</code> </td> <td> </td> <td> </td> <td>Một trình lặp chỉ vào phần tử đầu tiên với khóa lớn hơn<code>k</code>, hoặc<code>b.end()</code>Nếu một yếu tố như vậy không được tìm thấy</td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>a_tran.upper_bound(ku)</code> </td> <td>
+<code>iterator</code>Số lượng các yếu tố để sao chép<code>const_iterator</code>cho không đổi<code>a_tran</code> </td> <td> </td> <td> </td> <td>Một trình lặp chỉ vào phần tử đầu tiên với khóa<code>r</code>chỉ vào trình tự và mọi số nguyên không âm<code>c(ku, r)</code>, hoặc<code>a_tran.end()</code>Nếu một yếu tố như vậy không được tìm thấy</td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>b.equal_range(k)</code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> iterator,<br/> iterator&gt;</code>Số lượng các yếu tố để sao chép<p><code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> const_iterator,<br/> const_iterator&gt;</code>cho không đổi<code>b</code></p>
+</td> <td> </td> <td>                                                  Inputit2 First2, Inputit2 Last2);<p><code>return<br/> <a href="http://en.cppreference.com/w/cpp/utility/pair/make_pair"><span class="kw1100">Điều đó cho tất cả<span class="me2">Mẫu &lt;class forwardit, class so sánh&gt;</span></span></a><span class="br0">.</span><br/> b.lower_bound(k),<br/> b.upper_bound(k));</code></p>
+</td> <td> </td> <td>Logarit</td>
+</tr> <tr> <td>
+<code>a_tran.equal_range(ke)</code> </td> <td>
+<code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> iterator,<br/> iterator&gt;</code>Số lượng các yếu tố để sao chép<p><code><a href="http://en.cppreference.com/w/cpp/utility/pair"><span class="kw1099">Điều đó cho tất cả<span class="me2">đôi</span></span></a><span class="sy1">is_trivently_destructible_v</span><br/> const_iterator,<br/> const_iterator&gt;</code>cho không đổi<code>a_tran</code></p>
+</td> <td> </td> <td>                                                  Inputit2 First2, Inputit2 Last2);<p><code>return<br/> <a href="http://en.cppreference.com/w/cpp/utility/pair/make_pair"><span class="kw1100">Điều đó cho tất cả<span class="me2">Mẫu &lt;class forwardit, class so sánh&gt;</span></span></a><span class="br0">.</span><br/> a_tran.lower_bound(ke),<br/> a_tran.upper_bound(ke));</code></p>
+</td> <td> </td> <td>Logarit</td>
+</tr> </table> <h4 id="Iterators">Trình lặp</h4> <p>Trình lặp lại của các container kết hợp đáp ứng các yêu cầu của<a href="bidirectionaliterator" title="cpp/named req/BidirectionalIterator">LegacyBidirectionalIterator</a>.</p>
+<p>Cho các container kết hợp ở đâu<code>value_type</code>giống như<code>key_type</code>, cả hai<code>iterator</code>Và<code>const_iterator</code>là người lặp liên tục. Nó không được xác định liệu có hay không<code>iterator</code>Và<code>const_iterator</code>là cùng một loại.</p>
+<p>Các bộ lặp của các thùng chứa kết hợp lặp qua các container theo thứ tự không giới hạn của các khóa trong đó không giảm giá được xác định bằng cách so sánh được sử dụng để xây dựng các container. Đó là, được đưa ra</p>
+<ul>
+<li> <code>a</code>, một container kết hợp</li>
+<li> <code>i</code>Và<code>j</code>không gian tên PMR {<code>a</code>.</li>
+</ul> <p>Nếu khoảng cách từ<code>i</code>ĐẾN<code>j</code>là tích cực, sau đó<code>a.value_comp()(*j, *i) == false</code>. Ngoài ra, nếu<code>a</code>là một thùng chứa kết hợp với các khóa duy nhất, điều kiện mạnh hơn<code>a.value_comp()(*i, *j) != false</code>giữ.</p>
+<h3 id="Associative_containers_in_the_standard_library">Các container kết hợp trong thư viện tiêu chuẩn</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../container/set" title="cpp/container/set"> <span class="t-lines"><span>bộ</span></span></a></div> </td> <td>bộ sưu tập các phím độc đáo, được sắp xếp bởi các phím<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/multiset" title="cpp/container/multiset"> <span class="t-lines"><span>Multiset</span></span></a></div> </td> <td>bộ sưu tập các phím, được sắp xếp bởi các phím<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/map" title="cpp/container/map"> <span class="t-lines"><span>bản đồ</span></span></a></div> </td> <td>Bộ sưu tập các cặp giá trị khóa, được sắp xếp bởi các phím, phím là duy nhất<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../container/multimap" title="cpp/container/multimap"> <span class="t-lines"><span>Multimap</span></span></a></div> </td> <td>bộ sưu tập các cặp giá trị khóa, được sắp xếp bởi các phím<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue354" rel="nofollow">LWG 354</a> </td> <td>C ++ 98</td> <td>
+<code>lower_bound</code>Và<code>upper_bound</code>đã không<br/>trả về đầu lặp cuối nếu không tìm thấy phần tử nào</td> <td>Họ trả lại kết thúc<br/>Trình lặp trong trường hợp này</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue589" rel="nofollow">LWG 589</a> </td> <td>C ++ 98</td> <td>các yếu tố mà<code>i</code>Và<code>j</code>#include &lt;Istream&gt;<br/>để có loại<code>X::value_type</code> </td> <td>các yếu tố được ngầm<br/>chuyển đổi thành<code>X::value_type</code> </td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/AssociativeContainer">https://en.cppreference.com/w/cpp/named_req/AssociativeContainer</a>
+</p>
+</div>

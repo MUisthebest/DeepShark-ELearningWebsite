@@ -1,0 +1,46 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FileSystem :: Copy_Options</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/filesystem" title="cpp/header/filesystem">&lt;filesystem&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">enum class copy_options {</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>    none = / * không xác định * /,<a href="copy" title="cpp/filesystem/copy"><code>copy()</code></a>Và<a href="copy_file" title="cpp/filesystem/copy file"><code>copy_file()</code></a>    skip_existing = / * không xác định * /,</p>
+<p><code>copy_options</code>Cấu trúc kết hợp hiệu suất và khả năng truy cập của một mảng kiểu C với các lợi ích của một thùng chứa tiêu chuẩn, chẳng hạn như biết kích thước của chính nó, sự phân công hỗ trợ, trình lặp truy cập ngẫu nhiên, v.v.<a href="../named_req/bitmasktype" title="cpp/named req/BitmaskType">BitmaskType</a>    overwrite_existing = / * không xác định * /,<code>operator&amp;</code>Thì<code>operator|</code>Thì<code>operator^</code>Thì<code>operator~</code>Thì<code>operator&amp;=</code>Thì<code>operator|=</code>, Và<code>operator^=</code>    update_existing = / * không xác định * /,<code>none</code>    đệ quy = / * không xác định * /,</p>
+<h3 id="Member_constants">Inline Consexpr bool is_execut_policy_v = std :: is_execut_policy &lt;t&gt; :: value;</h3> <p>    copy_symlinks = / * không xác định * /,</p>
+<table class="wikitable"> <tr> <th>Áp dụng cho</th> <th>    skip_symlinks = / * không xác định * /,</th>
+</tr> <tr> <th colspan="2">    thư mục_only = / * không xác định * /,<a href="copy_file" title="cpp/filesystem/copy file"><code>copy_file()</code></a>    created_symlinks = / * không xác định * /,</th>
+</tr> <tr> <td>
+<code>none</code> </td> <td>    created_hard_links = / * không xác định * / /</td>
+</tr> <tr> <td>
+<code>skip_existing</code> </td> <td>};</td>
+</tr> <tr> <td>
+<code>overwrite_existing</code> </td> <td>Loại này thể hiện các tùy chọn có sẵn để kiểm soát hành vi của</td>
+</tr> <tr> <td>
+<code>update_existing</code> </td> <td>chức năng.</td>
+</tr> <tr> <th colspan="2">Nghĩa<a href="copy" title="cpp/filesystem/copy"><code>copy()</code></a>được xác định cho loại này).</th>
+</tr> <tr> <td>
+<code>none</code> </td> <td>đại diện cho bitmask trống; Mọi người liệt kê khác đại diện cho một yếu tố Bitmask riêng biệt.</td>
+</tr> <tr> <td>
+<code>recursive</code> </td> <td>Nhiều nhất một tùy chọn bản sao trong mỗi nhóm tùy chọn sau đây có thể có mặt, nếu không, hành vi của các chức năng sao chép không được xác định.</td>
+</tr> <tr> <th colspan="2">Nghĩa<a href="copy" title="cpp/filesystem/copy"><code>copy()</code></a>Tùy chọn kiểm soát</th>
+</tr> <tr> <td>
+<code>none</code> </td> <td>Khi tệp đã tồn tại</td>
+</tr> <tr> <td>
+<code>copy_symlinks</code> </td> <td>Báo cáo một lỗi (hành vi mặc định).</td>
+</tr> <tr> <td>
+<code>skip_symlinks</code> </td> <td>Giữ tệp hiện có, mà không báo cáo lỗi.</td>
+</tr> <tr> <th colspan="2">Thay thế tệp hiện có.<a href="copy" title="cpp/filesystem/copy"><code>copy()</code></a>làm</th>
+</tr> <tr> <td>
+<code>none</code> </td> <td>Chỉ thay thế tệp hiện có nếu nó cũ hơn tệp được sao chép.</td>
+</tr> <tr> <td>
+<code>directories_only</code> </td> <td>tùy chọn kiểm soát các tác động của</td>
+</tr> <tr> <td>
+<code>create_symlinks</code> </td> <td>trên thư mục con</td>
+</tr> <tr> <td>
+<code>create_hard_links</code> </td> <td>Bỏ qua các thư mục con (hành vi mặc định).</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">đường dẫn đến tệp đích, thư mục hoặc liên kết symlink</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">như đối số đường dẫn đầu tiên,</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="copy" title="cpp/filesystem/copy"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Bản sao tệp hoặc thư mục<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="copy_file" title="cpp/filesystem/copy file"> <span class="t-lines"><span>COPY_FILE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Bản sao nội dung tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/copy_options">https://en.cppreference.com/w/cpp/filesystem/copy_options</a>
+</p>
+</div>

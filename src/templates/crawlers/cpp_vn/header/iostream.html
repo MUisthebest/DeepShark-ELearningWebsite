@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">Tiêu đề tiêu chuẩn tiêu đề &lt;ISTREAM&gt;</h1> <p>Tiêu đề này là một phần của<a href="../io" title="cpp/io">Input/output</a>thư viện.</p>
+<p>Bao gồm<code>&lt;iostream&gt;</code>hoạt động như thể nó định nghĩa một đối tượng thời lượng lưu trữ tĩnh của loại<code><a href="../io/ios_base/init" title="cpp/io/ios base/Init">std::ios_base::Init</a></code>, mà hàm tạo của nó khởi tạo các đối tượng luồng tiêu chuẩn nếu nó là đầu tiên<code>std::ios_base::Init</code>đối tượng sẽ được xây dựng và người phá hủy có các vật thể đó (ngoại trừ<code>cin</code>Và<code>wcin</code>) nếu đó là lần cuối cùng<code>std::ios_base::Init</code>phản đối bị phá hủy.</p>
+<table class="t-dsc-begin"> <tr> <td colspan="2"> <h3 id="Includes">Bao gồm</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ios" title="cpp/header/ios"> <span class="t-lines"><span>&lt;iOS&gt;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td> <code><a href="../io/ios_base" title="cpp/io/ios base">std::ios_base</a></code>lớp học,<code><a href="../io/basic_ios" title="cpp/io/basic ios">std::basic_ios</a></code>Mẫu lớp và một số typedefs</td>
+</tr> <tr class="t-dsc"> <td> <div><a href="streambuf" title="cpp/header/streambuf"> <span class="t-lines"><span>&lt;Treambuf&gt;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td> <code><a href="../io/basic_streambuf" title="cpp/io/basic streambuf">std::basic_streambuf</a></code>mẫu lớp</td>
+</tr> <tr class="t-dsc"> <td> <div><a href="istream" title="cpp/header/istream"> <span class="t-lines"><span>&lt;istream&gt;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td> <code><a href="../io/basic_istream" title="cpp/io/basic istream">std::basic_istream</a></code>Mẫu lớp và một số typedefs</td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ostream" title="cpp/header/ostream"> <span class="t-lines"><span>&lt;Stream&gt;</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td> <code><a href="../io/basic_ostream" title="cpp/io/basic ostream">std::basic_ostream</a></code>Thì<code><a href="../io/basic_iostream" title="cpp/io/basic iostream">std::basic_iostream</a></code>Mẫu lớp và một số typedefs</td>
+</tr> <tr> <td colspan="2"> <h3 id="Objects">Đối tượng</h3> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/cin" title="cpp/io/cin"> <span class="t-lines"><span>cin</span><span>wcin</span></span></a></div> </td> <td>Đọc từ luồng đầu vào C tiêu chuẩn<code><a href="../io/c/std_streams" title="cpp/io/c/std streams">stdin</a></code><br/><span class="t-mark">(Đối tượng toàn cầu)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/cout" title="cpp/io/cout"> <span class="t-lines"><span>cout</span><span>wcout</span></span></a></div> </td> <td>ghi vào luồng đầu ra C tiêu chuẩn<code><a href="../io/c/std_streams" title="cpp/io/c/std streams">stdout</a></code><br/><span class="t-mark">(Đối tượng toàn cầu)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/cerr" title="cpp/io/cerr"> <span class="t-lines"><span>cerr</span><span>wcerr</span></span></a></div> </td> <td>ghi vào luồng lỗi C tiêu chuẩn<code><a href="../io/c/std_streams" title="cpp/io/c/std streams">stderr</a></code>, không bị ảnh hưởng<br/><span class="t-mark">(Đối tượng toàn cầu)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../io/clog" title="cpp/io/clog"> <span class="t-lines"><span>làm tắc nghẽn</span><span>wclog</span></span></a></div> </td> <td>ghi vào luồng lỗi C tiêu chuẩn<code><a href="../io/c/std_streams" title="cpp/io/c/std streams">stderr</a></code><br/><span class="t-mark">(Đối tượng toàn cầu)</span> </td>
+</tr> </table> <h3 id="Synopsis">kết quả bằng cách xây dựng mọi thành viên dữ liệu của kết quả từ thành viên tương ứng của</h3> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;IOS&gt;</pre></div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue155" rel="nofollow">LWG 155</a> </td> <td>C ++ 98</td> <td>#include &lt;Treambuf&gt;<code>std::basic_ios::Init</code><br/>#include &lt;istream&gt;</td> <td>, số lượng tăng số lặp là tuyến tính. Đáng chú ý,<code>std::ios_base::Init</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1123" rel="nofollow">LWG 1123</a> </td> <td>C ++ 98</td> <td>bao gồm<code>&lt;iostream&gt;</code>#include &lt;Stream&gt;<br/> <code><a href="../io/ios_base/init" title="cpp/io/ios base/Init">std::ios_base::Init</a></code>Đối tượng</td> <td>không gian tên std {</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/header/iostream">https://en.cppreference.com/w/cpp/header/iostream</a>
+</p>
+</div>

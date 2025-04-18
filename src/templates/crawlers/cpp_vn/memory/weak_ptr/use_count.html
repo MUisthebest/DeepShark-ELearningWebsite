@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: yếu_ptr &lt;t&gt; :: use_count</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Long use_count () const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Trả về số lượng<code>shared_ptr</code>các trường hợp chia sẻ quyền sở hữu đối tượng được quản lý hoặc<code>​0​</code>Nếu đối tượng được quản lý đã bị xóa, tức là.<code>*this</code>...</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>    auto auto static static /*Dynamic-index* /(rank_type i) noexcept;<code>shared_ptr</code>Các trường hợp chia sẻ quyền sở hữu đối tượng được quản lý ngay lập tức của cuộc gọi.</p>
+<h3 id="Notes">Ghi chú</h3> <p><code><a href="expired" title="cpp/memory/weak ptr/expired">expired()</a></code>có thể nhanh hơn<code>use_count()</code>. Chức năng này vốn dĩ là không rõ ràng, nếu đối tượng được quản lý được chia sẻ giữa các luồng có thể tạo và phá hủy các bản sao của<code>shared_ptr</code>: Sau đó, kết quả chỉ đáng tin cậy nếu nó phù hợp với số lượng bản sao được sở hữu duy nhất bởi luồng gọi hoặc không; Bất kỳ giá trị nào khác có thể trở nên cũ trước khi nó có thể được sử dụng.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;nhớ&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="expired" title="cpp/memory/weak ptr/expired"> <span class="t-lines"><span>hết hạn</span></span></a></div> </td> <td>kiểm tra xem đối tượng được tham chiếu đã bị xóa chưa<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/weak_ptr/use_count">https://en.cppreference.com/w/cpp/memory/weak_ptr/use_count</a>
+</p>
+</div>

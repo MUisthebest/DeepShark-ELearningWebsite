@@ -1,0 +1,30 @@
+ <h1 class="firstHeading" id="firstHeading"> </h1> <p>Hiển thị thông báo lỗi đã cho và hiển thị chương trình không được hình thành<span class="t-rev-inl t-since-cxx23"><span>, hoặc hiển thị thông báo cảnh báo đã cho mà không ảnh hưởng đến tính hợp lệ của chương trình</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>#error</code> <span class="t-spar">Chẩn đoán-Message</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>#warning</code> <span class="t-spar">Chẩn đoán-Message</span> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <div class="t-li1">
+<span class="t-li">1)</span>Sau khi gặp phải<code>#error</code>Chỉ thị, triển khai hiển thị thông báo<span class="t-spar">Chẩn đoán-Message</span>và hiển thị chương trình không được hình thành (phần tổng hợp dừng).</div> <div class="t-li1">
+<span class="t-li">2)</span>                                   Nhị phân p);<span class="t-v">(1)</span>, ngoại trừ tính hợp lệ của chương trình không bị ảnh hưởng và việc biên dịch tiếp tục.</div> <p><span class="t-spar">Chẩn đoán-Message</span>Có thể bao gồm một số từ không nhất thiết phải có trong trích dẫn.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Trước tiêu chuẩn hóa của nó trong C ++ 23,<code>#warning</code>đã được cung cấp bởi nhiều trình biên dịch trong tất cả các chế độ như một tiện ích mở rộng phù hợp.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#if __stdc_hosted__! = 1</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c"># Lỗi "Không phải triển khai được lưu trữ"</pre></div> </div> <h3 id="References">Tài liệu tham khảo</h3> <ul>
+<li>C ++ 23 Tiêu chuẩn (ISO/IEC 14882: 2023):</li>
+<ul><li> </li></ul>
+<li>Tiêu chuẩn C ++ 20 (ISO/IEC 14882: 2020):</li>
+<ul><li> </li></ul>
+<li>Tiêu chuẩn C ++ 17 (ISO/IEC 14882: 2017):</li>
+<ul><li>#if __cplusplus&gt; = 202302L</li></ul>
+<li>Tiêu chuẩn C ++ 14 (ISO/IEC 14882: 2014):</li>
+<ul><li>#include &lt;Istream&gt;</li></ul>
+<li>Tiêu chuẩn C ++ 11 (ISO/IEC 14882: 2011):</li>
+<ul><li>#include &lt;Istream&gt;</li></ul>
+<li>Tiêu chuẩn C ++ 03 (ISO/IEC 14882: 2003):</li>
+<ul><li>#include &lt;Istream&gt;</li></ul>
+<li>    S.B3 = 0B11;</li>
+<ul><li>#include &lt;Istream&gt;</li></ul>
+</ul> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/preprocessor/error" title="c/preprocessor/error">C documentation</a></span>vì<span class=""><span> </span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/preprocessor/error">https://en.cppreference.com/w/cpp/preprocessor/error</a>
+</p>
+</div>

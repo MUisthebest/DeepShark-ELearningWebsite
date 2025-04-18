@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">std :: enable_shared_from_this &lt;t&gt; :: enable_shared_from_this</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Consexpr enable_shared_from_this () noexcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">enable_shared_from_this (const enable_shared_from_this &amp; other) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Xây dựng một mới<code>enable_shared_from_this</code>sự vật. Chỉ giải thích<code><a href="http://en.cppreference.com/w/cpp/memory/weak_ptr"><span class="kw743">Điều đó cho tất cả<span class="me2">yếu_ptr</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>là bộ lặp không đổi, nghĩa là, trình lặp không bao giờ có thể được sử dụng làm trình lặp đầu ra vì các phần tử sửa đổi không được phép.<code><i>yếu-cái này</i></code>Xây dựng container cơ bản mới của bộ điều hợp container từ nhiều nguồn dữ liệu khác nhau.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>chồng chéo với container.<code>enable_shared_from_this</code>    remove_copy (r &amp;&amp; r, o kết quả, const t &amp; value, proj proj = {});</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Không có hàm tạo di chuyển: di chuyển từ một đối tượng có nguồn gốc từ<code>enable_shared_from_this</code>không chuyển bản sắc chung của nó.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;nhớ&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../shared_ptr" title="cpp/memory/shared ptr"> <span class="t-lines"><span>Shared_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Con trỏ thông minh với ngữ nghĩa sở hữu đối tượng được chia sẻ<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/enable_shared_from_this/enable_shared_from_this">https://en.cppreference.com/w/cpp/memory/enable_shared_from_this/enable_shared_from_this</a>
+</p>
+</div>

@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: IS_LAYOUT_COMPATITAL</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;class t, class u&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Nếu như<code>T</code>Và<code>U</code>&gt;<a href="../language/data_members#Standard-layout" title="cpp/language/data members"><i>tương thích bố cục</i></a>struct is_layout_compatitiated;<code>value</code>, một đối tượng riêng biệt của loại<code>true</code>. Nếu không thì<code>value</code>khoảng cách<code>false</code>.</p>
+<p>Các loại, cung cấp hằng số thành viên</p>
+<p><code>T</code>Và<code>U</code>Các loại trong gói tham số<span class="kw4">Vô hiệu</span>mỗi người sẽ là một loại hoàn chỉnh, (có thể là đủ điều kiện CV)</p>
+<p>, hoặc một mảng không rõ ràng buộc. Nếu không, hành vi là không xác định.</p>
+<p>bằng nhau<code>std::is_layout_compatible</code>hoặc<code>std::is_layout_compatible_v</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<h3 id="Helper_variable_template">mỗi người được hình thành tốt khi được coi là một toán hạng không được đánh giá.</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Mọi loại đều tương thích với bố cục với bất kỳ phiên bản nào có trình độ CV, ngay cả khi nó không phải là loại đối tượng.</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table>
+<div class="t-inherited"> <h2 id="Inherited_from_std::integral_constant">Mẫu &lt;Class T&gt;<a href="integral_constant" title="cpp/types/integral constant"> std::integral_constant</a>
+</h2> <h3 id="Member_constants">Inline Consexpr bool is_execut_policy_v = std :: is_execut_policy &lt;t&gt; :: value;</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>được phân vùng liên quan đến</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td> <code>true</code>nếu như<code>T</code>Và<code>U</code>Mẫu &lt;class t, class u&gt;<code>false</code>[tĩnh]<br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <h3 id="Member_functions">nếu không thì</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>(hằng số thành viên tĩnh công cộng)</span></span></div> </td> <td>Chức năng thành viên<span class="kw4">bool</span>; Nếu không nếu<code>value</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>chuyển đổi đối tượng thành</span></span></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C ++ 14)</span></span></span></div> </td> <td>(C ++ 20)<code>value</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Kiểu</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <span class="kw4">bool</span> </td>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td> <a href="http://en.cppreference.com/w/cpp/types/integral_constant"><span class="kw650">Điều đó cho tất cả<span class="me2">Integral_constant</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">bool</span>(chức năng thành viên công cộng)<span class="sy1">&lt;</span> </td>
+</tr> </table> </div> <h3 id="Notes">Ghi chú</h3> <p>Inline Consexpr bool is_layout_compatible_v = is_layout_compatition &lt;t, u&gt; :: value;<code>char</code>tương thích bố cục,<code>signed char</code>constexpr outputit độc đáo_copy (đầu vào đầu tiên, đầu vào cuối cùng,<code>unsigned char</code>.</p>
+<p><a href="../language/reinterpret_cast#Type_aliasing" title="cpp/language/reinterpret cast">Similar types</a>Một loại số nguyên đã ký và đối tác không dấu của nó không tương thích với bố cục.</p>
+<p>không tương thích bố cục với không</p>
+<p>không tương thích bố cục nếu chúng không giống nhau sau khi bỏ qua trình độ CV cấp cao nhất.</p>
+<table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_is_layout_compatible" title="cpp/feature test"><code>__cpp_lib_is_layout_compatible</code></a></td> <td><span class="nu0">201907L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>
+<code>std::is_layout_compatible</code> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Một loại liệt kê và loại cơ bản của nó không tương thích với bố cục.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="is_standard_layout" title="cpp/types/is standard layout"> <span class="t-lines"><span>is_standard_layout</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>kiểm tra xem một loại là<a href="../language/data_members#Standard-layout" title="cpp/language/data members">standard-layout</a>kiểu<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/is_layout_compatible">https://en.cppreference.com/w/cpp/types/is_layout_compatible</a>
+</p>
+</div>

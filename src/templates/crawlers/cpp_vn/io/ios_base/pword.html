@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iOS_Base :: PWord</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">void*&amp; pword (int index);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đầu tiên, phân bổ hoặc thay đổi kích thước lưu trữ riêng (mảng động của<code>void*</code>hoặc cấu trúc dữ liệu có thể lập chỉ mục khác) đủ để tạo ra<code>index</code>một chỉ mục hợp lệ, sau đó trả về một tham chiếu đến<code>void*</code>yếu tố của bộ nhớ riêng với chỉ mục<code>index</code>.</p>
+<p>Tài liệu tham khảo có thể bị vô hiệu hóa bởi bất kỳ hoạt động nào về điều này<code>ios_base</code>đối tượng, bao gồm một cuộc gọi khác đến<code>pword()</code>, nhưng các giá trị được lưu trữ được giữ lại, để đọc từ<code>pword(index)</code>với cùng một chỉ mục sau này sẽ tạo ra cùng một giá trị cho đến khi cuộc gọi tiếp theo đến<code><a href="../basic_ios/copyfmt" title="cpp/io/basic ios/copyfmt">std::basic_ios::copyfmt()</a></code>. Giá trị có thể được sử dụng cho bất kỳ mục đích. Chỉ số của phần tử phải được lấy bằng cách<code><a href="xalloc" title="cpp/io/ios base/xalloc">xalloc()</a></code>, nếu không thì hành vi là không xác định. Các yếu tố mới được khởi tạo thành một<a href="../../language/pointer#Null_pointers" title="cpp/language/pointer">null pointer</a>.</p>
+<p>Nếu chức năng thất bại (có thể là do lỗi phân bổ) và<code>*this</code>là một tiểu đơn lớp cơ sở của một<code>basic_ios&lt;&gt;</code>đối tượng hoặc tiểu mục, cuộc gọi<code><a href="http://en.cppreference.com/w/cpp/io/basic_ios"><span class="kw1716">Điều đó cho tất cả<span class="me2">BASIC_IOS</span></span></a><span class="sy1">&lt;&gt;</span><span class="sy4">::</span><span class="me2">đối tượng giữ kết quả phân tích cú pháp</span><span class="br0">.</span>badbit<span class="br0">)</span></code>mà có thể ném<code><a href="failure" title="cpp/io/ios base/failure">std::ios_base::failure</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Chỉ mục</td> <td>-</td> <td>Giá trị chỉ mục của phần tử</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>is_nothrow_constructible_v</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Sao chép hàm tạo. Nếu như<code><a href="failure" title="cpp/io/ios base/failure">std::ios_base::failure</a></code>Khi đặt Badbit.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Nếu con trỏ được lưu trữ trong<code>pword</code>yêu cầu quản lý,<code><a href="register_callback" title="cpp/io/ios base/register callback">register_callback()</a></code>có thể được sử dụng để cài đặt trình xử lý thực thi sao chép sâu hoặc giải quyết khi cần thiết.</p>
+<h3 id="Example">Ví dụ</h3>
+<div class="t-example">
+<p>Sử dụng lưu trữ pword lớp cơ sở để nhận dạng loại thời gian chạy của các đối tượng luồng dẫn xuất.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue36" rel="nofollow">LWG 36</a> </td> <td>C ++ 98</td> <td> <br/>Cấu trúc foo</td> <td>{<br/>    tĩnh int foo_xalloc;<code>copyfmt()</code> </td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue41" rel="nofollow">LWG 41</a> </td> <td>C ++ 98</td> <td>    STD :: Dữ liệu chuỗi; <br/> <code>ios_base</code>    Foo (const std :: string &amp; s): data (s) {}</td> <td>};<code>basic_ios</code><br/> <code>*this</code>// Phân bổ lưu trữ iWord để sử dụng với các đối tượng foo</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="iword" title="cpp/io/ios base/iword"> <span class="t-lines"><span>Mảng mở rộng nội bộ</span></span></a></div> </td> <td>thay đổi kích thước lưu trữ riêng nếu cần thiết và truy cập vào<span class="kw4">dài</span>phần tử tại chỉ mục đã cho<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="xalloc" title="cpp/io/ios base/xalloc"> <span class="t-lines"><span>Đặt địa phương</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>Trả về địa phương hiện tại<strong class="selflink"><code>pword()</code></strong>Và<a href="iword" title="cpp/io/ios base/iword"><code>iword()</code></a> <br/> <span class="t-mark">Trả về giá trị thời lượng đặc biệt tối thiểu</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ios_base/pword">https://en.cppreference.com/w/cpp/io/ios_base/pword</a>
+</p>
+</div>

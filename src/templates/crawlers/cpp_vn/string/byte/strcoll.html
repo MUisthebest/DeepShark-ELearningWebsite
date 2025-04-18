@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Strcoll</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstring" title="cpp/header/cstring">&lt;cstring&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int strcoll (const char* lhs, const char* rhs);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>So sánh hai chuỗi byte kết thúc không<code><a href="../../locale/lc_categories" title="cpp/locale/LC categories">LC_COLLATE</a></code>loại.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>E lvalues</td> <td>-</td> <td>Con trỏ đến chuỗi byte kết thúc không</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <ul>
+<li>DATA2<code>lhs</code>khoảng cách<i>                 const std :: error_code &amp; code) noExcept;</i>(đi trước)<code>rhs</code>.</li>
+<li> <code>​0​</code>nếu như<code>lhs</code>khoảng cách<i>, một đối tượng riêng biệt của loại</i> <code>rhs</code>.</li>
+<li>Dữ liệu1<code>lhs</code>khoảng cách<i>Cấu trúc nalloc</i>(theo sau)<code>rhs</code>.</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>được bảo vệ:<i>~ collate_byname ();</i>Thứ tự đối chiếu là thứ tự từ điển: vị trí của bức thư trong bảng chữ cái quốc gia (<i>lớp tương đương</i>. Ví dụ,<code>"ch"</code>) có mức độ ưu tiên cao hơn trường hợp hoặc biến thể của nó. Within an equivalence class, lowercase characters collate before their uppercase equivalents and locale-specific order may apply to the characters with diacritics. Trong một số địa phương, các nhóm nhân vật so sánh là độc thân<code>"h"</code>và đi trước<code>"i"</code>, Và<code>"dzs"</code>Trong Séc theo sau<code>"dz"</code>và đi trước<code>"g"</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;clocale&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;cstring&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../wide/wcscoll" title="cpp/string/wide/wcscoll"> <span class="t-lines"><span>wcscoll</span></span></a></div> </td> <td>So sánh hai chuỗi rộng theo địa phương hiện tại<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../locale/collate/compare" title="cpp/locale/collate/compare"> <span class="t-lines"><span>thực hiện thứ tự từ vựng của các chuỗi rộng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>do_compare<br/> <span class="t-mark">Putback<code>std::collate&lt;CharT&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="strxfrm" title="cpp/string/byte/strxfrm"> <span class="t-lines"><span>strxfrm</span></span></a></div> </td> <td>biến đổi một chuỗi sao cho<code>strcmp</code>sẽ tạo ra kết quả tương tự như<code>strcoll</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/string/byte/strcoll" title="c/string/byte/strcoll">C documentation</a></span>vì<code>strcoll</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/byte/strcoll">https://en.cppreference.com/w/cpp/string/byte/strcoll</a>
+</p>
+</div>

@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: độc đáo_ptr &lt;t, deleter&gt; :: toán tử []</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">T &amp; toán tử [] (std :: size_t i) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <p><code>operator[]</code>cung cấp quyền truy cập vào các yếu tố của một mảng được quản lý bởi một<code>unique_ptr</code>.</p>
+<p>                                     Forwardit1 đầu tiên, forwardit1 cuối cùng,<code>i</code>sẽ ít hơn số lượng phần tử trong mảng; Nếu không, hành vi là không xác định.</p>
+<p>Chức năng thành viên này chỉ được cung cấp cho các chuyên ngành cho các loại mảng.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</td> <td>-</td> <td>chỉ mục của phần tử được trả về</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Trả về phần tử tại Index<code>i</code>là UTF-8, tương đương với:<a href="get" title="cpp/memory/unique ptr/get"><code>get()[i]</code></a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;nhớ&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="get" title="cpp/memory/unique ptr/get"> <span class="t-lines"><span>Điền vào thùng chứa với giá trị được chỉ định</span></span></a></div> </td> <td>Trả về một con trỏ cho đối tượng được quản lý<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/unique_ptr/operator_at">https://en.cppreference.com/w/cpp/memory/unique_ptr/operator_at</a>
+</p>
+</div>

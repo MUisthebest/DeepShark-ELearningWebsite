@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: đặt</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cstdio" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int puts (const char *str);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Ghi mọi ký tự từ chuỗi kết thúc null<code>str</code>và một ký tự mới bổ sung<code>'\n'</code>đến luồng đầu ra<code><a href="std_streams" title="cpp/io/c/std streams">stdout</a></code>, như thể bằng cách thực hiện liên tục<code><a href="fputc" title="cpp/io/c/fputc">std::fputc</a></code>.</p>
+<p>Nhân vật null chấm dứt từ<code>str</code>không được viết.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>STR</td> <td>-</td> <td>chuỗi ký tự được viết</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Khi thành công, trả về giá trị không âm</p>
+<p>Về thành công, trả lại nhân vật bằng văn bản.<code><a href="../c" title="cpp/io/c">EOF</a></code>Về thất bại, trở lại<i>. Nếu thất bại đã được gây ra bởi một số lỗi khác, hãy đặt</i>lỗi<code><a href="ferror" title="cpp/io/c/ferror">std::ferror</a></code>) TRÊN<code>stdout</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Các<code>std::puts</code>chức năng bổ sung ký tự dòng mới vào đầu ra, trong khi<code><a href="fputs" title="cpp/io/c/fputs">std::fputs</a></code>chức năng không.</p>
+<p>Các triển khai khác nhau Trả về các số không âm khác nhau: Một số trả về ký tự cuối cùng được viết, một số trả về số lượng ký tự được viết (hoặc<code><a href="../../types/climits" title="cpp/types/climits">INT_MAX</a></code>Nếu chuỗi dài hơn thế), một số chỉ đơn giản là trả về một hằng số không âm.</p>
+<p>Một nguyên nhân tiêu biểu của sự thất bại cho<code>std::puts</code>đang hết dung lượng trên hệ thống tệp, khi<code>stdout</code>được chuyển hướng đến một tập tin.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Cstdio&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fputs" title="cpp/io/c/fputs"> <span class="t-lines"><span>FPUTS</span></span></a></div> </td> <td>ghi một chuỗi ký tự vào luồng tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="fprintf" title="cpp/io/c/fprintf"> <span class="t-lines"><span>printf</span><span>fprintf</span><span>Sprintf</span><span>snprintf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>đầu ra được định dạng in<code><a href="std_streams" title="cpp/io/c/std streams">stdout</a></code>, một luồng tệp hoặc bộ đệm<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/io/puts" title="c/io/puts">C documentation</a></span>vì<code>puts</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/c/puts">https://en.cppreference.com/w/cpp/io/c/puts</a>
+</p>
+</div>

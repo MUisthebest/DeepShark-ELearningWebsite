@@ -1,0 +1,11 @@
+ <h1 class="firstHeading" id="firstHeading">std :: make_error_condition (std :: errc)</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/system_error" title="cpp/header/system error">&lt;system_error&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">std :: error_condition make_error_condition (std :: errc e) noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Tạo điều kiện lỗi cho một<code>errc</code>được phân vùng liên quan đến<code>e</code>. Đặt giá trị lỗi thành<code>int(e)</code>và loại lỗi cho<code><a href="../generic_category" title="cpp/error/generic category">std::generic_category</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</td> <td>-</td> <td>Giá trị lỗi tiêu chuẩn</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Điều kiện lỗi cho<code>e</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">Đối số không hợp lệ</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/errc/make_error_condition">https://en.cppreference.com/w/cpp/error/errc/make_error_condition</a>
+</p>
+</div>

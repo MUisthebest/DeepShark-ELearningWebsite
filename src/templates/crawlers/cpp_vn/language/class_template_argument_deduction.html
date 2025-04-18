@@ -1,0 +1,105 @@
+ <h1 class="firstHeading" id="firstHeading">Khấu trừ đối số mẫu lớp (CTAD)<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>
+</h1> <p>Để khởi tạo một<a href="class_template" title="cpp/language/class template">class template</a>, mọi đối số mẫu phải được biết, nhưng không phải mọi đối số mẫu phải được chỉ định. Trong các bối cảnh sau, trình biên dịch sẽ suy ra các đối số mẫu từ loại của trình khởi tạo:</p>
+<ul><li>bất kì<a href="declarations" title="cpp/language/declarations">declaration</a>chỉ định khởi tạo một mẫu biến và biến, có loại được khai báo là mẫu lớp (có thể<a href="cv" title="cpp/language/cv">cv-qualified</a>):</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">STD :: Cặp P (2, 4.5);     // khấu trừ cho std :: cặp &lt;int, double&gt; p (2, 4.5);</pre></div> <ul><li> <a href="new" title="cpp/language/new">new-expressions</a>:</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">std :: tuple t (4, 3, 2.5); // giống như auto t = std :: make_tuple (4, 3, 2.5);</pre></div> <ul><li> <a href="explicit_cast" title="cpp/language/explicit cast">function-style cast</a>std :: Ít l;             // giống như std :: Ít &lt;oid&gt; l;</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>Cấu trúc a<a href="template_parameters#Non-type_template_parameter" title="cpp/language/template parameters">non-type template parameter</a>:</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Deduction_for_class_templates">    A (t, t);</h3> <h4 id="Implicitly-generated_deduction_guides">};</h4> <p> <code>C</code>Auto y = new a {1, 2}; // loại được phân bổ là &lt;int&gt;</p>
+<ul>
+<li>Nếu như<code>C</code>Biểu thức:<code>C<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>auto lck = std :: lock_guard (mtx);     // khấu trừ cho std :: lock_guard &lt;std :: mutex&gt;<code>F<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>std :: copy_n (vi1, 3,</li>
+<ul>
+<li>    std :: Back_insert_iterator (VI2)); // khấu trừ cho std :: back_insert_iterator &lt;t&gt;,<code>F<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>                                     // trong đó t là loại container vi2<code>C</code>std :: for_each (vi.begin (), vi.end (),<code>C<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>    Foo ([&amp;] (int i) {...}));          // khấu trừ cho foo &lt;t&gt;,<code>C<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>                                     // trong đó t là loại Lambda duy nhất</li>
+<li>loại của một<code>F<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>Mẫu &lt;Class T&gt;</li>
+<li>loại trả lại của<code>F<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>khoảng cách<code>C</code>Cấu trúc x<code>&lt;&gt;</code> </li>
+</ul>
+<li>Nếu như<code>C</code>{<code>C()</code> </li>
+<li>    constexpr x (t) {}<code>C(C)</code>};</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li> </li></ul> <dl>
+<dd>
+<ul>
+<li> <code>C</code>Mẫu &lt;x x&gt;<a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate type</a>struct y {};</li>
+<li> <code>C</code>, Và</li>
+<li>Y &lt;0&gt; y; // ok, y &lt;x &lt;int&gt; (0)&gt;<span class="t-spar">Khấu trừ cho các mẫu lớp</span>Hướng dẫn khấu trừ được tạo ra ngầm<a href="aggregate_initialization#Designated_initializer" title="cpp/language/aggregate initialization">designated initializer</a>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.</li>
+</ul> </dd>
+<dd>Khi, trong một diễn viên kiểu chức năng hoặc trong khai báo của một biến, trình định thức loại chỉ bao gồm tên của một mẫu lớp chính<ul>
+<li>          lớp proj1 = std :: nhận dạng, lớp proj2 = std :: nhận dạng&gt;<code>e<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>(tức là, không có danh sách đối số mẫu đi kèm), các ứng cử viên để khấu trừ được hình thành như sau:<a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate element</a>được xác định, cho mỗi hàm tạo (hoặc mẫu hàm tạo)<code>arg<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>là</li>
+<li> <a href="aggregate_initialization#Brace_elision" title="cpp/language/aggregate initialization">brace elision</a>được khai báo trong mẫu chính được đặt tên, một mẫu chức năng hư cấu</li>
+<ul>
+<li>Một<a href="dependent_name#Dependent_types" title="cpp/language/dependent name">dependent</a>, được xây dựng, sao cho</li>
+<li>tham số mẫu của<a href="dependent_name#Value-dependent_expressions" title="cpp/language/dependent name">value-dependent</a>là các tham số mẫu của</li>
+<li>theo sau (nếu<code>arg<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>Điều đó như vậy<a href="string_literal" title="cpp/language/string literal">string literal</a> </li>
+</ul>
+<li>nếu như<code>C</code>là một mẫu hàm tạo) bởi các tham số mẫu của<a href="parameter_pack" title="cpp/language/parameter pack">pack expansion</a>:</li>
+<ul>
+<li>(đối số mẫu mặc định cũng được bao gồm)</li>
+<li>các tham số chức năng của</li>
+</ul>
+<li>là các tham số của hàm tạo<code>e<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>theo sau là các tham số mẫu của mẫu lớp được đặt trong</li>
+<li>không được xác định hoặc không khai báo bất kỳ hàm tạo nào, một mẫu chức năng hư cấu bổ sung được thêm vào, có nguồn gốc như trên từ một hàm tạo giả định<code>T<sub>, nếu như</sub>, T<sub>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sub>, ..., T<sub>Trả về một kết quả, kết quả được bỏ qua. Nếu như</sub></code>Trong mọi trường hợp, một mẫu chức năng hư cấu bổ sung có nguồn gốc như trên từ một hàm tạo giả định</li>
+<ul>
+<li>Nếu như<code>e<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>Với giả định rằng bất kỳ lớp cơ sở phụ thuộc nào không có chức năng ảo hoặc các lớp cơ sở ảo,<code>arg<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>Điều đó như vậy<span class="t-spar">{</span>Ngoài ra, nếu<code>T<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>được xác định và đáp ứng các yêu cầu của một<code>e<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>.</li>
+<li>Nếu như<code>e<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>Với giả định rằng bất kỳ lớp cơ sở phụ thuộc nào không có chức năng ảo hoặc các lớp cơ sở ảo,<code>arg<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>Điều đó như vậy<a href="string_literal" title="cpp/language/string literal">string literal</a>Thì<code>T<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>Không có hướng dẫn khấu trừ do người dùng xác định<code>e<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>.</li>
+<li>Là xấu nếu<code>T<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>Biến được khởi tạo từ danh sách khởi tạo không phát thanh<code>e<sub>Phạm vi constexpr :: mượn_iterator_t &lt;r&gt;</sub></code>.</li>
+<li>arg1, arg2, ..., argn<code>P<sub>    nth_element (r &amp;&amp; r, iterator_t &lt;r&gt; nth, comp comp = {}, proj proj = {});</sub> ...</code>(có thể sử dụng</li>
+<li>Một ứng cử viên khấu trừ tổng hợp có thể được thêm vào. Danh sách tham số của ứng cử viên khấu trừ tổng hợp được sản xuất từ ​​các loại phần tử tổng hợp, như sau:<code>T<sub>Trả về một kết quả, kết quả được bỏ qua. Nếu như</sub> ...</code>.</li>
+</ul>
+</ul> </dd>
+<dd>là (có thể đệ quy)<code>C(T<sub>, nếu như</sub>, T<sub>    return (! (đầu tiên == cuối cùng) và! (giá trị &lt; *đầu tiên));</sub>, ..., T<sub>Trả về một kết quả, kết quả được bỏ qua. Nếu như</sub>)</code>.</dd>
+</dl>điều đó sẽ được khởi tạo từ<div class="cpp source-cpp"><pre data-language="cpp">không được xem xét cho bất kỳ yếu tố tổng hợp nào có</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p><a href="template_argument_deduction" title="cpp/language/template argument deduction">Template argument deduction</a>Và<a href="overload_resolution" title="cpp/language/overload resolution">overload resolution</a>loại không phải là<a href="overload_resolution#List-initialization" title="cpp/language/overload resolution">list-initialization</a>một loại mảng với một<code>U</code>là<code>U</code>lớn hơn hoặc bằng<code>C</code>ràng buộc, hoặc<code>C</code>.</p>
+<p>một loại mảng có loại phần tử mảng phụ thuộc và<code>F</code>(hoặc yếu tố của nó tự nó là một tổng hợp) có một cơ sở là</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Nếu mở rộng gói là một yếu tố tổng hợp kéo dài, nó được coi là phù hợp với tất cả các yếu tố còn lại của danh sách khởi tạo;</pre></div> <p>Nếu không, gói được coi là trống.<code>S::N</code>Nếu không có</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, ứng cử viên khấu trừ tổng hợp không được thêm vào.</pre></div> <h4 id="User-defined_deduction_guides">Nếu không, hãy xác định danh sách tham số</h4> <p>của ứng cử viên khấu trừ tổng hợp như sau:</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <span class="t-spar">là một mảng và</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tên mẫu</span> <code>(</code> <span class="t-spar">Thì</span> <code>) -&gt;</code> <span class="t-spar">là một tham chiếu rvalue cho loại được khai báo</span> <code>;</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>là một mảng và<a href="function_template#Abbreviated_function_template" title="cpp/language/function template">abbreviated function template</a>là một tham chiếu lvalue cho loại được khai báo về const</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>là loại được tuyên bố của</p>
+<p>Nếu một gói bị bỏ qua vì nó là một phần tử tổng hợp không truyền hình, một gói tham số bổ sung của biểu mẫu<a href="overload_resolution#Best_viable_function" title="cpp/language/overload resolution">overload resolution against other deduction guides</a>được chèn vào vị trí phần tử tổng hợp ban đầu của nó. (Điều này thường sẽ gây ra sự khấu trừ cho thất bại.)</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Nếu một gói là một phần tử tổng hợp kéo dài, chuỗi tham số theo dõi tương ứng với nó được thay thế bằng một tham số duy nhất của biểu mẫu</pre></div> <p>Ứng viên khấu trừ tổng hợp là một mẫu chức năng hư cấu có nguồn gốc như trên từ một hàm tạo giả định<a href="explicit" title="cpp/language/explicit">explicit</a>Trong quá trình suy luận đối số mẫu cho ứng cử viên khấu trừ tổng hợp, số lượng các phần tử trong gói tham số kéo dài chỉ được suy ra từ số lượng đối số chức năng còn lại nếu nó không được suy ra.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> <p>Cấu trúc a</p>
+<div class="cpp source-cpp"><pre data-language="cpp">{</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <h3 id="Deduction_for_alias_templates">    T t;</h3> <p> <code>A</code>    cấu trúc<code>A</code>    {<code>B&lt;ArgList&gt;</code>        dài a, b;<code>B</code>    } u;<code>B</code>};<code>B</code> </p>
+<ul>
+<li>A {1, 2, 3};<code>f</code>của<code>B</code>// Ứng cử viên khấu trừ tổng hợp:<code>f</code>từ<code>B&lt;ArgList&gt;</code>    Count_if (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);<a href="template_argument_deduction" title="cpp/language/template argument deduction">template argument deduction</a>// Mẫu &lt;Class T&gt;</li>
+<li>// A &lt;t&gt; f (t, dài, dài);<code>f</code> <code>g</code>Mẫu &lt;class ... args&gt;<code>f'</code>struct b: std :: tuple &lt;args ...&gt;, args ... {};</li>
+<ul>
+<li> <code>f'</code>    Các đặc điểm của lớp = std :: char_traits &lt;Plapt&gt;<code>g</code> </li>
+<li>Nếu như<code>f</code>B b {std :: tuple &lt;std :: any, std :: chuỗi&gt; {}, std :: any {}};<code>f'</code>// Ứng cử viên khấu trừ tổng hợp:<code>A</code>// Mẫu &lt;class ... args&gt;<code>f</code>// b &lt;args ...&gt; f (std :: tuple &lt;args ...&gt;, args ...);<code>f</code> <code>f'</code>// Loại B được suy ra là b &lt;std :: any, std :: String&gt;</li>
+<li>Sau đó được thực hiện để khởi tạo một đối tượng hư cấu thuộc loại lớp giả thuyết, có chữ ký của hàm tạo phù hợp<a href="constraints" title="cpp/language/constraints">constraints</a>của<code>f'</code>.<code>g</code>hoặc một lớp học xuất phát từ một chuyên ngành<code>A</code>Những nhà xây dựng hư cấu này là các thành viên công cộng thuộc loại lớp giả thuyết. Chúng rõ ràng nếu hướng dẫn được hình thành từ một hàm tạo rõ ràng. Nếu độ phân giải quá tải không thành công, chương trình sẽ không được hình thành. Nếu không, loại trả về của loại đã chọn</li>
+</ul>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">Chuyên môn hóa mẫu trở thành chuyên môn mẫu được suy luận.</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Mẫu &lt;Class T&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc Uniqueptr</pre></div> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>{</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    Uniqueptr (t* t);</pre></div> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> </table> <p>};</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Uniqueptr dp {new auto (2.0)};</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>TRONG<a href="overload_resolution#Best_viable_function" title="cpp/language/overload resolution">overload resolution</a>// một hàm tạo được khai báo:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// c1: uniqueptr (t*);</pre></div> <p> </p>
+<ul>
+<li>// tập hợp các hướng dẫn khấu trừ được tạo ra ngầm:</li>
+<li> </li>
+<li>// F1: Mẫu &lt;Class T&gt;</li>
+</ul> <div class="cpp source-cpp"><pre data-language="cpp">// uniqueptr &lt;t&gt; f (t* p);</pre></div> <p> <a href="template_argument_deduction" title="cpp/language/template argument deduction">forwarding reference</a>// f2: Mẫu &lt;Class T&gt; </p>
+<div class="cpp source-cpp"><pre data-language="cpp">// uniqueptr &lt;t&gt; f (uniqueptr &lt;t&gt;); // Ứng cử viên khấu trừ sao chép</pre></div> <p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">// Lớp tưởng tượng để khởi tạo:</pre></div> <p>// struct x</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// {</pre></div> <p>// Mẫu &lt;Class T&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp">// x (t* p);         // từ F1</pre></div> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td rowspan="2"><a href="../feature_test#cpp_deduction_guides" title="cpp/feature test"><code>__cpp_deduction_guides</code></a></td> <td><span class="nu0">201703L</span></td> <td><span class="t-mark">Dest_at</span></td> <td>//     </td>
+</tr> <tr> <td><span class="nu0">201907L</span></td> <td><span class="t-mark">Phạm vi :: Construct_at</span></td> <td>// Mẫu &lt;Class T&gt;</td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2376.html" rel="nofollow">CWG 2376</a> </td> <td>C ++ 17</td> <td>// x (Uniqueptr &lt;t&gt;); // từ F2<br/>//};</td> <td> <br/>//-khởi tạo trực tiếp của một đối tượng X</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2697.html" rel="nofollow">CWG 2697</a> </td> <td>C ++ 20</td> <td>// với "Double mới (2.0)" làm trình khởi tạo<br/>// chọn hàm tạo tương ứng với hướng dẫn f1 với t = double</td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://wg21.link/P0702R1" rel="nofollow">P0702R1</a> </td> <td>C ++ 17</td> <td>// Đối với f1 với t = double, loại trả về là uniqueptr &lt;double&gt;<br/> </td> <td>// kết quả:<br/>// uniqueptr &lt;double&gt; dp {new auto (2.0)}</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/class_template_argument_deduction">https://en.cppreference.com/w/cpp/language/class_template_argument_deduction</a>
+</p>
+</div>

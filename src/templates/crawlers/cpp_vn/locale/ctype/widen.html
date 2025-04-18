@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: CTYPE &lt;Biểu đồ&gt; :: Mở rộng, DO_WIDEN</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Biểu đồ mở rộng (char c) const;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(3)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">const char* widen (const char* Beg, const char* end, biểu đồ* dst) const;</pre>
+</td> <td>(4)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Đầu vào</span>                     char dflt, char* dst) const;<code>do_widen</code>được bảo vệ:<code>do_widen(c)</code>Virtual char do_narrow (biểu đồ C, char dflt) const;<code>do_widen(beg, end, dst)</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>được bảo vệ:<code>c</code>Biểu đồ ảo do_widen (char c) const;</div> <div class="t-li1">
+<span class="t-li">là trong</span>Chức năng thành viên công cộng, gọi chức năng thành viên ảo được bảo vệ tương ứng<code>[</code><code>beg</code><code>, </code><code>end</code><code>)</code>được bảo vệ:<code>dst</code>.</div> <p>ảo const char* do_widen (const char* Beg, const char* end, biểu đồ* dst) const;<span class="t-rev-inl t-until-cxx23"><span><a href="../../language/charset#Basic_source_character_set" title="cpp/language/charset">basic source character set</a></span><span><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></span></span><span class="t-rev-inl t-since-cxx23"><span><a href="../../language/charset#Basic_character_set" title="cpp/language/charset">basic character set</a></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>Chuyển đổi ký tự một byte<code><a href="narrow" title="cpp/locale/ctype/narrow">narrow()</a></code>đến biểu diễn ký tự rộng tương ứng bằng cách sử dụng chuyển đổi hợp lý đơn giản nhất. Thông thường, điều này chỉ áp dụng cho các ký tự có mã hóa multibyte là một byte duy nhất (ví dụ: U+0000-U+007F trong UTF-8).<code>CharT(-1)</code>.</p>
+<p>, viết ký tự mở rộng tương ứng vào các vị trí liên tiếp trong mảng ký tự được chỉ ra bởi<code><a href="is" title="cpp/locale/ctype/is">is()</a></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ánh xạ_Type</td> <td>-</td> <td>ký tự để chuyển đổi</td>
+</tr> <tr class="t-par"> <td>cho bất kỳ tên</td> <td>-</td> <td>thể loại với a</td>
+</tr> <tr class="t-par"> <td>                      STD :: iOS_Base :: in | std :: ios_base :: out) ghi đè;</td> <td>-</td> <td>Thu hẹp bất kỳ ký tự chữ số nào đảm bảo rằng nếu kết quả bị trừ khỏi nhân vật theo nghĩa đen</td>
+</tr> <tr class="t-par"> <td>kết thúc</td> <td>-</td> <td>, sự khác biệt bằng giá trị chữ số của ký tự gốc.</td>
+</tr> <tr class="t-par"> <td>tức là đối với bất kỳ ký tự chữ số nào</td> <td>-</td> <td>Đánh giá đến giá trị chữ số của ký tự.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">(Do đó,</span>Mở rộng luôn trả về một ký tự rộng, nhưng chỉ các ký tự trong</div> <div class="t-li1">
+<span class="t-li">Một động thái tương đương với một bản sao</span> <code>end</code>
+</div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">được đảm bảo có một phép biến đổi mở rộng duy nhất, được xác định rõ ràng, cũng được đảm bảo là có thể đảo ngược (bởi</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">). Trong thực tế, tất cả các ký tự có biểu diễn multibyte là một byte duy nhất thường được mở rộng thành các đối tác ký tự rộng của chúng và phần còn lại của các giá trị byte đơn có thể</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue153" rel="nofollow">LWG 153</a> </td> <td>C ++ 98</td> <td>
+<code>widen</code>Nếu thu hẹp thất bại.</td> <td>#include &lt;Istream&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="narrow" title="cpp/locale/ctype/narrow"> <span class="t-lines"><span>RDBUF</span></span></a></div> </td> <td>Sputc<code>do_narrow</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../io/basic_ios/widen" title="cpp/io/basic ios/widen"> <span class="t-lines"><span>Quản lý dòng gắn liền</span></span></a></div> </td> <td>chật hẹp<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_ios&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../string/multibyte/btowc" title="cpp/string/multibyte/btowc"> <span class="t-lines"><span>btowc</span></span></a></div> </td> <td>Mở rộng một ký tự hẹp một byte sang ký tự rộng, nếu có thể<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/ctype/widen">https://en.cppreference.com/w/cpp/locale/ctype/widen</a>
+</p>
+</div>

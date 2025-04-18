@@ -1,0 +1,42 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: TimedMutex<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Các<strong class="selflink">TimedMutex</strong>Yêu cầu mở rộng<a href="timedlockable" title="cpp/named req/TimedLockable">TimedLockable</a>Các yêu cầu để bao gồm đồng bộ hóa liên tràng.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <ul>
+<li> <a href="timedlockable" title="cpp/named req/TimedLockable">TimedLockable</a> </li>
+<li> <a href="mutex" title="cpp/named req/Mutex">Mutex</a> </li>
+</ul> <p>Ngoài ra, đối với một đối tượng<code>m</code>loại TimeDmutex:</p>
+<ul>
+<li>              Không có p);<code>m.try_lock_for(duration)</code>có các thuộc tính sau</li>
+<ul>
+<li>Hoạt động như một hoạt động nguyên tử.</li>
+<li>Nỗ lực để có được quyền sở hữu độc quyền của Mutex trong thời gian được chỉ định bởi<code>duration</code>. Nếu như<code>duration</code>ít hơn hoặc bằng<code>duration.zero()</code>, cố gắng để có được quyền sở hữu mà không cần chặn (như thể bằng cách<code>try_lock()</code>). Mặt khác, chức năng này chặn cho đến khi mutex được thu thập hoặc cho đến khi thời gian được chỉ định bởi<code>duration</code>vượt qua. Nó trở lại bên trong<code>duration</code>Chỉ khi nó thành công, nhưng nó mới được phép có được Mutex ngay cả khi tại một số thời điểm trong thời gian<code>duration</code>Nó không thuộc sở hữu của một chủ đề khác. Trong mọi trường hợp, nó trở lại<code>true</code>Nếu Mutex được mua lại và<code>false</code>Nếu đối số đầu tiên là</li>
+<li>Nếu như<code>try_lock_for(duration)</code>thành công, trước<code>unlock()</code>hoạt động trên cùng một đối tượng<i>Phát hành hoạt động</i>Hoạt động này (tương đương với Acquire phát hành<code><a href="../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>).</li>
+<li>Hành vi không được xác định nếu luồng gọi đã sở hữu mutex (trừ khi m là<code><a href="../thread/recursive_timed_mutex" title="cpp/thread/recursive timed mutex">std::recursive_timed_mutex</a></code>).</li>
+<li>Một ngoại lệ có thể được ném bởi đồng hồ, điểm thời gian hoặc thời lượng trong quá trình thực hiện (đồng hồ, điểm thời gian và thời lượng được cung cấp bởi thư viện tiêu chuẩn không bao giờ ném).</li>
+</ul>
+<li>              Không có p);<code>m.try_lock_until(time_point)</code>có các thuộc tính sau</li>
+<ul>
+<li>Hoạt động như một hoạt động nguyên tử.</li>
+<li>Cố gắng để có được quyền sở hữu độc quyền của Mutex trong thời gian còn lại cho đến khi<code>time_point</code>. Nếu như<code>time_point</code>đã được thông qua, cố gắng để có được quyền sở hữu mà không cần chặn (như thể<code>try_lock()</code>). Mặt khác, chức năng này chặn cho đến khi mutex được thu thập hoặc cho đến khi thời gian được chỉ định bởi<code>time_point</code>vượt qua. Nó trở lại trước<code>time_point</code>Chỉ khi nó thành công, nhưng nó mới được phép có được mutex ngay cả khi vào một thời điểm nào đó trước đây<code>time_point</code>Nó không thuộc sở hữu của một chủ đề khác. Trong mọi trường hợp, nó trở lại<code>true</code>Nếu Mutex được mua lại và<code>false</code>Nếu đối số đầu tiên là</li>
+<li>Nếu như<code>try_lock_until(time_point)</code>thành công, trước<code>unlock()</code>hoạt động trên cùng một đối tượng<i>Phát hành hoạt động</i>Hoạt động này (tương đương với Acquire phát hành<code><a href="../atomic/memory_order" title="cpp/atomic/memory order">std::memory_order</a></code>).</li>
+<li>Hành vi không được xác định nếu luồng gọi đã sở hữu mutex (trừ khi m là<code><a href="../thread/recursive_timed_mutex" title="cpp/thread/recursive timed mutex">std::recursive_timed_mutex</a></code>).</li>
+<li>Một ngoại lệ có thể được ném bởi đồng hồ, điểm thời gian hoặc thời lượng trong quá trình thực hiện (đồng hồ, điểm thời gian và thời lượng được cung cấp bởi thư viện tiêu chuẩn không bao giờ ném).</li>
+</ul>
+</ul> <h3 id="Library_types">Các loại thư viện</h3> <p>Các loại thư viện tiêu chuẩn sau đây thỏa mãn<strong class="selflink">TimedMutex</strong>:</p>
+<ul>
+<li> <code><a href="../thread/timed_mutex" title="cpp/thread/timed mutex">std::timed_mutex</a></code> </li>
+<li> <code><a href="../thread/recursive_timed_mutex" title="cpp/thread/recursive timed mutex">std::recursive_timed_mutex</a></code> </li>
+<li> <code><a href="../thread/shared_timed_mutex" title="cpp/thread/shared timed mutex">std::shared_timed_mutex</a></code> </li>
+</ul> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2093" rel="nofollow">LWG 2093</a> </td> <td>C ++ 11</td> <td>Các trường hợp ngoại lệ liên quan đến thời gian chờ bị thiếu trong đặc điểm kỹ thuật</td> <td>được nhắc đến</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="../thread" title="cpp/thread">Thread support library</a> </li>
+<li> <a href="timedlockable" title="cpp/named req/TimedLockable">TimedLockable</a> </li>
+<li> <a href="mutex" title="cpp/named req/Mutex">Mutex</a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/TimedMutex">https://en.cppreference.com/w/cpp/named_req/TimedMutex</a>
+</p>
+</div>

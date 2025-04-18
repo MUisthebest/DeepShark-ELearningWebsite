@@ -1,0 +1,75 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: FileSystem :: Sao chép</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/filesystem" title="cpp/header/filesystem">&lt;filesystem&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Void Sao chép (Const Std :: FileSystem :: Path &amp; From,</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">           const std :: fileSystem :: path &amp; to);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Void Sao chép (Const Std :: FileSystem :: Path &amp; From,</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">           const std :: fileSystem :: path &amp; to,</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>           std :: error_code &amp; ec);</p>
+<div class="t-li1">
+<span class="t-li">Đầu vào</span>Void Sao chép (Const Std :: FileSystem :: Path &amp; From,<span class="t-v">ConstExpr Outputit Adjacent_Difference (Inputit First, Inputit Last, </span>với<code>copy_options::none</code>           const std :: fileSystem :: path &amp; to,<code>options</code>.</div> <div class="t-li1">
+<span class="t-li">, hành vi là không xác định.</span>           STD :: FileSystem :: Copy_Options Tùy chọn);<code>from</code>Void Sao chép (Const Std :: FileSystem :: Path &amp; From,<code>to</code>           const std :: fileSystem :: path &amp; to,<code>options</code>           STD :: FileSystem :: Copy_Options Tùy chọn,<a href="copy_options" title="cpp/filesystem/copy options">copy_options</a>           std :: error_code &amp; ec);<code>options</code>Bản sao các tập tin và thư mục, với nhiều tùy chọn.<code>copy_file</code>Mặc định, tương đương với</div> <p>được sử dụng như</p>
+<ul>
+<li>Sao chép tệp hoặc thư mục<code>from</code>vào hồ sơ hoặc thư mục</li>
+<ul>
+<li> <code><a href="status" title="cpp/filesystem/status">std::filesystem::symlink_status</a></code>Sử dụng chức năng nhị phân đã cho<code>copy_options::skip_symlinks</code>Thì<code>copy_options::copy_symlinks</code>, hoặc<code>copy_options::create_symlinks</code>là một tập tin thông thường, sau đó<code>options</code>Số lượng các yếu tố để sao chép</li>
+<li> <code><a href="status" title="cpp/filesystem/status">std::filesystem::status</a></code>Nếu đối số đầu tiên là</li>
+</ul>
+<li>. Hành vi không được xác định nếu có nhiều hơn một tùy chọn trong bất kỳ<code>to</code>nhóm tùy chọn có mặt trong</li>
+<ul>
+<li> <code><a href="status" title="cpp/filesystem/status">std::filesystem::symlink_status</a></code>Sử dụng chức năng nhị phân đã cho<code>copy_options::skip_symlinks</code>hoặc<code>copy_options::create_symlinks</code>là một tập tin thông thường, sau đó<code>options</code>Số lượng các yếu tố để sao chép</li>
+<li> <code><a href="status" title="cpp/filesystem/status">std::filesystem::status</a></code>nhóm).<code>copy_options::copy_symlinks</code>là một tập tin thông thường, sau đó<code>options</code>).</li>
+</ul>
+<li>nếu không (bao gồm cả trường hợp<code>from</code>hoặc<code>to</code>bởi không nhiều hơn một cuộc gọi đến<a href="file_type" title="cpp/filesystem/file type">file type</a>có mặt trong</li>
+<li>Nếu như<code>from</code>Nếu cần thiết, có được trạng thái của</li>
+<li>Nếu như<code>from</code>Và<code>to</code>, bởi không nhiều hơn một cuộc gọi đến<code><a href="equivalent" title="cpp/filesystem/equivalent">std::filesystem::equivalent</a></code>Nếu một trong hai</li>
+<li>nếu không (bao gồm cả trường hợp<code>from</code>hoặc<code>to</code>có mặt trong<code><a href="is_other" title="cpp/filesystem/is other">std::filesystem::is_other</a></code>Nếu một trong hai</li>
+<li>Nếu như<code>from</code>có một quyết định thực hiện<code>to</code>, Tác dụng của chức năng này được xác định bằng cách thực hiện.</li>
+<li>Nếu như<code>from</code>Không tồn tại, báo cáo một lỗi.</li>
+<ul>
+<li>Nếu như<code>copy_options::skip_symlink</code>là một tập tin thông thường, sau đó<code>options</code>có mặt trong</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>to</code>Nếu một trong hai<code>copy_options::copy_symlinks</code>là một tập tin thông thường, sau đó<code>options</code>, báo cáo một lỗi.<code>copy_symlink(from, to)</code>.</li>
+<li>là một thư mục, nhưng</li>
+</ul>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>from</code>là một tập tin thông thường, báo cáo là một lỗi.</li>
+<ul>
+<li>Nếu như<code>copy_options::directories_only</code>là một tập tin thông thường, sau đó<code>options</code>có mặt trong</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>copy_options::create_symlinks</code>là một tập tin thông thường, sau đó<code>options</code>không tồn tại và<code>to</code>có mặt trong<code>from</code>, sau đó hành xử như thể<code>to</code>Nếu không, báo cáo một lỗi.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>copy_options::create_hard_links</code>là một tập tin thông thường, sau đó<code>options</code>có mặt trong<code>to</code>.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>to</code>, không làm gì cả.<code>copy_file(from, to/from.filename(), options)</code>có mặt trong<code>from</code>, tạo ra một liên kết symlink để<code>to</code>).</li>
+<li>. Ghi chú:<code>copy_file(from, to, options)</code>phải là một con đường tuyệt đối trừ khi</li>
+</ul>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>from</code>là trong thư mục hiện tại.<code>copy_options::create_symlinks</code>có mặt trong<code>options</code>, tạo một liên kết khó khăn để<code><a href="http://en.cppreference.com/w/cpp/error/errc/make_error_code"><span class="kw3344">Điều đó cho tất cả<span class="me2">make_error_code</span></span></a><span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/error/errc"><span class="kw914">Điều đó cho tất cả<span class="me2">errc</span><span class="sy4">::</span><span class="me2">là một thư mục, sau đó hành xử như thể</span></span></a><span class="br0">)</span></code>.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>from</code>(Tạo một bản sao của<code>options</code>mức độ, trong trường hợp đó, số lượng các phần tử trong chuỗi được biết đến theo thời gian biên dịch và được mã hóa trong loại hoặc a<code>copy_options::recursive</code>Là một tập tin trong thư mục<code>copy_options::none</code>Thì</li>
+<ul>
+<li>Nếu như<code>to</code>Nếu không, hành xử như thể<code>create_directory(to, from)</code>(sao chép tệp).</li>
+<li>là một thư mục và<code>to</code>được đặt vào<code>from</code>Mẫu &lt;Class T&gt;<code><span class="kw1">vì</span> <span class="br0">.</span><span class="kw4">hằng số</span> <a href="http://en.cppreference.com/w/cpp/filesystem/directory_entry"><span class="kw2206">Điều đó cho tất cả<span class="me2">Hệ thống tập tin</span><span class="sy4">::</span><span class="me2">Thư mục_Entry</span></span></a><span class="sy3">Không có giá trị</span> x <span class="sy4">:</span> <a href="http://en.cppreference.com/w/cpp/filesystem/directory_iterator"><span class="kw2207">Điều đó cho tất cả<span class="me2">Hệ thống tập tin</span><span class="sy4">::</span><span class="me2">Thư mục_Iterator</span></span></a><span class="br0">.</span>from<span class="br0">)</span><span class="br0">)</span></code>, báo cáo lỗi với mã lỗi bằng<code>copy(x.path(), to/x.path().filename(), options | in-recursive-copy)</code>là<i>is_a_directory</i>là một thư mục và một trong hai<code>options</code>hoặc là<code>options</code>khoảng cách<code>copy_options::none</code>    Yêu cầu std :: are thừng_as &lt;typename std :: Generator &lt;T2, V2, ALLOC2&gt; :: Măng sản, mang lại&gt;</li>
+</ul>
+<li>không tồn tại, lần đầu tiên thực hiện</li>
+</ul> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>từ</td> <td>-</td> <td>(Tạo thư mục mới với một bản sao của các thuộc tính của thư mục cũ).</td>
+</tr> <tr class="t-par"> <td>ĐẾN</td> <td>-</td> <td>Sau đó, cho dù</td>
+</tr> <tr class="t-par"> <td>Mã lỗi khác để khởi tạo với</td> <td>-</td> <td>không tham số cho báo cáo lỗi trong quá tải không ném</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Bất kỳ quá tải không được đánh dấu<code>noexcept</code>có thể ném<code><a href="../memory/new/bad_alloc" title="cpp/memory/new/bad alloc">std::bad_alloc</a></code>Nếu phân bổ bộ nhớ không thành công.<br/></p>
+<div class="t-li1">
+<span class="t-li">(Do đó,</span>Ném<code><a href="filesystem_error" title="cpp/filesystem/filesystem error">std::filesystem::filesystem_error</a></code>Về các lỗi API OS cơ bản, được xây dựng với<code>from</code>đã tồn tại hoặc vừa được tạo, lặp đi lặp lại các tệp có trong<code>to</code>Và cho mỗi mục nhập thư mục, các cuộc gọi đệ quy</div> <div class="t-li1">
+<span class="t-li">Một động thái tương đương với một bản sao</span>Đặt a<code><a href="http://en.cppreference.com/w/cpp/error/error_code"><span class="kw879">Điều đó cho tất cả<span class="me2">ERROR_CODE</span></span></a><span class="sy3">Không có giá trị</span></code>tham số đến mã lỗi API OS nếu cuộc gọi API OS không thành công và thực thi<code>ec.<a href="../error/error_code/clear" title="cpp/error/error code/clear">clear</a>()</code>Nếu không có lỗi xảy ra.</div> <h3 id="Notes">Ghi chú</h3> <p>sao chép trong bản sao</p>
+<div class="cpp source-cpp"><pre data-language="cpp">là một bit đặc biệt không có tác dụng khác khi được đặt trong</pre></div> <p>. (Mục đích duy nhất của việc thiết lập bit này là để ngăn chặn các thư mục sao chép đệ quy nếu<code>copy_options::recursive</code>Nếu không thì không có gì.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">đường dẫn đến tệp nguồn, thư mục hoặc liên kết symlink</pre></div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">đường dẫn đến tệp đích, thư mục hoặc liên kết symlink</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">như đối số đường dẫn đầu tiên,</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3013" rel="nofollow">LWG 3013</a> </td> <td>C ++ 17</td> <td>
+<code>error_code</code>Là đối số đường dẫn thứ hai và mã lỗi HĐH làm đối số mã lỗi.</td> <td>Hành vi mặc định khi các thư mục sao chép là bản sao không nhận được: các tệp được sao chép, nhưng không phải là thư mục con:</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2682" rel="nofollow">LWG 2682</a> </td> <td>C ++ 17</td> <td>// Được cho</td> <td>// /dir1 chứa /dir1 /file1, /dir1 /file2, /dir1 /dir2</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="copy_options" title="cpp/filesystem/copy options"> <span class="t-lines"><span>Copy_options</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Chỉ định ngữ nghĩa của các hoạt động sao chép<br/> <span class="t-mark">(enum)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="copy_symlink" title="cpp/filesystem/copy symlink"> <span class="t-lines"><span>COPY_SYMLINK</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>sao chép một liên kết tượng trưng<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="copy_file" title="cpp/filesystem/copy file"> <span class="t-lines"><span>COPY_FILE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Bản sao nội dung tệp<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/copy">https://en.cppreference.com/w/cpp/filesystem/copy</a>
+</p>
+</div>

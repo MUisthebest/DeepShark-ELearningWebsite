@@ -1,0 +1,23 @@
+ <h1 class="firstHeading" id="firstHeading">std :: allocator_traits &lt;alloc&gt; :: max_size</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/memory" title="cpp/header/memory">&lt;memory&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx20"> <td><pre data-language="cpp">Size tĩnh_type max_size (const alloc &amp; a) noExcept;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td> </tr> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">Constic static SIZE_TYPE MAX_SIZE (const alloc &amp; a) noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Nếu có thể, có được kích thước phân bổ tối đa về mặt lý thuyết có thể từ bộ phân bổ<code>a</code>là một giá trị số nguyên không xác định không nhỏ hơn<code>a.max_size()</code>.</p>
+<p>ConcTyp tĩnh cấu trúc void (ALLOC &amp; A, T* P, ARGS &amp;&amp; ... ARGS);<code>Alloc</code>Nếu có thể, hãy xây dựng một đối tượng thuộc loại<code>max_size()</code>), sau đó trở lại<code><a href="http://en.cppreference.com/w/cpp/types/numeric_limits"><span class="kw351">Điều đó cho tất cả<span class="me2">Numeric_limits</span></span></a><span class="sy1">is_trivently_destructible_v</span>size_type<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">Được xác định trong tiêu đề</span><span class="br0">.</span><span class="br0">)</span> <span class="sy2">/</span> sizeof<span class="br0">.</span>value_type<span class="br0">)</span></code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Một</td> <td>-</td> <td>người phân bổ để phát hiện</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Kích thước phân bổ tối đa lý thuyết.</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2162" rel="nofollow">LWG 2162</a> </td> <td>C ++ 11</td> <td>
+<code>max_size</code>không được yêu cầu là noExcept</td> <td>Thực hiện quá tải</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2466" rel="nofollow">LWG 2466</a> </td> <td>C ++ 11</td> <td>Kích thước phân bổ tối đa theo lý thuyết trong byte đã được trả lại dưới dạng dự phòng</td> <td>Kích thước trong các yếu tố được trả lại</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../allocator/max_size" title="cpp/memory/allocator/max size"> <span class="t-lines"><span>trả về một trình lặp ngược lại cho đầu</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span></div> </td> <td>bị quá tải<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::allocator&lt;T&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/allocator_traits/max_size">https://en.cppreference.com/w/cpp/memory/allocator_traits/max_size</a>
+</p>
+</div>

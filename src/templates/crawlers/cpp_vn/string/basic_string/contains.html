@@ -1,0 +1,32 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_string &lt;biểu đồ, đặc điểm, phân bổ&gt; :: chứa</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Constexpr Bool</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">    chứa (std :: basic_string_view &lt;biểu đồ, đặc điểm&gt; sv) const noexcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">Constexpr Bool</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> </table> <p>    chứa (biểu đồ ch) const noexcept;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Constexpr Bool<code>sv</code>    chứa (biểu đồ const* s) const;<code>std::basic_string</code>).</div> <div class="t-li1">
+<span class="t-li">2)</span>Kiểm tra nếu chuỗi chứa chuỗi con đã cho. Chất nền có thể là một trong những điều sau đây:<code>ch</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Một chế độ xem chuỗi<code>s</code>.</div> <p>(có thể là kết quả của việc chuyển đổi ngầm từ người khác<code>return find(x) != npos;</code>là<code>x</code>Một ký tự duy nhất</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Chuỗi ký tự kết thúc không</td> <td>-</td> <td>Cả ba quá tải đều tương đương với<code>std::basic_string</code> </td>
+</tr> <tr class="t-par"> <td>ch</td> <td>-</td> <td>là tham số.</td>
+</tr> <tr class="t-par"> <td>S</td> <td>-</td> <td>sv</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Chế độ xem chuỗi có thể là kết quả của việc chuyển đổi ngầm từ một<code>false</code>Nếu đối số đầu tiên là</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../../feature_test#cpp_lib_string_contains" title="cpp/feature test"><code>__cpp_lib_string_contains</code></a></td> <td><span class="nu0">và tất cả các hằng số số nguyên không dấu hoạt động như thể chúng có loại</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>
+<code>contains</code>chức năng</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">một ký tự duy nhất</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">chuỗi ký tự kết thúc không</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="starts_with" title="cpp/string/basic string/starts with"> <span class="t-lines"><span>Kiểm tra xem phạm vi thứ hai có khớp với tiền tố của phạm vi thứ nhất hay không.</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>                            PROD PRED = {}, proj1 proj1 = {}, proj2 proj2 = {});<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ends_with" title="cpp/string/basic string/ends with"> <span class="t-lines"><span>vị từ nhị phân so sánh các yếu tố dự kiến</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>phạm vi của các yếu tố được sử dụng làm hậu tố<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="find" title="cpp/string/basic string/find"> <span class="t-lines"><span>(Niebloid)</span></span></a></div> </td> <td>Xóa nhân vật cuối cùng<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="substr" title="cpp/string/basic string/substr"> <span class="t-lines"><span>rfind</span></span></a></div> </td> <td>Tìm sự xuất hiện cuối cùng của một chuỗi con<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_string_view/contains" title="cpp/string/basic string view/contains"> <span class="t-lines"><span>                           Forwardit2 first2, forwardit2 last2,</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span></span></div> </td> <td>remove_suffix<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_string_view&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/string/basic_string/contains">https://en.cppreference.com/w/cpp/string/basic_string/contains</a>
+</p>
+</div>

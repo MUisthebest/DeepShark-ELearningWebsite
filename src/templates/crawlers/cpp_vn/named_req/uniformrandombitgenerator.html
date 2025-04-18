@@ -1,0 +1,62 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: đồng ý<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Một trình tạo bit ngẫu nhiên thống nhất là một đối tượng hàm trả về các giá trị số nguyên không dấu sao cho mỗi giá trị trong phạm vi kết quả có thể có xác suất bằng nhau (lý tưởng).</p>
+<p>Các bộ tạo bit ngẫu nhiên thống nhất không được sử dụng làm bộ tạo số ngẫu nhiên: chúng được sử dụng làm nguồn của các bit ngẫu nhiên (được tạo ra với số lượng lớn, cho hiệu quả). Bất kỳ trình tạo bit ngẫu nhiên thống nhất nào cũng có thể được cắm vào bất kỳ<a href="../numeric/random" title="cpp/numeric/random">random number distribution</a>Để có được một số ngẫu nhiên (chính thức, một biến thể ngẫu nhiên).</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>G</code>thỏa mãn đồng ý với đồng ý nếu</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Cho quá tải<code>g</code>, một giá trị của loại<code>G</code>, tất cả các điều kiện sau đây đều được thỏa mãn:</p>
+<ul>
+<li> <code>G::result_type</code>là hợp lệ và biểu thị một loại số nguyên không dấu.</li>
+<li>Các biểu thức sau phải hợp lệ và có các hiệu ứng được chỉ định của chúng:</li>
+</ul> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> </table> <table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Kiểu</th> <th>Sắp xếp và các hoạt động liên quan</th>
+</tr> <tr> <td>
+<code>G::min()</code> </td> <td>
+<code>G::result_type</code> </td> <td> <ul>
+<li>Trả về giá trị nhỏ nhất<code>G</code>Nhà điều hành của<span class="br0">.</span><span class="br0">)</span>có thể trở lại.</li>
+<li>Giá trị trả về hoàn toàn ít hơn<code>G::max()</code>.</li>
+<li>Hàm phải là Consexpr.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>G::max()</code> </td> <td>
+<code>G::result_type</code> </td> <td> <ul>
+<li>Trả về giá trị lớn nhất<code>G</code>Nhà điều hành của<span class="br0">.</span><span class="br0">)</span>có thể trở lại.</li>
+<li>Giá trị trả về hoàn toàn lớn hơn<code>G::min()</code>.</li>
+<li>Hàm phải là Consexpr.</li>
+</ul> </td>
+</tr> <tr> <td>
+<code>g()</code> </td> <td>
+<code>G::result_type</code> </td> <td> <ul>
+<li>Trả về một giá trị trong khoảng thời gian đóng<code>[</code><code>G::min()</code><code>, </code><code>G::max()</code><code>]</code>.</li>
+<li>Đã khấu hao sự phức tạp liên tục.</li>
+</ul> </td>
+</tr>
+</table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>Tất cả các điều kiện sau đây được thỏa mãn:</p>
+<ul>
+<li> <code>G</code>Range constexpr :: mượn_subrange_t &lt;r&gt;<a href="../numeric/random/uniform_random_bit_generator" title="cpp/numeric/random/uniform random bit generator"><code>uniform_random_bit_generator</code></a>.</li>
+<li> <a href="http://en.cppreference.com/w/cpp/types/result_of"><span class="kw3219">Điều đó cho tất cả<span class="me2">  STD :: gertable_from &lt;u &amp;,</span></span></a><span class="sy1">is_trivently_destructible_v</span>G<span class="sy3">Không có giá trị</span><span class="sy1">&lt;</span>là một loại số nguyên không dấu.</li>
+<li> <code>G</code>cung cấp một cái lồng nhau<span class="kw1">Mở rộng, vì vậy các mẫu chức năng sau giống hệt nhau:</span>tên<code>result_type</code>, biểu thị cùng loại<a href="http://en.cppreference.com/w/cpp/types/result_of"><span class="kw3219">Điều đó cho tất cả<span class="me2">  STD :: gertable_from &lt;u &amp;,</span></span></a><span class="sy1">is_trivently_destructible_v</span>G<span class="sy3">Không có giá trị</span><span class="sy1">&lt;</span>.</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Tất cả<a href="randomnumberengine" title="cpp/named req/RandomNumberEngine">RandomNumberEngines</a>đáp ứng yêu cầu này.</p>
+<h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>Các cơ sở thư viện tiêu chuẩn sau đây mong đợi một loại đồng đều.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../algorithm/random_shuffle" title="cpp/algorithm/random shuffle"> <span class="t-lines"><span>(Mẫu chức năng)</span><span>Random_Shuffle</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../algorithm/sample" title="cpp/algorithm/sample"> <span class="t-lines"><span>Được xác định trong tiêu đề</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/generate_canonical" title="cpp/numeric/random/generate canonical"> <span class="t-lines"><span>Generate_Canonical</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>phân phối đồng đều các giá trị thực của độ chính xác đã cho<code>[</code><code>​0​</code><code>, </code><code>1</code><code>)</code> <br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/uniform_int_distribution" title="cpp/numeric/random/uniform int distribution"> <span class="t-lines"><span>Đồng phục_int_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tạo ra các giá trị số nguyên được phân phối đồng đều trên một phạm vi<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/uniform_real_distribution" title="cpp/numeric/random/uniform real distribution"> <span class="t-lines"><span>Đồng ý_Real_Distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tạo ra các giá trị thực được phân phối đồng đều trên một phạm vi<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2">Tất cả các phân phối số ngẫu nhiên khác</td>
+</tr> </table> <p>Các cơ sở thư viện tiêu chuẩn sau đây thỏa mãn đồng ý<a href="randomnumberengine" title="cpp/named req/RandomNumberEngine">RandomNumberEngine</a>:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../numeric/random/random_device" title="cpp/numeric/random/random device"> <span class="t-lines"><span>Random_device</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Trình tạo số ngẫu nhiên không xác định sử dụng nguồn entropy phần cứng<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> </table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../numeric/random/uniform_random_bit_generator" title="cpp/numeric/random/uniform random bit generator"> <span class="t-lines"><span>Đồng ý_Random_Bit_Generator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Chỉ định rằng một loại đủ điều kiện là một trình tạo bit ngẫu nhiên thống nhất<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/UniformRandomBitGenerator">https://en.cppreference.com/w/cpp/named_req/UniformRandomBitGenerator</a>
+</p>
+</div>

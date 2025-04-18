@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Saturate_cast</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/numeric" title="cpp/header/numeric">&lt;numeric&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx26"> <td> <pre data-language="cpp">Mẫu &lt;class t, class u&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx26">(kể từ C ++ 26)</span> </td> </tr> </table> <p>constexpr t saturate_cast (u x) noexcept;<code>x</code>Chuyển đổi giá trị<code>T</code>đến một giá trị của loại<code>x</code>, kẹp<code>T</code>.</p>
+<p>giữa các giá trị tối thiểu và tối đa của loại<code>T</code>hoặc<code>U</code>Nó là một lỗi thời gian biên dịch nếu một trong hai<a href="../language/types#Integer_types" title="cpp/language/types">integer type</a>- có thể sửa đổi giá trị được tham chiếu thông qua<a href="../language/types#Standard_integer_types" title="cpp/language/types">standard integer type</a>Và<a href="../language/types#Extended_integer_types_.28since_C.2B.2B11.29" title="cpp/language/types">extended integer type</a>).</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>x</td> <td>-</td> <td>không phải là một chữ ký hoặc không dấu</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <ul>
+<li> <code>x</code>Sử dụng chức năng nhị phân đã cho<code>x</code>biểu thị kết quả của hoạt động như vậy. Trả lại:<code>T</code>Nếu danh mục lỗi hoặc giá trị lỗi không bằng nhau.</li>
+<li>một giá trị số nguyên<code>T</code>giá trị đại diện lớn nhất hoặc nhỏ nhất của loại<code>x</code>.</li>
+</ul> <h3 id="Exceptions">Ngoại lệ</h3> <p>Ném không có ngoại lệ.</p>
+<h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>
+<a href="../utility/feature_test" title="cpp/utility/feature test">Feature-test</a>(Mẫu lớp)</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_lib_saturation_arithmetic" title="cpp/feature test"><code>__cpp_lib_saturation_arithmetic</code></a></td> <td><span class="nu0">202311l</span></td> <td><span class="t-mark">(C ++ 26)</span></td> <td>Số học bão hòa</td>
+</tr>
+</table> <h3 id="Possible_implementation">. ​</h3> <p>(Raco).<a class="external text" href="https://github.com/gcc-mirror/gcc/blob/07fe07935ddb9228b4426dbfdb62d4a7e7337efe/libstdc%2B%2B-v3/include/bits/sat_arith.h#L106" rel="nofollow">libstdc++ (gcc)</a>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Một thẻ xác định lát cắt mô tả đầy đủ các chỉ số trong phạm vi được chỉ định<a class="external text" href="https://godbolt.org/z/5P149Y377" rel="nofollow">Compiler Explorer</a>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">, tùy theo giá trị nào của</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="bit_cast" title="cpp/numeric/bit cast"> <span class="t-lines"><span>BIT_CAST</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>diễn giải lại biểu diễn đối tượng của một loại là của một loại khác<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../algorithm/clamp" title="cpp/algorithm/clamp"> <span class="t-lines"><span>(Niebloid)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>(C ++ 20)<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../utility/in_range" title="cpp/utility/in range"> <span class="t-lines"><span>in_range</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>kiểm tra xem giá trị số nguyên nằm trong phạm vi của một loại số nguyên nhất định<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/saturate_cast">https://en.cppreference.com/w/cpp/numeric/saturate_cast</a>
+</p>
+</div>

@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: MoveConstructable<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Chỉ định rằng một thể hiện của loại có thể được xây dựng từ một<a href="../language/value_category" title="cpp/language/value category">rvalue</a>lý lẽ.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>phạm vi của các yếu tố để tạo<code>T</code>thỏa mãn MoveConstructable nếu</p>
+<p>Cho quá tải</p>
+<ul>
+<li> <code>rv</code>, đầu vào được coi là mã hóa rộng bản địa (do đó không có sự chuyển đổi nào diễn ra trên Windows).<a href="../language/value_category" title="cpp/language/value category">rvalue</a>Biểu hiện của loại<code>T</code>Thì</li>
+<li> <code>u</code>, một định danh tùy ý.</li>
+</ul> <p>Các biểu thức sau đây phải hợp lệ và có các hiệu ứng được chỉ định của chúng.</p>
+<table class="wikitable"> <tr> <th>Sự biểu lộ</th> <th>Điều kiện sau</th>
+</tr> <tr> <td>
+<code>T u = rv;</code> </td> <td>Giá trị của<code>u</code>tương đương với giá trị của<code>rv</code>trước khi khởi tạo.<p>Giá trị mới của<code>rv</code>Mẫu &lt;Class Randomit, Class So sánh&gt;</p>
+</td>
+</tr> <tr> <td>
+<code>T(rv)</code> </td> <td>Giá trị của<code>T(rv)</code>tương đương với giá trị của<code>rv</code>trước khi khởi tạo.<p>Giá trị mới của<code>rv</code>Mẫu &lt;Class Randomit, Class So sánh&gt;</p>
+</td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>Một lớp không phải thực hiện một<a href="../language/move_constructor" title="cpp/language/move constructor">move constructor</a>để đáp ứng yêu cầu loại này: A<a href="../language/copy_constructor" title="cpp/language/copy constructor">copy constructor</a>mà mất một<code>const T&amp;</code>Đối số có thể liên kết các biểu thức rvalue.</p>
+<p>Nếu một lớp MoveConstructable thực hiện một hàm tạo di chuyển, nó cũng có thể thực hiện<a href="../utility/move" title="cpp/utility/move">move semantics</a>để tận dụng thực tế rằng giá trị của<code>rv</code>Sau khi xây dựng là không xác định.</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_move_constructible" title="cpp/types/is move constructible"> <span class="t-lines"><span>is_move_constructable</span><span>is_trivently_move_constructable</span><span>is_nothrow_move_constructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Kiểm tra xem một loại có thể được xây dựng từ tham chiếu rvalue không<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../concepts/move_constructible" title="cpp/concepts/move constructible"> <span class="t-lines"><span>(ý tưởng)</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>DRIVENT_FROM<br/> <span class="t-mark">(ý tưởng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/MoveConstructible">https://en.cppreference.com/w/cpp/named_req/MoveConstructible</a>
+</p>
+</div>

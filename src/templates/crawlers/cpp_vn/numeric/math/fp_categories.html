@@ -1,0 +1,21 @@
+ <h1 class="firstHeading" id="firstHeading">Fp_normal, fp_subnormal, fp_zero, fp_infinite, fp_nan</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define fp_normal / * Xác định triển khai * / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define fp_subnormal / * Xác định triển khai * / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define fp_zero / * Xác định triển khai * / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define fp_infinite / * Xác định triển khai * / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">#Define fp_nan / * Xác định triển khai * / /</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Các<code>FP_NORMAL</code>Thì<code>FP_SUBNORMAL</code>Thì<code>FP_ZERO</code>Thì<code>FP_INFINITE</code>Thì<code>FP_NAN</code>Macro mỗi đại diện cho một danh mục riêng biệt của số điểm nổi. Tất cả đều mở rộng đến một biểu thức không đổi số nguyên.</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Đặc điểm kỹ thuật:</th> <th>Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</th>
+</tr> <tr class="t-dsc"> <td> <code>FP_NORMAL</code> </td> <td>chỉ ra rằng giá trị là<i>Bình thường</i>, tức là không phải là vô cùng, dưới mức, không phải là một số</td>
+</tr> <tr class="t-dsc"> <td> <code>FP_SUBNORMAL</code> </td> <td>chỉ ra rằng giá trị là<i>bình thường</i> </td>
+</tr> <tr class="t-dsc"> <td> <code>FP_ZERO</code> </td> <td>chỉ ra rằng giá trị là dương hoặc âm 0</td>
+</tr> <tr class="t-dsc"> <td> <code>FP_INFINITE</code> </td> <td>chỉ ra rằng giá trị không thể được thể hiện bởi loại cơ bản (vô cực dương hoặc âm)</td>
+</tr> <tr class="t-dsc"> <td> <code>FP_NAN</code> </td> <td>chỉ ra rằng giá trị không phải là một số (NAN)</td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Phân loại giá trị điểm nổi</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">vào các loại sau: số không, dưới mức, bình thường, vô hạn, NAN hoặc danh mục được xác định bằng cách thực hiện.</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="fpclassify" title="cpp/numeric/math/fpclassify"> <span class="t-lines"><span>fpclassify</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>phân loại giá trị điểm nổi đã cho<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/math/FP_categories" title="c/numeric/math/FP categories">C documentation</a></span>vì<code>FP_categories</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/math/FP_categories">https://en.cppreference.com/w/cpp/numeric/math/FP_categories</a>
+</p>
+</div>

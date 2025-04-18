@@ -1,0 +1,34 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tiếp theo</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/iterator" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">Mẫu &lt;Class Inputit&gt;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">Inputit next (inputit it, typename std :: iterator_traits &lt;buputit&gt; :: argen_type n = 1);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Mẫu &lt;Class Inputit&gt;<code>n</code><sup>phần tử đầu vào trong I</sup>Số lượng các yếu tố để tiến lên<code>-n</code><sup>phần tử đầu vào trong I</sup>Một người lặp thuộc loại<code>n</code>Điều đó giữ<code>it</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Một số vòng lặp trong</td> <td>-</td> <td>người kế thừa (hoặc</td>
+</tr> <tr class="t-par"> <td>Trả về một kết quả, kết quả được bỏ qua. Nếu như</td> <td>-</td> <td>người tiền nhiệm nếu</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>là âm) của người lặp<code>InputIt</code>một người lặp<code>n</code><sup>phần tử đầu vào trong I</sup>Số lượng các yếu tố để tiến lên<code>-n</code><sup>phần tử đầu vào trong I</sup>Một người lặp thuộc loại<code>n</code>Điều đó giữ<code>it</code>.</p>
+<h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>    if (pre (*đầu tiên))</p>
+<p>            Forwardit2 first2, forwardit2 last2,<code>InputIt</code>Số lượng các yếu tố<a href="../named_req/randomaccessiterator" title="cpp/named req/RandomAccessIterator">LegacyRandomAccessIterator</a>nên được nâng cao</p>
+<h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">người kế thừa (hoặc</pre></div> </td>
+</tr>
+</table> <h3 id="Notes">Ghi chú</h3> <p>người tiền nhiệm nếu<code>++c.begin()</code>là âm) của người lặp<code>c.begin()</code>Mẫu &lt;class inputit&gt;<a href="../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>constexpr // kể từ C ++ 17<code>operator++</code>Đầu vào tiếp theo (inputit it, typename std :: iterator_traits &lt;buputit&gt; :: argen_type n = 1)<code>++c.begin()</code>{<code>std::next(c.begin())</code>làm.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">    STD :: tiến (nó, n);</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">    trả lại nó;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2353" rel="nofollow">LWG 2353</a> </td> <td>C ++ 11</td> <td>
+<code>next</code>Thực hiện quá tải<a href="../named_req/forwarditerator" title="cpp/named req/ForwardIterator">LegacyForwardIterator</a> </td> <td>
+<a href="../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>cho phép</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="prev" title="cpp/iterator/prev"> <span class="t-lines"><span>trước</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Giảm một vòng lặp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="advance" title="cpp/iterator/advance"> <span class="t-lines"><span>nâng cao</span></span></a></div> </td> <td>tiến lên một trình lặp bằng khoảng cách nhất định<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="distance" title="cpp/iterator/distance"> <span class="t-lines"><span>STD ::</span></span></a></div> </td> <td>Trả về khoảng cách giữa hai trình lặp<br/> <span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="ranges/next" title="cpp/iterator/ranges/next"> <span class="t-lines"><span>Phạm vi :: Tiếp theo</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>tăng một trình lặp bằng một khoảng cách nhất định hoặc đến một ràng buộc<br/><span class="t-mark">tạo một đối tượng tại một địa chỉ nhất định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/next">https://en.cppreference.com/w/cpp/iterator/next</a>
+</p>
+</div>

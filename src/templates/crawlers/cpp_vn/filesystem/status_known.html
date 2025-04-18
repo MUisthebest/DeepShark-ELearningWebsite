@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: fileSystem :: status_ đã biết</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/filesystem" title="cpp/header/filesystem">&lt;filesystem&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">bool status_ đã biết (std :: fileSystem :: file_status s) noexcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Kiểm tra xem trạng thái tệp đã cho có được biết không, tương đương với<code>s.type() != file_type::none</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>Trạng thái tệp để kiểm tra</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>Nếu trạng thái tệp đã cho là trạng thái tệp đã biết.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Mặc dù tên, chức năng kiểm tra trạng thái tệp của<code><a href="file_type" title="cpp/filesystem/file type">file_type::none</a></code>(có nghĩa là xảy ra lỗi), không<code><a href="file_type" title="cpp/filesystem/file type">file_type::unknown</a></code>(có nghĩa là tệp tồn tại, nhưng loại của nó không thể được xác định).</p>
+<h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="status" title="cpp/filesystem/status"> <span class="t-lines"><span>trạng thái</span><span>Symlink_Status</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span><span><span class="t-mark-rev t-since-cxx17">Dest_at</span></span></span></div> </td> <td>Xác định các thuộc tính tệp<br/>Xác định các thuộc tính tệp, kiểm tra mục tiêu symlink<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="directory_entry/status" title="cpp/filesystem/directory entry/status"> <span class="t-lines"><span>trạng thái</span><span>Symlink_Status</span></span></a></div> </td> <td>trạng thái của tệp được chỉ định bởi mục nhập thư mục này;<br/>Trạng thái của tệp/symlink được chỉ định bởi mục nhập thư mục này<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::filesystem::directory_entry</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/filesystem/status_known">https://en.cppreference.com/w/cpp/filesystem/status_known</a>
+</p>
+</div>

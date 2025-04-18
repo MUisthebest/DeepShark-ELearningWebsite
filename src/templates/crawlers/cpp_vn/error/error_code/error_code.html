@@ -1,0 +1,31 @@
+ <h1 class="firstHeading" id="firstHeading">std :: error_code :: error_code</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">error_code () noExcept;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">ERROR_CODE (int EC, const error_c Category &amp; ecat) noExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;Glass ErrorCodeenum&gt;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">ERROR_CODE (ErrorCodeenum E) NoExcept;</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Lưu ý rằng khởi tạo mặc định có thể dẫn đến các giá trị không xác định cho lớp không</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">error_code (const error_code &amp; other) = mặc định;</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Lưu ý rằng khởi tạo mặc định có thể dẫn đến các giá trị không xác định cho lớp không</span> </td> </tr> </table> <p>error_code (error_code &amp;&amp; other) = mặc định;</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Xây dựng mã lỗi mới.<code>error_code<span class="br0">.</span><span class="nu0">. Không làm gì khác.</span>, <a href="http://en.cppreference.com/w/cpp/error/system_category"><span class="kw875">Điều đó cho tất cả<span class="me2">System_c Category</span></span></a><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span></code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Xây dựng mã lỗi với giá trị mặc định. Tương đương với<code>ec</code>Xây dựng mã lỗi với<code>ecat</code>như mã lỗi phụ thuộc vào nền tảng và<a href="../error_category" title="cpp/error/error category">error category</a>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>như tương ứng<code>e</code>là các yếu tố của phạm vi.<code>make_error_code(e)</code>là<code>make_error_code</code>Xây dựng mã lỗi từ mã lỗi enum<a href="../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>Thực hiện các hoạt động số học cơ bản giữa hai thời lượng hoặc giữa thời lượng và số lượng đánh dấu.<code><a href="http://en.cppreference.com/w/cpp/error/error_code/is_error_code_enum"><span class="kw880">Điều đó cho tất cả<span class="me2">is_error_code_enum</span></span></a><span class="sy1">is_trivently_destructible_v</span>ErrorCodeEnum<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">được phân vùng liên quan đến</span></code>khoảng cách<code>true</code>.</div> <div class="t-li1">
+<span class="t-li">cluct clock_time_conversion &lt;clock, std :: Chrono :: System_Clock&gt;;</span>chỉ được tìm thấy bởi<code>other</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>Các hàm tạo sao chép được xác định ngầm và di chuyển hàm tạo. Khởi tạo mã lỗi với nội dung của</td>
+</tr> <tr class="t-par"> <td>Mã lỗi khác để khởi tạo với</td> <td>-</td> <td>EC</td>
+</tr> <tr class="t-par"> <td>Mã lỗi phụ thuộc nền tảng để xây dựng với</td> <td>-</td> <td>Danh mục lỗi tương ứng với<code>ec</code> </td>
+</tr> <tr class="t-par"> <td>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</td> <td>-</td> <td>ECAT</td>
+</tr>
+</table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3629" rel="nofollow">LWG 3629</a> </td> <td>C ++ 11</td> <td>Mã lỗi enum để xây dựng với<code>std::make_error_code</code>chỉ một</td> <td>Quá tải đã được sử dụng</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../errc/make_error_code" title="cpp/error/errc/make error code"> <span class="t-lines"><span>make_error_code<span class="t-dsc-small">(STD :: ERRC)</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>tạo giá trị mã lỗi cho<code>errc</code>enum<code>e</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../io/io_errc/make_error_code" title="cpp/io/io errc/make error code"> <span class="t-lines"><span>make_error_code<span class="t-dsc-small">(STD :: IO_ERRC)</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>xây dựng mã lỗi iostream<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../../thread/future_errc/make_error_code" title="cpp/thread/future errc/make error code"> <span class="t-lines"><span>make_error_code<span class="t-dsc-small">(STD :: Tương lai_errc)</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>xây dựng một mã lỗi trong tương lai<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/error/error_code/error_code">https://en.cppreference.com/w/cpp/error/error_code/error_code</a>
+</p>
+</div>

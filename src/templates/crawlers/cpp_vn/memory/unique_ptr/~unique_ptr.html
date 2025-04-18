@@ -1,0 +1,12 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: độc đáo_ptr &lt;t, deleter&gt; :: ~ độc đáo_ptr</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">~ độc đáo_ptr ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <p>Nếu như<code><a href="get" title="cpp/memory/unique ptr/get">get()</a></code> <code>==</code> <code>nullptr</code>Không có hiệu ứng. Nếu không, đối tượng sở hữu bị phá hủy thông qua<code><a href="get_deleter" title="cpp/memory/unique ptr/get deleter">get_deleter()</a></code><code>(</code><code><a href="get" title="cpp/memory/unique ptr/get">get()</a></code><code>)</code>.</p>
+<p>Nếu không, ném<code>get_deleter()(get())</code>không ném ngoại lệ.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Các chất hủy diệt ảo thuần túy<code>std::unique_ptr&lt;T&gt;</code>với Deleter mặc định có thể được xây dựng với<a class="mw-redirect" href="../../language/incomplete_type" title="cpp/language/incomplete type">incomplete type</a> <code>T</code>, loại<code>T</code>Phải hoàn thành tại điểm mã nơi gọi là chất hủy diệt.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Chương trình sau đây cho thấy việc sử dụng một Deleter tùy chỉnh.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;nhớ&gt;</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/unique_ptr/%7Eunique_ptr">https://en.cppreference.com/w/cpp/memory/unique_ptr/%7Eunique_ptr</a>
+</p>
+</div>

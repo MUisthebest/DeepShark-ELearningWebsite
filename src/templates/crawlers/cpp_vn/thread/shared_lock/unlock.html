@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Shared_lock &lt;mutex&gt; :: Mở khóa</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">khoảng trống mở khóa ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> </td> </tr> </table> <p>Mở khóa mutex liên quan từ chế độ chia sẻ. Gọi một cách hiệu quả<code>mutex()-&gt;unlock_shared()</code>.</p>
+<p><code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>được ném nếu không có mutex liên quan hoặc nếu mutex không bị khóa.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <ul>
+<li>Bất kỳ trường hợp ngoại lệ nào được ném bởi<code>mutex()-&gt;unlock_shared()</code>.</li>
+<li>Nếu không có mutex liên quan,<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>với mã lỗi của<code><a href="../../error/errc" title="cpp/error/errc">std::errc::operation_not_permitted</a></code>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="lock" title="cpp/thread/shared lock/lock"> <span class="t-lines"><span>khóa</span></span></a></div> </td> <td>Khóa chia sẻ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="release" title="cpp/thread/shared lock/release"> <span class="t-lines"><span>giải phóng</span></span></a></div> </td> <td>hoán đổi các thành viên dữ liệu với người khác<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/shared_lock/unlock">https://en.cppreference.com/w/cpp/thread/shared_lock/unlock</a>
+</p>
+</div>

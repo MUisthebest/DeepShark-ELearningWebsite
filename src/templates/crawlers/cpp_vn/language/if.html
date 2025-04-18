@@ -1,0 +1,120 @@
+ <h1 class="firstHeading" id="firstHeading">Nếu tuyên bố</h1> <p>Thực hiện có điều kiện thực hiện một tuyên bố khác.</p>
+<p>Được sử dụng khi mã cần được thực thi dựa trên thời gian chạy<span class="t-rev-inl t-since-cxx17"><span>hoặc biên dịch thời gian</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>tình trạng<span class="t-rev-inl t-since-cxx23"><span>, hoặc liệu câu lệnh IF được đánh giá trong bối cảnh được đánh giá rõ ràng</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if</code> <code>constexpr</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>(</code> <span class="t-spar"> </span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tình trạng</span> <code>)</code> <span class="t-spar">    if (const tự động từ khóa = {"if", "for", "while"};</span> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if</code> <code>constexpr</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>(</code> <span class="t-spar"> </span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <span class="t-spar">tình trạng</span> <code>)</code> <span class="t-spar">    if (const tự động từ khóa = {"if", "for", "while"};</span> <code>else</code> <span class="t-spar">        std :: cerr &lt;&lt; "mã thông báo không được là từ khóa \ n";</span> </td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if</code> <code>!</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>consteval</code> <span class="t-spar">Tệp hỗn hợp</span> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if</code> <code>!</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>consteval</code> <span class="t-spar">Tệp hỗn hợp</span> <code>else</code> <span class="t-spar">tuyên bố</span> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span> <i>Nếu tuyên bố</i>không có một nhánh khác</div> <div class="t-li1">
+<span class="t-li">2)</span> <i>Nếu tuyên bố</i>với một nhánh khác</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span> <i>(nếu điều kiện là một tuyên bố) nằm trong cùng một phạm vi, đó cũng là phạm vi của cả hai</i>không có một nhánh khác</div> <div class="t-li1">
+<span class="t-li">là trong</span> <i>(nếu điều kiện là một tuyên bố) nằm trong cùng một phạm vi, đó cũng là phạm vi của cả hai</i>với một nhánh khác</div> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>bất kỳ số lượng của<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <code>constexpr</code> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>Nếu có mặt, tuyên bố trở thành một<i>            std :: cout &lt;&lt; i &lt;&lt; "&gt; 1 và" &lt;&lt; j &lt;&lt; "&gt; 2 \ n";</i> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar"> </span> </td> <td>-</td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span>nhiều nhất là một chuyển đổi đủ điều kiện, và<ul>
+<li>chồng chéo với container.<a href="statements" title="cpp/language/statements">expression statement</a>(có thể là một<i>Tuyên bố NULL</i>(có nghĩa là mỗi đầu ra kết thúc bằng một dòng mới) và in kết quả vào một luồng.<code>;</code>")</li>
+<li>Một<a href="declarations" title="cpp/language/declarations">simple declaration</a>, thông thường là một tuyên bố của một biến với trình khởi tạo, nhưng nó có thể tuyên bố tùy ý nhiều biến hoặc là một<a href="structured_binding" title="cpp/language/structured binding">structured binding</a>tuyên ngôn</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <ul><li>chồng chéo với container.<a href="type_alias" title="cpp/language/type alias">alias declaration</a> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table>Lưu ý rằng bất kỳ<span class="t-spar"> </span>Phải kết thúc bằng một dấu chấm phẩy<code>;</code>, đó là lý do tại sao nó thường được mô tả một cách không chính thức như một biểu thức hoặc một tuyên bố theo sau là một dấu chấm phẩy.</td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tình trạng</span> </td> <td>-</td> <td>Một trong số<ul>
+<li> <a href="expressions" title="cpp/language/expressions">expression</a>đó là<a href="implicit_conversion#Contextual_conversions" title="cpp/language/implicit conversion">contextually convertible</a>ĐẾN<code>bool</code> </li>
+<li> <a href="declarations" title="cpp/language/declarations">declaration</a>của một biến không phải là một biến với một hoặc bình đẳng nẹp<a href="initialization" title="cpp/language/initialization">initializer</a>.</li>
+</ul> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">    if (const tự động từ khóa = {"if", "for", "while"};</span> </td> <td>-</td> <td>bất kì<a href="statements" title="cpp/language/statements">statement</a>(thường là một tuyên bố ghép), được thực thi nếu<span class="t-spar">tình trạng</span>thành một phạm vi được sắp xếp<code>true</code> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">        std :: cerr &lt;&lt; "mã thông báo không được là từ khóa \ n";</span> </td> <td>-</td> <td>bất kì<a href="statements" title="cpp/language/statements">statement</a>(thường là một tuyên bố ghép), được thực thi nếu<span class="t-spar">tình trạng</span>thành một phạm vi được sắp xếp<code>false</code> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Tệp hỗn hợp</span> </td> <td>-</td> <td>bất kì<a href="statements#Compound_statements" title="cpp/language/statements">compound statement</a>, được thực hiện nếu sự phản ứng if<ul>
+<li>được đánh giá trong một<a href="constant_expression#Manifestly_constant-evaluated_expressions" title="cpp/language/constant expression">manifestly constant-evaluated context</a>Sử dụng chức năng nhị phân đã cho<code>!</code>không phải là trước<code>consteval</code> </li>
+<li>không được đánh giá trong một bối cảnh được đánh giá rõ ràng, nếu<code>!</code>là trước<code>consteval</code> </li>
+</ul> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">tuyên bố</span> </td> <td>-</td> <td>bất kì<a href="statements" title="cpp/language/statements">statement</a>(Phải là một tuyên bố ghép, xem<a href="if#Consteval_if" title="cpp/language/if">below</a>), được thực hiện nếu tình trạng if-statement<ul>
+<li>không được đánh giá trong một<a href="constant_expression#Manifestly_constant-evaluated_expressions" title="cpp/language/constant expression">manifestly constant-evaluated context</a>Sử dụng chức năng nhị phân đã cho<code>!</code>không phải là trước<code>consteval</code> </li>
+<li>được đánh giá trong một bối cảnh được đánh giá rõ ràng, nếu<code>!</code>là trước<code>consteval</code> </li>
+</ul> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Consexpr ForwardIT Remove_if (ForwardIt First, ForwardIt Last,<span class="t-spar">tình trạng</span>        std :: Common_Reference_T &lt;<code>true</code>Sau khi chuyển đổi sang<code>bool</code>Thì<span class="t-spar">    if (const tự động từ khóa = {"if", "for", "while"};</span>được thực hiện.</p>
+<p>Nếu phần khác của câu lệnh IF có mặt và<span class="t-spar">tình trạng</span>        std :: Common_Reference_T &lt;<code>false</code>Sau khi chuyển đổi sang<code>bool</code>Thì<span class="t-spar">        std :: cerr &lt;&lt; "mã thông báo không được là từ khóa \ n";</span>được thực hiện.</p>
+<p>Ở dạng thứ hai của câu lệnh IF (cái bao gồm cả khác), nếu<span class="t-spar">    if (const tự động từ khóa = {"if", "for", "while"};</span>cũng là một câu lệnh IF sau đó rằng câu lệnh IF cũng phải chứa một phần khác (nói cách khác, trong các câu chuyện nếu được lồng vào nhau, phần khác được liên kết với phần gần nhất nếu không có một cái khác).</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <h4 id="If_statements_with_initializer">int main ()</h4> <p>Nếu như<span class="t-spar"> </span>{</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>{</code><br/> <dl>
+<dd>
+<span class="t-spar">    if (i&gt; 2)</span> <br/> </dd>
+<dd>
+<span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if</code> <code>constexpr</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>(</code> <span class="t-spar">tình trạng</span> <code>)</code> <br/> <span class="t-spar">    if (const tự động từ khóa = {"if", "for", "while"};</span> <br/> </dd>
+</dl> <p><code>}</code></p>
+</td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>hoặc</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>{</code><br/> <dl>
+<dd>
+<span class="t-spar">    if (i&gt; 2)</span><br/> </dd>
+<dd>
+<span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if</code> <code>constexpr</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>(</code> <span class="t-spar">tình trạng</span> <code>)</code> <br/> <span class="t-spar">    if (const tự động từ khóa = {"if", "for", "while"};</span><br/> </dd>
+<dd>
+<code>else</code> <span class="t-spar">        std :: cerr &lt;&lt; "mã thông báo không được là từ khóa \ n";</span><br/> </dd>
+</dl> <p><code>}</code></p>
+</td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <p>        std :: cout &lt;&lt; i &lt;&lt; "không lớn hơn 2 \ n";<span class="t-spar"> </span> <span class="t-spar"> </span> <span class="t-spar">tình trạng</span>    // lồng nhau if-statement<span class="t-spar">tuyên bố</span>struct common_type &lt;std :: Chrono :: Time_Point &lt;Đồng hồ, Thời lượng1&gt;, </p>
+<div class="cpp source-cpp"><pre data-language="cpp">    int j = 1;</pre></div> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <h4 id="Constexpr_if">    if (i&gt; 1)</h4> <p>là một tuyên bố) và tên được tuyên bố bởi<code>if constexpr</code>Mẫu &lt;biểu đồ lớp, các đặc điểm của lớp = std :: char_traits &lt;ciểu &gt;&gt;&gt;<i>            std :: cout &lt;&lt; i &lt;&lt; "&gt; 1 và" &lt;&lt; j &lt;&lt; "&gt; 2 \ n";</i>.</p>
+<p>        Khác // Đây là một phần của IF (j&gt; 2), không phải của IF (i&gt; 1)<span class="t-spar">tình trạng</span>// thực hiện đầu tiên<span class="t-rev-inl t-until-cxx23"><span>Một<a href="constant_expression#Converted_constant_expression" title="cpp/language/constant expression">contextually converted constant expression of type <code>bool</code></a></span><span><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></span></span><span class="t-rev-inl t-since-cxx23"><span>            std :: cout &lt;&lt; i &lt;&lt; "&gt; 1 và" &lt;&lt; j &lt;&lt; "&lt;= 2 \ n";<a href="implicit_conversion#Contextual_conversions" title="cpp/language/implicit conversion">contextually converted to <code>bool</code></a> <a href="constant_expression" title="cpp/language/constant expression">constant expression</a></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>    // khai báo có thể được sử dụng làm điều kiện với Dynamic_cast<code>true</code>, sau đó<span class="t-spar">        std :: cerr &lt;&lt; "mã thông báo không được là từ khóa \ n";</span>    {<span class="t-spar">    if (const tự động từ khóa = {"if", "for", "while"};</span>    };</p>
+<p> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">    cấu trúc có nguồn gốc: cơ sở</pre></div> <p>    {<a href="definition#One_Definition_Rule" title="cpp/language/definition">odr-use</a>        void df () {std :: cout &lt;&lt; "df () \ n"; }</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    };</pre></div> <p> <code>if constexpr</code>    Cơ sở* bp1 = cơ sở mới;<a href="../preprocessor/conditional" title="cpp/preprocessor/conditional"><code> #if</code></a>    Cơ sở* bp2 = mới xuất phát;</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>    if (dosive* p = dr động_cast &lt;dẫn xuất*&gt; (bp1))) // cast fail, return nullptr<a href="templates#Templated_entity" title="cpp/language/templates">templated entity</a>        p-&gt; df (); // không được thực thi<span class="t-spar">tình trạng</span># Elif __has_include (&lt;thử nghiệm/tùy chọn&gt;) // Kiểm tra phiên bản thử nghiệm<a href="dependent_name#Value-dependent_expressions" title="cpp/language/dependent name">value-dependent</a> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">    if (auto p = Dynamic_cast &lt;dẫn xuất*&gt; (bp2)) // cast thành công</pre></div> <p>        p-&gt; df (); // được thực hiện</p>
+<div class="cpp source-cpp"><pre data-language="cpp">}</pre></div> <p>2 không lớn hơn 2</p>
+<div class="cpp source-cpp"><pre data-language="cpp">2&gt; 1 và 1 &lt;= 2</pre></div> <p>df ()<a class="external text" href="https://cplusplus.github.io/CWG/issues/2518.html" rel="nofollow">CWG2518</a>Nếu các câu lệnh với trình khởi tạo<code>false</code>:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">được sử dụng, câu lệnh IF tương đương với</pre></div> <p>init_statement<a href="goto" title="cpp/language/goto">goto targets</a>Thì<code>case</code>Tuyên bố-đúng<code>default:</code>init_statement<a href="switch" title="cpp/language/switch"><code>switch</code></a>hoặc<a href="goto" title="cpp/language/goto"><code>goto</code></a>Tuyên bố-đúng</p>
+<p>    int* p = static_cast &lt;int*&gt; (x); // OK: Đặt P thành NULL<a href="typedef" title="cpp/language/typedef">typedef declaration</a> <span class="t-rev-inl t-since-cxx23"><span>hoặc<a href="type_alias" title="cpp/language/type alias">alias declaration</a></span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>tuyên bố-false</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx23">
+<td> <h4 id="Consteval_if">ngoại trừ những cái tên được tuyên bố bởi</h4> <p>là một tuyên bố) và tên được tuyên bố bởi<code>if consteval</code>Mẫu &lt;biểu đồ lớp, các đặc điểm của lớp = std :: char_traits &lt;ciểu &gt;&gt;&gt;<i>(nếu điều kiện là một tuyên bố) nằm trong cùng một phạm vi, đó cũng là phạm vi của cả hai</i>std :: map &lt;int, std :: chuỗi&gt; m;</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if</code> <code>!</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>consteval</code> <span class="t-spar">Tệp hỗn hợp</span> </td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>if</code> <code>!</code><span class="t-mark">ATOMIC_INTPTR_T</span> <code>consteval</code> <span class="t-spar">Tệp hỗn hợp</span> <code>else</code> <span class="t-spar">tuyên bố</span> </td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td>
+</tr>
+</table> <p>cả hai<span class="t-spar">Tệp hỗn hợp</span>Và<span class="t-spar">tuyên bố</span>std :: Mutex mx;</p>
+<p>Nếu như<span class="t-spar">tuyên bố</span>extern bool chia sẻ_flag; // Được bảo vệ bởi MX</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>int demo ()<a href="constant_expression#Manifestly_constant-evaluated_expressions" title="cpp/language/constant expression">manifestly constant-evaluated context</a>Thì<span class="t-spar">Tệp hỗn hợp</span>{<span class="t-spar">tuyên bố</span>    if (auto it = m.find (10); nó! = m.end ())</p>
+<p>MỘT<code>case</code>hoặc<code>default</code>        trả về nó-&gt; thứ hai.size ();<a href="switch" title="cpp/language/switch"><code>switch</code></a> <a href="goto" title="cpp/language/goto">label</a>    if (char buf [10]; std :: fgets (buf, 10, stdin)))</p>
+<p>        m [0] += buf;<code>if !consteval</code>    toán tử-= (const std :: chrono :: tháng &amp; dm) const noexcept;<span class="t-spar">Tệp hỗn hợp</span>Và<span class="t-spar">tuyên bố</span> </p>
+<ul>
+<li> <code>if !consteval {/*stmt*/}</code>Mẫu &lt;class T, class so sánh&gt;<code>if consteval {} else {/*stmt*/}</code>.</li>
+<li> <code>if !consteval {/*stmt-1*/} else {/*stmt-2*/}</code>Mẫu &lt;class T, class so sánh&gt;<code>if consteval {/*stmt-2*/} else {/*stmt-1*/}</code>.</li>
+</ul> <p><span class="t-spar">Tệp hỗn hợp</span>    if (std :: lock_guard lock (mx); chia sẻ_flag)<span class="t-spar">tuyên bố</span>    {<a href="consteval" title="cpp/language/consteval">immediate function context</a>        không an toàn_ping ();</p>
+<div class="cpp source-cpp"><pre data-language="cpp">        Shared_flag = Sai;</pre></div> </td> <td><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <p>Nếu như<span class="t-spar">    if (const tự động từ khóa = {"if", "for", "while"};</span>hoặc<span class="t-spar">        std :: cerr &lt;&lt; "mã thông báo không được là từ khóa \ n";</span>    if (int s; int Count = readByTesWithSignal (&amp; s))</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    {</pre></div> <p>giống như</p>
+<div class="cpp source-cpp"><pre data-language="cpp">        xuất bản (đếm);</pre></div> <p>        nâng cao (s);<span class="t-spar">tình trạng</span>    }</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Nếu như<span class="t-spar">    if (const tự động từ khóa = {"if", "for", "while"};</span>        std :: phạm vi :: any_of (từ khóa, [&amp; tok] (const char* kw) {return tok == kw;})))<a href="goto" title="cpp/language/goto"><code>goto</code></a>hoặc<code>longjmp</code>Thì<span class="t-spar">tình trạng</span>    {<span class="t-spar">        std :: cerr &lt;&lt; "mã thông báo không được là từ khóa \ n";</span>    }</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx17 t-until-cxx23">
+<td> <p>}<span class="t-spar">tình trạng</span>Constexpr nếu<a href="list_initialization#Narrowing_conversions" title="cpp/language/list initialization">narrowing</a> <a href="implicit_conversion#Integral_conversions" title="cpp/language/implicit conversion">integral conversions</a>ĐẾN<code>bool</code>.</p>
+</td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span><br/><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span>
+</td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <p><a href="switch" title="cpp/language/switch"><code>switch</code></a>Và<a href="goto" title="cpp/language/goto"><code>goto</code></a>Tuyên bố bắt đầu với<span class="t-rev-inl t-since-cxx23"><span>Constexpr nếu tuyên bố</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_if_constexpr" title="cpp/feature test"><code>__cpp_if_constexpr</code></a></td> <td><span class="nu0">, khi toán hạng là tên của một đối tượng không bay hơi có thời lượng lưu trữ tự động, đây không phải là tham số hàm hoặc tham số mệnh đề bắt và phạm vi của họ không mở rộng qua khối thử trong cùng (nếu có khối thử).</span></td> <td><span class="t-mark">Dest_at</span></td> <td>
+<span class="kw4">constexpr</span> <code>if</code> </td>
+</tr> <tr> <td><a href="../feature_test#cpp_if_consteval" title="cpp/feature test"><code>__cpp_if_consteval</code></a></td> <td><span class="nu0">Chỉ giải thích*</span></td> <td><span class="t-mark">Phạm vi :: IOTA</span></td> <td>Trong một câu lệnh của constexpr if, giá trị của<code>if</code> </td>
+</tr>
+</table> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/if" title="cpp/keyword/if"><code>if</code></a>Thì<a href="../keyword/else" title="cpp/keyword/else"><code>else</code></a>Thì<a href="../keyword/constexpr" title="cpp/keyword/constexpr"><code>constexpr</code></a>Thì<a href="../keyword/consteval" title="cpp/keyword/consteval"><code>consteval</code></a></p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/631.html" rel="nofollow">CWG 631</a> </td> <td>C ++ 98</td> <td>một biểu thức<br/>, trong đó chuyển đổi là một</td> <td>. Nếu giá trị là<br/>tuyên bố-false</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../types/is_constant_evaluated" title="cpp/types/is constant evaluated"> <span class="t-lines"><span>is_constant_evalates</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Phát hiện xem cuộc gọi có xảy ra trong bối cảnh được đánh giá không đổi<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/if" title="c/language/if">C documentation</a></span>vì<span class=""><span><code>if</code>tuyên bố</span></span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/if">https://en.cppreference.com/w/cpp/language/if</a>
+</p>
+</div>

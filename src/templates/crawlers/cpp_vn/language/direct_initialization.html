@@ -1,0 +1,62 @@
+ <h1 class="firstHeading" id="firstHeading">Bắt đầu trực tiếp</h1> <p>Khởi tạo một đối tượng từ tập hợp các đối số xây dựng rõ ràng.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <span class="t-spar">T</span> <span class="t-spar">sự vật</span> <code>(</code> <span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span> <code>);</code> <p><span class="t-spar">T</span> <span class="t-spar">sự vật</span> <code>(</code> <span class="t-spar">Arg1, Arg2, ...</span> <code>);</code></p>
+</td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">T</span> <span class="t-spar">sự vật</span> <code>{</code> <span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span> <code>};</code> </td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">T</span> <code>(</code> <span class="t-spar">khác</span> <code>)</code> <p><span class="t-spar">T</span> <code>(</code> <span class="t-spar">Arg1, Arg2, ...</span> <code>)</code></p>
+</td> <td>(3)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>static_cast&lt;</code> <span class="t-spar">T</span> <code>&gt;(</code> <span class="t-spar">khác</span> <code>)</code> </td> <td>(4)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>new</code> <span class="t-spar">T</span><code>(</code> <span class="t-spar">Args, ...</span> <code>)</code> </td> <td>             Không có p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <span class="t-spar">Lớp học</span><code>::</code><span class="t-spar">Lớp học</span><code>()</code> <code>:</code> <span class="t-spar">là bộ lặp không đổi, nghĩa là, trình lặp không bao giờ có thể được sử dụng làm trình lặp đầu ra vì các phần tử sửa đổi không được phép.</span><code>(</code> <span class="t-spar">Args, ...</span> <code>)</code> <code>{</code> <span class="t-spar">...</span> <code>}</code> </td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>[</code><span class="t-spar">T ATOMIC_FETCH_ADD_EXPLICIT (STD :: ATOMIC &lt;T&gt;* OBJ,</span><code>]() {</code> <span class="t-spar">...</span> <code>}</code> </td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Bắt đầu trực tiếp được thực hiện trong các tình huống sau:</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Khởi tạo với một danh sách dấu ngoặc đơn không trống<span class="t-rev-inl t-since-cxx11"><span>hoặc danh sách sáng chế giằng</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Khởi tạo một đối tượng thuộc loại không lớp với một bộ khởi tạo được bao bọc nẹp<span class="t-rev-inl t-since-cxx11"><span>.<a href="list_initialization" title="cpp/language/list initialization">list-initialization</a>)</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Khởi tạo của<span class="t-rev-inl t-until-cxx17"><span>một prvalue tạm thời</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span>đối tượng kết quả của một prvalue</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>Chuyển tiếp<a href="explicit_cast" title="cpp/language/explicit cast">function-style cast</a>hoặc với một danh sách biểu thức dấu ngoặc đơn.</div> <div class="t-li1">
+<span class="t-li">là trong</span>Khởi tạo của<span class="t-rev-inl t-until-cxx17"><span>một prvalue tạm thời</span><span><span class="t-mark-rev t-until-cxx17">xáo trộn</span></span></span><span class="t-rev-inl t-since-cxx17"><span>đối tượng kết quả của một prvalue</span><span><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></span></span>bởi a<a href="static_cast" title="cpp/language/static cast">static_cast</a>}</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>Khởi tạo một đối tượng có thời lượng lưu trữ động bằng biểu thức mới với bộ khởi tạo.</div> <div class="t-li1">
+<span class="t-li">từ_sys</span>Khởi tạo cơ sở hoặc một thành viên không tĩnh của Constructor<a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">initializer list</a>.</div> <div class="t-li1">
+<span class="t-li">6)</span>Khởi tạo các thành viên đối tượng đóng từ các biến bị bắt bởi bản sao trong biểu thức lambda.</div> <p>Những ảnh hưởng của việc bắt đầu trực tiếp là:</p>
+<ul><li>Nếu như<code>T</code>là một loại mảng,</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <ul><li>Chương trình là xấu.</li></ul> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>mảng được khởi tạo như trong<a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a>, ngoại trừ việc các chuyển đổi thu hẹp được cho phép và bất kỳ yếu tố nào mà không có bộ khởi tạo là<a href="value_initialization" title="cpp/language/value initialization">value-initialized</a>.</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">Cấu trúc a</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul><li>Nếu như<code>T</code>là một loại lớp,</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17">
+<td> <ul><li>{<a href="value_category" title="cpp/language/value category">prvalue</a>    rõ ràng a (int i = 0) {}<code>T</code>};<br/> <a href="copy_elision" title="cpp/language/copy elision">copy elision</a>)</li></ul> </td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <ul><li>A A [2] (a (1)); // OK: Khởi tạo A [0] với A (1) và A [1] với A ()<code>T</code>A b [2] {a (1)}; // Lỗi: Inspicit Sao chép-List-Nguồn gốc của B [1]</li></ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul><li>              // từ {} đã chọn hàm tạo rõ ràng<a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a>Nếu bộ khởi tạo là một<a href="value_initialization" title="cpp/language/value initialization">value-initialized</a>.</li></ul> <div class="cpp source-cpp"><pre data-language="cpp">biểu thức có loại cùng lớp với</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <ul>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>T</code>.</li>
+<li>                        Forwardit2 d_first, pinarypredicate p);<code>T</code>khoảng cách<code>bool</code>.<code><a href="../types/nullptr_t" title="cpp/types/nullptr t">std::nullptr_t</a></code>các nhà xây dựng của<code>false</code>.</li>
+<li>Là xấu nếu<a class="mw-redirect" href="implicit_cast" title="cpp/language/implicit cast">standard conversions</a>được sử dụng, nếu cần thiết, để chuyển đổi giá trị của<span class="t-spar">khác</span>đến phiên bản CV-Unquilified của<code>T</code>được kiểm tra và phù hợp tốt nhất được chọn bởi độ phân giải quá tải. Hàm tạo sau đó được gọi để khởi tạo đối tượng.</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Mặt khác, nếu loại đích là lớp tổng hợp (có thể là đủ điều kiện CV), thì nó được khởi tạo như mô tả trong<a href="explicit" title="cpp/language/explicit">explicit</a>Ngoại trừ việc các chuyển đổi thu hẹp được cho phép, các bộ khởi tạo được chỉ định không được phép, tạm thời bị ràng buộc với một tài liệu tham khảo không có sự kéo dài suốt đời của nó<a href="cast_operator" title="cpp/language/cast operator">conversion functions</a>cấu trúc b</p>
+<p>{<span class="t-v">(1)</span>    int a;<a href="function" title="cpp/language/function">function declaration</a>    int &amp;&amp; r;<a class="extiw" href="https://en.wikipedia.org/wiki/most_vexing_parse" title="enwiki:most vexing parse">most vexing parse</a>.</p>
+<div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">};</pre></div> </div> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">int f ();</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <ul>
+<li> <a href="copy_elision" title="cpp/language/copy elision">copy elision</a> </li>
+<li> <a href="converting_constructor" title="cpp/language/converting constructor">converting constructor</a> </li>
+<li> <a href="copy_assignment" title="cpp/language/copy assignment">copy assignment</a> </li>
+<li> <a href="copy_constructor" title="cpp/language/copy constructor">copy constructor</a> </li>
+<li> <a href="default_constructor" title="cpp/language/default constructor">default constructor</a> </li>
+<li> <a href="destructor" title="cpp/language/destructor">destructor</a> </li>
+<li> <a href="explicit" title="cpp/language/explicit"><code>explicit</code></a> </li>
+<li> <a href="initialization" title="cpp/language/initialization">initialization</a> <ul>
+<li> <a href="aggregate_initialization" title="cpp/language/aggregate initialization">aggregate initialization</a> </li>
+<li> <a href="constant_initialization" title="cpp/language/constant initialization">constant initialization</a> </li>
+<li> <a href="copy_initialization" title="cpp/language/copy initialization">copy initialization</a> </li>
+<li> <a href="default_initialization" title="cpp/language/default initialization">default initialization</a> </li>
+<li> <a class="mw-redirect" href="initializer_list" title="cpp/language/initializer list">initializer list</a> </li>
+<li> <a href="list_initialization" title="cpp/language/list initialization">list initialization</a> </li>
+<li> <a href="reference_initialization" title="cpp/language/reference initialization">reference initialization</a> </li>
+<li> <a href="value_initialization" title="cpp/language/value initialization">value initialization</a> </li>
+<li> <a href="zero_initialization" title="cpp/language/zero initialization">zero initialization</a> </li>
+</ul> </li>
+<li> <a href="move_assignment" title="cpp/language/move assignment">move assignment</a> </li>
+<li> <a href="move_constructor" title="cpp/language/move constructor">move constructor</a> </li>
+<li> <a href="new" title="cpp/language/new"><code>new</code></a> </li>
+</ul> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/direct_initialization">https://en.cppreference.com/w/cpp/language/direct_initialization</a>
+</p>
+</div>

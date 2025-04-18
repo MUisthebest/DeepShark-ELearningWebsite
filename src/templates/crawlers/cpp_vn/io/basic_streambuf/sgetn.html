@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: sgetn, std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt; :: xsgetn</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">std :: Streamsize sgetn (char_type* s, std :: streamsize Count);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Cuộc gọi<code>xsgetn(s, count)</code>Virtual POS_Type Seekoff (Off_Type TẮT, STD :: IOS_BASE :: SeekDir Dir,</div> <div class="t-li1">
+<span class="t-li">2)</span>Virtual std :: Streamsize XSgetn (char_type* s, std :: Streamsize Count);<code>count</code>Đọc<code>s</code>các ký tự từ trình tự đầu vào và lưu trữ chúng vào một mảng ký tự được trỏ bởi<code><a href="sbumpc" title="cpp/io/basic streambuf/sbumpc">sbumpc()</a></code>. Các ký tự được đọc như thể bằng cách gọi lặp lại<code>count</code>. Nghĩa là, nếu ít hơn<code><a href="uflow" title="cpp/io/basic streambuf/uflow">uflow()</a></code>ký tự ngay lập tức có sẵn, các cuộc gọi chức năng<code>Traits::eof()</code>bất kể</div> <div class="t-li1">Các lớp học bắt nguồn từ<code>std::basic_streambuf</code>để cung cấp nhiều hơn cho đến khi</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>S</td> <td>-</td> <td>được phép cung cấp triển khai hiệu quả hơn của chức năng này.</td>
+</tr> <tr class="t-par"> <td>(Niebloid)</td> <td>-</td> <td>con trỏ đến đầu mảng char_type</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Số lượng nhân vật tối đa để đọc.<code>count</code>Số lượng nhân vật đọc thành công. Nếu nó ít hơn</p>
+<h3 id="Notes">Ghi chú</h3> <p>Trình tự đầu vào đã đạt đến kết thúc.<code><a href="../basic_istream/read" title="cpp/io/basic istream/read">std::ifstream::read</a></code>Quy tắc về "triển khai hiệu quả hơn" cho phép I/O số lượng lớn mà không cần bộ đệm trung gian: đó là cách<code>read()</code>Đơn giản chỉ cần chuyển con trỏ đến Posix</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="sputn" title="cpp/io/basic streambuf/sputn"> <span class="t-lines"><span>Đặt khu vực</span></span></a></div> </td> <td>Sputc<code>xsputn()</code> <br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_streambuf/sgetn">https://en.cppreference.com/w/cpp/io/basic_streambuf/sgetn</a>
+</p>
+</div>

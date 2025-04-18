@@ -1,0 +1,19 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Time_Base</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">lớp time_base;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Lớp học<code>std::time_base</code>cung cấp các hằng số thứ tự ngày được kế thừa bởi<code><a href="time_get" title="cpp/locale/time get">std::time_get</a></code>mặt.</p>
+<h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>ATOMIC_UNSIGNED_LOCK_FREE</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>enum dateorder { no_order, dmy, mdy, ymd, ydm };</code> </td> <td>do_max_length</td>
+</tr> </table> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>được cung cấp, các giá trị của loại</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>no_order</code> </td> <td>Thứ tự không xác định</td>
+</tr> <tr class="t-dsc"> <td> <code>dmy</code> </td> <td>Ngày, tháng, năm (châu Âu) đặt hàng</td>
+</tr> <tr class="t-dsc"> <td> <code>mdy</code> </td> <td>Tháng, ngày, năm (người Mỹ) đặt hàng</td>
+</tr> <tr class="t-dsc"> <td> <code>ymd</code> </td> <td>Năm, tháng, ngày (châu Á) đặt hàng</td>
+</tr> <tr class="t-dsc"> <td> <code>ydm</code> </td> <td>Năm, ngày, tháng</td>
+</tr> </table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="time_get/date_order" title="cpp/locale/time get/date order"> <span class="t-lines"><span>do_date_order</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>có được thứ tự ưa thích của ngày, tháng và năm<br/> <span class="t-mark">Putback<code>std::time_get&lt;CharT,InputIt&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="time_get/get_date" title="cpp/locale/time get/get date"> <span class="t-lines"><span>DO_GET_DATE</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Trích xuất Tháng, ngày và năm từ luồng đầu vào<br/> <span class="t-mark">Putback<code>std::time_get&lt;CharT,InputIt&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/time_base">https://en.cppreference.com/w/cpp/locale/time_base</a>
+</p>
+</div>

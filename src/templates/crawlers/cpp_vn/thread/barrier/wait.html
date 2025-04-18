@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Rào cản &lt;FallionInfunction&gt; :: Đợi đã</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx20"> <td> <pre data-language="cpp">void Chờ (đến_token &amp;&amp; đến) const;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span> </td> </tr> </table> <p>Nếu như<code>arrival</code>được liên kết với điểm đồng bộ pha cho pha hiện tại của<code>*this</code>, các khối tại điểm đồng bộ hóa liên quan đến<code>arrival</code>Cho đến khi bước hoàn thành pha của pha của điểm đồng bộ hóa được chạy.</p>
+<p>                        Forwardit2 d_first, pinarypredicate p);<code>arrival</code>được liên kết với điểm đồng bộ pha cho giai đoạn ngay trước<code>*this</code>, trả lại ngay lập tức.</p>
+<p>Nếu không, tức là nếu<code>arrival</code>được liên kết với điểm đồng bộ pha cho giai đoạn trước của<code>*this</code>hoặc bất kỳ giai đoạn nào của một đối tượng rào cản khác ngoài<code>*this</code>Hoạt động tương đương cho quá tải</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>đến</td> <td>-</td> <td>chồng chéo với container.<code>arrival_token</code>thu được từ một cuộc gọi trước đó đến<a href="arrive" title="cpp/thread/barrier/arrive"><code>arrive</code></a>trên cùng một<code>barrier</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>Ném<code><a href="../../error/system_error" title="cpp/error/system error">std::system_error</a></code>với mã lỗi được phép cho các loại mutex về lỗi.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="arrive" title="cpp/thread/barrier/arrive"> <span class="t-lines"><span>một yêu cầu cuộc họp loại đối tượng không xác định của</span></span></a></div> </td> <td>đến<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/barrier/wait">https://en.cppreference.com/w/cpp/thread/barrier/wait</a>
+</p>
+</div>

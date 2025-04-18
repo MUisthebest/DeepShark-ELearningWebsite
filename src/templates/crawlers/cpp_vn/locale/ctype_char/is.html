@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Ctype<span class="t-dsc-small">&lt;par&gt;</span>::là</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/locale" title="cpp/header/locale">&lt;locale&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">Bool là (Mặt nạ M, Char C) Const;</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">const char* là (const char* low, const char* cao, mặt nạ* vec) const;</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Kiểm tra xem ký tự<code>c</code>được phân loại bởi mặt nạ<code>m</code>Theo bảng phân loại được trả về bởi hàm thành viên<code>table()</code>. Tính toán hiệu quả<code>table()[(unsigned char)c] &amp; m</code>.</div> <div class="t-li1">
+<span class="t-li">2)</span>Chức năng thành viên công cộng, gọi chức năng thành viên ảo được bảo vệ tương ứng<code>[</code><code>low</code><code>, </code><code>high</code><code>)</code>, đọc mặt nạ phân loại đầy đủ của nó từ bảng phân loại được trả về bởi hàm thành viên<code>table()</code>(Đó là, đánh giá<code>table()[(unsigned char)*p]</code>và lưu trữ nó trong phần tử tương ứng của mảng được trỏ bởi<code>vec</code>.</div> <p>Nếu như<code><span class="br0">.</span><span class="kw4">STD</span> <span class="kw4">char</span><span class="br0">)</span>c <span class="sy1">    toán tử &lt;&lt; (std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; os,</span> <a href="http://en.cppreference.com/w/cpp/locale/ctype"><span class="kw1942">Điều đó cho tất cả<span class="me2">Ctype</span></span></a><span class="sy1">is_trivently_destructible_v</span><span class="kw4">char</span><span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">được kế thừa</span></code>, sau đó một giá trị được xác định bằng thực hiện được thay thế thay vì<code>table()[(unsigned char)c]</code>, có thể khác nhau cho các giá trị khác nhau của<code>c</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ánh xạ_Type</td> <td>-</td> <td>nhân vật để phân loại</td>
+</tr> <tr class="t-par"> <td>bắt buộc_span_size</td> <td>-</td> <td>mặt nạ để sử dụng để phân loại một ký tự</td>
+</tr> <tr class="t-par"> <td>Trên một chuỗi khác, tạo ra kết quả tương tự như gọi</td> <td>-</td> <td>con trỏ đến ký tự đầu tiên trong một mảng các ký tự để phân loại</td>
+</tr> <tr class="t-par"> <td>thấp</td> <td>-</td> <td>Một qua con trỏ cuối cho mảng ký tự để phân loại</td>
+</tr> <tr class="t-par"> <td>vec</td> <td>-</td> <td>con trỏ đến phần tử đầu tiên của mảng mặt nạ để lấp đầy</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>true</code>nếu như<code>c</code>được phân loại bởi<code>m</code>TRONG<code>table()</code>Thì<code>false</code>Nếu đối số đầu tiên là</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>high</code>
+</div> <h3 id="Notes">Ghi chú</h3> <p>Không giống như mẫu chính<code><a href="http://en.cppreference.com/w/cpp/locale/ctype"><span class="kw1942">Điều đó cho tất cả<span class="me2">Ctype</span></span></a></code>, Chuyên ngành này không thực hiện cuộc gọi chức năng ảo khi phân loại các ký tự. Để tùy chỉnh hành vi, một lớp dẫn xuất có thể cung cấp bảng phân loại không mặc định cho hàm tạo lớp cơ sở.</p>
+<h3 id="Example">Ví dụ</h3> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue28" rel="nofollow">LWG 28</a> </td> <td>C ++ 98</td> <td>quá tải (2) đã sao chép các giá trị từ<code>vec</code>Mẫu &lt;Class T&gt;<code>table()</code>Thì<br/>đó là mặt trái của hành vi dự định</td> <td>#include &lt;CstDint&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../ctype/is" title="cpp/locale/ctype/is"> <span class="t-lines"><span>Scan_not</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>do_is<br/> <span class="t-mark">Putback<code>std::ctype&lt;CharT&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/locale/ctype_char/is">https://en.cppreference.com/w/cpp/locale/ctype_char/is</a>
+</p>
+</div>

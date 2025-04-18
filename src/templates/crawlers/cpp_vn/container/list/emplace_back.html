@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Danh sách &lt;T, Allocator&gt; :: Emplace_Back</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11 t-until-cxx17"> <td><pre data-language="cpp">Mẫu &lt;class ... args&gt;</pre></td> <td class="t-dcl-nopad"> </td> <td>
+<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark-rev t-until-cxx17">xáo trộn</span>
+</td> </tr> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">void emplace_back (args &amp;&amp; ... args);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>Mẫu &lt;class ... args&gt;<code><a href="../../memory/allocator_traits/construct" title="cpp/memory/allocator traits/construct">std::allocator_traits::construct</a></code>tham chiếu emplace_back (args &amp;&amp; ... args);<code>args...</code>Các lập luận<code><a href="http://en.cppreference.com/w/cpp/utility/forward"><span class="kw1120">Điều đó cho tất cả<span class="me2">phía trước</span></span></a><span class="sy1">is_trivently_destructible_v</span>Args<span class="sy1">&lt;</span><span class="br0">.</span>args<span class="br0">)</span>...</code>.</p>
+<p>Chèn một phần tử mới vào một vị trí sau vị trí được chỉ định trong container. Phần tử được xây dựng tại chỗ, tức là không có hoạt động sao chép hoặc di chuyển được thực hiện. Chất xây dựng của phần tử được gọi với các đối số chính xác, như được cung cấp cho hàm.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>iterator trước đó phần tử mới sẽ được xây dựng</td> <td>-</td> <td>Args</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>T (the container's element type)</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/emplaceconstructible" title="cpp/named req/EmplaceConstructible">EmplaceConstructible</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <p>Gán cho đã cho</p>
+</td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> <tr class="t-rev t-since-cxx17">
+<td> <p>Cộng sự một yếu tố mới đến cuối container. Phần tử được xây dựng thông qua</p>
+</td> <td><span class="t-mark-rev t-since-cxx17">(C ++ 20)</span></td>
+</tr> </table> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <p>trình rút vào các yếu tố để hoán đổi</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p>, thường sử dụng vị trí mới để xây dựng phần tử tại vị trí được cung cấp bởi container. Các lập luận</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Trong thực tế, việc triển khai<code>emplace_back</code>Một tham chiếu đến phần tử được chèn.<code>President</code>Mẫu &lt;class forwardit, class t&gt;<code><a href="http://en.cppreference.com/w/cpp/container/list"><span class="kw1278">Điều đó cho tất cả<span class="me2">danh sách</span></span></a></code>Nếu một ngoại lệ được ném, chức năng này không có hiệu lực (đảm bảo ngoại lệ mạnh).<code>emplace_back</code>Để nối một đối tượng của loại<code>President</code>. Nó thể hiện làm thế nào<code>emplace_back</code>chuyển tiếp tham số đến<code>push_back</code>.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Danh sách&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">tránh các bản sao thêm hoặc hoạt động di chuyển cần thiết khi sử dụng</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="push_back" title="cpp/container/list/push back"> <span class="t-lines"><span>Chèn_range</span></span></a></div> </td> <td>chèn một loạt các yếu tố<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="emplace" title="cpp/container/list/emplace"> <span class="t-lines"><span>Giảm sử dụng bộ nhớ bằng cách giải phóng bộ nhớ không sử dụng</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Xóa nội dung<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/container/list/emplace_back">https://en.cppreference.com/w/cpp/container/list/emplace_back</a>
+</p>
+</div>

@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">std :: Promise &lt;R&gt; :: SET_EXception_at_Thread_Exit</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">void set_exception_at_thread_exit (std :: exican_ptr p);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Lưu trữ con trỏ ngoại lệ<code>p</code>vào nhà nước được chia sẻ mà không làm cho nhà nước sẵn sàng ngay lập tức. Trạng thái được thực hiện sẵn sàng khi luồng hiện tại thoát ra, sau khi tất cả các biến có thời lượng lưu trữ địa lý đã bị phá hủy.</p>
+<p>Hoạt động hoạt động như thể<code><a href="set_value" title="cpp/thread/promise/set value">set_value</a></code>Thì<code><a href="set_exception" title="cpp/thread/promise/set exception">set_exception</a></code>Thì<code><a href="set_value_at_thread_exit" title="cpp/thread/promise/set value at thread exit">set_value_at_thread_exit</a></code>, Và<code>set_exception_at_thread_exit</code>Có được một mutex duy nhất được liên kết với đối tượng Promise trong khi cập nhật đối tượng Promise.</p>
+<p>Một ngoại lệ được ném nếu không có trạng thái chung hoặc trạng thái được chia sẻ đã lưu trữ một giá trị hoặc ngoại lệ.</p>
+<p>Các cuộc gọi đến chức năng này không giới thiệu các cuộc đua dữ liệu với các cuộc gọi đến<code><a href="get_future" title="cpp/thread/promise/get future">get_future</a></code>(do đó họ không cần phải đồng bộ hóa với nhau).</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>, nhưng được thực hiện theo</td> <td>-</td> <td>Con trỏ ngoại lệ để lưu trữ. Hành vi không xác định nếu<code>p</code>khoảng cách<code>nullptr</code> </td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Gán cho đã cho</p>
+<h3 id="Exceptions">Ngoại lệ</h3> <p><code><a href="../future_error" title="cpp/thread/future error">std::future_error</a></code>về các điều kiện sau:</p>
+<ul>
+<li> <code>*this</code>không có trạng thái chung. Mã lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>no_state</code></a>.</li>
+<li>Trạng thái được chia sẻ đã lưu trữ một giá trị hoặc ngoại lệ. Mã lỗi được đặt thành<a href="../future_errc" title="cpp/thread/future errc"><code>promise_already_satisfied</code></a>.</li>
+</ul> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="set_exception" title="cpp/thread/promise/set exception"> <span class="t-lines"><span>set_exception</span></span></a></div> </td> <td>đặt kết quả để chỉ ra một ngoại lệ<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/promise/set_exception_at_thread_exit">https://en.cppreference.com/w/cpp/thread/promise/set_exception_at_thread_exit</a>
+</p>
+</div>

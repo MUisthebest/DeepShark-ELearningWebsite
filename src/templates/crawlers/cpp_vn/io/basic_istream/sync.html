@@ -1,0 +1,25 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_istream &lt;biểu đồ, đặc điểm&gt; :: đồng bộ hóa</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">int sync ();</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Đồng bộ hóa bộ đệm đầu vào với nguồn dữ liệu liên quan.</p>
+<p>Hành xử như<a href="../../named_req/unformattedinputfunction" title="cpp/named req/UnformattedInputFunction">UnformattedInputFunction</a>, và sau đó gọi<code><a href="gcount" title="cpp/io/basic istream/gcount">gcount()</a></code>không bị ảnh hưởng. Sau khi xây dựng và kiểm tra đối tượng Sentry,</p>
+<p>Nếu như<code><a href="../basic_ios/rdbuf" title="cpp/io/basic ios/rdbuf">rdbuf()</a></code>là một con trỏ null, trở lại<code>-1</code>.</p>
+<p>Nếu không, các cuộc gọi<code>rdbuf()-&gt;pubsync()</code>. Nếu chức năng đó trở lại<code>-1</code>là một con trỏ null hoặc nếu không có ký tự nào được đưa vào<code>setstate(badbit)</code>Nếu lỗi ngăn chặn ngay cả khi biết liệu<code>-1</code>để định vị<code>​0​</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>​0​</code>về thành công,<code>-1</code>Khi thất bại hoặc nếu luồng không hỗ trợ hoạt động này (không bị ảnh hưởng).</p>
+<h3 id="Notes">Ghi chú</h3> <p>Như với<code><a href="readsome" title="cpp/io/basic istream/readsome">readsome()</a></code>, đó là việc thực hiện được xác định là liệu chức năng này có làm bất cứ điều gì với các luồng do thư viện cung cấp hay không. Mục đích thường là cho hoạt động đọc tiếp theo để chọn bất kỳ thay đổi nào có thể được thực hiện đối với chuỗi đầu vào liên quan sau khi bộ đệm luồng lấp đầy khu vực GET của nó. Để đạt được điều đó,<code>sync()</code>Có thể làm trống khu vực Get, hoặc nó có thể nạp lại nó, hoặc nó có thể không làm gì cả. Một ngoại lệ đáng chú ý là Visual Studio, nơi hoạt động này loại bỏ đầu vào chưa được xử lý khi được gọi bằng luồng đầu vào tiêu chuẩn.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>Thể hiện việc sử dụng luồng đầu vào<code>sync()</code>với đầu vào tệp. Lưu ý rằng đầu ra ở đây được xác định là do triển khai, vì các cuộc gọi đến<a href="../basic_filebuf/sync" title="cpp/io/basic filebuf/sync"><code>std::basic_filebuf::sync</code></a>được xác định thực hiện để đọc.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Fstream&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue62" rel="nofollow">LWG 62</a> </td> <td>C ++ 98</td> <td>
+<code>sync()</code>đến nửa đầu của một vectơ số nguyên:<code>traits::eof()</code>nếu như<code>rdbuf()-&gt;pubsync()</code>(C ++ 20)<code>-1</code> </td> <td>(C ++ 20)<code>-1</code>                     Forwardit2 s_first, forwardit2 s_last,</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../basic_streambuf/pubsync" title="cpp/io/basic streambuf/pubsync"> <span class="t-lines"><span>tìm kiếm</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>Tái định vị con trỏ tiếp theo trong chuỗi đầu vào, trình tự đầu ra hoặc cả hai sử dụng địa chỉ tuyệt đối<br/> <span class="t-mark">Putback<code>std::basic_streambuf&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../basic_ostream/flush" title="cpp/io/basic ostream/flush"> <span class="t-lines"><span>tuôn ra</span></span></a></div> </td> <td>Trả về chỉ báo vị trí đầu ra<br/> <span class="t-mark">std :: cặp &lt;forwardit, forwardit&gt; <code>std::basic_ostream&lt;CharT,Traits&gt;</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_istream/sync">https://en.cppreference.com/w/cpp/io/basic_istream/sync</a>
+</p>
+</div>

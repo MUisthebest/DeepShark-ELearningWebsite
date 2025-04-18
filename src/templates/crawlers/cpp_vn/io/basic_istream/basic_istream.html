@@ -1,0 +1,14 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_istream &lt;biểu đồ, đặc điểm&gt; :: basic_istream</h1> <table class="t-dcl-begin"> <tr class="t-dcl"> <td> <pre data-language="cpp">rõ ràng cơ bản_istream (std :: basic_streambuf &lt;biểu đồ, đặc điểm&gt;* sb);</pre>
+</td> <td>(1)</td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">được bảo vệ:</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">basic_istream (const basic_istream &amp; rhs) = xóa;</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>được bảo vệ:<code>basic_istream</code>basic_istream (basic_istream &amp;&amp; rhs);<code>basic_ios::init(sb)</code>1) Xây dựng<code>gcount()</code>đối tượng, gán các giá trị ban đầu cho lớp cơ sở bằng cách gọi</p>
+<p>. Giá trị của</p>
+<p>được khởi tạo về 0.<code>gcount()</code>từ<code>rhs</code>2) Trình xây dựng bản sao được bảo vệ và bị xóa. Các luồng đầu vào không thể sao chép.<code>rhs</code>3) Trình xây dựng di chuyển sao chép giá trị của<code>basic_ios&lt;CharT, Traits&gt;::move(rhs)</code>, đặt giá trị gcount () của<code>rdbuf()</code>đến 0 và sử dụng<code>rhs</code>Mẫu &lt;Class T&gt;<code>*this</code>Để di chuyển tất cả các thành viên BASIC_IOS, ngoại trừ<code><a href="../basic_ifstream" title="cpp/io/basic ifstream">std::basic_ifstream</a></code>Và<code><a href="../basic_istringstream" title="cpp/io/basic istringstream">std::basic_istringstream</a></code>, từ</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Ở cấp độ thấp, lớp học về cơ bản kết thúc việc triển khai thiết bị thô của</td> <td>-</td> <td>. Trình xây dựng di chuyển này được bảo vệ: nó được gọi bởi các hàm tạo di chuyển của các lớp luồng đầu vào di chuyển</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">, trong đó biết làm thế nào để di chuyển chính xác bộ đệm luồng liên quan.</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Streambuffer để sử dụng làm thiết bị cơ bản</pre></div> </div> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/basic_istream/basic_istream">https://en.cppreference.com/w/cpp/io/basic_istream/basic_istream</a>
+</p>
+</div>

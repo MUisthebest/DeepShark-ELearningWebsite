@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">std :: pmr :: synchronized_pool_resource :: DO_IS_EQUAL</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx17"> <td> <pre data-language="cpp">BOOL ảo DO_IS_EQUAL (const std :: pmr :: memory_resource &amp; other) const noexcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx17">(C ++ 20)</span> </td> </tr> </table> <p>So sánh<code>*this</code>với<code>other</code>cho danh tính - bộ nhớ được phân bổ bằng cách sử dụng<code>synchronized_pool_resource</code>Chỉ có thể được giải quyết bằng cách sử dụng cùng một tài nguyên đó.</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>this == &amp;other</code></p>
+<h3 id="Defect_report">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3000" rel="nofollow">LWG 3000</a> </td> <td>C ++ 17</td> <td>không cần thiết<code>dynamic_cast</code>đã được thực hiện</td> <td>#include &lt;Istream&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../memory_resource/do_is_equal" title="cpp/memory/memory resource/do is equal"> <span class="t-lines"><span>DO_IS_EQUAL</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-cmark">. Con trỏ được đảm bảo là hợp lệ ít nhất là cho đến khi đối tượng ngoại lệ mà nó thu được bị phá hủy hoặc cho đến khi hàm thành viên không phải là const (ví dụ: toán tử gán bản sao) trên đối tượng ngoại lệ được gọi.</span></span></span></div> </td> <td>So sánh cho sự bình đẳng với người khác<code>memory_resource</code><br/><span class="t-mark">(Chức năng thành viên riêng ảo của<code>std::pmr::memory_resource</code>)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/synchronized_pool_resource/do_is_equal">https://en.cppreference.com/w/cpp/memory/synchronized_pool_resource/do_is_equal</a>
+</p>
+</div>

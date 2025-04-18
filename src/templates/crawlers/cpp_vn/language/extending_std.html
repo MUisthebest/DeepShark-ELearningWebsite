@@ -1,0 +1,101 @@
+ <h1 class="firstHeading" id="firstHeading">Mở rộng không gian tên<code>std</code>
+</h1> <h3 id="Adding_declarations_to_std">Thêm khai báo vào<code>std</code>
+</h3> <p>Đó là hành vi không xác định để thêm các tuyên bố hoặc định nghĩa vào không gian tên<code>std</code>hoặc cho bất kỳ không gian tên được lồng trong<code>std</code>, với một vài ngoại lệ được ghi nhận dưới đây.</p>
+<div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Tiện ích&gt;</pre></div> <h3 id="Adding_template_specializations"> </h3> <h4 id="Class_templates">không gian tên std</h4> <p>{<code>std</code>// STD có thể vô tình giới thiệu hành vi không xác định và không</p>
+<div class="cpp source-cpp"><pre data-language="cpp">    cặp &lt;int, int&gt; toán tử+(cặp &lt;int, int&gt; a, cặp &lt;int, int&gt; b)</pre></div> <ul>
+<li>    {<code><a href="../numeric/complex" title="cpp/numeric/complex">std::complex</a></code>        return {a.first + b.first, a.second + b.second};</li>
+<li>Mẫu &lt;class T, std :: size_t phạm vi&gt;<code><a href="../types/numeric_limits" title="cpp/types/numeric limits">std::numeric_limits</a></code>    }<span class="t-rev-inl t-until-cxx11"><span><code>static const</code></span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span><code>static constexpr</code></span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>}<a href="constant_expression" title="cpp/language/constant expression">integral constant expressions</a>.</li>
+</ul> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <ul>
+<li>Thêm chuyên ngành mẫu<a href="../header/type_traits" title="cpp/header/type traits"><code>&lt;type_traits&gt;</code></a>Mẫu lớp<code><a href="../types/common_type" title="cpp/types/common type">std::common_type</a></code><span class="t-rev-inl t-since-cxx20"><span>Và<a href="../types/common_reference#Helper_types" title="cpp/types/common reference"><code>std::basic_common_reference</code></a></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Nó được phép thêm các chuyên ngành mẫu cho bất kỳ mẫu lớp thư viện tiêu chuẩn nào vào không gian tên<a href="../types" title="cpp/types">type traits</a>Chỉ khi tuyên bố phụ thuộc vào ít nhất một loại do chương trình xác định và chuyên môn hóa đáp ứng tất cả các yêu cầu cho mẫu ban đầu, ngoại trừ trường hợp các chuyên ngành đó bị cấm.<code><a href="../types/integral_constant" title="cpp/types/integral constant">std::integral_constant</a></code>.</li>
+<li>Mẫu &lt;class T, std :: size_t phạm vi&gt;<code><a href="../utility/hash" title="cpp/utility/hash">std::hash</a></code>// Nhận tuyên bố của mẫu STD chính :: Hash.<a href="../named_req/hash" title="cpp/named req/Hash">Hash</a>yêu cầu.</li>
+<li>Mẫu &lt;class T, std :: size_t phạm vi&gt;<code><a href="../atomic/atomic" title="cpp/atomic/atomic">std::atomic</a></code>// Chúng tôi không được phép tự tuyên bố nó.</li>
+<li>Mẫu &lt;class T, std :: size_t phạm vi&gt;<code><a href="../memory/shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>Và<code><a href="../memory/weak_ptr" title="cpp/memory/weak ptr">std::weak_ptr</a></code>// thực hiện đầu tiên<a href="../named_req/copyconstructible" title="cpp/named req/CopyConstructible">CopyConstructible</a>Và<a href="../named_req/copyassignable" title="cpp/named req/CopyAssignable">CopyAssignable</a>// &lt;tyindex&gt; được đảm bảo cung cấp một tuyên bố như vậy, <code><a href="../memory/shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>// thực hiện đầu tiên<a href="../named_req/lessthancomparable" title="cpp/named req/LessThanComparable">LessThanComparable</a>// và rẻ hơn nhiều so với &lt;chức năng&gt;.<code>bool</code>.</li>
+<li>Mẫu &lt;class T, std :: size_t phạm vi&gt;<code><a href="../iterator/istreambuf_iterator" title="cpp/iterator/istreambuf iterator">std::istreambuf_iterator</a></code> </li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx17">
+<td> <ul><li> <code><a href="../utility/functional/unary_function" title="cpp/utility/functional/unary function">std::unary_function</a></code>Và<code><a href="../utility/functional/binary_function" title="cpp/utility/functional/binary function">std::binary_function</a></code>#include &lt;TypeIndex&gt; </li></ul> </td> <td><span class="t-mark-rev t-until-cxx17">xáo trộn</span></td>
+</tr> </table> <p> </p>
+<h4 id="Function_templates_and_member_functions_of_templates">// chuyên về std :: băm để có thể sử dụng mytype làm khóa trong </h4> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>// std :: unetered_set và std :: unetered_map.  Mở không gian tên<code>std</code>// STD có thể vô tình giới thiệu hành vi không xác định và không</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>// Cần thiết cho các mẫu lớp học.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <p>Mẫu &lt;&gt;</p>
+<p>struct std :: Hash &lt;MyType&gt;</p>
+<h4 id="Variable_templates">{</h4> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx14">
+<td> <p>    std :: size_t toán tử () (const mytype &amp; t) const {return t.hash (); }</p>
+</td> <td><span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span></td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <ul>
+<li>Mẫu &lt;class T, std :: size_t phạm vi&gt;<code><a href="../iterator/sized_sentinel_for" title="cpp/iterator/sized sentinel for">std::disable_sized_sentinel_for</a></code>Thì<code><a href="../ranges/sized_range" title="cpp/ranges/sized range">std::ranges::disable_sized_range</a></code>Thì<code><a href="../ranges/view" title="cpp/ranges/view">std::ranges::enable_view</a></code>Và<code><a href="../ranges/borrowed_range" title="cpp/ranges/borrowed range">std::ranges::enable_borrowed_range</a></code>};<code>const bool</code>Chuyên về mẫu<ul>
+<li> <code>std::disable_sized_sentinel_for</code>Đối với bất kỳ loại nào khác ngoài phao, gấp đôi và đôi dài là không xác định.<code>S</code>Và<code>I</code>phải xác định tất cả các thành viên đã tuyên bố</li>
+<li> <code>std::ranges::disable_sized_range</code>Thì<code>std::ranges::enable_view</code>Và<code>std::ranges::enable_borrowed_range</code>trong mẫu chính, theo cách mà chúng có thể sử dụng được</li>
+</ul> </li>
+<li>Không có mẫu nào được xác định trong<a href="../numeric/constants" title="cpp/numeric/constants">mathematical constant variable template</a>có thể được chuyên về một loại do chương trình xác định, ngoại trừ</li>
+</ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Explicit_instantiation_of_templates">. Điều này bao gồm</h3> <p>và mẫu lớp<span class="t-rev-inl t-since-cxx20"><span>lớp học</span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span>Đối với các loại do chương trình xác định phải thỏa mãn</p>
+<h3 id="Program-defined_types">Phải có một hàm tạo bản sao tầm thường, một hàm tạo mặc định ConstExPR và bộ hủy diệt tầm thường.</h3> <p><i>. Ngoài ra, các chuyên ngành của</i>và chuyển đổi thành</p>
+<p><i>Phải có một hàm tạo bản sao tầm thường, một hàm tạo mặc định ConstExPR và bộ hủy diệt tầm thường.</i>có thể không được chuyên môn.<a href="class" title="cpp/language/class">class types</a>hoặc<a href="enum" title="cpp/language/enum">enumeration types</a>Đó là hành vi không xác định để khai báo chuyên môn đầy đủ hoặc một phần của bất kỳ mẫu lớp thành viên nào của lớp thư viện tiêu chuẩn hoặc mẫu lớp.<span class="t-rev-inl t-since-cxx11"><span>, hoặc<a href="lambda" title="cpp/language/lambda">closure type</a>Các mẫu chức năng và chức năng thành viên của các mẫu</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>Nó được phép thêm các chuyên ngành mẫu cho bất kỳ mẫu chức năng thư viện tiêu chuẩn nào vào không gian tên</p>
+<h3 id="Other_restrictions">Chỉ khi tuyên bố phụ thuộc vào ít nhất một loại do chương trình xác định và chuyên môn hóa đáp ứng tất cả các yêu cầu cho mẫu ban đầu, ngoại trừ trường hợp các chuyên ngành đó bị cấm.</h3> <p>Không gian tên<code>std</code>Đó là hành vi không xác định để tuyên bố một chuyên môn đầy đủ của bất kỳ mẫu chức năng thư viện tiêu chuẩn nào.<a href="namespace#Inline_namespaces" title="cpp/language/namespace">inline namespace</a>.</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <h4 id="Addressing_restriction">Đó là hành vi không xác định để tuyên bố chuyên môn hóa đầy đủ của bất kỳ chức năng thành viên nào của mẫu lớp thư viện tiêu chuẩn:</h4> <p>Đó là hành vi không xác định để khai báo chuyên môn hóa đầy đủ của bất kỳ mẫu chức năng thành viên nào của lớp thư viện tiêu chuẩn hoặc mẫu lớp:<i>Mẫu biến</i>Đó là hành vi không xác định để khai báo chuyên môn đầy đủ hoặc một phần của bất kỳ mẫu biến thư viện tiêu chuẩn nào, ngoại trừ khi được phép rõ ràng.</p>
+<p>sẽ có thể sử dụng trong các biểu thức không đổi và có loại</p>
+<div class="cpp source-cpp"><pre data-language="cpp">. Và</pre></div> <h4 id="Designated_addressable_functions">có thể được chuyên về các loại đối tượng không phải là cv-unqualified</h4> <ul><li> <a href="../io/manip" title="cpp/io/manip">I/O manipulators</a>:<ul>
+<li> <code>fmtflags</code>Nó được phép khởi tạo rõ ràng một<ul>
+<li> <code><a href="../io/manip/boolalpha" title="cpp/io/manip/boolalpha">std::boolalpha</a></code> </li>
+<li> <code><a href="../io/manip/boolalpha" title="cpp/io/manip/boolalpha">std::noboolalpha</a></code> </li>
+<li> <code><a href="../io/manip/showbase" title="cpp/io/manip/showbase">std::showbase</a></code> </li>
+<li> <code><a href="../io/manip/showbase" title="cpp/io/manip/showbase">std::noshowbase</a></code> </li>
+<li> <code><a href="../io/manip/showpoint" title="cpp/io/manip/showpoint">std::showpoint</a></code> </li>
+<li> <code><a href="../io/manip/showpoint" title="cpp/io/manip/showpoint">std::noshowpoint</a></code> </li>
+<li> <code><a href="../io/manip/showpos" title="cpp/io/manip/showpos">std::showpos</a></code> </li>
+<li> <code><a href="../io/manip/showpos" title="cpp/io/manip/showpos">std::noshowpos</a></code> </li>
+<li> <code><a href="../io/manip/skipws" title="cpp/io/manip/skipws">std::skipws</a></code> </li>
+<li> <code><a href="../io/manip/skipws" title="cpp/io/manip/skipws">std::noskipws</a></code> </li>
+<li> <code><a href="../io/manip/uppercase" title="cpp/io/manip/uppercase">std::uppercase</a></code> </li>
+<li> <code><a href="../io/manip/uppercase" title="cpp/io/manip/uppercase">std::nouppercase</a></code> </li>
+<li> <code><a href="../io/manip/unitbuf" title="cpp/io/manip/unitbuf">std::unitbuf</a></code> </li>
+<li> <code><a href="../io/manip/unitbuf" title="cpp/io/manip/unitbuf">std::nounitbuf</a></code> </li>
+</ul> </li>
+<li> <code>adjustfield</code>Nó được phép khởi tạo rõ ràng một<ul>
+<li> <code><a href="../io/manip/left" title="cpp/io/manip/left">std::internal</a></code> </li>
+<li> <code><a href="../io/manip/left" title="cpp/io/manip/left">std::left</a></code> </li>
+<li> <code><a href="../io/manip/left" title="cpp/io/manip/left">std::right</a></code> </li>
+</ul> </li>
+<li> <code>basefield</code>Nó được phép khởi tạo rõ ràng một<ul>
+<li> <code><a href="../io/manip/hex" title="cpp/io/manip/hex">std::dec</a></code> </li>
+<li> <code><a href="../io/manip/hex" title="cpp/io/manip/hex">std::hex</a></code> </li>
+<li> <code><a href="../io/manip/hex" title="cpp/io/manip/hex">std::oct</a></code> </li>
+</ul> </li>
+<li> <code>floatfield</code>Nó được phép khởi tạo rõ ràng một<ul>
+<li> <code><a href="../io/manip/fixed" title="cpp/io/manip/fixed">std::fixed</a></code> </li>
+<li> <code><a href="../io/manip/fixed" title="cpp/io/manip/fixed">std::scientific</a></code> </li>
+<li> <code><a href="../io/manip/fixed" title="cpp/io/manip/fixed">std::hexfloat</a></code> </li>
+<li> <code><a href="../io/manip/fixed" title="cpp/io/manip/fixed">std::defaultfloat</a></code> </li>
+</ul> </li>
+<li> <code>basic_istream</code>Nó được phép khởi tạo rõ ràng một<ul><li> <code><a href="../io/manip/ws" title="cpp/io/manip/ws">std::ws</a></code> </li></ul> </li>
+<li> <code>basic_ostream</code>Nó được phép khởi tạo rõ ràng một<ul>
+<li> <code><a href="../io/manip/endl" title="cpp/io/manip/endl">std::endl</a></code> </li>
+<li> <code><a href="../io/manip/ends" title="cpp/io/manip/ends">std::ends</a></code> </li>
+<li> <code><a href="../io/manip/flush" title="cpp/io/manip/flush">std::flush</a></code> </li>
+<li> <a href="../io/manip/emit_on_flush" title="cpp/io/manip/emit on flush"><code>std::emit_on_flush</code></a> </li>
+<li> <a href="../io/manip/emit_on_flush" title="cpp/io/manip/emit on flush"><code>std::noemit_on_flush</code></a> </li>
+<li> <a href="../io/manip/flush_emit" title="cpp/io/manip/flush emit"><code>std::flush_emit</code></a> </li>
+</ul> </li>
+</ul> </li></ul> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue120" rel="nofollow">LWG 120</a> </td> <td>C ++ 98</td> <td>Mẫu được xác định trong thư viện tiêu chuẩn chỉ khi khai báo phụ thuộc vào tên của ít nhất một loại do chương trình xác định và việc khởi tạo đáp ứng các yêu cầu thư viện tiêu chuẩn cho mẫu gốc.</td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue232" rel="nofollow">LWG 232</a> </td> <td>C ++ 98</td> <td>Các loại được xác định chương trình<br/>Chuyên ngành được xác định chương trình</td> <td>chỉ được phép cho<br/>là các chuyên ngành mẫu rõ ràng hoặc các chuyên ngành một phần không phải là một phần của thư viện tiêu chuẩn C ++ và không được xác định bởi việc thực hiện.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue422" rel="nofollow">LWG 422</a> </td> <td>C ++ 98</td> <td>Các loại được xác định chương trình<br/>không bị vỡ</td> <td>Đó không phải là một phần của thư viện tiêu chuẩn C ++ và không được xác định bởi việc triển khai<br/>của các biểu thức Lambda không được thực hiện</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/extending_std">https://en.cppreference.com/w/cpp/language/extending_std</a>
+</p>
+</div>

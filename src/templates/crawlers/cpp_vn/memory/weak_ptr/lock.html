@@ -1,0 +1,18 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: yếu_ptr &lt;t&gt; :: Khóa</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">std :: Shared_ptr &lt;t&gt; lock () const NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Tạo ra một cái mới<code><a href="../shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>chia sẻ quyền sở hữu của đối tượng được quản lý. Nếu không có đối tượng được quản lý, tức là<code>*this</code>trống, sau đó trở lại<code>shared_ptr</code>Cũng trống rỗng.</p>
+<p>Đường dẫn gần (const std :: fileSystem :: path &amp; p,<code>expired() ? shared_ptr&lt;T&gt;() : shared_ptr&lt;T&gt;(*this)</code>, được thực thi về mặt nguyên tử.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>MỘT<code>shared_ptr</code>mà chia sẻ quyền sở hữu đối tượng sở hữu nếu<code><a href="expired" title="cpp/memory/weak ptr/expired">std::weak_ptr::expired</a></code>(C ++ 20)<code>false</code>. Khác trả về được xây dựng mặc định<code>shared_ptr</code>nó đến một đối tượng<code>T</code>.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Cả hàm này và hàm tạo của<code><a href="../shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>có thể được sử dụng để có được quyền sở hữu tạm thời của đối tượng được quản lý được đề cập bởi một<code>std::weak_ptr</code>. Sự khác biệt là người xây dựng<code><a href="../shared_ptr" title="cpp/memory/shared ptr">std::shared_ptr</a></code>ném một ngoại lệ khi nó<code>std::weak_ptr</code>Đối số trống rỗng, trong khi<code>std::weak_ptr&lt;T&gt;::lock()</code>vẫn còn hiệu lực miễn là chia sẻ_ptr này, chẳng hạn như trong các trường hợp sử dụng điển hình trong đó<code>std::shared_ptr&lt;T&gt;</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Istream&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;nhớ&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2316" rel="nofollow">LWG 2316</a> </td> <td>C ++ 11</td> <td> </td> <td>Void Quan sát (STD :: yếu_ptr &lt;Int&gt; yếu)</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="expired" title="cpp/memory/weak ptr/expired"> <span class="t-lines"><span>hết hạn</span></span></a></div> </td> <td>kiểm tra xem đối tượng được tham chiếu đã bị xóa chưa<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/memory/weak_ptr/lock">https://en.cppreference.com/w/cpp/memory/weak_ptr/lock</a>
+</p>
+</div>

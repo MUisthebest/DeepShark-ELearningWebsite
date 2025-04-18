@@ -1,0 +1,38 @@
+ <h1 class="firstHeading" id="firstHeading">Nhập bí danh, mẫu bí danh<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Loại bí danh là một cái tên đề cập đến một loại được xác định trước đó (tương tự như<a href="typedef" title="cpp/language/typedef"><code>typedef</code></a>).</p>
+<p>Mẫu bí danh là một cái tên đề cập đến một gia đình loại.</p>
+<h3 id="Syntax">Cú pháp</h3> <p>Tuyên bố bí danh là<a href="declarations" title="cpp/language/declarations">declarations</a>    void H (int) {} // Định nghĩa của A :: H</p>
+<table class="t-sdsc-begin"> <tr class="t-sdsc"> <td> <code>using</code> <span class="t-spar">định danh</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>=</code> <span class="t-spar">Loại ID</span> <code>;</code> </td> <td>(1)</td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td> <code>template</code> <code>&lt;</code> <span class="t-spar">Khái niệm Hashable = Yêu cầu (T A)</span> <code>&gt;</code> <p><code>using</code> <span class="t-spar">định danh</span> <span class="t-spar">attr</span>﻿<span class="t-mark">ATOMIC_INTPTR_T</span> <code>=</code> <span class="t-spar">Loại ID</span> <code>;</code></p>
+</td> <td>(2)</td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <table class="t-par-begin"> <tr class="t-par"> <td> <span class="t-spar">attr</span> </td> <td>-</td> <td>Trình tự tùy chọn của bất kỳ số lượng nào<a href="attributes" title="cpp/language/attributes">attributes</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">định danh</span> </td> <td>-</td> <td>Tên được giới thiệu bởi tuyên bố này, trở thành tên loại<span class="t-v">(1)</span>hoặc một tên mẫu<span class="t-v">(2)</span> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Khái niệm Hashable = Yêu cầu (T A)</span> </td> <td>-</td> <td> <a href="template_parameters" title="cpp/language/template parameters">template parameter list</a>, như trong<a href="templates" title="cpp/language/templates">template declaration</a> </td>
+</tr> <tr class="t-par"> <td> <span class="t-spar">Loại ID</span> </td> <td>-</td> <td>Trình khai báo Tóm tắt hoặc bất kỳ hợp lệ nào khác<span class="t-spar">Loại ID</span>(có thể giới thiệu một loại mới, như đã lưu ý trong<a href="type#Type_naming" title="cpp/language/type">type-id</a>). Các<span class="t-spar">Loại ID</span>không thể trực tiếp hoặc gián tiếp tham khảo<span class="t-spar">định danh</span>. Lưu ý rằng<a href="scope#Point_of_declaration" title="cpp/language/scope">point of declaration</a>của định danh là ở dấu chấm phẩy sau<span class="t-spar">Loại ID</span>.</td>
+</tr>
+</table> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <div class="t-li1">
+<span class="t-li">1)</span>Tuyên bố bí danh loại giới thiệu một tên có thể được sử dụng làm từ đồng nghĩa với loại được ký hiệu<span class="t-spar">Loại ID</span>. Nó không giới thiệu một loại mới và nó không thể thay đổi ý nghĩa của một tên loại hiện có. Không có sự khác biệt giữa khai báo bí danh loại và<a href="typedef" title="cpp/language/typedef">typedef</a>tuyên ngôn. Tuyên bố này có thể xuất hiện trong phạm vi khối, phạm vi lớp hoặc phạm vi không gian tên.</div> <div class="t-li1">
+<span class="t-li">2)</span>Một mẫu bí danh là một mẫu, khi chuyên ngành, tương đương với kết quả của việc thay thế các đối số mẫu của mẫu bí danh cho các tham số mẫu trong<span class="t-spar">Loại ID</span>.<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> <p>Cấu trúc phân bổ {};<a href="templates#template-id" title="cpp/language/templates">template-id</a> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Class T&gt;</pre></div> <p>sử dụng vec = vector &lt;t, alloc &lt;t &gt;&gt;; // type-id là vector &lt;t, alloc &lt;t &gt;&gt;</p>
+<div class="cpp source-cpp"><pre data-language="cpp"> </pre></div> <p>VEC &lt;Int&gt; V; // vec &lt;gn&gt; giống như vector &lt;int, alloc &lt;int &gt;&gt;<a href="function_template#Template_argument_deduction" title="cpp/language/function template">template argument deduction</a>Khi kết quả của việc chuyên về một mẫu bí danh là một người phụ thuộc<a href="partial_specialization" title="cpp/language/partial specialization">partially</a>hoặc<a href="template_specialization" title="cpp/language/template specialization">explicitly specialize</a>, Thay thế tiếp theo áp dụng cho Mẫu đó-ID:</p>
+</div> <p>Mẫu &lt;Typename ...&gt;</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>sử dụng void_t = void;<a href="lambda" title="cpp/language/lambda">lambda expression</a> </p>
+<div class="cpp source-cpp"><pre data-language="cpp">Mẫu &lt;Typename T&gt;</pre></div> </td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Notes">Ghi chú</h3> <table class="wikitable ftm-begin ftm-has-value"> <tr> <th>Tính năng Test Macro</th> <th>vĩ mô</th> <th><span title="Standard in which the feature is introduced">Giá trị</span></th> <th>STD</th>
+</tr> <tr> <td><a href="../feature_test#cpp_alias_templates" title="cpp/feature test"><code>__cpp_alias_templates</code></a></td> <td><span class="nu0">200704l</span></td> <td><span class="t-mark">unininitialized_copy_n</span></td> <td>void g2 (std :: vector &lt;t&gt;, t x);</td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">void_t &lt;typename t :: foo&gt; f ();</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c"> </pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1558.html" rel="nofollow">CWG 1558</a> </td> <td>C ++ 11</td> <td>f &lt;tint&gt; (); // lỗi, int không có loại foo lồng nhau</td> <td>Loại được tạo ra khi chuyên về một mẫu bí danh không được phép trực tiếp hoặc gián tiếp sử dụng loại của chính nó:</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="typedef" title="cpp/language/typedef"> <code>typedef</code> declaration</a> </td> <td>Không gian tên FOO</td>
+</tr> <tr class="t-dsc"> <td> <a href="namespace_alias" title="cpp/language/namespace alias"> namespace alias </a> </td> <td>, nhưng không phải cho</td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/type_alias">https://en.cppreference.com/w/cpp/language/type_alias</a>
+</p>
+</div>

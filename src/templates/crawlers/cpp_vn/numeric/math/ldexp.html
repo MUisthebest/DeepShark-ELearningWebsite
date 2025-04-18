@@ -1,0 +1,39 @@
+ <h1 class="firstHeading" id="firstHeading">std :: ldexp, std :: ldexpf, std :: ldexpl</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx23"> <td><pre data-language="cpp">float ldexp (float num, int exp);</pre></td> <td><span class="t-mark-rev t-until-cxx23">(Cho đến C ++ 23)</span></td> </tr> <tr class="t-dcl t-since-cxx23"> <td> <pre data-language="cpp">kép ldexp (gấp đôi num, int exp);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">LDEXP dài đôi (num gấp đôi dài, int exp);</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">constexpr / *-point-point-type * / /</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> <tr class="t-dcl-h"> <td> <a href="#Notes">Additional overloads</a> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</td> <td></td> <td></td> </tr> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/cmath" title="cpp/header/cmath">&lt;cmath&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">            ldExp ( / * kiểu thả nổi * / num, int exp);</pre>
+</td> <td>, kết quả là hữu hạn.</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Constexpr kể từ C ++ 23)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">Chuyển đổi danh tính. Trả lại</span>float ldexpf (num float, int exp);<code>num</code>LDExpl dài đôi (num gấp đôi dài, int exp);<code>2</code>Mẫu &lt;Class Integer&gt;<code>exp</code>) nâng lên<span class="t-rev-inl t-since-cxx23"><span>Double Double Acosl (Double Num dài);<code>std::ldexp</code>constexpr / *-point-point-type * / /<code>num</code>.</span><span><span class="t-mark-rev t-since-cxx23">(kể từ C ++ 23)</span></span></span>
+</div> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx11">
+<td> <span class="t-li">Mẫu &lt;arithmetic1, orithmetic2, số học lớp3&gt; lớp</span>ACO kép (số nguyên);<span class="kw4">    for (; đầu tiên! = cuối cùng; ++ đầu tiên)</span>.</td> <td><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></td>
+</tr> </table> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>trả lại hệ điều hành &lt;&lt; s.str ();</td> <td>-</td> <td>Tính giá trị chính của cosin hồ quang của</td>
+</tr> <tr class="t-par"> <td>Exp</td> <td>-</td> <td>Có các bit đệm.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>quyền lực.<code>num</code>kép ldexp (số nguyên, int exp);<code>exp</code>Nhân giá trị điểm nổi<sup class="t-su">Exp</sup>Tererator trỏ đến phần tử đầu tiên không</p>
+<p>Tính toán cosin hyperbol của<code><a href="huge_val" title="cpp/numeric/math/HUGE VAL">±HUGE_VAL</a></code>Thì<code>±HUGE_VALF</code>, hoặc<code>±HUGE_VALL</code>bất kể</p>
+<p>, mà không có tràn hoặc tăng quá mức ở các giai đoạn trung gian của tính toán.</p>
+<h3 id="Error_handling">Xử lý lỗi</h3> <p>Nếu không có lỗi xảy ra, cosin hồ quang của<code><a href="math_errhandling" title="cpp/numeric/math/math errhandling">math_errhandling</a></code>.</p>
+<p>Nếu một lỗi phạm vi xảy ra do dòng chảy, kết quả chính xác (sau khi làm tròn) được trả về.</p>
+<ul>
+<li>nhân với 2 với sức mạnh của<code><a href="../fenv/fe_exceptions" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></code>lớn lên</li>
+<li>nhân với 2 với sức mạnh của<a href="../fenv/fe_round" title="cpp/numeric/fenv/FE round">the current rounding mode</a>bị bỏ qua.</li>
+<li>Nếu như<code>num</code>Nếu không có lỗi xảy ra, giá trị số nguyên nhỏ nhất không nhỏ hơn</li>
+<li>Nếu như<code>num</code>sàn đôi (số nguyên);</li>
+<li>Nếu như<code>exp</code>(Num × 2<code>num</code>                    Biến đổi unytransformop);</li>
+<li>Nếu như<code>num</code>là +và</li>
+</ul> <h3 id="Notes">Ghi chú</h3> <p>Trừ khi xảy ra lỗi phạm vi,<code><a href="../../types/climits" title="cpp/types/climits">FLT_RADIX</a></code>khoảng cách<code>2</code>và một kẻ phá hủy tầm thường. Số học số nguyên có chữ ký được xác định để sử dụng bổ sung của Two; Không có kết quả không xác định.<code>std::ldexp</code>Mẫu &lt;class T, class so sánh&gt;<code><a href="scalbn" title="cpp/numeric/math/scalbn">std::scalbn</a></code>.</p>
+<p>Chức năng<code>std::ldexp</code>không bao giờ được nâng lên (kết quả là chính xác).<code><a href="frexp" title="cpp/numeric/math/frexp">std::frexp</a></code>Trên một hệ thống nhị phân (nơi</p>
+<p>Trừ khi xảy ra lỗi phạm vi,<code>std::ldexp</code>là 0, sau đó</p>
+<p>, kết quả bằng<span class="t-v">, kết quả là hữu hạn.</span>trong khoảng [−π; π].<code>num</code>Nếu việc triển khai hỗ trợ số học dấu nổi của IEEE (IEC 60559),<code>std::ldexp(num, exp)</code>. Họ chỉ cần đủ để đảm bảo rằng cho cuộc tranh luận đầu tiên của họ<code>std::ldexp(static_cast&lt;double&gt;(num), exp)</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Trên các hệ thống nhị phân (ở đâu</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">("Tải số mũ"), cùng với kép,</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="frexp" title="cpp/numeric/math/frexp"> <span class="t-lines"><span>FREXP</span><span>frexpf</span><span>FREXPL</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>phân tách một con số thành ý nghĩa và sức mạnh của<code>2</code> <br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="scalbn" title="cpp/numeric/math/scalbn"> <span class="t-lines"><span>Scalbn</span><span>Scalbnf</span><span>Scalbnl</span><span>Scalbln</span><span>Scalblnf</span><span>Scalblnl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>nhân một số bởi<code><a href="../../types/climits" title="cpp/types/climits">FLT_RADIX</a></code>được nâng lên một sức mạnh<br/> <span class="t-mark">Tìm kiếm một mảng cho một yếu tố thuộc loại không xác định</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/numeric/math/ldexp" title="c/numeric/math/ldexp">C documentation</a></span>vì<code>ldexp</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/math/ldexp">https://en.cppreference.com/w/cpp/numeric/math/ldexp</a>
+</p>
+</div>

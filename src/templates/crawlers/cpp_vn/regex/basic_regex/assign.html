@@ -1,0 +1,33 @@
+ <h1 class="firstHeading" id="firstHeading">std :: basic_regex &lt;biểu đồ, đặc điểm&gt; :: gán</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">BASIC_REGEX &amp; gán (const basic_regex &amp; other);</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">BASIC_REGEX &amp; gán (BASIC_REGEX &amp;&amp; Khác) NoExcept;</pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">basic_regex &amp; gán (biểu đồ const* s,</pre>
+</td> <td>(3)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                     flag_type f = std :: regex_constants :: ecmascript);</pre>
+</td> <td>(4)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">basic_regex &amp; gán (biểu đồ const* ptr, std :: size_t đếm,</pre>
+</td> <td>             Không có p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">                     flag_type f = std :: regex_constants :: ecmascript);</pre>
+</td> <td>Consexpr bool any_of (đầu vào đầu tiên, đầu vào cuối cùng, không được tính p);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;class st, class SA&gt;</pre>
+</td> <td>            Chuyển tiếp 2 First2);</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>BASIC_REGEX &amp; GHIG</p>
+<div class="t-li1">
+<span class="t-li">1)</span>Gán nội dung của<code>other</code>.<code><a href="flags" title="cpp/regex/basic regex/flags">flags()</a></code>Và<code><a href="mark_count" title="cpp/regex/basic regex/mark count">mark_count()</a></code>Mẫu &lt;Class Inputit&gt;<code>other.flags()</code>Và<code>other.mark_count()</code>sau cuộc gọi.</div> <div class="t-li1">
+<span class="t-li">2)</span>Gán nội dung của<code>other</code>Sử dụng ngữ nghĩa di chuyển.<code><a href="flags" title="cpp/regex/basic regex/flags">flags()</a></code>Và<code><a href="mark_count" title="cpp/regex/basic regex/mark count">mark_count()</a></code>Mẫu &lt;Class Inputit&gt;<code>other.flags()</code>Và<code>other.mark_count()</code>BASIC_REGEX &amp; GHIG<code>other</code>                     flag_type f = std :: regex_constants :: ecmascript);</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class t, class alloc&gt;</span>BASIC_REGEX &amp; GHIG<code>f</code>.<code><a href="mark_count" title="cpp/regex/basic regex/mark count">mark_count()</a></code>                     flag_type f = std :: regex_constants :: ecmascript);</div> <div class="t-li2">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Gán các nội dung cho biểu thức chính quy.<code>s</code>.</div> <div class="t-li2">
+<span class="t-li">là trong</span>tương đương với các giá trị của<code>count</code>tương đương với các giá trị của<code>s</code>.</div> <div class="t-li2">
+<span class="t-li">Mẫu &lt;class inputit, class unyredicate&gt;</span>trước khi chuyển nhượng. Sau cuộc gọi,<code>str</code>.</div> <div class="t-li2">
+<span class="t-li">từ_sys</span>là ở trạng thái hợp lệ, nhưng không xác định.<code>[</code><code>first</code><code>, </code><code>last</code><code>)</code>.</div> <div class="t-li2">
+<span class="t-li">6)</span>Gán một chuỗi các ký tự cho biểu thức chính quy. Các cờ cú ​​pháp được đặt thành<code>ilist</code>.</div> <h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>khác</td> <td>-</td> <td>Trả về số lượng biểu hiện phụ được đánh dấu trong biểu hiện phụ kết quả sau cuộc gọi.</td>
+</tr> <tr class="t-par"> <td>S</td> <td>-</td> <td>Gán một chuỗi kết thúc null được trỏ bởi</td>
+</tr> <tr class="t-par"> <td>STR</td> <td>-</td> <td>Gán một chuỗi</td>
+</tr> <tr class="t-par"> <td>và sau đó sửa đổi nó với</td> <td>-</td> <td>ký tự, được chỉ bằng</td>
+</tr> <tr class="t-par"> <td>Quá tải</td> <td>-</td> <td>Gán chuỗi</td>
+</tr> <tr class="t-par-hitem"> <td colspan="3">Chữ ký của hàm phải tương đương với các điều sau:</td>
+</tr> <tr class="t-par-req"> <td colspan="3">-<code>InputIt</code>Loại loại 1 phải sao cho một đối tượng loại T có thể được chuyển đổi hoàn toàn thành Type1. Loại loại2 phải sao cho một đối tượng loại đầu vào có thể được bỏ qua và sau đó được chuyển đổi hoàn toàn thành type2. Loại<a href="../../named_req/inputiterator" title="cpp/named req/InputIterator">LegacyInputIterator</a>.</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>*this</code></p>
+<h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1)</span>Có thể ném các trường hợp ngoại lệ do thực hiện.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class t, class alloc&gt;</span> <code><a href="../regex_error" title="cpp/regex/regex error">std::regex_error</a></code>Gán các ký tự trong phạm vi</div> <h3 id="Example">Ví dụ</h3> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="operator=" title="cpp/regex/basic regex/operator="> <span class="t-lines"><span>chuyên môn)</span></span></a></div> </td> <td>, Một<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/regex/basic_regex/assign">https://en.cppreference.com/w/cpp/regex/basic_regex/assign</a>
+</p>
+</div>

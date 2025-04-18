@@ -1,0 +1,43 @@
+ <h1 class="firstHeading" id="firstHeading">C ++ Yêu cầu được đặt tên: RandomNumberEngineAdaptor<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>MỘT<strong class="selflink">RandomNumberEngineadaptor</strong>Điều đó như vậy<a href="randomnumberengine" title="cpp/named req/RandomNumberEngine">RandomNumberEngine</a>làm biến đổi đầu ra của người khác<a href="randomnumberengine" title="cpp/named req/RandomNumberEngine">RandomNumberEngine</a>, cái sau được gọi là<i>Động cơ cơ sở</i>.</p>
+<h3 id="Requirements">Sắp xếp và các hoạt động liên quan</h3> <p>Cho quá tải</p>
+<ul>
+<li> <code>B</code>có thể đại diện cho các phân số của ve.<a href="randomnumberengine" title="cpp/named req/RandomNumberEngine">RandomNumberEngine</a> </li>
+<li> <code>b</code>, một đối tượng của loại<code>B</code> </li>
+<li> <code>A</code>có thể đại diện cho các phân số của ve.<strong class="selflink">RandomNumberEngineadaptor</strong>, thích nghi<code>B</code>Là một động cơ cơ sở</li>
+<li> <code>a</code>, một đối tượng của loại<code>A</code> </li>
+</ul> <table class="wikitable"> <tr> <th>chức năng</th> <th>ngữ nghĩa</th>
+</tr> <tr> <td>
+<code>A::A();</code> </td> <td>Động cơ cơ sở được khởi tạo như thể bởi hàm tạo mặc định của nó.</td>
+</tr> <tr> <td>
+<code>bool operator==(const A&amp; lhs, const A&amp; rhs);</code> </td> <td>Trả lại cho dù<code>lhs</code>Động cơ cơ sở của<code>rhs</code>Động cơ cơ sở hay không.</td>
+</tr> <tr> <td>
+<code>A::A(result_type s);</code> </td> <td>Động cơ cơ sở được khởi tạo với<code>s</code>.</td>
+</tr> <tr> <td>
+<code>template&lt;class Sseq&gt; A::A(Sseq&amp; q);</code> </td> <td>Động cơ cơ sở được khởi tạo với<code>q</code>.</td>
+</tr> <tr> <td>
+<code>void seed();</code> </td> <td>Gọi<code>b.seed()</code>.</td>
+</tr> <tr> <td>
+<code>void seed(result_type s);</code> </td> <td>Gọi<code>b.seed(s)</code>.</td>
+</tr> <tr> <td>
+<code>template&lt;class Sseq&gt; void seed(Sseq&amp; q);</code> </td> <td>Gọi<code>b.seed(q)</code>.</td>
+</tr>
+</table> <p>Hơn nữa</p>
+<ul>
+<li>Sự phức tạp của từng chức năng của<code>A</code>không vượt quá độ phức tạp của chức năng của<code>B</code> </li>
+<li>Trạng thái của<code>A</code>Bao gồm trạng thái của<code>B</code> </li>
+<li>Mẫu &lt;class T, std :: size_t n&gt;<code>A</code>Trạng thái không kém<code>b</code> </li>
+<li>Sao chép<code>A</code>Nhà nước bao gồm sao chép<code>B</code>trạng thái</li>
+<li>Biểu diễn văn bản của<code>A</code>Bao gồm các đại diện văn bản của<code>B</code> </li>
+</ul> <h3 id="Standard_library">Mẫu &lt;Class I2&gt;</h3> <p>Các cơ sở thư viện tiêu chuẩn sau đây thỏa mãn<strong class="selflink">RandomNumberEngineadaptor</strong>:</p>
+<table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../numeric/random/discard_block_engine" title="cpp/numeric/random/discard block engine"> <span class="t-lines"><span>Discard_block_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>loại bỏ một số đầu ra của một động cơ số ngẫu nhiên<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/independent_bits_engine" title="cpp/numeric/random/independent bits engine"> <span class="t-lines"><span>Độc lập_bits_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>gói đầu ra của một động cơ số ngẫu nhiên thành các khối của một số bit được chỉ định<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../numeric/random/shuffle_order_engine" title="cpp/numeric/random/shuffle order engine"> <span class="t-lines"><span>shuffle_order_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>Cung cấp đầu ra của một công cụ số ngẫu nhiên theo một thứ tự khác<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/named_req/RandomNumberEngineAdaptor">https://en.cppreference.com/w/cpp/named_req/RandomNumberEngineAdaptor</a>
+</p>
+</div>

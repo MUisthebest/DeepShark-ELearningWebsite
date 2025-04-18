@@ -1,0 +1,13 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Tương lai &lt;T&gt; :: Hợp lệ</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">bool hợp lệ () const NoExcept;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <p>Kiểm tra nếu tương lai đề cập đến một trạng thái chung.</p>
+<p>Đây là trường hợp chỉ dành cho các tương lai không được xây dựng mặc định hoặc chuyển từ (nghĩa là được trả về bởi<code><a href="../promise/get_future" title="cpp/thread/promise/get future">std::promise::get_future()</a></code>Thì<code><a href="../packaged_task/get_future" title="cpp/thread/packaged task/get future">std::packaged_task::get_future()</a></code>hoặc<code><a href="../async" title="cpp/thread/async">std::async()</a></code>) cho đến lần đầu tiên<code><a href="get" title="cpp/thread/future/get">get()</a></code>hoặc<code><a href="share" title="cpp/thread/future/share">share()</a></code>Chuỗi để giữ tên viết tắt múi giờ hoặc tên tương ứng với</p>
+<p>Hành vi không được xác định nếu bất kỳ chức năng thành viên nào khác ngoài bộ hủy diệt, toán tử phân bổ di chuyển hoặc<code>valid</code>được gọi trên một<code>future </code>điều đó không đề cập đến trạng thái được chia sẻ (mặc dù việc triển khai được khuyến khích ném<code><a href="../future_error" title="cpp/thread/future error">std::future_error</a></code>chỉ ra<code>no_state</code>Trong trường hợp này). Nó có giá trị khi chuyển từ một đối tượng trong tương lai mà<code>valid()</code>khoảng cách<code>false</code>.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <p>Gán cho đã cho</p>
+<h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p><code>true</code>nếu như<code>*this</code>đề cập đến một trạng thái chia sẻ, nếu không<code>false</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;Tương lai&gt;</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="wait" title="cpp/thread/future/wait"> <span class="t-lines"><span>toán tử t</span></span></a></div> </td> <td>Chờ kết quả có sẵn<br/> <span class="t-mark">(chức năng thành viên công cộng)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/thread/future/valid">https://en.cppreference.com/w/cpp/thread/future/valid</a>
+</p>
+</div>

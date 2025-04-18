@@ -1,0 +1,27 @@
+ <h1 class="firstHeading" id="firstHeading">std :: căn chỉnh_union</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/type_traits" title="cpp/header/type traits">&lt;type_traits&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;std :: size_t len, lớp ... loại&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> <br/><span class="t-mark">(Không dùng nữa trong C ++ 23)</span> </td> </tr> </table> <p>struct căn chỉnh_storage;<code>type</code>struct căn chỉnh_union;<a href="../named_req/trivialtype" title="cpp/named req/TrivialType">trivial</a> <a href="../named_req/standardlayouttype" title="cpp/named req/StandardLayoutType">standard-layout</a>, đó là một<code>Types</code>loại kích thước và căn chỉnh phù hợp để sử dụng làm bộ lưu trữ không được chỉ định cho một đối tượng của bất kỳ loại nào được liệt kê trong<code>Len</code>.<code>std::aligned_union</code>. Kích thước của lưu trữ ít nhất là<code>Types</code>cũng xác định yêu cầu liên kết nghiêm ngặt nhất (lớn nhất) trong số tất cả<code>alignment_value</code>.</p>
+<p>Nếu như<code>sizeof...(Types) == 0</code>và làm cho nó có sẵn như là hằng số<code>Types</code>hoặc nếu bất kỳ loại nào trong</p>
+<p>, hoặc hành vi là không xác định.<a href="../language/object#Alignment" title="cpp/language/object">extended alignment</a>Nó được xác định theo xác định cho dù có bất kỳ</p>
+<p>bằng nhau<code>std::aligned_union</code>Hành vi của một chương trình bổ sung các chuyên ngành cho</p>
+<h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>Tên</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>type</code> </td> <td>không phải là một loại đối tượng hoàn chỉnh, hành vi không được xác định.<code>Types</code> </td>
+</tr> </table> <h3 id="Helper_types">Mẫu &lt;phạm vi :: input_range r, std :: meally_incrementable o&gt;</h3> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx14"> <td> <pre data-language="cpp">một loại tầm thường và tiêu chuẩn phù hợp để lưu trữ bất kỳ loại nào từ</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-since-cxx14">(kể từ C ++ 14)</span> <br/><span class="t-mark">(Không dùng nữa trong C ++ 23)</span> </td> </tr> </table> <h3 id="Member_constants">Inline Consexpr bool is_execut_policy_v = std :: is_execut_policy &lt;t&gt; :: value;</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><span class="t-lines"><span>Mẫu &lt;std :: size_t len, lớp ... loại&gt;</span></span></div>
+<div><span class="t-lines"><span><span class="t-cmark">Kế thừa từ</span></span></span></div> </td> <td>sử dụng Aligned_union_t = typename Aligned_union &lt;len, loại ...&gt; :: type;<code>Types</code> <br/> <span class="t-mark">là loại chính sách thực thi được xác định theo tiêu chuẩn hoặc thực hiện,</span> </td>
+</tr> </table> <h3 id="Possible_implementation">. ​</h3> <table class="eq-fun-cpp-table"> <tr> <td> <div class="cpp source-cpp"><pre data-language="cpp">Căn chỉnh_value</pre></div> </td>
+</tr>
+</table> <h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Yêu cầu liên kết nghiêm ngặt nhất của tất cả</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;THERTHERM&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue2979" rel="nofollow">LWG 2979</a> </td> <td>C ++ 11</td> <td> </td> <td>Mẫu &lt;std :: size_t len, lớp ... loại&gt;</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="alignment_of" title="cpp/types/alignment of"> <span class="t-lines"><span>Căn chỉnh_of</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được các yêu cầu căn chỉnh của loại<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="aligned_storage" title="cpp/types/aligned storage"> <span class="t-lines"><span>căn chỉnh_storage</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span><span class="t-mark-rev t-deprecated-cxx23">(Không dùng nữa trong C ++ 23)</span></span></span></div> </td> <td>Xác định loại phù hợp để sử dụng là lưu trữ không chính thức cho các loại kích thước đã cho<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/types/aligned_union">https://en.cppreference.com/w/cpp/types/aligned_union</a>
+</p>
+</div>

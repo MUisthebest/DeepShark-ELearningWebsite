@@ -1,0 +1,15 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: Difftime</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../../header/ctime" title="cpp/header/ctime">&lt;ctime&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Double Difftime (std :: time_t time_end, std :: time_t time_beg);</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> </table> <p>Tính toán sự khác biệt giữa hai lần lịch là<code><a href="time_t" title="cpp/chrono/c/time t">std::time_t</a></code>Đối tượng (<code>time_end - time_beg</code>) trong giây. Nếu như<code>time_end</code>Đề cập đến điểm thời gian trước<code>time_beg</code>Sau đó, kết quả là tiêu cực.</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Time_beg, Time_end</td> <td>-</td> <td>lần để so sánh</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <p>Sự khác biệt giữa hai lần tính bằng giây.</p>
+<h3 id="Notes">Ghi chú</h3> <p>Trên các hệ thống POSIX,<code><a href="time_t" title="cpp/chrono/c/time t">std::time_t</a></code>được đo bằng giây và<code>difftime</code>tương đương với phép trừ số học, nhưng C và C ++ cho phép các đơn vị phân số cho<code>time_t</code>.</p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">#include &lt;ctime&gt;</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="../duration" title="cpp/chrono/duration"> <span class="t-lines"><span>khoảng thời gian</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>một khoảng thời gian<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/chrono/difftime" title="c/chrono/difftime">C documentation</a></span>vì<code>difftime</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/chrono/c/difftime">https://en.cppreference.com/w/cpp/chrono/c/difftime</a>
+</p>
+</div>

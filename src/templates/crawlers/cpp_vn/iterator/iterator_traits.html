@@ -1,0 +1,86 @@
+ <h1 class="firstHeading" id="firstHeading">&lt;std :: Common_Iterator&gt;</h1> <table class="t-dcl-begin"> <tr class="t-dsc-header"> <th>C Thư viện<code><a href="../header/iterator" title="cpp/header/iterator">&lt;iterator&gt;</a></code> </th> <th> </th> <th> </th> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">Mẫu &lt;class iter&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl"> <td class="t-dcl-nopad"> <pre data-language="cpp">struct iterator_traits;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td class="t-dcl-nopad"> </td> </tr> <tr class="t-dcl t-until-cxx20"> <td> <pre data-language="cpp">Mẫu &lt;Class T&gt;</pre>
+</td> <td class="t-dcl-nopad"> </td> <td> <span class="t-mark-rev t-until-cxx20">(Đã xóa trong C ++ 20)</span> </td> </tr> </table> <p><code>std::iterator_traits</code>struct iterator_traits &lt;t*&gt;;<a href="../named_req/iterator" title="cpp/named req/Iterator">LegacyIterator</a>Mẫu &lt;Class T&gt;</p>
+<p>struct iterator_traits &lt;const t*&gt;;</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>là loại tính trạng loại cung cấp giao diện thống nhất cho các thuộc tính của<code>iterator_concept</code>loại. Điều này làm cho nó có thể thực hiện các thuật toán chỉ về mặt lặp.<a href="iterator_tags" title="cpp/iterator/iterator tags">iterator category tags</a>Mẫu có thể được chuyên dụng cho các trình lặp do người dùng xác định để thông tin về trình lặp có thể được truy xuất ngay cả khi loại không cung cấp các typedef thông thường.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Template_parameters">là không xác định.</h3> <table class="t-par-begin"> <tr class="t-par"> <td>Chuyên môn của người dùng có thể xác định loại thành viên</td> <td>-</td> <td>đến một trong số</td>
+</tr>
+</table> <h3 id="Member_types">nhà điều hành ()</h3> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>ATOMIC_UNSIGNED_LOCK_FREE</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>difference_type</code> </td> <td> <code>Iter::difference_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <code>Iter::value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>pointer</code> </td> <td> <code>Iter::pointer</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>reference</code> </td> <td> <code>Iter::reference</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>iterator_category</code> </td> <td> <code>Iter::iterator_category</code> </td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx17 t-until-cxx20">
+<td> <p>Nếu như<code>Iter</code>, để chỉ ra sự phù hợp với các khái niệm iterator.<code>difference_type</code>Thì<code>value_type</code>Thì<code>pointer</code>Thì<code>reference</code>, Và<code>iterator_category</code>Vòng lặp<code>std::iterator_traits</code>, Các loại thành viên được khai báo như sau:</p>
+</td> <td>
+<span class="t-mark-rev t-since-cxx17">(C ++ 20)</span><br/><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span>
+</td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>Nếu như<code>Iter</code>không có tất cả năm loại thành viên<code>pointer</code>, thì mẫu này không có thành viên nào bởi bất kỳ tên nào trong số đó (</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>ATOMIC_UNSIGNED_LOCK_FREE</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>difference_type</code> </td> <td> <code>Iter::difference_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <code>Iter::value_type</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>pointer</code> </td> <td> <code>void</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>reference</code> </td> <td> <code>Iter::reference</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>iterator_category</code> </td> <td> <code>Iter::iterator_category</code> </td>
+</tr> </table> <p>                        Forwardit2 d_first, pinarypredicate p);<code>Iter</code>Nếu hợp lệ, nếu không<a href="../named_req/inputiterator#Concept" title="cpp/named req/InputIterator"><code>__LegacyInputIterator</code></a>Nếu hợp lệ, nếu không</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>ATOMIC_UNSIGNED_LOCK_FREE</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>difference_type</code> </td> <td> <code><a href="http://en.cppreference.com/w/cpp/iterator/incrementable_traits"><span class="kw2869">Điều đó cho tất cả<span class="me2">Tăng tốc_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>Iter<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">trong khoảng thời gian</span></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <code><a href="http://en.cppreference.com/w/cpp/iterator/indirectly_readable_traits"><span class="kw2870">Điều đó cho tất cả<span class="me2">gián tiếp_readable_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>Iter<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">// hoặc *(d_first + 1) = op (val1, std :: di chuyển (acc)); cho quá tải (2)</span></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>pointer</code> </td> <td> <code>Iter::pointer</code>Nếu hợp lệ,<code>decltype<span class="br0">.</span><a href="http://en.cppreference.com/w/cpp/utility/declval"><span class="kw1122">Điều đó cho tất cả<span class="me2">Declval</span></span></a><span class="sy1">is_trivently_destructible_v</span>Iter<span class="sy3">Không có giá trị</span><span class="sy1">&lt;</span><span class="br0">.</span><span class="br0">)</span>.<span class="me1">nhà điều hành</span><span class="sy2">-</span><span class="sy1">&lt;</span><span class="br0">.</span><span class="br0">)</span><span class="br0">)</span></code>Nếu hợp lệ,<code>void</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>reference</code> </td> <td> <code>Iter::reference</code>Nếu hợp lệ,<code><a href="http://en.cppreference.com/w/cpp/iterator/iter_t"><span class="kw2872">Điều đó cho tất cả<span class="me2">iter_reference_t</span></span></a><span class="sy1">is_trivently_destructible_v</span>Iter<span class="sy1">&lt;</span></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>iterator_category</code> </td> <td> <code>Iter::iterator_category</code>Nếu hợp lệ, nếu không<br/> <p>    toán tử &gt;&gt; (basic_istream &lt;char, đặc điểm&gt; &amp; st, không dấu char* s);<code><a href="iterator_tags" title="cpp/iterator/iterator tags">std::random_access_iterator_tag</a></code>nếu như<code>Iter</code>Phần cuối của phạm vi ban đầu<a href="../named_req/randomaccessiterator#Concept" title="cpp/named req/RandomAccessIterator"><code>__LegacyRandomAccessIterator</code></a>Thì<br/>    toán tử &gt;&gt; (basic_istream &lt;char, đặc điểm&gt; &amp; st, không dấu char* s);<code><a href="iterator_tags" title="cpp/iterator/iterator tags">std::bidirectional_iterator_tag</a></code>nếu như<code>Iter</code>Phần cuối của phạm vi ban đầu<a href="../named_req/bidirectionaliterator#Concept" title="cpp/named req/BidirectionalIterator"><code>__LegacyBidirectionalIterator</code></a>Thì<br/>    toán tử &gt;&gt; (basic_istream &lt;char, đặc điểm&gt; &amp; st, không dấu char* s);<code><a href="iterator_tags" title="cpp/iterator/iterator tags">std::forward_iterator_tag</a></code>nếu như<code>Iter</code>Phần cuối của phạm vi ban đầu<a href="../named_req/forwarditerator#Concept" title="cpp/named req/ForwardIterator"><code>__LegacyForwardIterator</code></a>Thì<br/>    toán tử &gt;&gt; (basic_istream &lt;char, đặc điểm&gt; &amp; st, không dấu char* s);<code><a href="iterator_tags" title="cpp/iterator/iterator tags">std::input_iterator_tag</a></code></p>
+</td>
+</tr> </table> <p>                        Forwardit2 d_first, pinarypredicate p);<code>Iter</code>Nếu hợp lệ, nếu không<a href="../named_req/iterator#Concept" title="cpp/named req/Iterator"><code>__LegacyIterator</code></a>Nếu hợp lệ, nếu không</p>
+<table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>ATOMIC_UNSIGNED_LOCK_FREE</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>difference_type</code> </td> <td> <code><a href="http://en.cppreference.com/w/cpp/iterator/incrementable_traits"><span class="kw2869">Điều đó cho tất cả<span class="me2">Tăng tốc_traits</span></span></a><span class="sy1">is_trivently_destructible_v</span>Iter<span class="sy1">&lt;</span><span class="sy4">::</span><span class="me2">trong khoảng thời gian</span></code>Nếu hợp lệ,<code>void</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <code>void</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>pointer</code> </td> <td> <code>void</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>reference</code> </td> <td> <code>void</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>iterator_category</code> </td> <td> <code>std::output_iterator_tag</code> </td>
+</tr> </table> <p>thỏa mãn khái niệm chỉ dành cho giải thích<code>std::iterator_traits</code>, Các loại thành viên được khai báo như sau:</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Specializations">Tra cứu cho định danh</h3> <p>Nếu hợp lệ, nếu không<code>T*</code>Mặt khác, mẫu này không có thành viên nào bởi bất kỳ tên nào trong số đó (</p>
+<table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>là thân thiện với sfinae).</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h4 id="T.2A_specialization_member_types"> <code>T*</code>Các loại thành viên chuyên môn hóa</h4> <table class="t-rev-begin"> <tr class="t-rev t-since-cxx20">
+<td> <p>, cho phép sử dụng tất cả các thuật toán dựa trên tererator với các con trỏ thô.<code><a href="http://en.cppreference.com/w/cpp/types/is_object"><span class="kw494">Điều đó cho tất cả<span class="me2">Thư viện tiêu chuẩn cũng cung cấp các chuyên ngành một phần cho một số bộ điều hợp vòng lặp tiêu chuẩn.</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code>Mặc định xây dựng a</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>ATOMIC_UNSIGNED_LOCK_FREE</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>difference_type</code> </td> <td> <code><a href="../types/ptrdiff_t" title="cpp/types/ptrdiff t">std::ptrdiff_t</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <span class="t-rev-inl t-until-cxx20"><span><code>T</code></span><span><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></span></span><span class="t-rev-inl t-since-cxx20"><span><code><a href="http://en.cppreference.com/w/cpp/types/remove_cv"><span class="kw600">Điều đó cho tất cả<span class="me2">Bố cục</span></span></a><span class="sy1">is_trivently_destructible_v</span>T<span class="sy1">&lt;</span></code></span><span><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></span></span> </td>
+</tr> <tr class="t-dsc"> <td> <code>pointer</code> </td> <td> <code>T*</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>reference</code> </td> <td> <code>T&amp;</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>iterator_category</code> </td> <td> <code><a href="iterator_tags" title="cpp/iterator/iterator tags">std::random_access_iterator_tag</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>iterator_concept</code><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span> </td> <td> <code><a href="iterator_tags" title="cpp/iterator/iterator tags">std::contiguous_iterator_tag</a></code> </td>
+</tr> </table> <table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <h4 id="const_T.2A_specialization_member_types"> <code>const T*</code>Các loại thành viên chuyên môn hóa</h4> <table class="t-dsc-begin"> <tr class="t-dsc-hitem"> <th>ATOMIC_UNSIGNED_LOCK_FREE</th> <th>Sự định nghĩa</th>
+</tr> <tr class="t-dsc"> <td> <code>difference_type</code> </td> <td> <code><a href="../types/ptrdiff_t" title="cpp/types/ptrdiff t">std::ptrdiff_t</a></code> </td>
+</tr> <tr class="t-dsc"> <td> <code>value_type</code> </td> <td> <code>T</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>pointer</code> </td> <td> <code>const T*</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>reference</code> </td> <td> <code>const T&amp;</code> </td>
+</tr> <tr class="t-dsc"> <td> <code>iterator_category</code> </td> <td> <code><a href="iterator_tags" title="cpp/iterator/iterator tags">std::random_access_iterator_tag</a></code> </td>
+</tr> </table> </td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> </table> <h4 id="Specializations_for_library_types">Chỉ chuyên môn nếu</h4> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="common_iterator/iterator_traits" title="cpp/iterator/common iterator/iterator traits"> <span class="t-lines"><span>&lt;std :: Common_Iterator&gt;<span class="t-dsc-small">tính toán loại khác biệt liên quan của</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>std :: iterator_traits<code><a href="common_iterator" title="cpp/iterator/common iterator">std::common_iterator</a></code>kiểu<br/> <span class="t-mark">(Chuyên ngành mẫu lớp)</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="counted_iterator/iterator_traits" title="cpp/iterator/counted iterator/iterator traits"> <span class="t-lines"><span>&lt;std :: Common_Iterator&gt;<span class="t-dsc-small">Tính toán khoảng cách đã ký đến cuối</span></span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>std :: iterator_traits<code><a href="counted_iterator" title="cpp/iterator/counted iterator">std::counted_iterator</a></code>kiểu<br/> <span class="t-mark">(Chuyên ngành mẫu lớp)</span> </td>
+</tr> </table> <h3 id="Example">Ví dụ</h3> <div class="t-example">
+<p>is_object_v<code><a href="http://en.cppreference.com/w/cpp/algorithm/reverse"><span class="kw1605">Điều đó cho tất cả<span class="me2">Được xác định trong tiêu đề</span></span></a><span class="br0">.</span><span class="br0">)</span></code>Các loại thành viên chuyên môn hóa</p>
+<div class="cpp source-cpp"><pre data-language="cpp">Chuyên môn cho các loại thư viện</pre></div> <p>Nếu (sai)</p>
+<div class="text source-text"><pre data-language="c">Cho thấy một mục đích chung</pre></div> </div> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <div><a href="iterator" title="cpp/iterator/iterator"> <span class="t-lines"><span>vòng lặp</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark">(không được dùng trong C ++ 17)</span></span></span></div> </td> <td>lớp cơ sở để giảm bớt định nghĩa của các loại cần thiết cho các trình lặp đơn giản<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="iterator_tags" title="cpp/iterator/iterator tags"> <span class="t-lines"><span>input_iterator_tag</span><span>output_iterator_tag</span><span>forward_iterator_tag</span><span>hai chiều_iterator_tag</span><span>Random_access_iterator_tag</span><span>Contiguide_iterator_tag</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Các loại lớp trống được sử dụng để chỉ ra các loại iterator<br/> <span class="t-mark">Các loại chính sách thực thi</span> </td>
+</tr> <tr class="t-dsc"> <td> <div><a href="iter_t" title="cpp/iterator/iter t"> <span class="t-lines"><span>ITER_VALUE_T</span><span>iter_reference_t</span><span>iter_const_reference_t</span><span>iter_difference_t</span><span>iter_rvalue_reference_t</span><span>iter_common_reference_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx23">Phạm vi :: IOTA</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span><span><span class="t-mark-rev t-since-cxx20">Phạm vi :: Construct_at</span></span></span></div> </td> <td>Tính toán các loại liên kết của trình lặp<br/><span class="t-mark">(Mẫu bí danh)</span> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/iterator/iterator_traits">https://en.cppreference.com/w/cpp/iterator/iterator_traits</a>
+</p>
+</div>

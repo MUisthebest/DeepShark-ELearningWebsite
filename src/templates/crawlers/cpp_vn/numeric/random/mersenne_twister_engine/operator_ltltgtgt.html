@@ -1,0 +1,28 @@
+ <h1 class="firstHeading" id="firstHeading">toán tử &lt;&lt;, &gt;&gt;<small>(STD :: mersenne_twister_engine)</small>
+</h1> <table class="t-dcl-begin"> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Mẫu &lt;biểu đồ lớp, đặc điểm lớp&gt;</pre>
+</td> <td>(1)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">Friend std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; </pre>
+</td> <td>(2)</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>    toán tử &lt;&lt; (std :: basic_ostream &lt;biểu đồ, đặc điểm&gt; &amp; OST, <code>e</code>                const mersenne_twister_engine &amp; e);<code>ost</code>Mẫu &lt;biểu đồ lớp, đặc điểm lớp&gt;</div> <div class="t-li1">
+<span class="t-li">2)</span>Friend std :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp; <code>e</code>    Nhà điều hành &gt;&gt; (STD :: basic_istream &lt;biểu đồ, đặc điểm&gt; &amp; ist, <code>operator&lt;&lt;</code>                mersenne_twister_engine &amp; e);<code>CharT</code>Và<code>Traits</code>Tuần tự hóa trạng thái bên trong của động cơ số giả ngẫu nhiên<code>e</code>như một chuỗi các số thập phân được phân tách bởi một hoặc nhiều không gian và chèn nó vào luồng<code>failbit</code>. Ký tự điền và các cờ định dạng của luồng bị bỏ qua và không bị ảnh hưởng.<code>ist</code>.</div> <p>(tức là cả hai<a href="../../../language/unqualified_lookup" title="cpp/language/unqualified lookup">unqualified</a>hoặc<a href="../../../language/qualified_lookup" title="cpp/language/qualified lookup">qualified lookup</a>Chức năng này không thể nhìn thấy thông thường<a href="../../../language/adl" title="cpp/language/adl">argument-dependent lookup</a>Chuyển đổi danh tính:<code>std::mersenne_twister_engine&lt;UIntType,w,n,m,r,a,u,d,s,b,t,c,l,f&gt;</code>Hương hiệu nút</p>
+<p>Khôi phục trạng thái nội bộ của động cơ số giả ngẫu nhiên<code>os &lt;&lt; x</code>từ biểu diễn tuần tự hóa, được tạo ra bởi một cuộc gọi trước đó đến<code>y</code>sử dụng một luồng có cùng một địa điểm thấm nhuần và cùng một<code>is &gt;&gt; y</code>, sau đó<code>x == y</code>.</p>
+<p>. Nếu đầu vào không thể bị phân rã,<code>os.fmtflags</code>                  STD :: FileSystem :: Perms PRMS,<code>ios_base::dec</code>|<code>ios_base::left</code>không thay đổi và</p>
+<h3 id="Parameters">) với giá trị ban đầu</h3> <table class="t-par-begin"> <tr class="t-par"> <td>                Cơ bản_distribution &amp; d);</td> <td>-</td> <td>Thực hiện các hoạt động đầu vào và đầu ra trên phân phối số giả ngẫu nhiên</td>
+</tr> <tr class="t-par"> <td>như đại diện văn bản. Các cờ định dạng và nhân vật điền vào</td> <td>-</td> <td>Thực hiện các hoạt động đầu vào ký tự.</td>
+</tr> <tr class="t-par"> <td>if (auto p = Dynamic_cast &lt;const std :: nested_exception*&gt; (std :: addressof (e))))</td> <td>-</td> <td>được nâng lên trên</td>
+</tr>
+</table> <h3 id="Return_value">phải sao cho một đối tượng thuộc loại</h3> <div class="t-li1">
+<span class="t-li">1)</span> <code>ost</code>
+</div> <div class="t-li1">
+<span class="t-li">2)</span> <code>ist</code>
+</div> <h3 id="Complexity">Không hợp lệ bất kỳ trình lặp lại nào (bao gồm bất kỳ trình lặp cuối nào) hoặc sửa đổi bất kỳ yếu tố nào của các phạm vi liên quan, hành vi không được xác định.</h3> <h3 id="Exceptions">Ngoại lệ</h3> <div class="t-li1">
+<span class="t-li">1)</span>Có thể ném các trường hợp ngoại lệ do thực hiện.</div> <div class="t-li1">
+<span class="t-li">2)</span>Sao chép hàm tạo. Nếu như<code><a href="../../../io/ios_base/failure" title="cpp/io/ios base/failure">std::ios_base::failure</a></code>Nếu một biểu diễn văn bản được viết bằng cách sử dụng<code>failbit</code>.</div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue3519" rel="nofollow">LWG 3519</a> </td> <td>C ++ 11</td> <td>không thay đổi trong trường hợp đó.</td> <td>Hình thức của các nhà khai thác bình đẳng đã không được xác định</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/numeric/random/mersenne_twister_engine/operator_ltltgtgt">https://en.cppreference.com/w/cpp/numeric/random/mersenne_twister_engine/operator_ltltgtgt</a>
+</p>
+</div>

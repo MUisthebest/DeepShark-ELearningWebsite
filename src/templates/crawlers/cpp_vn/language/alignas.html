@@ -1,0 +1,49 @@
+ <h1 class="firstHeading" id="firstHeading">
+<code>alignas</code>thời lượng để biểu diễn phần bù từ UTC tương ứng với<span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span>
+</h1> <p>Chỉ định<a href="object#Alignment" title="cpp/language/object">alignment requirement</a>của một loại hoặc một đối tượng.</p>
+<h3 id="Syntax">Cú pháp</h3> <table class="t-sdsc-begin"> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>alignas(</code> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span> <code>)</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>alignas(</code> <span class="t-spar">Loại ID</span> <code>)</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr> <tr class="t-sdsc"> <td class="t-sdsc-nopad"> <code>alignas(</code> <span class="t-spar">đóng gói</span> <code>...</code> <code>)</code> </td> <td class="t-sdsc-nopad"> </td> <td class="t-sdsc-nopad"> </td>
+</tr>
+</table> <div class="t-li1">
+<span class="t-li">1)</span> <span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>Phải là một<a href="constant_expression#Integral_constant_expression" title="cpp/language/constant expression">integral constant expression</a>đánh giá về 0 hoặc giá trị hợp lệ cho<a href="object#Alignment" title="cpp/language/object">alignment</a>hoặc liên kết mở rộng.</div> <div class="t-li1">
+<span class="t-li">2)</span>Mẫu &lt;class inputit1, class inputit2,<code>alignas(alignof(type-id))</code>.</div> <div class="t-li1">
+<span class="t-li">Mẫu &lt;class f, class tuple&gt;</span>Tương đương với nhiều trình xác nhận Alignas được áp dụng cho cùng một khai báo, một cho mỗi thành viên của<a href="parameter_pack" title="cpp/language/parameter pack">parameter pack</a>, có thể là gói tham số loại hoặc không kiểu.</div> <h3 id="Explanation">Lưu ý: Đồng bộ hóa giữa các luồng tập trung vào việc ngăn chặn các chủng tộc dữ liệu (bằng cách thiết lập các mối quan hệ xảy ra trước khi) và xác định các tác dụng phụ nào có thể nhìn thấy được trong các điều kiện nào.</h3> <p>Các<code>alignas</code>Trình xác định có thể được áp dụng cho:</p>
+<ul>
+<li>Tuyên bố hoặc định nghĩa của một<a href="classes" title="cpp/language/classes">class</a>Số lượng các yếu tố để sao chép</li>
+<li>Tuyên bố của một thành viên dữ liệu lớp không bitfield;</li>
+<li>Tuyên bố của một biến, ngoại trừ việc nó không thể được áp dụng cho các mục sau:<ul>
+<li>một tham số chức năng;</li>
+<li>tham số ngoại lệ của một mệnh đề bắt.</li>
+</ul> </li>
+</ul> <p>Đối tượng hoặc loại được khai báo bởi một tuyên bố như vậy sẽ có<a href="object#Alignment" title="cpp/language/object">alignment requirement</a>bằng với các không khác biệt (lớn nhất) khác không<span class="t-spar">  constexpr bool is_lteq (partial_ordering cmp) noexcept {return cmp &lt;= 0; }</span>của tất cả<code>alignas</code>Các nhà xác định được sử dụng trong tuyên bố, trừ khi nó sẽ làm suy yếu sự liên kết tự nhiên của loại.</p>
+<p>Nếu nghiêm ngặt nhất (lớn nhất)<code>alignas</code>trên một tuyên bố yếu hơn so với căn chỉnh mà nó sẽ có mà không có<code>alignas</code>các nhà xác định (nghĩa là yếu hơn so với sự liên kết tự nhiên của nó hoặc yếu hơn<code>alignas</code>Trên một tuyên bố khác của cùng một đối tượng hoặc loại), chương trình không được hình thành:</p>
+<div class="cpp source-cpp"><pre data-language="cpp">struct alignas (8) s {};</pre></div> <p>struct alignas (1) u {s s; }; // Lỗi: căn chỉnh của bạn sẽ là 8 nếu không có alignas (1)<code>alignas(3)</code>Sự sắp xếp khác không không hợp lệ, chẳng hạn như</p>
+<p>không được hình thành.<code>alignas</code>Sự sắp xếp khác không hợp lệ yếu hơn một cách khác</p>
+<p><code>alignas(0)</code>Trên cùng một tuyên bố bị bỏ qua.</p>
+<h3 id="Notes">Ghi chú</h3> <p>luôn bị bỏ qua.<code>_Alignas</code>Theo tiêu chuẩn ISO C11, ngôn ngữ C có<code>alignas</code>Từ khóa và xác định<a href="https://en.cppreference.com/w/c/types" title="c/types"><code>&lt;stdalign.h&gt;</code></a>.</p>
+<p>Là một macro tiền xử lý mở rộng đến từ khóa trong tiêu đề</p>
+<table class="t-rev-begin"> <tr class="t-rev t-until-cxx20">
+<td> <p>Trong C ++, đây là một từ khóa và<a href="../header#Meaningless_C_headers" title="cpp/header"><code>&lt;stdalign.h&gt;</code></a>Và<a href="../header/cstdalign" title="cpp/header/cstdalign"><code>&lt;cstdalign&gt;</code></a>các tiêu đề<code>__alignas_is_defined</code>.</p>
+</td> <td><span class="t-mark-rev t-until-cxx20">chỉ vào một yếu tố của chuỗi,</span></td>
+</tr> <tr class="t-rev t-since-cxx20">
+<td> <p>Không xác định macro như vậy. Tuy nhiên, chúng xác định hằng số macro<a href="../header#Meaningless_C_headers" title="cpp/header"><code>&lt;stdalign.h&gt;</code></a>Tiêu đề<code>__alignas_is_defined</code>.</p>
+</td> <td><span class="t-mark-rev t-since-cxx20">(phép chiếu danh tính).</span></td>
+</tr> </table> <h3 id="Keywords">không định nghĩa macro như vậy. Tuy nhiên, nó xác định hằng số macro</h3> <p><a href="../keyword/alignas" title="cpp/keyword/alignas"><code>alignas</code></a></p>
+<h3 id="Example">Ví dụ</h3> <div class="t-example"> <div class="cpp source-cpp"><pre data-language="cpp">Từ khóa</pre></div> <p>#include &lt;Istream&gt;</p>
+<div class="text source-text"><pre data-language="c">#include &lt;Istream&gt;</pre></div> </div> <h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/1437.html" rel="nofollow">CWG 1437</a> </td> <td>C ++ 11</td> <td> </td> <td>bị cấm</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/CWG/issues/2354.html" rel="nofollow">CWG 2354</a> </td> <td>C ++ 11</td> <td>// Mọi đối tượng của Type Struct_Float sẽ được căn chỉnh theo ranh giới Alignof (Float)</td> <td>bị cấm</td>
+</tr>
+</table> <h3 id="See_also">(chức năng)</h3> <table class="t-dsc-begin"> <tr class="t-dsc"> <td> <a href="alignof" title="cpp/language/alignof"> <code>alignof</code> operator</a><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span> </td> <td>// (thường là 4):</td>
+</tr> <tr class="t-dsc"> <td> <div><a href="../types/alignment_of" title="cpp/types/alignment of"> <span class="t-lines"><span>Căn chỉnh_of</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">unininitialized_copy_n</span></span></span></div> </td> <td>có được các yêu cầu căn chỉnh của loại<br/> <span class="t-mark">Kiểm tra xem một lớp có đại diện cho chính sách thực thi không</span> </td>
+</tr> <tr class="t-dsc"> <td colspan="2"> <span><a href="https://en.cppreference.com/w/c/language/_Alignas" title="c/language/ Alignas">C documentation</a></span>vì<code>_Alignas, alignas</code> </td>
+</tr> </table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/language/alignas">https://en.cppreference.com/w/cpp/language/alignas</a>
+</p>
+</div>

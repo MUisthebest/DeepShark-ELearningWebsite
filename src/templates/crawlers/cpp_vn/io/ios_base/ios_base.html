@@ -1,0 +1,20 @@
+ <h1 class="firstHeading" id="firstHeading">STD :: iOS_Base :: iOS_Base</h1> <table class="t-dcl-begin"> <tr class="t-dcl-rev-aux"> <td></td> <td rowspan="3">(1)</td> <td></td> </tr> <tr class="t-dcl t-until-cxx11"> <td> <pre data-language="cpp">riêng tư:</pre>
+</td> <td> <span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span> </td> </tr> <tr class="t-dcl t-since-cxx11"> <td> <pre data-language="cpp">iOS_Base (const ios_base &amp;);</pre>
+</td> <td> <span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span> </td> </tr> <tr class="t-dcl"> <td> <pre data-language="cpp">công cộng:</pre>
+</td> <td>(2)</td> <td class="t-dcl-nopad"> </td> </tr> </table> <div class="t-li1">
+<span class="t-li">1)</span>Hàm tạo mặc định. Trạng thái nội bộ không được khởi tạo.<span class="t-rev-inl t-until-cxx11"><span>iOS_Base (const ios_base &amp;) = xóa;</span><span><span class="t-mark-rev t-until-cxx11">(Cho đến C ++ 11)</span></span></span><span class="t-rev-inl t-since-cxx11"><span>được bảo vệ:</span><span><span class="t-mark-rev t-since-cxx11">(kể từ C ++ 11)</span></span></span>iOS_Base ();</div> <div class="t-li1">
+<span class="t-li">2)</span>riêng tư<code>std::ios_base</code>bị xóa<a href="../basic_ios/init" title="cpp/io/basic ios/init"><code>std::basic_ios::init()</code></a>: Các luồng không thể sao chép.</div> <h3 id="Notes">Ghi chú</h3> <p>Hàm tạo mặc định được bảo vệ: chỉ các lớp dẫn xuất mới có thể xây dựng<code><a href="../basic_ios" title="cpp/io/basic ios">std::basic_ios</a></code>. Trạng thái nội bộ không được xác định sau khi xây dựng. Lớp dẫn xuất phải gọi<code><a href="../basic_istream" title="cpp/io/basic istream">std::istream</a></code>Và<code><a href="../basic_ostream" title="cpp/io/basic ostream">std::ostream</a></code>để hoàn thành khởi tạo trước khi sử dụng đầu tiên hoặc trước khi phá hủy; nếu không thì hành vi không xác định.<a href="../basic_ios/init" title="cpp/io/basic ios/init"><code>std::basic_ios::init()</code></a>Điều tương tự cũng áp dụng cho các hàm tạo của lớp tiếp theo trong phân cấp I/O,</p>
+<h3 id="Defect_reports">Báo cáo khiếm khuyết</h3> <p>Các báo cáo khiếm khuyết thay đổi hành vi sau đây được áp dụng hồi tố cho các tiêu chuẩn C ++ được công bố trước đó.</p>
+<table class="dsctable"> <tr> <th>Dr</th> <th>Áp dụng cho</th> <th>Hành vi như được công bố</th> <th>Hành vi chính xác</th>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue50" rel="nofollow">LWG 50</a> </td> <td>C ++ 98</td> <td>. Các lớp học có nguồn gốc hơn (</td> <td>) luôn được xây dựng với một đối tượng bộ đệm luồng cụ thể và cuộc gọi</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue220" rel="nofollow">LWG 220</a> </td> <td>C ++ 98</td> <td>, có thể hơn một lần, để hoàn thành việc khởi tạo cơ sở ảo của họ.<code>std::ios_base</code><br/>Trình xây dựng bản sao không được chỉ định<a href="../basic_ios/init" title="cpp/io/basic ios/init"><code>init()</code></a>được chỉ định là riêng tư</td> <td>là giá trị trả về, vẫn có thể giảm được, nhưng bản thân các yếu tố có giá trị không xác định. Một cuộc gọi đến<br/>kích cỡ.</td>
+</tr> <tr> <td>
+<a class="external text" href="https://cplusplus.github.io/LWG/issue1249" rel="nofollow">LWG 1249</a> </td> <td>C ++ 98</td> <td>hành vi phá hủy một</td> <td>đối tượng trước khi gọi nó</td>
+</tr>
+</table> <div class="_attribution">
+<p class="_attribution-p">© CPPReference.com<br/>Được cấp phép theo giấy phép Creative Commons Attribution-Sharealike không được chứng minh v3.0.<br/>
+<a class="_attribution-link" href="https://en.cppreference.com/w/cpp/io/ios_base/ios_base">https://en.cppreference.com/w/cpp/io/ios_base/ios_base</a>
+</p>
+</div>
