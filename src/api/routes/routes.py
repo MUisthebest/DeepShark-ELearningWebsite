@@ -72,7 +72,7 @@ def new_chat():
     db.session.commit()
 
     chat_history_id = new_chat_history.id
-    name_conversation = f"Cuộc hội thoại {chat_history_id} với ChatBOT"
+    name_conversation = f"Cuộc hội thoại với ChatBOT"
 
     new_chat_history.name_conversation = name_conversation
 
