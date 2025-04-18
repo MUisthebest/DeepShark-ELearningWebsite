@@ -71,6 +71,119 @@ main {
     min-height: 100vh; 
 }
 
+.list-object {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 30px;
+    justify-content: flex-start; /* Căn đều các object */
+    gap: 20px; /* Khoảng cách giữa các object */
+}
+
+.list-object .object {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 450px;
+    padding: 20px;
+
+    flex: 1 1 calc(25% - 20px); /* Mỗi object chiếm 25% chiều rộng, trừ đi gap */
+    max-width: calc(25% - 20px); /* Giới hạn max-width để tránh object bị giãn quá rộng */
+}
+
+/* 🔹 Khi màn hình nhỏ hơn 1200px, chỉ hiển thị 3 object mỗi hàng */
+@media (max-width: 1200px) {
+    .list-object .object {
+        flex: 1 1 calc(33.33% - 20px);
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+/* 🔹 Khi màn hình nhỏ hơn 900px, chỉ hiển thị 2 object mỗi hàng */
+@media (max-width: 900px) {
+    .list-object .object {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+/* 🔹 Khi màn hình nhỏ hơn 600px, chỉ hiển thị 1 object mỗi hàng */
+@media (max-width: 600px) {
+    .list-object .object {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+
+.list-object .object .title {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    width: 100%;
+    display: block; 
+}
+
+.list-object .object .description {
+    color: #999;
+    font-size: 15px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.list-object .object .list-course {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    height: 250px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.list-object .object .list-course .course {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.list-object .object button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 45px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.list-object .object .list-course .course p {
+    white-space: nowrap;
+}
+
+.sub-title {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+} 
+
 .logo {
     background: linear-gradient(45deg, #2A3335, #5d6dea);
     -webkit-background-clip: text;
@@ -79,6 +192,27 @@ main {
     font-optical-sizing: auto;
     -webkit-text-fill-color: transparent;
     font-size: 50px;
+}
+
+.search-bar {
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 60%;
+}
+.search-bar input {
+    width: 100%;
+    padding: 10px 40px 10px 20px; 
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+.search-bar i {
+    position: absolute;
+    right: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    cursor: pointer;
 }
 
 header nav ul {
@@ -405,19 +539,19 @@ main {
     flex: 1;
 }
 
-.search-bar {
+.search_bar {
     position: relative;
     margin-bottom: 20px;
     margin-top: 10px;
-    width: 60%;
+    width: 90%;
 }
-.search-bar input {
+.search_bar input {
     width: 100%;
     padding: 10px 40px 10px 20px; 
     border-radius: 10px;
     border: 1px solid #ddd;
 }
-.search-bar i {
+.search_bar i {
     position: absolute;
     right: 10px; 
     top: 50%;
@@ -459,11 +593,12 @@ main {
     flex: 1;
 }
 
-.container-llm input {
-    background-color: #333;
-    color: #ffffff;
-    padding: 10px;
-    width: 50%;
+
+.container-llm .content .input {
+    display: flex;
+    width: calc(50vw - 30px);
+    flex-direction: column;
+    margin-left: 15px;
 }
 
 .container-llm .content .input {
@@ -586,3 +721,68 @@ footer .content li {
     flex-direction: column;
     color: #fff;
 }
+
+
+.list-object .object .list-course .course span {
+    font-size: calc(1vw + 1px);
+}
+
+.list-object .object .list-course .course p {
+    font-size: calc(1vw + 1px);
+}
+
+.list-object .object .list-course .course img {
+    height: 30px;
+    width: auto;
+}
+
+.panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.panel.hidden {
+    display: none;
+}
+
+.panel-content {
+    background: white;
+    padding: 20px;
+    width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.panel-content #panel-list .course {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.panel-content #panel-list .course span, p{
+    display: flex;
+    width: calc(20% - 20px);
+}
+
+.close-panel {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+

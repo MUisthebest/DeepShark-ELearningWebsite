@@ -192,9 +192,9 @@ async def tutorial(subpath=None):
     json_files = {
         "cpp": os.path.join(current_dir, "templates/crawlers/cpp/index.json"),
         "python": os.path.join(current_dir, "templates/crawlers/python/index.json"),
-        "django": os.path.join(current_dir, "templates/crawlers/django/index.json"),
+        "django": os.path.join(current_dir, "templates/crawlers/django~5.2/index.json"),
         "flask": os.path.join(current_dir, "templates/crawlers/flask/index.json"),
-        "numpy": os.path.join(current_dir, "templates/crawlers/numpy/index.json")
+        "numpy": os.path.join(current_dir, "templates/crawlers/numpy~2.0/index.json")
     }
 
     def read_json(file_path):
