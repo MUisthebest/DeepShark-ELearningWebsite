@@ -1,9 +1,9 @@
-<div class="container flex items-center justify-center h-screen w-full bg-gray-100">
+<div class="profile-container flex items-center justify-center h-screen w-full bg-gray-100">
     <div class="glass p-8 rounded-2xl w-96 text-center shadow-lg border border-gray-700">
         <div class="relative">
             {% if user.image_face %}
             <img class="w-24 h-24 mx-auto rounded-full border-4 border-blue-500 shadow-md"
-                src="data:{{ user.avatar_mime }};base64,{{ user.image_face }}" alt="Avatar" />
+                src="data:{{ user.avatar_mime }};base64,{{ user.image_face }}" alt="Avatar" onerror="this.onerror=null; this.src='/static/image/profile-default.png';" />
             {% else %}
             <img class="w-24 h-24 mx-auto rounded-full border-4 border-blue-500 shadow-md"
                 src="../static/image/shark.png" alt="Default Avatar" />
@@ -11,25 +11,21 @@
         </div>
 
         <h2 class="mt-4 text-2xl font-bold text-blue-400">{{user.username}}</h2>
-        <h2 class="text-gray-300 text-sm">{{user.email}}</p>
 
-            <div class="mt-6 space-x-4">
-                <form action="/change-avatar" method="POST" enctype="multipart/form-data"
-                    class="inline-flex items-center gap-2">
-                    <!-- Hidden File Input -->
-                    <input id="avatar-input" type="file" name="avatar" accept="image/*" required class="hidden"
-                        onchange="this.form.submit()">
-
-                    <!-- Custom Styled Button -->
-                    <label for="avatar-input"
-                        class="px-4 py-2 bg-blue-600 hover:bg-blue-500 transition rounded-lg text-sm text-white cursor-pointer">
-                        Change Avatar
-                    </label>
-                </form>
-                <button onclick="window.location.href='/api/auth/logout'"
-                    class="px-4 py-2 bg-red-600 hover:bg-red-500 transition rounded-lg text-sm">
-                    Logout
-                </button>
-            </div>
+        <h4 style="text-align: center;" class="text-gray-400 mt-4 text-xl font-bold">{{user.email}}</h4>    
+        <div class="mt-6 space-x-4">
+            <a class="px-4 py-2 bg-blue-600 hover:bg-blue-500 transition rounded-lg text-sm text-white">
+                Change Avatar
+            </a>
+            <a class="px-4 py-2 bg-red-600 hover:bg-red-500 transition rounded-lg text-sm text-white">
+                Logout
+            </a>
+        </div>
+        <div class="mt-6 space-x-4">
+            <a href="/" class="block text-center w-full py-2 bg-green-600 hover:bg-green-500 transition rounded-lg text-sm text-white">
+                Home
+            </a>
+        </div>
     </div>
 </div>
+<link rel="stylesheet" href="../static/css/profile.css">

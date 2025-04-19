@@ -34,3 +34,4 @@ markdown==3.7
 beautifulsoup4==4.13.3
 googletrans==4.0.2
 flask[async]
+flask_socketio==5.5.1

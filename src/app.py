@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify 
 from api.routes.routes import api_bp
-from api.settings import db, bcrypt, jwt
+from api.ai_models.ai_model import summarize_text
+from api.settings import db, bcrypt, jwt, socketio
 from flask_migrate import Migrate
 from googletrans import Translator
 import os
@@ -9,7 +10,6 @@ import asyncio
 from flask import make_response
 from itertools import groupby
 import base64
-
 from bs4 import BeautifulSoup
 
 from api.routes.auth import app as auth_bp
@@ -35,7 +35,7 @@ app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 db.init_app(app)
 bcrypt.init_app(app)
 jwt.init_app(app)
-
+socketio.init_app(app)
 migrate = Migrate(app, db)
 
 app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
@@ -113,6 +113,31 @@ def profile():
         return redirect("/")
 
     return render_template("index.html", name="profile.html", user=user)
+
+@app.route("/chat-history", methods=["GET"])
+def chat_history():
+    user_id = request.cookies.get("user_id")
+    if not user_id:
+        return jsonify([])
+    
+    all_chats = ChatHistory.query.filter_by(user_id=user_id).order_by(ChatHistory.id.desc()).all()
+    
+    result = []
+    for chat in all_chats:
+        latest_message = ChatMessage.query.filter_by(history_chat_id=chat.id)\
+                                         .order_by(ChatMessage.created_at.desc())\
+                                         .first()
+        if latest_message:
+            summary = summarize_text(latest_message.bot_response)[:255] 
+            chat.name_conversation = summary
+            db.session.commit()
+        
+        result.append({
+            "id": chat.id,
+            "name": chat.name_conversation
+        })
+    
+    return jsonify(result)
 
 
 @app.route("/change-avatar", methods=["POST"])

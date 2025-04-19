@@ -1,3 +1,9 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +11,7 @@ body {
     box-sizing: border-box;
     background-color: #f4f4f4;
     width: 100%;
+    height: 100%;
     max-width: 100vw;
     display: flex;
     overflow-x: hidden;
@@ -35,13 +42,25 @@ header.shrunk {
 }
 
 
+.gradient-border {
+    background: #fff; /* Màu viền gradient */
+    padding: 3px; /* Độ dày viền */
+    border-radius: 50%;
+    display: inline-block;
+  
+    /* Để tạo phần viền rỗng bên trong */
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 0 3px transparent; /* Tạo lớp “viền” */
+    position: relative;
+  }
+
 .profile-icon {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    margin-right: 10px;
     object-fit: cover;
-    border: 2px dashed #5d6dea;
+    display: block;
 }
 
 .glass {
@@ -67,11 +86,9 @@ header.shrunk {
 }
 
 main {
-    display: block;
+    display: block; 
     width: 100%;
-    height: fit-content;
-    flex: 1;
-    min-height: 100vh;
+    min-height: 100vh; 
 }
 
 .list-object {
@@ -462,6 +479,7 @@ main {
 .item {
     width: 31%;
     margin: 1%;
+    display: flex;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: none;
     padding-bottom: 10px;
@@ -475,12 +493,15 @@ main {
 .info {
     padding: 10px;
     display: flex;
+    flex: 1;
+    height: 40%;
     justify-content: center;
     flex-direction: column;
 }
 
 .info h4 {
     font-size: calc(1.5vw);
+    height: 40%;
 }
 
 .info a {
@@ -492,7 +513,8 @@ main {
     width: 60%;
     text-align: center;
     align-self: center;
-    border-radius: 15px;
+    justify-self: flex-end;
+    border-radius: 10px;
     font-size: calc(1vw + 6px);
 }
 
@@ -899,8 +921,13 @@ footer .content li {
     flex-wrap: wrap;
 }
 
-.panel-content #panel-list .course span,
-p {
+
+.panel-content #panel-list .course span{
+    display: flex;
+    width: calc(20% - 20px);
+}
+
+.panel-content #panel-list .course p{
     display: flex;
     width: calc(20% - 20px);
 }
@@ -914,3 +941,57 @@ p {
     border: none;
     cursor: pointer;
 }
+
+.typing-indicator {
+    display: flex;
+    padding: 10px;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.chat-messages pre {
+    background-color: #1e1e1e !important;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.chat-messages code {
+    background-color: #1e1e1e !important;
+    color: #dcdcdc !important;
+}
+
+.hljs {
+    background: #1e1e1e !important;
+    color: #dcdcdc !important;
+}
+
+@keyframes typingAnimation {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-5px);
+    }
+}
+

@@ -49,38 +49,26 @@
             </button>
         </form>
 
-        <div class="for-chat">
-            <h4>History</h4>
-            {% if chats %}
-            {% for chat in chats %}
-            <a href="javascript:void(0)" class="history-item" data-chat-id="{{ chat.id }}">
-                {{ chat.name_conversation }} <br>
-            </a>
-            <hr>
-            {% endfor %}\
-            {% endif %}
-        </div>
-        {% if name=="tutorial.html" %}
-        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/tutorial.css') }}">
-        <div class="love_code">
-            <div class="Cpp_box">
-                <div class="root">
-                    <a class="Cpp_title" data-no-ajax href="/tutorial/cpp/index">C++</a>
-                    <i class='bx bxs-down-arrow toggle-tree'></i>
-                </div>
-                <div class="Cpp">
-                    {% for type, files in cpp.items() %}
-                    <div class="unit">
-                        <li>
-                            <a href="/tutorial/{{ type }}" data-no-ajax>{{ type }}</a>
-                            <i class='bx bxs-down-arrow toggle-btn'></i>
-                        </li>
-                        <ul class="dev" style="display: none;">
-                            {% for item in files %}
-                            <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
-                            {% endfor %}
-                        </ul>
+
+           <div class="for-chat" id="history-items">
+                <h4>History</h4>
+                {% if chats %}
+                    {% for chat in chats %}
+                        <a href="javascript:void(0)" class="history-item" data-chat-id="{{ chat.id }}">
+                            {{ chat.name_conversation }} <br>
+                        </a>
+                        <hr>
+                    {% endfor %}\
+                {% endif %}
+            </div>
+            {% if name=="tutorial.html" %}
+            <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/tutorial.css') }}">
+            <div class="love_code">
+                <div class="Cpp_box">
+                    <div class="root">
+                        <a class="Cpp_title" data-no-ajax href="/tutorial/cpp/index">C++</a>
+                        <i class='bx bxs-down-arrow toggle-tree'></i>
                     </div>
                     {% endfor %}
                 </div>
@@ -201,8 +189,6 @@
 
         </script>
         {% endif %}
-
-
         <div class="auth-buttons">
             {% if user %}
             <div class="profile">
@@ -261,6 +247,7 @@
                 newChatButton.classList.toggle('toggle-position-afterToggle');
             }
 
+
             const icon = document.querySelector('.toggle-icon');
             if (icon.classList.contains('bx-chevron-left-square')) {
                 icon.classList.remove('bx-chevron-left-square');
@@ -270,25 +257,66 @@
                 icon.classList.add('bx-chevron-left-square');
             }
         });
+        
+            document.querySelector('.toggle-for-ip').addEventListener('click', function() {
+                document.querySelector('header').classList.toggle('hidden');
+            })
 
-        document.querySelector('.toggle-for-ip').addEventListener('click', function () {
-            document.querySelector('header').classList.toggle('hidden');
-        });
-
-        window.addEventListener('resize', function () {
-            if (window.matchMedia("(min-width: 768px)").matches) {
-                document.querySelector('header').classList.remove('hidden');
-            } else {
-                if (document.querySelector('.logo').classList.contains('hidden')) {
-                    document.querySelector('.logo').classList.remove('hidden');
-                    document.querySelector('.new-chat').classList.remove('hidden');
-                    document.querySelector('.for-chat').classList.remove('hidden');
-                    document.querySelector('.auth-buttons').classList.remove('hidden');
-                    document.querySelector('.new-chat-btn').classList.remove('hidden');
+            document.addEventListener('DOMContentLoaded', function () {
+                const arrowIcon = document.getElementById('arrow-icon');
+                
+                if (arrowIcon) {
+                    arrowIcon.addEventListener('click', function () {
+                        document.querySelector('header').classList.toggle('hidden');
+                    });
                 }
-            }
-        });
-    </script>
-</body>
+            });
 
-</html>
+        
+            window.addEventListener('resize', function() {
+                if (window.matchMedia("(min-width: 768px)").matches) {
+                    document.querySelector('header').classList.remove('hidden');
+                } else {
+                    if (document.querySelector('.logo').classList.contains('hidden')) {
+                        document.querySelector('.logo').classList.remove('hidden');
+                        document.querySelector('.new-chat').classList.remove('hidden');
+                        document.querySelector('.for-chat').classList.remove('hidden');
+                        document.querySelector('.auth-buttons').classList.remove('hidden'); 
+                        document.querySelector('.new-chat-btn').classList.remove('hidden');
+                        }
+                }
+            });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+        <script>
+            const socket = io();
+            socket.on('connect', () => {
+                console.log('Đã kết nối với Socket.IO server');
+            });
+            socket.on('update_history', () => {
+                console.log('Nhận được sự kiện update_history');
+                fetch('/chat-history')
+                    .then(res => res.json())
+                    .then(data => {
+                        const container = document.getElementById('history-items');
+                        const fragment = document.createDocumentFragment();
+                        data.forEach(chat => {
+                            const a = document.createElement('a');
+                            a.href = 'javascript:void(0)';
+                            a.className = 'history-item';
+                            a.dataset.chatId = chat.id;
+                            a.innerHTML = `${chat.name}<br>`;
+                            fragment.appendChild(a);
+                            fragment.appendChild(document.createElement('hr'));
+                        });
+                        container.innerHTML = '';
+                        container.appendChild(fragment);
+                    });
+            });
+            socket.on('new_message', (data) => {
+                console.log("Tin nhắn mới trong history ID:", data.message_id);
+                // update nội dung nếu đang xem đúng history đó
+            });
+        </script>
+    </body>
+    </html>
