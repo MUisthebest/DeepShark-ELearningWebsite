@@ -15,6 +15,20 @@ header {
     top: 0; /* Đặt header ở đầu trang */
     left: 0; /* Đặt header ở bên trái trang */
     overflow-y: auto; /* Đảm bảo nội dung bên trong có thể cuộn nếu cần */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+}
+
+header::-webkit-scrollbar-thumb {
+    display: none; /* Ẩn thanh cuộn */
+}
+
+header::-webkit-scrollbar {
+    width: 0px; /* Ẩn thanh cuộn */
+}
+
+.logo {
+    padding: 40px;
 }
 
 header .love_code {
@@ -27,6 +41,16 @@ header .love_code {
     max-height: 80vh;
     width: 100%;
     margin-bottom: 10px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+}
+
+header .love_code::-webkit-scrollbar-thumb {
+    display: none; /* Ẩn thanh cuộn */
+}
+
+header .love_code::-webkit-scrollbar {
+    width: 0px; /* Ẩn thanh cuộn */
 }
 
 main {
@@ -39,7 +63,12 @@ main {
 }
 
 
+
 footer {
+    display: none;
+}
+
+.auth-buttons {
     display: none;
 }
 
@@ -108,7 +137,7 @@ b {
 .Cpp_box {
     display: flex;
     flex-direction: column;
-    max-width: calc(20vw);
+    max-width: calc(25vw);
     width: 100%;
     border: 1px solid #ccc;
 }
@@ -117,9 +146,13 @@ b {
 .Cpp {
     display: none;
     flex-direction: column;
-    max-height: 350px;
+    max-height: 400px;
     width: 100%;
     overflow-y: auto;
+}
+
+.Cpp::-webkit-scrollbar-thumb {
+    display: none;
 }
 
 .Cpp_box.open .Cpp {
@@ -129,6 +162,7 @@ b {
 .Cpp_box .root {
     display: flex;
     width: 100%;
+    padding: 10px;
     flex-direction: row;
     background: linear-gradient(45deg, #2A3335, #5d6dea);
 }
