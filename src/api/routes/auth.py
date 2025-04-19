@@ -31,7 +31,7 @@ def signin():
     user = User.query.filter_by(email=data["email"]).first()
     if user and bcrypt.check_password_hash(user.password_hash, data["password"]):
         response = make_response(redirect(url_for("home"))) 
-        response.set_cookie("user_id", str(user.id), httponly=True, max_age=3600) 
+        response.set_cookie("user_id", str(user.id), httponly=True, max_age=36000) 
         return response
 
     return jsonify({"message": "Invalid credentials"}), 401

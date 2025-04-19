@@ -1,0 +1,24 @@
+header {
+    display: none;
+}
+footer {
+    display: none;
+}
+.profile-container { 
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-image: url("../image/layout-background.svg");
+    background-size: cover;
+    overflow: hidden;
+    flex: 1;
+}
+p {
+    text-align: left !important;
+}

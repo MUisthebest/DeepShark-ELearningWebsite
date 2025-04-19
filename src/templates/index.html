@@ -43,7 +43,7 @@
                 </button>
             </form>
 
-            <div class="for-chat">
+            <div class="for-chat" id="history-items">
                 <h4>History</h4>
                 {% if chats %}
                     {% for chat in chats %}
@@ -201,7 +201,9 @@
                 {% if user %}
                     <div class="profile">
                         <a href="/profile">
-                            <img src="{{user.image_face}}" class="profile-icon">
+                            <div class="gradient-border">
+                                <img src="{{ user.image_face }}" class="profile-icon" onerror="this.onerror=null; this.src='/static/image/profile-default.png';">
+                            </div>
                         </a>
                     </div>
                 {% else %}
@@ -261,7 +263,18 @@
         
             document.querySelector('.toggle-for-ip').addEventListener('click', function() {
                 document.querySelector('header').classList.toggle('hidden');
+            })
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const arrowIcon = document.getElementById('arrow-icon');
+                
+                if (arrowIcon) {
+                    arrowIcon.addEventListener('click', function () {
+                        document.querySelector('header').classList.toggle('hidden');
+                    });
+                }
             });
+
         
             window.addEventListener('resize', function() {
                 if (window.matchMedia("(min-width: 768px)").matches) {
@@ -275,6 +288,37 @@
                         document.querySelector('.new-chat-btn').classList.remove('hidden');
                         }
                 }
+            });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+        <script>
+            const socket = io();
+            socket.on('connect', () => {
+                console.log('Đã kết nối với Socket.IO server');
+            });
+            socket.on('update_history', () => {
+                console.log('Nhận được sự kiện update_history');
+                fetch('/chat-history')
+                    .then(res => res.json())
+                    .then(data => {
+                        const container = document.getElementById('history-items');
+                        const fragment = document.createDocumentFragment();
+                        data.forEach(chat => {
+                            const a = document.createElement('a');
+                            a.href = 'javascript:void(0)';
+                            a.className = 'history-item';
+                            a.dataset.chatId = chat.id;
+                            a.innerHTML = `${chat.name}<br>`;
+                            fragment.appendChild(a);
+                            fragment.appendChild(document.createElement('hr'));
+                        });
+                        container.innerHTML = '';
+                        container.appendChild(fragment);
+                    });
+            });
+            socket.on('new_message', (data) => {
+                console.log("Tin nhắn mới trong history ID:", data.message_id);
+                // update nội dung nếu đang xem đúng history đó
             });
         </script>
     </body>
