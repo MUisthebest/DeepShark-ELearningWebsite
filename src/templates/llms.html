@@ -1,0 +1,66 @@
+<section class="container-llm">
+    <h2 class="title-course">Welcome to LLM Resources Hub</h2>
+    <h4 class="sub-title">Your one-stop destination for all the resources you need to excel in your <br> LLM program.</h4>
+    <div class="search_bar">
+        <input type="text" placeholder="Search courses..." />
+        <i class='bx bx-search-alt'></i>
+    </div>
+    <div class="list-object">
+        {% for group, items in grouped_data.items() %}
+        <div class="object">
+            <h4 class="title">{{ group_label[group | int - 1] }}</h4>
+            <p class="description">Danh sách nội dung</p>
+            <div class="list-course">
+                {% for row in items %}
+                <a class="course" href="{{ row.url}}">
+                    <span>{{ loop.index }}</span>
+                    <img src="{{ row.icon | default('/path/to/default-icon.png') }}" alt="icon" />
+                    <p>{{ row.title }}</p>
+                </a>
+                {% endfor %}
+            </div>
+            <button class="btn-more" data-group="{{ group }}">View All →</button>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<div id="fullPanel" class="panel hidden">
+    <div class="panel-content">
+        <button class="close-panel">&times;</button>
+        <h3 id="panel-title">Danh sách đầy đủ</h3>
+        <div id="panel-list"></div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const panel = document.getElementById("fullPanel");
+        const panelTitle = document.getElementById("panel-title");
+        const panelList = document.getElementById("panel-list");
+        const closePanel = document.querySelector(".close-panel");
+    
+        document.querySelectorAll(".btn-more").forEach(button => {
+            button.addEventListener("click", function () {
+                const group = this.dataset.group;
+                const title = this.previousElementSibling.previousElementSibling.textContent;
+                const list = this.parentElement.querySelector(".list-course").innerHTML;
+    
+                panelTitle.textContent = title;
+                panelList.innerHTML = list;
+                panel.classList.remove("hidden");
+            });
+        });
+    
+        closePanel.addEventListener("click", function () {
+            panel.classList.add("hidden");
+        });
+    
+        panel.addEventListener("click", function (e) {
+            if (e.target === panel) {
+                panel.classList.add("hidden");
+            }
+        });
+    });
+    </script>
+    

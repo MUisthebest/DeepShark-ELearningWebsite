@@ -1,10 +1,8 @@
 from flask import Blueprint, request, jsonify, render_template, redirect, url_for, session
 from api.ai_models.ai_model import predict , summarize_text, review_code
 from api.models.user import ChatHistory, ChatMessage 
-from api.settings import db
+from api.settings import db, socketio
 import markdown
-
-
 
 api_bp = Blueprint("api_ai_models", __name__)  # Khởi tạo Blueprint
 
@@ -48,9 +46,12 @@ def handle_message():
         chat_history.is_first_message = False 
         db.session.commit()
 
+
     new_message = ChatMessage(history_chat_id=message_id, user_message=input_data, bot_response=bot_response)
     db.session.add(new_message)
     db.session.commit()
+    
+    socketio.emit('update_history')        
 
     return jsonify({
         "prediction": bot_response
