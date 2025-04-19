@@ -21,7 +21,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 5px 20px 5px 20px;
     background-color: #fff;
     color: white;
     position: relative;
@@ -29,7 +29,7 @@ header {
 }
 
 header.shrunk {
-    width: 10% ;
+    width: 10%;
     padding: 0;
 
 }
@@ -54,7 +54,7 @@ header.shrunk {
     display: none;
 }
 
-.toggle i{
+.toggle i {
     display: none;
 }
 
@@ -67,11 +67,11 @@ header.shrunk {
 }
 
 main {
-    display: block; 
+    display: block;
     width: 100%;
-    height: fit-content; 
+    height: fit-content;
     flex: 1;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
 .list-object {
@@ -79,8 +79,10 @@ main {
     flex-wrap: wrap;
     width: 100%;
     padding: 30px;
-    justify-content: flex-start; /* Căn đều các object */
-    gap: 20px; /* Khoảng cách giữa các object */
+    justify-content: flex-start;
+    /* Căn đều các object */
+    gap: 20px;
+    /* Khoảng cách giữa các object */
 }
 
 .list-object .object {
@@ -92,8 +94,10 @@ main {
     height: 450px;
     padding: 20px;
 
-    flex: 1 1 calc(25% - 20px); /* Mỗi object chiếm 25% chiều rộng, trừ đi gap */
-    max-width: calc(25% - 20px); /* Giới hạn max-width để tránh object bị giãn quá rộng */
+    flex: 1 1 calc(25% - 20px);
+    /* Mỗi object chiếm 25% chiều rộng, trừ đi gap */
+    max-width: calc(25% - 20px);
+    /* Giới hạn max-width để tránh object bị giãn quá rộng */
 }
 
 /* 🔹 Khi màn hình nhỏ hơn 1200px, chỉ hiển thị 3 object mỗi hàng */
@@ -127,11 +131,11 @@ main {
     text-align: center;
     padding: 10px;
 
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     width: 100%;
-    display: block; 
+    display: block;
 }
 
 .list-object .object .description {
@@ -185,7 +189,7 @@ main {
     justify-content: center;
     text-align: center;
     font-size: 20px;
-} 
+}
 
 .logo {
     background: linear-gradient(45deg, #2A3335, #5d6dea);
@@ -203,15 +207,17 @@ main {
     margin-top: 10px;
     width: 60%;
 }
+
 .search-bar input {
     width: 100%;
-    padding: 10px 40px 10px 20px; 
+    padding: 10px 40px 10px 20px;
     border-radius: 10px;
     border: 1px solid #ddd;
 }
+
 .search-bar i {
     position: absolute;
-    right: 10px; 
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     color: #777;
@@ -253,16 +259,16 @@ header nav ul li a.active {
     padding: 10px;
 }
 
-.auth-buttons  .contact {
+.auth-buttons .contact {
     color: #5d6dea;
 }
 
-.auth-buttons  .sign-in {
+.auth-buttons .sign-in {
     border: 1px solid #5d6dea;
     color: #5d6dea;
 }
 
-.auth-buttons  .sign-up {
+.auth-buttons .sign-up {
     background-color: #5d6dea;
     color: #fff;
 }
@@ -305,7 +311,7 @@ main {
     color: #000;
     white-space: nowrap;
     overflow: hidden;
-    font-size: calc(1,2vw);
+    font-size: calc(1, 2vw);
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.032);
 
@@ -317,7 +323,7 @@ main {
     }
 }
 
-.hero .buttons a > * {
+.hero .buttons a>* {
     font-size: 20px;
     color: #000;
     margin-right: 10px;
@@ -362,7 +368,8 @@ main {
     padding: 0 10px;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary,
+.btn-secondary {
     padding: 5px 45px;
     text-decoration: none;
     border-radius: 10px;
@@ -372,7 +379,7 @@ main {
 .btn-primary {
     background-color: gold;
     color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .btn-secondary {
@@ -386,7 +393,8 @@ main {
     display: none;
 }
 
-.btn-primary:hover, .btn-secondary:hover {
+.btn-primary:hover,
+.btn-secondary:hover {
     opacity: 0.9;
 }
 
@@ -455,7 +463,7 @@ main {
     width: 31%;
     margin: 1%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: none; 
+    display: none;
     padding-bottom: 10px;
 }
 
@@ -489,7 +497,7 @@ main {
 }
 
 .item:nth-child(-n+3) {
-    display: block; 
+    display: block;
 }
 
 .show-more {
@@ -530,22 +538,24 @@ main {
     margin-top: 10px;
     width: 90%;
 }
+
 .search_bar input {
     width: 100%;
-    padding: 10px 40px 10px 20px; 
+    padding: 10px 40px 10px 20px;
     border-radius: 10px;
     border: 1px solid #ddd;
 }
+
 .search_bar i {
     position: absolute;
-    right: 10px; 
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     color: #777;
     cursor: pointer;
 }
 
-.container { 
+.container {
     max-width: 1500px;
     margin: 0 auto;
     padding: 20px 0px;
@@ -553,7 +563,7 @@ main {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-size: contain; 
+    background-size: contain;
     background-repeat: no-repeat;
     background-image: url("../image/layout-background.svg");
     background-size: cover;
@@ -561,7 +571,7 @@ main {
     flex: 1;
 }
 
-.container-llm { 
+.container-llm {
     max-width: 1500px;
     margin: 0 auto;
     padding: 20px 0px;
@@ -569,7 +579,7 @@ main {
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    background-size: contain; 
+    background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
     background-image: url("../image/layout-background.svg");
@@ -598,9 +608,12 @@ main {
     flex-direction: column;
     width: calc(50vw - 30px);
     margin-right: 15px;
-    height: 500px; /* Cùng chiều cao với .code-space */
-    flex-shrink: 0; /* Không co lại */
-    flex-grow: 0; /* Không mở rộng */
+    height: 500px;
+    /* Cùng chiều cao với .code-space */
+    flex-shrink: 0;
+    /* Không co lại */
+    flex-grow: 0;
+    /* Không mở rộng */
 }
 
 .container-llm .content .output h3 {
@@ -616,7 +629,8 @@ main {
     font-family: "Roboto Condensed", monospace;
     font-size: 14px;
     padding: 10px;
-    margin: 0; /* Đảm bảo không có margin thừa */
+    margin: 0;
+    /* Đảm bảo không có margin thừa */
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
@@ -639,24 +653,31 @@ main {
 
 
 .container-llm .content .output #reviewOutput {
-    background-color: #2b2929; /* Nền tối giống pre code.hljs */
-    color: #e4e4d6; /* Màu chữ sáng giống pre code.hljs */
+    background-color: #2b2929;
+    /* Nền tối giống pre code.hljs */
+    color: #e4e4d6;
+    /* Màu chữ sáng giống pre code.hljs */
     width: 100%;
     height: 100%;
     overflow-y: auto;
     font-family: "Roboto Condensed", monospace;
     font-size: 14px;
-    padding: 15px; /* Padding giống pre code.hljs */
+    padding: 15px;
+    /* Padding giống pre code.hljs */
     border: 1px solid #ddd;
-    border-radius: 15px; /* Border-radius giống pre code.hljs */
+    border-radius: 15px;
+    /* Border-radius giống pre code.hljs */
     box-sizing: border-box;
     text-align: left;
-    white-space: pre-wrap; /* Giữ định dạng xuống dòng */
+    white-space: pre-wrap;
+    /* Giữ định dạng xuống dòng */
 }
 
 .container-llm .content .output #reviewOutput strong {
-    color: #fdd663; /* Màu vàng giống .hljs-title */
-    font-weight: 700; /* In đậm giống .hljs */
+    color: #fdd663;
+    /* Màu vàng giống .hljs-title */
+    font-weight: 700;
+    /* In đậm giống .hljs */
 }
 
 /* Style cho danh sách trong ô output (như * Về cơ bản...) */
@@ -667,7 +688,8 @@ main {
 }
 
 .container-llm .content .output #reviewOutput ul li {
-    color: #e4e4d6; /* Màu chữ sáng giống pre code.hljs */
+    color: #e4e4d6;
+    /* Màu chữ sáng giống pre code.hljs */
     margin-bottom: 5px;
 }
 
@@ -679,7 +701,8 @@ main {
 
 .container-llm .content .output #reviewOutput ul li ul li {
     font-size: 14px;
-    color: #81c995; /* Màu xanh lá giống .hljs-comment */
+    color: #81c995;
+    /* Màu xanh lá giống .hljs-comment */
 }
 
 /* Style cho code block bên trong ô output */
@@ -689,11 +712,14 @@ main {
 }
 
 .container-llm .content .output #reviewOutput pre code.hljs {
-    background-color: #2b2929; /* Giữ nguyên nền tối */
-    color: #e4e4d6; /* Giữ nguyên màu chữ */
+    background-color: #2b2929;
+    /* Giữ nguyên nền tối */
+    color: #e4e4d6;
+    /* Giữ nguyên màu chữ */
     padding: 15px;
     border-radius: 15px;
-    font-family: "Courier New", monospace; /* Phông chữ giống Highlight.js */
+    font-family: "Courier New", monospace;
+    /* Phông chữ giống Highlight.js */
     overflow: auto;
 }
 
@@ -701,7 +727,8 @@ main {
 
 .review-button {
     display: block;
-    margin: 20px auto; /* Căn giữa nút */
+    margin: 20px auto;
+    /* Căn giữa nút */
     padding: 10px 20px;
     background-color: gold;
     color: black;
@@ -776,13 +803,33 @@ main {
     background-color: #ccc;
 }
 
-.course-cards{ display: flex; flex-wrap: wrap; justify-content: flex-start; padding: 0 2%;
-    box-shadow: 0 4px 8px rgba(238, 234, 234, 0.2), 
-                0 6px 20px rgba(239, 235, 235, 0.19); width: 70%; border: 1px solid #ddd; border-radius: 10px;    overflow-y: auto; max-height: 600px; scrollbar-width: none;}
-.course-cards::-webkit-scrollbar {
-    display: none; 
+.course-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0 2%;
+    box-shadow: 0 4px 8px rgba(238, 234, 234, 0.2),
+        0 6px 20px rgba(239, 235, 235, 0.19);
+    width: 70%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow-y: auto;
+    max-height: 600px;
+    scrollbar-width: none;
 }
-.card { background: white; border: 1px solid #ccc; border-radius: 10px; margin: 1%; padding: 20px; width: calc(31%); }
+
+.course-cards::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 1%;
+    padding: 20px;
+    width: calc(31%);
+}
 
 footer {
     margin-bottom: 0;
@@ -852,7 +899,8 @@ footer .content li {
     flex-wrap: wrap;
 }
 
-.panel-content #panel-list .course span, p{
+.panel-content #panel-list .course span,
+p {
     display: flex;
     width: calc(20% - 20px);
 }
@@ -866,4 +914,3 @@ footer .content li {
     border: none;
     cursor: pointer;
 }
-

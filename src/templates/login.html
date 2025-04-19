@@ -4,7 +4,7 @@
             <h2 class="logo text-center font-bold">DEEPSHARK</h2>
             <img src="../static/image/shark.png" class="w-14 h-14">
         </div>
-        <p class="text-sm text-gray-500 text-center mb-6">Sign in to your account</p>
+        <div class="text-sm text-gray-500 text-center mb-6">Sign in to your account</div>
 
         <form action="/api/auth/signin" method="POST" class="space-y-4">
             <div>
@@ -24,15 +24,16 @@
                 Sign In
             </button>
         </form>
-
-        <div class="text-center mt-4">
-            <a href="#" class="text-sm text-[#5d6dea] hover:underline">Forgot Password?</a>
+        {% if error %}
+        <div class="text-center mt-4 text-red-600">
+            Wrong password or email
         </div>
+        {% endif %}
 
         <div class="text-center mt-4">
-            <p class="text-sm text-gray-600">Don't have an account?
-                <a href="#" class="text-[#5d6dea] hover:underline font-semibold">Sign Up</a>
-            </p>
+            <div class="text-sm text-gray-600">Don't have an account?
+                <a href="/signup" class="text-[#5d6dea] hover:underline font-semibold">Sign Up</a>
+            </div>
         </div>
     </div>
 </div>

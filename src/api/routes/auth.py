@@ -5,34 +5,43 @@ from flask_jwt_extended import JWTManager, create_access_token, jwt_required, ge
 
 app = Blueprint("api_auth", __name__)
 
+
 @app.route("/signup", methods=["POST"])
 def signup():
     data = request.form
-    if not data or not all(k in data for k in ("username", "email", "password")):
-        return jsonify({"message": "Missing fields"}), 400
+    # if not data or not all(k in data for k in ("username", "email", "password")):
+    #     return jsonify({"message": "Missing fields"}), 400
 
     if User.query.filter_by(email=data["email"]).first():
-        return jsonify({"message": "Email already exists"}), 409
+        return redirect("/signup?error=Email already exists!")
+    if User.query.filter_by(username=data["username"]).first():
+        return redirect("/signup?error=Username already exists!")
 
     new_user = User(data["username"], data["email"], data["password"], data.get("image_face"))
 
     db.session.add(new_user)
     db.session.commit()
 
-    return jsonify({"message": "User created successfully"}), 201
+    return redirect("/signup?success=true")
 
 
 @app.route("/signin", methods=["POST"])
 def signin():
     data = request.form
-    if not data or not all(k in data for k in ("email", "password")):
-        return jsonify({"message": "Missing fields"}), 400
+    # if not data or not all(k in data for k in ("email", "password")):
+    #     return jsonify({"message": "Missing fields"}), 400
 
     user = User.query.filter_by(email=data["email"]).first()
     if user and bcrypt.check_password_hash(user.password_hash, data["password"]):
-        response = make_response(redirect(url_for("home"))) 
-        response.set_cookie("user_id", str(user.id), httponly=True, max_age=3600) 
+        response = make_response(redirect(url_for("home")))
+        response.set_cookie("user_id", str(user.id), httponly=True, max_age=86400)
         return response
 
-    return jsonify({"message": "Invalid credentials"}), 401
+    return redirect("/signin?error=true")
 
+
+@app.route("/logout", methods=["GET"])
+def logout():
+    response = make_response(redirect("/"))
+    response.delete_cookie("user_id")
+    return response
