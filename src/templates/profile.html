@@ -14,12 +14,22 @@
 
         <h4 style="text-align: center;" class="text-gray-400 mt-4 text-xl font-bold">{{user.email}}</h4>    
         <div class="mt-6 space-x-4">
-            <a class="px-4 py-2 bg-blue-600 hover:bg-blue-500 transition rounded-lg text-sm text-white">
-                Change Avatar
-            </a>
-            <a class="px-4 py-2 bg-red-600 hover:bg-red-500 transition rounded-lg text-sm text-white">
+            <form action="/change-avatar" method="POST" enctype="multipart/form-data"
+                class="inline-flex items-center gap-2">
+                <!-- Hidden File Input -->
+                <input id="avatar-input" type="file" name="avatar" accept="image/*" required class="hidden"
+                    onchange="this.form.submit()">
+
+                <!-- Custom Styled Button -->
+                <label for="avatar-input"
+                    class="px-4 py-2 bg-blue-600 hover:bg-blue-500 transition rounded-lg text-sm text-white cursor-pointer">
+                    Change Avatar
+                </label>
+            </form>
+            <button onclick="window.location.href='/api/auth/logout'"
+                class="px-4 py-2 bg-red-600 hover:bg-red-500 transition rounded-lg text-sm">
                 Logout
-            </a>
+            </button>
         </div>
         <div class="mt-6 space-x-4">
             <a href="/" class="block text-center w-full py-2 bg-green-600 hover:bg-green-500 transition rounded-lg text-sm text-white">

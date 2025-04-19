@@ -1,34 +1,307 @@
 <section class="container-llm">
-    <h2>Code Review Tool</h2>
-    <form method="POST" action="/api/ai_models/review-code" onsubmit="showLoading()" enctype="multipart/form-data">
-        <div class="content">
-            <div class="input">
-                <input type="file" id="fileInput" name="fileInput" accept=".txt,.py,.js,.html,.css,.java" />
-                <div class="code-space">
-                    <textarea id="codeInput" name="code" placeholder="Nhập code tại đây...">{{code_input }}</textarea>
+    <h2 class="tool-title">AI Code Review Tool</h2>
+    <form method="POST" action="/api/ai_models/review-code" onsubmit="showLoading()" enctype="multipart/form-data" class="review-form">
+        <div class="content-wrapper">
+            <div class="input-section">
+                <div class="file-upload-wrapper">
+                    <label for="fileInput" class="file-upload-label">
+                        <i class="fas fa-cloud-upload-alt"></i> Choose File
+                        <input type="file" id="fileInput" name="fileInput" accept=".txt,.py,.js,.html,.css,.java" class="file-upload-input" />
+                    </label>
+                    <span class="file-name" id="fileName">No file chosen</span>
+                </div>
+                <div class="code-editor">
+                    <div class="editor-header">
+                        <span class="language-tab active">Code</span>
+                        <div class="editor-actions">
+                            <button type="button" class="clear-btn" onclick="clearCode()">
+                                <i class="fas fa-trash-alt"></i> Clear
+                            </button>
+                        </div>
+                    </div>
+                    <textarea id="codeInput" name="code" placeholder="Enter your code here or upload a file...">{{code_input }}</textarea>
                 </div>
             </div>
-            <div class="output">
-                <h3>Result Review</h3>
-                <div id="reviewOutput">{%- if review_result -%}{{ review_result | safe }}{%- else -%}Kết quả review sẽ hiển thị ở đây...{%- endif -%}</div>            
+            
+            <div class="output-section">
+                <div class="result-header">
+                    <h3><i class="fas fa-search"></i> Review Results</h3>
+                    <div class="result-actions">
+                        <button type="button" class="copy-btn" onclick="copyResults()">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                </div>
+                <div class="result-container" id="reviewOutput">
+                    {%- if review_result -%}
+                        {{ review_result | safe }}
+                    {%- else -%}
+                        <div class="empty-state">
+                            <i class="fas fa-code"></i>
+                            <p>Review results will appear here...</p>
+                        </div>
+                    {%- endif -%}
+                </div>
             </div>
         </div>
-        <button type="submit" class="review-button">Review Code</button>
+        <button type="submit" class="review-button">
+            <i class="fas fa-play"></i> Analyze Code
+        </button>
     </form>
 </section>
+
+<style>
+
+.tool-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 90vw;
+}
+
+.input-section, .output-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.file-upload-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.file-upload-label {
+    background: #3498db;
+    color: #2c3e50;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.3s;
+}
+
+.file-upload-label:hover {
+    background: #2980b9;
+}
+
+.file-upload-input {
+    display: none;
+}
+
+.file-name {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.code-editor, .result-container {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-header, .result-header {
+    background: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.language-tab {
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.language-tab.active {
+    background: #e9ecef;
+    font-weight: 500;
+}
+
+.editor-actions, .result-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.clear-btn, .copy-btn {
+    background: none;
+    border: none;
+    color: #7f8c8d;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+
+.clear-btn:hover, .copy-btn:hover {
+    background: #f1f1f1;
+    color: #333;
+}
+
+#codeInput, #reviewOutput {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    resize: none;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    background: white;
+    color: #333;
+}
+
+#codeInput {
+    min-height: 300px;
+    outline: none;
+}
+
+#reviewOutput {
+    overflow-y: auto;
+    background: #f8f9fa;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #95a5a6;
+}
+
+.result-container pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Monaco', monospace;
+    color: #fff;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+}
+
+.empty-state i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hljs-title.function {
+    color: #e5e7eb; 
+    
+}
+
+
+.hljs-comment {
+    color: #81c995;  
+}
+
+.hljs-built_in{
+    color: #f8f8f2;  
+}
+
+
+.hljs-keyword{
+    color: #c58af9;  
+
+}
+
+.hljs-number{
+    color: #fa903e;  
+}
+
+.hljs {
+    font-weight: 700; 
+}
+
+.hljs-string{
+    color: #81c995;  
+}
+
+.hljs-variable.language_{
+    color: #8ab4f8
+}
+
+.hljs-type{
+    color: #c58af9;  
+
+}
+
+.review-button {
+    background: #27ae60;
+    color: #2c3e50;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    display: block;
+    margin: 0 auto;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.review-button:hover {
+    background: #219653;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+}
+</style>
 
 <script>
     document.getElementById('fileInput').addEventListener('change', function(event) {
         const file = event.target.files[0];
         if (file) {
+            document.getElementById('fileName').textContent = file.name;
             const reader = new FileReader();
             reader.onload = function(e) {
                 document.getElementById('codeInput').value = e.target.result;
             };
             reader.readAsText(file);
+        } else {
+            document.getElementById('fileName').textContent = 'No file chosen';
         }
     });
-</script>
 
+    function clearCode() {
+        document.getElementById('codeInput').value = '';
+        document.getElementById('fileInput').value = '';
+        document.getElementById('fileName').textContent = 'No file chosen';
+    }
+
+    function copyResults() {
+        const resultText = document.getElementById('reviewOutput').textContent;
+        navigator.clipboard.writeText(resultText).then(() => {
+            alert('Results copied to clipboard!');
+        });
+    }
+</script>
 
 
