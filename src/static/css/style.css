@@ -874,7 +874,12 @@ footer .content li {
     flex-wrap: wrap;
 }
 
-.panel-content #panel-list .course span, p{
+.panel-content #panel-list .course span{
+    display: flex;
+    width: calc(20% - 20px);
+}
+
+.panel-content #panel-list .course p{
     display: flex;
     width: calc(20% - 20px);
 }
@@ -887,5 +892,58 @@ footer .content li {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.typing-indicator {
+    display: flex;
+    padding: 10px;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.chat-messages pre {
+    background-color: #1e1e1e !important;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.chat-messages code {
+    background-color: #1e1e1e !important;
+    color: #dcdcdc !important;
+}
+
+.hljs {
+    background: #1e1e1e !important;
+    color: #dcdcdc !important;
+}
+
+@keyframes typingAnimation {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-5px);
+    }
 }
 
