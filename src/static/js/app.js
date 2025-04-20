@@ -7025,7 +7025,7 @@ app.Settings = class e {
         this.store = new CookiesStore,
         this.cache = {},
         this.autoSupported = "not all" !== window.matchMedia("(prefers-color-scheme)").media,
-        this.autoSupported && (this.darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)"),
+        this.autoSupported && (this.darkModeQuery = window.matchMedia("(prefers-color-scheme: light)"),
         this.darkModeQuery.addListener(( () => this.setTheme(this.get("theme")))))
     }
     get(e) {

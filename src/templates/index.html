@@ -25,10 +25,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
     <script>hljs.highlightAll();</script>
-
-
-
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -121,7 +120,7 @@
                             </li>
                             <ul class="dev" style="display: none;">
                                 {% for item in files %}
-                                <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
+                                <li><a href="/tutorial/numpy/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -142,7 +141,7 @@
                             </li>
                             <ul class="dev" style="display: none;">
                                 {% for item in files %}
-                                <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
+                                <li><a href="/tutorial/flask/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -163,7 +162,7 @@
                             </li>
                             <ul class="dev" style="display: none;">
                                 {% for item in files %}
-                                <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
+                                <li><a href="/tutorial/django/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
