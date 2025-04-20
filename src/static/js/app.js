@@ -5663,12 +5663,60 @@ $.closestLink = function(e, t) {
 }
 ,
 $.on = function(e, t, s, a) {
-    if (null == a && (a = !1),
-    t.includes(" "))
-        for (var n of t.split(" "))
-            $.on(e, n, s);
-    else
-        e.addEventListener(t, s, a)
+    // Kiểm tra tham số đầu vào
+    if (!e || !e.addEventListener) {
+        return;
+    }
+    
+    if (typeof t !== 'string' || t.trim() === '') {
+        console.error('Invalid event name', t);
+        return;
+    }
+    
+    if (typeof s !== 'function') {
+        console.error('Invalid event handler', s);
+        return;
+    }
+
+    // Xử lý tham số useCapture/options
+    var options = {};
+    if (typeof a === 'object') {
+        options = a;
+    } else {
+        options.capture = !!a;
+    }
+
+    try {
+        // Xử lý nhiều sự kiện
+        if (t.includes(" ")) {
+            t.split(" ").forEach(function(eventName) {
+                if (eventName.trim()) {
+                    e.addEventListener(eventName.trim(), s, options);
+                }
+            });
+        } else {
+            e.addEventListener(t, s, options);
+        }
+    } catch (error) {
+        console.error('Failed to add event listener:', {
+            element: e,
+            event: t,
+            handler: s,
+            options: options,
+            error: error
+        });
+    }
+    
+    // Trả về function để remove event
+    return function() {
+        if (t.includes(" ")) {
+            t.split(" ").forEach(function(eventName) {
+                e.removeEventListener(eventName.trim(), s, options);
+            });
+        } else {
+            e.removeEventListener(t, s, options);
+        }
+    };
 }
 ,
 $.off = function(e, t, s, a) {
@@ -5713,8 +5761,16 @@ const buildFragment = function(e) {
     return t
 };
 $.append = function(e, t) {
-    "string" == typeof t ? e.insertAdjacentHTML("beforeend", t) : ($.isCollection(t) && (t = buildFragment(t)),
-    e.appendChild(t))
+    if (!e || !e.nodeType) { // Kiểm tra e là DOM element hợp lệ
+        return;
+    }
+    
+    if ("string" == typeof t) {
+        e.insertAdjacentHTML("beforeend", t);
+    } else {
+        $.isCollection(t) && (t = buildFragment(t));
+        e.appendChild(t);
+    }
 }
 ,
 $.prepend = function(e, t) {
@@ -5741,8 +5797,10 @@ $.remove = function(e) {
 }
 ,
 $.empty = function(e) {
-    for (; e.firstChild; )
-        e.removeChild(e.firstChild)
+    if (!e || !e.firstChild) return;  // Kiểm tra e tồn tại và có firstChild
+    while (e.firstChild) {
+        e.removeChild(e.firstChild);
+    }
 }
 ,
 $.batchUpdate = function(e, t) {
@@ -6963,13 +7021,17 @@ app.ServiceWorker = class extends Events {
         return !!navigator.serviceWorker && app.config.service_worker_enabled
     }
     constructor() {
-        super(),
-        this.onStateChange = this.onStateChange.bind(this),
-        this.registration = null,
-        this.notifyUpdate = !0,
-        navigator.serviceWorker.register(app.config.service_worker_path, {
-            scope: "/"
-        }).then((e => this.updateRegistration(e)), (e => console.error("Could not register service worker:", e)))
+        super();
+        this.onStateChange = this.onStateChange.bind(this);
+        this.registration = null;
+        this.notifyUpdate = !0;
+    
+        // Chỉ đăng ký nếu không phải localhost
+        if (!window.location.href.includes('localhost') && !window.location.href.includes('127.0.0.1')) {
+            navigator.serviceWorker.register(app.config.service_worker_path, {
+                scope: "/"
+            }).then((e) => this.updateRegistration(e), (e) => console.error("Lỗi đăng ký Service Worker:", e));
+        }
     }
     update() {
         if (this.registration)
@@ -7112,7 +7174,7 @@ app.Settings = class e {
     }
     updateColorMeta() {
         const e = getComputedStyle(document.documentElement).getPropertyValue("--headerBackground").trim();
-        $("meta[name=theme-color]").setAttribute("content", e)
+        if ($("meta[name=theme-color]")) $("meta[name=theme-color]").setAttribute("content", e)
     }
     toggleLayout(e, t) {
         const {classList: s} = document.body;
@@ -7746,14 +7808,17 @@ app.models.Type = class extends app.Model {
 ,
 app.View = class extends Events {
     constructor(e) {
-        super(),
-        e instanceof HTMLElement && (this.el = e),
-        this.setupElement(),
-        this.el.className && (this.originalClassName = this.el.className),
-        this.constructor.className && this.resetClass(),
-        this.refreshElements(),
-        "function" == typeof this.init && (this.init(),
-        this.refreshElements())
+        super();
+        if (e instanceof HTMLElement) {
+            this.el = e;
+            this.setupElement();
+            if (this.el) { // Kiểm tra lại this.el để tránh null
+                this.el.className && (this.originalClassName = this.el.className);
+                this.constructor.className && this.resetClass();
+                this.refreshElements();
+            }
+        }
+        "function" == typeof this.init && (this.init(), this.refreshElements());
     }
     setupElement() {
         if (null == this.el && (this.el = "string" == typeof this.constructor.el ? $(this.constructor.el) : this.constructor.el ? this.constructor.el : document.createElement(this.constructor.tagName || "div")),
@@ -9611,12 +9676,17 @@ app.views.SearchScope = class e extends app.View {
     };
     static HASH_RGX = new RegExp(`^#${e.SEARCH_PARAM}=(.+?) .`);
     init() {
-        this.placeholder = this.input.getAttribute("placeholder"),
+        // Đảm bảo this.input tồn tại trước khi sử dụng
+        if (!this.input) {
+            return;
+        }
+        
+        this.placeholder = this.input.getAttribute("placeholder");
         this.searcher = new app.SynchronousSearcher({
             fuzzy_min_length: 2,
             max_results: 1
-        }),
-        this.searcher.on("results", (e => this.onResults(e)))
+        });
+        this.searcher.on("results", (e) => this.onResults(e));
     }
     getScope() {
         return this.doc || app

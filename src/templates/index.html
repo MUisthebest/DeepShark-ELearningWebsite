@@ -23,9 +23,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-
+    <svg style="display:none">
+        <symbol id="icon-copy" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z"/>
+        </symbol>
+    </svg>
     <script>hljs.highlightAll();</script>
-    
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -226,6 +230,7 @@
         {% include name %}
         {% else %}
         <div class="content">{{ content|safe }}</div>
+        <script src="{{ url_for('static', filename='/js/addCopyButton.js') }}"></script>
         {% endif %}
     </main>
     <footer>
