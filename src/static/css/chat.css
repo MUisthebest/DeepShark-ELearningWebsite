@@ -78,6 +78,10 @@ pre code.hljs {
 
 }
 
+.hljs-deletion{
+    color: #E9A5F1;  
+}
+
 
 table {
     width: 100%;
@@ -359,6 +363,7 @@ body {
         width: 100%;
         background-color: #ffffffcd;
         display: flex;
+        z-index: 9999;
 
     }
 
