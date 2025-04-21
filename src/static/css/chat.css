@@ -17,7 +17,7 @@ code {
     font-family: "Courier New", monospace;  /* Phông chữ monospace */
     display: inline-block;
     overflow-wrap: break-word;
-    font-size: 14px;
+    font-size: calc(1vw + 5px);
 }
 
 pre code.hljs {
