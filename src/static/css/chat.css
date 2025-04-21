@@ -260,7 +260,7 @@ body {
 .chat-message.bot-message {
     background-color: #e2e2e2;
     align-self: flex-start;
-    width: 66vw; /* Cố định chiều rộng */
+    width: 70vw; /* Cố định chiều rộng */
     max-width: 100%; /* Đảm bảo phần tử không vượt quá kích thước của container */
     overflow-wrap: break-word; /* Ngắt từ khi gặp từ quá dài */
     word-wrap: break-word; /* Ngắt từ dài và không vừa với chiều rộng */
@@ -355,13 +355,13 @@ body {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     header {
         position: absolute;
         height: 100%;
         width: 100%;
-        background-color: #ffffffcd;
+        background-color: #ffffffd4;
         display: flex;
         z-index: 9999;
 
