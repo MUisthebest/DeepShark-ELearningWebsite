@@ -332,5 +332,7 @@ def review():
     return render_template("index.html", name="review.html")
 
 
+# Thay đổi dòng này ở cuối file
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Railway sẽ cung cấp PORT qua biến môi trường
+    app.run(host="0.0.0.0", port=port)
