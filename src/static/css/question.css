@@ -1,0 +1,320 @@
+header {
+    display: none;
+}
+
+footer {
+    display: none;
+}
+
+
+.title {
+    background: #fff;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.title:hover {
+    text-decoration: none;
+}
+
+.title:hover h2 {
+    text-decoration: none;
+    background: linear-gradient(45deg, #5d6dea, #2A3335);
+    -webkit-background-clip: text;
+    background-clip: text;}
+
+.title h2 {
+    background: linear-gradient(45deg, #2A3335, #5d6dea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: "Jersey 15", serif;
+    margin: 0;
+    margin-top: 20px;
+    font-optical-sizing: auto;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    transition: .2s linear;
+}
+
+.search-section {
+    width: 100vw;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    height: 100vh;
+    gap: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid #5d6dea;
+    padding: 10px;
+}
+
+
+.history-header h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #2A3335;
+    background: #fff;
+    border-radius: 0px;
+    border: 3px solid #ccc;
+}
+
+.clear-history {
+    justify-self: center;
+}
+
+.history-list {
+    color: #2A3335;
+    background: #fff;
+    border-radius: 0px;
+    border: 3px solid #ccc;
+    padding: 0;
+}
+
+.history-list li {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    width: 100%;
+    font-size: calc(1vw + 1px);
+    /* Thêm các thuộc tính sau */
+    white-space: nowrap;      /* Ngăn không cho text xuống dòng */
+    overflow: hidden;        /* Ẩn phần nội dung bị tràn */
+    text-overflow: ellipsis; /* Hiển thị dấu ... khi text bị tràn */
+    max-width: 100%;         /* Đảm bảo không vượt quá kích thước container */
+}
+
+.history-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.search-section .history {
+    display: flex;
+    width: calc(30vw - 50px);
+}
+
+.search-section .main {
+    display: flex;
+    width: calc(70vw - 50px);
+}
+
+.search-header {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    margin-right: 5px;
+}
+
+.tab.active {
+    border-color: #ddd;
+    border-bottom-color: white;
+    background-color: white;
+    font-weight: bold;
+    color: #5d6dea; /* Màu cam của StackOverflow */
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.result-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+
+.result-item:hover {
+    background-color: #f9f9f9;
+}
+
+.result-title {
+    color: #0077cc;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.result-title:hover {
+    text-decoration: underline;
+}
+
+.result-meta {
+    font-size: 12px;
+    color: #666;
+}
+
+.stackoverflow {
+    border-left: 3px solid #5d6dea;
+    padding-left: 10px;
+}
+
+.axis {
+    border-left: 3px solid #2b2b2b; /* Màu giả định cho Axis */
+    padding-left: 10px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .search-section {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+        height: auto;
+    }
+    
+    .search-section .history,
+    .search-section .main {
+        width: 100%;
+    }
+    
+    .title h2 {
+        font-size: 36px;
+        margin-top: 10px;
+    }
+    
+    .search-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    
+    .tab {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    .history-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .history-header h3 {
+        font-size: 16px;
+        margin: 0;
+    }
+    
+    .result-title {
+        font-size: 14px;
+    }
+    
+    .result-meta {
+        font-size: 11px;
+    }
+    
+    /* Hide history on very small screens */
+    @media (max-width: 480px) {
+        .history {
+            display: none !important;
+        }
+    }
+}
+
+.content-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 700px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-panel.active {
+    right: 0;
+}
+
+.panel-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-title {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.close-panel {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.panel-content {
+    padding: 15px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Overlay khi panel mở */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: none;
+}
+
+.content-panel.active ~ .overlay {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .content-panel {
+        width: 100%;
+        max-width: 100%;
+    }
+}
