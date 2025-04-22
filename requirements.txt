@@ -39,3 +39,4 @@ flask_socketio==5.5.1
 IPython==8.14.0
 jupyter==1.0.0
 eventlet==0.36.1
+flask_cors==4.0.0
