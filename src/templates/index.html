@@ -303,9 +303,9 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
         <script>
-            const socket = io();
-            socket.on('connect', () => {
-                console.log('Đã kết nối với Socket.IO server');
+            const socket = io('https://deepshark-elearningwebsite-production.up.railway.app', {
+                transports: ['websocket'],
+                withCredentials: true, // nếu dùng cookie cho auth
             });
             socket.on('update_history', () => {
                 console.log('Nhận được sự kiện update_history');
