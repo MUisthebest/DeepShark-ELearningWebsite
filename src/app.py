@@ -35,9 +35,8 @@ app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 db.init_app(app)
 bcrypt.init_app(app)
 jwt.init_app(app)
-socketio.init_app(app)
+socketio.init_app(app, cors_allowed_origins="*")
 migrate = Migrate(app, db)
-
 app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
 app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 
