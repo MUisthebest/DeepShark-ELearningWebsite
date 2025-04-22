@@ -331,10 +331,6 @@ async def tutorial(subpath=None):
 def review():
     return render_template("index.html", name="review.html")
 
-@app.before_request
-def before_request():
-    if request.url.startswith('http://'):
-        return redirect(request.url.replace('http://', 'https://'), code=301)
 
 
 # Thay đổi dòng này ở cuối file
