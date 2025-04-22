@@ -11,6 +11,7 @@ from flask import make_response
 from itertools import groupby
 import base64
 from bs4 import BeautifulSoup
+from flask_cors import CORS
 
 from api.routes.auth import app as auth_bp
 from flask import Flask
@@ -23,9 +24,9 @@ import psycopg2
 
 load_dotenv()
 
-
 app = Flask(__name__)
 translator = Translator()
+CORS(app)
 
 # Config from .env
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
