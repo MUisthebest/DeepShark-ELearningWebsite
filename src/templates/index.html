@@ -205,6 +205,7 @@
         {% endif %}
         <div class="auth-buttons">
             {% if user %}
+            <a class="contact" href="/contact" data-no-ajax>Liên Hệ</a>
             <div class="profile">
                 <a href="/profile">
 
@@ -217,9 +218,9 @@
                 </a>
             </div>
             {% else %}
-            <a class="contact" href="#" data-no-ajax>Contact us</a>
-            <a class="sign-in" href="/signin" data-no-ajax>Sign in</a>
-            <a class="sign-up" href="/signup" data-no-ajax>Sign up</a>
+            <a class="contact" href="/contact" data-no-ajax>Liên Hệ</a>
+            <a class="sign-in" href="/signin" data-no-ajax>Đăng Nhập</a>
+            <a class="sign-up" href="/signup" data-no-ajax>Đăng Ký</a>
             {% endif %}
         </div>
     </header>
