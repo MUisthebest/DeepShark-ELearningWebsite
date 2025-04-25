@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -23,12 +21,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-
+    <svg style="display:none">
+        <symbol id="icon-copy" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z"/>
+        </symbol>
+    </svg>
     <script>hljs.highlightAll();</script>
 
-
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -121,7 +122,7 @@
                             </li>
                             <ul class="dev" style="display: none;">
                                 {% for item in files %}
-                                <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
+                                <li><a href="/tutorial/numpy/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -142,7 +143,7 @@
                             </li>
                             <ul class="dev" style="display: none;">
                                 {% for item in files %}
-                                <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
+                                <li><a href="/tutorial/flask/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -163,7 +164,7 @@
                             </li>
                             <ul class="dev" style="display: none;">
                                 {% for item in files %}
-                                <li><a href="/tutorial/cpp/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
+                                <li><a href="/tutorial/django/{{ item.path }}" data-no-ajax>{{ item.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -204,6 +205,7 @@
         {% endif %}
         <div class="auth-buttons">
             {% if user %}
+            <a class="contact" href="/contact" data-no-ajax>Liên Hệ</a>
             <div class="profile">
                 <a href="/profile">
 
@@ -216,9 +218,9 @@
                 </a>
             </div>
             {% else %}
-            <a class="contact" href="#" data-no-ajax>Contact us</a>
-            <a class="sign-in" href="/signin" data-no-ajax>Sign in</a>
-            <a class="sign-up" href="/signup" data-no-ajax>Sign up</a>
+            <a class="contact" href="/contact" data-no-ajax>Liên Hệ</a>
+            <a class="sign-in" href="/signin" data-no-ajax>Đăng Nhập</a>
+            <a class="sign-up" href="/signup" data-no-ajax>Đăng Ký</a>
             {% endif %}
         </div>
     </header>
@@ -227,6 +229,7 @@
         {% include name %}
         {% else %}
         <div class="content">{{ content|safe }}</div>
+        <script src="{{ url_for('static', filename='js/addCopyButton.js') }}"></script>
         {% endif %}
     </main>
     <footer>
@@ -242,9 +245,8 @@
     </footer>
 
 
-    <script src="{{ url_for('static', filename='/js/hiddenbutton.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='/js/update_chathistory.js') }}" defer></script>
-
+    <script src="{{ url_for('static', filename='js/hiddenbutton.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/update_chathistory.js') }}" defer></script>
     <script>
         document.querySelector('.toggle').addEventListener('click', function () {
             document.querySelector('.logo').classList.toggle('hidden');
@@ -287,7 +289,7 @@
 
         
             window.addEventListener('resize', function() {
-                if (window.matchMedia("(min-width: 768px)").matches) {
+                if (window.matchMedia("(min-width: 1024px)").matches) {
                     document.querySelector('header').classList.remove('hidden');
                 } else {
                     if (document.querySelector('.logo').classList.contains('hidden')) {
@@ -302,9 +304,9 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
         <script>
-            const socket = io();
-            socket.on('connect', () => {
-                console.log('Đã kết nối với Socket.IO server');
+            const socket = io('https://deepshark-elearningwebsite-production.up.railway.app', {
+                transports: ['websocket'],
+                withCredentials: true, // nếu dùng cookie cho auth
             });
             socket.on('update_history', () => {
                 console.log('Nhận được sự kiện update_history');

@@ -11,6 +11,7 @@ from flask import make_response
 from itertools import groupby
 import base64
 from bs4 import BeautifulSoup
+from flask_cors import CORS
 
 from api.routes.auth import app as auth_bp
 from flask import Flask
@@ -23,9 +24,9 @@ import psycopg2
 
 load_dotenv()
 
-
 app = Flask(__name__)
 translator = Translator()
+CORS(app)
 
 # Config from .env
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
@@ -35,9 +36,8 @@ app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 db.init_app(app)
 bcrypt.init_app(app)
 jwt.init_app(app)
-socketio.init_app(app)
+socketio.init_app(app, cors_allowed_origins="*")
 migrate = Migrate(app, db)
-
 app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
 app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 
@@ -331,6 +331,13 @@ async def tutorial(subpath=None):
 def review():
     return render_template("index.html", name="review.html")
 
+@app.route("/contact", methods=["GET"])
+def contact():
+    return render_template("index.html", name="team.html")
 
+
+
+# Thay đổi dòng này ở cuối file
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Railway sẽ cung cấp PORT qua biến môi trường
+    app.run(port=port, host="0.0.0.0", debug=True)  # Chạy ứng dụng Flask trên tất cả các địa chỉ IP của máy chủ

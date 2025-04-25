@@ -58,9 +58,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function improvedTypeMessage(element, message) {
+        const chatMessagesContainer = document.querySelector('.chat-messages');
         const parsedMessage = marked.parse(message);
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = parsedMessage;
+        
+        // Hàm kiểm tra xem người dùng có đang ở gần cuối chat không
+        function isNearBottom() {
+            const threshold = 100; // Khoảng cách threshold tính bằng pixel
+            return chatMessagesContainer.scrollTop + chatMessagesContainer.clientHeight >= 
+                   chatMessagesContainer.scrollHeight - threshold;
+        }
         
         // Xử lý từng node
         const processNode = async (parentNode, node) => {
@@ -81,7 +89,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     
                     // Tốc độ typing nhanh hơn (10-30ms)
                     await new Promise(resolve => setTimeout(resolve, 10 + Math.random() * 20));
-                    document.querySelector('.chat-messages').scrollTop = document.querySelector('.chat-messages').scrollHeight;
+                    
+                    // Chỉ scroll nếu đang ở gần cuối
+                    if (isNearBottom()) {
+                        chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+                    }
                 }
             } else if (node.nodeType === Node.ELEMENT_NODE) {
                 // Xử lý element node
@@ -113,7 +125,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         displayText += text[i];
                         typingNode.textContent = displayText;
                         await new Promise(resolve => setTimeout(resolve, 10 + Math.random() * 20));
-                        document.querySelector('.chat-messages').scrollTop = document.querySelector('.chat-messages').scrollHeight;
+                        
+                        // Chỉ scroll nếu đang ở gần cuối
+                        if (isNearBottom()) {
+                            chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+                        }
                     }
                     
                     // Sau khi typing xong, thay thế bằng nội dung gốc và xóa style tạm
@@ -135,8 +151,12 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let child of tempDiv.childNodes) {
             await processNode(element, child);
         }
+        
+        // Sau khi hoàn thành, scroll xuống nếu đang ở gần cuối
+        if (isNearBottom()) {
+            chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+        }
     }
-
     // Sự kiện
     sendButton.addEventListener('click', sendMessage);
     inputField.addEventListener('keypress', function (e) {

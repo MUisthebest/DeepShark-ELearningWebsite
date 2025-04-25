@@ -357,13 +357,13 @@ main {
 
 
 .hero .content h1 {
-    font-size: calc(2vw + 12px);
+    font-size: calc(2vw + 14px);
     text-align: justify;
     width: 65%;
     height: min-content;
     margin: 0;
     padding: 0;
-    font-family: "Poppins", serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
@@ -445,10 +445,10 @@ main {
 }
 
 .tutorial .title {
-    width: fit-content;
     display: flex;
     align-self: center;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     gap: 15px;
 }
@@ -456,13 +456,17 @@ main {
 .tutorial .title h2 {
     width: 100%;
     font-weight: bold;
-    font-size: 34px;
+    font-size: calc(2vw + 7px);
     text-align: center;
-    font-family: "Poppins", serif;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contact {
+    align-self: center;
 }
 
 .tutorial .title i {
-    font-size: 30px;
+    font-size: calc(2vw + 10px);
 }
 
 .tutorial .list-item {
@@ -594,7 +598,6 @@ main {
 }
 
 .container-llm {
-    max-width: 1500px;
     margin: 0 auto;
     padding: 20px 0px;
     display: flex;

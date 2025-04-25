@@ -2,9 +2,6 @@ import os
 import textwrap
 import google.generativeai as genai
 import markdown
-from IPython.display import Markdown
-from markdown_it import MarkdownIt
-
 
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")

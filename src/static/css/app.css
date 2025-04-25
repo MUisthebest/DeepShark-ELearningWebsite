@@ -1435,7 +1435,7 @@ abbr,acronym,dfn {
     border-bottom: 1px dotted var(--textColor)
 }
 
-pre,code,samp,._jq .manual-example table td,._redis>.example,._scala .related-types,._code,._cppref .t-cc,._crystal .signature,._d .d_decl,._haskell-api .src,._openlayers .signature,._openlayers .type-signature,._ramda code,._rfc-pre,._rust .code-header {
+samp,._jq .manual-example table td,._redis>.example,._scala .related-types,._code,._cppref .t-cc,._crystal .signature,._d .d_decl,._haskell-api .src,._openlayers .signature,._openlayers .type-signature,._ramda code,._rfc-pre,._rust .code-header {
     font-family: var(--monoFont);
     font-weight: normal;
     font-style: normal;
@@ -3275,6 +3275,10 @@ pre:hover>._pre-clip {
 
 ._notice ~ ._container {
     padding-bottom: 2.5rem
+}
+
+.availability p {
+    color: #ddd;
 }
 
 ._notice-text {

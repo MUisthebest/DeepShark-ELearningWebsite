@@ -11,6 +11,7 @@ header {
     padding: 15px;
     position: relative; /* Đặt vị trí cố định */
     display: flex;
+    width: 25%;
     height: 100vh; /* Chiều cao bằng chiều cao màn hình */
     top: 0; /* Đặt header ở đầu trang */
     left: 0; /* Đặt header ở bên trái trang */
@@ -57,7 +58,9 @@ main {
     padding: 30px;
     display: flex;
     overflow-y: auto;
+    flex-wrap: wrap;
     flex-grow: 1;
+    width: 75%;
     flex-direction: column;
     height: 100vh;
 }
@@ -140,6 +143,7 @@ b {
     max-width: calc(25vw);
     width: 100%;
     border: 1px solid #ccc;
+    transition: 0.1s ease;
 }
 
 
@@ -149,6 +153,7 @@ b {
     max-height: 400px;
     width: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .Cpp::-webkit-scrollbar-thumb {
@@ -270,6 +275,96 @@ header > li {
     justify-self: center;
 }
 
+pre {
+    position: relative;
+    border-radius: 6px;
+    padding: 16px;
+    overflow: auto;
+    background: #282c34;
+    color: #fff;
+    font-family: 'Fira Code', monospace;
+}
 
+/* Nút copy */
+._pre-clip {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s;
+    opacity: 0;
+}
+
+pre:hover ._pre-clip {
+    opacity: 1;
+}
+
+.hljs-title.function {
+    color: #e5e7eb; 
+    
+}
+
+
+.hljs-comment {
+    color: #81c995;  
+}
+
+.hljs-built_in{
+    color: #f8f8f2;  
+}
+
+
+.hljs-keyword{
+    color: #c58af9;  
+
+}
+
+.hljs-number{
+    color: #fa903e;  
+}
+
+.hljs {
+    font-weight: 700; 
+}
+
+.hljs-string{
+    color: #81c995;  
+}
+
+.hljs-variable.language_{
+    color: #8ab4f8
+}
+
+.hljs-type{
+    color: #c58af9;  
+
+}
+
+.hljs-deletion{
+    color: #E9A5F1;  
+}
+
+
+._pre-clip:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+._pre-clip svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+/* Hiệu ứng khi copy */
+._pre-clip.copied {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+}
 
 
