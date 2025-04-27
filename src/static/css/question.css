@@ -7,6 +7,61 @@ footer {
 }
 
 
+#search-query {
+    width: 100%;            /* Đặt chiều rộng là 100% để ô tìm kiếm chiếm toàn bộ không gian có sẵn */
+    max-width: 90%;       /* Đặt chiều rộng tối đa của ô tìm kiếm */
+    padding: 10px 10px;     /* Thêm khoảng cách trong ô tìm kiếm */
+    font-size: 18px;        /* Đặt kích thước font chữ */
+    border: 3px solid #ddd; /* Đặt viền cho ô tìm kiếm */
+    border-radius: 8px;     /* Làm tròn các góc của ô tìm kiếm */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+}
+
+
+button[type="submit"] {
+    width: 16%; /* Đặt kích thước cố định cho nút */
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #5d6dea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #3b4a8e; /* Đổi màu nền khi hover */
+}
+
+
+#search-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Căn giữa ô tìm kiếm và nút */
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa ô tìm kiếm và nút */
+    margin-top: 20px;
+}
+
+#search-query {
+    width: 80%; /* Tăng chiều rộng của ô tìm kiếm */
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+button[type="submit"] {
+    width: 16%; /* Giảm kích thước của nút tìm kiếm */
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #5d6dea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
 .title {
     background: #fff;
     width: 100vw;
@@ -49,7 +104,7 @@ footer {
     padding: 20px;
     height: 100vh;
     gap: 50px;
-    display: flex;
+    display: fixed;
     flex-direction: row;
 }
 
@@ -119,7 +174,17 @@ article {
     display: flex;
     border-bottom: 1px solid #ddd;
     margin-bottom: 20px;
+    flex-direction: column;
+
 }
+
+#search-results {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 
 .tab {
     padding: 10px 20px;
@@ -147,9 +212,13 @@ article {
 }
 
 .result-item {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
 }
 
 .result-item:hover {
@@ -158,10 +227,10 @@ article {
 
 .result-title {
     color: #0077cc;
-    font-size: 16px;
-    margin-bottom: 5px;
     text-decoration: none;
     display: block;
+    font-size: 16px; /* Giảm kích thước của tiêu đề */
+    margin-bottom: 5px;
 }
 
 .result-title:hover {
@@ -260,12 +329,13 @@ article {
     box-shadow: -2px 0 10px rgba(0,0,0,0.1);
     transition: right 0.3s ease;
     z-index: 1000;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
 .content-panel.active {
-    right: 0;
+    display: block;
+
 }
 
 .panel-header {
@@ -317,4 +387,113 @@ article {
         width: 100%;
         max-width: 100%;
     }
+}
+
+
+
+/* Container cho toàn bộ phần tìm kiếm */
+.search-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Panel bên trái */
+.search-tabs-panel {
+    width: 250px; /* Đảm bảo panel bên trái có chiều rộng cố định */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    padding-right: 20px;
+    display: fixed;
+
+}
+
+.search-tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab {
+    padding: 10px;
+    background-color: #eee;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tab.active {
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+/* Panel bên phải chứa kết quả tìm kiếm */
+.search-results-panel {
+    flex-grow: 1; /* Chiếm toàn bộ không gian còn lại */
+    padding: 20px;
+    overflow-y: auto;
+    padding-left: 20px;
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+}
+
+.result-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.result-title {
+    font-weight: bold;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.result-meta {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+/* Panel hiển thị chi tiết */
+.content-panel {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.content-panel.active {
+    display: block;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.close-panel {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+
+
+.result-item h3 {
+    font-size: 18px; /* Giảm kích thước của tiêu đề */
+    margin: 0;       /* Đặt margin = 0 để tránh làm ảnh hưởng đến các phần tử khác */
+    padding: 0;      /* Đảm bảo không có padding làm thay đổi kích thước */
+    overflow: hidden; /* Ngăn không cho tiêu đề làm tràn ra ngoài */
+    text-overflow: ellipsis; /* Hiển thị dấu ba chấm khi tiêu đề dài */
 }

@@ -1,113 +1,70 @@
 <link rel="stylesheet" href="../static/css/question.css">
 <a class="title" href="/"><h2>DEEPSHARK</h2></a>
-<section class="search-section">
-    <article class="history">
-        <div class="history-header">
-            <h3>Lịch sử tìm kiếm</h3>
-            <a href="#" class="clear-history">Xóa lịch sử</a>
-        </div>
-        <ul class="history-list">
-            <li class="history-item">Cách sử dụng React Hooks</li>
-            <li class="history-item">Sự khác biệt giữa let, var và const</li>
-            <li class="history-item">Fix lỗi 'Cannot read property of undefined'</li>
-        </ul>
-    </article>
-    <article class="main">
-        <div class="search-header">
-            <input type="text" class="search-input" placeholder="Nhập từ khóa tìm kiếm...">
-        </div>
-        
-        <div class="search-tabs">
-            <div class="tab active" data-tab="stackoverflow">StackOverflow</div>
-            <div class="tab" data-tab="axis">Axis</div>
-        </div>
-        
-        <div class="tab-content active" id="stackoverflow">
-            <div class="result-item stackoverflow">
-                <a href="#" class="result-title">Làm cách nào để sử dụng React Hooks đúng cách?</a>
-                <div class="result-meta">2,345 lượt xem · 12 câu trả lời · Đăng bởi Nguyễn Văn A</div>
-            </div>
-            
-            <div class="result-item stackoverflow">
-                <a href="#" class="result-title">Sự khác biệt giữa let, var và const trong JavaScript</a>
-                <div class="result-meta">5,678 lượt xem · 24 câu trả lời · Đăng bởi Trần Thị B</div>
-            </div>
-            
-            <div class="result-item stackoverflow">
-                <a href="#" class="result-title">Cách fix lỗi 'Cannot read property of undefined'</a>
-                <div class="result-meta">1,234 lượt xem · 8 câu trả lời · Đăng bởi Lê Văn C</div>
-            </div>
-        </div>
-        
-        <div class="tab-content" id="axis">
-            <div class="result-item axis">
-                <a href="#" class="result-title">Hướng dẫn cấu hình Docker cho dự án Node.js</a>
-                <div class="result-meta">1,567 lượt xem · 5 bình luận · Đăng bởi Phạm Thị D</div>
-            </div>
-            
-            <div class="result-item axis">
-                <a href="#" class="result-title">Best practices về bảo mật API RESTful</a>
-                <div class="result-meta">2,890 lượt xem · 7 bình luận · Đăng bởi Hoàng Văn E</div>
-            </div>
-            
-            <div class="result-item axis">
-                <a href="#" class="result-title">So sánh hiệu năng giữa MongoDB và PostgreSQL</a>
-                <div class="result-meta">3,456 lượt xem · 15 bình luận · Đăng bởi Vũ Thị F</div>
-            </div>
-        </div>
-        <div class="content-panel" id="contentPanel">
-            <div class="panel-header">
-                <h3 class="panel-title"></h3>
-                <button class="close-panel">&times;</button>
-            </div>
-            <div class="panel-content"></div>
-        </div>
-    </article>
 
+<section class="search-section">
+    <div class="search-container">
+        <!-- Panel bên trái chứa các tab -->
+        <div class="search-tabs-panel">
+            <div class="search-tabs">
+                <div class="tab active" data-tab="stackoverflow">StackOverflow</div>
+                <div class="tab" data-tab="axis">Axis</div>
+            </div>
+        </div>
+
+        <!-- Panel bên phải chứa các kết quả và ô tìm kiếm -->
+        <div class="search-results-panel">
+            <!-- Thêm ô tìm kiếm vào đây -->
+            <form id="search-form" method="POST" action="/api/ai_models/search">
+                <input type="text" id="search-query" name="query" placeholder="Nhập câu hỏi tìm kiếm..." required>
+                <button type="submit">Tìm kiếm</button>
+            </form>
+
+            <div id="search-results"></div>
+
+        </div>
+    </div>
 </section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const tabs = document.querySelectorAll('.tab');
-        const resultTitles = document.querySelectorAll('.result-title');
-        const contentPanel = document.getElementById('contentPanel');
-        const panelTitle = contentPanel.querySelector('.panel-title');
-        const panelContent = contentPanel.querySelector('.panel-content');
-        const closePanel = contentPanel.querySelector('.close-panel');
-        
-        // Xử lý tab
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                
-                this.classList.add('active');
-                const tabId = this.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
+// Lắng nghe sự kiện gửi form tìm kiếm
+document.getElementById('search-form').addEventListener('submit', function(event) {
+    event.preventDefault();  // Ngăn gửi form mặc định
+
+    const query = document.getElementById('search-query').value;
+
+    fetch('/api/ai_models/search', {
+        method: 'POST',
+        body: new URLSearchParams({ query: query }),
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.papers) {
+            const resultsDiv = document.getElementById('search-results');
+            resultsDiv.innerHTML = '';  // Xóa kết quả cũ
+
+            data.papers.forEach(paper => {
+                const paperElement = document.createElement('div');
+                paperElement.innerHTML = `
+                    <h3><a href="${paper.link}" target="_blank">${paper.title}</a></h3>
+                    <p>${paper.abstract}</p>
+                `;
+                resultsDiv.appendChild(paperElement);
             });
-        });
-        
-        // Xử lý click vào tiêu đề kết quả
-        resultTitles.forEach(title => {
-            title.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Lấy nội dung từ data-content
-                const content = this.getAttribute('data-content');
-                const titleText = this.textContent;
-                
-                // Hiển thị nội dung trong panel
-                panelTitle.textContent = titleText;
-                panelContent.textContent = content;
-                
-                // Hiển thị panel
-                contentPanel.classList.add('active');
-            });
-        });
-        
-        // Đóng panel
-        closePanel.addEventListener('click', function() {
-            contentPanel.classList.remove('active');
-        });
+        } else {
+            alert("Không tìm thấy bài báo nào.");
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Có lỗi xảy ra, vui lòng thử lại.");
     });
+});
 </script>
+
+<!-- Chèn tệp JavaScript vào cuối body -->
+<script src="../static/js/question.js"></script>
+
+</body>
