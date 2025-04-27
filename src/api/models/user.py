@@ -1,4 +1,7 @@
 from api.settings import db, bcrypt
+from pgvector.sqlalchemy import Vector  
+from sqlalchemy.dialects.postgresql import ARRAY, DOUBLE_PRECISION
+
 
 
 class User(db.Model):
@@ -52,3 +55,38 @@ class ChatMessage(db.Model):
             "user_message": self.user_message,
             "bot_response": self.bot_response,
         }
+
+
+
+class ArxivPaper(db.Model):
+    __tablename__ = 'arxiv_papers'
+
+    id = db.Column(db.Integer, primary_key=True)  # Cột ID là khóa chính
+    title = db.Column(db.Text(), nullable=False)  # Cột Title
+    question = db.Column(db.Text(), nullable=False)  # Cột Question
+    link = db.Column(db.Text(), nullable=False)  # Cột Link
+    category = db.Column(db.String(255), nullable=False)  # Cột Category
+    abstract = db.Column(db.Text(), nullable=False)  # Cột Abstract
+    vector_embedding = db.Column(Vector(384), nullable=False)  # Cột vector_embedding (pg_vector)
+
+    def __init__(self, title, question, link, category, abstract, vector_embedding):
+        self.title = title
+        self.question = question
+        self.link = link
+        self.category = category
+        self.abstract = abstract
+        self.vector_embedding = vector_embedding
+
+    def __repr__(self):
+        return f"<ArxivPaper {self.title}>"
+
+
+class CategoryEmbedding(db.Model):
+    __tablename__ = 'category_embeddings_average'
+
+    id = db.Column(db.Integer, primary_key=True)
+    category = db.Column(db.Text(), nullable=False)
+    avg_embedding = db.Column(ARRAY(DOUBLE_PRECISION), nullable=False)
+
+    def __repr__(self):
+        return f'<CategoryEmbedding {self.category}>'
