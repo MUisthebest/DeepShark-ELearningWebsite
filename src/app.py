@@ -19,8 +19,17 @@ from api.models.user import User, ChatHistory, ChatMessage
 from api.routes.auth import app as auth_bp
 from googletrans import Translator
 
+
+from api.ai_models.calculate_embedding import load_model, finetuned_modelSBERT
+
+
 from dotenv import load_dotenv
 import psycopg2
+import threading
+
+
+
+
 
 load_dotenv()
 
@@ -40,6 +49,13 @@ socketio.init_app(app, cors_allowed_origins="*")
 migrate = Migrate(app, db)
 app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
 app.register_blueprint(auth_bp, url_prefix="/api/auth/")
+
+
+finetuned_modelSBERT = None
+
+def load_model_in_background():
+    global finetuned_modelSBERT
+    finetuned_modelSBERT = load_model()
 
 # def get_translated_content():
 #     try:
@@ -337,7 +353,127 @@ def contact():
 
 
 
+import pandas as pd
+import ast
+from sqlalchemy.exc import SQLAlchemyError
+
+
+
+# def insert_data_from_csv(csv_file, start_row=0):
+#     # Đọc dữ liệu từ file CSV
+#     df = pd.read_csv(csv_file)
+
+#     try:
+#         df['vector_embedding'] = df['vector_embedding'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else x)
+#     except Exception as e:
+#         print(f"Lỗi khi chuyển đổi vector_embedding: {e}")
+#         return
+
+#     if df['vector_embedding'].isnull().any():
+#         print("Có giá trị NaN trong cột 'vector_embedding'.")
+#         return 
+
+
+#     # Thêm dữ liệu vào cơ sở dữ liệu từ dòng `start_row`
+#     with app.app_context():  # Đảm bảo rằng bạn đang trong ngữ cảnh Flask app
+#         for idx, row in df.iloc[start_row:].iterrows():
+#             try:
+#                 # Kiểm tra dữ liệu vector_embedding trước khi thêm vào
+#                 if not isinstance(row['vector_embedding'], list) or len(row['vector_embedding']) != 384:
+#                     print(f"Lỗi dữ liệu vector embedding tại dòng {idx}: {row['vector_embedding']}")
+#                     continue  
+
+#                 # Tạo đối tượng ArxivPaper từ dữ liệu trong mỗi dòng
+#                 new_paper = ArxivPaper(
+#                     title=row['Title'],
+#                     question=row['Question'],
+#                     link=row['Link'],
+#                     category=row['Category'],
+#                     abstract=row['Abstract'],
+#                     vector_embedding=row['vector_embedding']  # Đảm bảo cột này đã có trong CSV
+#                 )
+
+#                 # Thêm đối tượng vào session và commit để lưu vào cơ sở dữ liệu
+#                 db.session.add(new_paper)
+
+#                 # Commit sau mỗi lần thêm
+#                 db.session.commit()
+
+#                 print(f"Dòng {idx} đã được thêm vào cơ sở dữ liệu.")
+
+#             except SQLAlchemyError as e:
+#                 # Lỗi SQLAlchemy sẽ được in ra, sau đó tiếp tục với dòng tiếp theo
+#                 print(f"Lỗi khi thêm dòng {idx} vào cơ sở dữ liệu: {e}")
+#                 db.session.rollback()  # Rollback nếu có lỗi
+
+#             except Exception as e:
+#                 # Lỗi chung khi thêm dữ liệu
+#                 print(f"Lỗi không xác định tại dòng {idx}: {e}")
+
+#     print("Quá trình chèn dữ liệu hoàn tất.")
+
+
+# def insert_category_embeddings_from_csv(csv_file, start_row=0):
+#     # Đọc dữ liệu từ file CSV
+#     df = pd.read_csv(csv_file)
+
+#     # Kiểm tra dữ liệu (in ra vài dòng đầu để kiểm tra)
+#     print(df.head())
+#     # print("Phần tử đầu tiên của cột 'Avg_embedding':", df['Avg_embedding'].iloc[0])
+
+#     try:
+#         # Chuyển đổi cột 'Avg_embedding' từ chuỗi thành list (nếu cần thiết)
+#         df['Avg_embedding'] = df['Avg_embedding'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else x)
+#     except Exception as e:
+#         print(f"Lỗi khi chuyển đổi Avg_embedding: {e}")
+#         return
+
+#     # Kiểm tra xem có giá trị NaN trong cột 'Avg_embedding' không
+#     if df['Avg_embedding'].isnull().any():
+#         print("Có giá trị NaN trong cột 'Avg_embedding'.")
+#         return
+
+#     # Thêm dữ liệu vào cơ sở dữ liệu từ dòng `start_row`
+#     with app.app_context():  # Đảm bảo rằng bạn đang trong ngữ cảnh Flask app
+#         # Bắt đầu transaction
+#         with db.session.begin():  # Đảm bảo commit sau khi thêm tất cả
+#             for idx, row in df.iloc[start_row:].iterrows():
+#                 try:
+#                     # Kiểm tra dữ liệu avg_embedding trước khi thêm vào
+#                     if not isinstance(row['Avg_embedding'], list) or len(row['Avg_embedding']) != 384:
+#                         print(f"Lỗi dữ liệu Avg_embedding tại dòng {idx}: {row['Avg_embedding']}")
+#                         continue  # Bỏ qua dòng nếu không hợp lệ
+
+#                     # Tạo một đối tượng CategoryEmbedding từ dữ liệu trong mỗi dòng
+#                     category_embedding = CategoryEmbedding(
+#                         category=row['Category'],
+#                         avg_embedding=row['Avg_embedding']  # Đảm bảo dữ liệu là list hoặc JSON
+#                     )
+#                     print(f"Dữ liệu Avg_embedding tại dòng {idx}: {row['Avg_embedding']}")
+
+#                     # Thêm đối tượng vào session
+#                     db.session.add(category_embedding)
+
+#                     # Không cần commit ở đây vì `db.session.begin()` sẽ tự động commit khi ra khỏi block
+
+#                     print(f"Dòng {idx} đã được thêm vào cơ sở dữ liệu.")
+
+#                 except SQLAlchemyError as e:
+#                     # Lỗi SQLAlchemy sẽ được in ra, sau đó tiếp tục với dòng tiếp theo
+#                     print(f"Lỗi khi thêm dòng {idx} vào cơ sở dữ liệu: {e}")
+#                     db.session.rollback()  # Rollback nếu có lỗi
+
+#                 except Exception as e:
+#                     # Lỗi chung khi thêm dữ liệu
+#                     print(f"Lỗi không xác định tại dòng {idx}: {e}")
+
+#     print("Dữ liệu đã được thêm vào cơ sở dữ liệu.")
+
 # Thay đổi dòng này ở cuối file
 if __name__ == "__main__":
+
+    threading.Thread(target=load_model_in_background).start()
+
     port = int(os.environ.get("PORT", 5000))  # Railway sẽ cung cấp PORT qua biến môi trường
     app.run(port=port, host="0.0.0.0", debug=True)  # Chạy ứng dụng Flask trên tất cả các địa chỉ IP của máy chủ
+
