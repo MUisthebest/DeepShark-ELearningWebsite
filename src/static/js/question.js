@@ -1,71 +1,172 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const tabs = document.querySelectorAll('.tab');
-    const resultTitles = document.querySelectorAll('.result-title');
-    const searchResultsPanel = document.querySelector('.search-results-panel');
-    const backButton = document.createElement('button'); // Tạo nút "Quay lại"
-    
-    backButton.textContent = 'Quay lại';
-    backButton.style.display = 'none'; // Ban đầu ẩn nút
-    backButton.style.padding = '10px 20px';
-    backButton.style.margin = '10px 0';
-    backButton.style.backgroundColor = '#5d6dea';
-    backButton.style.color = 'white';
-    backButton.style.border = 'none';
-    backButton.style.borderRadius = '5px';
-    backButton.style.cursor = 'pointer';
-    
-    searchResultsPanel.appendChild(backButton); // Thêm nút vào search-results-panel
-
-    // Lưu lại danh sách các kết quả tìm kiếm để khôi phục lại khi nhấn "Quay lại"
-    const originalResults = searchResultsPanel.innerHTML;
-
-    // Xử lý tab
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-
-            this.classList.add('active');
-            const tabId = this.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
-
-            backButton.style.display = 'none'; // Ẩn nút "Quay lại" khi chuyển tab
-        });
+document.addEventListener('DOMContentLoaded', function(){
+    // DOM cache
+    const arxivTab     = document.getElementById('arxiv-tab');
+    const soTab        = document.getElementById('so-tab');
+    const arxivForm    = document.getElementById('arxiv-form');
+    const soForm       = document.getElementById('so-form');
+    const arxivResults = document.getElementById('arxiv-results');
+    const soResults    = document.getElementById('so-results');
+  
+    // 1) Chuyển tab
+    [arxivTab, soTab].forEach(tab => {
+      tab.addEventListener('click', () => {
+        const mode = tab.dataset.tab;
+        arxivTab.classList.toggle('active', mode === 'arxiv');
+        soTab.classList.toggle('active', mode === 'stackoverflow');
+        arxivForm.style.display    = mode === 'arxiv' ? 'flex' : 'none';
+        soForm.style.display       = mode === 'stackoverflow' ? 'flex' : 'none';
+        arxivResults.style.display = mode === 'arxiv' ? 'block' : 'none';
+        soResults.style.display    = mode === 'stackoverflow' ? 'block' : 'none';
+      });
     });
+  
+    // 2) Render kết quả arXiv
+    function renderArxiv(papers) {
+      arxivResults.innerHTML = '';
+      if (!papers || papers.length === 0) {
+        arxivResults.innerHTML = '<p>The server is stucked. Please Try Again</p>';
+        return;
+      }
+      papers.forEach(p => {
+        const d = document.createElement('div');
+        d.className = 'result-item';
+        d.innerHTML = `
+          <h3><a href="${p.link}" target="_blank">${p.title}</a></h3>
+          <p>${p.abstract}</p>
+        `;
+        arxivResults.appendChild(d);
+      });
+    }
+  
 
-    // Xử lý click vào tiêu đề kết quả
-    resultTitles.forEach(title => {
-        title.addEventListener('click', function(e) {
-            e.preventDefault();
 
-            // Lấy nội dung chi tiết từ data-content
-            const content = this.getAttribute('data-content');
-            const titleText = this.textContent;
 
-            // Tạo một phần tử mới để hiển thị chi tiết câu hỏi
-            const resultDetail = document.createElement('div');
-            resultDetail.classList.add('result-detail');
-            resultDetail.innerHTML = `
-                <h4>${titleText}</h4>
-                <p>${content}</p>
+    function enrichAnswerContent(html) {
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = html;
+    
+      wrapper.querySelectorAll('a').forEach(a => {
+        const img = a.querySelector('img');
+        if (!img) return;
+    
+        // 1) Lấy href và alt (dùng default nếu alt rỗng)
+        const href = a.href;
+        const altText = img.alt.trim() || 'View Image';
+    
+        // 2) Tạo logo
+        const logo = document.createElement('img');
+        logo.src = '/static/image/default-logo-image.png';  
+        logo.alt = 'Logo';
+        logo.className = 'answer-logo-inline mb-2';
+    
+        // 3) Tạo link text phía sau logo
+        const linkText = document.createElement('a');
+        linkText.href = href;
+        linkText.rel = 'noreferrer';
+        linkText.textContent = altText;
+        linkText.className = 'ml-2 text-blue-600 underline';
+    
+        // 4) Thay thế <a> gốc bằng logo + linkText
+        a.replaceWith(logo, linkText);
+      });
+    
+      return wrapper.innerHTML;
+    }
+
+
+
+    
+    // 3) Render kết quả StackOverflow
+    function renderSO(papers) {
+      soResults.innerHTML = '';
+      if (!papers || papers.length === 0) {
+        soResults.innerHTML = '<p>The server is stucked. Please Try Again</p>';
+        return;
+      }
+      papers.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'question-card bg-white rounded-lg shadow-sm overflow-hidden';
+  
+        // build answers HTML
+        let answersHTML = '';
+        for (let i = 1; i <= 5; i++) {
+          const txt   = p[`answer_${i}`];
+          const score = p[`answer_${i}_score`];
+          if (txt && txt.trim().length > 5) {
+            answersHTML += `
+              <div class="answer-item p-4 rounded-lg mb-4">
+                <div class="flex justify-between items-center mb-2">
+                  <div class="flex items-center">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2">
+                      Answer ${i}
+                    </span>
+                    <span class="text-sm text-gray-500">
+                      <i class="fas fa-thumbs-up text-blue-500 mr-1"></i>${score} upvotes
+                    </span>
+                  </div>
+                </div>
+                <div class="answer-content text-gray-700">
+                  ${enrichAnswerContent(txt)}
+                </div>
+              </div>
             `;
+          }
+        }
+        
 
-            // Ẩn danh sách kết quả và chỉ hiển thị nội dung chi tiết
-            searchResultsPanel.innerHTML = ''; // Xóa các kết quả cũ
-            searchResultsPanel.appendChild(backButton); // Thêm lại nút quay lại
-            searchResultsPanel.appendChild(resultDetail); // Thêm nội dung chi tiết vào panel
 
-            // Hiển thị nút "Quay lại"
-            backButton.style.display = 'inline-block';
-        });
+
+
+        card.innerHTML = `
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <h2 class="text-2xl font-semibold text-gray-800 hover:text-blue-600 cursor-pointer">
+                ${p.title}
+              </h2>
+              <span class="ml-auto text-sm text-gray-500">Asked: ${p.date}</span>
+            </div>
+            <div class="mt-4">
+              ${answersHTML}
+            </div>
+          </div>
+        `;
+
+
+        soResults.appendChild(card);
+      });
+      // re-highlight code blocks in answers
+      hljs.highlightAll();
+    }
+    
+  
+    // 4) Gửi form arXiv
+    arxivForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const q = document.getElementById('arxiv-query').value.trim();
+      if (!q) return;
+      fetch('/api/ai_models/search/arxiv', {
+        method: 'POST',
+        body: new URLSearchParams({ query: q }),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      })
+        .then(r => r.json())
+        .then(data => renderArxiv(data.papers || []))
+        .catch(() => renderArxiv([]));
     });
-
-    // Quay lại danh sách kết quả
-    backButton.addEventListener('click', function() {
-        // Phục hồi lại danh sách kết quả tìm kiếm ban đầu
-        searchResultsPanel.innerHTML = originalResults; // Khôi phục lại kết quả ban đầu
-
-        // Ẩn nút "Quay lại"
-        backButton.style.display = 'none';
+  
+    // 5) Gửi form SO
+    soForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const q = document.getElementById('so-query').value.trim();
+      if (!q) return;
+      fetch('/api/ai_models/search/stackoverflow', {
+        method: 'POST',
+        body: new URLSearchParams({ query: q }),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      })
+        .then(r => r.json())
+        .then(data => renderSO(data.papers || []))
+        .catch(() => renderSO([]));
     });
-});
+  });
+  

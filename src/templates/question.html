@@ -1,70 +1,66 @@
-<link rel="stylesheet" href="../static/css/question.css">
-<a class="title" href="/"><h2>DEEPSHARK</h2></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DEEPSHARK Search</title>
+  <link rel="stylesheet" href="../static/css/question.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Highlight.js styles (dùng cho code trong answer nếu có) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/kotlin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/swift.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/html.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/dart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/java.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/c.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/cpp.min.js"></script>
 
-<section class="search-section">
+</head>
+<body>
+  <a class="title" href="/"><h2>DEEPSHARK</h2></a>
+
+  <section class="search-section">
     <div class="search-container">
-        <!-- Panel bên trái chứa các tab -->
-        <div class="search-tabs-panel">
-            <div class="search-tabs">
-                <div class="tab active" data-tab="stackoverflow">StackOverflow</div>
-                <div class="tab" data-tab="axis">Axis</div>
-            </div>
+      <!-- panel trái: tabs -->
+      <div class="search-tabs-panel">
+        <div class="search-tabs">
+          <div id="arxiv-tab" class="tab active" data-tab="arxiv">arXiv Search</div>
+          <div id="so-tab"    class="tab"      data-tab="stackoverflow">StackOverflow Search</div>
         </div>
+      </div>
 
-        <!-- Panel bên phải chứa các kết quả và ô tìm kiếm -->
-        <div class="search-results-panel">
-            <!-- Thêm ô tìm kiếm vào đây -->
-            <form id="search-form" method="POST" action="/api/ai_models/search">
-                <input type="text" id="search-query" name="query" placeholder="Nhập câu hỏi tìm kiếm..." required>
-                <button type="submit">Tìm kiếm</button>
-            </form>
+      <!-- panel phải: form + kết quả -->
+      <div class="search-results-panel">
+        <!-- form arXiv -->
+        <form id="arxiv-form" class="search-form" style="display:flex; gap:10px;">
+          <input type="text" id="arxiv-query" placeholder="Search arXiv papers…" required>
+          <button type="submit">Tìm kiếm</button>
+        </form>
+        <!-- form SO -->
+        <form id="so-form" class="search-form" style="display:none; gap:10px;">
+          <input type="text" id="so-query" placeholder="Search StackOverflow questions…" required>
+          <button type="submit">Tìm kiếm</button>
+        </form>
 
-            <div id="search-results"></div>
-
-        </div>
+        <!-- vùng kết quả arXiv -->
+        <div id="arxiv-results" class="results-pane" style="display:block;"></div>
+        <!-- vùng kết quả SO -->
+        <div id="so-results"    class="results-pane" style="display:none;"></div>
+      </div>
     </div>
-</section>
+  </section>
 
-<script>
-// Lắng nghe sự kiện gửi form tìm kiếm
-document.getElementById('search-form').addEventListener('submit', function(event) {
-    event.preventDefault();  // Ngăn gửi form mặc định
-
-    const query = document.getElementById('search-query').value;
-
-    fetch('/api/ai_models/search', {
-        method: 'POST',
-        body: new URLSearchParams({ query: query }),
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.papers) {
-            const resultsDiv = document.getElementById('search-results');
-            resultsDiv.innerHTML = '';  // Xóa kết quả cũ
-
-            data.papers.forEach(paper => {
-                const paperElement = document.createElement('div');
-                paperElement.innerHTML = `
-                    <h3><a href="${paper.link}" target="_blank">${paper.title}</a></h3>
-                    <p>${paper.abstract}</p>
-                `;
-                resultsDiv.appendChild(paperElement);
-            });
-        } else {
-            alert("Không tìm thấy bài báo nào.");
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert("Có lỗi xảy ra, vui lòng thử lại.");
-    });
-});
-</script>
-
-<!-- Chèn tệp JavaScript vào cuối body -->
-<script src="../static/js/question.js"></script>
-
+  <!-- Highlight.js script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <!-- our JS -->
+  <script src="../static/js/question.js"></script>
 </body>
+</html>

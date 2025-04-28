@@ -493,7 +493,128 @@ article {
 .result-item h3 {
     font-size: 18px; /* Giảm kích thước của tiêu đề */
     margin: 0;       /* Đặt margin = 0 để tránh làm ảnh hưởng đến các phần tử khác */
-    padding: 0;      /* Đảm bảo không có padding làm thay đổi kích thước */
+    padding: 0.5rem;      /* Đảm bảo không có padding làm thay đổi kích thước */
     overflow: hidden; /* Ngăn không cho tiêu đề làm tràn ra ngoài */
     text-overflow: ellipsis; /* Hiển thị dấu ba chấm khi tiêu đề dài */
 }
+
+
+.search-tab-container {
+    display: none;
+  }
+.search-tab-container.active {
+    display: block;
+  }
+  
+.search-results-tab {
+    margin-top: 20px;
+}
+
+
+#arxiv-form,
+#so-form {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+  
+  /* cho input text */
+#arxiv-form input[type="text"],
+#so-form input[type="text"] {
+    flex: 1;               /* chiếm hết không gian còn lại */
+    min-width: 0;          /* để flex:1 hoạt động đúng trong IE/Edge */
+    padding: 10px;
+    font-size: 16px;
+    border: 3px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+  
+  /* cho nút submit */
+#arxiv-form button[type="submit"],
+#so-form button[type="submit"] {
+    flex: 0 0 auto;        /* không co giãn, không thu nhỏ */
+    padding: 8px 20px;
+    font-size: 16px;
+    background-color: #5d6dea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* hover giữ nguyên */
+#arxiv-form button[type="submit"]:hover,
+#so-form button[type="submit"]:hover {
+    background-color: #3b4a8e;
+  }
+
+
+.search-form {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+.search-form input {
+    flex: 1;
+    min-width: 0;
+}
+
+.search-form button {
+    flex: 0 0 auto;
+}
+
+
+.result-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+
+.question-card h2 {
+    font-size: 1.5rem; /* tương đương text-2xl */
+}
+
+.answer-logo {
+width: 40px;
+height: 40px;
+object-fit: contain;
+margin-bottom: 8px;
+}
+
+
+.answer-item .bg-blue-100.text-blue-800 {
+    font-size: 1.5rem;  
+    padding: 0.75rem 0.75rem; 
+}
+
+
+
+.answer-item .text-gray-500 {
+    font-size: 1rem;   
+    padding: 0.25rem 0.25rem; 
+}
+
+
+.answer-logo-inline {
+    display: block;
+    width: 20px;       
+    height: 20px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.answer-inline-img {
+    display: block;
+    max-width: 80%;    
+    height: auto;
+    border-radius: 4px; /* nếu muốn bo góc */
+    margin-bottom: 0.5rem;
+  }
