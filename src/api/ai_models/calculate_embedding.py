@@ -10,7 +10,7 @@ def load_model():
 
 # Hàm để tính toán embedding cho câu truy vấn
 def get_query_embedding(query):
-    global finetuned_modelSBERT  # Sử dụng model đã được load từ trước
+    global finetuned_modelSBERT 
     query_embedding = finetuned_modelSBERT.encode(query)
     return query_embedding
 

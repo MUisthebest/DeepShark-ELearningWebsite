@@ -1,4 +1,4 @@
-from api.models.user import CategoryEmbedding, ArxivPaper
+from api.models.user import CategoryEmbedding, ArxivPaper, StackOverflowQuestion
 # from api.ai_models.calculate_embedding import calculate_cosine_similarity
 import numpy as np
 
@@ -61,3 +61,26 @@ def find_top_papers(query_embedding, best_category):
     top_20_papers = [paper for paper, _ in similarities[:20]]
 
     return top_20_papers
+
+
+# def search_stackoverflow_in_db(query_embedding):
+#     questions = StackOverflowQuestion.query.filter(StackOverflowQuestion.vector_embedding.op('~')(query_embedding)).all()
+    
+#     similarities = []
+    
+#     # Tính toán cosine similarity giữa câu truy vấn và các câu hỏi
+#     for question in questions:
+#         question_embedding = np.array(question.vector_embedding)
+#         similarity = calculate_cosine_similarity(query_embedding, question_embedding)
+#         similarities.append((question, similarity))
+    
+#     # Sắp xếp câu hỏi theo cosine similarity giảm dần
+#     similarities.sort(key=lambda x: x[1], reverse=True)
+    
+#     # Lấy top 20 câu hỏi có similarity cao nhất
+#     top_20_questions = [question for question, _ in similarities[:20]]
+    
+#     # Trả về danh sách các câu hỏi với các thông tin cần thiết
+#     results = [{"title": question.title, "link": question.link, "abstract": question.abstract} for question in top_20_questions]
+    
+#     return results
