@@ -57,6 +57,37 @@ class ChatMessage(db.Model):
         }
 
 
+class StackOverflowQuestion(db.Model):
+    __tablename__ = 'question'
+
+    question_id = db.Column(db.Integer, primary_key=True)  
+    question_title = db.Column(db.Text(), nullable=False)
+    question_date = db.Column(db.Date, nullable=False)
+    answer_1 = db.Column(db.Text(), nullable=False)
+    answer_1_score = db.Column(db.Integer, nullable=False)
+    answer_2 = db.Column(db.Text(), nullable=False)
+    answer_2_score = db.Column(db.Integer, nullable=False)
+    answer_3 = db.Column(db.Text(), nullable=False)
+    answer_3_score = db.Column(db.Integer, nullable=False)
+    
+    # Cột vector_embedding sử dụng kiểu pgvector
+
+    def __init__(self, question_title, question_date, answer_1, answer_1_score, 
+                 answer_2, answer_2_score, answer_3, answer_3_score,
+                 vector_embedding):
+        self.question_title = question_title
+        self.question_date = question_date
+        self.answer_1 = answer_1
+        self.answer_1_score = answer_1_score
+        self.answer_2 = answer_2
+        self.answer_2_score = answer_2_score
+        self.answer_3 = answer_3
+        self.answer_3_score = answer_3_score
+        self.vector_embedding = vector_embedding
+
+    def __repr__(self):
+        return f"<StackOverflowQuestion {self.question_title}>"
+
 
 class ArxivPaper(db.Model):
     __tablename__ = 'arxiv_papers'
