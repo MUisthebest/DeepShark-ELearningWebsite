@@ -1,10 +1,12 @@
 from flask import Blueprint, request, jsonify, render_template, redirect, url_for, session
 from api.ai_models.ai_model import predict , summarize_text, review_code
-from api.models.user import ChatHistory, ChatMessage 
+from api.models.user import ChatHistory, ChatMessage
 from api.settings import db, socketio
 import markdown
 from api.ai_models.calculate_embedding import load_model, get_query_embedding
 from api.ai_models.search_utils import find_best_category, find_top_papers
+from sqlalchemy import text
+import numpy as np
 
 
 
@@ -125,23 +127,71 @@ def review_code_route():
     print(review_result)
     return render_template("index.html", name="review.html", review_result=review_result, code_input=code, language=language)
 
-
-@api_bp.route("/search", methods=["POST"])
-def search():
-    query = request.form.get("query")
+@api_bp.route("/search/arxiv", methods=["POST"])
+def search_arxiv():
+    query = request.form.get("query")  # Lấy từ form request
 
     if not query:
         return jsonify({"message": "No query provided!"}), 400
 
-    query_embedding = get_query_embedding(query)  # Sử dụng model đã được load để tạo embedding
+    # Tạo embedding từ câu truy vấn sử dụng model đã được load
+    query_embedding = get_query_embedding(query)
 
+    # Tìm category có liên quan nhất
     best_category = find_best_category(query_embedding)
 
     if not best_category:
         return jsonify({"message": "No relevant category found!"}), 404
 
+    # Lấy top các bài báo từ category tốt nhất
     top_papers = find_top_papers(query_embedding, best_category)
 
+    # Chuẩn bị dữ liệu kết quả trả về
     results = [{"title": paper.title, "link": paper.link, "abstract": paper.abstract} for paper in top_papers]
 
     return jsonify({"category": best_category, "papers": results})
+
+
+
+@api_bp.route("/search/stackoverflow", methods=["POST"])
+def search_stackoverflow():
+    query = request.form.get('query', '').strip()
+    if not query:
+        return jsonify({"message": "No query provided!"}), 400
+
+    # Sinh embedding cho query dưới dạng Python list
+    query_emb = get_query_embedding(query)
+    if isinstance(query_emb, np.ndarray):
+        query_emb = query_emb.tolist()
+
+    # Dùng text() với ép kiểu ::vector
+    stmt = text("""
+        SELECT
+          question_title   AS title,
+          question_date    AS date,
+          answer_1         AS answer_1,
+          answer_1_score   AS answer_1_score,
+          answer_2         AS answer_2,
+          answer_2_score   AS answer_2_score,
+          answer_3         AS answer_3,
+          answer_3_score   AS answer_3_score
+        FROM stackoverflow_question
+        -- Ép kiểu tham số emb thành vector
+        ORDER BY vector_embedding <-> (:emb)::vector
+        LIMIT 20
+    """)
+    # Thực thi
+    rows = db.session.execute(stmt, {"emb": query_emb}).fetchall()
+
+    papers = [{
+        "title":           r.title,
+        "date":            r.date,
+        "answer_1":        r.answer_1,
+        "answer_1_score":  r.answer_1_score,
+        "answer_2":        r.answer_2,
+        "answer_2_score":  r.answer_2_score,
+        "answer_3":        r.answer_3,
+        "answer_3_score":  r.answer_3_score,
+    } for r in rows]
+
+    return jsonify({"papers": papers})

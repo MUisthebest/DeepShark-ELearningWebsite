@@ -15,7 +15,7 @@ from flask_cors import CORS
 
 from api.routes.auth import app as auth_bp
 from flask import Flask
-from api.models.user import User, ChatHistory, ChatMessage
+from api.models.user import User, ChatHistory, ChatMessage,StackOverflowQuestion
 from api.routes.auth import app as auth_bp
 from googletrans import Translator
 
@@ -117,7 +117,7 @@ def question():
 
 
 def get_db_course():
-    conn = psycopg2.connect(host="ml-web.postgres.database.azure.com", database="main_db", user="ml_admin", password="ml#web_db#2224")
+    conn = psycopg2.connect(host="mldb.postgres.database.azure.com", database="main_db", user="ml_admin", password="ml#web_db#2224")
     return conn
 
 
@@ -353,9 +353,86 @@ def contact():
 
 
 
-import pandas as pd
-import ast
-from sqlalchemy.exc import SQLAlchemyError
+
+
+
+# Thay đổi dòng này ở cuối file
+if __name__ == "__main__":
+
+    threading.Thread(target=load_model_in_background).start()
+
+    port = int(os.environ.get("PORT", 5000))  # Railway sẽ cung cấp PORT qua biến môi trường
+    app.run(port=port, host="0.0.0.0", debug=True)  # Chạy ứng dụng Flask trên tất cả các địa chỉ IP của máy chủ
+
+
+
+
+
+
+
+
+# import pandas as pd
+# import ast
+# from sqlalchemy.exc import SQLAlchemyError
+# from sentence_transformers import SentenceTransformer
+# from sqlalchemy.orm import sessionmaker
+
+
+
+
+
+
+
+
+
+    # model = SentenceTransformer('./finetune-model/')
+
+
+    # def connect_db():
+    #     conn = psycopg2.connect(host="ml-web.postgres.database.azure.com", database="main_db", user="ml_admin", password="ml#web_db#2224")
+    #     return conn
+
+    # # Hàm tính toán embedding và cập nhật
+    # def calculate_and_update_embeddings(batch_size=1000):
+    #     with app.app_context(): 
+    #         conn = connect_db()
+    #         cursor = conn.cursor()
+
+    #         # Lấy tổng số dòng trong bảng question
+    #         cursor.execute("SELECT COUNT(*) FROM question")
+    #         total_rows = cursor.fetchone()[0]
+    #         print("Tổng số dòng:", total_rows)
+    #         # Xử lý theo từng batch
+    #         for offset in range(0, total_rows, batch_size):
+    #             # Lấy 1000 dòng mỗi lần
+    #             cursor.execute(f"SELECT question_id, question_title FROM question LIMIT {batch_size} OFFSET {offset}")
+    #             questions = cursor.fetchall()
+
+    #             # Duyệt qua từng question_title và tính toán embedding
+    #             for question in questions:
+    #                 question_id, question_title = question
+
+    #                 # Tính toán embedding
+    #                 embedding = model.encode([question_title])  # Giả sử `model.encode` là hàm tính toán embedding
+    #                 embedding_list = embedding[0].tolist()  # Convert to a list if needed
+
+    #                 # Cập nhật vào cột vector_embedding
+    #                 cursor.execute(
+    #                     "UPDATE question SET vector_embedding = %s WHERE question_id = %s", 
+    #                     (embedding_list, question_id)
+    #                 )
+
+    #                 print("Đã cập nhật vector_embedding cho question_id:", question_id)
+
+    #             # Commit sau mỗi batch
+    #             conn.commit()
+    #         # Đóng kết nối sau khi hoàn tất
+    #         cursor.close()
+    #         conn.close()
+
+
+
+
 
 
 
@@ -468,12 +545,3 @@ from sqlalchemy.exc import SQLAlchemyError
 #                     print(f"Lỗi không xác định tại dòng {idx}: {e}")
 
 #     print("Dữ liệu đã được thêm vào cơ sở dữ liệu.")
-
-# Thay đổi dòng này ở cuối file
-if __name__ == "__main__":
-
-    threading.Thread(target=load_model_in_background).start()
-
-    port = int(os.environ.get("PORT", 5000))  # Railway sẽ cung cấp PORT qua biến môi trường
-    app.run(port=port, host="0.0.0.0", debug=True)  # Chạy ứng dụng Flask trên tất cả các địa chỉ IP của máy chủ
-
