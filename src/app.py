@@ -51,34 +51,6 @@ app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
 app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 
 
-finetuned_modelSBERT = None
-
-def load_model_in_background():
-    global finetuned_modelSBERT
-    finetuned_modelSBERT = load_model()
-
-# def get_translated_content():
-#     try:
-#         conn = psycopg2.connect(host="ml-web.postgres.database.azure.com", database="main_db", user="ml_admin", password="ml#web_db#2224")
-#         cursor = conn.cursor()
-
-#         cursor.execute("SELECT answer_1 FROM question WHERE question_id = 50322054")
-#         row = cursor.fetchone()
-#         if row:
-#             answer_1 = row[0]
-#         else:
-#             return "Không có dữ liệu cho question_id = 50374628"
-
-
-#         translated_content = translator.translate(answer_1, src='en', dest='vi').text
-#         print("Dữ liệu dịch:", translated_content)
-
-#         conn.close()
-#         return translated_content
-
-#     except Exception as e:
-#         print("Lỗi kết nối DB:", e)
-#         return "Không thể lấy dữ liệu"
 
 
 @app.route("/")
@@ -86,15 +58,10 @@ def home():
     user_id = request.cookies.get("user_id")
     if not user_id:
         # translated_html = get_translated_content()
-
         # return render_template("index.html", name="home.html", user=None, content=translated_html)
         return render_template("index.html", name="home.html", user=None)
 
-    # translated_html = get_translated_content()
     user = User.query.get(user_id) if user_id else None
-
-    # print("Dữ liệu HTML đã dịch:", translated_html)
-    # return render_template("index.html", name="home.html", user=user, content=translated_html)
     return render_template("index.html", name="home.html", user=user)
 
 
@@ -359,7 +326,6 @@ def contact():
 # Thay đổi dòng này ở cuối file
 if __name__ == "__main__":
 
-    threading.Thread(target=load_model_in_background).start()
 
     port = int(os.environ.get("PORT", 5000))  # Railway sẽ cung cấp PORT qua biến môi trường
     app.run(port=port, host="0.0.0.0", debug=True)  # Chạy ứng dụng Flask trên tất cả các địa chỉ IP của máy chủ

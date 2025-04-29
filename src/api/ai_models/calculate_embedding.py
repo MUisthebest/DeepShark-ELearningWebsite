@@ -2,8 +2,7 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import os
 
-model_path = os.path.join(os.path.dirname(__file__), 'finetune-model')  
-finetuned_modelSBERT = SentenceTransformer(model_path)  
+finetuned_modelSBERT = SentenceTransformer("BanhMiKepThit015/Deepshark-Paraphrase-MiniLM-v2")
 
 def load_model():
     return finetuned_modelSBERT
@@ -14,5 +13,3 @@ def get_query_embedding(query):
     query_embedding = finetuned_modelSBERT.encode(query)
     return query_embedding
 
-# def calculate_cosine_similarity(query_embedding, target_embedding):
-#     return cosine_similarity([query_embedding], [target_embedding])[0][0]
