@@ -7,7 +7,6 @@ finetuned_modelSBERT = SentenceTransformer("BanhMiKepThit015/Deepshark-Paraphras
 def load_model():
     return finetuned_modelSBERT
 
-# Hàm để tính toán embedding cho câu truy vấn
 def get_query_embedding(query):
     global finetuned_modelSBERT 
     query_embedding = finetuned_modelSBERT.encode(query)

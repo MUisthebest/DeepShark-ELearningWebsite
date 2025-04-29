@@ -9,23 +9,23 @@ header {
     justify-content: flex-start;
     gap: 10px;
     padding: 15px;
-    position: relative; /* Đặt vị trí cố định */
+    position: relative; 
     display: flex;
     width: 25%;
-    height: 100vh; /* Chiều cao bằng chiều cao màn hình */
-    top: 0; /* Đặt header ở đầu trang */
-    left: 0; /* Đặt header ở bên trái trang */
-    overflow-y: auto; /* Đảm bảo nội dung bên trong có thể cuộn nếu cần */
-    scrollbar-width: none; /* Firefox */
+    height: 100vh;
+    top: 0; 
+    left: 0; 
+    overflow-y: auto; 
+    scrollbar-width: none; 
     -ms-overflow-style: none;
 }
 
 header::-webkit-scrollbar-thumb {
-    display: none; /* Ẩn thanh cuộn */
+    display: none; 
 }
 
 header::-webkit-scrollbar {
-    width: 0px; /* Ẩn thanh cuộn */
+    width: 0px;
 }
 
 .logo {
@@ -42,16 +42,16 @@ header .love_code {
     max-height: 80vh;
     width: 100%;
     margin-bottom: 10px;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none; 
     -ms-overflow-style: none;
 }
 
 header .love_code::-webkit-scrollbar-thumb {
-    display: none; /* Ẩn thanh cuộn */
+    display: none; 
 }
 
 header .love_code::-webkit-scrollbar {
-    width: 0px; /* Ẩn thanh cuộn */
+    width: 0px; 
 }
 
 main {
@@ -106,7 +106,6 @@ header li {
     text-decoration: none;
 }
 
-/* Ẩn danh sách con theo mặc định */
 ul.dev {
     display: none;
     list-style-type: none;
@@ -117,7 +116,6 @@ ul.dev {
     border-left: 1px dashed #ccc;
 }
 
-/* Hiển thị danh sách con khi phần tử cha được hover hoặc click */
 .unit.open > .dev {
     display: block;
 }
@@ -161,7 +159,7 @@ b {
 }
 
 .Cpp_box.open .Cpp {
-    display: block; /* Hiện danh sách khi có class 'open' */
+    display: block; 
 }
 
 .Cpp_box .root {
@@ -195,7 +193,6 @@ b {
     cursor: pointer;
 }
 
-/* Định dạng mục chính */
 .unit {
     list-style: none;
     cursor: pointer;
@@ -217,21 +214,18 @@ b {
     flex-direction: row;
 }
 
-/* Định dạng biểu tượng thư mục */
 .unit li > a::before {
-    content: "📁"; /* Biểu tượng thư mục đóng */
+    content: "📁"; 
     margin-right: 8px;
 }
 
-/* Định dạng biểu tượng file */
 .dev li a::before {
-    content: "📄"; /* Biểu tượng file */
+    content: "📄"; 
     margin-right: 8px;
 }
 
-/* Khi mở, đổi biểu tượng */
 .unit.open > a::before {
-    content: "📂"; /* Biểu tượng thư mục mở */
+    content: "📂"; 
 }
 
 
@@ -256,7 +250,7 @@ header > li {
 }
 
 .unit li a {
-    display: inline-block; /* hoặc block nếu cần thiết */
+    display: inline-block; 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -285,7 +279,6 @@ pre {
     font-family: 'Fira Code', monospace;
 }
 
-/* Nút copy */
 ._pre-clip {
     position: absolute;
     right: 8px;
@@ -361,7 +354,6 @@ pre:hover ._pre-clip {
     display: block;
 }
 
-/* Hiệu ứng khi copy */
 ._pre-clip.copied {
     background: rgba(40, 167, 69, 0.2);
     color: #28a745;

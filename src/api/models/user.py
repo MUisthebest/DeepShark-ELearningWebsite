@@ -92,13 +92,13 @@ class StackOverflowQuestion(db.Model):
 class ArxivPaper(db.Model):
     __tablename__ = 'arxiv_papers'
 
-    id = db.Column(db.Integer, primary_key=True)  # Cột ID là khóa chính
-    title = db.Column(db.Text(), nullable=False)  # Cột Title
-    question = db.Column(db.Text(), nullable=False)  # Cột Question
-    link = db.Column(db.Text(), nullable=False)  # Cột Link
-    category = db.Column(db.String(255), nullable=False)  # Cột Category
-    abstract = db.Column(db.Text(), nullable=False)  # Cột Abstract
-    vector_embedding = db.Column(Vector(384), nullable=False)  # Cột vector_embedding (pg_vector)
+    id = db.Column(db.Integer, primary_key=True) 
+    title = db.Column(db.Text(), nullable=False)  
+    question = db.Column(db.Text(), nullable=False) 
+    link = db.Column(db.Text(), nullable=False)  
+    category = db.Column(db.String(255), nullable=False) 
+    abstract = db.Column(db.Text(), nullable=False)  
+    vector_embedding = db.Column(Vector(384), nullable=False) 
 
     def __init__(self, title, question, link, category, abstract, vector_embedding):
         self.title = title

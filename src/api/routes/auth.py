@@ -9,9 +9,6 @@ app = Blueprint("api_auth", __name__)
 @app.route("/signup", methods=["POST"])
 def signup():
     data = request.form
-    # if not data or not all(k in data for k in ("username", "email", "password")):
-    #     return jsonify({"message": "Missing fields"}), 400
-
     if User.query.filter_by(email=data["email"]).first():
         return redirect("/signup?error=Email already exists!")
     if User.query.filter_by(username=data["username"]).first():
@@ -28,8 +25,6 @@ def signup():
 @app.route("/signin", methods=["POST"])
 def signin():
     data = request.form
-    # if not data or not all(k in data for k in ("email", "password")):
-    #     return jsonify({"message": "Missing fields"}), 400
 
     user = User.query.filter_by(email=data["email"]).first()
     if user and bcrypt.check_password_hash(user.password_hash, data["password"]):

@@ -18,13 +18,8 @@ def predict_web():
     data = request.get_json()  
     input_data = data.get("input_data", "")  
     print(f"Input data received: {input_data}")
-
-    # message_id = data.get("message_id")  # Lấy message_id từ frontend
     bot_response = predict(input_data) 
-
-    
     history_chat_id = request.cookies.get("history_chat_id")
-
     new_message = ChatMessage(history_chat_id=history_chat_id,user_message=input_data, bot_response=bot_response)
     db.session.add(new_message)
     db.session.commit()
@@ -129,26 +124,19 @@ def review_code_route():
 
 @api_bp.route("/search/arxiv", methods=["POST"])
 def search_arxiv():
-    query = request.form.get("query")  # Lấy từ form request
+    query = request.form.get("query")  
 
     if not query:
         return jsonify({"message": "No query provided!"}), 400
 
-    # Tạo embedding từ câu truy vấn sử dụng model đã được load
     query_embedding = get_query_embedding(query)
-
-    # Tìm category có liên quan nhất
     best_category = find_best_category(query_embedding)
 
     if not best_category:
         return jsonify({"message": "No relevant category found!"}), 404
 
-    # Lấy top các bài báo từ category tốt nhất
     top_papers = find_top_papers(query_embedding, best_category)
-
-    # Chuẩn bị dữ liệu kết quả trả về
     results = [{"title": paper.title, "link": paper.link, "abstract": paper.abstract} for paper in top_papers]
-
     return jsonify({"category": best_category, "papers": results})
 
 
@@ -159,7 +147,6 @@ def search_stackoverflow():
     if not query:
         return jsonify({"message": "No query provided!"}), 400
 
-    # Sinh embedding cho query dưới dạng Python list
     query_emb = get_query_embedding(query)
     if isinstance(query_emb, np.ndarray):
         query_emb = query_emb.tolist()
