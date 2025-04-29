@@ -69,6 +69,7 @@
 
 .input-section, .output-section {
     flex: 1;
+    width: calc(50% - 1.5rem);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -275,6 +276,13 @@
 @media (max-width: 768px) {
     .content-wrapper {
         flex-direction: column;
+    }
+
+    .input-section, .output-section {
+        width: 100%;
+    }
+    .input-section, .output-section {
+        margin-bottom: 1rem;
     }
 }
 </style>
