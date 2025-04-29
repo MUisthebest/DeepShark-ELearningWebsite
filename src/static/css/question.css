@@ -155,16 +155,6 @@ article {
     background-color: #f0f0f0;
 }
 
-.search-section .history {
-    display: flex;
-    width: calc(30vw - 50px);
-}
-
-.search-section .main {
-    display: flex;
-    width: calc(70vw - 50px);
-}
-
 .search-header {
     width: 100%;
     margin-bottom: 20px;
@@ -185,6 +175,12 @@ article {
     gap: 10px;
 }
 
+.search-tabs-panel {
+    justify-content: center;
+    display: flex;
+    width: calc(20vw - 50px);
+}
+
 
 .tab {
     padding: 10px 20px;
@@ -199,7 +195,6 @@ article {
     border-color: #ddd;
     border-bottom-color: white;
     background-color: white;
-    font-weight: bold;
     color: #5d6dea; /* Màu cam của StackOverflow */
 }
 
@@ -261,62 +256,6 @@ article {
     margin-bottom: 20px;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-    .search-section {
-        flex-direction: column;
-        gap: 20px;
-        padding: 10px;
-        height: auto;
-    }
-    
-    .search-section .history,
-    .search-section .main {
-        width: 100%;
-    }
-    
-    .title h2 {
-        font-size: 36px;
-        margin-top: 10px;
-    }
-    
-    .search-tabs {
-        overflow-x: auto;
-        white-space: nowrap;
-        padding-bottom: 5px;
-    }
-    
-    .tab {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-    
-    .history-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .history-header h3 {
-        font-size: 16px;
-        margin: 0;
-    }
-    
-    .result-title {
-        font-size: 14px;
-    }
-    
-    .result-meta {
-        font-size: 11px;
-    }
-    
-    /* Hide history on very small screens */
-    @media (max-width: 480px) {
-        .history {
-            display: none !important;
-        }
-    }
-}
 
 .content-panel {
     position: fixed;
@@ -378,16 +317,28 @@ article {
     display: none;
 }
 
+.result-item > h3 {
+    background: linear-gradient(45deg, #F1E7E7, #EBEAFF);
+}
+
+.search-results-panel {
+    flex-grow: 1; /* Chiếm toàn bộ không gian còn lại */
+    padding: 20px;
+    overflow-y: auto;
+    padding-left: 20px;
+    width: calc(70vw - 50px); /* Đảm bảo không vượt quá
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+}
+
 .content-panel.active ~ .overlay {
     display: block;
 }
 
-@media (max-width: 768px) {
-    .content-panel {
-        width: 100%;
-        max-width: 100%;
-    }
+#arxiv-form button[type="submit"] i,
+#so-form button[type="submit"] i {
+display: none;
 }
+
 
 
 
@@ -399,7 +350,6 @@ article {
 
 /* Panel bên trái */
 .search-tabs-panel {
-    width: 250px; /* Đảm bảo panel bên trái có chiều rộng cố định */
     background-color: #f4f4f4;
     padding: 20px;
     border-right: 1px solid #ccc;
@@ -427,13 +377,7 @@ article {
 }
 
 /* Panel bên phải chứa kết quả tìm kiếm */
-.search-results-panel {
-    flex-grow: 1; /* Chiếm toàn bộ không gian còn lại */
-    padding: 20px;
-    overflow-y: auto;
-    padding-left: 20px;
-    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
-}
+
 
 .result-item {
     padding: 10px;
@@ -537,14 +481,39 @@ article {
 #so-form button[type="submit"] {
     flex: 0 0 auto;        /* không co giãn, không thu nhỏ */
     padding: 8px 20px;
-    font-size: 16px;
+    font-size: calc(1vw + 1px);
     background-color: #5d6dea;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
   }
-  
+
+@media (max-width: 768px) {
+    #arxiv-form button[type="submit"],
+    #so-form button[type="submit"]  {
+    font-size: 0;
+    }
+    #arxiv-form button[type="submit"] i,
+    #so-form button[type="submit"] i {
+    display: block;
+    font-size: calc(5vw + 1px);
+    }
+    .search-section {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .content-panel {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search-results-panel {
+        width: 100%;
+    }
+}
+
+
   /* hover giữ nguyên */
 #arxiv-form button[type="submit"]:hover,
 #so-form button[type="submit"]:hover {
@@ -557,6 +526,7 @@ article {
     display: flex;
     gap: 10px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -618,3 +588,77 @@ margin-bottom: 8px;
     border-radius: 4px; /* nếu muốn bo góc */
     margin-bottom: 0.5rem;
   }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .search-section {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+        height: auto;
+    }
+
+    .search-tabs-panel {
+        width: 100vw;
+        padding: 5px;
+    }
+
+    .search-tabs {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .search-results-panel {
+        width: 100vw;
+        padding: 20px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 20px;
+        height: auto;
+    }
+    
+    .search-section .history,
+    .search-section .main {
+        width: 100%;
+    }
+    
+    .title h2 {
+        font-size: 36px;
+        margin-top: 10px;
+    }
+    
+    .search-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    
+    .tab {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    .history-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .history-header h3 {
+        font-size: 16px;
+        margin: 0;
+    }
+    
+    .result-title {
+        font-size: 14px;
+    }
+    
+    .result-meta {
+        font-size: 11px;
+    }
+    
+
+}

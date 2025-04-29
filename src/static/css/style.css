@@ -860,11 +860,53 @@ footer {
     margin-bottom: 0;
 }
 
+footer .content .col h3 {
+    color: #ecf0f1;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+footer .content .col p {
+    color: #ecf0f1;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+footer .content .col {
+    flex: 1;
+    width: 33vw;
+    margin: 10px 20px;
+}
+
+footer .content .col ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .content .col ul li {
+    width: 100%;
+}
+
+footer .content .col .team {
+    display: flex;
+    flex-direction: row;
+}
+
+footer .content .col .team img {
+    width: calc(5vw);
+    height: calc(5vw);
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover; /* Ảnh sẽ được crop để vừa khung mà không méo */
+    object-position: center; /* Căn giữa phần ảnh được hiển thị */
+}
+
 footer .content {
     display: flex;
     flex-direction: row;
     background: linear-gradient(to right, #2A3335, #194583);
-    padding: 0 80px;
+    gap: 10px;
+    padding: 0 20px;
 }
 
 footer .content li {
@@ -998,3 +1040,23 @@ footer .content li {
     }
 }
 
+@media (max-width: 768px) {
+    .hero {
+        gap: 10px;
+    }
+    footer {
+        display: none;
+    }
+
+    .content p {
+        display: none;
+    }
+
+    .btn-secondary {
+        margin-top: 30px;
+    }
+
+    .contact {
+        display: none;
+    }
+}
