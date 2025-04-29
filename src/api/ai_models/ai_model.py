@@ -4,7 +4,10 @@ import google.generativeai as genai
 import markdown
 
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+# GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+GEMINI_API_KEY = "AIzaSyBIB5M-kiz3aTZ3SYbk9cXWm_jxiBm9xLI"
+
 genai.configure(api_key=GEMINI_API_KEY)
 
 model = genai.GenerativeModel('gemini-2.0-flash')  

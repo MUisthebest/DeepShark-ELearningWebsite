@@ -662,3 +662,9 @@ margin-bottom: 8px;
     
 
 }
+
+
+.markdown-body p {
+    margin: 0 0 1em;
+    line-height: 1.6;
+}

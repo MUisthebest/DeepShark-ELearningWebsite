@@ -151,7 +151,6 @@ def search_stackoverflow():
     if isinstance(query_emb, np.ndarray):
         query_emb = query_emb.tolist()
 
-    # Dùng text() với ép kiểu ::vector
     stmt = text("""
         SELECT
           question_title   AS title,

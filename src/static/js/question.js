@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function(){
     function renderArxiv(papers) {
       arxivResults.innerHTML = '';
       if (!papers || papers.length === 0) {
-        arxivResults.innerHTML = '<p>The server is stucked. Please Try Again</p>';
+        arxivResults.innerHTML = '<p>No results found.</p>';
         return;
       }
       papers.forEach(p => {
@@ -32,12 +32,46 @@ document.addEventListener('DOMContentLoaded', function(){
         d.className = 'result-item';
         d.innerHTML = `
           <h3><a href="${p.link}" target="_blank">${p.title}</a></h3>
-          <p>${p.abstract}</p>
+          <div class="arxiv-abstract markdown-body">
+            ${marked.parse(p.abstract || '')}
+          </div>
         `;
         arxivResults.appendChild(d);
       });
     }
+
+
+    function renderArxiv(papers) {
+      arxivResults.innerHTML = '';
+      if (!papers || !papers.length) {
+        arxivResults.innerHTML = '<p>No results found.</p>';
+        return;
+      }
+
+      papers.forEach(p => {
+        // đảm bảo marked đã load
+        if (typeof marked !== 'function' && typeof marked?.parse !== 'function') {
+          console.error('marked.js chưa load or API mismatch', marked);
+        }
   
+        // parse markdown → HTML
+        const htmlAbstract = 
+          (typeof marked.parse === 'function')
+            ? marked.parse(p.abstract || '')
+            : marked(p.abstract || '');
+  
+        const card = document.createElement('div');
+        card.className = 'result-item';
+        card.innerHTML = `
+          <h3><a href="${p.link}" target="_blank">${p.title}</a></h3>
+          <!-- wrap vào div để apply CSS nếu muốn -->
+          <div class="arxiv-abstract markdown-body">
+            ${htmlAbstract}
+          </div>
+        `;
+        arxivResults.appendChild(card);
+      });
+    }
 
 
 

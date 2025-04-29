@@ -1,5 +1,9 @@
 from api.models.user import CategoryEmbedding, ArxivPaper, StackOverflowQuestion
+from api.settings import db
 import numpy as np
+from sqlalchemy import text
+
+
 
 def calculate_cosine_similarity(vector1, vector2):
     vector1 = np.array(vector1)
@@ -32,16 +36,41 @@ def find_best_category(query_embedding):
     return best_category
 
 
-def find_top_papers(query_embedding, best_category):
-    query_embedding = np.array(query_embedding)
-    papers_in_category = ArxivPaper.query.filter_by(category=best_category).all()
+# def find_top_papers(query_embedding, best_category):
+#     query_embedding = np.array(query_embedding)
+#     papers_in_category = ArxivPaper.query.filter_by(category=best_category).all()
     
-    similarities = []
-    for paper in papers_in_category:
-        paper_embedding = np.array(paper.vector_embedding)
+#     similarities = []
+#     for paper in papers_in_category:
+#         paper_embedding = np.array(paper.vector_embedding)
         
-        similarity = calculate_cosine_similarity(query_embedding, paper_embedding)
-        similarities.append((paper, similarity))
-    similarities.sort(key=lambda x: x[1], reverse=True)
-    top_20_papers = [paper for paper, _ in similarities[:20]]
-    return top_20_papers
+#         similarity = calculate_cosine_similarity(query_embedding, paper_embedding)
+#         similarities.append((paper, similarity))
+#     similarities.sort(key=lambda x: x[1], reverse=True)
+#     top_20_papers = [paper for paper, _ in similarities[:20]]
+#     return top_20_papers
+
+
+
+
+def find_top_papers(query_embedding, best_category):
+    if isinstance(query_embedding, np.ndarray):
+        query_embedding = query_embedding.tolist()
+
+    stmt = text("""
+        SELECT
+            title,
+            link,
+            abstract
+        FROM arxiv_papers
+        WHERE category = :category
+        ORDER BY vector_embedding <-> (:emb)::vector
+        LIMIT 20
+    """)
+    
+    rows = db.session.execute(stmt, {
+        "category": best_category,
+        "emb": query_embedding
+    }).fetchall()
+
+    return rows
