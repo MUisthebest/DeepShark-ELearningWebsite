@@ -225,6 +225,10 @@ main {
     width: 60%;
 }
 
+.menu-tutorial {
+    display: none;
+}
+
 .search-bar input {
     width: 100%;
     padding: 10px 40px 10px 20px;
@@ -323,12 +327,12 @@ main {
 .hero .buttons a {
     background: #fff;
     width: 40%;
-    padding: 10px 25px;
+    padding: 10px 30px;
     border-radius: 5px;
     color: #000;
     white-space: nowrap;
     overflow: hidden;
-    font-size: calc(1, 2vw);
+    font-size: calc(10px + 0.5vw);
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.032);
 
@@ -341,7 +345,7 @@ main {
 }
 
 .hero .buttons a>* {
-    font-size: 20px;
+    font-size: calc(10px + 0.5vw);
     color: #000;
     margin-right: 10px;
 }
@@ -869,7 +873,12 @@ footer .content .col h3 {
 footer .content .col p {
     color: #ecf0f1;
     margin-bottom: 20px;
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 600px;
+}
+
+header .exit {
+    display: none;
 }
 
 footer .content .col {
@@ -949,13 +958,14 @@ footer .content li {
 }
 
 .panel-content {
-    background: white;
+    background: #000;
     padding: 20px;
     width: 80%;
     max-height: 80%;
     overflow-y: auto;
     border-radius: 10px;
     position: relative;
+    gap: 10px;
 }
 
 .panel-content #panel-list .course {
@@ -964,16 +974,30 @@ footer .content li {
     gap: 40px;
     width: 100%;
     flex-wrap: wrap;
+    background-color: #222;
+    margin-bottom: 2px;
+    margin-top: 2px;
 }
 
 
 .panel-content #panel-list .course span{
     display: flex;
+    color: #fff;
+    text-align: center;
+    align-items: center;
     width: calc(20% - 20px);
 }
 
+.panel-content #panel-list .course img{
+    display: flex;
+    width: 30px;
+    height: 30px;
+}
+
+
 .panel-content #panel-list .course p{
     display: flex;
+    color: #fff;
     width: calc(20% - 20px);
 }
 
@@ -983,6 +1007,7 @@ footer .content li {
     right: 20px;
     font-size: 24px;
     background: none;
+    color: #fff;
     border: none;
     cursor: pointer;
 }
@@ -1043,6 +1068,19 @@ footer .content li {
 @media (max-width: 768px) {
     .hero {
         gap: 10px;
+        flex-direction: column-reverse;
+    }
+    .hero .content {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 30px 0;
+    }
+    .hero .content h1 {
+        font-size: calc(4vw + 7px);
+        text-align: center;
+        width: 100%;
     }
     footer {
         display: none;
@@ -1052,11 +1090,23 @@ footer .content li {
         display: none;
     }
 
+    .cta-buttons {
+        width: 100%;
+    }
+
     .btn-secondary {
-        margin-top: 30px;
+        margin-top: 10px;
+        width: 100%;
     }
 
     .contact {
         display: none;
+    }
+
+    .hero .buttons {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
     }
 }

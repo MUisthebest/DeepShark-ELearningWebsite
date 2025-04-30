@@ -360,4 +360,62 @@ pre:hover ._pre-clip {
     color: #28a745;
 }
 
+@media (max-width: 768px) {
+    header {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #ffffffd4;
+        display: flex;
+        z-index: 9999;
+
+    }
+
+    header .love_code {
+        height: 70%;
+        max-height: 70vh;
+        width: 100%;
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+
+    .menu-tutorial {
+        display: none;
+        position: absolute;
+        right: 10px;
+        bottom: 15px;
+        z-index: 9999;
+        font-size: 35px;
+        color: #5d6dea;
+        border: 1px solid #5d6dea;
+        background: #fff;
+        border-radius: 10px;
+    }
+
+    main {
+        width: 100%;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .Cpp_box {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    header  .exit {
+        display: flex;
+        height: 10%;
+    }
+
+    header .exit i {
+        color: #5d6dea;
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-size: 50px;
+        cursor: pointer;
+    }
+}
+
 

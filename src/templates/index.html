@@ -170,6 +170,8 @@
                     </div>
                 </div>
         </div>
+        <button class="exit"><i class='bx bxs-left-arrow-square'></i></button>
+
         <script>
 
             document.addEventListener("DOMContentLoaded", function () {
@@ -196,6 +198,10 @@
                             devList.style.display = (devList.style.display === "none" || devList.style.display === "") ? "block" : "none";
                         }
                     });
+                });
+                document.querySelector(".exit").addEventListener("click", function () {
+                    document.querySelector("header").classList.toggle("hidden");
+                    document.querySelector(".menu-tutorial").style.display = "flex";
                 });
             });
 
@@ -306,8 +312,21 @@
 
         
             window.addEventListener('resize', function() {
+                document.querySelector('header').classList.remove('shrunk');
+                document.querySelector('.menu-tutorial').style.display = "none";
                 if (window.matchMedia("(min-width: 1024px)").matches) {
+                    const icon = document.querySelector('.toggle-icon');
+                    if (icon.classList.contains('bx-chevron-left-square')) {
+                        icon.classList.remove('bx-chevron-left-square');
+                        icon.classList.add('bx-chevron-right-square');
+                    } else {
+                        icon.classList.remove('bx-chevron-right-square');
+                        icon.classList.add('bx-chevron-left-square');
+                    }
                     document.querySelector('header').classList.remove('hidden');
+                    document.querySelector('.new-chat-btn').classList.toggle('hidden');
+                    document.querySelector('.for-chat').classList.toggle('hidden');
+                    document.querySelector('.auth-buttons').classList.toggle('hidden');
                 } else {
                     if (document.querySelector('.logo').classList.contains('hidden')) {
                         document.querySelector('.logo').classList.remove('hidden');
@@ -315,7 +334,12 @@
                         document.querySelector('.for-chat').classList.remove('hidden');
                         document.querySelector('.auth-buttons').classList.remove('hidden'); 
                         document.querySelector('.new-chat-btn').classList.remove('hidden');
-                        }
+                    }
+                    else {
+                        document.querySelector('.new-chat-btn').classList.toggle('hidden');
+                        document.querySelector('.for-chat').classList.toggle('hidden');
+                        document.querySelector('.auth-buttons').classList.toggle('hidden');
+                    }
                 }
             });
         </script>
@@ -348,6 +372,13 @@
             socket.on('new_message', (data) => {
                 console.log("Tin nhắn mới trong history ID:", data.message_id);
                 // update nội dung nếu đang xem đúng history đó
+            });
+        </script>
+        <button class="menu-tutorial"><i class='bx bx-menu' ></i></button>
+        <script>
+            document.querySelector('.menu-tutorial').addEventListener('click', function() {
+                document.querySelector('header').classList.toggle('hidden');
+                document.querySelector('.menu-tutorial').style.display = "none";
             });
         </script>
     </body>
