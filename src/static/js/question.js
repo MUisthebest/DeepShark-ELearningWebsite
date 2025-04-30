@@ -54,23 +54,47 @@ document.addEventListener('DOMContentLoaded', function(){
           console.error('marked.js chưa load or API mismatch', marked);
         }
   
-        // parse markdown → HTML
-        const htmlAbstract = 
-          (typeof marked.parse === 'function')
-            ? marked.parse(p.abstract || '')
-            : marked(p.abstract || '');
-  
         const card = document.createElement('div');
         card.className = 'result-item';
+        
+        // Xử lý abstract - chuyển từ LaTeX trong Markdown sang HTML
+        let processedAbstract = p.abstract || '';
+        
+        // 1. Xử lý công thức toán (nếu dùng MathJax/Katex)
+        processedAbstract = processedAbstract
+        .replace(/\$O\$/g, '$O$')
+        .replace(/\$O\s/g, '$O$ ')
+        // Fix incomplete formulas
+        .replace(/\$g\$\$/g, '$g$')
+        .replace(/\$O\$(g)/g, '$O(g)$')
+        // Normalize log expressions
+        .replace(/\$\\lg\s/g, '$\\lg$ ')
+        // Ensure proper wrapping
+        .replace(/\$([a-zA-Z]+)\$/g, function(match, p1) {
+            return (p1.length > 1) ? `$${p1}$` : match;
+        });
+    
+        // 2. Chuyển Markdown -> HTML
+        const htmlAbstract = marked.parse(processedAbstract);
+    
         card.innerHTML = `
           <h3><a href="${p.link}" target="_blank">${p.title}</a></h3>
-          <!-- wrap vào div để apply CSS nếu muốn -->
-          <div class="arxiv-abstract markdown-body">
+          <div class="markdown-body">
             ${htmlAbstract}
           </div>
         `;
+        
         arxivResults.appendChild(card);
       });
+      if (window.MathJax) {
+        MathJax.tex = {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            packages: {'[+]': ['amsmath', 'amssymb']}
+        };
+        MathJax.typesetPromise();
+    }
     }
 
 
@@ -203,4 +227,5 @@ document.addEventListener('DOMContentLoaded', function(){
         .catch(() => renderSO([]));
     });
   });
+
   
