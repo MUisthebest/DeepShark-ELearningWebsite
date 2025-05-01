@@ -129,6 +129,7 @@ def review_code_route():
     return render_template("index.html", name="review.html", review_result=review_result, code_input=code, language=language)
 
 @api_bp.route("/search/arxiv", methods=["POST"])
+@search_breaker
 def search_arxiv():
     query = request.form.get("query")  
 
@@ -148,6 +149,7 @@ def search_arxiv():
 
 
 @api_bp.route("/search/stackoverflow", methods=["POST"])
+@search_breaker
 def search_stackoverflow():
     query = request.form.get('query', '').strip()
     if not query:
