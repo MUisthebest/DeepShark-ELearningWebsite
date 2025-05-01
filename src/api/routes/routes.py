@@ -7,7 +7,13 @@ from api.ai_models.calculate_embedding import load_model, get_query_embedding
 from api.ai_models.search_utils import find_best_category, find_top_papers
 from sqlalchemy import text
 import numpy as np
+from pybreaker import CircuitBreaker
 
+# Giới hạn thời gian xử lý
+TIMEOUT = 30  # giây
+
+# Circuit breaker để tránh server quá tải
+search_breaker = CircuitBreaker(fail_max=3, reset_timeout=60)
 
 
 api_bp = Blueprint("api_ai_models", __name__)  
