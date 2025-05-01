@@ -42,8 +42,6 @@
         </div>
 
 
-        <!-- <a href="#" class="new-chat">New Chat<i class='bx bx-message-add'></i></a> -->
-
         <form action="{{ url_for('api_ai_models.new_chat') }}" method="post">
             <button type="submit" class="new-chat-btn">
                 New Chat <i class='bx bx-message-add'></i>
@@ -172,6 +170,8 @@
                     </div>
                 </div>
         </div>
+        <button class="exit"><i class='bx bxs-left-arrow-square'></i></button>
+
         <script>
 
             document.addEventListener("DOMContentLoaded", function () {
@@ -198,6 +198,10 @@
                             devList.style.display = (devList.style.display === "none" || devList.style.display === "") ? "block" : "none";
                         }
                     });
+                });
+                document.querySelector(".exit").addEventListener("click", function () {
+                    document.querySelector("header").classList.toggle("hidden");
+                    document.querySelector(".menu-tutorial").style.display = "flex";
                 });
             });
 
@@ -234,13 +238,32 @@
     </main>
     <footer>
         <div class="content">
-            <li class="col">Top Study Website for Computer Science Students at University of Science</li>
-            <li class="col">
-                Feature Link
-            </li>
-            <li class="col">
-                Contact us
-            </li>
+            <div class="col">
+                <h3>Top Study Website for Computer Science Students at University of Science</h3>
+                <p>Your premier destination for computer science learning resources and tools.</p>
+            </div>
+            
+            <div class="col">
+                <h3>Feature Link</h3>
+                <ul>
+                    <li><a href="/question">Câu Hỏi</a></li>
+                    <li><a href="/tutorial">Hướng dẫn</a></li>
+                    <li><a href="/chat">Trò chuyện với Chat Bot</a></li>
+                    <li><a href="/llms">Tài nguyên LLMs</a></li>
+                    <li><a href="/review">Rì Viu Code</a></li>
+                </ul>
+            </div>
+            
+            <div class="col">
+                <h3>Contact Us</h3>
+                <ul class="team">
+                    <li><img src="../static/image/Vu.jpg" alt="Thành viên 1" class="member-image"></li>
+                    <li><img src="../static/image/Bang.jpg" alt="Thành viên 2" class="member-image"></li>
+                    <li><img src="../static/image/Thai.png" alt="Thành viên 3" class="member-image"></li>
+                    <li><img src="../static/image/Vinh.jpg" alt="Thành viên 4" class="member-image"></li>
+                    <li><img src="../static/image/Kien.png" alt="Thành viên 5" class="member-image"></li>
+                </ul>
+            </div>
         </div>
     </footer>
 
@@ -289,8 +312,21 @@
 
         
             window.addEventListener('resize', function() {
+                document.querySelector('header').classList.remove('shrunk');
+                document.querySelector('.menu-tutorial').style.display = "none";
                 if (window.matchMedia("(min-width: 1024px)").matches) {
+                    const icon = document.querySelector('.toggle-icon');
+                    if (icon.classList.contains('bx-chevron-left-square')) {
+                        icon.classList.remove('bx-chevron-left-square');
+                        icon.classList.add('bx-chevron-right-square');
+                    } else {
+                        icon.classList.remove('bx-chevron-right-square');
+                        icon.classList.add('bx-chevron-left-square');
+                    }
                     document.querySelector('header').classList.remove('hidden');
+                    document.querySelector('.new-chat-btn').classList.toggle('hidden');
+                    document.querySelector('.for-chat').classList.toggle('hidden');
+                    document.querySelector('.auth-buttons').classList.toggle('hidden');
                 } else {
                     if (document.querySelector('.logo').classList.contains('hidden')) {
                         document.querySelector('.logo').classList.remove('hidden');
@@ -298,7 +334,12 @@
                         document.querySelector('.for-chat').classList.remove('hidden');
                         document.querySelector('.auth-buttons').classList.remove('hidden'); 
                         document.querySelector('.new-chat-btn').classList.remove('hidden');
-                        }
+                    }
+                    else {
+                        document.querySelector('.new-chat-btn').classList.toggle('hidden');
+                        document.querySelector('.for-chat').classList.toggle('hidden');
+                        document.querySelector('.auth-buttons').classList.toggle('hidden');
+                    }
                 }
             });
         </script>
@@ -331,6 +372,13 @@
             socket.on('new_message', (data) => {
                 console.log("Tin nhắn mới trong history ID:", data.message_id);
                 // update nội dung nếu đang xem đúng history đó
+            });
+        </script>
+        <button class="menu-tutorial"><i class='bx bx-menu' ></i></button>
+        <script>
+            document.querySelector('.menu-tutorial').addEventListener('click', function() {
+                document.querySelector('header').classList.toggle('hidden');
+                document.querySelector('.menu-tutorial').style.display = "none";
             });
         </script>
     </body>

@@ -7,6 +7,61 @@ footer {
 }
 
 
+#search-query {
+    width: 100%;            /* Đặt chiều rộng là 100% để ô tìm kiếm chiếm toàn bộ không gian có sẵn */
+    max-width: 90%;       /* Đặt chiều rộng tối đa của ô tìm kiếm */
+    padding: 10px 10px;     /* Thêm khoảng cách trong ô tìm kiếm */
+    font-size: 18px;        /* Đặt kích thước font chữ */
+    border: 3px solid #ddd; /* Đặt viền cho ô tìm kiếm */
+    border-radius: 8px;     /* Làm tròn các góc của ô tìm kiếm */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+}
+
+
+button[type="submit"] {
+    width: 16%; /* Đặt kích thước cố định cho nút */
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #5d6dea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #3b4a8e; /* Đổi màu nền khi hover */
+}
+
+
+#search-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Căn giữa ô tìm kiếm và nút */
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa ô tìm kiếm và nút */
+    margin-top: 20px;
+}
+
+#search-query {
+    width: 80%; /* Tăng chiều rộng của ô tìm kiếm */
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+button[type="submit"] {
+    width: 16%; /* Giảm kích thước của nút tìm kiếm */
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #5d6dea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
 .title {
     background: #fff;
     width: 100vw;
@@ -49,7 +104,7 @@ footer {
     padding: 20px;
     height: 100vh;
     gap: 50px;
-    display: flex;
+    display: fixed;
     flex-direction: row;
 }
 
@@ -100,16 +155,6 @@ article {
     background-color: #f0f0f0;
 }
 
-.search-section .history {
-    display: flex;
-    width: calc(30vw - 50px);
-}
-
-.search-section .main {
-    display: flex;
-    width: calc(70vw - 50px);
-}
-
 .search-header {
     width: 100%;
     margin-bottom: 20px;
@@ -119,7 +164,23 @@ article {
     display: flex;
     border-bottom: 1px solid #ddd;
     margin-bottom: 20px;
+    flex-direction: column;
+
 }
+
+#search-results {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-tabs-panel {
+    justify-content: center;
+    display: flex;
+    width: calc(20vw - 50px);
+}
+
 
 .tab {
     padding: 10px 20px;
@@ -134,7 +195,6 @@ article {
     border-color: #ddd;
     border-bottom-color: white;
     background-color: white;
-    font-weight: bold;
     color: #5d6dea; /* Màu cam của StackOverflow */
 }
 
@@ -147,9 +207,13 @@ article {
 }
 
 .result-item {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
 }
 
 .result-item:hover {
@@ -158,10 +222,10 @@ article {
 
 .result-title {
     color: #0077cc;
-    font-size: 16px;
-    margin-bottom: 5px;
     text-decoration: none;
     display: block;
+    font-size: 16px; /* Giảm kích thước của tiêu đề */
+    margin-bottom: 5px;
 }
 
 .result-title:hover {
@@ -192,12 +256,367 @@ article {
     margin-bottom: 20px;
 }
 
+
+.content-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 700px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+}
+
+.content-panel.active {
+    display: block;
+
+}
+
+.panel-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-title {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.close-panel {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.panel-content {
+    padding: 15px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Overlay khi panel mở */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: none;
+}
+
+.result-item > h3 {
+    background: linear-gradient(45deg, #F1E7E7, #EBEAFF);
+}
+
+.search-results-panel {
+    flex-grow: 1; /* Chiếm toàn bộ không gian còn lại */
+    padding: 20px;
+    overflow-y: auto;
+    padding-left: 20px;
+    width: calc(70vw - 50px); /* Đảm bảo không vượt quá
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+}
+
+.content-panel.active ~ .overlay {
+    display: block;
+}
+
+#arxiv-form button[type="submit"] i,
+#so-form button[type="submit"] i {
+display: none;
+}
+
+
+
+
+/* Container cho toàn bộ phần tìm kiếm */
+.search-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Panel bên trái */
+.search-tabs-panel {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    padding-right: 20px;
+    display: fixed;
+
+}
+
+.search-tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab {
+    padding: 10px;
+    background-color: #eee;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tab.active {
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+/* Panel bên phải chứa kết quả tìm kiếm */
+
+
+.result-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.result-title {
+    font-weight: bold;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.result-meta {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+/* Panel hiển thị chi tiết */
+.content-panel {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.content-panel.active {
+    display: block;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.close-panel {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+
+
+.result-item h3 {
+    font-size: 18px; /* Giảm kích thước của tiêu đề */
+    margin: 0;       /* Đặt margin = 0 để tránh làm ảnh hưởng đến các phần tử khác */
+    padding: 0.5rem;      /* Đảm bảo không có padding làm thay đổi kích thước */
+    overflow: hidden; /* Ngăn không cho tiêu đề làm tràn ra ngoài */
+    text-overflow: ellipsis; /* Hiển thị dấu ba chấm khi tiêu đề dài */
+}
+
+
+.search-tab-container {
+    display: none;
+  }
+.search-tab-container.active {
+    display: block;
+  }
+  
+.search-results-tab {
+    margin-top: 20px;
+}
+
+
+#arxiv-form,
+#so-form {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+  
+  /* cho input text */
+#arxiv-form input[type="text"],
+#so-form input[type="text"] {
+    flex: 1;               /* chiếm hết không gian còn lại */
+    min-width: 0;          /* để flex:1 hoạt động đúng trong IE/Edge */
+    padding: 10px;
+    font-size: 16px;
+    border: 3px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+  
+  /* cho nút submit */
+#arxiv-form button[type="submit"],
+#so-form button[type="submit"] {
+    flex: 0 0 auto;        /* không co giãn, không thu nhỏ */
+    padding: 8px 20px;
+    font-size: calc(1vw + 1px);
+    background-color: #5d6dea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+@media (max-width: 768px) {
+    #arxiv-form button[type="submit"],
+    #so-form button[type="submit"]  {
+    font-size: 0;
+    }
+    #arxiv-form button[type="submit"] i,
+    #so-form button[type="submit"] i {
+    display: block;
+    font-size: calc(5vw + 1px);
+    }
+    .search-section {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .content-panel {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search-results-panel {
+        width: 100%;
+    }
+}
+
+
+  /* hover giữ nguyên */
+#arxiv-form button[type="submit"]:hover,
+#so-form button[type="submit"]:hover {
+    background-color: #3b4a8e;
+  }
+
+
+.search-form {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.search-form input {
+    flex: 1;
+    min-width: 0;
+}
+
+.search-form button {
+    flex: 0 0 auto;
+}
+
+
+.result-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+
+.question-card h2 {
+    font-size: 1.5rem; /* tương đương text-2xl */
+}
+
+.answer-logo {
+width: 40px;
+height: 40px;
+object-fit: contain;
+margin-bottom: 8px;
+}
+
+
+.answer-item .bg-blue-100.text-blue-800 {
+    font-size: 1.5rem;  
+    padding: 0.75rem 0.75rem; 
+}
+
+
+
+.answer-item .text-gray-500 {
+    font-size: 1rem;   
+    padding: 0.25rem 0.25rem; 
+}
+
+
+.answer-logo-inline {
+    display: block;
+    width: 20px;       
+    height: 20px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.answer-inline-img {
+    display: block;
+    max-width: 80%;    
+    height: auto;
+    border-radius: 4px; /* nếu muốn bo góc */
+    margin-bottom: 0.5rem;
+  }
+
 /* Mobile styles */
 @media (max-width: 768px) {
     .search-section {
         flex-direction: column;
         gap: 20px;
         padding: 10px;
+        height: auto;
+    }
+
+    .search-tabs-panel {
+        width: 100vw;
+        padding: 5px;
+    }
+
+    .search-tabs {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .search-results-panel {
+        width: 100vw;
+        padding: 20px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 20px;
         height: auto;
     }
     
@@ -241,80 +660,11 @@ article {
         font-size: 11px;
     }
     
-    /* Hide history on very small screens */
-    @media (max-width: 480px) {
-        .history {
-            display: none !important;
-        }
-    }
+
 }
 
-.content-panel {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    max-width: 700px;
-    height: 100vh;
-    background: white;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-    transition: right 0.3s ease;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-}
 
-.content-panel.active {
-    right: 0;
-}
-
-.panel-header {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.panel-title {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-}
-
-.close-panel {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #666;
-}
-
-.panel-content {
-    padding: 15px;
-    overflow-y: auto;
-    flex-grow: 1;
-}
-
-/* Overlay khi panel mở */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 999;
-    display: none;
-}
-
-.content-panel.active ~ .overlay {
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .content-panel {
-        width: 100%;
-        max-width: 100%;
-    }
+.markdown-body p {
+    margin: 0 0 1em;
+    line-height: 1.6;
 }

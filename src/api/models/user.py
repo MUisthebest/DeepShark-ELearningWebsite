@@ -1,4 +1,7 @@
 from api.settings import db, bcrypt
+from pgvector.sqlalchemy import Vector  
+from sqlalchemy.dialects.postgresql import ARRAY, DOUBLE_PRECISION
+
 
 
 class User(db.Model):
@@ -52,3 +55,69 @@ class ChatMessage(db.Model):
             "user_message": self.user_message,
             "bot_response": self.bot_response,
         }
+
+
+class StackOverflowQuestion(db.Model):
+    __tablename__ = 'question'
+
+    question_id = db.Column(db.Integer, primary_key=True)  
+    question_title = db.Column(db.Text(), nullable=False)
+    question_date = db.Column(db.Date, nullable=False)
+    answer_1 = db.Column(db.Text(), nullable=False)
+    answer_1_score = db.Column(db.Integer, nullable=False)
+    answer_2 = db.Column(db.Text(), nullable=False)
+    answer_2_score = db.Column(db.Integer, nullable=False)
+    answer_3 = db.Column(db.Text(), nullable=False)
+    answer_3_score = db.Column(db.Integer, nullable=False)
+    
+    # Cột vector_embedding sử dụng kiểu pgvector
+
+    def __init__(self, question_title, question_date, answer_1, answer_1_score, 
+                 answer_2, answer_2_score, answer_3, answer_3_score,
+                 vector_embedding):
+        self.question_title = question_title
+        self.question_date = question_date
+        self.answer_1 = answer_1
+        self.answer_1_score = answer_1_score
+        self.answer_2 = answer_2
+        self.answer_2_score = answer_2_score
+        self.answer_3 = answer_3
+        self.answer_3_score = answer_3_score
+        self.vector_embedding = vector_embedding
+
+    def __repr__(self):
+        return f"<StackOverflowQuestion {self.question_title}>"
+
+
+class ArxivPaper(db.Model):
+    __tablename__ = 'arxiv_papers'
+
+    id = db.Column(db.Integer, primary_key=True) 
+    title = db.Column(db.Text(), nullable=False)  
+    question = db.Column(db.Text(), nullable=False) 
+    link = db.Column(db.Text(), nullable=False)  
+    category = db.Column(db.String(255), nullable=False) 
+    abstract = db.Column(db.Text(), nullable=False)  
+    vector_embedding = db.Column(Vector(384), nullable=False) 
+
+    def __init__(self, title, question, link, category, abstract, vector_embedding):
+        self.title = title
+        self.question = question
+        self.link = link
+        self.category = category
+        self.abstract = abstract
+        self.vector_embedding = vector_embedding
+
+    def __repr__(self):
+        return f"<ArxivPaper {self.title}>"
+
+
+class CategoryEmbedding(db.Model):
+    __tablename__ = 'category_embeddings_average'
+
+    id = db.Column(db.Integer, primary_key=True)
+    category = db.Column(db.Text(), nullable=False)
+    avg_embedding = db.Column(ARRAY(DOUBLE_PRECISION), nullable=False)
+
+    def __repr__(self):
+        return f'<CategoryEmbedding {self.category}>'

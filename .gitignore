@@ -3,3 +3,14 @@
 venv/
 .env
 ._*
+src/api/ai_models/finetune-model/1_Pooling/config.json
+src/api/ai_models/finetune-model/config.json
+src/api/ai_models/finetune-model/config_sentence_transformers.json
+src/api/ai_models/finetune-model/model.safetensors
+src/api/ai_models/finetune-model/modules.json
+src/api/ai_models/finetune-model/README.md
+src/api/ai_models/finetune-model/sentence_bert_config.json
+src/api/ai_models/finetune-model/special_tokens_map.json
+src/api/ai_models/finetune-model/tokenizer.json
+src/api/ai_models/finetune-model/tokenizer_config.json
+src/api/ai_models/finetune-model/unigram.json
