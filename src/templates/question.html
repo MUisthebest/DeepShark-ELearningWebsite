@@ -46,10 +46,19 @@
           <button type="submit">Tìm kiếm<i class='bx bxs-search-alt-2'></i></button>
         </form>
 
-        <!-- vùng kết quả arXiv -->
-        <div id="arxiv-results" class="results-pane" style="display:block;"></div>
-        <!-- vùng kết quả SO -->
-        <div id="so-results"    class="results-pane" style="display:none;"></div>
+        <div id="arxiv-results" class="results-pane" style="display:block;">
+          <div class="loading-container" id="arxiv-loading" style="display: none;">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Đang tìm kiếm arXiv...</div>
+          </div>
+        </div>
+        
+        <div id="so-results" class="results-pane" style="display:none;">
+          <div class="loading-container" id="so-loading" style="display: none;">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Đang tìm kiếm StackOverflow...</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -353,6 +353,24 @@ body {
     background-color: #297cd4;
 }
 
+.empty-chat-notice {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-style: italic;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.typewriter {
+    overflow: hidden; /* Ẩn chữ tràn */
+    white-space: nowrap; /* Ngăn xuống dòng */
+    display: inline-block;
+    animation: typing 2s steps(40, end); /* Tốc độ hiện chữ */
+}
 
 
 @media (max-width: 1024px) {
@@ -365,6 +383,11 @@ body {
         display: flex;
         z-index: 9999;
 
+    }
+
+    .typewriter {
+        width: 100%;
+        animation: none; /* Tắt hiệu ứng khi nhỏ hơn 1024px */
     }
 
     .chat-header {

@@ -1,36 +1,38 @@
 <link rel="stylesheet" href="../static/css/chat.css">
-
+{% if not chats %}
+    <div class="empty-chat-notice">
+        <p>Chưa có đoạn chat nào. Vui lòng bấm <strong>New Chat</strong> để bắt đầu!</p>
+    </div>
+{% else %}
 <div class="chat-container">    
     <div class="chat-header">
         <img src="../static/image/shark.png" class="logo">
         <span class="name">Shark 2.0-Flash</span>
         <i class='bx bx-right-arrow-alt' id="arrow-icon"></i>
     </div>
-    <div class="chat-messages">
-        {% for message in chat_messages %}
-            <div class="chat-message user-message">
-                {% if message.user_message %}
-                    {{ message.user_message |safe }}
-                {% endif %}
-            </div>
-            <div class="chat-message bot-message">
-                {% if message.bot_response %}
-                    <div class="bot-response">{{ message.bot_response | safe }}</div>
-                {% endif %}
-            </div>  
-
-
-
-        {% endfor %}
     
+    <div class="chat-messages">
+            {% for message in chat_messages %}
+                <div class="chat-message user-message">
+                    {% if message.user_message %}
+                        {{ message.user_message |safe }}
+                    {% endif %}
+                </div>
+                <div class="chat-message bot-message">
+                    {% if message.bot_response %}
+                        <div class="bot-response">{{ message.bot_response | safe }}</div>
+                    {% endif %}
+                </div>  
+            {% endfor %}
     </div>
 
     <input type="hidden" id="message_id" value="{{ message_id }}">
 
     <div class="chat-input">
-        <input type="text" placeholder="Type a message..." />
-        <button>Send</button>
+        <input type="text" placeholder="Nhập tin nhắn..." />
+        <button>Gửi</button>
     </div>
-
 </div>
-<script src="../static/js/chat.js"></script>  
+{% endif %}
+
+<script src="../static/js/chat.js"></script>
