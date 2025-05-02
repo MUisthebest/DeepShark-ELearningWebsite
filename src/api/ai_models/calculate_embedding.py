@@ -1,37 +1,38 @@
 from sentence_transformers import SentenceTransformer
-import os
 import docker
 
 class ModelLoader:
     def __init__(self):
         self.model = None
-        self.container_name = "22127471/model-only"
-        self.local_path = "local_model_path"
+        self.container_name = "22127471/model-only"  # Tên image trên Docker Hub
+        self.container = None  # Thêm biến lưu container
 
     def load_from_docker(self):
-        """Tải model từ Docker Hub và lưu cục bộ"""
-        if os.path.exists(self.local_path):
-            return SentenceTransformer(self.local_path)
-            
+        """Tải model trực tiếp từ container đang chạy"""
         try:
             client = docker.from_env()
-            client.images.pull(self.container_name)
             
-            # Chạy container và copy model
-            container = client.containers.run(
+            # Khởi động container với model trong memory
+            self.container = client.containers.run(
                 self.container_name,
                 detach=True,
-                volumes={os.getcwd(): {'bind': '/host', 'mode': 'rw'}}
+                remove=True,  # Tự động xóa container khi dừng
+                mem_limit="500m"  # Giới hạn RAM
             )
-            container.exec_run(f"cp -r /app/model /host/{self.local_path}")
-            container.stop()
             
-            return SentenceTransformer(self.local_path)
+            # Truy cập model trực tiếp từ container
+            self.model = SentenceTransformer("/app/model")  # Đường dẫn trong container
+            return self.model
             
         except Exception as e:
             print(f"Lỗi khi tải model từ Docker: {e}")
-            # Fallback: tải từ HuggingFace nếu cần
+            # Fallback: tải từ HuggingFace
             return SentenceTransformer("BanhMiKepThit015/Deepshark-Paraphrase-MiniLM-v2")
+
+    def __del__(self):
+        """Dọn dẹp container khi hủy đối tượng"""
+        if self.container:
+            self.container.stop()
 
 def get_query_embedding(query):
     loader = ModelLoader()
