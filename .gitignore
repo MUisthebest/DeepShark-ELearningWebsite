@@ -14,4 +14,3 @@ src/api/ai_models/finetune-model/special_tokens_map.json
 src/api/ai_models/finetune-model/tokenizer.json
 src/api/ai_models/finetune-model/tokenizer_config.json
 src/api/ai_models/finetune-model/unigram.json
-local_model_path
