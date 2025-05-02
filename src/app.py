@@ -20,7 +20,7 @@ from api.routes.auth import app as auth_bp
 from googletrans import Translator
 
 
-from api.ai_models.calculate_embedding import load_model, finetuned_modelSBERT
+from api.ai_models.calculate_embedding import ModelLoader
 from dotenv import load_dotenv
 import psycopg2
 import threading
