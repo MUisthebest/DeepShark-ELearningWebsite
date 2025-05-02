@@ -39,4 +39,5 @@ def signin():
 def logout():
     response = make_response(redirect("/"))
     response.delete_cookie("user_id")
+    response.delete_cookie("history_chat_id") 
     return response

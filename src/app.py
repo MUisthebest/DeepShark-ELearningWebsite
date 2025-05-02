@@ -20,7 +20,7 @@ from api.routes.auth import app as auth_bp
 from googletrans import Translator
 
 
-from api.ai_models.calculate_embedding import load_model, finetuned_modelSBERT
+from api.ai_models.calculate_embedding import ModelLoader
 from dotenv import load_dotenv
 import psycopg2
 import threading
@@ -43,7 +43,7 @@ app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 db.init_app(app)
 bcrypt.init_app(app)
 jwt.init_app(app)
-socketio.init_app(app, cors_allowed_origins="*")
+socketio.init_app(app, cors_allowed_origins="*", async_mode='threading')
 migrate = Migrate(app, db)
 app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
 app.register_blueprint(auth_bp, url_prefix="/api/auth/")
@@ -312,5 +312,5 @@ def contact():
     return render_template("index.html", name="team.html")
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  
-    app.run(port=port, host="0.0.0.0", debug=True) 
+    port = int(os.environ.get("PORT", 8080))  
+    socketio.run(app, host="0.0.0.0", port=port, allow_unsafe_werkzeug=True)

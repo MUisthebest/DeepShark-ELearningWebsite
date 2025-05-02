@@ -53,7 +53,7 @@
                 <h4>History</h4>
                 {% if chats %}
                     {% for chat in chats %}
-                        <a href="javascript:void(0)" class="history-item" data-chat-id="{{ chat.id }}">
+                        <a href="/chat?chat_history_id={{ chat.id }}" class="history-item" data-chat-id="{{ chat.id }}">
                             {{ chat.name_conversation }} <br>
                         </a>
                         <hr>
@@ -239,8 +239,8 @@
     <footer>
         <div class="content">
             <div class="col">
-                <h3>Top Study Website for Computer Science Students at University of Science</h3>
-                <p>Your premier destination for computer science learning resources and tools.</p>
+                <h3>Trang Web Học Tập Hàng Đầu Cho Sinh Viên Khoa Học Máy Tính - Đại học Khoa Học Tự Nhiên</h3>
+                <p>Điểm đến uy tín cung cấp tài nguyên và công cụ học tập khoa học máy tính.</p>
             </div>
             
             <div class="col">
@@ -345,33 +345,100 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
         <script>
-            const socket = io('https://deepshark-elearningwebsite-production.up.railway.app', {
+            const socket = io('http://localhost:8080', { // Thay 3000 bằng port server của bạn
                 transports: ['websocket'],
-                withCredentials: true, // nếu dùng cookie cho auth
-            });
+                withCredentials: true, // Nếu bạn dùng cookie cho auth
+            });        
             socket.on('update_history', () => {
                 console.log('Nhận được sự kiện update_history');
                 fetch('/chat-history')
                     .then(res => res.json())
                     .then(data => {
                         const container = document.getElementById('history-items');
-                        const fragment = document.createDocumentFragment();
-                        data.forEach(chat => {
+                        if (!container) return;
+                        
+                        // Lưu scroll position trước khi cập nhật
+                        const prevScroll = container.scrollTop;
+                        
+                        container.innerHTML = '<h4>History</h4>';
+                        
+                        // Lấy chat_id từ URL
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const currentChatId = urlParams.get('chat_history_id');
+                        
+                        data.forEach((chat, index) => {
                             const a = document.createElement('a');
-                            a.href = 'javascript:void(0)';
+                            a.href = `/chat?chat_history_id=${chat.id}`;
                             a.className = 'history-item';
                             a.dataset.chatId = chat.id;
-                            a.innerHTML = `${chat.name}<br>`;
-                            fragment.appendChild(a);
-                            fragment.appendChild(document.createElement('hr'));
+                            
+                            
+                            // Tạo hiệu ứng typing
+                            const nameSpan = document.createElement('span');
+                            nameSpan.className= 'typewriter';
+                            nameSpan.textContent = chat.name;
+                            a.appendChild(nameSpan);
+                            
+                            container.appendChild(a);
+                            container.appendChild(document.createElement('hr'));
+                            
+                            // Kích hoạt animation với delay tăng dần
+                            setTimeout(() => {
+                                nameSpan.style.width = `${nameSpan.scrollWidth}px`;
+                                nameSpan.style.transition = 'width 1.5s ease'; // Tùy chỉnh tốc độ
+                            }, 10); // Delay để đảm bảo DOM đã render
                         });
-                        container.innerHTML = '';
-                        container.appendChild(fragment);
+                        
+                        // Khôi phục scroll position
+                        container.scrollTop = prevScroll;
+
+                        data.forEach((chat, index) => {
+                            if (chat.id.toString() === currentChatId) {
+                                a.classList.add('active');
+                            }
+                        });
+                        
+                        // Thêm sự kiện click
+                        addHistoryItemEventListeners();
                     });
             });
-            socket.on('new_message', (data) => {
-                console.log("Tin nhắn mới trong history ID:", data.message_id);
-                // update nội dung nếu đang xem đúng history đó
+            
+            // Hàm thêm sự kiện click cho các item
+            function addHistoryItemEventListeners() {
+                document.querySelectorAll('.history-item').forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Xóa highlight cũ
+                        document.querySelectorAll('.history-item').forEach(i => {
+                            i.classList.remove('active');
+                        });
+                        
+                        // Thêm highlight mới
+                        this.classList.add('active');
+                        
+                        // Chuyển trang
+                        const chatId = this.dataset.chatId;
+                        window.location.href = `/chat?chat_history_id=${chatId}`;
+                    });
+                });
+            }
+            
+            // Kiểm tra ngay khi load trang
+            document.addEventListener('DOMContentLoaded', function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const chatId = urlParams.get('chat_history_id');
+                
+                if (chatId) {
+                    // Đảm bảo item được highlight ngay cả khi chưa có sự kiện update_history
+                    const checkHighlight = setInterval(() => {
+                        const item = document.querySelector(`.history-item[data-chat-id="${chatId}"]`);
+                        if (item) {
+                            item.classList.add('active');
+                            clearInterval(checkHighlight);
+                        }
+                    }, 100);
+                }
             });
         </script>
         <button class="menu-tutorial"><i class='bx bx-menu' ></i></button>

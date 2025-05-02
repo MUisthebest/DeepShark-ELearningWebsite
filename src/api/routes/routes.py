@@ -3,11 +3,17 @@ from api.ai_models.ai_model import predict, summarize_text, review_code
 from api.models.user import ChatHistory, ChatMessage
 from api.settings import db, socketio
 import markdown
-from api.ai_models.calculate_embedding import load_model, get_query_embedding
+from api.ai_models.calculate_embedding import ModelLoader, get_query_embedding
 from api.ai_models.search_utils import find_best_category, find_top_papers
 from sqlalchemy import text
 import numpy as np
+from pybreaker import CircuitBreaker
 
+# Giới hạn thời gian xử lý
+TIMEOUT = 30  # giây
+
+# Circuit breaker để tránh server quá tải
+search_breaker = CircuitBreaker(fail_max=3, reset_timeout=60)
 
 api_bp = Blueprint("api_ai_models", __name__)
 
@@ -112,6 +118,7 @@ def review_code_route():
 
 
 @api_bp.route("/search/arxiv", methods=["POST"])
+@search_breaker
 def search_arxiv():
     query = request.form.get("query")
 
@@ -130,6 +137,7 @@ def search_arxiv():
 
 
 @api_bp.route("/search/stackoverflow", methods=["POST"])
+@search_breaker
 def search_stackoverflow():
     query = request.form.get("query", "").strip()
     if not query:
