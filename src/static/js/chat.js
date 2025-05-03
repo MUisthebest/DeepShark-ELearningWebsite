@@ -62,91 +62,76 @@ document.addEventListener('DOMContentLoaded', function () {
         const parsedMessage = marked.parse(message);
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = parsedMessage;
-        
-        // Hàm kiểm tra xem người dùng có đang ở gần cuối chat không
-        function isNearBottom() {
-            const threshold = 100; // Khoảng cách threshold tính bằng pixel
-            return chatMessagesContainer.scrollTop + chatMessagesContainer.clientHeight >= 
-                   chatMessagesContainer.scrollHeight - threshold;
+    
+        // Hàm typing sử dụng requestAnimationFrame
+        const typeText = async (node, text) => {
+            return new Promise(resolve => {
+                let i = 0;
+                const type = () => {
+                    if (i < text.length) {
+                        node.textContent = text.substring(0, i + 1);
+                        i++;
+                        requestAnimationFrame(type);
+                    } else {
+                        resolve();
+                    }
+                };
+                requestAnimationFrame(type);
+            });
+        };
+    
+        // Hàm kiểm tra scroll
+        function checkScroll() {
+            const threshold = 100;
+            const isNearBottom = chatMessagesContainer.scrollTop + chatMessagesContainer.clientHeight >= 
+                               chatMessagesContainer.scrollHeight - threshold;
+            if (isNearBottom) {
+                chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+            }
         }
-        
+    
         // Xử lý từng node
         const processNode = async (parentNode, node) => {
             if (node.nodeType === Node.TEXT_NODE) {
-                // Xử lý text node - typing từng ký tự
-                const text = node.textContent;
-                let displayText = '';
-                for (let i = 0; i < text.length; i++) {
-                    displayText += text[i];
-                    const textNode = document.createTextNode(displayText);
-                    
-                    // Tạm thời thay thế nội dung
-                    if (parentNode.lastChild?.nodeType === Node.TEXT_NODE) {
-                        parentNode.lastChild.nodeValue = displayText;
-                    } else {
-                        parentNode.appendChild(textNode);
-                    }
-                    
-                    // Tốc độ typing nhanh hơn (10-30ms)
-                    await new Promise(resolve => setTimeout(resolve, 10 + Math.random() * 20));
-                    
-                    // Chỉ scroll nếu đang ở gần cuối
-                    if (isNearBottom()) {
-                        chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
-                    }
-                }
+                const textNode = document.createTextNode('');
+                parentNode.appendChild(textNode);
+                await typeText(textNode, node.textContent);
+                checkScroll();
+                
             } else if (node.nodeType === Node.ELEMENT_NODE) {
-                // Xử lý element node
                 const clone = node.cloneNode(false);
                 parentNode.appendChild(clone);
-                
-                // Nếu là thẻ code hoặc pre
+    
                 if (node.tagName === 'PRE' || node.tagName === 'CODE') {
-                    // Lưu lại nội dung gốc
-                    const originalContent = node.innerHTML;
-                    const originalClass = node.className;
+                    // Clone và giữ nguyên cấu trúc
+                    const placeholder = document.createElement('div');
+                    Object.assign(placeholder.style, {
+                        backgroundColor: '#1a1a1a',
+                        color: '#ffffff',
+                        padding: '10px',
+                        borderRadius: '4px',
+                        fontFamily: 'monospace',
+                        whiteSpace: 'pre-wrap'
+                    });
                     
-                    // Áp dụng style typing (nền đen chữ trắng)
-                    clone.style.backgroundColor = '#1a1a1a';
-                    clone.style.color = '#ffffff';
-                    clone.style.padding = '10px';
-                    clone.style.borderRadius = '4px';
-                    clone.style.fontFamily = 'monospace';
-                    clone.style.whiteSpace = 'pre-wrap';
+                    clone.appendChild(placeholder);
+                    await typeText(placeholder, node.textContent);
+                    checkScroll();
                     
-                    // Tạo bản sao để typing
-                    const typingNode = document.createElement('span');
-                    clone.appendChild(typingNode);
-                    
-                    // Typing nội dung
-                    const text = node.textContent;
-                    let displayText = '';
-                    for (let i = 0; i < text.length; i++) {
-                        displayText += text[i];
-                        typingNode.textContent = displayText;
-                        await new Promise(resolve => setTimeout(resolve, 10 + Math.random() * 20));
-                        
-                        // Chỉ scroll nếu đang ở gần cuối
-                        if (isNearBottom()) {
-                            chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
-                        }
+                    // Thay thế bằng nội dung thật
+                    clone.innerHTML = node.innerHTML;
+                    clone.className = node.className;
+                    if (window.hljs) {
+                        hljs.highlightElement(clone);
                     }
-                    
-                    // Sau khi typing xong, thay thế bằng nội dung gốc và xóa style tạm
-                    clone.innerHTML = originalContent;
-                    clone.className = originalClass;
-                    clone.removeAttribute('style');
-                    hljs.highlightElement(clone);
                 } else {
-                    // Xử lý các node con
                     for (let child of node.childNodes) {
                         await processNode(clone, child);
                     }
                 }
             }
         };
-        
-        // Bắt đầu xử lý từng node
+    
         element.innerHTML = '';
         for (let child of tempDiv.childNodes) {
             await processNode(element, child);

@@ -4,7 +4,7 @@ import docker
 class ModelLoader:
     def __init__(self):
         self.model = None
-        self.container_name = "22127471/model-only"  # Tên image trên Docker Hub
+        self.container_name = "22127471/local_model_path"  # Tên image trên Docker Hub
         self.container = None  # Thêm biến lưu container
 
     def load_from_docker(self):
@@ -16,7 +16,6 @@ class ModelLoader:
             self.container = client.containers.run(
                 self.container_name,
                 detach=True,
-                remove=True,  # Tự động xóa container khi dừng
                 mem_limit="500m"  # Giới hạn RAM
             )
             
@@ -30,9 +29,13 @@ class ModelLoader:
             return SentenceTransformer("BanhMiKepThit015/Deepshark-Paraphrase-MiniLM-v2")
 
     def __del__(self):
-        """Dọn dẹp container khi hủy đối tượng"""
-        if self.container:
-            self.container.stop()
+        try:
+            if hasattr(self, 'container') and self.container and self.container.status != "exited":
+                self.container.stop()
+        except docker.errors.NotFound:
+            pass  # Bỏ qua nếu container không tồn tại
+        except Exception as e:
+            print(f"Error stopping container: {e}")
 
 def get_query_embedding(query):
     loader = ModelLoader()
