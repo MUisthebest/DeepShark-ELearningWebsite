@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify, render_template, redirect, url_for, session
-from api.ai_models.ai_model import predict , summarize_text, review_code
+from api.ai_models.ai_model import predict, summarize_text, review_code
 from api.models.user import ChatHistory, ChatMessage
 from api.settings import db, socketio
 import markdown
@@ -15,25 +15,21 @@ TIMEOUT = 30  # giây
 # Circuit breaker để tránh server quá tải
 search_breaker = CircuitBreaker(fail_max=3, reset_timeout=60)
 
-
-api_bp = Blueprint("api_ai_models", __name__)  
+api_bp = Blueprint("api_ai_models", __name__)
 
 
 @api_bp.route("/predict", methods=["POST"])
 def predict_web():
-    data = request.get_json()  
-    input_data = data.get("input_data", "")  
+    data = request.get_json()
+    input_data = data.get("input_data", "")
     print(f"Input data received: {input_data}")
-    bot_response = predict(input_data) 
+    bot_response = predict(input_data)
     history_chat_id = request.cookies.get("history_chat_id")
-    new_message = ChatMessage(history_chat_id=history_chat_id,user_message=input_data, bot_response=bot_response)
+    new_message = ChatMessage(history_chat_id=history_chat_id, user_message=input_data, bot_response=bot_response)
     db.session.add(new_message)
     db.session.commit()
 
     return jsonify({"prediction": bot_response})
-
-
-
 
 
 @api_bp.route("/handle_message", methods=["POST"])
@@ -41,7 +37,7 @@ def handle_message():
     data = request.get_json()
     input_data = data.get("input_data", "")
     message_id = data.get("message_id")
-    
+
     bot_response = predict(input_data)
 
     chat_history = ChatHistory.query.get(message_id)
@@ -50,32 +46,26 @@ def handle_message():
     if is_first_message:
         summary = summarize_text(input_data)
         chat_history.name_conversation = summary
-        chat_history.is_first_message = False 
+        chat_history.is_first_message = False
         db.session.commit()
-
 
     new_message = ChatMessage(history_chat_id=message_id, user_message=input_data, bot_response=bot_response)
     db.session.add(new_message)
     db.session.commit()
-    
-    socketio.emit('update_history')        
 
-    return jsonify({
-        "prediction": bot_response
-    })
+    socketio.emit("update_history")
 
-
-
+    return jsonify({"prediction": bot_response})
 
 
 @api_bp.route("/new_chat", methods=["POST"])
 def new_chat():
     user_id = request.cookies.get("user_id")
     if not user_id:
-        return redirect("/signin")  
+        return redirect("/signin")
 
     new_chat_history = ChatHistory(user_id=user_id)
-    
+
     db.session.add(new_chat_history)
     db.session.commit()
 
@@ -86,9 +76,7 @@ def new_chat():
 
     db.session.commit()
 
-    return redirect(url_for('chat', chat_history_id=chat_history_id))
-
-
+    return redirect(url_for("chat", chat_history_id=chat_history_id))
 
 
 @api_bp.route("/review-code", methods=["POST"])
@@ -128,10 +116,11 @@ def review_code_route():
     print(review_result)
     return render_template("index.html", name="review.html", review_result=review_result, code_input=code, language=language)
 
+
 @api_bp.route("/search/arxiv", methods=["POST"])
 @search_breaker
 def search_arxiv():
-    query = request.form.get("query")  
+    query = request.form.get("query")
 
     if not query:
         return jsonify({"message": "No query provided!"}), 400
@@ -147,11 +136,10 @@ def search_arxiv():
     return jsonify({"category": best_category, "papers": results})
 
 
-
 @api_bp.route("/search/stackoverflow", methods=["POST"])
 @search_breaker
 def search_stackoverflow():
-    query = request.form.get('query', '').strip()
+    query = request.form.get("query", "").strip()
     if not query:
         return jsonify({"message": "No query provided!"}), 400
 
@@ -159,7 +147,8 @@ def search_stackoverflow():
     if isinstance(query_emb, np.ndarray):
         query_emb = query_emb.tolist()
 
-    stmt = text("""
+    stmt = text(
+        """
         SELECT
           question_title   AS title,
           question_date    AS date,
@@ -171,21 +160,25 @@ def search_stackoverflow():
           answer_3_score   AS answer_3_score
         FROM stackoverflow_question
         -- Ép kiểu tham số emb thành vector
-        ORDER BY vector_embedding <-> (:emb)::vector
+        ORDER BY vector_embedding <=> (:emb)::vector
         LIMIT 20
-    """)
+    """
+    )
     # Thực thi
     rows = db.session.execute(stmt, {"emb": query_emb}).fetchall()
 
-    papers = [{
-        "title":           r.title,
-        "date":            r.date,
-        "answer_1":        r.answer_1,
-        "answer_1_score":  r.answer_1_score,
-        "answer_2":        r.answer_2,
-        "answer_2_score":  r.answer_2_score,
-        "answer_3":        r.answer_3,
-        "answer_3_score":  r.answer_3_score,
-    } for r in rows]
+    papers = [
+        {
+            "title": r.title,
+            "date": r.date,
+            "answer_1": r.answer_1,
+            "answer_1_score": r.answer_1_score,
+            "answer_2": r.answer_2,
+            "answer_2_score": r.answer_2_score,
+            "answer_3": r.answer_3,
+            "answer_3_score": r.answer_3_score,
+        }
+        for r in rows
+    ]
 
     return jsonify({"papers": papers})
