@@ -9,6 +9,7 @@ class ModelLoader:
     def load(self):
         if self.model is None:
             self.model = SentenceTransformer(self.model_name)
+            self.model.save("model")
         return self.model
 
 def get_query_embedding(query):
