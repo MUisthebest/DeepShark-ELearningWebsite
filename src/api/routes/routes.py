@@ -3,7 +3,7 @@ from api.ai_models.ai_model import predict, summarize_text, review_code
 from api.models.user import ChatHistory, ChatMessage
 from api.settings import db, socketio
 import markdown
-from api.ai_models.calculate_embedding import ModelLoader, get_query_embedding
+from api.ai_models.calculate_embedding import  get_query_embedding
 from api.ai_models.search_utils import find_best_category, find_top_papers
 from sqlalchemy import text
 import numpy as np
