@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, current_app 
 from api.routes.routes import api_bp
+from flask_caching import Cache
 from api.ai_models.ai_model import summarize_text
 from api.settings import db, bcrypt, jwt, socketio
 from flask_migrate import Migrate
@@ -15,7 +16,7 @@ from flask_cors import CORS
 
 from api.routes.auth import app as auth_bp
 from flask import Flask
-from api.models.user import User, ChatHistory, ChatMessage,StackOverflowQuestion, TutorialCache
+from api.models.user import User, ChatHistory, ChatMessage,StackOverflowQuestion
 from api.routes.auth import app as auth_bp
 from googletrans import Translator
 
@@ -53,8 +54,7 @@ app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
 app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 
 
-with app.app_context():
-    TutorialCache.load()
+cache = Cache(app, config={'CACHE_TYPE': 'SimpleCache'})
 
 @app.route("/")
 def home():
@@ -220,15 +220,63 @@ def llms():
 
 @app.route("/tutorial/<path:subpath>", methods=["GET"])
 @app.route("/tutorial", methods=["GET"])
+@cache.cached(timeout=3600, query_string=True)
 async def tutorial(subpath=None):
+    # Lấy đường dẫn tuyệt đối tới thư mục static/crawlers
+    static_dir = os.path.join(current_app.root_path, "static", "crawlers")
+
+    # Đường dẫn các file JSON
+    json_files = {
+        "cpp": os.path.join(static_dir, "cpp", "index.json"),
+        "python": os.path.join(static_dir, "python", "index.json"),
+        "django": os.path.join(static_dir, "django", "index.json"),
+        "flask": os.path.join(static_dir, "flask", "index.json"),
+        "numpy": os.path.join(static_dir, "numpy", "index.json"),
+    }
+
+    def read_json(file_path):
+        try:
+            with open(file_path, "r", encoding="utf-8") as file:
+                data = json.load(file)
+                entries = data.get("entries", [])
+                types = data.get("types", [])
+
+                if not isinstance(entries, list) or not isinstance(types, list):
+                    return None
+
+                tree_structure = {}
+                for type_item in types:
+                    type_name = type_item["name"]
+                    tree_structure[type_name] = []
+
+                for entry in entries:
+                    entry_type = entry["type"]
+                    if entry_type in tree_structure:
+                        tree_structure[entry_type].append({
+                            "name": entry["name"],
+                            "path": entry["path"]
+                        })
+
+                return tree_structure
+        except FileNotFoundError:
+            return None
+
+    # Đọc dữ liệu từ các file JSON
+    cpp_data = read_json(json_files["cpp"])
+    python_data = read_json(json_files["python"])
+    django_data = read_json(json_files["django"])
+    flask_data = read_json(json_files["flask"])
+    numpy_data = read_json(json_files["numpy"])
+
     translated_content = "Nội dung không tìm thấy."
 
+    # Kiểm tra subpath
     all_data = {
-        "cpp": TutorialCache.cpp,
-        "python": TutorialCache.python,
-        "django": TutorialCache.django,
-        "flask": TutorialCache.flask,
-        "numpy": TutorialCache.numpy,
+        "cpp": cpp_data,
+        "python": python_data,
+        "django": django_data,
+        "flask": flask_data,
+        "numpy": numpy_data,
     }
 
     if subpath:
@@ -243,21 +291,21 @@ async def tutorial(subpath=None):
                 break
 
         if not found:
-            static_dir = os.path.join(current_app.root_path, "static", "crawlers")
             read_file = os.path.join(static_dir, subpath + ".html")
             if os.path.exists(read_file):
                 with open(read_file, "r", encoding="utf-8") as html_file:
                     html_content = html_file.read()
                 translated_content = await translate_html_content(html_content)
 
+    # Render trang HTML
     response = make_response(render_template(
         "index.html",
         name="tutorial.html",
-        cpp=TutorialCache.cpp,
-        python=TutorialCache.python,
-        django=TutorialCache.django,
-        flask=TutorialCache.flask,
-        numpy=TutorialCache.numpy,
+        cpp=cpp_data,
+        python=python_data,
+        django=django_data,
+        flask=flask_data,
+        numpy=numpy_data,
         content=translated_content
     ))
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
