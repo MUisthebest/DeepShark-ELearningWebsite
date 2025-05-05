@@ -165,7 +165,7 @@ def chat():
         chat_messages = []
     return render_template("index.html", name="chat.html", user=user, chats=all_chats, chat_messages=chat_messages, message_id=chat_history_id)
 
-
+@cache.memoize(timeout=3600)
 async def translate_html_content(html_content):
     soup = BeautifulSoup(html_content, "html.parser")
 
@@ -233,7 +233,8 @@ async def tutorial(subpath=None):
         "flask": os.path.join(static_dir, "flask", "index.json"),
         "numpy": os.path.join(static_dir, "numpy", "index.json"),
     }
-
+    
+    @cache.memoize(timeout=3600)
     def read_json(file_path):
         try:
             with open(file_path, "r", encoding="utf-8") as file:
