@@ -345,7 +345,7 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
         <script>
-            const socket = io('http://localhost:8080', { // Thay 3000 bằng port server của bạn
+            const socket = io('https://deepshark-elearningwebsite-production.up.railway.app', { // Thay 3000 bằng port server của bạn
                 transports: ['websocket'],
                 withCredentials: true, // Nếu bạn dùng cookie cho auth
             });        

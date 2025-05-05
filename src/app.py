@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify 
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, current_app 
 from api.routes.routes import api_bp
 from api.ai_models.ai_model import summarize_text
 from api.settings import db, bcrypt, jwt, socketio
@@ -221,7 +221,7 @@ def llms():
 @app.route("/tutorial/<path:subpath>", methods=["GET"])
 @app.route("/tutorial", methods=["GET"])
 async def tutorial(subpath=None):
-    current_dir = os.path.dirname(os.path.abspath(__file__))
+    current_dir = current_app.root_path
 
     json_files = {"cpp": os.path.join(current_dir, "templates/crawlers/cpp/index.json"), "python": os.path.join(current_dir, "templates/crawlers/python/index.json"), "django": os.path.join(current_dir, "templates/crawlers/django/index.json"), "flask": os.path.join(current_dir, "templates/crawlers/flask/index.json"), "numpy": os.path.join(current_dir, "templates/crawlers/numpy/index.json")}
 
