@@ -32,8 +32,13 @@ load_dotenv()
 
 app = Flask(__name__)
 translator = Translator()
-CORS(app)
-
+CORS(app, resources={
+    r"/search/*": {
+        "origins": ["http://127.0.0.1:8080", "http://localhost:8080"],
+        "methods": ["POST", "OPTIONS"],
+        "allow_headers": ["Content-Type"]
+    }
+})
 # Config from .env
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -44,7 +49,7 @@ bcrypt.init_app(app)
 jwt.init_app(app)
 socketio.init_app(app, cors_allowed_origins="*", async_mode='threading')
 migrate = Migrate(app, db)
-app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
+app.register_blueprint(api_bp, url_prefix="/")
 app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 
 

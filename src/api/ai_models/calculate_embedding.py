@@ -1,17 +1,17 @@
-import requests
+from sentence_transformers import SentenceTransformer
+import docker
 
-HUGGINGFACE_API_TOKEN = "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"
+class ModelLoader:
+    def __init__(self):
+        self.model_name = "BanhMiKepThit015/Deepshark-Paraphrase-MiniLM-v2"
+        self.model = None
 
-API_URL = "https://api-inference.huggingface.co/pipeline/feature-extraction/BanhMiKepThit015/Deepshark-Paraphrase-MiniLM-v2"
-
-headers = {
-    "Authorization": f"Bearer {HUGGINGFACE_API_TOKEN}"
-}
+    def load(self):
+        if self.model is None:
+            self.model = SentenceTransformer(self.model_name)
+        return self.model
 
 def get_query_embedding(query):
-    payload = {
-        "inputs": query
-    }
-    response = requests.post(API_URL, headers=headers, json=payload)
-    response.raise_for_status()  # Nếu lỗi API sẽ raise Exception
-    return response.json()  # Đây chính là embedding (list số)
+    loader = ModelLoader()
+    model = loader.load()
+    return model.encode(query)
