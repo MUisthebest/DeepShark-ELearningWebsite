@@ -25,19 +25,6 @@ document.addEventListener('DOMContentLoaded', function(){
       return container;
   }
 
-  // Hàm lấy URL ngrok động
-  async function getNgrokUrl() {
-    try {
-      const response = await fetch('http://localhost:4040/api/tunnels');
-      const data = await response.json();
-      const publicUrl = data.tunnels[0].public_url;
-      return publicUrl;
-    } catch (error) {
-      console.error('Không thể lấy URL ngrok:', error);
-      throw new Error('Không thể kết nối với ngrok API. Vui lòng đảm bảo ngrok đang chạy.');
-    }
-  }
-
   // 1) Chuyển tab
   [arxivTab, soTab].forEach(tab => {
     tab.addEventListener('click', () => {
@@ -60,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
       return;
     }
     
+    // Tạo fragment để tối ưu performance
     const fragment = document.createDocumentFragment();
     
     papers.forEach(p => {
@@ -76,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function(){
     
     arxivResults.appendChild(fragment);
     
+    // Typeset MathJax nếu có
     if (window.MathJax) {
       MathJax.typesetPromise();
     }
@@ -125,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function(){
       const card = document.createElement('div');
       card.className = 'question-card bg-white rounded-lg shadow-sm overflow-hidden';
 
+      // build answers HTML
       let answersHTML = '';
       for (let i = 1; i <= 5; i++) {
         const txt   = p[`answer_${i}`];
@@ -170,64 +160,61 @@ document.addEventListener('DOMContentLoaded', function(){
     soResults.appendChild(fragment);
     hljs.highlightAll(); // Re-highlight code blocks
   }
-
-  // 4) Gửi form arXiv
-  arxivForm.addEventListener('submit', async e => {
-    e.preventDefault();
-    const q = document.getElementById('arxiv-query').value.trim();
-    if (!q) return;
-    
-    // Hiển thị loading và xóa kết quả cũ
-    arxivLoading.style.display = 'flex';
-    arxivResults.innerHTML = '';
-    arxivResults.appendChild(arxivLoading);
-    
-    try {
-      const ngrokUrl = await getNgrokUrl(); // Lấy URL ngrok động
-      const response = await fetch(`${ngrokUrl}/search/arxiv`, {
-        method: 'POST',
-        body: new URLSearchParams({ query: q }),
-        headers: { 
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'ngrok-skip-browser-warning': 'true'
-        }
-      });
-      const data = await response.json();
-      renderArxiv(data.papers || []);
-    } catch (error) {
+// 4) Gửi form arXiv
+arxivForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const q = document.getElementById('arxiv-query').value.trim();
+  if (!q) return;
+  
+  // Hiển thị loading và xóa kết quả cũ
+  arxivLoading.style.display = 'flex';
+  arxivResults.innerHTML = '';
+  arxivResults.appendChild(arxivLoading);
+  
+  // Thay URL bằng địa chỉ server thực tế của bạn
+  fetch('https://first-friendly-hornet.ngrok-free.app/search/arxiv', {
+    method: 'POST',
+    body: new URLSearchParams({ query: q }),
+    headers: { 
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'ngrok-skip-browser-warning': 'true' // Bỏ qua cảnh báo từ ngrok
+    }
+  })
+    .then(r => r.json())
+    .then(data => renderArxiv(data.papers || []))
+    .catch((error) => {
       console.error('Error:', error);
       arxivLoading.style.display = 'none';
       renderArxiv([]);
-    }
-  });
+    });
+});
 
-  // 5) Gửi form StackOverflow
-  soForm.addEventListener('submit', async e => {
-    e.preventDefault();
-    const q = document.getElementById('so-query').value.trim();
-    if (!q) return;
-    
-    // Hiển thị loading và xóa kết quả cũ
-    soLoading.style.display = 'flex';
-    soResults.innerHTML = '';
-    soResults.appendChild(soLoading);
-    
-    try {
-      const ngrokUrl = await getNgrokUrl(); // Lấy URL ngrok động
-      const response = await fetch(`${ngrokUrl}/search/stackoverflow`, {
-        method: 'POST',
-        body: new URLSearchParams({ query: q }),
-        headers: { 
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'ngrok-skip-browser-warning': 'true'
-        }
-      });
-      const data = await response.json();
-      renderSO(data.papers || []);
-    } catch (error) {
+// 5) Gửi form StackOverflow
+soForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const q = document.getElementById('so-query').value.trim();
+  if (!q) return;
+  
+  // Hiển thị loading và xóa kết quả cũ
+  soLoading.style.display = 'flex';
+  soResults.innerHTML = '';
+  soResults.appendChild(soLoading);
+  
+  // Thay URL bằng địa chỉ server thực tế của bạn
+  fetch('https://first-friendly-hornet.ngrok-free.app/search/stackoverflow', {
+    method: 'POST',
+    body: new URLSearchParams({ query: q }),
+    headers: { 
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'ngrok-skip-browser-warning': 'true' // Bỏ qua cảnh báo từ ngrok
+    }
+  })
+    .then(r => r.json())
+    .then(data => renderSO(data.papers || []))
+    .catch((error) => {
       console.error('Error:', error);
       soLoading.style.display = 'none';
       renderSO([]);
-    }
-  });
+    });
+});
 });
