@@ -217,13 +217,22 @@ def llms():
     return render_template("index.html", name="llms.html", grouped_data=grouped_data, group_label=group_label)
 
 
+
 @app.route("/question", methods=["GET"])
 @app.route("/tutorial/<path:subpath>", methods=["GET"])
 @app.route("/tutorial", methods=["GET"])
 async def tutorial(subpath=None):
+    # Dùng root_path chuẩn Flask (an toàn trên Railway)
     current_dir = current_app.root_path
 
-    json_files = {"cpp": os.path.join(current_dir, "templates/crawlers/cpp/index.json"), "python": os.path.join(current_dir, "templates/crawlers/python/index.json"), "django": os.path.join(current_dir, "templates/crawlers/django/index.json"), "flask": os.path.join(current_dir, "templates/crawlers/flask/index.json"), "numpy": os.path.join(current_dir, "templates/crawlers/numpy/index.json")}
+    # Đọc JSON trong static/crawlers
+    json_files = {
+        "cpp": os.path.join(current_dir, "static", "crawlers", "cpp", "index.json"),
+        "python": os.path.join(current_dir, "static", "crawlers", "python", "index.json"),
+        "django": os.path.join(current_dir, "static", "crawlers", "django", "index.json"),
+        "flask": os.path.join(current_dir, "static", "crawlers", "flask", "index.json"),
+        "numpy": os.path.join(current_dir, "static", "crawlers", "numpy", "index.json")
+    }
 
     def read_json(file_path):
         try:
@@ -236,7 +245,6 @@ async def tutorial(subpath=None):
                     return None
 
                 tree_structure = {}
-
                 for type_item in types:
                     type_name = type_item["name"]
                     tree_structure[type_name] = []
@@ -259,49 +267,42 @@ async def tutorial(subpath=None):
     translated_content = "Nội dung không tìm thấy."
 
     if subpath:
-        if subpath in cpp_data:
-            translated_content = "<h2>Danh sách bài học trong C++ - {}</h2>".format(subpath)
-            translated_content += "<ul>"
-            for item in cpp_data[subpath]:
-                translated_content += f'<li><a href="/tutorial/cpp/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
-            translated_content += "</ul>"
+        data_sources = {
+            "cpp": cpp_data,
+            "python": python_data,
+            "django": django_data,
+            "flask": flask_data,
+            "numpy": numpy_data
+        }
 
-        elif subpath in python_data:
-            translated_content = "<h2>Danh sách bài học trong Python - {}</h2>".format(subpath)
-            translated_content += "<ul>"
-            for item in python_data[subpath]:
-                translated_content += f'<li><a href="/tutorial/python/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
-            translated_content += "</ul>"
+        found = False
+        for lang, data in data_sources.items():
+            if data and subpath in data:
+                translated_content = f"<h2>Danh sách bài học trong {lang.capitalize()} - {subpath}</h2><ul>"
+                for item in data[subpath]:
+                    translated_content += f'<li><a href="/tutorial/{lang}/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
+                translated_content += "</ul>"
+                found = True
+                break
 
-        elif subpath in django_data:
-            translated_content = "<h2>Danh sách bài học trong Django - {}</h2>".format(subpath)
-            translated_content += "<ul>"
-            for item in django_data[subpath]:
-                translated_content += f'<li><a href="/tutorial/django/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
-            translated_content += "</ul>"
-
-        elif subpath in flask_data:
-            translated_content = "<h2>Danh sách bài học trong Flask - {}</h2>".format(subpath)
-            translated_content += "<ul>"
-            for item in flask_data[subpath]:
-                translated_content += f'<li><a href="/tutorial/flask/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
-            translated_content += "</ul>"
-
-        elif subpath in numpy_data:
-            translated_content = "<h2>Danh sách bài học trong NumPy - {}</h2>".format(subpath)
-            translated_content += "<ul>"
-            for item in numpy_data[subpath]:
-                translated_content += f'<li><a href="/tutorial/numpy/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
-            translated_content += "</ul>"
-
-        else:
-            read_file = os.path.join(current_dir, "templates/crawlers", subpath + ".html")
+        if not found:
+            # Đọc file HTML tĩnh (cũng nên để vào static/crawlers)
+            read_file = os.path.join(current_dir, "static", "crawlers", subpath + ".html")
             if os.path.exists(read_file):
                 with open(read_file, "r", encoding="utf-8") as html_file:
                     html_content = html_file.read()
                 translated_content = await translate_html_content(html_content)
 
-    response = make_response(render_template("index.html", name="tutorial.html", cpp=cpp_data, python=python_data, django=django_data, flask=flask_data, numpy=numpy_data, content=translated_content))
+    response = make_response(render_template(
+        "index.html",
+        name="tutorial.html",
+        cpp=cpp_data,
+        python=python_data,
+        django=django_data,
+        flask=flask_data,
+        numpy=numpy_data,
+        content=translated_content
+    ))
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "0"
