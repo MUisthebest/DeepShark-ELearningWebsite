@@ -1,7 +1,9 @@
 from api.settings import db, bcrypt
 from pgvector.sqlalchemy import Vector  
 from sqlalchemy.dialects.postgresql import ARRAY, DOUBLE_PRECISION
-
+import os
+import json
+from flask import current_app
 
 
 class User(db.Model):
@@ -121,3 +123,55 @@ class CategoryEmbedding(db.Model):
 
     def __repr__(self):
         return f'<CategoryEmbedding {self.category}>'
+    
+    
+class TutorialCache:
+    cpp = {}
+    python = {}
+    django = {}
+    flask = {}
+    numpy = {}
+
+    @classmethod
+    def load(cls):
+        static_dir = os.path.join(current_app.root_path, "static", "crawlers")
+        json_files = {
+            "cpp": os.path.join(static_dir, "cpp", "index.json"),
+            "python": os.path.join(static_dir, "python", "index.json"),
+            "django": os.path.join(static_dir, "django", "index.json"),
+            "flask": os.path.join(static_dir, "flask", "index.json"),
+            "numpy": os.path.join(static_dir, "numpy", "index.json"),
+        }
+
+        def read_json(file_path):
+            try:
+                with open(file_path, "r", encoding="utf-8") as file:
+                    data = json.load(file)
+                    entries = data.get("entries", [])
+                    types = data.get("types", [])
+
+                    if not isinstance(entries, list) or not isinstance(types, list):
+                        return None
+
+                    tree_structure = {}
+                    for type_item in types:
+                        type_name = type_item["name"]
+                        tree_structure[type_name] = []
+
+                    for entry in entries:
+                        entry_type = entry["type"]
+                        if entry_type in tree_structure:
+                            tree_structure[entry_type].append({
+                                "name": entry["name"],
+                                "path": entry["path"]
+                            })
+
+                    return tree_structure
+            except FileNotFoundError:
+                return None
+
+        cls.cpp = read_json(json_files["cpp"])
+        cls.python = read_json(json_files["python"])
+        cls.django = read_json(json_files["django"])
+        cls.flask = read_json(json_files["flask"])
+        cls.numpy = read_json(json_files["numpy"])
