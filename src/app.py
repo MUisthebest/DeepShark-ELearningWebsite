@@ -218,20 +218,19 @@ def llms():
 
 
 
-@app.route("/question", methods=["GET"])
 @app.route("/tutorial/<path:subpath>", methods=["GET"])
 @app.route("/tutorial", methods=["GET"])
 async def tutorial(subpath=None):
-    # Dùng root_path chuẩn Flask (an toàn trên Railway)
-    current_dir = current_app.root_path
+    # Lấy đường dẫn tuyệt đối tới thư mục static/crawlers
+    static_dir = os.path.join(current_app.root_path, "static", "crawlers")
 
-    # Đọc JSON trong static/crawlers
+    # Đường dẫn các file JSON
     json_files = {
-        "cpp": os.path.join(current_dir, "static", "crawlers", "cpp", "index.json"),
-        "python": os.path.join(current_dir, "static", "crawlers", "python", "index.json"),
-        "django": os.path.join(current_dir, "static", "crawlers", "django", "index.json"),
-        "flask": os.path.join(current_dir, "static", "crawlers", "flask", "index.json"),
-        "numpy": os.path.join(current_dir, "static", "crawlers", "numpy", "index.json")
+        "cpp": os.path.join(static_dir, "cpp", "index.json"),
+        "python": os.path.join(static_dir, "python", "index.json"),
+        "django": os.path.join(static_dir, "django", "index.json"),
+        "flask": os.path.join(static_dir, "flask", "index.json"),
+        "numpy": os.path.join(static_dir, "numpy", "index.json"),
     }
 
     def read_json(file_path):
@@ -252,12 +251,16 @@ async def tutorial(subpath=None):
                 for entry in entries:
                     entry_type = entry["type"]
                     if entry_type in tree_structure:
-                        tree_structure[entry_type].append({"name": entry["name"], "path": entry["path"]})
+                        tree_structure[entry_type].append({
+                            "name": entry["name"],
+                            "path": entry["path"]
+                        })
 
                 return tree_structure
         except FileNotFoundError:
             return None
 
+    # Đọc dữ liệu từ các file JSON
     cpp_data = read_json(json_files["cpp"])
     python_data = read_json(json_files["python"])
     django_data = read_json(json_files["django"])
@@ -266,18 +269,19 @@ async def tutorial(subpath=None):
 
     translated_content = "Nội dung không tìm thấy."
 
-    if subpath:
-        data_sources = {
-            "cpp": cpp_data,
-            "python": python_data,
-            "django": django_data,
-            "flask": flask_data,
-            "numpy": numpy_data
-        }
+    # Kiểm tra subpath
+    all_data = {
+        "cpp": cpp_data,
+        "python": python_data,
+        "django": django_data,
+        "flask": flask_data,
+        "numpy": numpy_data,
+    }
 
+    if subpath:
         found = False
-        for lang, data in data_sources.items():
-            if data and subpath in data:
+        for lang, data in all_data.items():
+            if subpath in data:
                 translated_content = f"<h2>Danh sách bài học trong {lang.capitalize()} - {subpath}</h2><ul>"
                 for item in data[subpath]:
                     translated_content += f'<li><a href="/tutorial/{lang}/{item["path"]}" data-no-ajax>{item["name"]}</a></li>'
@@ -286,13 +290,13 @@ async def tutorial(subpath=None):
                 break
 
         if not found:
-            # Đọc file HTML tĩnh (cũng nên để vào static/crawlers)
-            read_file = os.path.join(current_dir, "static", "crawlers", subpath + ".html")
+            read_file = os.path.join(static_dir, subpath + ".html")
             if os.path.exists(read_file):
                 with open(read_file, "r", encoding="utf-8") as html_file:
                     html_content = html_file.read()
                 translated_content = await translate_html_content(html_content)
 
+    # Render trang HTML
     response = make_response(render_template(
         "index.html",
         name="tutorial.html",
