@@ -53,8 +53,7 @@ app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
 app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 
 
-@app.before_first_request
-def load_cache():
+with app.app_context():
     TutorialCache.load()
 
 @app.route("/")
