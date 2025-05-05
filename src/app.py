@@ -49,7 +49,7 @@ bcrypt.init_app(app)
 jwt.init_app(app)
 socketio.init_app(app, cors_allowed_origins="*", async_mode='threading')
 migrate = Migrate(app, db)
-app.register_blueprint(api_bp, url_prefix="/")
+app.register_blueprint(api_bp, url_prefix="/api/ai_models/")
 app.register_blueprint(auth_bp, url_prefix="/api/auth/")
 
 
