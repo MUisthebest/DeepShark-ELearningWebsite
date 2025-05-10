@@ -136,7 +136,9 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let child of tempDiv.childNodes) {
             await processNode(element, child);
         }
-        
+        if (window.MathJax) {
+            await MathJax.typesetPromise([element]);
+        }
         // Sau khi hoàn thành, scroll xuống nếu đang ở gần cuối
         if (isNearBottom()) {
             chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
